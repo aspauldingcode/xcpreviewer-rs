@@ -606,6 +606,82 @@
         "local-re-controller"
       ],
       "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "verified_reuse_cases"
+        },
+        {
+          "equals": 4,
+          "path": "mutable_old_handle_cases"
+        },
+        {
+          "equals": 4,
+          "path": "separate_storage_preserved_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Delayed receiver reads of a reused same-ID surface observe generation-two bytes while separate surfaces preserve generation one; repeated imports coalesce local Mach names and retain independent user references.",
+      "id": "owned-surface-delayed-reuse",
+      "params": {},
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "adapter": "native_reference",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "captures"
+        },
+        {
+          "equals": true,
+          "path": "geometry_matches"
+        },
+        {
+          "equals": true,
+          "path": "repeat_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "repeat_png_bytes_equal"
+        },
+        {
+          "equals": true,
+          "path": "positive_change_visible"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Separate owned ImageRenderer native reference produces identical fresh-process A/A pixels and visible A/B text change under fixed geometry, scale and Aqua appearance.",
+      "id": "native-renderer-repeat-change",
+      "params": {
+        "repeat_control": true
+      },
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 240
     }
   ],
   "version": 1

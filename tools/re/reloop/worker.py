@@ -112,6 +112,12 @@ def perform(kind,out,p):
     if kind=='surface_failure':
         from reloop.surfacefailure import corpus,use_corpus
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
+    if kind=='surface_reuse':
+        from reloop.surfacereuse import corpus
+        return corpus(out)
+    if kind=='native_reference' and p.get('repeat_control',False):
+        from reloop.reference import corpus
+        return corpus(out)
     if kind in {'lldb_smoke','frida_smoke','native_reference','preview_hook_smoke'}:
         from reloop.trace import smoke
         return smoke(kind,out)

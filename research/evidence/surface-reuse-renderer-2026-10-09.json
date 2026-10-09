@@ -1,0 +1,167 @@
+{
+  "adapters": 22,
+  "automated_tests": {
+    "context": "Permitted owned subprocess-group cleanup; default-sandbox run failed its timeout cleanup test with PermissionError and is retained as a separate diagnostic.",
+    "failed": 0,
+    "passed": 83
+  },
+  "claims": [
+    {
+      "id": "owned-delayed-surface-reuse",
+      "status": "supported"
+    },
+    {
+      "id": "native-renderer-repeat-change",
+      "status": "supported"
+    }
+  ],
+  "controlled_changed_pixels": 1824,
+  "limitations": [
+    "Native assigned fixture generations, not recovered Canvas message fields.",
+    "Controlled CPU ordering only; no GPU fence, concurrent write race or native completion protocol.",
+    "No final kernel reclamation observable established.",
+    "ImageRenderer is separate from Xcode Canvas; no embedded ICC profile and system font tied to native environment.",
+    "No portable SwiftUI compilation/runtime proven.",
+    "Manifest authenticity requires a separately trusted commit or reviewer anchor."
+  ],
+  "mcp_tools": 19,
+  "prior_golden_comparison": {
+    "candidate_bytes": 256,
+    "candidate_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+    "different_bits_in_shared_extent": 0,
+    "different_bytes": 0,
+    "first_mismatches": [],
+    "mode": "exact-bytes",
+    "normalization": "none",
+    "passed": true,
+    "reference_bytes": 256,
+    "reference_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+    "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+    "unmatched_tail_bytes": 0
+  },
+  "render_images_visually_inspected": true,
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "verified_reuse_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "mutable_old_handle_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "separate_storage_preserved_cases",
+          "present": true
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "repeat_bytes_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "79fcd695a20529742daa3c34943ec6fb8d69efc0743dfb858b7afd4d1920f82c",
+      "execution": "success",
+      "experiment_hash": "fef3fc9f8c734b89bf55de835de02b3ee84c938d2588951fe3207feb2caec7b0",
+      "experiment_id": "owned-surface-delayed-reuse",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "3bd40600b17e4f045797487c34c42f4c49014269e0ab59f0ed2c4c4d47b394b4",
+      "observations": {
+        "cases": 8,
+        "helper_failures": 0,
+        "mutable_old_handle_cases": 4,
+        "repeat_bytes_equal_cases": 8,
+        "scope": "Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting. Not recovered Canvas generation/acknowledgement protocol, GPU fences, stale-name security or final reclamation.",
+        "separate_storage_preserved_cases": 4,
+        "verified_reuse_cases": 8
+      },
+      "run_id": "20261009T150541Z-owned-surface-delayed-reuse-3b615c52",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 3,
+          "expected": 3,
+          "passed": true,
+          "path": "captures",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "geometry_matches",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "repeat_pixels_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "repeat_png_bytes_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "positive_change_visible",
+          "present": true
+        }
+      ],
+      "environment_hash": "21f7ae64a3093dbcdc7be84b6817d6304afbe0fa17d3f8fa67a15be533261c51",
+      "execution": "success",
+      "experiment_hash": "cbcdcc8c0e18bd7da4495e9ab055cbb2a7787f08e14f8d94558e3a0884596786",
+      "experiment_id": "native-renderer-repeat-change",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "5e88ac941c05cd58854db082fc319ae15abc1f574e4fa6abe6205ca51d5fdfc3",
+      "observations": {
+        "captures": 3,
+        "controlled_changed_pixels": 1824,
+        "geometry_matches": true,
+        "positive_change_visible": true,
+        "repeat_pixels_equal": true,
+        "repeat_png_bytes_equal": true,
+        "scope": "Owned SwiftUI ImageRenderer; fixed 320x160, scale 1, Aqua; same-source fresh-process A/A and one changed text A/B. Not live Xcode Canvas or correlated IPC."
+      },
+      "run_id": "20261009T150758Z-native-renderer-repeat-change-bd921e73",
+      "verdict": "supports"
+    }
+  ],
+  "system_cmp_confirmed": true
+}

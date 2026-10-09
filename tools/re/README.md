@@ -79,3 +79,5 @@ python3 tools/re/summarize.py
 This generates a small index with image identities, selected signatures, relevant ObjC adapters, and synthetic probe results. Review the version-specific filename and findings before committing. Full Apple binaries, extracted caches, raw symbol tables, and decompiled implementation output are ignored by Git.
 
 The `surface_failure` adapter measures three owned handoff fault stages; parameter `control: use_state` selects independent local/global surface use-state controls. See [fault and recycling findings](../../docs/reverse-engineering/2026-10-09-surface-failure.md). Final reclamation and actual Canvas reuse/ordering remain open.
+
+The `surface_reuse` adapter compares delayed reads through reused/separate owned CPU surfaces. `native_reference` parameter `repeat_control: true` selects fresh-process ImageRenderer A/A and controlled text A/B. Both are separately scoped in [findings](../../docs/reverse-engineering/2026-10-09-reuse-renderer.md); neither recovers Canvas completion or hot reload.

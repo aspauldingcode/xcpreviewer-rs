@@ -20,43 +20,48 @@
       "fingerprint": "6b1114b83bcf559873cfd53bf804608545e3299364c8ba2fe6c76ead941c1107",
       "retry_prerequisite": "Schema enum synchronized; full 79-test suite passes.",
       "status": "resolved"
-    }
-  ],
-  "last_completed": "12 owned fault cases and 4 use-state cases, each repeated twice; final fault regression sealed; 79 tests pass.",
-  "next_actions": [
-    {
-      "action": "Find an independent final-release reclamation observable; keep unknown if none discriminates",
-      "issue_id": "R1",
-      "state": "unverified"
     },
     {
-      "action": "Implement frame-generation, stale-resource and delayed-completion controls",
+      "fingerprint": "706fd9227ff91c758fedbe92128226e34c489048e34cb0c9b1bb1b99f41494e4",
+      "retry_prerequisite": "Tests require permission to signal only their owned subprocess group; unrestricted owned-context rerun passes all 83 tests.",
+      "status": "permitted-execution-passed"
+    }
+  ],
+  "last_completed": "8 delayed reuse/separate cases repeated twice; native ImageRenderer A/A PNG/pixel repeat plus 1,824-pixel A/B text change; 83 tests pass with permitted owned cleanup.",
+  "next_actions": [
+    {
+      "action": "Recover actual completion acknowledgement and stale-generation rules; owned countermodel is measured",
       "issue_id": "R2",
       "state": "ready"
     },
     {
-      "action": "Use a changed capture diagnosis or observation method; no unchanged bridge retry",
+      "action": "Changed-method Canvas observation diagnosis, using renderer reference as independent tier",
       "issue_id": "O2",
       "state": "ready"
     },
     {
-      "action": "Select explicit portable subset and native reference tier",
+      "action": "Select explicit portable subset and compare to the new RendererOracle",
       "issue_id": "F1",
       "state": "ready"
+    },
+    {
+      "action": "Independent final reclamation observable; do not infer from not-in-use or absent local names",
+      "issue_id": "R1",
+      "state": "unverified"
     }
   ],
   "objective": "Recover and independently verify the declared native preview contract of GitHub milestone 1.",
   "pending_sync": [],
   "recent_evidence": [
     {
-      "manifest_sha256": "07a6f5cdcbcc04efcb831c0bbccb27d1f14f6c16586edde2ca191c023e57b6f3",
-      "path": "research/evidence/surface-failure-2026-10-09.json",
-      "run_id": "20261009T145227Z-owned-surface-use-state-de0eaf63"
+      "manifest_sha256": "3bd40600b17e4f045797487c34c42f4c49014269e0ab59f0ed2c4c4d47b394b4",
+      "path": "research/evidence/surface-reuse-renderer-2026-10-09.json",
+      "run_id": "20261009T150541Z-owned-surface-delayed-reuse-3b615c52"
     },
     {
-      "manifest_sha256": "f52b209d76b3e8dcde86f14ed07c3211a0a4a32b4d613037b006849f93f4e682",
-      "path": "research/evidence/surface-failure-2026-10-09.json",
-      "run_id": "20261009T145305Z-owned-surface-failure-cleanup-9769076e"
+      "manifest_sha256": "5e88ac941c05cd58854db082fc319ae15abc1f574e4fa6abe6205ca51d5fdfc3",
+      "path": "research/evidence/surface-reuse-renderer-2026-10-09.json",
+      "run_id": "20261009T150758Z-native-renderer-repeat-change-bd921e73"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

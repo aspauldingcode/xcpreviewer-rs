@@ -76,6 +76,12 @@ def plan(controller):
                              'reason':('Global in-use differs from local explicit count and can be false while retained CF pixels remain readable. '
                                        if use_state else 'Owned closed-endpoint/import-error/completion-timeout controls check local rights and bytes. ')+
                                       'Final kernel reclamation, reuse ordering and live Canvas transport remain unmeasured.'})
+        if spec.get('adapter')=='surface_reuse' and manifest.get('verdict')=='supports':
+            outcomes.append({'experiment':key,'action':'recover-native-completion-and-stale-generation-rules',
+                             'reason':'Owned CPU reuse demonstrates mutable storage and coalesced rights; assigned fixture generations do not recover Canvas sequencing or acknowledgements.'})
+        if spec.get('adapter')=='native_reference' and spec.get('params',{}).get('repeat_control') and manifest.get('verdict')=='supports':
+            outcomes.append({'experiment':key,'action':'use-separate-renderer-oracle-for-portable-subset',
+                             'reason':'ImageRenderer A/A and controlled A/B can support rendering comparisons; Canvas IPC and hot reload remain separate gates.'})
     # Templates are suggestions. The scheduled agent reviews and implements them; native execution remains bounded.
     queued={e['id'] for e in load(controller.root/'research/loop/campaign.json',{}).get('experiments',[])}
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}
