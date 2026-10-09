@@ -354,3 +354,7 @@ Verified State generic descriptor/pattern and eight chained witness targets;648 
 ## 2026-10-09 — Storage/trace bridge delegation
 
 Verified declared payload witness copy/destroy delegation:192 body+24 import instruction bytes; storage copies24 bytes and delegates three reference words, trace copies8 bytes and delegates one. Pattern/static metadata associations and reflection names checked.130 owned null/alias models compare3,040 bytes without invoking Swift. Six seals retained (three acquisition, three full controls);204 tests pass. Shared stub verifier now rejects duplicate instruction rows. Actual runtime selection, reference counts, reclamation and Canvas transport remain open. [Evidence](research/evidence/storage-bridge-delegation-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-storage-bridge-delegation.md).
+
+## 2026-10-09 — State named case indices
+
+Recovered State waiting0/fulfilled1 from defined case-index symbols, eight predicted constant bytes and enum reflection, with three witness rebases and424 mapped instruction bytes.132,098 finite direct-tag models compare28,088,564 whole-buffer bytes including padding; no native State invocation. Three seals retained (one acquisition, two controls);211 tests pass. Result discriminator, runtime/races and Canvas cleanup remain distinct/open. [Evidence](research/evidence/state-case-tags-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-state-case-tags.md).

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-09",
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T232008Z-native-state-tag-boundary-353c3889",
+      "manifest_sha256": "9206ddc97e42d639333ee945423b5b5f55d687b55d257692f07599805f803881",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded body acquisition only"
+    },
+    {
+      "run_id": "20261009T232141Z-native-state-tag-boundary-2a4c70ba",
+      "manifest_sha256": "e277a2fdbc62f078b0a992fda6717bfdc40f0137aa8cdc5387976ff5c5d12a8c",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static case-index/direct-tag control"
+    },
+    {
+      "run_id": "20261009T232230Z-native-state-tag-boundary-cdaf8dc3",
+      "manifest_sha256": "2ab3dd7750923ae16e7f450e9b6a80db02d1c74139376567dbe108470f83e2c3",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static case-index/direct-tag control"
+    }
+  ],
+  "facts": {
+    "body_instruction_bytes_compared": 424,
+    "case_index_bytes_independently_compared": 8,
+    "direct_tag_buffer_cases": 132098,
+    "enum_witness_rebases_verified": 3,
+    "named_case_indices": {
+      "fulfilled": 1,
+      "waiting": 0
+    },
+    "padding_bytes_per_model_buffer": 4,
+    "scope": "Static named resilient case indices, reflected enum declarations and declared witness bodies; finite direct-tag models only. WaitingStateUpdateResult uses a separate discriminator. No live State value, generic metadata construction, native getter/injector execution, extended-tag validity, race or transport claim.",
+    "state_tags_verified": true,
+    "whole_buffer_model_bytes_compared": 28088564
+  },
+  "tests_passed": 211,
+  "observations": [
+    "Named defined-section case-index constants and independent enum reflection associate State waiting0/fulfilled1.",
+    "State table rebases bind getter, single-RET projector and injector.",
+    "Direct-tag model changes only the size-derived tag byte and preserves complete payload/padding buffers.",
+    "WaitingStateUpdateResult is a separate enum; its discriminator is not assigned State case meaning."
+  ],
+  "scope": "Static named resilient case indices, reflected enum declarations and declared witness bodies; finite direct-tag models only. WaitingStateUpdateResult uses a separate discriminator. No live State value, generic metadata construction, native getter/injector execution, extended-tag validity, race or transport claim.",
+  "remaining": [
+    "Actual native State value and witness invocation",
+    "Runtime generic specialization and payload validity",
+    "Extended-tag behavior and WaitingStateUpdateResult source-case mapping",
+    "Live cancellation/completion races and correlated Canvas cleanup"
+  ]
+}

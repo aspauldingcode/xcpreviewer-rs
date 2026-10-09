@@ -3045,6 +3045,45 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-state-tag-boundary",
+      "adapter": "disassembly",
+      "hypothesis": "State waiting0/fulfilled1 case-index constants and reflected declarations independently associate with bound tag getter/injector/projector. Complete mapped bodies and encoded direct-tag branches support finite whole-buffer injection/read projections, preserving payload and padding without native invocation.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "2dcf8:2dd9c",
+          "2dd9c:2de9c",
+          "1e5c:1e60"
+        ],
+        "tag_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "state_tags_verified",
+          "equals": true
+        },
+        {
+          "path": "body_instruction_bytes_compared",
+          "equals": 424
+        },
+        {
+          "path": "direct_tag_buffer_cases",
+          "equals": 132098
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1
