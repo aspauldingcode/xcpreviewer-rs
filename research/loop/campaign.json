@@ -2360,6 +2360,76 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "owned-gpu-surface-completion",
+      "adapter": "surface_corpus",
+      "params": {
+        "gpu_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "After one bounded Metal completion handler for each red/red/blue render, CPU IOSurface snapshots should match independent BGRA literals and unchanged full allocation padding across four geometries and two repetitions. Status/error/identity faults must reject; no Canvas or GPU transfer claim.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 4
+        },
+        {
+          "path": "passed_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "owned-gpu-surface-retained-access",
+      "adapter": "surface_corpus",
+      "params": {
+        "gpu_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "After bounded red/red/blue GPU completions, drained command scopes and explicit texture/queue reference drop, retained IOSurface CPU snapshot must still match full independent blue allocation including padding. Whole-lifetime reclamation and internal GPU holders remain unknown.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 4
+        },
+        {
+          "path": "passed_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        },
+        {
+          "path": "retained_surface_cases",
+          "equals": 4
+        }
+      ]
     }
   ],
   "version": 1

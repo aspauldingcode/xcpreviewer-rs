@@ -146,6 +146,9 @@ def perform(kind,out,p):
     if kind=='raw_coder':
         from reloop.rawcoder import matrix
         return matrix(out)
+    if kind=='surface_corpus' and p.get('gpu_control',False):
+        from reloop.surfacegpu import corpus
+        return corpus(out)
     if kind=='surface_corpus':
         from reloop.surface import corpus
         return corpus(out)

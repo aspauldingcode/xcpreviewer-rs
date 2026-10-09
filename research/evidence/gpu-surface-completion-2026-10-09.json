@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-09",
+  "environment": {
+    "xcode": "26.6 (17F113)",
+    "macos": "26.5.1 (25F80)",
+    "architecture": "arm64",
+    "gpu": "Apple M1",
+    "storage": "Shared, unified memory",
+    "pixel_format": "BGRA8Unorm / IOSurface BGRA",
+    "plane_count": 0
+  },
+  "runs": [
+    {
+      "run_id": "20261009T204901Z-owned-gpu-surface-completion-a8b8786a",
+      "valid": true,
+      "manifest_sha256": "c23e53e9cf24a2bd8a980109e364901385be403ba4ab2f73a75fb04aee8b3928",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "cases": 4,
+        "compared_bytes": 0,
+        "helper_failures": 8,
+        "passed_cases": 0,
+        "repeat_equal_cases": 0,
+        "scope": "Owned single-process shared BGRA8 render-clear surfaces on unified memory; full allocation including padding. No GPU Mach handoff, Canvas synchronization, timeout recovery or reclamation claim."
+      }
+    },
+    {
+      "run_id": "20261009T205022Z-owned-gpu-surface-completion-6202a2b3",
+      "valid": true,
+      "manifest_sha256": "44b5606dea8b60a6b198365a0bd4b0db49afb1629f1b9672dcbe97b715ea5496",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 4,
+        "compared_bytes": 524288,
+        "helper_failures": 0,
+        "passed_cases": 4,
+        "repeat_equal_cases": 4,
+        "scope": "Owned single-process shared BGRA8 render-clear surfaces on unified memory; full allocation including padding. No GPU Mach handoff, Canvas synchronization, timeout recovery or reclamation claim."
+      }
+    },
+    {
+      "run_id": "20261009T205116Z-owned-gpu-surface-retained-access-5156ae20",
+      "valid": true,
+      "manifest_sha256": "c1ed0d95147fdbea31bd50cbbd1899ead1523d87ee6af9766a7f9c02c308c169",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 4,
+        "compared_bytes": 655360,
+        "helper_failures": 0,
+        "passed_cases": 4,
+        "repeat_equal_cases": 4,
+        "retained_surface_cases": 4,
+        "scope": "Owned single-process shared BGRA8 render-clear surfaces on unified memory; full allocation including padding and read after explicit Metal reference drop. No GPU Mach handoff, Canvas synchronization, timeout recovery or reclamation claim."
+      }
+    }
+  ],
+  "tests": 135,
+  "controls": {
+    "geometry": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        33,
+        7
+      ]
+    ],
+    "repeats": 2,
+    "stages": [
+      "CPU allocation initialization",
+      "red",
+      "red",
+      "blue",
+      "blue after explicit Metal reference drop"
+    ],
+    "completion_deadline_seconds": 5,
+    "helper_alarm_seconds": 12,
+    "subprocess_deadline_seconds": 15,
+    "comparison": "Full IOSurface allocation, active pixels, row padding and allocation tail, independent Python literal expected bytes"
+  },
+  "failure_memory": "Initial error_absent native NSNumber boxed integer1, strict Boolean verifier rejected all eight helpers. Initial seal retained; numberWithBool fix passes changed run. No pixel expectation relaxed.",
+  "limitations": [
+    "Owned single-process shared BGRA8 render-clear/control path, not Xcode Canvas or native private synchronization contract.",
+    "No multi-plane, managed/private memory, shader compute, HDR, alpha blend, format/color conversion, or discrete GPU qualification.",
+    "Command completion observed before read; early-read hazards, timeout recovery and cancellation remain untested.",
+    "Retained CF surface remains readable after drained command scopes and explicit texture/queue drop; internal driver holders and final physical reclamation remain unknown.",
+    "No GPU interprocess Mach/XPC transfer or actual native reply/resource association.",
+    "No Xcode windows, process attachment or protection changes."
+  ]
+}

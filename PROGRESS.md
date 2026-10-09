@@ -280,3 +280,9 @@ Evidence: [callback boundaries](docs/reverse-engineering/2026-10-09-cancellation
 Recovered shared invalidation-token closure weak-owner skip and lock/update/unlock/owner-release/result-cleanup ordering. A dependent merged update probe shows state byte `0x41 == 1` bypasses mutation, with a separate result tag. Added a finite checker including encoded ARM64 handoff targets and corrupted weak/state/lock/outcome controls. Four runs sealed and anchor-verified; 132 tests pass. Called dictionary effects, native races, selected-flow association and transport cancellation remain unverified; R2 stays open. No Xcode windows opened.
 
 Evidence: [invalidation gates](docs/reverse-engineering/2026-10-09-invalidation-cancellation.md), [sanitized seals](research/evidence/invalidation-cancellation-2026-10-09.json).
+
+## 2026-10-09 — owned GPU completion and retained surface access
+
+Added public Metal/IOSurface shared-BGRA render-clear control. Four geometries, two helper repeats, and red/red/blue results match independent literal pixels plus every row-padding/allocation-tail byte. Completion handler/status/error evidence gates CPU read. A dependent probe drains command scopes and drops explicit Metal texture/queue references; retained CF blue snapshots remain exact. Corrected initial control checks 524,288 bytes; retained-access control checks 655,360 bytes. Initial Boolean boxing harness rejection retained, fixed with explicit numberWithBool. Three seals anchor-verified; 135 tests pass. R1/R3 remain open for GPU transfer, Canvas synchronization, timeouts and final reclamation. No Xcode windows opened.
+
+Evidence: [GPU control](docs/reverse-engineering/2026-10-09-gpu-surface-completion.md), [sanitized seals](research/evidence/gpu-surface-completion-2026-10-09.json).
