@@ -54,7 +54,7 @@ def interpret(image,code,selector,maximum=128):
     if type(selector) is not int or not 0<=selector<32:raise ValueError('Invalid selector')
     pc=min(code)
     if code[pc][:2]!=('ldrb','w8, [x20]'):raise ValueError('Observed enum selector load has changed')
-    registers={'x8':selector};visited=[pc];pc+=4
+    registers={'x8':selector};visited=[pc];pc+=4;flags=None
     def read(name):
         key='x'+name[1:]
         if key not in registers:raise ValueError('Read of unknown register '+name)
@@ -79,6 +79,16 @@ def interpret(image,code,selector,maximum=128):
                 if not 0<=shift<=63:raise ValueError('Invalid operand shift')
                 rhs<<=shift
             left=read(args[1]);write(args[0],left+rhs if opcode=='add' else left-rhs if opcode=='sub' else left|rhs)
+        elif opcode=='cmp':
+            if len(args)!=2 or not re.fullmatch(r'[wx]\d+',args[0]):raise ValueError('Unsupported comparison')
+            width=32 if args[0].startswith('w') else 64;mask=(1<<width)-1;sign=1<<(width-1)
+            left=read(args[0]);right=(immediate(args[1]) if args[1].startswith('#') else read(args[1]))&mask
+            difference=(left-right)&mask
+            negative=bool(difference&sign);overflow=bool((left^right)&(left^difference)&sign)
+            flags={'eq':difference==0,'gt':difference!=0 and negative==overflow}
+        elif opcode=='csel':
+            if len(args)!=4 or args[3] not in {'eq','gt'} or flags is None:raise ValueError('Unsupported conditional select or missing flags')
+            write(args[0],read(args[1] if flags[args[3]] else args[2]))
         elif opcode=='ldrb':
             match=re.fullmatch(r'(w\d+), \[(x\d+), (x\d+)\]',operands)
             if not match:raise ValueError('Unsupported memory operand')

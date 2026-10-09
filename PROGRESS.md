@@ -196,3 +196,9 @@ All 100 tests pass. Sealed native evidence verifies. Planner now avoids re-diagn
 Installed reviewed, commit-pinned reverse-engineering, LLVM and Frida skills; Caveman FULL retained. Applied RE/LLVM workflows to a no-import wasm32 C literal rectangle control. Complete red/red/blue output matches 614,400 native ImageRenderer RGBA bytes; explicit row padding and ten nonmutating negative controls pass. This is a hand-authored rendering ABI, not SwiftUI compilation or broad platform execution.
 
 All 102 tests pass after the suite caught and corrected a missing public adapter enum; initial failure retained. Toolkit now has 24 adapters and 19 research MCP tools. No Xcode windows opened. See [contract and holdouts](docs/reverse-engineering/2026-10-09-portable-solid.md), [evidence](research/evidence/portable-solid-2026-10-09.json) and [skill provenance](research/loop/skills.json). F1 and both milestones remain open.
+
+## 2026-10-09 — native IOSurfacePayload codec keys
+
+Recovered five native key strings through bounded ARM64 interpretation; every string matches independent Swift nominal fields. Public serializer/deserializer entrypoints and closure expose the scoped five-field codec. No generation/completion field is named inside this type; surrounding envelope/lifecycle remains unobserved.
+
+Retained overbroad-query inconclusive run and unsupported-cmp failure; exact entrypoint query and added bounded conditional-select semantics pass. All 106 tests pass. Toolkit: 25 adapters / 19 MCP tools. No Xcode window opened; private raw disassembly remains local. See [findings](docs/reverse-engineering/2026-10-09-payload-keys.md) and [four anchors](research/evidence/surface-payload-keys-2026-10-09.json). R2/P1 and both milestones remain open.

@@ -1,0 +1,115 @@
+{
+  "failures_retained": [
+    {
+      "reason": "Broad regex matched five functions including closures, while declared count expected two. Exact public-entrypoint query later returns exactly two.",
+      "run_id": "20261009T170004Z-native-iosurface-payload-codec-sites-04a2575e"
+    },
+    {
+      "reason": "Interpreter rejected observed cmp instruction. Added bounded cmp/csel eq/gt semantics; changed run then passes.",
+      "run_id": "20261009T170215Z-native-iosurface-payload-key-witness-c3a2bdac"
+    }
+  ],
+  "getter_address": "0x945b0",
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "interpretation": "Five static codec key strings match independent nominal field descriptors. The bounded IOSurfacePayload type carries surfaceID, geometry/scale and selectable regions; generation/completion is not a named field of this type. Other envelope paths remain unobserved.",
+  "key_records": [
+    {
+      "metadata_case": "surfaceID",
+      "raw_value": "surfaceID",
+      "selector_index": 0
+    },
+    {
+      "metadata_case": "scaleFactor",
+      "raw_value": "scaleFactor",
+      "selector_index": 1
+    },
+    {
+      "metadata_case": "width",
+      "raw_value": "width",
+      "selector_index": 2
+    },
+    {
+      "metadata_case": "height",
+      "raw_value": "height",
+      "selector_index": 3
+    },
+    {
+      "metadata_case": "selectableRegions",
+      "raw_value": "selectableRegions",
+      "selector_index": 4
+    }
+  ],
+  "limitations": [
+    "Static source/binary evidence only; no native private enum call or live envelope/acknowledgement.",
+    "Selector indices derive from metadata and are not numeric transport IDs.",
+    "No payload-value roundtrip, integer range or malformed-value acceptance claim.",
+    "No resource import, IOSurface pixel/padding, GPU completion, final reclamation or portability claim.",
+    "No Xcode workspace opened."
+  ],
+  "nested_key_descriptor": "0xd22c8",
+  "payload_descriptor": "0xd2248",
+  "runs": [
+    {
+      "error": null,
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "c6ee656f3327192df0829fc114794f9976945ccaba223de62bf531d85a773ad3",
+      "observations": {
+        "function_count": 5,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      },
+      "run_id": "20261009T170004Z-native-iosurface-payload-codec-sites-04a2575e",
+      "sealed_verified": true,
+      "verdict": "inconclusive"
+    },
+    {
+      "error": "Unsupported instruction cmp",
+      "execution": "failed",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "71950b4102a2dc579409e33acc514fbdbeb22f316889aa6100cf127de0d472b2",
+      "observations": {},
+      "run_id": "20261009T170215Z-native-iosurface-payload-key-witness-c3a2bdac",
+      "sealed_verified": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "error": null,
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "2d658927b01c59d5ff74dfa3a9e5785cb6eff3a2babdf611409103d5af5f19c8",
+      "observations": {
+        "field_count": 5,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 5,
+        "keys_match_fields": true,
+        "raw_values": [
+          "surfaceID",
+          "scaleFactor",
+          "width",
+          "height",
+          "selectableRegions"
+        ],
+        "scope": "Pinned host IOSurfacePayload static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      },
+      "run_id": "20261009T170324Z-native-iosurface-payload-key-witness-6e3584d1",
+      "sealed_verified": true,
+      "verdict": "supports"
+    },
+    {
+      "error": null,
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "6981e3ea2ec9db47983d60e97dbccae5bc272b2e612b41b5b8c81980a972275f",
+      "observations": {
+        "function_count": 2,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      },
+      "run_id": "20261009T170530Z-native-iosurface-payload-exact-entrypoints-3476dfef",
+      "sealed_verified": true,
+      "verdict": "supports"
+    }
+  ],
+  "tests_passed": 106
+}

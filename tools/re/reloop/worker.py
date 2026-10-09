@@ -115,6 +115,9 @@ def perform(kind,out,p):
     if kind=='portable_solid':
         from reloop.portable import corpus
         return corpus(out)
+    if kind=='surface_payload':
+        from reloop.surfacepayload import recover
+        return recover(out)
     if kind=='surface_reuse':
         from reloop.surfacereuse import corpus
         return corpus(out)

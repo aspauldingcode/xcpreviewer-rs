@@ -1089,6 +1089,85 @@
         "local-re-controller"
       ],
       "timeout_seconds": 180
+    },
+    {
+      "adapter": "disassembly",
+      "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned host IOSurfacePayload serializer/deserializer expose the bounded scalar payload codec; static fields are not treated as live completion or envelope evidence.",
+      "id": "native-iosurface-payload-codec-sites",
+      "params": {
+        "query": "PreviewsMessagingHost.IOSurfacePayload.(propertyListValue.getter|init\\(propertyListValue:)"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "surface_payload",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 5,
+          "path": "field_count"
+        },
+        {
+          "equals": 5,
+          "path": "key_count"
+        },
+        {
+          "equals": true,
+          "path": "keys_match_fields"
+        },
+        {
+          "equals": [
+            "surfaceID",
+            "scaleFactor",
+            "width",
+            "height",
+            "selectableRegions"
+          ],
+          "path": "raw_values"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "All five native IOSurfacePayload key selectors return the same bounded strings as independent field descriptors; these static keys do not establish the live envelope or completion protocol.",
+      "id": "native-iosurface-payload-key-witness",
+      "params": {},
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "disassembly",
+      "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned host IOSurfacePayload serializer/deserializer expose the bounded scalar payload codec; static fields are not treated as live completion or envelope evidence.",
+      "id": "native-iosurface-payload-exact-entrypoints",
+      "params": {
+        "query": "^[0-9a-f]+ T PreviewsMessagingHost.IOSurfacePayload.(propertyListValue.getter|init\\(propertyListValue:)"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     }
   ],
   "version": 1
