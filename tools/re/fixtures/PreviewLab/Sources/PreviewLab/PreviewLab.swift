@@ -31,3 +31,25 @@ struct PreviewLabApp: App {
     Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1)
         .frame(width: 320, height: 160)
 }
+
+#Preview("Plain text") {
+    Text("TEXT CONTROL").foregroundStyle(Color.black)
+        .frame(width: 320, height: 160).background(Color.white)
+}
+#Preview("Plain stack") {
+    VStack(spacing: 12) {
+        Text("TEXT CONTROL")
+        Text("SECOND ROW")
+    }.foregroundStyle(Color.black)
+        .frame(width: 320, height: 160).background(Color.white)
+}
+#Preview("Title text") {
+    Text("TEXT CONTROL").font(.title).foregroundStyle(Color.black)
+        .frame(width: 320, height: 160).background(Color.white)
+}
+#Preview("Stack no background") {
+    VStack(spacing: 12) {
+        Text("Preview baseline").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160)
+}

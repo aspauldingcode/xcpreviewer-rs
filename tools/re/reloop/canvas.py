@@ -275,6 +275,7 @@ def capture(out,variants=(0,1),trace=False):
     if digest(fixture/'Sources/PreviewLab/PreviewLab.swift')!=source_hash:raise RuntimeError('Fixture source changed during reference capture')
     return {'rendered_variants':len(images),'png_valid':True,
             'fixture_content_nonblank':content['all_content_nonblank'],
+            'fixture_nonblank_captures':sum(c['passed'] for c in content['captures']),
             'solid_expected_colors':solid['all_expected_colors'],
             **comparison,
             'observed_processes':sum(e.get('kind')=='process-observed' for e in monitor.events),

@@ -831,6 +831,37 @@
         "local-re-controller"
       ],
       "timeout_seconds": 150
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": 4,
+          "path": "fixture_nonblank_captures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Plain Text, default-font stack, title-font Text and original stack without white background discriminate text versus composition failure under owned Canvas.",
+      "id": "native-canvas-text-factor-controls",
+      "params": {
+        "trace": false,
+        "variants": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
     }
   ],
   "version": 1

@@ -10,7 +10,7 @@
   "baseline_commit": "9b51624ec4386c5cf5f65bc5ba2b61b53600c548",
   "blocked_tracks": [
     {
-      "reason": "Retained broker responsive; solid Canvas controls render correct color patches. Prior text/VStack content remains unverified; full Canvas repeat/frame contract and native instrumentation remain open.",
+      "reason": "Inline text, title font and stack controls produce content; prior custom ProbeView blank unresolved. Full-frame oracle, repeatability and instrumentation remain open.",
       "retry_requires": "Changed text/layout control or full solid repeat/frame prediction; close owned window after every attempt before opening another.",
       "track": "native-canvas"
     }
@@ -34,17 +34,13 @@
       "status": "permitted-execution-passed"
     }
   ],
-  "last_completed": "Solid red/blue Canvas patches match exact literals; separate ImageRenderer compares 614,400 decoded RGBA bytes and repeats PNG; 94 tests pass. Closed two stale owned Xcode windows, verified zero workspace windows, added fail-before-open guard and cleanup targets.",
+  "last_completed": "Four inline text/layout controls produce content; plain Text and no-background stack visually show expected labels. Root cause of prior custom ProbeView blank remains unproven. Owned workspace closed, zero workspace windows verified; six targeted guard tests pass (94-test baseline).",
   "last_github_sync": {
-    "checkpoint": "solid-view discrimination and window cleanup",
+    "checkpoint": "inline text/layout controls",
     "date": "2026-10-09",
     "issues": [
       "O2",
       "O3"
-    ],
-    "numbers": [
-      3,
-      4
     ],
     "state": "open"
   },
@@ -55,7 +51,7 @@
       "state": "ready"
     },
     {
-      "action": "Discriminate plain Text, stack/layout and background/frame composition; repeat solid Canvas content against pinned expectations; close each owned window before another.",
+      "action": "Compare custom ProbeView and structurally identical inline body under same appearance/background, then A/A and label A/B. Close each owned workspace before another.",
       "issue_id": "O2",
       "state": "ready"
     },
@@ -117,6 +113,11 @@
       "manifest_sha256": "2fbbdb58072cd32f287fdd841eb072cd8f925513e4fd2c4323bf38fe11b8cf3c",
       "path": "research/evidence/canvas-solid-controls-2026-10-09.json",
       "run_id": "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+    },
+    {
+      "manifest_sha256": "2089fc33e0364c4cac91dc270e35c3e0d3f764312582bad57ad01f6a8f752722",
+      "path": "research/evidence/canvas-text-controls-2026-10-09.json",
+      "run_id": "20261009T155924Z-native-canvas-text-factor-controls-aadb9116"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

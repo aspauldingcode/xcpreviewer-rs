@@ -1,0 +1,83 @@
+{
+  "artifact_hashes_valid": true,
+  "checks": [
+    {
+      "actual": 4,
+      "expected": 4,
+      "passed": true,
+      "path": "rendered_variants",
+      "present": true
+    },
+    {
+      "actual": 4,
+      "expected": 4,
+      "passed": true,
+      "path": "fixture_nonblank_captures",
+      "present": true
+    }
+  ],
+  "cleanup": {
+    "owned_workspace_closed": true,
+    "welcome_close_attempt": "UI did not confirm dismissal; no project workspace remains.",
+    "window_listing": "No workspace windows found"
+  },
+  "content_check": {
+    "all_content_nonblank": true,
+    "captures": [
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 1511,
+        "passed": true
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 3064,
+        "passed": true
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 3928,
+        "passed": true
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 147456,
+        "passed": true
+      }
+    ],
+    "scope": "Pinned owned white fixture interior sanity, excluding chrome; nonblank is necessary, not OCR or semantic proof."
+  },
+  "execution": "success",
+  "frozen_sources_unchanged": true,
+  "limitations": [
+    "Nonwhite count is not OCR or text correctness. Variant7 dark background contributes to all 147456 interior pixels; this count is not glyph coverage.",
+    "Inline and custom-root previews differ in construction and some styling. Root cause is not yet proven.",
+    "No A/A or controlled label A/B for these inline text controls, no full pixel oracle or complete IPC trace."
+  ],
+  "manifest_sha256": "2089fc33e0364c4cac91dc270e35c3e0d3f764312582bad57ad01f6a8f752722",
+  "observations": {
+    "controlled_change_visible": true,
+    "fixture_content_nonblank": true,
+    "fixture_nonblank_captures": 4,
+    "instrumented_processes": 0,
+    "observed_processes": 1,
+    "pixels_identical": false,
+    "png_valid": true,
+    "preview_bytes_identical": false,
+    "rendered_variants": 4,
+    "sessions_created": 0,
+    "solid_expected_colors": false,
+    "source_sha256": "f695ec52f066209d330df71cf86d0484e3b94e662bedc7e7445c7456c3d2b375",
+    "wire_capture_complete": false
+  },
+  "run_id": "20261009T155924Z-native-canvas-text-factor-controls-aadb9116",
+  "tests": {
+    "existing_total": 94,
+    "targeted_guard_tests_passed": 6
+  },
+  "verdict": "supports",
+  "visually_inspected_variants": [
+    4,
+    7
+  ]
+}

@@ -166,3 +166,9 @@ Changed owned Canvas fixtures to explicit sRGB red/blue rectangle controls. Both
 User required closing finished Xcode windows before opening another. Closed two stale owned workspace windows, verified no workspace windows remain, and closed welcome. Capture now refuses to open while a generated workspace remains and records its cleanup target before launch, including failures. UI agent cleanup is mandatory; unrelated projects and Xcode process remain untouched.
 
 All 94 tests pass; toolkit remains 23 adapters and 19 MCP tools. See [findings](docs/reverse-engineering/2026-10-09-solid-controls.md), [anchors](research/evidence/canvas-solid-controls-2026-10-09.json), [Canvas patch fixtures](tools/re/fixtures/CanvasSolidOracle/manifest.json) and [independent solid fixtures](tools/re/fixtures/SolidRendererOracle/manifest.json). Next: text/layout discrimination and complete solid Canvas repeat/frame predictions, with cleanup between attempts. O2/O3 and both milestones remain open.
+
+## 2026-10-09 — inline text discrimination
+
+Four changed inline controls return content: plain Text, default-font stack, title-font Text and original stack without background. Visually checked plain text and no-background stack show expected labels. Dark background contributes to the last nonwhite count; counts are not OCR or glyph coverage. Blanket text/font failure is ruled out for these inputs; prior custom ProbeView blank root cause remains unproven. Next compare structurally identical inline/custom roots and establish repeat/change controls.
+
+Sealed artifacts/frozen sources verify. Owned workspace closed at completion; no workspace windows remain. Six targeted guard tests pass against the 94-test baseline. See [findings](docs/reverse-engineering/2026-10-09-text-controls.md), [anchor](research/evidence/canvas-text-controls-2026-10-09.json) and [owned snapshots](tools/re/fixtures/CanvasTextOracle/manifest.json). O2/O3 and both milestones remain open.
