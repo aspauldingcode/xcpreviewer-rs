@@ -115,6 +115,9 @@ def perform(kind,out,p):
     if kind=='surface_reuse':
         from reloop.surfacereuse import corpus
         return corpus(out)
+    if kind=='xcode_bridge_probe':
+        from reloop.bridgeprobe import probe
+        return probe(out)
     if kind=='native_reference' and p.get('repeat_control',False):
         from reloop.reference import corpus
         return corpus(out)

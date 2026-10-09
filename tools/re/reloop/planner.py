@@ -36,6 +36,13 @@ def plan(controller):
                     'Two independent renders of unchanged owned baseline produce identical pixels under this pinned environment.',
                     {'variants':[0,0],'trace':False},[{'path':'rendered_variants','equals':2},
                      {'path':'pixels_identical','equals':True}],timeout=600))
+        if spec.get('adapter')=='xcode_bridge_probe':
+            responsive=observed.get('initialized') is True and observed.get('direct_call_completed') is True
+            outcomes.append({'experiment':key,'action':'attempt-owned-canvas-capture' if responsive else 'inspect-xcode-permission-and-service-readiness',
+                             'reason':'Read-only tool response permits a separate owned capture attempt; it does not establish pixels or IPC.' if responsive else
+                                      'Initialization alone is insufficient. Inspect permission/service state and require a changed prerequisite before retrying the direct route.',
+                             'direct_call_completed':observed.get('direct_call_completed'),
+                             'error':observed.get('direct_call_error')})
         if spec.get('adapter')=='plist_corpus' and manifest.get('verdict')=='supports':
             seed=spec.get('params',{}).get('seed',1)+1
             proposals.append(experiment('plist-seed-%d'%seed,'plist_corpus',

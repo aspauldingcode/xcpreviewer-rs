@@ -142,3 +142,11 @@ A separate owned ImageRenderer campaign pins 320×160, scale 1 and Aqua. Fresh-p
 All 83 tests pass with permitted owned subprocess-group cleanup. Default-sandbox cleanup PermissionError remains a separate diagnostic. Both campaigns seal and verify frozen sources/artifacts; scoped claims are indexed. Controller now has 22 adapters and 19 MCP tools. Sanitized surface and renderer goldens are published; prior initial surface matches the separate delayed snapshot exactly via independent system cmp.
 
 See [findings](docs/reverse-engineering/2026-10-09-reuse-renderer.md), [evidence anchors](research/evidence/surface-reuse-renderer-2026-10-09.json), [surface goldens](tools/re/fixtures/SurfaceReuseOracle/manifest.json) and [renderer goldens](tools/re/fixtures/RendererOracle/manifest.json). R2 and O3 remain open for actual Canvas completion/capture. Next: changed-method observation and explicit portable subset using the separate renderer tier; no invented fixture field is promoted to Apple protocol semantics.
+
+## 2026-10-09 — direct Xcode route and permission gate
+
+Implemented a bounded direct read-only bridge diagnostic with explicit installed-Xcode selection, fresh session identity and capped local protocol logging. Sealed native run initializes but times out on window listing, without discovery or reverse server requests. Its inconclusive verdict is retained; verified artifacts and frozen sources are anchored in [sanitized evidence](research/evidence/xcode-bridge-route-2026-10-09.json).
+
+Separately found Xcode's pending preview-reloop permission prompt through read-only UI inspection. Requested explicit approval before granting building/testing/modification access; no grant made and causal explanation remains unproven. Native user Xcode/simulator processes remain untouched.
+
+Fixed shared-client reverse-request handling and colliding request IDs, verified by an independent owned bridge. Planner now gates capture on an actual tool response and requires changed readiness before retry. All 87 tests pass with ResourceWarning treated as an error. Toolkit: 23 adapters, 19 MCP tools. See [findings and next control](docs/reverse-engineering/2026-10-09-xcode-bridge.md). O2 and both milestones remain open.

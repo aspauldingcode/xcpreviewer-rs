@@ -682,6 +682,33 @@
         "local-re-controller"
       ],
       "timeout_seconds": 240
+    },
+    {
+      "adapter": "xcode_bridge_probe",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": true,
+          "path": "initialized"
+        },
+        {
+          "equals": false,
+          "path": "discovery_requested"
+        },
+        {
+          "equals": true,
+          "path": "direct_call_completed"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Bypassing discovery and servicing reverse MCP requests makes the installed Xcode read-only window-list route responsive in an explicitly selected fresh session.",
+      "id": "xcode-direct-read-route",
+      "params": {},
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 60
     }
   ],
   "version": 1

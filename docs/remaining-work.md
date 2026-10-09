@@ -6,9 +6,9 @@ Planning baseline: 2026-10-09, verified implementation checkpoint `3e91d33`. Thi
 
 Target: a documented, bounded preview product that compiles an explicitly supported Swift view subset, produces a portable image, and supplies a reproducible compatibility report against pinned native references. Unsupported constructs must fail clearly. Broader SwiftUI compatibility is a later expansion, measured feature by feature.
 
-The repository currently contains the RE toolkit, not the Rust preview product. It has 22 reviewed adapters, 19 research MCP tools, 83 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender and receiver exits. Receiver-first controls also measure local send-right counts and retained-port access after original CF release. These do not establish the full Xcode protocol or portable SwiftUI execution.
+The repository currently contains the RE toolkit, not the Rust preview product. It has 23 reviewed adapters, 19 research MCP tools, 87 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender and receiver exits. Receiver-first controls also measure local send-right counts and retained-port access after original CF release. These do not establish the full Xcode protocol or portable SwiftUI execution.
 
-Blocking gaps: Xcode MCP schema discovery stalls; native UI launches an owned preview but content stays blank; mapping-verified native instrumentation attach cancels before session creation. No accepted real canvas snapshot or complete request/reply trace exists. ImageRenderer remains a separate native reference path.
+Blocking gaps: Xcode MCP initializes but discovery and direct read-only tool calls stall; a pending preview-reloop access prompt is observed and requires user approval before the causal control; native UI launches an owned preview but content stays blank; mapping-verified native instrumentation attach cancels before session creation. No accepted real canvas snapshot or complete request/reply trace exists. ImageRenderer remains a separate native reference path.
 
 Two gates control the project:
 
@@ -25,6 +25,8 @@ If the canvas gate remains blocked, portable-subset research can use a separatel
 The [verified toolkit baseline](https://github.com/aspauldingcode/xcpreviewer-rs/issues/1) is completed; the remaining tasks are linked below. Milestone progress counts issues, not proof of universal behavioral coverage.
 
 R1 partial checkpoints: [receiver-first experiment](reverse-engineering/2026-10-09-surface-receiver.md) and [selected failure/timeout cleanup controls](reverse-engineering/2026-10-09-surface-failure.md) pass. Final reclamation and broader required failure coverage still keep R1 open. R2 now has measured use-state and [owned delayed-reuse countermodel](reverse-engineering/2026-10-09-reuse-renderer.md) boundaries; actual Canvas generation and completion ordering remain open. O3 now has ImageRenderer A/A repeat and controlled A/B pixels in its separate reference tier; live Canvas capture remains unverified.
+
+O2 now has a [sealed direct-route diagnostic](reverse-engineering/2026-10-09-xcode-bridge.md): bypassing discovery and supporting reverse requests did not produce a tool response. The observed permission prompt is a candidate blocker, not yet a proven cause.
 
 Feasibility experiments in milestone two can run before milestone one closes. Release acceptance still depends on native references and the final feature/coverage contract. Milestone two's aim is a cheaper, hot-reloadable canvas for Apple app development; that performance claim needs measured native-versus-portable workloads.
 

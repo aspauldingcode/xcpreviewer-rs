@@ -3,8 +3,8 @@
   "baseline_commit": "9b51624ec4386c5cf5f65bc5ba2b61b53600c548",
   "blocked_tracks": [
     {
-      "reason": "Bridge discovery times out; owned UI remains blank; native attach cancels before session creation.",
-      "retry_requires": "A changed method, implementation, tool state or discriminating diagnosis; no unchanged retries.",
+      "reason": "Direct Xcode tool call times out despite initialization, no discovery or reverse requests. Xcode permission dialog for preview-reloop awaits user approval. Prior blank Canvas/attach limitations remain.",
+      "retry_requires": "Explicit user approval of Xcode agent permission plus changed UI state, or independently changed service/observation method; no unchanged expensive retry.",
       "track": "native-canvas"
     }
   ],
@@ -27,7 +27,14 @@
       "status": "permitted-execution-passed"
     }
   ],
-  "last_completed": "8 delayed reuse/separate cases repeated twice; native ImageRenderer A/A PNG/pixel repeat plus 1,824-pixel A/B text change; 83 tests pass with permitted owned cleanup.",
+  "last_completed": "Implemented direct read-only Xcode bridge diagnostic, reverse-request ID collision handling and planner readiness guard; sealed timeout, observed pending Xcode permission; 87 tests pass.",
+  "last_github_sync": {
+    "checkpoint": "direct-route and access checkpoint",
+    "date": "2026-10-09",
+    "issue": "O2",
+    "number": 3,
+    "state": "open"
+  },
   "next_actions": [
     {
       "action": "Recover actual completion acknowledgement and stale-generation rules; owned countermodel is measured",
@@ -35,9 +42,9 @@
       "state": "ready"
     },
     {
-      "action": "Changed-method Canvas observation diagnosis, using renderer reference as independent tier",
+      "action": "Await required agent-access approval; after fresh permission state, repeat bounded direct route, then owned Canvas capture only if tool responds",
       "issue_id": "O2",
-      "state": "ready"
+      "state": "requires-user-permission"
     },
     {
       "action": "Select explicit portable subset and compare to the new RendererOracle",
@@ -62,6 +69,11 @@
       "manifest_sha256": "5e88ac941c05cd58854db082fc319ae15abc1f574e4fa6abe6205ca51d5fdfc3",
       "path": "research/evidence/surface-reuse-renderer-2026-10-09.json",
       "run_id": "20261009T150758Z-native-renderer-repeat-change-bd921e73"
+    },
+    {
+      "manifest_sha256": "61fce97f729570f191513d412c03be8fa1ef63bb900adffe70ceea5c8385aa63",
+      "path": "research/evidence/xcode-bridge-route-2026-10-09.json",
+      "run_id": "20261009T151924Z-xcode-direct-read-route-f15cc7da"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

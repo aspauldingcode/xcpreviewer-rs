@@ -1,0 +1,69 @@
+{
+  "adapters": 23,
+  "automated_tests": {
+    "context": "Permitted owned subprocess cleanup; ResourceWarning treated as error.",
+    "failed": 0,
+    "passed": 87
+  },
+  "limitations": [
+    "No tool response or Canvas pixels recovered.",
+    "No reverse server requests occurred in this native trace; client fix is independently verified with an owned bridge, not shown to solve Xcode failure.",
+    "Artifact consistency is not independent authenticity; use this published manifest anchor through a trusted commit.",
+    "Native user Xcode and simulator processes were not terminated."
+  ],
+  "mcp_tools": 19,
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "initialized",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "passed": true,
+          "path": "discovery_requested",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": true,
+          "passed": false,
+          "path": "direct_call_completed",
+          "present": true
+        }
+      ],
+      "environment_hash": "16fa5f49801c7c57e43f3205706a784cb12c61ba785005da8346295589595a27",
+      "execution": "success",
+      "experiment_hash": "b3c1a8514fe0ed71ef80a54ddc4c0650e4429249289f7a1e5de5f14833d39f27",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "61fce97f729570f191513d412c03be8fa1ef63bb900adffe70ceea5c8385aa63",
+      "observations": {
+        "direct_call_completed": false,
+        "direct_call_error": "MCP request timed out: tools/call",
+        "discovery_requested": false,
+        "initialized": true,
+        "message_count": 4,
+        "scope": "Read-only Xcode window-list route, not Canvas capture or IPC recovery. Local initialize response alone does not prove downstream tool responsiveness.",
+        "server_request_methods": []
+      },
+      "run_id": "20261009T151924Z-xcode-direct-read-route-f15cc7da",
+      "verdict": "inconclusive"
+    }
+  ],
+  "schema_version": 1,
+  "ui_observation": {
+    "agent": "preview-reloop",
+    "causality": "Candidate explanation for timeout, not yet established by post-approval control",
+    "dialog": "Allow preview-reloop to access Xcode?",
+    "observed_at": "2026-10-09",
+    "permission_scope": "Building, testing, or modifying code through Xcode tools",
+    "source": "Read-only Xcode accessibility inspection through computer-use tool; separate from sealed protocol trace",
+    "state": "Awaiting explicit user approval; no permission granted"
+  }
+}
