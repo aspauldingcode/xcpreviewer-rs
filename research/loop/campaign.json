@@ -999,6 +999,49 @@
         "local-re-controller"
       ],
       "timeout_seconds": 600
+    },
+    {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "verified_reuse_cases"
+        },
+        {
+          "equals": 4,
+          "path": "mutable_old_handle_cases"
+        },
+        {
+          "equals": 4,
+          "path": "separate_storage_preserved_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 8,
+          "path": "verified_lookup_lifetime_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Task-local imported Mach names lose immediate IOSurface lookup capability after their last send reference is released, while retained CF aliases preserve exact padded pixels; reuse coalesces names and preserves lookup until the second reference drops.",
+      "id": "owned-surface-retired-name",
+      "params": {},
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
     }
   ],
   "version": 1

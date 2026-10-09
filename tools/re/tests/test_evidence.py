@@ -175,6 +175,21 @@ class EvidenceTests(unittest.TestCase):
         proposal=plan(self.c)['proposals'][0]
         self.assertIn({'path':'pixels_identical','equals':True},proposal['checks'])
 
+    def test_planner_distinguishes_expected_blank_reversal_from_failure(self):
+        observed={'fixture_content_nonblank':False,'wire_capture_complete':False,
+                  'scheme_dark_blank':True,'scheme_light_content_visible':True,
+                  'scheme_reversal_png_equal':True,'scheme_reversal_pixels_equal':True}
+        for valid in (True,False):
+            data=dict(observed)
+            if not valid:data['scheme_light_content_visible']=False
+            run=self.seal(name='scheme-'+str(valid),observed=data)
+            atomic(run/'experiment.json',{'adapter':'xcode_preview','params':{'variants':[15,15,15],'scheme_control':True}})
+            m=load(run/'manifest.json');m['artifacts']=self.c.artifacts(run);atomic(run/'manifest.json',m)
+            atomic(self.c.state/'checkpoint.json',{'runs':{'scheme':run.name}})
+            actions=[o['action'] for o in plan(self.c)['outcomes']]
+            self.assertIn('use-verified-light-context' if valid else 'diagnose-blank-owned-content',actions)
+            self.assertIn('recover-transport-boundary',actions)
+
     def test_planner_rejects_chrome_only_capture_readiness(self):
         run=self.seal(observed={'fixture_content_nonblank':False})
         atomic(run/'experiment.json',{'adapter':'xcode_preview','params':{'variants':[0,1]}})

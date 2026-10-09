@@ -30,7 +30,13 @@ def plan(controller):
             if observed.get('solid_expected_colors') is True:
                 outcomes.append({'experiment':key,'action':'discriminate-text-layout-and-repeat-solid-content',
                                  'reason':'Owned red/blue center patches match exact predictions. This supports a narrow non-text rendering path, not full frames, text or IPC.'})
-            if observed.get('fixture_content_nonblank') is False:
+            scheme_verified=(spec.get('params',{}).get('scheme_control') is True
+                             and manifest.get('verdict')=='supports'
+                             and all(observed.get(k) is True for k in ('scheme_dark_blank','scheme_light_content_visible','scheme_reversal_png_equal','scheme_reversal_pixels_equal')))
+            if scheme_verified:
+                outcomes.append({'experiment':key,'action':'use-verified-light-context',
+                                 'reason':'Intentional dark blank controls reverse exactly around visible light content; do not retry resolved contrast diagnosis. Environment coverage and wire capture remain separate.'})
+            elif observed.get('fixture_content_nonblank') is False:
                 outcomes.append({'experiment':key,'action':'diagnose-blank-owned-content',
                                  'reason':'Returned PNGs or changed window titles do not establish rendered SwiftUI fixture content.'})
             elif observed.get('fixture_content_nonblank') is not True:

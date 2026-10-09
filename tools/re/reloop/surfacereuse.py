@@ -25,6 +25,8 @@ def inspect(record,receiver,case,mode,payloads,returncode=0):
         if receiver.get('audit_peer_verified') is not True or receiver.get('received_rights_released') is not True:return {'passed':False,'failure':'release'}
         for key,value in [('first_refs_after_two_imports',2 if same else 1),('second_refs_after_first_release',1)]:
             if type(receiver.get(key)) is not int or receiver[key]!=value:return {'passed':False,'failure':'right-counts'}
+        for key,value in [('first_lookup_after_release',record['first_id'] if same else 0),('remaining_lookup',record['second_id']),('retired_first_lookup',0),('retired_second_lookup',0)]:
+            if type(receiver.get(key)) is not int or receiver[key]!=value:return {'passed':False,'failure':'lookup-lifetime'}
         if receiver.get('fixture_generations')!=[1,2] or any(type(v) is not int for v in receiver['fixture_generations']):return {'passed':False,'failure':'fixture-generation'}
         first=expected(width,height,record['stride'],seed);second=expected(width,height,record['stride'],(seed+1)&255)
         delayed=second if same else first
@@ -60,5 +62,6 @@ def corpus(out):
             rows.append({'case':name,'mode':mode,'passed':passed,'repeat_bytes_equal':passed and results[0][1]==results[1][1],'failures':[r[0]['failure'] for r in results]})
     atomic(out/'surface-reuse-corpus.json',{'cases':rows})
     return {'cases':len(rows),'verified_reuse_cases':sum(r['passed'] for r in rows),'mutable_old_handle_cases':sum(r['passed'] and r['mode']=='reuse' for r in rows),
+            'verified_lookup_lifetime_cases':sum(r['passed'] for r in rows),
             'separate_storage_preserved_cases':sum(r['passed'] and r['mode']=='separate' for r in rows),'repeat_bytes_equal_cases':sum(r['repeat_bytes_equal'] for r in rows),'helper_failures':failures,
-            'scope':'Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting. Not recovered Canvas generation/acknowledgement protocol, GPU fences, stale-name security or final reclamation.'}
+            'scope':'Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting and immediate retired-name lookup checks while CF aliases remain alive. No unrelated port allocation is intentionally interposed; arbitrary name reuse remains untested. Not recovered Canvas generation/acknowledgement protocol, GPU fences, stale-name security or final reclamation.'}

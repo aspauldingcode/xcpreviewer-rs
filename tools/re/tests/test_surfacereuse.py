@@ -8,7 +8,7 @@ from reloop.surface import expected
 
 def fixture(mode='reuse'):
     same=mode=='reuse';r={'mode':mode,'width':3,'height':2,'seed':7,'next_seed':8,'stride':128,'receiver_exit':0,'sender_pid':123,'receiver_pid':124,'first_id':11,'second_id':11 if same else 12,'audit_peer_verified':True,'delayed_read_after_second_import':True,'rendezvous_removed':True}
-    receiver={'receiver_pid':124,'first_id':r['first_id'],'second_id':r['second_id'],'audit_peer_verified':True,'port_names_equal':same,'first_refs_after_two_imports':2 if same else 1,'second_refs_after_first_release':1,'received_rights_released':True,'fixture_generations':[1,2]}
+    receiver={'receiver_pid':124,'first_id':r['first_id'],'second_id':r['second_id'],'audit_peer_verified':True,'port_names_equal':same,'first_refs_after_two_imports':2 if same else 1,'second_refs_after_first_release':1,'received_rights_released':True,'fixture_generations':[1,2],'first_lookup_after_release':r['first_id'] if same else 0,'remaining_lookup':r['second_id'],'retired_first_lookup':0,'retired_second_lookup':0}
     first=expected(3,2,128,7);second=expected(3,2,128,8);delayed=second if same else first
     return r,receiver,dict(zip(PHASES,(first,second,delayed,second,delayed)))
 
@@ -30,6 +30,13 @@ class SurfaceReuseTests(unittest.TestCase):
         for key,value,failure in [('second_id',12,'resource-identity'),('first_refs_after_two_imports',1,'right-counts'),('second_refs_after_first_release',0,'right-counts'),('fixture_generations',[2,1],'fixture-generation')]:
             r,c,p=fixture();c[key]=value;self.assertEqual(inspect(r,c,(3,2,7),'reuse',p)['failure'],failure)
         r,c,p=fixture('separate');r['second_id']=r['first_id'];c['second_id']=r['first_id'];self.assertFalse(inspect(r,c,(3,2,7),'separate',p)['passed'])
+
+    def test_retired_name_and_remaining_right_checks_fail_closed(self):
+        for mode in ('reuse','separate'):
+            for key in ('first_lookup_after_release','remaining_lookup','retired_first_lookup','retired_second_lookup'):
+                for value in (None,True,999):
+                    r,c,p=fixture(mode);c[key]=value
+                    self.assertEqual(inspect(r,c,(3,2,7),mode,p)['failure'],'lookup-lifetime')
 
     def test_nonzero_exit_and_unverified_peer_cannot_promote_partial_success(self):
         r,c,p=fixture();self.assertEqual(inspect(r,c,(3,2,7),'reuse',p,51)['failure'],'helper-exit')

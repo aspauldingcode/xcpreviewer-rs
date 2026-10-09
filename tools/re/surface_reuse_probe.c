@@ -14,6 +14,12 @@ static int transfer_surface(mach_port_t endpoint,mach_port_t resource,IOSurfaceR
     m.magic=MAGIC;m.width=(uint32_t)IOSurfaceGetWidth(surface);m.height=(uint32_t)IOSurfaceGetHeight(surface);m.seed=seed;m.stride=(uint32_t)IOSurfaceGetBytesPerRow(surface);m.surface_id=IOSurfaceGetID(surface);
     return mach_msg(&m.h,MACH_SEND_MSG|MACH_SEND_TIMEOUT,sizeof(m),0,MACH_PORT_NULL,3000,MACH_PORT_NULL)==KERN_SUCCESS;
 }
+// A task-local name and a retained CF alias have independent lifetimes.
+static uint32_t lookup_id(mach_port_t name) {
+    IOSurfaceRef surface=IOSurfaceLookupFromMachPort(name);
+    if(!surface)return 0;
+    uint32_t id=IOSurfaceGetID(surface);CFRelease(surface);return id;
+}
 static int reuse_peer(const char *service,pid_t parent,const char *mode,const char *folder) {
     mach_port_t remote=MACH_PORT_NULL,inbox=MACH_PORT_NULL,p1=MACH_PORT_NULL,p2=MACH_PORT_NULL;
     IOSurfaceRef first=NULL,second=NULL;int same=!strcmp(mode,"reuse"),result=50;uint8_t raw[LIMIT];
@@ -28,14 +34,19 @@ static int reuse_peer(const char *service,pid_t parent,const char *mode,const ch
     if(!width || width>64 || !height || height>16 || stride<width*4 || count>LIMIT || IOSurfaceGetWidth(second)!=width || IOSurfaceGetHeight(second)!=height || IOSurfaceGetBytesPerRow(second)!=stride)goto done;
     // No read of the first handle occurs until the producer has supplied generation two.
     if(!snapshot(first,raw,count) || !write_bytes(folder,"delayed-first.bin",raw,count) || !snapshot(second,raw,count) || !write_bytes(folder,"second.bin",raw,count))goto done;
+    mach_port_t first_name=p1;
     if(mach_port_deallocate(mach_task_self(),p1))goto done;p1=MACH_PORT_NULL;
     if(!send_refs(p2,1))goto done;
+    uint32_t first_lookup_after_release=lookup_id(first_name),remaining_lookup=lookup_id(p2);
+    if(!send_refs(p2,1))goto done;
     mach_port_t released=p2;if(mach_port_deallocate(mach_task_self(),p2) || !no_send_refs(released))goto done;p2=MACH_PORT_NULL;
+    uint32_t retired_second_lookup=lookup_id(released),retired_first_lookup=lookup_id(first_name);
+    if(!no_send_refs(released) || !no_send_refs(first_name))goto done;
     // CF aliases remain usable after both received rights have been released.
     if(!snapshot(first,raw,count) || !write_bytes(folder,"after-right-release.bin",raw,count))goto done;
     char path[4096];if(snprintf(path,sizeof(path),"%s/receiver.json",folder)>=(int)sizeof(path))goto done;
     FILE *file=fopen(path,"w");if(!file)goto done;
-    int written=fprintf(file,"{\"receiver_pid\":%d,\"first_id\":%u,\"second_id\":%u,\"audit_peer_verified\":true,\"port_names_equal\":%s,\"first_refs_after_two_imports\":%d,\"second_refs_after_first_release\":1,\"received_rights_released\":true,\"fixture_generations\":[1,2]}\n",(int)getpid(),id1,id2,same?"true":"false",same?2:1)>0;
+    int written=fprintf(file,"{\"receiver_pid\":%d,\"first_id\":%u,\"second_id\":%u,\"audit_peer_verified\":true,\"port_names_equal\":%s,\"first_refs_after_two_imports\":%d,\"second_refs_after_first_release\":1,\"received_rights_released\":true,\"fixture_generations\":[1,2],\"first_lookup_after_release\":%u,\"remaining_lookup\":%u,\"retired_first_lookup\":%u,\"retired_second_lookup\":%u}\n",(int)getpid(),id1,id2,same?"true":"false",same?2:1,first_lookup_after_release,remaining_lookup,retired_first_lookup,retired_second_lookup)>0;
     if(fclose(file) || !written)goto done;
     CFRelease(first);first=NULL;CFRelease(second);second=NULL;
     if(send_ack(remote,3,1))goto done;result=0;

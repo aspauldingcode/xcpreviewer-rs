@@ -184,3 +184,9 @@ Final 95-test suite passes, including chrome-only change rejection. Initial owne
 One preview definition/title and body, only explicit dark/light/dark source environment changed: blank → visible → blank. Dark reversal matches all PNG bytes and decoded RGBA pixels; light interior matches the prior sealed custom light capture across 589,824 bytes. This removes the prior title confound for the owned fixture. Source mutation/restoration hashes verify; no global appearance changes.
 
 All 98 tests pass with ResourceWarning errors enabled. Sealed native evidence verifies; owned workspace closed and final listing empty. See [findings](docs/reverse-engineering/2026-10-09-scheme-switch.md), [anchor](research/evidence/canvas-scheme-switch-2026-10-09.json) and [snapshots](tools/re/fixtures/CanvasSchemeOracle/manifest.json). Independent portable prediction, environment coverage, wire capture and milestones remain open.
+
+## 2026-10-09 — imported Mach-name lifetime
+
+Eight owned surface cases, each repeated twice, verify immediate lookup survives the remaining coalesced import right and fails after the final imported right drops. Retained CF aliases still preserve expected padded pixels. Eighty independent comparisons cover 51,200 bytes; two selected snapshots match earlier goldens exactly. This separates local name validity from alias lifetime, without inferring final reclamation or Canvas completion.
+
+All 100 tests pass. Sealed native evidence verifies. Planner now avoids re-diagnosing intentional verified dark blanks, preserving the transport gate. No Xcode windows opened. See [findings](docs/reverse-engineering/2026-10-09-retired-name.md) and [anchor](research/evidence/surface-retired-name-2026-10-09.json). R1/R2 and both milestones remain open.
