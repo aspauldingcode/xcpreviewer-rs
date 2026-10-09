@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-09",
+  "baseline": {
+    "xcode": "26.6 (17F113)",
+    "macos": "26.5.1 (25F80)",
+    "architecture": "arm64",
+    "gpu": "Apple M1",
+    "format": "shared BGRA8Unorm"
+  },
+  "runs": [
+    {
+      "run_id": "20261009T212809Z-owned-gpu-event-frame-reuse-78a8758f",
+      "valid": true,
+      "manifest_sha256": "31d94d89201e762807134128a4d3c6aaa2b6e263b734f54e21ee830ff5644960",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 3145728,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "gpu_reuse_cases": 8,
+        "gpu_stall_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      },
+      "pending_status_counts": {
+        "2": 48
+      },
+      "reuse_observations": {
+        "helper_executions": 16,
+        "additional_frames": 32,
+        "all_resource_tokens_equal": true,
+        "all_surface_ids_equal": true,
+        "generation_indices": [
+          0,
+          1,
+          2
+        ],
+        "event_signal_values": [
+          1,
+          2,
+          3
+        ],
+        "whole_allocation_comparisons": 192
+      }
+    },
+    {
+      "run_id": "20261009T212925Z-owned-gpu-event-frame-reuse-4e17cb1c",
+      "valid": true,
+      "manifest_sha256": "91f2808c19ad535c809b1283f075a737ccc9608acae009f5ca6a06e97352996b",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 3145728,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "gpu_reuse_cases": 8,
+        "gpu_stall_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      },
+      "pending_status_counts": {
+        "2": 48
+      },
+      "reuse_observations": {
+        "helper_executions": 16,
+        "additional_frames": 32,
+        "all_resource_tokens_equal": true,
+        "all_surface_ids_equal": true,
+        "generation_indices": [
+          0,
+          1,
+          2
+        ],
+        "event_signal_values": [
+          1,
+          2,
+          3
+        ],
+        "whole_allocation_comparisons": 192
+      }
+    },
+    {
+      "run_id": "20261009T213032Z-owned-gpu-peer-event-timeout-656f43e3",
+      "valid": true,
+      "manifest_sha256": "0e121d9582696d8cf172a77364bcef700d59647d2b36d78ae7e191c5b597dd1c",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 2097152,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "gpu_reuse_cases": 0,
+        "gpu_stall_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      },
+      "pending_status_counts": {
+        "2": 16
+      }
+    },
+    {
+      "run_id": "20261009T213122Z-owned-gpu-event-frame-reuse-64102fc7",
+      "valid": true,
+      "manifest_sha256": "75d071f9e7049817a7f57defccf09d85ea1f76501f6e97e4df0189ce4f758f6e",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 3145728,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "gpu_reuse_cases": 8,
+        "gpu_stall_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      },
+      "pending_status_counts": {
+        "2": 48
+      },
+      "reuse_observations": {
+        "helper_executions": 16,
+        "additional_frames": 32,
+        "all_resource_tokens_equal": true,
+        "all_surface_ids_equal": true,
+        "generation_indices": [
+          0,
+          1,
+          2
+        ],
+        "event_signal_values": [
+          1,
+          2,
+          3
+        ],
+        "whole_allocation_comparisons": 192
+      }
+    }
+  ],
+  "tests": 145,
+  "contract": "Owned receiver reuses imported surface ID and the same Metal texture/buffer/queue/event through original/opposite/restored completed frames.20ms timeout followed by explicit signal per command, independent full-allocation comparison, then existing clean/abrupt exit/local-right cleanup.",
+  "limitations": [
+    "Fixture generation indices are not native Canvas sequence fields. Both changed frames are generated in the receiver while sender waits for acknowledgement.",
+    "All pre-release statuses committed2; no hardware arrival or scheduling-delay separation.",
+    "Serial completed commands only; no concurrent writer/read overlap, command cancellation or automatic recovery.",
+    "Local resource-pointer tokens are measured inside owned helper and sanitized to equality counts; no private pointer dumps published.",
+    "Actual Canvas transport/completion policy, broader formats/storage modes, internal driver holders and final physical reclamation remain open.",
+    "No Xcode windows opened, user processes terminated or system protections changed."
+  ]
+}

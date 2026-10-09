@@ -5,7 +5,7 @@ import pathlib
 import sys
 import unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.surfacegpuipc import inspect,inspect_consumer,inspect_stall
+from reloop.surfacegpuipc import inspect,inspect_consumer,inspect_stall,inspect_reuse
 from reloop.surfaceipc import RECEIVER_FLAGS
 from reloop.core import validate_experiment
 
@@ -84,6 +84,46 @@ class GPUMachTests(unittest.TestCase):
             bad=copy.deepcopy(e);bad['params']['gpu_stall_control']=value
             with self.assertRaises(ValueError):validate_experiment(bad)
         bad=copy.deepcopy(e);bad['params']['gpu_consumer_control']=False
+        with self.assertRaises(ValueError):validate_experiment(bad)
+
+    def reuse_fixture(self):
+        record,_,_=self.fixture();resources={'source':10,'destination':20,'queue':30,'event':40};frames=[]
+        for generation,pixel in ((1,b'\xff\0\0\xff'),(2,b'\0\0\xff\xff')):
+            frames.append({'generation':generation,'surface_id':42,'resources':resources.copy(),
+                           'event_before_release':generation,'event_after_release':generation+1,
+                           'wait_deadline_ns':20000000,'callbacks_before_release':0,'callback_count':1,
+                           'callback_status':4,'status':4,'status_before_release':2,
+                           'timeout_observed':True,'error_absent':True,
+                           'source_after_base64':base64.b64encode(pixel+b'\xa5'*12).decode(),
+                           'destination_after_base64':base64.b64encode(pixel+b'\x5c'*16380).decode()})
+        return record,{'reuse_resources':resources,'reuse_frames':frames}
+
+    def test_reuse_generation_identity_deadline_and_missing_frames_reject(self):
+        record,value=self.reuse_fixture();self.assertTrue(inspect_reuse(value,record,(1,1,0))['passed'])
+        for key,wrong in [('generation',2),('generation',True),('surface_id',43),('event_before_release',0),('event_after_release',1),('callback_count',2),('status',3),('timeout_observed',1),('error_absent',1),('status_before_release',4),('wait_deadline_ns',0)]:
+            bad=copy.deepcopy(value);bad['reuse_frames'][0][key]=wrong;self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+        bad=copy.deepcopy(value);bad['reuse_frames'].pop();self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+        bad=copy.deepcopy(value);bad['reuse_frames'].reverse();self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+        for token in (99,True):
+            bad=copy.deepcopy(value);bad['reuse_frames'][0]['resources']['source']=token;self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+        self.assertFalse(inspect_reuse({},record,(1,1,0))['passed'])
+        for malformed in (['source','destination','queue','event'],None,True):
+            bad=copy.deepcopy(value);bad['reuse_resources']=malformed;self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+
+    def test_reuse_stale_frame_active_padding_and_tail_reject(self):
+        record,value=self.reuse_fixture()
+        bad=copy.deepcopy(value);bad['reuse_frames'][0]['destination_after_base64']=value['reuse_frames'][1]['destination_after_base64'];self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+        for key,positions in [('source_after_base64',(0,4,8,15)),('destination_after_base64',(0,4,255,256,16383))]:
+            for position in positions:
+                bad=copy.deepcopy(value);data=bytearray(base64.b64decode(bad['reuse_frames'][0][key]));data[position]^=1;bad['reuse_frames'][0][key]=base64.b64encode(data).decode();self.assertFalse(inspect_reuse(bad,record,(1,1,0))['passed'])
+
+    def test_reuse_flag_requires_stall_and_boolean(self):
+        root=pathlib.Path(__file__).resolve().parents[3]
+        e=next(e for e in json.loads((root/'research/loop/campaign.json').read_text())['experiments'] if e['id']=='owned-gpu-event-frame-reuse')
+        for value in (1,'true',None):
+            bad=copy.deepcopy(e);bad['params']['gpu_reuse_control']=value
+            with self.assertRaises(ValueError):validate_experiment(bad)
+        bad=copy.deepcopy(e);bad['params']['gpu_stall_control']=False
         with self.assertRaises(ValueError):validate_experiment(bad)
 
     def test_gpu_mode_rejects_unreviewed_sender_first(self):

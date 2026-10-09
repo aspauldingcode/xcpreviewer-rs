@@ -304,3 +304,9 @@ Evidence: [peer GPU readback](docs/reverse-engineering/2026-10-09-gpu-peer-readb
 Added a receiving-process shared-event gate before GPU blit. Initial 20ms completion wait times out without callback; explicit event signal then permits exactly one successful late completion, followed by exact whole-allocation comparisons and existing clean/abrupt exit/local-right cleanup. Two timeout campaigns and ordinary GPU readback regression pass, each comparing 2,097,152 bytes. All 32 timeout executions observed committed status2, so GPU arrival and scheduling delay remain unproven. Three seals anchor-verified; 142 tests pass. Canvas timeout/cancellation policy and final reclamation remain open. No Xcode windows opened.
 
 Evidence: [event timeout control](docs/reverse-engineering/2026-10-09-gpu-event-timeout.md), [sanitized seals](research/evidence/gpu-event-timeout-2026-10-09.json).
+
+## 2026-10-09 — owned GPU frame reuse after timeout
+
+Receiving process now reuses the same imported surface, texture, destination buffer, queue and increasing event values through original/opposite/restored frames. Every command observes bounded pending timeout then explicit signal/late completion before snapshots; full source/destination active pixels, row padding and allocation tails match independent expectations. Existing clean/abrupt exit and local-right cleanup still pass after restoring original content. Three reuse campaigns each compare 3,145,728 bytes; prior event-timeout regression passes. Four seals anchor-verified; 145 tests pass, including stale-frame/resource/sequence/padding rejection. Resource identity is not frame content in this owned GPU fixture. R1/R2/R3 remain open for actual Canvas policy, concurrent reuse and final reclamation. No Xcode windows opened.
+
+Evidence: [GPU reuse control](docs/reverse-engineering/2026-10-09-gpu-frame-reuse.md), [sanitized seals](research/evidence/gpu-frame-reuse-2026-10-09.json).

@@ -42,7 +42,7 @@ int re_gpu_fill(IOSurfaceRef surface,unsigned seed,const char *folder) {
 }
 
 
-int re_gpu_readback(IOSurfaceRef surface,const char *folder) {
+int re_gpu_readback(IOSurfaceRef surface,unsigned seed,const char *folder) {
     @autoreleasepool {
         size_t w=IOSurfaceGetWidth(surface),h=IOSurfaceGetHeight(surface);
         size_t row=(w*4+255)&~(size_t)255,allocation=16384;
@@ -50,6 +50,9 @@ int re_gpu_readback(IOSurfaceRef surface,const char *folder) {
         id<MTLDevice> device=MTLCreateSystemDefaultDevice();if(!device || !device.hasUnifiedMemory)return 0;
         MTLTextureDescriptor *d=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:w height:h mipmapped:NO];
         d.storageMode=MTLStorageModeShared;d.usage=MTLTextureUsageShaderRead;
+#ifdef RE_GPU_REUSE
+        d.usage|=MTLTextureUsageRenderTarget;
+#endif
         id<MTLTexture> source=[device newTextureWithDescriptor:d iosurface:surface plane:0];
         id<MTLBuffer> destination=[device newBufferWithLength:allocation options:MTLResourceStorageModeShared];
         id<MTLCommandQueue> queue=[device newCommandQueue];if(!source || !destination || !queue || source.iosurface!=surface)return 0;
@@ -84,6 +87,39 @@ int re_gpu_readback(IOSurfaceRef surface,const char *folder) {
         NSMutableDictionary *metrics=[result mutableCopy];
 #ifdef RE_GPU_STALL
         metrics[@"stall"]=@{@"timeout_observed":[NSNumber numberWithBool:firstWait!=0],@"callbacks_before_release":@(callsBefore),@"status_before_release":@(statusBefore),@"event_before_release":@(eventBefore),@"event_after_release":@(pausedEvent.signaledValue),@"wait_deadline_ns":@20000000,@"initial_wait_completion_accepted":@NO};
+#endif
+#ifdef RE_GPU_REUSE
+        // Owned generation indices are not native Canvas frame identifiers.
+        NSMutableArray *frames=[NSMutableArray array];
+        uintptr_t sourceToken=(uintptr_t)(__bridge void *)source,destinationToken=(uintptr_t)(__bridge void *)destination,queueToken=(uintptr_t)(__bridge void *)queue,eventToken=(uintptr_t)(__bridge void *)pausedEvent;
+        metrics[@"reuse_resources"]=@{@"source":@(sourceToken),@"destination":@(destinationToken),@"queue":@(queueToken),@"event":@(eventToken)};
+        for(unsigned generation=1;generation<=2;generation++) {
+            id<MTLCommandBuffer> next=[queue commandBuffer];if(!next)return 0;
+            [next encodeWaitForEvent:pausedEvent value:generation+1];
+            MTLRenderPassDescriptor *pass=[MTLRenderPassDescriptor renderPassDescriptor];
+            pass.colorAttachments[0].texture=source;pass.colorAttachments[0].loadAction=MTLLoadActionClear;pass.colorAttachments[0].storeAction=MTLStoreActionStore;
+            BOOL blue=(seed>=128) != (generation==1);
+            pass.colorAttachments[0].clearColor=blue?MTLClearColorMake(0,0,1,1):MTLClearColorMake(1,0,0,1);
+            id<MTLRenderCommandEncoder> render=[next renderCommandEncoderWithDescriptor:pass];if(!render)return 0;[render endEncoding];
+            id<MTLBlitCommandEncoder> reader=[next blitCommandEncoder];if(!reader)return 0;
+            [reader copyFromTexture:source sourceSlice:0 sourceLevel:0 sourceOrigin:MTLOriginMake(0,0,0) sourceSize:MTLSizeMake(w,h,1) toBuffer:destination destinationOffset:0 destinationBytesPerRow:row destinationBytesPerImage:row*h];[reader endEncoding];
+            dispatch_semaphore_t completed=dispatch_semaphore_create(0);__block atomic_uint nextCalls=0;__block atomic_ulong nextStatus=0;
+            [next addCompletedHandler:^(id<MTLCommandBuffer> b){atomic_fetch_add(&nextCalls,1);atomic_store(&nextStatus,b.status);dispatch_semaphore_signal(completed);}];[next commit];
+            long timed=dispatch_semaphore_wait(completed,dispatch_time(DISPATCH_TIME_NOW,20*NSEC_PER_MSEC));
+            unsigned pendingCalls=atomic_load(&nextCalls);NSUInteger pendingStatus=next.status;uint64_t eventValue=pausedEvent.signaledValue;
+            pausedEvent.signaledValue=generation+1;
+            BOOL pending=timed!=0 && pendingCalls==0 && eventValue==generation && (pendingStatus==MTLCommandBufferStatusCommitted || pendingStatus==MTLCommandBufferStatusScheduled);
+            if(dispatch_semaphore_wait(completed,dispatch_time(DISPATCH_TIME_NOW,5*NSEC_PER_SEC)) || !pending || atomic_load(&nextCalls)!=1 || atomic_load(&nextStatus)!=MTLCommandBufferStatusCompleted || next.status!=MTLCommandBufferStatusCompleted || next.error)return 0;
+            NSData *sourceBytes=copy_allocation(surface);if(!sourceBytes)return 0;
+            NSData *destinationBytes=[NSData dataWithBytes:destination.contents length:allocation];
+            [frames addObject:@{@"generation":@(generation),@"surface_id":@(IOSurfaceGetID(surface)),@"resources":@{@"source":@((uintptr_t)(__bridge void *)source),@"destination":@((uintptr_t)(__bridge void *)destination),@"queue":@((uintptr_t)(__bridge void *)queue),@"event":@((uintptr_t)(__bridge void *)pausedEvent)},
+                @"event_before_release":@(eventValue),@"event_after_release":@(pausedEvent.signaledValue),@"timeout_observed":[NSNumber numberWithBool:timed!=0],@"callbacks_before_release":@(pendingCalls),@"status_before_release":@(pendingStatus),@"wait_deadline_ns":@20000000,
+                @"callback_count":@(atomic_load(&nextCalls)),@"callback_status":@(atomic_load(&nextStatus)),@"status":@(next.status),@"error_absent":[NSNumber numberWithBool:next.error==nil],
+                @"source_after_base64":[sourceBytes base64EncodedStringWithOptions:0],@"destination_after_base64":[destinationBytes base64EncodedStringWithOptions:0]}];
+        }
+        metrics[@"reuse_frames"]=frames;
+#else
+        (void)seed;
 #endif
         NSData *json=[NSJSONSerialization dataWithJSONObject:metrics options:NSJSONWritingSortedKeys error:NULL];
         NSString *path=[[NSString stringWithUTF8String:folder] stringByAppendingPathComponent:@"gpu-consumer.json"];

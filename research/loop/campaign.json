@@ -2547,6 +2547,55 @@
           "equals": 8
         }
       ]
+    },
+    {
+      "id": "owned-gpu-event-frame-reuse",
+      "adapter": "surface_ipc",
+      "params": {
+        "gpu_control": true,
+        "exit_order": "receiver",
+        "gpu_consumer_control": true,
+        "gpu_stall_control": true,
+        "gpu_reuse_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Owned receiver reuses the same imported surface, texture, destination buffer, queue and increasing event values through original/opposite/restored frames. Each pending deadline and late completion must pass; every source/destination allocation byte must match independent generation expectations. No Canvas generation ID or concurrent reuse claim.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "passed_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        },
+        {
+          "path": "gpu_consumer_cases",
+          "equals": 8
+        },
+        {
+          "path": "gpu_stall_cases",
+          "equals": 8
+        },
+        {
+          "path": "gpu_reuse_cases",
+          "equals": 8
+        }
+      ]
     }
   ],
   "version": 1

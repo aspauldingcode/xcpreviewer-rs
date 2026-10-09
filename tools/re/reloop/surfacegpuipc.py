@@ -31,9 +31,9 @@ def inspect(record,producer,case,mode,payloads):
     except (KeyError,TypeError,ValueError):return {'passed':False,'failure':'invalid-gpu-producer'}
 
 
-def corpus(out,consumer=False,stall=False):
+def corpus(out,consumer=False,stall=False,reuse=False):
     out=pathlib.Path(out);target=out/'owned-gpu-surface-ipc'
-    run(['xcrun','clang','-DRE_GPU_PRODUCER',*(['-DRE_GPU_CONSUMER'] if consumer else []),*(['-DRE_GPU_STALL'] if stall else []),'-Wall','-Wextra','-fobjc-arc','-framework','Foundation','-framework','Metal','-framework','IOSurface','-lbsm',ROOT/'tools/re/surface_ipc_probe.c',ROOT/'tools/re/surface_gpu_producer.m','-o',target],out,'compile')
+    run(['xcrun','clang','-DRE_GPU_PRODUCER',*(['-DRE_GPU_CONSUMER'] if consumer else []),*(['-DRE_GPU_STALL'] if stall else []),*(['-DRE_GPU_REUSE'] if reuse else []),'-Wall','-Wextra','-fobjc-arc','-framework','Foundation','-framework','Metal','-framework','IOSurface','-lbsm',ROOT/'tools/re/surface_ipc_probe.c',ROOT/'tools/re/surface_gpu_producer.m','-o',target],out,'compile')
     rows=[];failures=0;compared=0
     for case in CASES:
         for mode in ('receiver-clean','receiver-abrupt'):
@@ -52,6 +52,11 @@ def corpus(out,consumer=False,stall=False):
                     consumer_record=read('gpu-consumer.json')
                     gpu=inspect_consumer(consumer_record,record,case)
                     if stall and not inspect_stall(consumer_record.get('stall',{})):gpu={'passed':False,'failure':'invalid-stall-control'}
+                    if reuse and gpu['passed']:
+                        reused=inspect_reuse(consumer_record,record,case)
+                        if reused['passed']:
+                            gpu['actual'].update(reused['actual']);gpu['expected'].update(reused['expected'])
+                        else:gpu=reused
                     if gpu['passed']:
                         payloads.update(gpu['actual']);checked['expected'].update(gpu['expected'])
                     else:checked=gpu
@@ -67,7 +72,7 @@ def corpus(out,consumer=False,stall=False):
             rows.append({'case':list(case),'mode':mode,'passed':all(r[0] for r in records),'repeat_equal':all(r[0] for r in records) and records[0][1]==records[1][1]})
     atomic(out/'gpu-ipc-corpus.json',{'cases':rows})
     return {'cases':len(rows),'passed_cases':sum(r['passed'] for r in rows),'repeat_equal_cases':sum(r['repeat_equal'] for r in rows),'helper_failures':failures,'compared_bytes':compared,'gpu_consumer_cases':sum(r['passed'] for r in rows) if consumer else 0,
-            'gpu_stall_cases':sum(r['passed'] for r in rows) if stall else 0,'consumer_gpu_readback':consumer,
+            'gpu_stall_cases':sum(r['passed'] for r in rows) if stall else 0,'consumer_gpu_readback':consumer,'gpu_reuse_cases':sum(r['passed'] for r in rows) if reuse else 0,
             'scope':'Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation.'}
 
 
@@ -96,3 +101,26 @@ def inspect_stall(value):
             if type(value[k]) is not int or value[k]!=n:return False
         return type(value['status_before_release']) is int and value['status_before_release'] in (2,3)
     except (KeyError,TypeError):return False
+
+
+def inspect_reuse(value,record,case):
+    """Finite two-generation check on the same owned GPU objects and imported ID."""
+    try:
+        w,h,seed=case;resources=value['reuse_resources'];frames=value['reuse_frames']
+        if type(resources) is not dict or set(resources)!={'source','destination','queue','event'} or any(type(v) is not int or v<=0 for v in resources.values()) or len(set(resources.values()))!=4:raise ValueError('Invalid resource identity')
+        if type(frames) is not list or len(frames)!=2:raise ValueError('Incomplete reuse generations')
+        actual={};wanted={}
+        for generation,frame in enumerate(frames,1):
+            if frame['resources']!=resources or any(type(v) is not int for v in frame['resources'].values()):raise ValueError('Resource identity changed')
+            for key,n in [('generation',generation),('surface_id',record['surface_id']),('event_before_release',generation),('event_after_release',generation+1),('wait_deadline_ns',20000000),('callbacks_before_release',0),('callback_count',1),('callback_status',4),('status',4)]:
+                if type(frame[key]) is not int or frame[key]!=n:raise ValueError('Reuse sequence/completion mismatch')
+            if frame['timeout_observed'] is not True or frame['error_absent'] is not True or type(frame['status_before_release']) is not int or frame['status_before_release'] not in (2,3):raise ValueError('Reuse pending/error mismatch')
+            blue=(seed>=128)!=(generation==1);stage=2 if blue else 0
+            wanted['reuse-source-'+str(generation)]=expected(w,h,record['stride'],record['snapshot_bytes'],stage)
+            buffer=bytearray([0x5c]*16384);pixel=b'\xff\x00\x00\xff' if blue else b'\x00\x00\xff\xff';stride=(w*4+255)&~255
+            for y in range(h):buffer[y*stride:y*stride+w*4]=pixel*w
+            wanted['reuse-destination-'+str(generation)]=bytes(buffer)
+            actual['reuse-source-'+str(generation)]=base64.b64decode(frame['source_after_base64'],validate=True)
+            actual['reuse-destination-'+str(generation)]=base64.b64decode(frame['destination_after_base64'],validate=True)
+        return {'passed':actual==wanted,'failure':None if actual==wanted else 'reuse-full-allocation-mismatch','actual':actual,'expected':wanted}
+    except (KeyError,TypeError,ValueError):return {'passed':False,'failure':'invalid-gpu-reuse'}

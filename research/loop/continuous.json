@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "28cee719dfd0fdd203d416075c49eea224627406",
+  "baseline_commit": "ea1b89bfb67eef6270d989e6ede92042ab608c94",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -104,19 +104,19 @@
       "retry_prerequisite": "Explicit numberWithBool instead of integer boxing; corrected exact-byte completion and retained-access seals pass."
     }
   ],
-  "last_completed": "Owned peer Metal event-gated readback observes 20ms semaphore timeout without callback, explicitly signals event0 to1, then completes once and verifies whole source/destination allocation plus clean/abrupt exit and local-right cleanup. Two stall campaigns and ordinary GPU readback regression each compare2097152 bytes exactly. Three seals verified;142 tests pass. All pre-release statuses committed2, so no hardware arrival or Canvas timeout/cancellation claim.",
+  "last_completed": "Owned receiver reuses the same imported surface/Metal texture/destination buffer/queue/event through original/opposite/restored frames. Each event-gated command times out then explicitly resumes/completes once; independent full allocation predictions and existing clean/abrupt exit/local-right cleanup pass. Three reuse campaigns each compare3145728 bytes; original single-frame timeout regression passes. Four seals verified;145 tests pass including stale frame, malformed identity map, generation/event/padding faults. All pending statuses committed2; no native Canvas or concurrent-reuse claim.",
   "last_github_sync": {
-    "checkpoint": "Owned GPU event timeout and explicit recovery",
+    "checkpoint": "Owned GPU event frame reuse",
     "date": "2026-10-09",
     "issues": [
-      "R1",
+      "R2",
       "R3"
     ],
     "state": "open"
   },
   "next_actions": [
     {
-      "action": "Recover called dictionary removal/setter effects and actual selected-flow callback association. Static invalidation closure weak-owner skip and state-byte1 update bypass recovered; native executor/races, abandoned replies and resource cleanup remain unverified.",
+      "action": "Owned GPU resource reuse through original/opposite/restored frames now passes independent full allocations with event deadline/recovery. Recover native dictionary removal/setter effects and actual selected-flow callback association; native executor/races, abandoned replies and concurrent resource reuse remain unverified.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -553,6 +553,26 @@
       "path": "research/evidence/gpu-event-timeout-2026-10-09.json",
       "run_id": "20261009T212359Z-owned-gpu-surface-peer-readback-1479e353",
       "manifest_sha256": "1addf7cdd146a78ad8e04d5cd830680ed6a3ae5baa12b8601796ab0d3df74aea"
+    },
+    {
+      "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
+      "run_id": "20261009T212809Z-owned-gpu-event-frame-reuse-78a8758f",
+      "manifest_sha256": "31d94d89201e762807134128a4d3c6aaa2b6e263b734f54e21ee830ff5644960"
+    },
+    {
+      "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
+      "run_id": "20261009T212925Z-owned-gpu-event-frame-reuse-4e17cb1c",
+      "manifest_sha256": "91f2808c19ad535c809b1283f075a737ccc9608acae009f5ca6a06e97352996b"
+    },
+    {
+      "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
+      "run_id": "20261009T213032Z-owned-gpu-peer-event-timeout-656f43e3",
+      "manifest_sha256": "0e121d9582696d8cf172a77364bcef700d59647d2b36d78ae7e191c5b597dd1c"
+    },
+    {
+      "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
+      "run_id": "20261009T213122Z-owned-gpu-event-frame-reuse-64102fc7",
+      "manifest_sha256": "75d071f9e7049817a7f57defccf09d85ea1f76501f6e97e4df0189ce4f758f6e"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

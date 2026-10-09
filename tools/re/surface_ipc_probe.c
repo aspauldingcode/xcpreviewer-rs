@@ -18,7 +18,7 @@ extern int re_gpu_fill(IOSurfaceRef surface,unsigned seed,const char *folder);
 #endif
 
 #ifdef RE_GPU_CONSUMER
-extern int re_gpu_readback(IOSurfaceRef surface,const char *folder);
+extern int re_gpu_readback(IOSurfaceRef surface,unsigned seed,const char *folder);
 #endif
 
 #define MAGIC 0x52455346u
@@ -150,7 +150,7 @@ static int receiver_child(unsigned width,unsigned height,unsigned seed,int abrup
     resource=m->port.name;alias=IOSurfaceLookupFromMachPort(resource);
     if(!alias || !send_refs(resource,1) || IOSurfaceGetID(alias)!=m->surface_id || IOSurfaceGetWidth(alias)!=width || IOSurfaceGetHeight(alias)!=height || IOSurfaceGetBytesPerElement(alias)!=4 || IOSurfaceGetPixelFormat(alias)!=0x42475241 || IOSurfaceGetPlaneCount(alias)!=0 || IOSurfaceGetBytesPerRow(alias)!=m->stride || m->stride<width*4 || (size_t)m->stride*height>LIMIT)goto done;
     #ifdef RE_GPU_CONSUMER
-    if(!re_gpu_readback(alias,folder))goto done;
+    if(!re_gpu_readback(alias,seed,folder))goto done;
     #endif
     size_t count=snapshot_size(alias);if(!count)goto done;raw=malloc(count);expected=malloc(count);if(!raw || !expected)goto done;
     pattern(expected,m->stride,width,height,seed,count);
