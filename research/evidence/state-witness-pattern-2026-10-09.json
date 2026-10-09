@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-09",
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T225920Z-native-state-witness-bodies-9d2391a6",
+      "manifest_sha256": "2d4f524d315220c861e309c3b05ea4bf07c6e4b6736073c38e89d48316feabd6",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded acquisition only; instantiator range also included a neighboring helper"
+    },
+    {
+      "run_id": "20261009T230113Z-native-state-witness-bodies-d84a6e40",
+      "manifest_sha256": "1e7b7ed0b8a34484bae9fdabb1e943af20ed87a636d76021ac354c8a9fe73ae9",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static pattern/body control"
+    },
+    {
+      "run_id": "20261009T230141Z-native-state-witness-bodies-56bb218e",
+      "manifest_sha256": "e5d51a3be5a6d8dca4d12a1996939c7ddaacda05da26311a65226020195717d2",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static pattern/body control"
+    }
+  ],
+  "facts": {
+    "body_instruction_bytes_compared": 648,
+    "copy_target": "0x2d410",
+    "destroy_target": "0x2d360",
+    "direct_tag_layout_cases": 132098,
+    "generic_descriptor_bytes_checked": 48,
+    "import_instruction_bytes_compared": 48,
+    "imports": [
+      "_swift_allocateGenericValueMetadata",
+      "_swift_checkMetadataState",
+      "_swift_getTupleTypeLayout2",
+      "_swift_initEnumMetadataMultiPayload"
+    ],
+    "independently_predicted_pattern_bytes": 16,
+    "numeric_tag_offset": "max(sizeA, align8(sizeB)+57)",
+    "scope": "Static generic pattern and declared witness targets; finite direct-tag0/1 and trailer-copy projections. No runtime instantiation, actual witness invocation, extended-tag acceptance, payload ownership, release counts, races or Canvas transport proof.",
+    "state_pattern_verified": true,
+    "trailer_copy_bytes_compared": 57,
+    "witness_rebases_verified": 8
+  },
+  "tests_passed": 197,
+  "observations": [
+    "Generic State descriptor binds instantiation/completion pattern and eight declared witness targets.",
+    "Destroy/copy pattern targets select between payload witness tables using numeric direct tags0/1.",
+    "Tag offset is max(sizeA,align8(sizeB)+57); tag1 copies57 trailing bytes through overlapping vector writes.",
+    "Four runtime imports independently resolved; none invoked."
+  ],
+  "scope": "Static generic pattern and declared witness targets; finite direct-tag0/1 and trailer-copy projections. No runtime instantiation, actual witness invocation, extended-tag acceptance, payload ownership, release counts, races or Canvas transport proof.",
+  "remaining": [
+    "Actual specialized runtime metadata and witness table selection",
+    "Concrete payload witness effects and retain/release accounting",
+    "Source enum numeric-tag assignment and extended-tag validity",
+    "Native races, transport cleanup and physical reclamation"
+  ]
+}

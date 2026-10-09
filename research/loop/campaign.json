@@ -2954,6 +2954,50 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-state-witness-bodies",
+      "adapter": "disassembly",
+      "hypothesis": "The State descriptor and generic pattern bind eight chained witness targets; complete destroy/copy bodies match mapped bytes, direct numeric tags0/1 select payload tables A/B, and finite aligned layout/trailer projections agree with independent expectations. Four runtime imports are declared, without actual invocation.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "ec10:ec18",
+          "2d148:2d1e4",
+          "2d360:2d410",
+          "2d410:2d544",
+          "131180:13118c",
+          "1311f8:131204",
+          "131378:131384",
+          "1313e4:1313f0"
+        ],
+        "pattern_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "state_pattern_verified",
+          "equals": true
+        },
+        {
+          "path": "body_instruction_bytes_compared",
+          "equals": 648
+        },
+        {
+          "path": "direct_tag_layout_cases",
+          "equals": 132098
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

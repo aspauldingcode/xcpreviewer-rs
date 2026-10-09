@@ -346,3 +346,7 @@ Recovered complete copy/destroy dispatch and metadata resolver bodies:216 indepe
 ## 2026-10-09 — Token symbolic type records
 
 Resolved two specialized State type records through embedded-NUL symbolic parsing and validated dyld chained rebases.72 wrapper instruction bytes compared; ten nominal references,62 bounded record/terminator bytes and16 zero disk-cache bytes checked. Three accepted anchored seals;190 tests pass. Initial literal-name expectation was falsified and corrected to nested State with verified FulfillOnceState parent. Runtime metadata, concrete witness targets/effects and ownership remain unproven. No Xcode windows opened. [Evidence](research/evidence/token-symbolic-descriptors-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-token-symbolic-descriptors.md).
+
+## 2026-10-09 — Generic State witness pattern
+
+Verified State generic descriptor/pattern and eight chained witness targets;648 body and48 import-stub instruction bytes compared,16 pattern bytes independently predicted.132,098 direct-tag layout projections and complete57-byte overlapping trailer copy pass. Three seals retained: first acquisition range included neighboring helper, final controls narrow instantiator to8 bytes.197 tests pass. No runtime specialization, retain/release accounting or transport claim. [Evidence](research/evidence/state-witness-pattern-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-state-witness-pattern.md).
