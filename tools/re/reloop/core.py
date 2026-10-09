@@ -17,7 +17,7 @@ ADAPTERS = {'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disass
 PARAMS = {
     'surface_payload': {'payload'},
     'portable_solid': {'second_runtime'},
-    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control'},
+    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum'},
@@ -80,6 +80,8 @@ def validate_experiment(e):
     p = e['params']
     if 'payload' in p and p['payload'] not in ('IOSurfacePayload','RenderPayload','BitmapDescription','ServiceMessage','ServiceMessagePayload'):raise ValueError('Unsupported payload control')
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
+    if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
+    if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')

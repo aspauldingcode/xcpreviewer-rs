@@ -1799,6 +1799,152 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "id": "native-continuation-default-policy",
+      "hypothesis": "Default continuation tag2 and exact copied 16-byte payload should select assertion helper under previously anchored policy predicates; a different payload falsifies this prediction. No named enum case or runtime claim.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000000481c [tT] default argument 2 of PreviewsFoundationHost.Continuation.init",
+        "default_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "default_tag",
+          "equals": 2
+        },
+        {
+          "path": "default_constant_bytes",
+          "equals": 16
+        },
+        {
+          "path": "default_static_branch",
+          "equals": "assertion-helper"
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "id": "native-cancelation-token-entry",
+      "hypothesis": "Exact native CancelationToken.cancel entry should expose fulfillment guard and cancellation action handoff. Shared duplicate code alone is insufficient; recover actual entry instructions without invoking private Swift.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000012993c [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "id": "native-cancelation-token-guard",
+      "hypothesis": "Reviewed cancellation entry has unique lock/fulfill/unlock sites, exact outcome1 return boundary and first-fulfillment-only indirect tail dispatch outside lock. Mutated condition/identity/boundary must fail structural checker; no native runtime/transport claim.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000012993c [tT] ",
+        "cancel_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "cancel_guard_verified",
+          "equals": true
+        },
+        {
+          "path": "cancel_action_after_unlock",
+          "equals": true
+        },
+        {
+          "path": "cancel_skipped_outcome_tag",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "id": "native-default-assertion-helper",
+      "adapter": "disassembly",
+      "hypothesis": "The default payload(1,0)/tag2 policy reaches exact assertion-helper target 0x71290. Its body distinguishes a diagnostic helper from the fatal branch; no actual assertion execution or return guarantee assumed.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^0000000000071290 [tT] "
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

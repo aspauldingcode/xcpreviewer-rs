@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-09",
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "foundation_image_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "runs": [
+    {
+      "run_id": "20261009T195706Z-native-continuation-default-policy-5f5ec752",
+      "valid": true,
+      "manifest_sha256": "3e6f5e612ba031c908d4b5107ab4a9206a228d308c224b91d774bad60d5d1c0e",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "default_tag": 2,
+        "default_payload_words": [
+          1,
+          0
+        ],
+        "default_constant_bytes": 16,
+        "constant_address": "0x132920",
+        "default_static_branch": "assertion-helper",
+        "scope": "Pinned static getter plus reviewed policy predicates. No named enum case or native mode execution claimed."
+      }
+    },
+    {
+      "run_id": "20261009T195734Z-native-cancelation-token-entry-7d9b4a73",
+      "valid": true,
+      "manifest_sha256": "d61ba9d694187e40639aef334cb46e688747b6d6db0e9c64a215e2ada829df14",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T195901Z-native-cancelation-token-guard-c512bdb5",
+      "valid": true,
+      "manifest_sha256": "37c74c042843fe48fd60ea3c5176fb8d831b4275f6ba91eaf235178f882d57c6",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "cancel_guard_verified": true,
+        "cancel_action_after_unlock": true,
+        "cancel_skipped_outcome_tag": 1,
+        "cancel_sites": {
+          "lock": "0x12997c",
+          "fulfill": "0x1299ac",
+          "unlock": "0x1299b4",
+          "dispatch": "0x1299f0"
+        },
+        "scope": "Pinned cancellation static guard and tail dispatch only; target action, runtime ordering/races and transport remain unverified."
+      }
+    },
+    {
+      "run_id": "20261009T200015Z-native-default-assertion-helper-fd3f036e",
+      "valid": true,
+      "manifest_sha256": "4c6735685a7e16a5a958c5f66fbbbba4d10fe9bcd87cfe582c06bef6b9b7f82e",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    }
+  ],
+  "default_constant": {
+    "bytes_compared": 16,
+    "payload_words": [
+      1,
+      0
+    ],
+    "tag": 2,
+    "selected_static_path": "assertion-helper",
+    "named_enum_case": "unverified"
+  },
+  "static_sites": {
+    "constant": "0x132920",
+    "default_tag_store": "0x482c",
+    "policy_helper_call": "0x2c078 -> 0x71290",
+    "helper_analytics_call": "0x71460",
+    "helper_return": "0x71490",
+    "cancel_entry": "0x12993c",
+    "cancel_duplicate_target": "0x30a00",
+    "cancel_state_fulfillment": "0x1299ac -> previously verified unit-state body 0x30a1c",
+    "cancel_unlock": "0x1299b4",
+    "cancel_outcome_compare": "0x1299bc: compare1; b.ne to first-fulfillment action",
+    "cancel_duplicate_return": "0x1299d4",
+    "cancel_action_tail_dispatch": "0x1299f0: br x2, action loaded from indirect table"
+  },
+  "tests": 124,
+  "limitations": [
+    "Static getter payload/tag select reviewed assertion-helper path; no runtime behavior or named enum case assigned.",
+    "Assertion helper has analytics call and regular return, no direct fatal trap in selected body; callees and policy invocation remain unexecuted. No analytics event was sent by these static probes.",
+    "Cancellation shares fulfillment state/duplicate target and dispatches action after unlock in observed instructions; actual action target, concurrent/reentrant behavior, cancellation races, transport and resource release remain unverified.",
+    "Disassembly parser checks finite observed patterns; not a general control-flow proof or instruction interpreter.",
+    "No Xcode windows opened, no private Swift ABI declarations, no process attachment."
+  ]
+}

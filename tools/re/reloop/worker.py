@@ -61,6 +61,17 @@ def perform(kind,out,p):
             if len(files)!=1:raise ValueError('Guard control requires one selected closure')
             from reloop.continuation import inspect as inspect_guard
             facts=inspect_guard(files[0].read_text());atomic(out/'continuation-guard.json',facts)
+        if p.get('default_control',False):
+            if len(files)!=1:raise ValueError('Default control requires one selected getter')
+            from reloop.continuation import inspect_default
+            from reloop.swiftmeta import MachO
+            facts.update(inspect_default(files[0].read_text(),MachO(image)))
+            atomic(out/'continuation-default.json',facts)
+        if p.get('cancel_control',False):
+            if len(files)!=1:raise ValueError('Cancellation control requires one selected entry')
+            from reloop.continuation import inspect_cancel
+            facts.update(inspect_cancel(files[0].read_text()))
+            atomic(out/'cancellation-guard.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}
