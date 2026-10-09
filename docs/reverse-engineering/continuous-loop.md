@@ -43,3 +43,7 @@ At checkpoint `9b51624`, receiver-first and sender-first CPU Mach controls pass;
 ## Stop condition
 
 Continue until the declared contract of GitHub milestone 1 is actually reverse-engineered and independently verified, or the user pauses/stops this loop. Required unknowns keep the milestone open. On achievement, publish the coverage/unknowns report, notify the user and pause the heartbeat. The WASM milestone remains separately tracked; this RE automation does not silently declare it complete or expand into unrestricted product work.
+
+## REA discovery engine
+
+The user requested REA integration. Follow [the pinned integration](rea-integration.md) when using it. `rea_native` is a reviewed sealed adapter; the separate Codex MCP registration exposes a native/Apple subset of the measured schema. Keep one provider session for related queries, verify image/profile identity and compare selected native instruction bytes independently. Retain failures and close the owned provider. Static dossiers, snapshots and reconstruction reports do not satisfy runtime or Canvas wire acceptance. Never repeat an unchanged expensive import failure; use a smaller owned control or another unblocked oracle.

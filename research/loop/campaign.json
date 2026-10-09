@@ -2703,6 +2703,78 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-rea-observer-pilot",
+      "adapter": "rea_native",
+      "hypothesis": "Pinned REA/Ghidra recovers two observer removal wrappers and its call references agree with all eight encoded BL bytes from the independently mapped image.",
+      "depends_on": [],
+      "resources": [
+        "ghidra"
+      ],
+      "timeout_seconds": 480,
+      "artifact_limit_mb": 32,
+      "params": {},
+      "priority": 90,
+      "checks": [
+        {
+          "path": "rea_verified",
+          "equals": true
+        },
+        {
+          "path": "provider_closed",
+          "equals": true
+        },
+        {
+          "path": "native_functions",
+          "equals": 2
+        },
+        {
+          "path": "encoded_call_targets_verified",
+          "equals": 2
+        },
+        {
+          "path": "compared_bytes",
+          "equals": 8
+        }
+      ]
+    },
+    {
+      "id": "owned-rea-engine-control",
+      "adapter": "rea_native",
+      "hypothesis": "Pinned REA/Ghidra decompiles an owned ARM64 control and its selected call reference agrees with all four independently mapped BL bytes.",
+      "depends_on": [],
+      "resources": [
+        "ghidra"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "owned_control": true
+      },
+      "priority": 89,
+      "checks": [
+        {
+          "path": "rea_verified",
+          "equals": true
+        },
+        {
+          "path": "provider_closed",
+          "equals": true
+        },
+        {
+          "path": "native_functions",
+          "equals": 1
+        },
+        {
+          "path": "encoded_call_targets_verified",
+          "equals": 1
+        },
+        {
+          "path": "compared_bytes",
+          "equals": 4
+        }
+      ]
     }
   ],
   "version": 1

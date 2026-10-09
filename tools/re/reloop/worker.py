@@ -34,6 +34,9 @@ def ghidra_config():
 def perform(kind,out,p):
     xcode=p.get('xcode','/Applications/Xcode.app')
     image=p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
+    if kind=='rea_native':
+        from reloop.rea import run
+        return run(out,p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost'),p.get('owned_control',False))
     if kind=='inventory':
         command([sys.executable,ROOT/'tools/re/collect.py','--xcode',xcode,'--out',out/'inventory'],out,'collect')
         d=load(out/'inventory/inventory.json')

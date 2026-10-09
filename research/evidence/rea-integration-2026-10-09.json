@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-09",
+  "integration": "REA 6.2.0 pinned free Ghidra MCP/CLI",
+  "registry_integrity": "sha512-xAga+JPvM8afzaq7fkCtH66jGOcGlunNnpRTE1haWxZncNC19usvblyHhomWUohP1SJE9NZ3KbZwjz0gYOf7Cw==",
+  "node_version": "24.19.0",
+  "ghidra_version": "12.1.2",
+  "codex_enabled_tools": 35,
+  "discovered_tools": 139,
+  "installed_skill_sha256": "de89de14f26ec8c1f9185f0ebd932a08fb27c116f24dd70fbc0546c25114c478",
+  "registration_unrelated_text_preserved": true,
+  "tests_passed": 159,
+  "runs": [
+    {
+      "run_id": "20261009T220050Z-native-rea-observer-pilot-cd5ece24",
+      "manifest_sha256": "c68dc908e69af786ca60f4c89bf7289a1f3d003cf7f27f8aef9930d8f0c280ec",
+      "execution": "failed",
+      "verdict": "not_evaluated"
+    },
+    {
+      "run_id": "20261009T220651Z-owned-rea-engine-control-651d01fa",
+      "manifest_sha256": "3cc108fa031b8510e6ee24a9a720c9647f89c75fe1e66cce29bd5fb10400dd98",
+      "execution": "failed",
+      "verdict": "not_evaluated"
+    },
+    {
+      "run_id": "20261009T220828Z-owned-rea-engine-control-4ba4ec15",
+      "manifest_sha256": "1a8f0e8260ea70bfc316a4cd35d8fae4e1706a87ccb55b2bbcec76816c568b73",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261009T221010Z-owned-rea-engine-control-bb12b467",
+      "manifest_sha256": "3c0b0abface4a681aba3ddab92b8c8b0d936b494919d95b85b263b37eee3508c",
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "accepted_owned_control": {
+    "claim_scope": "static native discovery; selected encoded BL instructions only",
+    "compared_bytes": 4,
+    "discovered_tools": 139,
+    "duration_seconds": 37.044,
+    "encoded_call_targets_verified": 1,
+    "image_sha256": "63c770b53de5c533dcf57febe61be761aa0d0f61cd9992fe2508dc165407ff06",
+    "native_functions": 1,
+    "owned_control": true,
+    "provider_closed": true,
+    "rea_entry_sha256": "a31d888bbfd958f74a3415fc21d5385015a42a9dd647886f28bd3fd6e67d6eab",
+    "rea_runtime": {
+      "code_files": 1012,
+      "code_sha256": "7e17c0b5f6f85f5749500bdcf17427eac3b3d4eaa1ed809ec590c09f49fdba5f"
+    },
+    "rea_verified": true,
+    "rea_version": "6.2.0"
+  },
+  "limitations": [
+    "Owned control proves one selected 4-byte BL and native decompilation availability; it does not establish Xcode behavior.",
+    "FoundationHost full auto-analysis exceeded both 180-second and 330-second startup bounds; changed import/profile method required before retry.",
+    "Architecture-alias failure and successful-but-inconclusive campaign-path failure retained without rewriting seals.",
+    "Current desktop session may need MCP reconnection; private controller stdio connection was verified.",
+    "Canvas transport/runtime and WASM milestone acceptance remain open."
+  ]
+}

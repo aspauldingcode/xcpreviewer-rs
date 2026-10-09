@@ -316,3 +316,11 @@ Evidence: [GPU reuse control](docs/reverse-engineering/2026-10-09-gpu-frame-reus
 Followed instruction-derived invalidation targets into isolated setter/remover, concurrent remover, native bucket deletion and identifier-array removal. Mapped16-byte sentinel `(0,1)` selects static removal branch; found/uniqueness/ordered-key gates, missing-key traps, bucket occupancy/count/counter writes, array shift/count decrement and12 encoded call targets now have finite corruption-tested checks. Five discovery/dependency/control seals anchor-verified;150 tests pass. Value-witness/runtime contents, native callback association, races and transport/resource cleanup remain unverified; R2 stays open. No Xcode windows opened.
 
 Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-observer-dictionary-removal.md), [sanitized seals](research/evidence/observer-dictionary-removal-2026-10-09.json).
+
+## 2026-10-09 — pinned REA integration
+
+- Installed REA 6.2.0 locally with a committed npm lock, disabled lifecycle scripts and a repository-local cache. Added reproducible bootstrap; no paid provider required.
+- Registered the matching Codex MCP and skill, preserved unrelated configuration and retained its backup. Measured 139 tools; selected 35 native/Apple/evidence tools with bounded deadlines and explicit free Ghidra binding.
+- Added serial `rea_native` adapter, strict target/parameter checks, frozen manifests and runtime-code identity. Owned ARM64 function decompilation passes independent mapping, all four selected instruction bytes and encoded BL destination/reference/flow checks; owned provider closes cleanly.
+- Retained the FoundationHost 330-second import timeout, architecture-alias rejection and successful-but-inconclusive campaign-path run. Corrected the observed schema alias and acceptance paths; 159 tests pass.
+- Published sanitized [evidence](research/evidence/rea-integration-2026-10-09.json) and [integration/runbook guidance](docs/reverse-engineering/rea-integration.md). Full-image REA import requires a changed analysis method before retry; actual Canvas transport/runtime and both milestone contracts remain incomplete.

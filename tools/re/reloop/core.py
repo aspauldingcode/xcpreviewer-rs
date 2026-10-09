@@ -13,8 +13,9 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
-ADAPTERS = {'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
+ADAPTERS = {'rea_native', 'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
 PARAMS = {
+    'rea_native': {'binary','owned_control'},
     'surface_payload': {'payload'},
     'portable_solid': {'second_runtime'},
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control'},
@@ -82,8 +83,9 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
-    for flag in ('deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'):
+    for flag in ('owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
+    if p.get('owned_control') and 'binary' in p:raise ValueError('Owned REA control compiles its own target')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')
@@ -212,7 +214,7 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
 def source_files():
     excluded={'__pycache__','.build','.swiftpm'}
     suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme'}
-    return [p for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and not p.is_symlink() and p.suffix in suffixes and not excluded.intersection(p.parts)]
+    return [p for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and not p.is_symlink() and (p.suffix in suffixes or p.parent==ROOT/'tools/re/rea' and p.name in {'package.json','package-lock.json','codex-tools.json'}) and not excluded.intersection(p.parts)]
 
 
 def identity():
@@ -228,6 +230,13 @@ def identity():
     properties=pathlib.Path(home)/'Ghidra/application.properties' if home else None
     details['ghidra_properties_sha256']=digest(properties) if properties and properties.is_file() else None
     details['java_home']=java
+    rea_package=PROJECT_ROOT/'research/build/rea/node_modules/rea-agents'
+    details['rea']={'version':load(rea_package/'package.json',{}).get('version'),
+                    'entry_sha256':digest(rea_package/'scripts/rea.mjs') if (rea_package/'scripts/rea.mjs').is_file() else None,
+                    'installed_lock_sha256':digest(PROJECT_ROOT/'research/build/rea/package-lock.json') if (PROJECT_ROOT/'research/build/rea/package-lock.json').is_file() else None}
+    if rea_package.is_dir():
+        from reloop.rea import runtime_identity
+        details['rea']['runtime']=runtime_identity(rea_package)
     for name, argv in [('xcode',['xcodebuild','-version']), ('os',['sw_vers']), ('arch',['uname','-m'])]:
         try:
             r = subprocess.run(argv, capture_output=True, text=True, timeout=15)

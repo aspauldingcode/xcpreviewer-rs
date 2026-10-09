@@ -27,13 +27,23 @@
       "repo": "as0ler/skills",
       "skill_sha256": "22db2ac55ea8f97de8a0f94ee483de028bfd7d93720cd647073d201d90cac45e",
       "source_url": "https://github.com/as0ler/skills/blob/e5e12ea94df68ff1513bddbac6ee2e4558a738c1/frida/SKILL.md"
+    },
+    {
+      "name": "reverse-engineer-anything",
+      "installed_path": "/Users/8amps/.agents/skills/reverse-engineer-anything/SKILL.md",
+      "repo": "morluto/rea",
+      "package": "rea-agents",
+      "version": "6.2.0",
+      "skill_sha256": "de89de14f26ec8c1f9185f0ebd932a08fb27c116f24dd70fbc0546c25114c478",
+      "source_url": "https://github.com/morluto/rea"
     }
   ],
   "review_notes": [
     "Frida skill header latest version claim is stale relative to measured local 17.23.1; verify API behavior against installed runtime.",
     "RE guide is generic and ELF-heavy; adapt tool invocations to Mach-O/arm64.",
     "LLVM opt/llc are optional and were not found in current toolchain. Existing clang, wasm-ld and llvm-objdump suffice for measured spike.",
-    "Caveman FULL remains user-facing mode; code/docs remain precise normal language."
+    "Caveman FULL remains user-facing mode; code/docs remain precise normal language.",
+    "REA 6.2.0 MCP/CLI and matching skill installed. Native Ghidra remains identity-gated and provider-owned; pseudocode is discovery evidence, not runtime behavior or byte equivalence."
   ],
   "usage": "Load only relevant skills and sections. User constraints and sealed runbook take precedence; examples are not target permission or verified facts."
 }
