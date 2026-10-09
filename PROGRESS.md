@@ -268,3 +268,9 @@ Sixteen executions yield 48 padded-byte comparisons (30,720 bytes); all eight ca
 Recovered state snapshot/case-1 diagnostic skip and other-case Unfulfilled error/failure policy before normal reference cleanup. Deallocating destructor forwards to that body and class deallocation; no physical resource reclamation claim. Independent nominal metadata declares waiting/fulfilled, without assigning runtime tags; seven broader parser errors and unresolved payload types retained.
 
 Added finite destructor/target-metadata control modes and mutation controls. Initial wrong acceptance-field run retained inconclusive; corrected target checks pass. Four seals verify; 129 tests pass. See [scope](docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md) and [anchors](research/evidence/unfulfilled-deinit-2026-10-09.json). Native abandoned callback/reply behavior, race/resource accounting and transport remain open. No Xcode windows opened.
+
+## 2026-10-09 — cancellation callback and actor boundaries
+
+Recovered both concrete callback invoke bodies and specialized constructors. Isolated invoke optionally calls actor verification before dispatching its stored closure; concurrent invoke dispatches directly. A dependent probe shows the verification helper calls Swift `preconditionIsolated`; no executor-hop or concrete transport action is established. Added two finite structural controls and corruption checks for context, branch, callee, initialization, helper extent and duplicate evidence. Five runs sealed and anchor-verified; 131 tests pass. R2 remains open; no Xcode windows opened.
+
+Evidence: [callback boundaries](docs/reverse-engineering/2026-10-09-cancellation-callbacks.md), [sanitized seals](research/evidence/cancellation-callbacks-2026-10-09.json). Native runtime witness association, selected caller closure, races, abandoned replies and resource cleanup remain required.

@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-09",
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T202812Z-native-cancelation-callback-boundary-459e2d1d",
+      "valid": true,
+      "manifest_sha256": "7e3c46c1cafb061875c6469fabb53af03db30c0eaa1119b4baa4a1597987b31b",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 4,
+        "function_count": 4,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T203015Z-native-cancelation-callback-control-e6019dc2",
+      "valid": true,
+      "manifest_sha256": "1973ad06e128feccd42e5d7556850ef6446d0c87e67c62f7ac6d2aa4108e9d8c",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "observations": {
+        "address_fallback_count": 0,
+        "callback_boundaries_verified": true,
+        "callback_wrapper_count": 2,
+        "concurrent_stored_closure_dispatch": true,
+        "entry_body_count": 4,
+        "function_count": 4,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "isolated_optional_actor_check": true,
+        "scope": "Pinned static constructor and invoke boundaries. Witness-table relocation, concrete caller closure, actor verification behavior, scheduling, runtime completion and transport remain separate."
+      },
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T203032Z-native-actor-isolation-verification-ede51815",
+      "valid": true,
+      "manifest_sha256": "de9a5bd19b3592ae5d39bf71a28af537bb043738814c75947f68d2e8aad15e3b",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 1,
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T203125Z-native-actor-isolation-control-94d8737f",
+      "valid": true,
+      "manifest_sha256": "8bf020040d07a3451f0c72c4a1155dcdd5bb999aa928e1831cef370a60038111",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 1,
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "isolation_precondition_verified": true,
+        "scope": "Pinned helper directly calls Swift preconditionIsolated and returns normally if callee returns. Callee behavior, runtime actor identity, traps and scheduling remain unexecuted."
+      },
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T203157Z-native-actor-isolation-control-5ee5ead1",
+      "valid": true,
+      "manifest_sha256": "ecefd1e8d66573ea7b3231d025cbf07573c6c6275af187e1c0f554c754850807",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 1,
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "isolation_precondition_verified": true,
+        "scope": "Pinned helper directly calls Swift preconditionIsolated and returns normally if callee returns. Callee behavior, runtime actor identity, traps and scheduling remain unexecuted."
+      },
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "tests": 131,
+  "static_sites": {
+    "isolated_constructor": "0x129788/0x12978c store four incoming words; state reference at +0x20",
+    "concurrent_constructor": "0x129870 stores incoming pair; state reference at +0x10",
+    "isolated_invoke": "0x129a0c skips actor verification when actor pointer is null; verifyIsolated at0x129a48; stored closure at0x129a50",
+    "concurrent_invoke": "0x129a70 loads closure/context pair; call0x129a74",
+    "verify_isolated": "0x114e5c directly calls Swift preconditionIsolated stub0x12feb4; normal return0x114e68"
+  },
+  "limitations": [
+    "Static wrapper boundaries, not executed native cancellation or executor verification.",
+    "Witness-table runtime relocation and generic token dispatch association remain unverified.",
+    "Concrete caller closure may implement varied effects; wrapper is not proof of a fixed transport cancellation action.",
+    "No race, abandoned-reply, resource-release, or live Canvas IPC acceptance.",
+    "No Xcode windows opened, process attachment, or private Swift ABI construction."
+  ]
+}

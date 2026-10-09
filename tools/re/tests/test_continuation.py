@@ -3,7 +3,7 @@ import sys
 import unittest
 import struct
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.continuation import inspect,inspect_default,inspect_cancel,inspect_deinit,inspect_state_metadata
+from reloop.continuation import inspect,inspect_default,inspect_cancel,inspect_deinit,inspect_state_metadata,inspect_callbacks,inspect_isolation
 from reloop.core import validate_experiment
 import json
 import copy
@@ -67,6 +67,26 @@ DEINIT='''2ba54: 00 00 00 00 mov x8, x24
 '''
 
 class ContinuationTests(unittest.TestCase):
+    def test_callback_wrappers_reject_wrong_context_branch_and_duplicate_evidence(self):
+        def body(entry,rows):
+            return '\n'.join(f'{p:x}: 00 00 00 00 {op} {args}' for p,op,args in [(entry,'nop','')]+rows)+'\n'
+        texts=[body(0x129770,[(0x129788,'stp','x1, x2, [x8]'),(0x12978c,'stp','x3, x4, [x8, #0x10]'),(0x1297e4,'str','wzr, [x0, #0x4c]'),(0x1297e8,'strb','wzr, [x0, #0x49]'),(0x129844,'str','x21, [x19, #0x20]')]),
+               body(0x129858,[(0x129870,'stp','x1, x2, [x8]'),(0x1298c8,'str','wzr, [x0, #0x4c]'),(0x1298cc,'strb','wzr, [x0, #0x49]'),(0x129928,'str','x21, [x19, #0x10]')]),
+               body(0x1299f4,[(0x129a04,'ldr','x21, [x20]'),(0x129a08,'ldp','x22, x19, [x20, #0x10]'),(0x129a0c,'cbz','x21, 0x129a4c'),(0x129a10,'ldr','x20, [x20, #0x8]'),(0x129a44,'mov','x20, x21'),(0x129a48,'bl','_$sverifyIsolated'),(0x129a4c,'mov','x20, x19'),(0x129a50,'blr','x22'),(0x129a60,'ret','')]),
+               body(0x129a64,[(0x129a68,'nop',''),(0x129a6c,'nop',''),(0x129a70,'ldp','x8, x20, [x20]'),(0x129a74,'blr','x8'),(0x129a78,'nop',''),(0x129a7c,'nop',''),(0x129a80,'ret','')])]
+        self.assertTrue(inspect_callbacks(texts)['isolated_optional_actor_check'])
+        for old,new in [('cbz','cbnz'),('mov x20, x19','mov x20, x21'),('verifyIsolated','enqueue'),('blr x22','blr x19'),('ldp x8, x20','ldp x8, x19'),('#0x49','#0x39')]:
+            with self.assertRaises(ValueError):inspect_callbacks([t.replace(old,new) for t in texts])
+        for bad in [texts[:-1],texts+[texts[0]],texts[:2]+[texts[2]+texts[2].splitlines()[1]+'\n']+texts[3:]]:
+            with self.assertRaises(ValueError):inspect_callbacks(bad)
+
+    def test_isolation_helper_requires_exact_extent_and_precondition(self):
+        text='\n'.join(f'{p:x}: 00 00 00 00 nop' for p in range(0x114e38,0x114e6c,4))+'\n'
+        text=text.replace('114e58: 00 00 00 00 nop','114e58: 00 00 00 00 mov x1, sp').replace('114e5c: 00 00 00 00 nop','114e5c: 00 00 00 00 bl 0x12feb4 ; symbol stub for: preconditionIsolated').replace('114e68: 00 00 00 00 nop','114e68: 00 00 00 00 ret')
+        self.assertTrue(inspect_isolation(text)['isolation_precondition_verified'])
+        for bad in [text.replace('preconditionIsolated','enqueue'),text.replace('0x12feb4','0x12feb8'),text.replace('114e40: 00 00 00 00 nop','114e40: 00 00 00 00 b 0x114e68'),text.replace('ret','nop'),text+text.splitlines()[1]+'\n',text.split('\n',1)[1]]:
+            with self.assertRaises(ValueError):inspect_isolation(bad)
+
     def test_deinit_case_skip_and_diagnostic_require_observed_boundaries(self):
         self.assertEqual(inspect_deinit(DEINIT)['deinit_skipped_case'],1)
         for text in [DEINIT.replace('b.ne','b.eq'),DEINIT.replace('cmp w0, #0x1','cmp w0, #0x0'),DEINIT.replace('b 0x2bbf0','b 0x2bbd8'),DEINIT.replace('_swift_allocError','_swift_allocObject'),DEINIT.replace('FulfillmentFailureModefail','OtherFailureModefail'),DEINIT.replace('peek','update'),DEINIT.replace('2bc3c: 00 00 00 00 ret','')]:
@@ -98,7 +118,7 @@ class ContinuationTests(unittest.TestCase):
     def test_static_controls_reject_nonboolean_parameters(self):
         root=pathlib.Path(__file__).resolve().parents[3]
         experiments=json.loads((root/'research/loop/campaign.json').read_text())['experiments']
-        for key in ['default_control','cancel_control','deinit_control','state_control']:
+        for key in ['default_control','cancel_control','deinit_control','state_control','callback_control','isolation_control']:
             e=next(e for e in experiments if key in e['params'])
             for value in [1,'true',None]:
                 e['params'][key]=value

@@ -77,6 +77,15 @@ def perform(kind,out,p):
             from reloop.continuation import inspect_deinit
             facts.update(inspect_deinit(files[0].read_text()))
             atomic(out/'deinit-guard.json',facts)
+        if p.get('callback_control',False):
+            from reloop.continuation import inspect_callbacks
+            facts.update(inspect_callbacks([f.read_text() for f in files]))
+            atomic(out/'callback-boundaries.json',facts)
+        if p.get('isolation_control',False):
+            if len(files)!=1:raise ValueError('Isolation control requires one helper')
+            from reloop.continuation import inspect_isolation
+            facts.update(inspect_isolation(files[0].read_text()))
+            atomic(out/'isolation-boundary.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}

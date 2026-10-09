@@ -91,3 +91,46 @@ def inspect_state_metadata(data):
     if names!=['waiting','fulfilled']:raise ValueError('Fulfillment State case names changed')
     return {'state_metadata_verified':True,'state_case_names':names,'state_descriptor':state['address'],
             'scope':'Static nominal enum cases only; field order is not by itself runtime tag/ABI mapping. Unresolved symbolic types remain preserved in raw metadata.'}
+
+
+def inspect_callbacks(texts):
+    """Check pinned callback and constructor boundaries, not witness relocations."""
+    required={0x129770,0x129858,0x1299f4,0x129a64}
+    codes={}
+    for text in texts:
+        code=instructions(text)
+        if not code:raise ValueError('Missing callback body')
+        entry=min(code)
+        if entry in codes:raise ValueError('Duplicate callback body')
+        codes[entry]=(code,text)
+    if set(codes)!=required:raise ValueError('Exact callback/constructor entries required')
+    expected={
+        0x129770:{0x129788:('stp','x1, x2, [x8]'),0x12978c:('stp','x3, x4, [x8, #0x10]'),0x1297e4:('str','wzr, [x0, #0x4c]'),0x1297e8:('strb','wzr, [x0, #0x49]'),0x129844:('str','x21, [x19, #0x20]')},
+        0x129858:{0x129870:('stp','x1, x2, [x8]'),0x1298c8:('str','wzr, [x0, #0x4c]'),0x1298cc:('strb','wzr, [x0, #0x49]'),0x129928:('str','x21, [x19, #0x10]')},
+        0x1299f4:{0x129a04:('ldr','x21, [x20]'),0x129a08:('ldp','x22, x19, [x20, #0x10]'),0x129a0c:('cbz','x21, 0x129a4c'),0x129a10:('ldr','x20, [x20, #0x8]'),0x129a44:('mov','x20, x21'),0x129a4c:('mov','x20, x19'),0x129a50:('blr','x22'),0x129a60:('ret','')},
+        0x129a64:{0x129a70:('ldp','x8, x20, [x20]'),0x129a74:('blr','x8'),0x129a80:('ret','')},
+    }
+    for entry,checks in expected.items():
+        code,text=codes[entry]
+        # Repeated instruction addresses must not silently overwrite evidence.
+        addresses=re.findall(r'^\s*([0-9a-f]+):\s+(?:[0-9a-f]{2}\s+){4}\w',text,re.M)
+        if len(addresses)!=len(set(addresses)):raise ValueError('Duplicate instruction address')
+        if any(p not in code or code[p][:2]!=value for p,value in checks.items()):raise ValueError('Callback dataflow boundary changed')
+    isolated=codes[0x1299f4][0]
+    if isolated.get(0x129a48,('',))[0]!='bl' or 'verifyIsolated' not in isolated[0x129a48][1]:raise ValueError('Isolation verification call changed')
+    concurrent=codes[0x129a64][0]
+    if len(concurrent)!=8 or any(op=='bl' for op,args,raw in concurrent.values()):raise ValueError('Concurrent callback wrapper extent changed')
+    return {'callback_boundaries_verified':True,'callback_wrapper_count':2,'isolated_optional_actor_check':True,
+            'concurrent_stored_closure_dispatch':True,
+            'scope':'Pinned static constructor and invoke boundaries. Witness-table relocation, concrete caller closure, actor verification behavior, scheduling, runtime completion and transport remain separate.'}
+
+
+def inspect_isolation(text):
+    code=instructions(text)
+    addresses=re.findall(r'^\s*([0-9a-f]+):\s+(?:[0-9a-f]{2}\s+){4}\w',text,re.M)
+    if len(addresses)!=len(set(addresses)) or set(code)!=set(range(0x114e38,0x114e6c,4)):raise ValueError('Isolation helper extent changed')
+    if code[0x114e5c][:2]!=('bl','0x12feb4') or 'preconditionIsolated' not in text.split('114e5c:',1)[-1].splitlines()[0]:raise ValueError('Isolation precondition call changed')
+    if code[0x114e68][:2]!=('ret','') or code[0x114e58][:2]!=('mov','x1, sp'):raise ValueError('Isolation call/return boundary changed')
+    if [p for p,(op,args,raw) in code.items() if op.startswith('b') or op in ('cbz','cbnz','tbz','tbnz')]!=[0x114e5c]:raise ValueError('Unexpected isolation control transfer')
+    return {'isolation_precondition_verified':True,
+            'scope':'Pinned helper directly calls Swift preconditionIsolated and returns normally if callee returns. Callee behavior, runtime actor identity, traps and scheduling remain unexecuted.'}

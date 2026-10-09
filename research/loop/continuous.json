@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "227f24176f80222f67b10a0fcd800f9127dd72d5",
+  "baseline_commit": "33688a773420254080fcf5d22121a073f1edbcaa",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -99,9 +99,9 @@
       "retry_prerequisite": "Use actual parse_errors field and target-specific State verifier; seven broad parse errors retained explicitly."
     }
   ],
-  "last_completed": "Native FulfillOnceState destructor snapshot/case1 diagnostic skip and Unfulfilled error/failure policy before common reference cleanup recovered statically. Metadata declares waiting/fulfilled without runtime tag mapping; seven broad parse errors preserved. Two structural modes and fault controls implemented; four seals verify, initial absent-check-field run retained. 129 tests pass.",
+  "last_completed": "Recovered isolated/concurrent cancellation callback constructors and stored-closure invoke boundaries. Optional actor verification calls Swift preconditionIsolated, not evidence of an executor hop. Added two static controls with context/callee/branch/duplicate corruption tests; five runs sealed and externally anchored; 131 tests pass. Native callback/witness association and transport effects remain open.",
   "last_github_sync": {
-    "checkpoint": "Unfulfilled-state destructor diagnostic and static case metadata",
+    "checkpoint": "Cancellation callback boundaries and isolation precondition",
     "date": "2026-10-09",
     "issues": [
       "R2"
@@ -110,7 +110,7 @@
   },
   "next_actions": [
     {
-      "action": "Static destructor abandonment diagnostic and waiting/fulfilled metadata recovered. Safe typed native runtime case mapping, action identity, abandoned reply completion, cancellation races and resource release remain open; do not assume deinit sends error reply.",
+      "action": "Static callback wrappers dispatch stored closures; isolated wrapper optionally calls Swift preconditionIsolated. Recover concrete selected-flow closure and safely established witness association, then actual runtime ordering, abandoned reply and resource release. Do not infer transport cancellation or scheduling from wrapper names.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -437,6 +437,31 @@
       "run_id": "20261009T201938Z-native-unfulfilled-deinit-guard-2af55307",
       "manifest_sha256": "88ef8b716bb0dfd38123f0772dd7e08bfc520ba770ebb96ff5eba02cd697d1e4",
       "path": "research/evidence/unfulfilled-deinit-2026-10-09.json"
+    },
+    {
+      "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
+      "run_id": "20261009T202812Z-native-cancelation-callback-boundary-459e2d1d",
+      "manifest_sha256": "7e3c46c1cafb061875c6469fabb53af03db30c0eaa1119b4baa4a1597987b31b"
+    },
+    {
+      "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
+      "run_id": "20261009T203015Z-native-cancelation-callback-control-e6019dc2",
+      "manifest_sha256": "1973ad06e128feccd42e5d7556850ef6446d0c87e67c62f7ac6d2aa4108e9d8c"
+    },
+    {
+      "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
+      "run_id": "20261009T203032Z-native-actor-isolation-verification-ede51815",
+      "manifest_sha256": "de9a5bd19b3592ae5d39bf71a28af537bb043738814c75947f68d2e8aad15e3b"
+    },
+    {
+      "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
+      "run_id": "20261009T203125Z-native-actor-isolation-control-94d8737f",
+      "manifest_sha256": "8bf020040d07a3451f0c72c4a1155dcdd5bb999aa928e1831cef370a60038111"
+    },
+    {
+      "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
+      "run_id": "20261009T203157Z-native-actor-isolation-control-5ee5ead1",
+      "manifest_sha256": "ecefd1e8d66573ea7b3231d025cbf07573c6c6275af187e1c0f554c754850807"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

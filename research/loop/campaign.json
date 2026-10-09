@@ -2097,6 +2097,140 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-cancelation-callback-boundary",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Recover both actual callback invoke entries and specialized constructors. Predict stored closure dispatch with possible isolated actor check, not fixed transport cancellation. Four unique instruction-bearing entries required.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000012(9770|9858|99f4|9a64) [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 4
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 4
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-cancelation-callback-control",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Pinned callback/constructor boundary checker must verify optional isolation call and stored closure dispatch; mutations or duplicate bodies fail. This does not map runtime witness tables or establish transport action.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000012(9770|9858|99f4|9a64) [tT] ",
+        "callback_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 4
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 4
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "callback_boundaries_verified",
+          "equals": true
+        },
+        {
+          "path": "callback_wrapper_count",
+          "equals": 2
+        }
+      ]
+    },
+    {
+      "id": "native-actor-isolation-verification",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Recover verifyIsolated body to distinguish actor scheduling from an isolation assertion/verification; name alone is insufficient.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^0000000000114e38 [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-actor-isolation-control",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Exact helper extent and single preconditionIsolated call/return must pass; wrong callee or inserted branch fails. Static caller behavior only, not runtime executor correctness.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^0000000000114e38 [tT] ",
+        "isolation_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "isolation_precondition_verified",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1
