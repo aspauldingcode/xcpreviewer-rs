@@ -1,0 +1,180 @@
+{
+  "experiments": [
+    {
+      "adapter": "connected_probe",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 6,
+          "path": "linked_events"
+        },
+        {
+          "equals": true,
+          "path": "uuid_match"
+        },
+        {
+          "equals": true,
+          "path": "address_match"
+        },
+        {
+          "equals": true,
+          "path": "decompile_nonempty"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Observed owned native calls resolve to the same image UUID and unslid Ghidra function, with nonempty decompilation.",
+      "id": "connected-native-probe",
+      "params": {},
+      "priority": 100,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "adapter": "plist_corpus",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 24,
+          "path": "cases"
+        },
+        {
+          "equals": true,
+          "path": "all_round_trips"
+        },
+        {
+          "equals": 0,
+          "path": "failed_cases"
+        },
+        {
+          "equals": 24,
+          "path": "byte_repeat_equal_cases"
+        },
+        {
+          "equals": 24,
+          "path": "byte_fresh_equal_cases"
+        },
+        {
+          "equals": 24,
+          "path": "byte_foundation_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Seeded boundary dictionaries preserve values through UVPropertyList, Foundation and Python decoding.",
+      "id": "plist-boundary-corpus",
+      "params": {
+        "cases": 24,
+        "seed": 7
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "swift_metadata",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 351,
+          "path": "type_count"
+        },
+        {
+          "equals": 998,
+          "path": "field_count"
+        },
+        {
+          "equals": 0,
+          "path": "parse_errors"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned messaging image exposes 351 static nominal descriptors and 998 fields without parse errors.",
+      "id": "swift-nominal-metadata",
+      "params": {},
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "png_valid"
+        },
+        {
+          "equals": true,
+          "path": "controlled_change_visible"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Actual Xcode renders both owned macOS previews and their one-literal change produces a measured pixel difference.",
+      "id": "native-canvas-variants",
+      "params": {
+        "trace": true,
+        "variants": [
+          0,
+          1
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
+    },
+    {
+      "adapter": "plist_corpus",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": true,
+          "path": "all_round_trips"
+        },
+        {
+          "equals": 32,
+          "path": "cases"
+        },
+        {
+          "equals": 32,
+          "path": "byte_repeat_equal_cases"
+        },
+        {
+          "equals": 32,
+          "path": "byte_fresh_equal_cases"
+        },
+        {
+          "equals": 32,
+          "path": "byte_foundation_equal_cases"
+        },
+        {
+          "equals": 32,
+          "path": "cross_process_bytes_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "A new 32-case seed preserves typed values and exact repeated, fresh-object, Foundation and cross-process Apple bytes.",
+      "id": "plist-seed-8",
+      "params": {
+        "cases": 32,
+        "seed": 8
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
+    }
+  ],
+  "version": 1
+}

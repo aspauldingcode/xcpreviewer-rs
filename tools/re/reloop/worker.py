@@ -79,6 +79,20 @@ def perform(kind,out,p):
     if kind=='ghidra_mcp':
         from reloop.ghidra import call
         return call(p.get('tool','vibe_health'),p.get('arguments',{}),out)
+    if kind=='connected_probe':
+        from reloop.connected import connected
+        return connected(out)
+    if kind=='plist_corpus':
+        from reloop.corpus import corpus
+        return corpus(out,p.get('seed',1),p.get('cases',24))
+    if kind=='swift_metadata':
+        from reloop.swiftmeta import inspect
+        data=inspect(image,p.get('maximum',1000));atomic(out/'swift-metadata.json',data)
+        atomic(out/'swift-index.json',{'image_sha256':data['image_sha256'],'types':[{'name':t.get('name'),'kind':t['kind'],'address':t['address'],'fields':[f.get('name') for f in t.get('fields',[])]} for t in data['types']]})
+        return {'type_count':len(data['types']),'field_count':sum(len(t.get('fields',[])) for t in data['types']),'parse_errors':len(data['errors']),'image_sha256':data['image_sha256']}
+    if kind=='xcode_preview':
+        from reloop.canvas import capture
+        return capture(out,p.get('variants',[0,1]),p.get('trace',False))
     if kind in {'lldb_smoke','frida_smoke','native_reference'}:
         from reloop.trace import smoke
         return smoke(kind,out)

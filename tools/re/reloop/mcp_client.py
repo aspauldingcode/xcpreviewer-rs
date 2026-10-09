@@ -42,7 +42,8 @@ class Client:
         while True:
             remaining=deadline-time.monotonic()
             if remaining<=0:raise TimeoutError('MCP request timed out: '+method)
-            item=self.messages.get(timeout=remaining)
+            try:item=self.messages.get(timeout=remaining)
+            except queue.Empty:raise TimeoutError('MCP request timed out: '+method) from None
             if isinstance(item,Exception):raise item
             if item.get('id')!=request_id:continue
             if 'error' in item:raise RuntimeError(str(item['error']))

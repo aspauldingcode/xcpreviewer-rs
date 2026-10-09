@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import signal
 import subprocess
 import time
@@ -12,11 +13,13 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
-ADAPTERS = {'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference'}
+ADAPTERS = {'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview'}
 PARAMS = {
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
-    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': set()}
+    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': set(),
+    'connected_probe': set(), 'plist_corpus': {'seed','cases'}, 'swift_metadata': {'binary','maximum'},
+    'xcode_preview': {'variants','trace'}}
 
 
 def now():
@@ -78,6 +81,10 @@ def validate_experiment(e):
     if 'addresses' in p and (not isinstance(p['addresses'], list) or not p['addresses'] or
             len(p['addresses']) > 32 or not all(isinstance(v,str) and re.fullmatch('[0-9a-fA-F]{1,16}',v) for v in p['addresses'])):
         raise ValueError('invalid addresses')
+    for field,maximum in [('seed',2**31-1),('cases',64),('maximum',5000)]:
+        if field in p and (type(p[field]) is not int or not 1<=p[field]<=maximum):raise ValueError('Invalid '+field)
+    if 'variants' in p and (not isinstance(p['variants'],list) or not 1<=len(p['variants'])<=4 or not all(type(v) is int and 0<=v<=16 for v in p['variants'])):raise ValueError('Invalid preview variants')
+    if 'trace' in p and type(p['trace']) is not bool:raise ValueError('Invalid trace flag')
     if 'arguments' in p and not isinstance(p['arguments'], dict):
         raise ValueError('arguments must be an object')
     if not isinstance(e['checks'], list) or not e['checks']:
@@ -182,6 +189,12 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
             'duration_seconds':round(time.monotonic()-started,3)}
 
 
+def source_files():
+    excluded={'__pycache__','.build','.swiftpm'}
+    suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme'}
+    return [p for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and not p.is_symlink() and p.suffix in suffixes and not excluded.intersection(p.parts)]
+
+
 def identity():
     import importlib.metadata
     details = {'python':os.sys.version, 'packages':{}}
@@ -203,14 +216,14 @@ def identity():
             details[name] = {'error':type(error).__name__}
     image = pathlib.Path('/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
     details['messaging_image_sha256'] = digest(image) if image.is_file() else None
-    details['tool_sources'] = {str(p.relative_to(ROOT)):digest(p) for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and p.suffix in {'.py','.m','.swift','.java','.sh','.js','.c'} and '__pycache__' not in p.parts}
+    details['tool_sources'] = {str(p.relative_to(ROOT)):digest(p) for p in source_files()}
     return details
 
 
 class Controller:
     def __init__(self, root=ROOT, state_root=None):
         self.root = pathlib.Path(root).resolve()
-        self.state = pathlib.Path(state_root) if state_root else self.root/'research/state'
+        self.state = pathlib.Path(state_root).resolve() if state_root else self.root/'research/state'
         self.runs = self.state.parent/'runs'
         self.state.mkdir(parents=True,exist_ok=True)
         self.runs.mkdir(parents=True,exist_ok=True)
@@ -252,13 +265,23 @@ class Controller:
         return [{'path':str(p.relative_to(run)), 'sha256':digest(p), 'bytes':p.stat().st_size}
                 for p in sorted(run.rglob('*')) if p.is_file() and not p.is_symlink() and p != run/'manifest.json']
 
-    def verify(self,run_id):
-        if pathlib.Path(run_id).name != run_id: raise ValueError('invalid run ID')
+    def verify(self,run_id,expected_manifest_sha256=None):
+        if not isinstance(run_id,str) or run_id in {'.','..'} or pathlib.Path(run_id).name != run_id: raise ValueError('invalid run ID')
         run = self.runs/run_id
         m = load(run/'manifest.json')
         if not m or not m.get('sealed'): raise ValueError('run missing or not sealed')
         actual = self.artifacts(run)
-        return {'run_id':run_id,'valid':actual==m['artifacts']}
+        artifact_hashes={a['path']:a['sha256'] for a in actual}
+        frozen_unchanged=all(artifact_hashes.get('source/'+path)==sha
+                             for path,sha in m.get('tool_source_hashes',{}).items())
+        manifest_hash=digest(run/'manifest.json')
+        if expected_manifest_sha256 is not None and not re.fullmatch('[0-9a-f]{64}',expected_manifest_sha256):
+            raise ValueError('Invalid external manifest SHA-256')
+        anchored=None if expected_manifest_sha256 is None else manifest_hash==expected_manifest_sha256
+        return {'run_id':run_id,'valid':actual==m['artifacts'] and frozen_unchanged and anchored is not False,
+                'manifest_sha256':manifest_hash,'external_anchor_matches':anchored,
+                'frozen_sources_unchanged':frozen_unchanged,
+                'scope':'Artifact consistency; authenticity requires a separately trusted manifest hash.'}
 
     def status(self):
         return load(self.state/'checkpoint.json',{'runs':{},'pending':[]})
@@ -285,12 +308,13 @@ class Controller:
         except (OSError,subprocess.TimeoutExpired): commit='unknown';diff=b''
         import shutil
         source = run/'source'
-        for path in (ROOT/'tools/re').rglob('*'):
-            if not path.is_file() or path.is_symlink() or '__pycache__' in path.parts: continue
+        for path in source_files():
             target=source/path.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,target)
         argv = [os.sys.executable,str(source/'tools/re/reloop/worker.py'),e['adapter'],'--out',str(run/'output'),'--params',json.dumps(e['params'])]
-        code_hashes = {str(p.relative_to(ROOT)):digest(p) for p in sorted((ROOT/'tools/re').rglob('*'))
-                       if p.is_file() and p.suffix in {'.py','.m','.swift','.java','.sh','.js','.c'} and '__pycache__' not in p.parts}
+        code_hashes = {str(p.relative_to(source)):digest(p) for p in source.rglob('*') if p.is_file()}
+        if 'tool_sources' in environment:
+            # The frozen executable inputs, rather than an earlier live scan, are authoritative.
+            environment={**environment,'tool_sources':code_hashes}
         manifest = {'run_id':run_id,'started_at':now(),'experiment_id':e['id'],'hypothesis':e['hypothesis'],
                     'experiment_hash':canonical_hash(e),'environment':environment,'environment_hash':canonical_hash(environment),
                     'controller_loaded_source_sha256':LOADED_CONTROLLER_HASH,'git_commit':commit,'dirty_diff_hash':hashlib.sha256(diff).hexdigest(),'tool_source_hashes':code_hashes,
@@ -315,11 +339,11 @@ class Controller:
         if not 1<=max_experiments<=100 or not 0<minutes<=1440 or not 1<=max_mb<=10240: raise ValueError('invalid session budget')
         with self.lock():
             self.recover()
-            environment=identity()
             checkpoint=self.status();checkpoint.setdefault('runs',{})
             start=time.monotonic();used=0;attempted=set();results=[]
             if only and only not in {e['id'] for e in queue['experiments']}: raise ValueError('unknown experiment ID')
             for _ in range(max_experiments):
+                environment=identity()
                 remaining=minutes*60-(time.monotonic()-start)
                 if remaining<=0 or used>=max_mb*1024*1024: break
                 ready=[e for e in self.ready(queue,checkpoint,environment) if e['id'] not in attempted and (not only or e['id']==only)]

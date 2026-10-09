@@ -9,3 +9,5 @@ The proposed roadmap is in [plan.md](plan.md). Its dependency versions, protocol
 Initial results are in [REVERSE_ENGINEERING.md](REVERSE_ENGINEERING.md), with reproducible [research tools](tools/re/README.md) and a [progress log](PROGRESS.md). The first pass identifies XPC property-list adapters, native JIT loading hooks, and multiple rendering payload types on Xcode 26.6.
 
 The [free agentic RE toolkit](docs/reverse-engineering/toolkit.md) adds a bounded experiment controller, stdio MCP server, GhidraVibe integration, Frida/LLDB tracing, native SwiftUI reference capture and immutable evidence. Its [loop design](docs/reverse-engineering/agentic-loop.md) separates working instrumentation from the remaining live preview protocol campaign.
+
+Exact-output acceptance, evidence anchors, edge-case automation and AI porting strategy: [verification contract](docs/reverse-engineering/verification.md).

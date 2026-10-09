@@ -1,0 +1,269 @@
+{
+  "automated_tests": {
+    "failed": 0,
+    "passed": 37
+  },
+  "independent_comparator": "System cmp matched the published signed-zero Apple golden; MCP exact comparison detected 49 differing bytes in the Unicode Python/Apple encodings.",
+  "limitations": [
+    "Finite corpus only; not proof of all inputs.",
+    "UVPropertyList and Foundation may share implementation.",
+    "Published manifest hashes require a separately trusted commit or reviewer copy to authenticate evidence.",
+    "Raw captures, full decompilation and Apple binaries remain local."
+  ],
+  "mcp_tools": 19,
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 6,
+          "expected": 6,
+          "passed": true,
+          "path": "linked_events",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "uuid_match",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "address_match",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "decompile_nonempty",
+          "present": true
+        }
+      ],
+      "duration_seconds": 49.449,
+      "environment_hash": "739f4dd56eeed2746d109bbeb3cb4ae1b6c72365b52b839401bacb929bef927f",
+      "execution": "success",
+      "experiment_hash": "cd6135bbae75f6578ff4109133a4f50a7545c9516a07e2166414a8a2669cce49",
+      "experiment_id": "connected-native-probe",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "28ea37347169e6c8b1a7f88176a1493dfc71cbee47960f7039436e81f8f9b294",
+      "observations": {
+        "address_match": true,
+        "decompile_nonempty": true,
+        "frida_version": "17.23.1",
+        "inputs_match": true,
+        "linked_events": 6,
+        "payloads_match": true,
+        "plist_events": 6,
+        "scope": "Connected owned runtime/static fixture, not canvas IPC recovery",
+        "script_errors": 0,
+        "target_sha256": "75951d6dbb69daca10870d8f0e4e2ac4e6feac664478bbac1125d903d2a65c07",
+        "tick_events": 6,
+        "uuid_match": true
+      },
+      "run_id": "20261009T022952Z-connected-native-probe-017bc941",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 24,
+          "expected": 24,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "all_round_trips",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "failed_cases",
+          "present": true
+        },
+        {
+          "actual": 24,
+          "expected": 24,
+          "passed": true,
+          "path": "byte_repeat_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 24,
+          "expected": 24,
+          "passed": true,
+          "path": "byte_fresh_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 24,
+          "expected": 24,
+          "passed": true,
+          "path": "byte_foundation_equal_cases",
+          "present": true
+        }
+      ],
+      "duration_seconds": 15.509,
+      "environment_hash": "739f4dd56eeed2746d109bbeb3cb4ae1b6c72365b52b839401bacb929bef927f",
+      "execution": "success",
+      "experiment_hash": "95225f44e7a0dd04f1b6f8bfe7884994197657c098cb9edf6d427e7fbbccb2ec",
+      "experiment_id": "plist-boundary-corpus",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "b73a2a57ace1ed98f8eb5959ec2bdaaa5178bc3d00e0799dd953b86d08425309",
+      "observations": {
+        "all_round_trips": true,
+        "byte_foundation_equal_cases": 24,
+        "byte_fresh_equal_cases": 24,
+        "byte_python_encoding_equal_cases": 6,
+        "byte_repeat_equal_cases": 24,
+        "cases": 24,
+        "cross_process_bytes_equal_cases": 24,
+        "failed_cases": 0,
+        "scope": "Owned dictionary corpus; no XPC attachments or malformed native object injection.",
+        "seed": 7
+      },
+      "run_id": "20261009T023043Z-plist-boundary-corpus-96b0ebc9",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 351,
+          "expected": 351,
+          "passed": true,
+          "path": "type_count",
+          "present": true
+        },
+        {
+          "actual": 998,
+          "expected": 998,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "parse_errors",
+          "present": true
+        }
+      ],
+      "duration_seconds": 0.579,
+      "environment_hash": "739f4dd56eeed2746d109bbeb3cb4ae1b6c72365b52b839401bacb929bef927f",
+      "execution": "success",
+      "experiment_hash": "277e77a11e159cb72cb06fa5245e9e6128f918fdb9c2af14eaf75ec33c51dc8a",
+      "experiment_id": "swift-nominal-metadata",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "86ed8324d94c4ffbb59d1b46c4ea072287372e70a970eedd7ace422c7fd508e2",
+      "observations": {
+        "field_count": 998,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "parse_errors": 0,
+        "type_count": 351
+      },
+      "run_id": "20261009T023101Z-swift-nominal-metadata-46db1490",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": false,
+      "checks": [],
+      "diagnostic": "Native fixture build succeeded; Xcode MCP tools/list timed out. No canvas image or complete IPC capture obtained.",
+      "duration_seconds": 427.373,
+      "environment_hash": "739f4dd56eeed2746d109bbeb3cb4ae1b6c72365b52b839401bacb929bef927f",
+      "error_type": "TimeoutError",
+      "execution": "failed",
+      "experiment_hash": "5a8b0b9df6391c34dd932df2ce09f58287109bf7f5575da247678d39418529f9",
+      "experiment_id": "native-canvas-variants",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "2e6039183a36333ebadc8590a5d21cd34d11033a71fc5a9087b115f434df1b38",
+      "observations": {},
+      "quarantine_reason": "Xcode changed mutable workspace artifacts after sealing. Excluded from evidence index. Final adapter places active workspaces outside sealed runs; isolation is unit-tested, native canvas remains unverified.",
+      "run_id": "20261009T023104Z-native-canvas-variants-2d13631d",
+      "verdict": "not_evaluated"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "all_round_trips",
+          "present": true
+        },
+        {
+          "actual": 32,
+          "expected": 32,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 32,
+          "expected": 32,
+          "passed": true,
+          "path": "byte_repeat_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 32,
+          "expected": 32,
+          "passed": true,
+          "path": "byte_fresh_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 32,
+          "expected": 32,
+          "passed": true,
+          "path": "byte_foundation_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 32,
+          "expected": 32,
+          "passed": true,
+          "path": "cross_process_bytes_equal_cases",
+          "present": true
+        }
+      ],
+      "duration_seconds": 5.95,
+      "environment_hash": "865961c5b1c44919881240696df74648f92200abb4b81b2aac6b318f017feaf1",
+      "execution": "success",
+      "experiment_hash": "fa4a505b25c636812613e21145a6c0d7c6ff91794bf6b473ac03c91da716d7fc",
+      "experiment_id": "plist-seed-8",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "b58167e4f6359292cb78a36253aac0051dafa4681751d5f91411a70013185b18",
+      "observations": {
+        "all_round_trips": true,
+        "byte_foundation_equal_cases": 32,
+        "byte_fresh_equal_cases": 32,
+        "byte_python_encoding_equal_cases": 6,
+        "byte_repeat_equal_cases": 32,
+        "cases": 32,
+        "cross_process_bytes_equal_cases": 32,
+        "failed_cases": 0,
+        "scope": "Owned dictionary corpus; no XPC attachments or malformed native object injection.",
+        "seed": 8
+      },
+      "run_id": "20261009T023956Z-plist-seed-8-9d3d83a0",
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Connected RE toolkit validation and exact synthetic plist repeatability. No complete canvas IPC oracle or portable preview implementation is certified.",
+  "supported_experiments": 4,
+  "tool_failures": 1
+}

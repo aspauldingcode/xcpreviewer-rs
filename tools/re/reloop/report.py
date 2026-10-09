@@ -6,9 +6,10 @@ def report(controller):
     records=[]
     for experiment,run_id in sorted(controller.status().get('runs',{}).items()):
         manifest=load(controller.runs/run_id/'manifest.json')
-        valid=controller.verify(run_id)['valid']
+        verification=controller.verify(run_id);valid=verification['valid']
         record={key:manifest.get(key) for key in ['run_id','experiment_id','hypothesis','execution','verdict','duration_seconds','started_at','finished_at','experiment_hash','environment_hash','controller_loaded_source_sha256']}
         record['artifact_hashes_valid']=valid
+        record['manifest_sha256']=verification['manifest_sha256']
         record['checks']=manifest.get('checks',[])
         # Checks may contain user text in future experiments. This is a review
         # candidate; publication remains an explicit file-list/diff operation.
