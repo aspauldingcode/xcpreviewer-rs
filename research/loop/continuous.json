@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "ea1b89bfb67eef6270d989e6ede92042ab608c94",
+  "baseline_commit": "26e5e14f5b54de0dfd5fb884e3774342d37e5052",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -104,19 +104,18 @@
       "retry_prerequisite": "Explicit numberWithBool instead of integer boxing; corrected exact-byte completion and retained-access seals pass."
     }
   ],
-  "last_completed": "Owned receiver reuses the same imported surface/Metal texture/destination buffer/queue/event through original/opposite/restored frames. Each event-gated command times out then explicitly resumes/completes once; independent full allocation predictions and existing clean/abrupt exit/local-right cleanup pass. Three reuse campaigns each compare3145728 bytes; original single-frame timeout regression passes. Four seals verified;145 tests pass including stale frame, malformed identity map, generation/event/padding faults. All pending statuses committed2; no native Canvas or concurrent-reuse claim.",
+  "last_completed": "Recovered actual specialized observer dictionary setter/remover and native hash/ordered-array storage boundaries. Finite seven-entry checker decodes12 call targets and compares full mapped16-byte(0,1) sentinel; found/COW/sentinel/ordered-key traps, occupancy mask/count/counter and array shift/count mutations verified. Five seals anchor-verified;150 tests pass including call/branch/storage/bitmap/count/length and every constant-byte corruption. Static only; value-witness/runtime contents and concrete caller/transport/resource cleanup remain open.",
   "last_github_sync": {
-    "checkpoint": "Owned GPU event frame reuse",
+    "checkpoint": "Native static observer dictionary removal",
     "date": "2026-10-09",
     "issues": [
-      "R2",
-      "R3"
+      "R2"
     ],
     "state": "open"
   },
   "next_actions": [
     {
-      "action": "Owned GPU resource reuse through original/opposite/restored frames now passes independent full allocations with event deadline/recovery. Recover native dictionary removal/setter effects and actual selected-flow callback association; native executor/races, abandoned replies and concurrent resource reuse remain unverified.",
+      "action": "Selected dictionary removal storage sites and twelve calls now statically verified. Recover safe value-witness/sentinel effects and actual selected-flow callback association; typed runtime construction remains blocked. Native dictionary contents/executor/races, abandoned replies and transport resource cleanup remain unverified.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -573,6 +572,31 @@
       "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
       "run_id": "20261009T213122Z-owned-gpu-event-frame-reuse-64102fc7",
       "manifest_sha256": "75d071f9e7049817a7f57defccf09d85ea1f76501f6e97e4df0189ce4f758f6e"
+    },
+    {
+      "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
+      "run_id": "20261009T213809Z-native-invalidation-dictionary-bodies-228b9b81",
+      "manifest_sha256": "b2ede94b163a2a1e747735e414509c30278c51466eee4e9d3df9579b0c92f307"
+    },
+    {
+      "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
+      "run_id": "20261009T213901Z-native-invalidation-dictionary-dependencies-95651f48",
+      "manifest_sha256": "16abedef828079046a0614085854ad3e3e6ac4dc64ff5cffbc1afa0c24ff8426"
+    },
+    {
+      "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
+      "run_id": "20261009T214105Z-native-observer-removal-control-0e3d7c32",
+      "manifest_sha256": "4a6e6d106d9a691795acfbe6311266ee647263a11f34b315b28cc9460024ef12"
+    },
+    {
+      "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
+      "run_id": "20261009T214204Z-native-observer-removal-control-b15d5b1c",
+      "manifest_sha256": "46c6c0e7b805fd29da7c8268224d2b59a327b0b0ec916d0fd04918a6837b9bbc"
+    },
+    {
+      "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
+      "run_id": "20261009T214238Z-native-observer-removal-control-0c7b0a17",
+      "manifest_sha256": "7437538875e83b52796023b3620860ff4fc16c2198c1d2a906ba11b3141b583e"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

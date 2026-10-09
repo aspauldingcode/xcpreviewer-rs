@@ -2596,6 +2596,113 @@
           "equals": 8
         }
       ]
+    },
+    {
+      "id": "native-invalidation-dictionary-bodies",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Decode actual invalidation closure calls and inspect the selected specialized dictionary setter/remover. Discriminate nil-removal path from insertion and find actual storage writes/key removal. Four instruction bodies and pinned image required; no native invocation or final resource reclamation claim.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000004(2604|28d0) [tT] |^00000000000e(df78|e75c) [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 4
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 4
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-invalidation-dictionary-dependencies",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Follow decoded native call targets into isolated removal, native hash-bucket deletion and identifier-array remove-at. Require actual bodies before asserting effects; runtime state contents, selected callback and final resource release remain separate.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^00000000000(ee834|f82dc) [tT] |^0000000000018158 [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 3
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 3
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-observer-removal-control",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Finite pinned instruction and encoded-target checker must verify observer-key setter sentinel, removal lookup/COW branch, ordered-key removal, native bucket occupancy/count mutation and array shift/count decrement. Mapped sentinel compares all16 bytes; static cleanup is not runtime transport or reclamation.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000004(2604|28d0) [tT] |^00000000000e(df78|e75c|e834) [tT] |^00000000000f82dc [tT] |^0000000000018158 [tT] ",
+        "dictionary_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 7
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 7
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "observer_removal_verified",
+          "equals": true
+        },
+        {
+          "path": "sentinel_bytes",
+          "equals": 16
+        },
+        {
+          "path": "hash_count_decrement",
+          "equals": true
+        },
+        {
+          "path": "array_count_decrement",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

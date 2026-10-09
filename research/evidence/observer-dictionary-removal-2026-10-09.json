@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-09",
+  "baseline": {
+    "xcode": "26.6 (17F113)",
+    "macos": "26.5.1 (25F80)",
+    "architecture": "arm64",
+    "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+  },
+  "runs": [
+    {
+      "run_id": "20261009T213809Z-native-invalidation-dictionary-bodies-228b9b81",
+      "valid": true,
+      "manifest_sha256": "b2ede94b163a2a1e747735e414509c30278c51466eee4e9d3df9579b0c92f307",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 4,
+        "function_count": 4,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T213901Z-native-invalidation-dictionary-dependencies-95651f48",
+      "valid": true,
+      "manifest_sha256": "16abedef828079046a0614085854ad3e3e6ac4dc64ff5cffbc1afa0c24ff8426",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 3,
+        "function_count": 3,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T214105Z-native-observer-removal-control-0e3d7c32",
+      "valid": true,
+      "manifest_sha256": "4a6e6d106d9a691795acfbe6311266ee647263a11f34b315b28cc9460024ef12",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "array_count_decrement": true,
+        "encoded_call_targets_verified": 10,
+        "entry_body_count": 7,
+        "function_count": 7,
+        "hash_count_decrement": true,
+        "hash_mutation_counter_increment": true,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "observer_removal_verified": true,
+        "ordered_key_missing_traps": true,
+        "scope": "Pinned static instruction projection and full mapped constant only; named Swift ABI tags, value-witness effects, native dictionary contents, callback association, transport cleanup and final reclamation remain unverified.",
+        "sentinel_address": "0x133190",
+        "sentinel_bytes": 16,
+        "sentinel_words": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "run_id": "20261009T214204Z-native-observer-removal-control-b15d5b1c",
+      "valid": true,
+      "manifest_sha256": "46c6c0e7b805fd29da7c8268224d2b59a327b0b0ec916d0fd04918a6837b9bbc",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "array_count_decrement": true,
+        "encoded_call_targets_verified": 10,
+        "entry_body_count": 7,
+        "function_count": 7,
+        "hash_count_decrement": true,
+        "hash_mutation_counter_increment": true,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "observer_removal_verified": true,
+        "ordered_key_missing_traps": true,
+        "scope": "Pinned static instruction projection and full mapped constant only; named Swift ABI tags, value-witness effects, native dictionary contents, callback association, transport cleanup and final reclamation remain unverified.",
+        "sentinel_address": "0x133190",
+        "sentinel_bytes": 16,
+        "sentinel_words": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "run_id": "20261009T214238Z-native-observer-removal-control-0c7b0a17",
+      "valid": true,
+      "manifest_sha256": "7437538875e83b52796023b3620860ff4fc16c2198c1d2a906ba11b3141b583e",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "array_count_decrement": true,
+        "encoded_call_targets_verified": 12,
+        "entry_body_count": 7,
+        "function_count": 7,
+        "hash_count_decrement": true,
+        "hash_mutation_counter_increment": true,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "observer_removal_verified": true,
+        "ordered_key_missing_traps": true,
+        "scope": "Pinned static instruction projection and full mapped constant only; named Swift ABI tags, value-witness effects, native dictionary contents, callback association, transport cleanup and final reclamation remain unverified.",
+        "sentinel_address": "0x133190",
+        "sentinel_bytes": 16,
+        "sentinel_words": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "tests": 150,
+  "facts": {
+    "wrapper_setter_call": [
+      "0x42634",
+      "0xedf78"
+    ],
+    "wrapper_remover_call": [
+      "0x428e8",
+      "0xee75c"
+    ],
+    "setter_sentinel_words": [
+      0,
+      1
+    ],
+    "sentinel_address": "0x133190",
+    "compared_sentinel_bytes": 16,
+    "selected_entries": 7,
+    "final_encoded_call_targets": 12,
+    "hash_count_offset": 16,
+    "hash_mutation_word_offset": 36,
+    "ordered_array_count_offset": 16,
+    "ordered_key_missing": "static trap branches in both remover variants"
+  },
+  "limitations": [
+    "Static selected instruction projection, not native invocation, all-path proof or complete Swift ABI interpreter.",
+    "Value-witness effects and copied sentinel runtime meaning remain separate; no named Optional tag assigned.",
+    "Copy-on-write call targets are decoded, but copy helper effects and actual dictionary contents are not executed.",
+    "Same-address dictionary aliases retained; symbol names do not establish unique concrete type behavior.",
+    "Concrete selected caller/callback, native races, abandoned replies, transport cancellation, resource release and physical reclamation remain open.",
+    "No Xcode window opened, process attached, private ABI binding constructed or system protection changed."
+  ]
+}

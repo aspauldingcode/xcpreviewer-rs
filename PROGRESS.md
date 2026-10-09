@@ -310,3 +310,9 @@ Evidence: [event timeout control](docs/reverse-engineering/2026-10-09-gpu-event-
 Receiving process now reuses the same imported surface, texture, destination buffer, queue and increasing event values through original/opposite/restored frames. Every command observes bounded pending timeout then explicit signal/late completion before snapshots; full source/destination active pixels, row padding and allocation tails match independent expectations. Existing clean/abrupt exit and local-right cleanup still pass after restoring original content. Three reuse campaigns each compare 3,145,728 bytes; prior event-timeout regression passes. Four seals anchor-verified; 145 tests pass, including stale-frame/resource/sequence/padding rejection. Resource identity is not frame content in this owned GPU fixture. R1/R2/R3 remain open for actual Canvas policy, concurrent reuse and final reclamation. No Xcode windows opened.
 
 Evidence: [GPU reuse control](docs/reverse-engineering/2026-10-09-gpu-frame-reuse.md), [sanitized seals](research/evidence/gpu-frame-reuse-2026-10-09.json).
+
+## 2026-10-09 — native observer dictionary removal
+
+Followed instruction-derived invalidation targets into isolated setter/remover, concurrent remover, native bucket deletion and identifier-array removal. Mapped16-byte sentinel `(0,1)` selects static removal branch; found/uniqueness/ordered-key gates, missing-key traps, bucket occupancy/count/counter writes, array shift/count decrement and12 encoded call targets now have finite corruption-tested checks. Five discovery/dependency/control seals anchor-verified;150 tests pass. Value-witness/runtime contents, native callback association, races and transport/resource cleanup remain unverified; R2 stays open. No Xcode windows opened.
+
+Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-observer-dictionary-removal.md), [sanitized seals](research/evidence/observer-dictionary-removal-2026-10-09.json).

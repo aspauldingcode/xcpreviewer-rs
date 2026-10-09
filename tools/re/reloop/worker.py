@@ -90,6 +90,11 @@ def perform(kind,out,p):
             from reloop.continuation import inspect_invalidation
             facts.update(inspect_invalidation([f.read_text() for f in files]))
             atomic(out/'invalidation-boundaries.json',facts)
+        if p.get('dictionary_control',False):
+            from reloop.observerremoval import inspect
+            from reloop.swiftmeta import MachO
+            facts.update(inspect([f.read_text() for f in files],MachO(image)))
+            atomic(out/'observer-removal.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}
