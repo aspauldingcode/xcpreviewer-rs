@@ -35,7 +35,7 @@ def plan(controller):
                 proposals.append(experiment('canvas-repeat-control','xcode_preview',
                     'Two independent renders of unchanged owned baseline produce identical pixels under this pinned environment.',
                     {'variants':[0,0],'trace':False},[{'path':'rendered_variants','equals':2},
-                     {'path':'controlled_change_visible','equals':False}],timeout=600))
+                     {'path':'pixels_identical','equals':True}],timeout=600))
         if spec.get('adapter')=='plist_corpus' and manifest.get('verdict')=='supports':
             seed=spec.get('params',{}).get('seed',1)+1
             proposals.append(experiment('plist-seed-%d'%seed,'plist_corpus',

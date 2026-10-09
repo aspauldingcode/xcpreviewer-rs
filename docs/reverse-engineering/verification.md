@@ -10,7 +10,7 @@ The acceptance target is a replayable, independently checked compatibility repor
 | Serialization | Apple UVPropertyList versus repeated call, fresh object, Foundation, and Python encoder | Record each byte comparison separately. A semantic round trip cannot satisfy byte compatibility. Foundation and UV may share implementation; they are not assumed independent. |
 | Decoded values | Original typed fixture versus independent Python decoding of Apple output | Types, float64 bits (including signed zero), bytes, dates, arrays and dictionary contents agree. Dictionary order is a semantic distinction only when the contract requires it. |
 | Rendered files | Apple PNG versus another capture or candidate PNG | Exact file comparison is distinct from decoded pixel comparison; PNG compression and metadata can differ. |
-| Rendered pixels | Same geometry and ICC profile, RGBA conversion only | Every channel agrees at threshold zero. A tolerance is a separately named acceptance tier and never reported as bit exact. |
+| Rendered pixels | Same geometry and ICC profile, RGBA conversion only | Every channel agrees at threshold zero; incomparable geometry/profile cannot satisfy an A/A control. A tolerance is a separately named acceptance tier and never reported as bit exact. |
 | State and IPC | Original native session versus implementation replay | Preserve raw envelopes, attachments and lifecycle. Compare decoded fields and causal ordering using an explicitly specified model. No complete implementation or captured IPC oracle exists yet. |
 | Tool output | Frida events versus Ghidra image/function | Binary hash, Mach-O UUID and unslid function offset agree. This validates linkage; decompiler output is not a behavioral oracle. |
 

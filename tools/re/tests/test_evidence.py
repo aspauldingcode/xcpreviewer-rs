@@ -12,7 +12,7 @@ from reloop.evidence import Store, artifact, claim, page
 from reloop.responses import bounded, page as response_page
 from reloop.verification import bytes_equal, typed, sealed_compare
 from reloop.swiftmeta import MachO
-from reloop.canvas import select_tab, workspace
+from reloop.canvas import select_tab, workspace, compare_captures
 from reloop.planner import plan
 
 
@@ -137,6 +137,31 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse((clone/'xcuserdata').exists())
         (clone/'fixture.swift').write_text('Xcode writes')
         self.assertEqual((source/'fixture.swift').read_text(),'original')
+
+    def test_uncomparable_images_cannot_pass_repeatability_control(self):
+        from PIL import Image
+        from reloop.core import evaluate
+        a,b=self.root/'a.png',self.root/'b.png'
+        Image.new('RGBA',(2,2),'white').save(a);Image.new('RGBA',(3,2),'white').save(b)
+        result=compare_captures([a,b],self.root)
+        self.assertFalse(result['pixels_identical'])
+        self.assertNotEqual(evaluate([{'path':'pixels_identical','equals':True}],{'observations':result})[0],'supports')
+
+    def test_pixel_equality_does_not_claim_png_byte_equality(self):
+        from PIL import Image,PngImagePlugin
+        a,b=self.root/'a.png',self.root/'b.png';image=Image.new('RGBA',(2,2),'white')
+        image.save(a);metadata=PngImagePlugin.PngInfo();metadata.add_text('test','different encoding metadata')
+        image.save(b,pnginfo=metadata)
+        result=compare_captures([a,b],self.root)
+        self.assertTrue(result['pixels_identical']);self.assertFalse(result['preview_bytes_identical'])
+
+    def test_repeatability_proposal_requires_positive_pixel_equality(self):
+        run=self.seal(observed={'wire_capture_complete':False})
+        atomic(run/'experiment.json',{'adapter':'xcode_preview','params':{'variants':[0,1]}})
+        m=load(run/'manifest.json');m['artifacts']=self.c.artifacts(run);atomic(run/'manifest.json',m)
+        atomic(self.c.state/'checkpoint.json',{'runs':{'canvas':run.name}})
+        proposal=plan(self.c)['proposals'][0]
+        self.assertIn({'path':'pixels_identical','equals':True},proposal['checks'])
 
     def test_macho_rejects_truncated_load_commands(self):
         path = self.root/'bad-macho'

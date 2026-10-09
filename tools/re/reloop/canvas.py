@@ -24,6 +24,17 @@ def workspace(source=FIXTURE, parent=None):
     return target
 
 
+def compare_captures(images,out):
+    if len(images)<2:return {'controlled_change_visible':False,'pixels_identical':False,'preview_bytes_identical':False}
+    from reloop.verification import bytes_equal
+    from compare_images import compare
+    byte_result=bytes_equal(images[0],images[1]);atomic(out/'preview-byte-comparison.json',byte_result)
+    difference=compare(images[0],images[1],out/'preview-diff.png');atomic(out/'preview-difference.json',difference)
+    return {'controlled_change_visible':bool(difference.get('comparable') and difference['changed_pixels']>0),
+            'pixels_identical':bool(difference.get('comparable') and difference['passed']),
+            'preview_bytes_identical':byte_result['passed']}
+
+
 def select_tab(message, project=PROJECT):
     candidates=[]
     for line in message.splitlines():
@@ -172,15 +183,10 @@ def capture(out,variants=(0,1),trace=False):
         finally:
             if client:client.close()
             if monitor.thread.ident is not None:monitor.close()
-    difference=None
-    if len(images)>1:
-        from reloop.verification import bytes_equal
-        atomic(out/'preview-byte-comparison.json',bytes_equal(images[0],images[1]))
-        from compare_images import compare
-        difference=compare(images[0],images[1],out/'preview-diff.png');atomic(out/'preview-difference.json',difference)
+    comparison=compare_captures(images,out)
     if digest(fixture/'Sources/PreviewLab/PreviewLab.swift')!=source_hash:raise RuntimeError('Fixture source changed during reference capture')
     return {'rendered_variants':len(images),'png_valid':True,
-            'controlled_change_visible':bool(difference and difference.get('comparable') and difference['changed_pixels']>0),
+            **comparison,
             'observed_processes':sum(e.get('kind')=='process-observed' for e in monitor.events),
             'instrumented_processes':len(monitor.sessions),'wire_capture_complete':False,
             'source_sha256':source_hash}
