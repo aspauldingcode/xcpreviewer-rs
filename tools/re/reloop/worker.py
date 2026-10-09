@@ -56,7 +56,12 @@ def perform(kind,out,p):
     if kind=='disassembly':
         command([sys.executable,ROOT/'tools/re/disassemble.py','--binary',image,'--out',out/'disassembly',
                  '--query',p.get('query','MessageTypeKey.getter|OneWayMessageKey.getter')],out,'disassemble')
-        return {'function_count':len(list((out/'disassembly').glob('*.txt'))),'image_sha256':digest(image)}
+        files=list((out/'disassembly').glob('*.txt'));facts={}
+        if p.get('guard_control',False):
+            if len(files)!=1:raise ValueError('Guard control requires one selected closure')
+            from reloop.continuation import inspect as inspect_guard
+            facts=inspect_guard(files[0].read_text());atomic(out/'continuation-guard.json',facts)
+        return {'function_count':len(files),'image_sha256':digest(image),**facts}
     if kind=='ghidra':
         home,java,config=ghidra_config()
         if not home or not java: raise RuntimeError('Ghidra/JDK unavailable; see doctor and local-config.example.json')

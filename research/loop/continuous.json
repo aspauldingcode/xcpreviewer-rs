@@ -7,12 +7,17 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "869cdf333d4636ddba631c145e2d41a8ec5294d7",
+  "baseline_commit": "e4941fbffda206430608f0c67fb4079a57017492",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
       "retry_requires": "Use pinned light view context; do not repeat resolved blank-contrast attempts. Change observation/instrumentation for live transport and expand independent pixel coverage.",
       "track": "native-canvas"
+    },
+    {
+      "track": "private-swift-continuation-runtime",
+      "reason": "No Modules directory in PreviewsFoundationHost framework; no safe typed native Continuation construction boundary currently established. Do not fabricate private Swift ABI declarations.",
+      "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution."
     }
   ],
   "cadence_minutes": 10,
@@ -64,18 +69,18 @@
       "retry_prerequisite": "BOOL boxing corrected; Foundation legacy strings predicted separately; None is not a plist value. Corrected sealed run supports."
     }
   ],
-  "last_completed": "Owned UVPropertyList data controls: all eight data inputs preserved exactly across two helpers; valid dictionaries decode, six invalid/nondictionary inputs expose empty dictionaries. Foundation legacy ASCII parsing separated from Python binary-only expectation. Initial harness failure retained; corrected run supports. 113 tests pass.",
+  "last_completed": "Static completion guard: public resume forwards; initializer closure locks state, fulfills, unlocks, skips callback for outcome 1. Exact unit-state body maps first fulfillment to flag1/outcome0 and already fulfilled to outcome1 on normal return. Guard adapter negative controls and 115 tests pass; five native runs verify. No runtime exactly-once claim.",
   "last_github_sync": {
-    "checkpoint": "Owned UVPropertyList data decoding and empty fallback",
+    "checkpoint": "Static continuation completion guard and unit-state outcome",
     "date": "2026-10-09",
     "issues": [
-      "P2"
+      "R2"
     ],
     "state": "open"
   },
   "next_actions": [
     {
-      "action": "Wrapper empty-data fallback is measured, not live serialization failure. Inspect Continuation resume guards for repeated completion/cancellation and obtain an owned observable; retain optional identifier value and live envelope gates.",
+      "action": "Completion guard static intent recovered. Obtain a safe typed native runtime boundary for duplicate/concurrent/reentrant completion and failure-policy behavior; no framework Swift Modules directory currently available. Follow cancellation and actual capture envelopes independently.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -277,6 +282,31 @@
       "run_id": "20261009T191734Z-native-plist-data-decode-controls-a5b9fcfc",
       "manifest_sha256": "3e41f9d10707a45ad37f06d47a25d1704f79b25769b59ae6e5d8d5f74555dba1",
       "path": "research/evidence/plist-data-decode-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T192431Z-native-continuation-resume-boundary-274b5127",
+      "manifest_sha256": "e44e094241fb891c7dfe34845f664c24d21c51c51cbe119a2e34afc59c022a79",
+      "path": "research/evidence/continuation-guard-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T192502Z-native-continuation-resume-initializers-d8bc6f8d",
+      "manifest_sha256": "4f7e52c76493a1463d01833b1ed22e154e425ba2c86ec38a4c366ac13257e3e5",
+      "path": "research/evidence/continuation-guard-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T192604Z-native-continuation-guard-closure-507546f4",
+      "manifest_sha256": "c5c03339e65e9bc8c784b8148f611f745310ed643e19964c3b4e6c5f45cae24b",
+      "path": "research/evidence/continuation-guard-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T192739Z-native-continuation-guard-pattern-aaa9dae7",
+      "manifest_sha256": "fbf5eb9e2885919fa47a4ba149975c9097708a8a87eb7faeb4f9a42b502d3e94",
+      "path": "research/evidence/continuation-guard-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T192839Z-native-continuation-fulfillment-state-9b691d4f",
+      "manifest_sha256": "46a4b7cb09579a23eeb77f496a81ef980d0fd925bacf0cf6a1c8be7cbbae1ff6",
+      "path": "research/evidence/continuation-guard-2026-10-09.json"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

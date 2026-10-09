@@ -232,3 +232,9 @@ Two sealed runs verify against unchanged image identity and prior identifier anc
 Implemented finite native UVPropertyList data decoding controls. All eight inputs retain exact data bytes across independent helpers; two valid dictionaries decode exactly, while six invalid/non-dictionary inputs expose empty dictionaries. Foundation legacy ASCII string parsing is measured separately from Python binary-plist decoding. Empty dictionary alone cannot establish valid serialization.
 
 Initial BOOL-boxing/parser-domain harness failure retained; tests catch absent-None canonicalization. Corrected native run supports; all 113 tests pass. Both seals and prior reply anchors verify. No Xcode windows opened. See [measured boundary](docs/reverse-engineering/2026-10-09-plist-data-decode.md) and [anchors](research/evidence/plist-data-decode-2026-10-09.json). Full live reply/optional-field acceptance remains open.
+
+## 2026-10-09 — static continuation completion guard
+
+Followed public resume forwarding into initializer-owned lock/fulfill/unlock guard. Exact unit-state specialization sets first-fulfillment flag and outcome 0; already-fulfilled handler returns outcome 1 on its normal path. The closure skips user callback for tag 1 and invokes it outside the lock. This is static completion intent, not native race/reentrant/cancellation proof.
+
+Implemented fail-closed guard-pattern validation with negative evidence controls; all 115 tests pass. Five native runs and prior reply anchors verify. No Xcode windows opened. See [guard and runtime limits](docs/reverse-engineering/2026-10-09-continuation-guard.md) and [anchors](research/evidence/continuation-guard-2026-10-09.json). R2 and milestones remain open; a safe typed native runtime constructor is not yet established.

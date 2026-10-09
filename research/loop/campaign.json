@@ -1497,6 +1497,149 @@
           "equals": 6
         }
       ]
+    },
+    {
+      "id": "native-continuation-resume-boundary",
+      "adapter": "disassembly",
+      "hypothesis": "Exact public Continuation.resume(with:callsite:) reveals the stateful resume boundary without substituting continuation construction for exactly-once runtime evidence.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^[0-9a-f]+ T PreviewsFoundationHost.Continuation.resume\\(with:"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-continuation-resume-initializers",
+      "adapter": "disassembly",
+      "hypothesis": "Exact resume-bearing Continuation initializers locate the stored callback guard; the public resume method merely forwards through its stored callback pair.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^[0-9a-f]+ T PreviewsFoundationHost.Continuation.init\\(callsite:.*resume:"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-continuation-guard-closure",
+      "adapter": "disassembly",
+      "hypothesis": "Exact initializer-owned callback closure reveals the completion guard before calling user resume; no concurrent runtime proof follows from static selection alone.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^[0-9a-f]+ t closure #1 @Sendable .* in PreviewsFoundationHost.Continuation.init\\(callsite:.*resume: @Sendable \\(PreviewsFoundationHost.Callsite,"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-continuation-guard-pattern",
+      "adapter": "disassembly",
+      "hypothesis": "Pinned closure has lock/fulfill/unlock order, calls user resume outside the lock and branches around it for outcome tag 1; static guard evidence does not prove runtime once-only behavior.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^[0-9a-f]+ t closure #1 @Sendable .* in PreviewsFoundationHost.Continuation.init\\(callsite:.*resume: @Sendable \\(PreviewsFoundationHost.Callsite,",
+        "guard_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "guard_verified",
+          "equals": true
+        },
+        {
+          "path": "callback_after_unlock",
+          "equals": true
+        },
+        {
+          "path": "skipped_outcome_tag",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "id": "native-continuation-fulfillment-state",
+      "adapter": "disassembly",
+      "hypothesis": "The exact unit-state fulfillment specialization called under the closure lock identifies outcome tag 1 versus the first-fulfillment path; static mapping is not concurrent native execution.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^0000000000030a1c t generic specialization .* of closure #1 .*FulfillOnceState.fulfill\\(callsite:"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

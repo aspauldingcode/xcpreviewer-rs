@@ -17,7 +17,7 @@ ADAPTERS = {'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disass
 PARAMS = {
     'surface_payload': {'payload'},
     'portable_solid': set(),
-    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query'},
+    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum'},
@@ -79,6 +79,7 @@ def validate_experiment(e):
         raise ValueError('unsupported adapter parameters')
     p = e['params']
     if 'payload' in p and p['payload'] not in ('IOSurfacePayload','RenderPayload','BitmapDescription','ServiceMessage','ServiceMessagePayload'):raise ValueError('Unsupported payload control')
+    if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')
     if 'control' in p and p['control'] not in ('faults','use_state'):raise ValueError('invalid surface control')

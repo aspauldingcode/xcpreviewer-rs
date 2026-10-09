@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "foundation_image_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "runs": [
+    {
+      "run_id": "20261009T192431Z-native-continuation-resume-boundary-274b5127",
+      "manifest_sha256": "e44e094241fb891c7dfe34845f664c24d21c51c51cbe119a2e34afc59c022a79",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T192502Z-native-continuation-resume-initializers-d8bc6f8d",
+      "manifest_sha256": "4f7e52c76493a1463d01833b1ed22e154e425ba2c86ec38a4c366ac13257e3e5",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 2,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T192604Z-native-continuation-guard-closure-507546f4",
+      "manifest_sha256": "c5c03339e65e9bc8c784b8148f611f745310ed643e19964c3b4e6c5f45cae24b",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T192739Z-native-continuation-guard-pattern-aaa9dae7",
+      "manifest_sha256": "fbf5eb9e2885919fa47a4ba149975c9097708a8a87eb7faeb4f9a42b502d3e94",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "callback_after_unlock": true,
+        "function_count": 1,
+        "guard_verified": true,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "scope": "Pinned static guard pattern only; outcome meaning, runtime races, repeated completion and cancellation require separate evidence.",
+        "sites": {
+          "callback": "0x71a90",
+          "fulfill": "0x71a58",
+          "lock": "0x71a28",
+          "unlock": "0x71a60"
+        },
+        "skipped_outcome_tag": 1
+      }
+    },
+    {
+      "run_id": "20261009T192839Z-native-continuation-fulfillment-state-9b691d4f",
+      "manifest_sha256": "46a4b7cb09579a23eeb77f496a81ef980d0fd925bacf0cf6a1c8be7cbbae1ff6",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    }
+  ],
+  "static_state_sites": [
+    {
+      "address": "0x30a4c",
+      "fact": "Load fulfilled-state byte at state offset 0x39."
+    },
+    {
+      "address": "0x30a54",
+      "fact": "If byte is not 1, branch to first fulfillment."
+    },
+    {
+      "address": "0x30b70",
+      "fact": "First fulfillment stores flag 1."
+    },
+    {
+      "address": "0x30b74",
+      "fact": "First fulfillment stores outcome tag 0."
+    },
+    {
+      "address": "0x30b28",
+      "fact": "Already-fulfilled path calls overfulfill handler."
+    },
+    {
+      "address": "0x30b44",
+      "fact": "Already-fulfilled path stores outcome tag 1 on normal return."
+    }
+  ],
+  "limitations": [
+    "Guard pattern is validated structurally; state-function meaning is separately scoped analyst instruction analysis.",
+    "No private Swift ABI invocation, native duplicate/race/reentrant/cancel execution or exactly-once runtime proof.",
+    "Overfulfill handler may log/assert/throw according to failure policy; those behaviors are not measured here.",
+    "No evidence that every Canvas completion path uses this continuation.",
+    "No Xcode windows opened; raw disassembly stays local."
+  ]
+}
