@@ -122,7 +122,7 @@ def perform(kind,out,p):
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
     if kind=='portable_solid':
         from reloop.portable import corpus
-        return corpus(out)
+        return corpus(out,p.get('second_runtime',False))
     if kind=='surface_payload':
         from reloop.surfacepayload import recover
         return recover(out,p.get('payload','IOSurfacePayload'))

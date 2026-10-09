@@ -238,3 +238,9 @@ Initial BOOL-boxing/parser-domain harness failure retained; tests catch absent-N
 Followed public resume forwarding into initializer-owned lock/fulfill/unlock guard. Exact unit-state specialization sets first-fulfillment flag and outcome 0; already-fulfilled handler returns outcome 1 on its normal path. The closure skips user callback for tag 1 and invokes it outside the lock. This is static completion intent, not native race/reentrant/cancellation proof.
 
 Implemented fail-closed guard-pattern validation with negative evidence controls; all 115 tests pass. Five native runs and prior reply anchors verify. No Xcode windows opened. See [guard and runtime limits](docs/reverse-engineering/2026-10-09-continuation-guard.md) and [anchors](research/evidence/continuation-guard-2026-10-09.json). R2 and milestones remain open; a safe typed native runtime constructor is not yet established.
+
+## 2026-10-09 — independent WASM interpreter and rejection controls
+
+Extended the owned rectangle adapter to installed WasmKit 0.1.6. A separately compiled zero-import checker uses sealed native RGBA arrays and independent padding; V8 and WasmKit execute exactly the same module. Four cases compare 614,432 bytes, eight injected pixel/final-byte faults each report one mismatch, and ten invalid requests preserve the entire buffer (2,048,000 bytes per engine). Three checker holdouts reject explicitly.
+
+Unsealed untyped CLI crash retained separately; typed arguments correct the harness. Three substantive sealed campaigns verify, and 117 tests pass. No Xcode windows opened. See [runtime scope](docs/reverse-engineering/2026-10-09-portable-second-runtime.md) and [anchors/controls](research/evidence/portable-second-runtime-2026-10-09.json). Both runtimes ran on macOS; SwiftUI source compilation, browser/non-Apple execution and both milestone acceptance gates remain open.

@@ -1640,6 +1640,71 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "portable-wasm-second-runtime-rejections",
+      "adapter": "portable_solid",
+      "hypothesis": "The unchanged C rectangle executes in independent WasmKit interpreter: every native red/red/blue byte and independent padded byte matches; eight injected first/final byte faults report exactly one mismatch and invalid checker cases reject. No SwiftUI frontend or other OS claim. Changed checker additionally rejects ten render requests without modifying any of 204800 buffer bytes in both engines; both execute exactly the same no-import checker module.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "second_runtime": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "all_native_rgba_equal",
+          "equals": true
+        },
+        {
+          "path": "native_compared_bytes",
+          "equals": 614400
+        },
+        {
+          "path": "all_literal_and_padding_equal",
+          "equals": true
+        },
+        {
+          "path": "second_runtime",
+          "equals": "WasmKit"
+        },
+        {
+          "path": "second_runtime_controls",
+          "equals": 25
+        },
+        {
+          "path": "second_runtime_all_passed",
+          "equals": true
+        },
+        {
+          "path": "second_runtime_compared_bytes",
+          "equals": 614432
+        },
+        {
+          "path": "second_runtime_mutation_controls",
+          "equals": 8
+        },
+        {
+          "path": "second_runtime_invalid_requests",
+          "equals": 10
+        },
+        {
+          "path": "second_runtime_unchanged_buffer_bytes",
+          "equals": 2048000
+        },
+        {
+          "path": "same_checker_v8_passed",
+          "equals": true
+        },
+        {
+          "path": "checker_imports",
+          "equals": 0
+        }
+      ]
     }
   ],
   "version": 1

@@ -17,7 +17,7 @@ def expected(width,height,stride,variant):
     return (pixel*width+b'\xcd'*(stride-width*4))*height
 
 
-def corpus(out):
+def corpus(out,second_runtime=False):
     out=pathlib.Path(out)
     verified=Controller(root=PROJECT_ROOT).verify(ORACLE_RUN,ORACLE_ANCHOR)
     if not verified['valid']:raise RuntimeError('Native oracle seal/anchor mismatch')
@@ -47,9 +47,13 @@ def corpus(out):
     atomic(out/'literal-comparisons.json',comparisons);atomic(out/'native-comparisons.json',native_comparisons)
     atomic(out/'tool-identities.json',{'clang_sha256':digest(clang),'wasm_ld_sha256':digest(TOOLCHAIN/'wasm-ld'),
            'module_sha256':digest(module),'source_sha256':digest(source),'node':execution['node'],'v8':execution['v8']})
-    return {'native_frames':len(native_comparisons),'all_native_rgba_equal':all(c['passed'] for c in native_comparisons),
+    result={'native_frames':len(native_comparisons),'all_native_rgba_equal':all(c['passed'] for c in native_comparisons),
             'native_compared_bytes':sum(c['reference_bytes'] for c in native_comparisons),
             'all_literal_and_padding_equal':all(c['passed'] for c in comparisons),'wasm_imports':len(execution['imports']),
             'negative_cases':execution['negative_cases'],'negative_buffer_unchanged':execution['negative_buffer_unchanged'],
             'repeat_bytes_equal':bytes_equal(out/'portable-0.rgba',out/'portable-1.rgba')['passed'],
             'scope':'Hand-authored C opaque red/blue rectangle subset, LLVM wasm32, Node V8 on macOS. No Swift parsing, SwiftUI, Canvas wire, browser/other OS execution or hot reload/performance claim.'}
+    if second_runtime:
+        from reloop.wasmkit import verify_corpus
+        result.update(verify_corpus(out,command))
+    return result

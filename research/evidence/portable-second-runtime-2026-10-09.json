@@ -1,0 +1,371 @@
+{
+  "date": "2026-10-09",
+  "scope": "Owned C opaque red/blue renderer, LLVM wasm32; independent V8 and WasmKit on same macOS host. No SwiftUI source, browser or non-Apple OS execution claim.",
+  "runs": [
+    {
+      "run_id": "20261009T193809Z-portable-wasm-second-runtime-e578530f",
+      "valid": true,
+      "manifest_sha256": "10b40a12c95608efdb3612ce68069e234bbd7234c2ac3dc552e4e96fbe181623",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "verdict": "supports",
+      "result": {
+        "native_frames": 3,
+        "all_native_rgba_equal": true,
+        "native_compared_bytes": 614400,
+        "all_literal_and_padding_equal": true,
+        "wasm_imports": 0,
+        "negative_cases": 10,
+        "negative_buffer_unchanged": true,
+        "repeat_bytes_equal": true,
+        "scope": "Hand-authored C opaque red/blue rectangle subset, LLVM wasm32, Node V8 on macOS. No Swift parsing, SwiftUI, Canvas wire, browser/other OS execution or hot reload/performance claim.",
+        "second_runtime": "WasmKit",
+        "second_runtime_controls": 14,
+        "second_runtime_all_passed": true,
+        "second_runtime_compared_bytes": 614432,
+        "second_runtime_mutation_controls": 8
+      }
+    },
+    {
+      "run_id": "20261009T193912Z-portable-wasm-second-runtime-rejections-1da4782d",
+      "valid": true,
+      "manifest_sha256": "82fb1ce5f53da542e676acf723fdf5aed6fcaf4137a434a2f353b7375bb0998f",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "verdict": "supports",
+      "result": {
+        "native_frames": 3,
+        "all_native_rgba_equal": true,
+        "native_compared_bytes": 614400,
+        "all_literal_and_padding_equal": true,
+        "wasm_imports": 0,
+        "negative_cases": 10,
+        "negative_buffer_unchanged": true,
+        "repeat_bytes_equal": true,
+        "scope": "Hand-authored C opaque red/blue rectangle subset, LLVM wasm32, Node V8 on macOS. No Swift parsing, SwiftUI, Canvas wire, browser/other OS execution or hot reload/performance claim.",
+        "second_runtime": "WasmKit",
+        "second_runtime_controls": 25,
+        "second_runtime_all_passed": true,
+        "second_runtime_compared_bytes": 614432,
+        "second_runtime_mutation_controls": 8,
+        "second_runtime_invalid_requests": 10,
+        "second_runtime_unchanged_buffer_bytes": 2048000,
+        "same_checker_v8_passed": true,
+        "checker_imports": 0
+      }
+    },
+    {
+      "run_id": "20261009T194012Z-portable-wasm-second-runtime-rejections-352a1aa7",
+      "valid": true,
+      "manifest_sha256": "bc4790ea1c2d798b2d05059020ced1c7a12dd69cdca8793772e71e60200e2deb",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "verdict": "supports",
+      "result": {
+        "native_frames": 3,
+        "all_native_rgba_equal": true,
+        "native_compared_bytes": 614400,
+        "all_literal_and_padding_equal": true,
+        "wasm_imports": 0,
+        "negative_cases": 10,
+        "negative_buffer_unchanged": true,
+        "repeat_bytes_equal": true,
+        "scope": "Hand-authored C opaque red/blue rectangle subset, LLVM wasm32, Node V8 on macOS. No Swift parsing, SwiftUI, Canvas wire, browser/other OS execution or hot reload/performance claim.",
+        "second_runtime": "WasmKit",
+        "second_runtime_controls": 25,
+        "second_runtime_all_passed": true,
+        "second_runtime_compared_bytes": 614432,
+        "second_runtime_mutation_controls": 8,
+        "second_runtime_invalid_requests": 10,
+        "second_runtime_unchanged_buffer_bytes": 2048000,
+        "same_checker_v8_passed": true,
+        "checker_imports": 0
+      }
+    }
+  ],
+  "wasmkit_version": "0.1.6",
+  "runtime_sha256": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957",
+  "checker_module_sha256": "5514a25684855472f37b923cab91995e7f407c82d6b8f67cf7775ad06e6fe3e5",
+  "expected_arrays": {
+    "blue": {
+      "bytes": 204800,
+      "sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f"
+    },
+    "padding": {
+      "bytes": 32,
+      "sha256": "3ceef915fb78179aab1c5efa5aa78e2258485deead770e3af4283d417848f666"
+    },
+    "red": {
+      "bytes": 204800,
+      "sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab"
+    }
+  },
+  "checker_controls": [
+    {
+      "case": 0,
+      "expected": 0,
+      "mismatches": 0,
+      "mutation": 0,
+      "passed": true
+    },
+    {
+      "case": 0,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 1,
+      "passed": true
+    },
+    {
+      "case": 0,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 2,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "expected": 0,
+      "mismatches": 0,
+      "mutation": 0,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 1,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 2,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "expected": 0,
+      "mismatches": 0,
+      "mutation": 0,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 1,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 2,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "expected": 0,
+      "mismatches": 0,
+      "mutation": 0,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 1,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "expected": 1,
+      "mismatches": 1,
+      "mutation": 2,
+      "passed": true
+    },
+    {
+      "case": 4,
+      "expected": 4294967295,
+      "mismatches": 4294967295,
+      "mutation": 0,
+      "passed": true
+    },
+    {
+      "case": 0,
+      "expected": 4294967295,
+      "mismatches": 4294967295,
+      "mutation": 3,
+      "passed": true
+    }
+  ],
+  "invalid_request_controls": [
+    {
+      "case": 0,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 4,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 5,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 6,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 7,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 8,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 9,
+      "expected": 0,
+      "mismatches": 0,
+      "passed": true
+    },
+    {
+      "case": 10,
+      "expected": 4294967295,
+      "mismatches": 4294967295,
+      "passed": true
+    }
+  ],
+  "v8_checker": {
+    "all_passed": true,
+    "checker_rejections": 3,
+    "imports": [],
+    "invalid_requests": 10,
+    "rows": [
+      {
+        "case": 0,
+        "mismatches": 0,
+        "mutation": 0
+      },
+      {
+        "case": 0,
+        "mismatches": 1,
+        "mutation": 1
+      },
+      {
+        "case": 0,
+        "mismatches": 1,
+        "mutation": 2
+      },
+      {
+        "case": 1,
+        "mismatches": 0,
+        "mutation": 0
+      },
+      {
+        "case": 1,
+        "mismatches": 1,
+        "mutation": 1
+      },
+      {
+        "case": 1,
+        "mismatches": 1,
+        "mutation": 2
+      },
+      {
+        "case": 2,
+        "mismatches": 0,
+        "mutation": 0
+      },
+      {
+        "case": 2,
+        "mismatches": 1,
+        "mutation": 1
+      },
+      {
+        "case": 2,
+        "mismatches": 1,
+        "mutation": 2
+      },
+      {
+        "case": 3,
+        "mismatches": 0,
+        "mutation": 0
+      },
+      {
+        "case": 3,
+        "mismatches": 1,
+        "mutation": 1
+      },
+      {
+        "case": 3,
+        "mismatches": 1,
+        "mutation": 2
+      }
+    ]
+  },
+  "tool_identities": {
+    "clang_sha256": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+    "module_sha256": "ce6f5a72c0717971bb8580b8fc743a6dd4fa71cecdbd8ee8fb7a1c795525cc78",
+    "node": "v24.19.0",
+    "source_sha256": "5ac93da29afd1ece9d8c904f54c91d2b0830cfaddc50464fcb83f01caac226ec",
+    "v8": "13.6.233.17-node.51",
+    "wasm_ld_sha256": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962"
+  },
+  "native_anchor": {
+    "external_anchor_matches": true,
+    "frozen_sources_unchanged": true,
+    "manifest_sha256": "2fbbdb58072cd32f287fdd841eb072cd8f925513e4fd2c4323bf38fe11b8cf3c",
+    "run_id": "20261009T155055Z-native-solid-renderer-oracle-b779b982",
+    "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+    "valid": true
+  },
+  "unsealed_diagnostic": {
+    "command": "wasmkit run sealed portable-solid.wasm render 320 160 1280 2",
+    "exit_code": 133,
+    "error": "CLI/Run.swift:239: Fatal error: unknown type",
+    "status": "Unsealed exploratory observation, retained for failure memory; not acceptance evidence. Changed typed i32 arguments resolve the harness issue. Original failed invocation was not rerun.",
+    "module_run": "20261009T164421Z-portable-wasm-solid-parity-6af2a478"
+  },
+  "limitations": [
+    "Mismatch counts are produced by separately compiled byte checker, not independent WasmKit memory export. No LTO; render implementation opaque to checker translation unit.",
+    "Eight injected first/final-byte faults, including padding in 3x2 case, each yield exactly one differing byte. This is finite fault coverage.",
+    "Three native decoded ImageRenderer RGBA frames are independent of C implementation; row-padding expectations are synthetic. PNG encoding equality is not claimed.",
+    "Both engines execute on macOS. Swift parsing/runtime, SwiftUI, Canvas wire, other OS/browser, text/layout/assets/state, hot reload and performance remain unverified."
+  ]
+}

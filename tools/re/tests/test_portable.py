@@ -6,9 +6,27 @@ import unittest
 from PIL import Image
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
 from reloop.portable import expected
+from reloop.wasmkit import parse_result
+from reloop.core import validate_experiment
 
 
 class PortableTests(unittest.TestCase):
+    def test_wasmkit_requires_one_typed_result(self):
+        self.assertEqual(parse_result('[WasmTypes.Value.i32(0)]\n'),0)
+        self.assertEqual(parse_result('[WasmTypes.Value.i32(1)]'),1)
+        self.assertEqual(parse_result('[WasmTypes.Value.i32(-1)]'),0xffffffff)
+        for text in ['', '0', '[WasmTypes.Value.i64(0)]', '[WasmTypes.Value.i32(0)]\n[WasmTypes.Value.i32(1)]','error\n[WasmTypes.Value.i32(0)]','[WasmTypes.Value.i32(4294967296)]','[WasmTypes.Value.i32(-2147483649)]']:
+            with self.assertRaises(ValueError):parse_result(text)
+
+    def test_second_runtime_parameter_requires_boolean(self):
+        root=pathlib.Path(__file__).resolve().parents[3]
+        queue=json.loads((root/'research/loop/campaign.json').read_text())
+        e=next(e for e in queue['experiments'] if e['id']=='portable-wasm-second-runtime-rejections')
+        validate_experiment(e)
+        for value in [1,'true',None]:
+            e['params']['second_runtime']=value
+            with self.assertRaises(ValueError):validate_experiment(e)
+
     def test_literals_match_published_independent_native_frames(self):
         root=pathlib.Path(__file__).resolve().parents[1]/'fixtures/SolidRendererOracle'
         manifest=json.loads((root/'manifest.json').read_text())
