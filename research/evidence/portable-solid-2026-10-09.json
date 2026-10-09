@@ -1,0 +1,204 @@
+{
+  "frozen_sources_unchanged": true,
+  "limitations": [
+    "Hand-authored C rectangle ABI; no Swift frontend or general SwiftUI compatibility.",
+    "Node/V8 executed on macOS only; other OS/browser/WASM runtime checks remain open.",
+    "Only opaque literal red/blue; no text, alpha blending, layout, assets, state, animation, hot reload or performance qualification.",
+    "Native decoded RGBA equality, not PNG encoding equality or Canvas wire/surface/GPU semantics."
+  ],
+  "literal_and_padding_comparisons": [
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 32,
+      "candidate_sha256": "3ceef915fb78179aab1c5efa5aa78e2258485deead770e3af4283d417848f666",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 32,
+      "reference_sha256": "3ceef915fb78179aab1c5efa5aa78e2258485deead770e3af4283d417848f666",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    }
+  ],
+  "manifest_sha256": "6e36035613cf64054e8bf54d39c59850dfed5c1ebd3b505277c19ee2c860d0f0",
+  "module_execution": {
+    "exports": [
+      {
+        "kind": "memory",
+        "name": "memory"
+      },
+      {
+        "kind": "function",
+        "name": "pixels"
+      },
+      {
+        "kind": "function",
+        "name": "capacity"
+      },
+      {
+        "kind": "function",
+        "name": "render"
+      }
+    ],
+    "imports": [],
+    "negative_buffer_unchanged": true,
+    "negative_cases": 10,
+    "node": "v24.19.0",
+    "rows": [
+      {
+        "bytes": 204800,
+        "height": 160,
+        "index": 0,
+        "stride": 1280,
+        "variant": 2,
+        "width": 320
+      },
+      {
+        "bytes": 204800,
+        "height": 160,
+        "index": 1,
+        "stride": 1280,
+        "variant": 2,
+        "width": 320
+      },
+      {
+        "bytes": 204800,
+        "height": 160,
+        "index": 2,
+        "stride": 1280,
+        "variant": 3,
+        "width": 320
+      },
+      {
+        "bytes": 32,
+        "height": 2,
+        "index": 3,
+        "stride": 16,
+        "variant": 2,
+        "width": 3
+      }
+    ],
+    "v8": "13.6.233.17-node.51"
+  },
+  "native_anchor": {
+    "external_anchor_matches": true,
+    "frozen_sources_unchanged": true,
+    "manifest_sha256": "2fbbdb58072cd32f287fdd841eb072cd8f925513e4fd2c4323bf38fe11b8cf3c",
+    "run_id": "20261009T155055Z-native-solid-renderer-oracle-b779b982",
+    "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+    "valid": true
+  },
+  "native_comparisons": [
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    }
+  ],
+  "observations": {
+    "all_literal_and_padding_equal": true,
+    "all_native_rgba_equal": true,
+    "native_compared_bytes": 614400,
+    "native_frames": 3,
+    "negative_buffer_unchanged": true,
+    "negative_cases": 10,
+    "repeat_bytes_equal": true,
+    "scope": "Hand-authored C opaque red/blue rectangle subset, LLVM wasm32, Node V8 on macOS. No Swift parsing, SwiftUI, Canvas wire, browser/other OS execution or hot reload/performance claim.",
+    "wasm_imports": 0
+  },
+  "run_id": "20261009T164421Z-portable-wasm-solid-parity-6af2a478",
+  "sealed_verified": true,
+  "tool_identities": {
+    "clang_sha256": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+    "module_sha256": "ce6f5a72c0717971bb8580b8fc743a6dd4fa71cecdbd8ee8fb7a1c795525cc78",
+    "node": "v24.19.0",
+    "source_sha256": "5ac93da29afd1ece9d8c904f54c91d2b0830cfaddc50464fcb83f01caac226ec",
+    "v8": "13.6.233.17-node.51",
+    "wasm_ld_sha256": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962"
+  },
+  "validation": {
+    "initial_failure": "Public schema adapter enum omitted portable_solid; retained locally and fixed before final passing suite.",
+    "tests_passed": 102
+  }
+}

@@ -190,3 +190,9 @@ All 98 tests pass with ResourceWarning errors enabled. Sealed native evidence ve
 Eight owned surface cases, each repeated twice, verify immediate lookup survives the remaining coalesced import right and fails after the final imported right drops. Retained CF aliases still preserve expected padded pixels. Eighty independent comparisons cover 51,200 bytes; two selected snapshots match earlier goldens exactly. This separates local name validity from alias lifetime, without inferring final reclamation or Canvas completion.
 
 All 100 tests pass. Sealed native evidence verifies. Planner now avoids re-diagnosing intentional verified dark blanks, preserving the transport gate. No Xcode windows opened. See [findings](docs/reverse-engineering/2026-10-09-retired-name.md) and [anchor](research/evidence/surface-retired-name-2026-10-09.json). R1/R2 and both milestones remain open.
+
+## 2026-10-09 — installed skills and first WASM pixel boundary
+
+Installed reviewed, commit-pinned reverse-engineering, LLVM and Frida skills; Caveman FULL retained. Applied RE/LLVM workflows to a no-import wasm32 C literal rectangle control. Complete red/red/blue output matches 614,400 native ImageRenderer RGBA bytes; explicit row padding and ten nonmutating negative controls pass. This is a hand-authored rendering ABI, not SwiftUI compilation or broad platform execution.
+
+All 102 tests pass after the suite caught and corrected a missing public adapter enum; initial failure retained. Toolkit now has 24 adapters and 19 research MCP tools. No Xcode windows opened. See [contract and holdouts](docs/reverse-engineering/2026-10-09-portable-solid.md), [evidence](research/evidence/portable-solid-2026-10-09.json) and [skill provenance](research/loop/skills.json). F1 and both milestones remain open.

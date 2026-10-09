@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-09",
+  "installed_skills": [
+    {
+      "installed_path": "$CODEX_HOME/skills/reverse-engineering/SKILL.md",
+      "name": "reverse-engineering",
+      "path": "skills/security/reverse-engineering",
+      "ref": "bdc58472fa9f309ed1b3f7d985a0d8e9bd8f4608",
+      "repo": "mohitmishra786/low-level-dev-skills",
+      "skill_sha256": "38726e18aba30e3bed0ac357eb2440d2969158c3b4bfe51b604237b7e8c48b1d",
+      "source_url": "https://github.com/mohitmishra786/low-level-dev-skills/blob/bdc58472fa9f309ed1b3f7d985a0d8e9bd8f4608/skills/security/reverse-engineering/SKILL.md"
+    },
+    {
+      "installed_path": "$CODEX_HOME/skills/llvm/SKILL.md",
+      "name": "llvm",
+      "path": "skills/compilers/llvm",
+      "ref": "bdc58472fa9f309ed1b3f7d985a0d8e9bd8f4608",
+      "repo": "mohitmishra786/low-level-dev-skills",
+      "skill_sha256": "869ff4f5a1d644caeb1a6559f475534481307dfa845b4bba0d934355518f8959",
+      "source_url": "https://github.com/mohitmishra786/low-level-dev-skills/blob/bdc58472fa9f309ed1b3f7d985a0d8e9bd8f4608/skills/compilers/llvm/SKILL.md"
+    },
+    {
+      "installed_path": "$CODEX_HOME/skills/frida/SKILL.md",
+      "name": "frida",
+      "path": "frida",
+      "ref": "e5e12ea94df68ff1513bddbac6ee2e4558a738c1",
+      "repo": "as0ler/skills",
+      "skill_sha256": "22db2ac55ea8f97de8a0f94ee483de028bfd7d93720cd647073d201d90cac45e",
+      "source_url": "https://github.com/as0ler/skills/blob/e5e12ea94df68ff1513bddbac6ee2e4558a738c1/frida/SKILL.md"
+    }
+  ],
+  "review_notes": [
+    "Frida skill header latest version claim is stale relative to measured local 17.23.1; verify API behavior against installed runtime.",
+    "RE guide is generic and ELF-heavy; adapt tool invocations to Mach-O/arm64.",
+    "LLVM opt/llc are optional and were not found in current toolchain. Existing clang, wasm-ld and llvm-objdump suffice for measured spike.",
+    "Caveman FULL remains user-facing mode; code/docs remain precise normal language."
+  ],
+  "usage": "Load only relevant skills and sections. User constraints and sealed runbook take precedence; examples are not target permission or verified facts."
+}

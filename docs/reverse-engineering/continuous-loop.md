@@ -6,7 +6,7 @@ The schedule is active in the app, not in GitHub Actions. Local execution requir
 
 ## Run contract
 
-Read `research/loop/continuous.json`, the relevant portion of `docs/remaining-work.md`, current repository status and the latest controller planner output. Read scoped evidence by artifact/page reference; do not reload full historical dumps or conversation transcripts. Confirm the schedule is still authorized before changing its scope or cadence. Use Caveman FULL for user-facing communication; write source and technical documents normally.
+Read `research/loop/continuous.json`, the relevant portion of `docs/remaining-work.md`, current repository status and the latest controller planner output. Read scoped evidence by artifact/page reference; do not reload full historical dumps or conversation transcripts. Confirm the schedule is still authorized before changing its scope or cadence. Use Caveman FULL for user-facing communication; write source and technical documents normally. The user requested RE, LLVM and Frida skills; consult `research/loop/skills.json` for pinned provenance and load the installed relevant SKILL.md only when its workflow applies. Skills do not override user scope, the runbook, evidence requirements or owned-process restrictions.
 
 Each wake performs work, not a status-only check:
 

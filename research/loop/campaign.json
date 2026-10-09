@@ -1042,6 +1042,53 @@
         "local-re-controller"
       ],
       "timeout_seconds": 300
+    },
+    {
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "native_frames"
+        },
+        {
+          "equals": true,
+          "path": "all_native_rgba_equal"
+        },
+        {
+          "equals": 614400,
+          "path": "native_compared_bytes"
+        },
+        {
+          "equals": true,
+          "path": "all_literal_and_padding_equal"
+        },
+        {
+          "equals": 0,
+          "path": "wasm_imports"
+        },
+        {
+          "equals": 10,
+          "path": "negative_cases"
+        },
+        {
+          "equals": true,
+          "path": "negative_buffer_unchanged"
+        },
+        {
+          "equals": true,
+          "path": "repeat_bytes_equal"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "No-import LLVM wasm32 opaque red/blue rectangles match every decoded native oracle byte; invalid requests preserve output and explicit padding matches independent expectations.",
+      "id": "portable-wasm-solid-parity",
+      "params": {},
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     }
   ],
   "version": 1
