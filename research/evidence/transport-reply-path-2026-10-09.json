@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "run_id": "20261009T190932Z-native-transport-encoded-reply-sites-06a431d8",
+      "manifest_sha256": "96e5610ec960bcc8e48f5d150dbeac17f6337580c2889d17184111a5f5a3cff1",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 3,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    },
+    {
+      "run_id": "20261009T191016Z-native-lazy-reply-encoding-2dfb5314",
+      "manifest_sha256": "e1a9763e3ac62eced9dfedbd2256686d550fe1c7202e177548368b8192307f74",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    }
+  ],
+  "environment": {
+    "os": {
+      "exit_code": 0,
+      "value": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80"
+    },
+    "arch": {
+      "exit_code": 0,
+      "value": "arm64"
+    },
+    "xcode": {
+      "exit_code": 0,
+      "value": "Xcode 26.6\nBuild version 17F113"
+    },
+    "messaging_image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+  },
+  "static_sites": [
+    {
+      "address": "0x402a4",
+      "fact": "Encoded reply initializer stores caller callback pair in a closure context."
+    },
+    {
+      "address": "0x40300",
+      "fact": "Initializer constructs PreviewsFoundationHost Continuation with resume closure and failure-mode argument."
+    },
+    {
+      "address": "0x40784",
+      "fact": "Result tag branch selects failure handling versus success encoding."
+    },
+    {
+      "address": "0x407cc",
+      "fact": "Failure branch obtains serializableNSError through HumanReadableError."
+    },
+    {
+      "address": "0x407e0",
+      "fact": "Failure invokes captured callback with null payload and serialized error."
+    },
+    {
+      "address": "0x40818",
+      "fact": "Success calls LazyPropertyList.encoded getter."
+    },
+    {
+      "address": "0x40828",
+      "fact": "Success invokes captured callback with encoded payload and null error."
+    },
+    {
+      "address": "0x49574",
+      "fact": "Encoded getter checks OS version with arguments 14,4,0."
+    },
+    {
+      "address": "0x4981c",
+      "fact": "Data encoding branch calls UVPropertyList.initWithData."
+    },
+    {
+      "address": "0x498a4",
+      "fact": "Dictionary encoding branch calls UVPropertyList.initWithDictionary."
+    },
+    {
+      "address": "0x49908",
+      "fact": "Data serialization-error fallback calls initWithData with empty Data representation."
+    }
+  ],
+  "limitations": [
+    "Static selected call sites, not executed callback or live request/reply transport.",
+    "No selected callback contains an explicit ServiceMessage identifier copy; absence elsewhere is not established.",
+    "Continuation construction does not by itself prove exactly-once callbacks, timeout or cancellation behavior.",
+    "OS14.4 version branch and error fallback are not runtime-tested.",
+    "Selection-count checks establish symbol isolation, not payload-value acceptance.",
+    "No Xcode windows opened; raw disassembly stays local."
+  ]
+}

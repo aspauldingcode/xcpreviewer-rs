@@ -1414,6 +1414,48 @@
           "equals": 0
         }
       ]
+    },
+    {
+      "id": "native-transport-encoded-reply-sites",
+      "adapter": "disassembly",
+      "hypothesis": "Exact encodedReplyHandler initializer and its two primary closures can be isolated to distinguish handler routing from identifier propagation; no live matching or private ABI execution claimed.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 64,
+      "params": {
+        "query": "^[0-9a-f]+ [Tt] (PreviewsMessagingHost.TransportReply.init\\(encodedReplyHandler:|closure #[12] .* in PreviewsMessagingHost.TransportReply.init\\(encodedReplyHandler:)"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "id": "native-lazy-reply-encoding",
+      "adapter": "disassembly",
+      "hypothesis": "Exact LazyPropertyList encoded getter selected by the transport success callback isolates the encoding boundary; do not infer global absence of identifier routing.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 64,
+      "params": {
+        "query": "^[0-9a-f]+ T PreviewsMessagingHost.LazyPropertyList.encoded.getter"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        }
+      ]
     }
   ],
   "version": 1

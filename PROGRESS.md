@@ -220,3 +220,9 @@ Four new sealed runs verify; missing-signature closure selector failure is retai
 Immediate global IOSurface-ID disappearance fails in two of 16 owned executions despite peer exit and reviewed right/alias cleanup. Retained failure prevents premature reclamation claims. Separately registered requested-100ms control passes all 16 executions with 80 independent padded-byte comparisons (51,200 bytes); its immediate lookups were already null, so delay causality remains unproven.
 
 Both campaigns seal and verify; all 110 tests pass. No Xcode windows opened. See [scope and failed prediction](docs/reverse-engineering/2026-10-09-surface-id-lifetime.md) and [anchors](research/evidence/surface-id-lifetime-2026-10-09.json). R1/R2 and both milestones remain open.
+
+## 2026-10-09 — transport reply success/error boundary
+
+Static TransportReply result closure invokes captured callback with encoded LazyPropertyList plus null error on success, or null payload plus serializable NSError on failure. Dependent encoder has OS14.4 data/dictionary branches and selected serialization-error fallbacks. A null callback error alone does not prove payload serialization succeeded; no live reply matching or exactly-once completion is established.
+
+Two sealed runs verify against unchanged image identity and prior identifier anchors. Added campaign validates; existing 110-test implementation checkpoint unchanged. No Xcode windows opened. See [static path and limits](docs/reverse-engineering/2026-10-09-transport-reply.md) and [anchors](research/evidence/transport-reply-path-2026-10-09.json). P1/P2/R2 and both milestones remain open.
