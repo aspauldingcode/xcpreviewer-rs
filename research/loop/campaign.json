@@ -2872,6 +2872,50 @@
           "equals": 12
         }
       ]
+    },
+    {
+      "id": "native-token-value-witness-bodies",
+      "adapter": "disassembly",
+      "hypothesis": "Complete helper bytes dispatch copy/destroy through resolved metadata table slots16/8; zero or odd cached words select the mangled-name runtime import, independently bound through stub and pointer tables.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "ebc8:ec10",
+          "41dc:421c",
+          "2710:2760",
+          "1313b4:1313c0"
+        ],
+        "witness_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "witness_dispatch_verified",
+          "equals": true
+        },
+        {
+          "path": "compared_witness_instruction_bytes",
+          "equals": 216
+        },
+        {
+          "path": "metadata_stub_instruction_bytes_compared",
+          "equals": 12
+        },
+        {
+          "path": "metadata_cache_cases",
+          "equals": 65540
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

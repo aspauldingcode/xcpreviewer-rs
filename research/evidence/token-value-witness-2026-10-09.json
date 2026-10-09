@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-09",
+  "runs": [
+    {
+      "run_id": "20261009T223918Z-native-token-value-witness-bodies-5a6925bd",
+      "manifest_sha256": "5399b266286fac3abeeaa708dff9e01a39e9c845528534e0593ad3d391ec03e4",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded body acquisition only"
+    },
+    {
+      "run_id": "20261009T223947Z-native-token-value-witness-bodies-718e7e66",
+      "manifest_sha256": "3bf7462e3d3db2f40a23b30ad6b0809415f63932c6d9f9ba048a3507dc3febd7",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded body acquisition only"
+    },
+    {
+      "run_id": "20261009T224036Z-native-token-value-witness-bodies-604c5f82",
+      "manifest_sha256": "3ce976bf8d29bc85aea1b6ad7cc209f8dd8de095b937aa86b1a4fb20ca57b83c",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static dispatch verification"
+    },
+    {
+      "run_id": "20261009T224104Z-native-token-value-witness-bodies-1b574ce3",
+      "manifest_sha256": "492955e31db8d6ae636219471afc444d5ae2b53d282f3110e67c7c2e275df648",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static dispatch verification"
+    }
+  ],
+  "facts": {
+    "compared_witness_instruction_bytes": 216,
+    "copy_table_slot_bytes": 16,
+    "destroy_table_slot_bytes": 8,
+    "metadata_cache_cases": 65540,
+    "metadata_import_library": "/usr/lib/swift/libswiftCore.dylib",
+    "metadata_import_pointer": "0x171f80",
+    "metadata_import_symbol": "_swift_getTypeByMangledNameInContext2",
+    "metadata_runtime_gate": "cached_word==0 or low_bit==1",
+    "metadata_stub_instruction_bytes_compared": 12,
+    "scope": "Static complete helper bodies and declared import binding only. Runtime type resolution, witness target identity/effects, retained payload ownership, native calls, races, transport cleanup and reclamation remain unobserved.",
+    "witness_dispatch_verified": true
+  },
+  "tests_passed": 181,
+  "observations": [
+    "Copy and destroy bodies load function pointer slots16 and8 from a table at resolved metadata minus8.",
+    "Zero/odd metadata cache words select mangled-name lookup; nonzero even words skip it.",
+    "Resolver import is independently bound to Swift core; actual metadata contents and witness effects remain unknown."
+  ],
+  "scope": "Static complete helper bodies and declared import binding only. Runtime type resolution, witness target identity/effects, retained payload ownership, native calls, races, transport cleanup and reclamation remain unobserved.",
+  "remaining": [
+    "Actual type metadata, mangled descriptors and witness target identities",
+    "Concrete payload ownership and witness effects",
+    "Native cancellation/completion races and runtime releases",
+    "Correlated Canvas transport and final reclamation"
+  ],
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+}

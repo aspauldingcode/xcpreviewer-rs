@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "6de1b33ec20ebdbc7f436628a89f4d22c0ac0d87",
+  "baseline_commit": "51b1fc7d8cca6a7bc1c7217e9fe0849cabe28440",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -139,16 +139,17 @@
       "retry_prerequisite": "Display symbol suffix normalization added; encoded branch verification remains mandatory and regression test passes."
     }
   ],
-  "last_completed": "Recovered unnamed result-consumer0x42648 via new bounded explicit instruction-range acquisition. Compared all20 consumer and12 stub instruction bytes, independently decoded low-byte gate and tail dispatch, and verified stub/pointer indirect import tables plus library ordinal.65,542 static flag cases pass; four accepted seals;176 tests pass. Only flag lowbyte1 selects declared Swift bridge release import; no actual release/deallocation/runtime/transport claim.",
+  "last_completed": "Recovered complete copy/destroy metadata dispatch helpers and resolver cache gate.216 helper/resolver bytes plus12 import-stub bytes checked,65,540 zero/parity controls; four seals (first two acquisition only).181 tests. Actual concrete metadata/witness ownership effects remain unknown.",
   "last_github_sync": {
     "date": "2026-10-09",
-    "checkpoint": "Anonymous result consumer and independent Swift release import binding",
+    "checkpoint": "Value-witness dispatch and metadata cache resolver",
     "issues": [
       "R2"
     ],
     "state": "open"
   },
   "next_actions": [
+    "Recover concrete metadata/cache descriptor and witness target identities for the token storage state; do not infer payload ownership from generic helper slots.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -702,6 +703,26 @@
       "path": "research/evidence/token-result-consumer-2026-10-09.json",
       "run_id": "20261009T223247Z-native-token-result-consumer-271e2f1f",
       "manifest_sha256": "1203095dc46358b912f7e4d7d1625f3ad6abcdf7341435964c2550e6fab3a99e"
+    },
+    {
+      "path": "research/evidence/token-value-witness-2026-10-09.json",
+      "run_id": "20261009T223918Z-native-token-value-witness-bodies-5a6925bd",
+      "manifest_sha256": "5399b266286fac3abeeaa708dff9e01a39e9c845528534e0593ad3d391ec03e4"
+    },
+    {
+      "path": "research/evidence/token-value-witness-2026-10-09.json",
+      "run_id": "20261009T223947Z-native-token-value-witness-bodies-718e7e66",
+      "manifest_sha256": "3bf7462e3d3db2f40a23b30ad6b0809415f63932c6d9f9ba048a3507dc3febd7"
+    },
+    {
+      "path": "research/evidence/token-value-witness-2026-10-09.json",
+      "run_id": "20261009T224036Z-native-token-value-witness-bodies-604c5f82",
+      "manifest_sha256": "3ce976bf8d29bc85aea1b6ad7cc209f8dd8de095b937aa86b1a4fb20ca57b83c"
+    },
+    {
+      "path": "research/evidence/token-value-witness-2026-10-09.json",
+      "run_id": "20261009T224104Z-native-token-value-witness-bodies-1b574ce3",
+      "manifest_sha256": "492955e31db8d6ae636219471afc444d5ae2b53d282f3110e67c7c2e275df648"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

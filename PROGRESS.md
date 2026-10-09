@@ -338,3 +338,7 @@ Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-ob
 - Recovered the five-instruction consumer's low-byte-equals-one gate and unchanged payload register before release tail dispatch. Compared all 20 consumer and 12 stub instruction bytes against independently mapped native bytes.
 - Independently verified stub/pointer indirect indices, undefined external symbol and dylib ordinal: declared `_swift_bridgeObjectRelease` import from Swift core. Runtime interposition and actual deallocation remain unknown.
 - 65,542 finite static flag cases agree with an independent numeric oracle; four accepted seals retained; 176 tests pass. Published [evidence](research/evidence/token-result-consumer-2026-10-09.json) and [scope](docs/reverse-engineering/2026-10-09-token-result-consumer.md). Actual runtime/transport/resource reclamation acceptance stays open.
+
+## 2026-10-09 — Token metadata and witness dispatch
+
+Recovered complete copy/destroy dispatch and metadata resolver bodies:216 independently mapped instruction bytes plus12 import-stub bytes.65,540 cache gate cases agree with zero/parity expectations. Four sealed runs retained; first two prove acquisition only.181 automated tests pass, including every-byte and matching-image instruction mutations. Concrete metadata/witness ownership effects, runtime releases, races and Canvas transport remain open; no Xcode windows launched. See [evidence](research/evidence/token-value-witness-2026-10-09.json) and [analysis](docs/reverse-engineering/2026-10-09-token-value-witness.md).

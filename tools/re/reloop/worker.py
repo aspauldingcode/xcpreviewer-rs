@@ -118,6 +118,11 @@ def perform(kind,out,p):
             facts['release_binding_scope']=binding.pop('scope')
             facts.update(binding)
             atomic(out/'token-consume.json',facts)
+        if p.get('witness_control',False):
+            from reloop.tokenwitness import inspect
+            from reloop.swiftmeta import MachO
+            facts.update(inspect([f.read_text() for f in files],MachO(image)))
+            atomic(out/'token-witness.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}
