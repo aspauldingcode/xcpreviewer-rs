@@ -93,6 +93,13 @@ def perform(kind,out,p):
     if kind=='xcode_preview':
         from reloop.canvas import capture
         return capture(out,p.get('variants',[0,1]),p.get('trace',False))
+    if kind in {'xpc_corpus','xpc_negative','xpc_prefix'}:
+        from reloop.xpc import corpus,negatives,prefixes
+        if kind=='xpc_corpus':return corpus(out,p.get('seed',9),p.get('cases',32))
+        return negatives(out) if kind=='xpc_negative' else prefixes(out)
+    if kind=='agent_discriminants':
+        from reloop.discriminants import recover
+        return recover(out)
     if kind in {'lldb_smoke','frida_smoke','native_reference'}:
         from reloop.trace import smoke
         return smoke(kind,out)

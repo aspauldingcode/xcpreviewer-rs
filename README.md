@@ -11,3 +11,5 @@ Initial results are in [REVERSE_ENGINEERING.md](REVERSE_ENGINEERING.md), with re
 The [free agentic RE toolkit](docs/reverse-engineering/toolkit.md) adds a bounded experiment controller, stdio MCP server, GhidraVibe integration, Frida/LLDB tracing, native SwiftUI reference capture and immutable evidence. Its [loop design](docs/reverse-engineering/agentic-loop.md) separates working instrumentation from the remaining live preview protocol campaign.
 
 Exact-output acceptance, evidence anchors, edge-case automation and AI porting strategy: [verification contract](docs/reverse-engineering/verification.md).
+
+Latest recursive findings: [local XPC coding, malformed-input boundary and static message strings](docs/reverse-engineering/2026-10-08-xpc-boundary.md).

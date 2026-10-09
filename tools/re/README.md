@@ -6,6 +6,8 @@ Requires macOS, an installed Xcode, its command-line tools, and Python 3. No ext
 
 See the [free toolkit guide](../../docs/reverse-engineering/toolkit.md) for bootstrap, local Ghidra service lifecycle, the eight-experiment queue, MCP client configuration, Frida/LLDB probes and evidence verification. The manual commands below remain useful for targeted investigation.
 
+The reviewed connected campaign includes local XPC corpus, malformed-envelope and prefix/shrinking experiments plus bounded static message-string recovery. See [findings](../../docs/reverse-engineering/2026-10-08-xpc-boundary.md) and the synthetic [XPCOracle](fixtures/XPCOracle/manifest.json). These do not establish live service traffic or attachment compatibility.
+
 ## Static collection
 
 ```sh

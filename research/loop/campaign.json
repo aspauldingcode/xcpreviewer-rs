@@ -174,6 +174,161 @@
         "local-re-controller"
       ],
       "timeout_seconds": 300
+    },
+    {
+      "adapter": "xpc_corpus",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 32,
+          "path": "cases"
+        },
+        {
+          "equals": 0,
+          "path": "failed_cases"
+        },
+        {
+          "equals": true,
+          "path": "all_typed_round_trips"
+        },
+        {
+          "equals": 32,
+          "path": "data_wrapper_cases"
+        },
+        {
+          "equals": 32,
+          "path": "payload_equals_uv_data_cases"
+        },
+        {
+          "equals": 32,
+          "path": "cross_process_bytes_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned dictionaries use one data-valued XPC key whose payload exactly matches UVPropertyList.data and survives independent typed decoding.",
+      "id": "xpc-data-wrapper",
+      "params": {
+        "cases": 32,
+        "seed": 9
+      },
+      "priority": 99,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "xpc_negative",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": true,
+          "path": "missing_data_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "wrong_type_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "truncated_data_decodes_empty_dictionary"
+        },
+        {
+          "equals": true,
+          "path": "extra_key_preserves_values"
+        },
+        {
+          "equals": false,
+          "path": "invalid_rejected_without_crash"
+        },
+        {
+          "equals": true,
+          "path": "direct_full_preserves_values"
+        },
+        {
+          "equals": true,
+          "path": "direct_eight_byte_decodes_empty"
+        },
+        {
+          "equals": true,
+          "path": "empty_route_outcomes_differ"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Malformed XPC data and direct data decoding exhibit default-empty behavior; direct full data preserves values; empty-buffer routes differ.",
+      "id": "xpc-malformed-envelope",
+      "params": {},
+      "priority": 98,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "xpc_prefix",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 105,
+          "path": "tested_prefixes"
+        },
+        {
+          "equals": true,
+          "path": "full_prefix_preserves_values"
+        },
+        {
+          "equals": 0,
+          "path": "incomplete_prefixes_preserving_values"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 1,
+          "path": "minimal_keys"
+        },
+        {
+          "equals": true,
+          "path": "minimal_failure_preserved"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Every incomplete prefix loses original values; full prefix preserves values; truncated default-empty behavior minimizes to one input key.",
+      "id": "xpc-prefix-boundary",
+      "params": {},
+      "priority": 97,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "agent_discriminants",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 10,
+          "path": "case_count"
+        },
+        {
+          "equals": 10,
+          "path": "unique_raw_values"
+        },
+        {
+          "equals": true,
+          "path": "strings_match_case_names"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Static ARM64 getter yields ten unique string raw values matching nominal case names without a manufactured Swift ABI call.",
+      "id": "agent-string-discriminants",
+      "params": {},
+      "priority": 96,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     }
   ],
   "version": 1

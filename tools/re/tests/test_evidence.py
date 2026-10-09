@@ -176,6 +176,18 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(result['proposals'], [])
         self.assertEqual(result['outcomes'][0]['action'], 'quarantine')
 
+    def test_planner_advances_xpc_counterexperiment_without_duplicate_proposal(self):
+        run=self.seal(observed={'truncated_data_decodes_empty_dictionary':True})
+        atomic(run/'experiment.json',{'adapter':'xpc_negative','params':{}})
+        m=load(run/'manifest.json');m['artifacts']=self.c.artifacts(run);atomic(run/'manifest.json',m)
+        atomic(self.c.state/'checkpoint.json',{'runs':{'owned-negative':run.name}})
+        proposed=plan(self.c)
+        self.assertEqual(proposed['proposals'][0]['id'],'xpc-prefix-boundary')
+        atomic(self.root/'research/loop/campaign.json',{'experiments':proposed['proposals']})
+        queued=plan(self.c)
+        self.assertEqual(queued['proposals'],[])
+        self.assertIn('run-reviewed-followup',[o['action'] for o in queued['outcomes']])
+
     def test_campaign_schema_matches_executor(self):
         import jsonschema
         queue = load(ROOT/'research/loop/campaign.json')
