@@ -2775,6 +2775,57 @@
           "equals": 4
         }
       ]
+    },
+    {
+      "id": "native-token-callback-link",
+      "adapter": "disassembly",
+      "hypothesis": "Distinct captured token callbacks reach recovered dictionary-removal wrappers only through weak-owner and state guarded locked update, with every captured instruction byte matching the pinned image.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "makeCancelationToken|^00000000000bee(a8|cc|f0)|^00000000000428fc",
+        "token_link_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "token_link_verified",
+          "equals": true
+        },
+        {
+          "path": "entry_count",
+          "equals": 10
+        },
+        {
+          "path": "captured_pointer_targets",
+          "equals": 6
+        },
+        {
+          "path": "encoded_direct_targets",
+          "equals": 13
+        },
+        {
+          "path": "weak_owner_skip",
+          "equals": true
+        },
+        {
+          "path": "state_high_byte_one_skips_callback",
+          "equals": true
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "compared_instruction_bytes",
+          "equals": 632
+        }
+      ]
     }
   ],
   "version": 1

@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "206e485ff488823172f0c13351f2491e167e11e8",
+  "baseline_commit": "5dd80920c0308693b480e2e8d8f5b19bfbf73846",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -122,12 +122,27 @@
       "run_id": "20261009T220828Z-owned-rea-engine-control-4ba4ec15",
       "status": "resolved-campaign-check-path",
       "retry_prerequisite": "Correct observation-relative campaign paths; acceptance regression test passes."
+    },
+    {
+      "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547",
+      "status": "symbol-count-prediction-falsified",
+      "retry_prerequisite": "Six captured token entries observed; do not require nonexistent two constructor bodies."
+    },
+    {
+      "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b",
+      "status": "symbol-count-prediction-falsified",
+      "retry_prerequisite": "Cleanup target0x42648 is not a selected named entry; obtain independent bounded address evidence before assigning its body."
+    },
+    {
+      "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1",
+      "status": "resolved-symbol-annotation",
+      "retry_prerequisite": "Display symbol suffix normalization added; encoded branch verification remains mandatory and regression test passes."
     }
   ],
-  "last_completed": "Integrated pinned REA 6.2.0 local CLI/MCP, matching skill, 35-tool native/Apple subset and serial identity-gated adapter. Owned ARM64 decompilation and all four selected BL bytes pass independent mapped-byte/target checks;159 tests pass. FoundationHost full auto-analysis timed out at330s with clean provider close; failure and corrected alias/campaign runs retained. Static-only scope; native Canvas and WASM acceptance remain open.",
+  "last_completed": "Connected cancellation-token partial apply captures to distinct removal callback/update adapters and shared weak-owner/lock/state-guarded indirect invocation. Ten selected bodies compare all632 captured instruction bytes;6 pointers and13 direct branch/call targets independently decoded. Two accepted seals;6 retained runs;166 tests pass. Live desktop REA MCP now confirmed:35 configured tools and direct Xcode Mach-O identity/UUID inspection succeeds. Static only; runtime/transport/races/value witnesses and cleanup body remain open.",
   "last_github_sync": {
     "date": "2026-10-09",
-    "checkpoint": "Pinned REA integration and retained native-import failure",
+    "checkpoint": "Native token callback association and live REA setup audit",
     "issues": [
       "R2"
     ],
@@ -135,7 +150,7 @@
   },
   "next_actions": [
     {
-      "action": "Selected dictionary removal storage sites and twelve calls now statically verified. Recover safe value-witness/sentinel effects and actual selected-flow callback association; typed runtime construction remains blocked. Native dictionary contents/executor/races, abandoned replies and transport resource cleanup remain unverified. REA owned engine control now passes; use relevant read-only discovery against small targets. Full FoundationHost import is blocked until analysis method changes; preserve existing LLVM-based native callback work.",
+      "action": "Callback association now statically verified through weak-owner guard, lock/update/unlock and state-high-byte guard. Recover safely bounded cleanup body0x42648 and value-witness/sentinel effects, then discriminate actual runtime dictionary/cancellation behavior. REA full FoundationHost import remains blocked; do not repeat unchanged import. Live desktop MCP/metadata route works.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -637,6 +652,36 @@
       "path": "research/evidence/rea-integration-2026-10-09.json",
       "run_id": "20261009T221010Z-owned-rea-engine-control-bb12b467",
       "manifest_sha256": "3c0b0abface4a681aba3ddab92b8c8b0d936b494919d95b85b263b37eee3508c"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547",
+      "manifest_sha256": "30b59f23a211c3ffb91d873373f23cea281b0d53e473299b1011f5f29cea72c3"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221443Z-native-token-update-wrappers-ae8e1d29",
+      "manifest_sha256": "35d182d0ff940ab54c32b0fd88748823ca6a0cd4c2c5516e9c611c3f7ef25fc6"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b",
+      "manifest_sha256": "60133a15bd00b9ef92af2fd0a1f08990cad3a6c314b8566dbb44ce11802f2323"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1",
+      "manifest_sha256": "b5b664578fbe736dbfd89feb596764a58f855945d9e7747b95fd17793cf7aa20"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221722Z-native-token-callback-link-7a465643",
+      "manifest_sha256": "9717315e2d1e6e76ac3a0d72c99e0c6286952cf7991e01795ca89897d794102f"
+    },
+    {
+      "path": "research/evidence/token-callback-link-2026-10-09.json",
+      "run_id": "20261009T221817Z-native-token-callback-link-b9d4cdd9",
+      "manifest_sha256": "021709403d1431386f01850904c6304a540d6141963ffea6ef14475a951bcb03"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

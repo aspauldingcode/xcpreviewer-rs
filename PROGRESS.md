@@ -324,3 +324,10 @@ Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-ob
 - Added serial `rea_native` adapter, strict target/parameter checks, frozen manifests and runtime-code identity. Owned ARM64 function decompilation passes independent mapping, all four selected instruction bytes and encoded BL destination/reference/flow checks; owned provider closes cleanly.
 - Retained the FoundationHost 330-second import timeout, architecture-alias rejection and successful-but-inconclusive campaign-path run. Corrected the observed schema alias and acceptance paths; 159 tests pass.
 - Published sanitized [evidence](research/evidence/rea-integration-2026-10-09.json) and [integration/runbook guidance](docs/reverse-engineering/rea-integration.md). Full-image REA import requires a changed analysis method before retry; actual Canvas transport/runtime and both milestone contracts remain incomplete.
+
+## 2026-10-09 — token callback association and live REA audit
+
+- Connected isolated/concurrent token capture forwarders to distinct removal/update adapters, then shared weak-owner guarded lock/update/unlock and numeric state guard. Result consumption remains a separate unknown body.
+- Compared every one of 632 captured instruction bytes across ten selected entries with mapped native bytes; independently decoded six pointers, thirteen direct targets and the null/state branches. Two accepted repeats; all six runs, including count-prediction and annotation failures, retained.
+- Added mutation-tested checker and strict controller flag; 166 tests pass. Published [evidence](research/evidence/token-callback-link-2026-10-09.json) and [scope/unknowns](docs/reverse-engineering/2026-10-09-token-callback-link.md).
+- Confirmed REA connected in the live desktop session with all 35 configured tools. Direct Xcode Mach-O inspection succeeds and its complete UUID matches independent parsing. Metadata uses `native-macos`; full Ghidra import remains blocked separately. No setup/restart repetition or Xcode windows needed.

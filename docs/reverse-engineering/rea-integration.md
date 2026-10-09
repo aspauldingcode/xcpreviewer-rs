@@ -35,3 +35,7 @@ Upstream references: [REA](https://github.com/morluto/rea), [MCP contracts](http
 ## Accepted engine control
 
 The corrected owned ARM64 control passes native decompilation and all four selected BL instruction bytes against an independently mapped image and decoded target. It explicitly closes Ghidra and its MCP client. All 159 tests pass, including every selected-byte corruption, identity/profile/reference/flow mismatch, wrong-endian architecture rejection and campaign acceptance. The earlier schema-alias failure and success-but-inconclusive check-path run remain sealed. See [sanitized evidence and all anchors](../../research/evidence/rea-integration-2026-10-09.json).
+
+## Live desktop connection audit
+
+A later direct desktop MCP audit confirms all 35 configured tools are available in this session. The scoped Codex/Ghidra doctor is healthy. Direct `open_binary` / `inspect_macho` / `close_binary` succeeds on the pinned Xcode FoundationHost binary; its SHA-256 and all 16 UUID bytes agree with the independent mapper. No additional setup or agent restart is currently needed. This metadata operation uses `native-macos` and does not establish successful full-image Ghidra function analysis. See [audit evidence](../../research/evidence/token-callback-link-2026-10-09.json).

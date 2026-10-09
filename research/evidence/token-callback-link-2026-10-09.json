@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "image_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "runs": [
+    {
+      "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547",
+      "manifest_sha256": "30b59f23a211c3ffb91d873373f23cea281b0d53e473299b1011f5f29cea72c3",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261009T221443Z-native-token-update-wrappers-ae8e1d29",
+      "manifest_sha256": "35d182d0ff940ab54c32b0fd88748823ca6a0cd4c2c5516e9c611c3f7ef25fc6",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b",
+      "manifest_sha256": "60133a15bd00b9ef92af2fd0a1f08990cad3a6c314b8566dbb44ce11802f2323",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1",
+      "manifest_sha256": "b5b664578fbe736dbfd89feb596764a58f855945d9e7747b95fd17793cf7aa20",
+      "execution": "failed",
+      "verdict": "not_evaluated"
+    },
+    {
+      "run_id": "20261009T221722Z-native-token-callback-link-7a465643",
+      "manifest_sha256": "9717315e2d1e6e76ac3a0d72c99e0c6286952cf7991e01795ca89897d794102f",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T221817Z-native-token-callback-link-b9d4cdd9",
+      "manifest_sha256": "021709403d1431386f01850904c6304a540d6141963ffea6ef14475a951bcb03",
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "verified_static_facts": {
+    "address_fallback_count": 2,
+    "capture_key_context_offset": 16,
+    "captured_pointer_targets": 6,
+    "compared_instruction_bytes": 632,
+    "encoded_direct_targets": 13,
+    "entry_body_count": 10,
+    "entry_count": 10,
+    "function_count": 10,
+    "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "scope": "Static captured-pointer and selected dataflow association only; runtime invocation, enum names, value-witness effects, dictionary contents, races, transport cleanup and final reclamation remain open.",
+    "state_high_byte_one_skips_callback": true,
+    "token_link_verified": true,
+    "weak_owner_skip": true
+  },
+  "rea_setup_audit": {
+    "rea_version": "6.2.0",
+    "live_desktop_tools": 35,
+    "live_desktop_mcp_connected": true,
+    "doctor_scope_healthy": true,
+    "operation": "inspect_macho",
+    "provider": "native-macos",
+    "evidence_id": "ev_7cb62717576e2652cb1f39c29c2b4c4b0bf21b04ef47285720b11ac68d9ce90c",
+    "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "independent_uuid_bytes_compared": 16,
+    "raw_local_sha256": "44ed09acfa784b54d4bf626265412ebb2257ae01818707c713cc80b81b7c8a7e",
+    "dependencies_recorded": 21,
+    "provider_closed": true,
+    "scope": "Direct desktop MCP metadata inspection; no Ghidra function analysis or runtime/transport claim. Private helper inspection IO failure retained locally; desktop operation succeeded."
+  },
+  "tests_passed": 166,
+  "remaining": [
+    "Typed runtime callback invocation and dictionary contents",
+    "Actual cancellation races and completion ordering",
+    "Value-witness/sentinel ownership effects",
+    "Returned optional-result cleanup target body at0x42648",
+    "Canvas transport cleanup and final physical reclamation"
+  ]
+}
