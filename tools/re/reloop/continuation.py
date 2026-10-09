@@ -65,3 +65,29 @@ def inspect_cancel(text):
     return {'cancel_guard_verified':True,'cancel_action_after_unlock':True,'cancel_skipped_outcome_tag':1,
             'cancel_sites':{'lock':hex(lock),'fulfill':hex(fulfill),'unlock':hex(unlock),'dispatch':hex(dispatch)},
             'scope':'Pinned cancellation static guard and tail dispatch only; target action, runtime ordering/races and transport remain unverified.'}
+
+
+def inspect_deinit(text):
+    code=instructions(text)
+    expected={0x2ba54:('mov','x8, x24'),0x2ba60:('mov','x0, x24'),
+              0x2ba6c:('cmp','w0, #0x1'),0x2ba70:('b.ne','0x2ba88'),
+              0x2ba80:('blr','x8'),0x2ba84:('b','0x2bbf0'),0x2bc3c:('ret','')}
+    if any(p not in code or code[p][:2]!=value for p,value in expected.items()):raise ValueError('Deinit case/skip boundary changed')
+    sites={0x2ba5c:('SynchronousAccessProviding','peek'),0x2ba68:('_swift_getEnumCaseMultiPayload',),
+           0x2bb5c:('Unfulfilled',),0x2bb84:('_swift_allocError',),0x2bbd8:('FulfillmentFailureMode','fail'),0x2bc18:('_swift_release',)}
+    for p,names in sites.items():
+        line=next((line for line in text.splitlines() if re.match(r'^\s*%x:'%p,line)), '')
+        if p not in code or code[p][0]!='bl' or not all(name in line for name in names):raise ValueError('Deinit diagnostic/cleanup call changed')
+    return {'deinit_guard_verified':True,'deinit_skipped_case':1,'deinit_policy_before_common_cleanup':True,
+            'scope':'Pinned static snapshot/case branch and unfulfilled diagnostic. Case naming, native deinit execution, callback completion and resource reclamation remain separate.'}
+
+
+def inspect_state_metadata(data):
+    candidates=[t for t in data.get('types',[]) if t.get('name')=='State' and isinstance(t.get('parent'),dict) and t['parent'].get('name')=='FulfillOnceState']
+    if len(candidates)!=1:raise ValueError('Unique fulfillment State descriptor required')
+    state=candidates[0];fields=state.get('fields')
+    if state.get('kind')!=18 or state.get('field_count')!=2 or not isinstance(fields,list) or len(fields)!=2:raise ValueError('Fulfillment State enum shape changed')
+    names=[f.get('name') for f in fields]
+    if names!=['waiting','fulfilled']:raise ValueError('Fulfillment State case names changed')
+    return {'state_metadata_verified':True,'state_case_names':names,'state_descriptor':state['address'],
+            'scope':'Static nominal enum cases only; field order is not by itself runtime tag/ABI mapping. Unresolved symbolic types remain preserved in raw metadata.'}

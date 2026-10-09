@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-09",
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T201553Z-native-unfulfilled-state-deinit-6e2417ca",
+      "valid": true,
+      "manifest_sha256": "f2739e26ebdaa7f192b96a730b2fddac61582f303746e9f148f304288ccf8ad4",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 2,
+        "entry_body_count": 2,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T201728Z-native-fulfillment-state-metadata-488b120d",
+      "valid": true,
+      "manifest_sha256": "6f9c9d4c3e9c3dcc90189a8e8ddc9393b9ac885eddf9527294bccc128edb63f7",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "type_count": 348,
+        "field_count": 727,
+        "parse_errors": 7,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T201909Z-native-fulfillment-state-metadata-cfd30850",
+      "valid": true,
+      "manifest_sha256": "777945cef83f5492b2b0bdd869d52b68ba3ecf1e7483f3ce25379b60d6730877",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "type_count": 348,
+        "field_count": 727,
+        "parse_errors": 7,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "state_metadata_verified": true,
+        "state_case_names": [
+          "waiting",
+          "fulfilled"
+        ],
+        "state_descriptor": "0x1508f8",
+        "scope": "Static nominal enum cases only; field order is not by itself runtime tag/ABI mapping. Unresolved symbolic types remain preserved in raw metadata."
+      }
+    },
+    {
+      "run_id": "20261009T201938Z-native-unfulfilled-deinit-guard-2af55307",
+      "valid": true,
+      "manifest_sha256": "88ef8b716bb0dfd38123f0772dd7e08bfc520ba770ebb96ff5eba02cd697d1e4",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "deinit_guard_verified": true,
+        "deinit_skipped_case": 1,
+        "deinit_policy_before_common_cleanup": true,
+        "scope": "Pinned static snapshot/case branch and unfulfilled diagnostic. Case naming, native deinit execution, callback completion and resource reclamation remain separate."
+      }
+    }
+  ],
+  "static_sites": {
+    "state_snapshot": "0x2ba5c: SynchronousAccessProviding.peek",
+    "case_query": "0x2ba68: swift_getEnumCaseMultiPayload",
+    "case1_skip": "0x2ba6c compare1; other case branches0x2ba88; case1 jumps0x2bbf0",
+    "unfulfilled_error": "0x2bb5c type metadata; 0x2bb84 allocation",
+    "failure_policy": "0x2bbd8",
+    "common_reference_cleanup": "0x2bc18 swift_release; return0x2bc3c",
+    "deallocating_destructor": "0x2c178 calls deinit; 0x2c18c tails swift_deallocClassInstance"
+  },
+  "state_metadata": {
+    "descriptor": "0x1508f8",
+    "kind": 18,
+    "names": [
+      "waiting",
+      "fulfilled"
+    ],
+    "runtime_tag_mapping": "unverified",
+    "global_parse_errors": 7,
+    "unresolved_symbolic_types": "preserved locally; not complete ABI/type recovery"
+  },
+  "tests": 129,
+  "failure_memory": "Initial metadata acceptance checked absent errors field rather than parse_errors; sealed run retained inconclusive. Corrected target-specific verifier preserves seven broader parse errors instead of declaring full parsing success.",
+  "limitations": [
+    "Static conditional diagnostic and normal-return cleanup, not executed native destructor or abandoned transport reply.",
+    "No inferred automatic error callback or reply timeout from destruction; selected diagnostic allocation/policy does not prove whole-protocol callback absence.",
+    "Case1 skip is not assigned a declared name solely from field order; safe ABI/runtime mapping remains required.",
+    "Default policy paths are separately pinned; non-returning policies could prevent normal cleanup.",
+    "Reference cleanup/class deallocation is not Mach/IOSurface right accounting or final physical reclamation.",
+    "No Xcode windows, private Swift ABI calls or process attachment."
+  ]
+}

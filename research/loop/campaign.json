@@ -1986,6 +1986,117 @@
           "equals": 0
         }
       ]
+    },
+    {
+      "id": "native-unfulfilled-state-deinit",
+      "adapter": "disassembly",
+      "hypothesis": "Pinned FulfillOnceState destruction should distinguish fulfilled from abandoned state and expose diagnostic or cleanup behavior. Actual destructor bodies are required; no native destruction or surface release claim assumed.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000002b980 [tT] |^000000000002c170 [tT] "
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 2
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-fulfillment-state-metadata",
+      "adapter": "swift_metadata",
+      "hypothesis": "Pinned Foundation metadata exposes fulfillment-state case names and descriptor structure, independent of destructor instruction names. Metadata alone must not assign runtime case tags or claim abandonment execution. Initial acceptance used wrong result field; global parser has seven errors, retained explicitly. Changed target-specific case verifier must accept only unique waiting/fulfilled enum descriptor; no runtime tag mapping.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "maximum": 1000,
+        "state_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "state_metadata_verified",
+          "equals": true
+        },
+        {
+          "path": "state_case_names",
+          "equals": [
+            "waiting",
+            "fulfilled"
+          ]
+        },
+        {
+          "path": "parse_errors",
+          "equals": 7
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-unfulfilled-deinit-guard",
+      "adapter": "disassembly",
+      "hypothesis": "Exact deinit snapshot/case1-skip branch bypasses Unfulfilled allocation/failure policy and reaches common cleanup; other branch has diagnostic before cleanup on normal return. Mutation checker rejects changed case, skip destination, missing policy/allocation. No callback completion or resource-reclamation claim.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000002b980 [tT] ",
+        "deinit_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "deinit_guard_verified",
+          "equals": true
+        },
+        {
+          "path": "deinit_skipped_case",
+          "equals": 1
+        },
+        {
+          "path": "deinit_policy_before_common_cleanup",
+          "equals": true
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

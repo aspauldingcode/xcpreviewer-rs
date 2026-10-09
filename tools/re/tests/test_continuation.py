@@ -3,9 +3,10 @@ import sys
 import unittest
 import struct
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.continuation import inspect,inspect_default,inspect_cancel
+from reloop.continuation import inspect,inspect_default,inspect_cancel,inspect_deinit,inspect_state_metadata
 from reloop.core import validate_experiment
 import json
+import copy
 
 DEFAULT='''481c: 69 09 00 d0 adrp x9, 0x132000
 4820: 00 00 00 00 ldr q0, [x9, #0x920]
@@ -50,7 +51,36 @@ CANCEL='''100: 00 00 00 00 add x0, x22, #0x4c
 144: 00 00 00 00 br x2
 '''
 
+DEINIT='''2ba54: 00 00 00 00 mov x8, x24
+2ba5c: 00 00 00 00 bl _$sSynchronousAccessProvidingpeek
+2ba60: 00 00 00 00 mov x0, x24
+2ba68: 00 00 00 00 bl 0x900 ; symbol stub for: _swift_getEnumCaseMultiPayload
+2ba6c: 00 00 00 00 cmp w0, #0x1
+2ba70: 00 00 00 00 b.ne 0x2ba88
+2ba80: 00 00 00 00 blr x8
+2ba84: 00 00 00 00 b 0x2bbf0
+2bb5c: 00 00 00 00 bl _$sUnfulfilledMa
+2bb84: 00 00 00 00 bl 0x904 ; symbol stub for: _swift_allocError
+2bbd8: 00 00 00 00 bl _$sFulfillmentFailureModefail
+2bc18: 00 00 00 00 bl 0x908 ; symbol stub for: _swift_release
+2bc3c: 00 00 00 00 ret
+'''
+
 class ContinuationTests(unittest.TestCase):
+    def test_deinit_case_skip_and_diagnostic_require_observed_boundaries(self):
+        self.assertEqual(inspect_deinit(DEINIT)['deinit_skipped_case'],1)
+        for text in [DEINIT.replace('b.ne','b.eq'),DEINIT.replace('cmp w0, #0x1','cmp w0, #0x0'),DEINIT.replace('b 0x2bbf0','b 0x2bbd8'),DEINIT.replace('_swift_allocError','_swift_allocObject'),DEINIT.replace('FulfillmentFailureModefail','OtherFailureModefail'),DEINIT.replace('peek','update'),DEINIT.replace('2bc3c: 00 00 00 00 ret','')]:
+            with self.assertRaises(ValueError):inspect_deinit(text)
+
+    def test_metadata_case_names_are_not_assigned_runtime_tags(self):
+        state={'name':'State','kind':18,'field_count':2,'address':'0x100','parent':{'name':'FulfillOnceState'},'fields':[{'name':'waiting'},{'name':'fulfilled','mangled_type':{'unresolved_symbolic_prefix_base64':'AA=='}}]}
+        self.assertEqual(inspect_state_metadata({'types':[state]})['state_case_names'],['waiting','fulfilled'])
+        for value in [{'types':[]},{'types':[state,state]}]:
+            with self.assertRaises(ValueError):inspect_state_metadata(value)
+        for key,value in [('kind',17),('field_count',1),('parent',{}),('fields',[{'name':'fulfilled'},{'name':'waiting'}])]:
+            changed=copy.deepcopy(state);changed[key]=value
+            with self.assertRaises(ValueError):inspect_state_metadata({'types':[changed]})
+
     def test_cancellation_first_fulfillment_dispatches_after_unlock(self):
         self.assertTrue(inspect_cancel(CANCEL)['cancel_action_after_unlock'])
         self.assertEqual(inspect_cancel(CANCEL)['cancel_skipped_outcome_tag'],1)
@@ -68,7 +98,7 @@ class ContinuationTests(unittest.TestCase):
     def test_static_controls_reject_nonboolean_parameters(self):
         root=pathlib.Path(__file__).resolve().parents[3]
         experiments=json.loads((root/'research/loop/campaign.json').read_text())['experiments']
-        for key in ['default_control','cancel_control']:
+        for key in ['default_control','cancel_control','deinit_control','state_control']:
             e=next(e for e in experiments if key in e['params'])
             for value in [1,'true',None]:
                 e['params'][key]=value

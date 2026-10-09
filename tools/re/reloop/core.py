@@ -17,10 +17,10 @@ ADAPTERS = {'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disass
 PARAMS = {
     'surface_payload': {'payload'},
     'portable_solid': {'second_runtime'},
-    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control'},
+    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
-    'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum'},
+    'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum','state_control'},
     'xcode_preview': {'variants','trace','scheme_control'}, 'xpc_corpus': {'seed','cases'},
     'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}, 'surface_failure':{'control'}, 'surface_reuse':set(), 'xcode_bridge_probe':{'managed'}}
 
@@ -82,6 +82,8 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
+    for flag in ('deinit_control','state_control'):
+        if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')

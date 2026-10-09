@@ -72,6 +72,11 @@ def perform(kind,out,p):
             from reloop.continuation import inspect_cancel
             facts.update(inspect_cancel(files[0].read_text()))
             atomic(out/'cancellation-guard.json',facts)
+        if p.get('deinit_control',False):
+            if len(files)!=1:raise ValueError('Deinit control requires one selected entry')
+            from reloop.continuation import inspect_deinit
+            facts.update(inspect_deinit(files[0].read_text()))
+            atomic(out/'deinit-guard.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}
@@ -110,7 +115,11 @@ def perform(kind,out,p):
         from reloop.swiftmeta import inspect
         data=inspect(image,p.get('maximum',1000));atomic(out/'swift-metadata.json',data)
         atomic(out/'swift-index.json',{'image_sha256':data['image_sha256'],'types':[{'name':t.get('name'),'kind':t['kind'],'address':t['address'],'fields':[f.get('name') for f in t.get('fields',[])]} for t in data['types']]})
-        return {'type_count':len(data['types']),'field_count':sum(len(t.get('fields',[])) for t in data['types']),'parse_errors':len(data['errors']),'image_sha256':data['image_sha256']}
+        facts={}
+        if p.get('state_control',False):
+            from reloop.continuation import inspect_state_metadata
+            facts=inspect_state_metadata(data);atomic(out/'fulfillment-state.json',facts)
+        return {'type_count':len(data['types']),'field_count':sum(len(t.get('fields',[])) for t in data['types']),'parse_errors':len(data['errors']),'image_sha256':data['image_sha256'],**facts}
     if kind=='xcode_preview':
         from reloop.canvas import capture
         return capture(out,p.get('variants',[0,1]),p.get('trace',False),p.get('scheme_control',False))

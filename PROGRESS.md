@@ -262,3 +262,9 @@ Added strict default/cancellation structural control modes with mutated dataflow
 Paired owned controls observe completion receive timeout before releasing live peer through handshake. Open reply endpoint accepts/audit-verifies late acknowledgement; explicit endpoint revocation yields INVALID_DEST. Both peers gracefully release surface rights/CF aliases/inbox/reply names, with exact imported, post-timeout and sender retained bytes.
 
 Sixteen executions yield 48 padded-byte comparisons (30,720 bytes); all eight cases repeat. Shared-helper misplaced check caught during review and corrected; original three-phase fault corpus passes. Three seals verify; 127 tests pass. See [scope/review](docs/reverse-engineering/2026-10-09-surface-late-ack.md) and [anchors/comparisons](research/evidence/surface-late-ack-2026-10-09.json). Owned timeout policy is not native Canvas behavior; reclamation/GPU/races remain open. No Xcode windows opened.
+
+## 2026-10-09 — unfulfilled-state destruction diagnostic
+
+Recovered state snapshot/case-1 diagnostic skip and other-case Unfulfilled error/failure policy before normal reference cleanup. Deallocating destructor forwards to that body and class deallocation; no physical resource reclamation claim. Independent nominal metadata declares waiting/fulfilled, without assigning runtime tags; seven broader parser errors and unresolved payload types retained.
+
+Added finite destructor/target-metadata control modes and mutation controls. Initial wrong acceptance-field run retained inconclusive; corrected target checks pass. Four seals verify; 129 tests pass. See [scope](docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md) and [anchors](research/evidence/unfulfilled-deinit-2026-10-09.json). Native abandoned callback/reply behavior, race/resource accounting and transport remain open. No Xcode windows opened.
