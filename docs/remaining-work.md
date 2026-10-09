@@ -6,7 +6,7 @@ Planning baseline: 2026-10-09, verified implementation checkpoint `3e91d33`. Thi
 
 Target: a documented, bounded preview product that compiles an explicitly supported Swift view subset, produces a portable image, and supplies a reproducible compatibility report against pinned native references. Unsupported constructs must fail clearly. Broader SwiftUI compatibility is a later expansion, measured feature by feature.
 
-The repository currently contains the RE toolkit, not the Rust preview product. It has 20 reviewed adapters, 19 research MCP tools, 67 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender exit. These do not establish the full Xcode protocol or portable SwiftUI execution.
+The repository currently contains the RE toolkit, not the Rust preview product. It has 20 reviewed adapters, 19 research MCP tools, 72 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender and receiver exits. Receiver-first controls also measure local send-right counts and retained-port access after original CF release. These do not establish the full Xcode protocol or portable SwiftUI execution.
 
 Blocking gaps: Xcode MCP schema discovery stalls; native UI launches an owned preview but content stays blank; mapping-verified native instrumentation attach cancels before session creation. No accepted real canvas snapshot or complete request/reply trace exists. ImageRenderer remains a separate native reference path.
 
@@ -23,6 +23,8 @@ If the canvas gate remains blocked, portable-subset research can use a separatel
 2. **[Reverse-engineered → Fully cross-platform WASM canvas](https://github.com/aspauldingcode/xcpreviewer-rs/milestone/2).** Reimplement the recovered supported contract using portable compilation/compatibility source, WASM execution, Rust core, layout/rendering, developer canvas and hot reload. The product execution path must not depend on Apple frameworks, Mach, Xcode or a simulator. Native Apple tools remain reference oracles. Linux, macOS, Windows and browser execution claims require actual target checks; full feature coverage must be measured against the declared recovered contract, with no silent native fallback.
 
 The [verified toolkit baseline](https://github.com/aspauldingcode/xcpreviewer-rs/issues/1) is completed; the remaining tasks are linked below. Milestone progress counts issues, not proof of universal behavioral coverage.
+
+R1 partial checkpoint: [receiver-first experiment](reverse-engineering/2026-10-09-surface-receiver.md) passes; failure/timeout release accounting and final reclamation still keep R1 open.
 
 Feasibility experiments in milestone two can run before milestone one closes. Release acceptance still depends on native references and the final feature/coverage contract. Milestone two's aim is a cheaper, hot-reloadable canvas for Apple app development; that performance claim needs measured native-versus-portable workloads.
 

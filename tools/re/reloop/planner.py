@@ -66,8 +66,10 @@ def plan(controller):
             outcomes.append({'experiment':key,'action':'recover-interprocess-surface-lifecycle',
                 'reason':'Local IOSurface holder/reference behavior and CPU bytes do not establish cross-process transfer, GPU completion or canvas ownership.'})
         if spec.get('adapter')=='surface_ipc' and manifest.get('verdict')=='supports':
-            outcomes.append({'experiment':key,'action':'recover-reuse-and-completion-contract',
-                'reason':'Owned CPU Mach handoff survives sender exit. Reuse/ordering, GPU completion, revocation and actual canvas XPC envelopes remain unmeasured.'})
+            outcomes.append({'experiment':key,'action':'account-failure-and-timeout-release' if spec.get('params',{}).get('exit_order')=='receiver' else 'recover-reuse-and-completion-contract',
+                'reason':('Owned CPU Mach handoff survives receiver exit; local send-right counts and port-retained access after CF release are measured. Failure/timeout cleanup and final reclamation remain open. '
+                          if spec.get('params',{}).get('exit_order')=='receiver' else 'Owned CPU Mach handoff survives sender exit. ')+
+                         'Reuse/ordering, GPU completion, revocation and actual canvas XPC envelopes remain unmeasured.'})
     # Templates are suggestions. The agent reviews and proposes them; no infinite background loop.
     queued={e['id'] for e in load(controller.root/'research/loop/campaign.json',{}).get('experiments',[])}
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}

@@ -18,4 +18,4 @@ Exact-output acceptance, evidence anchors, edge-case automation and AI porting s
 
 Recursive findings: [local XPC coding, malformed-input boundary and static message strings](docs/reverse-engineering/2026-10-08-xpc-boundary.md), followed by [raw coder controls and owned surface lifetime](docs/reverse-engineering/2026-10-08-raw-coder-surface.md).
 
-Latest checkpoint: [owned surface handoff across processes and sender-exit lifetime](docs/reverse-engineering/2026-10-09-surface-ipc.md).
+Latest checkpoints: [owned surface handoff across processes and sender-exit lifetime](docs/reverse-engineering/2026-10-09-surface-ipc.md), then [receiver-first exit, local right counts and retained-port access](docs/reverse-engineering/2026-10-09-surface-receiver.md).

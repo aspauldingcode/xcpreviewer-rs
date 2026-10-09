@@ -20,7 +20,7 @@ PARAMS = {
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': set(),
     'connected_probe': set(), 'plist_corpus': {'seed','cases'}, 'swift_metadata': {'binary','maximum'},
     'xcode_preview': {'variants','trace'}, 'xpc_corpus': {'seed','cases'},
-    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':set()}
+    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}}
 
 
 def now():
@@ -76,6 +76,7 @@ def validate_experiment(e):
     if not isinstance(e['params'], dict) or set(e['params']) - PARAMS[e['adapter']]:
         raise ValueError('unsupported adapter parameters')
     p = e['params']
+    if 'exit_order' in p and p['exit_order'] not in ('sender','receiver'):raise ValueError('invalid exit_order')
     for field in ['xcode','binary','query','tool']:
         if field in p and (not isinstance(p[field], str) or not p[field] or len(p[field]) > 4096):
             raise ValueError('invalid parameter ' + field)

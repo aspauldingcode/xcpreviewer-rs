@@ -12,6 +12,8 @@ Further reviewed controls measure raw-coder key/class behavior, local IOSurface 
 
 The `surface_ipc` adapter transfers an owned IOSurface Mach right between audit-verified fork/exec peers and checks clean/abrupt sender exit, retained bytes and temporary rendezvous cleanup. See [findings](../../docs/reverse-engineering/2026-10-09-surface-ipc.md) and [SurfaceIPCOracle](fixtures/SurfaceIPCOracle/manifest.json). Actual canvas XPC envelopes and GPU fences remain open.
 
+Set `surface_ipc` parameter `exit_order` to `receiver` for clean/abrupt receiver-first exit, local send-right counts and retained-port access after original owner CF release. See [receiver-first findings](../../docs/reverse-engineering/2026-10-09-surface-receiver.md) and [SurfaceReceiverOracle](fixtures/SurfaceReceiverOracle/manifest.json). Failure/timeout cleanup and final kernel reclamation remain open.
+
 ## Static collection
 
 ```sh

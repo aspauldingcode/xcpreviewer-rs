@@ -489,6 +489,47 @@
         "local-re-controller"
       ],
       "timeout_seconds": 300
+    },
+    {
+      "adapter": "surface_ipc",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "exact_receiver_exit_cases"
+        },
+        {
+          "equals": 4,
+          "path": "clean_receiver_exit_cases"
+        },
+        {
+          "equals": 4,
+          "path": "abrupt_receiver_exit_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned audit-verified receiver-first clean and abrupt exit preserves sender bytes and mutation access; retained Mach right keeps access after original CF reference release, with checked local send-right counts.",
+      "id": "owned-surface-receiver-exit",
+      "params": {
+        "exit_order": "receiver"
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
     }
   ],
   "version": 1

@@ -108,7 +108,7 @@ def perform(kind,out,p):
         return corpus(out)
     if kind=='surface_ipc':
         from reloop.surfaceipc import corpus
-        return corpus(out)
+        return corpus(out,p.get('exit_order','sender'))
     if kind in {'lldb_smoke','frida_smoke','native_reference','preview_hook_smoke'}:
         from reloop.trace import smoke
         return smoke(kind,out)
