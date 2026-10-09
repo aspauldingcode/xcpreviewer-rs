@@ -1,0 +1,41 @@
+# Continuous reverse-engineering operation
+
+The user authorized recurring work on 2026-10-09. The desktop heartbeat `continuous-xcode-preview-re` returns to this chat every ten minutes. The heartbeat supplies the reasoning and source-editing agent; the existing reviewed controller supplies bounded native execution, freezing, sealing and verification. A shell daemon that merely repeats the existing queue would not discover or implement new experiments.
+
+The schedule is active in the app, not in GitHub Actions. Local execution requires the computer and desktop app to remain running and the project to remain available. Account usage limits and existing permissions still apply. This is recurring autonomous work, not a guarantee of uninterrupted execution. No paid service or API credential is added.
+
+## Run contract
+
+Read `research/loop/continuous.json`, the relevant portion of `docs/remaining-work.md`, current repository status and the latest controller planner output. Read scoped evidence by artifact/page reference; do not reload full historical dumps or conversation transcripts. Confirm the schedule is still authorized before changing its scope or cadence. Use Caveman FULL for user-facing communication; write source and technical documents normally.
+
+Each wake performs work, not a status-only check:
+
+1. **Restore and select.** Check for user edits, remote branch movement, active owned experiments and incomplete manifests. Verify relevant target identity and trusted evidence anchors before reusing a native claim. Select the highest-value unblocked uncertainty: capture gate and required protocol semantics first, resource lifecycle controls next; use an independent reference/portable-feasibility track when native capture is blocked. Score by acceptance gate unlocked, discriminating power, independence, expected cost and failure history. More random cases of an already-bounded plist oracle rank below a missing lifecycle or capture boundary.
+2. **Predict and implement.** State the competing explanations, predicted observations and a failure/control condition before execution. Add a reviewed bounded adapter or extend one when the required probe does not exist. Test the verifier against corrupted or absent evidence. Do not substitute a planner suggestion or prose design for implementation.
+3. **Execute and falsify.** Run the reviewed controller with a bounded experiment/time/artifact budget. Use owned projects and peer processes. Verify capture readiness, actual wait status, transport ownership and applicable synchronization. Repeat unchanged inputs and make one controlled positive change. Compare exact bytes, including padding, where exactness is claimed. Distinguish semantic equivalence from byte equality and native measurements from synthetic controls.
+4. **Assess and adapt.** Seal results and retain failures. Classify support, contradiction or inconclusive outcome with scope and missing checks. If a harness fails, fix the harness or choose an independent diagnostic; do not retry an unchanged failure. Do not promote source names, selectors or static strings to live wire facts. Choose the next dependent falsification or independent gate and continue while useful work and run capacity remain.
+5. **Checkpoint and synchronize.** Update the compact durable checkpoint, scoped evidence, next actions and `PROGRESS.md`. Run appropriate checks; inspect publication contents. Commit only task changes on `development`. Fast-forward and push `master` when that checkpoint is verified, preserving remote and user work. Synchronize matching GitHub issue progress without closing unmet acceptance gates. Record pending synchronization if network access fails.
+
+Work through multiple useful steps per wake; do not stop after the first small passing probe while another discriminating step is ready. Each individual native experiment retains its deadline. Reserve enough run capacity to leave a valid checkpoint. If interrupted, resume unfinished work before starting duplicate experiments. Do not extend a failing experiment's deadline repeatedly or replenish its budget merely to obtain success.
+
+## Exclusivity, failure memory and notifications
+
+The native controller uses its exclusive lock. The chat agent is the sole Git/queue writer. If another controller or user operation holds a required resource, skip that resource and choose independent work; never kill an unknown process to obtain it. An expired schedule tick is not authority to run a second writer. Future separate agents require explicit user authorization.
+
+The checkpoint records failure fingerprints from adapter, parameters, relevant environment identity and error. An unchanged fingerprint has a prerequisite for retry: changed implementation, input, tool state or a discriminating diagnosis. Three unchanged unsuccessful investigations mark that track blocked; other tracks continue. When every remaining track requires input or external change, keep a compact blocker record and perform only cheap state checks on later wakes. Notify once for a new actionable blocker and again only when it materially changes.
+
+Notify for meaningful verified progress, a new failure, required input or completion. Stay quiet for unchanged/non-actionable ticks. Keep raw traces local; report evidence links and practical implications. A successful tiny synthetic control is not a milestone completion.
+
+## Initial next work
+
+At checkpoint `9b51624`, receiver-first and sender-first CPU Mach controls pass; 72 automated tests pass. R1 remains open.
+
+- Implement failure/timeout controls before transfer, after import and before acknowledgement. Check owned endpoints/right counts and actual peer exit outcomes; partial snapshots and success-shaped output followed by nonzero exit must fail.
+- Design a discriminating final-release reclamation check, or explicitly retain that unknown if no reliable observable is available.
+- Recover R2 resource identity versus frame generation, stale handles, delayed consumers and completion ordering.
+- Revisit O2 with a changed observation method or narrow diagnosis; do not repeat unchanged MCP discovery or native attach failures. Obtain O3 repeatable native pixels before claiming P1 live lifecycle capture.
+- Use a separately labeled native ImageRenderer reference and F1/F2 portability spike when they can unlock independent work. Neither closes the Canvas wire gate.
+
+## Stop condition
+
+Continue until the declared contract of GitHub milestone 1 is actually reverse-engineered and independently verified, or the user pauses/stops this loop. Required unknowns keep the milestone open. On achievement, publish the coverage/unknowns report, notify the user and pause the heartbeat. The WASM milestone remains separately tracked; this RE automation does not silently declare it complete or expand into unrestricted product work.

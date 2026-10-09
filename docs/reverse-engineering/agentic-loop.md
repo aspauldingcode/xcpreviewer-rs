@@ -2,6 +2,8 @@
 
 Status: bounded local controller and MCP server implemented; live Xcode preview protocol recovery remains the next campaign. See the [toolkit guide](toolkit.md) for commands and measured validation, and the [verification contract](verification.md) for exact comparison, external anchors, edge cases and token-efficient investigation. Scope: recover Xcode preview semantics, validate a portable boundary, and build only the parts supported by evidence. Initial target: Xcode 26.6 (17F113), macOS 26.5.1 (25F80), arm64. This design extends the [initial findings](2026-10-08-initial-findings.md), not the speculative protocol in the original roadmap.
 
+Recurring operation is now authorized and scheduled in this chat every ten minutes. The [continuous operation runbook](continuous-loop.md) defines substantive work per wake, adaptive failure handling, durable checkpoints and completion conditions. The desktop heartbeat supplies the agent; individual native experiments remain bounded by this controller.
+
 ## Outcome and boundaries
 
 The loop should produce a versioned protocol model, replayable local fixtures, a native reference harness, and a measured compatibility report. It should make progress while the operator is away, recover from ordinary tool failures, and leave enough evidence for another agent to resume without trusting conversational memory.
