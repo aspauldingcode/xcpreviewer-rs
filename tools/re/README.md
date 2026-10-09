@@ -2,6 +2,10 @@
 
 Requires macOS, an installed Xcode, its command-line tools, and Python 3. No extra dependencies are needed for collection or runtime probes. Run from the repository root.
 
+## Automated experiments and MCP
+
+See the [free toolkit guide](../../docs/reverse-engineering/toolkit.md) for bootstrap, local Ghidra service lifecycle, the eight-experiment queue, MCP client configuration, Frida/LLDB probes and evidence verification. The manual commands below remain useful for targeted investigation.
+
 ## Static collection
 
 ```sh

@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "experiments": [
+    {
+      "id": "inventory",
+      "adapter": "inventory",
+      "hypothesis": "The installed target preview binaries can be fingerprinted and inspected without command failures.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 240,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 100,
+      "checks": [
+        {
+          "path": "binaries",
+          "equals": 18
+        },
+        {
+          "path": "failed_commands",
+          "equals": 0
+        },
+        {
+          "path": "sdk_stubs",
+          "equals": 8
+        }
+      ]
+    },
+    {
+      "id": "runtime-plist",
+      "adapter": "runtime",
+      "hypothesis": "Isolated host/OS helpers load and round-trip our synthetic property list; native key getters match the pinned baseline.",
+      "depends_on": [
+        "inventory"
+      ],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 240,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 95,
+      "checks": [
+        {
+          "path": "all_loaded",
+          "equals": true
+        },
+        {
+          "path": "uv_round_trip",
+          "equals": true
+        },
+        {
+          "path": "foundation_round_trip",
+          "equals": true
+        },
+        {
+          "path": "independent_python_decode",
+          "equals": true
+        },
+        {
+          "path": "message_keys.MessageTypeKey",
+          "equals": "type"
+        },
+        {
+          "path": "message_keys.OneWayMessageKey",
+          "equals": "UVOneWayMessageKey"
+        }
+      ]
+    },
+    {
+      "id": "key-disassembly",
+      "adapter": "disassembly",
+      "hypothesis": "The pinned host image exposes exactly the two selected message-key getters.",
+      "depends_on": [
+        "inventory"
+      ],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 90,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        }
+      ]
+    },
+    {
+      "id": "lldb-owned-trace",
+      "adapter": "lldb_smoke",
+      "hypothesis": "LLDB can resolve and observe all six owned fixture tick calls with matching debug variables.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 80,
+      "checks": [
+        {
+          "path": "completed",
+          "equals": true
+        },
+        {
+          "path": "tick_events",
+          "equals": 6
+        },
+        {
+          "path": "inputs_match",
+          "equals": true
+        },
+        {
+          "path": "breakpoint_resolved",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "frida-owned-trace",
+      "adapter": "frida_smoke",
+      "hypothesis": "Frida can observe six owned native calls and decode six synthetic UVPropertyList outputs without script errors.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 75,
+      "checks": [
+        {
+          "path": "tick_events",
+          "equals": 6
+        },
+        {
+          "path": "plist_events",
+          "equals": 6
+        },
+        {
+          "path": "inputs_match",
+          "equals": true
+        },
+        {
+          "path": "payloads_match",
+          "equals": true
+        },
+        {
+          "path": "script_errors",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "native-reference",
+      "adapter": "native_reference",
+      "hypothesis": "Our native SwiftUI harness emits a PNG reference image without the Xcode canvas.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 70,
+      "checks": [
+        {
+          "path": "png_valid",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "ghidra-selected",
+      "adapter": "ghidra",
+      "hypothesis": "Ghidra can decompile and save the two selected key getter functions; full analysis completion is not required.",
+      "depends_on": [
+        "inventory"
+      ],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 60,
+      "checks": [
+        {
+          "path": "decompiled_functions",
+          "equals": 2
+        },
+        {
+          "path": "failed_functions",
+          "equals": 0
+        },
+        {
+          "path": "project_saved",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "ghidra-vibe-health",
+      "adapter": "ghidra_mcp",
+      "hypothesis": "The GhidraVibe MCP extension reports a healthy program engine.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 60,
+      "artifact_limit_mb": 512,
+      "params": {},
+      "priority": 55,
+      "checks": [
+        {
+          "path": "engine_healthy",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

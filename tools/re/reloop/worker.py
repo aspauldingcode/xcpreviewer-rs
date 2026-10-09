@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+"""Fixed experiment adapters. Runs only reviewed local tool entry points."""
+import argparse
+import hashlib
+import json
+import os
+import pathlib
+import subprocess
+import sys
+
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
+from reloop.core import ROOT, PROJECT_ROOT, atomic, digest, load
+
+
+def command(argv,out,name,timeout=600):
+    with (out/(name+'.stdout')).open('wb') as stdout, (out/(name+'.stderr')).open('wb') as stderr:
+        result=subprocess.run([str(v) for v in argv],cwd=str(ROOT),stdout=stdout,stderr=stderr,timeout=timeout)
+    if result.returncode: raise RuntimeError(name+' exited '+str(result.returncode))
+
+
+def ghidra_config():
+    config=load(PROJECT_ROOT/'research/local-config.json',{})
+    home=config.get('ghidra_home')
+    if not home:
+        candidate=pathlib.Path.home()/'GhidraVibe/result-ghidra-vibe-fresh/lib/ghidra'
+        if candidate.is_dir(): home=str(candidate.resolve())
+    java=config.get('java_home')
+    if not java:
+        candidates=list(pathlib.Path('/nix/store').glob('*-semeru-bin-21*/Library/Java/JavaVirtualMachines/*/Contents/Home')) if pathlib.Path('/nix/store').exists() else []
+        if candidates: java=str(sorted(candidates)[0])
+    return home,java,config
+
+
+def perform(kind,out,p):
+    xcode=p.get('xcode','/Applications/Xcode.app')
+    image=p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
+    if kind=='inventory':
+        command([sys.executable,ROOT/'tools/re/collect.py','--xcode',xcode,'--out',out/'inventory'],out,'collect')
+        d=load(out/'inventory/inventory.json')
+        return {'binaries':sum(t['exists'] for t in d['targets']),
+                'failed_commands':sum(c['exit_code']!=0 for t in d['targets'] for c in t.get('commands',[])),
+                'sdk_stubs':len(list((out/'inventory').glob('*.tbd.txt')))}
+    if kind=='runtime':
+        env=os.environ.copy();env['RE_OUT']=str(out);env['XCODE_APP']=xcode
+        with (out/'runtime.stdout').open('wb') as stdout,(out/'runtime.stderr').open('wb') as stderr:
+            r=subprocess.run(['sh',str(ROOT/'tools/re/dump-runtime.sh')],env=env,cwd=ROOT,stdout=stdout,stderr=stderr,timeout=240)
+        if r.returncode: raise RuntimeError('runtime helpers failed')
+        probe=load(out/'runtime/plist-probe.json');keys=load(out/'runtime/message-keys.json')
+        import plistlib,base64
+        fixture=plistlib.loads(base64.b64decode(probe['base64']))
+        datasets={n:load(out/('runtime/'+n+'.json')) for n in ['os','host']}
+        return {'all_loaded':all(l['loaded'] for d in datasets.values() for l in d['loads']),
+                'uv_round_trip':bool(probe['uv_round_trip_equal']), 'foundation_round_trip':bool(probe['foundation_round_trip_equal']),
+                'independent_python_decode':fixture['type']=='synthetic-probe' and fixture['bytes']==b'hello',
+                'message_keys':keys,'images':{n:d['images'] for n,d in datasets.items()}}
+    if kind=='disassembly':
+        command([sys.executable,ROOT/'tools/re/disassemble.py','--binary',image,'--out',out/'disassembly',
+                 '--query',p.get('query','MessageTypeKey.getter|OneWayMessageKey.getter')],out,'disassemble')
+        return {'function_count':len(list((out/'disassembly').glob('*.txt'))),'image_sha256':digest(image)}
+    if kind=='ghidra':
+        home,java,config=ghidra_config()
+        if not home or not java: raise RuntimeError('Ghidra/JDK unavailable; see doctor and local-config.example.json')
+        projects=out/'projects';projects.mkdir()
+        addresses=p.get('addresses',['9661c','96600'])
+        target=out/'decompiled.txt'
+        args=[str(pathlib.Path(java)/'bin/java'),'-Xmx2G','-Djava.awt.headless=true',
+              '-Djava.system.class.loader=ghidra.GhidraClassLoader','-Duser.country=US','-Duser.language=en',
+              '-Dapplication.settingsdir='+str(out/'settings'),'-Djava.io.tmpdir='+str(out/'tmp'),
+              '-cp',str(pathlib.Path(home)/'Ghidra/Framework/Utility/lib/Utility.jar'),
+              'ghidra.Ghidra','ghidra.app.util.headless.AnalyzeHeadless',str(projects),'PreviewResearch',
+              '-import',image,'-max-cpu','2','-analysisTimeoutPerFile','120','-scriptPath',str(ROOT/'tools/re'),
+              '-postScript','DumpPreviewFunctions.java',str(target)]+addresses
+        (out/'tmp').mkdir()
+        atomic(out/'command.json',args)
+        command(args,out,'ghidra',timeout=600)
+        text=target.read_text();log=(out/'ghidra.stdout').read_text(errors='replace')+(out/'ghidra.stderr').read_text(errors='replace')
+        return {'decompiled_functions':text.count('\nAddress:'),'failed_functions':text.count('FAILED:')+text.count('NO FUNCTION'),
+                'partial_analysis':'Analysis timed out' in log,'project_saved':'Save succeeded' in log,'image_sha256':digest(image)}
+    if kind=='ghidra_mcp':
+        from reloop.ghidra import call
+        return call(p.get('tool','vibe_health'),p.get('arguments',{}),out)
+    if kind in {'lldb_smoke','frida_smoke','native_reference'}:
+        from reloop.trace import smoke
+        return smoke(kind,out)
+    raise ValueError('unknown adapter')
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('adapter');parser.add_argument('--out',type=pathlib.Path,required=True);parser.add_argument('--params',default='{}')
+    args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=True)
+    try:
+        result=perform(args.adapter,args.out,json.loads(args.params))
+        atomic(args.out/'result.json',{'observations':result})
+        print(json.dumps(result));return 0
+    except Exception as error:
+        atomic(args.out/'result.json',{'error':str(error),'error_type':type(error).__name__,'observations':{}})
+        print(str(error),file=sys.stderr);return 1
+
+if __name__=='__main__': raise SystemExit(main())

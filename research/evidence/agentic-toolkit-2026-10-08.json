@@ -1,0 +1,312 @@
+{
+  "scope": "Local toolkit validation. Owned synthetic traces and native reference rendering are not a live Xcode canvas protocol capture.",
+  "runs": [
+    {
+      "run_id": "20261009T003455Z-frida-owned-trace-87ca7846",
+      "experiment_id": "frida-owned-trace",
+      "hypothesis": "Frida can observe six owned native calls and decode six synthetic UVPropertyList outputs without script errors.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 4.44,
+      "started_at": "2026-10-09T00:34:55.791207+00:00",
+      "finished_at": "2026-10-09T00:35:00.235109+00:00",
+      "experiment_hash": "61b988b02bd0284d9ea9d2d284f886f52f7cde26be3759bb4e059040c2f3d76c",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 6,
+          "expected": 6,
+          "passed": true,
+          "path": "tick_events",
+          "present": true
+        },
+        {
+          "actual": 6,
+          "expected": 6,
+          "passed": true,
+          "path": "plist_events",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inputs_match",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "payloads_match",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "script_errors",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003523Z-ghidra-selected-661e3069",
+      "experiment_id": "ghidra-selected",
+      "hypothesis": "Ghidra can decompile and save the two selected key getter functions; full analysis completion is not required.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 157.667,
+      "started_at": "2026-10-09T00:35:23.598851+00:00",
+      "finished_at": "2026-10-09T00:38:01.273558+00:00",
+      "experiment_hash": "9bec43d21a153305bcc0d0cf7019fbb1e6057eaab5e85487c02b04e7a770368f",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "decompiled_functions",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "failed_functions",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "project_saved",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003802Z-ghidra-vibe-health-54d22b7d",
+      "experiment_id": "ghidra-vibe-health",
+      "hypothesis": "The GhidraVibe MCP extension reports a healthy program engine.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 0.343,
+      "started_at": "2026-10-09T00:38:02.330304+00:00",
+      "finished_at": "2026-10-09T00:38:02.676000+00:00",
+      "experiment_hash": "fca2a7c70904d4e21e9f648cc99620eccc8722039704ae3d67220ce5a12c3db1",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "engine_healthy",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003422Z-inventory-a76200fd",
+      "experiment_id": "inventory",
+      "hypothesis": "The installed target preview binaries can be fingerprinted and inspected without command failures.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 8.314,
+      "started_at": "2026-10-09T00:34:22.935585+00:00",
+      "finished_at": "2026-10-09T00:34:31.255232+00:00",
+      "experiment_hash": "029e0a622fa75f3131858c248aea4bef2c889131fd058f2263b7c9f39d1f109f",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 18,
+          "expected": 18,
+          "passed": true,
+          "path": "binaries",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "failed_commands",
+          "present": true
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "sdk_stubs",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003443Z-key-disassembly-2461cfa0",
+      "experiment_id": "key-disassembly",
+      "hypothesis": "The pinned host image exposes exactly the two selected message-key getters.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 1.315,
+      "started_at": "2026-10-09T00:34:43.671469+00:00",
+      "finished_at": "2026-10-09T00:34:44.988640+00:00",
+      "experiment_hash": "6369a81bfea6623f2941651d131233581770f4541bcc275387713759488b701c",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "function_count",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003445Z-lldb-owned-trace-fc4549b9",
+      "experiment_id": "lldb-owned-trace",
+      "hypothesis": "LLDB can resolve and observe all six owned fixture tick calls with matching debug variables.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 9.902,
+      "started_at": "2026-10-09T00:34:45.422068+00:00",
+      "finished_at": "2026-10-09T00:34:55.327392+00:00",
+      "experiment_hash": "e4c5192387f3a50b4603fdb45f396a0b43b1956c80029ee977c12dd59ee06d0a",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "completed",
+          "present": true
+        },
+        {
+          "actual": 6,
+          "expected": 6,
+          "passed": true,
+          "path": "tick_events",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inputs_match",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "breakpoint_resolved",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003501Z-native-reference-8104c773",
+      "experiment_id": "native-reference",
+      "hypothesis": "Our native SwiftUI harness emits a PNG reference image without the Xcode canvas.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 20.823,
+      "started_at": "2026-10-09T00:35:01.973949+00:00",
+      "finished_at": "2026-10-09T00:35:22.802908+00:00",
+      "experiment_hash": "4b7f5c87d7d109026f87c07b5e90f02c0a6a821d3e9294a3ef0334bf9ff4fcfd",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "png_valid",
+          "present": true
+        }
+      ]
+    },
+    {
+      "run_id": "20261009T003431Z-runtime-plist-52c5b39c",
+      "experiment_id": "runtime-plist",
+      "hypothesis": "Isolated host/OS helpers load and round-trip our synthetic property list; native key getters match the pinned baseline.",
+      "execution": "success",
+      "verdict": "supports",
+      "duration_seconds": 11.691,
+      "started_at": "2026-10-09T00:34:31.510281+00:00",
+      "finished_at": "2026-10-09T00:34:43.207452+00:00",
+      "experiment_hash": "a5b3af019ba09c791af2dba98fe57b619ac0c08dfb9209ecd5cd8734e692d492",
+      "environment_hash": "d7bcd74bfa025388aaae04404679a98055ec9e51f66b8c8179ca88b202137fed",
+      "controller_loaded_source_sha256": "81d94b1aa33d2b79e59a901ee7519410b1f616937b591fd9797fc0ac16c7e469",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "all_loaded",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "uv_round_trip",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "foundation_round_trip",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "independent_python_decode",
+          "present": true
+        },
+        {
+          "actual": "type",
+          "expected": "type",
+          "passed": true,
+          "path": "message_keys.MessageTypeKey",
+          "present": true
+        },
+        {
+          "actual": "UVOneWayMessageKey",
+          "expected": "UVOneWayMessageKey",
+          "passed": true,
+          "path": "message_keys.OneWayMessageKey",
+          "present": true
+        }
+      ]
+    }
+  ],
+  "all_hashes_valid": true,
+  "all_hypotheses_supported": true,
+  "additional_validation": {
+    "automated_tests_passed": 19,
+    "research_mcp_stdio_tools": 7,
+    "ghidra_vibe_stdio_tools": 70,
+    "ghidra_http_dyld_cache_discovery": true,
+    "xcode_mcp_discovery": "No running Xcode process; actual canvas orchestration unverified",
+    "native_reference_visual_inspection": "320x160 PNG contains both expected text labels",
+    "scope_note": "Ghidra HTTP routing and its additional test were corrected during the final headless run; relevant bridge calls and tests were rerun separately. Run hashes preserve the exact recorded revisions."
+  }
+}
