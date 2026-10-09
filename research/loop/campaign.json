@@ -3122,6 +3122,63 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "portable-literal-source-ir",
+      "adapter": "portable_solid",
+      "hypothesis": "Strict explicit opaque sRGB red/blue Color.frame fragments lower through saved LLVM IR to import-free WASM; native red/repeat/blue pixels and independent padding literals agree exactly, unsupported source and invalid runtime stride reject.",
+      "depends_on": [],
+      "resources": [
+        "portable-reference"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "source_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "source_modules",
+          "equals": 4
+        },
+        {
+          "path": "all_native_rgba_equal",
+          "equals": true
+        },
+        {
+          "path": "all_literal_padding_equal",
+          "equals": true
+        },
+        {
+          "path": "source_holdouts_rejected",
+          "equals": 15
+        },
+        {
+          "path": "repeat_pixels_equal",
+          "equals": true
+        },
+        {
+          "path": "repeat_module_bytes_equal",
+          "equals": true
+        },
+        {
+          "path": "wasm_imports",
+          "equals": 0
+        },
+        {
+          "path": "negative_requests",
+          "equals": 16
+        },
+        {
+          "path": "invalid_buffer_unchanged",
+          "equals": true
+        },
+        {
+          "path": "repeat_ir_bytes_equal",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

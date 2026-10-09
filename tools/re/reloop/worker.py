@@ -224,6 +224,9 @@ def perform(kind,out,p):
         from reloop.surfacefailure import corpus,use_corpus
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
     if kind=='portable_solid':
+        if p.get('source_control',False):
+            from reloop.viewsource import corpus
+            return corpus(out)
         from reloop.portable import corpus
         return corpus(out,p.get('second_runtime',False))
     if kind=='surface_payload':
