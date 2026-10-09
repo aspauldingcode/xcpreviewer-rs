@@ -214,3 +214,9 @@ Two unsupported-entry failures and the original prediction counterexample are se
 Followed the outer ServiceMessage serializer into its payload getter. Static archive and unarchive call sites select the singleton identifier key and Swift.String conformance, with an optional value API; initializer stores the returned value before content dispatch. This narrows where correlation data travels, without establishing reply propagation or malformed-value behavior.
 
 Four new sealed runs verify; missing-signature closure selector failure is retained and corrected. Campaign validates; existing 109-test implementation checkpoint unchanged. No Xcode windows opened. See [static path](docs/reverse-engineering/2026-10-09-service-identifier.md) and [four anchors](research/evidence/service-identifier-path-2026-10-09.json). R2/P1/P2 and both milestones remain open.
+
+## 2026-10-09 — final-reference global ID reachability
+
+Immediate global IOSurface-ID disappearance fails in two of 16 owned executions despite peer exit and reviewed right/alias cleanup. Retained failure prevents premature reclamation claims. Separately registered requested-100ms control passes all 16 executions with 80 independent padded-byte comparisons (51,200 bytes); its immediate lookups were already null, so delay causality remains unproven.
+
+Both campaigns seal and verify; all 110 tests pass. No Xcode windows opened. See [scope and failed prediction](docs/reverse-engineering/2026-10-09-surface-id-lifetime.md) and [anchors](research/evidence/surface-id-lifetime-2026-10-09.json). R1/R2 and both milestones remain open.

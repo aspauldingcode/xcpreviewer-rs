@@ -22,6 +22,12 @@ def inspect(record,receiver,case,mode,payloads,returncode=0):
         for key in ('first_id','second_id'):
             if type(record[key]) is not int or record[key]<=0 or type(receiver.get(key)) is not int or receiver[key]!=record[key]:return {'passed':False,'failure':'resource-identity'}
         if (record['first_id']==record['second_id'])!=same or receiver.get('port_names_equal') is not same:return {'passed':False,'failure':'resource-identity'}
+        if any(record.get(k) is not True for k in ('sender_rights_released','sender_aliases_released')):return {'passed':False,'failure':'sender-release'}
+        for key,value in (('live_global_first',record['first_id']),('live_global_second',record['second_id']),('settled_global_first',0),('settled_global_second',0)):
+            if type(record.get(key)) is not int or record[key]!=value:return {'passed':False,'failure':'global-id-lifetime'}
+        if type(record.get('lookup_delay_us')) is not int or record['lookup_delay_us']!=100000:return {'passed':False,'failure':'lookup-delay'}
+        for key,id_key in (('final_global_first','first_id'),('final_global_second','second_id')):
+            if type(record.get(key)) is not int or record[key] not in (0,record[id_key]):return {'passed':False,'failure':'immediate-id-observation'}
         if receiver.get('audit_peer_verified') is not True or receiver.get('received_rights_released') is not True:return {'passed':False,'failure':'release'}
         for key,value in [('first_refs_after_two_imports',2 if same else 1),('second_refs_after_first_release',1)]:
             if type(receiver.get(key)) is not int or receiver[key]!=value:return {'passed':False,'failure':'right-counts'}
@@ -63,5 +69,6 @@ def corpus(out):
     atomic(out/'surface-reuse-corpus.json',{'cases':rows})
     return {'cases':len(rows),'verified_reuse_cases':sum(r['passed'] for r in rows),'mutable_old_handle_cases':sum(r['passed'] and r['mode']=='reuse' for r in rows),
             'verified_lookup_lifetime_cases':sum(r['passed'] for r in rows),
+            'verified_final_id_lookup_cases':sum(r['passed'] for r in rows),
             'separate_storage_preserved_cases':sum(r['passed'] and r['mode']=='separate' for r in rows),'repeat_bytes_equal_cases':sum(r['repeat_bytes_equal'] for r in rows),'helper_failures':failures,
-            'scope':'Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting and immediate retired-name lookup checks while CF aliases remain alive. No unrelated port allocation is intentionally interposed; arbitrary name reuse remains untested. Not recovered Canvas generation/acknowledgement protocol, GPU fences, stale-name security or final reclamation.'}
+            'scope':'Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting and immediate retired-name lookup checks while CF aliases remain alive. No unrelated port allocation is intentionally interposed; arbitrary name reuse remains untested. Global ID lookup positive while sender CF aliases remain and null after a bounded 100ms delay following all reviewed owned references dropping is a scoped lookup-lifetime observable, not proof of memory reclamation or arbitrary ID recycling. Not recovered Canvas generation/acknowledgement protocol, GPU fences or stale-name security.'}

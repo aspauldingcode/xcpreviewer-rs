@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "84539fe9123cd1477f45fbf4760583149758e136",
+  "baseline_commit": "0e371f6a5e3e5214fd0825097d596581c755e558",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -52,16 +52,20 @@
       "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
       "status": "prediction-falsified-static-scope",
       "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+    },
+    {
+      "run_id": "20261009T190245Z-owned-surface-final-id-lookup-ae78056c",
+      "status": "immediate-id-null-prediction-falsified",
+      "retry_prerequisite": "Do not repeat immediate-null expectation. Changed bounded-delay control supports only sampled reachability, not cause or physical reclamation."
     }
   ],
-  "last_completed": "Static ServiceMessage serializer uses payload getter; payload archive and initializer unarchive select singleton identifier alias with optional Swift.String generic type. Four sealed site runs verified, missing-signature selector retained. No value roundtrip/live correlation claimed; 109-test implementation checkpoint unchanged.",
+  "last_completed": "R1 global-ID lifetime: immediate null prediction fails in two of 16 owned executions; separately registered 100ms followup passes all 16, with 80 full padded-byte comparisons. Both runs seal and verify; 110 tests pass. No memory reclamation/Canvas completion claim.",
   "last_github_sync": {
-    "checkpoint": "ServiceMessage optional identifier archive/unarchive static path",
+    "checkpoint": "Owned final-reference global ID reachability",
     "date": "2026-10-09",
     "issues": [
-      "R2",
-      "P1",
-      "P2"
+      "R1",
+      "R2"
     ],
     "state": "open"
   },
@@ -82,7 +86,7 @@
       "state": "ready"
     },
     {
-      "action": "Independent final reclamation observable; do not infer from not-in-use or absent local names",
+      "action": "Global ID reachability can persist immediately after final owned release; bounded 100ms controls are null. Distinguish transient release/lookup effects and possible ID recycling before stronger reclamation claims; choose an independent completion/correlation observable.",
       "issue_id": "R1",
       "state": "unverified"
     }
@@ -239,6 +243,16 @@
       "run_id": "20261009T185430Z-native-service-message-payload-getter-6dd0a3ee",
       "manifest_sha256": "eff91e8af3b2058d667ce4e9755165df446a870864804a2085ad58cdd65a8b47",
       "path": "research/evidence/service-identifier-path-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T190245Z-owned-surface-final-id-lookup-ae78056c",
+      "manifest_sha256": "bc5c8b1d7482ce21f0108d016a1c379b762be1e12d0e6b755a4313b864892074",
+      "path": "research/evidence/surface-id-lifetime-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T190408Z-owned-surface-settled-id-lookup-f86900de",
+      "manifest_sha256": "ba22863fee2857a9d8fe91da9615253a6448fd4561caae9ce07949388258fea7",
+      "path": "research/evidence/surface-id-lifetime-2026-10-09.json"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

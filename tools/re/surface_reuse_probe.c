@@ -20,6 +20,12 @@ static uint32_t lookup_id(mach_port_t name) {
     if(!surface)return 0;
     uint32_t id=IOSurfaceGetID(surface);CFRelease(surface);return id;
 }
+// ID lookup is a separate observable from task-local Mach-name lookup.
+static uint32_t global_lookup_id(uint32_t id) {
+    IOSurfaceRef surface=IOSurfaceLookup(id);
+    if(!surface)return 0;
+    uint32_t found=IOSurfaceGetID(surface);CFRelease(surface);return found;
+}
 static int reuse_peer(const char *service,pid_t parent,const char *mode,const char *folder) {
     mach_port_t remote=MACH_PORT_NULL,inbox=MACH_PORT_NULL,p1=MACH_PORT_NULL,p2=MACH_PORT_NULL;
     IOSurfaceRef first=NULL,second=NULL;int same=!strcmp(mode,"reuse"),result=50;uint8_t raw[LIMIT];
@@ -80,7 +86,14 @@ int main(int argc,char **argv) {
     if(!send_refs(p1,1) || !send_refs(p2,1))goto done;
     uint32_t id1=IOSurfaceGetID(first),id2=IOSurfaceGetID(second);
     if(!remove_rendezvous(&inbox,service))goto done;registered=0;
-    printf("{\"width\":%u,\"height\":%u,\"seed\":%u,\"next_seed\":%u,\"stride\":%zu,\"mode\":\"%s\",\"sender_pid\":%d,\"receiver_pid\":%d,\"first_id\":%u,\"second_id\":%u,\"audit_peer_verified\":true,\"receiver_exit\":0,\"delayed_read_after_second_import\":true,\"rendezvous_removed\":true}\n",width,height,seed,next,stride,mode,(int)getpid(),(int)child,id1,id2);result=0;
+    if(p2!=p1){if(mach_port_deallocate(mach_task_self(),p2))goto done;p2=MACH_PORT_NULL;}
+    if(mach_port_deallocate(mach_task_self(),p1))goto done;p1=MACH_PORT_NULL;p2=MACH_PORT_NULL;
+    uint32_t live_id1=global_lookup_id(id1),live_id2=global_lookup_id(id2);
+    if(second!=first)CFRelease(second);second=NULL;CFRelease(first);first=NULL;
+    uint32_t final_id1=global_lookup_id(id1),final_id2=global_lookup_id(id2);
+    usleep(100000);
+    uint32_t settled_id1=global_lookup_id(id1),settled_id2=global_lookup_id(id2);
+    printf("{\"width\":%u,\"height\":%u,\"seed\":%u,\"next_seed\":%u,\"stride\":%zu,\"mode\":\"%s\",\"sender_pid\":%d,\"receiver_pid\":%d,\"first_id\":%u,\"second_id\":%u,\"audit_peer_verified\":true,\"receiver_exit\":0,\"delayed_read_after_second_import\":true,\"rendezvous_removed\":true,\"sender_rights_released\":true,\"sender_aliases_released\":true,\"live_global_first\":%u,\"live_global_second\":%u,\"final_global_first\":%u,\"final_global_second\":%u,\"settled_global_first\":%u,\"settled_global_second\":%u,\"lookup_delay_us\":100000}\n",width,height,seed,next,stride,mode,(int)getpid(),(int)child,id1,id2,live_id1,live_id2,final_id1,final_id2,settled_id1,settled_id2);result=0;
  done:
     if(child>0 && !waited){kill(child,SIGKILL);waitpid(child,NULL,0);}
     if(registered && !remove_rendezvous(&inbox,service))fail("reuse-rendezvous-cleanup",1);

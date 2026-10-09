@@ -1383,6 +1383,37 @@
           "equals": 1
         }
       ]
+    },
+    {
+      "id": "owned-surface-settled-id-lookup",
+      "adapter": "surface_reuse",
+      "hypothesis": "Global ID lookup succeeds while sender aliases remain and becomes null at a bounded 100ms followup after owned peer exit/right/alias release; immediate lookup may remain reachable. No memory reclamation or ID-recycling guarantee.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 64,
+      "params": {},
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_final_id_lookup_cases",
+          "equals": 8
+        },
+        {
+          "path": "verified_reuse_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_bytes_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        }
+      ]
     }
   ],
   "version": 1
