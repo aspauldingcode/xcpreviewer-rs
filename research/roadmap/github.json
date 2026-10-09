@@ -1,0 +1,294 @@
+{
+  "issues": {
+    "A1": {
+      "dependencies": "I5 + H1 + V1",
+      "depends_on_ids": [
+        "H1",
+        "I5",
+        "V1"
+      ],
+      "milestone": 2,
+      "number": 23,
+      "title": "A1: Preview-facing MCP and user workflow",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/23"
+    },
+    "A2": {
+      "dependencies": "Stable I1/I5 API and actual consumer need",
+      "depends_on_ids": [
+        "I1",
+        "I5"
+      ],
+      "milestone": 2,
+      "number": 24,
+      "title": "A2: C ABI and language bindings",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/24"
+    },
+    "B1": {
+      "dependencies": "H1/H2 + stable native workload",
+      "depends_on_ids": [
+        "H1",
+        "H2"
+      ],
+      "milestone": 2,
+      "number": 21,
+      "title": "B1: Cost and latency qualification",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/21"
+    },
+    "BASE": {
+      "dependencies": "",
+      "depends_on_ids": [],
+      "milestone": 1,
+      "number": 1,
+      "title": "BASE: verified RE toolkit and owned boundary oracles",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/1"
+    },
+    "D1": {
+      "dependencies": "S1 + selected A1/A2",
+      "depends_on_ids": [
+        "A1",
+        "A2",
+        "S1"
+      ],
+      "milestone": 2,
+      "number": 26,
+      "title": "D1: Packaging, releases and operator docs",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/26"
+    },
+    "F1": {
+      "dependencies": "O3 reference tier",
+      "depends_on_ids": [
+        "O3"
+      ],
+      "milestone": 2,
+      "number": 11,
+      "title": "F1: Choose first portable subset",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/11"
+    },
+    "F2": {
+      "dependencies": "F1",
+      "depends_on_ids": [
+        "F1"
+      ],
+      "milestone": 2,
+      "number": 12,
+      "title": "F2: Compiler/runtime feasibility spike",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12"
+    },
+    "F3": {
+      "dependencies": "F2; P2 only for measured native mappings",
+      "depends_on_ids": [
+        "F2",
+        "P2"
+      ],
+      "milestone": 2,
+      "number": 13,
+      "title": "F3: Design portable protocol and ABI",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/13"
+    },
+    "H1": {
+      "dependencies": "I5; identity/cancellation contracts in F3",
+      "depends_on_ids": [
+        "F3",
+        "I5"
+      ],
+      "milestone": 2,
+      "number": 19,
+      "title": "H1: Transactional hot reload",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19"
+    },
+    "H2": {
+      "dependencies": "I5 + H1 + V1",
+      "depends_on_ids": [
+        "H1",
+        "I5",
+        "V1"
+      ],
+      "milestone": 2,
+      "number": 20,
+      "title": "H2: Developer canvas",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20"
+    },
+    "I1": {
+      "dependencies": "F3",
+      "depends_on_ids": [
+        "F3"
+      ],
+      "milestone": 2,
+      "number": 14,
+      "title": "I1: Rust workspace and core contracts",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14"
+    },
+    "I2": {
+      "dependencies": "F2 + I1",
+      "depends_on_ids": [
+        "F2",
+        "I1"
+      ],
+      "milestone": 2,
+      "number": 15,
+      "title": "I2: Swift compatibility/build adapter",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15"
+    },
+    "I3": {
+      "dependencies": "I1 + I2",
+      "depends_on_ids": [
+        "I1",
+        "I2"
+      ],
+      "milestone": 2,
+      "number": 16,
+      "title": "I3: Runtime and host imports",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/16"
+    },
+    "I4": {
+      "dependencies": "F1 + O3 + I3",
+      "depends_on_ids": [
+        "F1",
+        "I3",
+        "O3"
+      ],
+      "milestone": 2,
+      "number": 17,
+      "title": "I4: Layout and software rendering",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/17"
+    },
+    "I5": {
+      "dependencies": "I2\u2013I4",
+      "depends_on_ids": [
+        "I2",
+        "I4"
+      ],
+      "milestone": 2,
+      "number": 18,
+      "title": "I5: End-to-end portable CLI slice",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/18"
+    },
+    "O1": {
+      "dependencies": "Existing toolkit",
+      "depends_on_ids": [],
+      "milestone": 1,
+      "number": 2,
+      "title": "O1: Reconcile target/environment identities and invalid evidence",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/2"
+    },
+    "O2": {
+      "dependencies": "O1",
+      "depends_on_ids": [
+        "O1"
+      ],
+      "milestone": 1,
+      "number": 3,
+      "title": "O2: Native capture diagnosis",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/3"
+    },
+    "O3": {
+      "dependencies": "O2 for canvas; existing ImageRenderer for its own tier",
+      "depends_on_ids": [
+        "O2"
+      ],
+      "milestone": 1,
+      "number": 4,
+      "title": "O3: Stable reference fixtures",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4"
+    },
+    "P1": {
+      "dependencies": "O3 plus working observation method",
+      "depends_on_ids": [
+        "O3"
+      ],
+      "milestone": 1,
+      "number": 8,
+      "title": "P1: Recover one actual preview lifecycle",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/8"
+    },
+    "P2": {
+      "dependencies": "P1",
+      "depends_on_ids": [
+        "P1"
+      ],
+      "milestone": 1,
+      "number": 9,
+      "title": "P2: Recover bounded wire semantics",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9"
+    },
+    "P3": {
+      "dependencies": "P2 plus applicable R2/R3",
+      "depends_on_ids": [
+        "P2",
+        "R2",
+        "R3"
+      ],
+      "milestone": 1,
+      "number": 10,
+      "title": "P3: Native decoder/replay adapter",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/10"
+    },
+    "R1": {
+      "dependencies": "Existing Mach surface handoff",
+      "depends_on_ids": [],
+      "milestone": 1,
+      "number": 5,
+      "title": "R1: Receiver-first exit and release accounting",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/5"
+    },
+    "R2": {
+      "dependencies": "R1",
+      "depends_on_ids": [
+        "R1"
+      ],
+      "milestone": 1,
+      "number": 6,
+      "title": "R2: Resource reuse and completion model",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6"
+    },
+    "R3": {
+      "dependencies": "R2 and selected native output path",
+      "depends_on_ids": [
+        "R2"
+      ],
+      "milestone": 1,
+      "number": 7,
+      "title": "R3: Format and synchronization coverage",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/7"
+    },
+    "S1": {
+      "dependencies": "I5 + V1",
+      "depends_on_ids": [
+        "I5",
+        "V1"
+      ],
+      "milestone": 2,
+      "number": 25,
+      "title": "S1: Hardening and platform acceptance",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/25"
+    },
+    "V1": {
+      "dependencies": "O3; evolves alongside F1\u2013I5",
+      "depends_on_ids": [
+        "F1",
+        "I5",
+        "O3"
+      ],
+      "milestone": 2,
+      "number": 22,
+      "title": "V1: Independent conformance system",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22"
+    }
+  },
+  "milestones": [
+    {
+      "html_url": "https://github.com/aspauldingcode/xcpreviewer-rs/milestone/1",
+      "number": 1,
+      "title": "0 \u2192 Reverse-engineered"
+    },
+    {
+      "html_url": "https://github.com/aspauldingcode/xcpreviewer-rs/milestone/2",
+      "number": 2,
+      "title": "Reverse-engineered \u2192 Fully cross-platform WASM canvas"
+    }
+  ],
+  "note": "Stable remote IDs for future synchronization. Re-read GitHub for live issue states; close work only against its acceptance gates.",
+  "planning_baseline": "2026-10-09",
+  "repository": "aspauldingcode/xcpreviewer-rs",
+  "schema_version": 1
+}

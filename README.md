@@ -4,6 +4,10 @@ Research toward a portable Swift view previewer. This repository begins with rev
 
 The proposed roadmap is in [plan.md](plan.md). Its dependency versions, protocol examples, and portability assumptions are proposals to validate against observed behavior.
 
+The current [remaining-work plan](docs/remaining-work.md) orders native capture, protocol/resource recovery, portable feasibility, implementation and acceptance by their actual dependencies.
+
+GitHub delivery tracking: [0 → Reverse-engineered](https://github.com/aspauldingcode/xcpreviewer-rs/milestone/1), then [Reverse-engineered → Fully cross-platform WASM canvas](https://github.com/aspauldingcode/xcpreviewer-rs/milestone/2). Both milestones remain open; issue completion measures their declared acceptance gates.
+
 `master` holds verified milestones; `development` holds ongoing investigation and implementation. Reverse engineering tools and findings land on `development` first, then verified milestones are merged into `master`.
 
 Initial results are in [REVERSE_ENGINEERING.md](REVERSE_ENGINEERING.md), with reproducible [research tools](tools/re/README.md) and a [progress log](PROGRESS.md). The first pass identifies XPC property-list adapters, native JIT loading hooks, and multiple rendering payload types on Xcode 26.6.
