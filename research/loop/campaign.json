@@ -3084,6 +3084,44 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-update-result-witness",
+      "adapter": "disassembly",
+      "hypothesis": "Independent reflected result cases and declared generic witness links bound the separate update-result enum; numeric direct tags remain separate from State and live ownership.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "2e860:2e8f8",
+          "2e8f8:2e9e0",
+          "2e054:2e0f8",
+          "2de9c:2df24",
+          "1311f8:131204",
+          "1313e4:1313f0"
+        ],
+        "result_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "result_witness_verified",
+          "equals": true
+        },
+        {
+          "path": "body_instruction_bytes_compared",
+          "equals": 684
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

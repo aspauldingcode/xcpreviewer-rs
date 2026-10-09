@@ -358,3 +358,7 @@ Verified declared payload witness copy/destroy delegation:192 body+24 import ins
 ## 2026-10-09 — State named case indices
 
 Recovered State waiting0/fulfilled1 from defined case-index symbols, eight predicted constant bytes and enum reflection, with three witness rebases and424 mapped instruction bytes.132,098 finite direct-tag models compare28,088,564 whole-buffer bytes including padding; no native State invocation. Three seals retained (one acquisition, two controls);211 tests pass. Result discriminator, runtime/races and Canvas cleanup remain distinct/open. [Evidence](research/evidence/state-case-tags-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-state-case-tags.md).
+
+## 2026-10-09 — Separate update-result witness boundary
+
+Verified separate WaitingStateUpdateResult reflection, generic pattern and four witness rebases. Complete 684 body and 24 import instruction bytes compare independently; 132,098 numeric direct-tag models preserve 23,227,146 whole-buffer bytes including padding. Result uses max(sizeA,sizeB), unlike State trailer layout. Three seals retained including overbroad initial acquisition and falsified instantiator prediction; corrected control and 215 tests pass. Numeric case names and live result/ownership/race/transport remain open. [Evidence](research/evidence/update-result-witness-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-update-result-witness.md). No Xcode windows opened.

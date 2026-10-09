@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-09",
+  "facts": {
+    "body_instruction_bytes_compared": 684,
+    "destroy_metadata_offsets": {
+      "0": 32,
+      "1": 24
+    },
+    "direct_tag_model_cases": 132098,
+    "import_instruction_bytes_compared": 24,
+    "named_case_indices_verified": false,
+    "padding_bytes_per_buffer": 4,
+    "pattern_bytes_independently_compared": 16,
+    "payload_record_bytes_independently_compared": 8,
+    "reflected_cases": [
+      "updated",
+      "alreadyFulfilled"
+    ],
+    "result_witness_verified": true,
+    "scope": "Separate result reflection, generic pattern and declared witness bodies; finite direct numeric tags only. Reflection order is not independent named case-index proof. No live result, payload validity, native witness invocation, extended-tag acceptance, runtime release/race or Canvas transport claim.",
+    "tag_offset": "max(sizeA,sizeB)",
+    "whole_buffer_model_bytes_compared": 23227146,
+    "witness_rebases_verified": 4
+  },
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "retained_limitations": [
+    "Initial acquisition included a neighboring function; corrected injector range stops at 0x2e9e0.",
+    "Failed predicted instantiator 0xec18; independently decoded relative target 0x30a18 accepted after correction.",
+    "No independently named numeric result case indices or live result witness execution."
+  ],
+  "runs": [
+    {
+      "execution": "success",
+      "manifest_sha256": "1a005da1ed404dab5e0b2ed9a4a882fdffb1be97d0046deb66714901feb9a3dc",
+      "run_id": "20261009T232947Z-native-update-result-witness-4c35e228",
+      "verdict": "supports"
+    },
+    {
+      "execution": "failed",
+      "manifest_sha256": "7af2e46381d696a8b0536c4b06316a751e5adf7a9707940b8984ac70b8a932e1",
+      "run_id": "20261009T233058Z-native-update-result-witness-5001222d",
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "manifest_sha256": "33b2365af77752c8ba7b076d4eab175fc4594c1bfc38abe8533dd4320f5e5b7e",
+      "run_id": "20261009T233141Z-native-update-result-witness-40df37ef",
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Separate result reflection, generic pattern and declared witness bodies; finite direct numeric tags only. Reflection order is not independent named case-index proof. No live result, payload validity, native witness invocation, extended-tag acceptance, runtime release/race or Canvas transport claim.",
+  "tests_passed": 215
+}
