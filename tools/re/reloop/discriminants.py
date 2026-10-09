@@ -50,11 +50,16 @@ def returned_string(image,x0,x1):
     raise ValueError('Unsupported Swift String representation')
 
 
-def interpret(image,code,selector,maximum=128):
+def interpret(image,code,selector,maximum=128,entry="indirect"):
     if type(selector) is not int or not 0<=selector<32:raise ValueError('Invalid selector')
     pc=min(code)
-    if code[pc][:2]!=('ldrb','w8, [x20]'):raise ValueError('Observed enum selector load has changed')
-    registers={'x8':selector};visited=[pc];pc+=4;flags=None
+    if entry=='indirect':
+        if code[pc][:2]!=('ldrb','w8, [x20]'):raise ValueError('Observed enum selector load has changed')
+        registers={'x8':selector};visited=[pc];pc+=4
+    elif entry=='w0':registers={'x0':selector};visited=[]
+    elif entry=='constant':registers={};visited=[]
+    else:raise ValueError('Unsupported getter entry')
+    flags=None
     def read(name):
         key='x'+name[1:]
         if key not in registers:raise ValueError('Read of unknown register '+name)
@@ -71,14 +76,14 @@ def interpret(image,code,selector,maximum=128):
             if shift not in {0,16,32,48}:raise ValueError('Invalid movk shift')
             write(args[0],(read(args[0])&~(65535<<shift)) | (immediate(args[1])<<shift))
         elif opcode in {'adr','adrp'}:write(args[0],pc_relative(word,pc,opcode=='adrp'))
-        elif opcode in {'add','sub','orr'}:
+        elif opcode in {'add','sub','orr','and'}:
             rhs=immediate(args[2]) if args[2].startswith('#') else read(args[2])
             if len(args)==4:
                 if not re.fullmatch(r'lsl #\d+',args[3]):raise ValueError('Unsupported operand shift')
                 shift=int(args[3].split('#')[1])
                 if not 0<=shift<=63:raise ValueError('Invalid operand shift')
                 rhs<<=shift
-            left=read(args[1]);write(args[0],left+rhs if opcode=='add' else left-rhs if opcode=='sub' else left|rhs)
+            left=read(args[1]);write(args[0],left+rhs if opcode=='add' else left-rhs if opcode=='sub' else left|rhs if opcode=='orr' else left&rhs)
         elif opcode=='cmp':
             if len(args)!=2 or not re.fullmatch(r'[wx]\d+',args[0]):raise ValueError('Unsupported comparison')
             width=32 if args[0].startswith('w') else 64;mask=(1<<width)-1;sign=1<<(width-1)
@@ -95,6 +100,9 @@ def interpret(image,code,selector,maximum=128):
             offset=image.file_offset(read(match[2])+read(match[3]));write(match[1],image.data[offset])
         elif opcode=='br':next_pc=read(args[0])
         elif opcode=='b':next_pc=immediate(args[0])
+        elif opcode=='b.le':
+            if flags is None:raise ValueError('Conditional branch missing flags')
+            if not flags['gt']:next_pc=immediate(args[0])
         else:raise ValueError('Unsupported instruction '+opcode)
         pc=next_pc
     raise ValueError('Instruction budget exceeded')

@@ -1168,6 +1168,158 @@
         "local-re-controller"
       ],
       "timeout_seconds": 180
+    },
+    {
+      "adapter": "surface_payload",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "field_count"
+        },
+        {
+          "equals": 4,
+          "path": "key_count"
+        },
+        {
+          "equals": true,
+          "path": "keys_match_cases"
+        },
+        {
+          "equals": [
+            "bitmapDescription",
+            "selectableRegions",
+            "snapshotCornerRadius",
+            "scaleFactor"
+          ],
+          "path": "raw_values"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Native RenderPayload key witness returns the pre-registered strings matching nested key cases; stored field names may differ and do not imply live wire structure.",
+      "id": "native-render-codec-keys",
+      "params": {
+        "payload": "RenderPayload"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "surface_payload",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "field_count"
+        },
+        {
+          "equals": 9,
+          "path": "key_count"
+        },
+        {
+          "equals": true,
+          "path": "keys_match_cases"
+        },
+        {
+          "equals": [
+            "data",
+            "width",
+            "height",
+            "bytesPerRow",
+            "byteOrder",
+            "bitmapInfo",
+            "bitsPerComponent",
+            "bitsPerPixel",
+            "colorSpace"
+          ],
+          "path": "raw_values"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Native BitmapDescription key witness returns the pre-registered strings matching nested key cases; stored field names may differ and do not imply live wire structure.",
+      "id": "native-bitmap-codec-keys",
+      "params": {
+        "payload": "BitmapDescription"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "surface_payload",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "field_count"
+        },
+        {
+          "equals": 2,
+          "path": "key_count"
+        },
+        {
+          "equals": true,
+          "path": "keys_match_cases"
+        },
+        {
+          "equals": [
+            "messageType",
+            "payload"
+          ],
+          "path": "raw_values"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Native ServiceMessage key witness returns the pre-registered strings matching nested key cases; stored field names may differ and do not imply live wire structure.",
+      "id": "native-service-codec-keys",
+      "params": {
+        "payload": "ServiceMessage"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "surface_payload",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "field_count"
+        },
+        {
+          "equals": 1,
+          "path": "key_count"
+        },
+        {
+          "equals": false,
+          "path": "keys_match_cases"
+        },
+        {
+          "equals": [
+            "__unique_service_message_identifier"
+          ],
+          "path": "raw_values"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The singleton ServiceMessage.PayloadKey identifier case returns the literal __unique_service_message_identifier, distinct from its metadata case name; this is static codec evidence, not live request/reply correlation.",
+      "id": "native-service-identifier-codec-alias",
+      "params": {
+        "payload": "ServiceMessagePayload"
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
     }
   ],
   "version": 1

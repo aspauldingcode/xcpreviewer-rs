@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "contracts": [
+    {
+      "control": "RenderPayload",
+      "stored_fields": [
+        "bitmapDescription",
+        "selectableRegions",
+        "snapshotCornerRadius",
+        "scaleFactor"
+      ],
+      "key_cases": [
+        "bitmapDescription",
+        "selectableRegions",
+        "snapshotCornerRadius",
+        "scaleFactor"
+      ],
+      "keys": [
+        {
+          "selector_index": 0,
+          "metadata_case": "bitmapDescription",
+          "raw_value": "bitmapDescription"
+        },
+        {
+          "selector_index": 1,
+          "metadata_case": "selectableRegions",
+          "raw_value": "selectableRegions"
+        },
+        {
+          "selector_index": 2,
+          "metadata_case": "snapshotCornerRadius",
+          "raw_value": "snapshotCornerRadius"
+        },
+        {
+          "selector_index": 3,
+          "metadata_case": "scaleFactor",
+          "raw_value": "scaleFactor"
+        }
+      ],
+      "getter_address": "0x8d6ac",
+      "witness_address": "0x8d6ac",
+      "entry_mode": "indirect"
+    },
+    {
+      "control": "ServiceMessage",
+      "stored_fields": [
+        "identifier",
+        "content"
+      ],
+      "key_cases": [
+        "messageType",
+        "payload"
+      ],
+      "keys": [
+        {
+          "selector_index": 0,
+          "metadata_case": "messageType",
+          "raw_value": "messageType"
+        },
+        {
+          "selector_index": 1,
+          "metadata_case": "payload",
+          "raw_value": "payload"
+        }
+      ],
+      "getter_address": "0x5f308",
+      "witness_address": "0x5f308",
+      "entry_mode": "indirect"
+    },
+    {
+      "control": "BitmapDescription",
+      "stored_fields": [
+        "data",
+        "width",
+        "height",
+        "bytesPerRow",
+        "bitmapInfo",
+        "bitsPerComponent",
+        "bitsPerPixel",
+        "colorSpace"
+      ],
+      "key_cases": [
+        "data",
+        "width",
+        "height",
+        "bytesPerRow",
+        "byteOrder",
+        "bitmapInfo",
+        "bitsPerComponent",
+        "bitsPerPixel",
+        "colorSpace"
+      ],
+      "keys": [
+        {
+          "selector_index": 0,
+          "metadata_case": "data",
+          "raw_value": "data"
+        },
+        {
+          "selector_index": 1,
+          "metadata_case": "width",
+          "raw_value": "width"
+        },
+        {
+          "selector_index": 2,
+          "metadata_case": "height",
+          "raw_value": "height"
+        },
+        {
+          "selector_index": 3,
+          "metadata_case": "bytesPerRow",
+          "raw_value": "bytesPerRow"
+        },
+        {
+          "selector_index": 4,
+          "metadata_case": "byteOrder",
+          "raw_value": "byteOrder"
+        },
+        {
+          "selector_index": 5,
+          "metadata_case": "bitmapInfo",
+          "raw_value": "bitmapInfo"
+        },
+        {
+          "selector_index": 6,
+          "metadata_case": "bitsPerComponent",
+          "raw_value": "bitsPerComponent"
+        },
+        {
+          "selector_index": 7,
+          "metadata_case": "bitsPerPixel",
+          "raw_value": "bitsPerPixel"
+        },
+        {
+          "selector_index": 8,
+          "metadata_case": "colorSpace",
+          "raw_value": "colorSpace"
+        }
+      ],
+      "getter_address": "0x4a8e4",
+      "witness_address": "0x4aaec",
+      "entry_mode": "w0"
+    },
+    {
+      "control": "ServiceMessagePayload",
+      "stored_fields": [
+        "identifier",
+        "content"
+      ],
+      "key_cases": [
+        "identifier"
+      ],
+      "keys": [
+        {
+          "selector_index": 0,
+          "metadata_case": "identifier",
+          "raw_value": "__unique_service_message_identifier"
+        }
+      ],
+      "getter_address": "0x5f438",
+      "witness_address": "0x5f438",
+      "entry_mode": "constant"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "20261009T171138Z-native-render-codec-keys-014945ce",
+      "manifest_sha256": "8cb0356c463caab086f40058dcbe4d678e04b2b7e45223023ca2c5142525484f",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "error": null,
+      "checks": [
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "key_count",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "keys_match_cases",
+          "present": true
+        },
+        {
+          "actual": [
+            "bitmapDescription",
+            "selectableRegions",
+            "snapshotCornerRadius",
+            "scaleFactor"
+          ],
+          "expected": [
+            "bitmapDescription",
+            "selectableRegions",
+            "snapshotCornerRadius",
+            "scaleFactor"
+          ],
+          "passed": true,
+          "path": "raw_values",
+          "present": true
+        }
+      ],
+      "observations": {
+        "field_count": 4,
+        "fields_match_keys": true,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 4,
+        "keys_match_cases": true,
+        "keys_match_fields": true,
+        "raw_values": [
+          "bitmapDescription",
+          "selectableRegions",
+          "snapshotCornerRadius",
+          "scaleFactor"
+        ],
+        "scope": "Pinned host static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      }
+    },
+    {
+      "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791",
+      "manifest_sha256": "046c292a52f5cb548370fe0d59c9b25d25225407aac7547b225218c7dfd4c695",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "failed",
+      "verdict": "not_evaluated",
+      "error": null,
+      "checks": [],
+      "observations": {}
+    },
+    {
+      "run_id": "20261009T171143Z-native-service-codec-keys-71fb8108",
+      "manifest_sha256": "ec87e4532f22008331cadcea0749a772a8eef3816cac1e740bac65f8f1d742fd",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "error": null,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "key_count",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "keys_match_cases",
+          "present": true
+        },
+        {
+          "actual": [
+            "messageType",
+            "payload"
+          ],
+          "expected": [
+            "messageType",
+            "payload"
+          ],
+          "passed": true,
+          "path": "raw_values",
+          "present": true
+        }
+      ],
+      "observations": {
+        "field_count": 2,
+        "fields_match_keys": false,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 2,
+        "keys_match_cases": true,
+        "keys_match_fields": false,
+        "raw_values": [
+          "messageType",
+          "payload"
+        ],
+        "scope": "Pinned host static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      }
+    },
+    {
+      "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d",
+      "manifest_sha256": "8c7bb277cf30ef8a7c592aa437088be8bd11f0195aaa77ba4672f0fc20a76186",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "failed",
+      "verdict": "not_evaluated",
+      "error": null,
+      "checks": [],
+      "observations": {}
+    },
+    {
+      "run_id": "20261009T171542Z-native-bitmap-codec-keys-756286f6",
+      "manifest_sha256": "f76f67689d96189cd04c2e29b2332155945911982de6d62edc429cf93423d1d1",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "error": null,
+      "checks": [
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "passed": true,
+          "path": "key_count",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "keys_match_cases",
+          "present": true
+        },
+        {
+          "actual": [
+            "data",
+            "width",
+            "height",
+            "bytesPerRow",
+            "byteOrder",
+            "bitmapInfo",
+            "bitsPerComponent",
+            "bitsPerPixel",
+            "colorSpace"
+          ],
+          "expected": [
+            "data",
+            "width",
+            "height",
+            "bytesPerRow",
+            "byteOrder",
+            "bitmapInfo",
+            "bitsPerComponent",
+            "bitsPerPixel",
+            "colorSpace"
+          ],
+          "passed": true,
+          "path": "raw_values",
+          "present": true
+        }
+      ],
+      "observations": {
+        "field_count": 8,
+        "fields_match_keys": false,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 9,
+        "keys_match_cases": true,
+        "keys_match_fields": false,
+        "raw_values": [
+          "data",
+          "width",
+          "height",
+          "bytesPerRow",
+          "byteOrder",
+          "bitmapInfo",
+          "bitsPerComponent",
+          "bitsPerPixel",
+          "colorSpace"
+        ],
+        "scope": "Pinned host static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      }
+    },
+    {
+      "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
+      "manifest_sha256": "958646f5aea001adda41a990713975aa98a8069ced8d92442d9e4996e20804c9",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "inconclusive",
+      "error": null,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "passed": true,
+          "path": "key_count",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": true,
+          "passed": false,
+          "path": "keys_match_cases",
+          "present": true
+        },
+        {
+          "actual": [
+            "__unique_service_message_identifier"
+          ],
+          "expected": [
+            "identifier"
+          ],
+          "passed": false,
+          "path": "raw_values",
+          "present": true
+        }
+      ],
+      "observations": {
+        "field_count": 2,
+        "fields_match_keys": false,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 1,
+        "keys_match_cases": false,
+        "keys_match_fields": false,
+        "raw_values": [
+          "__unique_service_message_identifier"
+        ],
+        "scope": "Pinned host static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      }
+    },
+    {
+      "run_id": "20261009T171638Z-native-service-identifier-codec-alias-40561ffa",
+      "manifest_sha256": "66a9ca1cc8c240668f4d328ccc5a45041b5a73deaeeb90ef400a66d9ab797cfc",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "error": null,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "field_count",
+          "present": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "passed": true,
+          "path": "key_count",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "passed": true,
+          "path": "keys_match_cases",
+          "present": true
+        },
+        {
+          "actual": [
+            "__unique_service_message_identifier"
+          ],
+          "expected": [
+            "__unique_service_message_identifier"
+          ],
+          "passed": true,
+          "path": "raw_values",
+          "present": true
+        }
+      ],
+      "observations": {
+        "field_count": 2,
+        "fields_match_keys": false,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+        "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+        "key_count": 1,
+        "keys_match_cases": false,
+        "keys_match_fields": false,
+        "raw_values": [
+          "__unique_service_message_identifier"
+        ],
+        "scope": "Pinned host static codec key witness only. No resource import, Swift ABI invocation or service contact."
+      }
+    }
+  ],
+  "interpretation": "Stored fields, metadata enum cases and returned codec strings are separate representations. The identifier case returns __unique_service_message_identifier, contradicting the name-equality prediction in this static scope; controller conservatively marks failed checks inconclusive.",
+  "limitations": [
+    "Static ARM64 literal extraction and nominal metadata, not live wire observation.",
+    "No Swift private ABI calls, process attachment or Xcode windows.",
+    "No serializer/deserializer value roundtrip, malformed-value acceptance, numeric transport ID, cancellation or completion claim.",
+    "Raw disassembly and Apple image remain local."
+  ]
+}

@@ -15,7 +15,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
 ADAPTERS = {'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
 PARAMS = {
-    'surface_payload': set(),
+    'surface_payload': {'payload'},
     'portable_solid': set(),
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
@@ -78,6 +78,7 @@ def validate_experiment(e):
     if not isinstance(e['params'], dict) or set(e['params']) - PARAMS[e['adapter']]:
         raise ValueError('unsupported adapter parameters')
     p = e['params']
+    if 'payload' in p and p['payload'] not in ('IOSurfacePayload','RenderPayload','BitmapDescription','ServiceMessage','ServiceMessagePayload'):raise ValueError('Unsupported payload control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')
     if 'control' in p and p['control'] not in ('faults','use_state'):raise ValueError('invalid surface control')
     if 'exit_order' in p and p['exit_order'] not in ('sender','receiver'):raise ValueError('invalid exit_order')

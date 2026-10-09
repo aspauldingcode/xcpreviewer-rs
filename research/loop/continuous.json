@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "1ebe871537d2d0e985f4ce8a9992ae8c659559fe",
+  "baseline_commit": "eaf67fa527c30309471e7ac3e8aacc71ed1c67b4",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -37,21 +37,37 @@
       "fingerprint": "139edcaa7e22d78f9f2a5cd2329031d72a6f63917985800e12d62a8aecc0296d",
       "retry_prerequisite": "Observed cmp/csel semantics implemented and tested; changed sealed run supports.",
       "status": "resolved-for-static-key-witness"
+    },
+    {
+      "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791",
+      "status": "resolved-with-observed-entry-mode",
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+    },
+    {
+      "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d",
+      "status": "resolved-with-observed-entry-mode",
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+    },
+    {
+      "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
+      "status": "prediction-falsified-static-scope",
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
     }
   ],
-  "last_completed": "Native IOSurfacePayload: five key-witness strings match independent nominal fields; exact serializer/deserializer selection supports. Retained regex-count inconclusive and unsupported-cmp failure; bounded conditional-select fix passes. 106 tests; no Xcode opened.",
+  "last_completed": "RenderPayload, BitmapDescription and ServiceMessage static key recovery; bitmap has extra byteOrder key; singleton identifier case returns __unique_service_message_identifier. Original name prediction fails and is retired from active queue with sealed evidence retained. 109 tests pass. No Xcode windows opened.",
   "last_github_sync": {
-    "checkpoint": "native IOSurfacePayload keys and codec entrypoints",
+    "checkpoint": "static codec field/key/identifier alias boundaries",
     "date": "2026-10-09",
     "issues": [
       "R2",
-      "P1"
+      "P1",
+      "P2"
     ],
     "state": "open"
   },
   "next_actions": [
     {
-      "action": "Recover surrounding RenderPayload/request/reply correlation and actual capture completion/cancellation. IOSurfacePayload static five fields have no named generation/completion; do not extrapolate whole protocol absence.",
+      "action": "Follow ServiceMessage serializer/deserializer use of __unique_service_message_identifier and outer messageType/payload; recover value association and then live correlation/capture completion. Static alias is not proof of reply matching.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -168,6 +184,41 @@
       "manifest_sha256": "6981e3ea2ec9db47983d60e97dbccae5bc272b2e612b41b5b8c81980a972275f",
       "path": "research/evidence/surface-payload-keys-2026-10-09.json",
       "run_id": "20261009T170530Z-native-iosurface-payload-exact-entrypoints-3476dfef"
+    },
+    {
+      "run_id": "20261009T171138Z-native-render-codec-keys-014945ce",
+      "manifest_sha256": "8cb0356c463caab086f40058dcbe4d678e04b2b7e45223023ca2c5142525484f",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791",
+      "manifest_sha256": "046c292a52f5cb548370fe0d59c9b25d25225407aac7547b225218c7dfd4c695",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171143Z-native-service-codec-keys-71fb8108",
+      "manifest_sha256": "ec87e4532f22008331cadcea0749a772a8eef3816cac1e740bac65f8f1d742fd",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d",
+      "manifest_sha256": "8c7bb277cf30ef8a7c592aa437088be8bd11f0195aaa77ba4672f0fc20a76186",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171542Z-native-bitmap-codec-keys-756286f6",
+      "manifest_sha256": "f76f67689d96189cd04c2e29b2332155945911982de6d62edc429cf93423d1d1",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
+      "manifest_sha256": "958646f5aea001adda41a990713975aa98a8069ced8d92442d9e4996e20804c9",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T171638Z-native-service-identifier-codec-alias-40561ffa",
+      "manifest_sha256": "66a9ca1cc8c240668f4d328ccc5a45041b5a73deaeeb90ef400a66d9ab797cfc",
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
