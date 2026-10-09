@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-09",
+  "baseline": {
+    "xcode": "26.6 (17F113)",
+    "macos": "26.5.1 (25F80)",
+    "architecture": "arm64",
+    "gpu": "Apple M1",
+    "format": "shared BGRA8Unorm"
+  },
+  "runs": [
+    {
+      "run_id": "20261009T210826Z-owned-gpu-surface-peer-readback-d5a3d33d",
+      "valid": true,
+      "manifest_sha256": "9a6debfd56e646d1e3017ea4ce5e18c724a1408e4c221f34a9a354677b951cff",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 2097152,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      }
+    },
+    {
+      "run_id": "20261009T210934Z-owned-gpu-surface-peer-readback-dcde272d",
+      "valid": true,
+      "manifest_sha256": "a8bac8a07e7ceaf9bde8927282c510b290f87bdb0ab048331ba75f7cb76e423b",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 2097152,
+        "consumer_gpu_readback": true,
+        "gpu_consumer_cases": 8,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      }
+    },
+    {
+      "run_id": "20261009T211020Z-owned-gpu-surface-mach-receiver-exit-e70c4092",
+      "valid": true,
+      "manifest_sha256": "0decfa5063bddd2f0ec784aaf76ddc48c053432baf7b70855ee4692e27f4a419",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 1572864,
+        "consumer_gpu_readback": false,
+        "gpu_consumer_cases": 0,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation."
+      }
+    }
+  ],
+  "tests": 140,
+  "readback": {
+    "producer": "completed GPU clear before audited Mach transfer",
+    "consumer": "Metal texture-to-shared-buffer blit before CPU mutation/exit",
+    "allocation_bytes": 16384,
+    "destination_stride": "owned choice: round width*4 up to256 bytes",
+    "untouched_byte": 92,
+    "comparison": "128 whole-allocation comparisons per consumer campaign,2097152 bytes; both source and destination active/padding/tail bytes covered",
+    "identity": "consumer PID and imported surface ID tied to audit-verified receiver record",
+    "exit_controls": [
+      "clean release",
+      "abrupt exit23"
+    ]
+  },
+  "limitations": [
+    "Ordered producer completion then peer blit; no unsynchronized overlap or Apple native fence/event recovery.",
+    "Metal API/status/byte evidence, not a hardware instruction trace, zero-copy guarantee or GPU performance qualification.",
+    "Single-plane shared BGRA8 on Apple M1; no managed/discrete/multi-plane/HDR/alpha coverage.",
+    "No actual Canvas envelope, cancellation/timeout recovery, final reclamation or ID reuse proof.",
+    "Internal driver resource holders remain unknown; retained Mach/CF access and local right cleanup are scoped.",
+    "No Xcode windows, user process termination or protection changes."
+  ]
+}

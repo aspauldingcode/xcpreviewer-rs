@@ -17,6 +17,10 @@
 extern int re_gpu_fill(IOSurfaceRef surface,unsigned seed,const char *folder);
 #endif
 
+#ifdef RE_GPU_CONSUMER
+extern int re_gpu_readback(IOSurfaceRef surface,const char *folder);
+#endif
+
 #define MAGIC 0x52455346u
 #define LIMIT 65536u
 struct transfer {mach_msg_header_t h;mach_msg_body_t body;mach_msg_port_descriptor_t port;uint32_t magic,width,height,seed,stride,surface_id;};
@@ -145,6 +149,9 @@ static int receiver_child(unsigned width,unsigned height,unsigned seed,int abrup
     if(!peer_matches(&incoming,parent) || m->h.msgh_size!=sizeof(*m) || !(m->h.msgh_bits&MACH_MSGH_BITS_COMPLEX) || m->body.msgh_descriptor_count!=1 || m->port.type!=MACH_MSG_PORT_DESCRIPTOR || m->port.disposition!=MACH_MSG_TYPE_PORT_SEND || m->magic!=MAGIC || m->width!=width || m->height!=height || m->seed!=seed){mach_msg_destroy(&m->h);goto done;}
     resource=m->port.name;alias=IOSurfaceLookupFromMachPort(resource);
     if(!alias || !send_refs(resource,1) || IOSurfaceGetID(alias)!=m->surface_id || IOSurfaceGetWidth(alias)!=width || IOSurfaceGetHeight(alias)!=height || IOSurfaceGetBytesPerElement(alias)!=4 || IOSurfaceGetPixelFormat(alias)!=0x42475241 || IOSurfaceGetPlaneCount(alias)!=0 || IOSurfaceGetBytesPerRow(alias)!=m->stride || m->stride<width*4 || (size_t)m->stride*height>LIMIT)goto done;
+    #ifdef RE_GPU_CONSUMER
+    if(!re_gpu_readback(alias,folder))goto done;
+    #endif
     size_t count=snapshot_size(alias);if(!count)goto done;raw=malloc(count);expected=malloc(count);if(!raw || !expected)goto done;
     pattern(expected,m->stride,width,height,seed,count);
     if(!snapshot(alias,raw,count) || memcmp(raw,expected,count) || !write_bytes(folder,"before.bin",raw,count) || !mutate(alias,0,0x5a))goto done;

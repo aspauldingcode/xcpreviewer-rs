@@ -5,7 +5,7 @@ import pathlib
 import sys
 import unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.surfacegpuipc import inspect
+from reloop.surfacegpuipc import inspect,inspect_consumer
 from reloop.surfaceipc import RECEIVER_FLAGS
 from reloop.core import validate_experiment
 
@@ -40,6 +40,28 @@ class GPUMachTests(unittest.TestCase):
             badp=p.copy();raw=bytearray(base64.b64decode(p['after_base64']));raw[position]^=1;badp['after_base64']=base64.b64encode(raw).decode()
             self.assertFalse(inspect(r,badp,(1,1,0),'receiver-clean',b)['passed'])
         bad=b.copy();del bad['before'];self.assertFalse(inspect(r,p,(1,1,0),'receiver-clean',bad)['passed'])
+
+    def test_consumer_full_buffer_and_completion_identity_faults_reject(self):
+        r,p,b=self.fixture();initial=b'\x5c'*16384;after=b'\0\0\xff\xff'+initial[4:]
+        c={'consumer_pid':200,'surface_id':42,'width':1,'height':1,'stride':256,'allocation_bytes':16384,
+           'callback_count':1,'callback_status':4,'status':4,'source_storage_mode':0,'destination_storage_mode':0,
+           'error_absent':True,'unified_memory':True,'before_base64':base64.b64encode(initial).decode(),'after_base64':base64.b64encode(after).decode()}
+        self.assertTrue(inspect_consumer(c,r,(1,1,0))['passed'])
+        for k,v in [('consumer_pid',100),('surface_id',43),('callback_count',True),('callback_status',3),('status',5),('stride',128),('allocation_bytes',True),('error_absent',1),('source_storage_mode',2)]:
+            bad=c.copy();bad[k]=v;self.assertFalse(inspect_consumer(bad,r,(1,1,0))['passed'])
+        for position in (0,4,255,256,16383):
+            bad=c.copy();raw=bytearray(after);raw[position]^=1;bad['after_base64']=base64.b64encode(raw).decode()
+            self.assertFalse(inspect_consumer(bad,r,(1,1,0))['passed'])
+        self.assertFalse(inspect_consumer({},r,(1,1,0))['passed'])
+
+    def test_consumer_flag_requires_reviewed_producer_and_boolean(self):
+        root=pathlib.Path(__file__).resolve().parents[3]
+        e=next(e for e in json.loads((root/'research/loop/campaign.json').read_text())['experiments'] if e['id']=='owned-gpu-surface-peer-readback')
+        for v in (1,'true',None):
+            bad=copy.deepcopy(e);bad['params']['gpu_consumer_control']=v
+            with self.assertRaises(ValueError):validate_experiment(bad)
+        bad=copy.deepcopy(e);bad['params']['gpu_control']=False
+        with self.assertRaises(ValueError):validate_experiment(bad)
 
     def test_gpu_mode_rejects_unreviewed_sender_first(self):
         root=pathlib.Path(__file__).resolve().parents[3]

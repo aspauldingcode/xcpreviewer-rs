@@ -39,3 +39,34 @@ int re_gpu_fill(IOSurfaceRef surface,unsigned seed,const char *folder) {
         return json && [json writeToFile:path atomically:YES];
     }
 }
+
+
+int re_gpu_readback(IOSurfaceRef surface,const char *folder) {
+    @autoreleasepool {
+        size_t w=IOSurfaceGetWidth(surface),h=IOSurfaceGetHeight(surface);
+        size_t row=(w*4+255)&~(size_t)255,allocation=16384;
+        if(!folder || row*h>allocation)return 0;
+        id<MTLDevice> device=MTLCreateSystemDefaultDevice();if(!device || !device.hasUnifiedMemory)return 0;
+        MTLTextureDescriptor *d=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:w height:h mipmapped:NO];
+        d.storageMode=MTLStorageModeShared;d.usage=MTLTextureUsageShaderRead;
+        id<MTLTexture> source=[device newTextureWithDescriptor:d iosurface:surface plane:0];
+        id<MTLBuffer> destination=[device newBufferWithLength:allocation options:MTLResourceStorageModeShared];
+        id<MTLCommandQueue> queue=[device newCommandQueue];if(!source || !destination || !queue || source.iosurface!=surface)return 0;
+        memset(destination.contents,0x5c,allocation);
+        NSData *before=[NSData dataWithBytes:destination.contents length:allocation];
+        id<MTLCommandBuffer> command=[queue commandBuffer];id<MTLBlitCommandEncoder> blit=[command blitCommandEncoder];if(!command || !blit)return 0;
+        [blit copyFromTexture:source sourceSlice:0 sourceLevel:0 sourceOrigin:MTLOriginMake(0,0,0) sourceSize:MTLSizeMake(w,h,1) toBuffer:destination destinationOffset:0 destinationBytesPerRow:row destinationBytesPerImage:row*h];
+        [blit endEncoding];
+        dispatch_semaphore_t gate=dispatch_semaphore_create(0);__block unsigned calls=0;__block NSUInteger status=0;
+        [command addCompletedHandler:^(id<MTLCommandBuffer> b){calls++;status=b.status;dispatch_semaphore_signal(gate);}];[command commit];
+        if(dispatch_semaphore_wait(gate,dispatch_time(DISPATCH_TIME_NOW,5*NSEC_PER_SEC)) || calls!=1 || status!=MTLCommandBufferStatusCompleted || command.status!=MTLCommandBufferStatusCompleted || command.error)return 0;
+        NSData *after=[NSData dataWithBytes:destination.contents length:allocation];
+        NSDictionary *result=@{@"consumer_pid":@(getpid()),@"surface_id":@(IOSurfaceGetID(surface)),@"width":@(w),@"height":@(h),@"stride":@(row),@"allocation_bytes":@(allocation),
+            @"callback_count":@(calls),@"callback_status":@(status),@"status":@(command.status),@"error_absent":[NSNumber numberWithBool:command.error==nil],
+            @"unified_memory":@(device.hasUnifiedMemory),@"source_storage_mode":@(source.storageMode),@"destination_storage_mode":@(destination.storageMode),@"device":device.name,
+            @"before_base64":[before base64EncodedStringWithOptions:0],@"after_base64":[after base64EncodedStringWithOptions:0]};
+        NSData *json=[NSJSONSerialization dataWithJSONObject:result options:NSJSONWritingSortedKeys error:NULL];
+        NSString *path=[[NSString stringWithUTF8String:folder] stringByAppendingPathComponent:@"gpu-consumer.json"];
+        return json && [json writeToFile:path atomically:YES];
+    }
+}

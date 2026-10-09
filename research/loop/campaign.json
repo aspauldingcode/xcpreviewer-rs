@@ -2464,6 +2464,45 @@
           "equals": 0
         }
       ]
+    },
+    {
+      "id": "owned-gpu-surface-peer-readback",
+      "adapter": "surface_ipc",
+      "params": {
+        "gpu_control": true,
+        "exit_order": "receiver",
+        "gpu_consumer_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Audit-verified peer executes bounded GPU texture-to-buffer blit on imported completed BGRA surface. Independent full destination allocation pixels/padding must match before CPU mutations/clean or abrupt exit. No unsynchronized concurrent GPU or Canvas policy claim.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "passed_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        },
+        {
+          "path": "gpu_consumer_cases",
+          "equals": 8
+        }
+      ]
     }
   ],
   "version": 1

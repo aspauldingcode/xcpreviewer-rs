@@ -155,7 +155,7 @@ def perform(kind,out,p):
     if kind=='surface_ipc' and p.get('gpu_control',False):
         if p.get('exit_order')!='receiver':raise ValueError('GPU handoff requires reviewed receiver-first mode')
         from reloop.surfacegpuipc import corpus
-        return corpus(out)
+        return corpus(out,p.get('gpu_consumer_control',False))
     if kind=='surface_ipc':
         from reloop.surfaceipc import corpus
         return corpus(out,p.get('exit_order','sender'))
