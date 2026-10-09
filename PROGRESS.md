@@ -286,3 +286,9 @@ Evidence: [invalidation gates](docs/reverse-engineering/2026-10-09-invalidation-
 Added public Metal/IOSurface shared-BGRA render-clear control. Four geometries, two helper repeats, and red/red/blue results match independent literal pixels plus every row-padding/allocation-tail byte. Completion handler/status/error evidence gates CPU read. A dependent probe drains command scopes and drops explicit Metal texture/queue references; retained CF blue snapshots remain exact. Corrected initial control checks 524,288 bytes; retained-access control checks 655,360 bytes. Initial Boolean boxing harness rejection retained, fixed with explicit numberWithBool. Three seals anchor-verified; 135 tests pass. R1/R3 remain open for GPU transfer, Canvas synchronization, timeouts and final reclamation. No Xcode windows opened.
 
 Evidence: [GPU control](docs/reverse-engineering/2026-10-09-gpu-surface-completion.md), [sanitized seals](research/evidence/gpu-surface-completion-2026-10-09.json).
+
+## 2026-10-09 — GPU-produced surface Mach handoff
+
+Connected bounded public Metal render completion to the owned audited receiver-first Mach control. CPU peer imports GPU red/blue storage, mutates and exits cleanly or abruptly; producer retains full allocation/port-only access and checks local send-right counts. Independent producer/peer/padding/tail comparisons pass: 16 executions and 1,572,864 bytes per GPU campaign, repeated in two seals. Added identity/status/type/extent/exit/rights/byte fault controls; 138 tests pass. Original CPU sender-first and receiver-first campaigns rerun successfully. Four new seals anchor-verified; R1/R3 remain open for cross-process GPU execution, Canvas synchronization, failures and final reclamation. No Xcode windows opened.
+
+Evidence: [GPU Mach boundary](docs/reverse-engineering/2026-10-09-gpu-mach-handoff.md), [sanitized seals](research/evidence/gpu-mach-handoff-2026-10-09.json).

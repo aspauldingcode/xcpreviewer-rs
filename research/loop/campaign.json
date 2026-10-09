@@ -2430,6 +2430,40 @@
           "equals": 4
         }
       ]
+    },
+    {
+      "id": "owned-gpu-surface-mach-receiver-exit",
+      "adapter": "surface_ipc",
+      "params": {
+        "gpu_control": true,
+        "exit_order": "receiver"
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Completed GPU red/blue IOSurface transfers by audited Mach right to owned CPU peer, remains exact through peer mutation/clean or abrupt exit and port-only retained access. Full allocation/padding and rights/status/identity must independently pass. No Canvas or cross-process GPU execution.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "passed_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        }
+      ]
     }
   ],
   "version": 1

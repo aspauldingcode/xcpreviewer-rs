@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-09",
+  "baseline": {
+    "xcode": "26.6 (17F113)",
+    "macos": "26.5.1 (25F80)",
+    "gpu": "Apple M1",
+    "architecture": "arm64",
+    "format": "single-plane BGRA8Unorm, shared unified memory"
+  },
+  "runs": [
+    {
+      "run_id": "20261009T210001Z-owned-gpu-surface-mach-receiver-exit-ea1f6774",
+      "valid": true,
+      "manifest_sha256": "06b282d9cc7cdf2985f9874f247bfa55ee592e089d8c968889897c01f721ced0",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 1572864,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. No cross-process GPU execution, early-read race, Canvas envelope or final reclamation."
+      }
+    },
+    {
+      "run_id": "20261009T210116Z-owned-gpu-surface-mach-receiver-exit-5ae56a1d",
+      "valid": true,
+      "manifest_sha256": "d9d66a2822cb6bc29e38e4e5c40b99d6e7ea89b3da1b5d27ff03d15c0aca7869",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "compared_bytes": 1572864,
+        "helper_failures": 0,
+        "passed_cases": 8,
+        "repeat_equal_cases": 8,
+        "scope": "Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. No cross-process GPU execution, early-read race, Canvas envelope or final reclamation."
+      }
+    },
+    {
+      "run_id": "20261009T210132Z-owned-surface-process-exit-01b2faf3",
+      "valid": true,
+      "manifest_sha256": "4d6bc01cd43682aa7d59923dbd6826ba0ea12a240eed438c8353c59174b67baf",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "abrupt_sender_exit_cases": 4,
+        "cases": 8,
+        "clean_sender_exit_cases": 4,
+        "exact_handoff_cases": 8,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 8,
+        "scope": "Owned fork/exec sender/receiver Mach-port transfers, audit-verified peers, single-plane CPU BGRA. No Apple XPC envelope, GPU fences, canvas capture or surface revocation guarantee."
+      }
+    },
+    {
+      "run_id": "20261009T210151Z-owned-surface-receiver-exit-d3ddf66a",
+      "valid": true,
+      "manifest_sha256": "9f906f197ef08f146bbc6fa5e64efb9b1a3fee506b03f02cab7d4f0cdadd1cf7",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "abrupt_receiver_exit_cases": 4,
+        "cases": 8,
+        "clean_receiver_exit_cases": 4,
+        "exact_receiver_exit_cases": 8,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 8,
+        "scope": "Owned audit-verified receiver-first exit; local send-right counts and retained Mach-port access after owner CF release. No final kernel reclamation, GPU fences, concurrent release race or Apple XPC envelope."
+      }
+    }
+  ],
+  "tests": 138,
+  "gpu_control": {
+    "geometries": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        33,
+        7
+      ]
+    ],
+    "modes": [
+      "receiver-clean",
+      "receiver-abrupt"
+    ],
+    "repetitions": 2,
+    "producer_stages": [
+      "sentinel initialization",
+      "completed GPU red or blue"
+    ],
+    "receiver_stages": [
+      "import",
+      "after peer exit",
+      "owner mutation",
+      "Mach-port-only access"
+    ],
+    "comparison": "96 whole allocation comparisons per GPU run; 16384 bytes each; 1572864 bytes total, including row padding/allocation tail",
+    "rights": "sender send refs1 before/copy/after-exit;0 after final explicit drop; peer clean port/CF release or exit23 process teardown",
+    "identity": "audit token expected owned PID; producer sidecar PID, surface ID, extent and completion fields tied to final record"
+  },
+  "limitations": [
+    "Completed producer GPU write then CPU peer import, not simultaneous or cross-process GPU execution.",
+    "No Canvas/private Apple envelope or synchronization contract.",
+    "No early-read race, GPU timeout/recovery, cancellation, managed/discrete/multi-plane coverage.",
+    "Retained Mach right access and local rights cleanup do not prove physical reclamation or ID recycling.",
+    "Deprecated bootstrap rendezvous API remains scoped to pinned local baseline; compiler diagnostics retained.",
+    "No Xcode windows, user process termination, protection changes or private Swift ABI construction."
+  ]
+}

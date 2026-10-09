@@ -13,6 +13,10 @@
 #include <signal.h>
 #include <time.h>
 
+#ifdef RE_GPU_PRODUCER
+extern int re_gpu_fill(IOSurfaceRef surface,unsigned seed,const char *folder);
+#endif
+
 #define MAGIC 0x52455346u
 #define LIMIT 65536u
 struct transfer {mach_msg_header_t h;mach_msg_body_t body;mach_msg_port_descriptor_t port;uint32_t magic,width,height,seed,stride,surface_id;};
@@ -33,11 +37,25 @@ static int send_ack(mach_port_t port,uint32_t stage,uint32_t value) {
     struct ack m={0};m.h.msgh_bits=MACH_MSGH_BITS(MACH_MSG_TYPE_COPY_SEND,0);m.h.msgh_size=sizeof(m);m.h.msgh_remote_port=port;m.h.msgh_id=100+stage;m.magic=MAGIC;m.stage=stage;m.value=value;
     return mach_msg(&m.h,MACH_SEND_MSG|MACH_SEND_TIMEOUT,sizeof(m),0,MACH_PORT_NULL,3000,MACH_PORT_NULL);
 }
-static void pattern(uint8_t *bytes,size_t stride,size_t width,size_t height,unsigned seed) {
-    memset(bytes,0xa5,stride*height);
-    for(size_t y=0;y<height;y++)for(size_t x=0;x<width;x++)for(size_t c=0;c<4;c++)bytes[y*stride+x*4+c]=c==3?255:(seed+x*17+y*31+c*53)&255;
+static size_t snapshot_size(IOSurfaceRef surface) {
+#ifdef RE_GPU_PRODUCER
+    size_t n=IOSurfaceGetAllocSize(surface);return n<=LIMIT?n:0;
+#else
+    return IOSurfaceGetBytesPerRow(surface)*IOSurfaceGetHeight(surface);
+#endif
 }
-static IOSurfaceRef create_surface(size_t width,size_t height,unsigned seed) {
+static void pattern(uint8_t *bytes,size_t stride,size_t width,size_t height,unsigned seed,size_t count) {
+    memset(bytes,0xa5,count);
+#ifdef RE_GPU_PRODUCER
+    for(size_t y=0;y<height;y++)for(size_t x=0;x<width;x++) {
+        uint8_t *pixel=bytes+y*stride+x*4;
+        pixel[0]=seed>=128?255:0;pixel[1]=0;pixel[2]=seed>=128?0:255;pixel[3]=255;
+    }
+#else
+    for(size_t y=0;y<height;y++)for(size_t x=0;x<width;x++)for(size_t c=0;c<4;c++)bytes[y*stride+x*4+c]=c==3?255:(seed+x*17+y*31+c*53)&255;
+#endif
+}
+static IOSurfaceRef create_surface(size_t width,size_t height,unsigned seed,const char *folder) {
     CFStringRef keys[]={kIOSurfaceWidth,kIOSurfaceHeight,kIOSurfaceBytesPerElement,kIOSurfacePixelFormat};
     int32_t values[]={(int32_t)width,(int32_t)height,4,0x42475241};CFNumberRef numbers[4];
     for(int i=0;i<4;i++)numbers[i]=CFNumberCreate(NULL,kCFNumberSInt32Type,&values[i]);
@@ -47,8 +65,15 @@ static IOSurfaceRef create_surface(size_t width,size_t height,unsigned seed) {
     size_t stride=IOSurfaceGetBytesPerRow(surface),allocation=IOSurfaceGetAllocSize(surface);
     if(stride<width*4 || stride*height>LIMIT || allocation<stride*height || allocation>1024*1024){CFRelease(surface);return NULL;}
     if(IOSurfaceLock(surface,0,NULL)!=KERN_SUCCESS){CFRelease(surface);return NULL;}
-    memset(IOSurfaceGetBaseAddress(surface),0xa5,allocation);pattern(IOSurfaceGetBaseAddress(surface),stride,width,height,seed);
-    if(IOSurfaceUnlock(surface,0,NULL)!=KERN_SUCCESS){CFRelease(surface);return NULL;}return surface;
+    memset(IOSurfaceGetBaseAddress(surface),0xa5,allocation);
+#ifndef RE_GPU_PRODUCER
+    (void)folder;pattern(IOSurfaceGetBaseAddress(surface),stride,width,height,seed,allocation);
+#endif
+    if(IOSurfaceUnlock(surface,0,NULL)!=KERN_SUCCESS){CFRelease(surface);return NULL;}
+#ifdef RE_GPU_PRODUCER
+    if(!snapshot_size(surface) || !re_gpu_fill(surface,seed,folder)){CFRelease(surface);return NULL;}
+#endif
+    return surface;
 }
 static int snapshot(IOSurfaceRef surface,uint8_t *bytes,size_t count) {
     if(IOSurfaceLock(surface,kIOSurfaceLockReadOnly,NULL)!=KERN_SUCCESS)return 0;
@@ -82,15 +107,15 @@ static int sender(unsigned width,unsigned height,unsigned seed,int abrupt,pid_t 
     fprintf(stderr,"sender: rendezvous acquired\n");
     mach_port_t reply=MACH_PORT_NULL;IOSurfaceRef surface=NULL;mach_port_t resource=MACH_PORT_NULL;int result=11;
     if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&reply))goto done;
-    fprintf(stderr,"sender: creating surface\n");surface=create_surface(width,height,seed);if(!surface)goto done;fprintf(stderr,"sender: surface created\n");resource=IOSurfaceCreateMachPort(surface);if(!MACH_PORT_VALID(resource))goto done;
+    fprintf(stderr,"sender: creating surface\n");surface=create_surface(width,height,seed,NULL);if(!surface)goto done;fprintf(stderr,"sender: surface created\n");resource=IOSurfaceCreateMachPort(surface);if(!MACH_PORT_VALID(resource))goto done;
     struct transfer m={0};m.h.msgh_bits=MACH_MSGH_BITS(MACH_MSG_TYPE_COPY_SEND,MACH_MSG_TYPE_MAKE_SEND)|MACH_MSGH_BITS_COMPLEX;m.h.msgh_size=sizeof(m);m.h.msgh_remote_port=rendezvous;m.h.msgh_local_port=reply;m.h.msgh_id=99;
     m.body.msgh_descriptor_count=1;m.port.name=resource;m.port.disposition=MACH_MSG_TYPE_COPY_SEND;m.port.type=MACH_MSG_PORT_DESCRIPTOR;
     m.magic=MAGIC;m.width=width;m.height=height;m.seed=seed;m.stride=(uint32_t)IOSurfaceGetBytesPerRow(surface);m.surface_id=IOSurfaceGetID(surface);
     status=mach_msg(&m.h,MACH_SEND_MSG|MACH_SEND_TIMEOUT,sizeof(m),0,MACH_PORT_NULL,3000,MACH_PORT_NULL);if(status){fail("send-resource",status);goto done;}fprintf(stderr,"sender: resource sent\n");
     union receive received;status=receive_message(&received,reply);
     if(status || !peer_matches(&received,parent) || received.ack.h.msgh_size!=sizeof(struct ack) || received.ack.magic!=MAGIC || received.ack.stage!=1){fail("receiver-ack",status);goto done;}
-    size_t count=m.stride*height;uint8_t *expected=malloc(count),*actual=malloc(count);if(!expected || !actual){free(expected);free(actual);goto done;}
-    pattern(expected,m.stride,width,height,seed);expected[0]^=0x5a;
+    size_t count=snapshot_size(surface);uint8_t *expected=malloc(count),*actual=malloc(count);if(!expected || !actual){free(expected);free(actual);goto done;}
+    pattern(expected,m.stride,width,height,seed,count);expected[0]^=0x5a;
     int shared=snapshot(surface,actual,count)&&memcmp(expected,actual,count)==0;free(expected);free(actual);
     status=send_ack(rendezvous,2,shared);if(status || !shared){fail("shared-mutation",status);goto done;}
     if(abrupt)_exit(23);result=0;
@@ -120,8 +145,8 @@ static int receiver_child(unsigned width,unsigned height,unsigned seed,int abrup
     if(!peer_matches(&incoming,parent) || m->h.msgh_size!=sizeof(*m) || !(m->h.msgh_bits&MACH_MSGH_BITS_COMPLEX) || m->body.msgh_descriptor_count!=1 || m->port.type!=MACH_MSG_PORT_DESCRIPTOR || m->port.disposition!=MACH_MSG_TYPE_PORT_SEND || m->magic!=MAGIC || m->width!=width || m->height!=height || m->seed!=seed){mach_msg_destroy(&m->h);goto done;}
     resource=m->port.name;alias=IOSurfaceLookupFromMachPort(resource);
     if(!alias || !send_refs(resource,1) || IOSurfaceGetID(alias)!=m->surface_id || IOSurfaceGetWidth(alias)!=width || IOSurfaceGetHeight(alias)!=height || IOSurfaceGetBytesPerElement(alias)!=4 || IOSurfaceGetPixelFormat(alias)!=0x42475241 || IOSurfaceGetPlaneCount(alias)!=0 || IOSurfaceGetBytesPerRow(alias)!=m->stride || m->stride<width*4 || (size_t)m->stride*height>LIMIT)goto done;
-    size_t count=(size_t)m->stride*height;raw=malloc(count);expected=malloc(count);if(!raw || !expected)goto done;
-    pattern(expected,m->stride,width,height,seed);
+    size_t count=snapshot_size(alias);if(!count)goto done;raw=malloc(count);expected=malloc(count);if(!raw || !expected)goto done;
+    pattern(expected,m->stride,width,height,seed,count);
     if(!snapshot(alias,raw,count) || memcmp(raw,expected,count) || !write_bytes(folder,"before.bin",raw,count) || !mutate(alias,0,0x5a))goto done;
     if(abrupt) {
         // Leave the imported right and CF reference live. Process teardown owns cleanup.
@@ -153,8 +178,8 @@ static int receiver_first(int argc,char **argv) {
     snprintf(service,sizeof(service),"local.re.surface.%d.%s",getpid(),hex);snprintf(parentPID,sizeof(parentPID),"%d",getpid());
     if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox) || mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND))goto done;
     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;
-    surface=create_surface(width,height,seed);if(!surface)goto done;
-    size_t stride=IOSurfaceGetBytesPerRow(surface),count=stride*height;uint32_t surfaceID=IOSurfaceGetID(surface);
+    surface=create_surface(width,height,seed,argv[5]);if(!surface)goto done;
+    size_t stride=IOSurfaceGetBytesPerRow(surface),count=snapshot_size(surface);if(!count)goto done;uint32_t surfaceID=IOSurfaceGetID(surface);
     resource=IOSurfaceCreateMachPort(surface);if(!MACH_PORT_VALID(resource) || !send_refs(resource,1))goto done;
     child=fork();if(child==0){execl(argv[0],argv[0],"--receiver",argv[1],argv[2],argv[3],argv[4],parentPID,service,argv[5],NULL);_exit(127);}if(child<0)goto done;
     union receive ready;int status=receive_message(&ready,inbox);
@@ -170,7 +195,7 @@ static int receiver_first(int argc,char **argv) {
     int waitStatus;if(waitpid(child,&waitStatus,0)!=child)goto done;waited=1;
     if(!WIFEXITED(waitStatus) || WEXITSTATUS(waitStatus)!=(abrupt?23:0) || !send_refs(resource,1))goto done;
     raw=malloc(count);expected=malloc(count);if(!raw || !expected)goto done;
-    pattern(expected,stride,width,height,seed);expected[0]^=0x5a;
+    pattern(expected,stride,width,height,seed,count);expected[0]^=0x5a;
     if(!snapshot(surface,raw,count) || memcmp(raw,expected,count) || !write_bytes(argv[5],"after-exit.bin",raw,count) || !mutate(surface,1,0xa6))goto done;
     expected[1]^=0xa6;if(!snapshot(surface,raw,count) || memcmp(raw,expected,count) || !write_bytes(argv[5],"after-owner-mutation.bin",raw,count))goto done;
     // Drop the original CF reference; the retained Mach right must still provide access.
@@ -179,7 +204,7 @@ static int receiver_first(int argc,char **argv) {
     CFRelease(retained);retained=NULL;mach_port_t released=resource;
     if(mach_port_deallocate(mach_task_self(),resource) || !no_send_refs(released))goto done;resource=MACH_PORT_NULL;
     if(!remove_rendezvous(&inbox,service))goto done;registered=0;
-    printf("{\"width\":%u,\"height\":%u,\"seed\":%u,\"stride\":%zu,\"mode\":\"%s\",\"receiver_exit\":%d,\"sender_pid\":%d,\"receiver_pid\":%d,\"audit_peer_verified\":true,\"different_processes\":true,\"survives_receiver_exit\":true,\"owner_mutation_after_exit\":true,\"port_retains_after_owner_release\":true,\"sender_send_refs_before\":1,\"sender_send_refs_after_copy\":1,\"sender_send_refs_after_exit\":1,\"sender_send_refs_after_release\":0,\"receiver_release\":\"%s\",\"rendezvous_removed\":true}\n",width,height,seed,stride,argv[4],WEXITSTATUS(waitStatus),(int)getpid(),(int)child,abrupt?"process-teardown":"explicit-port-and-cf");result=0;
+    printf("{\"width\":%u,\"height\":%u,\"seed\":%u,\"stride\":%zu,\"mode\":\"%s\",\"surface_id\":%u,\"snapshot_bytes\":%zu,\"receiver_exit\":%d,\"sender_pid\":%d,\"receiver_pid\":%d,\"audit_peer_verified\":true,\"different_processes\":true,\"survives_receiver_exit\":true,\"owner_mutation_after_exit\":true,\"port_retains_after_owner_release\":true,\"sender_send_refs_before\":1,\"sender_send_refs_after_copy\":1,\"sender_send_refs_after_exit\":1,\"sender_send_refs_after_release\":0,\"receiver_release\":\"%s\",\"rendezvous_removed\":true}\n",width,height,seed,stride,argv[4],surfaceID,count,WEXITSTATUS(waitStatus),(int)getpid(),(int)child,abrupt?"process-teardown":"explicit-port-and-cf");result=0;
  done:
     if(child>0 && !waited){kill(child,SIGKILL);waitpid(child,NULL,0);}
     if(registered && !remove_rendezvous(&inbox,service))fail("rendezvous-cleanup",1);
@@ -198,7 +223,12 @@ int main(int argc,char **argv) {
     if(!values[0]||values[0]>64||!values[1]||values[1]>16||values[2]>255)return 2;
     const char *mode=argv[start+3];if(strcmp(mode,"clean") && strcmp(mode,"abrupt") && strcmp(mode,"receiver-clean") && strcmp(mode,"receiver-abrupt"))return 2;int abrupt=!strcmp(mode,"abrupt") || !strcmp(mode,"receiver-abrupt");
     if(childMode){char *end=NULL;long parent=strtol(argv[6],&end,10);if(!end || *end || parent<=1 || getppid()!=parent)return 2;if(receiverMode)return receiver_child(values[0],values[1],values[2],abrupt,(pid_t)parent,argv[7],argv[8]);return sender(values[0],values[1],values[2],abrupt,(pid_t)parent,argv[7]);}
+#ifdef RE_GPU_PRODUCER
     if(!strncmp(mode,"receiver-",9))return receiver_first(argc,argv);
+    return 2; // GPU producer is reviewed only for receiver-first control.
+#else
+    if(!strncmp(mode,"receiver-",9))return receiver_first(argc,argv);
+#endif
     mach_port_t inbox=MACH_PORT_NULL,receivedPort=MACH_PORT_NULL,reply=MACH_PORT_NULL;IOSurfaceRef alias=NULL;pid_t child=-1;int waited=0,result=12,status;
     char service[128]={0};unsigned char nonce[16];arc4random_buf(nonce,sizeof(nonce));char hex[33];for(int i=0;i<16;i++)sprintf(hex+i*2,"%02x",nonce[i]);snprintf(service,sizeof(service),"local.re.surface.%d.%s",getpid(),hex);int registered=0;
     uint8_t *before=NULL,*after=NULL,*expected=NULL;union receive incoming;
@@ -212,7 +242,7 @@ int main(int argc,char **argv) {
     if(!peer_matches(&incoming,child) || m->h.msgh_size!=sizeof(*m) || !(m->h.msgh_bits&MACH_MSGH_BITS_COMPLEX) || m->body.msgh_descriptor_count!=1 || m->port.type!=MACH_MSG_PORT_DESCRIPTOR || m->port.disposition!=MACH_MSG_TYPE_PORT_SEND || m->magic!=MAGIC || m->width!=values[0] || m->height!=values[1] || m->seed!=values[2]){mach_msg_destroy(&m->h);goto done;}
     receivedPort=m->port.name;reply=m->h.msgh_remote_port;alias=IOSurfaceLookupFromMachPort(receivedPort);
     if(!alias || IOSurfaceGetID(alias)!=m->surface_id || IOSurfaceGetWidth(alias)!=values[0] || IOSurfaceGetHeight(alias)!=values[1] || IOSurfaceGetBytesPerElement(alias)!=4 || IOSurfaceGetPixelFormat(alias)!=0x42475241 || IOSurfaceGetPlaneCount(alias)!=0 || IOSurfaceGetBytesPerRow(alias)!=m->stride || m->stride<values[0]*4 || (size_t)m->stride*values[1]>LIMIT)goto done;
-    size_t count=m->stride*values[1];before=malloc(count);after=malloc(count);expected=malloc(count);if(!before || !after || !expected)goto done;pattern(expected,m->stride,values[0],values[1],values[2]);
+    size_t count=snapshot_size(alias);if(!count)goto done;before=malloc(count);after=malloc(count);expected=malloc(count);if(!before || !after || !expected)goto done;pattern(expected,m->stride,values[0],values[1],values[2],count);
     if(!snapshot(alias,before,count) || memcmp(before,expected,count) || !write_bytes(argv[5],"before.bin",before,count) || !mutate(alias,0,0x5a))goto done;
     if(mach_port_deallocate(mach_task_self(),receivedPort)!=KERN_SUCCESS)goto done;receivedPort=MACH_PORT_NULL;
     if(send_ack(reply,1,1))goto done;

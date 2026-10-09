@@ -28,7 +28,7 @@ def inspect(record,case,mode,payloads):
     except (KeyError,ValueError,TypeError):return {'passed':False,'failure':'invalid-result'}
 
 
-def inspect_receiver(record,case,mode,payloads):
+def inspect_receiver(record,case,mode,payloads,expect=expected):
     width,height,seed=case
     try:
         if mode not in ('receiver-clean','receiver-abrupt') or record.get('mode')!=mode:return {'passed':False,'failure':'mode'}
@@ -38,7 +38,7 @@ def inspect_receiver(record,case,mode,payloads):
         if any(record.get(k) is not True for k in RECEIVER_FLAGS):return {'passed':False,'failure':'lifecycle'}
         if record.get('receiver_release')!=('process-teardown' if mode=='receiver-abrupt' else 'explicit-port-and-cf'):return {'passed':False,'failure':'release-path'}
         if any(type(record[k]) is not int or record[k]<=1 for k in ('sender_pid','receiver_pid')) or record['sender_pid']==record['receiver_pid']:return {'passed':False,'failure':'peer-identity'}
-        raw=expected(width,height,record['stride'],seed);after=bytearray(raw);after[0]^=0x5a;final=bytearray(after);final[1]^=0xa6
+        raw=expect(width,height,record['stride'],seed);after=bytearray(raw);after[0]^=0x5a;final=bytearray(after);final[1]^=0xa6
         refs=dict(zip(RECEIVER_PHASES,(raw,bytes(after),bytes(final),bytes(final))))
         if set(payloads)!=set(RECEIVER_PHASES) or any(payloads[k]!=refs[k] for k in RECEIVER_PHASES):return {'passed':False,'failure':'byte-mismatch'}
         return {'passed':True,'failure':None,'expected':refs,'padding_bytes_per_row':record['stride']-width*4}
