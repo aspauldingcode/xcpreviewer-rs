@@ -83,6 +83,9 @@ def perform(kind,out,p):
         from reloop.connected import connected
         return connected(out)
     if kind=='plist_corpus':
+        if p.get('decode_control',False):
+            from reloop.plistdecode import corpus as decode_corpus
+            return decode_corpus(out)
         from reloop.corpus import corpus
         return corpus(out,p.get('seed',1),p.get('cases',24))
     if kind=='swift_metadata':

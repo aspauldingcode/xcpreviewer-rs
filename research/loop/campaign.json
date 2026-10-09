@@ -1456,6 +1456,47 @@
           "equals": 1
         }
       ]
+    },
+    {
+      "id": "native-plist-data-decode-controls",
+      "adapter": "plist_corpus",
+      "hypothesis": "Owned UVPropertyList retains all eight data inputs exactly. Two valid dictionaries decode exactly; six invalid-or-nondictionary inputs expose empty dictionaries, while Foundation legacy strings are explicitly distinct from binary-only Python expectations. No Swift optional-value/live reply claim.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "decode_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        },
+        {
+          "path": "repeat_semantics",
+          "equals": 8
+        },
+        {
+          "path": "exact_input_bytes",
+          "equals": 8
+        },
+        {
+          "path": "valid_dictionary_controls",
+          "equals": 2
+        },
+        {
+          "path": "non_dictionary_empty_controls",
+          "equals": 6
+        }
+      ]
     }
   ],
   "version": 1

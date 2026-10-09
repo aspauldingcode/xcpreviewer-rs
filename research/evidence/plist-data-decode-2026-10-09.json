@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "run_id": "20261009T191515Z-native-plist-data-decode-controls-1bc905aa",
+      "manifest_sha256": "8c9a81e22556f1a16c77ca24889f4be9141639e143f34921b816e362ada09175",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "cases": 8,
+        "exact_input_bytes": 0,
+        "helper_failures": 16,
+        "repeat_semantics": 0,
+        "scope": "Owned UVPropertyList initWithData/data/dictionary boundary only; not Swift optional identifier acceptance, live reply or full malformed corpus.",
+        "valid_dictionary_controls": 0
+      }
+    },
+    {
+      "run_id": "20261009T191734Z-native-plist-data-decode-controls-a5b9fcfc",
+      "manifest_sha256": "3e41f9d10707a45ad37f06d47a25d1704f79b25769b59ae6e5d8d5f74555dba1",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "exact_input_bytes": 8,
+        "helper_failures": 0,
+        "non_dictionary_empty_controls": 6,
+        "repeat_semantics": 8,
+        "scope": "Owned UVPropertyList initWithData/data/dictionary boundary only; not Swift optional identifier acceptance, live reply or full malformed corpus.",
+        "valid_dictionary_controls": 2
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case": "empty-dictionary",
+      "input_bytes": 42,
+      "input_sha256": "9261ecceda608ef174256e5fdc774c1e6e3dcf533409c1bc393d490d01c713f1",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": true,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": false,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": true
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "identifier-dictionary",
+      "input_bytes": 101,
+      "input_sha256": "9527d378f9a24231d2ecf20f66d27a06c349ec71e5223da4a3115e47d55abe1d",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": true,
+      "assessment": {
+        "decoded": [
+          "dict",
+          [
+            [
+              "__unique_service_message_identifier",
+              [
+                "str",
+                "owned-\ud83e\udd80"
+              ]
+            ]
+          ]
+        ],
+        "empty_dictionary": false,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": true
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "empty-data",
+      "input_bytes": 0,
+      "input_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": false,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "header-only",
+      "input_bytes": 8,
+      "input_sha256": "8053c006d6022564eeb6c0cfcaaf08c8055ef7724dabce8dfad7dd272dab5f04",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "truncated-trailer",
+      "input_bytes": 100,
+      "input_sha256": "10fd0299ec29e18819a9227d48d76b25261f5110b6ea3d0ef517a0c773aab762",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": false,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "non-plist",
+      "input_bytes": 13,
+      "input_sha256": "67fb003a3b4bc65371242f7254d22e7a37b57db29d44868754c72a2a015d45fd",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "array-root",
+      "input_bytes": 50,
+      "input_sha256": "a4909ab8894e5e00a836c0d4b3b11a8318ec707d6f9c35ca9ab0bd15e59beb5b",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    },
+    {
+      "case": "string-root",
+      "input_bytes": 47,
+      "input_sha256": "7ace3deb2aa8f18b39d3458962c05ae9cf129260f69e791f3687b13a32ae6fe9",
+      "repeat_records_equal": true,
+      "data_equals_input_both": true,
+      "dictionary_type": true,
+      "foundation_present": true,
+      "foundation_dictionary": false,
+      "assessment": {
+        "decoded": [
+          "dict",
+          []
+        ],
+        "empty_dictionary": true,
+        "exact_data": true,
+        "failure": null,
+        "passed": true,
+        "valid_dictionary": false
+      },
+      "image": {
+        "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+        "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+      }
+    }
+  ],
+  "compared_input_bytes_across_two_executions": 722,
+  "environment": {
+    "os": {
+      "exit_code": 0,
+      "value": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80"
+    },
+    "arch": {
+      "exit_code": 0,
+      "value": "arm64"
+    },
+    "xcode": {
+      "exit_code": 0,
+      "value": "Xcode 26.6\nBuild version 17F113"
+    },
+    "messaging_image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+  },
+  "scope": "Owned UVPropertyList initWithData/data/dictionary execution; exact bytes, Python binary-plist expectations and separate Foundation legacy-string expectations. Not Swift optional identifier decoding or forced LazyPropertyList failure.",
+  "limitations": [
+    "Finite eight-input corpus; not arbitrary malformed or resource-attachment coverage.",
+    "Empty dictionary output can represent valid empty input, invalid data or non-dictionary roots; output alone does not distinguish them.",
+    "Preserved invalid input data is not proof of valid serialization or actual live reply acceptance.",
+    "Initial failed run retains incorrect BOOL boxing and parser-domain assumption; supporting run registers corrected separate expectations.",
+    "Native method image UUID observed; method encodings checked before invocation; no private Swift ABI call.",
+    "No Xcode windows opened."
+  ]
+}

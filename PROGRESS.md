@@ -226,3 +226,9 @@ Both campaigns seal and verify; all 110 tests pass. No Xcode windows opened. See
 Static TransportReply result closure invokes captured callback with encoded LazyPropertyList plus null error on success, or null payload plus serializable NSError on failure. Dependent encoder has OS14.4 data/dictionary branches and selected serialization-error fallbacks. A null callback error alone does not prove payload serialization succeeded; no live reply matching or exactly-once completion is established.
 
 Two sealed runs verify against unchanged image identity and prior identifier anchors. Added campaign validates; existing 110-test implementation checkpoint unchanged. No Xcode windows opened. See [static path and limits](docs/reverse-engineering/2026-10-09-transport-reply.md) and [anchors](research/evidence/transport-reply-path-2026-10-09.json). P1/P2/R2 and both milestones remain open.
+
+## 2026-10-09 — owned data decode and empty fallback
+
+Implemented finite native UVPropertyList data decoding controls. All eight inputs retain exact data bytes across independent helpers; two valid dictionaries decode exactly, while six invalid/non-dictionary inputs expose empty dictionaries. Foundation legacy ASCII string parsing is measured separately from Python binary-plist decoding. Empty dictionary alone cannot establish valid serialization.
+
+Initial BOOL-boxing/parser-domain harness failure retained; tests catch absent-None canonicalization. Corrected native run supports; all 113 tests pass. Both seals and prior reply anchors verify. No Xcode windows opened. See [measured boundary](docs/reverse-engineering/2026-10-09-plist-data-decode.md) and [anchors](research/evidence/plist-data-decode-2026-10-09.json). Full live reply/optional-field acceptance remains open.
