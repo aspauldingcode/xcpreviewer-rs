@@ -134,3 +134,37 @@ def inspect_isolation(text):
     if [p for p,(op,args,raw) in code.items() if op.startswith('b') or op in ('cbz','cbnz','tbz','tbnz')]!=[0x114e5c]:raise ValueError('Unexpected isolation control transfer')
     return {'isolation_precondition_verified':True,
             'scope':'Pinned helper directly calls Swift preconditionIsolated and returns normally if callee returns. Callee behavior, runtime actor identity, traps and scheduling remain unexecuted.'}
+
+
+def inspect_invalidation(texts):
+    """Check selected weak-owner and state-gated update boundaries."""
+    codes={}
+    for text in texts:
+        code=instructions(text);entry=min(code)
+        addresses=re.findall(r'^\s*([0-9a-f]+):\s+(?:[0-9a-f]{2}\s+){4}\w',text,re.M)
+        if entry in codes or len(addresses)!=len(set(addresses)):raise ValueError('Duplicate invalidation evidence')
+        codes[entry]=code
+    if set(codes)!={0x419cc,0x41f10,0x41f2c,0xbeef0}:raise ValueError('Exact invalidation boundaries required')
+    shared=codes[0x41f2c];update=codes[0xbeef0]
+    expected={0x41f74:('cbz','x0, 0x41fc4'),0x41f88:('add','x0, x23, #0x54'),0x41fa4:('blr','x20'),0x41fa8:('add','x0, x23, #0x54'),0x41fb0:('mov','x0, x22'),0x41fc0:('blr','x19')}
+    if any(shared.get(p,())[:2]!=value for p,value in expected.items()):raise ValueError('Weak owner/lock/update/cleanup boundary changed')
+    for p,target in [(0x41f70,'0x13166c'),(0x41f8c,'0x131120'),(0x41fac,'0x13112c'),(0x41fb4,'0x131498')]:
+        if shared.get(p,())[:2]!=('bl',target):raise ValueError('Invalidation ownership/lock callee changed')
+    checks={0xbef20:('ldrh','w8, [x0, #0x40]'),0xbef3c:('ubfx','w8, w8, #8, #8'),0xbef40:('cmp','w8, #0x1'),0xbefd0:('blr','x23'),0xbefe8:('strb','wzr, [x27, #0x41]'),0xbefec:('strb','w8, [x22, #0x8]')}
+    if any(update.get(p,())[:2]!=value for p,value in checks.items()):raise ValueError('Waiting update discriminator/dataflow changed')
+    for p,op,target in [(0xbef44,'b.ne','0xbef68'),(0xbef64,'b','0xbefec')]:
+        if p not in update or update[p][0]!=op or update[p][1].split()[0]!=target:raise ValueError('State callback-skip branch changed')
+    for p,value in [(0xbef60,1),(0xbefd4,0)]:
+        if update.get(p,())[:2]!=('mov',f'w8, #0x{value:x}'):raise ValueError('Waiting update outcome changed')
+    # Decode the actual B immediate at each wrapper to verify the shared handoff.
+    for entry,site in [(0x419cc,0x419e4),(0x41f10,0x41f28)]:
+        code=codes[entry]
+        if site not in code or code[site][0]!='b':raise ValueError('Missing invalidation shared handoff')
+        word=code[site][2]
+        if word>>26!=5:raise ValueError('Unexpected encoded handoff')
+        displacement=word&0x3ffffff
+        if displacement&0x2000000:displacement-=0x4000000
+        if site+displacement*4!=0x41f2c:raise ValueError('Wrong invalidation shared target')
+    return {'invalidation_boundaries_verified':True,'weak_owner_absent_skips_update':True,
+            'update_between_lock_unlock':True,'cleanup_after_unlock':True,'state_byte_offset':65,'skipped_state_tag':1,
+            'scope':'Pinned weak-owner gate and byte1 update skip only. Dictionary effects, named runtime tags, concrete transport cancellation, executor ordering and resource reclamation remain separate.'}

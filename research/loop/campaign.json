@@ -2231,6 +2231,135 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-invalidation-cancel-actions",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Recover actual invalidation-token closures to discriminate observer deregistration from direct transport cancellation. Three real entries required; names alone cannot assign effects.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000004(19cc|1f10|1f2c) [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 3
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 3
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-invalidation-remove-targets",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Instruction-derived closure targets should reveal identifier-specific observer removal and result destruction. Five exact entries required; mutation and cleanup targets must be inspected rather than inferred from symbol names.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^00000000000be(ea8|ecc) [tT] |^000000000004(28fc|2604|28d0) [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 5
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 5
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-invalidation-waiting-update",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Recover merged updateWaitingState body: test whether mutation is gated on actual state byte and whether already-fulfilled bypasses indirect update. Static outcomes are not runtime named ABI mapping.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^00000000000beef0 [tT] "
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-invalidation-boundary-control",
+      "adapter": "disassembly",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Static weak-owner skip, shared lock/update/unlock/release/cleanup and byte1 mutation skip must pass finite checker; corrupt branches/callees/outcomes fail. No runtime or whole dictionary proof.",
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000004(19cc|1f10|1f2c) [tT] |^00000000000beef0 [tT] ",
+        "invalidation_control": true
+      },
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 4
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 4
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "invalidation_boundaries_verified",
+          "equals": true
+        },
+        {
+          "path": "cleanup_after_unlock",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

@@ -274,3 +274,9 @@ Added finite destructor/target-metadata control modes and mutation controls. Ini
 Recovered both concrete callback invoke bodies and specialized constructors. Isolated invoke optionally calls actor verification before dispatching its stored closure; concurrent invoke dispatches directly. A dependent probe shows the verification helper calls Swift `preconditionIsolated`; no executor-hop or concrete transport action is established. Added two finite structural controls and corruption checks for context, branch, callee, initialization, helper extent and duplicate evidence. Five runs sealed and anchor-verified; 131 tests pass. R2 remains open; no Xcode windows opened.
 
 Evidence: [callback boundaries](docs/reverse-engineering/2026-10-09-cancellation-callbacks.md), [sanitized seals](research/evidence/cancellation-callbacks-2026-10-09.json). Native runtime witness association, selected caller closure, races, abandoned replies and resource cleanup remain required.
+
+## 2026-10-09 — invalidation cancellation gates
+
+Recovered shared invalidation-token closure weak-owner skip and lock/update/unlock/owner-release/result-cleanup ordering. A dependent merged update probe shows state byte `0x41 == 1` bypasses mutation, with a separate result tag. Added a finite checker including encoded ARM64 handoff targets and corrupted weak/state/lock/outcome controls. Four runs sealed and anchor-verified; 132 tests pass. Called dictionary effects, native races, selected-flow association and transport cancellation remain unverified; R2 stays open. No Xcode windows opened.
+
+Evidence: [invalidation gates](docs/reverse-engineering/2026-10-09-invalidation-cancellation.md), [sanitized seals](research/evidence/invalidation-cancellation-2026-10-09.json).

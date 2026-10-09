@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-09",
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T203714Z-native-invalidation-cancel-actions-42e0610a",
+      "valid": true,
+      "manifest_sha256": "a4f8dd837569b589bb6419167cf8e5816c636392587e7bd539ead46ce94f9ce9",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 0,
+        "entry_body_count": 3,
+        "function_count": 3,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T203745Z-native-invalidation-remove-targets-beccd150",
+      "valid": true,
+      "manifest_sha256": "1316a50b51a63932ef2dfa39d944eb5d871da63fbce421a89a243374cfc829a5",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 1,
+        "entry_body_count": 5,
+        "function_count": 5,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T203824Z-native-invalidation-waiting-update-25f0f63d",
+      "valid": true,
+      "manifest_sha256": "c477b30a6dd1008b318c637aaa959da3244f1069260f9cdfe220483f26544636",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 1,
+        "entry_body_count": 1,
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      }
+    },
+    {
+      "run_id": "20261009T203945Z-native-invalidation-boundary-control-8aaa14f1",
+      "valid": true,
+      "manifest_sha256": "5b44d0ae41d78101a135c2544a3c44d30e5cd105c356aa0dffb97677b13cdb9d",
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "address_fallback_count": 1,
+        "cleanup_after_unlock": true,
+        "entry_body_count": 4,
+        "function_count": 4,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+        "invalidation_boundaries_verified": true,
+        "scope": "Pinned weak-owner gate and byte1 update skip only. Dictionary effects, named runtime tags, concrete transport cancellation, executor ordering and resource reclamation remain separate.",
+        "skipped_state_tag": 1,
+        "state_byte_offset": 65,
+        "update_between_lock_unlock": true,
+        "weak_owner_absent_skips_update": true
+      }
+    }
+  ],
+  "tests": 132,
+  "sites": {
+    "shared_closure": "0x41f2c",
+    "weak_load": "0x41f70",
+    "absent_owner_skip": "0x41f74 ->0x41fc4",
+    "lock": "0x41f8c",
+    "update": "0x41fa4",
+    "unlock": "0x41fac",
+    "owner_release": "0x41fb4",
+    "result_cleanup": "0x41fc0",
+    "merged_state_update": "0xbeef0",
+    "state_byte": "0x41 via halfword0x40 upper byte",
+    "tag1_skip": "0xbef44/0xbef64 skips callback0xbefd0",
+    "result_tag": "1 on skip;0 after update;stored+8"
+  },
+  "limitations": [
+    "Static branch/order patterns only; no native token invocation, runtime weak-reference race or dictionary conformance experiment.",
+    "Called target names indicate observer removal and dictionary setter, but full dictionary effects and selected-flow closure association are not yet verified.",
+    "Named state cases, runtime witness relocation and generic specialization ABI remain separate.",
+    "No Mach/IOSurface resource ownership or final reclamation claim.",
+    "No Xcode windows, process attachment, or private Swift ABI construction."
+  ]
+}

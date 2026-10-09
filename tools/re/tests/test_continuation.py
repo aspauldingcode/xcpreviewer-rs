@@ -3,7 +3,7 @@ import sys
 import unittest
 import struct
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.continuation import inspect,inspect_default,inspect_cancel,inspect_deinit,inspect_state_metadata,inspect_callbacks,inspect_isolation
+from reloop.continuation import inspect,inspect_default,inspect_cancel,inspect_deinit,inspect_state_metadata,inspect_callbacks,inspect_isolation,inspect_invalidation
 from reloop.core import validate_experiment
 import json
 import copy
@@ -87,6 +87,22 @@ class ContinuationTests(unittest.TestCase):
         for bad in [text.replace('preconditionIsolated','enqueue'),text.replace('0x12feb4','0x12feb8'),text.replace('114e40: 00 00 00 00 nop','114e40: 00 00 00 00 b 0x114e68'),text.replace('ret','nop'),text+text.splitlines()[1]+'\n',text.split('\n',1)[1]]:
             with self.assertRaises(ValueError):inspect_isolation(bad)
 
+    def test_invalidation_weak_gate_lock_order_and_state_skip_faults(self):
+        def body(rows):return '\n'.join(f'{p:x}: '+struct.pack('<I',word).hex(' ')+f' {op} {args}' for p,op,args,word in rows)+'\n'
+        texts=[]
+        for entry,site in [(0x419cc,0x419e4),(0x41f10,0x41f28)]:
+            texts.append(body([(entry,'nop','',0),(site,'b','shared',0x14000000|((0x41f2c-site)//4))]))
+        shared=[(0x41f2c,'nop',''),(0x41f70,'bl','0x13166c'),(0x41f74,'cbz','x0, 0x41fc4'),(0x41f88,'add','x0, x23, #0x54'),(0x41f8c,'bl','0x131120'),(0x41fa4,'blr','x20'),(0x41fa8,'add','x0, x23, #0x54'),(0x41fac,'bl','0x13112c'),(0x41fb0,'mov','x0, x22'),(0x41fb4,'bl','0x131498'),(0x41fc0,'blr','x19')]
+        update=[(0xbeef0,'nop',''),(0xbef20,'ldrh','w8, [x0, #0x40]'),(0xbef3c,'ubfx','w8, w8, #8, #8'),(0xbef40,'cmp','w8, #0x1'),(0xbef44,'b.ne','0xbef68 <owned>'),(0xbef60,'mov','w8, #0x1'),(0xbef64,'b','0xbefec <owned>'),(0xbefd0,'blr','x23'),(0xbefd4,'mov','w8, #0x0'),(0xbefe8,'strb','wzr, [x27, #0x41]'),(0xbefec,'strb','w8, [x22, #0x8]')]
+        texts += [body([(p,op,args,0) for p,op,args in rows]) for rows in [shared,update]]
+        self.assertTrue(inspect_invalidation(texts)['cleanup_after_unlock'])
+        for old,new in [('cbz','cbnz'),('#0x54','#0x50'),('0x13112c','0x131120'),('b.ne','b.eq'),('0xbefec','0xbefd0'),('mov w8, #0x0','mov w8, #0x1'),('#0x41','#0x40')]:
+            with self.assertRaises(ValueError):inspect_invalidation([t.replace(old,new) for t in texts])
+        bad=texts.copy();bad[0]=bad[0].replace('52 01 00 14','53 01 00 14')
+        with self.assertRaises(ValueError):inspect_invalidation(bad)
+        with self.assertRaises(ValueError):inspect_invalidation(texts[:-1])
+        with self.assertRaises(ValueError):inspect_invalidation(texts+[texts[0]])
+
     def test_deinit_case_skip_and_diagnostic_require_observed_boundaries(self):
         self.assertEqual(inspect_deinit(DEINIT)['deinit_skipped_case'],1)
         for text in [DEINIT.replace('b.ne','b.eq'),DEINIT.replace('cmp w0, #0x1','cmp w0, #0x0'),DEINIT.replace('b 0x2bbf0','b 0x2bbd8'),DEINIT.replace('_swift_allocError','_swift_allocObject'),DEINIT.replace('FulfillmentFailureModefail','OtherFailureModefail'),DEINIT.replace('peek','update'),DEINIT.replace('2bc3c: 00 00 00 00 ret','')]:
@@ -118,7 +134,7 @@ class ContinuationTests(unittest.TestCase):
     def test_static_controls_reject_nonboolean_parameters(self):
         root=pathlib.Path(__file__).resolve().parents[3]
         experiments=json.loads((root/'research/loop/campaign.json').read_text())['experiments']
-        for key in ['default_control','cancel_control','deinit_control','state_control','callback_control','isolation_control']:
+        for key in ['default_control','cancel_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control']:
             e=next(e for e in experiments if key in e['params'])
             for value in [1,'true',None]:
                 e['params'][key]=value

@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "33688a773420254080fcf5d22121a073f1edbcaa",
+  "baseline_commit": "37660f167648b76acba0222435da6504f46b950f",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -99,9 +99,9 @@
       "retry_prerequisite": "Use actual parse_errors field and target-specific State verifier; seven broad parse errors retained explicitly."
     }
   ],
-  "last_completed": "Recovered isolated/concurrent cancellation callback constructors and stored-closure invoke boundaries. Optional actor verification calls Swift preconditionIsolated, not evidence of an executor hop. Added two static controls with context/callee/branch/duplicate corruption tests; five runs sealed and externally anchored; 131 tests pass. Native callback/witness association and transport effects remain open.",
+  "last_completed": "Recovered invalidation cancellation closures: weak-owner absence skips update; shared storage update is locked and owner/result cleanup occurs after unlock. Dependent merged update checks state byte0x41 and skips callback for tag1. Added encoded wrapper-target/weak-gate/lock-order/outcome corruption controls; four runs sealed and anchor-verified, 132 tests pass. Dictionary effects/native races/live transport remain open.",
   "last_github_sync": {
-    "checkpoint": "Cancellation callback boundaries and isolation precondition",
+    "checkpoint": "Invalidation cancellation weak-owner and state gates",
     "date": "2026-10-09",
     "issues": [
       "R2"
@@ -110,7 +110,7 @@
   },
   "next_actions": [
     {
-      "action": "Static callback wrappers dispatch stored closures; isolated wrapper optionally calls Swift preconditionIsolated. Recover concrete selected-flow closure and safely established witness association, then actual runtime ordering, abandoned reply and resource release. Do not infer transport cancellation or scheduling from wrapper names.",
+      "action": "Recover called dictionary removal/setter effects and actual selected-flow callback association. Static invalidation closure weak-owner skip and state-byte1 update bypass recovered; native executor/races, abandoned replies and resource cleanup remain unverified.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -462,6 +462,26 @@
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
       "run_id": "20261009T203157Z-native-actor-isolation-control-5ee5ead1",
       "manifest_sha256": "ecefd1e8d66573ea7b3231d025cbf07573c6c6275af187e1c0f554c754850807"
+    },
+    {
+      "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
+      "run_id": "20261009T203714Z-native-invalidation-cancel-actions-42e0610a",
+      "manifest_sha256": "a4f8dd837569b589bb6419167cf8e5816c636392587e7bd539ead46ce94f9ce9"
+    },
+    {
+      "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
+      "run_id": "20261009T203745Z-native-invalidation-remove-targets-beccd150",
+      "manifest_sha256": "1316a50b51a63932ef2dfa39d944eb5d871da63fbce421a89a243374cfc829a5"
+    },
+    {
+      "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
+      "run_id": "20261009T203824Z-native-invalidation-waiting-update-25f0f63d",
+      "manifest_sha256": "c477b30a6dd1008b318c637aaa959da3244f1069260f9cdfe220483f26544636"
+    },
+    {
+      "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
+      "run_id": "20261009T203945Z-native-invalidation-boundary-control-8aaa14f1",
+      "manifest_sha256": "5b44d0ae41d78101a135c2544a3c44d30e5cd105c356aa0dffb97677b13cdb9d"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
