@@ -342,3 +342,7 @@ Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-ob
 ## 2026-10-09 — Token metadata and witness dispatch
 
 Recovered complete copy/destroy dispatch and metadata resolver bodies:216 independently mapped instruction bytes plus12 import-stub bytes.65,540 cache gate cases agree with zero/parity expectations. Four sealed runs retained; first two prove acquisition only.181 automated tests pass, including every-byte and matching-image instruction mutations. Concrete metadata/witness ownership effects, runtime releases, races and Canvas transport remain open; no Xcode windows launched. See [evidence](research/evidence/token-value-witness-2026-10-09.json) and [analysis](docs/reverse-engineering/2026-10-09-token-value-witness.md).
+
+## 2026-10-09 — Token symbolic type records
+
+Resolved two specialized State type records through embedded-NUL symbolic parsing and validated dyld chained rebases.72 wrapper instruction bytes compared; ten nominal references,62 bounded record/terminator bytes and16 zero disk-cache bytes checked. Three accepted anchored seals;190 tests pass. Initial literal-name expectation was falsified and corrected to nested State with verified FulfillOnceState parent. Runtime metadata, concrete witness targets/effects and ownership remain unproven. No Xcode windows opened. [Evidence](research/evidence/token-symbolic-descriptors-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-token-symbolic-descriptors.md).

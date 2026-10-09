@@ -2916,6 +2916,44 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-token-symbolic-descriptors",
+      "adapter": "disassembly",
+      "hypothesis": "Encoded wrapper pointers identify two zero on-disk caches and length30 type records. Symbolic references, including embedded NULs, resolve through verified format6 dyld page-chain members to distinct concurrent/isolated storage state nominal contexts.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "beea8:beecc",
+          "beecc:beef0"
+        ],
+        "descriptor_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "token_descriptors_verified",
+          "equals": true
+        },
+        {
+          "path": "wrapper_instruction_bytes_compared",
+          "equals": 72
+        },
+        {
+          "path": "symbolic_reference_count",
+          "equals": 10
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-09",
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T225035Z-native-token-symbolic-descriptors-1cdeca18",
+      "manifest_sha256": "1368016e648dbb264a625637318256ad70e62d8e6ce99a6f88a0779e8006800c",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T225134Z-native-token-symbolic-descriptors-46274901",
+      "manifest_sha256": "6d65c59db7b6e9612b0158d584dca5629b20b76e2501ec06f20485b6a5735047",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T225248Z-native-token-symbolic-descriptors-f54ddcb5",
+      "manifest_sha256": "034a48f9b9652316b2a590da538245d028539b686000d47c08d1ef41384a0f07",
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "facts": {
+    "record_span_bytes_checked": 62,
+    "records": [
+      {
+        "cache": "0x187be8",
+        "operators": "yyG_G",
+        "record_bytes": 31,
+        "references": [
+          {
+            "context_kind": 18,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "FulfillOnceState",
+              "State"
+            ],
+            "descriptor": "0x1508f8",
+            "kind": 2,
+            "name": "State",
+            "record_offset": 0,
+            "slot": "0x170118"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "ObserverAndTokenStorage"
+            ],
+            "descriptor": "0x151358",
+            "kind": 2,
+            "name": "ObserverAndTokenStorage",
+            "record_offset": 6,
+            "slot": "0x1701e8"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "ConcurrentInvalidationObserverBox"
+            ],
+            "descriptor": "0x151320",
+            "kind": 2,
+            "name": "ConcurrentInvalidationObserverBox",
+            "record_offset": 12,
+            "slot": "0x170260"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "ConcurrentTokenCallback"
+            ],
+            "descriptor": "0x1558f8",
+            "kind": 2,
+            "name": "ConcurrentTokenCallback",
+            "record_offset": 17,
+            "slot": "0x1701e0"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "InvalidationTrace"
+            ],
+            "descriptor": "0x1520e0",
+            "kind": 2,
+            "name": "InvalidationTrace",
+            "record_offset": 23,
+            "slot": "0x170168"
+          }
+        ],
+        "type_record": "0x148ec0",
+        "type_record_descriptor": "0x13c080",
+        "wrapper": "0xbeea8"
+      },
+      {
+        "cache": "0x187c00",
+        "operators": "yyG_G",
+        "record_bytes": 31,
+        "references": [
+          {
+            "context_kind": 18,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "FulfillOnceState",
+              "State"
+            ],
+            "descriptor": "0x1508f8",
+            "kind": 2,
+            "name": "State",
+            "record_offset": 0,
+            "slot": "0x170118"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "ObserverAndTokenStorage"
+            ],
+            "descriptor": "0x151358",
+            "kind": 2,
+            "name": "ObserverAndTokenStorage",
+            "record_offset": 6,
+            "slot": "0x1701e8"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "IsolatedInvalidationObserverBox"
+            ],
+            "descriptor": "0x15133c",
+            "kind": 2,
+            "name": "IsolatedInvalidationObserverBox",
+            "record_offset": 12,
+            "slot": "0x170250"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "IsolatedTokenCallback"
+            ],
+            "descriptor": "0x1558dc",
+            "kind": 2,
+            "name": "IsolatedTokenCallback",
+            "record_offset": 17,
+            "slot": "0x1701d0"
+          },
+          {
+            "context_kind": 17,
+            "context_path": [
+              "PreviewsFoundationHost",
+              "InvalidationTrace"
+            ],
+            "descriptor": "0x1520e0",
+            "kind": 2,
+            "name": "InvalidationTrace",
+            "record_offset": 23,
+            "slot": "0x170168"
+          }
+        ],
+        "type_record": "0x148f00",
+        "type_record_descriptor": "0x134478",
+        "wrapper": "0xbeecc"
+      }
+    ],
+    "scope": "On-disk wrapper association, symbolic nominal references and chained rebase identities only. Actual dyld slide/binding, resolved runtime metadata, concrete value-witness targets/effects, payload ownership and transport remain unobserved.",
+    "symbolic_reference_count": 10,
+    "token_descriptors_verified": true,
+    "wrapper_instruction_bytes_compared": 72,
+    "zero_disk_cache_bytes_checked": 16
+  },
+  "tests_passed": 190,
+  "preflight_failure": {
+    "sealed": false,
+    "phase": "local verifier development",
+    "error": "Token-state symbolic identity changed",
+    "falsified": "First symbolic reference literal name is FulfillOnceState",
+    "correction": "First reference is nested State; verify parent path PreviewsFoundationHost.FulfillOnceState.State"
+  },
+  "scope": "On-disk wrapper association, symbolic nominal references and chained rebase identities only. Actual dyld slide/binding, resolved runtime metadata, concrete value-witness targets/effects, payload ownership and transport remain unobserved."
+}
