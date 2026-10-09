@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "047c1a8ccb6fb60baace3cdd86789faff2c97b7d",
+  "baseline_commit": "505b48551fdb8b2caddeda80a487dff170f8538d",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -72,20 +72,35 @@
       "fingerprint": "wasmkit-untyped-i32-cli-exit133",
       "status": "resolved-unsealed-diagnostic",
       "retry_prerequisite": "Typed i32:value invocation; sealed checker executions pass. Do not rerun unchanged untyped crash."
+    },
+    {
+      "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
+      "status": "quarantined-for-body-claims",
+      "retry_prerequisite": "Actual entry instructions required; bounded address fallback implemented."
+    },
+    {
+      "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd",
+      "status": "resolved-native-alias-accounting",
+      "retry_prerequisite": "Deduplicate same-address aliases and retain names; corrected run supports."
+    },
+    {
+      "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2",
+      "status": "resolved-private-name-query",
+      "retry_prerequisite": "Exact instruction-derived target replaces missed private demangled name. Shared handler calls fail directly; no assert-entry handoff claim."
     }
   ],
-  "last_completed": "Independent WasmKit 0.1.6 and V8 execute unchanged C rectangle and same zero-import checker. 614432 bytes, eight injected faults, ten invalid request whole-buffer checks (2048000 bytes), three checker holdouts pass. Three seals verify; 117 tests pass. Same macOS host only.",
+  "last_completed": "Disassembly now rejects heading-only entry, uses bounded-address fallback and groups native aliases. Exact continuation duplicate chain reaches shared failure policy with callback/log/assert/fatal branches; default getter tag2 remains unnamed. Six seals verified including two inconclusive and one body-quarantined symbol-count result; 119 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Independent WasmKit rectangle and rejection controls",
+    "checkpoint": "Duplicate completion failure policy and disassembly acceptance fixes",
     "date": "2026-10-09",
     "issues": [
-      "F1"
+      "R2"
     ],
     "state": "open"
   },
   "next_actions": [
     {
-      "action": "Completion guard static intent recovered. Obtain a safe typed native runtime boundary for duplicate/concurrent/reentrant completion and failure-policy behavior; no framework Swift Modules directory currently available. Follow cancellation and actual capture envelopes independently.",
+      "action": "Obtain safe typed owned runtime boundary for duplicate/concurrent/reentrant completion and policy behavior. Static direct fail dispatch and tag2 default are recovered; enum payload/case mapping, cancellation ordering and transport remain open.",
       "issue_id": "R2",
       "state": "ready"
     },
@@ -327,6 +342,36 @@
       "run_id": "20261009T194012Z-portable-wasm-second-runtime-rejections-352a1aa7",
       "manifest_sha256": "bc4790ea1c2d798b2d05059020ced1c7a12dd69cdca8793772e71e60200e2deb",
       "path": "research/evidence/portable-second-runtime-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
+      "manifest_sha256": "2ca2fa6e24f882c6507564844852da7d27c9eed2ef5f340ad8dfe9c1ad06aeff",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd",
+      "manifest_sha256": "94e291ee609dbbc20ca2cff16c4413fc3c7e9a0a1bddb3f2ef1aab0a8ed89896",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T194819Z-native-overfulfill-policy-dispatch-3e9df25f",
+      "manifest_sha256": "82d0e8864887313b9183cfe1a205bec0eaddbb7b4b30eeac4d0648ba80ea6a5e",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T194852Z-native-continuation-overfulfill-target-c807dccf",
+      "manifest_sha256": "2da3c5c048e36eec8a3e7327bc833e26ccad4de3f4e165e7a0dda45a6e944f00",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2",
+      "manifest_sha256": "b66cd519795656aae26595bed7fbdc1c8d1cdc77520e8d8c6d3d7b2be380becf",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
+    },
+    {
+      "run_id": "20261009T195013Z-native-overfulfill-failure-mode-8888c3bd",
+      "manifest_sha256": "f564cd6c517d2af029104f6fdf17a7433c58eb10dba868443df5d6edf881650c",
+      "path": "research/evidence/continuation-policy-2026-10-09.json"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

@@ -1705,6 +1705,100 @@
           "equals": 0
         }
       ]
+    },
+    {
+      "id": "native-continuation-overfulfill-target",
+      "adapter": "disassembly",
+      "hypothesis": "The guard closure supplies x5=0x30a00 to the exact unit-state fulfillment body; selected target should expose the duplicate completion diagnostic handoff. Symbol/body evidence only, no runtime failure-policy claim. Heading-only selection failed to reveal instructions; changed bounded-address fallback must recover actual entry instructions.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^0000000000030a00 [tT] "
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 1
+        },
+        {
+          "path": "address_fallback_count",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "id": "native-overfulfill-policy-dispatch",
+      "adapter": "disassembly",
+      "hypothesis": "Selected duplicate handler target and OverfulfillHandle.assert expose policy dispatch; continuation default policy getter provides a tag to distinguish mode. Pinned static instructions only, no native assertion or callback execution.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000002c944 [tT] |^000000000002cd8c [tT] |^000000000000481c [tT] default argument 2 of PreviewsFoundationHost.Continuation.init"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 3
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 3
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
+    },
+    {
+      "id": "native-overfulfill-failure-mode",
+      "adapter": "disassembly",
+      "hypothesis": "The recovered shared duplicate handler calls FulfillmentFailureMode.fail directly, not the public OverfulfillHandle.assert entry. Exact branch target 0x2bc40 should expose finite policy dispatch. Static tag branches only; no runtime execution or tag-name mapping assumed. Retain prior name-query miss and rejected indirect-path prediction.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "query": "^000000000002c99c [tT] |^000000000002bc40 [tT] "
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        },
+        {
+          "path": "entry_body_count",
+          "equals": 2
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1

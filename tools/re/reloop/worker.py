@@ -61,7 +61,9 @@ def perform(kind,out,p):
             if len(files)!=1:raise ValueError('Guard control requires one selected closure')
             from reloop.continuation import inspect as inspect_guard
             facts=inspect_guard(files[0].read_text());atomic(out/'continuation-guard.json',facts)
-        return {'function_count':len(files),'image_sha256':digest(image),**facts}
+        selections=load(out/'disassembly/selection.json')
+        return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
+                'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}
     if kind=='ghidra':
         home,java,config=ghidra_config()
         if not home or not java: raise RuntimeError('Ghidra/JDK unavailable; see doctor and local-config.example.json')

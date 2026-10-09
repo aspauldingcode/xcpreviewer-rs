@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-09",
+  "foundation_image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "foundation_image_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "runs": [
+    {
+      "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
+      "valid": true,
+      "manifest_sha256": "2ca2fa6e24f882c6507564844852da7d27c9eed2ef5f340ad8dfe9c1ad06aeff",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Heading-only selected file: supports symbol count only; quarantined for body/semantic acceptance."
+    },
+    {
+      "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd",
+      "valid": true,
+      "manifest_sha256": "94e291ee609dbbc20ca2cff16c4413fc3c7e9a0a1bddb3f2ef1aab0a8ed89896",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 3,
+        "address_fallback_count": 2,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Actual body recovered; alias rows counted three times; registered unique-count checks fail."
+    },
+    {
+      "run_id": "20261009T194819Z-native-overfulfill-policy-dispatch-3e9df25f",
+      "valid": true,
+      "manifest_sha256": "82d0e8864887313b9183cfe1a205bec0eaddbb7b4b30eeac4d0648ba80ea6a5e",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 3,
+        "entry_body_count": 3,
+        "address_fallback_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Three actual entries recovered; default getter tag2, public assert forwards policy, intermediate target."
+    },
+    {
+      "run_id": "20261009T194852Z-native-continuation-overfulfill-target-c807dccf",
+      "valid": true,
+      "manifest_sha256": "2da3c5c048e36eec8a3e7327bc833e26ccad4de3f4e165e7a0dda45a6e944f00",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 1,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Alias grouping corrected; unique body and bounded-address fallback checks pass."
+    },
+    {
+      "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2",
+      "valid": true,
+      "manifest_sha256": "b66cd519795656aae26595bed7fbdc1c8d1cdc77520e8d8c6d3d7b2be380becf",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "function_count": 1,
+        "entry_body_count": 1,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Private fail name query missed: one of two bodies; shared handler calls policy directly, contrary to proposed assert entry handoff."
+    },
+    {
+      "run_id": "20261009T195013Z-native-overfulfill-failure-mode-8888c3bd",
+      "valid": true,
+      "manifest_sha256": "f564cd6c517d2af029104f6fdf17a7433c58eb10dba868443df5d6edf881650c",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 2,
+        "entry_body_count": 2,
+        "address_fallback_count": 0,
+        "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+      },
+      "assessment": "Changed exact target selection recovers shared handler and private failure dispatch."
+    }
+  ],
+  "static_sites": {
+    "guard_duplicate_target": "0x30a00",
+    "target_call": "0x30a08 -> 0x2c988",
+    "intermediate_call": "0x2c990 -> 0x2c99c",
+    "shared_handler_policy_call": "0x2c9fc -> 0x2bc40",
+    "public_assert_policy_call": "0x2cdb8 -> 0x2bc40",
+    "default_tag_store": "0x482c: tag2 at output+0x10; 16-byte payload copied from constant",
+    "policy_discriminator": "0x2bcc0 tag at self+0x10; tag0 branches to callback; tag1 enters logging; other tags test payload pair",
+    "callback": "0x2be70",
+    "logging": "0x2bd30 and 0x2bfcc",
+    "assertion_helper": "0x2c078",
+    "fatal_call_and_trap": "0x2c164 and 0x2c16c"
+  },
+  "implementation_controls": [
+    "Require actual entry instruction; symbol heading and other-address instructions fail.",
+    "Fallback bounded by next distinct native text entry and maximum 65536-byte interval; each subprocess deadline 30s.",
+    "Normalize generic ARM64 words to exact little-endian bytes with bit-preservation tests.",
+    "One output body per entry; preserve matching aliases in metadata without overwrites."
+  ],
+  "tests": {
+    "passed": 119,
+    "initial_failure": "Owned-process group cleanup PermissionError; subsequent authorized full-suite execution passes. Initial observation retained; no change to user process ownership policy."
+  },
+  "limitations": [
+    "Static source/runtime/transport distinctions retained: no private Swift calls or process attachment.",
+    "Default tag2 is not mapped to a named enum case without payload/ABI evidence.",
+    "Shared cancellation-specialization symbol demonstrates merged code, not cancellation transport/completion ordering.",
+    "Fatal and assertion branches are statically present; no native invocation or failure-mode runtime behavior observed.",
+    "Initial supports verdict certifies only selected symbol count, not body; explicitly quarantined rather than edited."
+  ],
+  "historical_presence_audit": {
+    "runs_scanned": 22,
+    "files_scanned": 38,
+    "missing_entry_instructions": [
+      {
+        "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
+        "entry": "0000000000030a00"
+      }
+    ],
+    "scope": "Current local disassembly-file entry presence only; not semantic, completeness or historical authenticity certification."
+  }
+}
