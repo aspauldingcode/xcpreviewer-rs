@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-09",
+  "runs": [
+    {
+      "run_id": "20261009T222848Z-native-token-result-consumer-f915724b",
+      "manifest_sha256": "2666ebf504c74ea62548c22cdaa6299546288923071305d57001bf0aad47f7a4",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T223053Z-native-token-result-consumer-4d57fc14",
+      "manifest_sha256": "59c85034aa2be5fdbcd3cef15462e7ecfed60f922aba47ecc5c525568041e77f",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T223224Z-native-token-result-consumer-2736322e",
+      "manifest_sha256": "5ae7fbc7dee38a0ea1405782cb00f4f41f166e18b2cddaa2168ed2e1dd5074bb",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261009T223247Z-native-token-result-consumer-271e2f1f",
+      "manifest_sha256": "1203095dc46358b912f7e4d7d1625f3ad6abcdf7341435964c2550e6fab3a99e",
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "facts": {
+    "address_fallback_count": 0,
+    "compared_instruction_bytes": 20,
+    "consumer_verified": true,
+    "entry_body_count": 2,
+    "flag_cases": 65542,
+    "function_count": 2,
+    "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "import_library": "/usr/lib/swift/libswiftCore.dylib",
+    "import_pointer_address": "0x171e60",
+    "import_symbol": "_swift_bridgeObjectRelease",
+    "numeric_gate": "low8(flag)==1",
+    "projected_release_cases": 258,
+    "release_binding_scope": "Static Mach-O import binding only; dyld interposition, runtime implementation and deallocation remain unobserved.",
+    "release_symbol_binding_verified": true,
+    "release_tail_target": "0x1311c8",
+    "scope": "Static byte-decoded projection only; source enum names, actual bridge ownership/deallocation, runtime invocation, transport and physical reclamation remain unverified.",
+    "stub_instruction_bytes_compared": 12
+  },
+  "tests_passed": 176,
+  "observations": [
+    "Anonymous consumer0x42648 masks low8(w1), compares1, returns for allother values, and tail-branches to release stub for1.",
+    "No consumer instruction mutates x0 before tail dispatch.",
+    "Stub ADRP/LDR/BR resolves pointer0x171e60; independent indirect symbol indices agree for stub and pointer sections.",
+    "Undefined external symbol and dylib ordinal bind _swift_bridgeObjectRelease from /usr/lib/swift/libswiftCore.dylib.",
+    "65,542 static projection cases match modulo256 oracle;258 select release tail."
+  ],
+  "scope": "Finite static code and declared import binding; no actual Apple callback/release execution or native deallocation measurement.",
+  "remaining": [
+    "Source enum case names and precise payload bridge ownership",
+    "Copy/destroy value-witness effects and actual native dictionary contents",
+    "Cancellation/completion races and runtime invocation",
+    "Dyld runtime interposition and actual deallocation",
+    "Canvas transport resource cleanup and physical reclamation"
+  ]
+}

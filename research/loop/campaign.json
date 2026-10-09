@@ -2826,6 +2826,52 @@
           "equals": 632
         }
       ]
+    },
+    {
+      "id": "native-token-result-consumer",
+      "adapter": "disassembly",
+      "hypothesis": "The anonymous token result consumer masks the low byte and tail-calls bridge-object release only for numeric flag1; all20 bytes and exhaustive16-bit flags agree with independent expectations. The stub and pointer slot independently bind the same undefined Swift bridge release import.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "42648:4265c",
+          "1311c8:1311d4"
+        ],
+        "cleanup_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "consumer_verified",
+          "equals": true
+        },
+        {
+          "path": "compared_instruction_bytes",
+          "equals": 20
+        },
+        {
+          "path": "flag_cases",
+          "equals": 65542
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        },
+        {
+          "path": "release_symbol_binding_verified",
+          "equals": true
+        },
+        {
+          "path": "stub_instruction_bytes_compared",
+          "equals": 12
+        }
+      ]
     }
   ],
   "version": 1

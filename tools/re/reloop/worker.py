@@ -57,8 +57,10 @@ def perform(kind,out,p):
                 'independent_python_decode':fixture['type']=='synthetic-probe' and fixture['bytes']==b'hello',
                 'message_keys':keys,'images':{n:d['images'] for n,d in datasets.items()}}
     if kind=='disassembly':
-        command([sys.executable,ROOT/'tools/re/disassemble.py','--binary',image,'--out',out/'disassembly',
-                 '--query',p.get('query','MessageTypeKey.getter|OneWayMessageKey.getter')],out,'disassemble')
+        args=[sys.executable,ROOT/'tools/re/disassemble.py','--binary',image,'--out',out/'disassembly',
+              '--query',p.get('query','^$' if p.get('ranges') else 'MessageTypeKey.getter|OneWayMessageKey.getter')]
+        for value in p.get('ranges',[]):args+=['--range',value]
+        command(args,out,'disassemble')
         files=list((out/'disassembly').glob('*.txt'));facts={}
         if p.get('guard_control',False):
             if len(files)!=1:raise ValueError('Guard control requires one selected closure')
@@ -103,6 +105,19 @@ def perform(kind,out,p):
             from reloop.swiftmeta import MachO
             facts.update(inspect([f.read_text() for f in files],MachO(image)))
             atomic(out/'token-link.json',facts)
+        if p.get('cleanup_control',False):
+            from reloop.tokenconsume import inspect
+            from reloop.swiftmeta import MachO
+            from reloop.stubbind import inspect as inspect_stub
+            if len(files)!=2:raise ValueError('Cleanup control requires consumer and import stub ranges')
+            bodies={int(f.stem,16):f.read_text() for f in files}
+            if set(bodies)!={0x42648,0x1311c8}:raise ValueError('Exact cleanup/stub entries required')
+            native_image=MachO(image)
+            facts.update(inspect(bodies[0x42648],native_image))
+            binding=inspect_stub(bodies[0x1311c8],native_image,0x1311c8,'_swift_bridgeObjectRelease','/usr/lib/swift/libswiftCore.dylib')
+            facts['release_binding_scope']=binding.pop('scope')
+            facts.update(binding)
+            atomic(out/'token-consume.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}

@@ -10,7 +10,8 @@ from reloop.disassembly import has_entry,normalize_words
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--binary', default='/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
 parser.add_argument('--out', type=pathlib.Path, default=pathlib.Path('research/raw/disassembly'))
-parser.add_argument('--query', required=True, help='Regular expression matched against demangled names')
+parser.add_argument('--range',dest='ranges',action='append',default=[],help='Explicit aligned start:stop hex range, at most 4096 bytes')
+parser.add_argument('--query', default='^$', help='Regular expression matched against demangled names')
 args = parser.parse_args()
 query = re.compile(args.query)
 raw = subprocess.run(['nm', args.binary], capture_output=True, text=True, check=True,timeout=30).stdout
@@ -44,6 +45,22 @@ for line, demangled in zip(raw.splitlines(), result.splitlines()):
     row={'entry':hex(entry),'stop':hex(stop) if stop else None,'mode':mode,'entry_instruction':True,'aliases':[demangled]}
     selections.append(row);seen[address]=row
     count += 1
+if args.ranges:
+    from reloop.core import validate_experiment
+    from reloop.swiftmeta import MachO
+    validate_experiment({'id':'range-validation','adapter':'disassembly','hypothesis':'Validate bounded instruction ranges','depends_on':[],'resources':[],'timeout_seconds':30,'artifact_limit_mb':8,'params':{'ranges':args.ranges},'priority':1,'checks':[{'path':'valid','equals':True}]})
+    image=MachO(args.binary)
+    for value in args.ranges:
+        start,stop=(int(v,16) for v in value.split(':'))
+        if not any(s['disk'] and s['address']<=start and stop<=s['address']+s['size'] for s in image.sections):raise ValueError('Instruction range must fit one file-backed section')
+        key=format(start,'016x')
+        if key in seen:raise ValueError('Range overlaps a selected entry')
+        output=subprocess.run(['xcrun','llvm-objdump','--arch=arm64','--disassemble','--start-address='+hex(start),'--stop-address='+hex(stop),args.binary],capture_output=True,text=True,check=True,timeout=30).stdout
+        output=normalize_words(output)
+        if not has_entry(output,start):raise ValueError('Explicit range lacks instruction evidence')
+        (args.out/(key+'.txt')).write_text('Explicit bounded range '+value+'\n'+output)
+        row={'entry':hex(start),'stop':hex(stop),'mode':'explicit-address','entry_instruction':True,'aliases':[]}
+        selections.append(row);seen[key]=row;count+=1
 (args.out/'selection.json').write_text(json.dumps(selections,indent=2)+'\n')
 print(f'Disassembled {count} functions into {args.out}')
 raise SystemExit(0 if count else 1)

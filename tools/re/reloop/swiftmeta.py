@@ -38,7 +38,8 @@ class MachO:
                     disk = flags & 0xff not in {1, 0xc, 0x12}
                     if disk and fileoff + extent > len(self.data): raise ValueError('Section outside image')
                     self.sections.append({'name': name, 'segment': segment, 'address': addr,
-                                          'size': extent, 'offset': fileoff, 'disk': disk})
+                                          'size': extent, 'offset': fileoff, 'disk': disk, 'flags':flags,
+                                          'reserved1':self.u32(p+68),'reserved2':self.u32(p+72)})
             offset += length
 
     def unpack(self, fmt, offset):

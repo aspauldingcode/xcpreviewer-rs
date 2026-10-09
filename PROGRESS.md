@@ -331,3 +331,10 @@ Evidence: [dictionary removal boundaries](docs/reverse-engineering/2026-10-09-ob
 - Compared every one of 632 captured instruction bytes across ten selected entries with mapped native bytes; independently decoded six pointers, thirteen direct targets and the null/state branches. Two accepted repeats; all six runs, including count-prediction and annotation failures, retained.
 - Added mutation-tested checker and strict controller flag; 166 tests pass. Published [evidence](research/evidence/token-callback-link-2026-10-09.json) and [scope/unknowns](docs/reverse-engineering/2026-10-09-token-callback-link.md).
 - Confirmed REA connected in the live desktop session with all 35 configured tools. Direct Xcode Mach-O inspection succeeds and its complete UUID matches independent parsing. Metadata uses `native-macos`; full Ghidra import remains blocked separately. No setup/restart repetition or Xcode windows needed.
+
+## 2026-10-09 — anonymous token result consumer
+
+- Added bounded explicit native instruction ranges for unnamed helpers, with alignment/extent/section/duplicate validation.
+- Recovered the five-instruction consumer's low-byte-equals-one gate and unchanged payload register before release tail dispatch. Compared all 20 consumer and 12 stub instruction bytes against independently mapped native bytes.
+- Independently verified stub/pointer indirect indices, undefined external symbol and dylib ordinal: declared `_swift_bridgeObjectRelease` import from Swift core. Runtime interposition and actual deallocation remain unknown.
+- 65,542 finite static flag cases agree with an independent numeric oracle; four accepted seals retained; 176 tests pass. Published [evidence](research/evidence/token-result-consumer-2026-10-09.json) and [scope](docs/reverse-engineering/2026-10-09-token-result-consumer.md). Actual runtime/transport/resource reclamation acceptance stays open.

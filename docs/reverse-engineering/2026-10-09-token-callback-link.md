@@ -17,3 +17,5 @@ The desktop REA registration is now verified live: all 35 configured tools are c
 [Sanitized facts, REA audit and six anchors](../../research/evidence/token-callback-link-2026-10-09.json). Raw Apple instruction bodies and metadata remain local. Runtime invocation, cancellation races, dictionary contents, result cleanup, Canvas transport and physical reclamation remain required unknowns. R2 remains open.
 
 Exploratory collection batches are removed from the active campaign after sealing. The final reviewed callback-link control remains available; the historical count predictions are not retried on later wakes.
+
+Later work recovers the previously unknown consumer body and independently verifies its release import: [token result consumer](2026-10-09-token-result-consumer.md). This supersedes that specific static-body unknown without closing runtime/ownership acceptance.

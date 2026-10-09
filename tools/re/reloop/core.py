@@ -18,7 +18,7 @@ PARAMS = {
     'rea_native': {'binary','owned_control'},
     'surface_payload': {'payload'},
     'portable_solid': {'second_runtime'},
-    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control'},
+    'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','ranges','cleanup_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum','state_control'},
@@ -83,7 +83,7 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
-    for flag in ('owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'):
+    for flag in ('owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
     if p.get('owned_control') and 'binary' in p:raise ValueError('Owned REA control compiles its own target')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
@@ -98,6 +98,14 @@ def validate_experiment(e):
     for field in ['xcode','binary','query','tool']:
         if field in p and (not isinstance(p[field], str) or not p[field] or len(p[field]) > 4096):
             raise ValueError('invalid parameter ' + field)
+    if 'ranges' in p:
+        if not isinstance(p['ranges'],list) or not 1<=len(p['ranges'])<=8:raise ValueError('Invalid instruction ranges')
+        seen=set()
+        for value in p['ranges']:
+            if not isinstance(value,str) or not re.fullmatch('[0-9a-fA-F]{1,16}:[0-9a-fA-F]{1,16}',value):raise ValueError('Invalid instruction range')
+            start,stop=(int(v,16) for v in value.split(':'))
+            if start%4 or stop%4 or not 0<stop-start<=4096 or (start,stop) in seen:raise ValueError('Unbounded/unaligned/duplicate instruction range')
+            seen.add((start,stop))
     if 'addresses' in p and (not isinstance(p['addresses'], list) or not p['addresses'] or
             len(p['addresses']) > 32 or not all(isinstance(v,str) and re.fullmatch('[0-9a-fA-F]{1,16}',v) for v in p['addresses'])):
         raise ValueError('invalid addresses')
