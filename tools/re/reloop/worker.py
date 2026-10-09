@@ -100,7 +100,13 @@ def perform(kind,out,p):
     if kind=='agent_discriminants':
         from reloop.discriminants import recover
         return recover(out)
-    if kind in {'lldb_smoke','frida_smoke','native_reference'}:
+    if kind=='raw_coder':
+        from reloop.rawcoder import matrix
+        return matrix(out)
+    if kind=='surface_corpus':
+        from reloop.surface import corpus
+        return corpus(out)
+    if kind in {'lldb_smoke','frida_smoke','native_reference','preview_hook_smoke'}:
         from reloop.trace import smoke
         return smoke(kind,out)
     raise ValueError('unknown adapter')

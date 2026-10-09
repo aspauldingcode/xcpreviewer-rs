@@ -1,0 +1,247 @@
+{
+  "adapters": 19,
+  "automated_tests": {
+    "failed": 0,
+    "passed": 62
+  },
+  "failed_hook_handshake": {
+    "artifact_hashes_valid": true,
+    "execution": "failed",
+    "manifest_sha256": "92f4a7e4c1833e8d866055652a574610c0da7ad6b477da6b67253a686eb00112",
+    "reason": "Hook readiness awaited before fixture loaded its framework. Final control preloads before marker wait. Failed run retained.",
+    "run_id": "20261009T032726Z-deferred-preview-hook-control-05ac7098",
+    "verdict": "not_evaluated"
+  },
+  "limitations": [
+    "Local IOSurface aliases are not a cross-process resource-transfer oracle.",
+    "Only single-plane BGRA CPU writes; GPU synchronization, color conversion, other pixel formats and release-race behavior untested.",
+    "Raw coder observations apply to this installed image and finite inputs, not all secure coding.",
+    "Deferred hook passes on synthetic helper only; actual native preview attachment still fails.",
+    "Authentication of local sealed evidence requires a separately trusted commit or reviewer anchor."
+  ],
+  "manual_native_canvas": {
+    "build_and_launch_observed": true,
+    "canvas": "Window chrome visible; content remains blank. No accepted render snapshot.",
+    "image_sha256": "da0c687ad4d1c4ee5ad41c9ee19327522a56cdff0a93356d683816151fb08bf7",
+    "initial_instrumentation": "180-second observation ended with attach pending; partial diagnostics retained.",
+    "ownership": "Executable mapping lies within resolved owned fixture build root; process identity rechecked.",
+    "revised_instrumentation": "Cancelled at ten seconds before session creation; zero messages.",
+    "sealed_experiment": false,
+    "settings_changed": false,
+    "stack_sample": "Owned preview main thread was in AppKit event loop through SwiftUI/PreviewsInjection/XOJITExecutor; this does not identify the cause.",
+    "trigger": "Native Refresh on the existing owned PreviewLab workspace, then select Literal change.",
+    "user_processes_terminated": false
+  },
+  "mcp_tools": 19,
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 28,
+          "expected": 28,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        },
+        {
+          "actual": 18,
+          "expected": 18,
+          "passed": true,
+          "path": "exact_data_controls",
+          "present": true
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "class_mismatch_returns_data",
+          "present": true
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "passed": true,
+          "path": "nondata_encode_exceptions",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "empty_data_returns_nil",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "nil_object_returns_nil",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "missing_data_returns_nil",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "wrong_data_type_returns_nil",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "overwrite_returns_last_data",
+          "present": true
+        },
+        {
+          "actual": 28,
+          "expected": 28,
+          "passed": true,
+          "path": "cross_process_semantics_equal",
+          "present": true
+        }
+      ],
+      "environment_hash": "ce6456b964bcbd67c7dd1e4a4aff4e8f41a1fa2f899fb2118e9fd40fd08acd57",
+      "execution": "success",
+      "experiment_hash": "39a6d733a3c960eef5e544f92fb1e3330b9a3470a4227e28fcb5e3862ca28370",
+      "experiment_id": "raw-coder-key-class-contract",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "1bd63b9e726f0579b070bb23cc96444f303d7def436b385c0d77c09d24cfc337",
+      "observations": {
+        "cases": 28,
+        "class_mismatch_returns_data": 12,
+        "cross_process_semantics_equal": 28,
+        "data_controls": 18,
+        "empty_data_returns_nil": true,
+        "encoder_image_uuids": [
+          "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+        ],
+        "exact_data_controls": 18,
+        "helper_failures": 0,
+        "missing_data_returns_nil": true,
+        "nil_object_returns_nil": true,
+        "nondata_encode_exceptions": 5,
+        "overwrite_returns_last_data": true,
+        "scope": "Finite owned UVRawXPCCoder/UVRawXPCDecoder object controls. Key/class behavior measured locally; no service IPC, handles or general secure-coder guarantee.",
+        "wrong_data_type_returns_nil": true
+      },
+      "run_id": "20261009T032355Z-raw-coder-key-class-contract-bb235a59",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "exact_resource_round_trips",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "cross_process_payload_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "68eb5252fffde1fba17ebee331945859942837ea7fbe229bfdeb9419da074770",
+      "execution": "success",
+      "experiment_hash": "b5c170e54dc6244c40253065ae218cb4d2660de78258a4c98a0af82e86333527",
+      "experiment_id": "owned-surface-reference-lifetime",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "6420f1f87e86f3c40972a20f788d4a53e36a64e168fb28dc006d942fdf4bcce3",
+      "observations": {
+        "cases": 4,
+        "cross_process_payload_equal_cases": 4,
+        "exact_resource_round_trips": 4,
+        "helper_failures": 0,
+        "padded_row_cases": 4,
+        "scope": "Four owned single-plane BGRA surfaces, local XPC reference lifetime and CPU writes. Separate-process bytes checked, not interprocess resource transfer or GPU/canvas semantics."
+      },
+      "run_id": "20261009T032630Z-owned-surface-reference-lifetime-c0fd62e0",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 6,
+          "expected": 6,
+          "passed": true,
+          "path": "plist_events",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "payloads_match",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "hook_installed",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "script_errors",
+          "present": true
+        }
+      ],
+      "environment_hash": "f571aacf7240de418577b8ba912eec2361f40e81ef0e4b6bf231e112d2b7d1f8",
+      "execution": "success",
+      "experiment_hash": "37d6ee95e8d71f9515e5ebf2a99db16e687738fd362fc525b5dcc440b1d47130",
+      "experiment_id": "deferred-preview-hook-control",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "67bb07e6ecda8a4a2d7907298f38be4c34ccea8ff5f48437036b089f67972fc9",
+      "observations": {
+        "frida_version": "17.23.1",
+        "hook_installed": true,
+        "payloads_match": true,
+        "plist_events": 6,
+        "scope": "Canvas hook validated on owned synthetic helper; native preview attach remains unverified.",
+        "script_errors": 0,
+        "target_sha256": "f032e8099af0185d4de438eef104cdb4a1b4e913004072da19251c06b301e3d0"
+      },
+      "run_id": "20261009T032803Z-deferred-preview-hook-control-acf91736",
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Finite local raw-XPC coder and IOSurface lifetime experiments, plus owned-helper canvas hook control. No live wire envelope or portable renderer certification.",
+  "supported_experiments": 3
+}

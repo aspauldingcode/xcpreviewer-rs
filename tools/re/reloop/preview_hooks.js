@@ -1,6 +1,6 @@
 // Loaded only after Python verifies an owned PreviewLab build-root mapping.
 'use strict';
-let sequence=0,installed=false;
+let sequence=0,installed=false,scheduled=false;
 function emit(kind,details,data) {
   send(Object.assign({kind,sequence:++sequence,pid:Process.id,thread:Process.getCurrentThreadId(),wall_time_ms:Date.now()},details),data);
 }
@@ -43,6 +43,12 @@ function install() {
     installed=true;emit('hook-installed',{image:moduleInfo(image),offset:String(address.sub(image.base))});
   } catch(e){emit('hook-unavailable',{error:String(e)});}
 }
-Process.attachModuleObserver({onAdded(m){if(/Preview|SwiftUI|libxpc/i.test(m.name))emit('module-loaded',moduleInfo(m));install();}});
-setInterval(install,250);
+// Avoid runtime/ObjC calls inside the loader's synchronous module notification.
+function scheduleInstall() {
+  if(installed||scheduled)return;
+  scheduled=true;
+  setImmediate(()=>{try{install();}finally{scheduled=false;}});
+}
+Process.attachModuleObserver({onAdded(m){if(/Preview|SwiftUI|libxpc/i.test(m.name))emit('module-loaded',moduleInfo(m));scheduleInstall();}});
+setInterval(scheduleInstall,250);
 emit('ready',{coverage:'late attach; requests before attach unknown'});

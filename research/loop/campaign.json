@@ -329,6 +329,127 @@
         "local-re-controller"
       ],
       "timeout_seconds": 120
+    },
+    {
+      "adapter": "raw_coder",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 28,
+          "path": "cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 18,
+          "path": "exact_data_controls"
+        },
+        {
+          "equals": 12,
+          "path": "class_mismatch_returns_data"
+        },
+        {
+          "equals": 5,
+          "path": "nondata_encode_exceptions"
+        },
+        {
+          "equals": true,
+          "path": "empty_data_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "nil_object_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "missing_data_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "wrong_data_type_returns_nil"
+        },
+        {
+          "equals": true,
+          "path": "overwrite_returns_last_data"
+        },
+        {
+          "equals": 28,
+          "path": "cross_process_semantics_equal"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned raw coder ignores key/class arguments, accepts data payloads, returns nil for empty/missing/wrong-type fields and overwrites the fixed data slot.",
+      "id": "raw-coder-key-class-contract",
+      "params": {},
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_corpus",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "cases"
+        },
+        {
+          "equals": 4,
+          "path": "exact_resource_round_trips"
+        },
+        {
+          "equals": 4,
+          "path": "cross_process_payload_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Local IOSurface XPC holders retain owned surfaces; lookup references survive holder release, alias mutation preserves exact independently predicted CPU bytes including row padding.",
+      "id": "owned-surface-reference-lifetime",
+      "params": {},
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "preview_hook_smoke",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 6,
+          "path": "plist_events"
+        },
+        {
+          "equals": true,
+          "path": "payloads_match"
+        },
+        {
+          "equals": true,
+          "path": "hook_installed"
+        },
+        {
+          "equals": 0,
+          "path": "script_errors"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Deferred canvas data hook becomes ready before owned helper resume and captures six known serialized values without script errors.",
+      "id": "deferred-preview-hook-control",
+      "params": {},
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     }
   ],
   "version": 1

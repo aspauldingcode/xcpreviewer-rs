@@ -8,6 +8,8 @@ See the [free toolkit guide](../../docs/reverse-engineering/toolkit.md) for boot
 
 The reviewed connected campaign includes local XPC corpus, malformed-envelope and prefix/shrinking experiments plus bounded static message-string recovery. See [findings](../../docs/reverse-engineering/2026-10-08-xpc-boundary.md) and the synthetic [XPCOracle](fixtures/XPCOracle/manifest.json). These do not establish live service traffic or attachment compatibility.
 
+Further reviewed controls measure raw-coder key/class behavior, local IOSurface holder/reference lifetime with exact row-padding bytes, and the deferred canvas hook on an owned helper. See [results and limits](../../docs/reverse-engineering/2026-10-08-raw-coder-surface.md) and [SurfaceOracle](fixtures/SurfaceOracle/manifest.json).
+
 ## Static collection
 
 ```sh

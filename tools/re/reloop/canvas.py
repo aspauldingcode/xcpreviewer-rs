@@ -7,12 +7,26 @@ import subprocess
 import threading
 import time
 import uuid
+from contextlib import contextmanager
 from reloop.core import ROOT, PROJECT_ROOT, atomic, digest, now
 from reloop.ghidra import unpack
 from reloop.mcp_client import Client
 
 FIXTURE = ROOT / 'tools/re/fixtures/PreviewLab'
 PROJECT = FIXTURE / 'PreviewLab.xcodeproj'
+
+
+@contextmanager
+def frida_deadline(seconds, factory=None):
+    """Cancel synchronous Frida operations; the worker watchdog remains the outer bound."""
+    if factory is None:
+        import frida
+        factory=frida.Cancellable
+    cancellation=factory()
+    timer=threading.Timer(seconds,cancellation.cancel);timer.daemon=True;timer.start()
+    try:
+        with cancellation:yield
+    finally:timer.cancel()
 
 
 def workspace(source=FIXTURE, parent=None):
@@ -110,26 +124,36 @@ class Monitor:
                 event.update(ownership='verified fixture build-root mapping',mapped_image=mapped,image_sha256=digest(mapped))
                 if device:
                     try:
-                        session=device.attach(pid)
-                        script=session.create_script((pathlib.Path(__file__).parent/'preview_hooks.js').read_text())
                         def message(value,data,process_id=pid):
                             record={'kind':'frida-message','pid':process_id,'host_monotonic_ns':time.monotonic_ns(),'message':value}
                             if data is not None:
                                 import base64
                                 record['base64']=base64.b64encode(data).decode()
                             self.events.append(record)
-                        script.on('message',message);script.load();self.sessions[pid]=(session,script)
+                        self.events.append({'kind':'attach-started','pid':pid,'deadline_seconds':10})
+                        with frida_deadline(10):
+                            session=device.attach(pid)
+                            self.sessions[pid]=(session,None)
+                            self.events.append({'kind':'session-created','pid':pid})
+                            script=session.create_script((pathlib.Path(__file__).parent/'preview_hooks.js').read_text())
+                            self.sessions[pid]=(session,script)
+                            self.events.append({'kind':'script-load-started','pid':pid})
+                            script.on('message',message);script.load()
                         self.events.append({'kind':'attached','pid':pid,'coverage':'late attach; earlier events may be missing'})
                     except Exception as error:self.events.append({'kind':'attach-failed','pid':pid,'error':str(error)})
 
     def close(self):
-        self.stop.set();self.thread.join(timeout=8)
+        self.stop.set();self.thread.join(timeout=12)
         for session,script in self.sessions.values():
-            try:script.unload();session.detach()
-            except Exception:pass
+            for operation in ([script.unload] if script is not None else [])+[session.detach]:
+                try:
+                    with frida_deadline(3):operation()
+                except Exception as error:self.events.append({'kind':'cleanup-error','error':str(error)})
         atomic(self.out/'preview-lifecycle.json',{'events':self.events,
             'scope':'Owned mapping required before instrumentation; no protected-process bypass. Candidate processes are not asserted owned.',
-            'wire_capture_complete':False,'cleanup':'Detached instrumentation. Xcode owns preview process lifecycle; user sessions were not terminated.'})
+            'wire_capture_complete':False,
+            'cleanup_completed':not self.thread.is_alive() and not any(e.get('kind')=='cleanup-error' for e in self.events),
+            'cleanup':'Instrumentation cleanup attempted; inspect phase/error events. Xcode owns preview process lifecycle; user sessions were not terminated.'})
         if self.thread.is_alive():raise RuntimeError('Instrumentation attach did not return; partial evidence saved; outer watchdog must reconcile process')
 
 
@@ -188,5 +212,6 @@ def capture(out,variants=(0,1),trace=False):
     return {'rendered_variants':len(images),'png_valid':True,
             **comparison,
             'observed_processes':sum(e.get('kind')=='process-observed' for e in monitor.events),
-            'instrumented_processes':len(monitor.sessions),'wire_capture_complete':False,
+            'instrumented_processes':sum(e.get('kind')=='attached' for e in monitor.events),
+            'sessions_created':len(monitor.sessions),'wire_capture_complete':False,
             'source_sha256':source_hash}

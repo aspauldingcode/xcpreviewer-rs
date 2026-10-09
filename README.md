@@ -12,4 +12,4 @@ The [free agentic RE toolkit](docs/reverse-engineering/toolkit.md) adds a bounde
 
 Exact-output acceptance, evidence anchors, edge-case automation and AI porting strategy: [verification contract](docs/reverse-engineering/verification.md).
 
-Latest recursive findings: [local XPC coding, malformed-input boundary and static message strings](docs/reverse-engineering/2026-10-08-xpc-boundary.md).
+Recursive findings: [local XPC coding, malformed-input boundary and static message strings](docs/reverse-engineering/2026-10-08-xpc-boundary.md), followed by [raw coder controls and owned surface lifetime](docs/reverse-engineering/2026-10-08-raw-coder-surface.md).

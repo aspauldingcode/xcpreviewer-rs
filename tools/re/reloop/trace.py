@@ -49,33 +49,51 @@ def smoke(kind,out):
     try:
         marker=out/'resume.marker'
         with (out/'target.stdout').open('wb') as stdout,(out/'target.stderr').open('wb') as stderr:
-            process=subprocess.Popen([str(target),str(marker)],stdout=stdout,stderr=stderr)
+            process=subprocess.Popen([str(target),str(marker)]+(['preload'] if kind=='preview_hook_smoke' else []),stdout=stdout,stderr=stderr)
         pid=process.pid
-        session=device.attach(pid)
-        script=session.create_script((ROOT/'tools/re/reloop/frida_hooks.js').read_text())
+        from reloop.canvas import frida_deadline
+        with frida_deadline(10):
+            session=device.attach(pid)
+            script=session.create_script((ROOT/('tools/re/reloop/preview_hooks.js' if kind=='preview_hook_smoke' else 'tools/re/reloop/frida_hooks.js')).read_text())
         def message(m,data):
             if m['type']=='send':
                 event=m['payload']
                 if data is not None:event['base64']=base64.b64encode(data).decode()
                 events.append(event)
             elif m['type']=='error':errors.append(m)
-        script.on('message',message);script.load();marker.touch()
+        script.on('message',message)
+        with frida_deadline(10):script.load()
+        if kind=='preview_hook_smoke':
+            ready=time.monotonic()+5
+            while time.monotonic()<ready and not any(e.get('kind')=='hook-installed' for e in events):time.sleep(.02)
+            if not any(e.get('kind')=='hook-installed' for e in events):raise RuntimeError('Preview data hook did not become ready before owned target resume')
+        marker.touch()
         deadline=time.monotonic()+15
         while time.monotonic()<deadline and len([e for e in events if e.get('kind')=='plist-data'])<6:
             time.sleep(.05)
         atomic(out/'frida-events.json',events);atomic(out/'frida-errors.json',errors)
         payloads=[plistlib.loads(base64.b64decode(e['base64'])) for e in events if e.get('kind')=='plist-data']
         ticks=[e for e in events if e.get('kind')=='tick']
+        if kind=='preview_hook_smoke':
+            return {'frida_version':frida.__version__,'plist_events':len(payloads),
+                    'payloads_match':[p['value'] for p in payloads]==list(range(1,7)) and all(p['type']=='owned-trace-probe' for p in payloads),
+                    'hook_installed':any(e.get('kind')=='hook-installed' for e in events),
+                    'script_errors':len(errors)+sum(e.get('kind')=='capture-error' for e in events),
+                    'target_sha256':digest(target),'scope':'Canvas hook validated on owned synthetic helper; native preview attach remains unverified.'}
         return {'frida_version':frida.__version__,'tick_events':len(ticks),'plist_events':len(payloads),
                 'inputs_match':[e['input'] for e in ticks]==list(range(6)),
                 'payloads_match':[p['value'] for p in payloads]==list(range(1,7)) and all(p['type']=='owned-trace-probe' for p in payloads),
                 'script_errors':len(errors)+sum(e.get('kind')=='capture-error' for e in events),'target_sha256':digest(target),
                 'scope':'owned synthetic helper, not a captured Xcode preview session'}
     finally:
+        atomic(out/'frida-events.json',events);atomic(out/'frida-errors.json',errors)
         if session:
-            try:session.detach()
-            except frida.InvalidOperationError:pass
+            try:
+                with frida_deadline(3):session.detach()
+            except Exception as error:
+                errors.append({'phase':'cleanup','error':str(error)})
         if process and process.poll() is None:
             process.terminate()
             try:process.wait(timeout=2)
             except subprocess.TimeoutExpired:process.kill();process.wait()
+        atomic(out/'frida-errors.json',errors)

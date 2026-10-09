@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "bytes": 256,
+      "path": "before.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 256,
+      "path": "after.bin",
+      "sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e"
+    }
+  ],
+  "geometry": {
+    "allocation_bytes": 16384,
+    "bytes_per_element": 4,
+    "height": 2,
+    "pixel_format": 1111970369,
+    "plane_count": 0,
+    "seed": 7,
+    "stride": 128,
+    "width": 3
+  },
+  "pattern": "Row padding 0xa5; channels B,G,R=(seed+17*x+31*y+53*c)&255, A=255. After: byte 0 XOR 0x5a.",
+  "scope": "Owned CPU-written single-plane BGRA surface. Native readback via local XPC holder and lookup references; no canvas pixels or interprocess transfer.",
+  "source_manifest_sha256": "6420f1f87e86f3c40972a20f788d4a53e36a64e168fb28dc006d942fdf4bcce3",
+  "source_run_id": "20261009T032630Z-owned-surface-reference-lifetime-c0fd62e0"
+}

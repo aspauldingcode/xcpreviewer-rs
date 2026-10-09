@@ -59,6 +59,12 @@ def plan(controller):
         if spec.get('adapter')=='agent_discriminants' and manifest.get('verdict')=='supports':
             outcomes.append({'experiment':key,'action':'validate-strings-in-live-envelope',
                 'reason':'Static String raw values do not establish actual envelope selection, ordering or numeric wire IDs.'})
+        if spec.get('adapter')=='raw_coder' and manifest.get('verdict')=='supports':
+            outcomes.append({'experiment':key,'action':'keep-raw-coder-contract-narrow',
+                'reason':'Owned controls ignore supplied keys and requested classes. Do not infer generic keyed secure decoding from selector names.'})
+        if spec.get('adapter')=='surface_corpus' and manifest.get('verdict')=='supports':
+            outcomes.append({'experiment':key,'action':'recover-interprocess-surface-lifecycle',
+                'reason':'Local IOSurface holder/reference behavior and CPU bytes do not establish cross-process transfer, GPU completion or canvas ownership.'})
     # Templates are suggestions. The agent reviews and proposes them; no infinite background loop.
     queued={e['id'] for e in load(controller.root/'research/loop/campaign.json',{}).get('experiments',[])}
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}
