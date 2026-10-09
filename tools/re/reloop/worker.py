@@ -131,6 +131,9 @@ def perform(kind,out,p):
         from reloop.surfaceipc import corpus
         return corpus(out,p.get('exit_order','sender'))
     if kind=='surface_failure':
+        if p.get('control')=='late_ack':
+            from reloop.surfacelate import corpus
+            return corpus(out)
         from reloop.surfacefailure import corpus,use_corpus
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
     if kind=='portable_solid':

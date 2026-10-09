@@ -256,3 +256,9 @@ Fixed disassembly acceptance: headings no longer certify bodies; bounded address
 Resolved complete default constant pair `(1,0)` plus tag 2 to reviewed assertion-helper path. Exact helper has analytics call and normal return without direct fatal trap; no policy was executed and no named enum case inferred. Cancellation entry selects same fulfillment state/duplicate target, returns for outcome 1, and dispatches indirect action after unlock on first fulfillment.
 
 Added strict default/cancellation structural control modes with mutated dataflow, bounds, condition and action-boundary tests. Four seals verify; prior eleven continuation/policy anchors verify; 124 tests pass. No Xcode windows opened or private Swift calls used. See [scope](docs/reverse-engineering/2026-10-09-cancellation-default.md) and [anchors](research/evidence/cancellation-default-2026-10-09.json). Native races, action identity, release and live transport remain open.
+
+## 2026-10-09 — live-peer late acknowledgement and endpoint revocation
+
+Paired owned controls observe completion receive timeout before releasing live peer through handshake. Open reply endpoint accepts/audit-verifies late acknowledgement; explicit endpoint revocation yields INVALID_DEST. Both peers gracefully release surface rights/CF aliases/inbox/reply names, with exact imported, post-timeout and sender retained bytes.
+
+Sixteen executions yield 48 padded-byte comparisons (30,720 bytes); all eight cases repeat. Shared-helper misplaced check caught during review and corrected; original three-phase fault corpus passes. Three seals verify; 127 tests pass. See [scope/review](docs/reverse-engineering/2026-10-09-surface-late-ack.md) and [anchors/comparisons](research/evidence/surface-late-ack-2026-10-09.json). Owned timeout policy is not native Canvas behavior; reclamation/GPU/races remain open. No Xcode windows opened.

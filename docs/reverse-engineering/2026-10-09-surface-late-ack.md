@@ -1,0 +1,13 @@
+# Live peer after timeout: reply endpoint controls
+
+The owned Mach/IOSurface fault helper now tests a receiver that remains alive after the sender's completion receive returns MACH_RCV_TIMED_OUT. A handshake sent only after the observed timeout releases the peer to perform cleanup and send its late acknowledgement. No sleep-based ordering assumption is used.
+
+Two paired controls discriminate endpoint policy. With the reply endpoint still open, the late send succeeds and the sender receives and audit-verifies that message. With explicit rendezvous/receive-right removal before the handshake, the peer's late send returns MACH_SEND_INVALID_DEST. Thus receive timeout alone does not revoke an owned endpoint. The fixture declines completion in both cases by design; that decision is not recovered Xcode behavior.
+
+In both paths the live peer checks its resource right count, deallocates its surface port, proves that retained CF access still yields the exact padded pixels, releases that CF reference, removes its inbox and reply names, and exits with the expected reviewed code. The sender checks actual peer wait status, its retained resource count, exact pixels and local name/rendezvous cleanup. Peer identity, expected late-send error, strict cleanup flags and actual exits are independently required by the Python verifier. Changed errors, false or missing peer cleanup, identity/right-count changes and injected padding faults fail.
+
+Four geometries × two endpoint policies × two executions yield 16 owned helper executions. Imported, post-timeout and sender-retained snapshots yield 48 full comparisons (30,720 bytes), including padding. All eight paired cases repeat exactly. The original three-phase fault corpus also passes after the shared-helper change. All 127 tests pass, and three campaign seals verify.
+
+Source inspection caught a misplaced cleanup-stage right-count check in the initial frozen helper's legacy before-transfer branch; the late-only initial campaign did not exercise that branch. The check was moved into the live post-timeout peer before publication. Initial evidence remains sealed; the corrected late campaign and original fault corpus verify the final helper.
+
+This is CPU owned-fixture evidence. It does not establish native Canvas acknowledgement/cancellation policy, surface resource revocation, final kernel allocation reclamation, GPU completion, concurrent consumers or general races. No Xcode windows opened or user app processes terminated. [Sanitized evidence](../../research/evidence/surface-late-ack-2026-10-09.json) includes all comparison counts and three anchors. R1 and both milestones remain open.

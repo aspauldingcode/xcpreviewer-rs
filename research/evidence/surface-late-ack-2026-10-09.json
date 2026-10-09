@@ -1,0 +1,464 @@
+{
+  "date": "2026-10-09",
+  "scope": "Owned CPU IOSurface/Mach late completion controls; no Xcode Canvas protocol claim.",
+  "runs": [
+    {
+      "run_id": "20261009T200824Z-owned-surface-late-ack-endpoints-570f633f",
+      "valid": true,
+      "manifest_sha256": "81a2df5b2d558d4c8c09e044d37e353d7ea35b5620b4d33583a1f9394c22f8bb",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "verified_late_ack_cases": 8,
+        "repeat_bytes_equal_cases": 8,
+        "open_endpoint_late_ack_cases": 4,
+        "revoked_endpoint_late_ack_cases": 4,
+        "compared_bytes": 30720,
+        "failed_executions": 0,
+        "scope": "Owned CPU Mach fixture, receive timeout then live-peer late ack, open versus explicitly revoked reply endpoint. Explicit cleanup, exact padded pixels; no native Canvas timeout policy, final reclamation, GPU or race guarantee."
+      }
+    },
+    {
+      "run_id": "20261009T200936Z-owned-surface-late-ack-endpoints-7f8e2910",
+      "valid": true,
+      "manifest_sha256": "1453e5f2c076b9eff57143c3d07bcbc16182340409216b8b60c0b4e5ed2e5df7",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 8,
+        "verified_late_ack_cases": 8,
+        "repeat_bytes_equal_cases": 8,
+        "open_endpoint_late_ack_cases": 4,
+        "revoked_endpoint_late_ack_cases": 4,
+        "compared_bytes": 30720,
+        "failed_executions": 0,
+        "scope": "Owned CPU Mach fixture, receive timeout then live-peer late ack, open versus explicitly revoked reply endpoint. Explicit cleanup, exact padded pixels; no native Canvas timeout policy, final reclamation, GPU or race guarantee."
+      }
+    },
+    {
+      "run_id": "20261009T200951Z-owned-surface-failure-cleanup-4742c660",
+      "valid": true,
+      "manifest_sha256": "b5da90b7ce5c24deb0c8cd4949cc4d6ffefa3a85941533e68f4e55ae344270bd",
+      "external_anchor_matches": null,
+      "frozen_sources_unchanged": true,
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "cases": 12,
+        "verified_fault_cases": 12,
+        "closed_endpoint_cases": 4,
+        "after_import_error_cases": 4,
+        "completion_timeout_cases": 4,
+        "repeat_bytes_equal_cases": 12,
+        "helper_failures": 0,
+        "scope": "Owned CPU Mach fixture: closed endpoint, explicit import-error cleanup and completion timeout with owned-child SIGKILL. Local names/right counts only; no final kernel reclamation, general crash/race coverage, GPU completion or Apple Canvas XPC claim."
+      }
+    }
+  ],
+  "late_comparisons": [
+    {
+      "case": "17x3-seed129-late-ack-closed-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-closed-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-closed-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-closed-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-closed-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-closed-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "17x3-seed129-late-ack-open-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 384,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-closed-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "1x1-seed0-late-ack-open-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 128,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-closed-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "33x7-seed255-late-ack-open-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 1792,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-closed-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-0",
+      "stage": "imported-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-0",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-0",
+      "stage": "retained-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-1",
+      "stage": "imported-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-1",
+      "stage": "post-timeout-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    },
+    {
+      "case": "3x2-seed7-late-ack-open-1",
+      "stage": "retained-comparison",
+      "reference_bytes": 256,
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "passed": true
+    }
+  ],
+  "tests": 127,
+  "harness_review": {
+    "initial_run": "20261009T200824Z-owned-surface-late-ack-endpoints-570f633f",
+    "finding": "Cleanup-stage right-count check was mistakenly placed in legacy before-transfer branch; late-only initial run did not exercise that branch. Identified during source inspection before publication.",
+    "fix": "Move count measurement to live peer after timeout handshake; final late campaign and original three-phase fault corpus pass. Initial frozen source retained."
+  },
+  "limitations": [
+    "Receive timeout alone does not destroy an owned reply endpoint; revoked endpoint is explicit receive-right/rendezvous removal.",
+    "Completion_accepted=false is owned fixture decision after timeout, not recovered native cancellation/completion policy.",
+    "Exact imported, port-released retained-CF post-timeout, and sender retained bytes include every padding byte.",
+    "Observed graceful peer/right-name cleanup does not establish final kernel reclamation or resource revocation; GPU, arbitrary timing/races, concurrent consumers and native Canvas transport remain open."
+  ]
+}

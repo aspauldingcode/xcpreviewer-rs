@@ -1945,6 +1945,47 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "owned-surface-late-ack-endpoints",
+      "adapter": "surface_failure",
+      "hypothesis": "Owned receive timeout does not itself revoke reply endpoint: live peer late ack should arrive while endpoint open, but fail INVALID_DEST after explicit revocation. Both paths gracefully release peer rights/CF aliases; all imported/post-timeout/retained bytes including padding match independently and repeat. No native Canvas policy inferred.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "control": "late_ack"
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "verified_late_ack_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_bytes_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "open_endpoint_late_ack_cases",
+          "equals": 4
+        },
+        {
+          "path": "revoked_endpoint_late_ack_cases",
+          "equals": 4
+        },
+        {
+          "path": "failed_executions",
+          "equals": 0
+        }
+      ]
     }
   ],
   "version": 1

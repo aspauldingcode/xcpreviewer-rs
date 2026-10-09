@@ -85,7 +85,7 @@ def validate_experiment(e):
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')
-    if 'control' in p and p['control'] not in ('faults','use_state'):raise ValueError('invalid surface control')
+    if 'control' in p and p['control'] not in ('faults','use_state','late_ack'):raise ValueError('invalid surface control')
     if 'exit_order' in p and p['exit_order'] not in ('sender','receiver'):raise ValueError('invalid exit_order')
     for field in ['xcode','binary','query','tool']:
         if field in p and (not isinstance(p[field], str) or not p[field] or len(p[field]) > 4096):

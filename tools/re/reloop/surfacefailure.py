@@ -8,18 +8,19 @@ from reloop.surface import CASES,expected
 from reloop.verification import bytes_equal
 
 PHASES=('before-transfer','after-import','before-ack')
+LATE_PHASES=('late-ack-open','late-ack-closed')
 FLAGS=('audit_peer_verified','failure_observed','local_resource_name_removed','peer_endpoint_name_removed','rendezvous_removed')
 # Pinned Darwin SDK constants, independently enforced by the C helper's named constants.
-ERRORS={'before-transfer':0x10000003,'after-import':0,'before-ack':0x10004003}
+ERRORS={'before-transfer':0x10000003,'after-import':0,'before-ack':0x10004003,'late-ack-open':0x10004003,'late-ack-closed':0x10004003}
 
 
 def inspect(record,case,phase,payloads,returncode=0):
     if returncode!=0:return {'passed':False,'failure':'helper-exit'}
     width,height,seed=case
     try:
-        if phase not in PHASES or record.get('phase')!=phase:return {'passed':False,'failure':'phase'}
+        if phase not in PHASES+LATE_PHASES or record.get('phase')!=phase:return {'passed':False,'failure':'phase'}
         for key,value in [('width',width),('height',height),('seed',seed),('mach_error',ERRORS[phase]),
-                          ('peer_exit',-1 if phase=='before-ack' else 41 if phase=='before-transfer' else 42),
+                          ('peer_exit',{'before-ack':-1,'before-transfer':41,'after-import':42,'late-ack-open':43,'late-ack-closed':44}[phase]),
                           ('peer_signal',9 if phase=='before-ack' else 0),('local_resource_refs_retained',1)]:
             if type(record[key]) is not int or record[key]!=value:return {'passed':False,'failure':'metadata-or-rights'}
         if record.get('completion_accepted') is not False or any(record.get(k) is not True for k in FLAGS):return {'passed':False,'failure':'lifecycle'}
@@ -28,6 +29,7 @@ def inspect(record,case,phase,payloads,returncode=0):
         raw=expected(width,height,record['stride'],seed)
         refs={'retained':raw}
         if phase!='before-transfer':refs['imported']=raw
+        if phase in LATE_PHASES:refs['post-timeout']=raw
         if set(payloads)!=set(refs) or any(payloads[k]!=refs[k] for k in refs):return {'passed':False,'failure':'byte-mismatch'}
         return {'passed':True,'failure':None,'expected':refs,'padding_bytes_per_row':record['stride']-width*4}
     except (KeyError,ValueError,TypeError):return {'passed':False,'failure':'invalid-result'}
