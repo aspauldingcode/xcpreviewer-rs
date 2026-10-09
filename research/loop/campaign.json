@@ -450,6 +450,45 @@
         "local-re-controller"
       ],
       "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_ipc",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "exact_handoff_cases"
+        },
+        {
+          "equals": 4,
+          "path": "clean_sender_exit_cases"
+        },
+        {
+          "equals": 4,
+          "path": "abrupt_sender_exit_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Audit-verified owned fork/exec peers transfer a real IOSurface Mach send right, share exact CPU mutations, release the received right, and retain bytes after clean and abrupt sender exits.",
+      "id": "owned-surface-process-exit",
+      "params": {},
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
     }
   ],
   "version": 1

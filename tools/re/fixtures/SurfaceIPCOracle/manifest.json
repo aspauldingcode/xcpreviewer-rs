@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "bytes": 256,
+      "path": "after-exit.bin",
+      "sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e"
+    },
+    {
+      "bytes": 256,
+      "path": "after-receiver-mutation.bin",
+      "sha256": "6494ebd516486b1d2b33239ad8b219ab78bded9ad469df4c1b5031e940b1077f"
+    },
+    {
+      "bytes": 256,
+      "path": "before.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    }
+  ],
+  "geometry": {
+    "height": 2,
+    "seed": 7,
+    "stride": 128,
+    "width": 3
+  },
+  "mode": "clean",
+  "mutations": {
+    "after-exit": {
+      "byte_offset": 0,
+      "xor": 90
+    },
+    "after-receiver-mutation": {
+      "byte_offset": 1,
+      "xor": 166
+    }
+  },
+  "scope": "Owned audit-verified Mach handoff, CPU BGRA only. No Apple XPC envelope or GPU fence oracle.",
+  "sender_exit": 0,
+  "source_manifest_sha256": "9e70621efe0fff7b94c70695e3d306112f52f04275f3e62ec0aa207e672ff036",
+  "source_run_id": "20261009T135602Z-owned-surface-process-exit-6c5d6503"
+}

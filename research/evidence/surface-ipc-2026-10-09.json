@@ -1,0 +1,140 @@
+{
+  "adapters": 20,
+  "automated_tests": {
+    "failed": 0,
+    "passed": 67
+  },
+  "cross_adapter_comparisons": [
+    {
+      "candidate": "before.bin",
+      "candidate_bytes": 256,
+      "candidate_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "prior_local_golden": "before.bin",
+      "reference_bytes": 256,
+      "reference_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate": "after-exit.bin",
+      "candidate_bytes": 256,
+      "candidate_sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "prior_local_golden": "after.bin",
+      "reference_bytes": 256,
+      "reference_sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    }
+  ],
+  "initial_cleanup_attempt": {
+    "artifact_hashes_valid": true,
+    "cause": "Explicit bootstrap unregister returned 1101 after handoff byte checks. Final helper destroys receive right and requires lookup to return unknown service.",
+    "helper_failures": 16,
+    "manifest_sha256": "419373862af7dd0dae85979c9220d2e012966b5c18dba02eaf3a7677dc01cbc7",
+    "run_id": "20261009T135354Z-owned-surface-process-exit-13013703",
+    "verdict": "inconclusive"
+  },
+  "limitations": [
+    "Mach handoff is not the recovered Apple XPC envelope.",
+    "Four owned single-plane BGRA shapes only; CPU locking, not GPU synchronization.",
+    "Abrupt exit uses _exit(23), not arbitrary crash, revocation or concurrent release races.",
+    "Legacy bootstrap registration is deprecated and may be unavailable on another OS/sandbox.",
+    "No final-release reclamation, reuse/ordering, multi-plane formats or live canvas compatibility established.",
+    "Manifest authenticity requires a separately trusted commit or reviewer copy."
+  ],
+  "manual_calibration": {
+    "inherited_registered_ports": "Sender reported send; receiver timed out. Cause not established; abandoned as rendezvous route.",
+    "sealed": false,
+    "temporary_random_rendezvous": "Worked; raw diagnostics remain local."
+  },
+  "mcp_tools": 19,
+  "ownership_and_cleanup": {
+    "peers": "Fork/exec child and parent, kernel audit PID validation in both directions.",
+    "persistent_agents_installed": false,
+    "process_deadlines": "12-second helper alarms, 3-second Mach send/receive limits, 15-second caller timeout, outer worker watchdog.",
+    "rendezvous": "128-bit random local service name; successful cleanup requires receive-right destruction and bounded unknown-service lookup.",
+    "system_protections_changed": false,
+    "user_processes_terminated": false
+  },
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "exact_handoff_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "clean_sender_exit_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "abrupt_sender_exit_cases",
+          "present": true
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "passed": true,
+          "path": "repeat_bytes_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "af86aed1d6a1e4b7fd8aaccb7d20b8f08f6f208d7d5e725b4e2ad8bd832e0cd5",
+      "execution": "success",
+      "experiment_hash": "b6f2d39de0de05631d7ef300b4511ae80b26fa371a16f39573007fc3d37c55b5",
+      "experiment_id": "owned-surface-process-exit",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "9e70621efe0fff7b94c70695e3d306112f52f04275f3e62ec0aa207e672ff036",
+      "observations": {
+        "abrupt_sender_exit_cases": 4,
+        "cases": 8,
+        "clean_sender_exit_cases": 4,
+        "exact_handoff_cases": 8,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 8,
+        "scope": "Owned fork/exec sender/receiver Mach-port transfers, audit-verified peers, single-plane CPU BGRA. No Apple XPC envelope, GPU fences, canvas capture or surface revocation guarantee."
+      },
+      "run_id": "20261009T135602Z-owned-surface-process-exit-6c5d6503",
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Owned audit-verified Mach handoff, CPU BGRA only. No Apple XPC envelope or GPU fence oracle.",
+  "supported_experiments": 1,
+  "system_cmp_confirmed_both": true
+}

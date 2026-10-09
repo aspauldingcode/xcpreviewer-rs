@@ -10,6 +10,8 @@ The reviewed connected campaign includes local XPC corpus, malformed-envelope an
 
 Further reviewed controls measure raw-coder key/class behavior, local IOSurface holder/reference lifetime with exact row-padding bytes, and the deferred canvas hook on an owned helper. See [results and limits](../../docs/reverse-engineering/2026-10-08-raw-coder-surface.md) and [SurfaceOracle](fixtures/SurfaceOracle/manifest.json).
 
+The `surface_ipc` adapter transfers an owned IOSurface Mach right between audit-verified fork/exec peers and checks clean/abrupt sender exit, retained bytes and temporary rendezvous cleanup. See [findings](../../docs/reverse-engineering/2026-10-09-surface-ipc.md) and [SurfaceIPCOracle](fixtures/SurfaceIPCOracle/manifest.json). Actual canvas XPC envelopes and GPU fences remain open.
+
 ## Static collection
 
 ```sh

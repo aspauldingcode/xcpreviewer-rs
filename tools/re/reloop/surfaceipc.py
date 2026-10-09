@@ -1,0 +1,56 @@
+"""Owned sender/receiver Mach surface handoff, exit and exact byte controls."""
+import json
+import pathlib
+import subprocess
+from reloop.core import ROOT,atomic
+from reloop.trace import run
+from reloop.surface import CASES,expected
+from reloop.verification import bytes_equal
+
+PHASES=('before','after-exit','after-receiver-mutation')
+FLAGS=('different_processes','audit_peer_verified','sender_observed_receiver_mutation','received_port_released_before_sender_exit','survives_sender_exit','receiver_mutation_after_exit','rendezvous_removed')
+
+
+def inspect(record,case,mode,payloads):
+    width,height,seed=case
+    try:
+        for key,value in [('width',width),('height',height),('seed',seed),('sender_exit',23 if mode=='abrupt' else 0)]:
+            if type(record[key]) is not int or record[key]!=value:return {'passed':False,'failure':'metadata'}
+        if mode not in ('clean','abrupt') or record.get('mode')!=mode:return {'passed':False,'failure':'mode'}
+        if any(record.get(k) is not True for k in FLAGS):return {'passed':False,'failure':'lifecycle'}
+        if any(type(record[k]) is not int or record[k]<=1 for k in ('sender_pid','receiver_pid')) or record['sender_pid']==record['receiver_pid']:return {'passed':False,'failure':'peer-identity'}
+        raw=expected(width,height,record['stride'],seed);after=bytearray(raw);after[0]^=0x5a;final=bytearray(after);final[1]^=0xa6
+        refs=dict(zip(PHASES,(raw,bytes(after),bytes(final))))
+        if set(payloads)!=set(PHASES) or any(payloads[k]!=refs[k] for k in PHASES):return {'passed':False,'failure':'byte-mismatch'}
+        return {'passed':True,'failure':None,'expected':refs,'padding_bytes_per_row':record['stride']-width*4}
+    except (KeyError,ValueError,TypeError):return {'passed':False,'failure':'invalid-result'}
+
+
+def corpus(out):
+    out=pathlib.Path(out);target=out/'owned-surface-ipc'
+    run(['xcrun','clang','-std=c11','-Wall','-Wextra','-framework','CoreFoundation','-framework','IOSurface','-lbsm',ROOT/'tools/re/surface_ipc_probe.c','-o',target],out,'compile')
+    rows=[];failures=0
+    for case in CASES:
+        for mode in ('clean','abrupt'):
+            width,height,seed=case;name='%dx%d-seed%d-%s'%(width,height,seed,mode);records=[]
+            for repeat in range(2):
+                folder=out/(name+'-'+str(repeat));folder.mkdir()
+                with (folder/'stdout.json').open('wb') as stdout,(folder/'stderr.txt').open('wb') as stderr:
+                    result=subprocess.run([str(target),str(width),str(height),str(seed),mode,str(folder)],stdout=stdout,stderr=stderr,timeout=15)
+                try:record=json.loads((folder/'stdout.json').read_text())
+                except ValueError:record={}
+                failures+=bool(result.returncode or not record)
+                payloads={phase:(folder/(phase+'.bin')).read_bytes() for phase in PHASES if (folder/(phase+'.bin')).exists()}
+                checked=inspect(record,case,mode,payloads);records.append((checked,payloads))
+                if checked['passed']:
+                    for phase,raw in checked['expected'].items():
+                        (folder/('expected-'+phase+'.bin')).write_bytes(raw)
+                        atomic(folder/(phase+'-comparison.json'),bytes_equal(folder/(phase+'.bin'),folder/('expected-'+phase+'.bin')))
+                atomic(folder/'assessment.json',{k:v for k,v in checked.items() if k!='expected'})
+            passed=all(c[0]['passed'] for c in records)
+            rows.append({'case':name,'mode':mode,'passed':passed,'repeat_bytes_equal':passed and records[0][1]==records[1][1],
+                         'failures':[c[0]['failure'] for c in records],'padding_bytes_per_row':records[0][0].get('padding_bytes_per_row')})
+    atomic(out/'surface-ipc-corpus.json',{'cases':rows})
+    return {'cases':len(rows),'exact_handoff_cases':sum(r['passed'] for r in rows),'clean_sender_exit_cases':sum(r['passed'] and r['mode']=='clean' for r in rows),
+            'abrupt_sender_exit_cases':sum(r['passed'] and r['mode']=='abrupt' for r in rows),'repeat_bytes_equal_cases':sum(r['repeat_bytes_equal'] for r in rows),
+            'helper_failures':failures,'scope':'Owned fork/exec sender/receiver Mach-port transfers, audit-verified peers, single-plane CPU BGRA. No Apple XPC envelope, GPU fences, canvas capture or surface revocation guarantee.'}
