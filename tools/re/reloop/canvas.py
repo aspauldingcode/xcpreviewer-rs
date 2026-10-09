@@ -10,7 +10,6 @@ import uuid
 from contextlib import contextmanager
 from reloop.core import ROOT, PROJECT_ROOT, atomic, digest, now
 from reloop.ghidra import unpack
-from reloop.mcp_client import Client
 
 FIXTURE = ROOT / 'tools/re/fixtures/PreviewLab'
 PROJECT = FIXTURE / 'PreviewLab.xcodeproj'
@@ -47,6 +46,25 @@ def compare_captures(images,out):
     return {'controlled_change_visible':bool(difference.get('comparable') and difference['changed_pixels']>0),
             'pixels_identical':bool(difference.get('comparable') and difference['passed']),
             'preview_bytes_identical':byte_result['passed']}
+
+
+def fixture_content_check(images):
+    """Independent sanity prediction for the owned white fixture with two dark text rows.
+
+    Exclude title bar, rounded window corners and borders. This detects blank content;
+    positive ink alone does not establish text identity or full rendering conformance.
+    """
+    from PIL import Image
+    checks=[]
+    for path in images:
+        with Image.open(path) as image:
+            if image.size!=(640,384):
+                checks.append({'geometry_matches':False,'interior_ink_pixels':None,'passed':False});continue
+            pixels=image.convert('RGBA').crop((32,96,608,352)).getdata()
+            ink=sum(1 for r,g,b,a in pixels if a>240 and min(r,g,b)<240)
+            checks.append({'geometry_matches':True,'interior_ink_pixels':ink,'passed':ink>=100})
+    return {'captures':checks,'all_content_nonblank':bool(checks) and all(c['passed'] for c in checks),
+            'scope':'Pinned owned white fixture interior sanity, excluding chrome; nonblank is necessary, not OCR or semantic proof.'}
 
 
 def select_tab(message, project=PROJECT):
@@ -179,7 +197,9 @@ def capture(out,variants=(0,1),trace=False):
     monitor=Monitor(out,build_root,trace);client=None;images=[]
     with (out/'xcode-bridge.stderr').open('wb') as stderr:
         try:
-            client=Client(['xcrun','mcpbridge'],stderr,timeout=240)
+            from reloop.xcodebridge import BrokerClient
+            client=BrokerClient()
+            atomic(out/'broker-identity.json',client.metadata)
             schema=client.request('tools/list',{});atomic(out/'xcode-schema.json',schema)
             names={t['name'] for t in schema['tools']}
             if not {'RenderPreview','XcodeListWindows','XcodeGlob','XcodeRead'}<=names:raise RuntimeError('Installed Xcode lacks required preview tools')
@@ -193,7 +213,7 @@ def capture(out,variants=(0,1),trace=False):
             monitor.start()
             for ordinal,index in enumerate(variants):
                 result=tools_call(client,'RenderPreview',{'tabIdentifier':tab,'sourceFilePath':matches[0],
-                                 'previewDefinitionIndexInFile':index,'timeout':150})
+                                 'previewDefinitionIndexInFile':index,'timeout':60})
                 atomic(out/('preview-%d-definition-%d-response.json'%(ordinal,index)),result)
                 if result.get('errors') or not result.get('previewSnapshotPath'):
                     raise RuntimeError('Xcode preview failed; inspect response artifact')
@@ -208,8 +228,15 @@ def capture(out,variants=(0,1),trace=False):
             if client:client.close()
             if monitor.thread.ident is not None:monitor.close()
     comparison=compare_captures(images,out)
+    content=fixture_content_check(images);atomic(out/'fixture-content-check.json',content)
+    if len(images)==3 and tuple(variants)==(0,0,1):
+        changed_dir=out/'controlled-change';changed_dir.mkdir()
+        changed=compare_captures(images[1:],changed_dir)
+        comparison['controlled_change_visible']=changed['controlled_change_visible']
+        comparison['changed_preview_bytes_identical']=changed['preview_bytes_identical']
     if digest(fixture/'Sources/PreviewLab/PreviewLab.swift')!=source_hash:raise RuntimeError('Fixture source changed during reference capture')
     return {'rendered_variants':len(images),'png_valid':True,
+            'fixture_content_nonblank':content['all_content_nonblank'],
             **comparison,
             'observed_processes':sum(e.get('kind')=='process-observed' for e in monitor.events),
             'instrumented_processes':sum(e.get('kind')=='attached' for e in monitor.events),

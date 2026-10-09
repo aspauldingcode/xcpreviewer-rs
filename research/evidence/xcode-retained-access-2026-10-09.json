@@ -1,0 +1,302 @@
+{
+  "adapters": 23,
+  "automated_tests": {
+    "context": "Permitted owned-process cleanup; ResourceWarning treated as error. Prior one-test failure retained locally and corrected for stricter content contract.",
+    "failed": 0,
+    "passed": 92
+  },
+  "blank_content_rejection": {
+    "all_content_nonblank": false,
+    "captures": [
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 0,
+        "passed": false
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 0,
+        "passed": false
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 0,
+        "passed": false
+      }
+    ],
+    "scope": "Pinned owned white fixture interior sanity, excluding chrome; nonblank is necessary, not OCR or semantic proof."
+  },
+  "bypass_research": {
+    "installed_version": "Xcode 26.6 build 17F113",
+    "public_proxy_implementation": "https://github.com/jeffy-w/xcode-mcp-proxy",
+    "static_candidate_preferences": [
+      "IDEChatInternalAllowUntrustedAgentsWithoutUserInteraction",
+      "IDEIntelligenceAllowApprovingUntrustedAgentsForSession"
+    ],
+    "status": "Installed binary string identifiers only; behavior not established and preferences not modified.",
+    "vendor_access_documentation": "https://developer.apple.com/documentation/xcode/giving-external-agents-access-to-xcode"
+  },
+  "limitations": [
+    "No accepted SwiftUI Canvas fixture pixels; changed pixels are window title chrome.",
+    "No complete Canvas XPC trace, hook readiness, GPU completion or final reclamation.",
+    "No settings/protections changed; no global launch agent installed; no Apple binary/private dump published.",
+    "Private Unix socket retains current approval; broker/Xcode exit may require another grant.",
+    "Manifest consistency requires separately trusted published anchors for authenticity."
+  ],
+  "mcp_tools": 19,
+  "png_repeat": {
+    "candidate_bytes": 12654,
+    "candidate_sha256": "c90810225e0635251d9a187bccbf513167b5c796c7ac01373f6555eb13c2386d",
+    "different_bits_in_shared_extent": 0,
+    "different_bytes": 0,
+    "first_mismatches": [],
+    "mode": "exact-bytes",
+    "normalization": "none",
+    "passed": true,
+    "reference_bytes": 12654,
+    "reference_sha256": "c90810225e0635251d9a187bccbf513167b5c796c7ac01373f6555eb13c2386d",
+    "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+    "unmatched_tail_bytes": 0
+  },
+  "retained_access": {
+    "explicit_user_approval": true,
+    "permission_dialog_disappeared": true,
+    "same_broker_across_experiment_workers": true,
+    "scope": "Current retained broker/Xcode lifetime only; no restart or permanent approval proof.",
+    "upstream_message_capture": "Managed control does not observe upstream message count/reverse requests. Its legacy zero fields mean unobserved, not absence."
+  },
+  "runs": [
+    {
+      "acceptance": "Read-only service responsiveness only",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "initialized",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "passed": true,
+          "path": "discovery_requested",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": true,
+          "passed": false,
+          "path": "direct_call_completed",
+          "present": true
+        }
+      ],
+      "environment_hash": "d427e2b8d795429d57b5ea1c935a0ee4043afe80da48f05c995fb15a6160b98c",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "4bf39a20e915dc02118ffe0d4f6759e42200e5f2f2ab588b85937b474802e34c",
+      "observations": {
+        "direct_call_completed": false,
+        "direct_call_error": "MCP request timed out: tools/call",
+        "discovery_requested": false,
+        "initialized": true,
+        "message_count": 4,
+        "scope": "Read-only Xcode window-list route, not Canvas capture or IPC recovery. Local initialize response alone does not prove downstream tool responsiveness.",
+        "server_request_methods": []
+      },
+      "run_id": "20261009T152930Z-xcode-approved-read-route-2315fd44",
+      "verdict": "inconclusive"
+    },
+    {
+      "acceptance": "Read-only service responsiveness only",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "initialized",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "passed": true,
+          "path": "discovery_requested",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "direct_call_completed",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "same_broker_session",
+          "present": true
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "independent_callers_completed",
+          "present": true
+        }
+      ],
+      "environment_hash": "e055e8df298fed2e7e3b949030522c9dc8191569cdafe2d82ddeb393a2bd7d7d",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "dc50d5ca4b6f650ca067108c44a950e0e20a2fa85309d930ea3aca92dc197cf0",
+      "observations": {
+        "direct_call_completed": true,
+        "direct_call_error": null,
+        "discovery_requested": false,
+        "independent_callers_completed": 2,
+        "initialized": true,
+        "managed_connection": true,
+        "message_count": 0,
+        "same_broker_session": true,
+        "scope": "Read-only Xcode window-list route, not Canvas capture or IPC recovery. Local initialize response alone does not prove downstream tool responsiveness.",
+        "server_request_methods": []
+      },
+      "run_id": "20261009T153346Z-xcode-retained-session-control-778570bf",
+      "verdict": "supports"
+    },
+    {
+      "acceptance": "Legacy PNG/chrome checks only; fixture-content acceptance rejected by visual inspection and corrected run",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 3,
+          "expected": 3,
+          "passed": true,
+          "path": "rendered_variants",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "png_valid",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "pixels_identical",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "preview_bytes_identical",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "controlled_change_visible",
+          "present": true
+        }
+      ],
+      "environment_hash": "eca6bad9b4001fed5fa9c00166563ca0bfd05a1fc7252ae437fe234c83d3e134",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "9383208749b2a8e67306583faac4cd612deecfdb4ca80ebc5f9cad7be588f691",
+      "observations": {
+        "changed_preview_bytes_identical": false,
+        "controlled_change_visible": true,
+        "instrumented_processes": 0,
+        "observed_processes": 1,
+        "pixels_identical": true,
+        "png_valid": true,
+        "preview_bytes_identical": true,
+        "rendered_variants": 3,
+        "sessions_created": 0,
+        "source_sha256": "52ee9a285362995995a3cdfd09104198166f5821e89d03ca17d4d95c45192bee",
+        "wire_capture_complete": false
+      },
+      "run_id": "20261009T153612Z-native-canvas-approved-repeat-change-c4062578",
+      "verdict": "supports"
+    },
+    {
+      "acceptance": "Rejected: content gate fails",
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 3,
+          "expected": 3,
+          "passed": true,
+          "path": "rendered_variants",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "png_valid",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "pixels_identical",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "preview_bytes_identical",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "controlled_change_visible",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": true,
+          "passed": false,
+          "path": "fixture_content_nonblank",
+          "present": true
+        }
+      ],
+      "environment_hash": "04d601ca4484c9df229df01236408c2075783eabb8527a571dfebb7f39424dc0",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "4bf2fbb7bb9c2e0e35bc4ac44ad88e7c1c87ab18169093eaeeb6b7648aeafaa6",
+      "observations": {
+        "changed_preview_bytes_identical": false,
+        "controlled_change_visible": true,
+        "fixture_content_nonblank": false,
+        "instrumented_processes": 0,
+        "observed_processes": 1,
+        "pixels_identical": true,
+        "png_valid": true,
+        "preview_bytes_identical": true,
+        "rendered_variants": 3,
+        "sessions_created": 0,
+        "source_sha256": "52ee9a285362995995a3cdfd09104198166f5821e89d03ca17d4d95c45192bee",
+        "wire_capture_complete": false
+      },
+      "run_id": "20261009T153950Z-native-canvas-approved-repeat-change-096cc06d",
+      "verdict": "inconclusive"
+    }
+  ],
+  "schema_version": 1,
+  "title_change_pixels": 2260,
+  "visually_inspected": true
+}

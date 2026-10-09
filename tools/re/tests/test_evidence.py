@@ -156,12 +156,21 @@ class EvidenceTests(unittest.TestCase):
         self.assertTrue(result['pixels_identical']);self.assertFalse(result['preview_bytes_identical'])
 
     def test_repeatability_proposal_requires_positive_pixel_equality(self):
-        run=self.seal(observed={'wire_capture_complete':False})
+        run=self.seal(observed={'wire_capture_complete':False,'fixture_content_nonblank':True})
         atomic(run/'experiment.json',{'adapter':'xcode_preview','params':{'variants':[0,1]}})
         m=load(run/'manifest.json');m['artifacts']=self.c.artifacts(run);atomic(run/'manifest.json',m)
         atomic(self.c.state/'checkpoint.json',{'runs':{'canvas':run.name}})
         proposal=plan(self.c)['proposals'][0]
         self.assertIn({'path':'pixels_identical','equals':True},proposal['checks'])
+
+    def test_planner_rejects_chrome_only_capture_readiness(self):
+        run=self.seal(observed={'fixture_content_nonblank':False})
+        atomic(run/'experiment.json',{'adapter':'xcode_preview','params':{'variants':[0,1]}})
+        m=load(run/'manifest.json');m['artifacts']=self.c.artifacts(run);atomic(run/'manifest.json',m)
+        atomic(self.c.state/'checkpoint.json',{'runs':{'canvas':run.name}})
+        result=plan(self.c)
+        self.assertEqual(result['proposals'],[])
+        self.assertEqual(result['outcomes'][0]['action'],'diagnose-blank-owned-content')
 
     def test_macho_rejects_truncated_load_commands(self):
         path = self.root/'bad-macho'

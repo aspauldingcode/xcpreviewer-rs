@@ -698,17 +698,73 @@
         {
           "equals": true,
           "path": "direct_call_completed"
+        },
+        {
+          "equals": true,
+          "path": "same_broker_session"
+        },
+        {
+          "equals": 2,
+          "path": "independent_callers_completed"
         }
       ],
       "depends_on": [],
-      "hypothesis": "Bypassing discovery and servicing reverse MCP requests makes the installed Xcode read-only window-list route responsive in an explicitly selected fresh session.",
-      "id": "xcode-direct-read-route",
-      "params": {},
+      "hypothesis": "Two independent local callers obtain read-only Xcode tool responses using one retained explicitly approved broker process and session.",
+      "id": "xcode-retained-session-control",
+      "params": {
+        "managed": true
+      },
       "priority": 95,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 60
+      "timeout_seconds": 220
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "png_valid"
+        },
+        {
+          "equals": true,
+          "path": "pixels_identical"
+        },
+        {
+          "equals": true,
+          "path": "preview_bytes_identical"
+        },
+        {
+          "equals": true,
+          "path": "controlled_change_visible"
+        },
+        {
+          "equals": true,
+          "path": "fixture_content_nonblank"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned Canvas PNGs contain actual fixture content, repeat exactly under A/A, and show A/B content changes; title-only blank windows must not pass.",
+      "id": "native-canvas-approved-repeat-change",
+      "params": {
+        "trace": false,
+        "variants": [
+          0,
+          0,
+          1
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
     }
   ],
   "version": 1

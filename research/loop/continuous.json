@@ -1,10 +1,17 @@
 {
+  "access_policy": {
+    "approved_by_user": true,
+    "mechanism": "Owned retained private Unix-socket broker",
+    "preflight": "tools/re/agent.py xcode-bridge status",
+    "restart": "Explicit owned start only; can require a new grant. No automatic approval bypass.",
+    "scope": "Same Xcode/broker lifetime, no permanent grant claim"
+  },
   "automation_id": "continuous-xcode-preview-re",
   "baseline_commit": "9b51624ec4386c5cf5f65bc5ba2b61b53600c548",
   "blocked_tracks": [
     {
-      "reason": "Direct Xcode tool call times out despite initialization, no discovery or reverse requests. Xcode permission dialog for preview-reloop awaits user approval. Prior blank Canvas/attach limitations remain.",
-      "retry_requires": "Explicit user approval of Xcode agent permission plus changed UI state, or independently changed service/observation method; no unchanged expensive retry.",
+      "reason": "Xcode tool responsiveness restored through retained approved broker. RenderPreview returns owned 640x384 PNGs with zero fixture interior ink; 2,260 changed pixels are title chrome. Native attach remains unverified.",
+      "retry_requires": "Reuse live private broker; diagnose rendering with changed fixture/observation, not unchanged blank retries. If broker/Xcode exits, record approval loss; do not auto-restart or disable permission checks.",
       "track": "native-canvas"
     }
   ],
@@ -27,12 +34,18 @@
       "status": "permitted-execution-passed"
     }
   ],
-  "last_completed": "Implemented direct read-only Xcode bridge diagnostic, reverse-request ID collision handling and planner readiness guard; sealed timeout, observed pending Xcode permission; 87 tests pass.",
+  "last_completed": "Retained approved Xcode broker serves independent callers and subsequent experiment workers without new prompts; Canvas PNG A/A repeats but content is blank; corrected sealed content gate rejects chrome-only output; 92 tests pass.",
   "last_github_sync": {
-    "checkpoint": "direct-route and access checkpoint",
+    "checkpoint": "retained access and content falsification",
     "date": "2026-10-09",
-    "issue": "O2",
-    "number": 3,
+    "issues": [
+      "O2",
+      "O3"
+    ],
+    "numbers": [
+      3,
+      4
+    ],
     "state": "open"
   },
   "next_actions": [
@@ -42,9 +55,9 @@
       "state": "ready"
     },
     {
-      "action": "Await required agent-access approval; after fresh permission state, repeat bounded direct route, then owned Canvas capture only if tool responds",
+      "action": "Reuse approved broker; discriminate why owned PreviewLab text is absent while window chrome renders. Compare owned View-only/window preview or an independent content observation; require nonblank plus semantic controls.",
       "issue_id": "O2",
-      "state": "requires-user-permission"
+      "state": "ready"
     },
     {
       "action": "Select explicit portable subset and compare to the new RendererOracle",
@@ -74,6 +87,26 @@
       "manifest_sha256": "61fce97f729570f191513d412c03be8fa1ef63bb900adffe70ceea5c8385aa63",
       "path": "research/evidence/xcode-bridge-route-2026-10-09.json",
       "run_id": "20261009T151924Z-xcode-direct-read-route-f15cc7da"
+    },
+    {
+      "manifest_sha256": "4bf39a20e915dc02118ffe0d4f6759e42200e5f2f2ab588b85937b474802e34c",
+      "path": "research/evidence/xcode-retained-access-2026-10-09.json",
+      "run_id": "20261009T152930Z-xcode-approved-read-route-2315fd44"
+    },
+    {
+      "manifest_sha256": "dc50d5ca4b6f650ca067108c44a950e0e20a2fa85309d930ea3aca92dc197cf0",
+      "path": "research/evidence/xcode-retained-access-2026-10-09.json",
+      "run_id": "20261009T153346Z-xcode-retained-session-control-778570bf"
+    },
+    {
+      "manifest_sha256": "9383208749b2a8e67306583faac4cd612deecfdb4ca80ebc5f9cad7be588f691",
+      "path": "research/evidence/xcode-retained-access-2026-10-09.json",
+      "run_id": "20261009T153612Z-native-canvas-approved-repeat-change-c4062578"
+    },
+    {
+      "manifest_sha256": "4bf2fbb7bb9c2e0e35bc4ac44ad88e7c1c87ab18169093eaeeb6b7648aeafaa6",
+      "path": "research/evidence/xcode-retained-access-2026-10-09.json",
+      "run_id": "20261009T153950Z-native-canvas-approved-repeat-change-096cc06d"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

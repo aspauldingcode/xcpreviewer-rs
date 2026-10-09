@@ -146,6 +146,7 @@ def main():
     search=sub.add_parser('search');search.add_argument('query')
     claim_parser=sub.add_parser('claim');claim_parser.add_argument('spec',type=pathlib.Path)
     service=sub.add_parser('services');service.add_argument('action',choices=['start','stop','status'])
+    bridge=sub.add_parser('xcode-bridge');bridge.add_argument('action',choices=['start','stop','status'])
     verify=sub.add_parser('verify');verify.add_argument('run_id');verify.add_argument('--manifest-sha256')
     compare=sub.add_parser('compare');compare.add_argument('reference_run');compare.add_argument('reference_path');compare.add_argument('candidate_run');compare.add_argument('candidate_path')
     args=parser.parse_args();controller=Controller(state_root=args.state_dir)
@@ -174,6 +175,11 @@ def main():
         if args.action=='status':result=services(args.action)
         else:
             with controller.lock():result=services(args.action)
+    elif args.command=='xcode-bridge':
+        from reloop.xcodebridge import manage
+        if args.action=='status':result=manage(args.action)
+        else:
+            with controller.lock():result=manage(args.action)
     elif args.command=='doctor':result=doctor()
     elif args.command=='status':result=controller.status()
     elif args.command=='report':

@@ -117,7 +117,7 @@ def perform(kind,out,p):
         return corpus(out)
     if kind=='xcode_bridge_probe':
         from reloop.bridgeprobe import probe
-        return probe(out)
+        return probe(out,p.get('managed',False))
     if kind=='native_reference' and p.get('repeat_control',False):
         from reloop.reference import corpus
         return corpus(out)

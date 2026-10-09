@@ -18,8 +18,27 @@ def summarize(events,outcome):
             'message_count':len(events),'scope':'Read-only Xcode window-list route, not Canvas capture or IPC recovery. Local initialize response alone does not prove downstream tool responsiveness.'}
 
 
-def probe(out):
+def probe(out,managed=False):
     out=pathlib.Path(out);events=[];lock=threading.Lock();client=None;state={}
+    if managed:
+        from reloop.xcodebridge import BrokerClient
+        identities=[]
+        try:
+            for number in range(2):
+                client=BrokerClient();identities.append(client.metadata)
+                response=client.request('tools/call',{'name':'XcodeListWindows','arguments':{}})
+                atomic(out/('windows-response-%d.json'%number),response)
+                if response.get('isError'):raise RuntimeError('Xcode tool returned isError')
+                client.close()
+            same=all(x['pid']==identities[0]['pid'] and x['session_id']==identities[0]['session_id'] for x in identities)
+            state.update(initialized=True,completed=True)
+        except Exception as error:
+            same=False;state.update(error=str(error),error_type=type(error).__name__)
+        atomic(out/'broker-identities.json',identities);atomic(out/'diagnostic.json',state)
+        return {**summarize(events,state),'managed_connection':True,'same_broker_session':same,
+                'independent_callers_completed':2 if state.get('completed') else 0,
+                'message_count':None,'server_request_methods':None,
+                'transport_observation_scope':'Managed upstream messages are not traced by this caller; null is unobserved, not zero traffic.'}
     process_list=subprocess.run(['ps','-axo','pid=,comm='],capture_output=True,text=True,timeout=5,check=True).stdout
     pids=[int(line.strip().split(None,1)[0]) for line in process_list.splitlines() if line.strip().endswith('/Applications/Xcode.app/Contents/MacOS/Xcode')]
     if len(pids)!=1:raise RuntimeError('Require exactly one identified installed Xcode for read-only probe')

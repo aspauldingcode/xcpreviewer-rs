@@ -27,15 +27,21 @@ def plan(controller):
                              'execution':manifest.get('execution'),'error':result.get('error') if isinstance(result,dict) else 'invalid result'})
             continue
         if spec.get('adapter')=='xcode_preview':
+            if observed.get('fixture_content_nonblank') is False:
+                outcomes.append({'experiment':key,'action':'diagnose-blank-owned-content',
+                                 'reason':'Returned PNGs or changed window titles do not establish rendered SwiftUI fixture content.'})
+            elif observed.get('fixture_content_nonblank') is not True:
+                outcomes.append({'experiment':key,'action':'require-owned-content-check',
+                                 'reason':'Legacy capture checks can accept chrome-only snapshots; content readiness remains unverified.'})
             if observed.get('wire_capture_complete') is False:
                 outcomes.append({'experiment':key,'action':'recover-transport-boundary',
                                  'reason':'Rendered output/lifecycle is not complete correlated IPC evidence',
                                  'instrumented_processes':observed.get('instrumented_processes')})
-            if spec.get('params',{}).get('variants',[0,1])==[0,1] and manifest.get('verdict')=='supports':
+            if observed.get('fixture_content_nonblank') is True and spec.get('params',{}).get('variants',[0,1])==[0,1] and manifest.get('verdict')=='supports':
                 proposals.append(experiment('canvas-repeat-control','xcode_preview',
                     'Two independent renders of unchanged owned baseline produce identical pixels under this pinned environment.',
                     {'variants':[0,0],'trace':False},[{'path':'rendered_variants','equals':2},
-                     {'path':'pixels_identical','equals':True}],timeout=600))
+                     {'path':'pixels_identical','equals':True},{'path':'fixture_content_nonblank','equals':True}],timeout=600))
         if spec.get('adapter')=='xcode_bridge_probe':
             responsive=observed.get('initialized') is True and observed.get('direct_call_completed') is True
             outcomes.append({'experiment':key,'action':'attempt-owned-canvas-capture' if responsive else 'inspect-xcode-permission-and-service-readiness',
