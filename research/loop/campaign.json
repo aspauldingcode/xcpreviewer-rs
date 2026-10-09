@@ -1320,6 +1320,69 @@
         "local-re-controller"
       ],
       "timeout_seconds": 90
+    },
+    {
+      "id": "native-service-message-exact-entrypoints",
+      "adapter": "disassembly",
+      "hypothesis": "Pinned ServiceMessage public serializer/deserializer entrypoints can be selected without nested closure contamination; inspect identifier alias use without claiming live correlation.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 64,
+      "params": {
+        "query": "^[0-9a-f]+ T PreviewsMessagingHost.ServiceMessage.(propertyListValue.getter|init\\(propertyListValue:)"
+      },
+      "priority": 96,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        }
+      ]
+    },
+    {
+      "id": "native-service-message-identifier-sites",
+      "adapter": "disassembly",
+      "hypothesis": "Exact serializer content closure and messageType/payload initializer expose identifier encode/decode sites; selection excludes partial-apply thunks and does not establish live request/reply behavior.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 64,
+      "params": {
+        "query": "^[0-9a-f]+ [tT] (closure #1 .* in PreviewsMessagingHost.ServiceMessage.propertyListValue.getter|PreviewsMessagingHost.ServiceMessage.init\\(messageType:)"
+      },
+      "priority": 96,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 2
+        }
+      ]
+    },
+    {
+      "id": "native-service-message-payload-getter",
+      "adapter": "disassembly",
+      "hypothesis": "The exact payload getter selected by the outer serializer exposes optional identifier insertion into the inner payload; static call sites do not prove live reply matching.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 64,
+      "params": {
+        "query": "^[0-9a-f]+ T PreviewsMessagingHost.ServiceMessage.payload.getter"
+      },
+      "priority": 96,
+      "checks": [
+        {
+          "path": "function_count",
+          "equals": 1
+        }
+      ]
     }
   ],
   "version": 1

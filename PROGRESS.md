@@ -208,3 +208,9 @@ Retained overbroad-query inconclusive run and unsupported-cmp failure; exact ent
 Recovered RenderPayload, BitmapDescription and ServiceMessage key witnesses. Bitmap has nine keys versus eight fields, including byteOrder; ServiceMessage outer keys are messageType/payload despite identifier/content stored fields. Singleton identifier case returns __unique_service_message_identifier, falsifying the original metadata-name prediction in this static scope. This guides decoder/correlation work without claiming live reply matching.
 
 Two unsupported-entry failures and the original prediction counterexample are sealed and retained; bounded thunk/register/constant entry support and signed branch checks yield supporting dependent controls. All seven runs verify; all 109 tests pass. No Xcode windows opened. See [findings](docs/reverse-engineering/2026-10-09-codec-boundaries.md) and [seven anchors](research/evidence/codec-key-boundaries-2026-10-09.json). R2/P1/P2 and both milestones remain open.
+
+## 2026-10-09 — optional service identifier encode/decode sites
+
+Followed the outer ServiceMessage serializer into its payload getter. Static archive and unarchive call sites select the singleton identifier key and Swift.String conformance, with an optional value API; initializer stores the returned value before content dispatch. This narrows where correlation data travels, without establishing reply propagation or malformed-value behavior.
+
+Four new sealed runs verify; missing-signature closure selector failure is retained and corrected. Campaign validates; existing 109-test implementation checkpoint unchanged. No Xcode windows opened. See [static path](docs/reverse-engineering/2026-10-09-service-identifier.md) and [four anchors](research/evidence/service-identifier-path-2026-10-09.json). R2/P1/P2 and both milestones remain open.

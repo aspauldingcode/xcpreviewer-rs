@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "image_uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "runs": [
+    {
+      "run_id": "20261009T185223Z-native-service-message-exact-entrypoints-2cb2beae",
+      "manifest_sha256": "4208bf04be0cea11e4b565421d86125321202e6ecef380595f82c7d220653a8c",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 2,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    },
+    {
+      "run_id": "20261009T185303Z-native-service-message-identifier-sites-5835dbc3",
+      "manifest_sha256": "39eb51e993bbd261f77e00c0c7bb77d4409572dd810600124d0748a8f3a6bff9",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "inconclusive",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    },
+    {
+      "run_id": "20261009T185356Z-native-service-message-identifier-sites-4a20bcf4",
+      "manifest_sha256": "ecb62089fe4c497b721f304627f72fc651a2b548f49f6c39861f6ce4a95cecfe",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 2,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    },
+    {
+      "run_id": "20261009T185430Z-native-service-message-payload-getter-6dd0a3ee",
+      "manifest_sha256": "eff91e8af3b2058d667ce4e9755165df446a870864804a2085ad58cdd65a8b47",
+      "sealed_verified": true,
+      "frozen_sources_unchanged": true,
+      "execution": "success",
+      "verdict": "supports",
+      "observations": {
+        "function_count": 1,
+        "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c"
+      }
+    }
+  ],
+  "static_call_sites": [
+    {
+      "address": "0x5f470",
+      "fact": "Public propertyListValue getter constructs PropertyList from content closure."
+    },
+    {
+      "address": "0x5f564",
+      "fact": "Content closure calls ServiceMessage.payload getter; outer dictionary uses messageType and payload keys."
+    },
+    {
+      "address": "0x5ed18",
+      "fact": "Payload getter selects singleton PayloadKey and calls PropertyList.archiveValue with Optional Swift.String generic argument."
+    },
+    {
+      "address": "0x5fc3c",
+      "fact": "messageType/payload initializer selects singleton PayloadKey and calls PropertyList.unarchiveOptionalValue with Swift.String generic argument."
+    },
+    {
+      "address": "0x5fcb4",
+      "fact": "Initializer stores returned two-word value at output base before content dispatch."
+    }
+  ],
+  "limitations": [
+    "Call-site analysis and prior key witness, not native value execution or live wire capture.",
+    "No proof of absent/null/wrong-type/duplicate-key behavior or response identifier propagation.",
+    "Function-count checks validate selection only; call-site interpretations are separately scoped analyst findings.",
+    "Missing closure signature selector retained as inconclusive; corrected selector excludes partial-apply thunks.",
+    "Raw disassembly remains local; no Xcode windows opened."
+  ],
+  "nominal_identifier_mangled_type": "SSSg",
+  "nominal_field_evidence": "research/evidence/codec-key-boundaries-2026-10-09.json",
+  "nominal_field_source": {
+    "run_id": "20261009T171638Z-native-service-identifier-codec-alias-40561ffa",
+    "artifact": "output/payload-keys.json",
+    "field": "payload_descriptor.fields.identifier.mangled_type",
+    "trusted_manifest_anchors": "research/evidence/codec-key-boundaries-2026-10-09.json"
+  }
+}
