@@ -80,7 +80,7 @@ HOLDOUTS = [
 ]
 
 
-def corpus(out):
+def corpus(out, second_runtime=False):
     out = pathlib.Path(out)
     anchor = Controller(root=PROJECT_ROOT).verify(ORACLE_RUN, ORACLE_ANCHOR)
     if not anchor['valid']:
@@ -133,9 +133,13 @@ def corpus(out):
     atomic(out / 'holdouts.json', {'rejected': rejected})
     atomic(out / 'tool-identities.json', {'clang_sha256': digest(TOOLCHAIN / 'clang'), 'wasm_ld_sha256': digest(TOOLCHAIN / 'wasm-ld'), 'node': execution['node'], 'v8': execution['v8']})
     repeat = bytes_equal(out / 'pixels-0.rgba', out / 'pixels-1.rgba')['passed']
-    return {'source_modules': len(jobs), 'all_native_rgba_equal': all(r['passed'] for r in native_comparisons),
+    result = {'source_modules': len(jobs), 'all_native_rgba_equal': all(r['passed'] for r in native_comparisons),
             'native_compared_bytes': sum(r['reference_bytes'] for r in native_comparisons),
             'all_literal_padding_equal': all(r['passed'] for r in comparisons), 'literal_compared_bytes': sum(r['reference_bytes'] for r in comparisons),
             'source_holdouts_rejected': len(rejected), 'repeat_pixels_equal': repeat, 'repeat_module_bytes_equal': jobs[0]['module_sha256'] == jobs[1]['module_sha256'], 'repeat_ir_bytes_equal': jobs[0]['ir_sha256'] == jobs[1]['ir_sha256'],
             'wasm_imports': execution['imports'], 'negative_requests': execution['negative_requests'], 'invalid_buffer_unchanged': execution['invalid_buffer_unchanged'],
             'scope': 'Strict ASCII explicit opaque sRGB red/blue Color.frame expression subset, bounded integer geometry. Custom lowering through saved C/LLVM IR to import-free WASM in Node V8 on macOS. Frozen native ImageRenderer reference; no Swift compiler, general SwiftUI, browser/non-Apple execution, live Canvas transport or hot-reload/performance claim.'}
+    if second_runtime:
+        from reloop.sourceinterpreter import verify
+        result.update(verify(out, command, jobs))
+    return result

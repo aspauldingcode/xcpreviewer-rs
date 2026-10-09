@@ -226,7 +226,7 @@ def perform(kind,out,p):
     if kind=='portable_solid':
         if p.get('source_control',False):
             from reloop.viewsource import corpus
-            return corpus(out)
+            return corpus(out,p.get('second_runtime',False))
         from reloop.portable import corpus
         return corpus(out,p.get('second_runtime',False))
     if kind=='surface_payload':

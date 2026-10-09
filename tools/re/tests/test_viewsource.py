@@ -33,7 +33,7 @@ class ViewSourceTests(unittest.TestCase):
             e['params'] = {'source_control': value}
             with self.assertRaises(ValueError):validate_experiment(e)
         e['params'] = {'source_control': True, 'second_runtime': True}
-        with self.assertRaises(ValueError):validate_experiment(e)
+        validate_experiment(e)
 
     def test_ir_normalization_preserves_all_nonheader_bytes(self):
         tail = 'target triple = "wasm32"\n\ndefine i32 @render() { ret i32 0 }\n'

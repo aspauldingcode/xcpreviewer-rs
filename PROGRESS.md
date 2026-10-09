@@ -366,3 +366,7 @@ Verified separate WaitingStateUpdateResult reflection, generic pattern and four 
 ## 2026-10-09 — Literal source-to-IR feasibility
 
 Implemented explicit opaque sRGB Color.frame expression subset through generated C and saved LLVM IR to import-free WASM. Full native RGBA comparison covers 614,400 bytes; independent literals/padding cover 614,432 bytes. Repeat normalized IR/module bytes match; 15 unsupported-source holdouts and 16 full-buffer invalid-stride controls pass. Four seals retain two inconclusive filename-metadata comparisons and subsequent precise sRGB contract. 221 tests pass. No general SwiftUI/non-Apple/browser/Canvas or hot-reload claim; F1/F2 stay open. [Evidence](research/evidence/literal-source-ir-2026-10-09.json), [contract and limits](docs/reverse-engineering/2026-10-09-literal-source-ir.md). No Xcode windows opened.
+
+## 2026-10-09 — Source renderer independent interpreter
+
+Linked unchanged saved source renderer IR with a separate non-LTO whole-allocation checker. WasmKit/V8 agree on all 40 controls; 12 pixel/padding/unused-tail faults are detected and 16 invalid strides preserve complete buffers. Baseline 819,200 and invalid-request 3,276,800 allocation bytes compare per interpreter. Two accepted seals; 223 tests pass. Diagnostic modules are separate from standalone modules; both hosts remain macOS, and F2/non-Apple/Canvas gates stay open. [Evidence](research/evidence/source-second-interpreter-2026-10-09.json), [scope](docs/reverse-engineering/2026-10-09-source-second-interpreter.md). No Xcode windows opened.

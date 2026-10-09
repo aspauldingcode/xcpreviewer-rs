@@ -7,7 +7,7 @@
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
   "automation_id": "continuous-xcode-preview-re",
-  "baseline_commit": "d47b155b204be02f053d7ad646836d3e4f7678b3",
+  "baseline_commit": "a3bc24b3a51de26fcbca5f82468458674e87e11c",
   "blocked_tracks": [
     {
       "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
@@ -149,18 +149,17 @@
       "retry_prerequisite": "IR file metadata normalized and optional WASM output-name section stripped; complete module/pixel repeats pass. Raw headers and earlier inconclusive seals retained."
     }
   ],
-  "last_completed": "Implemented strict explicit opaque sRGB Color.frame expression frontend through generated C and saved LLVM IR to import-free WASM on macOS V8. Native 614,400 and independent literal/padding 614,432 bytes agree; normalized IR/module repeats exact.15 source holdouts and16 invalid-stride full-buffer controls pass;221 tests. Four seals retain two inconclusive filename-metadata comparisons and named-color contract tightening. No general Swift compiler, non-Apple/browser or Canvas claim.",
+  "last_completed": "Executed unchanged saved source renderer IR with separately compiled full-allocation checker in WasmKit and V8.40 controls agree;12 active/padding/unused-tail faults each detected;16 invalid strides preserve complete buffers. Baseline819,200 and invalid-request3,276,800 bytes compared per interpreter;223 tests. Two successful seals. Diagnostic modules differ from standalone modules; both hosts macOS, no non-Apple/browser or broader SwiftUI acceptance.",
   "last_github_sync": {
     "date": "2026-10-09",
-    "checkpoint": "Literal source-to-IR feasibility",
+    "checkpoint": "Source renderer second interpreter",
     "issues": [
-      "F1",
       "F2"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Run the exact explicit-sRGB source modules on an available intended non-Apple/browser host, or independently verify these new modules in existing WasmKit with injected faults. Do not claim general SwiftUI compilation or portable host coverage from macOS V8; native runtime/capture and resource release/race gates remain open.",
+    "Find an available free intended non-Apple execution host and execute an owned sealed source module with independent byte expectations and recorded host identity. Consider existing public-repository CI resources if available; inspect account/repository availability before dispatch. Both interpreters now verify source IR on macOS only. Native typed runtime/capture and release/race gates remain open; do not repeat unchanged blockers.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -844,6 +843,16 @@
       "path": "research/evidence/literal-source-ir-2026-10-09.json",
       "run_id": "20261009T234219Z-portable-literal-source-ir-ef189896",
       "manifest_sha256": "1ebaa38a64c8bbc1220b5788410f48592a0dcd69927b93d2e8595d6abb12731e"
+    },
+    {
+      "path": "research/evidence/source-second-interpreter-2026-10-09.json",
+      "run_id": "20261009T234959Z-portable-source-second-interpreter-1dc429cb",
+      "manifest_sha256": "f6ede4f9e9bcc01cd9a71c3797bef4da8588ba7e527612786805b8a19c58a212"
+    },
+    {
+      "path": "research/evidence/source-second-interpreter-2026-10-09.json",
+      "run_id": "20261009T235049Z-portable-source-second-interpreter-668376cf",
+      "manifest_sha256": "db1ab482584b1fbf0d6e004cdc0197b35500d874663bbe153145446d4bde16f9"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

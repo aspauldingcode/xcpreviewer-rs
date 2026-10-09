@@ -85,7 +85,6 @@ def validate_experiment(e):
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
     for flag in ('source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
-    if p.get('source_control') and p.get('second_runtime'):raise ValueError('Source subset has its own runtime contract')
     if p.get('owned_control') and 'binary' in p:raise ValueError('Owned REA control compiles its own target')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')

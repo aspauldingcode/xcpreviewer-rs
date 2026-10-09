@@ -3179,6 +3179,84 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-source-second-interpreter",
+      "adapter": "portable_solid",
+      "hypothesis": "Unchanged saved source renderer IR, linked without LTO to an independent full-buffer checker, agrees in WasmKit and V8 against native/padding expectations; injected active/padding/unused allocation faults and invalid strides are detected. Checker geometry also rejects heights beyond the source contract.",
+      "depends_on": [],
+      "resources": [
+        "portable-reference"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "source_control": true,
+        "second_runtime": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "source_modules",
+          "equals": 4
+        },
+        {
+          "path": "all_native_rgba_equal",
+          "equals": true
+        },
+        {
+          "path": "all_literal_padding_equal",
+          "equals": true
+        },
+        {
+          "path": "source_holdouts_rejected",
+          "equals": 15
+        },
+        {
+          "path": "repeat_pixels_equal",
+          "equals": true
+        },
+        {
+          "path": "repeat_module_bytes_equal",
+          "equals": true
+        },
+        {
+          "path": "wasm_imports",
+          "equals": 0
+        },
+        {
+          "path": "negative_requests",
+          "equals": 16
+        },
+        {
+          "path": "invalid_buffer_unchanged",
+          "equals": true
+        },
+        {
+          "path": "repeat_ir_bytes_equal",
+          "equals": true
+        },
+        {
+          "path": "source_second_runtime_controls",
+          "equals": 40
+        },
+        {
+          "path": "source_second_runtime_all_passed",
+          "equals": true
+        },
+        {
+          "path": "source_second_mutation_controls",
+          "equals": 12
+        },
+        {
+          "path": "source_checker_v8_agrees",
+          "equals": true
+        },
+        {
+          "path": "source_checker_imports",
+          "equals": 0
+        }
+      ]
     }
   ],
   "version": 1
