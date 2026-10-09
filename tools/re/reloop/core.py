@@ -19,7 +19,7 @@ PARAMS = {
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases'}, 'swift_metadata': {'binary','maximum'},
-    'xcode_preview': {'variants','trace'}, 'xpc_corpus': {'seed','cases'},
+    'xcode_preview': {'variants','trace','scheme_control'}, 'xpc_corpus': {'seed','cases'},
     'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}, 'surface_failure':{'control'}, 'surface_reuse':set(), 'xcode_bridge_probe':{'managed'}}
 
 
@@ -89,6 +89,8 @@ def validate_experiment(e):
         if field in p and (type(p[field]) is not int or not 1<=p[field]<=maximum):raise ValueError('Invalid '+field)
     if 'variants' in p and (not isinstance(p['variants'],list) or not 1<=len(p['variants'])<=4 or not all(type(v) is int and 0<=v<=16 for v in p['variants'])):raise ValueError('Invalid preview variants')
     if 'trace' in p and type(p['trace']) is not bool:raise ValueError('Invalid trace flag')
+    if 'scheme_control' in p and type(p['scheme_control']) is not bool:raise ValueError('Invalid scheme control flag')
+    if p.get('scheme_control') and (e['adapter']!='xcode_preview' or p.get('variants')!=[15,15,15]):raise ValueError('Scheme control requires owned definition 15 repeated three times')
     if 'arguments' in p and not isinstance(p['arguments'], dict):
         raise ValueError('arguments must be an object')
     if not isinstance(e['checks'], list) or not e['checks']:

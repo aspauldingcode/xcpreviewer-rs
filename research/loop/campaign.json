@@ -956,6 +956,49 @@
         "local-re-controller"
       ],
       "timeout_seconds": 600
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "scheme_dark_blank"
+        },
+        {
+          "equals": true,
+          "path": "scheme_light_content_visible"
+        },
+        {
+          "equals": true,
+          "path": "scheme_reversal_png_equal"
+        },
+        {
+          "equals": true,
+          "path": "scheme_reversal_pixels_equal"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Changing only marked view colorScheme dark/light/dark within one owned definition/title switches blank/content/blank and reverses PNG/pixels exactly.",
+      "id": "native-canvas-same-definition-scheme",
+      "params": {
+        "scheme_control": true,
+        "trace": false,
+        "variants": [
+          15,
+          15,
+          15
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
     }
   ],
   "version": 1

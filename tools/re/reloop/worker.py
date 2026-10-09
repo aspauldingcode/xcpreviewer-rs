@@ -92,7 +92,7 @@ def perform(kind,out,p):
         return {'type_count':len(data['types']),'field_count':sum(len(t.get('fields',[])) for t in data['types']),'parse_errors':len(data['errors']),'image_sha256':data['image_sha256']}
     if kind=='xcode_preview':
         from reloop.canvas import capture
-        return capture(out,p.get('variants',[0,1]),p.get('trace',False))
+        return capture(out,p.get('variants',[0,1]),p.get('trace',False),p.get('scheme_control',False))
     if kind in {'xpc_corpus','xpc_negative','xpc_prefix'}:
         from reloop.xpc import corpus,negatives,prefixes
         if kind=='xpc_corpus':return corpus(out,p.get('seed',9),p.get('cases',32))

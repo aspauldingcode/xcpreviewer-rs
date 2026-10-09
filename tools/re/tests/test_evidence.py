@@ -12,7 +12,7 @@ from reloop.evidence import Store, artifact, claim, page
 from reloop.responses import bounded, page as response_page
 from reloop.verification import bytes_equal, typed, sealed_compare
 from reloop.swiftmeta import MachO
-from reloop.canvas import select_tab, workspace, compare_captures
+from reloop.canvas import select_tab, workspace, compare_captures, switch_scheme
 from reloop.planner import plan
 
 
@@ -31,6 +31,18 @@ class EvidenceTests(unittest.TestCase):
             'execution': execution, 'verdict': 'supports', 'environment_hash': 'test-environment',
             'artifacts': self.c.artifacts(run)})
         return run
+
+    def test_scheme_switch_changes_only_marked_value_and_reverses(self):
+        source = 'unmarked .environment(\\.colorScheme, .dark)\n' + '.environment(\\.colorScheme, .dark) // RE_SCHEME_SWITCH\n'
+        light = switch_scheme(source, 'light')
+        self.assertEqual(light, source.replace('.dark) // RE_SCHEME_SWITCH', '.light) // RE_SCHEME_SWITCH'))
+        self.assertEqual(switch_scheme(light, 'dark'), source)
+        self.assertEqual(switch_scheme(source, 'dark'), source)
+
+    def test_scheme_switch_rejects_ambiguous_or_missing_marker(self):
+        marker = '.environment(\\.colorScheme, .dark) // RE_SCHEME_SWITCH'
+        for text, value in [('', 'light'), (marker * 2, 'light'), (marker, 'automatic')]:
+            with self.assertRaises(ValueError): switch_scheme(text, value)
 
     def test_exact_compare_detects_bit_flip_and_tail(self):
         a, b = self.root/'a', self.root/'b'

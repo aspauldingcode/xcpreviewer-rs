@@ -25,6 +25,13 @@ class CoreTests(unittest.TestCase):
         e=experiment();e['params']={'command':'rm something'}
         with self.assertRaises(ValueError):validate_queue({'version':1,'experiments':[e]})
 
+    def test_scheme_control_requires_exact_owned_sequence(self):
+        e=experiment();e['adapter']='xcode_preview';e['params']={'variants':[15,15,15],'scheme_control':True}
+        validate_queue({'version':1,'experiments':[e]})
+        for params in [{'variants':[15,15],'scheme_control':True}, {'variants':[0,0,1],'scheme_control':True}, {'variants':[15,15,15],'scheme_control':1}]:
+            e['params']=params
+            with self.assertRaises(ValueError):validate_queue({'version':1,'experiments':[e]})
+
     def test_reject_dependency_cycles(self):
         a,b=experiment('first-check'),experiment('second-check');a['depends_on']=['second-check'];b['depends_on']=['first-check']
         with self.assertRaises(ValueError):validate_queue({'version':1,'experiments':[a,b]})

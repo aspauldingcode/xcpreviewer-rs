@@ -1,0 +1,145 @@
+{
+  "cleanup": {
+    "final_workspace_listing": "No workspace windows found",
+    "owned_workspace_closed": true
+  },
+  "content": {
+    "all_content_nonblank": false,
+    "captures": [
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 0,
+        "passed": false
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 6286,
+        "passed": true
+      },
+      {
+        "geometry_matches": true,
+        "interior_ink_pixels": 0,
+        "passed": false
+      }
+    ],
+    "scope": "Pinned owned white fixture interior sanity, excluding chrome; nonblank is necessary, not OCR or semantic proof."
+  },
+  "copied_source_restored": true,
+  "dark_light_pixels": {
+    "changed_fraction": 0.027303059895833332,
+    "changed_pixels": 6710,
+    "comparable": true,
+    "max_channel_error": 216,
+    "mean_absolute_error_rgba": [
+      3.8521077473958334,
+      3.8521077473958334,
+      3.8521077473958334,
+      0.0
+    ],
+    "normalization": "RGBA conversion only; no resizing, profile conversion, font or scale normalization",
+    "passed": false,
+    "size": [
+      640,
+      384
+    ],
+    "threshold": 0
+  },
+  "frozen_sources_unchanged": true,
+  "interpretation": "One definition and title with only marked explicit dark/light/dark environment value changed yields blank/content/blank and exact reversal. Title changes cannot explain this within-run distinction. Contrast remains an inference; no live foreground value dump.",
+  "limitations": [
+    "Owned macOS fixture and fixed current native environment only.",
+    "Pixel nonblank threshold is necessary content sanity, not OCR. Light snapshot was visually inspected.",
+    "No complete wire capture, raw surface padding, GPU completion or final reclamation.",
+    "Native repeat and prior native interior equality do not establish independent portable rendering equality."
+  ],
+  "manifest_sha256": "e92880dd2d05565797e9e232f441c1851eeafad8eb24dbbae5ff736887c5e1df",
+  "observations": {
+    "controlled_change_visible": true,
+    "fixture_content_nonblank": false,
+    "fixture_nonblank_captures": 1,
+    "instrumented_processes": 0,
+    "observed_processes": 6,
+    "pixels_identical": false,
+    "png_valid": true,
+    "preview_bytes_identical": false,
+    "rendered_variants": 3,
+    "scheme_dark_blank": true,
+    "scheme_light_content_visible": true,
+    "scheme_reversal_pixels_equal": true,
+    "scheme_reversal_png_equal": true,
+    "sessions_created": 0,
+    "solid_expected_colors": false,
+    "source_sha256": "393a1019a2b1244b0bbf6e7d15b62f2612e740b2a4a4843fbe838cb3ab222e48",
+    "wire_capture_complete": false
+  },
+  "prior_light_interior": {
+    "compared_bytes": 589824,
+    "crop": [
+      32,
+      96,
+      608,
+      352
+    ],
+    "different_bytes": 0,
+    "exact_equal": true,
+    "new_sha256": "24d400e84c6f21b36d65f787abf9b96b2af15252374ab576e172752bb1c2c0e4",
+    "prior_run_id": "20261009T161243Z-native-canvas-light-root-repeat-6f533b59",
+    "prior_sha256": "24d400e84c6f21b36d65f787abf9b96b2af15252374ab576e172752bb1c2c0e4",
+    "scope": "Fixed interior only, excluding preview title and corners; two native captures, not independent portable prediction"
+  },
+  "reversal_pixels": {
+    "changed_fraction": 0.0,
+    "changed_pixels": 0,
+    "comparable": true,
+    "max_channel_error": 0,
+    "mean_absolute_error_rgba": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "normalization": "RGBA conversion only; no resizing, profile conversion, font or scale normalization",
+    "passed": true,
+    "size": [
+      640,
+      384
+    ],
+    "threshold": 0
+  },
+  "reversal_png": {
+    "candidate_bytes": 13866,
+    "candidate_sha256": "8406711694133e2173c6c1ca7c486384c6d356fd25689b66be6b3ddab7cb85d5",
+    "different_bits_in_shared_extent": 0,
+    "different_bytes": 0,
+    "first_mismatches": [],
+    "mode": "exact-bytes",
+    "normalization": "none",
+    "passed": true,
+    "reference_bytes": 13866,
+    "reference_sha256": "8406711694133e2173c6c1ca7c486384c6d356fd25689b66be6b3ddab7cb85d5",
+    "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+    "unmatched_tail_bytes": 0
+  },
+  "run_id": "20261009T162104Z-native-canvas-same-definition-scheme-6556218b",
+  "scheme_source_checks": [
+    {
+      "definition": 15,
+      "scheme": "dark",
+      "scope": "Only the marked environment value in the owned mutable workspace changes.",
+      "sha256": "393a1019a2b1244b0bbf6e7d15b62f2612e740b2a4a4843fbe838cb3ab222e48"
+    },
+    {
+      "definition": 15,
+      "scheme": "light",
+      "scope": "Only the marked environment value in the owned mutable workspace changes.",
+      "sha256": "5f92b9d246fda3ac5c0880db0f3731bb0ef0c8a8d03eaccbd59c9a70d1a5dad2"
+    },
+    {
+      "definition": 15,
+      "scheme": "dark",
+      "scope": "Only the marked environment value in the owned mutable workspace changes.",
+      "sha256": "393a1019a2b1244b0bbf6e7d15b62f2612e740b2a4a4843fbe838cb3ab222e48"
+    }
+  ],
+  "sealed_verified": true
+}

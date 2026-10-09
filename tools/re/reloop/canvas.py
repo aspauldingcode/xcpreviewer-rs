@@ -225,7 +225,14 @@ class Monitor:
         if self.thread.is_alive():raise RuntimeError('Instrumentation attach did not return; partial evidence saved; outer watchdog must reconcile process')
 
 
-def capture(out,variants=(0,1),trace=False):
+def switch_scheme(text,scheme):
+    if scheme not in {'light','dark'}:raise ValueError('Invalid owned scheme')
+    pattern=r'\.environment\(\\.colorScheme, \.(dark|light)\) // RE_SCHEME_SWITCH'
+    if len(re.findall(pattern,text))!=1:raise ValueError('Exactly one owned scheme marker required')
+    return re.sub(pattern,lambda _:'.environment(\\.colorScheme, .'+scheme+') // RE_SCHEME_SWITCH',text)
+
+
+def capture(out,variants=(0,1),trace=False,scheme_control=False):
     out=pathlib.Path(out)
     from reloop.xcodebridge import BrokerClient
     preflight=BrokerClient()
@@ -238,6 +245,7 @@ def capture(out,variants=(0,1),trace=False):
     fixture=workspace()
     project=fixture/'PreviewLab.xcodeproj'
     source_hash=digest(fixture/'Sources/PreviewLab/PreviewLab.swift')
+    fixture_source=fixture/'Sources/PreviewLab/PreviewLab.swift';original_source=fixture_source.read_text()
     atomic(out/'workspace-lifecycle.json',{'project':str(project),'cleanup_required':True,
           'instruction':'UI agent must close this owned workspace when finished, including failure, and verify no owned workspace windows before another capture.'})
     subprocess.run(['open','-a','Xcode',str(project)],check=True,timeout=15)
@@ -270,6 +278,10 @@ def capture(out,variants=(0,1),trace=False):
             atomic(out/'project-source.json',tools_call(client,'XcodeRead',{'tabIdentifier':tab,'filePath':matches[0]}))
             monitor.start()
             for ordinal,index in enumerate(variants):
+                if scheme_control:
+                    fixture_source.write_text(switch_scheme(original_source,('dark','light','dark')[ordinal]))
+                    atomic(out/('scheme-source-%d.json'%ordinal),{'definition':index,'scheme':('dark','light','dark')[ordinal],
+                           'sha256':digest(fixture_source),'scope':'Only the marked environment value in the owned mutable workspace changes.'})
                 result=tools_call(client,'RenderPreview',{'tabIdentifier':tab,'sourceFilePath':matches[0],
                                  'previewDefinitionIndexInFile':index,'timeout':60})
                 atomic(out/('preview-%d-definition-%d-response.json'%(ordinal,index)),result)
@@ -283,12 +295,20 @@ def capture(out,variants=(0,1),trace=False):
                     image.verify()
                 dest=out/('preview-%d-definition-%d.png'%(ordinal,index));shutil.copyfile(source,dest);images.append(dest)
         finally:
+            if scheme_control:fixture_source.write_text(original_source)
             if client:client.close()
             if monitor.thread.ident is not None:monitor.close()
     comparison=compare_captures(images,out)
     if tuple(variants) in {(8,9,8,11),(12,13,12,14)} and len(images)==4:
         comparison.update(compare_root_controls(images,out))
     content=fixture_content_check(images);atomic(out/'fixture-content-check.json',content)
+    if scheme_control and len(images)==3:
+        reversal_dir=out/'scheme-reversal';reversal_dir.mkdir()
+        reversal=compare_captures([images[0],images[2]],reversal_dir)
+        comparison.update(scheme_dark_blank=all(c['geometry_matches'] and c['interior_ink_pixels']==0 for c in (content['captures'][0],content['captures'][2])),
+                          scheme_light_content_visible=content['captures'][1]['passed'],
+                          scheme_reversal_png_equal=reversal['preview_bytes_identical'],
+                          scheme_reversal_pixels_equal=reversal['pixels_identical'])
     solid=solid_color_check(images,variants);atomic(out/'solid-color-check.json',solid)
     if len(images)==3 and tuple(variants)==(0,0,1):
         changed_dir=out/'controlled-change';changed_dir.mkdir()

@@ -92,3 +92,8 @@ struct PreviewLabApp: App {
     }.frame(width: 320, height: 160).background(Color.white)
         .environment(\.colorScheme, .light)
 }
+
+#Preview("Scheme switch") {
+    ProbeView(label: "Preview baseline")
+        .environment(\.colorScheme, .dark) // RE_SCHEME_SWITCH
+}
