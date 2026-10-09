@@ -1,0 +1,619 @@
+{
+  "scope": "Initial investigation; synthetic serialization probes, no captured live preview session",
+  "captured_at_utc": "2026-10-09T00:04:49.126473+00:00",
+  "environment": {
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80",
+    "architecture": "arm64"
+  },
+  "binaries": [
+    {
+      "name": "PreviewsDeveloperTools",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsDeveloperTools.framework/PreviewsDeveloperTools",
+      "exists": true,
+      "sha256": "d70f346fc8c8f7085f0a8b05fe160776b5464a3a6efc146259076fd12aa21cc2",
+      "uuids": [
+        "0A6DFE3A-0A5D-3822-9112-A2851E5C3915"
+      ]
+    },
+    {
+      "name": "PreviewsFoundationHost",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+      "exists": true,
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuids": [
+        "6B75229B-DE5D-3D37-94BC-75AF4F4704C6"
+      ]
+    },
+    {
+      "name": "PreviewsMessagingHost",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost",
+      "exists": true,
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuids": [
+        "CE104027-3729-381B-8F0C-C774E404C0CE"
+      ]
+    },
+    {
+      "name": "PreviewsModel",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsModel.framework/PreviewsModel",
+      "exists": true,
+      "sha256": "4d9db3d442d8af280f8e67d1e53b36f6870180762b612d891c2adfbe2f414587",
+      "uuids": [
+        "FA1F7217-0D65-3F27-A61E-66DB29DBDDE4"
+      ]
+    },
+    {
+      "name": "PreviewsPipeline",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsPipeline.framework/PreviewsPipeline",
+      "exists": true,
+      "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+      "uuids": [
+        "C6ED2A5E-6F2E-3A41-A158-6D2F65E00A58"
+      ]
+    },
+    {
+      "name": "PreviewsPlatforms",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsPlatforms.framework/PreviewsPlatforms",
+      "exists": true,
+      "sha256": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd",
+      "uuids": [
+        "BD66C841-73DE-3E93-A37C-15F9B1A0246E"
+      ]
+    },
+    {
+      "name": "PreviewsScenes",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsScenes.framework/PreviewsScenes",
+      "exists": true,
+      "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+      "uuids": [
+        "AFAF513A-C115-3755-840E-1D82B40E7D93"
+      ]
+    },
+    {
+      "name": "PreviewsSyntax",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsSyntax.framework/PreviewsSyntax",
+      "exists": true,
+      "sha256": "25f8532a4d27206365bd54a74e498b921596d414d1f40534efe5b187523bebfd",
+      "uuids": [
+        "BFB90872-5E31-3E7C-8E45-F06D35FABE94"
+      ]
+    },
+    {
+      "name": "PreviewsUI",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsUI.framework/PreviewsUI",
+      "exists": true,
+      "sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab",
+      "uuids": [
+        "0D87B0E2-F445-3035-A9B6-B1CF8230E015"
+      ]
+    },
+    {
+      "name": "PreviewsXROSMessaging",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsXROSMessaging.framework/PreviewsXROSMessaging",
+      "exists": true,
+      "sha256": "d5c2bea5ecf0d2642f2b66e1794e327f0b764a8c1ed5db1bfff505cc34431d57",
+      "uuids": [
+        "7BAF04A2-45B1-3CD4-906C-A150A18688CF"
+      ]
+    },
+    {
+      "name": "PreviewsXROSServices",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsXROSServices.framework/PreviewsXROSServices",
+      "exists": true,
+      "sha256": "d1de42ec9a2bb3c5697e6d03f0ad2b29bf868ef5a5fb11a5f201ab6de6f8d204",
+      "uuids": [
+        "CB63868D-51D1-341D-A3DC-581041E84517"
+      ]
+    },
+    {
+      "name": "PreviewsXcodeUI",
+      "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsXcodeUI.framework/PreviewsXcodeUI",
+      "exists": true,
+      "sha256": "a9b8dfb668c66f7668e5340cad86e6135e54fe8274b001af2129461c2c7f8d68",
+      "uuids": [
+        "9EA73AF2-BE3C-31B2-B4FF-D0E9719AD244"
+      ]
+    },
+    {
+      "name": "MacOSX-XCPreviewAgent",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Xcode/Agents/XCPreviewAgent.app/Contents/MacOS/XCPreviewAgent",
+      "exists": true,
+      "sha256": "f2979b6d9bfe45ab055326fab18dbfee33d8f86e91150d2b22c7b017a6b9226e",
+      "uuids": [
+        "F376A98B-52CC-3C1C-969B-09E02DBCE9F6"
+      ]
+    },
+    {
+      "name": "MacOSX-JITStub",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a",
+      "exists": true,
+      "sha256": "1e7b5847ab6c17db45ec5b0376d034b69091c748422cdfcb8eb3648690f1862c",
+      "uuids": []
+    },
+    {
+      "name": "iPhoneOS-XCPreviewAgent",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Agents/XCPreviewAgent.app/XCPreviewAgent",
+      "exists": true,
+      "sha256": "49303878e27b6ae0b15de6fe003d2a79c6c281b0e6f1159f4a518e83c59522f4",
+      "uuids": [
+        "27041B98-5B58-3137-A5F4-06603FA7F718"
+      ]
+    },
+    {
+      "name": "iPhoneOS-JITStub",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a",
+      "exists": true,
+      "sha256": "6ae5ce473c7beddf7f3ee7dfde06b5a78716bf9ea1287a8c2c9f911d1d1f9f86",
+      "uuids": []
+    },
+    {
+      "name": "iPhoneSimulator-XCPreviewAgent",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCPreviewAgent.app/XCPreviewAgent",
+      "exists": true,
+      "sha256": "02ccdb59cb048f2831e1fde47f16dda81b039b723e1006652bb00c8fe2cd8042",
+      "uuids": [
+        "0EA27599-4B6E-3024-9BB2-59A0B08E3382",
+        "B9D3DA24-5807-3F0B-82A1-FBD697C5B11A"
+      ]
+    },
+    {
+      "name": "iPhoneSimulator-JITStub",
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a",
+      "exists": true,
+      "sha256": "4d8986366999b4a7691e0f8c150dea8080842f1eff794a1116995d48a4383659",
+      "uuids": []
+    }
+  ],
+  "runtime": {
+    "os": {
+      "loads": [
+        {
+          "error": "",
+          "loaded": 1,
+          "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/PreviewsServices"
+        },
+        {
+          "error": "",
+          "loaded": 1,
+          "path": "/System/Library/PrivateFrameworks/PreviewsMessagingOS.framework/PreviewsMessagingOS"
+        }
+      ],
+      "images": [
+        {
+          "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+        },
+        {
+          "path": "/System/Library/PrivateFrameworks/PreviewsMessagingOS.framework/Versions/A/PreviewsMessagingOS",
+          "uuid": "FCD0744F-93BB-3E73-B767-AED59079B9DF"
+        },
+        {
+          "path": "/System/Library/PrivateFrameworks/PreviewsFoundationOS.framework/Versions/A/PreviewsFoundationOS",
+          "uuid": "EFDD2C08-FBEA-381F-95D2-2B4D96973BC7"
+        }
+      ],
+      "class_count": 36,
+      "matching_protocol_count": 0,
+      "classes": [
+        {
+          "class_methods": [
+            {
+              "encoding": "B16@0:8",
+              "selector": "supportsBSXPCSecureCoding"
+            },
+            {
+              "encoding": "B16@0:8",
+              "selector": "supportsSecureCoding"
+            }
+          ],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "_encodeWithAnyCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "_initWithAnyCoder:"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "data"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeToXpcDictionary:"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeWithBSXPCCoder:"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeWithCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithBSXPCCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithData:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithDictionary:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVPropertyList",
+          "protocols": [
+            "BSXPCSecureCoding",
+            "NSSecureCoding"
+          ],
+          "superclass": "NSObject"
+        },
+        {
+          "class_methods": [],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "v32@0:8@16@24",
+              "selector": "encodeObject:forKey:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVRawXPCCoder",
+          "protocols": [
+            "AnySecureCoder"
+          ],
+          "superclass": "NSObject"
+        },
+        {
+          "class_methods": [],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "@32@0:8#16@24",
+              "selector": "decodeObjectOfClass:forKey:"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVRawXPCDecoder",
+          "protocols": [
+            "AnySecureDecoder"
+          ],
+          "superclass": "NSObject"
+        }
+      ]
+    },
+    "host": {
+      "loads": [
+        {
+          "error": "",
+          "loaded": 1,
+          "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost"
+        }
+      ],
+      "images": [
+        {
+          "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost",
+          "uuid": "CE104027-3729-381B-8F0C-C774E404C0CE"
+        },
+        {
+          "path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost",
+          "uuid": "6B75229B-DE5D-3D37-94BC-75AF4F4704C6"
+        },
+        {
+          "path": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3"
+        }
+      ],
+      "class_count": 36,
+      "matching_protocol_count": 0,
+      "classes": [
+        {
+          "class_methods": [
+            {
+              "encoding": "B16@0:8",
+              "selector": "supportsBSXPCSecureCoding"
+            },
+            {
+              "encoding": "B16@0:8",
+              "selector": "supportsSecureCoding"
+            }
+          ],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "_encodeWithAnyCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "_initWithAnyCoder:"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "data"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeToXpcDictionary:"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeWithBSXPCCoder:"
+            },
+            {
+              "encoding": "v24@0:8@16",
+              "selector": "encodeWithCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithBSXPCCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithCoder:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithData:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithDictionary:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVPropertyList",
+          "protocols": [
+            "BSXPCSecureCoding",
+            "NSSecureCoding"
+          ],
+          "superclass": "NSObject"
+        },
+        {
+          "class_methods": [],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "v32@0:8@16@24",
+              "selector": "encodeObject:forKey:"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVRawXPCCoder",
+          "protocols": [
+            "AnySecureCoder"
+          ],
+          "superclass": "NSObject"
+        },
+        {
+          "class_methods": [],
+          "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+          "instance_methods": [
+            {
+              "encoding": "v16@0:8",
+              "selector": ".cxx_destruct"
+            },
+            {
+              "encoding": "@32@0:8#16@24",
+              "selector": "decodeObjectOfClass:forKey:"
+            },
+            {
+              "encoding": "@16@0:8",
+              "selector": "dictionary"
+            },
+            {
+              "encoding": "@24@0:8@16",
+              "selector": "initWithXpcDictionary:"
+            }
+          ],
+          "name": "UVRawXPCDecoder",
+          "protocols": [
+            "AnySecureDecoder"
+          ],
+          "superclass": "NSObject"
+        }
+      ]
+    }
+  },
+  "message_keys": {
+    "MessageTypeKey": "type",
+    "OneWayMessageKey": "UVOneWayMessageKey"
+  },
+  "synthetic_plist_probe": {
+    "base64": "YnBsaXN0MDDWAQIDBAUGBwoLDA0OVnZhbHVlc1VieXRlc1dlbmFibGVkVWNvdW50VHR5cGVWbmVzdGVkoggJEAEQAkVoZWxsbwkQB18QD3N5bnRoZXRpYy1wcm9iZdEPEFRuYW1lV3ByZXZpZXcIFRwiKjA1PD9BQ0lKTF5hZgAAAAAAAAEBAAAAAAAAABEAAAAAAAAAAAAAAAAAAABu",
+    "bytes": 159,
+    "error": "",
+    "foundation_decodable": 1,
+    "foundation_format": 200,
+    "foundation_round_trip_equal": true,
+    "input_kind": "synthetic dictionary; not a captured preview message",
+    "uv_round_trip_equal": true
+  },
+  "static_key_recovery": {
+    "method": "Manual ARM64 instruction/string analysis; not live captured payloads",
+    "BitmapDescription": {
+      "address": "0x4a8e4",
+      "keys": [
+        "data",
+        "width",
+        "height",
+        "bytesPerRow",
+        "byteOrder",
+        "bitmapInfo",
+        "bitsPerComponent",
+        "bitsPerPixel",
+        "colorSpace"
+      ]
+    },
+    "RenderPayload": {
+      "address": "0x8d6ac",
+      "keys": [
+        "bitmapDescription",
+        "selectableRegions",
+        "snapshotCornerRadius",
+        "scaleFactor"
+      ]
+    },
+    "LayerHostPayload": {
+      "address": "0x8df88",
+      "keys": [
+        "contextID",
+        "scaleFactor",
+        "width",
+        "height"
+      ]
+    },
+    "JITLoadCommand": {
+      "address": "0x6fde4",
+      "keys": [
+        "discriminant",
+        "command"
+      ]
+    },
+    "JITLoadCommand.LoadDylib": {
+      "address": "0x70528",
+      "keys": [
+        "path",
+        "linkage",
+        "symbolsPath"
+      ]
+    },
+    "BitmapDescription.ByteOrder": {
+      "address": "0x4a1f8",
+      "raw_values": [
+        "little",
+        "big"
+      ]
+    },
+    "JITLoadCommand.LoadDylib.Linkage": {
+      "address": "0x70084",
+      "raw_values": [
+        "strong",
+        "weak"
+      ]
+    }
+  },
+  "ghidra": {
+    "version": "12.1.2",
+    "language": "AARCH64:LE:64:AppleSilicon",
+    "selected_function_count": 7,
+    "selected_function_failures": 0,
+    "automatic_analysis_timed_out": true,
+    "project_saved": true
+  },
+  "host_symbols": [
+    "000000000008dc9c T PreviewsMessagingHost.LayerHostPayload.init(contextID: Swift.Int, scaleFactor: CoreGraphics.CGFloat, width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat) -> PreviewsMessagingHost.LayerHostPayload",
+    "00000000000aa240 T PreviewsMessagingHost.HostAgentSystem.AgentEndpoint.Identity.init(streamID: Foundation.UUID, agentPid: Swift.Int32) -> PreviewsMessagingHost.HostAgentSystem.AgentEndpoint.Identity",
+    "00000000000632c4 T PreviewsMessagingHost.LaunchPayload.init(workspaceID: Swift.String, agentDescriptor: PreviewsMessagingHost.AgentDescriptor, agentRole: PreviewsMessagingHost.PreviewAgentRole, agentBootstrapMode: PreviewsMessagingHost.PreviewAgentBootstrapMode, environment: [Swift.String : Swift.String], arguments: [Swift.String], processType: PreviewsMessagingHost.ProcessType, binaryType: PreviewsMessagingHost.BinaryType, targetDescriptions: [PreviewsMessagingHost.BuiltTargetDescription], hostAuditToken: __C.audit_token_t?) -> PreviewsMessagingHost.LaunchPayload",
+    "000000000008d354 T PreviewsMessagingHost.RenderPayload.scaleFactor.getter : CoreGraphics.CGFloat",
+    "000000000008d35c T PreviewsMessagingHost.RenderPayload.init(bitmapDescription: PreviewsMessagingHost.BitmapDescription, selectableRegions: [PreviewsMessagingHost.SelectableRegion], snapshotCornerRadius: Swift.Double, scaleFactor: CoreGraphics.CGFloat) -> PreviewsMessagingHost.RenderPayload",
+    "0000000000002bb8 T default argument 2 of PreviewsMessagingHost.RenderPayload.init(bitmapDescription: PreviewsMessagingHost.BitmapDescription, selectableRegions: [PreviewsMessagingHost.SelectableRegion], snapshotCornerRadius: Swift.Double, scaleFactor: CoreGraphics.CGFloat) -> PreviewsMessagingHost.RenderPayload",
+    "000000000008d304 T PreviewsMessagingHost.RenderPayload.bitmapDescription.getter : PreviewsMessagingHost.BitmapDescription",
+    "00000000000631cc T PreviewsMessagingHost.RenderPayload.selectableRegions.getter : [PreviewsMessagingHost.SelectableRegion]",
+    "000000000008d34c T PreviewsMessagingHost.RenderPayload.snapshotCornerRadius.getter : Swift.Double",
+    "0000000000066a90 T PreviewsMessagingHost.ForwardPayload.init(messageType: PreviewsMessagingHost.AgentMessageType, messagePayload: PreviewsFoundationHost.PropertyList, pid: Swift.Int32, contentDomain: PreviewsMessagingHost.PreviewContentDomain?, previewInterfaceOrientation: PreviewsMessagingHost.PreviewTraits.Orientation?, sceneIdentifier: Swift.String?) -> PreviewsMessagingHost.ForwardPayload",
+    "00000000000702d4 T PreviewsMessagingHost.JITLoadCommand.LoadDylib.init(path: Swift.String, linkage: PreviewsMessagingHost.JITLoadCommand.LoadDylib.Linkage, symbolsPath: Swift.String?) -> PreviewsMessagingHost.JITLoadCommand.LoadDylib",
+    "000000000009661c T PreviewsMessagingHost.MessageTypeKey.getter : Swift.String",
+    "00000000000bf4c0 S enum case for PreviewsMessagingHost.AgentMessageType.incrementalLayerHost(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4bc S enum case for PreviewsMessagingHost.AgentMessageType.layerHost(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4c4 S enum case for PreviewsMessagingHost.AgentMessageType.captureIOSurface(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4a4 S enum case for PreviewsMessagingHost.AgentMessageType.previewInstances(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4b0 S enum case for PreviewsMessagingHost.AgentMessageType.incrementalRender(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4b8 S enum case for PreviewsMessagingHost.AgentMessageType.incrementalDisplay(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4c8 S enum case for PreviewsMessagingHost.AgentMessageType.incrementalCaptureIOSurface(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4a8 S enum case for PreviewsMessagingHost.AgentMessageType.incrementalPreviewInstances(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4ac S enum case for PreviewsMessagingHost.AgentMessageType.render(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "00000000000bf4b4 S enum case for PreviewsMessagingHost.AgentMessageType.display(PreviewsMessagingHost.AgentMessageType.Type) -> PreviewsMessagingHost.AgentMessageType",
+    "0000000000096600 T PreviewsMessagingHost.OneWayMessageKey.getter : Swift.String",
+    "000000000004a588 T PreviewsMessagingHost.BitmapDescription.bitmapInfo.getter : Swift.UInt32",
+    "000000000004a5c8 T PreviewsMessagingHost.BitmapDescription.colorSpace.getter : Swift.String",
+    "000000000004a578 T PreviewsMessagingHost.BitmapDescription.bytesPerRow.getter : Swift.Int",
+    "000000000004a5b8 T PreviewsMessagingHost.BitmapDescription.bitsPerPixel.getter : Swift.Int",
+    "000000000004a598 T PreviewsMessagingHost.BitmapDescription.bitsPerComponent.getter : Swift.Int",
+    "000000000004a4b4 T PreviewsMessagingHost.BitmapDescription.data.getter : Foundation.Data",
+    "000000000004a628 T PreviewsMessagingHost.BitmapDescription.init(data: Foundation.Data, width: Swift.Int, height: Swift.Int, bytesPerRow: Swift.Int, bitmapInfo: Swift.UInt32, bitsPerComponent: Swift.Int, bitsPerPixel: Swift.Int, colorSpace: Swift.String) -> PreviewsMessagingHost.BitmapDescription",
+    "000000000004a558 T PreviewsMessagingHost.BitmapDescription.width.getter : Swift.Int",
+    "000000000004a568 T PreviewsMessagingHost.BitmapDescription.height.getter : Swift.Int"
+  ],
+  "sdk_export_signatures": {
+    "PreviewsServices": [
+      "PreviewsServices.PreviewsServiceConnection.send(message: __C.UVPropertyList, replyHandler: (__C.UVPropertyList?, Swift.Error?) -> ()) -> ()",
+      "PreviewsServices.PreviewsServiceConnection.send(message: __C.UVPropertyList) -> ()"
+    ],
+    "PreviewsInjection": [
+      "PreviewsInjection.__previewsInjectionJITLinkEntrypoint(argc: Swift.Int32, argv: Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>?>?, previewsDylibPath: Swift.UnsafeMutablePointer<Swift.Int8>?, previewsDylibEntryPointName: Swift.UnsafeMutablePointer<Swift.Int8>?) -> ()",
+      "PreviewsInjection.__previewsInjectionRunUserEntryPoint() -> Swift.Int32",
+      "PreviewsInjection.__previewsInjectionPerformFirstJITLink(argc: Swift.Int32, argv: Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>?>?) -> Swift.Int32",
+      "PreviewsInjection.__previewsInjectionRegisterSwiftExtensionEntrySection(argc: Swift.Int32, argv: Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>?>?) -> Swift.Int32",
+      "PreviewsInjection.__previewsInjectionGetDebugPseudodylibSwiftEntrySectionData() -> Swift.UnsafeRawPointer",
+      "dispatch thunk of PreviewsInjection.EntryPoint.handleEndpoint(_: __C.NSXPCListenerEndpoint, context: PreviewsFoundationOS.PropertyList) -> ()",
+      "dispatch thunk of PreviewsInjection.EntryPoint.handleHostMessageStream(_: PreviewsMessagingOS.MessageStream, instance: PreviewsMessagingOS.MessageStreamInstanceIdentifier) -> Swift.Bool",
+      "dispatch thunk of PreviewsInjection.EntryPoint.handleShellMessageStream(PreviewsMessagingOS.MessageStream) -> ()"
+    ]
+  }
+}
