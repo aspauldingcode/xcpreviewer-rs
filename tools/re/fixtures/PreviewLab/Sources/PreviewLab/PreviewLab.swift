@@ -21,3 +21,13 @@ struct PreviewLabApp: App {
 
 #Preview("Baseline") { ProbeView(label: "Preview baseline") }
 #Preview("Literal change") { ProbeView(label: "Preview changed") }
+
+// Independent whole-view controls: no text, font, stack or app-state dependency.
+#Preview("Solid red") {
+    Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 1)
+        .frame(width: 320, height: 160)
+}
+#Preview("Solid blue") {
+    Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1)
+        .frame(width: 320, height: 160)
+}

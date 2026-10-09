@@ -67,6 +67,23 @@ def fixture_content_check(images):
             'scope':'Pinned owned white fixture interior sanity, excluding chrome; nonblank is necessary, not OCR or semantic proof.'}
 
 
+def solid_color_check(images,variants):
+    """Exact center-patch predictions from owned explicit sRGB red/blue source literals."""
+    from PIL import Image
+    expected={2:(255,0,0,255),3:(0,0,255,255)};checks=[]
+    for path,index in zip(images,variants):
+        if index not in expected:continue
+        with Image.open(path) as image:
+            width,height=image.size
+            box=(width//2-16,height//2-16,width//2+16,height//2+16)
+            pixels=list(image.convert('RGBA').crop(box).getdata())
+            matched=sum(pixel==expected[index] for pixel in pixels)
+            checks.append({'variant':index,'expected_rgba':list(expected[index]),'patch':list(box),
+                           'matched_pixels':matched,'compared_pixels':len(pixels),'passed':matched==len(pixels)})
+    return {'captures':checks,'all_expected_colors':bool(checks) and all(c['passed'] for c in checks),
+            'scope':'Exact 32x32 center patch only, RGBA conversion without resizing/profile conversion; not full-frame equivalence or live wire proof.'}
+
+
 def select_tab(message, project=PROJECT):
     candidates=[]
     for line in message.splitlines():
@@ -75,6 +92,18 @@ def select_tab(message, project=PROJECT):
             candidates.append(match[1])
     if len(candidates)!=1:raise RuntimeError('Exactly one owned PreviewLab project tab required; close duplicate tabs, not other projects')
     return candidates[0]
+
+
+def require_closed_owned_workspaces(message,parent=None):
+    """Fail before creating/opening another workspace; UI agent closes verified owned windows."""
+    parent=pathlib.Path(parent or PROJECT_ROOT/'research/build/preview-workspaces').resolve()
+    paths=[pathlib.Path(match).resolve() for match in re.findall(r'workspacePath:\s*(.+?)\s*$',message,re.MULTILINE)]
+    if not paths and message.strip()!='No workspace windows found':
+        raise RuntimeError('Unrecognized window listing; cannot establish workspace cleanup')
+    owned=sorted(set(str(path) for path in paths if parent in path.parents))
+    if owned:
+        raise RuntimeError('Close prior owned PreviewLab workspace windows before opening another: '+', '.join(owned))
+    return {'owned_workspace_windows':0,'scope':'Owned preview-workspaces root only; other user projects untouched.'}
 
 
 def tools_call(client,name,arguments):
@@ -177,10 +206,19 @@ class Monitor:
 
 def capture(out,variants=(0,1),trace=False):
     out=pathlib.Path(out)
+    from reloop.xcodebridge import BrokerClient
+    preflight=BrokerClient()
+    try:
+        windows=tools_call(preflight,'XcodeListWindows',{})
+        atomic(out/'window-preflight.json',windows)
+        require_closed_owned_workspaces(windows['message'])
+    finally:preflight.close()
     # Xcode rewrites scheme/workspace metadata. Keep executable source snapshots untouched.
     fixture=workspace()
     project=fixture/'PreviewLab.xcodeproj'
     source_hash=digest(fixture/'Sources/PreviewLab/PreviewLab.swift')
+    atomic(out/'workspace-lifecycle.json',{'project':str(project),'cleanup_required':True,
+          'instruction':'UI agent must close this owned workspace when finished, including failure, and verify no owned workspace windows before another capture.'})
     subprocess.run(['open','-a','Xcode',str(project)],check=True,timeout=15)
     settings=subprocess.run(['xcodebuild','-project',str(project),'-scheme','PreviewLab','-configuration','Debug','-sdk','macosx','-destination','platform=macOS,arch=arm64','-destination-timeout','5','-showBuildSettings','-json'],capture_output=True,text=True,timeout=90)
     (out/'build-settings.stderr').write_text(settings.stderr)
@@ -197,7 +235,6 @@ def capture(out,variants=(0,1),trace=False):
     monitor=Monitor(out,build_root,trace);client=None;images=[]
     with (out/'xcode-bridge.stderr').open('wb') as stderr:
         try:
-            from reloop.xcodebridge import BrokerClient
             client=BrokerClient()
             atomic(out/'broker-identity.json',client.metadata)
             schema=client.request('tools/list',{});atomic(out/'xcode-schema.json',schema)
@@ -229,6 +266,7 @@ def capture(out,variants=(0,1),trace=False):
             if monitor.thread.ident is not None:monitor.close()
     comparison=compare_captures(images,out)
     content=fixture_content_check(images);atomic(out/'fixture-content-check.json',content)
+    solid=solid_color_check(images,variants);atomic(out/'solid-color-check.json',solid)
     if len(images)==3 and tuple(variants)==(0,0,1):
         changed_dir=out/'controlled-change';changed_dir.mkdir()
         changed=compare_captures(images[1:],changed_dir)
@@ -237,6 +275,7 @@ def capture(out,variants=(0,1),trace=False):
     if digest(fixture/'Sources/PreviewLab/PreviewLab.swift')!=source_hash:raise RuntimeError('Fixture source changed during reference capture')
     return {'rendered_variants':len(images),'png_valid':True,
             'fixture_content_nonblank':content['all_content_nonblank'],
+            'solid_expected_colors':solid['all_expected_colors'],
             **comparison,
             'observed_processes':sum(e.get('kind')=='process-observed' for e in monitor.events),
             'instrumented_processes':sum(e.get('kind')=='attached' for e in monitor.events),

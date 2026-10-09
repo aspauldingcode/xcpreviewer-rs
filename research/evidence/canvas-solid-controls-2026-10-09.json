@@ -1,0 +1,208 @@
+{
+  "adapters": 23,
+  "automated_tests": {
+    "context": "Permitted owned subprocess cleanup; ResourceWarning treated as error.",
+    "failed": 0,
+    "passed": 94
+  },
+  "canvas_exact_patches": {
+    "all_expected_colors": true,
+    "captures": [
+      {
+        "compared_pixels": 1024,
+        "expected_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "matched_pixels": 1024,
+        "passed": true,
+        "patch": [
+          304,
+          176,
+          336,
+          208
+        ],
+        "variant": 2
+      },
+      {
+        "compared_pixels": 1024,
+        "expected_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "matched_pixels": 1024,
+        "passed": true,
+        "patch": [
+          304,
+          176,
+          336,
+          208
+        ],
+        "variant": 3
+      }
+    ],
+    "scope": "Exact 32x32 center patch only, RGBA conversion without resizing/profile conversion; not full-frame equivalence or live wire proof."
+  },
+  "limitations": [
+    "Canvas equality covers two 32x32 center patches only; full-frame chrome/corners/scale and repeat controls remain separate.",
+    "Independent ImageRenderer compares complete 320x160 scale1 decoded RGBA, not PNG encoding against independent expectations or raw row padding.",
+    "Earlier text/VStack fixture is still unverified; solid controls rule out blanket whole-view failure only for these inputs.",
+    "No complete Canvas XPC trace, instrumentation readiness, completion protocol or final reclamation.",
+    "UI cleanup preserves Xcode process and unrelated projects; broker remains live.",
+    "Trusted published manifest anchors establish authenticity separately from local hash consistency."
+  ],
+  "mcp_tools": 19,
+  "renderer_full_rgba": [
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "geometry_matches": true,
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "geometry_matches": true,
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "d1b441bb8217f964a3b028349640f0c603facd6d86df93d096f690b6b32abbab",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate_bytes": 204800,
+      "candidate_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "geometry_matches": true,
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference_bytes": 204800,
+      "reference_sha256": "78490211937397dced6d8ee95020c09d7610a3ceabe06766edeeec46bef9071f",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    }
+  ],
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 2,
+          "expected": 2,
+          "passed": true,
+          "path": "rendered_variants",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "png_valid",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "solid_expected_colors",
+          "present": true
+        }
+      ],
+      "environment_hash": "666d89e878b4922bae6e38e81f8fcef315a59cb0aee321b02c8126d543530c19",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "ab549636a5e161223eb167840fb98f9b19d60efc896955d4671d6f81241c6b4a",
+      "observations": {
+        "controlled_change_visible": true,
+        "fixture_content_nonblank": true,
+        "instrumented_processes": 0,
+        "observed_processes": 1,
+        "pixels_identical": false,
+        "png_valid": true,
+        "preview_bytes_identical": false,
+        "rendered_variants": 2,
+        "sessions_created": 0,
+        "solid_expected_colors": true,
+        "source_sha256": "e99969f4450ceaa1212875928ed6bfe49098fe344f1ab971fbf6bda83e214dd0",
+        "wire_capture_complete": false
+      },
+      "run_id": "20261009T154817Z-native-canvas-solid-view-controls-f9a90f47",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 3,
+          "expected": 3,
+          "passed": true,
+          "path": "captures",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "all_expected_rgba",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "repeat_png_bytes_equal",
+          "present": true
+        },
+        {
+          "actual": 614400,
+          "expected": 614400,
+          "passed": true,
+          "path": "compared_rgba_bytes",
+          "present": true
+        }
+      ],
+      "environment_hash": "aee2a97b52cff0cfc40d21228c3cf43bb657d4fce5acbbb8844f81d0d7c171c6",
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "2fbbdb58072cd32f287fdd841eb072cd8f925513e4fd2c4323bf38fe11b8cf3c",
+      "observations": {
+        "all_expected_rgba": true,
+        "captures": 3,
+        "compared_rgba_bytes": 614400,
+        "repeat_png_bytes_equal": true,
+        "scope": "Separate owned ImageRenderer, 320x160 scale1 Aqua. Entire decoded RGBA including alpha compared to independent color literals; no PNG encoding oracle, row padding, Canvas or IPC claim."
+      },
+      "run_id": "20261009T155055Z-native-solid-renderer-oracle-b779b982",
+      "verdict": "supports"
+    }
+  ],
+  "schema_version": 1,
+  "window_cleanup": {
+    "closed_stale_owned_workspace_windows": 2,
+    "policy": "Close completed owned workspace before next open; adapter preflight rejects stale owned windows or unknown listing format; lifecycle artifact retains cleanup target.",
+    "source": "Separate computer-use observations plus local read-only window-list result, not part of native sealed runs",
+    "welcome_window_closed": true,
+    "workspace_listing_after_cleanup": "No workspace windows found"
+  }
+}

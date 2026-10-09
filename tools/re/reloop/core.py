@@ -17,7 +17,7 @@ ADAPTERS = {'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb
 PARAMS = {
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
-    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control'},
+    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases'}, 'swift_metadata': {'binary','maximum'},
     'xcode_preview': {'variants','trace'}, 'xpc_corpus': {'seed','cases'},
     'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}, 'surface_failure':{'control'}, 'surface_reuse':set(), 'xcode_bridge_probe':{'managed'}}

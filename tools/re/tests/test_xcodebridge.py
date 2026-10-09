@@ -8,10 +8,33 @@ import time
 import unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
 from reloop.xcodebridge import BrokerClient, validate_request
-from reloop.canvas import fixture_content_check
+from reloop.canvas import fixture_content_check, solid_color_check, require_closed_owned_workspaces
 
 
 class XcodeBrokerTests(unittest.TestCase):
+    def test_stale_owned_window_blocks_next_open_but_user_project_is_preserved(self):
+        with tempfile.TemporaryDirectory() as d:
+            parent=pathlib.Path(d)/'preview-workspaces'
+            owned=str(parent/'preview-owned/PreviewLab.xcodeproj')
+            with self.assertRaisesRegex(RuntimeError,'Close prior owned'):
+                require_closed_owned_workspaces('tabIdentifier: a, workspacePath: '+owned,parent)
+            result=require_closed_owned_workspaces('tabIdentifier: user, workspacePath: '+str(pathlib.Path(d)/'User.xcodeproj'),parent)
+            self.assertEqual(result['owned_workspace_windows'],0)
+            self.assertEqual(require_closed_owned_workspaces('No workspace windows found',parent)['owned_workspace_windows'],0)
+            with self.assertRaisesRegex(RuntimeError,'Unrecognized'):
+                require_closed_owned_workspaces('new unsupported format',parent)
+
+    def test_solid_patch_rejects_white_output_and_single_alpha_bit_change(self):
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as d:
+            path=pathlib.Path(d)/'solid.png';image=Image.new('RGBA',(640,384),'white');image.save(path)
+            self.assertFalse(solid_color_check([path],[2])['all_expected_colors'])
+            image=Image.new('RGBA',(640,384),(255,0,0,255));image.save(path)
+            self.assertTrue(solid_color_check([path],[2])['all_expected_colors'])
+            image.putpixel((320,192),(255,0,0,254));image.save(path)
+            result=solid_color_check([path],[2]);self.assertFalse(result['all_expected_colors'])
+            self.assertEqual(result['captures'][0]['matched_pixels'],1023)
+
     def test_window_chrome_changes_do_not_satisfy_owned_content_gate(self):
         from PIL import Image, ImageDraw
         with tempfile.TemporaryDirectory() as d:

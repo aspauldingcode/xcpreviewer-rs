@@ -27,6 +27,9 @@ def plan(controller):
                              'execution':manifest.get('execution'),'error':result.get('error') if isinstance(result,dict) else 'invalid result'})
             continue
         if spec.get('adapter')=='xcode_preview':
+            if observed.get('solid_expected_colors') is True:
+                outcomes.append({'experiment':key,'action':'discriminate-text-layout-and-repeat-solid-content',
+                                 'reason':'Owned red/blue center patches match exact predictions. This supports a narrow non-text rendering path, not full frames, text or IPC.'})
             if observed.get('fixture_content_nonblank') is False:
                 outcomes.append({'experiment':key,'action':'diagnose-blank-owned-content',
                                  'reason':'Returned PNGs or changed window titles do not establish rendered SwiftUI fixture content.'})
@@ -95,6 +98,9 @@ def plan(controller):
         if spec.get('adapter')=='native_reference' and spec.get('params',{}).get('repeat_control') and manifest.get('verdict')=='supports':
             outcomes.append({'experiment':key,'action':'use-separate-renderer-oracle-for-portable-subset',
                              'reason':'ImageRenderer A/A and controlled A/B can support rendering comparisons; Canvas IPC and hot reload remain separate gates.'})
+        if spec.get('adapter')=='native_reference' and spec.get('params',{}).get('solid_control') and manifest.get('verdict')=='supports':
+            outcomes.append({'experiment':key,'action':'compare-portable-solid-pixels-and-native-text-path',
+                             'reason':'Full decoded solid RGBA matches independent literals; PNG encoding, Canvas chrome, text and wire semantics are separate.'})
     # Templates are suggestions. The scheduled agent reviews and implements them; native execution remains bounded.
     queued={e['id'] for e in load(controller.root/'research/loop/campaign.json',{}).get('experiments',[])}
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}

@@ -10,8 +10,8 @@
   "baseline_commit": "9b51624ec4386c5cf5f65bc5ba2b61b53600c548",
   "blocked_tracks": [
     {
-      "reason": "Xcode tool responsiveness restored through retained approved broker. RenderPreview returns owned 640x384 PNGs with zero fixture interior ink; 2,260 changed pixels are title chrome. Native attach remains unverified.",
-      "retry_requires": "Reuse live private broker; diagnose rendering with changed fixture/observation, not unchanged blank retries. If broker/Xcode exits, record approval loss; do not auto-restart or disable permission checks.",
+      "reason": "Retained broker responsive; solid Canvas controls render correct color patches. Prior text/VStack content remains unverified; full Canvas repeat/frame contract and native instrumentation remain open.",
+      "retry_requires": "Changed text/layout control or full solid repeat/frame prediction; close owned window after every attempt before opening another.",
       "track": "native-canvas"
     }
   ],
@@ -34,9 +34,9 @@
       "status": "permitted-execution-passed"
     }
   ],
-  "last_completed": "Retained approved Xcode broker serves independent callers and subsequent experiment workers without new prompts; Canvas PNG A/A repeats but content is blank; corrected sealed content gate rejects chrome-only output; 92 tests pass.",
+  "last_completed": "Solid red/blue Canvas patches match exact literals; separate ImageRenderer compares 614,400 decoded RGBA bytes and repeats PNG; 94 tests pass. Closed two stale owned Xcode windows, verified zero workspace windows, added fail-before-open guard and cleanup targets.",
   "last_github_sync": {
-    "checkpoint": "retained access and content falsification",
+    "checkpoint": "solid-view discrimination and window cleanup",
     "date": "2026-10-09",
     "issues": [
       "O2",
@@ -55,7 +55,7 @@
       "state": "ready"
     },
     {
-      "action": "Reuse approved broker; discriminate why owned PreviewLab text is absent while window chrome renders. Compare owned View-only/window preview or an independent content observation; require nonblank plus semantic controls.",
+      "action": "Discriminate plain Text, stack/layout and background/frame composition; repeat solid Canvas content against pinned expectations; close each owned window before another.",
       "issue_id": "O2",
       "state": "ready"
     },
@@ -107,8 +107,25 @@
       "manifest_sha256": "4bf2fbb7bb9c2e0e35bc4ac44ad88e7c1c87ab18169093eaeeb6b7648aeafaa6",
       "path": "research/evidence/xcode-retained-access-2026-10-09.json",
       "run_id": "20261009T153950Z-native-canvas-approved-repeat-change-096cc06d"
+    },
+    {
+      "manifest_sha256": "ab549636a5e161223eb167840fb98f9b19d60efc896955d4671d6f81241c6b4a",
+      "path": "research/evidence/canvas-solid-controls-2026-10-09.json",
+      "run_id": "20261009T154817Z-native-canvas-solid-view-controls-f9a90f47"
+    },
+    {
+      "manifest_sha256": "2fbbdb58072cd32f287fdd841eb072cd8f925513e4fd2c4323bf38fe11b8cf3c",
+      "path": "research/evidence/canvas-solid-controls-2026-10-09.json",
+      "run_id": "20261009T155055Z-native-solid-renderer-oracle-b779b982"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
-  "schema_version": 1
+  "schema_version": 1,
+  "window_policy": {
+    "before_next_open": true,
+    "capture_preflight_enforces": true,
+    "cleanup_target_artifact": "workspace-lifecycle.json",
+    "close_owned_workspace_when_finished": true,
+    "verify_zero_owned_windows": true
+  }
 }

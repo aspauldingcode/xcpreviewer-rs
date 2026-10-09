@@ -765,6 +765,72 @@
         "local-re-controller"
       ],
       "timeout_seconds": 600
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "png_valid"
+        },
+        {
+          "equals": true,
+          "path": "solid_expected_colors"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Explicit sRGB red and blue rectangle previews render predicted content without text/font/stack dependencies; white patches falsify whole-view readiness.",
+      "id": "native-canvas-solid-view-controls",
+      "params": {
+        "trace": false,
+        "variants": [
+          2,
+          3
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 480
+    },
+    {
+      "adapter": "native_reference",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "captures"
+        },
+        {
+          "equals": true,
+          "path": "all_expected_rgba"
+        },
+        {
+          "equals": true,
+          "path": "repeat_png_bytes_equal"
+        },
+        {
+          "equals": 614400,
+          "path": "compared_rgba_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Independent owned ImageRenderer renders explicit sRGB red/blue to exact full-frame RGBA literal expectations and unchanged red repeats its PNG bytes.",
+      "id": "native-solid-renderer-oracle",
+      "params": {
+        "solid_control": true
+      },
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 150
     }
   ],
   "version": 1
