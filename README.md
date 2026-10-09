@@ -21,3 +21,5 @@ Recursive findings: [local XPC coding, malformed-input boundary and static messa
 Latest checkpoints: [owned surface handoff across processes and sender-exit lifetime](docs/reverse-engineering/2026-10-09-surface-ipc.md), then [receiver-first exit, local right counts and retained-port access](docs/reverse-engineering/2026-10-09-surface-receiver.md).
 
 [Continuous RE operation](docs/reverse-engineering/continuous-loop.md) now uses a ten-minute desktop heartbeat in the existing chat, with a [durable work checkpoint](research/loop/continuous.json). Local scheduling requires the computer and desktop app to remain running; the loop advances experiments and implementation, then synchronizes verified progress.
+
+Latest recurring-loop findings: [failed handoff cleanup and surface recycling state](docs/reverse-engineering/2026-10-09-surface-failure.md).

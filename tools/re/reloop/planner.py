@@ -70,7 +70,13 @@ def plan(controller):
                 'reason':('Owned CPU Mach handoff survives receiver exit; local send-right counts and port-retained access after CF release are measured. Failure/timeout cleanup and final reclamation remain open. '
                           if spec.get('params',{}).get('exit_order')=='receiver' else 'Owned CPU Mach handoff survives sender exit. ')+
                          'Reuse/ordering, GPU completion, revocation and actual canvas XPC envelopes remain unmeasured.'})
-    # Templates are suggestions. The agent reviews and proposes them; no infinite background loop.
+        if spec.get('adapter')=='surface_failure' and manifest.get('verdict')=='supports':
+            use_state=spec.get('params',{}).get('control')=='use_state'
+            outcomes.append({'experiment':key,'action':'recover-generation-and-completion-ordering' if use_state else 'discriminate-final-reclamation-and-reuse',
+                             'reason':('Global in-use differs from local explicit count and can be false while retained CF pixels remain readable. '
+                                       if use_state else 'Owned closed-endpoint/import-error/completion-timeout controls check local rights and bytes. ')+
+                                      'Final kernel reclamation, reuse ordering and live Canvas transport remain unmeasured.'})
+    # Templates are suggestions. The scheduled agent reviews and implements them; native execution remains bounded.
     queued={e['id'] for e in load(controller.root/'research/loop/campaign.json',{}).get('experiments',[])}
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}
                     for p in proposals if p['id'] in queued and p['id'] not in latest)

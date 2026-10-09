@@ -1,53 +1,64 @@
 {
-  "schema_version": 1,
   "automation_id": "continuous-xcode-preview-re",
-  "cadence_minutes": 10,
-  "runbook": "docs/reverse-engineering/continuous-loop.md",
-  "objective": "Recover and independently verify the declared native preview contract of GitHub milestone 1.",
   "baseline_commit": "9b51624ec4386c5cf5f65bc5ba2b61b53600c548",
-  "last_completed": "Receiver-first exit and retained-port access; original sender-first regression campaign; 72 automated tests.",
-  "next_actions": [
+  "blocked_tracks": [
     {
-      "issue_id": "R1",
-      "action": "Implement failure/timeout release accounting controls",
-      "state": "ready"
+      "reason": "Bridge discovery times out; owned UI remains blank; native attach cancels before session creation.",
+      "retry_requires": "A changed method, implementation, tool state or discriminating diagnosis; no unchanged retries.",
+      "track": "native-canvas"
+    }
+  ],
+  "cadence_minutes": 10,
+  "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
+  "failure_fingerprints": [
+    {
+      "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",
+      "retry_prerequisite": "Added parent proceed acknowledgement before endpoint destruction; final sealed campaign passes.",
+      "status": "resolved-for-reviewed-control"
     },
     {
+      "fingerprint": "6b1114b83bcf559873cfd53bf804608545e3299364c8ba2fe6c76ead941c1107",
+      "retry_prerequisite": "Schema enum synchronized; full 79-test suite passes.",
+      "status": "resolved"
+    }
+  ],
+  "last_completed": "12 owned fault cases and 4 use-state cases, each repeated twice; final fault regression sealed; 79 tests pass.",
+  "next_actions": [
+    {
+      "action": "Find an independent final-release reclamation observable; keep unknown if none discriminates",
       "issue_id": "R1",
-      "action": "Find a discriminating final-release reclamation observable",
       "state": "unverified"
     },
     {
+      "action": "Implement frame-generation, stale-resource and delayed-completion controls",
       "issue_id": "R2",
-      "action": "Measure resource reuse, frame generation and completion ordering",
-      "state": "pending"
-    },
-    {
-      "issue_id": "O2",
-      "action": "Diagnose native capture with a changed observation method",
       "state": "ready"
     },
     {
-      "issue_id": "F2",
-      "action": "Portable feasibility using an explicit supported subset and separate native reference",
-      "state": "conditional-on-F1"
-    }
-  ],
-  "blocked_tracks": [
+      "action": "Use a changed capture diagnosis or observation method; no unchanged bridge retry",
+      "issue_id": "O2",
+      "state": "ready"
+    },
     {
-      "track": "native-canvas",
-      "reason": "Bridge discovery times out; owned UI remains blank; native attach cancels before session creation.",
-      "retry_requires": "A changed method, implementation, tool state or discriminating diagnosis; no unchanged retries."
+      "action": "Select explicit portable subset and native reference tier",
+      "issue_id": "F1",
+      "state": "ready"
     }
   ],
-  "failure_fingerprints": [],
+  "objective": "Recover and independently verify the declared native preview contract of GitHub milestone 1.",
   "pending_sync": [],
-  "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
   "recent_evidence": [
     {
-      "path": "research/evidence/surface-receiver-2026-10-09.json",
-      "run_id": "20261009T142401Z-owned-surface-receiver-exit-ffb8b194",
-      "manifest_sha256": "9550536f01e7f702d0cc9030b7192361464e7baac76b8499c4be0d4013b89081"
+      "manifest_sha256": "07a6f5cdcbcc04efcb831c0bbccb27d1f14f6c16586edde2ca191c023e57b6f3",
+      "path": "research/evidence/surface-failure-2026-10-09.json",
+      "run_id": "20261009T145227Z-owned-surface-use-state-de0eaf63"
+    },
+    {
+      "manifest_sha256": "f52b209d76b3e8dcde86f14ed07c3211a0a4a32b4d613037b006849f93f4e682",
+      "path": "research/evidence/surface-failure-2026-10-09.json",
+      "run_id": "20261009T145305Z-owned-surface-failure-cleanup-9769076e"
     }
-  ]
+  ],
+  "runbook": "docs/reverse-engineering/continuous-loop.md",
+  "schema_version": 1
 }

@@ -13,14 +13,14 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
-ADAPTERS = {'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc'}
+ADAPTERS = {'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure'}
 PARAMS = {
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': set(),
     'connected_probe': set(), 'plist_corpus': {'seed','cases'}, 'swift_metadata': {'binary','maximum'},
     'xcode_preview': {'variants','trace'}, 'xpc_corpus': {'seed','cases'},
-    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}}
+    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':set(), 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order'}, 'surface_failure':{'control'}}
 
 
 def now():
@@ -76,6 +76,7 @@ def validate_experiment(e):
     if not isinstance(e['params'], dict) or set(e['params']) - PARAMS[e['adapter']]:
         raise ValueError('unsupported adapter parameters')
     p = e['params']
+    if 'control' in p and p['control'] not in ('faults','use_state'):raise ValueError('invalid surface control')
     if 'exit_order' in p and p['exit_order'] not in ('sender','receiver'):raise ValueError('invalid exit_order')
     for field in ['xcode','binary','query','tool']:
         if field in p and (not isinstance(p[field], str) or not p[field] or len(p[field]) > 4096):

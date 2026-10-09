@@ -1,0 +1,267 @@
+{
+  "adapters": 21,
+  "automated_tests": {
+    "failed": 0,
+    "passed": 79
+  },
+  "claims": [
+    {
+      "id": "owned-surface-failure-cleanup",
+      "status": "supported"
+    },
+    {
+      "id": "owned-surface-use-state",
+      "status": "supported"
+    }
+  ],
+  "comparisons": [
+    {
+      "candidate": "tools/re/fixtures/SurfaceFailureOracle/after-timeout.bin",
+      "candidate_bytes": 256,
+      "candidate_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference": "tools/re/fixtures/SurfaceIPCOracle/before.bin",
+      "reference_bytes": 256,
+      "reference_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    },
+    {
+      "candidate": "tools/re/fixtures/SurfaceFailureOracle/not-in-use.bin",
+      "candidate_bytes": 256,
+      "candidate_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "different_bits_in_shared_extent": 0,
+      "different_bytes": 0,
+      "first_mismatches": [],
+      "mode": "exact-bytes",
+      "normalization": "none",
+      "passed": true,
+      "reference": "tools/re/fixtures/SurfaceIPCOracle/before.bin",
+      "reference_bytes": 256,
+      "reference_sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+      "unmatched_tail_bytes": 0
+    }
+  ],
+  "limitations": [
+    "Selected fault stages only; no exhaustive concurrent release/crash coverage.",
+    "Timeout SIGKILL applies only to the owned fork/exec child; actual signal/wait outcome checked.",
+    "Local Mach name removal and global not-in-use do not prove final kernel memory reclamation.",
+    "No actual Canvas XPC envelope, frame generation protocol, GPU synchronization or portable SwiftUI runtime recovered.",
+    "Temporary bootstrap registration is deprecated and may be unavailable on other hosts.",
+    "Manifest authenticity requires a separately trusted commit or reviewer anchor."
+  ],
+  "manual_calibration": {
+    "before_transfer": "Initial helper exited 43 before completing control. A missing readiness gate was inferred; audit-verified proceed acknowledgement before endpoint destruction makes the final control pass. Original calibration is not accepted native evidence.",
+    "restricted_use_state": "Default-sandbox invocation exited 44; permitted native invocation passed. Failure subphase was not isolated; no definitive cause claimed.",
+    "sealed": false
+  },
+  "mcp_tools": 19,
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "verified_fault_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "closed_endpoint_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "after_import_error_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "completion_timeout_cases",
+          "present": true
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "repeat_bytes_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "85af5ca5ad143b247bfa3dda5fb3a3a9a8bae32d0979b396e17c306b17c1fb48",
+      "execution": "success",
+      "experiment_hash": "be33b9c857ed0cf410928e6295c0c03ffeb9381beac92285454653068a641d92",
+      "experiment_id": "owned-surface-failure-cleanup",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "e5b1bbb63fbd35ac07f0f2260f4f4e7a76f43f07bb6e708e530f73e30fe88961",
+      "observations": {
+        "after_import_error_cases": 4,
+        "cases": 12,
+        "closed_endpoint_cases": 4,
+        "completion_timeout_cases": 4,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 12,
+        "scope": "Owned CPU Mach fixture: closed endpoint, explicit import-error cleanup and completion timeout with owned-child SIGKILL. Local names/right counts only; no final kernel reclamation, general crash/race coverage, GPU completion or Apple Canvas XPC claim.",
+        "verified_fault_cases": 12
+      },
+      "run_id": "20261009T144935Z-owned-surface-failure-cleanup-8715d160",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "verified_use_state_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "repeat_bytes_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "601b37310291bdd2542d203483dd19dafe32c2aec8c08d3652ff9cb5107b7f2f",
+      "execution": "success",
+      "experiment_hash": "b7c4a38c5a957e6b341a9ce564b12b304c3ecdaa742c1ca494535aed0a3fb943",
+      "experiment_id": "owned-surface-use-state",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "07a6f5cdcbcc04efcb831c0bbccb27d1f14f6c16586edde2ca191c023e57b6f3",
+      "observations": {
+        "cases": 4,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 4,
+        "scope": "Owned local CPU surfaces: local count differs from global in-use while Mach port lives; global in-use false still permits exact bytes through retained CF reference. No final allocation reclamation or Canvas reuse protocol.",
+        "verified_use_state_cases": 4
+      },
+      "run_id": "20261009T145227Z-owned-surface-use-state-de0eaf63",
+      "verdict": "supports"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "cases",
+          "present": true
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "verified_fault_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "closed_endpoint_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "after_import_error_cases",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "completion_timeout_cases",
+          "present": true
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "passed": true,
+          "path": "repeat_bytes_equal_cases",
+          "present": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "passed": true,
+          "path": "helper_failures",
+          "present": true
+        }
+      ],
+      "environment_hash": "601b37310291bdd2542d203483dd19dafe32c2aec8c08d3652ff9cb5107b7f2f",
+      "execution": "success",
+      "experiment_hash": "be33b9c857ed0cf410928e6295c0c03ffeb9381beac92285454653068a641d92",
+      "experiment_id": "owned-surface-failure-cleanup",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "f52b209d76b3e8dcde86f14ed07c3211a0a4a32b4d613037b006849f93f4e682",
+      "observations": {
+        "after_import_error_cases": 4,
+        "cases": 12,
+        "closed_endpoint_cases": 4,
+        "completion_timeout_cases": 4,
+        "helper_failures": 0,
+        "repeat_bytes_equal_cases": 12,
+        "scope": "Owned CPU Mach fixture: closed endpoint, explicit import-error cleanup and completion timeout with owned-child SIGKILL. Local names/right counts only; no final kernel reclamation, general crash/race coverage, GPU completion or Apple Canvas XPC claim.",
+        "verified_fault_cases": 12
+      },
+      "run_id": "20261009T145305Z-owned-surface-failure-cleanup-9769076e",
+      "verdict": "supports"
+    }
+  ],
+  "sdk_contract": {
+    "distinction": "Local explicit use count is debugging state; global in-use is a recycling predicate, not proof of allocation destruction.",
+    "header": "IOSurface.framework/Headers/IOSurfaceRef.h",
+    "sha256": "8ee2890f7a5392ac2040c2e0b3d3cb773cdebe3627ad3452881fc7d20a759bd5"
+  },
+  "system_cmp_confirmed": true,
+  "system_protections_changed": false,
+  "user_processes_terminated": false
+}

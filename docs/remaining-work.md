@@ -6,7 +6,7 @@ Planning baseline: 2026-10-09, verified implementation checkpoint `3e91d33`. Thi
 
 Target: a documented, bounded preview product that compiles an explicitly supported Swift view subset, produces a portable image, and supplies a reproducible compatibility report against pinned native references. Unsupported constructs must fail clearly. Broader SwiftUI compatibility is a later expansion, measured feature by feature.
 
-The repository currently contains the RE toolkit, not the Rust preview product. It has 20 reviewed adapters, 19 research MCP tools, 72 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender and receiver exits. Receiver-first controls also measure local send-right counts and retained-port access after original CF release. These do not establish the full Xcode protocol or portable SwiftUI execution.
+The repository currently contains the RE toolkit, not the Rust preview product. It has 21 reviewed adapters, 19 research MCP tools, 79 passing tests, scoped claims, immutable local evidence and published synthetic goldens. Verified boundaries include plist serialization/decoding, local raw-XPC coding, static message strings, and owned CPU IOSurface Mach handoff with clean/abrupt sender and receiver exits. Receiver-first controls also measure local send-right counts and retained-port access after original CF release. These do not establish the full Xcode protocol or portable SwiftUI execution.
 
 Blocking gaps: Xcode MCP schema discovery stalls; native UI launches an owned preview but content stays blank; mapping-verified native instrumentation attach cancels before session creation. No accepted real canvas snapshot or complete request/reply trace exists. ImageRenderer remains a separate native reference path.
 
@@ -24,7 +24,7 @@ If the canvas gate remains blocked, portable-subset research can use a separatel
 
 The [verified toolkit baseline](https://github.com/aspauldingcode/xcpreviewer-rs/issues/1) is completed; the remaining tasks are linked below. Milestone progress counts issues, not proof of universal behavioral coverage.
 
-R1 partial checkpoint: [receiver-first experiment](reverse-engineering/2026-10-09-surface-receiver.md) passes; failure/timeout release accounting and final reclamation still keep R1 open.
+R1 partial checkpoints: [receiver-first experiment](reverse-engineering/2026-10-09-surface-receiver.md) and [selected failure/timeout cleanup controls](reverse-engineering/2026-10-09-surface-failure.md) pass. Final reclamation and broader required failure coverage still keep R1 open. R2 now has a measured use-state boundary; generation and completion ordering remain open.
 
 Feasibility experiments in milestone two can run before milestone one closes. Release acceptance still depends on native references and the final feature/coverage contract. Milestone two's aim is a cheaper, hot-reloadable canvas for Apple app development; that performance claim needs measured native-versus-portable workloads.
 

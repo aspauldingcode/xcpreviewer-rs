@@ -109,6 +109,9 @@ def perform(kind,out,p):
     if kind=='surface_ipc':
         from reloop.surfaceipc import corpus
         return corpus(out,p.get('exit_order','sender'))
+    if kind=='surface_failure':
+        from reloop.surfacefailure import corpus,use_corpus
+        return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
     if kind in {'lldb_smoke','frida_smoke','native_reference','preview_hook_smoke'}:
         from reloop.trace import smoke
         return smoke(kind,out)

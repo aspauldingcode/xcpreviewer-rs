@@ -530,6 +530,82 @@
         "local-re-controller"
       ],
       "timeout_seconds": 300
+    },
+    {
+      "adapter": "surface_failure",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 12,
+          "path": "cases"
+        },
+        {
+          "equals": 12,
+          "path": "verified_fault_cases"
+        },
+        {
+          "equals": 4,
+          "path": "closed_endpoint_cases"
+        },
+        {
+          "equals": 4,
+          "path": "after_import_error_cases"
+        },
+        {
+          "equals": 4,
+          "path": "completion_timeout_cases"
+        },
+        {
+          "equals": 12,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned closed-endpoint, post-import error and completion-timeout controls preserve sender CPU bytes and release local resource/peer endpoint names while rejecting completion.",
+      "id": "owned-surface-failure-cleanup",
+      "params": {},
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "adapter": "surface_failure",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "cases"
+        },
+        {
+          "equals": 4,
+          "path": "verified_use_state_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned Mach ports increase global in-use while local explicit use count stays zero; dropping port and explicit use returns global in-use false without invalidating retained CF bytes.",
+      "id": "owned-surface-use-state",
+      "params": {
+        "control": "use_state"
+      },
+      "priority": 90,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     }
   ],
   "version": 1
