@@ -5,7 +5,7 @@ import pathlib
 import sys
 import unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
-from reloop.surfacegpuipc import inspect,inspect_consumer
+from reloop.surfacegpuipc import inspect,inspect_consumer,inspect_stall
 from reloop.surfaceipc import RECEIVER_FLAGS
 from reloop.core import validate_experiment
 
@@ -61,6 +61,29 @@ class GPUMachTests(unittest.TestCase):
             bad=copy.deepcopy(e);bad['params']['gpu_consumer_control']=v
             with self.assertRaises(ValueError):validate_experiment(bad)
         bad=copy.deepcopy(e);bad['params']['gpu_control']=False
+        with self.assertRaises(ValueError):validate_experiment(bad)
+
+    def test_stall_control_missing_types_and_pending_state_reject(self):
+        good={'timeout_observed':True,'initial_wait_completion_accepted':False,
+              'callbacks_before_release':0,'event_before_release':0,'event_after_release':1,
+              'wait_deadline_ns':20000000,'status_before_release':2}
+        self.assertTrue(inspect_stall(good))
+        self.assertTrue(inspect_stall({**good,'status_before_release':3}))
+        for key in good:
+            bad=good.copy();del bad[key];self.assertFalse(inspect_stall(bad))
+        for key,value in [('timeout_observed',1),('initial_wait_completion_accepted',0),
+                          ('callbacks_before_release',1),('callbacks_before_release',False),
+                          ('event_before_release',1),('event_after_release',0),
+                          ('wait_deadline_ns',0),('status_before_release',4),('status_before_release',True)]:
+            self.assertFalse(inspect_stall({**good,key:value}))
+
+    def test_stall_flag_requires_consumer_and_boolean(self):
+        root=pathlib.Path(__file__).resolve().parents[3]
+        e=next(e for e in json.loads((root/'research/loop/campaign.json').read_text())['experiments'] if e['id']=='owned-gpu-peer-event-timeout')
+        for value in (1,'true',None):
+            bad=copy.deepcopy(e);bad['params']['gpu_stall_control']=value
+            with self.assertRaises(ValueError):validate_experiment(bad)
+        bad=copy.deepcopy(e);bad['params']['gpu_consumer_control']=False
         with self.assertRaises(ValueError):validate_experiment(bad)
 
     def test_gpu_mode_rejects_unreviewed_sender_first(self):

@@ -2503,6 +2503,50 @@
           "equals": 8
         }
       ]
+    },
+    {
+      "id": "owned-gpu-peer-event-timeout",
+      "adapter": "surface_ipc",
+      "params": {
+        "gpu_control": true,
+        "exit_order": "receiver",
+        "gpu_consumer_control": true,
+        "gpu_stall_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "priority": 100,
+      "hypothesis": "Owned peer GPU blit waits on event0 for value1. Initial20ms semaphore wait must time out with no callback; explicit signal then permits late completion, exact full-buffer readback and existing rights/exit cleanup. This is fixture-controlled stall/recovery, not Canvas timeout or GPU cancellation.",
+      "checks": [
+        {
+          "path": "cases",
+          "equals": 8
+        },
+        {
+          "path": "passed_cases",
+          "equals": 8
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "helper_failures",
+          "equals": 0
+        },
+        {
+          "path": "gpu_consumer_cases",
+          "equals": 8
+        },
+        {
+          "path": "gpu_stall_cases",
+          "equals": 8
+        }
+      ]
     }
   ],
   "version": 1

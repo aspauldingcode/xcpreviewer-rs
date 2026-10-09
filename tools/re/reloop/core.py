@@ -22,7 +22,7 @@ PARAMS = {
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum','state_control'},
     'xcode_preview': {'variants','trace','scheme_control'}, 'xpc_corpus': {'seed','cases'},
-    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':{'gpu_control'}, 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order','gpu_control','gpu_consumer_control'}, 'surface_failure':{'control'}, 'surface_reuse':set(), 'xcode_bridge_probe':{'managed'}}
+    'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':{'gpu_control'}, 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order','gpu_control','gpu_consumer_control','gpu_stall_control'}, 'surface_failure':{'control'}, 'surface_reuse':set(), 'xcode_bridge_probe':{'managed'}}
 
 
 def now():
@@ -82,12 +82,13 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
-    for flag in ('deinit_control','state_control','callback_control','isolation_control','invalidation_control','gpu_control','gpu_consumer_control'):
+    for flag in ('deinit_control','state_control','callback_control','isolation_control','invalidation_control','gpu_control','gpu_consumer_control','gpu_stall_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
     if 'decode_control' in p and type(p['decode_control']) is not bool:raise ValueError('Invalid decode control')
     if 'second_runtime' in p and type(p['second_runtime']) is not bool:raise ValueError('Invalid second runtime control')
     if 'repeat_control' in p and type(p['repeat_control']) is not bool:raise ValueError('invalid reference repeat control')
     if 'control' in p and p['control'] not in ('faults','use_state','late_ack'):raise ValueError('invalid surface control')
+    if p.get('gpu_stall_control') is True and p.get('gpu_consumer_control') is not True:raise ValueError('GPU stall requires reviewed GPU consumer')
     if p.get('gpu_consumer_control') is True and p.get('gpu_control') is not True:raise ValueError('GPU consumer requires reviewed producer control')
     if e['adapter']=='surface_ipc' and p.get('gpu_control') is True and p.get('exit_order')!='receiver':raise ValueError('GPU handoff requires receiver-first mode')
     if 'exit_order' in p and p['exit_order'] not in ('sender','receiver'):raise ValueError('invalid exit_order')

@@ -31,9 +31,9 @@ def inspect(record,producer,case,mode,payloads):
     except (KeyError,TypeError,ValueError):return {'passed':False,'failure':'invalid-gpu-producer'}
 
 
-def corpus(out,consumer=False):
+def corpus(out,consumer=False,stall=False):
     out=pathlib.Path(out);target=out/'owned-gpu-surface-ipc'
-    run(['xcrun','clang','-DRE_GPU_PRODUCER',*(['-DRE_GPU_CONSUMER'] if consumer else []),'-Wall','-Wextra','-fobjc-arc','-framework','Foundation','-framework','Metal','-framework','IOSurface','-lbsm',ROOT/'tools/re/surface_ipc_probe.c',ROOT/'tools/re/surface_gpu_producer.m','-o',target],out,'compile')
+    run(['xcrun','clang','-DRE_GPU_PRODUCER',*(['-DRE_GPU_CONSUMER'] if consumer else []),*(['-DRE_GPU_STALL'] if stall else []),'-Wall','-Wextra','-fobjc-arc','-framework','Foundation','-framework','Metal','-framework','IOSurface','-lbsm',ROOT/'tools/re/surface_ipc_probe.c',ROOT/'tools/re/surface_gpu_producer.m','-o',target],out,'compile')
     rows=[];failures=0;compared=0
     for case in CASES:
         for mode in ('receiver-clean','receiver-abrupt'):
@@ -49,7 +49,9 @@ def corpus(out,consumer=False):
                 payloads={p:(folder/(p+'.bin')).read_bytes() for p in RECEIVER_PHASES if (folder/(p+'.bin')).exists()}
                 checked=inspect(record,producer,case,mode,payloads)
                 if consumer and checked['passed']:
-                    gpu=inspect_consumer(read('gpu-consumer.json'),record,case)
+                    consumer_record=read('gpu-consumer.json')
+                    gpu=inspect_consumer(consumer_record,record,case)
+                    if stall and not inspect_stall(consumer_record.get('stall',{})):gpu={'passed':False,'failure':'invalid-stall-control'}
                     if gpu['passed']:
                         payloads.update(gpu['actual']);checked['expected'].update(gpu['expected'])
                     else:checked=gpu
@@ -65,7 +67,7 @@ def corpus(out,consumer=False):
             rows.append({'case':list(case),'mode':mode,'passed':all(r[0] for r in records),'repeat_equal':all(r[0] for r in records) and records[0][1]==records[1][1]})
     atomic(out/'gpu-ipc-corpus.json',{'cases':rows})
     return {'cases':len(rows),'passed_cases':sum(r['passed'] for r in rows),'repeat_equal_cases':sum(r['repeat_equal'] for r in rows),'helper_failures':failures,'compared_bytes':compared,'gpu_consumer_cases':sum(r['passed'] for r in rows) if consumer else 0,
-            'consumer_gpu_readback':consumer,
+            'gpu_stall_cases':sum(r['passed'] for r in rows) if stall else 0,'consumer_gpu_readback':consumer,
             'scope':'Owned completed shared-BGRA GPU producer and audited receiver-first Mach surface handoff, full allocation and local sender rights. Optional owned GPU consumer blit is separately flagged; no early-read race, Canvas envelope or final reclamation.'}
 
 
@@ -85,3 +87,12 @@ def inspect_consumer(value,record,case):
         wanted={'consumer-before':initial,'consumer-after':bytes(rendered)}
         return {'passed':actual==wanted,'failure':None if actual==wanted else 'consumer-full-allocation-mismatch','actual':actual,'expected':wanted}
     except (KeyError,ValueError,TypeError):return {'passed':False,'failure':'invalid-gpu-consumer'}
+
+
+def inspect_stall(value):
+    try:
+        if value['timeout_observed'] is not True or value['initial_wait_completion_accepted'] is not False:return False
+        for k,n in [('callbacks_before_release',0),('event_before_release',0),('event_after_release',1),('wait_deadline_ns',20000000)]:
+            if type(value[k]) is not int or value[k]!=n:return False
+        return type(value['status_before_release']) is int and value['status_before_release'] in (2,3)
+    except (KeyError,TypeError):return False

@@ -298,3 +298,9 @@ Evidence: [GPU Mach boundary](docs/reverse-engineering/2026-10-09-gpu-mach-hando
 Extended owned GPU Mach handoff with receiver Metal texture-to-buffer blit on imported IOSurface before CPU mutation/exit. Independent shared destination initialization, active pixels, row padding and allocation-tail predictions pass: 16 executions, 128 whole allocation comparisons and 2,097,152 bytes per consumer campaign. Two consumer seals and producer-only regression pass. Strict identity/status/type/layout/missing-readback/padding faults reject; 140 tests pass. Three new seals anchor-verified. Ordered public Metal control only; Canvas, unsynchronized overlap, failures and final reclamation remain open. No Xcode windows opened.
 
 Evidence: [peer GPU readback](docs/reverse-engineering/2026-10-09-gpu-peer-readback.md), [sanitized seals](research/evidence/gpu-peer-readback-2026-10-09.json).
+
+## 2026-10-09 — owned GPU event timeout and recovery
+
+Added a receiving-process shared-event gate before GPU blit. Initial 20ms completion wait times out without callback; explicit event signal then permits exactly one successful late completion, followed by exact whole-allocation comparisons and existing clean/abrupt exit/local-right cleanup. Two timeout campaigns and ordinary GPU readback regression pass, each comparing 2,097,152 bytes. All 32 timeout executions observed committed status2, so GPU arrival and scheduling delay remain unproven. Three seals anchor-verified; 142 tests pass. Canvas timeout/cancellation policy and final reclamation remain open. No Xcode windows opened.
+
+Evidence: [event timeout control](docs/reverse-engineering/2026-10-09-gpu-event-timeout.md), [sanitized seals](research/evidence/gpu-event-timeout-2026-10-09.json).
