@@ -84,6 +84,27 @@ def solid_color_check(images,variants):
             'scope':'Exact 32x32 center patch only, RGBA conversion without resizing/profile conversion; not full-frame equivalence or live wire proof.'}
 
 
+def compare_root_controls(images,out):
+    from PIL import Image
+    if len(images)!=4:raise ValueError('Four root/repeat/change captures required')
+    root_dir=out/'root-equality';root_dir.mkdir()
+    root=compare_captures(images[:2],root_dir)
+    repeat_dir=out/'inline-repeat';repeat_dir.mkdir()
+    repeat=compare_captures([images[0],images[2]],repeat_dir)
+    change_dir=out/'inline-change';change_dir.mkdir()
+    changed=compare_captures([images[0],images[3]],change_dir)
+    bodies=[]
+    for image_path in images:
+        with Image.open(image_path) as image:
+            if image.size!=(640,384):raise ValueError('Root-control geometry mismatch')
+            bodies.append(image.convert('RGBA').crop((32,96,608,352)).tobytes())
+    return {'root_pixels_equal':root['pixels_identical'],
+            'inline_repeat_png_equal':repeat['preview_bytes_identical'],
+            'inline_repeat_pixels_equal':repeat['pixels_identical'],
+            'inline_body_change_visible':bodies[0]!=bodies[3],
+            'inline_changed_pixels_visible':changed['controlled_change_visible']}
+
+
 def select_tab(message, project=PROJECT):
     candidates=[]
     for line in message.splitlines():
@@ -265,6 +286,8 @@ def capture(out,variants=(0,1),trace=False):
             if client:client.close()
             if monitor.thread.ident is not None:monitor.close()
     comparison=compare_captures(images,out)
+    if tuple(variants) in {(8,9,8,11),(12,13,12,14)} and len(images)==4:
+        comparison.update(compare_root_controls(images,out))
     content=fixture_content_check(images);atomic(out/'fixture-content-check.json',content)
     solid=solid_color_check(images,variants);atomic(out/'solid-color-check.json',solid)
     if len(images)==3 and tuple(variants)==(0,0,1):

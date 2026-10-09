@@ -1,0 +1,233 @@
+{
+  "cleanup": {
+    "both_owned_workspaces_closed_before_next_open": true,
+    "final_workspace_listing": "No workspace windows found"
+  },
+  "interpretation": "Pinning view colorScheme to light changes matched forced-white fixtures from blank to visible; inline/custom equivalence rules out root construction alone. Default foreground/background contrast is a supported explanation, not a direct runtime color dump.",
+  "label_change_pixels": {
+    "changed_fraction": 0.0240478515625,
+    "changed_pixels": 5910,
+    "comparable": true,
+    "max_channel_error": 216,
+    "mean_absolute_error_rgba": [
+      3.7350667317708335,
+      3.7350667317708335,
+      3.7350667317708335,
+      0.0
+    ],
+    "normalization": "RGBA conversion only; no resizing, profile conversion, font or scale normalization",
+    "passed": false,
+    "size": [
+      640,
+      384
+    ],
+    "threshold": 0
+  },
+  "limitations": [
+    "Fixed owned macOS fixture only; system fonts and scale/environment still require coverage.",
+    "PNG/pixel exact repeat is within this native environment, not independent portable rendering equivalence.",
+    "No complete Canvas IPC trace, raw transport padding, GPU completion or final reclamation.",
+    "Do not conflate root-equality controlled_change_visible=false with the separately measured label A/B; comparison pairs differ.",
+    "Preview title changes between inherited/light runs; within each run titles are matched. Appearance is a supported explanation, but title factor still needs independent isolation."
+  ],
+  "repeat_pixels": {
+    "changed_fraction": 0.0,
+    "changed_pixels": 0,
+    "comparable": true,
+    "max_channel_error": 0,
+    "mean_absolute_error_rgba": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "normalization": "RGBA conversion only; no resizing, profile conversion, font or scale normalization",
+    "passed": true,
+    "size": [
+      640,
+      384
+    ],
+    "threshold": 0
+  },
+  "repeat_png": {
+    "candidate_bytes": 23440,
+    "candidate_sha256": "1a4a50ee364d1486b4aa06bb3d3f0323f58018bbae3c81e516f4ba21696263dd",
+    "different_bits_in_shared_extent": 0,
+    "different_bytes": 0,
+    "first_mismatches": [],
+    "mode": "exact-bytes",
+    "normalization": "none",
+    "passed": true,
+    "reference_bytes": 23440,
+    "reference_sha256": "1a4a50ee364d1486b4aa06bb3d3f0323f58018bbae3c81e516f4ba21696263dd",
+    "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately.",
+    "unmatched_tail_bytes": 0
+  },
+  "root_comparison": {
+    "changed_fraction": 0.0,
+    "changed_pixels": 0,
+    "comparable": true,
+    "max_channel_error": 0,
+    "mean_absolute_error_rgba": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "normalization": "RGBA conversion only; no resizing, profile conversion, font or scale normalization",
+    "passed": true,
+    "size": [
+      640,
+      384
+    ],
+    "threshold": 0
+  },
+  "runs": [
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "rendered_variants",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "root_pixels_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inline_repeat_png_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inline_repeat_pixels_equal",
+          "present": true
+        },
+        {
+          "actual": false,
+          "expected": true,
+          "passed": false,
+          "path": "inline_body_change_visible",
+          "present": true
+        }
+      ],
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "d1a7e956f8457d4c89dc6438afce7cc79ef7cb2a5a487a1cb3fee3b4b9385665",
+      "observations": {
+        "controlled_change_visible": false,
+        "fixture_content_nonblank": false,
+        "fixture_nonblank_captures": 0,
+        "inline_body_change_visible": false,
+        "inline_changed_pixels_visible": false,
+        "inline_repeat_pixels_equal": true,
+        "inline_repeat_png_equal": true,
+        "instrumented_processes": 0,
+        "observed_processes": 1,
+        "pixels_identical": true,
+        "png_valid": true,
+        "preview_bytes_identical": true,
+        "rendered_variants": 4,
+        "root_pixels_equal": true,
+        "sessions_created": 0,
+        "solid_expected_colors": false,
+        "source_sha256": "1b71c43c13c50d1d8f66e3fcea69e10da5ad0f318b0d8a45599b436b129cbbb2",
+        "wire_capture_complete": false
+      },
+      "run_id": "20261009T160943Z-native-canvas-inline-custom-repeat-099b6df3",
+      "verdict": "inconclusive"
+    },
+    {
+      "artifact_hashes_valid": true,
+      "checks": [
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "rendered_variants",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "root_pixels_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inline_repeat_png_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inline_repeat_pixels_equal",
+          "present": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "path": "inline_body_change_visible",
+          "present": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "passed": true,
+          "path": "fixture_nonblank_captures",
+          "present": true
+        }
+      ],
+      "execution": "success",
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "05b6e5f90e9b8587e2c4959bc39352e7630d01fe1236381992ddabb6e596bbd1",
+      "observations": {
+        "controlled_change_visible": false,
+        "fixture_content_nonblank": true,
+        "fixture_nonblank_captures": 4,
+        "inline_body_change_visible": true,
+        "inline_changed_pixels_visible": true,
+        "inline_repeat_pixels_equal": true,
+        "inline_repeat_png_equal": true,
+        "instrumented_processes": 0,
+        "observed_processes": 1,
+        "pixels_identical": true,
+        "png_valid": true,
+        "preview_bytes_identical": true,
+        "rendered_variants": 4,
+        "root_pixels_equal": true,
+        "sessions_created": 0,
+        "solid_expected_colors": false,
+        "source_sha256": "5737db62034a33b89c87a9c91200466cc6cb705a6768f68af1602d0d666d48f7",
+        "wire_capture_complete": false
+      },
+      "run_id": "20261009T161243Z-native-canvas-light-root-repeat-6f533b59",
+      "verdict": "supports"
+    }
+  ],
+  "schema_version": 1,
+  "tests": {
+    "context": "Final full suite passes with ResourceWarning treated as error. Initial owned cleanup PermissionError retained in tool output; isolated 13 core tests and final rerun pass.",
+    "failed": 0,
+    "passed": 95
+  },
+  "visually_inspected": [
+    "light custom root baseline"
+  ]
+}

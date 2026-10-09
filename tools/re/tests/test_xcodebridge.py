@@ -8,10 +8,22 @@ import time
 import unittest
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
 from reloop.xcodebridge import BrokerClient, validate_request
-from reloop.canvas import fixture_content_check, solid_color_check, require_closed_owned_workspaces
+from reloop.canvas import fixture_content_check, solid_color_check, require_closed_owned_workspaces, compare_root_controls
 
 
 class XcodeBrokerTests(unittest.TestCase):
+    def test_root_label_change_requires_body_not_chrome(self):
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as d:
+            out=pathlib.Path(d);paths=[]
+            for i in range(4):
+                image=Image.new('RGBA',(640,384),'white')
+                if i==3:image.putpixel((100,20),(0,0,0,255))
+                path=out/('%d.png'%i);image.save(path);paths.append(path)
+            result=compare_root_controls(paths,out)
+            self.assertTrue(result['root_pixels_equal']);self.assertTrue(result['inline_repeat_png_equal'])
+            self.assertTrue(result['inline_changed_pixels_visible']);self.assertFalse(result['inline_body_change_visible'])
+
     def test_stale_owned_window_blocks_next_open_but_user_project_is_preserved(self):
         with tempfile.TemporaryDirectory() as d:
             parent=pathlib.Path(d)/'preview-workspaces'

@@ -862,6 +862,100 @@
         "local-re-controller"
       ],
       "timeout_seconds": 600
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "root_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_repeat_png_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_repeat_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_body_change_visible"
+        },
+        {
+          "equals": 4,
+          "path": "fixture_nonblank_captures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Structurally identical inline/custom bodies with identical chrome render equal pixels; unchanged inline repeats PNG/pixels and a label-only change affects interior content.",
+      "id": "native-canvas-inline-custom-repeat",
+      "params": {
+        "trace": false,
+        "variants": [
+          8,
+          9,
+          8,
+          11
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
+    },
+    {
+      "adapter": "xcode_preview",
+      "artifact_limit_mb": 512,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "rendered_variants"
+        },
+        {
+          "equals": true,
+          "path": "root_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_repeat_png_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_repeat_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "inline_body_change_visible"
+        },
+        {
+          "equals": 4,
+          "path": "fixture_nonblank_captures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinning light colorScheme makes forced-white inline/custom bodies visibly equivalent, retains exact inline repeat, and exposes label-only interior change.",
+      "id": "native-canvas-light-root-repeat",
+      "params": {
+        "trace": false,
+        "variants": [
+          12,
+          13,
+          12,
+          14
+        ]
+      },
+      "priority": 85,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 600
     }
   ],
   "version": 1

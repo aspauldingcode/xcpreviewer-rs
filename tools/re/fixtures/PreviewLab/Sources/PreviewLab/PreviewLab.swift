@@ -53,3 +53,42 @@ struct PreviewLabApp: App {
         Text("Owned canvas fixture").foregroundStyle(.secondary)
     }.frame(width: 320, height: 160)
 }
+
+// Same title, geometry and body composition remove chrome/style confounders.
+#Preview("Root control") {
+    VStack(spacing: 12) {
+        Text("Preview baseline").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160).background(Color.white)
+}
+#Preview("Root control") { ProbeView(label: "Preview baseline") }
+#Preview("Root control") {
+    VStack(spacing: 12) {
+        Text("Preview baseline").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160).background(Color.white)
+}
+#Preview("Root control") {
+    VStack(spacing: 12) {
+        Text("Preview changed").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160).background(Color.white)
+}
+
+#Preview("Light root control") {
+    VStack(spacing: 12) {
+        Text("Preview baseline").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160).background(Color.white)
+        .environment(\.colorScheme, .light)
+}
+#Preview("Light root control") {
+    ProbeView(label: "Preview baseline").environment(\.colorScheme, .light)
+}
+#Preview("Light root control") {
+    VStack(spacing: 12) {
+        Text("Preview changed").font(.title)
+        Text("Owned canvas fixture").foregroundStyle(.secondary)
+    }.frame(width: 320, height: 160).background(Color.white)
+        .environment(\.colorScheme, .light)
+}
