@@ -47,3 +47,8 @@ class StubBindingTests(unittest.TestCase):
     def test_stub_register_fault_with_matching_bytes_rejects(self):
         image=Image();image.words[2]^=1<<5;data=bytearray(image.data);struct.pack_into('<I',data,360,image.words[2]);image.data=bytes(data)
         with self.assertRaises(ValueError):self.verify(image)
+
+    def test_missing_extra_duplicate_instruction_rows_reject(self):
+        image=Image();text=image.text()
+        for bad in ["\n".join(text.splitlines()[:-1]),text+text.splitlines()[0]+"\n",text+"100c: 00 00 00 00 nop\n"]:
+            with self.assertRaises(ValueError):inspect(bad,image,0x1000,NAME,LIB)

@@ -1,5 +1,6 @@
 """Read-only Mach-O indirect symbol binding and ARM64 stub projection."""
 import struct
+import re
 from reloop.discriminants import instructions,pc_relative
 
 
@@ -39,6 +40,8 @@ def index(image,section,address,stride,indirect):
 
 def inspect(text,image,address,expected_symbol,expected_library):
     code=instructions(text)
+    rows=re.findall(r'^\s*([0-9a-f]+):\s+(?:[0-9a-f]{2}\s+){4}\w',text,re.M)
+    if len(rows)!=len(set(rows)):raise ValueError('Duplicate native stub instruction')
     if set(code)!=set(range(address,address+12,4)):raise ValueError('Exact three-instruction native stub required')
     words=[]
     for site in range(address,address+12,4):

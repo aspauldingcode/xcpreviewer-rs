@@ -350,3 +350,7 @@ Resolved two specialized State type records through embedded-NUL symbolic parsin
 ## 2026-10-09 — Generic State witness pattern
 
 Verified State generic descriptor/pattern and eight chained witness targets;648 body and48 import-stub instruction bytes compared,16 pattern bytes independently predicted.132,098 direct-tag layout projections and complete57-byte overlapping trailer copy pass. Three seals retained: first acquisition range included neighboring helper, final controls narrow instantiator to8 bytes.197 tests pass. No runtime specialization, retain/release accounting or transport claim. [Evidence](research/evidence/state-witness-pattern-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-state-witness-pattern.md).
+
+## 2026-10-09 — Storage/trace bridge delegation
+
+Verified declared payload witness copy/destroy delegation:192 body+24 import instruction bytes; storage copies24 bytes and delegates three reference words, trace copies8 bytes and delegates one. Pattern/static metadata associations and reflection names checked.130 owned null/alias models compare3,040 bytes without invoking Swift. Six seals retained (three acquisition, three full controls);204 tests pass. Shared stub verifier now rejects duplicate instruction rows. Actual runtime selection, reference counts, reclamation and Canvas transport remain open. [Evidence](research/evidence/storage-bridge-delegation-2026-10-09.json), [analysis](docs/reverse-engineering/2026-10-09-storage-bridge-delegation.md).

@@ -133,6 +133,11 @@ def perform(kind,out,p):
             from reloop.swiftmeta import MachO
             facts.update(inspect([f.read_text() for f in files],MachO(image)))
             atomic(out/'state-pattern.json',facts)
+        if p.get('ownership_control',False):
+            from reloop.storageownership import inspect
+            from reloop.swiftmeta import MachO
+            facts.update(inspect([f.read_text() for f in files],MachO(image)))
+            atomic(out/'storage-ownership.json',facts)
         selections=load(out/'disassembly/selection.json')
         return {'function_count':len(files),'entry_body_count':sum(s['entry_instruction'] for s in selections),
                 'address_fallback_count':sum(s['mode']=='bounded-address' for s in selections),'image_sha256':digest(image),**facts}

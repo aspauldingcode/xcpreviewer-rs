@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-09",
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "runs": [
+    {
+      "run_id": "20261009T230901Z-native-token-storage-witness-bodies-ebefdd2d",
+      "manifest_sha256": "3a5b8798e8a890c9a9458f2566cf74052d36a367f42827d655f784fe0ecf1036",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded acquisition only"
+    },
+    {
+      "run_id": "20261009T230916Z-native-token-storage-witness-bodies-0096b744",
+      "manifest_sha256": "e3f36c43432800bcbcc2dbb2cc28819c79e3d57177d625faab477ffec460b2e5",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded acquisition only"
+    },
+    {
+      "run_id": "20261009T230948Z-native-token-storage-witness-bodies-beccf0c6",
+      "manifest_sha256": "04d43c2c596a2f5fa3f07c404f653b4e03cf2d8fe1ec1ccf9ac89f66c7dd7903",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "bounded acquisition only"
+    },
+    {
+      "run_id": "20261009T231138Z-native-token-storage-witness-bodies-dfb1f7c2",
+      "manifest_sha256": "7fbc9a462bf9e02becbd14442bcd3d9f1c59d70aca5fa3c391bf8179748ac56a",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static delegation control"
+    },
+    {
+      "run_id": "20261009T231206Z-native-token-storage-witness-bodies-ed0fcbdd",
+      "manifest_sha256": "0d7ecfb381a514d0c53f7d339e12535f86fc16b7236b2ba4cdcc4c64a4a678c6",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static delegation control"
+    },
+    {
+      "run_id": "20261009T231344Z-native-token-storage-witness-bodies-719bf99c",
+      "manifest_sha256": "aaff0b5d011c7aa13cd417bf242398302dac19753facd17f8ae520ebc84e011b",
+      "execution": "success",
+      "verdict": "supports",
+      "scope": "full static delegation control; duplicate stub rows rejected"
+    }
+  ],
+  "facts": {
+    "body_instruction_bytes_compared": 192,
+    "import_instruction_bytes_compared": 24,
+    "owned_model_bytes_compared": 3040,
+    "ownership_model_cases": 130,
+    "reflected_fields": {
+      "storage": [
+        "observers",
+        "managedTokens"
+      ],
+      "trace": [
+        "links"
+      ]
+    },
+    "scope": "Static generic storage pattern/static trace metadata, declared witness/import delegation and owned finite model only. Null/alias arguments remain distinct calls, not proof of distinct allocations, actual runtime retains/releases, reclamation, state races or Canvas cleanup.",
+    "storage_bridge_calls_per_operation": 3,
+    "storage_ownership_verified": true,
+    "storage_value_bytes": 24,
+    "trace_bridge_calls_per_operation": 1,
+    "trace_value_bytes": 8
+  },
+  "tests_passed": 204,
+  "observations": [
+    "Declared storage witness copies24 bytes and delegates three bridge retains/releases per copy/destroy.",
+    "Static trace metadata binds an8-byte value witness with one bridge retain/release delegation.",
+    "Reflected field names are independent observations; no automatic field-to-word mapping.",
+    "Owned null/alias model preserves call multiplicity and complete bytes without invoking Swift runtime."
+  ],
+  "scope": "Static generic storage pattern/static trace metadata, declared witness/import delegation and owned finite model only. Null/alias arguments remain distinct calls, not proof of distinct allocations, actual runtime retains/releases, reclamation, state races or Canvas cleanup.",
+  "remaining": [
+    "Actual specialized runtime witness selection and payload values",
+    "Native retain/release effects, allocation identity and reclamation",
+    "Source-case numeric mapping and live dictionary races",
+    "Correlated Canvas transport cleanup"
+  ]
+}

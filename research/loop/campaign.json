@@ -2998,6 +2998,53 @@
           "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
         }
       ]
+    },
+    {
+      "id": "native-token-storage-witness-bodies",
+      "adapter": "disassembly",
+      "hypothesis": "Declared storage/trace witness association and complete bodies delegate three/one reference words to independently bound Swift bridge retain/release imports. Owned finite null/alias models preserve complete bytes and event multiplicity without runtime invocation.",
+      "depends_on": [],
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ranges": [
+          "42358:423dc",
+          "42900:42904",
+          "dbc0:dbc8",
+          "ed44:ed48",
+          "db94:dbc0",
+          "1311c8:1311d4",
+          "1311e0:1311ec"
+        ],
+        "ownership_control": true
+      },
+      "priority": 90,
+      "checks": [
+        {
+          "path": "storage_ownership_verified",
+          "equals": true
+        },
+        {
+          "path": "body_instruction_bytes_compared",
+          "equals": 192
+        },
+        {
+          "path": "ownership_model_cases",
+          "equals": 130
+        },
+        {
+          "path": "owned_model_bytes_compared",
+          "equals": 3040
+        },
+        {
+          "path": "image_sha256",
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+        }
+      ]
     }
   ],
   "version": 1
