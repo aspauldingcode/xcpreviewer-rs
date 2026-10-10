@@ -3887,6 +3887,146 @@
           "equals": 28
         }
       ]
+    },
+    {
+      "id": "native-mixed-alpha-quartz-contrast",
+      "adapter": "native_reference",
+      "hypothesis": "Independent owned CGContext producer with original Double versus public NSColor inputs discriminates shared raster quantization against pinned ImageRenderer raw pixels; rational and float32 models predeclared, all720 allocation bytes including sentinel padding compare.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_quartz_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "allocations",
+          "equals": 56
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 28
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 40320
+        },
+        {
+          "path": "padding_bytes",
+          "equals": 6048
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-public-quartz-contrast",
+      "adapter": "native_reference",
+      "hypothesis": "Original Double and reconstructed public NSColor Quartz fills differ from native ImageRenderer; direct public Color.cgColor and NSColor.cgColor fills discriminate conversion/reconstruction boundary with unchanged native anchors and full padded allocation.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_public_quartz_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "allocations",
+          "equals": 112
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 56
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 80640
+        },
+        {
+          "path": "padding_bytes",
+          "equals": 12096
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-normal-quartz-contrast",
+      "adapter": "native_reference",
+      "hypothesis": "Changing only owned CGContext blendMode.copy to normal over zero transparent active pixels discriminates a raster blend path cause of five native ImageRenderer half-tie counterexamples; same four public/source inputs, predictions and sentinel padding. No internal implementation claim.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_normal_quartz_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "allocations",
+          "equals": 112
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 56
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 80640
+        },
+        {
+          "path": "padding_bytes",
+          "equals": 12096
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-blend-contrast",
+      "adapter": "native_reference",
+      "hypothesis": "Full allocation byte contrast of separately anchored copy/normal CGContext campaigns tests whether blend mode changes any active pixel or sentinel padding in this zero-background fixture.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 30,
+      "artifact_limit_mb": 1,
+      "params": {
+        "mixed_blend_compare_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "pairs",
+          "equals": 112
+        },
+        {
+          "path": "all_equal",
+          "equals": true
+        },
+        {
+          "path": "compared_bytes",
+          "equals": 80640
+        }
+      ]
     }
   ],
   "version": 1

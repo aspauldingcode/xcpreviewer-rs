@@ -163,6 +163,18 @@
       "scope": "Owned ImageRenderer raw CGImage/Color precision versus TIFF-PNG export at mixed-alpha half-ties. Retain failed general rounding models. No native Canvas transport claim."
     },
     {
+      "completion_experiment_ids": [
+        "native-mixed-alpha-quartz-contrast",
+        "native-mixed-alpha-public-quartz-contrast",
+        "native-mixed-alpha-normal-quartz-contrast",
+        "native-mixed-alpha-blend-contrast"
+      ],
+      "completion_runs": [
+        "20261010T180515Z-native-mixed-alpha-quartz-contrast-73aad159",
+        "20261010T180803Z-native-mixed-alpha-public-quartz-contrast-35375162",
+        "20261010T180922Z-native-mixed-alpha-normal-quartz-contrast-2c5d86d7",
+        "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72"
+      ],
       "id": "native-mixed-alpha-quartz-contrast",
       "issue": "O3",
       "priority": 95,
@@ -171,6 +183,17 @@
         "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9"
       ],
       "scope": "Independent owned CGContext mixed-alpha producer contrasts exact source Double with publicly bridged components and declared raw rounding models, including owned padding. No general color model or native Canvas transport claim."
+    },
+    {
+      "id": "native-mixed-alpha-render-callback",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T180803Z-native-mixed-alpha-public-quartz-contrast-35375162",
+        "20261010T180922Z-native-mixed-alpha-normal-quartz-contrast-2c5d86d7",
+        "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72"
+      ],
+      "scope": "Owned public ImageRenderer draw callback into explicit padded CGContext versus pinned cgImage provider. Native drawing boundary discrimination, no Canvas transport or universal color formula."
     }
   ],
   "schema_version": 1

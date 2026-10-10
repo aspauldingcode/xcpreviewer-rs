@@ -418,3 +418,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: raw mixed-alpha export boundary
 
 [CGImage/export control](docs/reverse-engineering/2026-10-10-native-mixed-boundary.md) measures84 native captures/51,408 raw bytes in three supported campaigns. Mixed rounding counterexamples already exist before TIFF/PNG export; both exports match measured-raw unpremultiplication exactly. Latest28 legacy outputs equal sealed prior native measurements.271 tests; failed layout probe retained. Native stride68 has no padding. Next independent CGContext contrast; Canvas and both milestones remain open.
+
+### 2026-10-10: independent Quartz and public-color contrast
+
+[Quartz producer controls](docs/reverse-engineering/2026-10-10-native-mixed-quartz.md) compare280 native allocations/201,600 bytes/30,240 sentinel padding bytes, with140 repeats. Direct Double half-up predictions pass; public color routes still differ from ImageRenderer in five cases. Copy versus normal allocation bytes agree exactly in a separately sealed112-pair contrast. Harness failures retained;278 tests. Next public ImageRenderer drawing callback into owned padded context; Canvas and both milestones remain open.

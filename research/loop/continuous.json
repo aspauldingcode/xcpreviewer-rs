@@ -187,13 +187,23 @@
       "retry_prerequisite": "Observed default byteorder/premultiplied-last layout admitted only with distinct opaque RGBA source control before partial-alpha interpretation; corrected seals support. Do not generalize default layout across targets.",
       "run_id": "20261010T175723Z-native-mixed-alpha-export-boundary-b09abd81",
       "status": "resolved-owned-default-RGBA-layout"
+    },
+    {
+      "retry_prerequisite": "Explicit CGFloat mapping fixes observed Swift CGColor component-pointer type mismatch; corrected native seals support.",
+      "run_id": "20261010T180436Z-native-mixed-alpha-quartz-contrast-44317d47",
+      "status": "resolved-owned-CGFloat-type"
+    },
+    {
+      "retry_prerequisite": "Separate two fresh processes from four input variants; verify all four repeat pairs. Regression tests detect last public variant padding corruption. Retain original224-allocation observation without acceptance.",
+      "run_id": "20261010T180630Z-native-mixed-alpha-public-quartz-contrast-bca37b91",
+      "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Owned CGImage raw provider reveals mixed-alpha rounding before TIFF/PNG export:three supported campaigns84 captures/51,408 complete raw bytes;84 direct and84 legacy PNG exports exactly follow measured-raw unpremultiplication. All three boundaries repeat; latest28 legacy outputs equal independently sealed prior native measurements. Source models remain18/28,20/28,18/28, so general quantization unresolved.271 tests. Native stride68 has zero padding; no Canvas claim.",
+  "last_completed": "Independent Quartz producer/public CGColor/copy-normal contrast:three supported native campaigns280 allocations/201,600 complete bytes/30,240 sentinel padding bytes;140 repeat pairs. Original Double half-up model28/28 per campaign; each input matches ImageRenderer only18/28, with same five half-tie cases mismatching. Public input routes agree; sealed copy-normal contrast112 pairs/80,640 bytes exactly equal. Compiler type and repeat-accounting failures retained.278 tests.",
   "last_github_sync": {
-    "checkpoint": "Native mixed-alpha CGImage/export boundary",
+    "checkpoint": "Independent Quartz/public-color/blend contrast",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100550841"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100646009"
     ],
     "issues": [
       "O3"
@@ -208,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Independent owned CGContext mixed-alpha contrast:original Double inputs versus publicly resolved/NSColor component inputs, predeclared raw formulas and explicit owned row padding. Distinguish ImageRenderer source conversion from common graphics quantization without fitting observed bytes. Native Canvas blockers unchanged.",
+    "Use owned public ImageRenderer.render draw callback into a pinned padded CGContext; compare complete output against anchored cgImage/provider and independent source models. Discriminate SwiftUI drawing from direct Quartz conversion after copy-versus-normal effect was falsified for this fixture. Do not expand portable mixed-color subset or claim Canvas protocol recovered.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1398,6 +1408,30 @@
     {
       "manifest_sha256": "1e4eba98fc4be9d17f142476c503ac78d3eb0ec645b00a10a4ec93c3255174d5",
       "run_id": "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9"
+    },
+    {
+      "manifest_sha256": "e49e9b7569600f619c3115e55f34afd3d9474972de15fc005f6b71d7042aab53",
+      "run_id": "20261010T180436Z-native-mixed-alpha-quartz-contrast-44317d47"
+    },
+    {
+      "manifest_sha256": "88e88ea623374d8e3612f446a24ed4d4fa6509fb1cc00a6eae27a0111a6dac02",
+      "run_id": "20261010T180515Z-native-mixed-alpha-quartz-contrast-73aad159"
+    },
+    {
+      "manifest_sha256": "23a04555a19d9080c5d0b0441ec6f2d8797a03011b38ce95e0b108c68310ccbb",
+      "run_id": "20261010T180630Z-native-mixed-alpha-public-quartz-contrast-bca37b91"
+    },
+    {
+      "manifest_sha256": "8a02e4157a202765c607119e225d40ad5b4652ffba1a78a7b31b7b777f71f42a",
+      "run_id": "20261010T180803Z-native-mixed-alpha-public-quartz-contrast-35375162"
+    },
+    {
+      "manifest_sha256": "9f64ffa2a42419af5469cfd67c746d503f30ef76d05a03943d94965bf6f02b32",
+      "run_id": "20261010T180922Z-native-mixed-alpha-normal-quartz-contrast-2c5d86d7"
+    },
+    {
+      "manifest_sha256": "2e1532098c59e31e720b6093469d780065a67d281db814e1c605273b2d6969c1",
+      "run_id": "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

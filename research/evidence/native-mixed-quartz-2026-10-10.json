@@ -1,0 +1,219 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "failed",
+      "facts": {},
+      "manifest_sha256": "e49e9b7569600f619c3115e55f34afd3d9474972de15fc005f6b71d7042aab53",
+      "run_id": "20261010T180436Z-native-mixed-alpha-quartz-contrast-44317d47",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocation_bytes": 40320,
+        "allocations": 56,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 28,
+            "f32-product-even": 20,
+            "f32-product-half-up": 28,
+            "rational-even": 20,
+            "rational-half-up": 28
+          },
+          "1": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          }
+        },
+        "native_matches": {
+          "0": 18,
+          "1": 18
+        },
+        "padding_bytes": 6048,
+        "repeat_equal_pairs": 28,
+        "scope": "Owned CGContext source-versus-public-bridge producer contrast with full allocation/padding; independent model matches and pinned ImageRenderer relations distinguished. No general mixed-color or Canvas protocol acceptance."
+      },
+      "manifest_sha256": "88e88ea623374d8e3612f446a24ed4d4fa6509fb1cc00a6eae27a0111a6dac02",
+      "run_id": "20261010T180515Z-native-mixed-alpha-quartz-contrast-73aad159",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocation_bytes": 161280,
+        "allocations": 224,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 56,
+            "f32-product-even": 40,
+            "f32-product-half-up": 56,
+            "rational-even": 40,
+            "rational-half-up": 56
+          },
+          "1": {
+            "f32-components-double-product": 40,
+            "f32-product-even": 44,
+            "f32-product-half-up": 40,
+            "rational-even": 44,
+            "rational-half-up": 40
+          },
+          "2": {
+            "f32-components-double-product": 40,
+            "f32-product-even": 44,
+            "f32-product-half-up": 40,
+            "rational-even": 44,
+            "rational-half-up": 40
+          },
+          "3": {
+            "f32-components-double-product": 40,
+            "f32-product-even": 44,
+            "f32-product-half-up": 40,
+            "rational-even": 44,
+            "rational-half-up": 40
+          }
+        },
+        "native_matches": {
+          "0": 36,
+          "1": 36,
+          "2": 36,
+          "3": 36
+        },
+        "padding_bytes": 24192,
+        "repeat_equal_pairs": 28,
+        "scope": "Owned CGContext source-versus-public-bridge producer contrast with full allocation/padding; independent model matches and pinned ImageRenderer relations distinguished. No general mixed-color or Canvas protocol acceptance."
+      },
+      "manifest_sha256": "23a04555a19d9080c5d0b0441ec6f2d8797a03011b38ce95e0b108c68310ccbb",
+      "run_id": "20261010T180630Z-native-mixed-alpha-public-quartz-contrast-bca37b91",
+      "seal_valid": true,
+      "verdict": "inconclusive"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocation_bytes": 80640,
+        "allocations": 112,
+        "double_bridge_different_cases": 4,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 28,
+            "f32-product-even": 20,
+            "f32-product-half-up": 28,
+            "rational-even": 20,
+            "rational-half-up": 28
+          },
+          "1": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          },
+          "2": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          },
+          "3": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          }
+        },
+        "native_matches": {
+          "0": 18,
+          "1": 18,
+          "2": 18,
+          "3": 18
+        },
+        "padding_bytes": 12096,
+        "public_inputs_equal": true,
+        "repeat_equal_pairs": 56,
+        "scope": "Owned CGContext source-versus-public-bridge producer contrast with full allocation/padding; independent model matches and pinned ImageRenderer relations distinguished. No general mixed-color or Canvas protocol acceptance."
+      },
+      "manifest_sha256": "8a02e4157a202765c607119e225d40ad5b4652ffba1a78a7b31b7b777f71f42a",
+      "run_id": "20261010T180803Z-native-mixed-alpha-public-quartz-contrast-35375162",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocation_bytes": 80640,
+        "allocations": 112,
+        "double_bridge_different_cases": 4,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 28,
+            "f32-product-even": 20,
+            "f32-product-half-up": 28,
+            "rational-even": 20,
+            "rational-half-up": 28
+          },
+          "1": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          },
+          "2": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          },
+          "3": {
+            "f32-components-double-product": 20,
+            "f32-product-even": 22,
+            "f32-product-half-up": 20,
+            "rational-even": 22,
+            "rational-half-up": 20
+          }
+        },
+        "native_matches": {
+          "0": 18,
+          "1": 18,
+          "2": 18,
+          "3": 18
+        },
+        "padding_bytes": 12096,
+        "public_inputs_equal": true,
+        "repeat_equal_pairs": 56,
+        "scope": "Owned CGContext source-versus-public-bridge producer contrast with full allocation/padding; independent model matches and pinned ImageRenderer relations distinguished. No general mixed-color or Canvas protocol acceptance."
+      },
+      "manifest_sha256": "9f64ffa2a42419af5469cfd67c746d503f30ef76d05a03943d94965bf6f02b32",
+      "run_id": "20261010T180922Z-native-mixed-alpha-normal-quartz-contrast-2c5d86d7",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_equal": true,
+        "compared_bytes": 80640,
+        "pairs": 112,
+        "scope": "Full byte contrast of externally anchored owned copy versus normal CGContext draws over zero active pixels and sentinel padding; no effect here. Not a general blend-mode or ImageRenderer implementation claim."
+      },
+      "manifest_sha256": "2e1532098c59e31e720b6093469d780065a67d281db814e1c605273b2d6969c1",
+      "run_id": "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Owned independent CGContext producer/public-color/blend contrast with full allocation and sentinel padding; five native ImageRenderer half-tie cases still differ. Native draw callback is next, not Canvas protocol acceptance."
+}

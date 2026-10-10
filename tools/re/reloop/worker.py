@@ -262,6 +262,18 @@ def perform(kind,out,p):
     if kind=='native_reference' and p.get('cleanup_control',False):
         from reloop.quiescence import corpus
         return corpus(out)
+    if kind=='native_reference' and p.get('mixed_blend_compare_control',False):
+        from reloop.mixedquartz import blend_contrast
+        return blend_contrast(out)
+    if kind=='native_reference' and p.get('mixed_normal_quartz_control',False):
+        from reloop.mixedquartz import corpus
+        return corpus(out,True,True)
+    if kind=='native_reference' and p.get('mixed_public_quartz_control',False):
+        from reloop.mixedquartz import corpus
+        return corpus(out,True)
+    if kind=='native_reference' and p.get('mixed_quartz_control',False):
+        from reloop.mixedquartz import corpus
+        return corpus(out)
     if kind=='native_reference' and p.get('mixed_boundary_control',False):
         from reloop.mixedboundary import corpus
         return corpus(out)
