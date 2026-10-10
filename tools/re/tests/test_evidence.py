@@ -58,6 +58,28 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(bytes_equal(a, b)['first_mismatches'][0]['offset'], 65536)
         b.write_bytes(a.read_bytes()); self.assertTrue(bytes_equal(a, b)['passed'])
 
+    def test_stream_chunk_fastpath_matches_independent_diagnostics(self):
+        import hashlib
+        a,b=self.root/'a',self.root/'b'
+        for size in (0,65535,65536,65537,131195):
+            raw=bytes(i%256 for i in range(size));a.write_bytes(raw)
+            for tail in (0,3,-3):
+                changed=bytearray(raw if tail>=0 else raw[:max(0,size+tail)])
+                if tail>0:changed.extend(bytes([71])*tail)
+                for offset in (0,65535,65536,size-1):
+                    if 0<=offset<len(changed):changed[offset]^=3
+                b.write_bytes(changed);v=bytes_equal(a,b);mismatches=[];bits=0
+                for i in range(max(len(raw),len(changed))):
+                    x=raw[i] if i<len(raw) else None;y=changed[i] if i<len(changed) else None
+                    if x!=y:
+                        mismatches.append({'offset':i,'reference':x,'candidate':y})
+                        if x is not None and y is not None:bits+=bin(x^y).count('1')
+                self.assertEqual(v['different_bytes'],len(mismatches));self.assertEqual(v['different_bits_in_shared_extent'],bits)
+                self.assertEqual(v['first_mismatches'],mismatches[:32]);self.assertEqual(v['unmatched_tail_bytes'],abs(len(raw)-len(changed)))
+                self.assertEqual(v['passed'],not mismatches);self.assertEqual(v['reference_sha256'],hashlib.sha256(raw).hexdigest())
+                self.assertEqual(v['candidate_sha256'],hashlib.sha256(changed).hexdigest())
+            b.write_bytes(raw);self.assertTrue(bytes_equal(a,b)['passed'])
+
     def test_typed_comparison_preserves_signed_zero_and_bool(self):
         self.assertNotEqual(typed(-0.0), typed(0.0))
         self.assertNotEqual(typed(True), typed(1))

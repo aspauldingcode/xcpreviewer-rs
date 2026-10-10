@@ -1,0 +1,37 @@
+<!doctype html><meta charset="utf-8"><title>Owned primary-source browser control</title>
+<pre id="status">Running</pre><canvas id="preview"></canvas>
+<script>
+const cfg=__CONFIG__,b64=a=>{let s='';for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode(...a.subarray(i,i+8192));return btoa(s)};
+const hash=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
+(async()=>{try{
+ const rows=[],invalid=[],controls=[],aggregates=[],checker_invalid=[],renderer_hashes=[],checker_hashes=[];
+ let imports=0;
+ for(const job of cfg.jobs){
+  const bytes=await(await fetch(`/source-${job.index}.wasm`)).arrayBuffer(),module=await WebAssembly.compile(bytes);
+  renderer_hashes.push(await hash(bytes));imports+=WebAssembly.Module.imports(module).length;
+  for(let s=0;s<2;s++)for(let repeat=0;repeat<2;repeat++){
+   const e=(await WebAssembly.instantiate(module,{})).exports,raw=new Uint8Array(e.memory.buffer,e.pixels(),e.capacity());raw.fill(0xc3);
+   const rendered=e.render(job.strides[s]),w=job.config.width,h=job.config.height,straight=new Uint8ClampedArray(w*h*4);
+   for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    const p=y*job.strides[s]+x*4,q=(y*w+x)*4,a=raw[p+3];straight[q+3]=a;
+    for(let c=0;c<3;c++)straight[q+c]=a?Math.floor((raw[p+c]*255+a/2)/a):0;
+   }
+   const canvas=document.getElementById('preview');canvas.width=w;canvas.height=h;
+   const ctx=canvas.getContext('2d',{alpha:true,colorSpace:'srgb'});ctx.putImageData(new ImageData(straight,w,h,{colorSpace:'srgb'}),0,0);
+   const readback=ctx.getImageData(0,0,w,h);
+   rows.push({job:job.index,stride_index:s,repeat,capacity:e.capacity(),rendered,allocation:b64(raw),straight:b64(straight),canvas:b64(readback.data),context:ctx.getContextAttributes(),image_color_space:readback.colorSpace});
+  }
+  const e=(await WebAssembly.instantiate(module,{})).exports,raw=new Uint8Array(e.memory.buffer,e.pixels(),e.capacity());raw.fill(0xc3);e.render(job.strides[0]);
+  for(const [k,stride] of [0,job.config.width*4-1,257,0xffffffff].entries())invalid.push({job:job.index,index:k,stride,result:e.render(stride),allocation:b64(raw)});
+  const checkerbytes=await(await fetch(`/checker-${job.index}.wasm`)).arrayBuffer(),cm=await WebAssembly.compile(checkerbytes),ce=(await WebAssembly.instantiate(cm,{})).exports;
+  checker_hashes.push(await hash(checkerbytes));imports+=WebAssembly.Module.imports(cm).length;
+  for(let s=0;s<2;s++)for(let mutation=0;mutation<5;mutation++)controls.push({job:job.index,stride_index:s,mutation,count:ce.verify(s,mutation)>>>0});
+  aggregates.push({job:job.index,count:ce.verify_all()>>>0});
+  for(const [index,[s,m]] of [[2,0],[0,5],[0xffffffff,0],[0,0xffffffff]].entries())checker_invalid.push({job:job.index,index,stride_index:s,mutation:m,count:ce.verify(s,m)>>>0});
+ }
+ const report={nonce:cfg.nonce,repeat:cfg.repeat,origin:location.origin,user_agent:navigator.userAgent,renderer_hashes,checker_hashes,imports,rows,invalid,controls,aggregates,checker_invalid};
+ const reply=await fetch('/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});
+ if(!reply.ok)throw Error('report rejected '+reply.status+' '+await reply.text());
+ document.getElementById('status').textContent='Complete: 64 frames, 64 invalid strides, 160 checker controls, Canvas2D readback';
+}catch(error){document.getElementById('status').textContent='Failed: '+String(error)}})();
+</script>

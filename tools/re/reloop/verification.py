@@ -20,6 +20,11 @@ def bytes_equal(reference, candidate):
             for i, chunk in enumerate([a, b]):
                 hashes[i].update(chunk)
                 lengths[i] += len(chunk)
+            # Native bytes equality examines the complete chunk; hashes/lengths above
+            # still cover every byte. Expand diagnostics only for unequal chunks.
+            if a == b:
+                offset += len(a)
+                continue
             for i in range(max(len(a), len(b))):
                 x = a[i] if i < len(a) else None
                 y = b[i] if i < len(b) else None

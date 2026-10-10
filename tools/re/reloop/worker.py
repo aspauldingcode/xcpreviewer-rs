@@ -241,6 +241,9 @@ def perform(kind,out,p):
     if kind=='portable_solid' and p.get('primary_syntax_control',False):
         from reloop.primarysource import syntax
         return syntax(out)
+    if kind=='portable_solid' and p.get('primary_browser_control',False):
+        from reloop.browsersource import corpus
+        return corpus(out)
     if kind=='portable_solid' and p.get('primary_source_control',False):
         from reloop.primarysource import corpus
         return corpus(out)

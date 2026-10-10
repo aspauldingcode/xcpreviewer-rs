@@ -330,6 +330,7 @@
       "scope": "Actual Linux execution of pinned primary-layer source-derived standalone/checker modules with full native callback-target and independent allocations, no-write/fault controls. Native getter/PNG differs; not a Linux Swift frontend or Canvas compatibility claim."
     },
     {
+      "blocked_track": "browser-locked-host",
       "id": "browser-primary-source-subset",
       "issue": "F2",
       "priority": 95,
@@ -337,6 +338,15 @@
         "20261010T192727Z-linux-primary-source-subset-b075e295"
       ],
       "scope": "Actual browser execution of pinned primary-layer source-derived standalone/checker modules; full independent/native-prefix allocations and fault/no-write controls. Discriminate explicit premultiplied-to-straight Canvas2D readback, retain rounding and native getter/PNG differences. No arbitrary SwiftUI or Canvas wire inference."
+    },
+    {
+      "id": "primary-source-cli-cache",
+      "issue": "F1",
+      "priority": 94,
+      "requires_runs": [
+        "20261010T191804Z-portable-primary-source-subset-811cf568"
+      ],
+      "scope": "Portable primary-layer source CLI and bounded deterministic source/configuration/IR/module cache identities; explicit subset diagnostics and transaction/fault controls. No browser workaround, native Canvas or arbitrary SwiftUI acceptance."
     }
   ],
   "schema_version": 1

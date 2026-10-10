@@ -4662,6 +4662,71 @@
           "equals": 8388608
         }
       ]
+    },
+    {
+      "id": "browser-primary-source-subset",
+      "adapter": "portable_solid",
+      "hypothesis": "Actual browser source-derived WASM preserves complete native/model allocations, invalid strides and exact checker faults; explicit unpremultiplication survives alpha-enabled sRGB Canvas2D byte readback.",
+      "params": {
+        "primary_browser_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 150,
+      "artifact_limit_mb": 24,
+      "priority": 95,
+      "checks": [
+        {
+          "path": "browser_modules",
+          "equals": 16
+        },
+        {
+          "path": "browser_frames",
+          "equals": 128
+        },
+        {
+          "path": "browser_repeats",
+          "equals": 2
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 2097152
+        },
+        {
+          "path": "invalid_bytes",
+          "equals": 2097152
+        },
+        {
+          "path": "canvas_bytes",
+          "equals": 199648
+        },
+        {
+          "path": "native_bytes",
+          "equals": 40320
+        },
+        {
+          "path": "checker_controls",
+          "equals": 320
+        },
+        {
+          "path": "mutation_controls",
+          "equals": 256
+        },
+        {
+          "path": "aggregate_controls",
+          "equals": 32
+        },
+        {
+          "path": "invalid_checker_requests",
+          "equals": 128
+        },
+        {
+          "path": "server_cleanup",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

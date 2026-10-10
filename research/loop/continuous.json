@@ -23,6 +23,11 @@
       "reason": "REA/Ghidra default full-image auto-analysis exceeds both180s and330s; open identity matches and provider close succeeds. Owned engine control passes.",
       "retry_requires": "Changed reviewed analysis profile/import method; do not repeat unchanged full-image import or raise deadlines indefinitely.",
       "track": "rea-foundationhost-full-import"
+    },
+    {
+      "reason": "Computer-use reported locked Mac; automatic approval review rejected actual browser launch and prohibited workaround. No runtime experiment executed.",
+      "retry_requires": "User unlocks Mac; browser prerequisite available and blocked action approved. Do not use indirect/headless/Node route to bypass rejection.",
+      "track": "browser-locked-host"
     }
   ],
   "cadence_minutes": 10,
@@ -208,28 +213,34 @@
       "retry_prerequisite": "Checker exports memory/verify/verify_all, not pixels/capacity. Corrected to full128KiB exported memory and frozen baseline; expanded run supports.",
       "run_id": "20261010T192645Z-linux-primary-source-subset-caebd9f7",
       "status": "resolved-for-declared-checker-boundary"
+    },
+    {
+      "fingerprint": "browser-source-full-suite-equal-chunk-scan-20261010",
+      "retry_prerequisite": "Complete equal chunks now bypass redundant per-byte diagnostic expansion after every byte is hashed/counted. Independent exhaustive boundary, bit, tail and hash comparisons pass;311-test suite passes in61.670s. Interrupted prior suite retained, not called passing.",
+      "status": "resolved-for-exact-verifier"
     }
   ],
-  "last_completed": "Actual Linux primary-layer source-derived modules:16 modules,64 full allocations/1,048,576 bytes matching independent and macOS frames;28 native-prefix frames/20,160 native bytes.64 invalid renderer requests unchanged;160 checker controls including128 exact-one faults and16 aggregates.64 invalid checker requests preserve whole128KiB memory/8,388,608 bytes. Missing-export failure retained and corrected using actual memory export. Source/config/IR/module identities checked; owned containers removed and existing containers preserved. 307 tests pass.",
+  "last_completed": "Actual-browser primary-source adapter and page implemented with independent full allocation, native callback prefix, invalid stride, exact checker counts and explicit premultiplied-to-straight Canvas2D verifiers. Synthetic corruption tests pass. Actual browser execution blocked by locked Mac and auto-review rejection; no runtime evidence or graph completion claimed. Full suite exposed redundant equal-byte scan in checker-memory tests; interrupted at five-minute budget, exact complete-chunk comparison added with independent exhaustive diagnostic equivalence controls. No sampling or normalization; 311 tests pass in61.670s; page JavaScript syntax passes. No actual browser runtime acceptance or controlled performance claim.",
   "last_github_sync": {
-    "checkpoint": "Actual Linux primary-layer source-derived WASM",
+    "checkpoint": "Browser primary-source adapter, locked-host prerequisite",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/11#issuecomment-6101341396"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6102363293",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6102403323"
     ],
     "issues": [
-      "F1"
+      "F2"
     ],
     "state": "open"
   },
   "last_work": {
-    "checkpoint": "Actual Linux primary-layer source-derived WASM",
+    "checkpoint": "Browser primary-source adapter, runtime blocked",
     "issues": [
-      "F1"
+      "F2"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Execute the16 pinned primary-layer source-derived standalone/checker modules in actual browser; compare complete independent/native-prefix allocations and invalid/fault controls. Discriminate explicit premultiplied-to-straight Canvas2D readback, preserve quantization/native getter/PNG differences. Close owned browser tabs; no Xcode windows needed.",
+    "Browser source adapter awaits unlocked Mac and available approved browser prerequisite. Continue independent portable source-to-IR CLI/deterministic cache work, preserving native transport and getter/PNG distinctions; no indirect browser workaround.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
