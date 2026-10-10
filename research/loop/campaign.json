@@ -3481,6 +3481,80 @@
           "equals": 128
         }
       ]
+    },
+    {
+      "id": "portable-browser-execution",
+      "adapter": "portable_solid",
+      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "browser_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "browser_modules",
+          "equals": 4
+        },
+        {
+          "path": "browser_repeats",
+          "equals": 2
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1638400
+        },
+        {
+          "path": "invalid_bytes",
+          "equals": 6553600
+        },
+        {
+          "path": "server_cleanup",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "portable-browser-execution-repeat",
+      "adapter": "portable_solid",
+      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "browser_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "browser_modules",
+          "equals": 4
+        },
+        {
+          "path": "browser_repeats",
+          "equals": 2
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1638400
+        },
+        {
+          "path": "invalid_bytes",
+          "equals": 6553600
+        },
+        {
+          "path": "server_cleanup",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

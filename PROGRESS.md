@@ -386,3 +386,7 @@ Two owned retained-mode seals keep original surface ID through2,048 replacement-
 ## 2026-10-10 — Delivery graph and extended Canvas loop
 
 Added30-node/47-edge acceptance/research graph, anchored quarantine, blocked prerequisites, downstream ranking and completed-research skipping. Existing heartbeat extended through declared native RE then cross-platform WASM Canvas acceptance. Graph-selected native-backed reconstruction commit policy passes128 controls twice;102,400 padded image bytes compare. First compile failure exposed stale shared-helper CPU signatures; repaired reuse/failure callers, retained failure, R1 failure/timeout12 cases pass.243 tests. Both milestone gates remain open; next independent ready task is browser execution. [Graph and scope](docs/reverse-engineering/2026-10-10-graph-loop.md), [evidence](research/evidence/graph-generation-2026-10-10.json). No Xcode windows opened.
+
+## 2026-10-10 — Actual browser source WASM and Canvas2D
+
+Two sealed browser campaigns/two fresh loads each execute exact anchored owned source modules;3,276,800 baseline bytes,13,107,200 per-invalid-request allocation bytes and2,457,696 Canvas2D opaque RGBA bytes compare exactly. Frozen-template failure retained/fixed;247 tests pass. Loopback servers and owned browser tabs close; no Xcode windows opened. Browser research gate complete, F2 and milestones remain open. Graph selects native alpha/compositing oracle next. [Evidence](research/evidence/browser-source-wasm-2026-10-10.json), [scope](docs/reverse-engineering/2026-10-10-browser-source-wasm.md).

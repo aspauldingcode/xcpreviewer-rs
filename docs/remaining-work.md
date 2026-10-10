@@ -170,3 +170,7 @@ R1/R2 now have a discriminating stale-handle countermodel: two owned one-task CP
 ### 2026-10-10: graph-driven continuing delivery
 
 The [delivery/research graph](reverse-engineering/2026-10-10-graph-loop.md) separates milestone acceptance from scoped experiment completion and skips anchored completed research. Thirty nodes,47 typed edges; empty explicit coverage attestations conservatively leave both acceptance gates open. Owned native-backed generation/content commit policy passes256 controls across two campaigns; this is reconstruction design, not recovered Canvas sequencing. Shared CPU helper API regression repaired and R1 failure/timeout corpus revalidated.243 tests. Next ready independent task is actual browser execution; native capture/typed runtime require changed prerequisites. User extended existing heartbeat to continue milestone2 after actual milestone1 acceptance, pausing only after both declared contracts or explicit request.
+
+### 2026-10-10: actual browser boundary
+
+[Actual browser/Canvas2D control](reverse-engineering/2026-10-10-browser-source-wasm.md) now executes exact anchored import-free literal-source modules and compares complete baseline/invalid allocations plus opaque Canvas2D readback across four page loads. Frozen HTML inventory failure retained/fixed;247 tests. Narrow browser research gate passes, not general SwiftUI/source compilation/hot reload or F2 delivery acceptance. Next graph task expands native alpha/compositing predictions; actual transport/typed runtime blockers remain.

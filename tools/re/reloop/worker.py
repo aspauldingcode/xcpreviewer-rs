@@ -226,6 +226,9 @@ def perform(kind,out,p):
             return corpus(out)
         from reloop.surfacefailure import corpus,use_corpus
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
+    if kind=='portable_solid' and p.get('browser_control',False):
+        from reloop.browserwasm import corpus
+        return corpus(out)
     if kind=='portable_solid':
         if p.get('source_control',False):
             from reloop.viewsource import corpus

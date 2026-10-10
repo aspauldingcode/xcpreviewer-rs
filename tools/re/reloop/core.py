@@ -18,7 +18,7 @@ PARAMS = {
     'linux_wasm': set(),
     'rea_native': {'binary','owned_control'},
     'surface_payload': {'payload'},
-    'portable_solid': {'second_runtime','source_control'},
+    'portable_solid': {'second_runtime','source_control','browser_control'},
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','ranges','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control'},
@@ -84,8 +84,9 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
-    for flag in ('source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control','name_reuse_control','retained_right_control','generation_control'):
+    for flag in ('source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control','name_reuse_control','retained_right_control','generation_control','browser_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
+    if p.get('browser_control') and (p.get('source_control') or p.get('second_runtime')):raise ValueError('Browser executes anchored modules without source/runtime modes')
     if p.get('generation_control') and (p.get('name_reuse_control') or p.get('retained_right_control')):raise ValueError('Generation and name controls are separate')
     if p.get('retained_right_control') and p.get('name_reuse_control') is not True:raise ValueError('Retained right requires name reuse control')
     if p.get('owned_control') and 'binary' in p:raise ValueError('Owned REA control compiles its own target')
@@ -224,7 +225,7 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
 
 def source_files():
     excluded={'__pycache__','.build','.swiftpm'}
-    suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme'}
+    suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme','.html'}
     return [p for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and not p.is_symlink() and (p.suffix in suffixes or p.parent==ROOT/'tools/re/rea' and p.name in {'package.json','package-lock.json','codex-tools.json'}) and not excluded.intersection(p.parts)]
 
 

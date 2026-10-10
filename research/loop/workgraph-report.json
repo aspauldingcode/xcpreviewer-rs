@@ -277,10 +277,10 @@
       ]
     },
     {
-      "id": "portable-browser-execution",
+      "id": "native-alpha-compositing-oracle",
       "kind": "research",
       "state": "ready",
-      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract."
+      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
     },
     {
       "id": "native-correlated-capture",
@@ -299,6 +299,12 @@
       "kind": "research",
       "state": "complete",
       "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames."
+    },
+    {
+      "id": "portable-browser-execution",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract."
     }
   ],
   "edges": [
@@ -518,8 +524,8 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "portable-browser-execution",
-      "to": "F2",
+      "from": "native-alpha-compositing-oracle",
+      "to": "O3",
       "kind": "research-assists"
     },
     {
@@ -535,6 +541,11 @@
     {
       "from": "owned-generation-commit-control",
       "to": "R2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "portable-browser-execution",
+      "to": "F2",
       "kind": "research-assists"
     }
   ],
@@ -568,17 +579,19 @@
   ],
   "research_frontier": [
     {
-      "id": "portable-browser-execution",
-      "issue": "F2",
-      "priority": 80,
-      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract.",
-      "requires_runs": [],
+      "id": "native-alpha-compositing-oracle",
+      "issue": "O3",
+      "priority": 95,
+      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire.",
+      "requires_runs": [
+        "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+      ],
       "state": "ready",
       "missing_evidence": [],
       "blocker": null,
-      "unlocks_delivery_nodes": 14,
+      "unlocks_delivery_nodes": 19,
       "acceptance_dependencies_unmet": [
-        "F1"
+        "O2"
       ]
     },
     {
@@ -644,9 +657,31 @@
       "acceptance_dependencies_unmet": [
         "R1"
       ]
+    },
+    {
+      "id": "portable-browser-execution",
+      "issue": "F2",
+      "priority": 80,
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract.",
+      "requires_runs": [],
+      "completion_runs": [
+        "20261010T164540Z-portable-browser-execution-ffcf61e2",
+        "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb"
+      ],
+      "completion_experiment_ids": [
+        "portable-browser-execution",
+        "portable-browser-execution-repeat"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 14,
+      "acceptance_dependencies_unmet": [
+        "F1"
+      ]
     }
   ],
-  "next_task": "portable-browser-execution",
+  "next_task": "native-alpha-compositing-oracle",
   "quarantined_runs": [],
   "milestone1_complete": false,
   "unverified_milestone1": [

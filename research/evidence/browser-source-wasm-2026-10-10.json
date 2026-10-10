@@ -1,0 +1,48 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T163738Z-portable-browser-execution-f379d13e",
+      "manifest_sha256": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131",
+      "execution": "failed",
+      "verdict": "not_evaluated"
+    },
+    {
+      "run_id": "20261010T164540Z-portable-browser-execution-ffcf61e2",
+      "manifest_sha256": "298ac5ff819b1a788f5c251af3b7b3cf3d9be329cee639e8fb9ea67859a93d88",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "browser_modules": 4,
+        "browser_repeats": 2,
+        "allocation_bytes": 1638400,
+        "invalid_bytes": 6553600,
+        "canvas_bytes": 1228848,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "server_cleanup": true,
+        "scope": "Exact anchored import-free owned WASM in actual macOS in-app browser and Canvas2D readback, native/literal pixels and full allocation padding/tail. No browser source compilation, general SwiftUI, Canvas wire or performance claim."
+      }
+    },
+    {
+      "run_id": "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb",
+      "manifest_sha256": "2e35f34e3a577adf9237e259c0dd4b80f0bfeeddc0f8677fb3366264d7ed5910",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "browser_modules": 4,
+        "browser_repeats": 2,
+        "allocation_bytes": 1638400,
+        "invalid_bytes": 6553600,
+        "canvas_bytes": 1228848,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "server_cleanup": true,
+        "scope": "Exact anchored import-free owned WASM in actual macOS in-app browser and Canvas2D readback, native/literal pixels and full allocation padding/tail. No browser source compilation, general SwiftUI, Canvas wire or performance claim."
+      }
+    }
+  ],
+  "tests": 247,
+  "allocation_bytes": 3276800,
+  "invalid_allocation_bytes": 13107200,
+  "canvas_rgba_bytes": 2457696,
+  "scope": "Owned exact anchored WASM modules in actual in-app browser on current macOS desktop; Canvas2D getImageData opaque RGBA. User-agent reports Chrome155, not independently pinned browser binary/engine architecture. No browser source compiler, full SwiftUI, Windows, arbitrary alpha/color management, Xcode wire, GPU or performance claim."
+}

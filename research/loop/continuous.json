@@ -172,20 +172,23 @@
       "fingerprint": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b",
       "status": "resolved-shared-helper-interface",
       "retry_prerequisite": "Pass explicit folder/count parameters in CPU reuse/failure callers. Native generation and R1 failure corpus now compile/pass; failed seal retained."
+    },
+    {
+      "fingerprint": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131",
+      "status": "resolved-source-freezing",
+      "retry_prerequisite": "Include owned HTML template in controller frozen source inventory; both actual browser controls pass."
     }
   ],
-  "last_completed": "Added acceptance/research dependency graph with anchored evidence, retry blocks, completion skipping and downstream impact. Graph-selected native-backed commit policy passes128 controls twice; repaired shared CPU helper API regression, retained failure, R1 failure/timeout12 cases pass. Native Canvas protocol and both delivery milestones remain open.",
+  "last_completed": "Exact anchored source modules execute in actual browser and Canvas2D readback, two campaigns/two loads each.3,276,800 full baseline bytes,13,107,200 invalid-request allocation bytes and2,457,696 canvas RGBA bytes compare.247 tests, initial missing frozen HTML failure retained/fixed. Owned browser tabs and loopback servers closed. Narrow browser gate only; F2/milestones remain open.",
   "last_github_sync": {
-    "checkpoint": "Dependency graph and native-backed generation controls",
+    "checkpoint": "Actual browser WASM and Canvas2D feasibility",
     "issues": [
-      "R1",
-      "R2",
       "F2"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Run graph; select next unblocked research task. Generation commit policy is an owned reference, not recovered Canvas sequencing. Browser execution is next independent feasibility gate while native capture/typed runtime retain changed-prerequisite blocks.",
+    "Graph selects native alpha/compositing oracle next, expanding independent rendering coverage without claiming Canvas wire. Browser source subset passes narrow execution/readback gate; native capture/typed runtime still require changed prerequisites.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -954,6 +957,21 @@
       "path": "research/evidence/graph-generation-2026-10-10.json",
       "run_id": "20261010T163014Z-owned-surface-failure-cleanup-45fc44df",
       "manifest_sha256": "f07402321447b498c082c0f3b2926c442dee5424295e3ab4789a86d98df254a7"
+    },
+    {
+      "path": "research/evidence/browser-source-wasm-2026-10-10.json",
+      "run_id": "20261010T163738Z-portable-browser-execution-f379d13e",
+      "manifest_sha256": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131"
+    },
+    {
+      "path": "research/evidence/browser-source-wasm-2026-10-10.json",
+      "run_id": "20261010T164540Z-portable-browser-execution-ffcf61e2",
+      "manifest_sha256": "298ac5ff819b1a788f5c251af3b7b3cf3d9be329cee639e8fb9ea67859a93d88"
+    },
+    {
+      "path": "research/evidence/browser-source-wasm-2026-10-10.json",
+      "run_id": "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb",
+      "manifest_sha256": "2e35f34e3a577adf9237e259c0dd4b80f0bfeeddc0f8677fb3366264d7ed5910"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -967,10 +985,8 @@
     "verify_zero_owned_windows": true
   },
   "last_work": {
-    "checkpoint": "Dependency graph and native-backed generation controls",
+    "checkpoint": "Actual browser WASM and Canvas2D feasibility",
     "issues": [
-      "R1",
-      "R2",
       "F2"
     ],
     "state": "open"
