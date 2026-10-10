@@ -402,3 +402,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: portable alpha reconstruction
 
 [Native-backed alpha WASM](docs/reverse-engineering/2026-10-10-portable-alpha.md) matches8 native cases plus independent padded/tail allocations in two campaigns:216 frames,3,538,944 baseline bytes,393,216 invalid bytes,19,584 native bytes. V8/WasmKit native-array checker detects48 mutations; renderer/checker modules repeat exactly.256 tests. Opaque source parser unchanged. Next actual browser alpha readback; F2 and both milestones remain open.
+
+### 2026-10-10: actual browser alpha boundary
+
+[Browser alpha control](docs/reverse-engineering/2026-10-10-browser-alpha.md) compares72 frames across four actual page loads:1,179,648 complete baseline bytes,4,718,592 invalid bytes,44,064 Canvas2D bytes,19,584 native bytes.259 tests; owned tabs/servers closed. Primary-red alpha and red-over-blue only; opaque source parser unchanged. Next actual Linux alpha execution; both milestones remain open.

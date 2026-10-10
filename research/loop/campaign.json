@@ -3686,6 +3686,47 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-alpha-browser-readback",
+      "adapter": "portable_solid",
+      "hypothesis": "Actual browser executes exact pinned alpha module twice; full allocation/invalid buffers and sRGB alpha Canvas2D readback match independent native/model expectations.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "alpha_browser_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "browser_frames",
+          "equals": 36
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 589824
+        },
+        {
+          "path": "invalid_bytes",
+          "equals": 2359296
+        },
+        {
+          "path": "canvas_bytes",
+          "equals": 22032
+        },
+        {
+          "path": "native_bytes",
+          "equals": 9792
+        },
+        {
+          "path": "server_cleanup",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

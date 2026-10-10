@@ -277,10 +277,10 @@
       ]
     },
     {
-      "id": "portable-alpha-browser-readback",
+      "id": "portable-alpha-linux-execution",
       "kind": "research",
       "state": "ready",
-      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire."
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim."
     },
     {
       "id": "native-correlated-capture",
@@ -311,6 +311,12 @@
       "kind": "research",
       "state": "complete",
       "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
+    },
+    {
+      "id": "portable-alpha-browser-readback",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire."
     },
     {
       "id": "portable-alpha-rendering-control",
@@ -542,7 +548,7 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "portable-alpha-browser-readback",
+      "from": "portable-alpha-linux-execution",
       "to": "F2",
       "kind": "research-assists"
     },
@@ -569,6 +575,11 @@
     {
       "from": "native-alpha-compositing-oracle",
       "to": "O3",
+      "kind": "research-assists"
+    },
+    {
+      "from": "portable-alpha-browser-readback",
+      "to": "F2",
       "kind": "research-assists"
     },
     {
@@ -612,13 +623,13 @@
   ],
   "research_frontier": [
     {
-      "id": "portable-alpha-browser-readback",
+      "id": "portable-alpha-linux-execution",
       "issue": "F2",
       "priority": 95,
-      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire.",
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim.",
       "requires_runs": [
-        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
-        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
       ],
       "state": "ready",
       "missing_evidence": [],
@@ -735,6 +746,30 @@
       ]
     },
     {
+      "id": "portable-alpha-browser-readback",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire.",
+      "requires_runs": [
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      ],
+      "completion_runs": [
+        "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-browser-readback"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 14,
+      "acceptance_dependencies_unmet": [
+        "F1"
+      ]
+    },
+    {
       "id": "portable-alpha-rendering-control",
       "issue": "F2",
       "priority": 95,
@@ -781,7 +816,7 @@
       ]
     }
   ],
-  "next_task": "portable-alpha-browser-readback",
+  "next_task": "portable-alpha-linux-execution",
   "quarantined_runs": [
     "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
   ],

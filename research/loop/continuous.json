@@ -179,19 +179,19 @@
       "retry_prerequisite": "Include owned HTML template in controller frozen source inventory; both actual browser controls pass."
     }
   ],
-  "last_completed": "Owned import-free alpha WASM matches eight native cases and full padded allocations in V8/WasmKit. Two campaigns216 frames:3,538,944 baseline bytes,393,216 invalid bytes and19,584 native bytes.64 native-array checker controls detect48 pixel/padding/tail mutations. Exact renderer/checker module repeat; IR source-path metadata difference disclosed.256 tests; no parser or Canvas acceptance expansion.",
+  "last_completed": "Actual browser alpha module and alpha-enabled sRGB Canvas2D readback pass two campaigns/four fresh loads:72 frames,1,179,648 baseline bytes,4,718,592 invalid bytes,44,064 canvas bytes,19,584 native bytes.259 tests; owned tabs and servers closed. Eight native cases, remaining model coverage; no source parser/Canvas wire acceptance expansion.",
   "last_github_sync": {
-    "checkpoint": "Native-backed portable alpha WASM",
+    "checkpoint": "Actual browser alpha readback",
     "issues": [
       "F2"
     ],
     "state": "open",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6100170541"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6100269610"
     ]
   },
   "next_actions": [
-    "Actual browser alpha execution and Canvas2D readback against pinned native/model expectations; preserve full allocation/padding/tail and reject malformed requests. Do not silently expand opaque source parser or claim Canvas wire.",
+    "Actual Linux alpha execution of pinned module against full allocations/native expectations; preserve existing VM/container ownership and bounded cleanup. Native Canvas correlation and typed runtime still require changed prerequisites.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1142,6 +1142,60 @@
         "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
         "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
       }
+    },
+    {
+      "run_id": "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+      "manifest_sha256": "cf62cae1d3469c13bdb6f5701ae114da11029d4ecc37cab0d72abf51b38dc792",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "allocation_bytes": 589824,
+        "browser_frames": 36,
+        "browser_repeats": 2,
+        "canvas_bytes": 22032,
+        "invalid_bytes": 2359296,
+        "native_bytes": 9792,
+        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
+        "server_cleanup": true,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      },
+      "server_cleanup": {
+        "closed": true,
+        "errors": [],
+        "thread_stopped": true
+      },
+      "source_anchor": {
+        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      }
+    },
+    {
+      "run_id": "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d",
+      "manifest_sha256": "cff14ea23624091e80ee268c8487d2b9dee4a48c3a4e4fc2b198e4ea3c31fae6",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "allocation_bytes": 589824,
+        "browser_frames": 36,
+        "browser_repeats": 2,
+        "canvas_bytes": 22032,
+        "invalid_bytes": 2359296,
+        "native_bytes": 9792,
+        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
+        "server_cleanup": true,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      },
+      "server_cleanup": {
+        "closed": true,
+        "errors": [],
+        "thread_stopped": true
+      },
+      "source_anchor": {
+        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      }
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -1155,7 +1209,7 @@
     "verify_zero_owned_windows": true
   },
   "last_work": {
-    "checkpoint": "Native-backed portable alpha WASM",
+    "checkpoint": "Actual browser alpha readback",
     "issues": [
       "F2"
     ],

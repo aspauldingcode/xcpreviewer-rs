@@ -1,0 +1,71 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+      "manifest_sha256": "cf62cae1d3469c13bdb6f5701ae114da11029d4ecc37cab0d72abf51b38dc792",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "allocation_bytes": 589824,
+        "browser_frames": 36,
+        "browser_repeats": 2,
+        "canvas_bytes": 22032,
+        "invalid_bytes": 2359296,
+        "native_bytes": 9792,
+        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
+        "server_cleanup": true,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      },
+      "server_cleanup": {
+        "closed": true,
+        "errors": [],
+        "thread_stopped": true
+      },
+      "source_anchor": {
+        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      }
+    },
+    {
+      "run_id": "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d",
+      "manifest_sha256": "cff14ea23624091e80ee268c8487d2b9dee4a48c3a4e4fc2b198e4ea3c31fae6",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "allocation_bytes": 589824,
+        "browser_frames": 36,
+        "browser_repeats": 2,
+        "canvas_bytes": 22032,
+        "invalid_bytes": 2359296,
+        "native_bytes": 9792,
+        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
+        "server_cleanup": true,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      },
+      "server_cleanup": {
+        "closed": true,
+        "errors": [],
+        "thread_stopped": true
+      },
+      "source_anchor": {
+        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      }
+    }
+  ],
+  "tests": 259,
+  "browser_provenance": {
+    "surface": "Codex in-app browser through computer-use",
+    "owned_tab_ids": [
+      "3",
+      "4"
+    ],
+    "fresh_loads": 4,
+    "completion_observed": true,
+    "owned_tabs_closed": true
+  },
+  "scope": "Exact anchored alpha WASM/full allocations and alpha-enabled sRGB Canvas2D readback. Eight native cases, remaining model cases; no native Canvas/source compiler/arbitrary color acceptance."
+}

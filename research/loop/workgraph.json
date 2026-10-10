@@ -107,6 +107,23 @@
       "requires_runs": [
         "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
         "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      ],
+      "completion_runs": [
+        "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-browser-readback"
+      ]
+    },
+    {
+      "id": "portable-alpha-linux-execution",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim.",
+      "requires_runs": [
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
       ]
     }
   ]

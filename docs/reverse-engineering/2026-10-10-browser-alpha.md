@@ -1,0 +1,15 @@
+# Actual browser alpha execution and Canvas2D readback
+
+The exact previously sealed alpha renderer WASM executes in the Codex in-app browser. Two owned loopback-server campaigns each receive two fresh page loads, with18 fresh module instances per load. Reports include module SHA256, zero imports, complete16,384-byte allocations, four rejected requests per case and alpha-enabled sRGB Canvas2D readback. Module bytes are unchanged from the V8/WasmKit/native-oracle control.
+
+Across four page loads,72 alpha frames compare1,179,648 baseline allocation bytes,4,718,592 post-invalid-request allocation bytes and44,064 active Canvas2D RGBA bytes. Every byte matches independent quantized-alpha/padding/tail expectations and the anchored prior allocations. Eight pinned native cases per load compare19,584 decoded native RGBA bytes across all loads. Remaining eighth-step/background combinations are model controls. All same-input repeats match.
+
+The browser context reports `alpha:true`, `colorSpace:srgb`; its readback ImageData also reports sRGB. Transparent zero-alpha RGB stays canonical zero in this corpus. Partial primary-red alpha and opaque red-over-blue preserve straight RGBA on the measured route. This does not establish arbitrary mixed colors, general premultiplication precision, other color spaces, display-profile equivalence or browser source compilation.
+
+Actual browser provenance: computer-use created owned hidden tabs3 and4 on each controller-published loopback URL, observed `Complete:18 alpha frames,72 invalid requests,Canvas2D readback`, reloaded once and observed completion again, then closed each owned tab before creating the next. Neither Node nor a synthetic HTTP client produced acquisition reports. Unit fixtures are explicitly labeled synthetic and only exercise the verifier. Native Canvas/Xcode windows were not opened or modified.
+
+The user-agent reports Chrome155 on MacIntel10.15.7; that string is not an independently pinned browser binary, hardware architecture or host OS version. Both servers have closed sockets and stopped threads; the second campaign explicitly rejects incomplete cleanup rather than merely returning a successful cleanup flag. Rejected decoded reports are retained before validation. Every report requires the campaign nonce, exact origin, sequential repeat index, pinned module hash and strict integer metadata.
+
+Verifier controls reject active/padding/tail corruption, invalid-request mutation, wrong Canvas bytes, stale identity/repeat/module/origin, disabled alpha, changed color space and boolean-as-integer metadata. Full suite259 tests passes. The existing opaque source parser remains unchanged. F2 and both milestones remain open: native Canvas wire, typed runtime, compiler/platform/product/hot reload/cost acceptance are separate gates. Next graph task is actual Linux alpha execution against these pinned native/model expectations.
+
+Implementation: `tools/re/reloop/browseralpha.py`, `browser_alpha.html`; sanitized anchors: `research/evidence/browser-alpha-2026-10-10.json`. Reports and binaries remain in local sealed owned runs; no Apple private binary is published.
