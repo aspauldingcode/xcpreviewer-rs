@@ -1,0 +1,48 @@
+{
+  "changes": [
+    "Retain subprocess.TimeoutExpired as failed execution with cleanup rather than propagating an unsealed controller exception.",
+    "Read command identity only for candidate owned ancestry; preserve full start/command equality and between-read start checks."
+  ],
+  "diagnosis": "Global command inventory timed out; scoped minimal ancestry/owned-command diagnostic succeeded once at0.150s/0.025s, but later minimal ancestry also timed out. Full-command retrieval alone and concurrent test load do not explain all failures. Both deadlines remain2s.",
+  "remaining": "Current host process-observation prerequisite unreliable. Do not repeat expensive extent runs unchanged; implement and discriminate a public macOS libproc ownership observation backend or require proven stable bounded snapshots before retry.",
+  "runs": [
+    {
+      "execution": "interrupted",
+      "manifest_sha256": "e765c606a6dd3a80023a00b95b401696e3c0df89013cf27fb373e5bcefc42b0a",
+      "retained_partial_frames": 2,
+      "run_id": "20261010T220233Z-primary-source-frame-native-extents-dc6fea8d",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "failed",
+      "manifest_sha256": "a4b84db3ecdf03d52377243a4188c7594ad3420dec96338854dbc758d214f0fd",
+      "retained_partial_frames": 4,
+      "run_id": "20261010T220729Z-primary-source-frame-native-extents-506e5ffa",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "failed",
+      "manifest_sha256": "12154562a486cc8a630b409406e00e578a03c4b5c66fefbf9403b849b4cf33b1",
+      "retained_partial_frames": 0,
+      "run_id": "20261010T221109Z-primary-source-frame-native-extents-58da5976",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Interrupted/failed owned source-frame extent experiment and bounded process-observation implementation; no complete extent or delivery acceptance",
+  "validation": {
+    "isolated_repository_suite": {
+      "log_sha256": "4d760f61bd98d0955254c8eee5b1a21b6a31e1945c97d1ca6a9898f8a17488a9",
+      "passed": true,
+      "scope": "Final proposed implementation excluding unrelated concurrent graph/source-frame changes.",
+      "seconds": 96.324,
+      "tests": 323
+    },
+    "passed": true,
+    "scope": "Verifier/ownership controls; no completed full native-versus-portable extent corpus.",
+    "targeted_tests": 9
+  }
+}

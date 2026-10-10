@@ -32,6 +32,9 @@ def ghidra_config():
 
 
 def perform(kind,out,p):
+    if kind=='portable_solid' and p.get('extent_cli_control',False):
+        from reloop.extentcli import corpus
+        return corpus(out)
     if kind=='native_reference' and p.get('primary_extent_control',False):
         from reloop.primaryextent import corpus
         return corpus(out)

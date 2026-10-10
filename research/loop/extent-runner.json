@@ -4,7 +4,7 @@
     "rounds": 1,
     "experiments": 1,
     "minutes": 4,
-    "artifact_bytes": 268435456
+    "artifact_bytes": 33554432
   },
   "communication": {
     "skill": "caveman",
@@ -15,6 +15,9 @@
   "task_bindings": {
     "native-primary-extent-holdouts": [
       "native-primary-extent-holdouts"
+    ],
+    "primary-source-frame-native-extents": [
+      "primary-source-frame-native-extents"
     ]
   }
 }

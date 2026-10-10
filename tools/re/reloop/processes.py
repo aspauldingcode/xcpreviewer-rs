@@ -5,16 +5,48 @@ import subprocess
 import time
 
 
-def snapshot():
-    result = subprocess.run(['/bin/ps', '-axo', 'pid=,ppid=,pgid=,stat=,lstart=,command='],
+def snapshot(roots=None, known=None):
+    """Inventory ancestry cheaply; fetch command identity only for candidate owners.
+
+    Commands for unrelated processes can block while reading their argument pages.
+    Both reads retain two-second deadlines. Final start-time/command equality is
+    still required before any previously observed PID can be signalled.
+    """
+    roots = {os.getpid()} if roots is None else set(roots)
+    known = {} if known is None else known
+    result = subprocess.run(['/bin/ps', '-axo', 'pid=,ppid=,pgid=,stat=,lstart='],
                             capture_output=True, text=True, check=True, timeout=2)
+    inventory = {}
+    for line in result.stdout.splitlines():
+        parts = line.strip().split()
+        if len(parts) == 9:
+            pid, parent, group = map(int, parts[:3])
+            inventory[pid] = {'parent': parent, 'group': group,
+                              'state': parts[3], 'start': tuple(parts[4:9])}
+    candidates = {pid for pid in roots if pid in inventory}
+    candidates.update(pid for pid, identity in known.items()
+                      if pid in inventory and inventory[pid]['start'] == identity[:5])
+    while True:
+        children = {pid for pid, row in inventory.items() if row['parent'] in candidates}
+        if children <= candidates:
+            break
+        candidates.update(children)
+    if not candidates:
+        return {}
+    result = subprocess.run(['/bin/ps', '-p', ','.join(str(p) for p in sorted(candidates)),
+                             '-o', 'pid=,lstart=,command='],
+                            capture_output=True, text=True, timeout=2)
+    if result.returncode not in (0, 1):
+        raise subprocess.CalledProcessError(result.returncode, result.args, result.stdout, result.stderr)
     rows = {}
     for line in result.stdout.splitlines():
-        parts = line.strip().split(None, 9)
-        if len(parts) == 10:
-            pid, parent, group = map(int, parts[:3])
-            rows[pid] = {'parent': parent, 'group': group,
-                         'state': parts[3], 'identity': tuple(parts[4:9]) + (parts[9],)}
+        parts = line.strip().split(None, 6)
+        if len(parts) == 7:
+            pid = int(parts[0]);start = tuple(parts[1:6])
+            if pid in candidates and inventory[pid]['start'] == start:
+                row = inventory[pid]
+                rows[pid] = {'parent': row['parent'], 'group': row['group'],
+                             'state': row['state'], 'identity': start + (parts[6],)}
     return rows
 
 
@@ -25,8 +57,9 @@ class OwnedTree:
         self.known = {}
 
     def observe(self):
-        rows = snapshot()
         root_live = self.process is not None and self.process.poll() is None
+        roots = {self.pid} if root_live or (self.process is None and self.pid not in self.known) else set()
+        rows = snapshot(roots, self.known)
         owned = {self.pid} if root_live or (self.process is None and self.pid not in self.known) else set()
         # A known identity can still be ours after reparenting or setsid().
         owned.update(pid for pid, identity in self.known.items()

@@ -484,3 +484,7 @@ Implemented explicit source-to-WASM CLI, content-addressed semantic cache with e
 ## 2026-10-10 — Native primary-layer extent holdouts
 
 80 public native callback captures match every independent allocation byte at compact/padded 1×1,13×7,64×64 targets: 1,310,720 bytes, including 1536 padding and1,035,264 unused-tail bytes. 40 repeat pairs match. Two insufficient-artifact-budget failures retained with valid seals; corrected 256 MB/180 s final run supports. 337 working-tree tests pass. Canvas transport/native PNG and both delivery milestones remain open. See [evidence](research/evidence/native-primary-extent-2026-10-10.json) and [scope](docs/reverse-engineering/2026-10-10-native-primary-extent.md).
+
+## 2026-10-10 — Extent CLI verifier and observation failures
+
+Implemented frozen source-frame CLI versus full native extent consumer, independently projected/decoded PNGs, transparent holdouts and corruption/failure controls. Three attempts stopped on bounded process-observation timeouts; no full corpus acceptance. Fixed timeout retention and scoped owned-command identity reads; reused/start-changed identities still excluded. Nine targeted tests and all 323 isolated repository tests pass. Retained failures and public libproc observer next task: [dossier](docs/reverse-engineering/2026-10-10-extent-cli-observation.md). Both milestones remain open.

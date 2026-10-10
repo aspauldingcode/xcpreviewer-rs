@@ -379,6 +379,7 @@
       "scope": "Independent public native callback full allocation predictions at compact/padded 1x1,13x7,64x64 extents; no Canvas/native getter equivalence."
     },
     {
+      "blocked_track": "host-process-observation",
       "id": "primary-source-frame-native-extents",
       "issue": "I5",
       "priority": 96,
@@ -387,6 +388,13 @@
         "20261010T215404Z-primary-source-frame-cli-8a8fd3bc"
       ],
       "scope": "Run the supported source-frame CLI for all40 newly native-anchored primary extent jobs, repeats and full16384-byte target allocations; independent explicit straight-alpha PNG decoding and corruption/runtime/precommit controls. Raw native callback acceptance remains separate from PNG conversion and native Canvas transport."
+    },
+    {
+      "id": "owned-process-observation-oracle",
+      "issue": "R1",
+      "priority": 99,
+      "requires_runs": [],
+      "scope": "Implement and independently discriminate a public macOS libproc-based owned process observer against known spawned/detached/reused identities; retain bounded deadlines and preserve user processes. Resolve host ps prerequisite before full extent/capture retries; no native Canvas release policy acceptance."
     }
   ],
   "schema_version": 1

@@ -4841,6 +4841,83 @@
           "equals": 40
         }
       ]
+    },
+    {
+      "id": "primary-source-frame-native-extents",
+      "adapter": "portable_solid",
+      "hypothesis": "Pinned source-frame CLI matches every byte of40 native extent jobs across repeats, separately projected PNG pixels and transparent holdouts; verifier mutants rejected and failed runtime/cache/precommit requests preserve last valid output.",
+      "depends_on": [],
+      "resources": [
+        "wasm"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "extent_cli_control": true
+      },
+      "priority": 96,
+      "checks": [
+        {
+          "path": "native_jobs",
+          "equals": 40
+        },
+        {
+          "path": "frames",
+          "equals": 84
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1376256
+        },
+        {
+          "path": "native_frames",
+          "equals": 80
+        },
+        {
+          "path": "native_full_bytes",
+          "equals": 1310720
+        },
+        {
+          "path": "independent_matches",
+          "equals": 84
+        },
+        {
+          "path": "native_matches",
+          "equals": 80
+        },
+        {
+          "path": "pngs",
+          "equals": 84
+        },
+        {
+          "path": "png_matches",
+          "equals": 84
+        },
+        {
+          "path": "png_decoded_bytes",
+          "equals": 274656
+        },
+        {
+          "path": "transparent_frames",
+          "equals": 4
+        },
+        {
+          "path": "verifier_faults",
+          "equals": 4
+        },
+        {
+          "path": "failure_controls",
+          "equals": 8
+        },
+        {
+          "path": "last_good_preserved",
+          "equals": true
+        },
+        {
+          "path": "staging_cleanup",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

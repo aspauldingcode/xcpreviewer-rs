@@ -28,6 +28,11 @@
       "reason": "Computer-use reported locked Mac; automatic approval review rejected actual browser launch and prohibited workaround. No runtime experiment executed.",
       "retry_requires": "User unlocks Mac; browser prerequisite available and blocked action approved. Do not use indirect/headless/Node route to bypass rejection.",
       "track": "browser-locked-host"
+    },
+    {
+      "reason": "Three changed extent attempts stopped on bounded2s ps inventory timeouts. Minimal/owned-only query succeeded once but later minimal query also timed out; full-command retrieval and concurrent validation do not explain all failures. Failed/interrupted outputs retained, no extent acceptance.",
+      "retry_requires": "Independently verified public libproc observation backend or demonstrated stable bounded snapshots under execution. Do not repeat unchanged expensive extent probes or increase their deadlines.",
+      "track": "host-process-observation"
     }
   ],
   "cadence_minutes": 10,
@@ -226,25 +231,29 @@
       "status": "resolved-for-declared-build-contract"
     }
   ],
-  "last_completed": "Native public primary-layer extent holdouts:80 captures/1,310,720 full allocation bytes match independent predictions at1x1/13x7/64x64 compact/padded strides;40 A/A pairs match.1536 padding and1035264 unused-tail bytes included. Two artifact-limit failures retained, corrected256MB final run supports;337 working-tree tests pass. No native Canvas/getter/PNG acceptance.",
+  "last_completed": "Implemented frozen CLI/native extent verifier with transparent PNG and pixel/padding/tail/failure controls. Three changed attempts stop on host process-observation; no full extent acceptance. Fixed observation-timeout sealing and scoped command identity reads, preserving start/command guards and2s limits;9 targeted tests and323 isolated repository tests pass. Public libproc observation oracle selected next.",
   "last_github_sync": {
-    "checkpoint": "Native public primary-layer extent holdouts",
+    "checkpoint": "Extent CLI observation failures and owned observer controls",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/18#issuecomment-6102583934"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/18#issuecomment-6102755026",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/5#issuecomment-6102755452"
     ],
     "issues": [
-      "I5"
+      "I5",
+      "R1"
     ],
     "state": "open"
   },
   "last_work": {
-    "checkpoint": "Native public primary-layer extent holdouts",
+    "checkpoint": "Frozen extent CLI and retained observation failures",
     "issues": [
-      "I5"
+      "I5",
+      "R1"
     ],
     "state": "open"
   },
   "next_actions": [
+    "Implement and discriminate a public macOS libproc owned-process observer; stable ancestry and lifetime identities required before retrying blocked full extent CLI. Do not reset failure memory or raise native deadlines.",
     "Compare supported source-frame CLI output against the newly sealed native extent oracle, retaining separate raw premultiplied/converted PNG claims and last-result failure controls. Preserve concurrently edited source-frame/graph work.",
     "Implement explicit primary-layer source-to-frame/image CLI using bounded configured WASM runtime and declared premultiplied callback-target semantics; independent/native full-byte and fault controls, preserve last valid result. Do not equate atomic bundle pointer with runtime/state hot reload or native Canvas; browser remains blocked on unlocked/approved prerequisite.",
     {
@@ -1592,6 +1601,21 @@
       "manifest_sha256": "5786fc404ec0181161d42e431b303425260af6adb3d517bf92351cbf542301fa",
       "path": "research/evidence/native-primary-extent-2026-10-10.json",
       "run_id": "20261010T215252Z-native-primary-extent-holdouts-5143e5b4"
+    },
+    {
+      "manifest_sha256": "e765c606a6dd3a80023a00b95b401696e3c0df89013cf27fb373e5bcefc42b0a",
+      "path": "research/evidence/extent-cli-observation-2026-10-10.json",
+      "run_id": "20261010T220233Z-primary-source-frame-native-extents-dc6fea8d"
+    },
+    {
+      "manifest_sha256": "a4b84db3ecdf03d52377243a4188c7594ad3420dec96338854dbc758d214f0fd",
+      "path": "research/evidence/extent-cli-observation-2026-10-10.json",
+      "run_id": "20261010T220729Z-primary-source-frame-native-extents-506e5ffa"
+    },
+    {
+      "manifest_sha256": "12154562a486cc8a630b409406e00e578a03c4b5c66fefbf9403b849b4cf33b1",
+      "path": "research/evidence/extent-cli-observation-2026-10-10.json",
+      "run_id": "20261010T221109Z-primary-source-frame-native-extents-58da5976"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
