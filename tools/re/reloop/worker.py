@@ -32,6 +32,9 @@ def ghidra_config():
 
 
 def perform(kind,out,p):
+    if kind=='native_reference' and p.get('primary_extent_control',False):
+        from reloop.primaryextent import corpus
+        return corpus(out)
     xcode=p.get('xcode','/Applications/Xcode.app')
     image=p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
     if kind=='linux_wasm' and p.get('primary_source_control',False):

@@ -4800,6 +4800,47 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-primary-extent-holdouts",
+      "adapter": "native_reference",
+      "hypothesis": "Predeclared quantized primary model predicts every public callback target byte across compact/padded 1x1,13x7,64x64 extents, repeats and four holdout alpha cases in both orders.",
+      "depends_on": [],
+      "resources": [
+        "swift"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "primary_extent_control": true
+      },
+      "priority": 93,
+      "checks": [
+        {
+          "path": "jobs",
+          "equals": 40
+        },
+        {
+          "path": "captures",
+          "equals": 80
+        },
+        {
+          "path": "full_allocation_bytes",
+          "equals": 1310720
+        },
+        {
+          "path": "independent_matches",
+          "equals": 80
+        },
+        {
+          "path": "repeat_pairs",
+          "equals": 40
+        },
+        {
+          "path": "repeat_matches",
+          "equals": 40
+        }
+      ]
     }
   ],
   "version": 1
