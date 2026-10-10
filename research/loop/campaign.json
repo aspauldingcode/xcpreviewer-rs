@@ -4589,6 +4589,79 @@
           "equals": 3
         }
       ]
+    },
+    {
+      "id": "linux-primary-source-subset",
+      "adapter": "linux_wasm",
+      "hypothesis": "Pinned source-derived standalone/checker modules retain every allocation byte and fault count on actual Linux Wasmtime; invalid strides write nothing. No native getter/PNG or Canvas transport equivalence.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90,
+      "artifact_limit_mb": 20,
+      "params": {
+        "primary_source_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "source_modules",
+          "equals": 16
+        },
+        {
+          "path": "frames",
+          "equals": 64
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1048576
+        },
+        {
+          "path": "cross_host_bytes",
+          "equals": 1048576
+        },
+        {
+          "path": "native_target_bytes",
+          "equals": 20160
+        },
+        {
+          "path": "invalid_requests",
+          "equals": 64
+        },
+        {
+          "path": "checker_controls",
+          "equals": 160
+        },
+        {
+          "path": "mutation_controls",
+          "equals": 128
+        },
+        {
+          "path": "aggregate_controls",
+          "equals": 16
+        },
+        {
+          "path": "owned_cleanup_verified",
+          "equals": true
+        },
+        {
+          "path": "existing_containers_preserved",
+          "equals": true
+        },
+        {
+          "path": "host_system",
+          "equals": "Linux"
+        },
+        {
+          "path": "invalid_checker_requests",
+          "equals": 64
+        },
+        {
+          "path": "invalid_checker_bytes",
+          "equals": 8388608
+        }
+      ]
     }
   ],
   "version": 1

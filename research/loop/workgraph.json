@@ -315,6 +315,12 @@
       "scope": "Strict declared primary-color layer source-to-IR subset and native callback-target full-allocation conformance, reject unsupported source, retain getter/PNG difference; no arbitrary SwiftUI or Canvas protocol inference."
     },
     {
+      "completion_experiment_ids": [
+        "linux-primary-source-subset"
+      ],
+      "completion_runs": [
+        "20261010T192727Z-linux-primary-source-subset-b075e295"
+      ],
       "id": "linux-primary-source-subset",
       "issue": "F1",
       "priority": 95,
@@ -322,6 +328,15 @@
         "20261010T191804Z-portable-primary-source-subset-811cf568"
       ],
       "scope": "Actual Linux execution of pinned primary-layer source-derived standalone/checker modules with full native callback-target and independent allocations, no-write/fault controls. Native getter/PNG differs; not a Linux Swift frontend or Canvas compatibility claim."
+    },
+    {
+      "id": "browser-primary-source-subset",
+      "issue": "F2",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T192727Z-linux-primary-source-subset-b075e295"
+      ],
+      "scope": "Actual browser execution of pinned primary-layer source-derived standalone/checker modules; full independent/native-prefix allocations and fault/no-write controls. Discriminate explicit premultiplied-to-straight Canvas2D readback, retain rounding and native getter/PNG differences. No arbitrary SwiftUI or Canvas wire inference."
     }
   ],
   "schema_version": 1

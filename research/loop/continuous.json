@@ -202,13 +202,19 @@
       "fingerprint": "0486897dfecfb1cc92c4c086dc1dd1b3300070f401a4c4007898c8c3205401b7",
       "retry_prerequisite": "Initial source parser accepted3 expressions without newline/semicolon separators; independent Swift parse-only controls rejected them. Required separators now enforced, held-out diagnostics extended and full source pipeline reverified.",
       "status": "resolved-for-declared-source-subset"
+    },
+    {
+      "fingerprint": "3394dfe4148ad034206c27bd4f646d9ef8bbd354f372c4949d5dcf3d7e4dcd2a",
+      "retry_prerequisite": "Checker exports memory/verify/verify_all, not pixels/capacity. Corrected to full128KiB exported memory and frozen baseline; expanded run supports.",
+      "run_id": "20261010T192645Z-linux-primary-source-subset-caebd9f7",
+      "status": "resolved-for-declared-checker-boundary"
     }
   ],
-  "last_completed": "Strict primary-layer ZStack.frame source-to-C-to-saved LLVM IR-to-WASM:16 modules,64 full V8 frames/1,048,576 bytes,28 native-prefix comparisons/20,160 target bytes,64 no-write invalid requests,160 baseline/fault cases per interpreter. Repeat/whitespace IR and module bytes equal. Swift parse-only oracle exposed3 missing-separator acceptances; retained inconclusive seal, enforced newline/semicolon separators, fixed oracle agreement and22 diagnostic holdouts. Final complete pipeline supports;getter/PNG/Canvas distinctions retained. 304 tests pass.",
+  "last_completed": "Actual Linux primary-layer source-derived modules:16 modules,64 full allocations/1,048,576 bytes matching independent and macOS frames;28 native-prefix frames/20,160 native bytes.64 invalid renderer requests unchanged;160 checker controls including128 exact-one faults and16 aggregates.64 invalid checker requests preserve whole128KiB memory/8,388,608 bytes. Missing-export failure retained and corrected using actual memory export. Source/config/IR/module identities checked; owned containers removed and existing containers preserved. 307 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Strict primary-layer source subset and independent syntax fix",
+    "checkpoint": "Actual Linux primary-layer source-derived WASM",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/11#issuecomment-6101259530"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/11#issuecomment-6101341396"
     ],
     "issues": [
       "F1"
@@ -216,14 +222,14 @@
     "state": "open"
   },
   "last_work": {
-    "checkpoint": "Actual Linux alpha WASM",
+    "checkpoint": "Actual Linux primary-layer source-derived WASM",
     "issues": [
-      "F2"
+      "F1"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Execute the16 pinned source-derived standalone/checker modules on actual existing Linux host with full independent/native-prefix/cross-host allocations, unsupported stride no-write and per-source fault controls. Verify module/source/IR identities and preserve containers. Custom lowerer/callback-target contract only; no native getter/PNG or general Swift compiler claim.",
+    "Execute the16 pinned primary-layer source-derived standalone/checker modules in actual browser; compare complete independent/native-prefix allocations and invalid/fault controls. Discriminate explicit premultiplied-to-straight Canvas2D readback, preserve quantization/native getter/PNG differences. Close owned browser tabs; no Xcode windows needed.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1519,6 +1525,21 @@
       "manifest_sha256": "45f7ac0b391eb74b2580209a237e231ee77d55be31c2857129c14137d69b3f88",
       "path": "research/evidence/primary-source-subset-2026-10-10.json",
       "run_id": "20261010T191804Z-portable-primary-source-subset-811cf568"
+    },
+    {
+      "manifest_sha256": "1101921f77aa79b26e51cf0607716f8fa50592a95e5f4a899bec5419ec03a5d9",
+      "path": "research/evidence/linux-primary-source-2026-10-10.json",
+      "run_id": "20261010T192555Z-linux-primary-source-subset-1df2d0ef"
+    },
+    {
+      "manifest_sha256": "3394dfe4148ad034206c27bd4f646d9ef8bbd354f372c4949d5dcf3d7e4dcd2a",
+      "path": "research/evidence/linux-primary-source-2026-10-10.json",
+      "run_id": "20261010T192645Z-linux-primary-source-subset-caebd9f7"
+    },
+    {
+      "manifest_sha256": "10215ed49eee6c5d19bc7be1432c9b7d9d175598b623e41227d693cad50d4182",
+      "path": "research/evidence/linux-primary-source-2026-10-10.json",
+      "run_id": "20261010T192727Z-linux-primary-source-subset-b075e295"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

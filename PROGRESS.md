@@ -462,3 +462,9 @@ Actual Linux ARM64 Wasmtime49 primary-layer execution:320 complete allocations/5
 Strict primary-layer ZStack.frame source-to-C-to-saved LLVM IR-to-WASM:16 modules,64 full V8 frames/1,048,576 bytes,28 native-prefix comparisons/20,160 target bytes,64 no-write invalid requests,160 baseline/fault cases per interpreter. Repeat/whitespace IR and module bytes equal. Swift parse-only oracle exposed3 missing-separator acceptances; retained inconclusive seal, enforced newline/semicolon separators, fixed oracle agreement and22 diagnostic holdouts. Final complete pipeline supports;getter/PNG/Canvas distinctions retained.
 
 304 tests pass. Evidence: [primary-layer source subset](docs/reverse-engineering/2026-10-10-primary-source-subset.md). Both milestones remain open.
+
+## 2026-10-10 — actual Linux primary-layer source modules
+
+Actual Linux ARM64 Wasmtime49 executes16 pinned source-derived modules:64 complete allocations/1,048,576 bytes agree with independent Fraction expectations and macOS V8;28 native-prefix frames reuse20,160 measured native bytes.64 invalid renderer requests preserve full allocations.160 checker controls include128 exact-one faults,16 aggregates pass.64 invalid checker calls return sentinel and preserve all128KiB linear memory/8,388,608 bytes against their observed valid-call baseline. Missing-export harness failure retained; corrected using actual exported memory. Source/config/IR/module hashes checked, owned containers removed and two existing containers preserved. Frontend remains macOS;native getter/PNG differs;no native Canvas/general SwiftUI claim.
+
+307 tests pass. Evidence: [Linux primary-layer source](docs/reverse-engineering/2026-10-10-linux-primary-source.md). Both milestones remain open.

@@ -1,0 +1,74 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "success",
+      "facts": {
+        "aggregate_controls": 16,
+        "allocation_bytes": 1048576,
+        "architecture": "aarch64",
+        "checker_controls": 160,
+        "cross_host_bytes": 1048576,
+        "existing_containers_preserved": true,
+        "frames": 64,
+        "host_system": "Linux",
+        "imports": 0,
+        "invalid_bytes": 1048576,
+        "invalid_requests": 64,
+        "kernel": "6.8.0-100-generic",
+        "mutation_controls": 128,
+        "native_full_bytes": 458752,
+        "native_target_bytes": 20160,
+        "owned_cleanup_verified": true,
+        "runtime": "Wasmtime49.0.0",
+        "scope": "Actual Linux ARM64 Wasmtime execution of pinned source-derived standalone/checker modules, complete independent/native-prefix allocations, no-write invalid strides and exact checker fault counts. Frontend and LLVM compilation remain macOS; native getter/PNG differs. No Linux Swift frontend, browser/Windows, independent non-Apple hardware or native Canvas transport claim.",
+        "source_modules": 16
+      },
+      "manifest_sha256": "1101921f77aa79b26e51cf0607716f8fa50592a95e5f4a899bec5419ec03a5d9",
+      "run_id": "20261010T192555Z-linux-primary-source-subset-1df2d0ef",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "error_class": "KeyError",
+      "execution": "failed",
+      "manifest_sha256": "3394dfe4148ad034206c27bd4f646d9ef8bbd354f372c4949d5dcf3d7e4dcd2a",
+      "owned_cleanup_verified": true,
+      "reason": "Expanded probe assumed unexported checker pixels/capacity; corrected to exported whole linear memory.",
+      "run_id": "20261010T192645Z-linux-primary-source-subset-caebd9f7",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "aggregate_controls": 16,
+        "allocation_bytes": 1048576,
+        "architecture": "aarch64",
+        "checker_controls": 160,
+        "cross_host_bytes": 1048576,
+        "existing_containers_preserved": true,
+        "frames": 64,
+        "host_system": "Linux",
+        "imports": 0,
+        "invalid_bytes": 1048576,
+        "invalid_checker_bytes": 8388608,
+        "invalid_checker_requests": 64,
+        "invalid_requests": 64,
+        "kernel": "6.8.0-100-generic",
+        "mutation_controls": 128,
+        "native_full_bytes": 458752,
+        "native_target_bytes": 20160,
+        "owned_cleanup_verified": true,
+        "runtime": "Wasmtime49.0.0",
+        "scope": "Actual Linux ARM64 Wasmtime execution of pinned source-derived standalone/checker modules, complete independent/native-prefix allocations, no-write invalid strides and exact checker fault counts. Frontend and LLVM compilation remain macOS; native getter/PNG differs. No Linux Swift frontend, browser/Windows, independent non-Apple hardware or native Canvas transport claim.",
+        "source_modules": 16
+      },
+      "manifest_sha256": "10215ed49eee6c5d19bc7be1432c9b7d9d175598b623e41227d693cad50d4182",
+      "run_id": "20261010T192727Z-linux-primary-source-subset-b075e295",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Actual Linux execution of pinned macOS source-derived modules, explicit premultiplied callback-target subset; frontend remains macOS. No native getter/PNG, browser/Windows, arbitrary SwiftUI or Canvas equivalence."
+}
