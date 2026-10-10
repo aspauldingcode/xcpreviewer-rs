@@ -4727,6 +4727,79 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "primary-source-cli-cache",
+      "adapter": "portable_solid",
+      "hypothesis": "Owned literal primary-layer CLI publishes exact pinned LLVM/WASM, reuses canonical semantic identity with exact source provenance and preserves last valid bundle pointer on unsupported source/cache/compiler/pre-publication failures.",
+      "params": {
+        "source_cli_control": true
+      },
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 16,
+      "priority": 94,
+      "checks": [
+        {
+          "path": "cli_builds",
+          "equals": 4
+        },
+        {
+          "path": "cache_hits",
+          "equals": 2
+        },
+        {
+          "path": "module_equal",
+          "equals": true
+        },
+        {
+          "path": "ir_equal",
+          "equals": true
+        },
+        {
+          "path": "semantic_cache_shared",
+          "equals": true
+        },
+        {
+          "path": "source_provenance_distinct",
+          "equals": true
+        },
+        {
+          "path": "changed_source_key_distinct",
+          "equals": true
+        },
+        {
+          "path": "frames",
+          "equals": 16
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 262144
+        },
+        {
+          "path": "native_target_bytes",
+          "equals": 5760
+        },
+        {
+          "path": "invalid_requests",
+          "equals": 16
+        },
+        {
+          "path": "failure_controls",
+          "equals": 7
+        },
+        {
+          "path": "all_failed_builds_preserve_pointer",
+          "equals": true
+        },
+        {
+          "path": "staging_cleanup",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

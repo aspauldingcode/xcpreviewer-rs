@@ -1,0 +1,90 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "error_class": "ValueError",
+      "execution": "failed",
+      "manifest_sha256": "05596612dee77ec45656e9380da14b2a5869e1fa60303832e8742ecc4d6efe56",
+      "reason": "CLI exit mismatch before publication; later independent generic-linker control retains driver-flavor error and unchanged-pointer proof.",
+      "run_id": "20261010T213853Z-primary-source-cli-cache-dd725d32",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_failed_builds_preserve_pointer": true,
+        "allocation_bytes": 262144,
+        "cache_hits": 2,
+        "changed_source_key_distinct": true,
+        "cli_builds": 4,
+        "failure_controls": 6,
+        "frames": 16,
+        "invalid_bytes": 262144,
+        "invalid_requests": 16,
+        "ir_equal": true,
+        "module_equal": true,
+        "native_target_bytes": 5760,
+        "scope": "Owned primary-layer source CLI, semantic identity cache and atomic single published-bundle pointer; exact compiler output and full native/model/no-write bytes. macOS compilation/V8 only. Local integrity is not authentication; no active runtime swap, state preservation, stale generation, watch/debounce, native Canvas or general SwiftUI acceptance.",
+        "semantic_cache_shared": true,
+        "source_provenance_distinct": true,
+        "staging_cleanup": true
+      },
+      "manifest_sha256": "69ca747046ea8e0165ef2e3ce0c58fbd05e35659582ebdc374f65f70d27b074a",
+      "run_id": "20261010T214020Z-primary-source-cli-cache-9a718aa7",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_failed_builds_preserve_pointer": true,
+        "allocation_bytes": 262144,
+        "cache_hits": 2,
+        "changed_source_key_distinct": true,
+        "cli_builds": 4,
+        "failure_controls": 7,
+        "frames": 16,
+        "invalid_bytes": 262144,
+        "invalid_requests": 16,
+        "ir_equal": true,
+        "module_equal": true,
+        "native_target_bytes": 5760,
+        "scope": "Owned primary-layer source CLI, semantic identity cache and atomic single published-bundle pointer; exact compiler output and full native/model/no-write bytes. macOS compilation/V8 only. Local integrity is not authentication; no active runtime swap, state preservation, stale generation, watch/debounce, native Canvas or general SwiftUI acceptance.",
+        "semantic_cache_shared": true,
+        "source_provenance_distinct": true,
+        "staging_cleanup": true
+      },
+      "manifest_sha256": "505561087d985059aff97b8a0f3cb4e1ff14173ac88ae7e76bd41bd1b81d4b0d",
+      "run_id": "20261010T214201Z-primary-source-cli-cache-ac6bcb45",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_failed_builds_preserve_pointer": true,
+        "allocation_bytes": 262144,
+        "cache_hits": 2,
+        "changed_source_key_distinct": true,
+        "cli_builds": 4,
+        "failure_controls": 7,
+        "frames": 16,
+        "invalid_bytes": 262144,
+        "invalid_requests": 16,
+        "ir_equal": true,
+        "module_equal": true,
+        "native_target_bytes": 5760,
+        "scope": "Owned primary-layer source CLI, semantic identity cache and atomic single published-bundle pointer; exact compiler output and full native/model/no-write bytes. macOS compilation/V8 only. Local integrity is not authentication; no active runtime swap, state preservation, stale generation, watch/debounce, native Canvas or general SwiftUI acceptance.",
+        "semantic_cache_shared": true,
+        "source_provenance_distinct": true,
+        "staging_cleanup": true
+      },
+      "manifest_sha256": "f594b3a58c341dbed36cd6670d379f96c7a4c9f540dbc0b4d1f9a45148f025b6",
+      "run_id": "20261010T214238Z-primary-source-cli-cache-5790d3f7",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Owned primary-layer source CLI/cache and single atomic bundle pointer, macOS compiler and V8 full native/model frames. Final run binds complete producer/options identities. Local cache consistency is not authentication; no hot reload runtime, arbitrary SwiftUI or native Canvas acceptance."
+}

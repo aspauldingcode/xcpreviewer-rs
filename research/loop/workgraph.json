@@ -340,6 +340,12 @@
       "scope": "Actual browser execution of pinned primary-layer source-derived standalone/checker modules; full independent/native-prefix allocations and fault/no-write controls. Discriminate explicit premultiplied-to-straight Canvas2D readback, retain rounding and native getter/PNG differences. No arbitrary SwiftUI or Canvas wire inference."
     },
     {
+      "completion_experiment_ids": [
+        "primary-source-cli-cache"
+      ],
+      "completion_runs": [
+        "20261010T214238Z-primary-source-cli-cache-5790d3f7"
+      ],
       "id": "primary-source-cli-cache",
       "issue": "F1",
       "priority": 94,
@@ -347,6 +353,15 @@
         "20261010T191804Z-portable-primary-source-subset-811cf568"
       ],
       "scope": "Portable primary-layer source CLI and bounded deterministic source/configuration/IR/module cache identities; explicit subset diagnostics and transaction/fault controls. No browser workaround, native Canvas or arbitrary SwiftUI acceptance."
+    },
+    {
+      "id": "primary-source-frame-cli",
+      "issue": "I5",
+      "priority": 94,
+      "requires_runs": [
+        "20261010T214238Z-primary-source-cli-cache-5790d3f7"
+      ],
+      "scope": "Explicit supported primary-layer source-to-frame/image CLI and bounded configured WASM runtime, full independent/native callback-target comparisons and failed-render last-result preservation. No native getter/PNG equivalence, general SwiftUI, runtime state migration or browser workaround."
     }
   ],
   "schema_version": 1
