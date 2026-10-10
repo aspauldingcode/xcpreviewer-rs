@@ -199,11 +199,11 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Independent Quartz producer/public CGColor/copy-normal contrast:three supported native campaigns280 allocations/201,600 complete bytes/30,240 sentinel padding bytes;140 repeat pairs. Original Double half-up model28/28 per campaign; each input matches ImageRenderer only18/28, with same five half-tie cases mismatching. Public input routes agree; sealed copy-normal contrast112 pairs/80,640 bytes exactly equal. Compiler type and repeat-accounting failures retained.278 tests.",
+  "last_completed": "Public ImageRenderer callback:three supported campaigns280 target allocations/callbacks,189,504 complete bytes/18,144 padding bytes,140 equal repeat pairs. Native relation26/28 per target;case12 blue7 vs cgImage8 remains. Both blend states and stride68/80/default/explicit format matrix yield equal active pixels; final84 comparisons/51,408 active bytes.283 tests. No layout/blend fix or general color claim.",
   "last_github_sync": {
-    "checkpoint": "Independent Quartz/public-color/blend contrast",
+    "checkpoint": "Public renderer callback and layout matrix",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100646009"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100730372"
     ],
     "issues": [
       "O3"
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Use owned public ImageRenderer.render draw callback into a pinned padded CGContext; compare complete output against anchored cgImage/provider and independent source models. Discriminate SwiftUI drawing from direct Quartz conversion after copy-versus-normal effect was falsified for this fixture. Do not expand portable mixed-color subset or claim Canvas protocol recovered.",
+    "Same-instance renderer order probe:copy cgImage provider bytes immediately before/after public draw callbacks and nsImage export in one process, retaining deferred provider data separately. Discriminate getter/order/cache/shared-buffer versus drawing-boundary cause of remaining case12 half-tie. Do not fit pixels or extend portable mixed-color subset.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1432,6 +1432,18 @@
     {
       "manifest_sha256": "2e1532098c59e31e720b6093469d780065a67d281db814e1c605273b2d6969c1",
       "run_id": "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72"
+    },
+    {
+      "manifest_sha256": "b4e035e5e743e4fe2f957698140e0c1810605d69bc4eb5961464aa32678119c8",
+      "run_id": "20261010T181451Z-native-mixed-alpha-render-callback-78056926"
+    },
+    {
+      "manifest_sha256": "081406081b2e80a8afeee6e99bf109c1d435cadbd53be887e3c8c5c610208300",
+      "run_id": "20261010T181650Z-native-mixed-alpha-render-callback-layouts-cfa5e838"
+    },
+    {
+      "manifest_sha256": "e29113c81a44a864192f65dcd7798096e6ede996088b9cca83f81953f082d9cc",
+      "run_id": "20261010T181849Z-native-mixed-alpha-render-callback-layouts-c645b934"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

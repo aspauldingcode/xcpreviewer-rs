@@ -422,3 +422,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: independent Quartz and public-color contrast
 
 [Quartz producer controls](docs/reverse-engineering/2026-10-10-native-mixed-quartz.md) compare280 native allocations/201,600 bytes/30,240 sentinel padding bytes, with140 repeats. Direct Double half-up predictions pass; public color routes still differ from ImageRenderer in five cases. Copy versus normal allocation bytes agree exactly in a separately sealed112-pair contrast. Harness failures retained;278 tests. Next public ImageRenderer drawing callback into owned padded context; Canvas and both milestones remain open.
+
+### 2026-10-10: public renderer callback and layout matrix
+
+[Drawing callback controls](docs/reverse-engineering/2026-10-10-native-mixed-callback.md) compare280 target allocations/189,504 bytes/18,144 padding bytes and140 repeat pairs. One native half-tie case still differs:blue7 versus cgImage8. Both blend states and all four stride/bitmap targets have equal active pixels; full padded comparisons remain separate.283 tests; all seals verified. Next same-instance getter/callback order probe; Canvas and both milestones remain open.

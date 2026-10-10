@@ -4027,6 +4027,96 @@
           "equals": 80640
         }
       ]
+    },
+    {
+      "id": "native-mixed-alpha-render-callback",
+      "adapter": "native_reference",
+      "hypothesis": "Owned ImageRenderer public render callback draws the fourteen mixed-alpha views into explicit padded CGContext; exactly one callback per target, two context blend states, independent source models and pinned native cgImage relation discriminate the drawing boundary.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_callback_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "allocations",
+          "equals": 56
+        },
+        {
+          "path": "callback_events",
+          "equals": 56
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 40320
+        },
+        {
+          "path": "padding_bytes",
+          "equals": 6048
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 28
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "opaque_source_matches",
+          "equals": 4
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-render-callback-layouts",
+      "adapter": "native_reference",
+      "hypothesis": "Public renderer callback missed native case12 blue by1 in every pixel:2x2 target stride68/80 and default/explicit-big RGBA format matrix isolates layout versus rendering boundary; full allocations and sentinel padding compared without pixel normalization.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_callback_layout_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "allocations",
+          "equals": 112
+        },
+        {
+          "path": "callback_events",
+          "equals": 112
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 74592
+        },
+        {
+          "path": "padding_bytes",
+          "equals": 6048
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 56
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "opaque_source_matches",
+          "equals": 8
+        }
+      ]
     }
   ],
   "version": 1

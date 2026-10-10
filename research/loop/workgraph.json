@@ -185,6 +185,14 @@
       "scope": "Independent owned CGContext mixed-alpha producer contrasts exact source Double with publicly bridged components and declared raw rounding models, including owned padding. No general color model or native Canvas transport claim."
     },
     {
+      "completion_experiment_ids": [
+        "native-mixed-alpha-render-callback",
+        "native-mixed-alpha-render-callback-layouts"
+      ],
+      "completion_runs": [
+        "20261010T181451Z-native-mixed-alpha-render-callback-78056926",
+        "20261010T181849Z-native-mixed-alpha-render-callback-layouts-c645b934"
+      ],
       "id": "native-mixed-alpha-render-callback",
       "issue": "O3",
       "priority": 95,
@@ -194,6 +202,16 @@
         "20261010T181047Z-native-mixed-alpha-blend-contrast-c8635b72"
       ],
       "scope": "Owned public ImageRenderer draw callback into explicit padded CGContext versus pinned cgImage provider. Native drawing boundary discrimination, no Canvas transport or universal color formula."
+    },
+    {
+      "id": "native-mixed-alpha-render-order",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T181451Z-native-mixed-alpha-render-callback-78056926",
+        "20261010T181849Z-native-mixed-alpha-render-callback-layouts-c645b934"
+      ],
+      "scope": "Owned same-instance cgImage provider immediate/deferred snapshots around public draw callback and nsImage export; discriminate getter/order/cache/shared-buffer from drawing-boundary quantization. No Canvas transport or general color recovery."
     }
   ],
   "schema_version": 1

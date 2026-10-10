@@ -1,0 +1,155 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "success",
+      "facts": {
+        "all_blend_equal": true,
+        "all_padding_unchanged": true,
+        "allocation_bytes": 40320,
+        "allocations": 56,
+        "callback_events": 56,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "1": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          }
+        },
+        "native_matches": {
+          "0": 26,
+          "1": 26
+        },
+        "opaque_source_matches": 4,
+        "padding_bytes": 6048,
+        "repeat_equal_pairs": 28,
+        "scope": "Public owned ImageRenderer drawing callback into independently initialized padded CGContext versus pinned native cgImage and rational/float source predictions. No Canvas wire or general color-model claim."
+      },
+      "manifest_sha256": "b4e035e5e743e4fe2f957698140e0c1810605d69bc4eb5961464aa32678119c8",
+      "run_id": "20261010T181451Z-native-mixed-alpha-render-callback-78056926",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_blend_equal": false,
+        "all_padding_unchanged": true,
+        "allocation_bytes": 74592,
+        "allocations": 112,
+        "callback_events": 112,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "1": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "2": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "3": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          }
+        },
+        "native_matches": {
+          "0": 26,
+          "1": 26,
+          "2": 26,
+          "3": 26
+        },
+        "opaque_source_matches": 8,
+        "padding_bytes": 6048,
+        "repeat_equal_pairs": 56,
+        "scope": "Public owned ImageRenderer drawing callback into independently initialized padded CGContext versus pinned native cgImage and rational/float source predictions. No Canvas wire or general color-model claim."
+      },
+      "manifest_sha256": "081406081b2e80a8afeee6e99bf109c1d435cadbd53be887e3c8c5c610208300",
+      "run_id": "20261010T181650Z-native-mixed-alpha-render-callback-layouts-cfa5e838",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "active_relation_bytes": 51408,
+        "active_relation_pairs": 84,
+        "all_active_targets_equal": true,
+        "all_full_target_buffers_equal": false,
+        "all_padding_unchanged": true,
+        "allocation_bytes": 74592,
+        "allocations": 112,
+        "callback_events": 112,
+        "model_matches": {
+          "0": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "1": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "2": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          },
+          "3": {
+            "f32-components-double-product": 18,
+            "f32-product-even": 20,
+            "f32-product-half-up": 18,
+            "rational-even": 20,
+            "rational-half-up": 18
+          }
+        },
+        "native_matches": {
+          "0": 26,
+          "1": 26,
+          "2": 26,
+          "3": 26
+        },
+        "opaque_source_matches": 8,
+        "padding_bytes": 6048,
+        "repeat_equal_pairs": 56,
+        "scope": "Public owned ImageRenderer drawing callback into independently initialized padded CGContext versus pinned native cgImage and rational/float source predictions. No Canvas wire or general color-model claim."
+      },
+      "manifest_sha256": "e29113c81a44a864192f65dcd7798096e6ede996088b9cca83f81953f082d9cc",
+      "run_id": "20261010T181849Z-native-mixed-alpha-render-callback-layouts-c645b934",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Owned public renderer callback versus pinned cgImage:case12 blue7 versus8 remains at both blend states and all four stride/bitmap targets. Active extraction is explicit; complete allocations/padding also compare. No Canvas protocol or general color acceptance."
+}
