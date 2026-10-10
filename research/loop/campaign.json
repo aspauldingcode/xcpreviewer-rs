@@ -3621,6 +3621,71 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-alpha-rendering-control",
+      "adapter": "portable_solid",
+      "hypothesis": "Explicit eighth-step alpha WASM matches pinned native alpha holdouts, independently predicted complete allocations/padding/tails; invalid requests preserve all bytes and WasmKit native-array checker detects pixel/padding/tail mutations.",
+      "depends_on": [],
+      "resources": [
+        "portable-reference"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "alpha_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "frames",
+          "equals": 108
+        },
+        {
+          "path": "all_allocations_equal",
+          "equals": true
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1769472
+        },
+        {
+          "path": "native_frames",
+          "equals": 16
+        },
+        {
+          "path": "native_bytes",
+          "equals": 9792
+        },
+        {
+          "path": "all_native_equal",
+          "equals": true
+        },
+        {
+          "path": "all_repeats_equal",
+          "equals": true
+        },
+        {
+          "path": "invalid_requests",
+          "equals": 12
+        },
+        {
+          "path": "all_invalid_unchanged",
+          "equals": true
+        },
+        {
+          "path": "imports",
+          "equals": 0
+        },
+        {
+          "path": "second_runtime_controls",
+          "equals": 32
+        },
+        {
+          "path": "second_runtime_passed",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

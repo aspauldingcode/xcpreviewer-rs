@@ -76,6 +76,13 @@
       "requires_runs": [
         "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
         "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ],
+      "completion_runs": [
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-rendering-control"
       ]
     },
     {
@@ -90,6 +97,16 @@
       ],
       "completion_experiment_ids": [
         "compiler-artifact-limit-quiescence"
+      ]
+    },
+    {
+      "id": "portable-alpha-browser-readback",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire.",
+      "requires_runs": [
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
       ]
     }
   ]

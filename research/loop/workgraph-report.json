@@ -277,10 +277,10 @@
       ]
     },
     {
-      "id": "portable-alpha-rendering-control",
+      "id": "portable-alpha-browser-readback",
       "kind": "research",
       "state": "ready",
-      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire."
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire."
     },
     {
       "id": "native-correlated-capture",
@@ -311,6 +311,12 @@
       "kind": "research",
       "state": "complete",
       "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
+    },
+    {
+      "id": "portable-alpha-rendering-control",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire."
     },
     {
       "id": "portable-browser-execution",
@@ -536,7 +542,7 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "portable-alpha-rendering-control",
+      "from": "portable-alpha-browser-readback",
       "to": "F2",
       "kind": "research-assists"
     },
@@ -563,6 +569,11 @@
     {
       "from": "native-alpha-compositing-oracle",
       "to": "O3",
+      "kind": "research-assists"
+    },
+    {
+      "from": "portable-alpha-rendering-control",
+      "to": "F2",
       "kind": "research-assists"
     },
     {
@@ -601,13 +612,13 @@
   ],
   "research_frontier": [
     {
-      "id": "portable-alpha-rendering-control",
+      "id": "portable-alpha-browser-readback",
       "issue": "F2",
       "priority": 95,
-      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire.",
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire.",
       "requires_runs": [
-        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
-        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
       ],
       "state": "ready",
       "missing_evidence": [],
@@ -724,6 +735,30 @@
       ]
     },
     {
+      "id": "portable-alpha-rendering-control",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire.",
+      "requires_runs": [
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ],
+      "completion_runs": [
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-rendering-control"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 14,
+      "acceptance_dependencies_unmet": [
+        "F1"
+      ]
+    },
+    {
       "id": "portable-browser-execution",
       "issue": "F2",
       "priority": 80,
@@ -746,7 +781,7 @@
       ]
     }
   ],
-  "next_task": "portable-alpha-rendering-control",
+  "next_task": "portable-alpha-browser-readback",
   "quarantined_runs": [
     "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
   ],

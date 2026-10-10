@@ -1,0 +1,112 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+      "manifest_sha256": "25c6ffa5b18e4fed6c4cb61ac436fa9e0574612c999e680fc8f450fa0bafb6ff",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "all_allocations_equal": true,
+        "all_invalid_unchanged": true,
+        "all_native_equal": true,
+        "all_repeats_equal": true,
+        "allocation_bytes": 1769472,
+        "frames": 108,
+        "imports": 0,
+        "invalid_bytes": 196608,
+        "invalid_requests": 12,
+        "mutation_controls": 24,
+        "native_bytes": 9792,
+        "native_frames": 16,
+        "repeat_pairs": 54,
+        "scope": "Explicit eighth-step red alpha/optional blue subset. Native17x9 holdouts plus model-only remaining cases; entire16384-byte allocation, padding and tail. Node V8 and native-backed checker in WasmKit on macOS. No Swift parser expansion, arbitrary colors, Canvas wire or other platform/browser/performance claim.",
+        "second_runtime_controls": 32,
+        "second_runtime_passed": true
+      },
+      "identities": {
+        "checker_module": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
+        "clang": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+        "node": "v24.19.0",
+        "renderer_ir": "a76b1a04046340ed0bb70d3a9e4e868af5c65ad388814244765c1c3add043348",
+        "renderer_module": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "source": "e71849d28a33872e25b19efaa1905bccf4ecc62447d78aa207f952ee805f2cf7",
+        "v8": "13.6.233.17-node.51",
+        "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
+        "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
+      }
+    },
+    {
+      "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+      "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "all_allocations_equal": true,
+        "all_invalid_unchanged": true,
+        "all_native_equal": true,
+        "all_repeats_equal": true,
+        "allocation_bytes": 1769472,
+        "frames": 108,
+        "imports": 0,
+        "invalid_bytes": 196608,
+        "invalid_requests": 12,
+        "mutation_controls": 24,
+        "native_bytes": 9792,
+        "native_frames": 16,
+        "repeat_pairs": 54,
+        "scope": "Explicit eighth-step red alpha/optional blue subset. Native17x9 holdouts plus model-only remaining cases; entire16384-byte allocation, padding and tail. Node V8 and native-backed checker in WasmKit on macOS. No Swift parser expansion, arbitrary colors, Canvas wire or other platform/browser/performance claim.",
+        "second_runtime_controls": 32,
+        "second_runtime_passed": true
+      },
+      "identities": {
+        "checker_module": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
+        "clang": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+        "node": "v24.19.0",
+        "renderer_ir": "7e9064a3943c44cc786b663fd74bfe885ccd131ac4c5185d6fb249f6d3fbc9f9",
+        "renderer_module": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "source": "e71849d28a33872e25b19efaa1905bccf4ecc62447d78aa207f952ee805f2cf7",
+        "v8": "13.6.233.17-node.51",
+        "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
+        "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
+      }
+    }
+  ],
+  "repeat_modules": {
+    "alpha.wasm": {
+      "mode": "exact-bytes",
+      "passed": true,
+      "reference_bytes": 952,
+      "candidate_bytes": 952,
+      "reference_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+      "candidate_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "unmatched_tail_bytes": 0,
+      "first_mismatches": [],
+      "normalization": "none",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately."
+    },
+    "alpha-checker.wasm": {
+      "mode": "exact-bytes",
+      "passed": true,
+      "reference_bytes": 6284,
+      "candidate_bytes": 6284,
+      "reference_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
+      "candidate_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
+      "different_bytes": 0,
+      "different_bits_in_shared_extent": 0,
+      "unmatched_tail_bytes": 0,
+      "first_mismatches": [],
+      "normalization": "none",
+      "scope": "Equality of these files only; oracle independence and behavioral coverage must be established separately."
+    }
+  },
+  "ir_comparison": {
+    "raw_identical": false,
+    "excluding_first_two_source_metadata_lines": true,
+    "scope": "Only first two source-path lines excluded for text comparison. Exact WASM comparisons use no normalization."
+  },
+  "tests": 256,
+  "scope": "Owned eighth-step red-alpha/blue renderer. Eight native cases; remaining modeled combinations. macOS V8/WasmKit, no source/frontend/platform/Canvas acceptance."
+}
