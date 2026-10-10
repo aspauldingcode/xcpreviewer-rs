@@ -250,6 +250,9 @@ def perform(kind,out,p):
     if kind=='xcode_bridge_probe':
         from reloop.bridgeprobe import probe
         return probe(out,p.get('managed',False))
+    if kind=='native_reference' and p.get('cleanup_control',False):
+        from reloop.quiescence import corpus
+        return corpus(out)
     if kind=='native_reference' and p.get('alpha_control',False):
         from reloop.alpha import corpus
         return corpus(out)

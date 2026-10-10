@@ -83,7 +83,14 @@
       "issue": "O1",
       "priority": 100,
       "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
-      "requires_runs": []
+      "requires_runs": [],
+      "completion_runs": [
+        "20261010T170900Z-compiler-artifact-limit-quiescence-e35ca1a9",
+        "20261010T170930Z-compiler-artifact-limit-quiescence-3cc3f7a5"
+      ],
+      "completion_experiment_ids": [
+        "compiler-artifact-limit-quiescence"
+      ]
     }
   ]
 }

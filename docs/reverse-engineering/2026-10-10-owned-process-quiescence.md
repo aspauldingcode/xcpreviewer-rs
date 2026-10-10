@@ -1,0 +1,15 @@
+# Owned compiler interruption and evidence quiescence
+
+The previous16MiB interrupted SwiftUI compilation left cache files changing after the experiment manifest was sealed. Its retained seal is invalid and remains quarantined. This is a harness integrity defect, not native Canvas evidence.
+
+The new discriminating control runs owned detached writers under timeout and artifact interruption, then a fresh actual SwiftUI compilation under the same16MiB cap. The first instrumented run stopped detached controls correctly but still observed compiler-cache mutations. Its tracking count was one: xcrun's executable transition caused the original root command identity to differ, losing child ancestry discovery. That initial result and its unchanged/inconsistent artifact state are retained, never converted to a passing result.
+
+The executor now follows the live Popen-owned root across exec and records observed descendant start-time/command identities. It follows known descendants after reparenting and process-group changes. Before signaling an individual descendant it rechecks identity; it excludes changed identities. It verifies no observed descendant remains runnable after bounded TERM/KILL cleanup, and avoids signaling a retired root process-group number. Process inventory failure prevents launch. These operations apply only to owned experiment ancestry and leave user Xcode/simulator processes alone.
+
+Two corrected campaigns test detached writers and actual compiler interruption. Cache inventories/hashes are compared immediately and after nominal additional0.2,1,2-second delays. Both pass with no late writer output and stable cache hashes; compiler ancestry count is two rather than one. The resulting experiment seals also verify unchanged. Four detached failure controls and two compiler artifact-limit controls are retained. The interrupted native compiler cache is local evidence only; no Apple cache/binary is published.
+
+Tests cover a detached late writer, a changed/reused numeric PID identity, a live root exec transition and explicit graph quarantine overriding an otherwise successful anchor. Full suite253 tests passes. The graph now displays the earlier explicit quarantine even though no delivery/research node depends on it. O1 and both milestones remain open.
+
+Limit: polling can miss an arbitrary child that forks, escapes and execs between observations. ps start-time/command identity has finite precision; this is not a universal hostile-process ownership primitive. Stable snapshots over a finite interval are a measured condition, not proof of indefinite filesystem/kernel quiescence. The recovered source/runtime/transport distinctions remain unchanged. Next research is the independently declared portable alpha rendering control; native Canvas correlation still requires a changed prerequisite.
+
+Implementation: `tools/re/reloop/processes.py`, executor integration in `core.py`, sealed control in `quiescence.py`. Sanitized anchors: `research/evidence/process-quiescence-2026-10-10.json`.

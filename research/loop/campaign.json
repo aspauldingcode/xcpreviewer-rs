@@ -3584,6 +3584,43 @@
           "equals": 9792
         }
       ]
+    },
+    {
+      "id": "compiler-artifact-limit-quiescence",
+      "adapter": "native_reference",
+      "hypothesis": "Tracked owned detached descendants cannot write after timeout/artifact abort; actual fresh SwiftUI compiler16MiB interruption leaves unchanged cache hashes at0,.2,1.2,3.2s after bounded cleanup.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 256,
+      "params": {
+        "cleanup_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "all_detached_stable",
+          "equals": true
+        },
+        {
+          "path": "timeout_observed",
+          "equals": true
+        },
+        {
+          "path": "artifact_limit_observed",
+          "equals": true
+        },
+        {
+          "path": "compiler_artifact_limit_observed",
+          "equals": true
+        },
+        {
+          "path": "compiler_cache_stable",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

@@ -21,7 +21,7 @@ PARAMS = {
     'portable_solid': {'second_runtime','source_control','browser_control'},
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','ranges','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
-    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control','alpha_control'},
+    'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'repeat_control','solid_control','alpha_control','cleanup_control'},
     'connected_probe': set(), 'plist_corpus': {'seed','cases','decode_control'}, 'swift_metadata': {'binary','maximum','state_control'},
     'xcode_preview': {'variants','trace','scheme_control'}, 'xpc_corpus': {'seed','cases'},
     'xpc_negative':set(), 'xpc_prefix':set(), 'agent_discriminants':set(), 'raw_coder':set(), 'surface_corpus':{'gpu_control'}, 'preview_hook_smoke':set(), 'surface_ipc':{'exit_order','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control'}, 'surface_failure':{'control'}, 'surface_reuse':{'name_reuse_control','retained_right_control','generation_control'}, 'xcode_bridge_probe':{'managed'}}
@@ -86,7 +86,7 @@ def validate_experiment(e):
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
     for flag in ('source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control','name_reuse_control','retained_right_control','generation_control','browser_control','alpha_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
-    if p.get('alpha_control') and (p.get('solid_control') or p.get('repeat_control')):raise ValueError('Separate alpha reference modes')
+    if e['adapter']=='native_reference' and sum(bool(p.get(k)) for k in ('alpha_control','solid_control','repeat_control','cleanup_control'))>1:raise ValueError('Separate native reference modes')
     if p.get('browser_control') and (p.get('source_control') or p.get('second_runtime')):raise ValueError('Browser executes anchored modules without source/runtime modes')
     if p.get('generation_control') and (p.get('name_reuse_control') or p.get('retained_right_control')):raise ValueError('Generation and name controls are separate')
     if p.get('retained_right_control') and p.get('name_reuse_control') is not True:raise ValueError('Retained right requires name reuse control')
@@ -179,6 +179,7 @@ def tree_size(path):
 
 
 def terminate_group(process):
+    if process.poll() is not None: return  # Do not signal a retired/reused group number.
     for sig, grace in [(signal.SIGTERM, 1), (signal.SIGKILL, 1)]:
         try: os.killpg(process.pid, sig)
         except ProcessLookupError: break
@@ -192,16 +193,22 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
     started = time.monotonic()
     outcome = 'failed'
     process = None
+    tree = None
     with (directory/'stdout.txt').open('wb') as stdout, (directory/'stderr.txt').open('wb') as stderr:
         try:
             env = dict(os.environ)
             env['PYTHONDONTWRITEBYTECODE'] = '1'
             env['RE_PROJECT_ROOT'] = str(PROJECT_ROOT)
             env['PYTHONUNBUFFERED'] = '1'
+            from reloop.processes import OwnedTree, snapshot
+            snapshot()  # Fail before launch if owned identity tracking is unavailable.
             process = subprocess.Popen(argv, cwd=str(ROOT), stdout=stdout, stderr=stderr, env=env, start_new_session=True)
+            tree = OwnedTree(process.pid, process)
+            tree.observe()
             if event: event('process_started', {'pid':process.pid, 'process_group':process.pid})
             next_update = started + 30
             while process.poll() is None:
+                tree.observe()
                 elapsed = time.monotonic() - started
                 if elapsed >= timeout:
                     outcome = 'timed_out'; break
@@ -218,7 +225,12 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
         except OSError as error:
             stderr.write(str(error).encode())
         finally:
-            if process is not None: terminate_group(process)
+            try:
+                if tree is not None:
+                    cleanup = tree.drain()
+                    if event: event('owned_descendant_cleanup', cleanup)
+            finally:
+                if process is not None: terminate_group(process)
     if tree_size(directory) > limit_bytes: outcome = 'artifact_limit'
     return {'execution':outcome, 'exit_code':process.returncode if process else None,
             'duration_seconds':round(time.monotonic()-started,3)}

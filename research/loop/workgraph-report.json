@@ -277,12 +277,6 @@
       ]
     },
     {
-      "id": "compiler-artifact-limit-quiescence",
-      "kind": "research",
-      "state": "ready",
-      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims."
-    },
-    {
       "id": "portable-alpha-rendering-control",
       "kind": "research",
       "state": "ready",
@@ -299,6 +293,12 @@
       "kind": "research",
       "state": "blocked",
       "scope": "Native typed runtime completion and cancellation, no guessed private ABI."
+    },
+    {
+      "id": "compiler-artifact-limit-quiescence",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims."
     },
     {
       "id": "owned-generation-commit-control",
@@ -536,11 +536,6 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "compiler-artifact-limit-quiescence",
-      "to": "O1",
-      "kind": "research-assists"
-    },
-    {
       "from": "portable-alpha-rendering-control",
       "to": "F2",
       "kind": "research-assists"
@@ -553,6 +548,11 @@
     {
       "from": "typed-continuation-runtime",
       "to": "R2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "compiler-artifact-limit-quiescence",
+      "to": "O1",
       "kind": "research-assists"
     },
     {
@@ -600,18 +600,6 @@
     "P3"
   ],
   "research_frontier": [
-    {
-      "id": "compiler-artifact-limit-quiescence",
-      "issue": "O1",
-      "priority": 100,
-      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
-      "requires_runs": [],
-      "state": "ready",
-      "missing_evidence": [],
-      "blocker": null,
-      "unlocks_delivery_nodes": 21,
-      "acceptance_dependencies_unmet": []
-    },
     {
       "id": "portable-alpha-rendering-control",
       "issue": "F2",
@@ -666,6 +654,25 @@
       "acceptance_dependencies_unmet": [
         "R1"
       ]
+    },
+    {
+      "id": "compiler-artifact-limit-quiescence",
+      "issue": "O1",
+      "priority": 100,
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
+      "requires_runs": [],
+      "completion_runs": [
+        "20261010T170900Z-compiler-artifact-limit-quiescence-e35ca1a9",
+        "20261010T170930Z-compiler-artifact-limit-quiescence-3cc3f7a5"
+      ],
+      "completion_experiment_ids": [
+        "compiler-artifact-limit-quiescence"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 21,
+      "acceptance_dependencies_unmet": []
     },
     {
       "id": "owned-generation-commit-control",
@@ -739,8 +746,10 @@
       ]
     }
   ],
-  "next_task": "compiler-artifact-limit-quiescence",
-  "quarantined_runs": [],
+  "next_task": "portable-alpha-rendering-control",
+  "quarantined_runs": [
+    "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
+  ],
   "milestone1_complete": false,
   "unverified_milestone1": [
     "O1",

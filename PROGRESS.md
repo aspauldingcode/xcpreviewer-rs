@@ -394,3 +394,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: alpha quantization falsification
 
 [Native alpha oracle](docs/reverse-engineering/2026-10-10-native-alpha.md) retains symmetric half-rounding contradiction and artifact-cap failure. Revised quantized-alpha complementary model passes two fresh holdouts and all8 cases in two campaigns:19,584 decoded RGBA bytes;249 tests. Owned goldens published. Next portable alpha control remains separate from opaque source parser; native Canvas/transport and milestone acceptance stay open.
+
+### 2026-10-10: owned compiler cleanup
+
+[Owned descendant tracking](docs/reverse-engineering/2026-10-10-owned-process-quiescence.md) now preserves ancestry across root exec and reparenting/group changes. Two corrected campaigns stop four detached late writers and two actual Swift compiler artifact-limit runs; finite cache snapshots and seals remain stable. Initial tracking failure retained, explicit quarantine visible in graph;253 tests pass. Next portable alpha control. Arbitrary between-poll escape/exec and indefinite quiescence remain outside measured claims; both milestone acceptance gates stay open.

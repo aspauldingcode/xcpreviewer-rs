@@ -36,3 +36,11 @@ class WorkGraphTests(unittest.TestCase):
             c,r,p,q=self.fixture(pathlib.Path(d));p['research_tasks'][0]['completion_runs']=['r'];(c.runs/'r'/'experiment.json').write_text(json.dumps({'id':'research-b'}))
             g=build(c,r,p,q);self.assertIsNone(g['next_task']);self.assertEqual(g['research_frontier'][0]['state'],'complete');self.assertFalse(g['milestone1_complete'])
             (c.runs/'r'/'experiment.json').write_text(json.dumps({'id':'unrelated'}));self.assertEqual(build(c,r,p,q)['next_task'],'research-b')
+
+    def test_explicit_quarantine_is_visible_and_overrides_success(self):
+        with tempfile.TemporaryDirectory() as d:
+            c,r,p,q=self.fixture(pathlib.Path(d))
+            q['quarantined_evidence']=[{'run_id':'r'}]
+            g=build(c,r,p,q)
+            self.assertEqual(g['quarantined_runs'],['r'])
+            self.assertIsNone(g['next_task'])

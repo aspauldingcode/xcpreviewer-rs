@@ -23,8 +23,9 @@ def build(controller,roadmap=None,policy=None,checkpoint=None):
     checkpoint=checkpoint or load(controller.root/'research/loop/continuous.json')
     issues=roadmap['issues'];order=topology(issues)
     anchors={r['run_id']:r['manifest_sha256'] for r in checkpoint.get('recent_evidence',[])}
-    verified={};quarantine=[]
+    verified={};quarantine=[r['run_id'] for r in checkpoint.get('quarantined_evidence',[])]
     def evidence(rid):
+        if rid in quarantine:verified[rid]=False;return False
         if rid in verified:return verified[rid]
         anchor=anchors.get(rid)
         if not anchor:verified[rid]=False;return False
