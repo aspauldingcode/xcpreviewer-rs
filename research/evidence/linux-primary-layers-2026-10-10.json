@@ -1,0 +1,66 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "success",
+      "existing_container_count": 2,
+      "facts": {
+        "allocation_bytes": 5242880,
+        "architecture": "aarch64",
+        "checker_controls": 200,
+        "cross_host_bytes": 5242880,
+        "existing_containers_preserved": true,
+        "frames": 320,
+        "host_system": "Linux",
+        "imports": 0,
+        "invalid_bytes": 278528,
+        "invalid_requests": 17,
+        "kernel": "6.8.0-100-generic",
+        "mutation_controls": 160,
+        "native_full_bytes": 1310720,
+        "native_target_bytes": 57600,
+        "owned_cleanup_verified": true,
+        "runtime": "Wasmtime49.0.0",
+        "scope": "Exact pinned primary-layer WASM on Linux ARM64 in existing Colima VM/Apple hardware, full native callback-target/model/padding/tail allocations; native getter/PNG differences retained. macOS compilation retained. No Linux source frontend, independent non-Apple hardware, Windows, Canvas wire or cost claim."
+      },
+      "manifest_sha256": "21c73bdc7cc0c687e26ca2ebf539dce61b6a3303779b4e5f5857e9aced2c2934",
+      "owned_container_remaining": false,
+      "run_id": "20261010T190443Z-linux-primary-layer-control-86feb1b8",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "existing_container_count": 2,
+      "facts": {
+        "algorithm_mutants": 2,
+        "all_cross_host_counts_equal": true,
+        "all_detected": true,
+        "architecture": "aarch64",
+        "existing_containers_preserved": true,
+        "host_system": "Linux",
+        "kernel": "6.8.0-100-generic",
+        "native_cases": 80,
+        "owned_cleanup_verified": true,
+        "runtime": "Wasmtime49.0.0",
+        "scope": "Actual Linux semantic algorithm mutants versus anchored full native checker; paired host case counts, no new native acquisition or raw mutant frame captures."
+      },
+      "manifest_sha256": "8494f511cf0d9b0c0b6be90f7121b1ee44a3d34793102dd642b235a8ad762ae6",
+      "owned_container_remaining": false,
+      "run_id": "20261010T190617Z-linux-primary-layer-algorithm-mutants-76b47f3c",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "runtime_identity": {
+    "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
+    "wheel_identity": {
+      "bytes": 8853040,
+      "url": "https://files.pythonhosted.org/packages/9c/f4/7889eb2fdbb11423e61f442af218441e0ae5749452bf8d2c1ade4ce630c5/wasmtime-49.0.0-py3-none-manylinux2014_aarch64.whl",
+      "version": "49.0.0",
+      "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
+    },
+    "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
+  },
+  "scope": "Actual existing Linux ARM64 Wasmtime, exact pinned primary-layer modules/checker/mutants. Callback-target contract only; getter/PNG differences retained. No Linux compiler, non-Apple hardware, browser or Canvas equivalence."
+}

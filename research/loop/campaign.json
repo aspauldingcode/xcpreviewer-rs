@@ -4429,6 +4429,84 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "linux-primary-layer-control",
+      "adapter": "linux_wasm",
+      "hypothesis": "Actual existing Linux ARM64 Wasmtime executes pinned primary-layer WASM and full native byte checker:320 complete independent/cross-host allocations,17 no-write invalid requests and200 native baseline/fault cases. Preserve existing containers and remove only owned nonce container; no native getter/PNG equivalence.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90,
+      "artifact_limit_mb": 16,
+      "params": {
+        "layer_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "frames",
+          "equals": 320
+        },
+        {
+          "path": "checker_controls",
+          "equals": 200
+        },
+        {
+          "path": "mutation_controls",
+          "equals": 160
+        },
+        {
+          "path": "owned_cleanup_verified",
+          "equals": true
+        },
+        {
+          "path": "existing_containers_preserved",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "linux-primary-layer-algorithm-mutants",
+      "adapter": "linux_wasm",
+      "hypothesis": "Exact pinned source-alpha truncation and layer-order mutant modules are rejected on actual Linux Wasmtime. Compare all80 native case mismatch counts to anchored V8 and both witness/aggregate rejections; preserve existing containers.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90,
+      "artifact_limit_mb": 8,
+      "params": {
+        "layer_mutation_control": true
+      },
+      "priority": 94,
+      "checks": [
+        {
+          "path": "algorithm_mutants",
+          "equals": 2
+        },
+        {
+          "path": "native_cases",
+          "equals": 80
+        },
+        {
+          "path": "all_detected",
+          "equals": true
+        },
+        {
+          "path": "all_cross_host_counts_equal",
+          "equals": true
+        },
+        {
+          "path": "owned_cleanup_verified",
+          "equals": true
+        },
+        {
+          "path": "existing_containers_preserved",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

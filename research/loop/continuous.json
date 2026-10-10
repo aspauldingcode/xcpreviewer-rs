@@ -199,11 +199,11 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Portable primary-layer callback-target control:320 fresh V8 instances/5,242,880 complete allocation bytes;80 native-prefix comparisons/57,600 native target bytes plus independently checked tails;160 repeat pairs;17 invalid requests/278,528 unchanged bytes. Import-free C-to-LLVM-to-WASM. Native checker40 targets\u00d75 modes in V8 and WasmKit,160 channel/alpha/padding/tail faults per runtime. Two semantic algorithm mutants detected by full native checks; endpoint controls preserved, paired runtime witness counts agree. Getter/PNG differs; no Canvas or SwiftUI compatibility claim. 297 tests pass.",
+  "last_completed": "Actual Linux ARM64 Wasmtime49 primary-layer execution:320 complete allocations/5,242,880 independent bytes plus same extent cross-host equality;80 full native-prefix comparisons/57,600 reused native target bytes;17 invalid requests/278,528 unchanged bytes.200 native checker controls including160 channel/alpha/padding/tail faults. Both semantic mutants rejected;all80 per-case counts match anchored V8. Owned containers removed,two existing containers preserved. Getter/PNG differences remain;no Canvas/SwiftUI equivalence. 301 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Portable primary-layer control and algorithm falsification",
+    "checkpoint": "Actual Linux primary-layer module and algorithm-mutant verification",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6101066094"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6101151714"
     ],
     "issues": [
       "F2"
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Execute the externally anchored primary-layer WASM renderer/checker on actual existing Linux Wasmtime host, preserving current containers/VM and verifying runtime/image identities. Compare full allocations, invalid requests and native mutation cases; declare callback-target contract and getter/PNG mismatch. No network/pulls or universal cross-platform Canvas claim.",
+    "Implement an explicit bounded source-to-IR subset for primary-color ZStack layers with constant alpha eighths and frame geometry, reusing pinned primary-layer WASM semantics. Parse/validate whole source with unsupported constructs rejected, preserve existing opaque subset, independent holdout and diagnostic mutations. Verify source-driven full callback-target allocations in both interpreters and actual Linux; do not claim native getter/PNG or arbitrary SwiftUI compatibility.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1484,6 +1484,16 @@
       "manifest_sha256": "1158c7335125110c92030359b7c150a7545278beee638bf7207b5d4304d8facf",
       "path": "research/evidence/portable-primary-layers-2026-10-10.json",
       "run_id": "20261010T185711Z-portable-primary-layer-algorithm-mutants-f18b9d9e"
+    },
+    {
+      "manifest_sha256": "21c73bdc7cc0c687e26ca2ebf539dce61b6a3303779b4e5f5857e9aced2c2934",
+      "path": "research/evidence/linux-primary-layers-2026-10-10.json",
+      "run_id": "20261010T190443Z-linux-primary-layer-control-86feb1b8"
+    },
+    {
+      "manifest_sha256": "8494f511cf0d9b0c0b6be90f7121b1ee44a3d34793102dd642b235a8ad762ae6",
+      "path": "research/evidence/linux-primary-layers-2026-10-10.json",
+      "run_id": "20261010T190617Z-linux-primary-layer-algorithm-mutants-76b47f3c"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

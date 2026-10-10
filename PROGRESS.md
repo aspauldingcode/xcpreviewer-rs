@@ -450,3 +450,9 @@ Primary-layer composition:128 fresh processes,512 callback/getter targets;368,64
 Portable primary-layer callback-target control:320 fresh V8 instances/5,242,880 complete allocation bytes;80 native-prefix comparisons/57,600 native target bytes plus independently checked tails;160 repeat pairs;17 invalid requests/278,528 unchanged bytes. Import-free C-to-LLVM-to-WASM. Native checker40 targets×5 modes in V8 and WasmKit,160 channel/alpha/padding/tail faults per runtime. Two semantic algorithm mutants detected by full native checks; endpoint controls preserved, paired runtime witness counts agree. Getter/PNG differs; no Canvas or SwiftUI compatibility claim.
 
 297 tests pass. Evidence: [portable primary layers](docs/reverse-engineering/2026-10-10-portable-primary-layers.md). Both milestones remain open.
+
+## 2026-10-10 — actual Linux primary-layer execution
+
+Actual Linux ARM64 Wasmtime49 primary-layer execution:320 complete allocations/5,242,880 independent bytes plus same extent cross-host equality;80 full native-prefix comparisons/57,600 reused native target bytes;17 invalid requests/278,528 unchanged bytes.200 native checker controls including160 channel/alpha/padding/tail faults. Both semantic mutants rejected;all80 per-case counts match anchored V8. Owned containers removed,two existing containers preserved. Getter/PNG differences remain;no Canvas/SwiftUI equivalence.
+
+301 tests pass. Evidence: [Linux primary layers](docs/reverse-engineering/2026-10-10-linux-primary-layers.md). Both milestones remain open.
