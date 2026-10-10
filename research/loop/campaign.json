@@ -4117,6 +4117,76 @@
           "equals": 8
         }
       ]
+    },
+    {
+      "adapter": "native_reference",
+      "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "captures"
+        },
+        {
+          "equals": 112,
+          "path": "callback_events"
+        },
+        {
+          "equals": 168,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 8,
+          "path": "opaque_source_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Same-instance immediate owned cgImage copies and retained CFData snapshots around two drawing callbacks and nsImage export, with cg-first/callback-first orders. Mutations/order-dependent pixels support shared-buffer/cache explanation; stable blue8 getters versus blue7 callback supports boundary difference. No universal color or Canvas protocol claim.",
+      "id": "native-mixed-alpha-render-order",
+      "params": {
+        "mixed_order_control": true
+      },
+      "priority": 95,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
+      "artifact_limit_mb": 2,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "exports"
+        },
+        {
+          "equals": 224,
+          "path": "provider_export_matches"
+        },
+        {
+          "equals": 28,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": 28,
+          "path": "order_equal_pairs"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Reused sealed same-instance immediate provider copies predict full nsImage export pixels at both call orders; source-independent renderer formula remains unknown.",
+      "id": "native-mixed-alpha-order-export-contrast",
+      "params": {
+        "mixed_order_export_control": true
+      },
+      "priority": 94,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 30
     }
   ],
   "version": 1

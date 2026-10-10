@@ -199,11 +199,11 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Public ImageRenderer callback:three supported campaigns280 target allocations/callbacks,189,504 complete bytes/18,144 padding bytes,140 equal repeat pairs. Native relation26/28 per target;case12 blue7 vs cgImage8 remains. Both blend states and stride68/80/default/explicit format matrix yield equal active pixels; final84 comparisons/51,408 active bytes.283 tests. No layout/blend fix or general color claim.",
+  "last_completed": "Same-instance public renderer order:56 fresh processes,224 immediate provider copies plus224 retained snapshots (274,176 bytes),112 callbacks (80,640 complete bytes including12,096 padding). All168 repeat pairs and168 call-order pairs equal. Getters and retained provider bytes stable across both callbacks and nsImage export; case12 remains blue8 getter versus7 callback in all8 targets. Reused56 exports/34,272 decoded bytes satisfy224 measured-provider relations,28 repeat pairs and28 order pairs. No general color formula or native Canvas wire claim. 287 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Public renderer callback and layout matrix",
+    "checkpoint": "Same-instance renderer order and export relation",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100730372"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100808339"
     ],
     "issues": [
       "O3"
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Same-instance renderer order probe:copy cgImage provider bytes immediately before/after public draw callbacks and nsImage export in one process, retaining deferred provider data separately. Discriminate getter/order/cache/shared-buffer versus drawing-boundary cause of remaining case12 half-tie. Do not fit pixels or extend portable mixed-color subset.",
+    "Discriminate native mixed-alpha half-ties across public renderer rasterization scales with identical source and fixed pixel extent. Predeclare input/scale control, raw layout and independent expectations; preserve unsupported mixed-color portable subset and Canvas capture blockers.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1444,6 +1444,16 @@
     {
       "manifest_sha256": "e29113c81a44a864192f65dcd7798096e6ede996088b9cca83f81953f082d9cc",
       "run_id": "20261010T181849Z-native-mixed-alpha-render-callback-layouts-c645b934"
+    },
+    {
+      "manifest_sha256": "195b54b87dc547bcc0a5d187f0b454f53ab946f7dce0813ee6bfab2b0765f236",
+      "path": "research/evidence/native-mixed-order-2026-10-10.json",
+      "run_id": "20261010T182739Z-native-mixed-alpha-render-order-9d110f33"
+    },
+    {
+      "manifest_sha256": "0a83c346c22bd8fb0182bccba666dfdefd652c5105831cdd4976ba1242715d36",
+      "path": "research/evidence/native-mixed-order-2026-10-10.json",
+      "run_id": "20261010T182852Z-native-mixed-alpha-order-export-contrast-8b6e0df7"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

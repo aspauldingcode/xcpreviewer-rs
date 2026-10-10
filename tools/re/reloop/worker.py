@@ -262,6 +262,12 @@ def perform(kind,out,p):
     if kind=='native_reference' and p.get('cleanup_control',False):
         from reloop.quiescence import corpus
         return corpus(out)
+    if kind=='native_reference' and p.get('mixed_order_export_control',False):
+        from reloop.mixedorder import export_contrast
+        return export_contrast(out)
+    if kind=='native_reference' and p.get('mixed_order_control',False):
+        from reloop.mixedorder import corpus
+        return corpus(out)
     if kind=='native_reference' and p.get('mixed_callback_layout_control',False):
         from reloop.mixedcallback import corpus
         return corpus(out,True)

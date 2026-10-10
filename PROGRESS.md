@@ -426,3 +426,9 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: public renderer callback and layout matrix
 
 [Drawing callback controls](docs/reverse-engineering/2026-10-10-native-mixed-callback.md) compare280 target allocations/189,504 bytes/18,144 padding bytes and140 repeat pairs. One native half-tie case still differs:blue7 versus cgImage8. Both blend states and all four stride/bitmap targets have equal active pixels; full padded comparisons remain separate.283 tests; all seals verified. Next same-instance getter/callback order probe; Canvas and both milestones remain open.
+
+## 2026-10-10 — same-instance renderer order
+
+Same-instance public renderer order:56 fresh processes,224 immediate provider copies plus224 retained snapshots (274,176 bytes),112 callbacks (80,640 complete bytes including12,096 padding). All168 repeat pairs and168 call-order pairs equal. Getters and retained provider bytes stable across both callbacks and nsImage export; case12 remains blue8 getter versus7 callback in all8 targets. Reused56 exports/34,272 decoded bytes satisfy224 measured-provider relations,28 repeat pairs and28 order pairs. No general color formula or native Canvas wire claim.
+
+287 tests pass. Evidence: [same-instance renderer order](docs/reverse-engineering/2026-10-10-native-mixed-order.md). Both milestones remain open.
