@@ -377,6 +377,16 @@
         "20261010T191804Z-portable-primary-source-subset-811cf568"
       ],
       "scope": "Independent public native callback full allocation predictions at compact/padded 1x1,13x7,64x64 extents; no Canvas/native getter equivalence."
+    },
+    {
+      "id": "primary-source-frame-native-extents",
+      "issue": "I5",
+      "priority": 96,
+      "requires_runs": [
+        "20261010T215252Z-native-primary-extent-holdouts-5143e5b4",
+        "20261010T215404Z-primary-source-frame-cli-8a8fd3bc"
+      ],
+      "scope": "Run the supported source-frame CLI for all40 newly native-anchored primary extent jobs, repeats and full16384-byte target allocations; independent explicit straight-alpha PNG decoding and corruption/runtime/precommit controls. Raw native callback acceptance remains separate from PNG conversion and native Canvas transport."
     }
   ],
   "schema_version": 1
