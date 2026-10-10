@@ -246,6 +246,14 @@
       "scope": "Explicit public drawingGroup solid Color output across four scales; unchanged bytes do not prove offscreen execution or universal modifier invariance."
     },
     {
+      "completion_experiment_ids": [
+        "native-primary-layer-composition",
+        "native-primary-layer-holdouts"
+      ],
+      "completion_runs": [
+        "20261010T184512Z-native-primary-layer-composition-c5d47964",
+        "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b"
+      ],
       "id": "native-primary-layer-composition",
       "issue": "O3",
       "priority": 95,
@@ -254,6 +262,15 @@
         "20261010T183552Z-native-mixed-alpha-drawing-group-fea18d4f"
       ],
       "scope": "Independent integer primary-color source-over predictions for multi-layer public native views with modifier and scale controls; source-to-output geometry and padding. No internal offscreen or Canvas transport assumption."
+    },
+    {
+      "id": "portable-primary-layer-control",
+      "issue": "F2",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b"
+      ],
+      "scope": "Independent WASM primary-layer premultiplied source-over feasibility against scoped public native callback allocations; explicit supported contract and failures, both runtimes. Native getters differ; no PNG/Canvas/SwiftUI compatibility equivalence."
     }
   ],
   "schema_version": 1

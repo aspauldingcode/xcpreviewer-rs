@@ -1,0 +1,92 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocations": 192,
+        "callback_bytes": 138240,
+        "callback_events": 192,
+        "captures": 48,
+        "endpoint_source_matches": 64,
+        "getter_bytes": 117504,
+        "getter_callback_matches": 160,
+        "matrix_equal_pairs": 144,
+        "model_matches": {
+          "exact-final": {
+            "callback": 144,
+            "getter": 176
+          },
+          "exact-stage": {
+            "callback": 176,
+            "getter": 176
+          },
+          "quantized-stage": {
+            "callback": 192,
+            "getter": 160
+          }
+        },
+        "padding_bytes": 20736,
+        "positive_layer_order_change": true,
+        "repeat_equal_pairs": 192,
+        "scope": "Owned public primary-layer source-over controls with explicit grouped/ungrouped and scale1/2 targets. Independent rational predictions, native getter/callback relations and padding separate; no Canvas transport or universal compositing model."
+      },
+      "manifest_sha256": "010c8a705392ddbe4f14cdea4e0f1f9c555e1bf7f04e494fe0e37eaa4bf5712f",
+      "run_id": "20261010T184512Z-native-primary-layer-composition-c5d47964",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_padding_unchanged": true,
+        "allocations": 320,
+        "callback_bytes": 230400,
+        "callback_events": 320,
+        "captures": 80,
+        "endpoint_source_matches": 64,
+        "getter_bytes": 195840,
+        "getter_callback_matches": 240,
+        "matrix_equal_pairs": 240,
+        "model_matches": {
+          "exact-final": {
+            "callback": 216,
+            "getter": 264
+          },
+          "exact-stage": {
+            "callback": 256,
+            "getter": 256
+          },
+          "quantized-stage": {
+            "callback": 320,
+            "getter": 240
+          }
+        },
+        "new_holdout_matches": {
+          "exact-final": {
+            "callback": 72,
+            "getter": 88
+          },
+          "exact-stage": {
+            "callback": 80,
+            "getter": 80
+          },
+          "quantized-stage": {
+            "callback": 128,
+            "getter": 80
+          }
+        },
+        "padding_bytes": 34560,
+        "positive_layer_order_change": true,
+        "repeat_equal_pairs": 320,
+        "scope": "Owned public primary-layer source-over controls with explicit grouped/ungrouped and scale1/2 targets. Independent rational predictions, native getter/callback relations and padding separate; no Canvas transport or universal compositing model."
+      },
+      "manifest_sha256": "0dfae6bf400c8d511bd921027daa9f779d06596ffa177eb3a47cab5d1ae43b28",
+      "run_id": "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Independent source-over models for owned primary-color layer callbacks and same-instance getters. Quantized-stage fits512 callbacks including128 new holdout targets, fails112 getter targets; no universal color, offscreen implementation or Canvas transport claim."
+}

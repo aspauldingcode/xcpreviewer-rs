@@ -199,11 +199,11 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Public renderer scale and drawingGroup controls:112 fresh processes,448 exact-count callbacks/allocations,322,560 full bytes including48,384 unchanged padding bytes. Scales1/2/0.5/4 in both orders preserve prior callback pixels:448/448; getter relation416/448,onlycase12 differs. All224 repeat and224 order pairs pass. Explicit drawingGroup modifier produces equal bytes but does not prove an offscreen pass was executed. General mixed-color formula and native Canvas protocol remain open. 290 tests pass.",
+  "last_completed": "Primary-layer composition:128 fresh processes,512 callback/getter targets;368,640 full callback bytes including55,296 unchanged padding bytes and313,344 getter bytes.512 repeat pairs,384 scale/group matrix pairs and layer-order positive controls pass. Independently predeclared quantized-stage source-over predicts512/512 callbacks, including128/128 new holdouts, but only400/512 getters. Getter boundary remains distinct; no universal color or native Canvas protocol claim. 293 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Rasterization scale and public drawingGroup controls",
+    "checkpoint": "Independent primary-layer composition and new holdouts",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100876158"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100973013"
     ],
     "issues": [
       "O3"
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Public drawingGroup may optimize a solid Color; use independently predicted primary-color multi-layer source-over view to exercise actual compositing, with modifier/no-modifier and scale holdouts. Fixed target/padding, same-instance getters and explicit geometry. Keep mixed-color formula unsupported, do not equate modifier presence with offscreen execution.",
+    "Implement bounded portable primary-layer source-over feasibility under an explicit premultiplied callback-target contract, using the independent quantized-stage rule and externally anchored full native target files. Reject unsupported inputs; compare full allocations/padding across interpreters, inject channel/alpha/order faults. Keep getter/PNG discrepancies explicit and do not claim Canvas or full SwiftUI conformance.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1464,6 +1464,16 @@
       "manifest_sha256": "80f02e84ec2de13eb02a7ea02534b0150840a08e57032c1e37c50df44120eec9",
       "path": "research/evidence/native-mixed-scale-2026-10-10.json",
       "run_id": "20261010T183552Z-native-mixed-alpha-drawing-group-fea18d4f"
+    },
+    {
+      "manifest_sha256": "010c8a705392ddbe4f14cdea4e0f1f9c555e1bf7f04e494fe0e37eaa4bf5712f",
+      "path": "research/evidence/native-primary-layers-2026-10-10.json",
+      "run_id": "20261010T184512Z-native-primary-layer-composition-c5d47964"
+    },
+    {
+      "manifest_sha256": "0dfae6bf400c8d511bd921027daa9f779d06596ffa177eb3a47cab5d1ae43b28",
+      "path": "research/evidence/native-primary-layers-2026-10-10.json",
+      "run_id": "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

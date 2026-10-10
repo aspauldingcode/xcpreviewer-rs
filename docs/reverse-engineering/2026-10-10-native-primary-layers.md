@@ -1,0 +1,21 @@
+# Independent primary-layer composition
+
+The simple Color drawingGroup probe could be optimized; unchanged pixels did not establish an offscreen pass. This probe adds a three-layer ZStack at fixed17×9,using explicit sRGB blue/red/green primaries with independently specified alpha eighths. Forward layers paint blue,then red,then green; reverse paints green,then red,then blue. Two fresh processes repeat each case/order; each contains ungrouped/grouped and public rasterizationScale1/2 targets. Each target has a fresh renderer and an immediate copied cgImage provider before its exactly-once public drawing callback.
+
+Three independent rational source predictions were written before compilation: quantized-stage rounds each source alpha to8bits and each premultiplied source-over result to8bits; exact-stage uses exact input alpha eighths but rounds each stage; exact-final rounds only after all exact rational composition. All compare every pixel without normalization. Callback targetRGBA8,stride80,active zero and12 a5 padding bytes per row are independently specified. Getter geometry,SRGB profile,RGBA mapping and612-byte extent are validated separately. Four endpoint controls, two discovery tuples and six original holdouts precede eight new predeclared holdouts.
+
+Primary-layer composition:128 fresh processes,512 callback/getter targets;368,640 full callback bytes including55,296 unchanged padding bytes and313,344 getter bytes.512 repeat pairs,384 scale/group matrix pairs and layer-order positive controls pass. Independently predeclared quantized-stage source-over predicts512/512 callbacks, including128/128 new holdouts, but only400/512 getters. Getter boundary remains distinct; no universal color or native Canvas protocol claim.
+
+Initial corpus12 alpha triples:48 processes,192 targets,138,240 callback bytes and117,504 getter bytes. The quantized-stage rule predicts all192 callbacks but160 getters. Exact-stage predicts176 callbacks/176 getters; exact-final144 callbacks/176 getters. All192 repeat pairs,144 modifier/scale matrix pairs and64 complete endpoint source controls pass. Changing layer order in opaque controlcase1 changes red to blue, establishing a positive observation control.
+
+The dependent corpus retains the12 original controls and adds8 new alpha triples:80 processes,320 targets,230,400 callback bytes and195,840 getter bytes. Quantized-stage predicts320 callbacks,240 getters; among the128 new holdout targets it predicts128 callbacks,80 getters. Exact-stage predicts256/256 overall and80/80 new targets; exact-final216 callbacks/264 getters and72/88 new targets. All320 repeat pairs,240 modifier/scale pairs and64 endpoint controls pass. No model fits all getters.
+
+For case4,forward half-alpha red over opaque blue then quarter-alpha green,callback premultipliedRGBA is `(96,64,95,255)` while getter is `(96,64,96,255)`. For case8,three half-alpha layers,forward callback is `(64,128,32,224)` versus getter `(64,128,32,223)`. Native getter/callback relations match160/192 and240/320; disagreements are retained. Matching callback source predictions do not recover getter/PNG output or general SwiftUI composition. Explicit grouped/ungrouped equality does not prove an actual offscreen allocation or backend operation.
+
+The first acquisition SHA256 `010c8a705392ddbe4f14cdea4e0f1f9c555e1bf7f04e494fe0e37eaa4bf5712f` seals `20261010T184512Z-native-primary-layer-composition-c5d47964`.
+
+The second SHA256 `0dfae6bf400c8d511bd921027daa9f779d06596ffa177eb3a47cab5d1ae43b28` seals `20261010T184640Z-native-primary-layer-holdouts-05e3ae4b`.
+
+Environment: macOS26.5.1 build25F80,ARM64,Apple Swift6.3.3. No Xcode windows opened. 293 tests pass. Tests cover independently calculated endpoint/discriminating values, rejected identities and mode combinations, missing anchors, and pixel/alpha/padding/tail corruption. Model generalization is limited to the20 measured alpha triples and declared primaries; it is not a universal guarantee.
+
+Next: bounded portable primary-layer feasibility under an explicit callback-target premultiplied contract, with full native allocation comparison and fault injection. Keep getter/PNG discrepancies and Canvas transport limitations visible; both milestone acceptance contracts remain open.

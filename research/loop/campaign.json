@@ -4269,6 +4269,88 @@
           "equals": 16
         }
       ]
+    },
+    {
+      "id": "native-primary-layer-composition",
+      "adapter": "native_reference",
+      "hypothesis": "Independent rational stage/final quantization predictions for12 primary-color multi-layer alpha inputs, both layer orders, public modifier/no-modifier andscale1/2. Controls and holdouts declared before acquisition; getter and full padded callback allocations discriminate actual source-over output without assuming offscreen execution.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "primary_layer_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 48
+        },
+        {
+          "path": "allocations",
+          "equals": 192
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 192
+        },
+        {
+          "path": "endpoint_source_matches",
+          "equals": 64
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "positive_layer_order_change",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "native-primary-layer-holdouts",
+      "adapter": "native_reference",
+      "hypothesis": "Quantized source alpha and per-layer8bit source-over predicts all192 first-corpus callback targets but fails32 getter targets. Eight new alpha-triple holdouts, both layer orders, grouping andscale1/2 falsify callback generalization; retain every source prediction and getter contradiction.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "primary_layer_holdout_control": true
+      },
+      "priority": 94,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 80
+        },
+        {
+          "path": "allocations",
+          "equals": 320
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 320
+        },
+        {
+          "path": "endpoint_source_matches",
+          "equals": 64
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "positive_layer_order_change",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1
