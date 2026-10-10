@@ -1,0 +1,65 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
+      "manifest_sha256": "efefc0973001d2e0975358715e9e664776a4295c52064c104526623f4439a21e",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_cases": 4,
+        "repeat_equal_cases": 4,
+        "compared_bytes": 524288,
+        "exact_name_reuse": 0,
+        "index_reuse": 0,
+        "retained_right": true,
+        "scope": "Retained original send right with producer CF owner dropped; delayed original full-allocation read, original final name cleanup; Owned task-local 128 sequential replacement send-right create/lookups/deallocations per execution; full CPU allocations including padding/tail. Numeric index is name>>8 observation, no arbitrary reuse guarantee, Canvas transport, GPU race or physical reclamation."
+      }
+    },
+    {
+      "run_id": "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
+      "manifest_sha256": "d16155b847895e2c6d43dabace608bb6554e25a7a6d883cc071f7fe3f0a54a88",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_cases": 4,
+        "repeat_equal_cases": 4,
+        "compared_bytes": 524288,
+        "exact_name_reuse": 0,
+        "index_reuse": 0,
+        "retained_right": true,
+        "scope": "Retained original send right with producer CF owner dropped; delayed original full-allocation read, original final name cleanup; Owned task-local 128 sequential replacement send-right create/lookups/deallocations per execution; full CPU allocations including padding/tail. Numeric index is name>>8 observation, no arbitrary reuse guarantee, Canvas transport, GPU race or physical reclamation."
+      }
+    },
+    {
+      "run_id": "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db",
+      "manifest_sha256": "a013a583818aa66c5ab8ac26b8af22990b3618dd003b3dbea6ffdd4419fa6c6e",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_cases": 4,
+        "repeat_equal_cases": 4,
+        "compared_bytes": 393216,
+        "exact_name_reuse": 10,
+        "index_reuse": 1024,
+        "retained_right": false,
+        "scope": "Owned task-local 128 sequential replacement send-right create/lookups/deallocations per execution; full CPU allocations including padding/tail. Numeric index is name>>8 observation, no arbitrary reuse guarantee, Canvas transport, GPU race or physical reclamation."
+      }
+    }
+  ],
+  "tests": 234,
+  "test_failure": {
+    "path": "research/raw/retained-name-test-queue-selection-failure.txt",
+    "sha256": "0002c286f169daf465ded1b5ba43c062484560e22a8c6dbec62efda7f052a597",
+    "cause": "Test selected last queue entry; adding released contrast changed that entry. Select named retained experiment instead."
+  },
+  "facts": {
+    "retained_lifecycles": 2048,
+    "retained_name_aliases": 0,
+    "released_contrast_lifecycles": 1024,
+    "released_name_aliases": 10,
+    "whole_allocation_bytes": 1441792,
+    "producer_cf_dropped_in_retained_mode": true
+  },
+  "scope": "One task owned CPU BGRA surfaces with original send right retained, producer CF owner dropped, delayed original allocation read, final original right release. No immutable frame, generation rejection, concurrent/cross-task/GPU/Canvas or physical reclamation proof."
+}

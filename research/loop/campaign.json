@@ -3354,6 +3354,83 @@
           "equals": 4
         }
       ]
+    },
+    {
+      "id": "owned-surface-retained-name-churn",
+      "adapter": "surface_reuse",
+      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "name_reuse_control": true,
+        "retained_right_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        }
+      ]
+    },
+    {
+      "id": "owned-surface-retained-name-churn-repeat",
+      "adapter": "surface_reuse",
+      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "name_reuse_control": true,
+        "retained_right_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        }
+      ]
+    },
+    {
+      "id": "owned-surface-released-name-churn-contrast",
+      "adapter": "surface_reuse",
+      "hypothesis": "Same reviewed helper released-right contrast: stale numeric name resolves replacement only on exact recurrence during128 owned right lifecycles; full original/replacement/final allocations compare. No retained-right protection.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "name_reuse_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        }
+      ]
     }
   ],
   "version": 1

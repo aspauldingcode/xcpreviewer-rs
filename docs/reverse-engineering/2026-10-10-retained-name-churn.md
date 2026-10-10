@@ -1,0 +1,17 @@
+# Retaining a send right protects resource identity during bounded name churn
+
+The preceding retired-name experiment establishes a stale numeric-handle countermodel. This follow-up keeps the original IOSurface send right while dropping the original producer CF reference before replacement allocation churn. Two sealed retained campaigns each cover four shapes twice and 128 replacement send-right lifecycles per execution. All 2,048 original-handle lookups retain the original resource ID; none of the replacement names aliases the original name. After churn, a delayed original-handle lookup compares its complete allocation with independently generated original pixels, padding and unused tail. The original send reference count remains one; its final deallocation removes its name.
+
+A released-right contrast uses the same helper and replaces only the lifetime mode. It observes ten exact retired-name recurrences in 1,024 replacement lifecycles; the retired handle resolves the distinct replacement surface ID only on recurrence. Its original producer CF surface remains alive, demonstrating that CF resource reachability alone does not reserve a retired task-local Mach name. The retained mode releases that CF owner before churn, demonstrating the separate effect of the still-owned send right. Original versus replacement seeds provide controlled content change.
+
+Across all three campaigns, 1,441,792 complete allocation bytes compare independently. Retained runs compare producer original, producer replacement, final valid replacement-name lookup and delayed original-name lookup allocations; released contrast compares the first three. Every replacement send reference count is one, and every post-release replacement name is removed. Entire buffers include active BGRA pixels, row padding and unused allocation tail. Per-churn stale observations verify IDs, not a pixel snapshot per iteration.
+
+## What this establishes
+
+Keeping an owned right through an intended read protects the measured resource identity even after the initial CF owner drops. A bare cached numeric name after deallocation does not provide that protection. These are public IOSurface/Mach observations from owned processes, not inferred from private Swift symbols or Canvas transport.
+
+Retained rights do not establish immutable frame contents: the earlier mutable reuse control shows an old resource handle can read a later frame written to the same resource. A reconstruction needs separately reviewed generation/session admission and completion rules to reject obsolete work. Those rules remain proposed reconstruction policy until actual Canvas evidence exists. Arbitrary interleaving, cross-task transfer, GPU races, physical memory reclamation and actual Canvas completion/cancellation remain open; R1/R2 and milestone1 remain open.
+
+## Verification and retained failure
+
+All three accepted seals verify against [published anchors](../../research/evidence/retained-name-churn-2026-10-10.json). Two additional verifier tests reject retained metadata corruption, wrong delayed bytes including padding/tail, impossible retained-name aliasing, and unreviewed/incorrectly typed control parameters. The full suite initially failed because a test selected the last queue entry after adding the contrast; the named retained experiment is now selected explicitly. The failure output remains local and its hash is published; all234 tests pass. No Xcode windows opened or user processes altered.

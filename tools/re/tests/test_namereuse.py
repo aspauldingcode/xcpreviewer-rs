@@ -31,3 +31,24 @@ class NameReuseTests(unittest.TestCase):
         r=fixture();r['observations'][0]['name']=259;r['observations'][0]['stale_id']=12
         self.assertTrue(inspect(r,(3,2,7))['passed'])
         r['observations'][0]['stale_id']=0;self.assertFalse(inspect(r,(3,2,7))['passed'])
+
+    def test_retained_right_preserves_original_and_cleanup(self):
+        r=fixture();r.update(retired_lookup=11,stale_lookup=11,retained_right=True,producer_cf_released=True,retained_name_removed=True,retained_refs=1,retained_release_status=0,retained_base64=r['first_base64'])
+        for item in r['observations']:item['stale_id']=11
+        self.assertTrue(inspect(r,(3,2,7),retained=True)['passed'])
+        import copy
+        for key,value in (('retained_refs',True),('retained_refs',2),('retained_name_removed',False),('producer_cf_released',False),('retained_base64',r['second_base64'])):
+            bad=copy.deepcopy(r);bad[key]=value;self.assertFalse(inspect(bad,(3,2,7),retained=True)['passed'],key)
+        for offset in (0,127,4095):
+            bad=copy.deepcopy(r);raw=bytearray(base64.b64decode(bad['retained_base64']));raw[offset]^=1
+            bad['retained_base64']=base64.b64encode(raw).decode();self.assertFalse(inspect(bad,(3,2,7),retained=True)['passed'])
+        bad=copy.deepcopy(r);bad['observations'][0]['name']=259;self.assertFalse(inspect(bad,(3,2,7),retained=True)['passed'])
+
+    def test_retained_parameter_requires_reviewed_name_control(self):
+        from reloop.core import validate_experiment
+        import json,pathlib,copy
+        queue=json.loads(pathlib.Path('research/loop/campaign.json').read_text());e=copy.deepcopy(next(e for e in queue['experiments'] if e['id']=='owned-surface-retained-name-churn'));validate_experiment(e)
+        e['params']['name_reuse_control']=False
+        with self.assertRaises(ValueError):validate_experiment(e)
+        e['params']['name_reuse_control']=True;e['params']['retained_right_control']=1
+        with self.assertRaises(ValueError):validate_experiment(e)

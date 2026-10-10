@@ -162,3 +162,7 @@ F2 Linux execution boundary: [anchored source WASM on Linux ARM64](reverse-engin
 ### 2026-10-10: bounded retired-name aliasing control
 
 R1/R2 now have a discriminating stale-handle countermodel: two owned one-task CPU campaigns observe 28 exact retired-name recurrences across 2,048 sequential replacement-right lifecycles; each stale numeric name then resolves the distinct replacement surface. Exact 786,432 allocation bytes, reference counts and post-release name removal pass. Explicit rename is unavailable on the measured route (-303); all failed seals retained. See [scope and acceptance limits](reverse-engineering/2026-10-10-surface-name-churn.md). Next test retained-right and producer-generation rejection under delayed consumers, preserving transport distinctions. Arbitrary churn/interleaving, cross-task name reuse, GPU races and physical reclamation remain open.
+
+### 2026-10-10: retained rights versus delayed stale names
+
+[Retained-right control](reverse-engineering/2026-10-10-retained-name-churn.md) now preserves original resource ID and full delayed allocation after original CF owner release across2,048 replacement lifecycles; same-helper released contrast aliases10 times.1,441,792 bytes and final right/name cleanup pass;234 tests. Next discriminate generation/session rejection for delayed mutable-frame consumers; retained identity does not freeze frame contents. Such reconstruction policy remains separate from actual Canvas wire semantics, GPU synchronization, cross-task lifetime and physical reclamation acceptance.
