@@ -222,6 +222,9 @@
       "scope": "Owned same-instance cgImage provider immediate/deferred snapshots around public draw callback and nsImage export; discriminate getter/order/cache/shared-buffer from drawing-boundary quantization. No Canvas transport or general color recovery."
     },
     {
+      "completion_runs": [
+        "20261010T183453Z-native-mixed-alpha-rasterization-scale-c9636cdf"
+      ],
       "id": "native-mixed-alpha-rasterization-scale",
       "issue": "O3",
       "priority": 95,
@@ -229,6 +232,28 @@
         "20261010T182739Z-native-mixed-alpha-render-order-9d110f33"
       ],
       "scope": "Predeclared public renderer rasterizationScale1/2 controls at fixed output17x9 and source content; distinguish scale-dependent drawing quantization without fitting a general model. No Canvas transport claim."
+    },
+    {
+      "completion_runs": [
+        "20261010T183552Z-native-mixed-alpha-drawing-group-fea18d4f"
+      ],
+      "id": "native-mixed-alpha-drawing-group",
+      "issue": "O3",
+      "priority": 94,
+      "requires_runs": [
+        "20261010T183453Z-native-mixed-alpha-rasterization-scale-c9636cdf"
+      ],
+      "scope": "Explicit public drawingGroup solid Color output across four scales; unchanged bytes do not prove offscreen execution or universal modifier invariance."
+    },
+    {
+      "id": "native-primary-layer-composition",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T183453Z-native-mixed-alpha-rasterization-scale-c9636cdf",
+        "20261010T183552Z-native-mixed-alpha-drawing-group-fea18d4f"
+      ],
+      "scope": "Independent integer primary-color source-over predictions for multi-layer public native views with modifier and scale controls; source-to-output geometry and padding. No internal offscreen or Canvas transport assumption."
     }
   ],
   "schema_version": 1

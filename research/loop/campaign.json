@@ -4187,6 +4187,88 @@
         "local-re-controller"
       ],
       "timeout_seconds": 30
+    },
+    {
+      "id": "native-mixed-alpha-rasterization-scale",
+      "adapter": "native_reference",
+      "hypothesis": "Four predeclared public rasterization scales1/2/0.5/4, forward/reverse call order and fixed17x9 target/source, discriminate scale or cached-order dependence of the case12 callback/getter gap. Repeat controls and full target/padding comparisons; no universal model or Canvas transport.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_scale_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 56
+        },
+        {
+          "path": "allocations",
+          "equals": 224
+        },
+        {
+          "path": "callback_events",
+          "equals": 224
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 112
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "opaque_source_matches",
+          "equals": 16
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-drawing-group",
+      "adapter": "native_reference",
+      "hypothesis": "Four scales did not change solid Color callback/getter gap. Explicit public drawingGroup(opaque:false,colorMode:nonLinear) changes the rendering boundary, at fixed source and target geometry and forward/reverse scales. Predict rasterized getter-like rounding or unchanged callback rounding; retain failures and all padded bytes.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_group_control": true
+      },
+      "priority": 94,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 56
+        },
+        {
+          "path": "allocations",
+          "equals": 224
+        },
+        {
+          "path": "callback_events",
+          "equals": 224
+        },
+        {
+          "path": "repeat_equal_pairs",
+          "equals": 112
+        },
+        {
+          "path": "all_padding_unchanged",
+          "equals": true
+        },
+        {
+          "path": "opaque_source_matches",
+          "equals": 16
+        }
+      ]
     }
   ],
   "version": 1

@@ -199,11 +199,11 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Same-instance public renderer order:56 fresh processes,224 immediate provider copies plus224 retained snapshots (274,176 bytes),112 callbacks (80,640 complete bytes including12,096 padding). All168 repeat pairs and168 call-order pairs equal. Getters and retained provider bytes stable across both callbacks and nsImage export; case12 remains blue8 getter versus7 callback in all8 targets. Reused56 exports/34,272 decoded bytes satisfy224 measured-provider relations,28 repeat pairs and28 order pairs. No general color formula or native Canvas wire claim. 287 tests pass.",
+  "last_completed": "Public renderer scale and drawingGroup controls:112 fresh processes,448 exact-count callbacks/allocations,322,560 full bytes including48,384 unchanged padding bytes. Scales1/2/0.5/4 in both orders preserve prior callback pixels:448/448; getter relation416/448,onlycase12 differs. All224 repeat and224 order pairs pass. Explicit drawingGroup modifier produces equal bytes but does not prove an offscreen pass was executed. General mixed-color formula and native Canvas protocol remain open. 290 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Same-instance renderer order and export relation",
+    "checkpoint": "Rasterization scale and public drawingGroup controls",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100808339"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100876158"
     ],
     "issues": [
       "O3"
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Discriminate native mixed-alpha half-ties across public renderer rasterization scales with identical source and fixed pixel extent. Predeclare input/scale control, raw layout and independent expectations; preserve unsupported mixed-color portable subset and Canvas capture blockers.",
+    "Public drawingGroup may optimize a solid Color; use independently predicted primary-color multi-layer source-over view to exercise actual compositing, with modifier/no-modifier and scale holdouts. Fixed target/padding, same-instance getters and explicit geometry. Keep mixed-color formula unsupported, do not equate modifier presence with offscreen execution.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1454,6 +1454,16 @@
       "manifest_sha256": "0a83c346c22bd8fb0182bccba666dfdefd652c5105831cdd4976ba1242715d36",
       "path": "research/evidence/native-mixed-order-2026-10-10.json",
       "run_id": "20261010T182852Z-native-mixed-alpha-order-export-contrast-8b6e0df7"
+    },
+    {
+      "manifest_sha256": "e7e59c73057eb4801a306c0e0fb3afe79422b8876fe1e6adeaaf0e7156d65dcd",
+      "path": "research/evidence/native-mixed-scale-2026-10-10.json",
+      "run_id": "20261010T183453Z-native-mixed-alpha-rasterization-scale-c9636cdf"
+    },
+    {
+      "manifest_sha256": "80f02e84ec2de13eb02a7ea02534b0150840a08e57032c1e37c50df44120eec9",
+      "path": "research/evidence/native-mixed-scale-2026-10-10.json",
+      "run_id": "20261010T183552Z-native-mixed-alpha-drawing-group-fea18d4f"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

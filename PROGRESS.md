@@ -432,3 +432,9 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 Same-instance public renderer order:56 fresh processes,224 immediate provider copies plus224 retained snapshots (274,176 bytes),112 callbacks (80,640 complete bytes including12,096 padding). All168 repeat pairs and168 call-order pairs equal. Getters and retained provider bytes stable across both callbacks and nsImage export; case12 remains blue8 getter versus7 callback in all8 targets. Reused56 exports/34,272 decoded bytes satisfy224 measured-provider relations,28 repeat pairs and28 order pairs. No general color formula or native Canvas wire claim.
 
 287 tests pass. Evidence: [same-instance renderer order](docs/reverse-engineering/2026-10-10-native-mixed-order.md). Both milestones remain open.
+
+## 2026-10-10 — rasterization scale and grouping
+
+Public renderer scale and drawingGroup controls:112 fresh processes,448 exact-count callbacks/allocations,322,560 full bytes including48,384 unchanged padding bytes. Scales1/2/0.5/4 in both orders preserve prior callback pixels:448/448; getter relation416/448,onlycase12 differs. All224 repeat and224 order pairs pass. Explicit drawingGroup modifier produces equal bytes but does not prove an offscreen pass was executed. General mixed-color formula and native Canvas protocol remain open.
+
+290 tests pass. Evidence: [scale and grouping](docs/reverse-engineering/2026-10-10-native-mixed-scale.md). Both milestones remain open.
