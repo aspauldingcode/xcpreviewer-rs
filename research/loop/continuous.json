@@ -179,16 +179,21 @@
       "retry_prerequisite": "Include owned HTML template in controller frozen source inventory; both actual browser controls pass."
     }
   ],
-  "last_completed": "Exact anchored source modules execute in actual browser and Canvas2D readback, two campaigns/two loads each.3,276,800 full baseline bytes,13,107,200 invalid-request allocation bytes and2,457,696 canvas RGBA bytes compare.247 tests, initial missing frozen HTML failure retained/fixed. Owned browser tabs and loopback servers closed. Narrow browser gate only; F2/milestones remain open.",
+  "last_completed": "Native alpha counterexample retained: half source-over128/127 falsifies symmetric128/128. Revised quantized-alpha model passes eighth/three-quarter holdouts and all8 cases in two campaigns;19,584 exact decoded RGBA bytes;249 tests. No Canvas wire/padding/linear/general-color claim.",
   "last_github_sync": {
-    "checkpoint": "Actual browser WASM and Canvas2D feasibility",
+    "checkpoint": "Native alpha quantization holdouts",
     "issues": [
-      "F2"
+      "O3",
+      "O1"
     ],
-    "state": "open"
+    "state": "open",
+    "comments": [
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100001061",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/2#issuecomment-6100001267"
+    ]
   },
   "next_actions": [
-    "Graph selects native alpha/compositing oracle next, expanding independent rendering coverage without claiming Canvas wire. Browser source subset passes narrow execution/readback gate; native capture/typed runtime still require changed prerequisites.",
+    "Repair/discriminate artifact-limit compiler descendant/cache quiescence before sealing; corrupted failed seal quarantined. Then explicit portable quantized-alpha control against valid native holdouts.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -972,6 +977,55 @@
       "path": "research/evidence/browser-source-wasm-2026-10-10.json",
       "run_id": "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb",
       "manifest_sha256": "2e35f34e3a577adf9237e259c0dd4b80f0bfeeddc0f8677fb3366264d7ed5910"
+    },
+    {
+      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
+      "manifest_sha256": "e606c6194f371f0c27f293154481e82dd0288365ccda8f2a88e161e5b0d6fafe",
+      "execution": "artifact_limit",
+      "verdict": "not_evaluated",
+      "seal_valid": false
+    },
+    {
+      "run_id": "20261010T165851Z-native-alpha-compositing-oracle-80fb135e",
+      "manifest_sha256": "35c192dcd257d9e618946fcc0d38d867c6ea0703b0a6fb3d14a1d0ddbb00f59d",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "seal_valid": true,
+      "facts": {
+        "captures": 12,
+        "compared_rgba_bytes": 7344,
+        "expected_cases": 10,
+        "repeat_equal_cases": 6,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
+    },
+    {
+      "run_id": "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+      "manifest_sha256": "066e199eab0ce98a5d81934a910af8312616a86eda7542808f66ed07c3234021",
+      "execution": "success",
+      "verdict": "supports",
+      "seal_valid": true,
+      "facts": {
+        "captures": 16,
+        "compared_rgba_bytes": 9792,
+        "expected_cases": 16,
+        "repeat_equal_cases": 8,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
+    },
+    {
+      "run_id": "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
+      "manifest_sha256": "4377ef5efe83e95dd1d092eb80c2551ae9fac9312a61a5748a1a4902c8114a48",
+      "execution": "success",
+      "verdict": "supports",
+      "seal_valid": true,
+      "facts": {
+        "captures": 16,
+        "compared_rgba_bytes": 9792,
+        "expected_cases": 16,
+        "repeat_equal_cases": 8,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -985,10 +1039,17 @@
     "verify_zero_owned_windows": true
   },
   "last_work": {
-    "checkpoint": "Actual browser WASM and Canvas2D feasibility",
+    "checkpoint": "Native alpha quantization holdouts",
     "issues": [
-      "F2"
+      "O3"
     ],
     "state": "open"
-  }
+  },
+  "quarantined_evidence": [
+    {
+      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
+      "reason": "Artifact-limit compiler-cache files changed after sealing; evidence invalid, retained but excluded from claims.",
+      "next": "Discriminate compiler subprocess group/termination and cache quiescence using owned control."
+    }
+  ]
 }

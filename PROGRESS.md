@@ -390,3 +390,7 @@ Added30-node/47-edge acceptance/research graph, anchored quarantine, blocked pre
 ## 2026-10-10 — Actual browser source WASM and Canvas2D
 
 Two sealed browser campaigns/two fresh loads each execute exact anchored owned source modules;3,276,800 baseline bytes,13,107,200 per-invalid-request allocation bytes and2,457,696 Canvas2D opaque RGBA bytes compare exactly. Frozen-template failure retained/fixed;247 tests pass. Loopback servers and owned browser tabs close; no Xcode windows opened. Browser research gate complete, F2 and milestones remain open. Graph selects native alpha/compositing oracle next. [Evidence](research/evidence/browser-source-wasm-2026-10-10.json), [scope](docs/reverse-engineering/2026-10-10-browser-source-wasm.md).
+
+### 2026-10-10: alpha quantization falsification
+
+[Native alpha oracle](docs/reverse-engineering/2026-10-10-native-alpha.md) retains symmetric half-rounding contradiction and artifact-cap failure. Revised quantized-alpha complementary model passes two fresh holdouts and all8 cases in two campaigns:19,584 decoded RGBA bytes;249 tests. Owned goldens published. Next portable alpha control remains separate from opaque source parser; native Canvas/transport and milestone acceptance stay open.

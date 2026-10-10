@@ -277,10 +277,16 @@
       ]
     },
     {
-      "id": "native-alpha-compositing-oracle",
+      "id": "compiler-artifact-limit-quiescence",
       "kind": "research",
       "state": "ready",
-      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims."
+    },
+    {
+      "id": "portable-alpha-rendering-control",
+      "kind": "research",
+      "state": "ready",
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire."
     },
     {
       "id": "native-correlated-capture",
@@ -299,6 +305,12 @@
       "kind": "research",
       "state": "complete",
       "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames."
+    },
+    {
+      "id": "native-alpha-compositing-oracle",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
     },
     {
       "id": "portable-browser-execution",
@@ -524,8 +536,13 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "native-alpha-compositing-oracle",
-      "to": "O3",
+      "from": "compiler-artifact-limit-quiescence",
+      "to": "O1",
+      "kind": "research-assists"
+    },
+    {
+      "from": "portable-alpha-rendering-control",
+      "to": "F2",
       "kind": "research-assists"
     },
     {
@@ -541,6 +558,11 @@
     {
       "from": "owned-generation-commit-control",
       "to": "R2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "native-alpha-compositing-oracle",
+      "to": "O3",
       "kind": "research-assists"
     },
     {
@@ -579,19 +601,32 @@
   ],
   "research_frontier": [
     {
-      "id": "native-alpha-compositing-oracle",
-      "issue": "O3",
+      "id": "compiler-artifact-limit-quiescence",
+      "issue": "O1",
+      "priority": 100,
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
+      "requires_runs": [],
+      "state": "ready",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 21,
+      "acceptance_dependencies_unmet": []
+    },
+    {
+      "id": "portable-alpha-rendering-control",
+      "issue": "F2",
       "priority": 95,
-      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire.",
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire.",
       "requires_runs": [
-        "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
       ],
       "state": "ready",
       "missing_evidence": [],
       "blocker": null,
-      "unlocks_delivery_nodes": 19,
+      "unlocks_delivery_nodes": 14,
       "acceptance_dependencies_unmet": [
-        "O2"
+        "F1"
       ]
     },
     {
@@ -659,6 +694,29 @@
       ]
     },
     {
+      "id": "native-alpha-compositing-oracle",
+      "issue": "O3",
+      "priority": 95,
+      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire.",
+      "requires_runs": [
+        "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+      ],
+      "completion_runs": [
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ],
+      "completion_experiment_ids": [
+        "native-alpha-quantized-compositing"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 19,
+      "acceptance_dependencies_unmet": [
+        "O2"
+      ]
+    },
+    {
       "id": "portable-browser-execution",
       "issue": "F2",
       "priority": 80,
@@ -681,7 +739,7 @@
       ]
     }
   ],
-  "next_task": "native-alpha-compositing-oracle",
+  "next_task": "compiler-artifact-limit-quiescence",
   "quarantined_runs": [],
   "milestone1_complete": false,
   "unverified_milestone1": [

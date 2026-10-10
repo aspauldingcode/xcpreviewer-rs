@@ -1,0 +1,61 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
+      "manifest_sha256": "e606c6194f371f0c27f293154481e82dd0288365ccda8f2a88e161e5b0d6fafe",
+      "execution": "artifact_limit",
+      "verdict": "not_evaluated",
+      "seal_valid": false
+    },
+    {
+      "run_id": "20261010T165851Z-native-alpha-compositing-oracle-80fb135e",
+      "manifest_sha256": "35c192dcd257d9e618946fcc0d38d867c6ea0703b0a6fb3d14a1d0ddbb00f59d",
+      "execution": "success",
+      "verdict": "inconclusive",
+      "seal_valid": true,
+      "facts": {
+        "captures": 12,
+        "compared_rgba_bytes": 7344,
+        "expected_cases": 10,
+        "repeat_equal_cases": 6,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
+    },
+    {
+      "run_id": "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+      "manifest_sha256": "066e199eab0ce98a5d81934a910af8312616a86eda7542808f66ed07c3234021",
+      "execution": "success",
+      "verdict": "supports",
+      "seal_valid": true,
+      "facts": {
+        "captures": 16,
+        "compared_rgba_bytes": 9792,
+        "expected_cases": 16,
+        "repeat_equal_cases": 8,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
+    },
+    {
+      "run_id": "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
+      "manifest_sha256": "4377ef5efe83e95dd1d092eb80c2551ae9fac9312a61a5748a1a4902c8114a48",
+      "execution": "success",
+      "verdict": "supports",
+      "seal_valid": true,
+      "facts": {
+        "captures": 16,
+        "compared_rgba_bytes": 9792,
+        "expected_cases": 16,
+        "repeat_equal_cases": 8,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      }
+    }
+  ],
+  "scope": "Separate owned ImageRenderer, decoded straight RGBA only; revised quantized-alpha model tested against fresh holdouts, not Canvas protocol.",
+  "initial_counterexample": "Half composite expected128/128, measured128/127 in both repeats.",
+  "tests": 249,
+  "quarantine": {
+    "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
+    "reason": "Compiler-cache artifacts changed after artifact-limit seal; invalid, excluded from all native claims."
+  }
+}

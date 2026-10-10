@@ -59,7 +59,31 @@
       "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire.",
       "requires_runs": [
         "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+      ],
+      "completion_runs": [
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ],
+      "completion_experiment_ids": [
+        "native-alpha-quantized-compositing"
       ]
+    },
+    {
+      "id": "portable-alpha-rendering-control",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire.",
+      "requires_runs": [
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ]
+    },
+    {
+      "id": "compiler-artifact-limit-quiescence",
+      "issue": "O1",
+      "priority": 100,
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
+      "requires_runs": []
     }
   ]
 }

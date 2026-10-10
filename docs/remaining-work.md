@@ -174,3 +174,7 @@ The [delivery/research graph](reverse-engineering/2026-10-10-graph-loop.md) sepa
 ### 2026-10-10: actual browser boundary
 
 [Actual browser/Canvas2D control](reverse-engineering/2026-10-10-browser-source-wasm.md) now executes exact anchored import-free literal-source modules and compares complete baseline/invalid allocations plus opaque Canvas2D readback across four page loads. Frozen HTML inventory failure retained/fixed;247 tests. Narrow browser research gate passes, not general SwiftUI/source compilation/hot reload or F2 delivery acceptance. Next graph task expands native alpha/compositing predictions; actual transport/typed runtime blockers remain.
+
+### 2026-10-10: alpha quantization falsification
+
+[Native alpha oracle](reverse-engineering/2026-10-10-native-alpha.md) retains symmetric half-rounding contradiction and artifact-cap failure. Revised quantized-alpha complementary model passes two fresh holdouts and all8 cases in two campaigns:19,584 decoded RGBA bytes;249 tests. Owned goldens published. Next portable alpha control remains separate from opaque source parser; native Canvas/transport and milestone acceptance stay open.

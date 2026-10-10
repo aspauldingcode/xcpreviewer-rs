@@ -3555,6 +3555,35 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-alpha-quantized-compositing",
+      "adapter": "native_reference",
+      "hypothesis": "After retained symmetric half-rounding contradiction, quantize source alpha first and use complementary opaque blue; eighth and three-quarter holdouts discriminate unchanged integer model in two fresh processes per case.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "alpha_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "expected_cases",
+          "equals": 16
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 8
+        },
+        {
+          "path": "compared_rgba_bytes",
+          "equals": 9792
+        }
+      ]
     }
   ],
   "version": 1
