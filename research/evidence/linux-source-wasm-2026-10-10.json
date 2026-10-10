@@ -1,0 +1,51 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T002135Z-portable-linux-owned-wasm-45d7bd66",
+      "manifest_sha256": "8ba1a1c4073a16e32516e84528c91e88089f0ced482d98411e336390d424b143",
+      "execution": "success",
+      "verdict": "supports"
+    },
+    {
+      "run_id": "20261010T003849Z-portable-linux-owned-wasm-9771a1ae",
+      "manifest_sha256": "6c58326d7da83d7312e7cd4326d1f78566fe71afd33e99673e62ef8a0f4cc8ed",
+      "execution": "success",
+      "verdict": "supports"
+    }
+  ],
+  "facts": {
+    "architecture": "aarch64",
+    "cross_host_pixel_bytes_compared": 614432,
+    "diagnostic_controls": 40,
+    "host_system": "Linux",
+    "imports": 0,
+    "invalid_allocation_bytes_compared": 3276800,
+    "invalid_requests": 16,
+    "linux_source_verified": true,
+    "owned_container_cleanup_verified": true,
+    "runtime": "Wasmtime 49.0.0",
+    "scope": "Exact anchored standalone/diagnostic owned WASM modules on Linux ARM64 Wasmtime in an existing Colima VM on Apple hardware. Direct memory byte comparisons, cross-host pixels and fault controls. macOS source compilation retained; no Linux compiler frontend execution, browser, general SwiftUI, Canvas transport or performance claim.",
+    "standalone_allocation_bytes_compared": 819200,
+    "standalone_modules": 4
+  },
+  "host": {
+    "host_system": "Linux",
+    "kernel": "6.8.0-100-generic",
+    "architecture": "aarch64",
+    "python": "3.12.3",
+    "wasmtime": "49.0.0",
+    "memory_limit_bytes": 1048576,
+    "fuel_per_call": 100000000
+  },
+  "tests_passed": 227,
+  "retained_schema_failure_sha256": "5f2d573a705c98d7ca7c953010021b6895e14045adddd71a22e93357314429dc",
+  "source_anchor": "db1ab482584b1fbf0d6e004cdc0197b35500d874663bbe153145446d4bde16f9",
+  "scope": "Exact anchored standalone/diagnostic owned WASM modules on Linux ARM64 Wasmtime in an existing Colima VM on Apple hardware. Direct memory byte comparisons, cross-host pixels and fault controls. macOS source compilation retained; no Linux compiler frontend execution, browser, general SwiftUI, Canvas transport or performance claim.",
+  "remaining": [
+    "Broader selected source/frontend coverage and Linux compilation",
+    "Browser/Windows execution",
+    "Native Canvas IPC and runtime release/race acceptance",
+    "Hot reload and performance"
+  ]
+}

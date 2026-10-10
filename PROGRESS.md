@@ -370,3 +370,7 @@ Implemented explicit opaque sRGB Color.frame expression subset through generated
 ## 2026-10-09 — Source renderer independent interpreter
 
 Linked unchanged saved source renderer IR with a separate non-LTO whole-allocation checker. WasmKit/V8 agree on all 40 controls; 12 pixel/padding/unused-tail faults are detected and 16 invalid strides preserve complete buffers. Baseline 819,200 and invalid-request 3,276,800 allocation bytes compare per interpreter. Two accepted seals; 223 tests pass. Diagnostic modules are separate from standalone modules; both hosts remain macOS, and F2/non-Apple/Canvas gates stay open. [Evidence](research/evidence/source-second-interpreter-2026-10-09.json), [scope](docs/reverse-engineering/2026-10-09-source-second-interpreter.md). No Xcode windows opened.
+
+## 2026-10-10 UTC — Anchored source WASM on Linux ARM64
+
+Exact sealed standalone/diagnostic modules execute in Wasmtime49 on existing Colima Linux VM. Direct allocations compare819,200 bytes;16 invalid requests preserve3,276,800 allocation bytes;614,432 pixel bytes match macOS V8;40 diagnostic controls agree with WasmKit/V8. Zero imports, owned-container cleanup, existing user container still running. Two accepted seals;227 tests after retained campaign-schema failure/fix.27 adapters/19 MCP tools. Narrow Linux execution gate passes; source compiler still macOS and broader SwiftUI/Canvas/browser/performance remain open. [Evidence](research/evidence/linux-source-wasm-2026-10-10.json), [scope](docs/reverse-engineering/2026-10-10-linux-source-wasm.md). No Xcode windows opened.

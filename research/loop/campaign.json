@@ -3257,6 +3257,53 @@
           "equals": 0
         }
       ]
+    },
+    {
+      "id": "portable-linux-owned-wasm",
+      "adapter": "linux_wasm",
+      "hypothesis": "Exact anchored owned source WASM modules execute on Linux ARM64 Wasmtime in the existing VM; independent full allocations, cross-host pixels, invalid strides and diagnostic faults agree, with zero imports and owned-container cleanup. Cleanup ownership and anchor/wheel rejection receive mutation-tested checks.",
+      "depends_on": [],
+      "resources": [
+        "local-linux-vm"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {},
+      "priority": 90,
+      "checks": [
+        {
+          "path": "linux_source_verified",
+          "equals": true
+        },
+        {
+          "path": "host_system",
+          "equals": "Linux"
+        },
+        {
+          "path": "standalone_modules",
+          "equals": 4
+        },
+        {
+          "path": "diagnostic_controls",
+          "equals": 40
+        },
+        {
+          "path": "cross_host_pixel_bytes_compared",
+          "equals": 614432
+        },
+        {
+          "path": "invalid_requests",
+          "equals": 16
+        },
+        {
+          "path": "imports",
+          "equals": 0
+        },
+        {
+          "path": "owned_container_cleanup_verified",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

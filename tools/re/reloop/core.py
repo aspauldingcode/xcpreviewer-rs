@@ -13,8 +13,9 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
-ADAPTERS = {'rea_native', 'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
+ADAPTERS = {'linux_wasm', 'rea_native', 'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
 PARAMS = {
+    'linux_wasm': set(),
     'rea_native': {'binary','owned_control'},
     'surface_payload': {'payload'},
     'portable_solid': {'second_runtime','source_control'},
