@@ -262,6 +262,9 @@ def perform(kind,out,p):
     if kind=='native_reference' and p.get('cleanup_control',False):
         from reloop.quiescence import corpus
         return corpus(out)
+    if kind=='native_reference' and p.get('mixed_boundary_control',False):
+        from reloop.mixedboundary import corpus
+        return corpus(out)
     if kind=='native_reference' and p.get('mixed_even_control',False):
         from reloop.mixedalpha import corpus
         return corpus(out,True)

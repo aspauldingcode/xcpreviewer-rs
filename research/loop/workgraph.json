@@ -148,6 +148,11 @@
       "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance."
     },
     {
+      "completion_runs": [
+        "20261010T175821Z-native-mixed-alpha-export-boundary-15f363bf",
+        "20261010T175938Z-native-mixed-alpha-export-boundary-6175bb7d",
+        "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9"
+      ],
       "id": "native-mixed-alpha-export-boundary",
       "issue": "O3",
       "priority": 95,
@@ -156,6 +161,16 @@
         "20261010T175120Z-native-mixed-alpha-oracle-3f194451"
       ],
       "scope": "Owned ImageRenderer raw CGImage/Color precision versus TIFF-PNG export at mixed-alpha half-ties. Retain failed general rounding models. No native Canvas transport claim."
+    },
+    {
+      "id": "native-mixed-alpha-quartz-contrast",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T175821Z-native-mixed-alpha-export-boundary-15f363bf",
+        "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9"
+      ],
+      "scope": "Independent owned CGContext mixed-alpha producer contrasts exact source Double with publicly bridged components and declared raw rounding models, including owned padding. No general color model or native Canvas transport claim."
     }
   ],
   "schema_version": 1

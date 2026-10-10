@@ -1,0 +1,86 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "failed",
+      "facts": {},
+      "manifest_sha256": "6c930b458a8e1d35288d993616146bb9f8bbd92ae1ac55e320be80a76226a635",
+      "run_id": "20261010T175723Z-native-mixed-alpha-export-boundary-b09abd81",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_boundaries_repeat": true,
+        "all_padding_zero": true,
+        "captures": 28,
+        "direct_legacy_matches": 28,
+        "legacy_export_matches": 28,
+        "opaque_mapping_controls": 2,
+        "raw_bytes": 17136,
+        "raw_export_matches": 28,
+        "raw_model_matches": {
+          "even-exact": 20,
+          "half-up-exact": 18,
+          "half-up-quantized": 18
+        },
+        "scope": "Owned mixed-color CGImage provider allocation and two PNG export boundaries. Raw models remain competing; measured-raw export relation is not an independent source oracle or Canvas transport evidence."
+      },
+      "manifest_sha256": "25e95c2f8069586a2973e06120729fa673ee7768c98397cfe20a2c375de3768b",
+      "run_id": "20261010T175821Z-native-mixed-alpha-export-boundary-15f363bf",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_boundaries_repeat": true,
+        "all_padding_zero": true,
+        "captures": 28,
+        "direct_legacy_matches": 28,
+        "legacy_export_matches": 28,
+        "native_padding_bytes": 0,
+        "opaque_mapping_controls": 2,
+        "raw_bytes": 17136,
+        "raw_export_matches": 28,
+        "raw_model_matches": {
+          "even-exact": 20,
+          "half-up-exact": 18,
+          "half-up-quantized": 18
+        },
+        "scope": "Owned mixed-color CGImage provider allocation and two PNG export boundaries. Raw models remain competing; measured-raw export relation is not an independent source oracle or Canvas transport evidence."
+      },
+      "manifest_sha256": "52b4ccb65cd83d93499206c8d7bc1f2e1693154ca3362e84a2488fd3dbb53a17",
+      "run_id": "20261010T175938Z-native-mixed-alpha-export-boundary-6175bb7d",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_boundaries_repeat": true,
+        "all_padding_zero": true,
+        "captures": 28,
+        "direct_legacy_matches": 28,
+        "legacy_export_matches": 28,
+        "native_padding_bytes": 0,
+        "opaque_mapping_controls": 2,
+        "prior_native_matches": 28,
+        "raw_bytes": 17136,
+        "raw_export_matches": 28,
+        "raw_model_matches": {
+          "even-exact": 20,
+          "half-up-exact": 18,
+          "half-up-quantized": 18
+        },
+        "scope": "Owned mixed-color CGImage provider allocation and two PNG export boundaries. Raw models remain competing; measured-raw export relation is not an independent source oracle or Canvas transport evidence."
+      },
+      "manifest_sha256": "1e4eba98fc4be9d17f142476c503ac78d3eb0ec645b00a10a4ec93c3255174d5",
+      "run_id": "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Owned CGImage premultiplied RGBA raw allocation and direct/legacy export relations. Raw source models falsified; export relation uses measured raw pixels, not an independent source prediction. Measured native stride68 has no padding. No Canvas protocol evidence."
+}

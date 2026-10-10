@@ -3842,6 +3842,51 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-mixed-alpha-export-boundary",
+      "adapter": "native_reference",
+      "hypothesis": "Owned raw CGImage allocations and direct versus legacy TIFF-PNG exports discriminate where mixed-alpha rounding occurs. Independent half-up/even premultiplied models include zero padding; separate measured-raw unpremultiply relation predicts both export boundaries. No internal Color precision/Canvas claim.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_boundary_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 28
+        },
+        {
+          "path": "all_boundaries_repeat",
+          "equals": true
+        },
+        {
+          "path": "raw_export_matches",
+          "equals": 28
+        },
+        {
+          "path": "legacy_export_matches",
+          "equals": 28
+        },
+        {
+          "path": "direct_legacy_matches",
+          "equals": 28
+        },
+        {
+          "path": "opaque_mapping_controls",
+          "equals": 2
+        },
+        {
+          "path": "prior_native_matches",
+          "equals": 28
+        }
+      ]
     }
   ],
   "version": 1

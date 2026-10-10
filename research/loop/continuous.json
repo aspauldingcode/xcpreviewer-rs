@@ -182,13 +182,18 @@
       "retry_prerequisite": "New observed native raw-pixel/Color precision boundary; do not repeat unchanged ties-to-even hypothesis or normalize its output.",
       "run_id": "20261010T175037Z-native-mixed-alpha-even-holdouts-cdfa8876",
       "status": "mixed-even-model-holdouts-falsified"
+    },
+    {
+      "retry_prerequisite": "Observed default byteorder/premultiplied-last layout admitted only with distinct opaque RGBA source control before partial-alpha interpretation; corrected seals support. Do not generalize default layout across targets.",
+      "run_id": "20261010T175723Z-native-mixed-alpha-export-boundary-b09abd81",
+      "status": "resolved-owned-default-RGBA-layout"
     }
   ],
-  "last_completed": "Native mixed-color alpha export:two10-case campaigns20 fresh captures each; straight6/20, exact half-up18/20, quantized half-up16/20. New ties-to-even model20/28 and all4 new holdout pairs contradict;28 fresh captures repeat exactly. All68 captures repeat;266 tests. Native output quantization is observable but general model remains unproven.",
+  "last_completed": "Owned CGImage raw provider reveals mixed-alpha rounding before TIFF/PNG export:three supported campaigns84 captures/51,408 complete raw bytes;84 direct and84 legacy PNG exports exactly follow measured-raw unpremultiplication. All three boundaries repeat; latest28 legacy outputs equal independently sealed prior native measurements. Source models remain18/28,20/28,18/28, so general quantization unresolved.271 tests. Native stride68 has zero padding; no Canvas claim.",
   "last_github_sync": {
-    "checkpoint": "Native mixed-color alpha counterexamples",
+    "checkpoint": "Native mixed-alpha CGImage/export boundary",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100470107"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100550841"
     ],
     "issues": [
       "O3"
@@ -203,7 +208,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Inspect owned ImageRenderer raw CGImage pixel representation and exact Color float conversion before PNG/TIFF export to discriminate the retained mixed-alpha half-tie counterexamples. Predeclare new predictions; do not fit native output or extend portable subset until justified. Native Canvas blockers unchanged.",
+    "Independent owned CGContext mixed-alpha contrast:original Double inputs versus publicly resolved/NSColor component inputs, predeclared raw formulas and explicit owned row padding. Distinguish ImageRenderer source conversion from common graphics quantization without fitting observed bytes. Native Canvas blockers unchanged.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1377,6 +1382,22 @@
     {
       "manifest_sha256": "b485e3308ecc51e40ff3fec873d08dd43446e927cc1dadede14c5b5cdaa3248d",
       "run_id": "20261010T175120Z-native-mixed-alpha-oracle-3f194451"
+    },
+    {
+      "manifest_sha256": "6c930b458a8e1d35288d993616146bb9f8bbd92ae1ac55e320be80a76226a635",
+      "run_id": "20261010T175723Z-native-mixed-alpha-export-boundary-b09abd81"
+    },
+    {
+      "manifest_sha256": "25e95c2f8069586a2973e06120729fa673ee7768c98397cfe20a2c375de3768b",
+      "run_id": "20261010T175821Z-native-mixed-alpha-export-boundary-15f363bf"
+    },
+    {
+      "manifest_sha256": "52b4ccb65cd83d93499206c8d7bc1f2e1693154ca3362e84a2488fd3dbb53a17",
+      "run_id": "20261010T175938Z-native-mixed-alpha-export-boundary-6175bb7d"
+    },
+    {
+      "manifest_sha256": "1e4eba98fc4be9d17f142476c503ac78d3eb0ec645b00a10a4ec93c3255174d5",
+      "run_id": "20261010T180037Z-native-mixed-alpha-export-boundary-ab65f9f9"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

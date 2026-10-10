@@ -414,3 +414,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: native mixed-color alpha counterexamples
 
 [Mixed-alpha boundary](docs/reverse-engineering/2026-10-10-native-mixed-alpha.md) repeats68 captures/41,616 RGBA bytes. Two independent campaigns discriminate three predeclared formulas; a revised ties-to-even model matches original cases but fails every new half-tie holdout pair. All failures and seals retained;266 tests. Portable subset unchanged. Next raw CGImage/Color precision versus export boundary; native Canvas and both milestones remain open.
+
+### 2026-10-10: raw mixed-alpha export boundary
+
+[CGImage/export control](docs/reverse-engineering/2026-10-10-native-mixed-boundary.md) measures84 native captures/51,408 raw bytes in three supported campaigns. Mixed rounding counterexamples already exist before TIFF/PNG export; both exports match measured-raw unpremultiplication exactly. Latest28 legacy outputs equal sealed prior native measurements.271 tests; failed layout probe retained. Native stride68 has no padding. Next independent CGContext contrast; Canvas and both milestones remain open.
