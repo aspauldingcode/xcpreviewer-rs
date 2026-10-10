@@ -1,0 +1,76 @@
+{
+  "runs": [
+    {
+      "run_id": "20261010T162741Z-owned-generation-commit-control-ee28d03c",
+      "manifest_sha256": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b",
+      "execution": "failed",
+      "verdict": "not_evaluated"
+    },
+    {
+      "run_id": "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
+      "manifest_sha256": "891a23732f5a0e6b563e1894a2a06e44e11615840b2079c42979bac382470065",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_executions": 16,
+        "controls": 128,
+        "native": {
+          "cases": 8,
+          "verified_reuse_cases": 8,
+          "mutable_old_handle_cases": 4,
+          "verified_lookup_lifetime_cases": 8,
+          "verified_final_id_lookup_cases": 8,
+          "separate_storage_preserved_cases": 4,
+          "repeat_bytes_equal_cases": 8,
+          "helper_failures": 0,
+          "scope": "Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting and immediate retired-name lookup checks while CF aliases remain alive. No unrelated port allocation is intentionally interposed; arbitrary name reuse remains untested. Global ID lookup positive while sender CF aliases remain and null after a bounded 100ms delay following all reviewed owned references dropping is a scoped lookup-lifetime observable, not proof of memory reclamation or arbitrary ID recycling. Not recovered Canvas generation/acknowledgement protocol, GPU fences or stale-name security."
+        },
+        "scope": "Owned native mutable/separate CPU frames feed explicit immutable-content and session/generation commit policy. Proposed reconstruction policy; no actual Canvas sequencing, races, fences or kernel reclamation."
+      }
+    },
+    {
+      "run_id": "20261010T162948Z-owned-generation-commit-control-repeat-30150539",
+      "manifest_sha256": "2de6280e7c3ca103c48ea373cf3aa8d1c49814099d35057d06abd0ebe0fdd891",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_executions": 16,
+        "controls": 128,
+        "native": {
+          "cases": 8,
+          "verified_reuse_cases": 8,
+          "mutable_old_handle_cases": 4,
+          "verified_lookup_lifetime_cases": 8,
+          "verified_final_id_lookup_cases": 8,
+          "separate_storage_preserved_cases": 4,
+          "repeat_bytes_equal_cases": 8,
+          "helper_failures": 0,
+          "scope": "Owned audit-verified CPU fixture. Producer-assigned generations and delayed reads demonstrate mutable shared storage versus separate surfaces, with received Mach-right accounting and immediate retired-name lookup checks while CF aliases remain alive. No unrelated port allocation is intentionally interposed; arbitrary name reuse remains untested. Global ID lookup positive while sender CF aliases remain and null after a bounded 100ms delay following all reviewed owned references dropping is a scoped lookup-lifetime observable, not proof of memory reclamation or arbitrary ID recycling. Not recovered Canvas generation/acknowledgement protocol, GPU fences or stale-name security."
+        },
+        "scope": "Owned native mutable/separate CPU frames feed explicit immutable-content and session/generation commit policy. Proposed reconstruction policy; no actual Canvas sequencing, races, fences or kernel reclamation."
+      }
+    },
+    {
+      "run_id": "20261010T163014Z-owned-surface-failure-cleanup-45fc44df",
+      "manifest_sha256": "f07402321447b498c082c0f3b2926c442dee5424295e3ab4789a86d98df254a7",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "cases": 12,
+        "verified_fault_cases": 12,
+        "closed_endpoint_cases": 4,
+        "after_import_error_cases": 4,
+        "completion_timeout_cases": 4,
+        "repeat_bytes_equal_cases": 12,
+        "helper_failures": 0,
+        "scope": "Owned CPU Mach fixture: closed endpoint, explicit import-error cleanup and completion timeout with owned-child SIGKILL. Local names/right counts only; no final kernel reclamation, general crash/race coverage, GPU completion or Apple Canvas XPC claim."
+      }
+    }
+  ],
+  "tests": 243,
+  "scope": "Delivery DAG/research selection and owned native-backed proposed commit policy. Shared CPU helper API regression repaired. No recovered Canvas generation/wire policy or physical reclamation.",
+  "native_padded_image_bytes_compared": 102400,
+  "commit_policy_controls": 256,
+  "graph_nodes": 30,
+  "graph_edges": 47
+}

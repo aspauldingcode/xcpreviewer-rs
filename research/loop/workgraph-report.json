@@ -1,0 +1,665 @@
+{
+  "milestone2_complete": false,
+  "all_milestones_complete": false,
+  "nodes": [
+    {
+      "id": "O1",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/2",
+      "acceptance_verified": false,
+      "dependencies": []
+    },
+    {
+      "id": "O2",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/3",
+      "acceptance_verified": false,
+      "dependencies": [
+        "O1"
+      ]
+    },
+    {
+      "id": "O3",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4",
+      "acceptance_verified": false,
+      "dependencies": [
+        "O2"
+      ]
+    },
+    {
+      "id": "F1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/11",
+      "acceptance_verified": false,
+      "dependencies": [
+        "O3"
+      ]
+    },
+    {
+      "id": "F2",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F1"
+      ]
+    },
+    {
+      "id": "P1",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/8",
+      "acceptance_verified": false,
+      "dependencies": [
+        "O3"
+      ]
+    },
+    {
+      "id": "P2",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9",
+      "acceptance_verified": false,
+      "dependencies": [
+        "P1"
+      ]
+    },
+    {
+      "id": "F3",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/13",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F2",
+        "P2"
+      ]
+    },
+    {
+      "id": "I1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F3"
+      ]
+    },
+    {
+      "id": "I2",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F2",
+        "I1"
+      ]
+    },
+    {
+      "id": "I3",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/16",
+      "acceptance_verified": false,
+      "dependencies": [
+        "I1",
+        "I2"
+      ]
+    },
+    {
+      "id": "I4",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/17",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F1",
+        "I3",
+        "O3"
+      ]
+    },
+    {
+      "id": "I5",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/18",
+      "acceptance_verified": false,
+      "dependencies": [
+        "I2",
+        "I4"
+      ]
+    },
+    {
+      "id": "H1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F3",
+        "I5"
+      ]
+    },
+    {
+      "id": "V1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22",
+      "acceptance_verified": false,
+      "dependencies": [
+        "F1",
+        "I5",
+        "O3"
+      ]
+    },
+    {
+      "id": "A1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/23",
+      "acceptance_verified": false,
+      "dependencies": [
+        "H1",
+        "I5",
+        "V1"
+      ]
+    },
+    {
+      "id": "A2",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/24",
+      "acceptance_verified": false,
+      "dependencies": [
+        "I1",
+        "I5"
+      ]
+    },
+    {
+      "id": "H2",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20",
+      "acceptance_verified": false,
+      "dependencies": [
+        "H1",
+        "I5",
+        "V1"
+      ]
+    },
+    {
+      "id": "B1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/21",
+      "acceptance_verified": false,
+      "dependencies": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "id": "BASE",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/1",
+      "acceptance_verified": false,
+      "dependencies": []
+    },
+    {
+      "id": "S1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/25",
+      "acceptance_verified": false,
+      "dependencies": [
+        "I5",
+        "V1"
+      ]
+    },
+    {
+      "id": "D1",
+      "kind": "delivery",
+      "milestone": 2,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/26",
+      "acceptance_verified": false,
+      "dependencies": [
+        "A1",
+        "A2",
+        "S1"
+      ]
+    },
+    {
+      "id": "R1",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/5",
+      "acceptance_verified": false,
+      "dependencies": []
+    },
+    {
+      "id": "R2",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6",
+      "acceptance_verified": false,
+      "dependencies": [
+        "R1"
+      ]
+    },
+    {
+      "id": "R3",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/7",
+      "acceptance_verified": false,
+      "dependencies": [
+        "R2"
+      ]
+    },
+    {
+      "id": "P3",
+      "kind": "delivery",
+      "milestone": 1,
+      "issue_url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/10",
+      "acceptance_verified": false,
+      "dependencies": [
+        "P2",
+        "R2",
+        "R3"
+      ]
+    },
+    {
+      "id": "portable-browser-execution",
+      "kind": "research",
+      "state": "ready",
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract."
+    },
+    {
+      "id": "native-correlated-capture",
+      "kind": "research",
+      "state": "blocked",
+      "scope": "Actual native Canvas request/reply correlation; static/owned controls cannot close this."
+    },
+    {
+      "id": "typed-continuation-runtime",
+      "kind": "research",
+      "state": "blocked",
+      "scope": "Native typed runtime completion and cancellation, no guessed private ABI."
+    },
+    {
+      "id": "owned-generation-commit-control",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames."
+    }
+  ],
+  "edges": [
+    {
+      "from": "O1",
+      "to": "O2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "O2",
+      "to": "O3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "O3",
+      "to": "F1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F1",
+      "to": "F2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "O3",
+      "to": "P1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "P1",
+      "to": "P2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F2",
+      "to": "F3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "P2",
+      "to": "F3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F3",
+      "to": "I1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F2",
+      "to": "I2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I1",
+      "to": "I2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I1",
+      "to": "I3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I2",
+      "to": "I3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F1",
+      "to": "I4",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I3",
+      "to": "I4",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "O3",
+      "to": "I4",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I2",
+      "to": "I5",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I4",
+      "to": "I5",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F3",
+      "to": "H1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "H1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "F1",
+      "to": "V1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "V1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "O3",
+      "to": "V1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "H1",
+      "to": "A1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "A1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "V1",
+      "to": "A1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I1",
+      "to": "A2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "A2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "H1",
+      "to": "H2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "H2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "V1",
+      "to": "H2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "H1",
+      "to": "B1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "H2",
+      "to": "B1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "I5",
+      "to": "S1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "V1",
+      "to": "S1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "A1",
+      "to": "D1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "A2",
+      "to": "D1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "S1",
+      "to": "D1",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "R1",
+      "to": "R2",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "R2",
+      "to": "R3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "P2",
+      "to": "P3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "R2",
+      "to": "P3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "R3",
+      "to": "P3",
+      "kind": "acceptance-prerequisite"
+    },
+    {
+      "from": "portable-browser-execution",
+      "to": "F2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "native-correlated-capture",
+      "to": "P1",
+      "kind": "research-assists"
+    },
+    {
+      "from": "typed-continuation-runtime",
+      "to": "R2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "owned-generation-commit-control",
+      "to": "R2",
+      "kind": "research-assists"
+    }
+  ],
+  "topological_delivery_order": [
+    "O1",
+    "O2",
+    "O3",
+    "F1",
+    "F2",
+    "P1",
+    "P2",
+    "F3",
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "H1",
+    "V1",
+    "A1",
+    "A2",
+    "H2",
+    "B1",
+    "BASE",
+    "S1",
+    "D1",
+    "R1",
+    "R2",
+    "R3",
+    "P3"
+  ],
+  "research_frontier": [
+    {
+      "id": "portable-browser-execution",
+      "issue": "F2",
+      "priority": 80,
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract.",
+      "requires_runs": [],
+      "state": "ready",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 14,
+      "acceptance_dependencies_unmet": [
+        "F1"
+      ]
+    },
+    {
+      "id": "native-correlated-capture",
+      "issue": "P1",
+      "priority": 120,
+      "scope": "Actual native Canvas request/reply correlation; static/owned controls cannot close this.",
+      "blocked_track": "native-canvas",
+      "requires_runs": [],
+      "state": "blocked",
+      "missing_evidence": [],
+      "blocker": {
+        "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
+        "retry_requires": "Use pinned light view context; do not repeat resolved blank-contrast attempts. Change observation/instrumentation for live transport and expand independent pixel coverage.",
+        "track": "native-canvas"
+      },
+      "unlocks_delivery_nodes": 16,
+      "acceptance_dependencies_unmet": [
+        "O3"
+      ]
+    },
+    {
+      "id": "typed-continuation-runtime",
+      "issue": "R2",
+      "priority": 110,
+      "scope": "Native typed runtime completion and cancellation, no guessed private ABI.",
+      "blocked_track": "private-swift-continuation-runtime",
+      "requires_runs": [],
+      "state": "blocked",
+      "missing_evidence": [],
+      "blocker": {
+        "track": "private-swift-continuation-runtime",
+        "reason": "No Modules directory in PreviewsFoundationHost framework; no safe typed native Continuation construction boundary currently established. Do not fabricate private Swift ABI declarations.",
+        "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution."
+      },
+      "unlocks_delivery_nodes": 2,
+      "acceptance_dependencies_unmet": [
+        "R1"
+      ]
+    },
+    {
+      "id": "owned-generation-commit-control",
+      "issue": "R2",
+      "priority": 100,
+      "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames.",
+      "requires_runs": [
+        "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
+        "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
+        "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db"
+      ],
+      "completion_runs": [
+        "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
+        "20261010T162948Z-owned-generation-commit-control-repeat-30150539"
+      ],
+      "completion_experiment_ids": [
+        "owned-generation-commit-control",
+        "owned-generation-commit-control-repeat"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 2,
+      "acceptance_dependencies_unmet": [
+        "R1"
+      ]
+    }
+  ],
+  "next_task": "portable-browser-execution",
+  "quarantined_runs": [],
+  "milestone1_complete": false,
+  "unverified_milestone1": [
+    "O1",
+    "O2",
+    "O3",
+    "P1",
+    "P2",
+    "BASE",
+    "R1",
+    "R2",
+    "R3",
+    "P3"
+  ],
+  "policy": "Research can advance before acceptance dependencies complete. Scoped owned/static results never automatically satisfy native runtime/transport or delivery acceptance."
+}

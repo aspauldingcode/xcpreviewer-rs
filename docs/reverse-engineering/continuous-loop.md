@@ -42,7 +42,7 @@ At checkpoint `9b51624`, receiver-first and sender-first CPU Mach controls pass;
 
 ## Stop condition
 
-Continue until the declared contract of GitHub milestone 1 is actually reverse-engineered and independently verified, or the user pauses/stops this loop. Required unknowns keep the milestone open. On achievement, publish the coverage/unknowns report, notify the user and pause the heartbeat. The WASM milestone remains separately tracked; this RE automation does not silently declare it complete or expand into unrestricted product work.
+The user extended the loop on 2026-10-10 through the declared cross-platform WASM Canvas outcome. Continue until milestone1 is independently reverse-engineered and verified, then notify that transition and continue milestone2 implementation and platform acceptance. Pause on verified completion of both declared contracts or explicit user request. Required unknowns keep each milestone open; a bounded source subset or owned policy does not establish universal SwiftUI compatibility. Use `tools/re/agent.py graph` before selection; distinguish acceptance-prerequisite edges from research-assists edges and skip anchored completed research.
 
 ## REA discovery engine
 

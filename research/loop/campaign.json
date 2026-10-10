@@ -3431,6 +3431,56 @@
           "equals": 4
         }
       ]
+    },
+    {
+      "id": "owned-generation-commit-control",
+      "adapter": "surface_reuse",
+      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "generation_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_executions",
+          "equals": 16
+        },
+        {
+          "path": "controls",
+          "equals": 128
+        }
+      ]
+    },
+    {
+      "id": "owned-generation-commit-control-repeat",
+      "adapter": "surface_reuse",
+      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "generation_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_executions",
+          "equals": 16
+        },
+        {
+          "path": "controls",
+          "equals": 128
+        }
+      ]
     }
   ],
   "version": 1

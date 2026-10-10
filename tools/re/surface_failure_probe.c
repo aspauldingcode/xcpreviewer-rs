@@ -30,7 +30,7 @@ static int fault_peer(const char *service,pid_t parent,const char *phase,const c
     if(!peer_matches(&incoming,parent) || m->h.msgh_size!=sizeof(*m) || !(m->h.msgh_bits&MACH_MSGH_BITS_COMPLEX) || m->body.msgh_descriptor_count!=1 || m->port.type!=MACH_MSG_PORT_DESCRIPTOR || m->port.disposition!=MACH_MSG_TYPE_PORT_SEND || m->magic!=MAGIC || !m->width || m->width>64 || !m->height || m->height>16 || m->stride<m->width*4 || (size_t)m->stride*m->height>LIMIT){mach_msg_destroy(&m->h);goto done;}
     resource=m->port.name;alias=IOSurfaceLookupFromMachPort(resource);size_t count=(size_t)m->stride*m->height;
     if(!alias || !send_refs(resource,1) || IOSurfaceGetID(alias)!=m->surface_id || IOSurfaceGetWidth(alias)!=m->width || IOSurfaceGetHeight(alias)!=m->height || IOSurfaceGetBytesPerRow(alias)!=m->stride)goto done;
-    pattern(expectedBytes,m->stride,m->width,m->height,m->seed);
+    pattern(expectedBytes,m->stride,m->width,m->height,m->seed,count);
     if(!snapshot(alias,bytes,count) || memcmp(bytes,expectedBytes,count) || !write_bytes(folder,"imported.bin",bytes,count))goto done;
     if(!strcmp(phase,"after-import")) {
         mach_port_t old=resource;if(mach_port_deallocate(mach_task_self(),resource) || !name_gone(old))goto done;resource=MACH_PORT_NULL;
@@ -68,7 +68,7 @@ static int fault_peer(const char *service,pid_t parent,const char *phase,const c
     if(MACH_PORT_VALID(remote))mach_port_deallocate(mach_task_self(),remote);return result;
 }
 static int use_state(unsigned width,unsigned height,unsigned seed,const char *folder) {
-    IOSurfaceRef surface=create_surface(width,height,seed);if(!surface)return 44;
+    IOSurfaceRef surface=create_surface(width,height,seed,NULL);if(!surface)return 44;
     mach_port_t port=MACH_PORT_NULL;int active=0,result=44;uint8_t bytes[LIMIT],expectedBytes[LIMIT];
     size_t stride=IOSurfaceGetBytesPerRow(surface),count=stride*height;int local[5],global[5];
     local[0]=IOSurfaceGetUseCount(surface);global[0]=!!IOSurfaceIsInUse(surface);
@@ -80,7 +80,7 @@ static int use_state(unsigned width,unsigned height,unsigned seed,const char *fo
     local[3]=IOSurfaceGetUseCount(surface);global[3]=!!IOSurfaceIsInUse(surface);
     IOSurfaceDecrementUseCount(surface);active=0;
     local[4]=IOSurfaceGetUseCount(surface);global[4]=!!IOSurfaceIsInUse(surface);
-    pattern(expectedBytes,stride,width,height,seed);
+    pattern(expectedBytes,stride,width,height,seed,count);
     if(!snapshot(surface,bytes,count) || memcmp(bytes,expectedBytes,count) || !write_bytes(folder,"not-in-use.bin",bytes,count))goto done;
     printf("{\"phase\":\"use-state\",\"width\":%u,\"height\":%u,\"seed\":%u,\"stride\":%zu,\"local_use_counts\":[%d,%d,%d,%d,%d],\"global_in_use\":[%d,%d,%d,%d,%d],\"mach_port_name_removed\":true,\"cf_reference_retained\":true}\n",width,height,seed,stride,local[0],local[1],local[2],local[3],local[4],global[0],global[1],global[2],global[3],global[4]);result=0;
  done:
@@ -106,7 +106,7 @@ int main(int argc,char **argv) {
     snprintf(service,sizeof(service),"local.re.surface.%d.%s",getpid(),hex);snprintf(parentPID,sizeof(parentPID),"%d",getpid());
     if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox) || mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND))goto done;
     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;
-    surface=create_surface(width,height,seed);if(!surface)goto done;size_t stride=IOSurfaceGetBytesPerRow(surface),count=stride*height;
+    surface=create_surface(width,height,seed,NULL);if(!surface)goto done;size_t stride=IOSurfaceGetBytesPerRow(surface),count=stride*height;
     resource=IOSurfaceCreateMachPort(surface);if(!MACH_PORT_VALID(resource) || !send_refs(resource,1))goto done;
     child=fork();if(child==0){execl(argv[0],argv[0],"--fault-peer",service,parentPID,phase,argv[5],NULL);_exit(127);}if(child<0)goto done;
     union receive ready;if(receive_message(&ready,inbox))goto done;
@@ -149,7 +149,7 @@ int main(int argc,char **argv) {
         else if(!strncmp(phase,"late-ack-",9)){if(!WIFEXITED(waitStatus) || WEXITSTATUS(waitStatus)!=(!strcmp(phase,"late-ack-closed")?44:43))goto done;}
         else if(!WIFSIGNALED(waitStatus) || WTERMSIG(waitStatus)!=SIGKILL)goto done;
     }
-    if(!send_refs(resource,1)){mach_port_urefs_t refs=0;mach_port_get_refs(mach_task_self(),resource,MACH_PORT_RIGHT_SEND,&refs);fprintf(stderr,"retained refs=%u disposition=%u bits=%u\n",refs,m.port.disposition,m.h.msgh_bits);goto done;}pattern(expectedBytes,stride,width,height,seed);
+    if(!send_refs(resource,1)){mach_port_urefs_t refs=0;mach_port_get_refs(mach_task_self(),resource,MACH_PORT_RIGHT_SEND,&refs);fprintf(stderr,"retained refs=%u disposition=%u bits=%u\n",refs,m.port.disposition,m.h.msgh_bits);goto done;}pattern(expectedBytes,stride,width,height,seed,count);
     if(!snapshot(surface,actual,count) || memcmp(actual,expectedBytes,count) || !write_bytes(argv[5],"retained.bin",actual,count))goto done;
     CFRelease(surface);surface=NULL;mach_port_t old=resource;if(mach_port_deallocate(mach_task_self(),resource) || !name_gone(old))goto done;resource=MACH_PORT_NULL;
     old=remote;if(mach_port_deallocate(mach_task_self(),remote) || !name_gone(old))goto done;remote=MACH_PORT_NULL;

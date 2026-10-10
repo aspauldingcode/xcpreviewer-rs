@@ -167,19 +167,25 @@
       "fingerprint": "0002c286f169daf465ded1b5ba43c062484560e22a8c6dbec62efda7f052a597",
       "status": "resolved",
       "retry_prerequisite": "Test selects owned retained experiment by ID; all234 tests pass."
+    },
+    {
+      "fingerprint": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b",
+      "status": "resolved-shared-helper-interface",
+      "retry_prerequisite": "Pass explicit folder/count parameters in CPU reuse/failure callers. Native generation and R1 failure corpus now compile/pass; failed seal retained."
     }
   ],
-  "last_completed": "Owned retained-right protection contrasts released-handle aliasing: original CF owner dropped,2,048 replacement lifecycles preserve original ID/full delayed allocation with zero name aliases; released contrast aliases10 times in1,024 lifecycles.1,441,792 full allocation bytes compare;234 tests pass after retained named-queue test fix. Three accepted seals; no frame-generation/Canvas/physical reclamation claim.",
+  "last_completed": "Added acceptance/research dependency graph with anchored evidence, retry blocks, completion skipping and downstream impact. Graph-selected native-backed commit policy passes128 controls twice; repaired shared CPU helper API regression, retained failure, R1 failure/timeout12 cases pass. Native Canvas protocol and both delivery milestones remain open.",
   "last_github_sync": {
-    "checkpoint": "Retained-right lifetime protection",
+    "checkpoint": "Dependency graph and native-backed generation controls",
     "issues": [
       "R1",
-      "R2"
+      "R2",
+      "F2"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Retained rights protect owned resource identity through bounded churn; prior mutable reuse control proves they do not freeze frame bytes. Next discriminate producer generation admission/commit checks and delayed-consumer stale frame rejection, explicitly reconstruction policy; continue changed capture/typed native boundary work when available.",
+    "Run graph; select next unblocked research task. Generation commit policy is an owned reference, not recovered Canvas sequencing. Browser execution is next independent feasibility gate while native capture/typed runtime retain changed-prerequisite blocks.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -201,7 +207,7 @@
       "state": "unverified"
     }
   ],
-  "objective": "Recover and independently verify the declared native preview contract of GitHub milestone 1.",
+  "objective": "Recover and independently verify milestone1 native preview contract, then implement and verify milestone2 declared cross-platform WASM Canvas contract.",
   "pending_sync": false,
   "recent_evidence": [
     {
@@ -928,6 +934,26 @@
       "path": "research/evidence/retained-name-churn-2026-10-10.json",
       "run_id": "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db",
       "manifest_sha256": "a013a583818aa66c5ab8ac26b8af22990b3618dd003b3dbea6ffdd4419fa6c6e"
+    },
+    {
+      "path": "research/evidence/graph-generation-2026-10-10.json",
+      "run_id": "20261010T162741Z-owned-generation-commit-control-ee28d03c",
+      "manifest_sha256": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b"
+    },
+    {
+      "path": "research/evidence/graph-generation-2026-10-10.json",
+      "run_id": "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
+      "manifest_sha256": "891a23732f5a0e6b563e1894a2a06e44e11615840b2079c42979bac382470065"
+    },
+    {
+      "path": "research/evidence/graph-generation-2026-10-10.json",
+      "run_id": "20261010T162948Z-owned-generation-commit-control-repeat-30150539",
+      "manifest_sha256": "2de6280e7c3ca103c48ea373cf3aa8d1c49814099d35057d06abd0ebe0fdd891"
+    },
+    {
+      "path": "research/evidence/graph-generation-2026-10-10.json",
+      "run_id": "20261010T163014Z-owned-surface-failure-cleanup-45fc44df",
+      "manifest_sha256": "f07402321447b498c082c0f3b2926c442dee5424295e3ab4789a86d98df254a7"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -941,10 +967,11 @@
     "verify_zero_owned_windows": true
   },
   "last_work": {
-    "checkpoint": "Retained-right lifetime protection",
+    "checkpoint": "Dependency graph and native-backed generation controls",
     "issues": [
       "R1",
-      "R2"
+      "R2",
+      "F2"
     ],
     "state": "open"
   }

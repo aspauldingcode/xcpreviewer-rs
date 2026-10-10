@@ -112,5 +112,7 @@ def plan(controller):
     outcomes.extend({'experiment':p['id'],'action':'run-reviewed-followup','reason':'Template already queued; do not propose a duplicate.'}
                     for p in proposals if p['id'] in queued and p['id'] not in latest)
     proposals=[p for p in proposals if p['id'] not in latest and p['id'] not in queued][:4]
-    return {'outcomes':outcomes,'proposals':proposals,'automatic_execution':False,
+    from reloop.workgraph import build
+    graph=build(controller) if (controller.root/'research/loop/workgraph.json').is_file() else {'next_task':None,'milestone1_complete':False,'unverified_milestone1':['graph-not-configured'],'research_frontier':[]}
+    return {'work_graph':{'next_task':graph['next_task'],'milestone1_complete':graph['milestone1_complete'],'unverified_milestone1':graph['unverified_milestone1'],'research_frontier':graph['research_frontier']},'outcomes':outcomes,'proposals':proposals,'automatic_execution':False,
             'policy':'Choose one discriminating follow-up. Do not retry identical failures, renew budgets, or promote static names into wire semantics.'}

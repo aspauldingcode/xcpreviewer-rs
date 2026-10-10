@@ -141,7 +141,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--state-dir',type=pathlib.Path)
     sub=parser.add_subparsers(dest='command',required=True)
-    for name in ['doctor','status','serve','next','report','index','plan','campaign']:sub.add_parser(name)
+    for name in ['doctor','status','serve','next','report','index','plan','graph','campaign']:sub.add_parser(name)
     run=sub.add_parser('run');run.add_argument('--queue',type=pathlib.Path,default=QUEUE);run.add_argument('--only');run.add_argument('--max-experiments',type=int,default=8);run.add_argument('--minutes',type=float,default=45);run.add_argument('--max-mb',type=int,default=1024)
     search=sub.add_parser('search');search.add_argument('query')
     claim_parser=sub.add_parser('claim');claim_parser.add_argument('spec',type=pathlib.Path)
@@ -167,6 +167,9 @@ def main():
     elif args.command=='claim':
         from reloop.evidence import claim
         with controller.lock():result=claim(controller,load(args.spec))
+    elif args.command=='graph':
+        from reloop.workgraph import build
+        result=build(controller)
     elif args.command=='plan':
         from reloop.planner import plan
         result=plan(controller)

@@ -71,15 +71,15 @@ int main(int argc,char **argv) {
     pid_t child=-1;int waited=0,registered=0,result=51;uint8_t raw[LIMIT];char service[128],hex[33],parentPID[32];unsigned char nonce[16];
     arc4random_buf(nonce,sizeof(nonce));for(int i=0;i<16;i++)sprintf(hex+i*2,"%02x",nonce[i]);snprintf(service,sizeof(service),"local.re.surface.%d.%s",getpid(),hex);snprintf(parentPID,sizeof(parentPID),"%d",getpid());
     if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox) || mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND) || bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;
-    first=create_surface(width,height,seed);if(!first)goto done;size_t stride=IOSurfaceGetBytesPerRow(first),count=stride*height;
+    first=create_surface(width,height,seed,NULL);if(!first)goto done;size_t stride=IOSurfaceGetBytesPerRow(first),count=stride*height;
     p1=IOSurfaceCreateMachPort(first);if(!MACH_PORT_VALID(p1) || !snapshot(first,raw,count) || !write_bytes(argv[5],"producer-first.bin",raw,count))goto done;
     child=fork();if(child==0){execl(argv[0],argv[0],"--reuse-peer",service,parentPID,mode,argv[5],NULL);_exit(127);}if(child<0)goto done;
     union receive ready;if(receive_message(&ready,inbox))goto done;
     if(!peer_matches(&ready,child) || ready.ack.h.msgh_size!=sizeof(struct ack) || ready.ack.magic!=MAGIC || ready.ack.stage!=0){mach_msg_destroy(&ready.ack.h);goto done;}remote=ready.ack.h.msgh_remote_port;
     if(!MACH_PORT_VALID(remote) || !transfer_surface(remote,p1,first,seed,1))goto done;
     union receive imported;if(receive_message(&imported,inbox) || !peer_matches(&imported,child) || imported.ack.h.msgh_size!=sizeof(struct ack) || imported.ack.magic!=MAGIC || imported.ack.stage!=1 || imported.ack.value!=1)goto done;
-    if(same){second=first;p2=p1;if(IOSurfaceLock(first,0,NULL))goto done;pattern(IOSurfaceGetBaseAddress(first),stride,width,height,next);if(IOSurfaceUnlock(first,0,NULL))goto done;}
-    else {second=create_surface(width,height,next);if(!second)goto done;p2=IOSurfaceCreateMachPort(second);if(!MACH_PORT_VALID(p2))goto done;}
+    if(same){second=first;p2=p1;if(IOSurfaceLock(first,0,NULL))goto done;pattern(IOSurfaceGetBaseAddress(first),stride,width,height,next,count);if(IOSurfaceUnlock(first,0,NULL))goto done;}
+    else {second=create_surface(width,height,next,NULL);if(!second)goto done;p2=IOSurfaceCreateMachPort(second);if(!MACH_PORT_VALID(p2))goto done;}
     if(!snapshot(second,raw,count) || !write_bytes(argv[5],"producer-next.bin",raw,count) || !transfer_surface(remote,p2,second,next,2))goto done;
     union receive complete;if(receive_message(&complete,inbox) || !peer_matches(&complete,child) || complete.ack.h.msgh_size!=sizeof(struct ack) || complete.ack.magic!=MAGIC || complete.ack.stage!=3 || complete.ack.value!=1)goto done;
     int waitStatus;if(waitpid(child,&waitStatus,0)!=child)goto done;waited=1;if(!WIFEXITED(waitStatus) || WEXITSTATUS(waitStatus)!=0)goto done;

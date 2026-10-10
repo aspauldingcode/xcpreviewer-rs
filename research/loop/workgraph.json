@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "acceptance_attestations": {},
+  "research_tasks": [
+    {
+      "id": "owned-generation-commit-control",
+      "issue": "R2",
+      "priority": 100,
+      "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames.",
+      "requires_runs": [
+        "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
+        "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
+        "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db"
+      ],
+      "completion_runs": [
+        "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
+        "20261010T162948Z-owned-generation-commit-control-repeat-30150539"
+      ],
+      "completion_experiment_ids": [
+        "owned-generation-commit-control",
+        "owned-generation-commit-control-repeat"
+      ]
+    },
+    {
+      "id": "native-correlated-capture",
+      "issue": "P1",
+      "priority": 120,
+      "scope": "Actual native Canvas request/reply correlation; static/owned controls cannot close this.",
+      "blocked_track": "native-canvas",
+      "requires_runs": []
+    },
+    {
+      "id": "typed-continuation-runtime",
+      "issue": "R2",
+      "priority": 110,
+      "scope": "Native typed runtime completion and cancellation, no guessed private ABI.",
+      "blocked_track": "private-swift-continuation-runtime",
+      "requires_runs": []
+    },
+    {
+      "id": "portable-browser-execution",
+      "issue": "F2",
+      "priority": 80,
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract.",
+      "requires_runs": []
+    }
+  ]
+}
