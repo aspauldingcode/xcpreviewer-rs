@@ -3780,6 +3780,68 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "native-mixed-alpha-oracle",
+      "adapter": "native_reference",
+      "hypothesis": "Predeclared straight versus exact/quantized premultiply-export formulas discriminate mixed byte-grid sRGB partial alpha:4 discovery,4 holdouts,2 endpoint controls;20 fresh captures compare every decoded RGBA byte and repeats. Model contradictions retained, not fitted.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_alpha_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 20
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 10
+        },
+        {
+          "path": "models_discriminated",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-even-holdouts",
+      "adapter": "native_reference",
+      "hypothesis": "Retain initial exact-half-up contradiction at three-quarter blue230; independent ties-to-even premultiplication with quantized alpha export predicts all original cases plus4 new rational half-tie holdouts before execution. No actual-data fitting.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 256,
+      "params": {
+        "mixed_even_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "captures",
+          "equals": 28
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 14
+        },
+        {
+          "path": "model_matches.premultiply-even-exact-alpha",
+          "equals": 28
+        },
+        {
+          "path": "new_even_holdouts_match",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

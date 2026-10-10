@@ -1,148 +1,162 @@
 {
-  "schema_version": 1,
   "acceptance_attestations": {},
   "research_tasks": [
     {
-      "id": "owned-generation-commit-control",
-      "issue": "R2",
-      "priority": 100,
-      "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames.",
-      "requires_runs": [
-        "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
-        "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
-        "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db"
+      "completion_experiment_ids": [
+        "owned-generation-commit-control",
+        "owned-generation-commit-control-repeat"
       ],
       "completion_runs": [
         "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
         "20261010T162948Z-owned-generation-commit-control-repeat-30150539"
       ],
-      "completion_experiment_ids": [
-        "owned-generation-commit-control",
-        "owned-generation-commit-control-repeat"
-      ]
+      "id": "owned-generation-commit-control",
+      "issue": "R2",
+      "priority": 100,
+      "requires_runs": [
+        "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
+        "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
+        "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db"
+      ],
+      "scope": "Owned reconstruction policy: stale completion rejected at commit; retained resource identity does not freeze mutable frames."
     },
     {
+      "blocked_track": "native-canvas",
       "id": "native-correlated-capture",
       "issue": "P1",
       "priority": 120,
-      "scope": "Actual native Canvas request/reply correlation; static/owned controls cannot close this.",
-      "blocked_track": "native-canvas",
-      "requires_runs": []
+      "requires_runs": [],
+      "scope": "Actual native Canvas request/reply correlation; static/owned controls cannot close this."
     },
     {
+      "blocked_track": "private-swift-continuation-runtime",
       "id": "typed-continuation-runtime",
       "issue": "R2",
       "priority": 110,
-      "scope": "Native typed runtime completion and cancellation, no guessed private ABI.",
-      "blocked_track": "private-swift-continuation-runtime",
-      "requires_runs": []
+      "requires_runs": [],
+      "scope": "Native typed runtime completion and cancellation, no guessed private ABI."
     },
     {
-      "id": "portable-browser-execution",
-      "issue": "F2",
-      "priority": 80,
-      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract.",
-      "requires_runs": [],
+      "completion_experiment_ids": [
+        "portable-browser-execution",
+        "portable-browser-execution-repeat"
+      ],
       "completion_runs": [
         "20261010T164540Z-portable-browser-execution-ffcf61e2",
         "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb"
       ],
-      "completion_experiment_ids": [
-        "portable-browser-execution",
-        "portable-browser-execution-repeat"
-      ]
+      "id": "portable-browser-execution",
+      "issue": "F2",
+      "priority": 80,
+      "requires_runs": [],
+      "scope": "Actual browser host of anchored explicit source subset; no general SwiftUI/Canvas contract."
     },
     {
-      "id": "native-alpha-compositing-oracle",
-      "issue": "O3",
-      "priority": 95,
-      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire.",
-      "requires_runs": [
-        "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+      "completion_experiment_ids": [
+        "native-alpha-quantized-compositing"
       ],
       "completion_runs": [
         "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
         "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
       ],
-      "completion_experiment_ids": [
-        "native-alpha-quantized-compositing"
-      ]
+      "id": "native-alpha-compositing-oracle",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261009T155055Z-native-solid-renderer-oracle-b779b982"
+      ],
+      "scope": "Independent native ImageRenderer explicit alpha and background/compositing predictions with byte/holdout controls; not Canvas wire."
     },
     {
-      "id": "portable-alpha-rendering-control",
-      "issue": "F2",
-      "priority": 95,
-      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire.",
-      "requires_runs": [
-        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
-        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      "completion_experiment_ids": [
+        "portable-alpha-rendering-control"
       ],
       "completion_runs": [
         "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
         "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
       ],
-      "completion_experiment_ids": [
-        "portable-alpha-rendering-control"
-      ]
+      "id": "portable-alpha-rendering-control",
+      "issue": "F2",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb"
+      ],
+      "scope": "Explicit quantized-alpha reconstruction compared with native holdouts plus complete portable allocations; no implicit parser expansion or Canvas wire."
     },
     {
-      "id": "compiler-artifact-limit-quiescence",
-      "issue": "O1",
-      "priority": 100,
-      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims.",
-      "requires_runs": [],
+      "completion_experiment_ids": [
+        "compiler-artifact-limit-quiescence"
+      ],
       "completion_runs": [
         "20261010T170900Z-compiler-artifact-limit-quiescence-e35ca1a9",
         "20261010T170930Z-compiler-artifact-limit-quiescence-3cc3f7a5"
       ],
-      "completion_experiment_ids": [
-        "compiler-artifact-limit-quiescence"
-      ]
+      "id": "compiler-artifact-limit-quiescence",
+      "issue": "O1",
+      "priority": 100,
+      "requires_runs": [],
+      "scope": "Owned compiler subprocess/async cache termination and stable seal after artifact-limit; retained broken failed seal must never support claims."
     },
     {
-      "id": "portable-alpha-browser-readback",
-      "issue": "F2",
-      "priority": 95,
-      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire.",
-      "requires_runs": [
-        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
-        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      "completion_experiment_ids": [
+        "portable-alpha-browser-readback"
       ],
       "completion_runs": [
         "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
         "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
       ],
-      "completion_experiment_ids": [
-        "portable-alpha-browser-readback"
-      ]
-    },
-    {
-      "id": "portable-alpha-linux-execution",
+      "id": "portable-alpha-browser-readback",
       "issue": "F2",
       "priority": 95,
-      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim.",
       "requires_runs": [
-        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
-        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+        "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      ],
+      "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire."
+    },
+    {
+      "completion_experiment_ids": [
+        "portable-alpha-linux-execution"
       ],
       "completion_runs": [
         "20261010T173707Z-portable-alpha-linux-execution-d49eafb7",
         "20261010T173752Z-portable-alpha-linux-execution-189daf75",
         "20261010T173913Z-portable-alpha-linux-execution-af34f703"
       ],
-      "completion_experiment_ids": [
-        "portable-alpha-linux-execution"
-      ]
+      "id": "portable-alpha-linux-execution",
+      "issue": "F2",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+      ],
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim."
     },
     {
+      "completion_runs": [
+        "20261010T174920Z-native-mixed-alpha-oracle-5fbe2a53",
+        "20261010T175120Z-native-mixed-alpha-oracle-3f194451"
+      ],
       "id": "native-mixed-alpha-oracle",
       "issue": "O3",
       "priority": 95,
-      "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance.",
       "requires_runs": [
         "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
         "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
-      ]
+      ],
+      "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance."
+    },
+    {
+      "id": "native-mixed-alpha-export-boundary",
+      "issue": "O3",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T174920Z-native-mixed-alpha-oracle-5fbe2a53",
+        "20261010T175120Z-native-mixed-alpha-oracle-3f194451"
+      ],
+      "scope": "Owned ImageRenderer raw CGImage/Color precision versus TIFF-PNG export at mixed-alpha half-ties. Retain failed general rounding models. No native Canvas transport claim."
     }
-  ]
+  ],
+  "schema_version": 1
 }

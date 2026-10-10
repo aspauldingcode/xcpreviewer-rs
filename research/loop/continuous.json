@@ -15,14 +15,14 @@
       "track": "native-canvas"
     },
     {
-      "track": "private-swift-continuation-runtime",
       "reason": "No Modules directory in PreviewsFoundationHost framework; no safe typed native Continuation construction boundary currently established. Do not fabricate private Swift ABI declarations.",
-      "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution."
+      "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution.",
+      "track": "private-swift-continuation-runtime"
     },
     {
-      "track": "rea-foundationhost-full-import",
       "reason": "REA/Ghidra default full-image auto-analysis exceeds both180s and330s; open identity matches and provider close succeeds. Owned engine control passes.",
-      "retry_requires": "Changed reviewed analysis profile/import method; do not repeat unchanged full-image import or raise deadlines indefinitely."
+      "retry_requires": "Changed reviewed analysis profile/import method; do not repeat unchanged full-image import or raise deadlines indefinitely.",
+      "track": "rea-foundationhost-full-import"
     }
   ],
   "cadence_minutes": 10,
@@ -49,94 +49,94 @@
       "status": "resolved-for-static-key-witness"
     },
     {
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports.",
       "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791",
-      "status": "resolved-with-observed-entry-mode",
-      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+      "status": "resolved-with-observed-entry-mode"
     },
     {
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports.",
       "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d",
-      "status": "resolved-with-observed-entry-mode",
-      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+      "status": "resolved-with-observed-entry-mode"
     },
     {
+      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports.",
       "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
-      "status": "prediction-falsified-static-scope",
-      "retry_prerequisite": "Observed thunk/constant entry support added; do not retry metadata-name equality. Registered alias control supports."
+      "status": "prediction-falsified-static-scope"
     },
     {
+      "retry_prerequisite": "Do not repeat immediate-null expectation. Changed bounded-delay control supports only sampled reachability, not cause or physical reclamation.",
       "run_id": "20261009T190245Z-owned-surface-final-id-lookup-ae78056c",
-      "status": "immediate-id-null-prediction-falsified",
-      "retry_prerequisite": "Do not repeat immediate-null expectation. Changed bounded-delay control supports only sampled reachability, not cause or physical reclamation."
+      "status": "immediate-id-null-prediction-falsified"
     },
     {
+      "retry_prerequisite": "BOOL boxing corrected; Foundation legacy strings predicted separately; None is not a plist value. Corrected sealed run supports.",
       "run_id": "20261009T191515Z-native-plist-data-decode-controls-1bc905aa",
-      "status": "resolved-owned-data-harness",
-      "retry_prerequisite": "BOOL boxing corrected; Foundation legacy strings predicted separately; None is not a plist value. Corrected sealed run supports."
+      "status": "resolved-owned-data-harness"
     },
     {
       "fingerprint": "wasmkit-untyped-i32-cli-exit133",
-      "status": "resolved-unsealed-diagnostic",
-      "retry_prerequisite": "Typed i32:value invocation; sealed checker executions pass. Do not rerun unchanged untyped crash."
+      "retry_prerequisite": "Typed i32:value invocation; sealed checker executions pass. Do not rerun unchanged untyped crash.",
+      "status": "resolved-unsealed-diagnostic"
     },
     {
+      "retry_prerequisite": "Actual entry instructions required; bounded address fallback implemented.",
       "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
-      "status": "quarantined-for-body-claims",
-      "retry_prerequisite": "Actual entry instructions required; bounded address fallback implemented."
+      "status": "quarantined-for-body-claims"
     },
     {
+      "retry_prerequisite": "Deduplicate same-address aliases and retain names; corrected run supports.",
       "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd",
-      "status": "resolved-native-alias-accounting",
-      "retry_prerequisite": "Deduplicate same-address aliases and retain names; corrected run supports."
+      "status": "resolved-native-alias-accounting"
     },
     {
+      "retry_prerequisite": "Exact instruction-derived target replaces missed private demangled name. Shared handler calls fail directly; no assert-entry handoff claim.",
       "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2",
-      "status": "resolved-private-name-query",
-      "retry_prerequisite": "Exact instruction-derived target replaces missed private demangled name. Shared handler calls fail directly; no assert-entry handoff claim."
+      "status": "resolved-private-name-query"
     },
     {
+      "retry_prerequisite": "Moved cleanup-stage count check from legacy pre-transfer branch into post-timeout peer. Corrected late and legacy campaigns pass.",
       "run_id": "20261009T200824Z-owned-surface-late-ack-endpoints-570f633f",
-      "status": "superseded-shared-helper-review",
-      "retry_prerequisite": "Moved cleanup-stage count check from legacy pre-transfer branch into post-timeout peer. Corrected late and legacy campaigns pass."
+      "status": "superseded-shared-helper-review"
     },
     {
+      "retry_prerequisite": "Use actual parse_errors field and target-specific State verifier; seven broad parse errors retained explicitly.",
       "run_id": "20261009T201728Z-native-fulfillment-state-metadata-488b120d",
-      "status": "resolved-metadata-acceptance-field",
-      "retry_prerequisite": "Use actual parse_errors field and target-specific State verifier; seven broad parse errors retained explicitly."
+      "status": "resolved-metadata-acceptance-field"
     },
     {
+      "retry_prerequisite": "Explicit numberWithBool instead of integer boxing; corrected exact-byte completion and retained-access seals pass.",
       "run_id": "20261009T204901Z-owned-gpu-surface-completion-a8b8786a",
-      "status": "resolved-gpu-error-boolean-boxing",
-      "retry_prerequisite": "Explicit numberWithBool instead of integer boxing; corrected exact-byte completion and retained-access seals pass."
+      "status": "resolved-gpu-error-boolean-boxing"
     },
     {
+      "retry_prerequisite": "Changed analysis profile/import method; smaller owned engine control passes.",
       "run_id": "20261009T220050Z-native-rea-observer-pilot-cd5ece24",
-      "status": "blocked-native-import",
-      "retry_prerequisite": "Changed analysis profile/import method; smaller owned engine control passes."
+      "status": "blocked-native-import"
     },
     {
+      "retry_prerequisite": "Exact observed little-endian Ghidra language alias accepted; wrong-endian test rejects.",
       "run_id": "20261009T220651Z-owned-rea-engine-control-651d01fa",
-      "status": "resolved-observed-language-alias",
-      "retry_prerequisite": "Exact observed little-endian Ghidra language alias accepted; wrong-endian test rejects."
+      "status": "resolved-observed-language-alias"
     },
     {
+      "retry_prerequisite": "Correct observation-relative campaign paths; acceptance regression test passes.",
       "run_id": "20261009T220828Z-owned-rea-engine-control-4ba4ec15",
-      "status": "resolved-campaign-check-path",
-      "retry_prerequisite": "Correct observation-relative campaign paths; acceptance regression test passes."
+      "status": "resolved-campaign-check-path"
     },
     {
+      "retry_prerequisite": "Six captured token entries observed; do not require nonexistent two constructor bodies.",
       "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547",
-      "status": "symbol-count-prediction-falsified",
-      "retry_prerequisite": "Six captured token entries observed; do not require nonexistent two constructor bodies."
+      "status": "symbol-count-prediction-falsified"
     },
     {
+      "retry_prerequisite": "Cleanup target0x42648 is not a selected named entry; obtain independent bounded address evidence before assigning its body.",
       "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b",
-      "status": "symbol-count-prediction-falsified",
-      "retry_prerequisite": "Cleanup target0x42648 is not a selected named entry; obtain independent bounded address evidence before assigning its body."
+      "status": "symbol-count-prediction-falsified"
     },
     {
+      "retry_prerequisite": "Display symbol suffix normalization added; encoded branch verification remains mandatory and regression test passes.",
       "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1",
-      "status": "resolved-symbol-annotation",
-      "retry_prerequisite": "Display symbol suffix normalization added; encoded branch verification remains mandatory and regression test passes."
+      "status": "resolved-symbol-annotation"
     },
     {
       "retry_prerequisite": "Independently decoded result pattern instantiator 0x30a18 replaces incorrect State helper assumption; corrected sealed control passes.",
@@ -144,54 +144,66 @@
       "status": "resolved-static-pattern-prediction"
     },
     {
+      "retry_prerequisite": "IR file metadata normalized and optional WASM output-name section stripped; complete module/pixel repeats pass. Raw headers and earlier inconclusive seals retained.",
       "run_id": "20261009T234009Z-portable-literal-source-ir-ace96174",
-      "status": "resolved-repeat-module-filename-metadata",
-      "retry_prerequisite": "IR file metadata normalized and optional WASM output-name section stripped; complete module/pixel repeats pass. Raw headers and earlier inconclusive seals retained."
+      "status": "resolved-repeat-module-filename-metadata"
     },
     {
       "fingerprint": "linux-wasm-adapter-missing-campaign-schema",
-      "status": "resolved-schema-sync",
-      "retry_prerequisite": "Added linux_wasm enum to campaign schema; full227-test suite passes. Native Linux controls had already passed; suite failure retained separately."
+      "retry_prerequisite": "Added linux_wasm enum to campaign schema; full227-test suite passes. Native Linux controls had already passed; suite failure retained separately.",
+      "status": "resolved-schema-sync"
     },
     {
       "fingerprint": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b",
-      "status": "unsupported-observed-route",
-      "retry_prerequisite": "Explicit mach_port_rename returns -303 on this kernel; no unchanged retries. Bounded natural send-name churn replaces forced route."
+      "retry_prerequisite": "Explicit mach_port_rename returns -303 on this kernel; no unchanged retries. Bounded natural send-name churn replaces forced route.",
+      "status": "unsupported-observed-route"
     },
     {
       "fingerprint": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd",
-      "status": "resolved",
-      "retry_prerequisite": "Native cleanup flags cast to BOOL; strict verifier rejected integer flags, corrected two accepted seals."
+      "retry_prerequisite": "Native cleanup flags cast to BOOL; strict verifier rejected integer flags, corrected two accepted seals.",
+      "status": "resolved"
     },
     {
       "fingerprint": "0002c286f169daf465ded1b5ba43c062484560e22a8c6dbec62efda7f052a597",
-      "status": "resolved",
-      "retry_prerequisite": "Test selects owned retained experiment by ID; all234 tests pass."
+      "retry_prerequisite": "Test selects owned retained experiment by ID; all234 tests pass.",
+      "status": "resolved"
     },
     {
       "fingerprint": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b",
-      "status": "resolved-shared-helper-interface",
-      "retry_prerequisite": "Pass explicit folder/count parameters in CPU reuse/failure callers. Native generation and R1 failure corpus now compile/pass; failed seal retained."
+      "retry_prerequisite": "Pass explicit folder/count parameters in CPU reuse/failure callers. Native generation and R1 failure corpus now compile/pass; failed seal retained.",
+      "status": "resolved-shared-helper-interface"
     },
     {
       "fingerprint": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131",
-      "status": "resolved-source-freezing",
-      "retry_prerequisite": "Include owned HTML template in controller frozen source inventory; both actual browser controls pass."
+      "retry_prerequisite": "Include owned HTML template in controller frozen source inventory; both actual browser controls pass.",
+      "status": "resolved-source-freezing"
+    },
+    {
+      "retry_prerequisite": "New observed native raw-pixel/Color precision boundary; do not repeat unchanged ties-to-even hypothesis or normalize its output.",
+      "run_id": "20261010T175037Z-native-mixed-alpha-even-holdouts-cdfa8876",
+      "status": "mixed-even-model-holdouts-falsified"
     }
   ],
-  "last_completed": "Pinned alpha WASM and native-array checker pass three Linux ARM64 Wasmtime campaigns:324 fresh frames,5,308,416 independent allocation bytes and same extents cross-host,589,824 invalid bytes,29,376 native bytes;96 checker cases/72 mutations.262 tests. Own containers removed and existing containers preserved; VM on Apple hardware, no Linux frontend/native Canvas acceptance.",
+  "last_completed": "Native mixed-color alpha export:two10-case campaigns20 fresh captures each; straight6/20, exact half-up18/20, quantized half-up16/20. New ties-to-even model20/28 and all4 new holdout pairs contradict;28 fresh captures repeat exactly. All68 captures repeat;266 tests. Native output quantization is observable but general model remains unproven.",
   "last_github_sync": {
+    "checkpoint": "Native mixed-color alpha counterexamples",
+    "comments": [
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100470107"
+    ],
+    "issues": [
+      "O3"
+    ],
+    "state": "open"
+  },
+  "last_work": {
     "checkpoint": "Actual Linux alpha WASM",
     "issues": [
       "F2"
     ],
-    "state": "open",
-    "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6100369810"
-    ]
+    "state": "open"
   },
   "next_actions": [
-    "Native mixed-color alpha ImageRenderer oracle: discriminate direct channel rounding versus premultiply/export rounding with independent predictions and holdouts, then compare actual browser readback. Preserve native Canvas transport/runtime blockers.",
+    "Inspect owned ImageRenderer raw CGImage pixel representation and exact Color float conversion before PNG/TIFF export to discriminate the retained mixed-alpha half-tie counterexamples. Predeclare new predictions; do not fit native output or extend portable subset until justified. Native Canvas blockers unchanged.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -215,6 +227,13 @@
   ],
   "objective": "Recover and independently verify milestone1 native preview contract, then implement and verify milestone2 declared cross-platform WASM Canvas contract.",
   "pending_sync": false,
+  "quarantined_evidence": [
+    {
+      "next": "Discriminate compiler subprocess group/termination and cache quiescence using owned control.",
+      "reason": "Artifact-limit compiler-cache files changed after sealing; evidence invalid, retained but excluded from claims.",
+      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
+    }
+  ],
   "recent_evidence": [
     {
       "manifest_sha256": "3bd40600b17e4f045797487c34c42f4c49014269e0ab59f0ed2c4c4d47b394b4",
@@ -312,534 +331,534 @@
       "run_id": "20261009T170530Z-native-iosurface-payload-exact-entrypoints-3476dfef"
     },
     {
-      "run_id": "20261009T171138Z-native-render-codec-keys-014945ce",
       "manifest_sha256": "8cb0356c463caab086f40058dcbe4d678e04b2b7e45223023ca2c5142525484f",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171138Z-native-render-codec-keys-014945ce"
     },
     {
-      "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791",
       "manifest_sha256": "046c292a52f5cb548370fe0d59c9b25d25225407aac7547b225218c7dfd4c695",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171141Z-native-bitmap-codec-keys-b64ac791"
     },
     {
-      "run_id": "20261009T171143Z-native-service-codec-keys-71fb8108",
       "manifest_sha256": "ec87e4532f22008331cadcea0749a772a8eef3816cac1e740bac65f8f1d742fd",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171143Z-native-service-codec-keys-71fb8108"
     },
     {
-      "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d",
       "manifest_sha256": "8c7bb277cf30ef8a7c592aa437088be8bd11f0195aaa77ba4672f0fc20a76186",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171145Z-native-service-identifier-codec-keys-c58ebb6d"
     },
     {
-      "run_id": "20261009T171542Z-native-bitmap-codec-keys-756286f6",
       "manifest_sha256": "f76f67689d96189cd04c2e29b2332155945911982de6d62edc429cf93423d1d1",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171542Z-native-bitmap-codec-keys-756286f6"
     },
     {
-      "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3",
       "manifest_sha256": "958646f5aea001adda41a990713975aa98a8069ced8d92442d9e4996e20804c9",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171609Z-native-service-identifier-codec-keys-ab6337c3"
     },
     {
-      "run_id": "20261009T171638Z-native-service-identifier-codec-alias-40561ffa",
       "manifest_sha256": "66a9ca1cc8c240668f4d328ccc5a45041b5a73deaeeb90ef400a66d9ab797cfc",
-      "path": "research/evidence/codec-key-boundaries-2026-10-09.json"
+      "path": "research/evidence/codec-key-boundaries-2026-10-09.json",
+      "run_id": "20261009T171638Z-native-service-identifier-codec-alias-40561ffa"
     },
     {
-      "run_id": "20261009T185223Z-native-service-message-exact-entrypoints-2cb2beae",
       "manifest_sha256": "4208bf04be0cea11e4b565421d86125321202e6ecef380595f82c7d220653a8c",
-      "path": "research/evidence/service-identifier-path-2026-10-09.json"
+      "path": "research/evidence/service-identifier-path-2026-10-09.json",
+      "run_id": "20261009T185223Z-native-service-message-exact-entrypoints-2cb2beae"
     },
     {
-      "run_id": "20261009T185303Z-native-service-message-identifier-sites-5835dbc3",
       "manifest_sha256": "39eb51e993bbd261f77e00c0c7bb77d4409572dd810600124d0748a8f3a6bff9",
-      "path": "research/evidence/service-identifier-path-2026-10-09.json"
+      "path": "research/evidence/service-identifier-path-2026-10-09.json",
+      "run_id": "20261009T185303Z-native-service-message-identifier-sites-5835dbc3"
     },
     {
-      "run_id": "20261009T185356Z-native-service-message-identifier-sites-4a20bcf4",
       "manifest_sha256": "ecb62089fe4c497b721f304627f72fc651a2b548f49f6c39861f6ce4a95cecfe",
-      "path": "research/evidence/service-identifier-path-2026-10-09.json"
+      "path": "research/evidence/service-identifier-path-2026-10-09.json",
+      "run_id": "20261009T185356Z-native-service-message-identifier-sites-4a20bcf4"
     },
     {
-      "run_id": "20261009T185430Z-native-service-message-payload-getter-6dd0a3ee",
       "manifest_sha256": "eff91e8af3b2058d667ce4e9755165df446a870864804a2085ad58cdd65a8b47",
-      "path": "research/evidence/service-identifier-path-2026-10-09.json"
+      "path": "research/evidence/service-identifier-path-2026-10-09.json",
+      "run_id": "20261009T185430Z-native-service-message-payload-getter-6dd0a3ee"
     },
     {
-      "run_id": "20261009T190245Z-owned-surface-final-id-lookup-ae78056c",
       "manifest_sha256": "bc5c8b1d7482ce21f0108d016a1c379b762be1e12d0e6b755a4313b864892074",
-      "path": "research/evidence/surface-id-lifetime-2026-10-09.json"
+      "path": "research/evidence/surface-id-lifetime-2026-10-09.json",
+      "run_id": "20261009T190245Z-owned-surface-final-id-lookup-ae78056c"
     },
     {
-      "run_id": "20261009T190408Z-owned-surface-settled-id-lookup-f86900de",
       "manifest_sha256": "ba22863fee2857a9d8fe91da9615253a6448fd4561caae9ce07949388258fea7",
-      "path": "research/evidence/surface-id-lifetime-2026-10-09.json"
+      "path": "research/evidence/surface-id-lifetime-2026-10-09.json",
+      "run_id": "20261009T190408Z-owned-surface-settled-id-lookup-f86900de"
     },
     {
-      "run_id": "20261009T190932Z-native-transport-encoded-reply-sites-06a431d8",
       "manifest_sha256": "96e5610ec960bcc8e48f5d150dbeac17f6337580c2889d17184111a5f5a3cff1",
-      "path": "research/evidence/transport-reply-path-2026-10-09.json"
+      "path": "research/evidence/transport-reply-path-2026-10-09.json",
+      "run_id": "20261009T190932Z-native-transport-encoded-reply-sites-06a431d8"
     },
     {
-      "run_id": "20261009T191016Z-native-lazy-reply-encoding-2dfb5314",
       "manifest_sha256": "e1a9763e3ac62eced9dfedbd2256686d550fe1c7202e177548368b8192307f74",
-      "path": "research/evidence/transport-reply-path-2026-10-09.json"
+      "path": "research/evidence/transport-reply-path-2026-10-09.json",
+      "run_id": "20261009T191016Z-native-lazy-reply-encoding-2dfb5314"
     },
     {
-      "run_id": "20261009T191515Z-native-plist-data-decode-controls-1bc905aa",
       "manifest_sha256": "8c9a81e22556f1a16c77ca24889f4be9141639e143f34921b816e362ada09175",
-      "path": "research/evidence/plist-data-decode-2026-10-09.json"
+      "path": "research/evidence/plist-data-decode-2026-10-09.json",
+      "run_id": "20261009T191515Z-native-plist-data-decode-controls-1bc905aa"
     },
     {
-      "run_id": "20261009T191734Z-native-plist-data-decode-controls-a5b9fcfc",
       "manifest_sha256": "3e41f9d10707a45ad37f06d47a25d1704f79b25769b59ae6e5d8d5f74555dba1",
-      "path": "research/evidence/plist-data-decode-2026-10-09.json"
+      "path": "research/evidence/plist-data-decode-2026-10-09.json",
+      "run_id": "20261009T191734Z-native-plist-data-decode-controls-a5b9fcfc"
     },
     {
-      "run_id": "20261009T192431Z-native-continuation-resume-boundary-274b5127",
       "manifest_sha256": "e44e094241fb891c7dfe34845f664c24d21c51c51cbe119a2e34afc59c022a79",
-      "path": "research/evidence/continuation-guard-2026-10-09.json"
+      "path": "research/evidence/continuation-guard-2026-10-09.json",
+      "run_id": "20261009T192431Z-native-continuation-resume-boundary-274b5127"
     },
     {
-      "run_id": "20261009T192502Z-native-continuation-resume-initializers-d8bc6f8d",
       "manifest_sha256": "4f7e52c76493a1463d01833b1ed22e154e425ba2c86ec38a4c366ac13257e3e5",
-      "path": "research/evidence/continuation-guard-2026-10-09.json"
+      "path": "research/evidence/continuation-guard-2026-10-09.json",
+      "run_id": "20261009T192502Z-native-continuation-resume-initializers-d8bc6f8d"
     },
     {
-      "run_id": "20261009T192604Z-native-continuation-guard-closure-507546f4",
       "manifest_sha256": "c5c03339e65e9bc8c784b8148f611f745310ed643e19964c3b4e6c5f45cae24b",
-      "path": "research/evidence/continuation-guard-2026-10-09.json"
+      "path": "research/evidence/continuation-guard-2026-10-09.json",
+      "run_id": "20261009T192604Z-native-continuation-guard-closure-507546f4"
     },
     {
-      "run_id": "20261009T192739Z-native-continuation-guard-pattern-aaa9dae7",
       "manifest_sha256": "fbf5eb9e2885919fa47a4ba149975c9097708a8a87eb7faeb4f9a42b502d3e94",
-      "path": "research/evidence/continuation-guard-2026-10-09.json"
+      "path": "research/evidence/continuation-guard-2026-10-09.json",
+      "run_id": "20261009T192739Z-native-continuation-guard-pattern-aaa9dae7"
     },
     {
-      "run_id": "20261009T192839Z-native-continuation-fulfillment-state-9b691d4f",
       "manifest_sha256": "46a4b7cb09579a23eeb77f496a81ef980d0fd925bacf0cf6a1c8be7cbbae1ff6",
-      "path": "research/evidence/continuation-guard-2026-10-09.json"
+      "path": "research/evidence/continuation-guard-2026-10-09.json",
+      "run_id": "20261009T192839Z-native-continuation-fulfillment-state-9b691d4f"
     },
     {
-      "run_id": "20261009T193809Z-portable-wasm-second-runtime-e578530f",
       "manifest_sha256": "10b40a12c95608efdb3612ce68069e234bbd7234c2ac3dc552e4e96fbe181623",
-      "path": "research/evidence/portable-second-runtime-2026-10-09.json"
+      "path": "research/evidence/portable-second-runtime-2026-10-09.json",
+      "run_id": "20261009T193809Z-portable-wasm-second-runtime-e578530f"
     },
     {
-      "run_id": "20261009T193912Z-portable-wasm-second-runtime-rejections-1da4782d",
       "manifest_sha256": "82fb1ce5f53da542e676acf723fdf5aed6fcaf4137a434a2f353b7375bb0998f",
-      "path": "research/evidence/portable-second-runtime-2026-10-09.json"
+      "path": "research/evidence/portable-second-runtime-2026-10-09.json",
+      "run_id": "20261009T193912Z-portable-wasm-second-runtime-rejections-1da4782d"
     },
     {
-      "run_id": "20261009T194012Z-portable-wasm-second-runtime-rejections-352a1aa7",
       "manifest_sha256": "bc4790ea1c2d798b2d05059020ced1c7a12dd69cdca8793772e71e60200e2deb",
-      "path": "research/evidence/portable-second-runtime-2026-10-09.json"
+      "path": "research/evidence/portable-second-runtime-2026-10-09.json",
+      "run_id": "20261009T194012Z-portable-wasm-second-runtime-rejections-352a1aa7"
     },
     {
-      "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1",
       "manifest_sha256": "2ca2fa6e24f882c6507564844852da7d27c9eed2ef5f340ad8dfe9c1ad06aeff",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T194534Z-native-continuation-overfulfill-target-6f2e0bb1"
     },
     {
-      "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd",
       "manifest_sha256": "94e291ee609dbbc20ca2cff16c4413fc3c7e9a0a1bddb3f2ef1aab0a8ed89896",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T194747Z-native-continuation-overfulfill-target-a840cabd"
     },
     {
-      "run_id": "20261009T194819Z-native-overfulfill-policy-dispatch-3e9df25f",
       "manifest_sha256": "82d0e8864887313b9183cfe1a205bec0eaddbb7b4b30eeac4d0648ba80ea6a5e",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T194819Z-native-overfulfill-policy-dispatch-3e9df25f"
     },
     {
-      "run_id": "20261009T194852Z-native-continuation-overfulfill-target-c807dccf",
       "manifest_sha256": "2da3c5c048e36eec8a3e7327bc833e26ccad4de3f4e165e7a0dda45a6e944f00",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T194852Z-native-continuation-overfulfill-target-c807dccf"
     },
     {
-      "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2",
       "manifest_sha256": "b66cd519795656aae26595bed7fbdc1c8d1cdc77520e8d8c6d3d7b2be380becf",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T194923Z-native-overfulfill-failure-mode-29cd97a2"
     },
     {
-      "run_id": "20261009T195013Z-native-overfulfill-failure-mode-8888c3bd",
       "manifest_sha256": "f564cd6c517d2af029104f6fdf17a7433c58eb10dba868443df5d6edf881650c",
-      "path": "research/evidence/continuation-policy-2026-10-09.json"
+      "path": "research/evidence/continuation-policy-2026-10-09.json",
+      "run_id": "20261009T195013Z-native-overfulfill-failure-mode-8888c3bd"
     },
     {
-      "run_id": "20261009T195706Z-native-continuation-default-policy-5f5ec752",
       "manifest_sha256": "3e6f5e612ba031c908d4b5107ab4a9206a228d308c224b91d774bad60d5d1c0e",
-      "path": "research/evidence/cancellation-default-2026-10-09.json"
+      "path": "research/evidence/cancellation-default-2026-10-09.json",
+      "run_id": "20261009T195706Z-native-continuation-default-policy-5f5ec752"
     },
     {
-      "run_id": "20261009T195734Z-native-cancelation-token-entry-7d9b4a73",
       "manifest_sha256": "d61ba9d694187e40639aef334cb46e688747b6d6db0e9c64a215e2ada829df14",
-      "path": "research/evidence/cancellation-default-2026-10-09.json"
+      "path": "research/evidence/cancellation-default-2026-10-09.json",
+      "run_id": "20261009T195734Z-native-cancelation-token-entry-7d9b4a73"
     },
     {
-      "run_id": "20261009T195901Z-native-cancelation-token-guard-c512bdb5",
       "manifest_sha256": "37c74c042843fe48fd60ea3c5176fb8d831b4275f6ba91eaf235178f882d57c6",
-      "path": "research/evidence/cancellation-default-2026-10-09.json"
+      "path": "research/evidence/cancellation-default-2026-10-09.json",
+      "run_id": "20261009T195901Z-native-cancelation-token-guard-c512bdb5"
     },
     {
-      "run_id": "20261009T200015Z-native-default-assertion-helper-fd3f036e",
       "manifest_sha256": "4c6735685a7e16a5a958c5f66fbbbba4d10fe9bcd87cfe582c06bef6b9b7f82e",
-      "path": "research/evidence/cancellation-default-2026-10-09.json"
+      "path": "research/evidence/cancellation-default-2026-10-09.json",
+      "run_id": "20261009T200015Z-native-default-assertion-helper-fd3f036e"
     },
     {
-      "run_id": "20261009T200824Z-owned-surface-late-ack-endpoints-570f633f",
       "manifest_sha256": "81a2df5b2d558d4c8c09e044d37e353d7ea35b5620b4d33583a1f9394c22f8bb",
-      "path": "research/evidence/surface-late-ack-2026-10-09.json"
+      "path": "research/evidence/surface-late-ack-2026-10-09.json",
+      "run_id": "20261009T200824Z-owned-surface-late-ack-endpoints-570f633f"
     },
     {
-      "run_id": "20261009T200936Z-owned-surface-late-ack-endpoints-7f8e2910",
       "manifest_sha256": "1453e5f2c076b9eff57143c3d07bcbc16182340409216b8b60c0b4e5ed2e5df7",
-      "path": "research/evidence/surface-late-ack-2026-10-09.json"
+      "path": "research/evidence/surface-late-ack-2026-10-09.json",
+      "run_id": "20261009T200936Z-owned-surface-late-ack-endpoints-7f8e2910"
     },
     {
-      "run_id": "20261009T200951Z-owned-surface-failure-cleanup-4742c660",
       "manifest_sha256": "b5da90b7ce5c24deb0c8cd4949cc4d6ffefa3a85941533e68f4e55ae344270bd",
-      "path": "research/evidence/surface-late-ack-2026-10-09.json"
+      "path": "research/evidence/surface-late-ack-2026-10-09.json",
+      "run_id": "20261009T200951Z-owned-surface-failure-cleanup-4742c660"
     },
     {
-      "run_id": "20261009T201553Z-native-unfulfilled-state-deinit-6e2417ca",
       "manifest_sha256": "f2739e26ebdaa7f192b96a730b2fddac61582f303746e9f148f304288ccf8ad4",
-      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json"
+      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json",
+      "run_id": "20261009T201553Z-native-unfulfilled-state-deinit-6e2417ca"
     },
     {
-      "run_id": "20261009T201728Z-native-fulfillment-state-metadata-488b120d",
       "manifest_sha256": "6f9c9d4c3e9c3dcc90189a8e8ddc9393b9ac885eddf9527294bccc128edb63f7",
-      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json"
+      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json",
+      "run_id": "20261009T201728Z-native-fulfillment-state-metadata-488b120d"
     },
     {
-      "run_id": "20261009T201909Z-native-fulfillment-state-metadata-cfd30850",
       "manifest_sha256": "777945cef83f5492b2b0bdd869d52b68ba3ecf1e7483f3ce25379b60d6730877",
-      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json"
+      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json",
+      "run_id": "20261009T201909Z-native-fulfillment-state-metadata-cfd30850"
     },
     {
-      "run_id": "20261009T201938Z-native-unfulfilled-deinit-guard-2af55307",
       "manifest_sha256": "88ef8b716bb0dfd38123f0772dd7e08bfc520ba770ebb96ff5eba02cd697d1e4",
-      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json"
+      "path": "research/evidence/unfulfilled-deinit-2026-10-09.json",
+      "run_id": "20261009T201938Z-native-unfulfilled-deinit-guard-2af55307"
     },
     {
+      "manifest_sha256": "7e3c46c1cafb061875c6469fabb53af03db30c0eaa1119b4baa4a1597987b31b",
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
-      "run_id": "20261009T202812Z-native-cancelation-callback-boundary-459e2d1d",
-      "manifest_sha256": "7e3c46c1cafb061875c6469fabb53af03db30c0eaa1119b4baa4a1597987b31b"
+      "run_id": "20261009T202812Z-native-cancelation-callback-boundary-459e2d1d"
     },
     {
+      "manifest_sha256": "1973ad06e128feccd42e5d7556850ef6446d0c87e67c62f7ac6d2aa4108e9d8c",
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
-      "run_id": "20261009T203015Z-native-cancelation-callback-control-e6019dc2",
-      "manifest_sha256": "1973ad06e128feccd42e5d7556850ef6446d0c87e67c62f7ac6d2aa4108e9d8c"
+      "run_id": "20261009T203015Z-native-cancelation-callback-control-e6019dc2"
     },
     {
+      "manifest_sha256": "de9a5bd19b3592ae5d39bf71a28af537bb043738814c75947f68d2e8aad15e3b",
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
-      "run_id": "20261009T203032Z-native-actor-isolation-verification-ede51815",
-      "manifest_sha256": "de9a5bd19b3592ae5d39bf71a28af537bb043738814c75947f68d2e8aad15e3b"
+      "run_id": "20261009T203032Z-native-actor-isolation-verification-ede51815"
     },
     {
+      "manifest_sha256": "8bf020040d07a3451f0c72c4a1155dcdd5bb999aa928e1831cef370a60038111",
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
-      "run_id": "20261009T203125Z-native-actor-isolation-control-94d8737f",
-      "manifest_sha256": "8bf020040d07a3451f0c72c4a1155dcdd5bb999aa928e1831cef370a60038111"
+      "run_id": "20261009T203125Z-native-actor-isolation-control-94d8737f"
     },
     {
+      "manifest_sha256": "ecefd1e8d66573ea7b3231d025cbf07573c6c6275af187e1c0f554c754850807",
       "path": "research/evidence/cancellation-callbacks-2026-10-09.json",
-      "run_id": "20261009T203157Z-native-actor-isolation-control-5ee5ead1",
-      "manifest_sha256": "ecefd1e8d66573ea7b3231d025cbf07573c6c6275af187e1c0f554c754850807"
+      "run_id": "20261009T203157Z-native-actor-isolation-control-5ee5ead1"
     },
     {
+      "manifest_sha256": "a4f8dd837569b589bb6419167cf8e5816c636392587e7bd539ead46ce94f9ce9",
       "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
-      "run_id": "20261009T203714Z-native-invalidation-cancel-actions-42e0610a",
-      "manifest_sha256": "a4f8dd837569b589bb6419167cf8e5816c636392587e7bd539ead46ce94f9ce9"
+      "run_id": "20261009T203714Z-native-invalidation-cancel-actions-42e0610a"
     },
     {
+      "manifest_sha256": "1316a50b51a63932ef2dfa39d944eb5d871da63fbce421a89a243374cfc829a5",
       "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
-      "run_id": "20261009T203745Z-native-invalidation-remove-targets-beccd150",
-      "manifest_sha256": "1316a50b51a63932ef2dfa39d944eb5d871da63fbce421a89a243374cfc829a5"
+      "run_id": "20261009T203745Z-native-invalidation-remove-targets-beccd150"
     },
     {
+      "manifest_sha256": "c477b30a6dd1008b318c637aaa959da3244f1069260f9cdfe220483f26544636",
       "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
-      "run_id": "20261009T203824Z-native-invalidation-waiting-update-25f0f63d",
-      "manifest_sha256": "c477b30a6dd1008b318c637aaa959da3244f1069260f9cdfe220483f26544636"
+      "run_id": "20261009T203824Z-native-invalidation-waiting-update-25f0f63d"
     },
     {
+      "manifest_sha256": "5b44d0ae41d78101a135c2544a3c44d30e5cd105c356aa0dffb97677b13cdb9d",
       "path": "research/evidence/invalidation-cancellation-2026-10-09.json",
-      "run_id": "20261009T203945Z-native-invalidation-boundary-control-8aaa14f1",
-      "manifest_sha256": "5b44d0ae41d78101a135c2544a3c44d30e5cd105c356aa0dffb97677b13cdb9d"
+      "run_id": "20261009T203945Z-native-invalidation-boundary-control-8aaa14f1"
     },
     {
+      "manifest_sha256": "c23e53e9cf24a2bd8a980109e364901385be403ba4ab2f73a75fb04aee8b3928",
       "path": "research/evidence/gpu-surface-completion-2026-10-09.json",
-      "run_id": "20261009T204901Z-owned-gpu-surface-completion-a8b8786a",
-      "manifest_sha256": "c23e53e9cf24a2bd8a980109e364901385be403ba4ab2f73a75fb04aee8b3928"
+      "run_id": "20261009T204901Z-owned-gpu-surface-completion-a8b8786a"
     },
     {
+      "manifest_sha256": "44b5606dea8b60a6b198365a0bd4b0db49afb1629f1b9672dcbe97b715ea5496",
       "path": "research/evidence/gpu-surface-completion-2026-10-09.json",
-      "run_id": "20261009T205022Z-owned-gpu-surface-completion-6202a2b3",
-      "manifest_sha256": "44b5606dea8b60a6b198365a0bd4b0db49afb1629f1b9672dcbe97b715ea5496"
+      "run_id": "20261009T205022Z-owned-gpu-surface-completion-6202a2b3"
     },
     {
+      "manifest_sha256": "c1ed0d95147fdbea31bd50cbbd1899ead1523d87ee6af9766a7f9c02c308c169",
       "path": "research/evidence/gpu-surface-completion-2026-10-09.json",
-      "run_id": "20261009T205116Z-owned-gpu-surface-retained-access-5156ae20",
-      "manifest_sha256": "c1ed0d95147fdbea31bd50cbbd1899ead1523d87ee6af9766a7f9c02c308c169"
+      "run_id": "20261009T205116Z-owned-gpu-surface-retained-access-5156ae20"
     },
     {
+      "manifest_sha256": "06b282d9cc7cdf2985f9874f247bfa55ee592e089d8c968889897c01f721ced0",
       "path": "research/evidence/gpu-mach-handoff-2026-10-09.json",
-      "run_id": "20261009T210001Z-owned-gpu-surface-mach-receiver-exit-ea1f6774",
-      "manifest_sha256": "06b282d9cc7cdf2985f9874f247bfa55ee592e089d8c968889897c01f721ced0"
+      "run_id": "20261009T210001Z-owned-gpu-surface-mach-receiver-exit-ea1f6774"
     },
     {
+      "manifest_sha256": "d9d66a2822cb6bc29e38e4e5c40b99d6e7ea89b3da1b5d27ff03d15c0aca7869",
       "path": "research/evidence/gpu-mach-handoff-2026-10-09.json",
-      "run_id": "20261009T210116Z-owned-gpu-surface-mach-receiver-exit-5ae56a1d",
-      "manifest_sha256": "d9d66a2822cb6bc29e38e4e5c40b99d6e7ea89b3da1b5d27ff03d15c0aca7869"
+      "run_id": "20261009T210116Z-owned-gpu-surface-mach-receiver-exit-5ae56a1d"
     },
     {
+      "manifest_sha256": "4d6bc01cd43682aa7d59923dbd6826ba0ea12a240eed438c8353c59174b67baf",
       "path": "research/evidence/gpu-mach-handoff-2026-10-09.json",
-      "run_id": "20261009T210132Z-owned-surface-process-exit-01b2faf3",
-      "manifest_sha256": "4d6bc01cd43682aa7d59923dbd6826ba0ea12a240eed438c8353c59174b67baf"
+      "run_id": "20261009T210132Z-owned-surface-process-exit-01b2faf3"
     },
     {
+      "manifest_sha256": "9f906f197ef08f146bbc6fa5e64efb9b1a3fee506b03f02cab7d4f0cdadd1cf7",
       "path": "research/evidence/gpu-mach-handoff-2026-10-09.json",
-      "run_id": "20261009T210151Z-owned-surface-receiver-exit-d3ddf66a",
-      "manifest_sha256": "9f906f197ef08f146bbc6fa5e64efb9b1a3fee506b03f02cab7d4f0cdadd1cf7"
+      "run_id": "20261009T210151Z-owned-surface-receiver-exit-d3ddf66a"
     },
     {
+      "manifest_sha256": "9a6debfd56e646d1e3017ea4ce5e18c724a1408e4c221f34a9a354677b951cff",
       "path": "research/evidence/gpu-peer-readback-2026-10-09.json",
-      "run_id": "20261009T210826Z-owned-gpu-surface-peer-readback-d5a3d33d",
-      "manifest_sha256": "9a6debfd56e646d1e3017ea4ce5e18c724a1408e4c221f34a9a354677b951cff"
+      "run_id": "20261009T210826Z-owned-gpu-surface-peer-readback-d5a3d33d"
     },
     {
+      "manifest_sha256": "a8bac8a07e7ceaf9bde8927282c510b290f87bdb0ab048331ba75f7cb76e423b",
       "path": "research/evidence/gpu-peer-readback-2026-10-09.json",
-      "run_id": "20261009T210934Z-owned-gpu-surface-peer-readback-dcde272d",
-      "manifest_sha256": "a8bac8a07e7ceaf9bde8927282c510b290f87bdb0ab048331ba75f7cb76e423b"
+      "run_id": "20261009T210934Z-owned-gpu-surface-peer-readback-dcde272d"
     },
     {
+      "manifest_sha256": "0decfa5063bddd2f0ec784aaf76ddc48c053432baf7b70855ee4692e27f4a419",
       "path": "research/evidence/gpu-peer-readback-2026-10-09.json",
-      "run_id": "20261009T211020Z-owned-gpu-surface-mach-receiver-exit-e70c4092",
-      "manifest_sha256": "0decfa5063bddd2f0ec784aaf76ddc48c053432baf7b70855ee4692e27f4a419"
+      "run_id": "20261009T211020Z-owned-gpu-surface-mach-receiver-exit-e70c4092"
     },
     {
+      "manifest_sha256": "4cb094a2d69ffa594e2976dabc94ccf11add94407b3a011a11f74b12137ce9fa",
       "path": "research/evidence/gpu-event-timeout-2026-10-09.json",
-      "run_id": "20261009T211911Z-owned-gpu-peer-event-timeout-46aa708e",
-      "manifest_sha256": "4cb094a2d69ffa594e2976dabc94ccf11add94407b3a011a11f74b12137ce9fa"
+      "run_id": "20261009T211911Z-owned-gpu-peer-event-timeout-46aa708e"
     },
     {
+      "manifest_sha256": "a71214d944cd1c62213f3e1f907a5be9eff63df8144f55ea2a3890a7e82c3318",
       "path": "research/evidence/gpu-event-timeout-2026-10-09.json",
-      "run_id": "20261009T212324Z-owned-gpu-peer-event-timeout-56fdd96c",
-      "manifest_sha256": "a71214d944cd1c62213f3e1f907a5be9eff63df8144f55ea2a3890a7e82c3318"
+      "run_id": "20261009T212324Z-owned-gpu-peer-event-timeout-56fdd96c"
     },
     {
+      "manifest_sha256": "1addf7cdd146a78ad8e04d5cd830680ed6a3ae5baa12b8601796ab0d3df74aea",
       "path": "research/evidence/gpu-event-timeout-2026-10-09.json",
-      "run_id": "20261009T212359Z-owned-gpu-surface-peer-readback-1479e353",
-      "manifest_sha256": "1addf7cdd146a78ad8e04d5cd830680ed6a3ae5baa12b8601796ab0d3df74aea"
+      "run_id": "20261009T212359Z-owned-gpu-surface-peer-readback-1479e353"
     },
     {
+      "manifest_sha256": "31d94d89201e762807134128a4d3c6aaa2b6e263b734f54e21ee830ff5644960",
       "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
-      "run_id": "20261009T212809Z-owned-gpu-event-frame-reuse-78a8758f",
-      "manifest_sha256": "31d94d89201e762807134128a4d3c6aaa2b6e263b734f54e21ee830ff5644960"
+      "run_id": "20261009T212809Z-owned-gpu-event-frame-reuse-78a8758f"
     },
     {
+      "manifest_sha256": "91f2808c19ad535c809b1283f075a737ccc9608acae009f5ca6a06e97352996b",
       "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
-      "run_id": "20261009T212925Z-owned-gpu-event-frame-reuse-4e17cb1c",
-      "manifest_sha256": "91f2808c19ad535c809b1283f075a737ccc9608acae009f5ca6a06e97352996b"
+      "run_id": "20261009T212925Z-owned-gpu-event-frame-reuse-4e17cb1c"
     },
     {
+      "manifest_sha256": "0e121d9582696d8cf172a77364bcef700d59647d2b36d78ae7e191c5b597dd1c",
       "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
-      "run_id": "20261009T213032Z-owned-gpu-peer-event-timeout-656f43e3",
-      "manifest_sha256": "0e121d9582696d8cf172a77364bcef700d59647d2b36d78ae7e191c5b597dd1c"
+      "run_id": "20261009T213032Z-owned-gpu-peer-event-timeout-656f43e3"
     },
     {
+      "manifest_sha256": "75d071f9e7049817a7f57defccf09d85ea1f76501f6e97e4df0189ce4f758f6e",
       "path": "research/evidence/gpu-frame-reuse-2026-10-09.json",
-      "run_id": "20261009T213122Z-owned-gpu-event-frame-reuse-64102fc7",
-      "manifest_sha256": "75d071f9e7049817a7f57defccf09d85ea1f76501f6e97e4df0189ce4f758f6e"
+      "run_id": "20261009T213122Z-owned-gpu-event-frame-reuse-64102fc7"
     },
     {
+      "manifest_sha256": "b2ede94b163a2a1e747735e414509c30278c51466eee4e9d3df9579b0c92f307",
       "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
-      "run_id": "20261009T213809Z-native-invalidation-dictionary-bodies-228b9b81",
-      "manifest_sha256": "b2ede94b163a2a1e747735e414509c30278c51466eee4e9d3df9579b0c92f307"
+      "run_id": "20261009T213809Z-native-invalidation-dictionary-bodies-228b9b81"
     },
     {
+      "manifest_sha256": "16abedef828079046a0614085854ad3e3e6ac4dc64ff5cffbc1afa0c24ff8426",
       "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
-      "run_id": "20261009T213901Z-native-invalidation-dictionary-dependencies-95651f48",
-      "manifest_sha256": "16abedef828079046a0614085854ad3e3e6ac4dc64ff5cffbc1afa0c24ff8426"
+      "run_id": "20261009T213901Z-native-invalidation-dictionary-dependencies-95651f48"
     },
     {
+      "manifest_sha256": "4a6e6d106d9a691795acfbe6311266ee647263a11f34b315b28cc9460024ef12",
       "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
-      "run_id": "20261009T214105Z-native-observer-removal-control-0e3d7c32",
-      "manifest_sha256": "4a6e6d106d9a691795acfbe6311266ee647263a11f34b315b28cc9460024ef12"
+      "run_id": "20261009T214105Z-native-observer-removal-control-0e3d7c32"
     },
     {
+      "manifest_sha256": "46c6c0e7b805fd29da7c8268224d2b59a327b0b0ec916d0fd04918a6837b9bbc",
       "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
-      "run_id": "20261009T214204Z-native-observer-removal-control-b15d5b1c",
-      "manifest_sha256": "46c6c0e7b805fd29da7c8268224d2b59a327b0b0ec916d0fd04918a6837b9bbc"
+      "run_id": "20261009T214204Z-native-observer-removal-control-b15d5b1c"
     },
     {
+      "manifest_sha256": "7437538875e83b52796023b3620860ff4fc16c2198c1d2a906ba11b3141b583e",
       "path": "research/evidence/observer-dictionary-removal-2026-10-09.json",
-      "run_id": "20261009T214238Z-native-observer-removal-control-0c7b0a17",
-      "manifest_sha256": "7437538875e83b52796023b3620860ff4fc16c2198c1d2a906ba11b3141b583e"
+      "run_id": "20261009T214238Z-native-observer-removal-control-0c7b0a17"
     },
     {
+      "manifest_sha256": "c68dc908e69af786ca60f4c89bf7289a1f3d003cf7f27f8aef9930d8f0c280ec",
       "path": "research/evidence/rea-integration-2026-10-09.json",
-      "run_id": "20261009T220050Z-native-rea-observer-pilot-cd5ece24",
-      "manifest_sha256": "c68dc908e69af786ca60f4c89bf7289a1f3d003cf7f27f8aef9930d8f0c280ec"
+      "run_id": "20261009T220050Z-native-rea-observer-pilot-cd5ece24"
     },
     {
+      "manifest_sha256": "3cc108fa031b8510e6ee24a9a720c9647f89c75fe1e66cce29bd5fb10400dd98",
       "path": "research/evidence/rea-integration-2026-10-09.json",
-      "run_id": "20261009T220651Z-owned-rea-engine-control-651d01fa",
-      "manifest_sha256": "3cc108fa031b8510e6ee24a9a720c9647f89c75fe1e66cce29bd5fb10400dd98"
+      "run_id": "20261009T220651Z-owned-rea-engine-control-651d01fa"
     },
     {
+      "manifest_sha256": "1a8f0e8260ea70bfc316a4cd35d8fae4e1706a87ccb55b2bbcec76816c568b73",
       "path": "research/evidence/rea-integration-2026-10-09.json",
-      "run_id": "20261009T220828Z-owned-rea-engine-control-4ba4ec15",
-      "manifest_sha256": "1a8f0e8260ea70bfc316a4cd35d8fae4e1706a87ccb55b2bbcec76816c568b73"
+      "run_id": "20261009T220828Z-owned-rea-engine-control-4ba4ec15"
     },
     {
+      "manifest_sha256": "3c0b0abface4a681aba3ddab92b8c8b0d936b494919d95b85b263b37eee3508c",
       "path": "research/evidence/rea-integration-2026-10-09.json",
-      "run_id": "20261009T221010Z-owned-rea-engine-control-bb12b467",
-      "manifest_sha256": "3c0b0abface4a681aba3ddab92b8c8b0d936b494919d95b85b263b37eee3508c"
+      "run_id": "20261009T221010Z-owned-rea-engine-control-bb12b467"
     },
     {
+      "manifest_sha256": "30b59f23a211c3ffb91d873373f23cea281b0d53e473299b1011f5f29cea72c3",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547",
-      "manifest_sha256": "30b59f23a211c3ffb91d873373f23cea281b0d53e473299b1011f5f29cea72c3"
+      "run_id": "20261009T221405Z-native-token-callback-bodies-593f8547"
     },
     {
+      "manifest_sha256": "35d182d0ff940ab54c32b0fd88748823ca6a0cd4c2c5516e9c611c3f7ef25fc6",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221443Z-native-token-update-wrappers-ae8e1d29",
-      "manifest_sha256": "35d182d0ff940ab54c32b0fd88748823ca6a0cd4c2c5516e9c611c3f7ef25fc6"
+      "run_id": "20261009T221443Z-native-token-update-wrappers-ae8e1d29"
     },
     {
+      "manifest_sha256": "60133a15bd00b9ef92af2fd0a1f08990cad3a6c314b8566dbb44ce11802f2323",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b",
-      "manifest_sha256": "60133a15bd00b9ef92af2fd0a1f08990cad3a6c314b8566dbb44ce11802f2323"
+      "run_id": "20261009T221522Z-native-token-shared-update-body-ef157c7b"
     },
     {
+      "manifest_sha256": "b5b664578fbe736dbfd89feb596764a58f855945d9e7747b95fd17793cf7aa20",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1",
-      "manifest_sha256": "b5b664578fbe736dbfd89feb596764a58f855945d9e7747b95fd17793cf7aa20"
+      "run_id": "20261009T221626Z-native-token-callback-link-40c6f5a1"
     },
     {
+      "manifest_sha256": "9717315e2d1e6e76ac3a0d72c99e0c6286952cf7991e01795ca89897d794102f",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221722Z-native-token-callback-link-7a465643",
-      "manifest_sha256": "9717315e2d1e6e76ac3a0d72c99e0c6286952cf7991e01795ca89897d794102f"
+      "run_id": "20261009T221722Z-native-token-callback-link-7a465643"
     },
     {
+      "manifest_sha256": "021709403d1431386f01850904c6304a540d6141963ffea6ef14475a951bcb03",
       "path": "research/evidence/token-callback-link-2026-10-09.json",
-      "run_id": "20261009T221817Z-native-token-callback-link-b9d4cdd9",
-      "manifest_sha256": "021709403d1431386f01850904c6304a540d6141963ffea6ef14475a951bcb03"
+      "run_id": "20261009T221817Z-native-token-callback-link-b9d4cdd9"
     },
     {
+      "manifest_sha256": "2666ebf504c74ea62548c22cdaa6299546288923071305d57001bf0aad47f7a4",
       "path": "research/evidence/token-result-consumer-2026-10-09.json",
-      "run_id": "20261009T222848Z-native-token-result-consumer-f915724b",
-      "manifest_sha256": "2666ebf504c74ea62548c22cdaa6299546288923071305d57001bf0aad47f7a4"
+      "run_id": "20261009T222848Z-native-token-result-consumer-f915724b"
     },
     {
+      "manifest_sha256": "59c85034aa2be5fdbcd3cef15462e7ecfed60f922aba47ecc5c525568041e77f",
       "path": "research/evidence/token-result-consumer-2026-10-09.json",
-      "run_id": "20261009T223053Z-native-token-result-consumer-4d57fc14",
-      "manifest_sha256": "59c85034aa2be5fdbcd3cef15462e7ecfed60f922aba47ecc5c525568041e77f"
+      "run_id": "20261009T223053Z-native-token-result-consumer-4d57fc14"
     },
     {
+      "manifest_sha256": "5ae7fbc7dee38a0ea1405782cb00f4f41f166e18b2cddaa2168ed2e1dd5074bb",
       "path": "research/evidence/token-result-consumer-2026-10-09.json",
-      "run_id": "20261009T223224Z-native-token-result-consumer-2736322e",
-      "manifest_sha256": "5ae7fbc7dee38a0ea1405782cb00f4f41f166e18b2cddaa2168ed2e1dd5074bb"
+      "run_id": "20261009T223224Z-native-token-result-consumer-2736322e"
     },
     {
+      "manifest_sha256": "1203095dc46358b912f7e4d7d1625f3ad6abcdf7341435964c2550e6fab3a99e",
       "path": "research/evidence/token-result-consumer-2026-10-09.json",
-      "run_id": "20261009T223247Z-native-token-result-consumer-271e2f1f",
-      "manifest_sha256": "1203095dc46358b912f7e4d7d1625f3ad6abcdf7341435964c2550e6fab3a99e"
+      "run_id": "20261009T223247Z-native-token-result-consumer-271e2f1f"
     },
     {
+      "manifest_sha256": "5399b266286fac3abeeaa708dff9e01a39e9c845528534e0593ad3d391ec03e4",
       "path": "research/evidence/token-value-witness-2026-10-09.json",
-      "run_id": "20261009T223918Z-native-token-value-witness-bodies-5a6925bd",
-      "manifest_sha256": "5399b266286fac3abeeaa708dff9e01a39e9c845528534e0593ad3d391ec03e4"
+      "run_id": "20261009T223918Z-native-token-value-witness-bodies-5a6925bd"
     },
     {
+      "manifest_sha256": "3bf7462e3d3db2f40a23b30ad6b0809415f63932c6d9f9ba048a3507dc3febd7",
       "path": "research/evidence/token-value-witness-2026-10-09.json",
-      "run_id": "20261009T223947Z-native-token-value-witness-bodies-718e7e66",
-      "manifest_sha256": "3bf7462e3d3db2f40a23b30ad6b0809415f63932c6d9f9ba048a3507dc3febd7"
+      "run_id": "20261009T223947Z-native-token-value-witness-bodies-718e7e66"
     },
     {
+      "manifest_sha256": "3ce976bf8d29bc85aea1b6ad7cc209f8dd8de095b937aa86b1a4fb20ca57b83c",
       "path": "research/evidence/token-value-witness-2026-10-09.json",
-      "run_id": "20261009T224036Z-native-token-value-witness-bodies-604c5f82",
-      "manifest_sha256": "3ce976bf8d29bc85aea1b6ad7cc209f8dd8de095b937aa86b1a4fb20ca57b83c"
+      "run_id": "20261009T224036Z-native-token-value-witness-bodies-604c5f82"
     },
     {
+      "manifest_sha256": "492955e31db8d6ae636219471afc444d5ae2b53d282f3110e67c7c2e275df648",
       "path": "research/evidence/token-value-witness-2026-10-09.json",
-      "run_id": "20261009T224104Z-native-token-value-witness-bodies-1b574ce3",
-      "manifest_sha256": "492955e31db8d6ae636219471afc444d5ae2b53d282f3110e67c7c2e275df648"
+      "run_id": "20261009T224104Z-native-token-value-witness-bodies-1b574ce3"
     },
     {
+      "manifest_sha256": "1368016e648dbb264a625637318256ad70e62d8e6ce99a6f88a0779e8006800c",
       "path": "research/evidence/token-symbolic-descriptors-2026-10-09.json",
-      "run_id": "20261009T225035Z-native-token-symbolic-descriptors-1cdeca18",
-      "manifest_sha256": "1368016e648dbb264a625637318256ad70e62d8e6ce99a6f88a0779e8006800c"
+      "run_id": "20261009T225035Z-native-token-symbolic-descriptors-1cdeca18"
     },
     {
+      "manifest_sha256": "6d65c59db7b6e9612b0158d584dca5629b20b76e2501ec06f20485b6a5735047",
       "path": "research/evidence/token-symbolic-descriptors-2026-10-09.json",
-      "run_id": "20261009T225134Z-native-token-symbolic-descriptors-46274901",
-      "manifest_sha256": "6d65c59db7b6e9612b0158d584dca5629b20b76e2501ec06f20485b6a5735047"
+      "run_id": "20261009T225134Z-native-token-symbolic-descriptors-46274901"
     },
     {
+      "manifest_sha256": "034a48f9b9652316b2a590da538245d028539b686000d47c08d1ef41384a0f07",
       "path": "research/evidence/token-symbolic-descriptors-2026-10-09.json",
-      "run_id": "20261009T225248Z-native-token-symbolic-descriptors-f54ddcb5",
-      "manifest_sha256": "034a48f9b9652316b2a590da538245d028539b686000d47c08d1ef41384a0f07"
+      "run_id": "20261009T225248Z-native-token-symbolic-descriptors-f54ddcb5"
     },
     {
+      "manifest_sha256": "2d4f524d315220c861e309c3b05ea4bf07c6e4b6736073c38e89d48316feabd6",
       "path": "research/evidence/state-witness-pattern-2026-10-09.json",
-      "run_id": "20261009T225920Z-native-state-witness-bodies-9d2391a6",
-      "manifest_sha256": "2d4f524d315220c861e309c3b05ea4bf07c6e4b6736073c38e89d48316feabd6"
+      "run_id": "20261009T225920Z-native-state-witness-bodies-9d2391a6"
     },
     {
+      "manifest_sha256": "1e7b7ed0b8a34484bae9fdabb1e943af20ed87a636d76021ac354c8a9fe73ae9",
       "path": "research/evidence/state-witness-pattern-2026-10-09.json",
-      "run_id": "20261009T230113Z-native-state-witness-bodies-d84a6e40",
-      "manifest_sha256": "1e7b7ed0b8a34484bae9fdabb1e943af20ed87a636d76021ac354c8a9fe73ae9"
+      "run_id": "20261009T230113Z-native-state-witness-bodies-d84a6e40"
     },
     {
+      "manifest_sha256": "e5d51a3be5a6d8dca4d12a1996939c7ddaacda05da26311a65226020195717d2",
       "path": "research/evidence/state-witness-pattern-2026-10-09.json",
-      "run_id": "20261009T230141Z-native-state-witness-bodies-56bb218e",
-      "manifest_sha256": "e5d51a3be5a6d8dca4d12a1996939c7ddaacda05da26311a65226020195717d2"
+      "run_id": "20261009T230141Z-native-state-witness-bodies-56bb218e"
     },
     {
+      "manifest_sha256": "3a5b8798e8a890c9a9458f2566cf74052d36a367f42827d655f784fe0ecf1036",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T230901Z-native-token-storage-witness-bodies-ebefdd2d",
-      "manifest_sha256": "3a5b8798e8a890c9a9458f2566cf74052d36a367f42827d655f784fe0ecf1036"
+      "run_id": "20261009T230901Z-native-token-storage-witness-bodies-ebefdd2d"
     },
     {
+      "manifest_sha256": "e3f36c43432800bcbcc2dbb2cc28819c79e3d57177d625faab477ffec460b2e5",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T230916Z-native-token-storage-witness-bodies-0096b744",
-      "manifest_sha256": "e3f36c43432800bcbcc2dbb2cc28819c79e3d57177d625faab477ffec460b2e5"
+      "run_id": "20261009T230916Z-native-token-storage-witness-bodies-0096b744"
     },
     {
+      "manifest_sha256": "04d43c2c596a2f5fa3f07c404f653b4e03cf2d8fe1ec1ccf9ac89f66c7dd7903",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T230948Z-native-token-storage-witness-bodies-beccf0c6",
-      "manifest_sha256": "04d43c2c596a2f5fa3f07c404f653b4e03cf2d8fe1ec1ccf9ac89f66c7dd7903"
+      "run_id": "20261009T230948Z-native-token-storage-witness-bodies-beccf0c6"
     },
     {
+      "manifest_sha256": "7fbc9a462bf9e02becbd14442bcd3d9f1c59d70aca5fa3c391bf8179748ac56a",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T231138Z-native-token-storage-witness-bodies-dfb1f7c2",
-      "manifest_sha256": "7fbc9a462bf9e02becbd14442bcd3d9f1c59d70aca5fa3c391bf8179748ac56a"
+      "run_id": "20261009T231138Z-native-token-storage-witness-bodies-dfb1f7c2"
     },
     {
+      "manifest_sha256": "0d7ecfb381a514d0c53f7d339e12535f86fc16b7236b2ba4cdcc4c64a4a678c6",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T231206Z-native-token-storage-witness-bodies-ed0fcbdd",
-      "manifest_sha256": "0d7ecfb381a514d0c53f7d339e12535f86fc16b7236b2ba4cdcc4c64a4a678c6"
+      "run_id": "20261009T231206Z-native-token-storage-witness-bodies-ed0fcbdd"
     },
     {
+      "manifest_sha256": "aaff0b5d011c7aa13cd417bf242398302dac19753facd17f8ae520ebc84e011b",
       "path": "research/evidence/storage-bridge-delegation-2026-10-09.json",
-      "run_id": "20261009T231344Z-native-token-storage-witness-bodies-719bf99c",
-      "manifest_sha256": "aaff0b5d011c7aa13cd417bf242398302dac19753facd17f8ae520ebc84e011b"
+      "run_id": "20261009T231344Z-native-token-storage-witness-bodies-719bf99c"
     },
     {
+      "manifest_sha256": "9206ddc97e42d639333ee945423b5b5f55d687b55d257692f07599805f803881",
       "path": "research/evidence/state-case-tags-2026-10-09.json",
-      "run_id": "20261009T232008Z-native-state-tag-boundary-353c3889",
-      "manifest_sha256": "9206ddc97e42d639333ee945423b5b5f55d687b55d257692f07599805f803881"
+      "run_id": "20261009T232008Z-native-state-tag-boundary-353c3889"
     },
     {
+      "manifest_sha256": "e277a2fdbc62f078b0a992fda6717bfdc40f0137aa8cdc5387976ff5c5d12a8c",
       "path": "research/evidence/state-case-tags-2026-10-09.json",
-      "run_id": "20261009T232141Z-native-state-tag-boundary-2a4c70ba",
-      "manifest_sha256": "e277a2fdbc62f078b0a992fda6717bfdc40f0137aa8cdc5387976ff5c5d12a8c"
+      "run_id": "20261009T232141Z-native-state-tag-boundary-2a4c70ba"
     },
     {
+      "manifest_sha256": "2ab3dd7750923ae16e7f450e9b6a80db02d1c74139376567dbe108470f83e2c3",
       "path": "research/evidence/state-case-tags-2026-10-09.json",
-      "run_id": "20261009T232230Z-native-state-tag-boundary-cdaf8dc3",
-      "manifest_sha256": "2ab3dd7750923ae16e7f450e9b6a80db02d1c74139376567dbe108470f83e2c3"
+      "run_id": "20261009T232230Z-native-state-tag-boundary-cdaf8dc3"
     },
     {
       "manifest_sha256": "1a005da1ed404dab5e0b2ed9a4a882fdffb1be97d0046deb66714901feb9a3dc",
@@ -857,180 +876,176 @@
       "run_id": "20261009T233141Z-native-update-result-witness-40df37ef"
     },
     {
+      "manifest_sha256": "a9779dff7f10d354eba03331823772773f9feb8dc08a943d6b1f09a01a0238ab",
       "path": "research/evidence/literal-source-ir-2026-10-09.json",
-      "run_id": "20261009T234009Z-portable-literal-source-ir-ace96174",
-      "manifest_sha256": "a9779dff7f10d354eba03331823772773f9feb8dc08a943d6b1f09a01a0238ab"
+      "run_id": "20261009T234009Z-portable-literal-source-ir-ace96174"
     },
     {
+      "manifest_sha256": "77b7587979952954e3419b28486383f5feff69b2c2ab50b1062f126e146c8028",
       "path": "research/evidence/literal-source-ir-2026-10-09.json",
-      "run_id": "20261009T234106Z-portable-literal-source-ir-6ea8549e",
-      "manifest_sha256": "77b7587979952954e3419b28486383f5feff69b2c2ab50b1062f126e146c8028"
+      "run_id": "20261009T234106Z-portable-literal-source-ir-6ea8549e"
     },
     {
+      "manifest_sha256": "e9a8be17a14c403184ec65f8d69faa108a51948faabcd2cce9c82edebdd4e3ea",
       "path": "research/evidence/literal-source-ir-2026-10-09.json",
-      "run_id": "20261009T234126Z-portable-literal-source-ir-9701c407",
-      "manifest_sha256": "e9a8be17a14c403184ec65f8d69faa108a51948faabcd2cce9c82edebdd4e3ea"
+      "run_id": "20261009T234126Z-portable-literal-source-ir-9701c407"
     },
     {
+      "manifest_sha256": "1ebaa38a64c8bbc1220b5788410f48592a0dcd69927b93d2e8595d6abb12731e",
       "path": "research/evidence/literal-source-ir-2026-10-09.json",
-      "run_id": "20261009T234219Z-portable-literal-source-ir-ef189896",
-      "manifest_sha256": "1ebaa38a64c8bbc1220b5788410f48592a0dcd69927b93d2e8595d6abb12731e"
+      "run_id": "20261009T234219Z-portable-literal-source-ir-ef189896"
     },
     {
+      "manifest_sha256": "f6ede4f9e9bcc01cd9a71c3797bef4da8588ba7e527612786805b8a19c58a212",
       "path": "research/evidence/source-second-interpreter-2026-10-09.json",
-      "run_id": "20261009T234959Z-portable-source-second-interpreter-1dc429cb",
-      "manifest_sha256": "f6ede4f9e9bcc01cd9a71c3797bef4da8588ba7e527612786805b8a19c58a212"
+      "run_id": "20261009T234959Z-portable-source-second-interpreter-1dc429cb"
     },
     {
+      "manifest_sha256": "db1ab482584b1fbf0d6e004cdc0197b35500d874663bbe153145446d4bde16f9",
       "path": "research/evidence/source-second-interpreter-2026-10-09.json",
-      "run_id": "20261009T235049Z-portable-source-second-interpreter-668376cf",
-      "manifest_sha256": "db1ab482584b1fbf0d6e004cdc0197b35500d874663bbe153145446d4bde16f9"
+      "run_id": "20261009T235049Z-portable-source-second-interpreter-668376cf"
     },
     {
+      "manifest_sha256": "8ba1a1c4073a16e32516e84528c91e88089f0ced482d98411e336390d424b143",
       "path": "research/evidence/linux-source-wasm-2026-10-10.json",
-      "run_id": "20261010T002135Z-portable-linux-owned-wasm-45d7bd66",
-      "manifest_sha256": "8ba1a1c4073a16e32516e84528c91e88089f0ced482d98411e336390d424b143"
+      "run_id": "20261010T002135Z-portable-linux-owned-wasm-45d7bd66"
     },
     {
+      "manifest_sha256": "6c58326d7da83d7312e7cd4326d1f78566fe71afd33e99673e62ef8a0f4cc8ed",
       "path": "research/evidence/linux-source-wasm-2026-10-10.json",
-      "run_id": "20261010T003849Z-portable-linux-owned-wasm-9771a1ae",
-      "manifest_sha256": "6c58326d7da83d7312e7cd4326d1f78566fe71afd33e99673e62ef8a0f4cc8ed"
+      "run_id": "20261010T003849Z-portable-linux-owned-wasm-9771a1ae"
     },
     {
+      "manifest_sha256": "d7da8c93cfb95143dbafa80e32df6877ce128577ab785e1886f4b3a1407c5f1b",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T032332Z-owned-surface-explicit-name-reuse-d3465602",
-      "manifest_sha256": "d7da8c93cfb95143dbafa80e32df6877ce128577ab785e1886f4b3a1407c5f1b"
+      "run_id": "20261010T032332Z-owned-surface-explicit-name-reuse-d3465602"
     },
     {
+      "manifest_sha256": "52feedf59ccbb85e11f35e86e1b0f66d0e4e3dadc60bb4b4a00ac9940f0fe2fd",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T034201Z-owned-surface-explicit-name-reuse-f8d5c901",
-      "manifest_sha256": "52feedf59ccbb85e11f35e86e1b0f66d0e4e3dadc60bb4b4a00ac9940f0fe2fd"
+      "run_id": "20261010T034201Z-owned-surface-explicit-name-reuse-f8d5c901"
     },
     {
+      "manifest_sha256": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T035833Z-owned-surface-explicit-name-reuse-1ebec83e",
-      "manifest_sha256": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b"
+      "run_id": "20261010T035833Z-owned-surface-explicit-name-reuse-1ebec83e"
     },
     {
+      "manifest_sha256": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T040524Z-owned-surface-bounded-name-churn-46cd410c",
-      "manifest_sha256": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd"
+      "run_id": "20261010T040524Z-owned-surface-bounded-name-churn-46cd410c"
     },
     {
+      "manifest_sha256": "b1ca78aabe925951aaeba7bd5057decdbec645daa86435707e0417640526e979",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T042203Z-owned-surface-bounded-name-churn-567f95c6",
-      "manifest_sha256": "b1ca78aabe925951aaeba7bd5057decdbec645daa86435707e0417640526e979"
+      "run_id": "20261010T042203Z-owned-surface-bounded-name-churn-567f95c6"
     },
     {
+      "manifest_sha256": "a8feb4d0724d862e6f5f980aa59112235116cf6ff95f2c369e80bb3890d5c84d",
       "path": "research/evidence/surface-name-churn-2026-10-10.json",
-      "run_id": "20261010T043856Z-owned-surface-bounded-name-churn-repeat-5ea51600",
-      "manifest_sha256": "a8feb4d0724d862e6f5f980aa59112235116cf6ff95f2c369e80bb3890d5c84d"
+      "run_id": "20261010T043856Z-owned-surface-bounded-name-churn-repeat-5ea51600"
     },
     {
+      "manifest_sha256": "efefc0973001d2e0975358715e9e664776a4295c52064c104526623f4439a21e",
       "path": "research/evidence/retained-name-churn-2026-10-10.json",
-      "run_id": "20261010T044324Z-owned-surface-retained-name-churn-62cecea4",
-      "manifest_sha256": "efefc0973001d2e0975358715e9e664776a4295c52064c104526623f4439a21e"
+      "run_id": "20261010T044324Z-owned-surface-retained-name-churn-62cecea4"
     },
     {
+      "manifest_sha256": "d16155b847895e2c6d43dabace608bb6554e25a7a6d883cc071f7fe3f0a54a88",
       "path": "research/evidence/retained-name-churn-2026-10-10.json",
-      "run_id": "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4",
-      "manifest_sha256": "d16155b847895e2c6d43dabace608bb6554e25a7a6d883cc071f7fe3f0a54a88"
+      "run_id": "20261010T044402Z-owned-surface-retained-name-churn-repeat-d2f1b2c4"
     },
     {
+      "manifest_sha256": "a013a583818aa66c5ab8ac26b8af22990b3618dd003b3dbea6ffdd4419fa6c6e",
       "path": "research/evidence/retained-name-churn-2026-10-10.json",
-      "run_id": "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db",
-      "manifest_sha256": "a013a583818aa66c5ab8ac26b8af22990b3618dd003b3dbea6ffdd4419fa6c6e"
+      "run_id": "20261010T044418Z-owned-surface-released-name-churn-contrast-be1d51db"
     },
     {
+      "manifest_sha256": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b",
       "path": "research/evidence/graph-generation-2026-10-10.json",
-      "run_id": "20261010T162741Z-owned-generation-commit-control-ee28d03c",
-      "manifest_sha256": "eb50d3f3b38fc59c29398370d26be3f555940eec578b48fef0439020c5f21e0b"
+      "run_id": "20261010T162741Z-owned-generation-commit-control-ee28d03c"
     },
     {
+      "manifest_sha256": "891a23732f5a0e6b563e1894a2a06e44e11615840b2079c42979bac382470065",
       "path": "research/evidence/graph-generation-2026-10-10.json",
-      "run_id": "20261010T162858Z-owned-generation-commit-control-06a4c9fd",
-      "manifest_sha256": "891a23732f5a0e6b563e1894a2a06e44e11615840b2079c42979bac382470065"
+      "run_id": "20261010T162858Z-owned-generation-commit-control-06a4c9fd"
     },
     {
+      "manifest_sha256": "2de6280e7c3ca103c48ea373cf3aa8d1c49814099d35057d06abd0ebe0fdd891",
       "path": "research/evidence/graph-generation-2026-10-10.json",
-      "run_id": "20261010T162948Z-owned-generation-commit-control-repeat-30150539",
-      "manifest_sha256": "2de6280e7c3ca103c48ea373cf3aa8d1c49814099d35057d06abd0ebe0fdd891"
+      "run_id": "20261010T162948Z-owned-generation-commit-control-repeat-30150539"
     },
     {
+      "manifest_sha256": "f07402321447b498c082c0f3b2926c442dee5424295e3ab4789a86d98df254a7",
       "path": "research/evidence/graph-generation-2026-10-10.json",
-      "run_id": "20261010T163014Z-owned-surface-failure-cleanup-45fc44df",
-      "manifest_sha256": "f07402321447b498c082c0f3b2926c442dee5424295e3ab4789a86d98df254a7"
+      "run_id": "20261010T163014Z-owned-surface-failure-cleanup-45fc44df"
     },
     {
+      "manifest_sha256": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131",
       "path": "research/evidence/browser-source-wasm-2026-10-10.json",
-      "run_id": "20261010T163738Z-portable-browser-execution-f379d13e",
-      "manifest_sha256": "69a555d092fb4bdeee5f8d713f02689464ec06071d2acbf7383ba314be88c131"
+      "run_id": "20261010T163738Z-portable-browser-execution-f379d13e"
     },
     {
+      "manifest_sha256": "298ac5ff819b1a788f5c251af3b7b3cf3d9be329cee639e8fb9ea67859a93d88",
       "path": "research/evidence/browser-source-wasm-2026-10-10.json",
-      "run_id": "20261010T164540Z-portable-browser-execution-ffcf61e2",
-      "manifest_sha256": "298ac5ff819b1a788f5c251af3b7b3cf3d9be329cee639e8fb9ea67859a93d88"
+      "run_id": "20261010T164540Z-portable-browser-execution-ffcf61e2"
     },
     {
+      "manifest_sha256": "2e35f34e3a577adf9237e259c0dd4b80f0bfeeddc0f8677fb3366264d7ed5910",
       "path": "research/evidence/browser-source-wasm-2026-10-10.json",
-      "run_id": "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb",
-      "manifest_sha256": "2e35f34e3a577adf9237e259c0dd4b80f0bfeeddc0f8677fb3366264d7ed5910"
+      "run_id": "20261010T164719Z-portable-browser-execution-repeat-5d32f7bb"
     },
     {
-      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
-      "manifest_sha256": "e606c6194f371f0c27f293154481e82dd0288365ccda8f2a88e161e5b0d6fafe",
       "execution": "artifact_limit",
-      "verdict": "not_evaluated",
-      "seal_valid": false
+      "manifest_sha256": "e606c6194f371f0c27f293154481e82dd0288365ccda8f2a88e161e5b0d6fafe",
+      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
+      "seal_valid": false,
+      "verdict": "not_evaluated"
     },
     {
-      "run_id": "20261010T165851Z-native-alpha-compositing-oracle-80fb135e",
-      "manifest_sha256": "35c192dcd257d9e618946fcc0d38d867c6ea0703b0a6fb3d14a1d0ddbb00f59d",
       "execution": "success",
-      "verdict": "inconclusive",
-      "seal_valid": true,
       "facts": {
         "captures": 12,
         "compared_rgba_bytes": 7344,
         "expected_cases": 10,
         "repeat_equal_cases": 6,
         "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
-      }
+      },
+      "manifest_sha256": "35c192dcd257d9e618946fcc0d38d867c6ea0703b0a6fb3d14a1d0ddbb00f59d",
+      "run_id": "20261010T165851Z-native-alpha-compositing-oracle-80fb135e",
+      "seal_valid": true,
+      "verdict": "inconclusive"
     },
     {
-      "run_id": "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
+      "execution": "success",
+      "facts": {
+        "captures": 16,
+        "compared_rgba_bytes": 9792,
+        "expected_cases": 16,
+        "repeat_equal_cases": 8,
+        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
+      },
       "manifest_sha256": "066e199eab0ce98a5d81934a910af8312616a86eda7542808f66ed07c3234021",
-      "execution": "success",
-      "verdict": "supports",
+      "run_id": "20261010T165921Z-native-alpha-quantized-compositing-37fdb085",
       "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
       "facts": {
         "captures": 16,
         "compared_rgba_bytes": 9792,
         "expected_cases": 16,
         "repeat_equal_cases": 8,
         "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
-      }
-    },
-    {
-      "run_id": "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
+      },
       "manifest_sha256": "4377ef5efe83e95dd1d092eb80c2551ae9fac9312a61a5748a1a4902c8114a48",
-      "execution": "success",
-      "verdict": "supports",
+      "run_id": "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
       "seal_valid": true,
-      "facts": {
-        "captures": 16,
-        "compared_rgba_bytes": 9792,
-        "expected_cases": 16,
-        "repeat_equal_cases": 8,
-        "scope": "Owned 17x9 ImageRenderer nonlinear sRGB straight PNG RGBA; predictions include alpha0, quarter, half, opaque and red over blue. No encoded PNG, padding, Canvas transport or arbitrary color contract."
-      }
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T170819Z-compiler-artifact-limit-quiescence-730c1ba1",
-      "manifest_sha256": "8990ca1f12e672c5d6ed224f4177cca9cf171f0b53cbeffb2f6672aec214973e",
       "execution": "success",
-      "verdict": "inconclusive",
-      "seal_valid": true,
       "facts": {
         "all_detached_stable": true,
         "artifact_limit_observed": true,
@@ -1039,14 +1054,30 @@
         "detached_controls": 2,
         "scope": "Observed owned descendants stopped, cache snapshots stable through3.2s after return. Finite observation does not prove all arbitrary detached children or kernel quiescence.",
         "timeout_observed": true
-      }
+      },
+      "manifest_sha256": "8990ca1f12e672c5d6ed224f4177cca9cf171f0b53cbeffb2f6672aec214973e",
+      "run_id": "20261010T170819Z-compiler-artifact-limit-quiescence-730c1ba1",
+      "seal_valid": true,
+      "verdict": "inconclusive"
     },
     {
-      "run_id": "20261010T170900Z-compiler-artifact-limit-quiescence-e35ca1a9",
+      "execution": "success",
+      "facts": {
+        "all_detached_stable": true,
+        "artifact_limit_observed": true,
+        "compiler_artifact_limit_observed": true,
+        "compiler_cache_stable": true,
+        "detached_controls": 2,
+        "scope": "Observed owned descendants stopped, cache snapshots stable through3.2s after return. Finite observation does not prove all arbitrary detached children or kernel quiescence.",
+        "timeout_observed": true
+      },
       "manifest_sha256": "5fecc32c2c44dc68a5ebf110cf94e0ac5ec2be1c187d4c09f4162fc3a4c36c1e",
-      "execution": "success",
-      "verdict": "supports",
+      "run_id": "20261010T170900Z-compiler-artifact-limit-quiescence-e35ca1a9",
       "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
       "facts": {
         "all_detached_stable": true,
         "artifact_limit_observed": true,
@@ -1055,29 +1086,14 @@
         "detached_controls": 2,
         "scope": "Observed owned descendants stopped, cache snapshots stable through3.2s after return. Finite observation does not prove all arbitrary detached children or kernel quiescence.",
         "timeout_observed": true
-      }
-    },
-    {
-      "run_id": "20261010T170930Z-compiler-artifact-limit-quiescence-3cc3f7a5",
+      },
       "manifest_sha256": "d6342c84b9b91abf21d1ff126e579108188273e88b569f9855705806553ceb24",
-      "execution": "success",
-      "verdict": "supports",
+      "run_id": "20261010T170930Z-compiler-artifact-limit-quiescence-3cc3f7a5",
       "seal_valid": true,
-      "facts": {
-        "all_detached_stable": true,
-        "artifact_limit_observed": true,
-        "compiler_artifact_limit_observed": true,
-        "compiler_cache_stable": true,
-        "detached_controls": 2,
-        "scope": "Observed owned descendants stopped, cache snapshots stable through3.2s after return. Finite observation does not prove all arbitrary detached children or kernel quiescence.",
-        "timeout_observed": true
-      }
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
-      "manifest_sha256": "25c6ffa5b18e4fed6c4cb61ac436fa9e0574612c999e680fc8f450fa0bafb6ff",
       "execution": "success",
-      "verdict": "supports",
       "facts": {
         "all_allocations_equal": true,
         "all_invalid_unchanged": true,
@@ -1106,13 +1122,13 @@
         "v8": "13.6.233.17-node.51",
         "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
         "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
-      }
+      },
+      "manifest_sha256": "25c6ffa5b18e4fed6c4cb61ac436fa9e0574612c999e680fc8f450fa0bafb6ff",
+      "run_id": "20261010T171711Z-portable-alpha-rendering-control-caa5e2b2",
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
-      "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
       "execution": "success",
-      "verdict": "supports",
       "facts": {
         "all_allocations_equal": true,
         "all_invalid_unchanged": true,
@@ -1141,13 +1157,40 @@
         "v8": "13.6.233.17-node.51",
         "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
         "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
-      }
+      },
+      "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+      "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+      "execution": "success",
+      "facts": {
+        "allocation_bytes": 589824,
+        "browser_frames": 36,
+        "browser_repeats": 2,
+        "canvas_bytes": 22032,
+        "invalid_bytes": 2359296,
+        "native_bytes": 9792,
+        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
+        "server_cleanup": true,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      },
       "manifest_sha256": "cf62cae1d3469c13bdb6f5701ae114da11029d4ecc37cab0d72abf51b38dc792",
+      "run_id": "20261010T172702Z-portable-alpha-browser-readback-bacf7c1e",
+      "server_cleanup": {
+        "closed": true,
+        "errors": [],
+        "thread_stopped": true
+      },
+      "source_anchor": {
+        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
+        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
+      },
+      "verdict": "supports"
+    },
+    {
       "execution": "success",
-      "verdict": "supports",
       "facts": {
         "allocation_bytes": 589824,
         "browser_frames": 36,
@@ -1159,33 +1202,8 @@
         "server_cleanup": true,
         "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
       },
-      "server_cleanup": {
-        "closed": true,
-        "errors": [],
-        "thread_stopped": true
-      },
-      "source_anchor": {
-        "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
-        "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
-        "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
-      }
-    },
-    {
-      "run_id": "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d",
       "manifest_sha256": "cff14ea23624091e80ee268c8487d2b9dee4a48c3a4e4fc2b198e4ea3c31fae6",
-      "execution": "success",
-      "verdict": "supports",
-      "facts": {
-        "allocation_bytes": 589824,
-        "browser_frames": 36,
-        "browser_repeats": 2,
-        "canvas_bytes": 22032,
-        "invalid_bytes": 2359296,
-        "native_bytes": 9792,
-        "scope": "Actual macOS in-app browser anchored alpha WASM; alpha-enabled sRGB Canvas2D straight readback. Eight native cases, remaining model controls. No source frontend, arbitrary colors/linear modes/Canvas wire/platform/cost claim.",
-        "server_cleanup": true,
-        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
-      },
+      "run_id": "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d",
       "server_cleanup": {
         "closed": true,
         "errors": [],
@@ -1195,13 +1213,61 @@
         "manifest_sha256": "ed45a9708266d9e670605d12a1984f75343e8173bcc3b0a4f6a12e1c09b00a56",
         "module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
         "run_id": "20261010T171800Z-portable-alpha-rendering-control-8b44b123"
-      }
+      },
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T173707Z-portable-alpha-linux-execution-d49eafb7",
+      "execution": "success",
+      "facts": {
+        "allocation_bytes": 1769472,
+        "architecture": "aarch64",
+        "checker_controls": 32,
+        "cross_host_bytes": 1769472,
+        "existing_containers_preserved": true,
+        "frames": 108,
+        "host_system": "Linux",
+        "imports": 0,
+        "invalid_bytes": 196608,
+        "invalid_requests": 12,
+        "kernel": "6.8.0-100-generic",
+        "mutation_controls": 24,
+        "native_bytes": 9792,
+        "owned_cleanup_verified": true,
+        "runtime": "Wasmtime49.0.0",
+        "scope": "Exact pinned alpha WASM on Linux ARM64 in existing Colima VM/Apple hardware, full native/model/padding/tail allocations. macOS compilation retained. No Linux source frontend, independent non-Apple hardware, Windows, Canvas wire or cost claim."
+      },
+      "host_identity": {
+        "architecture": "aarch64",
+        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
+        "fuel_per_call": 10000000,
+        "host_system": "Linux",
+        "kernel": "6.8.0-100-generic",
+        "memory_limit_bytes": 131072,
+        "python": "3.12.3",
+        "renderer_module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
+        "wasmtime": "49.0.0"
+      },
       "manifest_sha256": "39df85bafbccadd5c7ee147c1b4fa0bc789317f55062d47beb87e7a70c831cdd",
+      "ownership": {
+        "existing_count": 2,
+        "existing_preserved": true,
+        "owned_container_absent": true
+      },
+      "run_id": "20261010T173707Z-portable-alpha-linux-execution-d49eafb7",
+      "runtime_identity": {
+        "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
+        "wheel_identity": {
+          "bytes": 8853040,
+          "url": "https://files.pythonhosted.org/packages/9c/f4/7889eb2fdbb11423e61f442af218441e0ae5749452bf8d2c1ade4ce630c5/wasmtime-49.0.0-py3-none-manylinux2014_aarch64.whl",
+          "version": "49.0.0",
+          "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
+        },
+        "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
+      },
+      "verdict": "supports"
+    },
+    {
       "execution": "success",
-      "verdict": "supports",
       "facts": {
         "allocation_bytes": 1769472,
         "architecture": "aarch64",
@@ -1221,66 +1287,23 @@
         "scope": "Exact pinned alpha WASM on Linux ARM64 in existing Colima VM/Apple hardware, full native/model/padding/tail allocations. macOS compilation retained. No Linux source frontend, independent non-Apple hardware, Windows, Canvas wire or cost claim."
       },
       "host_identity": {
-        "host_system": "Linux",
         "architecture": "aarch64",
-        "kernel": "6.8.0-100-generic",
-        "python": "3.12.3",
-        "wasmtime": "49.0.0",
+        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
         "fuel_per_call": 10000000,
+        "host_system": "Linux",
+        "kernel": "6.8.0-100-generic",
         "memory_limit_bytes": 131072,
+        "python": "3.12.3",
         "renderer_module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
-        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc"
+        "wasmtime": "49.0.0"
       },
-      "runtime_identity": {
-        "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
-        "wheel_identity": {
-          "bytes": 8853040,
-          "url": "https://files.pythonhosted.org/packages/9c/f4/7889eb2fdbb11423e61f442af218441e0ae5749452bf8d2c1ade4ce630c5/wasmtime-49.0.0-py3-none-manylinux2014_aarch64.whl",
-          "version": "49.0.0",
-          "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
-        },
-        "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
-      },
-      "ownership": {
-        "existing_count": 2,
-        "existing_preserved": true,
-        "owned_container_absent": true
-      }
-    },
-    {
-      "run_id": "20261010T173752Z-portable-alpha-linux-execution-189daf75",
       "manifest_sha256": "ce7de6160e1fab7cfc545f24c67d5481c0c94f5a781668bf236f86951f219ad1",
-      "execution": "success",
-      "verdict": "supports",
-      "facts": {
-        "allocation_bytes": 1769472,
-        "architecture": "aarch64",
-        "checker_controls": 32,
-        "cross_host_bytes": 1769472,
-        "existing_containers_preserved": true,
-        "frames": 108,
-        "host_system": "Linux",
-        "imports": 0,
-        "invalid_bytes": 196608,
-        "invalid_requests": 12,
-        "kernel": "6.8.0-100-generic",
-        "mutation_controls": 24,
-        "native_bytes": 9792,
-        "owned_cleanup_verified": true,
-        "runtime": "Wasmtime49.0.0",
-        "scope": "Exact pinned alpha WASM on Linux ARM64 in existing Colima VM/Apple hardware, full native/model/padding/tail allocations. macOS compilation retained. No Linux source frontend, independent non-Apple hardware, Windows, Canvas wire or cost claim."
+      "ownership": {
+        "existing_count": 2,
+        "existing_preserved": true,
+        "owned_container_absent": true
       },
-      "host_identity": {
-        "host_system": "Linux",
-        "architecture": "aarch64",
-        "kernel": "6.8.0-100-generic",
-        "python": "3.12.3",
-        "wasmtime": "49.0.0",
-        "fuel_per_call": 10000000,
-        "memory_limit_bytes": 131072,
-        "renderer_module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
-        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc"
-      },
+      "run_id": "20261010T173752Z-portable-alpha-linux-execution-189daf75",
       "runtime_identity": {
         "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
         "wheel_identity": {
@@ -1291,17 +1314,10 @@
         },
         "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
       },
-      "ownership": {
-        "existing_count": 2,
-        "existing_preserved": true,
-        "owned_container_absent": true
-      }
+      "verdict": "supports"
     },
     {
-      "run_id": "20261010T173913Z-portable-alpha-linux-execution-af34f703",
-      "manifest_sha256": "6c0a5f5287df9120f924e034c4c83d1427040eb13a88a6cb9aa25a15ab84fc2c",
       "execution": "success",
-      "verdict": "supports",
       "facts": {
         "allocation_bytes": 1769472,
         "architecture": "aarch64",
@@ -1321,16 +1337,23 @@
         "scope": "Exact pinned alpha WASM on Linux ARM64 in existing Colima VM/Apple hardware, full native/model/padding/tail allocations. macOS compilation retained. No Linux source frontend, independent non-Apple hardware, Windows, Canvas wire or cost claim."
       },
       "host_identity": {
-        "host_system": "Linux",
         "architecture": "aarch64",
-        "kernel": "6.8.0-100-generic",
-        "python": "3.12.3",
-        "wasmtime": "49.0.0",
+        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc",
         "fuel_per_call": 10000000,
+        "host_system": "Linux",
+        "kernel": "6.8.0-100-generic",
         "memory_limit_bytes": 131072,
+        "python": "3.12.3",
         "renderer_module_sha256": "be573d736b6f3df3f71d2c338774f9613d0150211bb0f21f04add182ab3fbe4d",
-        "checker_module_sha256": "b223d9bd6df645605743a3a37e8c04f5223768a26e926d3b3abd6a5311ef97cc"
+        "wasmtime": "49.0.0"
       },
+      "manifest_sha256": "6c0a5f5287df9120f924e034c4c83d1427040eb13a88a6cb9aa25a15ab84fc2c",
+      "ownership": {
+        "existing_count": 2,
+        "existing_preserved": true,
+        "owned_container_absent": true
+      },
+      "run_id": "20261010T173913Z-portable-alpha-linux-execution-af34f703",
       "runtime_identity": {
         "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
         "wheel_identity": {
@@ -1341,11 +1364,19 @@
         },
         "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f"
       },
-      "ownership": {
-        "existing_count": 2,
-        "existing_preserved": true,
-        "owned_container_absent": true
-      }
+      "verdict": "supports"
+    },
+    {
+      "manifest_sha256": "221d6d34d28f548f1a1b50ff32e7a6928699aee9d0b6ef0efe21d469432a344e",
+      "run_id": "20261010T174920Z-native-mixed-alpha-oracle-5fbe2a53"
+    },
+    {
+      "manifest_sha256": "61149f693416489e588210b3b2f1b8a2e226b052e460778915e4167ee2f2117f",
+      "run_id": "20261010T175037Z-native-mixed-alpha-even-holdouts-cdfa8876"
+    },
+    {
+      "manifest_sha256": "b485e3308ecc51e40ff3fec873d08dd43446e927cc1dadede14c5b5cdaa3248d",
+      "run_id": "20261010T175120Z-native-mixed-alpha-oracle-3f194451"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -1357,19 +1388,5 @@
     "cleanup_target_artifact": "workspace-lifecycle.json",
     "close_owned_workspace_when_finished": true,
     "verify_zero_owned_windows": true
-  },
-  "last_work": {
-    "checkpoint": "Actual Linux alpha WASM",
-    "issues": [
-      "F2"
-    ],
-    "state": "open"
-  },
-  "quarantined_evidence": [
-    {
-      "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61",
-      "reason": "Artifact-limit compiler-cache files changed after sealing; evidence invalid, retained but excluded from claims.",
-      "next": "Discriminate compiler subprocess group/termination and cache quiescence using owned control."
-    }
-  ]
+  }
 }

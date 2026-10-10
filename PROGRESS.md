@@ -410,3 +410,7 @@ Two sealed browser campaigns/two fresh loads each execute exact anchored owned s
 ### 2026-10-10: actual Linux alpha boundary
 
 [Linux alpha control](docs/reverse-engineering/2026-10-10-linux-alpha.md) matches324 fresh full allocations in three campaigns:5,308,416 independent bytes and the same extents cross-host,589,824 invalid bytes,29,376 native bytes.96 checker cases/72 mutations;262 tests. Offline owned containers removed, existing containers preserved. macOS compilation and Apple-hosted Linux VM disclosed. Next native mixed-color alpha oracle; F2 and both milestones remain open.
+
+### 2026-10-10: native mixed-color alpha counterexamples
+
+[Mixed-alpha boundary](docs/reverse-engineering/2026-10-10-native-mixed-alpha.md) repeats68 captures/41,616 RGBA bytes. Two independent campaigns discriminate three predeclared formulas; a revised ties-to-even model matches original cases but fails every new half-tie holdout pair. All failures and seals retained;266 tests. Portable subset unchanged. Next raw CGImage/Color precision versus export boundary; native Canvas and both milestones remain open.
