@@ -1,0 +1,65 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "run_id": "20261010T032332Z-owned-surface-explicit-name-reuse-d3465602",
+      "manifest_sha256": "d7da8c93cfb95143dbafa80e32df6877ce128577ab785e1886f4b3a1407c5f1b",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261010T034201Z-owned-surface-explicit-name-reuse-f8d5c901",
+      "manifest_sha256": "52feedf59ccbb85e11f35e86e1b0f66d0e4e3dadc60bb4b4a00ac9940f0fe2fd",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261010T035833Z-owned-surface-explicit-name-reuse-1ebec83e",
+      "manifest_sha256": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261010T040524Z-owned-surface-bounded-name-churn-46cd410c",
+      "manifest_sha256": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd",
+      "execution": "success",
+      "verdict": "inconclusive"
+    },
+    {
+      "run_id": "20261010T042203Z-owned-surface-bounded-name-churn-567f95c6",
+      "manifest_sha256": "b1ca78aabe925951aaeba7bd5057decdbec645daa86435707e0417640526e979",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_cases": 4,
+        "repeat_equal_cases": 4,
+        "compared_bytes": 393216,
+        "exact_name_reuse": 13,
+        "index_reuse": 1024,
+        "scope": "Owned task-local 128 sequential replacement send-right create/lookups/deallocations per execution; full CPU allocations including padding/tail. Numeric index is name>>8 observation, no arbitrary reuse guarantee, Canvas transport, GPU race or physical reclamation."
+      }
+    },
+    {
+      "run_id": "20261010T043856Z-owned-surface-bounded-name-churn-repeat-5ea51600",
+      "manifest_sha256": "a8feb4d0724d862e6f5f980aa59112235116cf6ff95f2c369e80bb3890d5c84d",
+      "execution": "success",
+      "verdict": "supports",
+      "facts": {
+        "verified_cases": 4,
+        "repeat_equal_cases": 4,
+        "compared_bytes": 393216,
+        "exact_name_reuse": 15,
+        "index_reuse": 1024,
+        "scope": "Owned task-local 128 sequential replacement send-right create/lookups/deallocations per execution; full CPU allocations including padding/tail. Numeric index is name>>8 observation, no arbitrary reuse guarantee, Canvas transport, GPU race or physical reclamation."
+      }
+    }
+  ],
+  "tests": 232,
+  "limitations": [
+    "Owned CPU-written single-plane BGRA surfaces in one task; no Canvas wire or peer lifetime measurement.",
+    "Explicit rename returned -303 (bad request message ID); no supported forced rename route established.",
+    "128 sequential replacement send rights per execution; numeric index=name>>8 observation only. Arbitrary generation policy, interleaving, cross-process and resource reclamation remain unproved.",
+    "Three complete allocations per execution include padding and unused allocation tail. The stale_base64 field holds final valid replacement-name lookup bytes; each churn stale lookup is checked by resource ID, not per-event pixel snapshot."
+  ],
+  "implementation_guidance": "Never treat retired raw Mach numeric name as durable resource identity. Retain owned rights through intended reads and bind producer-issued generation/session identifiers; such identifiers are reconstruction policy, not recovered Canvas protocol."
+}

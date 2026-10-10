@@ -3304,6 +3304,56 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "owned-surface-bounded-name-churn",
+      "adapter": "surface_reuse",
+      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "name_reuse_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        }
+      ]
+    },
+    {
+      "id": "owned-surface-bounded-name-churn-repeat",
+      "adapter": "surface_reuse",
+      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "name_reuse_control": true
+      },
+      "priority": 100,
+      "checks": [
+        {
+          "path": "verified_cases",
+          "equals": 4
+        },
+        {
+          "path": "repeat_equal_cases",
+          "equals": 4
+        }
+      ]
     }
   ],
   "version": 1

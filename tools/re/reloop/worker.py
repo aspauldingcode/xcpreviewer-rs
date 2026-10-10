@@ -235,6 +235,9 @@ def perform(kind,out,p):
     if kind=='surface_payload':
         from reloop.surfacepayload import recover
         return recover(out,p.get('payload','IOSurfacePayload'))
+    if kind=='surface_reuse' and p.get('name_reuse_control',False):
+        from reloop.namereuse import corpus
+        return corpus(out)
     if kind=='surface_reuse':
         from reloop.surfacereuse import corpus
         return corpus(out)

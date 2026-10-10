@@ -152,19 +152,29 @@
       "fingerprint": "linux-wasm-adapter-missing-campaign-schema",
       "status": "resolved-schema-sync",
       "retry_prerequisite": "Added linux_wasm enum to campaign schema; full227-test suite passes. Native Linux controls had already passed; suite failure retained separately."
+    },
+    {
+      "fingerprint": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b",
+      "status": "unsupported-observed-route",
+      "retry_prerequisite": "Explicit mach_port_rename returns -303 on this kernel; no unchanged retries. Bounded natural send-name churn replaces forced route."
+    },
+    {
+      "fingerprint": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd",
+      "status": "resolved",
+      "retry_prerequisite": "Native cleanup flags cast to BOOL; strict verifier rejected integer flags, corrected two accepted seals."
     }
   ],
-  "last_completed": "Verified exact anchored owned source WASM on actual Linux ARM64 Wasmtime49 in existing Colima VM, preserving user container. Direct full allocation819,200 bytes,16 invalid requests3,276,800 allocation bytes,614,432 cross-host pixel bytes and40 diagnostic controls pass with zero imports. Two accepted seals;227 tests after retained/synchronized adapter schema failure.27 adapters/19 MCP tools. Narrow Linux execution only; source compiler macOS, no general SwiftUI/Canvas/browser/performance claim.",
+  "last_completed": "Two accepted bounded native name-churn campaigns:28 exact retired-name aliases resolve distinct replacement IOSurface IDs across2,048 send-right lifecycles;786,432 complete allocation bytes including padding/tail, references and name cleanup pass.232 tests; six seals including four inconclusive outcomes retained. No Canvas wire/GPU/final reclamation claim.",
   "last_github_sync": {
-    "date_utc": "2026-10-10",
-    "checkpoint": "Owned Linux source WASM execution",
+    "checkpoint": "Bounded native stale-name aliasing",
     "issues": [
-      "F2"
+      "R1",
+      "R2"
     ],
     "state": "open"
   },
   "next_actions": [
-    "Narrow source-module Linux execution now proven. Select the next required gate: reviewed broader source subset with independent native holdouts, Linux source compilation, browser execution, or a discriminating owned native resource lifecycle experiment. Preserve full SwiftUI/Canvas contract distinctions; do not repeat unchanged private-runtime attach or REA import blockers.",
+    "Owned bounded Mach name churn proves exact retired names can resolve replacement resources. Next discriminate delayed-consumer protection with owned retained-right/generation controls or resume changed native capture instrumentation. Raw numeric name, frame generation and physical reclamation remain distinct; preserve failed rename and serialization seals.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -868,6 +878,36 @@
       "path": "research/evidence/linux-source-wasm-2026-10-10.json",
       "run_id": "20261010T003849Z-portable-linux-owned-wasm-9771a1ae",
       "manifest_sha256": "6c58326d7da83d7312e7cd4326d1f78566fe71afd33e99673e62ef8a0f4cc8ed"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T032332Z-owned-surface-explicit-name-reuse-d3465602",
+      "manifest_sha256": "d7da8c93cfb95143dbafa80e32df6877ce128577ab785e1886f4b3a1407c5f1b"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T034201Z-owned-surface-explicit-name-reuse-f8d5c901",
+      "manifest_sha256": "52feedf59ccbb85e11f35e86e1b0f66d0e4e3dadc60bb4b4a00ac9940f0fe2fd"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T035833Z-owned-surface-explicit-name-reuse-1ebec83e",
+      "manifest_sha256": "084a8d844254e1c929825e8deef6901f1e44eaf8a61236e0b0ebe39af4626c5b"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T040524Z-owned-surface-bounded-name-churn-46cd410c",
+      "manifest_sha256": "0582914c105bad2b8bd0c8b0e23cfd0ce5211528eace5ae8aa7b9b415fb3badd"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T042203Z-owned-surface-bounded-name-churn-567f95c6",
+      "manifest_sha256": "b1ca78aabe925951aaeba7bd5057decdbec645daa86435707e0417640526e979"
+    },
+    {
+      "path": "research/evidence/surface-name-churn-2026-10-10.json",
+      "run_id": "20261010T043856Z-owned-surface-bounded-name-churn-repeat-5ea51600",
+      "manifest_sha256": "a8feb4d0724d862e6f5f980aa59112235116cf6ff95f2c369e80bb3890d5c84d"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -879,5 +919,13 @@
     "cleanup_target_artifact": "workspace-lifecycle.json",
     "close_owned_workspace_when_finished": true,
     "verify_zero_owned_windows": true
+  },
+  "last_work": {
+    "checkpoint": "Bounded native Mach name churn",
+    "issues": [
+      "R1",
+      "R2"
+    ],
+    "state": "open"
   }
 }
