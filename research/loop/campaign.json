@@ -4507,6 +4507,88 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-primary-source-subset",
+      "adapter": "portable_solid",
+      "hypothesis": "Whole-expression bounded primary-layer ZStack.frame parser rejects unsupported source; source-to-C-to-saved LLVM IR-to-import-free WASM preserves explicit premultiplied callback-target contract. Native holdout prefix, full allocations, repeat/whitespace module identities, two interpreters and corruption/no-write controls.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 32,
+      "params": {
+        "primary_source_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "source_modules",
+          "equals": 16
+        },
+        {
+          "path": "all_allocations_equal",
+          "equals": true
+        },
+        {
+          "path": "all_native_equal",
+          "equals": true
+        },
+        {
+          "path": "all_invalid_unchanged",
+          "equals": true
+        },
+        {
+          "path": "imports",
+          "equals": 0
+        },
+        {
+          "path": "repeat_ir_equal",
+          "equals": true
+        },
+        {
+          "path": "repeat_module_equal",
+          "equals": true
+        },
+        {
+          "path": "second_runtime_passed",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "portable-primary-source-separators",
+      "adapter": "portable_solid",
+      "hypothesis": "Independent owned Swift frontend parse-only controls discriminate missing expression separators; bounded subset must reject same invalid inputs without claiming semantic Swift typechecking.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 45,
+      "artifact_limit_mb": 2,
+      "params": {
+        "primary_syntax_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "native_valid_controls",
+          "equals": 1
+        },
+        {
+          "path": "native_invalid_controls",
+          "equals": 3
+        },
+        {
+          "path": "all_syntax_agree",
+          "equals": true
+        },
+        {
+          "path": "subset_invalid_rejected",
+          "equals": 3
+        }
+      ]
     }
   ],
   "version": 1

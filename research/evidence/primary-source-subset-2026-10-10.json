@@ -1,0 +1,89 @@
+{
+  "date_utc": "2026-10-10",
+  "runs": [
+    {
+      "execution": "success",
+      "facts": {
+        "all_allocations_equal": true,
+        "all_invalid_unchanged": true,
+        "all_native_equal": true,
+        "allocation_bytes": 1048576,
+        "diagnostic_holdouts": 19,
+        "frames": 64,
+        "imports": 0,
+        "invalid_requests": 64,
+        "native_frames": 28,
+        "native_target_bytes": 20160,
+        "repeat_ir_equal": true,
+        "repeat_module_equal": true,
+        "scope": "Strict ASCII primary-layer ZStack.frame expression subset lowered through C and saved LLVM IR to WASM; explicit premultiplied callback-target contract, V8/WasmKit macOS. Native getter/PNG differs. No Swift compiler, arbitrary SwiftUI, Linux source-module execution, browser or Canvas transport claim.",
+        "second_runtime_cases": 160,
+        "second_runtime_passed": true,
+        "source_modules": 16
+      },
+      "manifest_sha256": "4dae9bfa36deeffdf591aa78dbed478482dea9b2e0423969dc37ee7b05034d8e",
+      "run_id": "20261010T191558Z-portable-primary-source-subset-004a4903",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_syntax_agree": false,
+        "native_invalid_controls": 3,
+        "native_valid_controls": 1,
+        "scope": "Owned Swift frontend parse-only separator controls versus strict expression parser; no typechecking, LLVM execution or native Canvas evidence.",
+        "subset_invalid_rejected": 0
+      },
+      "manifest_sha256": "0486897dfecfb1cc92c4c086dc1dd1b3300070f401a4c4007898c8c3205401b7",
+      "run_id": "20261010T191727Z-portable-primary-source-separators-af88f188",
+      "seal_valid": true,
+      "verdict": "inconclusive"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_syntax_agree": true,
+        "native_invalid_controls": 3,
+        "native_valid_controls": 1,
+        "scope": "Owned Swift frontend parse-only separator controls versus strict expression parser; no typechecking, LLVM execution or native Canvas evidence.",
+        "subset_invalid_rejected": 3
+      },
+      "manifest_sha256": "fe8dfb73bbb39a1f682e96c35e65320eff96c094f3212d22c04e26694a765135",
+      "run_id": "20261010T191744Z-portable-primary-source-separators-316163f0",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_allocations_equal": true,
+        "all_invalid_unchanged": true,
+        "all_native_equal": true,
+        "allocation_bytes": 1048576,
+        "diagnostic_holdouts": 22,
+        "frames": 64,
+        "imports": 0,
+        "invalid_requests": 64,
+        "native_frames": 28,
+        "native_target_bytes": 20160,
+        "repeat_ir_equal": true,
+        "repeat_module_equal": true,
+        "scope": "Strict ASCII primary-layer ZStack.frame expression subset lowered through C and saved LLVM IR to WASM; explicit premultiplied callback-target contract, V8/WasmKit macOS. Native getter/PNG differs. No Swift compiler, arbitrary SwiftUI, Linux source-module execution, browser or Canvas transport claim.",
+        "second_runtime_cases": 160,
+        "second_runtime_passed": true,
+        "source_modules": 16
+      },
+      "manifest_sha256": "45f7ac0b391eb74b2580209a237e231ee77d55be31c2857129c14137d69b3f88",
+      "run_id": "20261010T191804Z-portable-primary-source-subset-811cf568",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Strict custom primary-layer expression parser and C/LLVM/WASM lowerer. Separator gap independently falsified/fixed; all seals valid. Premultiplied native callback-target contract, not native getter/PNG, general Swift compiler or Canvas equivalence.",
+  "toolchain_hashes_unchanged_from_pinned_portable_layers": {
+    "clang": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+    "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
+    "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
+  }
+}

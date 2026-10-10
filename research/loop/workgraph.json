@@ -298,6 +298,14 @@
       "scope": "Existing actual Linux Wasmtime execution of pinned primary-layer WASM module/checker with full native-prefix and independent buffer/tail/invalid/fault controls. Explicit callback contract, no PNG or SwiftUI/Canvas equivalence."
     },
     {
+      "completion_experiment_ids": [
+        "portable-primary-source-subset",
+        "portable-primary-source-separators"
+      ],
+      "completion_runs": [
+        "20261010T191744Z-portable-primary-source-separators-316163f0",
+        "20261010T191804Z-portable-primary-source-subset-811cf568"
+      ],
       "id": "portable-primary-source-subset",
       "issue": "F1",
       "priority": 95,
@@ -305,6 +313,15 @@
         "20261010T190443Z-linux-primary-layer-control-86feb1b8"
       ],
       "scope": "Strict declared primary-color layer source-to-IR subset and native callback-target full-allocation conformance, reject unsupported source, retain getter/PNG difference; no arbitrary SwiftUI or Canvas protocol inference."
+    },
+    {
+      "id": "linux-primary-source-subset",
+      "issue": "F1",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T191804Z-portable-primary-source-subset-811cf568"
+      ],
+      "scope": "Actual Linux execution of pinned primary-layer source-derived standalone/checker modules with full native callback-target and independent allocations, no-write/fault controls. Native getter/PNG differs; not a Linux Swift frontend or Canvas compatibility claim."
     }
   ],
   "schema_version": 1

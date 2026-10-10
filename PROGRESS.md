@@ -456,3 +456,9 @@ Portable primary-layer callback-target control:320 fresh V8 instances/5,242,880 
 Actual Linux ARM64 Wasmtime49 primary-layer execution:320 complete allocations/5,242,880 independent bytes plus same extent cross-host equality;80 full native-prefix comparisons/57,600 reused native target bytes;17 invalid requests/278,528 unchanged bytes.200 native checker controls including160 channel/alpha/padding/tail faults. Both semantic mutants rejected;all80 per-case counts match anchored V8. Owned containers removed,two existing containers preserved. Getter/PNG differences remain;no Canvas/SwiftUI equivalence.
 
 301 tests pass. Evidence: [Linux primary layers](docs/reverse-engineering/2026-10-10-linux-primary-layers.md). Both milestones remain open.
+
+## 2026-10-10 — strict primary-layer source subset
+
+Strict primary-layer ZStack.frame source-to-C-to-saved LLVM IR-to-WASM:16 modules,64 full V8 frames/1,048,576 bytes,28 native-prefix comparisons/20,160 target bytes,64 no-write invalid requests,160 baseline/fault cases per interpreter. Repeat/whitespace IR and module bytes equal. Swift parse-only oracle exposed3 missing-separator acceptances; retained inconclusive seal, enforced newline/semicolon separators, fixed oracle agreement and22 diagnostic holdouts. Final complete pipeline supports;getter/PNG/Canvas distinctions retained.
+
+304 tests pass. Evidence: [primary-layer source subset](docs/reverse-engineering/2026-10-10-primary-source-subset.md). Both milestones remain open.
