@@ -3727,6 +3727,59 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-alpha-linux-execution",
+      "adapter": "linux_wasm",
+      "hypothesis": "Exact pinned alpha modules execute offline on existing Linux ARM64 Wasmtime; full native/model/cross-host allocations, invalid requests and independent checker mutations agree, owned-container cleanup preserves existing inventory.",
+      "depends_on": [],
+      "resources": [
+        "local-linux-vm"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 16,
+      "params": {
+        "alpha_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "frames",
+          "equals": 108
+        },
+        {
+          "path": "allocation_bytes",
+          "equals": 1769472
+        },
+        {
+          "path": "cross_host_bytes",
+          "equals": 1769472
+        },
+        {
+          "path": "native_bytes",
+          "equals": 9792
+        },
+        {
+          "path": "invalid_requests",
+          "equals": 12
+        },
+        {
+          "path": "invalid_bytes",
+          "equals": 196608
+        },
+        {
+          "path": "checker_controls",
+          "equals": 32
+        },
+        {
+          "path": "owned_cleanup_verified",
+          "equals": true
+        },
+        {
+          "path": "existing_containers_preserved",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1

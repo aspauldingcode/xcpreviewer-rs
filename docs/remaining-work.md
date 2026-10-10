@@ -190,3 +190,7 @@ The [delivery/research graph](reverse-engineering/2026-10-10-graph-loop.md) sepa
 ### 2026-10-10: actual browser alpha boundary
 
 [Browser alpha control](reverse-engineering/2026-10-10-browser-alpha.md) compares72 frames across four actual page loads:1,179,648 complete baseline bytes,4,718,592 invalid bytes,44,064 Canvas2D bytes,19,584 native bytes.259 tests; owned tabs/servers closed. Primary-red alpha and red-over-blue only; opaque source parser unchanged. Next actual Linux alpha execution; both milestones remain open.
+
+### 2026-10-10: actual Linux alpha boundary
+
+[Linux alpha control](reverse-engineering/2026-10-10-linux-alpha.md) matches324 fresh full allocations in three campaigns:5,308,416 independent bytes and the same extents cross-host,589,824 invalid bytes,29,376 native bytes.96 checker cases/72 mutations;262 tests. Offline owned containers removed, existing containers preserved. macOS compilation and Apple-hosted Linux VM disclosed. Next native mixed-color alpha oracle; F2 and both milestones remain open.

@@ -24,12 +24,7 @@ def cleanup_owned(name, owner, out):
     if remaining.returncode or remaining.stdout.strip():raise ValueError('Owned Linux container cleanup unverified')
 
 
-def corpus(out):
-    out = pathlib.Path(out)
-    anchor = Controller(root=PROJECT_ROOT).verify(RUN, ANCHOR)
-    if not anchor['valid']:raise ValueError('Source/interpreter evidence anchor mismatch')
-    atomic(out / 'source-anchor.json', anchor)
-    staging = PROJECT_ROOT / 'research/build/linux-wasmtime'
+def verify_runtime(staging):
     if digest(staging / 'wasmtime-49.0.0.whl') != WHEEL:raise ValueError('Pinned Linux wheel hash mismatch')
     # Verify extracted files against the wheel, so wheel identity alone cannot hide changes.
     import zipfile
@@ -42,6 +37,14 @@ def corpus(out):
             if entry.is_dir():continue
             if (staging / 'package' / entry.filename).read_bytes() != archive.read(entry):
                 raise ValueError('Extracted Linux runtime changed')
+
+def corpus(out):
+    out = pathlib.Path(out)
+    anchor = Controller(root=PROJECT_ROOT).verify(RUN, ANCHOR)
+    if not anchor['valid']:raise ValueError('Source/interpreter evidence anchor mismatch')
+    atomic(out / 'source-anchor.json', anchor)
+    staging = PROJECT_ROOT / 'research/build/linux-wasmtime'
+    verify_runtime(staging)
     owner = uuid.uuid4().hex
     name = 'xcpreviewer-linux-' + owner[:12]
     evidence = PROJECT_ROOT / 'research/runs' / RUN / 'output'

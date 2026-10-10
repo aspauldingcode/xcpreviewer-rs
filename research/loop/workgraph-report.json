@@ -277,10 +277,10 @@
       ]
     },
     {
-      "id": "portable-alpha-linux-execution",
+      "id": "native-mixed-alpha-oracle",
       "kind": "research",
       "state": "ready",
-      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim."
+      "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance."
     },
     {
       "id": "native-correlated-capture",
@@ -317,6 +317,12 @@
       "kind": "research",
       "state": "complete",
       "scope": "Actual browser alpha module and Canvas2D straight RGBA readback; native holdouts plus full allocations; not source compilation/general SwiftUI or Canvas wire."
+    },
+    {
+      "id": "portable-alpha-linux-execution",
+      "kind": "research",
+      "state": "complete",
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim."
     },
     {
       "id": "portable-alpha-rendering-control",
@@ -548,8 +554,8 @@
       "kind": "acceptance-prerequisite"
     },
     {
-      "from": "portable-alpha-linux-execution",
-      "to": "F2",
+      "from": "native-mixed-alpha-oracle",
+      "to": "O3",
       "kind": "research-assists"
     },
     {
@@ -579,6 +585,11 @@
     },
     {
       "from": "portable-alpha-browser-readback",
+      "to": "F2",
+      "kind": "research-assists"
+    },
+    {
+      "from": "portable-alpha-linux-execution",
       "to": "F2",
       "kind": "research-assists"
     },
@@ -623,20 +634,20 @@
   ],
   "research_frontier": [
     {
-      "id": "portable-alpha-linux-execution",
-      "issue": "F2",
+      "id": "native-mixed-alpha-oracle",
+      "issue": "O3",
       "priority": 95,
-      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim.",
+      "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance.",
       "requires_runs": [
-        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
         "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
       ],
       "state": "ready",
       "missing_evidence": [],
       "blocker": null,
-      "unlocks_delivery_nodes": 14,
+      "unlocks_delivery_nodes": 19,
       "acceptance_dependencies_unmet": [
-        "F1"
+        "O2"
       ]
     },
     {
@@ -770,6 +781,31 @@
       ]
     },
     {
+      "id": "portable-alpha-linux-execution",
+      "issue": "F2",
+      "priority": 95,
+      "scope": "Actual existing Linux host of pinned alpha module, complete native/model/padding/tail allocations, no source compiler/Windows/Canvas wire claim.",
+      "requires_runs": [
+        "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+      ],
+      "completion_runs": [
+        "20261010T173707Z-portable-alpha-linux-execution-d49eafb7",
+        "20261010T173752Z-portable-alpha-linux-execution-189daf75",
+        "20261010T173913Z-portable-alpha-linux-execution-af34f703"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-linux-execution"
+      ],
+      "state": "complete",
+      "missing_evidence": [],
+      "blocker": null,
+      "unlocks_delivery_nodes": 14,
+      "acceptance_dependencies_unmet": [
+        "F1"
+      ]
+    },
+    {
       "id": "portable-alpha-rendering-control",
       "issue": "F2",
       "priority": 95,
@@ -816,7 +852,7 @@
       ]
     }
   ],
-  "next_task": "portable-alpha-linux-execution",
+  "next_task": "native-mixed-alpha-oracle",
   "quarantined_runs": [
     "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
   ],

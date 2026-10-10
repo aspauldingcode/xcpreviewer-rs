@@ -34,6 +34,9 @@ def ghidra_config():
 def perform(kind,out,p):
     xcode=p.get('xcode','/Applications/Xcode.app')
     image=p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')
+    if kind=='linux_wasm' and p.get('alpha_control',False):
+        from reloop.linuxalpha import corpus
+        return corpus(out)
     if kind=='linux_wasm':
         from reloop.linuxwasm import corpus
         return corpus(out)

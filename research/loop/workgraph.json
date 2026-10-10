@@ -124,6 +124,24 @@
       "requires_runs": [
         "20261010T171800Z-portable-alpha-rendering-control-8b44b123",
         "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
+      ],
+      "completion_runs": [
+        "20261010T173707Z-portable-alpha-linux-execution-d49eafb7",
+        "20261010T173752Z-portable-alpha-linux-execution-189daf75",
+        "20261010T173913Z-portable-alpha-linux-execution-af34f703"
+      ],
+      "completion_experiment_ids": [
+        "portable-alpha-linux-execution"
+      ]
+    },
+    {
+      "id": "native-mixed-alpha-oracle",
+      "issue": "O3",
+      "priority": 95,
+      "scope": "Native ImageRenderer mixed-color/partial-alpha export, independent competing quantization predictions and holdouts. Not Canvas wire or general color/profile acceptance.",
+      "requires_runs": [
+        "20261010T165943Z-native-alpha-quantized-compositing-33ebc0eb",
+        "20261010T172820Z-portable-alpha-browser-readback-5ea7e92d"
       ]
     }
   ]
