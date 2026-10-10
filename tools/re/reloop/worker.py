@@ -229,6 +229,12 @@ def perform(kind,out,p):
             return corpus(out)
         from reloop.surfacefailure import corpus,use_corpus
         return use_corpus(out) if p.get('control','faults')=='use_state' else corpus(out)
+    if kind=='portable_solid' and p.get('layer_mutation_control',False):
+        from reloop.portablelayers import mutants
+        return mutants(out)
+    if kind=='portable_solid' and p.get('layer_control',False):
+        from reloop.portablelayers import corpus
+        return corpus(out)
     if kind=='portable_solid' and p.get('alpha_browser_control',False):
         from reloop.browseralpha import corpus
         return corpus(out)

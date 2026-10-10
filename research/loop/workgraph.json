@@ -264,6 +264,14 @@
       "scope": "Independent integer primary-color source-over predictions for multi-layer public native views with modifier and scale controls; source-to-output geometry and padding. No internal offscreen or Canvas transport assumption."
     },
     {
+      "completion_experiment_ids": [
+        "portable-primary-layer-control",
+        "portable-primary-layer-algorithm-mutants"
+      ],
+      "completion_runs": [
+        "20261010T185525Z-portable-primary-layer-control-596eab9a",
+        "20261010T185711Z-portable-primary-layer-algorithm-mutants-f18b9d9e"
+      ],
       "id": "portable-primary-layer-control",
       "issue": "F2",
       "priority": 95,
@@ -271,6 +279,15 @@
         "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b"
       ],
       "scope": "Independent WASM primary-layer premultiplied source-over feasibility against scoped public native callback allocations; explicit supported contract and failures, both runtimes. Native getters differ; no PNG/Canvas/SwiftUI compatibility equivalence."
+    },
+    {
+      "id": "linux-primary-layer-control",
+      "issue": "F2",
+      "priority": 95,
+      "requires_runs": [
+        "20261010T185525Z-portable-primary-layer-control-596eab9a"
+      ],
+      "scope": "Existing actual Linux Wasmtime execution of pinned primary-layer WASM module/checker with full native-prefix and independent buffer/tail/invalid/fault controls. Explicit callback contract, no PNG or SwiftUI/Canvas equivalence."
     }
   ],
   "schema_version": 1

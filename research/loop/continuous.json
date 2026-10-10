@@ -199,14 +199,14 @@
       "status": "resolved-public-input-repeat-accounting"
     }
   ],
-  "last_completed": "Primary-layer composition:128 fresh processes,512 callback/getter targets;368,640 full callback bytes including55,296 unchanged padding bytes and313,344 getter bytes.512 repeat pairs,384 scale/group matrix pairs and layer-order positive controls pass. Independently predeclared quantized-stage source-over predicts512/512 callbacks, including128/128 new holdouts, but only400/512 getters. Getter boundary remains distinct; no universal color or native Canvas protocol claim. 293 tests pass.",
+  "last_completed": "Portable primary-layer callback-target control:320 fresh V8 instances/5,242,880 complete allocation bytes;80 native-prefix comparisons/57,600 native target bytes plus independently checked tails;160 repeat pairs;17 invalid requests/278,528 unchanged bytes. Import-free C-to-LLVM-to-WASM. Native checker40 targets\u00d75 modes in V8 and WasmKit,160 channel/alpha/padding/tail faults per runtime. Two semantic algorithm mutants detected by full native checks; endpoint controls preserved, paired runtime witness counts agree. Getter/PNG differs; no Canvas or SwiftUI compatibility claim. 297 tests pass.",
   "last_github_sync": {
-    "checkpoint": "Independent primary-layer composition and new holdouts",
+    "checkpoint": "Portable primary-layer control and algorithm falsification",
     "comments": [
-      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/4#issuecomment-6100973013"
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/12#issuecomment-6101066094"
     ],
     "issues": [
-      "O3"
+      "F2"
     ],
     "state": "open"
   },
@@ -218,7 +218,7 @@
     "state": "open"
   },
   "next_actions": [
-    "Implement bounded portable primary-layer source-over feasibility under an explicit premultiplied callback-target contract, using the independent quantized-stage rule and externally anchored full native target files. Reject unsupported inputs; compare full allocations/padding across interpreters, inject channel/alpha/order faults. Keep getter/PNG discrepancies explicit and do not claim Canvas or full SwiftUI conformance.",
+    "Execute the externally anchored primary-layer WASM renderer/checker on actual existing Linux Wasmtime host, preserving current containers/VM and verifying runtime/image identities. Compare full allocations, invalid requests and native mutation cases; declare callback-target contract and getter/PNG mismatch. No network/pulls or universal cross-platform Canvas claim.",
     {
       "action": "Result consumer and release stub binding now statically verified. Recover copy/destroy helper value-witness effects and precise payload ownership without unsafe private ABI invocation; discriminate actual runtime dictionary/cancellation behavior when typed boundary is available. REA full FoundationHost import remains blocked; live desktop metadata route works. Do not equate static bridge release dispatch with physical reclamation.",
       "issue_id": "R2",
@@ -1474,6 +1474,16 @@
       "manifest_sha256": "0dfae6bf400c8d511bd921027daa9f779d06596ffa177eb3a47cab5d1ae43b28",
       "path": "research/evidence/native-primary-layers-2026-10-10.json",
       "run_id": "20261010T184640Z-native-primary-layer-holdouts-05e3ae4b"
+    },
+    {
+      "manifest_sha256": "bc1c5bb6b54b5263fa4b1a1b56beb9f729c8ff5b81629059cb9fb6b243cf99f8",
+      "path": "research/evidence/portable-primary-layers-2026-10-10.json",
+      "run_id": "20261010T185525Z-portable-primary-layer-control-596eab9a"
+    },
+    {
+      "manifest_sha256": "1158c7335125110c92030359b7c150a7545278beee638bf7207b5d4304d8facf",
+      "path": "research/evidence/portable-primary-layers-2026-10-10.json",
+      "run_id": "20261010T185711Z-portable-primary-layer-algorithm-mutants-f18b9d9e"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",

@@ -1,0 +1,82 @@
+{
+  "algorithm_mutations": [
+    {
+      "aggregate_rejected": true,
+      "changed_cases": 17,
+      "endpoint_controls": true,
+      "ir_sha256": "77a2e530243aea6bb4dfda775b98ec0634520e41f629add4a45c5eae29483eb3",
+      "module_sha256": "800fd432b3fbfb3bb55d4acd35edcc63b2d245a9ab351b3a0ed35bf6631b419b",
+      "mutation": "source-alpha-truncation",
+      "v8_witness": 306,
+      "wasmkit_witness": 306,
+      "witness_equal": true
+    },
+    {
+      "aggregate_rejected": true,
+      "changed_cases": 16,
+      "endpoint_controls": true,
+      "ir_sha256": "6adb3507935196bfa89938e38240990511dda9267e3806e0d1ba7381ffcac416",
+      "module_sha256": "a5522b6cac8e16c3c8b7cff91d3e7e27273f17ea4220ea3e2632ec4cf2037718",
+      "mutation": "forward-layer-order",
+      "v8_witness": 306,
+      "wasmkit_witness": 306,
+      "witness_equal": true
+    }
+  ],
+  "date_utc": "2026-10-10",
+  "identities": {
+    "checker_module": "7262433a9d1f11faa1e459e4a1ea87a6c633add22e96441d8a47bd72f80cc999",
+    "clang": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+    "node": "v24.19.0",
+    "renderer_ir": "d8c3543fb7fa05a598b7b80056236f24168aeda311a5edd844fc97521938e45a",
+    "renderer_module": "a9ea3fb017107be59f8231c27af6332b4b3bffdc72a7902a1b1b8aeaf15b44ca",
+    "source": "509679e24bbdddbda92e1ba387d426d3924b329229c27186a77ed10d2d2aa270",
+    "v8": "13.6.233.17-node.51",
+    "wasm_ld": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962",
+    "wasmkit": "2ba68ae1418d4bdb9299ad7382385cc4361eaa27abed655c2a21614a9006e957"
+  },
+  "runs": [
+    {
+      "execution": "success",
+      "facts": {
+        "all_allocations_equal": true,
+        "all_invalid_unchanged": true,
+        "all_native_equal": true,
+        "all_repeats_equal": true,
+        "allocation_bytes": 5242880,
+        "frames": 320,
+        "imports": 0,
+        "invalid_bytes": 278528,
+        "invalid_requests": 17,
+        "mutation_cases_per_runtime": 160,
+        "native_frames": 80,
+        "native_full_bytes": 1310720,
+        "native_target_bytes": 57600,
+        "repeat_pairs": 160,
+        "scope": "Primary-only declared premultiplied callback-target contract with integer alpha eighths and layer order. Native padding prefix and independently predicted entire16384-byte allocations/tail; V8 and WasmKit on macOS. No native getter/PNG match, Swift parsing expansion, browser, Linux or Canvas transport claim.",
+        "second_runtime_cases": 200,
+        "second_runtime_passed": true
+      },
+      "manifest_sha256": "bc1c5bb6b54b5263fa4b1a1b56beb9f729c8ff5b81629059cb9fb6b243cf99f8",
+      "run_id": "20261010T185525Z-portable-primary-layer-control-596eab9a",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "algorithm_mutants": 2,
+        "all_detected": true,
+        "all_endpoints_equal": true,
+        "all_witnesses_equal": true,
+        "native_cases_per_mutant": 40,
+        "scope": "Two deliberate algorithm mutants versus frozen native padded targets; V8 full per-case counts and WasmKit aggregate rejection/witness agreement. No new native acquisition or getter/Canvas conformance claim."
+      },
+      "manifest_sha256": "1158c7335125110c92030359b7c150a7545278beee638bf7207b5d4304d8facf",
+      "run_id": "20261010T185711Z-portable-primary-layer-algorithm-mutants-f18b9d9e",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Explicit primary-only premultiplied callback-target WASM feasibility. MacOS V8/WasmKit; no native getter/PNG, Swift parser, actual Linux/browser or Canvas conformance claim."
+}

@@ -4351,6 +4351,84 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "portable-primary-layer-control",
+      "adapter": "portable_solid",
+      "hypothesis": "Import-free C-to-LLVM-to-WASM primary-layer source-over under explicit premultiplied callback-target contract matches independent Fraction predictions and full anchored native padded targets. Two runtimes and channel/alpha/padding/tail corruption; reject unsupported inputs without changing allocation. Native getters differ, no Canvas or SwiftUI equivalence.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180,
+      "artifact_limit_mb": 64,
+      "params": {
+        "layer_control": true
+      },
+      "priority": 95,
+      "checks": [
+        {
+          "path": "frames",
+          "equals": 320
+        },
+        {
+          "path": "all_allocations_equal",
+          "equals": true
+        },
+        {
+          "path": "all_native_equal",
+          "equals": true
+        },
+        {
+          "path": "all_repeats_equal",
+          "equals": true
+        },
+        {
+          "path": "all_invalid_unchanged",
+          "equals": true
+        },
+        {
+          "path": "imports",
+          "equals": 0
+        },
+        {
+          "path": "second_runtime_passed",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "portable-primary-layer-algorithm-mutants",
+      "adapter": "portable_solid",
+      "hypothesis": "Frozen native byte checker rejects source-alpha truncation and reversed forward layer order algorithm mutants, while endpoint controls remain exact. Verify full per-case bytes with V8, aggregate rejection and witness counts with WasmKit.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90,
+      "artifact_limit_mb": 8,
+      "params": {
+        "layer_mutation_control": true
+      },
+      "priority": 94,
+      "checks": [
+        {
+          "path": "algorithm_mutants",
+          "equals": 2
+        },
+        {
+          "path": "all_detected",
+          "equals": true
+        },
+        {
+          "path": "all_endpoints_equal",
+          "equals": true
+        },
+        {
+          "path": "all_witnesses_equal",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1
