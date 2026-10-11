@@ -16,11 +16,18 @@ def verify(folder):
     assert index['pins']=={CLI_RUN:CLI_ANCHOR,NATIVE_RUN:NATIVE_ANCHOR}
     assert len(d['rows'])==42 and len(d['abi'])==26 and hashlib.sha256((TOOLCHAIN/'wasmkit').read_bytes()).hexdigest()==d['runtime_sha256']
     assert hashlib.sha256((folder/'frozen/wasm-checker.rs').read_bytes()).hexdigest()==d['checker_source_sha256']
+    for row in d['abi']:
+        assert row['capacity']==16384 and parse_result(row['capacity_stdout'])==16384
+        assert 0<=row['pointer']<=131072-16384 and parse_result(row['pointer_stdout'])==row['pointer']
+        for export,value in [('capacity',row['capacity']),('pixels',row['pointer'])]:
+            r=subprocess.run([str(TOOLCHAIN/'wasmkit'),'run',str(folder/'rust-wasm/inputs'/row['module']),export],capture_output=True,timeout=3)
+            assert r.returncode==0 and parse_result(r.stdout.decode())==value
     for n,(row,reference) in enumerate(zip(d['rows'],index['records'][::2])):
         assert row['job']==n and row['config']==reference['config'] and row['stride']==reference['stride']
         oracle=expected(row['config'],row['stride']);assert oracle==(folder/'rust-wasm/inputs'/reference['expected']).read_bytes() and len(oracle)==16384
         if reference['native']:assert oracle==(folder/'rust-wasm/inputs'/reference['native']).read_bytes()
         assert row['rendered']==row['stride']*row['config']['height'] and parse_result(row['render_stdout'])==row['rendered']
+        original=folder/'rust-wasm/inputs'/reference['module'];r=subprocess.run([str(TOOLCHAIN/'wasmkit'),'run',str(original),'render','i32:'+str(row['stride'])],capture_output=True,timeout=3);assert r.returncode==0 and parse_result(r.stdout.decode())==row['rendered']
         module=folder/'control'/row['module'];assert hashlib.sha256(module.read_bytes()).hexdigest()==row['module_sha256']
         assert [c['mutation'] for c in row['controls']]==list(range(5)) and row['v8']==[0,1,1,1,0]
         for c,value in zip(row['controls'],[0,1,1,1,0]):
