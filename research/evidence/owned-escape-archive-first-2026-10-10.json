@@ -1,0 +1,5 @@
+{
+  "retained_failure": "First clean candidate test_graphloop import failed with ModuleNotFoundError: No module named reloop",
+  "cause": "The new archive harness omitted PYTHONPATH=tools/re; test module imports reloop directly. No experiment, verifier result, or commit was accepted by this failed harness.",
+  "changed_control": "Set explicit archived tools/re on child PYTHONPATH and retry a new candidate archive; no native deadline extension."
+}

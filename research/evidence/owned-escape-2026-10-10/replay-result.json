@@ -1,0 +1,152 @@
+{
+  "controls": [
+    {
+      "child": 37085,
+      "cleanup": null,
+      "code": 0,
+      "group_after": 37085,
+      "identity": [
+        1791693263,
+        923113,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+      ],
+      "late_write": true,
+      "observed": false,
+      "parent_after": 1,
+      "parent_before": 37084,
+      "target_status": {
+        "error": null,
+        "record": {
+          "anchorCode": null,
+          "anchorReported": true,
+          "code": 0,
+          "pid": 37083,
+          "signal": "SIGKILL",
+          "stderr": "",
+          "stdout": ""
+        }
+      }
+    },
+    {
+      "child": 37110,
+      "cleanup": null,
+      "code": 7,
+      "group_after": 37110,
+      "identity": [
+        1791693265,
+        594048,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+      ],
+      "late_write": true,
+      "observed": false,
+      "parent_after": 1,
+      "parent_before": 37109,
+      "target_status": {
+        "error": "Error: Owned compiler exited 7",
+        "record": {
+          "anchorCode": null,
+          "anchorReported": true,
+          "code": 7,
+          "pid": 37106,
+          "signal": "SIGKILL",
+          "stderr": "",
+          "stdout": ""
+        }
+      }
+    },
+    {
+      "child": 37132,
+      "cleanup": {
+        "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations.",
+        "tracked_processes": 4
+      },
+      "code": 0,
+      "group_after": 37132,
+      "identity": [
+        1791693267,
+        212127,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+      ],
+      "late_write": false,
+      "observed": true,
+      "parent_after": 1,
+      "parent_before": 37131,
+      "target_status": {
+        "error": null,
+        "record": {
+          "anchorCode": null,
+          "anchorReported": true,
+          "code": 0,
+          "pid": 37130,
+          "signal": "SIGKILL",
+          "stderr": "",
+          "stdout": ""
+        }
+      }
+    },
+    {
+      "child": 37147,
+      "cleanup": {
+        "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations.",
+        "tracked_processes": 4
+      },
+      "code": 7,
+      "group_after": 37147,
+      "identity": [
+        1791693269,
+        115824,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+      ],
+      "late_write": false,
+      "observed": true,
+      "parent_after": 1,
+      "parent_before": 37146,
+      "target_status": {
+        "error": "Error: Owned compiler exited 7",
+        "record": {
+          "anchorCode": null,
+          "anchorReported": true,
+          "code": 7,
+          "pid": 37145,
+          "signal": "SIGKILL",
+          "stderr": "",
+          "stdout": ""
+        }
+      }
+    }
+  ],
+  "identity_mutants": [
+    {
+      "field": 0,
+      "no_signal": true
+    },
+    {
+      "field": 1,
+      "no_signal": true
+    },
+    {
+      "field": 2,
+      "no_signal": true
+    }
+  ],
+  "node_sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+  "python_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+  "schema_version": 1,
+  "scope": "Observed owned ancestry only; setsid children unseen between snapshots remain excluded.",
+  "tool": {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/Users/8amps/xcpreviewer-rs/research/evidence/owned-escape-2026-10-10/frozen/tools/re/native/OwnedProcessSnapshot.c",
+      "-lproc",
+      "-o",
+      "/private/tmp/owned-escape-replay/helper/owned-process-snapshot"
+    ],
+    "binary_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+    "compiler_sha256": "179301dcb41ea78accc3fa0048a7e6f6710d891945a751a34addd622020c1818",
+    "source_sha256": "f575177f88d6d8306f38d0fc16863396f5d666988d2a8d98c60e87392f162833"
+  }
+}

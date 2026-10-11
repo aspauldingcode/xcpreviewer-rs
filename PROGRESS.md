@@ -508,3 +508,8 @@ Implemented a frozen-CLI subprocess builder with source/module/full-allocation r
 ## 2026-10-10: anchored compiler orphan cleanup
 
 Retained two actual failures where compiler target exits0/7 but its inherited child writes late and defeats a200ms deadline. Private POSIX supervisor now remains group leader until target status is delivered on a separate descriptor, then the caller drains the still-owned group. Both fixed controls suppress late writes, settle near100ms and preserve target status0/7 separately from anchor termination. Canonical 20261011T042223Z-primary-live-wasm-swap-ddcf94bc passes23 declared checks, repeats fresh compilation and full84 independent/80 reused-native allocations. Escaping children remain excluded; native Canvas lifecycle and scientific delivery remain pending.
+
+
+## Owned escaping-child controls (2026-10-10)
+
+Four owned setsid/reparenting controls plus a frozen replay distinguish inherited-group cleanup from explicit public full-identity descendant drain. Group-only targets0/7 retain late writes; observed descendants produce no late writes and preserve both statuses. Three identity-selector mutants receive no signal; five receipt corruptions reject. Clean candidate archive:27 relevant tests pass. Evidence: `research/evidence/owned-escape-2026-10-10/manifest.json` (92c1c3a3f8156131a93fb18272377f9369a26fce3080b1c89be006934d509ac0). Detached cleanup is not yet integrated into the shipped Node runner. Unseen escapes and observation-to-signal races remain excluded. Native Canvas and scientific/delivery acceptance remain open.
