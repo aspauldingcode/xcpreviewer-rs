@@ -1,0 +1,109 @@
+{
+  "delivery_review": "review-pending",
+  "full_byte_recheck": {
+    "frames": 84,
+    "independent": 1376256,
+    "native": 1310720
+  },
+  "integrity": {
+    "external_anchor_matches": true,
+    "frozen_sources_unchanged": true,
+    "manifest_sha256": "3184e90345083836bd4d83d9af01e8b7be4d5ace84f32625d946ae84ea692a54",
+    "run_id": "20261011T034242Z-primary-live-wasm-swap-6ce0ce0b",
+    "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+    "valid": true
+  },
+  "manifest_sha256": "3184e90345083836bd4d83d9af01e8b7be4d5ace84f32625d946ae84ea692a54",
+  "next": "Bounded source watcher or discriminate reentrant publication guard; native capture needs approved bridge restoration and unlocked host.",
+  "observations": {
+    "close_controls": 4,
+    "failed_proposals": 6,
+    "frames": 84,
+    "independent_bytes": 1376256,
+    "native_bytes": 1310720,
+    "scope": "Frozen owned runtime policy controls, reused public native corpus; no Canvas sequencing or scientific delivery acceptance",
+    "source_rejections": 5,
+    "source_revisions": 3,
+    "zero_workers": true
+  },
+  "process_observation": "public libproc adapter selected explicitly; default ps not replaced",
+  "research_task": "scoped-support; completed overlay skips unchanged work",
+  "run_id": "20261011T034242Z-primary-live-wasm-swap-6ce0ce0b",
+  "schema_version": 1,
+  "ui_session": "none opened",
+  "verification": {
+    "checks": [
+      {
+        "actual": 84,
+        "expected": 84,
+        "passed": true,
+        "path": "frames",
+        "present": true
+      },
+      {
+        "actual": 1310720,
+        "expected": 1310720,
+        "passed": true,
+        "path": "native_bytes",
+        "present": true
+      },
+      {
+        "actual": 1376256,
+        "expected": 1376256,
+        "passed": true,
+        "path": "independent_bytes",
+        "present": true
+      },
+      {
+        "actual": 6,
+        "expected": 6,
+        "passed": true,
+        "path": "failed_proposals",
+        "present": true
+      },
+      {
+        "actual": 4,
+        "expected": 4,
+        "passed": true,
+        "path": "close_controls",
+        "present": true
+      },
+      {
+        "actual": 5,
+        "expected": 5,
+        "passed": true,
+        "path": "source_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "source_revisions",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "zero_workers",
+        "present": true
+      }
+    ],
+    "delivery_review": "review-pending",
+    "integrity": {
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "3184e90345083836bd4d83d9af01e8b7be4d5ace84f32625d946ae84ea692a54",
+      "run_id": "20261011T034242Z-primary-live-wasm-swap-6ce0ce0b",
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "valid": true
+    },
+    "recomputed_verdict": "supports",
+    "scope": "Fresh-process artifact integrity and predeclared checks; not independent contract review.",
+    "valid": true
+  },
+  "wake_id": "70abbf286fae418cafdf3a517272fc52",
+  "wake_state": "budget-exhausted",
+  "xcode_bridge": "offline; no automatic restart"
+}

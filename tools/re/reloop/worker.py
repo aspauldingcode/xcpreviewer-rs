@@ -32,6 +32,9 @@ def ghidra_config():
 
 
 def perform(kind,out,p):
+    if kind=='live_swap':
+        from reloop.liveswapprobe import corpus
+        return corpus(out)
     if kind=='portable_solid' and p.get('extent_cli_control',False):
         from reloop.extentcli import corpus
         return corpus(out)

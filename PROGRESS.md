@@ -488,3 +488,7 @@ Implemented explicit source-to-WASM CLI, content-addressed semantic cache with e
 ## 2026-10-10 — Extent CLI verifier and observation failures
 
 Implemented frozen source-frame CLI versus full native extent consumer, independently projected/decoded PNGs, transparent holdouts and corruption/failure controls. Three attempts stopped on bounded process-observation timeouts; no full corpus acceptance. Fixed timeout retention and scoped owned-command identity reads; reused/start-changed identities still excluded. Nine targeted tests and all 323 isolated repository tests pass. Retained failures and public libproc observer next task: [dossier](docs/reverse-engineering/2026-10-10-extent-cli-observation.md). Both milestones remain open.
+
+## 2026-10-10: canonical live-swap graph binding
+
+Registered the fixed live_swap adapter, predeclared eight checks and bounded one-round graph binding. Owned run 20261011T034242Z-primary-live-wasm-swap-6ce0ce0b passed 84 full independent frames (1,376,256 bytes), 80 reused native allocations (1,310,720 bytes), six failed proposals, four close controls, five source rejections, three accepted source revisions and zero workers. Fresh-process verification and separate full-byte comparisons passed. Successful research is skipped through the sealed ledger overlay; scientific delivery and both milestones remain pending. Xcode bridge remains offline; no UI workspace opened. See research/evidence/live-swap-binding-2026-10-10.json.

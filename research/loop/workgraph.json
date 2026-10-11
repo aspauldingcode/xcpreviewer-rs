@@ -395,6 +395,15 @@
       "priority": 99,
       "requires_runs": [],
       "scope": "Implement and independently discriminate a public macOS libproc-based owned process observer against known spawned/detached/reused identities; retain bounded deadlines and preserve user processes. Resolve host ps prerequisite before full extent/capture retries; no native Canvas release policy acceptance."
+    },
+    {
+      "id": "primary-live-wasm-swap",
+      "issue": "I4",
+      "priority": 96,
+      "requires_runs": [
+        "20261010T222740Z-primary-source-frame-native-extents-89cb7e2c"
+      ],
+      "scope": "Implement an owned persistent WASM host that prepares and verifies supported primary-source frame revisions before atomic instance/frame swap; compare every native-anchored allocation byte and falsify invalid/trapping proposals while preserving last-good instance/frame. Owned reconstruction policy only; no general SwiftUI state migration or recovered Canvas hot-reload sequencing."
     }
   ],
   "schema_version": 1

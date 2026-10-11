@@ -4918,6 +4918,53 @@
           "equals": true
         }
       ]
+    },
+    {
+      "id": "primary-live-wasm-swap",
+      "adapter": "live_swap",
+      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim.",
+      "depends_on": [],
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120,
+      "artifact_limit_mb": 32,
+      "params": {},
+      "priority": 96,
+      "checks": [
+        {
+          "path": "frames",
+          "equals": 84
+        },
+        {
+          "path": "native_bytes",
+          "equals": 1310720
+        },
+        {
+          "path": "independent_bytes",
+          "equals": 1376256
+        },
+        {
+          "path": "failed_proposals",
+          "equals": 6
+        },
+        {
+          "path": "close_controls",
+          "equals": 4
+        },
+        {
+          "path": "source_rejections",
+          "equals": 5
+        },
+        {
+          "path": "source_revisions",
+          "equals": 3
+        },
+        {
+          "path": "zero_workers",
+          "equals": true
+        }
+      ]
     }
   ],
   "version": 1
