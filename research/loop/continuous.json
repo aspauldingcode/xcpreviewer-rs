@@ -290,6 +290,15 @@
     "result": "Two actual wait0 Metal helpers: first reader pending before release; stale event reader completes with oldbytes while writer2 gated; fresh event4 yields newbytes.229376 independent full allocation bytes,6 resealed faults. REA ownbinary identity verified,sessionclosed; invalidtoolargument retained",
     "started_at": "2026-10-11T15:07:28.547619+00:00"
   },
+  "gpu_submission_lifetime_checkpoint": {
+    "classification": "unsubmitted callback prediction contradicted and retained; changed native status discriminator supported; delivery review pending",
+    "evidence": "research/evidence/gpu-submission-lifetime-2026-10-11",
+    "manifest_sha256": "d8500f8f4038a772748b22e68233a7316640fc3c079e1e5e1c14c02b3aa0c9a1",
+    "milestones_complete": false,
+    "next_wake_hint": "Submission/pool control complete: command destruction invokes handler with status0; queued command survives CPU command/buffer drop and pool drain, timeout does not cancel, explicit event release yields status4/allbytes. Final command weak liveness variable. Do not repeat unchanged. Next required peer failure/release or demanded product contract; native Canvas bridge offline, no restart; R1/R2 and both milestones open.",
+    "result": "4 native waits0; unsubmitted destruction callback once status0, submitted after CPU owners/pool drop survives gated wait and completes once status4;196608 fullbytes,6 resealed faults. Sandbox device prerequisite failure retained. Final command liveness variable, no final physical release claim.",
+    "started_at": "2026-10-11T15:40:59.973603+00:00"
+  },
   "last_completed": "Implemented frozen CLI/native extent verifier with transparent PNG and pixel/padding/tail/failure controls. Three changed attempts stop on host process-observation; no full extent acceptance. Fixed observation-timeout sealing and scoped command identity reads, preserving start/command guards and2s limits;9 targeted tests and323 isolated repository tests pass. Public libproc observation oracle selected next.",
   "last_github_sync": {
     "checkpoint": "Extent CLI observation failures and owned observer controls",

@@ -699,3 +699,7 @@ Two owned Metal helpers measure CPU-owner drop retention in encoded-uncommitted 
 ## 2026-10-11 — native owner attribution discriminator
 
 Initial four-mode owner prediction failed: same-pool CPU-only/unencoded/unretained buffers also stayed weak alive. Failed controls sealed. Nested construction pool drain separates ownership: only retained-encoded buffer stays alive while command owner remains. Four native waits0,425984 full bytes independently checked, six resealed faults; REA bothhelperidentities/closed. See [scope and correction](docs/reverse-engineering/2026-10-11-gpu-buffer-owner.md). Same-pool liveness does not identify a sole owner; physical/Canvas/Mach release and both milestones remain open.
+
+## 2026-10-11 — native submission and destruction callback distinction
+
+Unsubmitted command destruction invokes its handler once with status0, contradicting the initial no-callback prediction (retained). Submitted default retained-reference work survives both CPU owner drops and construction pool drain, times out with zero callbacks, then explicitly released event completes once with status4. Four native waits0,196608 fullbytes, six resealed faults. Final weak command lifetime varies; no physical reclamation claim. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-submission-lifetime.md). R1/R2/Canvas and both milestones remain open.

@@ -1,0 +1,10 @@
+{
+  "parent_manifest_sha256": "7010b2175304947e02a515d44d895e02487dbc512da04a0ab7b6c3aad708db63",
+  "scope": "Owned public Metal submission with retainedReferences=true, not Canvas transport or physical reclamation",
+  "competing_predictions": [
+    "CPU command drop cancels queued work and releases buffer",
+    "Submission retains command/resource through explicit event gate; unsubmitted command drains away"
+  ],
+  "required": "Submitted construction-pool weak owners alive, event blocked wait with zero callbacks, release once completed status4 and whole frame. Unsubmitted destruction callback status measured, not assumed absent. Final weak liveness only observation.",
+  "observer": "Completion handler promotes weak buffer only after completed status; snapshot copies bytes. Final weak liveness is observation, not a reclamation acceptance predicate."
+}
