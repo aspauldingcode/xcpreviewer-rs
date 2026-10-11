@@ -1,0 +1,5 @@
+{
+  "parentSeal": "9cdf028d82cdd2930879a26c5d0d1396bd26a48c3a48603c82439f78c2511b74",
+  "competingPolicy": "Equal restored source digest reuses old publication without rebuilding",
+  "prediction": "Missing/empty sources retain the accepted full allocation and stale readiness without launching compiler; same-source restoration builds fresh revisions/generations even though source and rendered bytes match. Repeated invalid and valid polls do not rebuild. Native Canvas state reset is not inferred."
+}

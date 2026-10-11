@@ -667,3 +667,7 @@ Owned handler0.2.0 now advertises typed availability and one structured allocati
 ### 2026-10-11: current preview readiness and first-build recovery
 
 Handler 0.2.1 reports current readiness without treating retained historical failures as current blockers. Official SDK controls first rejection/no frame, same-session recovery, unchanged poll without rebuild, stale-frame retention and second recovery/close. One actual server wait 0, two Rust/V8 modules, two expected CLI rejects wait 2,65,536 independently checked bytes; nine policy cases/three invalid cases and four correlated resealed faults;91 Python plus7 Rust tests. [Scope/evidence](docs/reverse-engineering/2026-10-11-mcp-readiness.md). Native Canvas refresh/transport and both milestones remain open.
+
+### 2026-10-11: missing/empty source and exact restoration
+
+Official SDK control retains full stale frames on missing/empty source and republishes identical source as new revision/generation after restoration. Three distinct successful Rust builds have identical module/image hashes; repeated invalid/valid polls add no events or builds. One actual server wait 0; 98,304 independent consumer bytes and three fresh V8 replays; four resealed faults reject; 93 Python plus seven Rust archive tests. [Scope and evidence](docs/reverse-engineering/2026-10-11-mcp-restore.md). Native Canvas reset/transport and both milestones remain open.
