@@ -5170,6 +5170,30 @@
         {
           "equals": true,
           "path": "rust_second_all_equal"
+        },
+        {
+          "equals": 3,
+          "path": "rust_source_revisions"
+        },
+        {
+          "equals": 49152,
+          "path": "rust_source_bytes"
+        },
+        {
+          "equals": 22,
+          "path": "rust_source_unsupported"
+        },
+        {
+          "equals": true,
+          "path": "rust_source_drained"
+        },
+        {
+          "equals": true,
+          "path": "rust_source_failure_retained"
+        },
+        {
+          "equals": true,
+          "path": "rust_source_zero_workers"
         }
       ],
       "depends_on": [],

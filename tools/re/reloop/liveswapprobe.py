@@ -91,6 +91,8 @@ def corpus(out):
     facts.update(rust_wasm(out / 'rust-wasm'))
     from reloop.rustwasmsecond import corpus as rust_second
     facts.update(rust_second(out / 'rust-wasm', out / 'rust-second'))
+    from reloop.rustsourceprobe import corpus as rust_source
+    facts.update(rust_source(out / 'rust-source'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
     return facts
 

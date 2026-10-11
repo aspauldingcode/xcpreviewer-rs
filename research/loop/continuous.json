@@ -1842,6 +1842,23 @@
     "runtime_controls": 210,
     "scientific_delivery_review": "pending"
   },
+  "rust_source_checkpoint": {
+    "actual_cli_rejections": 26,
+    "canonical_checks": 68,
+    "clean_archive_tests": 60,
+    "complete_bytes": 49152,
+    "evidence_manifest_sha256": "7cf8a0b11b90f5f479e8409ba909a160ab77c738a88804b9ab5724ac0a631382",
+    "git_sync": "verified commit pending push",
+    "manifest_sha256": "6d51d711deb3a5d01c8a565b4b22b7e8286344c980e4b175bbc149861a922bfc",
+    "next": "Exercise actual Rust compiler/linker cancellation, timeout, stale generations and late artifact rejection through observed source builder; pin target sysroot inputs for reproducibility; keep non-Apple/browser and native Canvas capture/protocol/final-release gates open.",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T06:26:24.398648+00:00",
+    "resealed_mutants": 3,
+    "revisions": 3,
+    "run_id": "20261011T062316Z-primary-live-wasm-swap-83823ea7",
+    "scientific_delivery_review": "pending",
+    "unsupported_parser_controls": 22
+  },
   "rust_wasm_checkpoint": {
     "canonical_checks": 56,
     "clean_archive_tests": 56,
