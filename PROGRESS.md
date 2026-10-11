@@ -739,3 +739,7 @@ Hung pixels live-read deadline previously left worker alive, then repeated timeo
 ## 2026-10-11 — unavailable execution and cached consumer
 
 Readiness now marks worker0 publication stale; existing consumer adopts two stable statuses with identical accepted bytes. Unchanged-source refresh recovers healthy revision2/generation2; close clears frame and stops RPC. Two successful producers plus two retained stride-contract fixture failures;98304 independently expected bytes and8 resealed faults. See [scope](docs/reverse-engineering/2026-10-11-mcp-quarantine.md). Owned handler policy only; native Canvas/both milestones remain open.
+
+## 2026-10-11 — cached consumer adversarial histories
+
+Two repeat14-history packet replays reject forged identities/rollback/diagnostics/unstable status/cold unavailable reads and accept stale cached status or bounded healthy retry. Lifecycle mutation remained rejected by rollback (prediction contradicted); diagnostic mutation exposed missing check and exited1. All786432 relevant bytes and8 resealed faults verified. [Scope](docs/reverse-engineering/2026-10-11-mcp-cache-guards.md). Historical owned packets only; both milestones/native capture remain open.

@@ -400,6 +400,15 @@
     "run_id": "20261011T034242Z-primary-live-wasm-swap-6ce0ce0b",
     "wake_id": "70abbf286fae418cafdf3a517272fc52"
   },
+  "mcp_cache_guards_checkpoint": {
+    "classification": "finite cached consumer histories supported; lifecycle bypass prediction contradicted and retained; delivery pending",
+    "evidence": "research/evidence/mcp-cache-guards-2026-10-11",
+    "manifest_sha256": "d31b0248d1f8617a417525bff4b5556cfa48a515cc3049460e1bcdf16d12bc15",
+    "milestones_complete": false,
+    "next_wake_hint": "Finite cached adversarial histories now complete. Pick independent demanded boundary; do not repeat unchanged replay cases or local Metal events. Native bridge offline/no restart; browser review-gated. Both milestones open.",
+    "result": "Two repeat14-history runs pass; descriptor/lifecycle/diagnostic/unstable/cold rejects preserve accepted bytes, valid stale/retry succeed. Lifecycle mutant still rejected by rollback; diagnostic mutant realexit1.786432 fullbytes/8 resealed faults. Historical owned packet replay only.",
+    "started_at": "2026-10-11T19:14:21.320747+00:00"
+  },
   "mcp_channel_checkpoint": {
     "clean_archive_tests": 88,
     "controls": 10,

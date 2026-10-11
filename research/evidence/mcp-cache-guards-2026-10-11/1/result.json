@@ -1,0 +1,167 @@
+{
+  "rows": [
+    {
+      "kind": "sourceSha256",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n... Skipped lines\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n...\n    revision: 1,\n+   sourceSha256: '0000000000000000000000000000000000000000000000000000000000000000',\n-   sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n    stride: 64,\n    width: 1\n  }\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "moduleSha256",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n    height: 1,\n+   moduleSha256: '0000000000000000000000000000000000000000000000000000000000000000',\n-   moduleSha256: 'ed78589c54b0ae1710f98a3905d539a7d026f805aff0794d172023c6159c92e8',\n    renderedBytes: 64,\n    revision: 1,\n    sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n    stride: 64,\n    width: 1\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "allocationSha256",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n\n  {\n    allocationBytes: 16384,\n+   allocationSha256: '0000000000000000000000000000000000000000000000000000000000000000',\n-   allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n    height: 1,\n    moduleSha256: 'ed78589c54b0ae1710f98a3905d539a7d026f805aff0794d172023c6159c92e8',\n    renderedBytes: 64,\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "generation",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n+   generation: 2,\n-   generation: 1,\n    height: 1,\n    moduleSha256: 'ed78589c54b0ae1710f98a3905d539a7d026f805aff0794d172023c6159c92e8',\n    renderedBytes: 64,\n    revision: 1,\n    sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "revision",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n... Skipped lines\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n...\n    renderedBytes: 64,\n+   revision: 2,\n-   revision: 1,\n    sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n    stride: 64,\n    width: 1\n  }\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "width",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n... Skipped lines\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n...\n    stride: 64,\n+   width: 2\n-   width: 1\n  }\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "stride",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n... Skipped lines\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n...\n    sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n+   stride: 65,\n-   stride: 64,\n    width: 1\n  }\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "renderedBytes",
+      "error": "AssertionError [ERR_ASSERTION]: Unavailable publication identity changed\n+ actual - expected\n\n  {\n    allocationBytes: 16384,\n    allocationSha256: '7ae633d30b3dd8b9d9362db8b1c10413994de71cb9faee7eb78402e58d88bfc1',\n    format: 'premultiplied-RGBA8',\n    generation: 1,\n    height: 1,\n    moduleSha256: 'ed78589c54b0ae1710f98a3905d539a7d026f805aff0794d172023c6159c92e8',\n+   renderedBytes: 65,\n-   renderedBytes: 64,\n    revision: 1,\n    sourceSha256: 'a7d20b65a322124b5cc7cd22373a65b476360474820a3ed7c5083176c7ac8076',\n    stride: 64,\n    width: 1\n  }\n",
+      "calls": [
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "lifecycle",
+      "error": "AssertionError [ERR_ASSERTION]: Lifecycle publication mismatch",
+      "calls": [
+        "preview_status",
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "diagnostic",
+      "error": "AssertionError [ERR_ASSERTION]: Diagnostic publication mismatch",
+      "calls": [
+        "preview_status",
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "unstable",
+      "error": "Error: Preview changed during bounded sample",
+      "calls": [
+        "preview_status",
+        "preview_status",
+        "preview_status",
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "ready"
+      }
+    },
+    {
+      "kind": "cold",
+      "error": "AssertionError [ERR_ASSERTION]: Preview tool failed",
+      "calls": [
+        "preview_status",
+        "preview_frame"
+      ],
+      "accepted": null
+    },
+    {
+      "kind": "valid",
+      "error": null,
+      "calls": [
+        "preview_status",
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 1,
+        "state": "stale"
+      }
+    },
+    {
+      "kind": "retry",
+      "error": null,
+      "calls": [
+        "preview_status",
+        "preview_status",
+        "preview_status",
+        "preview_frame",
+        "preview_status"
+      ],
+      "accepted": {
+        "revision": 2,
+        "state": "ready"
+      }
+    }
+  ],
+  "bytes": 212992
+}
