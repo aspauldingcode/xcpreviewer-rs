@@ -1646,6 +1646,11 @@
       "manifest_sha256": "1240cd4bd1158114e727a98a2ad700516fcf7e0e0bab86095f1dfe3cb744351c",
       "path": "research/evidence/owned-compiler-2026-10-10/verification.json",
       "run_id": "20261011T041411Z-primary-live-wasm-swap-7262bae5"
+    },
+    {
+      "manifest_sha256": "6143e6db4fa97108341cdfd292385b7e244816021114fea611497c02d2cf7e4a",
+      "path": "research/evidence/owned-orphan-2026-10-10/verification.json",
+      "run_id": "20261011T042223Z-primary-live-wasm-swap-ddcf94bc"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -1688,6 +1693,14 @@
     "manifest_sha256": "1240cd4bd1158114e727a98a2ad700516fcf7e0e0bab86095f1dfe3cb744351c",
     "next": "Discriminate compiler leader exit while inherited child holds stdout; current owned process runner requires trusted root awaiting its children. Add safe identity-aware orphan accounting before broader tree claims. Native capture still needs approved bridge restoration and unlocked host.",
     "run_id": "20261011T041411Z-primary-live-wasm-swap-7262bae5",
+    "scientific_delivery_review": "pending"
+  },
+  "owned_orphan_checkpoint": {
+    "evidence_manifest_sha256": "d52bc6068dd009bc19f9b9aec200bab0387c342661c38b49ef61907eb456a002",
+    "finished_at": "2026-10-11T04:23:47.893713+00:00",
+    "manifest_sha256": "6143e6db4fa97108341cdfd292385b7e244816021114fea611497c02d2cf7e4a",
+    "next": "Discriminate group-escaping children using explicit public lifetime/executable identity observation. Anchor now accepts inherited orphans only; preserve detached-child exclusion. Restore private Canvas bridge only through approved path when host unlocked.",
+    "run_id": "20261011T042223Z-primary-live-wasm-swap-ddcf94bc",
     "scientific_delivery_review": "pending"
   }
 }

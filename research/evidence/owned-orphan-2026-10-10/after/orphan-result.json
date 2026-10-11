@@ -1,0 +1,24 @@
+{
+  "controls": [
+    {
+      "targetExit": 0,
+      "elapsedMs": 112.362833,
+      "code": 0,
+      "signal": "SIGKILL",
+      "lateWriteAbsent": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "targetExit": 7,
+      "elapsedMs": 100.671292,
+      "code": 7,
+      "signal": "SIGKILL",
+      "lateWriteAbsent": true,
+      "error": "Error: Owned compiler exited 7",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "scope": "Known inherited group held by private supervisor anchor; no escaping descendants or native Canvas policy"
+}

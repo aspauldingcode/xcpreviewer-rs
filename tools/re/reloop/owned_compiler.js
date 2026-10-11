@@ -2,18 +2,27 @@
 // Trusted owned POSIX compiler trees only. Never attach to existing processes.
 const {spawn}=require('node:child_process'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-function runOwned(command,args,{signal,timeout=5000,limit=65536}={}){
+function runOwned(command,args,{signal,timeout=5000,limit=65536,supervisorPython='python3'}={}){
  assert(process.platform!=='win32','POSIX owned process groups required');assert(Number.isSafeInteger(timeout)&&timeout>=50&&timeout<=30000);assert(Number.isSafeInteger(limit)&&limit>=1&&limit<=1048576);
  return new Promise((resolve,reject)=>{
   if(signal?.aborted){reject(Error('Owned compiler aborted before spawn'));return;}
-  const child=spawn(command,args,{detached:true,stdio:['ignore','pipe','pipe']});let stdout=Buffer.alloc(0),stderr=Buffer.alloc(0),failure=null;
-  const stop=reason=>{failure ||= reason;if(child.pid&&child.exitCode===null&&child.signalCode===null){try{process.kill(-child.pid,'SIGKILL');}catch(e){if(e.code!=='ESRCH')failure=e;}}};
+  const child=spawn(supervisorPython,[path.join(__dirname,'owned_group_anchor.py'),command,...args],{detached:true,stdio:['ignore','pipe','pipe','pipe']});
+  let stdout=Buffer.alloc(0),stderr=Buffer.alloc(0),control='',failure=null,targetCode=null,reported=false;
+  const stop=reason=>{if(reason)failure ||= reason;if(child.pid&&child.exitCode===null&&child.signalCode===null){try{process.kill(-child.pid,'SIGKILL');}catch(e){if(e.code!=='ESRCH')failure=e;}}};
   const abort=()=>stop(Error('Owned compiler aborted'));signal?.addEventListener('abort',abort,{once:true});
   const timer=setTimeout(()=>stop(Error('Owned compiler deadline exceeded')),timeout);
   const collect=(kind,b)=>{if(stdout.length+stderr.length+b.length>limit){stop(Error('Owned compiler output limit'));return;}if(kind==='stdout')stdout=Buffer.concat([stdout,b]);else stderr=Buffer.concat([stderr,b]);};
   child.stdout.on('data',b=>collect('stdout',b));child.stderr.on('data',b=>collect('stderr',b));child.on('error',e=>{failure=e;});
-  child.on('close',(code,term)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);const record={pid:child.pid,code,signal:term,stdout:stdout.toString(),stderr:stderr.toString()};
-   if(failure||code!==0){const error=failure||Error('Owned compiler exited '+code);error.record=record;reject(error);}else resolve(record);
+  child.stdio[3].on('data',b=>{
+   if(reported){stop(Error('Duplicate owned anchor report'));return;}control+=b.toString();
+   if(control.length>4096){stop(Error('Owned anchor report limit'));return;}
+   if(!control.endsWith('\n'))return;
+   try{const report=JSON.parse(control);assert(Number.isSafeInteger(report.target_code));targetCode=report.target_code;reported=true;stop(targetCode===0?null:Error('Owned compiler exited '+targetCode));}
+   catch(e){stop(e);}
+  });
+  child.on('close',(anchorCode,term)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);
+   const record={pid:child.pid,code:targetCode,anchorCode,signal:term,anchorReported:reported,stdout:stdout.toString(),stderr:stderr.toString()};
+   if(failure||!reported||targetCode!==0||term!=='SIGKILL'){const error=failure||Error('Owned anchor did not complete verified drain');error.record=record;reject(error);}else resolve(record);
   });
  });
 }
@@ -23,7 +32,7 @@ function compiler(options){
  const build=async(source,{signal})=>{
   const stage=fs.mkdtempSync(path.join(root,'build-'));const sourcePath=path.join(stage,'source.swift');fs.writeFileSync(sourcePath,source);
   let execution;
-  try{execution=await runOwned(python,[cli,sourcePath,'--cache',path.join(root,'cache'),'--output',path.join(stage,'published'),'--clang',clang,'--wasm-ld',wasmLd,'--node',node,'--stride',String(stride)],{signal,timeout:5000});}
+  try{execution=await runOwned(python,[cli,sourcePath,'--cache',path.join(root,'cache'),'--output',path.join(stage,'published'),'--clang',clang,'--wasm-ld',wasmLd,'--node',node,'--stride',String(stride)],{signal,timeout:5000,supervisorPython:python});}
   catch(e){fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify({error:String(e),record:e.record},null,2));throw e;}
   const receipt=JSON.parse(execution.stdout);assert(receipt.ok);assert(/^[a-f0-9]{64}$/.test(receipt.entry_sha256));assert.equal(receipt.source_sha256,sha(source));
   const folder=path.join(stage,'published/versions',receipt.entry_sha256),rawManifest=fs.readFileSync(path.join(folder,'manifest.json'));assert.equal(sha(rawManifest),receipt.entry_sha256);

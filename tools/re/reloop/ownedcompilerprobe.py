@@ -32,12 +32,21 @@ def corpus(out):
         subprocess.run([config['node'], str(ROOT / 'tools/re/tests/owned_compiler_control.js'),
                         str(out / 'config.json'), str(out / 'result')],
                        check=True, timeout=30, stdout=stdout, stderr=stderr)
+    with (out / 'orphan.stdout').open('wb') as stdout, (out / 'orphan.stderr').open('wb') as stderr:
+        subprocess.run([config['node'], str(ROOT / 'tools/re/tests/owned_orphan_control.js'),
+                        str(out / 'orphan-controls'), str(ROOT / 'tools/re/reloop/owned_compiler.js'),
+                        config['python'], 'verify'], check=True, timeout=15, stdout=stdout, stderr=stderr)
+    orphan = json.loads((out / 'orphan-controls/orphan-result.json').read_text())
+    if orphan['failures']:
+        raise ValueError('Owned orphan control failed')
     if before != {k: digest(config[k]) for k in before}:
         raise ValueError('Compiler executables changed during probe')
     result = json.loads((out / 'result/compiler-result.json').read_text())
     atomic(out / 'provenance.json', {'frozen_cli_run': CLI_RUN, 'manifest_sha256': CLI_ANCHOR,
                                     'executables': before, 'scope': result['scope']})
-    return {'fresh_compiler_frames': len(result['records']),
+    return {'owned_orphan_controls': len(orphan['controls']),
+            'owned_target_exits_preserved': [r['code'] for r in orphan['controls']] == [0, 7],
+            'fresh_compiler_frames': len(result['records']),
             'fresh_compiler_bytes': sum(r['comparedBytes'] for r in result['records']),
             'compiler_tree_controls': len(result['controls']),
             'compiler_late_writes_absent': all(r['childStarted'] and r['lateWriteAbsent'] for r in result['controls']),

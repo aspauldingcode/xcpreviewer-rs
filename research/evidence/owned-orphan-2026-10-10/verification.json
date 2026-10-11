@@ -1,0 +1,189 @@
+{
+  "after_failures": 0,
+  "before_failures": 2,
+  "fresh_compiler_bytes_rechecked": 49152,
+  "independent_bytes_rechecked": 1376256,
+  "manifest_sha256": "6143e6db4fa97108341cdfd292385b7e244816021114fea611497c02d2cf7e4a",
+  "native_bytes_rechecked": 1310720,
+  "run_id": "20261011T042223Z-primary-live-wasm-swap-ddcf94bc",
+  "scientific_delivery_review": "pending",
+  "scope": "Owned private group anchor lifetime, target exit status preservation and inherited-child cleanup; no escaping descendants or native Canvas lifecycle.",
+  "verification": {
+    "checks": [
+      {
+        "actual": 84,
+        "expected": 84,
+        "passed": true,
+        "path": "frames",
+        "present": true
+      },
+      {
+        "actual": 1310720,
+        "expected": 1310720,
+        "passed": true,
+        "path": "native_bytes",
+        "present": true
+      },
+      {
+        "actual": 1376256,
+        "expected": 1376256,
+        "passed": true,
+        "path": "independent_bytes",
+        "present": true
+      },
+      {
+        "actual": 6,
+        "expected": 6,
+        "passed": true,
+        "path": "failed_proposals",
+        "present": true
+      },
+      {
+        "actual": 4,
+        "expected": 4,
+        "passed": true,
+        "path": "close_controls",
+        "present": true
+      },
+      {
+        "actual": 5,
+        "expected": 5,
+        "passed": true,
+        "path": "source_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "source_revisions",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "zero_workers",
+        "present": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "passed": true,
+        "path": "closed_guard_controls",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "guard_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "file_revisions",
+        "present": true
+      },
+      {
+        "actual": 7,
+        "expected": 7,
+        "passed": true,
+        "path": "file_controls",
+        "present": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "passed": true,
+        "path": "file_builder_aborts",
+        "present": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "passed": true,
+        "path": "file_deadline_aborts",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "file_loop_quiescent",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "file_serialized_read",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "fresh_compiler_frames",
+        "present": true
+      },
+      {
+        "actual": 49152,
+        "expected": 49152,
+        "passed": true,
+        "path": "fresh_compiler_bytes",
+        "present": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "passed": true,
+        "path": "compiler_tree_controls",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "compiler_late_writes_absent",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "source_frontend_cache_misses",
+        "present": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "passed": true,
+        "path": "owned_orphan_controls",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "owned_target_exits_preserved",
+        "present": true
+      }
+    ],
+    "delivery_review": "review-pending",
+    "integrity": {
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "6143e6db4fa97108341cdfd292385b7e244816021114fea611497c02d2cf7e4a",
+      "run_id": "20261011T042223Z-primary-live-wasm-swap-ddcf94bc",
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "valid": true
+    },
+    "recomputed_verdict": "supports",
+    "scope": "Fresh-process artifact integrity and predeclared checks; not independent contract review.",
+    "valid": true
+  },
+  "wake_id": "301c91a019a7480f9165cd3578463fb2"
+}
