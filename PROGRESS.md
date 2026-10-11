@@ -767,3 +767,7 @@ Four owned Swift frontend processes accept space/VT/FF/CR at Color-opening bound
 ## 2026-10-11 — native member-access syntax rejection
 
 Native parser rejects space/tab/newline after member-access dot while both lowerers accepted. Tightened both grammars; preserved legal Color whitespace. Four waits0/1/1/1/no timeout, six invalid expressions now reject, independent source/diagnostic/identity reader and eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-source-dot-spacing.md). Native syntax only; both milestone/Canvas acceptance remain open.
+
+## 2026-10-11 — cached-build CLI regular input gate
+
+FIFO blocks old primary build CLI until owned parent1.5sec kill/reap; symlink target reaches parser. CLI now requires bounded ASCII POSIX regular descriptor/nonblocking/no-follow open and detects changed reads, closing descriptors. Four actual children;fixed rejects before build/cache with no timeout. Six resealed faults and actual descriptor/replacement/mutation controls. [Scope](docs/reverse-engineering/2026-10-11-source-cli-input.md). No compiler/render/native/platform acceptance;both milestones open.

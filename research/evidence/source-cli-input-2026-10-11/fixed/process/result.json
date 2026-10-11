@@ -1,0 +1,31 @@
+{
+  "fixed": true,
+  "records": [
+    {
+      "kind": "fifo",
+      "pid": 93535,
+      "wait": {
+        "code": 1,
+        "timeout": false,
+        "reaped": true
+      },
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error_type\": \"ValueError\", \"error\": \"Bounded regular source file required\"}\n",
+      "cache_created": false,
+      "output_created": false
+    },
+    {
+      "kind": "symlink",
+      "pid": 93536,
+      "wait": {
+        "code": 1,
+        "timeout": false,
+        "reaped": true
+      },
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error_type\": \"OSError\", \"error\": \"[Errno 62] Too many levels of symbolic links: '/Users/8amps/xcpreviewer-rs/research/evidence/source-cli-input-2026-10-11/fixed/process/symlink/owned.swift'\"}\n",
+      "cache_created": false,
+      "output_created": false
+    }
+  ]
+}

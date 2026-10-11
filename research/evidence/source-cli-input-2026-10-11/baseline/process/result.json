@@ -1,0 +1,31 @@
+{
+  "fixed": false,
+  "records": [
+    {
+      "kind": "fifo",
+      "pid": 93327,
+      "wait": {
+        "code": -9,
+        "timeout": true,
+        "reaped": true
+      },
+      "stdout": "",
+      "stderr": "",
+      "cache_created": false,
+      "output_created": false
+    },
+    {
+      "kind": "symlink",
+      "pid": 93350,
+      "wait": {
+        "code": 1,
+        "timeout": false,
+        "reaped": true
+      },
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error_type\": \"ValueError\", \"error\": \"Unsupported expression outside primary-layer ZStack.frame contract\"}\n",
+      "cache_created": false,
+      "output_created": false
+    }
+  ]
+}

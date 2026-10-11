@@ -1,0 +1,9 @@
+{
+  "prediction": "Baseline FIFO blocks synchronous CLI until parent-owned1.5sec kill/reap; baseline symlink target reaches parser. Fixed CLI rejects both before build/cache. Four actual CLI subprocesses; no compiler invoked.",
+  "limits": {
+    "actual_python_cli_processes": 4,
+    "each_wait_seconds": 1.5,
+    "kill_reap_seconds": 2,
+    "pair_seconds": 8
+  }
+}

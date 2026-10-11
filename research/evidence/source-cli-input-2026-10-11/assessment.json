@@ -1,0 +1,5 @@
+{
+  "baseline_acceptance": false,
+  "reason": "FIFO blocks CLI until owned parent kill/reap; symlink target read reaches parser. Fixed gate rejects both before build.",
+  "scope": "Actual owned Python CLI with missing compiler paths never invoked. POSIX local inputs only; no rendering/platform/native claim."
+}
