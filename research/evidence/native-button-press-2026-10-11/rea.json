@@ -1,0 +1,60 @@
+{
+  "open": {
+    "result": {
+      "path": "/Users/8amps/xcpreviewer-rs/research/build/button-press-reference",
+      "format": "mach-o",
+      "kind": "executable",
+      "sha256": "cc5c43015bc79e3179068a7c83b1ce84fe6ed7c7da53b67fe20e965bf772f715",
+      "architecture": "arm64"
+    }
+  },
+  "identity": {
+    "result": {
+      "open": true,
+      "path": "/Users/8amps/xcpreviewer-rs/research/build/button-press-reference",
+      "sha256": "cc5c43015bc79e3179068a7c83b1ce84fe6ed7c7da53b67fe20e965bf772f715",
+      "architecture": "arm64",
+      "server_identity": {
+        "package": {
+          "name": "rea-agents",
+          "version": "6.2.0",
+          "root_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents",
+          "build_commit": null
+        },
+        "server": {
+          "name": "rea",
+          "version": "6.2.0",
+          "started_at": "2026-10-10T21:29:54.401Z",
+          "command_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents/scripts/rea.mjs"
+        },
+        "sdk": {
+          "server": "2.3.1",
+          "client_test": "2.3.1",
+          "core": "2.3.1"
+        },
+        "negotiated_protocol_version": "2025-06-18",
+        "client": {
+          "name": "codex-mcp-client",
+          "version": "0.162.0-alpha.2"
+        },
+        "skill": {
+          "name": "reverse-engineer-anything",
+          "expected_version": "34"
+        },
+        "protocol_features": {
+          "progress": true,
+          "cancellation": true,
+          "elicitation": false
+        },
+        "alignment": {
+          "state": "unknown",
+          "reasons": [],
+          "remediation": "Supply expected package, catalog, or registration identity to compare the live server."
+        }
+      }
+    }
+  },
+  "closed": {
+    "result": null
+  }
+}

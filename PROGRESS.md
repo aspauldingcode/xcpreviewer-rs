@@ -779,3 +779,7 @@ Baseline index FIFO hangs until owned2sec kill/reap; fixed index/manifest reads 
 ## 2026-10-11 — native external observed-model state
 
 Same owned ImageRenderer updates red→blue immediately on external model mutation and blue→red on reset; fresh renderer retains same model value, fresh default model resets red. Two fresh native waits0/16 phases/262144 fullbytes incl1728padding/250624tail/eight resealed faults/zero appwindows. SDK compile failure retained within four-producer budget. [Scope](docs/reverse-engineering/2026-10-11-native-observed-state.md). No Button/@State/Canvas refresh/transport claim;both milestones open.
+
+## 2026-10-11 — hidden native button input failure retained
+
+Hidden owned SwiftUI host exposes AXGroup only in two runs;zero buttons/actions.32768 full initial-red bytes incl216padding/31328tail/eight resealed faults/zeroownwindows;protocol compile failure retained within four producers. [Scope](docs/reverse-engineering/2026-10-11-native-button-press.md). Input acceptance failed;next needs changed hosting visibility/lifecycle. Both milestones open.

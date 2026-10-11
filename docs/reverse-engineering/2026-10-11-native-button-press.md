@@ -1,0 +1,13 @@
+# Hidden owned SwiftUI button accessibility discriminator
+
+A bounded public accessibility tree walk attempts to find and press a SwiftUI Button in an NSHostingView attached to a hidden owned NSWindow. The window is never ordered front or made key. Planned button action increments an external counter and toggles its color, observed through a separate public ImageRenderer. The tree limit is8levels/64nodes.
+
+Both fresh native processes expose AXGroup only, inspect1node, find no button and deliver zero actions. Input acceptance fails. Only initial red reference frames exist; planned three presses/red-blue-red-blue sequence did not execute. This distinguishes prior successful direct model mutation from actual action discovery/delivery. It does not establish visible SwiftUI input impossibility or Canvas behavior. A retry must change hosting visibility/lifecycle, not merely wait longer or repeat unchanged controls.
+
+Four producers include a retained compile failure because Swift NSAccessibility is a concrete namespace; corrected source uses NSAccessibilityProtocol. Corrected compile and two native processes exit0 under60second compile/15second native deadlines and12second helper alarm. Each closes its own hidden window and reports zero owned application windows. User Xcode/simulator processes are untouched; no Xcode workspace or bridge restart.
+
+Independent reader validates failed acquisition, absence of actions, traversal/actual waits and32,768 complete initial-red bytes including216a5 padding and31,328c3 tail. Eight resealed faults target wait, callback, fabricated button/press, cleanup and active/padding/tail bytes. Passing reader tests do not mean input acceptance. Prior observed-model seal/reader verified. REA confirms owned ARM64 helper cc5c43015bc79e3179068a7c83b1ce84fe6ed7c7da53b67fe20e965bf772f715/server6.2.0 and closes target; only owned source/sanitized observations published. Seal `c00f39aab76f4cfc68373d03a6759071c942d0895c7739ad07bcc6a42979dc55`; [evidence](../../research/evidence/native-button-press-2026-10-11/manifest.json).
+
+Graph-loop has no unfinished wake and retains reviewed-binding-required primary-live-wasm-swap. Live backlog inspected; approved bridge remains offline. Both milestones/native input/reset/display-export/privatewire/portable interactive-state acceptance remain open.
+
+Initial verifier expected empty stderr; its failed reader/manifest are retained. Both owned-window processes emit the same ApplePersistence=NO log shape with variable timestamp/PID/thread. Corrected reader requires that exact shape and keeps raw logs; no producer rerun or output deletion.
