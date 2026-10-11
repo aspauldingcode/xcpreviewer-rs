@@ -1,0 +1,58 @@
+{
+  "kind": "view.wasm",
+  "receipt": {
+    "version": 1,
+    "cache_key": "14b021dd43cb06b0bd46932f27cc35f6945f213ed6fabbee45b8621c451cbe22",
+    "entry_sha256": "c01c1fec99079f582e584f0ad2c724c39c423942b6a448637498b0cb4f6f0c4c",
+    "source_sha256": "04c4a6710d2bc58920d57661d5f04934711b3ca6b69491058c3b9c65a6e4b732",
+    "module_sha256": "8307c1d2ba3b3ba79315086aed90bc9a35c7b4341a3a7e002409994f8123803b",
+    "module": "versions/c01c1fec99079f582e584f0ad2c724c39c423942b6a448637498b0cb4f6f0c4c/view.wasm",
+    "config": {
+      "width": 17,
+      "height": 9,
+      "alphas": [
+        4,
+        2,
+        8
+      ],
+      "reverse": 0
+    },
+    "cache_hit": false,
+    "scope": "Strict explicit primary-layer source subset to cached WASM, atomic single published-bundle pointer. No runtime/state preservation, stale generation, watcher, native Canvas or general SwiftUI claim."
+  },
+  "calls": [
+    [
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/clang",
+      "--target=wasm32",
+      "-O2",
+      "-nostdlib",
+      "-fno-builtin",
+      "-emit-llvm",
+      "-S",
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/cache/.owned-build-a2x5rxts/view.c",
+      "-o",
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/cache/.owned-build-a2x5rxts/view.ll"
+    ],
+    [
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/clang",
+      "--target=wasm32",
+      "-O2",
+      "-nostdlib",
+      "-fno-builtin",
+      "-fuse-ld=/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/ld",
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/cache/.owned-build-a2x5rxts/view.ll",
+      "-Wl,--no-entry",
+      "-Wl,--strip-all",
+      "-Wl,--initial-memory=131072",
+      "-Wl,--max-memory=131072",
+      "-Wl,--export=render",
+      "-Wl,--export=pixels",
+      "-Wl,--export=capacity",
+      "-o",
+      "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/cache/.owned-build-a2x5rxts/view.wasm"
+    ]
+  ],
+  "pointer_hex": "7b0a20202263616368655f6b6579223a202231346230323164643433636230366230626434363933326632376363333566363934356632313365643666616262656534356238363231633435316362653232222c0a202022636f6e666967223a207b0a2020202022616c70686173223a205b0a202020202020342c0a202020202020322c0a202020202020380a202020205d2c0a2020202022686569676874223a20392c0a202020202272657665727365223a20302c0a20202020227769647468223a2031370a20207d2c0a202022656e7472795f736861323536223a202263303163316665633939303739663538326535383466306164326337323463333963343233393432623661343438363337343938623063623466366630633463222c0a2020226d6f64756c65223a202276657273696f6e732f633031633166656339393037396635383265353834663061643263373234633339633432333934326236613434383633373439386230636234663666306334632f766965772e7761736d222c0a2020226d6f64756c655f736861323536223a202238333037633164326261336233626137393331353038366165643930626339613335633762343334316133613765303032343039393934663831323338303362222c0a202022736f757263655f736861323536223a202230346334613637313064326263353839323064353736363164356630343933343731316233636136623639343931303538633362396336356136653462373332222c0a20202276657273696f6e223a20310a7d0a",
+  "module_hex": "0061736d010000006f776e6564206d6f64756c65",
+  "bad_path": "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/cache/entries/886ce31ffb8be5599fc0e39f5ac1925dbca4c72bddbec2ab628d73fa866551be/view.wasm"
+}

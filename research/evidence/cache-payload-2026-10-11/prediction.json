@@ -1,0 +1,9 @@
+{
+  "scope": "Actual owned Python cache-hit FIFO payload reads with explicit fake compiler outputs; no compilation/runtime claim",
+  "prediction": "Reanchor owned manifest with declared zero-sized FIFO payload. Baseline stat matches zero then digest blocks; fixed regular bounded read rejects without more fake compiler calls or publication change. Test IR and WASM payload independently.",
+  "limits": {
+    "producers": 4,
+    "wait_seconds": 2,
+    "reap_seconds": 2
+  }
+}

@@ -18,6 +18,7 @@ from reloop.primarysource import parse,lower
 from reloop.viewsource import stable_ir
 
 FILES=('view.c','view.ll','view.wasm')
+PAYLOAD_LIMITS={'view.c':65536,'view.ll':4194304,'view.wasm':4194304}
 FLAGS=['--target=wasm32','-O2','-nostdlib','-fno-builtin']
 LINK_FLAGS=['-Wl,--no-entry','-Wl,--strip-all','-Wl,--initial-memory=131072','-Wl,--max-memory=131072','-Wl,--export=render','-Wl,--export=pixels','-Wl,--export=capacity']
 
@@ -70,11 +71,17 @@ def entry(folder,key,identity,anchor):
     if hashlib.sha256(raw).hexdigest()!=anchor:raise ValueError('Cache manifest anchor changed')
     m=json.loads(raw)
     if type(m) is not dict or set(m)!={'version','cache_key','identity','files'} or m['version']!=1 or type(m['version']) is not int or m['cache_key']!=key or fingerprint(m['identity'])!=fingerprint(identity) or type(m['files']) is not dict or set(m['files'])!=set(FILES):raise ValueError('Cache identity changed')
+    payloads={}
     for name in FILES:
-        row=m['files'][name];p=folder/name
-        if type(row) is not dict or set(row)!={'sha256','bytes'} or type(row['bytes']) is not int or p.stat().st_size!=row['bytes'] or digest(p)!=row['sha256']:raise ValueError('Cache payload changed')
-    if (folder/'view.wasm').read_bytes()[:8]!=b'\0asm\x01\0\0\0':raise ValueError('WASM header changed')
-    if (folder/'view.c').read_text()!=lower(identity['config']):raise ValueError('Cache lowered source changed')
+        row=m['files'][name]
+        if type(row) is not dict or set(row)!={'sha256','bytes'} or type(row['bytes']) is not int or not 0<=row['bytes']<=PAYLOAD_LIMITS[name]:
+            raise ValueError('Cache payload size limit')
+        raw=read_metadata(folder/name,PAYLOAD_LIMITS[name])
+        if len(raw)!=row['bytes'] or hashlib.sha256(raw).hexdigest()!=row['sha256']:
+            raise ValueError('Cache payload changed')
+        payloads[name]=raw
+    if payloads['view.wasm'][:8]!=b'\0asm\x01\0\0\0':raise ValueError('WASM header changed')
+    if payloads['view.c']!=lower(identity['config']).encode():raise ValueError('Cache lowered source changed')
     return m
 
 

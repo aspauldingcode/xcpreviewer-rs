@@ -795,3 +795,7 @@ Two owned SwiftUI probes expose no navigation children; public center hit-test r
 ## 2026-10-11 — owned main-screen prerequisite failure
 
 Two placement/control acquisitions fail at NSScreen.main with actual -5 waits and OwnedState Code=3. No input, result or frame was acquired; cleanup is unverified. Seven resealed false-acceptance corruptions are rejected. [Retained failure and retry prerequisite](docs/reverse-engineering/2026-10-11-native-button-placement.md). Switch to independent work while display availability remains unresolved. Both milestones remain open.
+
+## 2026-10-11 — bounded cache payload entry reads
+
+Baseline cached IR/WASM FIFO digest reads block; both owned children are killed and reaped at two seconds. Fixed entry reads enforce source/IR/module size caps and nonblocking/no-follow regular descriptors, compare the same bounded bytes, and preserve publication without extra fake stages. Four producer controls, 120 fake-module bytes and six resealed faults. [Scope](docs/reverse-engineering/2026-10-11-cache-payload.md). Both milestones remain open.

@@ -1,0 +1,55 @@
+{
+  "cache_key": "14b021dd43cb06b0bd46932f27cc35f6945f213ed6fabbee45b8621c451cbe22",
+  "files": {
+    "view.c": {
+      "bytes": 1098,
+      "sha256": "f3b3e10f9b7086afa1bc689e2801209a5f8d95520f067f47411bfbec57b63b93"
+    },
+    "view.ll": {
+      "bytes": 74,
+      "sha256": "42fa6f3254111e1dfae60791805a18032c22b291444bb05792788e2526f2eb4f"
+    },
+    "view.wasm": {
+      "bytes": 20,
+      "sha256": "8307c1d2ba3b3ba79315086aed90bc9a35c7b4341a3a7e002409994f8123803b"
+    }
+  },
+  "identity": {
+    "builder_sha256": "62d1aafd3ece01383557ef8d09ce6bc0bc9e46baff94ae8a1e78a63b049e6512",
+    "clang_invocation": "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/clang",
+    "clang_sha256": "3e7347496cb952bfb1adc129399748e91a3b71a5e4e74e33fcda83472b3ba371",
+    "config": {
+      "alphas": [
+        4,
+        2,
+        8
+      ],
+      "height": 9,
+      "reverse": 0,
+      "width": 17
+    },
+    "flags": [
+      "--target=wasm32",
+      "-O2",
+      "-nostdlib",
+      "-fno-builtin"
+    ],
+    "ir_normalizer_sha256": "2d6a422204f82cfd05ed3b24a4fed205b57f4c218e6b6734dc50005f85f368f3",
+    "kernel_sha256": "f3b3e10f9b7086afa1bc689e2801209a5f8d95520f067f47411bfbec57b63b93",
+    "link_flags": [
+      "-Wl,--no-entry",
+      "-Wl,--strip-all",
+      "-Wl,--initial-memory=131072",
+      "-Wl,--max-memory=131072",
+      "-Wl,--export=render",
+      "-Wl,--export=pixels",
+      "-Wl,--export=capacity"
+    ],
+    "lowerer_sha256": "8c37f976e054abae0dbaab19f4d371941e468d56054b0c5e33144d9a20ad0eac",
+    "target": "wasm32",
+    "version": 1,
+    "wasm_ld_invocation": "/Users/8amps/xcpreviewer-rs/research/evidence/cache-payload-2026-10-11/fixed/view.wasm/ld",
+    "wasm_ld_sha256": "829731049b0eaea3ec3ed13f3e5f30413d637e07dd76081d6d01c799c0365743"
+  },
+  "version": 1
+}

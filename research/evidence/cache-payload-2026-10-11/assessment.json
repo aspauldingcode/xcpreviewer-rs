@@ -1,0 +1,7 @@
+{
+  "scope": "Owned cache hit behavior with explicit fake compiler; no executable WASM or native frame claim",
+  "producers": 4,
+  "baseline": "Two FIFO payload digest hangs, outer owned kill/reap -9",
+  "fixed": "Both reject before publication or additional fake compiler calls",
+  "milestones_complete": false
+}

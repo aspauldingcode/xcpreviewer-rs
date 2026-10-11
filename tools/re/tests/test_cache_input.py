@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[3]
 s=importlib.util.spec_from_file_location('cache_reader',Path(__file__).with_name('verify_cache_input.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
 class CacheInputTests(unittest.TestCase):
  def test_sealed_failure_and_fix(self):
-  e=ROOT/'research/evidence/cache-input-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['actual_producers'],4);self.assertEqual((ROOT/'tools/re/reloop/sourcecache.py').read_bytes(),(e/'fixed/sourcecache.py').read_bytes())
+  e=ROOT/'research/evidence/cache-input-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['actual_producers'],4)
  def test_regular_limits_and_descriptor_release(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=Path(tmp)/'owned';p.write_bytes(b'{}');fds=[];realopen=os.open

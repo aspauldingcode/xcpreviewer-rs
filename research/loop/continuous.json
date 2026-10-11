@@ -62,6 +62,16 @@
     "retained_failure": "Missing adjacent-source harness exit1 and ineffective00 module fault retained;corrected dependencies/fault without producer budget extension",
     "started_at": "2026-10-11T20:35:37.990116+00:00"
   },
+  "cache_payload_checkpoint": {
+    "budget": "Four producers; parent wait 2 seconds; owned reap 2 seconds. No real compiler/WASM runtime/native claim.",
+    "classification": "Cached IR/WASM FIFO digest hangs retained; bounded payload entry reads fixed",
+    "evidence": "research/evidence/cache-payload-2026-10-11",
+    "manifest_sha256": "4c3f7c445ce0d3faec6edb334d7e104b14f90d4aba16f909aa8194a1cc2de9f7",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed cache metadata/payload FIFO controls. Compiler output capture and publication-copy races remain separate. Choose independent demanded build/platform/resource gate while native main-screen/bridge/browser prerequisites remain unresolved.",
+    "result": "Four actual Python producers; baseline IR/WASM outer two-second owned kill/reap -9; fixed rejects with last pointer/module preserved and no extra stages. 120 explicit fake-module bytes and six resealed faults.",
+    "started_at": "2026-10-11T21:35:11.030146+00:00"
+  },
   "cadence_minutes": 10,
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
   "failure_fingerprints": [
