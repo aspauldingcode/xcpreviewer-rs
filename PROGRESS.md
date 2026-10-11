@@ -703,3 +703,7 @@ Initial four-mode owner prediction failed: same-pool CPU-only/unencoded/unretain
 ## 2026-10-11 — native submission and destruction callback distinction
 
 Unsubmitted command destruction invokes its handler once with status0, contradicting the initial no-callback prediction (retained). Submitted default retained-reference work survives both CPU owner drops and construction pool drain, times out with zero callbacks, then explicitly released event completes once with status4. Four native waits0,196608 fullbytes, six resealed faults. Final weak command lifetime varies; no physical reclamation claim. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-submission-lifetime.md). R1/R2/Canvas and both milestones remain open.
+
+## 2026-10-11 — queued-before-import surface failure
+
+Four owned audited native peers discard one measured queued attachment by destroying its inbox without receive/import. COPY_SEND keeps senderref1; MOVE_SEND removes original sender name. Sender retained CF and replacement-port-only mutated storage remain exact after peer exit; endpoints and rendezvous removed, completion rejected.196608 fullbytes including padding/tail, seven resealed faults;REA identity/closed. See [scope and evidence](docs/reverse-engineering/2026-10-11-surface-queued-drop.md). No final physical reclamation/Canvas claim; both milestones open.

@@ -1,0 +1,5 @@
+{
+  "scope": "Owned queued IOSurface descriptor destroyed before receive/import; CPU shared storage only, no physical reclamation or Canvas transport",
+  "required": "One queued message measured by receiver; audited control channel orders destruction without descriptor receipt. COPY leaves sender sendref1, MOVE removes sender name. Sender retained CF storage and replacement-port-only alias remain byte exact after peer endpoint destruction/exit. Completion rejected.",
+  "parent_manifest_sha256": "d8500f8f4038a772748b22e68233a7316640fc3c079e1e5e1c14c02b3aa0c9a1"
+}
