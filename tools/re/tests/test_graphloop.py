@@ -54,7 +54,8 @@ def experiment(eid):
 class GraphLoopTests(unittest.TestCase):
     def fixture(self, root, ids=('owned-one',)):
         controller = OwnedController(root)
-        config = load(ROOT / 'research/loop/graph-runner.json')
+        config = load(ROOT / 'research/loop/live-swap-runner.json')
+        config['limits'] = {'rounds': 4, 'experiments': 4, 'minutes': 15, 'artifact_bytes': 1073741824}
         config['task_bindings'] = {'owned-task': list(ids)}
         atomic(root / 'research/loop/graph-runner.json', config)
         atomic(root / 'research/loop/campaign.json',
