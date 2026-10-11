@@ -1,0 +1,13 @@
+{
+  "node": "/etc/profiles/per-user/8amps/bin/node",
+  "node_sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+  "protocol": "2025-11-25",
+  "scope": "Official pinned schema with installed Draft202012Validator; no official SDK/full behavioral conformance",
+  "invalid_before": 7,
+  "validated_after": 36,
+  "download_diagnostic": "Schema uses $defs; initial definitions-key diagnostic corrected without refetching",
+  "native_controls_reused": "mcp-process-2026-10-11; no native rerun or deadline change",
+  "validator_version": "4.25.1",
+  "validator_class": "Draft202012Validator",
+  "schema_tests": "InitializeResult, ListToolsResult, CallToolResult and advertised JSON Schema input contracts checked separately from generic envelopes"
+}

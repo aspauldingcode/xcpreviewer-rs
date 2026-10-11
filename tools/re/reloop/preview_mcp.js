@@ -8,7 +8,7 @@ class PreviewMcp {
  constructor(session){this.session=session;this.phase='new';this.ids=new Set();}
  async handle(m){
   const validId=x=>typeof x==='string'?(Buffer.byteLength(x)<=128):Number.isSafeInteger(x);
-  const error=(id,code,message)=>({jsonrpc:'2.0',id,error:{code,message}});
+  const error=(id,code,message)=>({jsonrpc:'2.0',...(id===null?{}:{id}),error:{code,message}});
   let bytes;
   try{bytes=Buffer.byteLength(JSON.stringify(m));}catch(_){return error(null,-32600,'Invalid request');}
   if(bytes>4096||!object(m)||m.jsonrpc!=='2.0'||typeof m.method!=='string'||Object.keys(m).some(k=>!['jsonrpc','id','method','params'].includes(k))||('params'in m&&!object(m.params))||('id'in m&&!validId(m.id)))return error(object(m)&&validId(m.id)?m.id:null,-32600,'Invalid request');

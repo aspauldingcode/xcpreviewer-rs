@@ -24,7 +24,7 @@ function serveMcp(input,output,handler,session,{deadline=10000,writeDeadline=100
   while(!stopped&&queue.length){
    active=queue.shift();const current=active;
    try{
-    const packet=current.parseError?{jsonrpc:'2.0',id:null,error:{code:-32700,message:'Parse error'}}:await handler.handle(current.message);
+    const packet=current.parseError?{jsonrpc:'2.0',error:{code:-32700,message:'Parse error'}}:await handler.handle(current.message);
     if(packet&&!stopped&&!current.cancelled){current.writing=true;await write(packet);}
    }catch(_){void stop('output-failed');}
    finally{active=null;}

@@ -650,3 +650,8 @@ UTF-8/newline framing, serial queue8, bounded backpressure/EOF and optional canc
 ## Actual owned MCP stdio preview (2026-10-11)
 
 Independent Python process client drives pinned MCP initialization/tools and actual Rust13x7→11x6→13x7 builds; unsupported CLI wait2 retains frame.65536 full allocation bytes,3 fresh modules and6 oracle controls pass. Four owned Node processes exit0/clean; early cancellation avoids build entry, entered cancellation and EOF record CLI wait-15/abort/drained with phase unlocalized. Four resealed exit/reply/wait/padding faults reject. Harness import and nested-manifest inventory errors retained and repaired without native reruns/deadline changes.83 Python plus7 Rust archive tests. Seal700c6bfe00763d9a5f54f450acc70444416755838185922e6c4deda87a71401e. Official SDK/full conformance/native Canvas acceptance remain open; both milestones open.
+
+
+## Official MCP schema discriminator (2026-10-11)
+
+Pinned official2025-11-25 schema falsifies7 unknown-ID id:null error responses; current handler/stream omit unreadable IDs and preserve known IDs.36 repaired owned envelopes plus specialized results/input schemas and16 actual MCP/Rust transcript envelopes validate. Reused native reader independently checks65536 full allocation bytes without native rerun. Three resealed ID/content/capability faults reject.85 Python plus7 Rust archive tests. Seale89f7262fde27c316fcf905a60e912d2ec2f2c8c77fcd2ab26404c09392a221c. Official SDK/full behavioral/native Canvas acceptance remain open; both milestones open.
