@@ -707,3 +707,7 @@ Unsubmitted command destruction invokes its handler once with status0, contradic
 ## 2026-10-11 — queued-before-import surface failure
 
 Four owned audited native peers discard one measured queued attachment by destroying its inbox without receive/import. COPY_SEND keeps senderref1; MOVE_SEND removes original sender name. Sender retained CF and replacement-port-only mutated storage remain exact after peer exit; endpoints and rendezvous removed, completion rejected.196608 fullbytes including padding/tail, seven resealed faults;REA identity/closed. See [scope and evidence](docs/reverse-engineering/2026-10-11-surface-queued-drop.md). No final physical reclamation/Canvas claim; both milestones open.
+
+## 2026-10-11 — rejected coalesced descriptor cleanup
+
+Four owned audited peers receive two coalesced IOSurface send descriptors in an intentionally invalid fixture envelope, reject without import and release refs2→0 via whole-message destruction or refs2→1→0 via explicit release/descriptor clearing/destruction. Sender retained CF and replacement-port-only storage remain exact through peer exit46.196608 fullbytes including padding/tail, seven resealed faults;REA identity/closed. See [scope](docs/reverse-engineering/2026-10-11-surface-rejected-envelope.md). No generic parser/Canvas/physical release claim; both milestones open.

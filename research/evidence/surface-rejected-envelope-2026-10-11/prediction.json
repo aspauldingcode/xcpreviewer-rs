@@ -1,0 +1,5 @@
+{
+  "scope": "Owned invalid application envelope with two received/coalesced IOSurface send rights; no surface import, Canvas message or physical reclamation claim",
+  "required": "Audited receive rejects invalid magic; two descriptor rights share one name with2 references. Full mach_msg_destroy removes name; partial release with descriptor name cleared leaves1 then destruction removes name. Sender COPY ref1 and retained fullstorage survive. Completion rejected.",
+  "parent_manifest_sha256": "dd1acfa45665be4314909cefbea7b8f3b02228abeaee84baad73a800686ef7a9"
+}

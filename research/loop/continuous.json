@@ -2377,6 +2377,15 @@
     "result": "4 native waits0 and childexit45; queuedcount1, audited peers, COPY senderref1/MOVE originalnamegone, endpointdead/removed and rendezvousgone;12 fullallocations196608bytes;7 resealed faults;REA identity/closed;no final physical reclamation or Canvas claims",
     "started_at": "2026-10-11T15:47:56.416428+00:00"
   },
+  "surface_rejected_envelope_checkpoint": {
+    "classification": "finite native received-envelope rejection/right cleanup supported; delivery review pending",
+    "evidence": "research/evidence/surface-rejected-envelope-2026-10-11",
+    "manifest_sha256": "1b82bc521056230d812b4d44f7cdfa4430f11e239bb183d681cb22cae5df7bda",
+    "milestones_complete": false,
+    "next_wake_hint": "Received invalid-envelope cleanup complete: duplicate descriptors coalesce refs2; full destroy removesname; partial release plus descriptorclear leaves1 then destroy removesname.196608 fullbytes/7 faults. Do not repeat unchanged. Next distinct required ownership/failure or demanded product contract. Private Xcode bridge offline, no restart; native Canvas/physicalreclamation and both milestones remain open.",
+    "result": "4 native waits0/peerexit46;two received copies coalescedname refs2;all destroy removesname, partial release/cleardescriptor refs1 then destroy removesname;196608 fullbytes,7 faults,REA identity/closed;no import/Canvas/physicalrelease claims",
+    "started_at": "2026-10-11T15:56:19.532187+00:00"
+  },
   "window_policy": {
     "before_next_open": true,
     "capture_preflight_enforces": true,
