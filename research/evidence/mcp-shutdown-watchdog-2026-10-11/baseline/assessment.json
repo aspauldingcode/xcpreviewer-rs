@@ -1,0 +1,4 @@
+{
+  "acceptance": false,
+  "reason": "Injected async close never settles; actual owned CLI stays alive beyond5sec wait, no lifecycle artifact. Independent controller kills/reaps only its Popen child with code-9. Actual worker remains live before forced process exit; no native physical reclamation claim."
+}

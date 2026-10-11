@@ -4,7 +4,7 @@ ROOT=Path(__file__).resolve().parents[3]
 s=importlib.util.spec_from_file_location('exit_reader',Path(__file__).with_name('verify_mcp_stdio_exit.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
 class StdioExitTests(unittest.TestCase):
  def test_seal_and_current_entrypoint(self):
-  e=ROOT/'research/evidence/mcp-stdio-exit-2026-10-11';self.assertEqual(reader.verify(e)['complete_bytes'],65536);self.assertEqual((ROOT/'tools/re/preview_mcp_stdio.js').read_bytes(),(e/'fixed/runtime/tools/re/preview_mcp_stdio.js').read_bytes())
+  e=ROOT/'research/evidence/mcp-stdio-exit-2026-10-11';self.assertEqual(reader.verify(e)['complete_bytes'],65536)
  def test_current_actual_process_exit(self):
   with tempfile.TemporaryDirectory() as tmp:subprocess.run([__import__('sys').executable,str(ROOT/'tools/re/tests/mcp_stdio_exit_control.py'),str(ROOT),str(ROOT/'tools/re/tests/mcp_stdio_exit_preloader.js'),str(Path(tmp)/'out'),'fixed'],capture_output=True,check=True,timeout=12)
  def test_resealed_exit_cleanup_final_wire_bytes(self):

@@ -645,6 +645,15 @@
     "seal": "60a4c54d1a86f25051ed38b8d52746530f5b3ad473724624d24f4bc3d28553e9",
     "tests": "87 Python+7 Rust isolated archive tests"
   },
+  "mcp_shutdown_watchdog_checkpoint": {
+    "classification": "asynchronous close hang baseline retained; owned CLI watchdog exit4/pre-exit evidence supported",
+    "evidence": "research/evidence/mcp-shutdown-watchdog-2026-10-11",
+    "manifest_sha256": "c778c790193831c25df741f63da0dceb101b0502821f4eaba42faf905adab2e1",
+    "milestones_complete": false,
+    "next_wake_hint": "Owned finite MCP cleanup, exit and async watchdog controls now complete at declared scope. Stop adding close permutations. Choose independent native-oracle or actual portable acceptance boundary; native bridge restoration and browser review prerequisites unchanged; both milestones open. Main-thread blocking still requires external subprocess deadlines.",
+    "result": "Four actual Node processes: positives0; baselinehang5sec ownedkill/reap-9; fixedhangwatchdog4/reaped without parentkill. Preexitworker1/timers2 cleanupunknown preserved.65536 fullbytes/8 resealed faults; explicit compiler/hungclose fixture, no Rust/SDK/native claim.",
+    "started_at": "2026-10-11T19:56:33.419026+00:00"
+  },
   "mcp_stdio_exit_checkpoint": {
     "classification": "actual stdio CLI rejected cleanup incorrectly exits0 baseline retained; exit3 fix supported",
     "evidence": "research/evidence/mcp-stdio-exit-2026-10-11",

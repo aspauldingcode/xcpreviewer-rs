@@ -1,0 +1,12 @@
+{
+  "scope": "Actual owned Node process/stdin/channel/session/worker with explicit synthetic compiler and never-settling close fixture; no Rust/SDK/native claim",
+  "parent_manifest_sha256": "0a9d54ebb8ea115144260e9f2623a6c46c737350c461c231caf31285d4a2ade9",
+  "required": "Bound CLI lifetime at requested channel deadline+1000ms; exit4/timeout artifact retaining pre-exit worker1 unknown cleanup, normalclose0. Outer5sec kill only owned Popen baseline timeout.",
+  "limits": {
+    "actual_node_processes": 4,
+    "wait_seconds": 5,
+    "packet_seconds": 3,
+    "requested_deadline_ms": 500,
+    "watchdog_grace_ms": 1000
+  }
+}

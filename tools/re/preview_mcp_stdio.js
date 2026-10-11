@@ -12,7 +12,15 @@ const {readArtifact}=require('./reloop/bounded_artifact.js'),{rustSourceBuilder}
   assert(!r.error&&r.status===0&&r.stdout.length===16384,'Finite oracle failed');return r.stdout;
  };
  const builder=rustSourceBuilder({...cfg,root,oracle}),session=new PreviewSession(source,builder),channel=serveMcp(process.stdin,process.stdout,new PreviewMcp(session),session,{deadline});
- const result=await channel.done;
+ // Bound asynchronous shutdown even if a trusted close adapter never settles.
+ const watchdog=setTimeout(()=>{
+  const snapshot={kind:'shutdown-timeout',deadlineMs:deadline,graceMs:1000,cleanup:'unknown',final:session.status()};
+  try{fs.writeFileSync(path.join(root,'shutdown-timeout.json'),JSON.stringify(snapshot,null,2)+'\n');}catch(_){}
+  try{fs.writeSync(2,JSON.stringify(snapshot)+'\n');}catch(_){}
+  process.exit(4);
+ },deadline+1000);
+ let result;
+ try{result=await channel.done;}finally{clearTimeout(watchdog);}
  fs.writeFileSync(path.join(root,'session-lifecycle.json'),JSON.stringify({channel:result,final:session.status(),builds:builder.records(),failures:builder.failures()},null,2)+'\n');
  const cleanupFailed=result.cleanup!=='complete';
  process.stderr.write(JSON.stringify({kind:cleanupFailed?'cleanup-failed':'closed',channel:result,lifecycle:session.status().lifecycle})+'\n');

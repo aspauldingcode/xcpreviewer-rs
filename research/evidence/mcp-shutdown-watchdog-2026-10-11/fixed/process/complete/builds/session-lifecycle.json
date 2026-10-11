@@ -1,0 +1,42 @@
+{
+  "channel": {
+    "received": 4,
+    "writes": 3,
+    "suppressed": 0,
+    "closed": true,
+    "cleanup": "complete",
+    "reason": "input-ended"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 2,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "129385fc9b4a3ddda3341ce2a8910f082707f5d6c627cc63e2ba2462ccae89a4"
+      },
+      "lastFailure": null
+    },
+    "readiness": {
+      "state": "closed",
+      "frameRevision": null,
+      "message": "Preview closed."
+    }
+  },
+  "builds": [],
+  "failures": []
+}

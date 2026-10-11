@@ -755,3 +755,7 @@ Channel summary now separates transport closed from cleanup complete/failed. Act
 ## 2026-10-11 — actual stdio cleanup failure exit
 
 CLI previously exited0 despite channel cleanup failed. It now retains lifecycle artifact and emits sanitized cleanup-failed/exit3; success stays0. Four actual owned Node processes with explicit compiler fixture/post-release failure injection,65536 independent bytes/seven resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-stdio-exit.md). No Rust/SDK/native compiler claim; nonsettling close and both milestones remain open.
+
+## 2026-10-11 — asynchronous CLI shutdown watchdog
+
+Baseline hung close required owned parent kill/reap after5sec(-9). CLI now keeps requested deadline+1000ms watchdog, retains pre-exit worker1/timers2/cleanupunknown and self-exits4; positive exit0 and prior rejection exit3 verified. Four actual Node processes,65536 independent bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-shutdown-watchdog.md). Event-loop timer only; external deadlines/native/both milestone acceptance remain.

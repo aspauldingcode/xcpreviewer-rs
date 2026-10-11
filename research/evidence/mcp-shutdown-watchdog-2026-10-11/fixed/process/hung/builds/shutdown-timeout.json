@@ -1,0 +1,48 @@
+{
+  "kind": "shutdown-timeout",
+  "deadlineMs": 500,
+  "graceMs": 1000,
+  "cleanup": "unknown",
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 1,
+      "busy": false,
+      "closed": false,
+      "revision": 1,
+      "loopClosed": false,
+      "building": false,
+      "timers": 2
+    },
+    "frame": {
+      "revision": 1,
+      "generation": 1,
+      "sourceSha256": "129385fc9b4a3ddda3341ce2a8910f082707f5d6c627cc63e2ba2462ccae89a4",
+      "moduleSha256": "ca207ddc21c651d304774ff26f8d4fff593c04bb730b03404e82ba82390196d6",
+      "allocationSha256": "cbcef0a5082223fd5d1aa6a70da815042667c48b4a3da2afc3a7515855c2be0b",
+      "allocationBytes": 16384,
+      "renderedBytes": 64,
+      "width": 1,
+      "height": 1,
+      "stride": 64,
+      "format": "premultiplied-RGBA8"
+    },
+    "diagnostics": {
+      "retainedEvents": 2,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "129385fc9b4a3ddda3341ce2a8910f082707f5d6c627cc63e2ba2462ccae89a4"
+      },
+      "lastFailure": null
+    },
+    "readiness": {
+      "state": "ready",
+      "frameRevision": 1,
+      "message": "Preview ready."
+    }
+  }
+}
