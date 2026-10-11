@@ -635,3 +635,8 @@ Owned NDJSON transport accepts exact id/method requests,4096-byte input,32768-by
 ## Owned stdin preview process (2026-10-11)
 
 Custom preview_stdio process accepts operator-pinned compiler config, owned source and new build root; wire remains bounded NDJSON. Bounded independent Python primary-byte oracle handles supported finite expressions without fixture lookup. Actual process revisions13x7→11x6→13x7 recover after unsupported edit wait2;4 transported allocations65536 bytes exact. Separate EOF process suppresses pending reply, owned CLI wait-15/drained, phase unlocalized; both Node exits0 and zero workers/timers.6 fresh oracle replays and3 resealed exit/EOF-reply/padding faults pass.77 Python plus7 Rust archive tests pass. Seal026dfeb04cad4dd0115d531a7a6fc20658b5e1cbfb6330b888635c2998350aa7. Custom stdin integration, not MCP/native Canvas. Both milestones remain open.
+
+
+## Owned MCP message handler (2026-10-11)
+
+Custom NDJSON rejects MCP initialize, proving transport mismatch. Separate bounded PreviewMcp message handler implements pinned2025-11-25 negotiation/initialized/ping/tools and JSON-RPC versus tool errors; ID0/empty strings and opaque metadata supported. Independent fake-session controls compare32768 synthetic allocation bytes,9 malformed messages,256-ID bound,2 fresh Node replays and3 resealed faults.79 Python plus7 Rust clean archive tests. Seal26cf87d10dba2fd23cb63dfa298eef3364eb8098ccdfbc7428dc651464a9ea5d. Handler only: framing/EOF/cancellation/SDK/actual compiler integration remain open. Native capture bridge offline; both milestone contracts open.
