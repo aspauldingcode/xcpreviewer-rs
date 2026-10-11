@@ -640,3 +640,8 @@ Custom preview_stdio process accepts operator-pinned compiler config, owned sour
 ## Owned MCP message handler (2026-10-11)
 
 Custom NDJSON rejects MCP initialize, proving transport mismatch. Separate bounded PreviewMcp message handler implements pinned2025-11-25 negotiation/initialized/ping/tools and JSON-RPC versus tool errors; ID0/empty strings and opaque metadata supported. Independent fake-session controls compare32768 synthetic allocation bytes,9 malformed messages,256-ID bound,2 fresh Node replays and3 resealed faults.79 Python plus7 Rust clean archive tests. Seal26cf87d10dba2fd23cb63dfa298eef3364eb8098ccdfbc7428dc651464a9ea5d. Handler only: framing/EOF/cancellation/SDK/actual compiler integration remain open. Native capture bridge offline; both milestone contracts open.
+
+
+## Bounded MCP stream controls (2026-10-11)
+
+UTF-8/newline framing, serial queue8, bounded backpressure/EOF and optional cancellation implemented around PreviewMcp. Active tool cancellation closes owned session and suppresses pending reply; queued cancellation retains used ID. Ten cooperative fake-session stream controls,2 fresh Node replays,16384 independent synthetic bytes and3 resealed suppression/cleanup/allocation faults pass.81 Python plus7 Rust archive tests. Sealf47fb3de71f3ac8b34cc2332f3702f970cb66d6feaaed8db6bfe94f86b74f942. External stdio/actual compiler/SDK interop remains next; no native Canvas acceptance. Both milestone contracts open.

@@ -1,0 +1,11 @@
+{
+  "node_sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+  "scope": "Owned bounded MCP stream controls with cooperative fake session; no SDK or real compiler/server integration",
+  "sources": [
+    "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports",
+    "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/cancellation"
+  ],
+  "parent_manifest_sha256": "26cf87d10dba2fd23cb63dfa298eef3364eb8098ccdfbc7428dc651464a9ea5d",
+  "scalar_eof_observation": "Invalid scalar request response was emitted before EOF; EOF cleanup still closes without pending work. No suppression of already-written responses claimed.",
+  "sdk": "Not installed in research venv; independent schema/stream reader only, no SDK interoperability claim"
+}
