@@ -1,0 +1,6 @@
+{
+  "code": 1,
+  "stderr": "AssertionError [ERR_ASSERTION]: Preview tool failed\n    at #request (/Users/8amps/xcpreviewer-rs/research/evidence/mcp-quarantine-2026-10-11/baseline/runtime/preview_consumer.js:10:100)\n    at async PreviewConsumer.sample (/Users/8amps/xcpreviewer-rs/research/evidence/mcp-quarantine-2026-10-11/baseline/runtime/preview_consumer.js:17:41)\n    at async /Users/8amps/xcpreviewer-rs/research/evidence/mcp-quarantine-2026-10-11/preview_quarantine_control.js:17:34 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n",
+  "stdout": "",
+  "timeout": false
+}

@@ -14,7 +14,17 @@ class PreviewConsumer {
   try{
    if(this.#accepted?.status.readiness.state==='closed')return this.snapshot();
    for(let attempt=0;attempt<2;attempt++){
-    const before=await this.#status(),r=await this.#request('frame'),frame=decodeFrameContent(r.structuredContent),after=await this.#status();
+    const before=await this.#status();
+    let frame;
+    const cached=this.#accepted?.frame;
+    if(cached&&before.frame&&before.lifecycle.liveWorkers===0&&before.readiness.state==='stale'){
+     // Reuse only independently accepted bytes with the identical publication identity.
+     assert.deepEqual(before.frame,cached.descriptor,'Unavailable publication identity changed');
+     frame={descriptor:{...cached.descriptor},allocation:Buffer.from(cached.allocation)};
+    }else{
+     const r=await this.#request('frame');frame=decodeFrameContent(r.structuredContent);
+    }
+    const after=await this.#status();
     try{assert.deepEqual(before,after);assert.deepEqual(after.frame,frame?frame.descriptor:null);}catch(_){continue;}
     assert(Number.isSafeInteger(after.lifecycle.revision)&&after.lifecycle.revision>=0,'Invalid lifecycle revision');
     assert(!frame||after.lifecycle.revision===frame.descriptor.revision,'Lifecycle publication mismatch');

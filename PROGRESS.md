@@ -735,3 +735,7 @@ After first connection invalidation and original sender-variable drops, same pee
 ## 2026-10-11 — live verification worker quarantine
 
 Hung pixels live-read deadline previously left worker alive, then repeated timeout; baseline retained. Fix retires failed worker, preserves cached revision1 bytes, rejects repeat as unavailable and recovers healthy revision2; close quiescent. Four producer waits0,196608 fullbytes/seven resealed faults. Next readiness/consumer integration must distinguish cached frame from unavailable execution. See [scope](docs/reverse-engineering/2026-10-11-live-read-timeout.md). Both milestones/native Canvas remain open.
+
+## 2026-10-11 — unavailable execution and cached consumer
+
+Readiness now marks worker0 publication stale; existing consumer adopts two stable statuses with identical accepted bytes. Unchanged-source refresh recovers healthy revision2/generation2; close clears frame and stops RPC. Two successful producers plus two retained stride-contract fixture failures;98304 independently expected bytes and8 resealed faults. See [scope](docs/reverse-engineering/2026-10-11-mcp-quarantine.md). Owned handler policy only; native Canvas/both milestones remain open.

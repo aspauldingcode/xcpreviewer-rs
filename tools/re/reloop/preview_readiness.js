@@ -9,6 +9,7 @@ function previewReadiness(status){
  const summary=(state,message)=>({state,frameRevision:f?f.revision:null,message});
  if(l.closed||l.loopClosed)return summary('closed','Preview closed.');
  if(l.building||l.busy)return summary(f?'updating':'building',f?'Updating preview; last frame retained.':'Building preview.');
+ if(f&&l.liveWorkers===0)return summary('stale','Last frame retained. Preview execution unavailable. Refresh to retry.');
  if(last&&['rejected','invalid-source','unavailable-source'].includes(last.kind)){
   const cause={rejected:'Source rejected.', 'invalid-source':'Source invalid.', 'unavailable-source':'Source unavailable.'}[last.kind];
   return summary(f?'stale':'failed',f?'Last frame retained. '+cause+' Edit source to retry.':cause+' Edit source to retry.');
