@@ -787,3 +787,7 @@ Hidden owned SwiftUI host exposes AXGroup only in two runs;zero buttons/actions.
 ## 2026-10-11 — visible native button discovery boundary
 
 Ordering the owned host behind other windows changes visibility to true and preserves non-key status, but two public tree walks still expose AXGroup only and deliver zero actions. All 32,768 initial-red bytes, including padding and unused tail, are verified; ten resealed faults cover the evidence checks. Both owned windows close. [Scope and next prerequisite](docs/reverse-engineering/2026-10-11-native-button-visible.md). Both milestones remain open.
+
+## 2026-10-11 — navigation and hit-test discovery boundary
+
+Two owned SwiftUI probes expose no navigation children; public center hit-test returns AXGroup only and delivers zero actions. The screen point is [80, -62], so display placement remains unvalidated. Both owned windows close. All 32,768 initial-red bytes and thirteen resealed evidence faults are verified. [Scope and next prerequisites](docs/reverse-engineering/2026-10-11-native-button-hit.md). Both milestones remain open.

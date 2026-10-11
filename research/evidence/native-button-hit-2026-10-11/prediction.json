@@ -1,0 +1,12 @@
+{
+  "scope": "Owned public SwiftUI navigation children and accessibilityHitTest at owned window center; no physical click or Canvas evidence",
+  "prediction": "Navigation-order children or hit-test may expose virtual button where direct children returned AXGroup. If hit returns button, three accepted actions must correlate model counts 1/2/3 and blue/red/blue full frames. If absent, retain scoped failure without unchanged retries.",
+  "limits": {
+    "producers": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "alarm_seconds": 12,
+    "tree_depth": 8,
+    "tree_nodes": 64
+  }
+}
