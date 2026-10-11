@@ -1,0 +1,11 @@
+{
+  "scope": "Owned persistent worker WASM host, reconstruction policy only",
+  "prediction": "Valid proposals change instance/frame together; invalid/trapping/timed-out proposals retain exact active token and every byte; superseded workers terminate",
+  "fixtures": "Two sealed source-frame CLI modules; full saved V8 allocations. No new native Canvas claim",
+  "bounds": {
+    "proposal_ms": 1500,
+    "module_bytes": 1048576,
+    "allocation_bytes": 16384,
+    "memory_bytes": 131072
+  }
+}
