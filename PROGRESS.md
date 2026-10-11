@@ -620,3 +620,8 @@ Two deterministic owned file-loop controls close or supersede at external oracle
 ## Bounded file-loop diagnostics (2026-10-11)
 
 SourceFileLoop now retains latest64 events and reports dropped count plus detached latest/last failure. Error messages remove control characters and truncate at512 UTF8 bytes without splitting iteration code points.80 repeated owned fixture builder failures keep16384 frame bytes exact; invalid/deleted source classified; final64 events and100 dropped accounted. Independent frozen replay and3 resealed count/error/padding mutants pass.71 Python plus7 Rust archive tests pass. Sealb86e3d6ddbaa67c0e185254e44636d5ca1a42001eec7877ab9cf70e592c1176c. Before diagnostics method absent and unbounded event history; original source and TypeError retained. Prebuilt fixture evidence, not fresh compilation or native Canvas transport. Both milestones remain open.
+
+
+## Local preview consumer contract (2026-10-11)
+
+PreviewSession schema1 exposes start/poll/status/readFrame/close with bounded diagnostics and detached allocation/descriptor. Active WASM geometry now publishes atomically with frame/revision/source provenance. Actual Rust revisions13x7→9x5→13x7 pass8 consumer controls; unsupported edit exits2/drained and retains revision2 geometry/frame.3 fresh modules plus retained allocation yield65536 independently checked bytes;3 resealed geometry/hidden-failure/padding mutants reject.73 Python plus7 Rust clean archive tests pass. Seal5f4ae354812a9f4c4a35dcf1be81f022398e47ca813bf28ab4faff8689b70df9. Local module API only; no MCP transport, native Canvas or broad SwiftUI acceptance claimed. Both milestones remain open.

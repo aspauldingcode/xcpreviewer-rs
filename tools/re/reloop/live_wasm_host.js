@@ -35,8 +35,8 @@ class LiveWasmHost {
   }
   snapshot() {
     if (!this.#active) return null;
-    const {revision, token, frame, moduleSha256, sourceRevision} = this.#active;
-    return {revision, token, moduleSha256, frame: Buffer.from(frame),
+    const {revision, token, frame, moduleSha256, sourceRevision, geometry} = this.#active;
+    return {revision, token, moduleSha256, geometry: {...geometry}, frame: Buffer.from(frame),
       ...(sourceRevision ? {sourceRevision: {...sourceRevision}} : {})};
   }
   async propose(moduleBytes, expected, width, height, stride, timeout = 1500,
@@ -74,7 +74,7 @@ class LiveWasmHost {
       const old = this.#active;
       this.#active = {worker: candidate, frame, revision: ++this.#revision,
         token: crypto.randomUUID(), moduleSha256: crypto.createHash('sha256').update(proposal).digest('hex'),
-        sourceRevision: provenance};
+        sourceRevision: provenance, geometry: {width, height, stride}};
       committed = true;
       this.#candidate = null;
       if (old) await old.worker.terminate();
