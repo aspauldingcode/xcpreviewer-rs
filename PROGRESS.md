@@ -799,3 +799,7 @@ Two placement/control acquisitions fail at NSScreen.main with actual -5 waits an
 ## 2026-10-11 — bounded cache payload entry reads
 
 Baseline cached IR/WASM FIFO digest reads block; both owned children are killed and reaped at two seconds. Fixed entry reads enforce source/IR/module size caps and nonblocking/no-follow regular descriptors, compare the same bounded bytes, and preserve publication without extra fake stages. Four producer controls, 120 fake-module bytes and six resealed faults. [Scope](docs/reverse-engineering/2026-10-11-cache-payload.md). Both milestones remain open.
+
+## 2026-10-11 — bounded compiler subprocess output
+
+Build commands now use temporary output files and a child-only 4 MiB file cap, bounded diagnostic reads and explicit limit rejection. Four owned Python emitter controls observe baseline 8192 bytes/exit 0 versus fixed 4096 bytes/SIGXFSZ under reduced test caps; parent limits remain unchanged. All 24,576 diagnostic bytes and seven resealed faults verified. [Scope](docs/reverse-engineering/2026-10-11-compiler-output.md). Real compiler, threaded/Windows/descendant and native Canvas acceptance remain open.

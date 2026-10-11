@@ -74,6 +74,16 @@
   },
   "cadence_minutes": 10,
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
+  "compiler_output_checkpoint": {
+    "budget": "Four emitters, three-second waits, child-only file cap4096 for controls. Production timeout30 seconds/file cap4MiB.",
+    "classification": "Owned compiler command output/file cap implemented and independently observed",
+    "evidence": "research/evidence/compiler-output-2026-10-11",
+    "manifest_sha256": "2e8b6a792a80ec21e379eb150c124e9e5d386251a55108e518185b0e66d8029b",
+    "milestones_complete": false,
+    "next_wake_hint": "Choose demanded real compiler/platform or native resource gate; skip completed output controls. POSIX preexec thread safety and descendants/Windows remain separate. Native display/bridge/browser prerequisites unchanged.",
+    "result": "Four Python emitters: baseline stdout/stderr 8192 bytes/exit0; fixed 4096 bytes/SIGXFSZ -25/rejected; parent limits unchanged; 24576 complete diagnostic bytes and seven resealed faults.",
+    "started_at": "2026-10-11T21:45:52.738952+00:00"
+  },
   "failure_fingerprints": [
     {
       "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",

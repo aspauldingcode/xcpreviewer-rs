@@ -1,0 +1,9 @@
+{
+  "scope": "Owned Python emitter as compiler-process output control, POSIX child-only file-size cap; no compiler/WASM/native Canvas claim",
+  "prediction": "Baseline capture retains 8192 identical bytes from stdout or stderr. Fixed child file cap4096 fails before accepting output, retains bounded file bytes and actual exit signal; parent observes and reaps. No global resource limit changes.",
+  "limits": {
+    "producers": 4,
+    "process_seconds": 3,
+    "output_bytes": 4096
+  }
+}

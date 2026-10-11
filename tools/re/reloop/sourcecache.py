@@ -9,6 +9,8 @@ import json
 import os
 import pathlib
 import re
+import resource
+import signal
 import shutil
 import stat
 import subprocess
@@ -38,6 +40,23 @@ def read_metadata(path,limit):
         return raw
     finally:
         os.close(fd)
+
+
+def run_compiler(args,*,timeout=30,output_limit=4194304):
+    """POSIX owned child: bounded file outputs and captured diagnostic memory."""
+    if type(output_limit) is not int or output_limit<=0:
+        raise ValueError('Compiler output limit required')
+    def limit_child():
+        _,hard=resource.getrlimit(resource.RLIMIT_FSIZE)
+        cap=output_limit if hard==resource.RLIM_INFINITY else min(output_limit,hard)
+        resource.setrlimit(resource.RLIMIT_FSIZE,(cap,cap))
+    with tempfile.TemporaryFile() as out,tempfile.TemporaryFile() as err:
+        result=subprocess.run(args,stdout=out,stderr=err,timeout=timeout,preexec_fn=limit_child)
+        out.seek(0);err.seek(0)
+        stdout=out.read(output_limit+1);stderr=err.read(output_limit+1)
+        if result.returncode==-signal.SIGXFSZ or len(stdout)>=output_limit or len(stderr)>=output_limit:
+            raise RuntimeError('Compiler output/file size limit exceeded')
+        return subprocess.CompletedProcess(args,result.returncode,stdout,stderr)
 
 
 def fingerprint(value):return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
@@ -106,7 +125,7 @@ def build(source,cache,output,clang,wasm_ld,*,fault_before_commit=False):
             try:
                 c=staging/'view.c';ir=staging/'view.ll';module=staging/'view.wasm';c.write_text(lower(config))
                 def command(args):
-                    r=subprocess.run([str(a) for a in args],capture_output=True,timeout=30)
+                    r=run_compiler([str(a) for a in args])
                     if r.returncode:raise RuntimeError('Compiler failed: '+r.stderr.decode(errors='replace')[-4096:])
                 command([clang,*FLAGS,'-emit-llvm','-S',c,'-o',ir]);ir.write_text(stable_ir(ir.read_text()))
                 command([clang,*FLAGS,'-fuse-ld='+str(wasm_ld),ir,*LINK_FLAGS,'-o',module])

@@ -5,7 +5,7 @@ from reloop.primarysource import expression
 out=pathlib.Path(sys.argv[2]);out.mkdir();kind=sys.argv[3];clang=out/'clang';ld=out/'ld';clang.write_bytes(b'owned fixture compiler');ld.write_bytes(b'owned fixture linker');calls=[]
 def compiler(args,**kw):
  calls.append([str(x) for x in args]);p=pathlib.Path(args[args.index('-o')+1]);p.write_text("; ModuleID = 'owned'\nsource_filename = \"owned\"\nowned IR\n") if '-emit-llvm' in args else p.write_bytes(b'\0asm\x01\0\0\0owned module');return subprocess.CompletedProcess(args,0,b'',b'')
-with patch.object(cache.subprocess,'run',side_effect=compiler):
+with (patch.object(cache,'run_compiler',side_effect=compiler) if hasattr(cache,'run_compiler') else patch.object(cache.subprocess,'run',side_effect=compiler)):
  a=cache.build(expression(4),out/'cache',out/'output',clang,ld);b=cache.build(expression(4),out/'cache',out/'output',clang,ld);assert b['cache_hit'] and len(calls)==2
  pointer=(out/'output/current.json').read_bytes();module=(out/'output'/a['module']).read_bytes();folder=out/'cache/entries'/a['entry_sha256'];m=json.loads((folder/'manifest.json').read_text());m['files'][kind]['bytes']=0
  cache.atomic(folder/'manifest.json',m);anchor=cache.digest(folder/'manifest.json');new=folder.with_name(anchor);folder.rename(new);cache.atomic(out/'cache/keys'/(a['cache_key']+'.json'),{'version':1,'entry_sha256':anchor});bad=new/kind;bad.unlink();os.mkfifo(bad)
