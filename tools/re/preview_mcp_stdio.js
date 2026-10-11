@@ -14,5 +14,7 @@ const {readArtifact}=require('./reloop/bounded_artifact.js'),{rustSourceBuilder}
  const builder=rustSourceBuilder({...cfg,root,oracle}),session=new PreviewSession(source,builder),channel=serveMcp(process.stdin,process.stdout,new PreviewMcp(session),session,{deadline});
  const result=await channel.done;
  fs.writeFileSync(path.join(root,'session-lifecycle.json'),JSON.stringify({channel:result,final:session.status(),builds:builder.records(),failures:builder.failures()},null,2)+'\n');
- process.stderr.write(JSON.stringify({kind:'closed',channel:result,lifecycle:session.status().lifecycle})+'\n');
+ const cleanupFailed=result.cleanup!=='complete';
+ process.stderr.write(JSON.stringify({kind:cleanupFailed?'cleanup-failed':'closed',channel:result,lifecycle:session.status().lifecycle})+'\n');
+ if(cleanupFailed)process.exitCode=3;
 })().catch(()=>{process.stderr.write('{"kind":"startup-failed"}\n');process.exitCode=2;});

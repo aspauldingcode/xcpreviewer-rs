@@ -645,6 +645,15 @@
     "seal": "60a4c54d1a86f25051ed38b8d52746530f5b3ad473724624d24f4bc3d28553e9",
     "tests": "87 Python+7 Rust isolated archive tests"
   },
+  "mcp_stdio_exit_checkpoint": {
+    "classification": "actual stdio CLI rejected cleanup incorrectly exits0 baseline retained; exit3 fix supported",
+    "evidence": "research/evidence/mcp-stdio-exit-2026-10-11",
+    "manifest_sha256": "0a9d54ebb8ea115144260e9f2623a6c46c737350c461c231caf31285d4a2ade9",
+    "milestones_complete": false,
+    "next_wake_hint": "CLI cleanup failure exit contract complete. Nonsettling close still needs process-owned watchdog only if demanded packaging requires it. Choose independent native-oracle/portable acceptance work; do not repeat local cleanup wrappers indefinitely. Bridge restoration/browser review gate remain; both milestones open.",
+    "result": "Four actual owned Node processes: baselinefailedcloseexit0; fixedfailedexit3/kindcleanup-failed with lifeartifact; successfulexit0. Finalworker/timer0.65536 fullbytes/7 resealed faults. Explicit compiler fixture and post-release fault injection; no Rust/SDK/native claim.",
+    "started_at": "2026-10-11T19:45:54.398589+00:00"
+  },
   "mcp_terminal_checkpoint": {
     "bridge": "retained approved bridge offline; restoration prerequisite unchanged; no restart",
     "classification": "finite-owned research supported; delivery review pending",

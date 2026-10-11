@@ -1,0 +1,10 @@
+{
+  "scope": "Actual owned Node CLI/stdin process/channel/session/WASM with explicit test-only compiler and post-release close injection; no Rust/SDK/native compiler",
+  "parent_manifest_sha256": "ab1138f435e04463df90ade08031a25af8a9921d67fb83e74a03a32e1ea1add3",
+  "required": "Successful close exit0, rejected close summary failed and exit3 after artifacts; both workers/timers0, no private exception.",
+  "limits": {
+    "actual_node_processes": 4,
+    "wait_seconds": 5,
+    "packet_seconds": 3
+  }
+}

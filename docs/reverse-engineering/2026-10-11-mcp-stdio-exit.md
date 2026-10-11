@@ -1,0 +1,19 @@
+# Owned stdio cleanup failure exit status
+
+The actual preview_mcp_stdio.js entrypoint now returns exit3 and a sanitized cleanup-failed stderr summary when its channel cleanup outcome is not complete. It writes session-lifecycle.json first, retaining final state and failed cleanup. Successful shutdown still returns exit0/kind closed; startup failures remain exit2. This prevents a rejected close adapter from being reported as successful process completion.
+
+## Selection and fixture provenance
+
+The previous wake made channel cleanup rejection visible but source inspection found the executable ignored that result. Graph-loop reports no unfinished running wake, one reviewed-binding-required candidate and incomplete milestones. Live GitHub backlog retains A1/S1/D1, conformance and native R1/R2/capture. Approved bridge remains running/responsive false with retained session cb8b4afc-df18-46cd-b895-fc9b6941327f; no restart or Xcode workspace. Parent channel seal ab1138f435e04463df90ade08031a25af8a9921d67fb83e74a03a32e1ea1add3 and its semantic verifier were rechecked.
+
+This experiment runs the actual owned Node executable and JSON-RPC stdio/channel/session/worker boundary, driven by an independent Python client. A frozen test-only Node preloader explicitly replaces rustSourceBuilder with a hand-authored no-import WASM receipt fixture; no Rust/source compiler, native oracle or official SDK is exercised. A selected PreviewSession subclass invokes the real close and then throws a private test exception. This measures post-release adapter failure; it does not introduce a failure before resource release or a hung adapter. Normal mode uses the unmodified real session. The preloader only intercepts the two declared dependencies when loaded by preview_mcp_stdio.js and is never installed into product execution.
+
+## Discrimination
+
+Four actual owned Node subprocesses consume the producer budget: baseline complete/failed and fixed complete/failed. Each initializes, starts a real WASM worker, obtains a typed16-KiB frame, ends stdin, and records actual process wait status within5seconds and each packet within3seconds. Baseline complete and failed both exit0/kind closed even though the failed channel summary says cleanup failed. Fixed complete exits0; fixed failed exits3/kind cleanup-failed. Both final states have workers0/timers0/frame null; cleanup rejection is independent of physical leak. The Python controller finally waits or terminates only its own Popen process on deadline, never user processes. Outer Python control has an unchanged12second deadline for its pair.
+
+## Evidence and verification
+
+Manifest `0a9d54ebb8ea115144260e9f2623a6c46c737350c461c231caf31285d4a2ade9` seals frozen CLI/runtime, preloader, independent client, actual waits, wire packets, lifecycle artifacts and stderr. The reader checks exact process codes, stderr classification, channel counters and cleanup outcome, coherent start/frame descriptors and final lifecycle, without inferring process success from a printed summary. It compares65,536 independent frame bytes across four actual Node processes: four active0x77 bytes and all remaining0xc3, including row padding and untouched allocation tail. Seven resealed faults (outer wait, actual exit, cleanup outcome, final worker, private stderr, byte4 and tail16,383) must reject with valid hashes. Candidate tests run current actual stdio control and existing channel/quarantine regressions. No Rust changes.
+
+The observed runtime is scoped to existing local Node/macOS. No non-Apple, native Canvas, private protocol, official SDK or fresh source compiler acceptance follows. REA is not required for ordinary owned JavaScript and a test-only fixture. Non-settling close remains a distinct unhandled prerequisite for a process watchdog; this exit change only applies after channel.done settles. Operator packaging must preserve exit3 and lifecycle diagnostics. Both milestones remain open.

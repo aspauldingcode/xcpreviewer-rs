@@ -1,0 +1,4 @@
+{
+  "acceptance": false,
+  "reason": "Actual owned stdio CLI exits0 and kindclosed although channel cleanup failed after real release. Workers0 does not turn rejected adapter into success. No pre-release leak or compiler claim."
+}

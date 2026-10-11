@@ -751,3 +751,7 @@ At256 request IDs, baseline refused close while retaining worker1/timers2/frame.
 ## 2026-10-11 — channel cleanup outcome
 
 Channel summary now separates transport closed from cleanup complete/failed. Actual owned worker controls distinguish throw before release(worker1) from throw after release(worker0); both failed adapters reported failed, all finally closed. Four waits0/12 controls,262144 independent bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-channel-cleanup.md). Non-settling close remains explicit; no SDK/native physical release/both milestone completion.
+
+## 2026-10-11 — actual stdio cleanup failure exit
+
+CLI previously exited0 despite channel cleanup failed. It now retains lifecycle artifact and emits sanitized cleanup-failed/exit3; success stays0. Four actual owned Node processes with explicit compiler fixture/post-release failure injection,65536 independent bytes/seven resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-stdio-exit.md). No Rust/SDK/native compiler claim; nonsettling close and both milestones remain open.
