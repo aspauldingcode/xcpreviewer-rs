@@ -34,6 +34,6 @@ def corpus(out):
         args=base.copy();args[slot]=value;r=subprocess.run([str(binary),*map(str,args),str(expected),str(expected)],capture_output=True,timeout=2)
         assert r.returncode==2 and error.encode() in r.stderr
         controls.append({'kind':kind,'args':args,'code':r.returncode,'error':r.stderr.decode()})
-    facts={'rust_frames':len(rows),'rust_allocation_bytes':len(rows)*16384,'rust_native_bytes':sum(r['native_bytes'] for r in rows),'rust_negative_controls':len(controls),'rust_core_tests':5,'scope':'Dependency-free Rust frame receipt/allocation and transactional ownership policy; no WASM execution, source compilation, native Canvas sequencing or platform acceptance'}
+    facts={'rust_frames':len(rows),'rust_allocation_bytes':len(rows)*16384,'rust_native_bytes':sum(r['native_bytes'] for r in rows),'rust_negative_controls':len(controls),'rust_core_tests':7,'scope':'Dependency-free Rust frame receipt/allocation and transactional ownership policy; no WASM execution, source compilation, native Canvas sequencing or platform acceptance'}
     atomic(out/'result.json',{'observations':facts,'rows':rows,'controls':controls,'rust_identity':identity,'binary_sha256':digest(binary),'source_sha256':{p.name:digest(p) for p in source.glob('*.rs')}})
     return facts

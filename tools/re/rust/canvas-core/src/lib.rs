@@ -17,6 +17,7 @@ pub struct FrameAbi {
 }
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Error {
+    Alpha,
     Dimensions,
     Stride,
     Memory,
@@ -71,6 +72,42 @@ pub fn validate(
     }
     Ok(())
 }
+/// Render only the independently measured three-primary, alpha-eighth contract.
+/// Writes the whole allocation; every invalid request leaves the input unchanged.
+pub fn render_primary(
+    spec: FrameSpec,
+    alphas: [u8; 3],
+    reverse: bool,
+    output: &mut [u8],
+) -> Result<usize, Error> {
+    let used = spec.byte_count()? as usize;
+    if alphas.iter().any(|a| *a > 8) {
+        return Err(Error::Alpha);
+    }
+    if output.len() != ALLOCATION {
+        return Err(Error::Length);
+    }
+    let mut pixel = [0u32; 4];
+    let order = if reverse { [1, 0, 2] } else { [2, 0, 1] };
+    for channel in order {
+        let alpha = (u32::from(alphas[channel]) * 255 + 4) / 8;
+        for (c, value) in pixel.iter_mut().enumerate() {
+            let source = if c == channel || c == 3 { alpha } else { 0 };
+            *value = (source * 255 + *value * (255 - alpha) + 127) / 255;
+        }
+    }
+    output.fill(0xc3);
+    for row in output[..used].chunks_exact_mut(spec.stride as usize) {
+        row.fill(0xa5);
+        for target in row[..spec.width as usize * 4].chunks_exact_mut(4) {
+            for (byte, value) in target.iter_mut().zip(pixel) {
+                *byte = value as u8;
+            }
+        }
+    }
+    Ok(used)
+}
+
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Snapshot {
     pub revision: u64,
@@ -236,5 +273,45 @@ mod tests {
             Err(Error::Revision)
         );
         assert_eq!(store.snapshot(), old);
+    }
+    #[test]
+    fn invalid_render_keeps_every_input_byte() {
+        let (spec, _, mut bytes) = valid();
+        let old = bytes.clone();
+        assert_eq!(
+            render_primary(spec, [9, 4, 4], false, &mut bytes),
+            Err(Error::Alpha)
+        );
+        assert_eq!(bytes, old);
+        assert_eq!(
+            render_primary(
+                FrameSpec { stride: 51, ..spec },
+                [4, 4, 4],
+                false,
+                &mut bytes
+            ),
+            Err(Error::Stride)
+        );
+        assert_eq!(bytes, old);
+        let mut short = vec![17; ALLOCATION - 1];
+        let old = short.clone();
+        assert_eq!(
+            render_primary(spec, [4, 4, 4], false, &mut short),
+            Err(Error::Length)
+        );
+        assert_eq!(short, old);
+    }
+    #[test]
+    fn transparent_and_opaque_controls_overwrite_full_allocation() {
+        let (spec, _, mut bytes) = valid();
+        bytes.fill(0x11);
+        assert_eq!(render_primary(spec, [0, 0, 0], false, &mut bytes), Ok(448));
+        assert_eq!(&bytes[..4], &[0, 0, 0, 0]);
+        assert!(bytes[52..64].iter().all(|b| *b == 0xa5));
+        assert!(bytes[448..].iter().all(|b| *b == 0xc3));
+        render_primary(spec, [8, 8, 8], false, &mut bytes).unwrap();
+        assert_eq!(&bytes[..4], &[0, 255, 0, 255]);
+        render_primary(spec, [8, 8, 8], true, &mut bytes).unwrap();
+        assert_eq!(&bytes[..4], &[0, 0, 255, 255]);
     }
 }

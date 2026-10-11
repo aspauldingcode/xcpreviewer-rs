@@ -5104,8 +5104,28 @@
           "path": "rust_negative_controls"
         },
         {
-          "equals": 5,
+          "equals": 7,
           "path": "rust_core_tests"
+        },
+        {
+          "equals": 84,
+          "path": "rust_render_frames"
+        },
+        {
+          "equals": 1376256,
+          "path": "rust_render_bytes"
+        },
+        {
+          "equals": 1310720,
+          "path": "rust_render_native_bytes"
+        },
+        {
+          "equals": 5,
+          "path": "rust_render_invalid_controls"
+        },
+        {
+          "equals": true,
+          "path": "rust_render_invalid_unchanged"
         }
       ],
       "depends_on": [],

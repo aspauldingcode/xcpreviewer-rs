@@ -1,0 +1,386 @@
+{
+  "id": "159a71984ef14b848e7f29b0f4b73ab1",
+  "state": "budget-exhausted",
+  "rounds": [
+    {
+      "task": "primary-live-wasm-swap",
+      "run_id": "20261011T055326Z-primary-live-wasm-swap-2866b28f",
+      "state": "scoped-support",
+      "execution": "success",
+      "verdict": "supports",
+      "verification": {
+        "valid": true,
+        "integrity": {
+          "run_id": "20261011T055326Z-primary-live-wasm-swap-2866b28f",
+          "valid": true,
+          "manifest_sha256": "51890d87226c81d7940991d94b66e779ea3034598df24247cff86880d08af650",
+          "external_anchor_matches": true,
+          "frozen_sources_unchanged": true,
+          "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash."
+        },
+        "recomputed_verdict": "supports",
+        "checks": [
+          {
+            "path": "frames",
+            "expected": 84,
+            "actual": 84,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "native_bytes",
+            "expected": 1310720,
+            "actual": 1310720,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "independent_bytes",
+            "expected": 1376256,
+            "actual": 1376256,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "failed_proposals",
+            "expected": 6,
+            "actual": 6,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "close_controls",
+            "expected": 4,
+            "actual": 4,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "source_rejections",
+            "expected": 5,
+            "actual": 5,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "source_revisions",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "zero_workers",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "closed_guard_controls",
+            "expected": 2,
+            "actual": 2,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "guard_rejections",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_revisions",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_controls",
+            "expected": 7,
+            "actual": 7,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_builder_aborts",
+            "expected": 1,
+            "actual": 1,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_deadline_aborts",
+            "expected": 1,
+            "actual": 1,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_loop_quiescent",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_serialized_read",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "fresh_compiler_frames",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "fresh_compiler_bytes",
+            "expected": 49152,
+            "actual": 49152,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "compiler_tree_controls",
+            "expected": 2,
+            "actual": 2,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "compiler_late_writes_absent",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "source_frontend_cache_misses",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "owned_orphan_controls",
+            "expected": 2,
+            "actual": 2,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "owned_target_exits_preserved",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_input_controls",
+            "expected": 7,
+            "actual": 7,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_input_descriptors_closed",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "file_fifo_deadline_closed",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_compiler_controls",
+            "expected": 4,
+            "actual": 4,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_compiler_late_writes_absent",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_fresh_compiler_frames",
+            "expected": 3,
+            "actual": 3,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_fresh_compiler_bytes",
+            "expected": 49152,
+            "actual": 49152,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_private_abort_pipe",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_loss_cleanup_rejected",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_loss_pipe_settlement",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_output_pressure_drained",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_malformed_rows_rejected",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_terminal_rejections",
+            "expected": 4,
+            "actual": 4,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_terminal_valid_control",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_reparent_abort_drained",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_utf8_split_exact",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_invalid_utf8_rejected",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "observed_ascii_bytewise_exact",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_frames",
+            "expected": 84,
+            "actual": 84,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_allocation_bytes",
+            "expected": 1376256,
+            "actual": 1376256,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_native_bytes",
+            "expected": 1310720,
+            "actual": 1310720,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_negative_controls",
+            "expected": 10,
+            "actual": 10,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_core_tests",
+            "expected": 7,
+            "actual": 7,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_render_frames",
+            "expected": 84,
+            "actual": 84,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_render_bytes",
+            "expected": 1376256,
+            "actual": 1376256,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_render_native_bytes",
+            "expected": 1310720,
+            "actual": 1310720,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_render_invalid_controls",
+            "expected": 5,
+            "actual": 5,
+            "present": true,
+            "passed": true
+          },
+          {
+            "path": "rust_render_invalid_unchanged",
+            "expected": true,
+            "actual": true,
+            "present": true,
+            "passed": true
+          }
+        ],
+        "delivery_review": "review-pending",
+        "scope": "Fresh-process artifact integrity and predeclared checks; not independent contract review."
+      }
+    }
+  ]
+}

@@ -85,6 +85,8 @@ def corpus(out):
     facts.update(observed_compiler(out / 'observed-compiler'))
     from reloop.rustframeprobe import corpus as rust_frame
     facts.update(rust_frame(out / 'rust-frame'))
+    from reloop.rustrenderprobe import corpus as rust_render
+    facts.update(rust_render(out / 'rust-render'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
     return facts
 
