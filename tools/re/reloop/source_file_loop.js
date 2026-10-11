@@ -31,7 +31,9 @@ class SourceFileLoop {
   this.#deadline=setTimeout(()=>{void this.close();},duration);
   return this.poll();
  }
- poll(){
+ poll(){return this.#observe(false);}
+ refresh(){assert(!this.#closed,'File loop closed');return this.#observe(true);}
+ #observe(force){
   if(this.#closed)return this.#drain;
   let source,key,reason;
   try{
@@ -47,7 +49,7 @@ class SourceFileLoop {
    key=crypto.createHash('sha256').update(source).digest('hex');
    if(!source.length||source.length>4096||!source.every(b=>b<128))reason='invalid-source';
   }catch(e){key='read-error:'+String(e.code||e.message);reason='unavailable-source';}
-  if(key===this.#seen){this.#kick();return this.#drain;}
+  if(key===this.#seen&&(!force||reason)){this.#kick();return this.#drain;}
   this.#seen=key;this.#pending=null;
   if(reason){this.#host.invalidate();this.#record({kind:reason});return this.#drain;}
   const ticket=this.#host.begin(source);this.#pending={source:Buffer.from(source),ticket};

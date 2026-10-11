@@ -20,6 +20,7 @@ class PreviewSession {
  async #run(action){assert(!this.#operation,'Preview session operation active');this.#operation=true;try{return await action();}finally{this.#operation=false;}}
  async start(interval=25,duration=5000){return this.#run(async()=>{await this.#loop.start(interval,duration);return this.status();});}
  async poll(){return this.#run(async()=>{await this.#loop.poll();return this.status();});}
+ async refresh(){return this.#run(async()=>{await this.#loop.refresh();return this.status();});}
  async readFrame(){return this.#run(async()=>{
   if(!this.#loop.snapshot())return null;
   const snapshot=await this.#loop.verifyLive();return {descriptor:this.#describe(snapshot),allocation:Buffer.from(snapshot.frame)};

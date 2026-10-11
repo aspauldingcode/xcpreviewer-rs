@@ -671,3 +671,7 @@ Handler 0.2.1 reports current readiness without treating retained historical fai
 ### 2026-10-11: missing/empty source and exact restoration
 
 Official SDK control retains full stale frames on missing/empty source and republishes identical source as new revision/generation after restoration. Three distinct successful Rust builds have identical module/image hashes; repeated invalid/valid polls add no events or builds. One actual server wait 0; 98,304 independent consumer bytes and three fresh V8 replays; four resealed faults reject; 93 Python plus seven Rust archive tests. [Scope and evidence](docs/reverse-engineering/2026-10-11-mcp-restore.md). Native Canvas reset/transport and both milestones remain open.
+
+### 2026-10-11: explicit same-source refresh and retry
+
+Handler 0.2.2 adds preview_refresh: unchanged poll skips rebuilding, explicit refresh republishes verified same source and retries unchanged rejected source. Last accepted frame survives both intentional failures; close rejects refresh. One actual SDK server wait 0, three successful Rust/V8 modules, two expected CLI waits 2, 98,304 independent consumer bytes; owned invalid/closed/concurrent/abort controls; four resealed faults; 95 Python plus seven Rust tests. [Scope and evidence](docs/reverse-engineering/2026-10-11-mcp-refresh.md). No user-state migration or native Canvas refresh/reset claim; both milestones remain open.
