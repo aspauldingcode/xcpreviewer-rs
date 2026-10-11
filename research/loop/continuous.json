@@ -268,6 +268,25 @@
     ],
     "state": "open"
   },
+  "linker_observation_checkpoint": {
+    "clean_archive_tests": 72,
+    "evidence_manifest_sha256": "1e98e86f9f39dc2e635f1f5480be1cce93c1ba7c6405fd0799830551e481a1f6",
+    "failed_runs": [
+      "20261011T092512Z-primary-live-wasm-swap-222dbf1c",
+      "20261011T092727Z-primary-live-wasm-swap-5225b242"
+    ],
+    "git_sync": "verified commit pending push",
+    "independent_module_bytes": 32768,
+    "native_acceptance": false,
+    "next": "Actual file-loop cancellation/completion race control and strict receipt validation; native linker termination and Canvas capture remain unverified. Both milestones remain open.",
+    "observation_limit": "25ms ancestry sampling can miss short linker lifetime; observed live row does not guarantee linker remains live when abort drain runs",
+    "per_attempt_runtime_receipts": "missing in retained failed attempts; prototype now writes before assertions",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T09:32:31.638491+00:00",
+    "resealed_mutants": 2,
+    "retry_requires": "Change observation method or independently measure linker interval; do not repeat unchanged6000-export workload",
+    "stress_exports_checked": 12000
+  },
   "live_guard_checkpoint": {
     "evidence_manifest_sha256": "afa3361ebcaf2e32cb8ac43623da6622ff49ee297371d505d5b3107b0a05c446",
     "finished_at": "2026-10-11T03:51:42.881657+00:00",
