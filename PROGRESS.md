@@ -630,3 +630,8 @@ PreviewSession schema1 exposes start/poll/status/readFrame/close with bounded di
 ## Bounded owned preview channel (2026-10-11)
 
 Owned NDJSON transport accepts exact id/method requests,4096-byte input,32768-byte response, one active plus one queued request, increasing IDs and close priority. Stop destroys owned input, drains session and operation, ends/destroys output; backpressure has50..1000ms write deadline.2 actual Rust frames13x7/9x5 carry32768 exact allocation bytes;9 fault controls and3 fresh independent stream replays pass.3 resealed queue/suppressed-reply/padding claims reject.75 Python plus7 Rust archive tests pass. Seal70d308a30ffa11267f7674b357f2dece0998f339aaabd4beb3a9e887a43e93b8. Initial syntax and immediate-next-request reply race retained/fixed; deadlines unchanged. Custom local transport, not MCP/native Canvas. Both milestones remain open.
+
+
+## Owned stdin preview process (2026-10-11)
+
+Custom preview_stdio process accepts operator-pinned compiler config, owned source and new build root; wire remains bounded NDJSON. Bounded independent Python primary-byte oracle handles supported finite expressions without fixture lookup. Actual process revisions13x7→11x6→13x7 recover after unsupported edit wait2;4 transported allocations65536 bytes exact. Separate EOF process suppresses pending reply, owned CLI wait-15/drained, phase unlocalized; both Node exits0 and zero workers/timers.6 fresh oracle replays and3 resealed exit/EOF-reply/padding faults pass.77 Python plus7 Rust archive tests pass. Seal026dfeb04cad4dd0115d531a7a6fc20658b5e1cbfb6330b888635c2998350aa7. Custom stdin integration, not MCP/native Canvas. Both milestones remain open.
