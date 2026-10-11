@@ -783,3 +783,7 @@ Same owned ImageRenderer updates red→blue immediately on external model mutati
 ## 2026-10-11 — hidden native button input failure retained
 
 Hidden owned SwiftUI host exposes AXGroup only in two runs;zero buttons/actions.32768 full initial-red bytes incl216padding/31328tail/eight resealed faults/zeroownwindows;protocol compile failure retained within four producers. [Scope](docs/reverse-engineering/2026-10-11-native-button-press.md). Input acceptance failed;next needs changed hosting visibility/lifecycle. Both milestones open.
+
+## 2026-10-11 — visible native button discovery boundary
+
+Ordering the owned host behind other windows changes visibility to true and preserves non-key status, but two public tree walks still expose AXGroup only and deliver zero actions. All 32,768 initial-red bytes, including padding and unused tail, are verified; ten resealed faults cover the evidence checks. Both owned windows close. [Scope and next prerequisite](docs/reverse-engineering/2026-10-11-native-button-visible.md). Both milestones remain open.
