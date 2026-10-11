@@ -26,3 +26,15 @@ class LiveWasmHostTests(unittest.TestCase):
             self.assertEqual(result['accepted'], 2)
             self.assertEqual(len(result['faults']), 6)
             self.assertTrue(all(row['live_instance_verified'] for row in result['faults']))
+
+    def test_close_waits_for_candidate_and_operation_quiescence(self):
+        node = shutil.which('node')
+        if not node:
+            self.skipTest('Node unavailable')
+        with tempfile.TemporaryDirectory() as temporary:
+            subprocess.run([node, str(ROOT / 'tools/re/tests/live_wasm_cancel_control.js'), temporary],
+                           check=True, timeout=15, capture_output=True)
+            result = json.loads((Path(temporary) / 'after-fix.json').read_text())
+            self.assertTrue(result['settled_at_close'])
+            self.assertEqual(result['status_at_close']['liveWorkers'], 0)
+            self.assertEqual(len(result['extra_controls']), 3)

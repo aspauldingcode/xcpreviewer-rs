@@ -22,6 +22,17 @@ function request(worker, message, timeout) {
 
 class LiveWasmHost {
   #active = null; #busy = false; #closed = false; #revision = 0;
+  #candidate = null; #workers = new Set(); #settled = Promise.resolve();
+  status() {
+    return {liveWorkers: this.#workers.size, busy: this.#busy,
+      closed: this.#closed, revision: this.#revision};
+  }
+  #begin() {
+    this.#busy = true;
+    let release;
+    this.#settled = new Promise(resolve => { release = resolve; });
+    return release;
+  }
   snapshot() {
     if (!this.#active) return null;
     const {revision, token, frame, moduleSha256} = this.#active;
@@ -36,10 +47,14 @@ class LiveWasmHost {
     assert(stride >= width * 4 && stride <= 256 && timeout >= 50 && timeout <= 5000);
     // Capture immutable proposal bytes before asynchronous work.
     const proposal = Buffer.from(moduleBytes), prediction = Buffer.from(expected);
-    this.#busy = true;
-    const candidate = new Worker(__filename, {resourceLimits: {maxOldGenerationSizeMb: 64}});
+    const release = this.#begin();
+    let candidate;
     let committed = false;
     try {
+      candidate = new Worker(__filename, {resourceLimits: {maxOldGenerationSizeMb: 64}});
+      this.#candidate = candidate;
+      this.#workers.add(candidate);
+      candidate.once('exit', () => this.#workers.delete(candidate));
       const value = await request(candidate, {module: proposal, width, height, stride}, timeout);
       const frame = Buffer.from(value.frame);
       assert.deepEqual(frame, prediction, 'Complete allocation differs from independent expectation');
@@ -48,27 +63,35 @@ class LiveWasmHost {
       this.#active = {worker: candidate, frame, revision: ++this.#revision,
         token: crypto.randomUUID(), moduleSha256: crypto.createHash('sha256').update(proposal).digest('hex')};
       committed = true;
+      this.#candidate = null;
       if (old) await old.worker.terminate();
+      assert(!this.#closed, 'Host closed during publication');
       return this.snapshot();
     } finally {
-      if (!committed) await candidate.terminate();
+      if (!committed && candidate) await candidate.terminate();
+      this.#candidate = null;
       this.#busy = false;
+      release();
     }
   }
   async verifyLive(timeout = 1500) {
     assert(this.#active && !this.#busy && !this.#closed);
     assert(Number.isSafeInteger(timeout) && timeout >= 50 && timeout <= 5000);
-    this.#busy = true;
+    const active = this.#active;
+    const release = this.#begin();
     try {
-      const result = await request(this.#active.worker, {read: true}, timeout);
-      assert.deepEqual(Buffer.from(result.frame), this.#active.frame);
+      const result = await request(active.worker, {read: true}, timeout);
+      assert(!this.#closed, 'Host closed during live verification');
+      assert.deepEqual(Buffer.from(result.frame), active.frame);
       return this.snapshot();
-    } finally { this.#busy = false; }
+    } finally { this.#busy = false; release(); }
   }
   async close() {
     this.#closed = true;
     const old = this.#active; this.#active = null;
-    if (old) await old.worker.terminate();
+    const pending = this.#candidate;
+    await Promise.all([old?.worker.terminate(), pending?.terminate()]);
+    await this.#settled;
   }
 }
 

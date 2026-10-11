@@ -25,6 +25,7 @@ function ownedFault(loop) {
   try {
     await assert.rejects(propose(0,Buffer.from([0]))); assert.equal(host.snapshot(),null);
     const first = await propose(0); assert.deepEqual(first.frame,frames[0]);
+    assert.equal(host.status().liveWorkers,1);
     first.frame.fill(0); assert.deepEqual(host.snapshot().frame,frames[0]);
     const baseline = host.snapshot();
     const cases = [['malformed',Buffer.from([0]),frames[0]],['trap',ownedFault(false),frames[0]],
@@ -40,11 +41,14 @@ function ownedFault(loop) {
       if(name==='deadline') assert.match(error,/deadline/);
       assert.deepEqual(host.snapshot(),baseline);
       assert.deepEqual(await host.verifyLive(),baseline);
+      assert.equal(host.status().liveWorkers,1);
       receipts.push({case:name,error,retained_revision:baseline.revision,compared_bytes:16384,live_instance_verified:true});
     }
     const second=await propose(1);assert.equal(second.revision,2);assert.notEqual(second.token,baseline.token);
     assert.deepEqual(second.frame,frames[1]);assert.deepEqual(await host.verifyLive(),second);
+    assert.equal(host.status().liveWorkers,1);
     await host.close();assert.equal(host.snapshot(),null);await assert.rejects(propose(0));
+    assert.equal(host.status().liveWorkers,0);
     fs.writeFileSync(path.join(dir,'control-result.json'),JSON.stringify({node:process.version,v8:process.versions.v8,platform:process.platform,architecture:process.arch,accepted:2,faults:receipts,full_comparison_bytes:16384*8,scope:'Owned swap policy; no native Canvas sequencing or SwiftUI state migration'},null,2)+'\n');
   } finally { await host.close(); }
 })().catch(error=>{console.error(error);process.exitCode=1;});

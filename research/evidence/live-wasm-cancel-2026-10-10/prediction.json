@@ -1,0 +1,10 @@
+{
+  "scope": "Owned persistent WASM close/cancellation accounting, not native Canvas lifecycle",
+  "hypothesis": "close currently resolves while a proposal is busy and its owned candidate still runs until its deadline",
+  "acceptance": "close awaits candidate and active worker termination and operation settlement; concurrent proposals reject; no proposal commits after close",
+  "bounds": {
+    "candidate_timeout_ms": 5000,
+    "control_process_seconds": 15
+  },
+  "prior_manifest_sha256": "7a77937fb1d32207ed6eac1ee7dac88a959150222f5485ad5ac69af8d622ff64"
+}
