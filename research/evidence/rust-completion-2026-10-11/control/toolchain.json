@@ -1,0 +1,258 @@
+{
+  "identity": {
+    "compiler": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+    "compiler_file": {
+      "bytes": 412504,
+      "sha256": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da"
+    },
+    "compiler_version": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: aarch64-apple-darwin\nrelease: 1.97.1\nLLVM version: 22.1.6",
+    "linkers": {
+      "gcc-ld/wasm-ld": {
+        "bytes": 376576,
+        "sha256": "0ba311a537cf5a03f7046849a4a6a5c54d8db827e35519d9ebcd8e61a862546b"
+      },
+      "rust-lld": {
+        "bytes": 130977488,
+        "sha256": "8f5fe507df7232eac0a610c12a5d11f3202205235f710eb98c6c78df6d3f548d"
+      }
+    },
+    "scope": "Actual compiler, installed target libraries and selected installed linker files; excludes complete dynamic-library/OS dependency closure",
+    "target": "wasm32-wasip1",
+    "target_files": {
+      "libaddr2line-59887f237bead7bb.rlib": {
+        "bytes": 20748,
+        "sha256": "8621e8c691252d5f9d9b9981a97094dbfec71c3d869102ae92d01cdc5ddb77f6"
+      },
+      "libaddr2line-59887f237bead7bb.rmeta": {
+        "bytes": 490390,
+        "sha256": "5808843258645da4347443c60f3286756d7e16da908c3a852f1d5ec7c1a37f50"
+      },
+      "libadler2-9156d4fdcecdd2e4.rlib": {
+        "bytes": 6986,
+        "sha256": "7782a398c6ad6652407c1065df894111a49cc1742a124c8cb8350a5498461ab1"
+      },
+      "libadler2-9156d4fdcecdd2e4.rmeta": {
+        "bytes": 20365,
+        "sha256": "1c924525b120f0704e515ad03a9fb97091ed9c05f012bf8012a2169ce82774bd"
+      },
+      "liballoc-cc5f0dbde2d9cdb3.rlib": {
+        "bytes": 693854,
+        "sha256": "570b34ca71fcc0d6ee98f6c4852946e33cf16f48ccbb24628cb7cf4671386d26"
+      },
+      "liballoc-cc5f0dbde2d9cdb3.rmeta": {
+        "bytes": 7414481,
+        "sha256": "f4203d61d5cf5a33027346a3672e46a67c07399aec73794deef248945d5bff0d"
+      },
+      "libcfg_if-54d4973fd0c04dcf.rlib": {
+        "bytes": 3278,
+        "sha256": "0e2467c3e21d4503560bc47042c6ce400d20f43d336acf87f4b1f3a40ac2297b"
+      },
+      "libcfg_if-54d4973fd0c04dcf.rmeta": {
+        "bytes": 5495,
+        "sha256": "f038f447f10f719e5e7df15a35e36c389a7fc54ed9b5d78551516bf616c11a73"
+      },
+      "libcompiler_builtins-a34696ce04862d8d.rlib": {
+        "bytes": 3093352,
+        "sha256": "3f93886a9a24a64d12fa8daa6aa4c21442ba63233911b3a1f4610db347714413"
+      },
+      "libcompiler_builtins-a34696ce04862d8d.rmeta": {
+        "bytes": 1972724,
+        "sha256": "cf9ad99387050fe5e0091726013164b4f52eea1cb76e3adb2a1ce0f7c08e6480"
+      },
+      "libcore-388c8f0e2a6080bd.rlib": {
+        "bytes": 2424088,
+        "sha256": "fc58578e4c888a7e421b5d3bdf94082b8fe453f74d54532175e46bdbc11e0785"
+      },
+      "libcore-388c8f0e2a6080bd.rmeta": {
+        "bytes": 41973770,
+        "sha256": "fcd8f9287dc84e0ecba84b99c8366088a15bf3b44459b2964695b94a0820b8e6"
+      },
+      "libgetopts-a0029f2935427f8a.rlib": {
+        "bytes": 511686,
+        "sha256": "0e2773499fb84583625b663affdeb9942da6b55713ce39bb43728571f26ba317"
+      },
+      "libgetopts-a0029f2935427f8a.rmeta": {
+        "bytes": 226117,
+        "sha256": "3c18087d0dece4d570123348301eaab99e3b54aa4c6e38dc10cd7385385937b4"
+      },
+      "libgimli-1a0fee8207881196.rlib": {
+        "bytes": 758254,
+        "sha256": "d73f71eb17bc0a54d157ef157645b273b79d4b8f6a09d415791f20de668210aa"
+      },
+      "libgimli-1a0fee8207881196.rmeta": {
+        "bytes": 5326528,
+        "sha256": "ad5db636d36f3dfd0864a32715f02567691c29e8ce910aeea06368ca17d84a0b"
+      },
+      "libhashbrown-9345130aae3708fa.rlib": {
+        "bytes": 18424,
+        "sha256": "ce1f720ba32f23b6b76e72dca74a9d9e3fe87a7d8e918481be3f70fa6fdfd294"
+      },
+      "libhashbrown-9345130aae3708fa.rmeta": {
+        "bytes": 1732730,
+        "sha256": "1537735b9ef933a74bfdd4cb8be9d580dc92ba348df6d09e20b9c3daaba54a4a"
+      },
+      "liblibc-6db2b73f2f4f2856.rlib": {
+        "bytes": 4082,
+        "sha256": "182c1a49c705ae549e5d30533a98e9896c0eb77e18b659ce5a1e1244597dca6d"
+      },
+      "liblibc-6db2b73f2f4f2856.rmeta": {
+        "bytes": 363304,
+        "sha256": "abcf3e7f4bcfef16f725b1f09a3662006a3bda2cda26688fbe94f135e4ae13ea"
+      },
+      "libmemchr-e282e0cb75b71ece.rlib": {
+        "bytes": 118696,
+        "sha256": "670eee19cef52845019919c1703a5b59659318cd032f57c49fedfb0a5bb8be3d"
+      },
+      "libmemchr-e282e0cb75b71ece.rmeta": {
+        "bytes": 604545,
+        "sha256": "ce49bb24c818d55c518212bdd83de28a4132c0f9358c5710a3ec1bb168f182f2"
+      },
+      "libminiz_oxide-cdad288f75b71c95.rlib": {
+        "bytes": 78698,
+        "sha256": "938f125050eb0b104ab5f61539f05c13bd62c900b08d12a4f7e35ec80943be30"
+      },
+      "libminiz_oxide-cdad288f75b71c95.rmeta": {
+        "bytes": 124232,
+        "sha256": "1f6de4b4d44d605507b37b0d61b0c65078f2754edf7d539f51525bcddfb535c0"
+      },
+      "libobject-656fcc8f1d6ed44d.rlib": {
+        "bytes": 138730,
+        "sha256": "60e1a6c4339e9e44de0b41bba059bb8c3d10429a36df654e2ffc7e376d4798da"
+      },
+      "libobject-656fcc8f1d6ed44d.rmeta": {
+        "bytes": 8536463,
+        "sha256": "2f3ccae0b6a85deb6de0d5849705934a769c3cfc72ae5221898ba71271a2c147"
+      },
+      "libpanic_abort-3a07a70418b2faa8.rlib": {
+        "bytes": 7074,
+        "sha256": "410596e8c6158d7c9fdb7779519779a197de400ebdf3b2beca599f5acf159274"
+      },
+      "libpanic_abort-3a07a70418b2faa8.rmeta": {
+        "bytes": 2897,
+        "sha256": "bb106548ef627d62dedbdfc5c9065e93081f9be24708b47374207a5ea68c90ac"
+      },
+      "libpanic_unwind-4093577d690d5135.rlib": {
+        "bytes": 16230,
+        "sha256": "c88bbd389aa8f77cf6557e8b3f6614c0feedc12d5cf9c1b55e5e27913c620eb7"
+      },
+      "libpanic_unwind-4093577d690d5135.rmeta": {
+        "bytes": 7074,
+        "sha256": "e00c433b644285dc5201ac1e21067c1bf430d37d4c2e53935ae4ed0ec3478ba7"
+      },
+      "libproc_macro-1f8b8f25a88d7e06.rlib": {
+        "bytes": 2686658,
+        "sha256": "cecb003e058c83c8ee28ff2a0e1364411740abdd0d2f50c9f043442327f1cd48"
+      },
+      "libproc_macro-1f8b8f25a88d7e06.rmeta": {
+        "bytes": 1100418,
+        "sha256": "5c0b4d0bb9caeb922df72b4e09e2c6bf920baddb2a6b5981734fbbaeb53c1695"
+      },
+      "librustc_demangle-d31abd361eef7241.rlib": {
+        "bytes": 188230,
+        "sha256": "768de04b362c8dc8eb0c3822bc2132b62db0652cabda792a25a3b4eecb300ad4"
+      },
+      "librustc_demangle-d31abd361eef7241.rmeta": {
+        "bytes": 90705,
+        "sha256": "c574dbc68c762117bc212a2aa0f25168d5c40b6858e5231434ba91f95c984887"
+      },
+      "librustc_literal_escaper-285359ac7150a874.rlib": {
+        "bytes": 3430,
+        "sha256": "b01308ccd671e064dc842bf1d2b345334ace1bc335eac28f8da514cca1b29eeb"
+      },
+      "librustc_literal_escaper-285359ac7150a874.rmeta": {
+        "bytes": 122012,
+        "sha256": "0de72b7b1890af627c9607b92ff700632099c59fcbf3b08e166e0d83cbeb0e44"
+      },
+      "librustc_std_workspace_alloc-2c9c9da19487ec20.rlib": {
+        "bytes": 3506,
+        "sha256": "f5608236e1bc5f902af4cadd6215d4f2642ee98ef858bc802cbba7a20a724be5"
+      },
+      "librustc_std_workspace_alloc-2c9c9da19487ec20.rmeta": {
+        "bytes": 2157,
+        "sha256": "8b45d8da3ee140edc1eb9f50e6f82dce54bb4feaf1d52ad5267e9039878905ef"
+      },
+      "librustc_std_workspace_core-9e22656c0fd5fb53.rlib": {
+        "bytes": 3500,
+        "sha256": "248d6e224c797afab863d5f50bd8aa9b1510822c08c07cae1378954f4d63f873"
+      },
+      "librustc_std_workspace_core-9e22656c0fd5fb53.rmeta": {
+        "bytes": 5928,
+        "sha256": "318fe1e2bc3198960f1f8bf149da33bfd7a575b1db62ad843be2696dc025dc0c"
+      },
+      "librustc_std_workspace_std-f3cd4f6e88667be1.rlib": {
+        "bytes": 3492,
+        "sha256": "89f0e3650c8c25902cf0a2ecd973781b748b6ca7ef8775fddd6f35104c111487"
+      },
+      "librustc_std_workspace_std-f3cd4f6e88667be1.rmeta": {
+        "bytes": 6938,
+        "sha256": "5b9d4cd408ab9a161db9938ef770a6299c1680d32fb5a0c7ff9865d490ef6b2f"
+      },
+      "libstd-66af0ae48857a96f.rlib": {
+        "bytes": 3766626,
+        "sha256": "2ddab8eb511f7f41dd76f32cf63f3b27098ac7697308ddf0f1aa3800617602ee"
+      },
+      "libstd-66af0ae48857a96f.rmeta": {
+        "bytes": 7435387,
+        "sha256": "15f9aff46c3aee48f69a879533bf297559c32e5465aeb6384d64b579d70f1755"
+      },
+      "libstd_detect-a5e86ad85f7526ff.rlib": {
+        "bytes": 3382,
+        "sha256": "cda6157b9fbccbadff8651d29960395b9a2500e7b9ff62063ff6df5660b84adc"
+      },
+      "libstd_detect-a5e86ad85f7526ff.rmeta": {
+        "bytes": 221714,
+        "sha256": "84867c52e8033ab650bd1dc7cc7a8d36312e40fcfda41409f6952e8bcfe01d5a"
+      },
+      "libsysroot-e8a1676d07abd34a.rlib": {
+        "bytes": 3344,
+        "sha256": "326b72ba4b651843b0c681cb16ea574759ac018731d93f5c85f6ea5797e7250f"
+      },
+      "libsysroot-e8a1676d07abd34a.rmeta": {
+        "bytes": 2046,
+        "sha256": "9f4ded0a68448677078ba10252ec9908862c51dc6e5ded9053ab150567e4f1c6"
+      },
+      "libtest-476a055a8cfe7cb5.rlib": {
+        "bytes": 5120322,
+        "sha256": "c75e57aa02fb45a6f836d7f5f8ab16def27f0aca5d159ecb095286892a04978f"
+      },
+      "libtest-476a055a8cfe7cb5.rmeta": {
+        "bytes": 999269,
+        "sha256": "46da1d34ab9aa4545bcd396981f845f775a3ec614483119ba063f57025224bc7"
+      },
+      "libunwind-8186f258889ce83f.rlib": {
+        "bytes": 5002,
+        "sha256": "2fb2cb5b07d54eb154d78406828d3b10680b89b55b6571df5a8ba2942552751c"
+      },
+      "libunwind-8186f258889ce83f.rmeta": {
+        "bytes": 14648,
+        "sha256": "40be763307696768aab31bd9427d96e437fbe6d1214a86331408202af2f0434a"
+      },
+      "libwasip1-255e56af0b217986.rlib": {
+        "bytes": 191812,
+        "sha256": "41e36e23186ddb8b501430f92756fbf52692eca41b93958e8d9b7d843fe58a40"
+      },
+      "libwasip1-255e56af0b217986.rmeta": {
+        "bytes": 256837,
+        "sha256": "34362e5f1ce0c02f64b3734da6036f32c1bb8a7098280363359e96f948648810"
+      },
+      "self-contained/crt1-command.o": {
+        "bytes": 1994,
+        "sha256": "d97a7840560d165783422a81fb2620d6dc821ac58b74f0da20dc1a9465788ea5"
+      },
+      "self-contained/crt1-reactor.o": {
+        "bytes": 1681,
+        "sha256": "c0ce69c600d2bf8cd170da94e95e1755236541d596b3471e15a798f24afebe25"
+      },
+      "self-contained/libc.a": {
+        "bytes": 3094330,
+        "sha256": "5d8ba34d8c6fd0ac59e0efe37241143887f8f232864bbeacc4181ae739f63371"
+      },
+      "self-contained/libunwind.a": {
+        "bytes": 13606,
+        "sha256": "6351f2983b7dd2972eceb538ac2acbe23894e31799f0ac286930e4f20a4ca647"
+      }
+    },
+    "target_libdir": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/wasm32-wasip1/lib"
+  },
+  "sha256": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+}
