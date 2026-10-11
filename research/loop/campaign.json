@@ -5086,6 +5086,26 @@
         {
           "equals": true,
           "path": "observed_ascii_bytewise_exact"
+        },
+        {
+          "equals": 84,
+          "path": "rust_frames"
+        },
+        {
+          "equals": 1376256,
+          "path": "rust_allocation_bytes"
+        },
+        {
+          "equals": 1310720,
+          "path": "rust_native_bytes"
+        },
+        {
+          "equals": 10,
+          "path": "rust_negative_controls"
+        },
+        {
+          "equals": 5,
+          "path": "rust_core_tests"
         }
       ],
       "depends_on": [],

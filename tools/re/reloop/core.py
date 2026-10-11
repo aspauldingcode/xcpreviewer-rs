@@ -252,7 +252,7 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
 
 def source_files():
     excluded={'__pycache__','.build','.swiftpm'}
-    suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme','.html'}
+    suffixes={'.py','.m','.swift','.java','.sh','.js','.c','.entitlements','.pbxproj','.xcscheme','.html','.rs'}
     return [p for p in sorted((ROOT/'tools/re').rglob('*')) if p.is_file() and not p.is_symlink() and (p.suffix in suffixes or p.parent==ROOT/'tools/re/rea' and p.name in {'package.json','package-lock.json','codex-tools.json'}) and not excluded.intersection(p.parts)]
 
 
