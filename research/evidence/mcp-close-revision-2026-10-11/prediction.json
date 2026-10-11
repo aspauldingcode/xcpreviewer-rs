@@ -1,0 +1,6 @@
+{
+  "parentManifestSha256": "476942f9568e9cae06dfdc15d908bce871fa347122a245f55365ea4325ed757a",
+  "scope": "Historical owned SDK packet fixture with two deliberately correlated invalid closure revisions; finite portable consumer guard",
+  "prediction": "Old consumer accepts closed revisions0/1 after accepted2, drops frame and terminally ignores restoredready; fixed rejects, retains wholeframe and recovers. Valid stale/close preserved.",
+  "deadlineSeconds": 3
+}

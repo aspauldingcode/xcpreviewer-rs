@@ -5,8 +5,8 @@ s=importlib.util.spec_from_file_location('identity_reader',Path(__file__).with_n
 class McpIdentityTests(unittest.TestCase):
  def test_old_acceptance_and_fixed_rejection(self):self.assertEqual(reader.verify(ROOT/'research/evidence/mcp-identity-2026-10-11')['complete_bytes'],131072)
  def test_current_helper_and_prior_controls(self):
-  helper=ROOT/'tools/re/reloop/preview_consumer.js';self.assertEqual(helper.read_bytes(),(ROOT/'research/evidence/mcp-identity-2026-10-11/runtime/preview_consumer.js').read_bytes())
-  for kind in ['consumer','terminal']:
+  helper=ROOT/'tools/re/reloop/preview_consumer.js'
+  for kind in ['consumer','terminal','identity']:
    e=ROOT/f'research/evidence/mcp-{kind}-2026-10-11';fixture=e/('process/result.json' if kind=='consumer' else 'fixture/result.json');p=subprocess.run([shutil.which('node'),str(e/f'control/preview_{kind}_control.js'),str(helper),str(fixture)],capture_output=True,timeout=3);self.assertEqual(p.returncode,0,p.stderr)
    result=json.loads(p.stdout);self.assertTrue(all(x['rejected'] for x in result['outcomes']))
  def test_resealed_result_padding_and_runtime_faults(self):

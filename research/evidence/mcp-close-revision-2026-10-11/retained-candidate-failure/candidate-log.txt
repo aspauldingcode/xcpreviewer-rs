@@ -1,0 +1,41 @@
+Current consumer controls 8 passed
+Current terminal controls 2 passed
+Current identity controls 4 passed
+test_preview_mcp.py ..
+----------------------------------------------------------------------
+Ran 2 tests in 0.994s
+
+OK
+test_mcp_frame_contract.py ..
+----------------------------------------------------------------------
+Ran 2 tests in 3.595s
+
+OK
+test_mcp_readiness.py ..
+----------------------------------------------------------------------
+Ran 2 tests in 4.617s
+
+OK
+test_mcp_consumer.py ..
+----------------------------------------------------------------------
+Ran 2 tests in 5.298s
+
+OK
+test_mcp_terminal.py ..
+----------------------------------------------------------------------
+Ran 2 tests in 3.095s
+
+OK
+test_mcp_identity.py F..
+======================================================================
+FAIL: test_current_helper_and_prior_controls (test_mcp_identity.McpIdentityTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/mcp-close-revision-clean/tools/re/tests/test_mcp_identity.py", line 8, in test_current_helper_and_prior_controls
+    helper=ROOT/'tools/re/reloop/preview_consumer.js';self.assertEqual(helper.read_bytes(),(ROOT/'research/evidence/mcp-identity-2026-10-11/runtime/preview_consumer.js').read_bytes())
+AssertionError: b"// [2200 chars]n    if(this.#accepted)assert(after.lifecycle.[848 chars]};\n" != b"// [2200 chars]n    const previous=this.#accepted?.frame;\n  [712 chars]};\n"
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.903s
+
+FAILED (failures=1)

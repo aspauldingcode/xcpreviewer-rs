@@ -23,6 +23,8 @@ class PreviewConsumer {
     if(frame&&publication?.kind==='published')assert(
      publication.revision===frame.descriptor.revision&&publication.generation===frame.descriptor.generation&&publication.sourceSha256===frame.descriptor.sourceSha256,
      'Diagnostic publication mismatch');
+    if(this.#accepted)assert(after.lifecycle.revision>=this.#accepted.status.lifecycle.revision,
+     'Lifecycle revision rollback');
     const previous=this.#accepted?.frame;
     if(previous){
      assert(frame||after.readiness.state==='closed','Accepted frame disappeared while open');

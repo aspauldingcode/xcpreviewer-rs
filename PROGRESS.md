@@ -711,3 +711,7 @@ Four owned audited native peers discard one measured queued attachment by destro
 ## 2026-10-11 — rejected coalesced descriptor cleanup
 
 Four owned audited peers receive two coalesced IOSurface send descriptors in an intentionally invalid fixture envelope, reject without import and release refs2→0 via whole-message destruction or refs2→1→0 via explicit release/descriptor clearing/destruction. Sender retained CF and replacement-port-only storage remain exact through peer exit46.196608 fullbytes including padding/tail, seven resealed faults;REA identity/closed. See [scope](docs/reverse-engineering/2026-10-11-surface-rejected-envelope.md). No generic parser/Canvas/physical release claim; both milestones open.
+
+## 2026-10-11 — consumer close revision monotonicity
+
+Old correlated closed revisions0/1 after published2 discarded the accepted frame and terminally ignored restored-ready replies. Fixed lifecycle revision guard rejects stale close, retains wholeframe and recovers; valid stale/closed2 unchanged. Baseline contradiction retained,163840 independent completebytes,5 resealed faults. Fresh Node fixture control using historical SDK packets, no new native/SDK capture. See [scope](docs/reverse-engineering/2026-10-11-mcp-close-revision.md). Both milestones and native gates remain open.
