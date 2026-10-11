@@ -1,0 +1,11 @@
+<anonymous_script>:1
+Preview operation failed
+^
+
+SyntaxError: Unexpected token 'P', "Preview op"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at tool (file:///Users/8amps/xcpreviewer-rs/research/evidence/mcp-frame-contract-2026-10-11/control/mcp_frame_sdk_control.mjs:20:154)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///Users/8amps/xcpreviewer-rs/research/evidence/mcp-frame-contract-2026-10-11/control/mcp_frame_sdk_control.mjs:24:70
+
+Node.js v24.19.0

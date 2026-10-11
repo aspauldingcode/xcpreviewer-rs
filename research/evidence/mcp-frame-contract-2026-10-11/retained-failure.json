@@ -1,0 +1,7 @@
+{
+  "cause": "Duplicating full frame in text and structuredContent exceeded the unchanged32768-byte reply cap",
+  "failedSeal": "671235985c027168e4aa48094daf9e2a995f29a3f9d9570b6f7ab615e244f0ad",
+  "fix": "Brief text plus one typed allocation; no cap/deadline increase",
+  "preflight": "Graph wake collection is a dictionary; guard adapted before any mutation after AttributeError.",
+  "verifier_harness_failure": "Availability mutant correctly rejected by jsonschema.ValidationError, but test initially expected AssertionError only. Reader now raises concise AssertionError for the contract mismatch, avoiding allocation dumps; no native rerun."
+}

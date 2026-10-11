@@ -659,3 +659,7 @@ Pinned official2025-11-25 schema falsifies7 unknown-ID id:null error responses; 
 ### 2026-10-11: official MCP SDK interoperability
 
 Official client2.3.1 explicit legacy handshake now accepts owned stdio preview edits/rejection/recovery/close and EOF cleanup.2 actual server waits0,4 fresh Rust/V8 modules,81,920 complete independently checked bytes;3 retained harness/prediction failures and3 resealed negative controls;87 Python+7 Rust isolated tests. [Evidence and scope](docs/reverse-engineering/2026-10-11-mcp-sdk.md). Modern protocol/full MCP/native Canvas and both delivery milestones remain open.
+
+### 2026-10-11: explicit MCP frame availability
+
+Owned handler0.2.0 now advertises typed availability and one structured allocation with a bounded reusable decoder. Official SDK/default AJV accepts initial/post-close unavailability, source edit/rejection/recovery and EOF cleanup;19 independently schema-checked replies,2 server waits0,4 Rust/V8 modules,81,920 full consumer bytes plus16,384 synthetic bytes. Duplicate-allocation cap failure retained/fixed without raising limits;8 decoder faults and3 resealed evidence faults reject;89 Python+7 Rust tests. [Scope/evidence](docs/reverse-engineering/2026-10-11-mcp-frame-contract.md). Both milestones and native Canvas acceptance stay open.
