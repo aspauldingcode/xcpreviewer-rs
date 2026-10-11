@@ -1,0 +1,64 @@
+{
+  "scope": "Owned synthetic plist goldens; Apple UVPropertyList encoding, not captured preview IPC. Reference outputs must not be regenerated merely to make a candidate pass.",
+  "oracle_run_id": "20261009T023043Z-plist-boundary-corpus-96b0ebc9",
+  "oracle_manifest_sha256": "b73a2a57ace1ed98f8eb5959ec2bdaaa5178bc3d00e0799dd953b86d08425309",
+  "oracle_environment_hash": "739f4dd56eeed2746d109bbeb3cb4ae1b6c72365b52b839401bacb929bef927f",
+  "fixtures": [
+    {
+      "id": "boundary-02",
+      "input": {
+        "path": "boundary-02.input.plist",
+        "sha256": "40df323dd2269fcddb334d0f5b0a56a7b9de0c784dc73c6e58f5ef61c5e21ee6",
+        "bytes": 104
+      },
+      "reference": {
+        "path": "boundary-02.reference.plist",
+        "sha256": "44466988eec03bccdf8abcb807ff11336cf558d1f0974c1bef47f40f09555350",
+        "bytes": 104
+      }
+    },
+    {
+      "id": "boundary-03",
+      "input": {
+        "path": "boundary-03.input.plist",
+        "sha256": "d0fa8cbf6fa169e1c3ea1576e59b3c400c95dcb5c13a0491eb0559a171ae8c16",
+        "bytes": 116
+      },
+      "reference": {
+        "path": "boundary-03.reference.plist",
+        "sha256": "d0fa8cbf6fa169e1c3ea1576e59b3c400c95dcb5c13a0491eb0559a171ae8c16",
+        "bytes": 116
+      }
+    },
+    {
+      "id": "boundary-04",
+      "input": {
+        "path": "boundary-04.input.plist",
+        "sha256": "c97dbe32ba3950e3ffec9e822b9ea8a3aaeda6e44665903a3a499b3a49c26cc3",
+        "bytes": 115
+      },
+      "reference": {
+        "path": "boundary-04.reference.plist",
+        "sha256": "c97dbe32ba3950e3ffec9e822b9ea8a3aaeda6e44665903a3a499b3a49c26cc3",
+        "bytes": 115
+      }
+    }
+  ],
+  "oracle_environment": {
+    "xcode": {
+      "exit_code": 0,
+      "value": "Xcode 26.6\nBuild version 17F113"
+    },
+    "os": {
+      "exit_code": 0,
+      "value": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80"
+    },
+    "arch": {
+      "exit_code": 0,
+      "value": "arm64"
+    }
+  },
+  "encoder": "UVPropertyList from OS PreviewsServices.framework; Foundation is not assumed independent",
+  "probe_source_sha256": "1590bc1b5dd280b7739269c0eb0ec786bb4502d82544aaf42333f4d7f444927f",
+  "probe_executable_sha256": "dcd988f0f44b8b03949041dca615047e7e32eafec0ca58412952d059400b7fb1"
+}

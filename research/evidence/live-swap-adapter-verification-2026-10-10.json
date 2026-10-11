@@ -1,0 +1,20 @@
+{
+  "runs": [
+    {
+      "path": "research/evidence/live-swap-adapter-2026-10-10",
+      "manifest_sha256": "ba08ee73699a0ef2213b64a1c7fff995ed5c28773b72f6d2e1b71fda3fac9ab6",
+      "files": 507,
+      "execution": "success"
+    },
+    {
+      "path": "research/evidence/live-swap-adapter-supervised-2026-10-10",
+      "manifest_sha256": "79c9a5e9dc3b0525f36288ea379a3c68ebe2c62741794f69dcc69899bc49e3af",
+      "files": 508,
+      "execution": "success"
+    }
+  ],
+  "verification": "Separate-process rehash and every-byte output/reference comparisons for both frozen executions",
+  "timeout_control": "Owned parent/child session killed at0.2s; no delayed0.6s child write;1 bounded test passes",
+  "graph_binding": "pending explicit worker registration and campaign spec",
+  "scientific_delivery_review": "pending"
+}

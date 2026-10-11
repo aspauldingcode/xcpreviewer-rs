@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {LiveWasmHost}=require('../reloop/live_wasm_host.js');
 const dir=process.argv[2], baselineOnly=process.argv[3]==='before';
-const fixture=path.resolve(__dirname,'../../../research/evidence/live-wasm-swap-2026-10-10');
+const fixture=process.argv[4] || path.resolve(__dirname,'../../../research/evidence/live-wasm-swap-2026-10-10');
 const rows=JSON.parse(fs.readFileSync(path.join(fixture,'fixtures.json')));
 const bytes=fs.readFileSync(path.join(fixture,'0-view.wasm')),frame=fs.readFileSync(path.join(fixture,'0-allocation.raw'));
 function loopModule(){

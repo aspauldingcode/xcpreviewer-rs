@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "bytes": 256,
+      "path": "delayed-reuse.bin",
+      "sha256": "267f0882014109547c2b8fafa6848c4acd486be63d3a1c4b48dc1fa79d4dae12"
+    },
+    {
+      "bytes": 256,
+      "path": "delayed-separate.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    }
+  ],
+  "geometry": {
+    "height": 2,
+    "next_seed": 8,
+    "seed": 7,
+    "stride": 128,
+    "width": 3
+  },
+  "manifest_sha256": "3bd40600b17e4f045797487c34c42f4c49014269e0ab59f0ed2c4c4d47b394b4",
+  "native_run": "20261009T150541Z-owned-surface-delayed-reuse-3b615c52",
+  "scope": "Owned delayed receiver sees seed8 from reused surface and seed7 from separate storage. Fixture generations are not Canvas wire fields."
+}

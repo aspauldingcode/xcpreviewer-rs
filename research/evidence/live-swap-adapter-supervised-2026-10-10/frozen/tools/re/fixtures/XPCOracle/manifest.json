@@ -1,0 +1,27 @@
+{
+  "direct_data_control_manifest_sha256": "c6b1fe93daccee0398717b0d6e5e6d15af3587b1425d61efcddd537716a3f97c",
+  "direct_data_control_run_id": "20261009T030511Z-xpc-malformed-envelope-e11c5131",
+  "encoder_image_uuid": "FFFB683F-5943-3C25-91B2-72D6E5174FA3",
+  "expected": {
+    "direct_data_decoded_value": {},
+    "direct_data_outcome": "decoded",
+    "python_plistlib": "InvalidFileException",
+    "xpc_decoded_value": {},
+    "xpc_outcome": "decoded"
+  },
+  "files": [
+    {
+      "bytes": 81,
+      "path": "minimal-input.plist",
+      "sha256": "6ccabae4e2c059b93c9e52ecee48fca3eb18f717297a7636b272a5e5a175a427"
+    },
+    {
+      "bytes": 8,
+      "path": "truncated-data.bin",
+      "sha256": "8053c006d6022564eeb6c0cfcaaf08c8055ef7724dabce8dfad7dd272dab5f04"
+    }
+  ],
+  "scope": "Owned one-key synthetic input and eight-byte malformed local XPC data. No live traffic.",
+  "source_manifest_sha256": "3f12a64b24cdf2a0012a2944baea2f1fc2548f1d727735062e6cab285cd30657",
+  "source_run_id": "20261009T030513Z-xpc-prefix-boundary-df34da4b"
+}

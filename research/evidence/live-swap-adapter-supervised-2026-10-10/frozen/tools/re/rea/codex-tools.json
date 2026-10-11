@@ -1,0 +1,17 @@
+{
+  "startup_timeout_sec": 30,
+  "tool_timeout_sec": 360,
+  "enabled_tools": [
+    "open_binary", "close_binary", "binary_session", "binary_overview",
+    "analyze_function", "inspect_native_instruction", "read_function_instructions",
+    "read_bytes", "address_to_file_offset", "procedure_references", "xrefs",
+    "search_procedures", "search_strings", "resolve_containing_procedure",
+    "get_call_graph", "trace_call_path", "trace_native_values",
+    "inspect_native_dispatch_metadata", "analyze_swift_types", "demangle_swift",
+    "inspect_macho", "inspect_signature", "inspect_plist", "trace_dylib_resolution",
+    "project_apple_application_graph", "inspect_binary_layout",
+    "export_evidence_bundle", "get_evidence_bundle", "compare_functions",
+    "correlate_static_and_runtime", "verify_reconstruction", "list_unknowns",
+    "record_unknown", "update_unknown", "verify_unknown_resolution"
+  ]
+}

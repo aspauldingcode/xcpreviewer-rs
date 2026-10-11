@@ -1,0 +1,49 @@
+{
+  "settled_at_close": true,
+  "close_ms": 5.361707999999993,
+  "proposal_error": "Error: Candidate worker exited: 0",
+  "status_at_close": {
+    "liveWorkers": 0,
+    "busy": false,
+    "closed": true,
+    "revision": 1
+  },
+  "last_good_before_close": true,
+  "compared_bytes": 16384,
+  "after_close_snapshot": null,
+  "extra_controls": [
+    {
+      "case": "empty-valid-proposal",
+      "error": "Error: Candidate worker exited: 0",
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0
+      },
+      "settled_at_close": true
+    },
+    {
+      "case": "live-read",
+      "error": "Error: Candidate worker exited: 1",
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 1
+      },
+      "settled_at_close": true
+    },
+    {
+      "case": "active-valid-proposal",
+      "error": "Error: Candidate worker exited: 0",
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 1
+      },
+      "settled_at_close": true
+    }
+  ]
+}

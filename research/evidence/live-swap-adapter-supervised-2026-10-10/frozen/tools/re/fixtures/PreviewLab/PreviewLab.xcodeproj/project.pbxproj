@@ -1,0 +1,25 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1; classes = {}; objectVersion = 56;
+ objects = {
+  A00000000000000000000001 = {isa = PBXProject; attributes = {LastUpgradeCheck = 2660;}; buildConfigurationList = A00000000000000000000002; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = A00000000000000000000003; productRefGroup = A00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (A00000000000000000000005);};
+  A00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000010,A00000000000000000000011); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A00000000000000000000003 = {isa = PBXGroup; children = (A00000000000000000000020,A00000000000000000000004); sourceTree = "<group>";};
+  A00000000000000000000020 = {isa = PBXGroup; children = (A00000000000000000000021); path = Sources; sourceTree = "<group>";};
+  A00000000000000000000021 = {isa = PBXGroup; children = (A00000000000000000000006); path = PreviewLab; sourceTree = "<group>";};
+  A00000000000000000000004 = {isa = PBXGroup; name = Products; children = (A00000000000000000000007); sourceTree = "<group>";};
+  A00000000000000000000005 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000008; buildPhases = (A00000000000000000000009,A0000000000000000000000A,A0000000000000000000000B); buildRules = (); dependencies = (); name = PreviewLab; productName = PreviewLab; productReference = A00000000000000000000007; productType = "com.apple.product-type.application";};
+  A00000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLab.swift; sourceTree = "<group>";};
+  A00000000000000000000007 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreviewLab.app; sourceTree = BUILT_PRODUCTS_DIR;};
+  A00000000000000000000008 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000012,A00000000000000000000013); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A00000000000000000000009 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A0000000000000000000000C); runOnlyForDeploymentPostprocessing = 0;};
+  A0000000000000000000000A = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+  A0000000000000000000000B = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+  A0000000000000000000000C = {isa = PBXBuildFile; fileRef = A00000000000000000000006;};
+  A00000000000000000000010 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = macosx; SDK_STAT_CACHE_ENABLE = NO; ALWAYS_SEARCH_USER_PATHS = NO; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_VERSION = 6.0;}; name = Debug;};
+  A00000000000000000000011 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = macosx; SDK_STAT_CACHE_ENABLE = NO; ALWAYS_SEARCH_USER_PATHS = NO; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_VERSION = 6.0;}; name = Release;};
+  A00000000000000000000012 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = local.re.PreviewLab; GENERATE_INFOPLIST_FILE = YES; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_STYLE = Manual; ENABLE_PREVIEWS = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SUPPORTED_PLATFORMS = macosx;}; name = Debug;};
+  A00000000000000000000013 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = local.re.PreviewLab; GENERATE_INFOPLIST_FILE = YES; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_STYLE = Manual; ENABLE_PREVIEWS = YES; SUPPORTED_PLATFORMS = macosx;}; name = Release;};
+ };
+ rootObject = A00000000000000000000001;
+}

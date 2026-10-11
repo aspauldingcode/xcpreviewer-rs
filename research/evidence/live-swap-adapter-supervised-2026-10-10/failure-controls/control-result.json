@@ -1,0 +1,53 @@
+{
+  "node": "v24.19.0",
+  "v8": "13.6.233.17-node.51",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "accepted": 2,
+  "faults": [
+    {
+      "case": "malformed",
+      "error": "Error: CompileError: WebAssembly.compile(): expected 4 bytes, fell off end @+0",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    },
+    {
+      "case": "trap",
+      "error": "Error: RuntimeError: unreachable",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    },
+    {
+      "case": "deadline",
+      "error": "Error: Candidate deadline exceeded",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    },
+    {
+      "case": "pixel",
+      "error": "AssertionError [ERR_ASSERTION]: Complete allocation differs from independent expectation\n+ actual - expected\n\n  Buffer(16384) [Uint8Array] [\n+   96,\n-   97,\n    64,\n    95,\n    255,\n    96,\n    64,\n",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    },
+    {
+      "case": "padding",
+      "error": "AssertionError [ERR_ASSERTION]: Complete allocation differs from independent expectation\n+ actual - expected\n... Skipped lines\n\n  Buffer(16384) [Uint8Array] [\n    96,\n    64,\n    95,\n    255,\n...\n    255,\n-   164,\n    165,\n    165,\n    165,\n    165,\n    165,\n...\n    165,\n+   165,\n    96,\n    64,\n    95,\n    255,\n    96,\n",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    },
+    {
+      "case": "tail",
+      "error": "AssertionError [ERR_ASSERTION]: Complete allocation differs from independent expectation\n+ actual - expected\n... Skipped lines\n\n  Buffer(16384) [Uint8Array] [\n    96,\n    64,\n    95,\n    255,\n...\n    195,\n+   195\n-   194\n  ]\n",
+      "retained_revision": 1,
+      "compared_bytes": 16384,
+      "live_instance_verified": true
+    }
+  ],
+  "full_comparison_bytes": 131072,
+  "scope": "Owned swap policy; no native Canvas sequencing or SwiftUI state migration"
+}
