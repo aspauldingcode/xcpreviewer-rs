@@ -13,6 +13,11 @@ class SourceRevisionHost {
       sourceSha256:crypto.createHash('sha256').update(source).digest('hex')});
     return this.#latest;
   }
+  invalidate(){
+    assert(!this.#closed,'Source host closed');
+    assert(this.#generation<Number.MAX_SAFE_INTEGER);
+    ++this.#generation;this.#latest=null;
+  }
   submit(ticket,build,expected,timeout=1500) {
     assert(!this.#closed && ticket===this.#latest,'Stale or foreign build ticket');
     assert.equal(build.sourceSha256,ticket.sourceSha256,'Build source receipt mismatch');

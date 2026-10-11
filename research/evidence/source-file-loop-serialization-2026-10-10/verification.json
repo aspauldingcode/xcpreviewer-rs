@@ -1,0 +1,240 @@
+{
+  "file_loop": {
+    "aborts": 1,
+    "accepted": 3,
+    "controls": [
+      "unchanged-file-skipped",
+      "superseded-build-retained",
+      "unsupported-retained",
+      "non-ascii-retained",
+      "oversized-retained",
+      "deleted-retained",
+      "close-aborted-builder"
+    ],
+    "deadlineAborts": 1,
+    "events": [
+      {
+        "generation": 1,
+        "kind": "observed",
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "generation": 1,
+        "kind": "published",
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "generation": 2,
+        "kind": "observed",
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "generation": 3,
+        "kind": "observed",
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      },
+      {
+        "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket",
+        "generation": 2,
+        "kind": "rejected"
+      },
+      {
+        "generation": 3,
+        "kind": "published",
+        "revision": 2,
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      },
+      {
+        "generation": 4,
+        "kind": "observed",
+        "sourceSha256": "6b6ce80d4e4d2ca781f13240bdcf1ea1d814ac0638e3704f4e08fa34566ab327"
+      },
+      {
+        "error": "Error: Unsupported source fixture",
+        "generation": 4,
+        "kind": "rejected"
+      },
+      {
+        "kind": "invalid-source"
+      },
+      {
+        "kind": "invalid-source"
+      },
+      {
+        "kind": "unavailable-source"
+      },
+      {
+        "generation": 8,
+        "kind": "observed",
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "generation": 8,
+        "kind": "published",
+        "revision": 3,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "generation": 9,
+        "kind": "observed",
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "error": "Error: Owned builder aborted",
+        "generation": 9,
+        "kind": "rejected"
+      }
+    ],
+    "final_status": {
+      "building": false,
+      "busy": false,
+      "closed": true,
+      "liveWorkers": 0,
+      "loopClosed": true,
+      "revision": 3,
+      "timers": 0
+    },
+    "full_allocation_compared": true,
+    "scope": "Owned file/reconstruction policy, not native Canvas edits/state migration",
+    "serializedLiveRead": true,
+    "source_mode": "Actual bounded file polling and atomic replacements; prebuilt pinned fixture adapter, no fresh compilation"
+  },
+  "independent_bytes_rechecked": 1376256,
+  "manifest_sha256": "e98e41cee68489b22ecf05dc96425dbb2bbb246d9f815da931d9c1ca8b3d65b7",
+  "native_bytes_rechecked": 1310720,
+  "prior_failure": "Test observed revision before old-worker cleanup finished; fixed test waits for non-busy settled drain. No native failure claim.",
+  "run_id": "20261011T040407Z-primary-live-wasm-swap-6a7fe1c3",
+  "scientific_delivery_review": "pending",
+  "scope": "Actual owned file polling and cooperative prebuilt fixture builder; no fresh compiler invocation, OS file watcher event semantics, browser, Xcode Canvas sequence or general SwiftUI state migration.",
+  "verification": {
+    "checks": [
+      {
+        "actual": 84,
+        "expected": 84,
+        "passed": true,
+        "path": "frames",
+        "present": true
+      },
+      {
+        "actual": 1310720,
+        "expected": 1310720,
+        "passed": true,
+        "path": "native_bytes",
+        "present": true
+      },
+      {
+        "actual": 1376256,
+        "expected": 1376256,
+        "passed": true,
+        "path": "independent_bytes",
+        "present": true
+      },
+      {
+        "actual": 6,
+        "expected": 6,
+        "passed": true,
+        "path": "failed_proposals",
+        "present": true
+      },
+      {
+        "actual": 4,
+        "expected": 4,
+        "passed": true,
+        "path": "close_controls",
+        "present": true
+      },
+      {
+        "actual": 5,
+        "expected": 5,
+        "passed": true,
+        "path": "source_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "source_revisions",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "zero_workers",
+        "present": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "passed": true,
+        "path": "closed_guard_controls",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "guard_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "file_revisions",
+        "present": true
+      },
+      {
+        "actual": 7,
+        "expected": 7,
+        "passed": true,
+        "path": "file_controls",
+        "present": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "passed": true,
+        "path": "file_builder_aborts",
+        "present": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "passed": true,
+        "path": "file_deadline_aborts",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "file_loop_quiescent",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "file_serialized_read",
+        "present": true
+      }
+    ],
+    "delivery_review": "review-pending",
+    "integrity": {
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "e98e41cee68489b22ecf05dc96425dbb2bbb246d9f815da931d9c1ca8b3d65b7",
+      "run_id": "20261011T040407Z-primary-live-wasm-swap-6a7fe1c3",
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "valid": true
+    },
+    "recomputed_verdict": "supports",
+    "scope": "Fresh-process artifact integrity and predeclared checks; not independent contract review.",
+    "valid": true
+  },
+  "wake_id": "2ac6318c2bdc49df928178942393eb84",
+  "watcher_saved_allocation_bytes": 16384
+}

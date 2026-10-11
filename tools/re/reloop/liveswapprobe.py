@@ -46,6 +46,8 @@ def corpus(out):
                                    for suffix in ('source.swift', 'view.wasm', 'expected.raw')]:
         shutil.copyfile(source / name, source_inputs / name)
     run('tests/source_revision_control.js', [source_inputs, controls], 15)
+    run('tests/source_file_loop_control.js', [source_inputs, out / 'file-controls'], 15)
+    file_loop = json.loads((out / 'file-controls/file-loop-result.json').read_text())
     frames = json.loads((out / 'frames/result.json').read_text())
     faults = json.loads((controls / 'control-result.json').read_text())
     cancel = json.loads((controls / 'after-fix.json').read_text())
@@ -56,6 +58,12 @@ def corpus(out):
     if not cancel['settled_at_close'] or cancel['status_at_close']['liveWorkers'] != 0:
         raise ValueError('Adapter cancellation gate failed')
     facts = {'frames': len(frames['records']),
+             'file_revisions': file_loop['accepted'],
+             'file_serialized_read': file_loop['serializedLiveRead'],
+             'file_controls': len(file_loop['controls']),
+             'file_builder_aborts': file_loop['aborts'],
+             'file_deadline_aborts': file_loop['deadlineAborts'],
+             'file_loop_quiescent': file_loop['final_status']['timers'] == 0 and not file_loop['final_status']['building'],
              'native_bytes': sum(r['native_bytes'] for r in frames['records']),
              'independent_bytes': sum(r['independent_bytes'] for r in frames['records']),
              'failed_proposals': len(faults['faults']),

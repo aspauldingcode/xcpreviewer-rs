@@ -1631,6 +1631,16 @@
       "manifest_sha256": "7408abc331849997ac534f9be0c474f85a3063620af6990a3b17ea1d101cb747",
       "path": "research/evidence/live-guard-reentrancy-2026-10-10/verification.json",
       "run_id": "20261011T035112Z-primary-live-wasm-swap-8279b44a"
+    },
+    {
+      "manifest_sha256": "ccfe173c8a75efe913b6ecaac8431c62adb3a82e13fd11c9ab3150713b4f8f64",
+      "path": "research/evidence/source-file-loop-2026-10-10/verification.json",
+      "run_id": "20261011T040249Z-primary-live-wasm-swap-0e41d92d"
+    },
+    {
+      "manifest_sha256": "e98e41cee68489b22ecf05dc96425dbb2bbb246d9f815da931d9c1ca8b3d65b7",
+      "path": "research/evidence/source-file-loop-serialization-2026-10-10/verification.json",
+      "run_id": "20261011T040407Z-primary-live-wasm-swap-6a7fe1c3"
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
@@ -1657,6 +1667,14 @@
     "manifest_sha256": "7408abc331849997ac534f9be0c474f85a3063620af6990a3b17ea1d101cb747",
     "next": "Bounded owned source watcher with latest-generation publication, malformed/unsupported edit retention and deletion/close controls; no UI bypass.",
     "run_id": "20261011T035112Z-primary-live-wasm-swap-8279b44a",
+    "scientific_delivery_review": "pending"
+  },
+  "source_file_loop_checkpoint": {
+    "evidence_manifest_sha256": "53f66e86b7778c4f037773bf4ce7d36320dc5c391738fa6d022c7bbb6750d15c",
+    "finished_at": "2026-10-11T04:04:23.259686+00:00",
+    "manifest_sha256": "e98e41cee68489b22ecf05dc96425dbb2bbb246d9f815da931d9c1ca8b3d65b7",
+    "next": "Implement bounded owned subprocess compilation adapter for file loop using frozen CLI; enforce process-tree deadline and abort, compare fresh modules/source receipts/all allocations. Current fixture adapter is explicitly prebuilt/cooperative; keep native Canvas gate open.",
+    "run_id": "20261011T040407Z-primary-live-wasm-swap-6a7fe1c3",
     "scientific_delivery_review": "pending"
   }
 }

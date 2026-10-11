@@ -1,0 +1,18 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(this.#active && !this.#busy && !this.#closed)
+
+    at LiveWasmHost.verifyLive (<repository>/tools/re/reloop/live_wasm_host.js:91:5)
+    at SourceRevisionHost.verifyLive (<repository>/tools/re/reloop/source_revision_host.js:31:34)
+    at SourceFileLoop.verifyLive (<repository>/tools/re/reloop/source_file_loop.js:10:33)
+    at <repository>/tools/re/tests/source_file_loop_control.js:26:147
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:597:9)
+    at process.processTimers (node:internal/timers:571:7) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
