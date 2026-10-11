@@ -2,7 +2,7 @@
 // Protocol handler only: caller owns framing, serialization, cancellation and shutdown.
 const VERSION='2025-11-25';
 const {FRAME_OUTPUT_SCHEMA,frameContent}=require('./preview_frame_contract.js');
-const descriptions={start:'Start finite source preview. A rejected build can leave no frame; inspect diagnostics. Starting a closed session fails.',poll:'Read source changes. Rejected edits retain the previous accepted frame; inspect diagnostics.',status:'Read lifecycle, frame descriptor and diagnostics without reading the allocation.',frame:'Read the current accepted allocation. available=false and frame=null before first publication or after close. A rejected edit can retain an older frame; inspect status diagnostics.',close:'Close the session and release its current frame. Repeated close is allowed; restart requires a new server session.'};
+const descriptions={start:'Start finite source preview. A rejected build can leave no frame; inspect diagnostics. Starting a closed session fails.',poll:'Read source changes. Rejected edits retain the previous accepted frame; inspect diagnostics.',status:'Read readiness, lifecycle, frame descriptor and diagnostics. Historical failure does not make a recovered frame stale.',frame:'Read the current accepted allocation. available=false and frame=null before first publication or after close. A rejected edit can retain an older frame; inspect status diagnostics.',close:'Close the session and release its current frame. Repeated close is allowed; restart requires a new server session.'};
 const names=['preview_start','preview_poll','preview_status','preview_frame','preview_close'];
 const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const empty=x=>object(x)&&Object.keys(x).length===0;
@@ -29,7 +29,7 @@ class PreviewMcp {
    if(this.phase!=='new')return error(id,-32600,'Already initialized');
    if(!object(p)||typeof p.protocolVersion!=='string'||!object(p.capabilities)||!object(p.clientInfo)||typeof p.clientInfo.name!=='string'||typeof p.clientInfo.version!=='string')return error(id,-32602,'Invalid initialization');
    this.phase='negotiated';
-   return reply({protocolVersion:VERSION,capabilities:{tools:{}},serverInfo:{name:'owned-preview-handler',version:'0.2.0'}});
+   return reply({protocolVersion:VERSION,capabilities:{tools:{}},serverInfo:{name:'owned-preview-handler',version:'0.2.1'}});
   }
   if(this.phase!=='ready')return error(id,-32000,'Initialization incomplete');
   if(m.method==='tools/list'){

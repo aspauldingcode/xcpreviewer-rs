@@ -663,3 +663,7 @@ Official client2.3.1 explicit legacy handshake now accepts owned stdio preview e
 ### 2026-10-11: explicit MCP frame availability
 
 Owned handler0.2.0 now advertises typed availability and one structured allocation with a bounded reusable decoder. Official SDK/default AJV accepts initial/post-close unavailability, source edit/rejection/recovery and EOF cleanup;19 independently schema-checked replies,2 server waits0,4 Rust/V8 modules,81,920 full consumer bytes plus16,384 synthetic bytes. Duplicate-allocation cap failure retained/fixed without raising limits;8 decoder faults and3 resealed evidence faults reject;89 Python+7 Rust tests. [Scope/evidence](docs/reverse-engineering/2026-10-11-mcp-frame-contract.md). Both milestones and native Canvas acceptance stay open.
+
+### 2026-10-11: current preview readiness and first-build recovery
+
+Handler 0.2.1 reports current readiness without treating retained historical failures as current blockers. Official SDK controls first rejection/no frame, same-session recovery, unchanged poll without rebuild, stale-frame retention and second recovery/close. One actual server wait 0, two Rust/V8 modules, two expected CLI rejects wait 2,65,536 independently checked bytes; nine policy cases/three invalid cases and four correlated resealed faults;91 Python plus7 Rust tests. [Scope/evidence](docs/reverse-engineering/2026-10-11-mcp-readiness.md). Native Canvas refresh/transport and both milestones remain open.

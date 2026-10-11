@@ -2,6 +2,7 @@
 // Local finite primary-renderer consumer API. No network/MCP transport claimed.
 const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {SourceFileLoop}=require('./source_file_loop.js');
+const {previewReadiness}=require('./preview_readiness.js');
 class PreviewSession {
  #loop;#operation=false;
  constructor(file,builder){this.#loop=new SourceFileLoop(file,builder);}
@@ -14,8 +15,8 @@ class PreviewSession {
    allocationBytes:snapshot.frame.length,renderedBytes:snapshot.geometry.height*snapshot.geometry.stride,
    ...snapshot.geometry,format:'premultiplied-RGBA8'};
  }
- status(){return {schemaVersion:1,scope:'Finite primary source preview; local owned policy',
-  lifecycle:this.#loop.status(),frame:this.#describe(this.#loop.snapshot()),diagnostics:this.#loop.diagnostics()};}
+ status(){const status={schemaVersion:1,scope:'Finite primary source preview; local owned policy',
+  lifecycle:this.#loop.status(),frame:this.#describe(this.#loop.snapshot()),diagnostics:this.#loop.diagnostics()};return {...status,readiness:previewReadiness(status)};}
  async #run(action){assert(!this.#operation,'Preview session operation active');this.#operation=true;try{return await action();}finally{this.#operation=false;}}
  async start(interval=25,duration=5000){return this.#run(async()=>{await this.#loop.start(interval,duration);return this.status();});}
  async poll(){return this.#run(async()=>{await this.#loop.poll();return this.status();});}
