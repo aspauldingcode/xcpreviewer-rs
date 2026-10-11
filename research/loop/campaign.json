@@ -5146,6 +5146,30 @@
         {
           "equals": true,
           "path": "rust_wasm_zero_workers"
+        },
+        {
+          "equals": 42,
+          "path": "rust_second_jobs"
+        },
+        {
+          "equals": 210,
+          "path": "rust_second_controls"
+        },
+        {
+          "equals": 3440640,
+          "path": "rust_second_compared_bytes"
+        },
+        {
+          "equals": 126,
+          "path": "rust_second_mutants"
+        },
+        {
+          "equals": 26,
+          "path": "rust_second_abi_modules"
+        },
+        {
+          "equals": true,
+          "path": "rust_second_all_equal"
         }
       ],
       "depends_on": [],
