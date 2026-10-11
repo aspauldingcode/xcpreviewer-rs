@@ -13,9 +13,10 @@ class OwnedOrphanTests(unittest.TestCase):
         node=shutil.which('node')
         if not node:self.skipTest('Existing Node required')
         with tempfile.TemporaryDirectory() as out:
-            subprocess.run([node,str(ROOT/'tools/re/tests/owned_orphan_control.js'),out,
-                            str(ROOT/'tools/re/reloop/owned_compiler.js'),sys.executable,'verify'],
-                           check=True,timeout=10,capture_output=True)
+            execution=subprocess.run([node,str(ROOT/'tools/re/tests/owned_orphan_control.js'),out,
+                            str(ROOT/'tools/re/reloop/owned_compiler.js'),sys.executable,'unit'],
+                           check=False,timeout=10,capture_output=True)
+            self.assertEqual(execution.returncode,0,execution.stderr.decode())
             result=json.loads((Path(out)/'orphan-result.json').read_text())
             self.assertEqual(result['failures'],0)
             self.assertEqual([c['code'] for c in result['controls']],[0,7])

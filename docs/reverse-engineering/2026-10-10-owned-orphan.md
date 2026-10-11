@@ -30,3 +30,10 @@ No user Xcode/simulator process was targeted. No Xcode workspace was opened,
 private bridge restarted, or native Canvas lifecycle claim accepted. Both milestone
 contracts and independent scientific delivery review remain open. The next
 uncertainty is identity-aware observation of an owned child leaving the group.
+
+An isolated early unit invocation exited1 without emitting its captured branch
+diagnostic; the subsequent clean25-test suite passed. That failure is retained
+in research/evidence/owned-orphan-unit-first-2026-10-10.json without speculative
+attribution. Unit controls separate a1000ms startup allowance from late-write
+assertions; canonical sealed controls retain their200ms deadline. Future unit
+failures now emit the captured diagnostic.

@@ -1,0 +1,9 @@
+{
+  "elapsed_seconds": 2.46,
+  "error": "CalledProcessError: owned_orphan_control.js returned exit status 1",
+  "execution": "failed",
+  "scope": "Retained isolated unit failure; no attribution to runtime defect established. Unit branch uses1000ms startup budget; canonical controls retain200ms and sealed passing results.",
+  "stderr": "Captured by subprocess but not emitted by unittest; detailed branch cause unavailable",
+  "subsequent_clean_archive_tests": 25,
+  "test": "test_success_and_failure_exit_drain_inherited_child"
+}

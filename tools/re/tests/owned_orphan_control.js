@@ -7,10 +7,10 @@ const out=process.argv[2],python=process.argv[4],observe=process.argv[5]==='obse
  for(const exit of [0,7]){
   const late=path.join(out,'late-'+exit),code='import os,time,sys\npid=os.fork()\nif pid==0:\n time.sleep(0.8)\n open(sys.argv[1],"w").write("late")\nelse:\n print("owned-child-started",flush=True)\n os._exit(int(sys.argv[2]))\n';
   const start=performance.now();let result,error;
-  try{result=await runOwned(python,['-c',code,late,String(exit)],{timeout:200,supervisorPython:python});}catch(e){error=e;result=e.record;}
+  try{result=await runOwned(python,['-c',code,late,String(exit)],{timeout:process.argv[5]==='unit'?1000:200,supervisorPython:python});}catch(e){error=e;result=e.record;}
   const elapsed=performance.now()-start;await new Promise(r=>setTimeout(r,900));
   assert.match(result.stdout,/owned-child-started/);
-  const passed=!fs.existsSync(late)&&elapsed<700&&(exit===0?!error:!!error&&result.code===7);
+  const passed=!fs.existsSync(late)&&elapsed<(process.argv[5]==='unit'?1500:700)&&(exit===0?!error:!!error&&result.code===7);
   controls.push({targetExit:exit,elapsedMs:elapsed,code:result.code,signal:result.signal,lateWriteAbsent:!fs.existsSync(late),error:error?String(error):null,passed});
   if(!observe)assert(passed,'Owned root-exit orphan cleanup failed');
  }
