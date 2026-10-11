@@ -8,7 +8,7 @@ function rustSourceBuilder(cfg){
  const build=async(source,{signal})=>{
   assert(Buffer.isBuffer(source)&&source.length>0&&source.length<=4096);const stage=fs.mkdtempSync(path.join(cfg.root,'build-')),file=path.join(stage,'source.swift');fs.writeFileSync(file,source);
   let execution;
-  try{execution=await runObserved(cfg.python,[cfg.cli,file,'--output',path.join(stage,'result'),'--rustc',cfg.rustc,'--rustc-sha256',cfg.rustcSha,'--toolchain-pin',cfg.toolchainPin],{signal,timeout:5000,observer:cfg.observer,supervisorPython:cfg.python});}
+  try{execution=await runObserved(cfg.python,[cfg.cli,file,'--output',path.join(stage,'result'),'--rustc',cfg.rustc,'--rustc-sha256',cfg.rustcSha,'--toolchain-pin',cfg.toolchainPin],{signal,timeout:5000,observer:cfg.observer,supervisorPython:cfg.python,onObservation:cfg.onObservation});}
   catch(e){const failure={error:String(e),record:e.record};failures.push(failure);fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));throw e;}
   const receipt=JSON.parse(execution.stdout);assert.equal(receipt.source_sha256,sha(source));assert.equal(receipt.rustc_sha256,cfg.rustcSha);assert.equal(receipt.toolchain_sha256,cfg.toolchainPin);
   const target=path.join(stage,'result/view.wasm'),info=fs.lstatSync(target);assert(info.isFile()&&!info.isSymbolicLink()&&info.size<=1048576);const module=fs.readFileSync(target);assert.equal(receipt.module_sha256,sha(module));

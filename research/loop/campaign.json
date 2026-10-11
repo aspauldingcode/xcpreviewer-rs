@@ -5222,6 +5222,22 @@
         {
           "equals": true,
           "path": "rust_source_builder_frozen"
+        },
+        {
+          "equals": true,
+          "path": "rust_file_stale_rejected"
+        },
+        {
+          "equals": true,
+          "path": "rust_file_abort_drained"
+        },
+        {
+          "equals": 65536,
+          "path": "rust_file_controls_bytes"
+        },
+        {
+          "equals": true,
+          "path": "rust_file_controls_quiescent"
         }
       ],
       "depends_on": [],

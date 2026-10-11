@@ -95,6 +95,8 @@ def corpus(out):
     facts.update(rust_source(out / 'rust-source'))
     facts['rust_source_builder_frozen']=(ROOT / 'tools/re/reloop/rust_source_builder.js').is_file()
     assert facts['rust_target_linker_pin_verified'] and facts['rust_source_builder_frozen']
+    from reloop.rustloopprobe import corpus as rust_loop
+    facts.update(rust_loop(out / 'rust-source', out / 'rust-loop'))
     from reloop.rustfailureprobe import corpus as rust_failure
     facts.update(rust_failure(out / 'rust-failure'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
