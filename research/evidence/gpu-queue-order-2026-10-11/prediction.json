@@ -1,0 +1,7 @@
+{
+  "scope": "Owned public Metal two-queue shared-buffer oracle, no Canvas or Mach transfer",
+  "prediction": "Reader awaiting new event2 remains pending until writer released; old event2 lets second reader complete with old bytes while writer2 is gated at3; event4 yields fresh bytes. Full padding/tail preserved.",
+  "subprocess_deadline_seconds": 15,
+  "helper_alarm_seconds": 20,
+  "repetitions": 2
+}

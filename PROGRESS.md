@@ -687,3 +687,7 @@ Fixed closed-with-frame and lifecycle revision contradictions after retaining ol
 ## 2026-10-11 — consumer diagnostic identity
 
 Fixed four correlated published-diagnostic contradictions after retaining old accepting results. Valid stale-source and terminal behavior preserved. Four fresh bounded verification replays,131072 independent allocation bytes including padding/tail; four resealed faults and prior8 consumer/2 terminal guards checked. See [evidence and scope](docs/reverse-engineering/2026-10-11-mcp-identity.md). Native R1/R2/capture and both milestones stay open.
+
+## 2026-10-11 — native two-queue generation fence
+
+Two owned public Metal helpers pass: stale event2 completes reader with old frame while writer waits3; fresh event4 yields new frame. 229376 full allocation bytes independently checked, six resealed faults rejected; actual waits0, retained REA helper identity and tool-argument failure. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-queue-order.md). No Canvas/cross-process release acceptance; both milestones open.
