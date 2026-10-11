@@ -38,6 +38,20 @@ def configuration(controller):
     if not path.is_file() or digest(path) != mode['sha256']:
         raise ValueError('Caveman skill missing or changed; reconcile configured identity')
     # The reasoning agent receives the actual pinned skill, not only a mode label.
+    # This canonical adapter is already registered and has its own reviewed runner.
+    # Preserve explicit user bindings (including an empty list) and all limits.
+    if DEFAULT_CONFIG == 'research/loop/graph-runner.json':
+        live = 'primary-live-wasm-swap'
+        registered = load(controller.root / 'research/loop/live-swap-runner.json', {})
+        policy = load(controller.root / 'research/loop/workgraph.json', {})
+        queue = load(controller.root / 'research/loop/campaign.json', {})
+        if (registered.get('schema_version') == 1
+                and registered.get('task_bindings', {}).get(live) == [live]
+                and any(t.get('id') == live for t in policy.get('research_tasks', []))
+                and any(e.get('id') == live and e.get('adapter') == 'live_swap'
+                        for e in queue.get('experiments', []))):
+            config = copy.deepcopy(config)
+            config['task_bindings'].setdefault(live, [live])
     return config, {'skill': 'caveman', 'intensity': 'full', 'path': str(path),
                     'sha256': mode['sha256'], 'instructions': path.read_text(),
                     'code_and_docs': 'normal precise language'}
@@ -206,6 +220,65 @@ def fresh_verify(controller, manifest, seconds):
     if result.returncode != 0:
         value['valid'] = False
     return value
+
+
+def adopt_verified(controller, task_id, run_id, anchor):
+    """Adopt scoped historical research only after fresh-process verification."""
+    if (type(run_id) is not str or pathlib.Path(run_id).name != run_id
+            or run_id in ('', '.', '..') or type(anchor) is not str
+            or len(anchor) != 64 or any(c not in '0123456789abcdef' for c in anchor)):
+        raise ValueError('Invalid adoption identity')
+    with controller.lock():
+        config, _ = configuration(controller)
+        path = controller.state / 'graph-loop.json'
+        ledger = load(path, {'schema_version': 1, 'accepted': {}, 'failures': {}, 'wakes': {}})
+        if any(w.get('state') in ('running', 'reconciliation-required')
+               for w in ledger.get('wakes', {}).values()):
+            raise ValueError('Resume unfinished wake before adoption')
+        checkpoint = load(controller.root / 'research/loop/continuous.json', {})
+        if run_id in {r['run_id'] for r in checkpoint.get('quarantined_evidence', [])}:
+            raise ValueError('Quarantined adoption run')
+        for row in checkpoint.get('recent_evidence', []):
+            if row['run_id'] == run_id and row['manifest_sha256'] != anchor:
+                raise ValueError('Conflicting adoption anchor')
+        policy = load(controller.root / 'research/loop/workgraph.json')
+        task = next((t for t in policy['research_tasks'] if t['id'] == task_id), None)
+        if task is None or not config['task_bindings'].get(task_id):
+            raise ValueError('Reviewed adoption binding required')
+        graph = build(controller, policy=policy, checkpoint=checkpoint)
+        eligible = next((t for t in graph['research_frontier'] if t['id'] == task_id), None)
+        if eligible is None or eligible['state'] not in ('ready', 'complete'):
+            raise ValueError('Adoption research prerequisite unmet')
+        folder = controller.runs / run_id
+        manifest = load(folder / 'manifest.json', {})
+        eid = manifest.get('experiment_id')
+        allowed = task.get('completion_experiment_ids', [task_id])
+        if eid not in config['task_bindings'][task_id] or eid not in allowed:
+            raise ValueError('Adoption experiment outside task scope')
+        queue = validate_queue(load(controller.root / 'research/loop/campaign.json'))
+        spec = next((e for e in queue['experiments'] if e['id'] == eid), None)
+        if (spec is None or manifest.get('run_id') != run_id
+                or manifest.get('experiment_hash') != canonical_hash(spec)
+                or manifest.get('execution') != 'success' or manifest.get('verdict') != 'supports'
+                or digest(folder / 'manifest.json') != anchor):
+            raise ValueError('Adoption contract or anchor changed')
+        if tree_size(folder) > config['limits']['artifact_bytes']:
+            raise ValueError('Adoption artifact budget exceeded')
+        check = fresh_verify(controller, manifest, min(30, config['limits']['minutes'] * 60))
+        report = {'task': task_id, 'run_id': run_id, 'manifest_sha256': anchor,
+                  'experiment_id': eid, 'experiment_hash': manifest['experiment_hash'],
+                  'verification': check, 'delivery_review': 'review-pending',
+                  'scope': 'research-only', 'verified_at': now()}
+        ledger.setdefault('adoptions', {})[task_id + ':' + run_id] = report
+        if check.get('valid') is True:
+            rows = ledger.setdefault('accepted', {}).setdefault(task_id, [])
+            if not any(r['run_id'] == run_id for r in rows):
+                rows.append({k: report[k] for k in ('run_id', 'manifest_sha256',
+                                                   'experiment_id', 'experiment_hash')})
+        atomic(path, ledger)
+        if check.get('valid') is not True:
+            raise ValueError('Fresh adoption verification failed; report retained')
+        return report
 
 
 def charge(controller, wake):

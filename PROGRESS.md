@@ -815,3 +815,7 @@ Baseline compiler parent timeout leaves owned same-group child writing; fixed co
 ## 2026-10-11 — real isolated-session build holdout
 
 Real LLVM stages under changed Popen/session boundary exit0 with owned group IDs equal spawnedPIDs; cache hit preserves pointer and skips recompilation. Native-backed holdout12 V8 allocations match all131072 bytes, including padding/tail and invalid-buffer preservation. WasmKit render720 result is separately scoped. Twelve resealed faults. [Scope](docs/reverse-engineering/2026-10-11-session-build.md). Both milestones remain open.
+
+## 2026-10-11 — verified completed-research adoption
+
+Default live-swap binding now reuses its existing registered runner. New explicit anchored adoption validates current task scope, prerequisites and a fresh frozen-run verifier before idempotent research acceptance. Matching canonical run passes all88 declared checks; default graph has no ready candidates, while delivery review and both milestones remain open. API rejection controls and nine resealed false-promotion faults pass. [Scope and next prerequisites](docs/reverse-engineering/2026-10-11-graph-adoption.md). No corpus producers rerun; unrelated staged work preserved.

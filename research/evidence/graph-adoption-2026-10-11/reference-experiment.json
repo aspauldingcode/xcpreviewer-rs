@@ -1,0 +1,367 @@
+{
+  "adapter": "live_swap",
+  "artifact_limit_mb": 32,
+  "checks": [
+    {
+      "equals": 84,
+      "path": "frames"
+    },
+    {
+      "equals": 1310720,
+      "path": "native_bytes"
+    },
+    {
+      "equals": 1376256,
+      "path": "independent_bytes"
+    },
+    {
+      "equals": 6,
+      "path": "failed_proposals"
+    },
+    {
+      "equals": 4,
+      "path": "close_controls"
+    },
+    {
+      "equals": 5,
+      "path": "source_rejections"
+    },
+    {
+      "equals": 3,
+      "path": "source_revisions"
+    },
+    {
+      "equals": true,
+      "path": "zero_workers"
+    },
+    {
+      "equals": 2,
+      "path": "closed_guard_controls"
+    },
+    {
+      "equals": 3,
+      "path": "guard_rejections"
+    },
+    {
+      "equals": 3,
+      "path": "file_revisions"
+    },
+    {
+      "equals": 7,
+      "path": "file_controls"
+    },
+    {
+      "equals": 1,
+      "path": "file_builder_aborts"
+    },
+    {
+      "equals": 1,
+      "path": "file_deadline_aborts"
+    },
+    {
+      "equals": true,
+      "path": "file_loop_quiescent"
+    },
+    {
+      "equals": true,
+      "path": "file_serialized_read"
+    },
+    {
+      "equals": 3,
+      "path": "fresh_compiler_frames"
+    },
+    {
+      "equals": 49152,
+      "path": "fresh_compiler_bytes"
+    },
+    {
+      "equals": 2,
+      "path": "compiler_tree_controls"
+    },
+    {
+      "equals": true,
+      "path": "compiler_late_writes_absent"
+    },
+    {
+      "equals": 3,
+      "path": "source_frontend_cache_misses"
+    },
+    {
+      "equals": 2,
+      "path": "owned_orphan_controls"
+    },
+    {
+      "equals": true,
+      "path": "owned_target_exits_preserved"
+    },
+    {
+      "equals": 7,
+      "path": "file_input_controls"
+    },
+    {
+      "equals": true,
+      "path": "file_input_descriptors_closed"
+    },
+    {
+      "equals": true,
+      "path": "file_fifo_deadline_closed"
+    },
+    {
+      "equals": 4,
+      "path": "observed_compiler_controls"
+    },
+    {
+      "equals": true,
+      "path": "observed_compiler_late_writes_absent"
+    },
+    {
+      "equals": 3,
+      "path": "observed_fresh_compiler_frames"
+    },
+    {
+      "equals": 49152,
+      "path": "observed_fresh_compiler_bytes"
+    },
+    {
+      "equals": true,
+      "path": "observed_private_abort_pipe"
+    },
+    {
+      "equals": true,
+      "path": "observed_loss_cleanup_rejected"
+    },
+    {
+      "equals": true,
+      "path": "observed_loss_pipe_settlement"
+    },
+    {
+      "equals": true,
+      "path": "observed_output_pressure_drained"
+    },
+    {
+      "equals": true,
+      "path": "observed_malformed_rows_rejected"
+    },
+    {
+      "equals": 4,
+      "path": "observed_terminal_rejections"
+    },
+    {
+      "equals": true,
+      "path": "observed_terminal_valid_control"
+    },
+    {
+      "equals": true,
+      "path": "observed_reparent_abort_drained"
+    },
+    {
+      "equals": true,
+      "path": "observed_utf8_split_exact"
+    },
+    {
+      "equals": true,
+      "path": "observed_invalid_utf8_rejected"
+    },
+    {
+      "equals": true,
+      "path": "observed_ascii_bytewise_exact"
+    },
+    {
+      "equals": 84,
+      "path": "rust_frames"
+    },
+    {
+      "equals": 1376256,
+      "path": "rust_allocation_bytes"
+    },
+    {
+      "equals": 1310720,
+      "path": "rust_native_bytes"
+    },
+    {
+      "equals": 10,
+      "path": "rust_negative_controls"
+    },
+    {
+      "equals": 7,
+      "path": "rust_core_tests"
+    },
+    {
+      "equals": 84,
+      "path": "rust_render_frames"
+    },
+    {
+      "equals": 1376256,
+      "path": "rust_render_bytes"
+    },
+    {
+      "equals": 1310720,
+      "path": "rust_render_native_bytes"
+    },
+    {
+      "equals": 5,
+      "path": "rust_render_invalid_controls"
+    },
+    {
+      "equals": true,
+      "path": "rust_render_invalid_unchanged"
+    },
+    {
+      "equals": 84,
+      "path": "rust_wasm_frames"
+    },
+    {
+      "equals": 1376256,
+      "path": "rust_wasm_bytes"
+    },
+    {
+      "equals": 1310720,
+      "path": "rust_wasm_native_bytes"
+    },
+    {
+      "equals": 3,
+      "path": "rust_wasm_faults"
+    },
+    {
+      "equals": true,
+      "path": "rust_wasm_zero_workers"
+    },
+    {
+      "equals": 42,
+      "path": "rust_second_jobs"
+    },
+    {
+      "equals": 210,
+      "path": "rust_second_controls"
+    },
+    {
+      "equals": 3440640,
+      "path": "rust_second_compared_bytes"
+    },
+    {
+      "equals": 126,
+      "path": "rust_second_mutants"
+    },
+    {
+      "equals": 26,
+      "path": "rust_second_abi_modules"
+    },
+    {
+      "equals": true,
+      "path": "rust_second_all_equal"
+    },
+    {
+      "equals": 3,
+      "path": "rust_source_revisions"
+    },
+    {
+      "equals": 49152,
+      "path": "rust_source_bytes"
+    },
+    {
+      "equals": 22,
+      "path": "rust_source_unsupported"
+    },
+    {
+      "equals": true,
+      "path": "rust_source_drained"
+    },
+    {
+      "equals": true,
+      "path": "rust_source_failure_retained"
+    },
+    {
+      "equals": true,
+      "path": "rust_source_zero_workers"
+    },
+    {
+      "equals": 3,
+      "path": "rust_failure_controls"
+    },
+    {
+      "equals": 49152,
+      "path": "rust_failure_retained_bytes"
+    },
+    {
+      "equals": true,
+      "path": "rust_failure_late_artifacts_stable"
+    },
+    {
+      "equals": 2,
+      "path": "rust_failure_recovery_revision"
+    },
+    {
+      "equals": true,
+      "path": "rust_failure_zero_workers"
+    },
+    {
+      "equals": true,
+      "path": "rust_target_linker_pin_verified"
+    },
+    {
+      "equals": true,
+      "path": "rust_source_builder_frozen"
+    },
+    {
+      "equals": true,
+      "path": "rust_file_stale_rejected"
+    },
+    {
+      "equals": true,
+      "path": "rust_file_abort_drained"
+    },
+    {
+      "equals": 65536,
+      "path": "rust_file_controls_bytes"
+    },
+    {
+      "equals": true,
+      "path": "rust_file_controls_quiescent"
+    },
+    {
+      "equals": 3,
+      "path": "rust_file_failure_cases"
+    },
+    {
+      "equals": 147456,
+      "path": "rust_file_failure_bytes"
+    },
+    {
+      "equals": true,
+      "path": "rust_postcompile_failure_recorded"
+    },
+    {
+      "equals": true,
+      "path": "rust_file_timeout_recovered"
+    },
+    {
+      "equals": 8,
+      "path": "artifact_read_cases"
+    },
+    {
+      "equals": true,
+      "path": "artifact_read_descriptors_closed"
+    },
+    {
+      "equals": true,
+      "path": "artifact_read_bounded"
+    },
+    {
+      "equals": 3,
+      "path": "rust_receipt_valid"
+    },
+    {
+      "equals": 34,
+      "path": "rust_receipt_mutants"
+    }
+  ],
+  "depends_on": [],
+  "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close. Actual bounded file polling with prebuilt pinned fixture adapter retains last-good state on unsupported/invalid/deleted edits and aborts cooperative builders at closure/deadline. File changes during live verification queue until the host is idle. A frozen CLI freshly compiles three supported edits to pinned modules/full allocations; owned inherited POSIX compiler groups suppress late child writes on timeout/abort. A private inherited-group anchor remains alive until draining, preserving target exit status while preventing late child writes after successful or failing target exit.",
+  "id": "primary-live-wasm-swap",
+  "params": {},
+  "priority": 96,
+  "resources": [
+    "local-re-controller"
+  ],
+  "timeout_seconds": 120
+}
