@@ -1,0 +1,126 @@
+[
+  {
+    "index": 0,
+    "label": "normal",
+    "space_hex": "20",
+    "cases": {
+      "primary": "ZStack {\nColor (.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor (.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor (.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n",
+      "opaque": "Color (.sRGB, red: 1, green: 0, blue: 0, opacity: 1).frame(width: 17, height: 9)"
+    },
+    "baseline_configs": {
+      "primary": {
+        "width": 17,
+        "height": 9,
+        "alphas": [
+          4,
+          2,
+          8
+        ],
+        "reverse": 0
+      },
+      "opaque": {
+        "color": "red",
+        "width": 17,
+        "height": 9
+      }
+    },
+    "wait": {
+      "code": 0,
+      "timeout": false
+    },
+    "native_accepted": true
+  },
+  {
+    "index": 1,
+    "label": "vertical-tab",
+    "space_hex": "0b",
+    "cases": {
+      "primary": "ZStack {\nColor\u000b(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor\u000b(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor\u000b(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n",
+      "opaque": "Color\u000b(.sRGB, red: 1, green: 0, blue: 0, opacity: 1).frame(width: 17, height: 9)"
+    },
+    "baseline_configs": {
+      "primary": {
+        "width": 17,
+        "height": 9,
+        "alphas": [
+          4,
+          2,
+          8
+        ],
+        "reverse": 0
+      },
+      "opaque": {
+        "color": "red",
+        "width": 17,
+        "height": 9
+      }
+    },
+    "wait": {
+      "code": 0,
+      "timeout": false
+    },
+    "native_accepted": true
+  },
+  {
+    "index": 2,
+    "label": "form-feed",
+    "space_hex": "0c",
+    "cases": {
+      "primary": "ZStack {\nColor\f(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor\f(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor\f(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n",
+      "opaque": "Color\f(.sRGB, red: 1, green: 0, blue: 0, opacity: 1).frame(width: 17, height: 9)"
+    },
+    "baseline_configs": {
+      "primary": {
+        "width": 17,
+        "height": 9,
+        "alphas": [
+          4,
+          2,
+          8
+        ],
+        "reverse": 0
+      },
+      "opaque": {
+        "color": "red",
+        "width": 17,
+        "height": 9
+      }
+    },
+    "wait": {
+      "code": 0,
+      "timeout": false
+    },
+    "native_accepted": true
+  },
+  {
+    "index": 3,
+    "label": "carriage-return",
+    "space_hex": "0d",
+    "cases": {
+      "primary": "ZStack {\nColor\r(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor\r(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor\r(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n",
+      "opaque": "Color\r(.sRGB, red: 1, green: 0, blue: 0, opacity: 1).frame(width: 17, height: 9)"
+    },
+    "baseline_configs": {
+      "primary": {
+        "width": 17,
+        "height": 9,
+        "alphas": [
+          4,
+          2,
+          8
+        ],
+        "reverse": 0
+      },
+      "opaque": {
+        "color": "red",
+        "width": 17,
+        "height": 9
+      }
+    },
+    "wait": {
+      "code": 0,
+      "timeout": false
+    },
+    "native_accepted": true
+  }
+]

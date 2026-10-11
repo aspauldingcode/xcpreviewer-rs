@@ -1,0 +1,8 @@
+{
+  "scope": "Custom expression lowerers versus pinned native Swift frontend syntax only; no typecheck, renderer or Canvas claim",
+  "prediction": "Whitespace controls accepted by lowerers must parse as Swift; native disagreement falsifies lexical compatibility. Four bounded compiler invocations include normal whitespace, VT, FF, CR controls. No frame-byte claim.",
+  "limits": {
+    "compiler_invocations": 4,
+    "each_seconds": 10
+  }
+}

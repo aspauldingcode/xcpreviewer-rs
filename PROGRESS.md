@@ -759,3 +759,7 @@ CLI previously exited0 despite channel cleanup failed. It now retains lifecycle 
 ## 2026-10-11 — asynchronous CLI shutdown watchdog
 
 Baseline hung close required owned parent kill/reap after5sec(-9). CLI now keeps requested deadline+1000ms watchdog, retains pre-exit worker1/timers2/cleanupunknown and self-exits4; positive exit0 and prior rejection exit3 verified. Four actual Node processes,65536 independent bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-shutdown-watchdog.md). Event-loop timer only; external deadlines/native/both milestone acceptance remain.
+
+## 2026-10-11 — native syntax whitespace discrimination
+
+Four owned Swift frontend processes accept space/VT/FF/CR at Color-opening boundary for both custom subsets; all eight lowerer configurations agree. Proposed VT/FF rejection hypothesis contradicted; no grammar fix warranted. Actual waits0/no timeout/diagnostic; independent source/identity reader, seven resealed faults, current lowerer regressions. [Scope](docs/reverse-engineering/2026-10-11-source-whitespace.md). Native syntax only; both milestones/Canvas gates remain open.

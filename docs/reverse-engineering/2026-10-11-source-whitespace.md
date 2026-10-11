@@ -1,0 +1,15 @@
+# Native parse-only whitespace discrimination
+
+Four bounded owned Swift frontend invocations accept the same primary-layer and opaque literal expressions with space, vertical tab (0x0b), form feed (0x0c), or carriage return (0x0d) inserted between Color and its opening parenthesis. Both custom lowerers accept all eight expressions with identical parsed configurations. Every native process exits0 without timeout, stdout or stderr. The proposed explanation that Python ASCII \s admits VT/FF rejected by Swift is contradicted at this location. No grammar change is warranted by these observations.
+
+## Selection and independent verification
+
+Finite owned MCP close/error/watchdog controls were completed in the preceding wake; the next wake selected an independent source acceptance boundary rather than more close permutations. Graph-loop has no unfinished owned wake and retains primary-live-wasm-swap as reviewed-binding-required; both delivery contracts remain incomplete. Live GitHub backlog includes native capture/resource and portable frontend/conformance work. Approved private Xcode bridge remains offline and was neither restarted nor used. No workspace was opened.
+
+The producer froze both lowerer sources and complete Swift controls before executing four native compiler processes, each with10second timeout. Literal expectations in the independent reader do not invoke either lowerer. It verifies every source byte, retained actual exit/timeout/diagnostic outcome, expected configuration and REA/compiler identity. Current lowerers are separately checked against all retained controls. Seven resealed semantic faults test exit, timeout, omitted control, altered source, altered configuration, inserted diagnostic and compiler identity. The latest shutdown-watchdog seal/reader were verified before checkpointing; this does not reclassify those owned process controls as native compiler evidence.
+
+REA opened the actual shipped compiler, confirmed ARM64 target SHA256 `2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb`, retained server6.2.0 provenance and closed the target. No Apple binary bytes are published. Evidence manifest SHA256 `f11aaeff87e9766ad02ee8a5b48c4ee89893fd932e964f326610fe62c69d9f91`; [sanitized local evidence](../../research/evidence/source-whitespace-2026-10-11/manifest.json).
+
+## Scope and next action
+
+This is Swift frontend syntax acceptance at one measured token boundary, not typechecking, arbitrary whitespace placement, SwiftUI rendering, image byte compatibility, non-Apple frontend execution or Canvas wire evidence. There is no frame allocation or padding comparison in this syntax experiment. Both milestones/native R1/R2/capture and browser reviewed-binding prerequisite remain open. Skip these four completed lexical controls on later wakes. Prioritize a demanded native interaction/reset/display-export observation once its prerequisites change, or an independent portable source/build/platform acceptance boundary. Do not add a lexical restriction based on the falsified VT/FF assumption.
