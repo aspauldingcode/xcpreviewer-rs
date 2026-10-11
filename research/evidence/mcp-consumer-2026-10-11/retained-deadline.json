@@ -1,0 +1,55 @@
+{
+  "manifestSha256": "1dd2d0f06d1ca2c9be71899dac531dce66fd9faf81905ee0ee55c1113ea4b751",
+  "reason": "SDK connection closed at existing 10000ms channel deadline during later recovery refresh; no completed result.json. Do not accept wait0 as completed workflow.",
+  "change": "Remove separately completed recovery build; concentrate this control on bracketing race and stale retention. Deadlines/caps unchanged.",
+  "controlWait": {
+    "code": 1,
+    "timeout": false
+  },
+  "wait": {
+    "timeout": false,
+    "code": 0
+  },
+  "channel": {
+    "received": 25,
+    "writes": 23,
+    "suppressed": 1,
+    "closed": true,
+    "reason": "channel-deadline"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 2,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 8,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "Error: Observed compiler aborted"
+      },
+      "lastFailure": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "Error: Observed compiler aborted"
+      }
+    },
+    "readiness": {
+      "state": "closed",
+      "frameRevision": null,
+      "message": "Preview closed."
+    }
+  },
+  "completedTools": 21,
+  "localRetained": "research/evidence/mcp-consumer-deadline-local-2026-10-11"
+}

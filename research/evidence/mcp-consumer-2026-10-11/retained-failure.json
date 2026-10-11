@@ -1,0 +1,50 @@
+{
+  "scope": "Owned SDK control recorder; runtime wait0 does not make an aliased record coherent",
+  "firstManifestSha256": "334fcadb5d5a4bd0a89a5dcd2fc1d140ae0b4edaab47c597c58511da255e10f7",
+  "reason": "Recorder retained caller-owned status reference; intended caller mutation changed recorded sample1 width13 to1 while its frame descriptor remained13. Wire replies and consumer internal detached snapshot remained correct.",
+  "originalControlSha256": "8c17d2eb45790014ae9a844cf9828d87338ded2671490d392e2556686dd699bd",
+  "fix": "Copy status and descriptor at recording boundary; fixed independent control, unchanged caps/deadlines",
+  "initialStatus": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 1,
+      "busy": false,
+      "closed": false,
+      "revision": 1,
+      "loopClosed": false,
+      "building": false,
+      "timers": 2
+    },
+    "frame": {
+      "revision": 1,
+      "generation": 1,
+      "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8",
+      "moduleSha256": "65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235",
+      "allocationSha256": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461",
+      "allocationBytes": 16384,
+      "renderedBytes": 448,
+      "width": 1,
+      "height": 7,
+      "stride": 64,
+      "format": "premultiplied-RGBA8"
+    },
+    "diagnostics": {
+      "retainedEvents": 2,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      "lastFailure": null
+    },
+    "readiness": {
+      "state": "ready",
+      "frameRevision": 1,
+      "message": "Preview ready."
+    }
+  },
+  "fullFailureRetainedLocally": "research/evidence/mcp-consumer-recording-local-2026-10-11"
+}

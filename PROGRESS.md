@@ -675,3 +675,7 @@ Official SDK control retains full stale frames on missing/empty source and repub
 ### 2026-10-11: explicit same-source refresh and retry
 
 Handler 0.2.2 adds preview_refresh: unchanged poll skips rebuilding, explicit refresh republishes verified same source and retries unchanged rejected source. Last accepted frame survives both intentional failures; close rejects refresh. One actual SDK server wait 0, three successful Rust/V8 modules, two expected CLI waits 2, 98,304 independent consumer bytes; owned invalid/closed/concurrent/abort controls; four resealed faults; 95 Python plus seven Rust tests. [Scope and evidence](docs/reverse-engineering/2026-10-11-mcp-refresh.md). No user-state migration or native Canvas refresh/reset claim; both milestones remain open.
+
+### 2026-10-11: correlated SDK consumer snapshots
+
+Scoped JS consumer validates status/frame/status identity, retries one deliberately interleaved publication and preserves accepted state on eight hostile histories. One actual SDK server wait0, two Rust/V8 modules, one expected CLI wait2; 147,456 wire/snapshot bytes independently checked, four resealed faults; 97 Python plus seven Rust tests. Recorder alias and fixed deadline failures retained; reduced redundant recovery workload without raising limits. [Scope/evidence](docs/reverse-engineering/2026-10-11-mcp-consumer.md). Bracketed observation is not atomic/perpetual freshness or native Canvas protocol acceptance; both milestones remain open.
