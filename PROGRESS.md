@@ -625,3 +625,8 @@ SourceFileLoop now retains latest64 events and reports dropped count plus detach
 ## Local preview consumer contract (2026-10-11)
 
 PreviewSession schema1 exposes start/poll/status/readFrame/close with bounded diagnostics and detached allocation/descriptor. Active WASM geometry now publishes atomically with frame/revision/source provenance. Actual Rust revisions13x7→9x5→13x7 pass8 consumer controls; unsupported edit exits2/drained and retains revision2 geometry/frame.3 fresh modules plus retained allocation yield65536 independently checked bytes;3 resealed geometry/hidden-failure/padding mutants reject.73 Python plus7 Rust clean archive tests pass. Seal5f4ae354812a9f4c4a35dcf1be81f022398e47ca813bf28ab4faff8689b70df9. Local module API only; no MCP transport, native Canvas or broad SwiftUI acceptance claimed. Both milestones remain open.
+
+
+## Bounded owned preview channel (2026-10-11)
+
+Owned NDJSON transport accepts exact id/method requests,4096-byte input,32768-byte response, one active plus one queued request, increasing IDs and close priority. Stop destroys owned input, drains session and operation, ends/destroys output; backpressure has50..1000ms write deadline.2 actual Rust frames13x7/9x5 carry32768 exact allocation bytes;9 fault controls and3 fresh independent stream replays pass.3 resealed queue/suppressed-reply/padding claims reject.75 Python plus7 Rust archive tests pass. Seal70d308a30ffa11267f7674b357f2dece0998f339aaabd4beb3a9e887a43e93b8. Initial syntax and immediate-next-request reply race retained/fixed; deadlines unchanged. Custom local transport, not MCP/native Canvas. Both milestones remain open.

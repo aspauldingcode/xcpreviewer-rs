@@ -457,6 +457,24 @@
     "scientific_delivery_review": "pending"
   },
   "pending_sync": false,
+  "preview_channel_checkpoint": {
+    "actual_completed_modules": 2,
+    "clean_archive_tests": 82,
+    "complete_bytes": 32768,
+    "evidence_manifest_sha256": "70d308a30ffa11267f7674b357f2dece0998f339aaabd4beb3a9e887a43e93b8",
+    "fault_controls": 9,
+    "fresh_stream_replays": 3,
+    "git_sync": "verified commit pending push",
+    "next": "Add a process/stdin wrapper and protocol compatibility controls before claiming a preview-facing MCP server. Native R1/R2/capture/transport, browser/non-Apple gates stay open.",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T10:25:02.184898+00:00",
+    "resealed_mutants": 3,
+    "retained_failed_seals": {
+      "preview-channel-reply-race-2026-10-11": "1f1b88e6f7c3f6f020b0f461c0476f4c607fb20fd366f0c3652f71416a729892",
+      "preview-channel-syntax-failure-2026-10-11": "afde1533bebbbff14a2b2d47bb90776f374b1a88f9f906ad85d4d8bac0d0bd01"
+    },
+    "scientific_delivery_review": "pending"
+  },
   "preview_session_checkpoint": {
     "actual_failed_builds": 1,
     "clean_archive_tests": 80,
