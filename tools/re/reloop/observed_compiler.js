@@ -8,11 +8,11 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
  return new Promise((resolve,reject)=>{
   if(signal?.aborted){reject(Error('Observed compiler aborted before spawn'));return;}
   const child=spawn(supervisorPython,[path.join(__dirname,'observed_group_anchor.py'),observer.helper,observer.sha256,String(timeout),command,...args],{detached:true,stdio:['pipe','pipe','pipe','pipe']});
-  let failure=null,report=null,control='',controlBytes=0,stdout=Buffer.alloc(0),stderr=Buffer.alloc(0),requested=false;
+  let failure=null,report=null,control='',controlBytes=0,stdout=Buffer.alloc(0),stderr=Buffer.alloc(0),requested=false,emergencyClosed=false;
   const kill=()=>{if(child.pid&&child.exitCode===null&&child.signalCode===null){try{process.kill(-child.pid,'SIGKILL');}catch(e){if(e.code!=='ESRCH')failure ||= e;}}};
   const cancel=reason=>{failure ||= reason;if(!requested){requested=true;child.stdin.write('abort\n');}};
   const abort=()=>cancel(Error('Observed compiler aborted'));signal?.addEventListener('abort',abort,{once:true});
-  const timer=setTimeout(()=>{failure ||= Error('Observed supervisor hard deadline; cleanup unverified');kill();for(const stream of [child.stdin,child.stdout,child.stderr,child.stdio[3]])stream.destroy();},timeout+5000);
+  const timer=setTimeout(()=>{emergencyClosed=true;failure ||= Error('Observed supervisor hard deadline; cleanup unverified');kill();for(const stream of [child.stdin,child.stdout,child.stderr,child.stdio[3]])stream.destroy();},timeout+5000);
   const collect=(kind,b)=>{if(stdout.length+stderr.length+b.length>limit){cancel(Error('Observed compiler output limit'));return;}if(kind==='stdout')stdout=Buffer.concat([stdout,b]);else stderr=Buffer.concat([stderr,b]);};
   child.stdout.on('data',b=>collect('stdout',b));child.stderr.on('data',b=>collect('stderr',b));
   for(const stream of [child.stdin,child.stdout,child.stderr,child.stdio[3]])stream.on('error',e=>{failure ||= e;});
@@ -29,7 +29,7 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
    }
   });
   child.on('close',(code,term)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);
-   const record={pid:child.pid,anchorCode:code,signal:term,report,stdout:stdout.toString(),stderr:stderr.toString()};
+   const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,stdout:stdout.toString(),stderr:stderr.toString()};
    if(failure||report?.drained!==true||report.remaining_observed!==0||report.target_code!==0||term!=='SIGKILL'){const e=failure||Error('Observed cleanup unverified');e.record=record;reject(e);}else resolve(record);
   });
  });

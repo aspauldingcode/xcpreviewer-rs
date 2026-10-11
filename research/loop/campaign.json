@@ -5046,6 +5046,18 @@
         {
           "equals": true,
           "path": "observed_private_abort_pipe"
+        },
+        {
+          "equals": true,
+          "path": "observed_loss_cleanup_rejected"
+        },
+        {
+          "equals": true,
+          "path": "observed_loss_pipe_settlement"
+        },
+        {
+          "equals": true,
+          "path": "observed_output_pressure_drained"
         }
       ],
       "depends_on": [],

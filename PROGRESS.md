@@ -528,3 +528,8 @@ Optional pinned public macOS observer path now tracks sampled full-identity esca
 ## Private supervisor input isolation (2026-10-10)
 
 A further actual EOF control found the target inherited the supervisor nonblocking abort-read pipe and exited1 with BlockingIOError. DEVNULL target stdin now isolates private commands; owned read returns EOF/status0. Before/fix evidencec228964baff9ee05c4a36d09647100dddb080ec0a37e8eca40b7e56494eb2420 retains the initial incorrect deadline prediction and corrected EAGAIN diagnosis. Canonical run20261011T045810Z-primary-live-wasm-swap-69015bde passes31 checks, anchor25f3808fa9237a8fb1774831d7eb85c268997b40ee338a68cd94443c6557d254.33 isolated candidate tests pass; false resealed EOF claim rejects. Native Canvas/scientific acceptance remains open.
+
+
+## Observer-loss and output-pressure controls (2026-10-10)
+
+Two actual owned controls separate bounded pipe settlement from descendant release. Invalidated private helper reports drain unknown/false; escaped child retains stdout until emergency closure5506ms and later writes retained marker. Valid helper output pressure requests private abort and drains at258ms; no delayed write. Explicit emergencyClosed receipt now prevents accounting ambiguity. Four resealed false-claim controls reject;35 clean candidate tests pass. Canonical run20261011T050401Z-primary-live-wasm-swap-e9f4af29 passes34 checks, anchor600c6a736b2f1dce995e51c5f49feb7b420affc4522bff10d71ef551c1bd927a; evidence8dc52716ac13db373a4ecd5cc97ca7ca2069c326ffea1e06e4245f4a4f765b55. Lost-observer failure retained. Native Canvas/scientific/delivery acceptance remains open.

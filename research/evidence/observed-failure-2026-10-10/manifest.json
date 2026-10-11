@@ -1,0 +1,43 @@
+{
+  "files": {
+    "canonical.json": {
+      "bytes": 6021,
+      "sha256": "12b57c0b25dc704cc8eeb61acbf8fca004c6fab29a2b695a8054ad22d334c482"
+    },
+    "controls/observer-loss-held-stdio/late": {
+      "bytes": 4,
+      "sha256": "089001a35679a33ef3db0ca350db9b9a2f0136e0e327577b04b3b98127470961"
+    },
+    "controls/observer-loss-held-stdio/owned-helper": {
+      "bytes": 39,
+      "sha256": "0e56afd5be79c6a313d7a322f0dab212325cc33e697602751d08b0391b79da38"
+    },
+    "controls/output-pressure/owned-helper": {
+      "bytes": 34168,
+      "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+    },
+    "controls/output-pressure/release": {
+      "bytes": 7,
+      "sha256": "a4d451ec23463726f72c43d64c710968f6b602cd653b4de8adee1b556240a829"
+    },
+    "controls/result.json": {
+      "bytes": 2064,
+      "sha256": "5bce422ffab11af5be9151026f4b5cb095bb9a2c55afe028d5180b40f94fb432"
+    },
+    "observed_compiler.js": {
+      "bytes": 3693,
+      "sha256": "0ad2437a5ce175b3ec6dcc90d262e30e1f44a875ca415073efcf8b9a8d52513c"
+    },
+    "observed_failure_control.js": {
+      "bytes": 2855,
+      "sha256": "52c284f0f38a0af4e98fbc5a6fc54e3f0b0121175ecd92e772bb6c4ef1f77075"
+    },
+    "observed_group_anchor.py": {
+      "bytes": 4499,
+      "sha256": "d6cdbb362d61cd4ae418efba43615571b97b7fa2dd5743600d9d22d4aea2bcb2"
+    }
+  },
+  "schema_version": 1,
+  "scientific_delivery_review": "pending",
+  "scope": "Owned observer loss, output pressure and caller settlement; forced pipe closure does not prove descendant release or native Canvas policy"
+}

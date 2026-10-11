@@ -1,0 +1,71 @@
+{
+  "controls": [
+    {
+      "mode": "observer-loss-held-stdio",
+      "observed": {
+        "pid": 65454,
+        "parent": 65452,
+        "group": 65454,
+        "state": "L",
+        "identity": [
+          1791695067,
+          243363,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 65450,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "AssertionError: ",
+          "drained": false
+        },
+        "emergencyClosed": true,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: AssertionError: ",
+      "elapsedMs": 5506.137084,
+      "lateWritePresent": true
+    },
+    {
+      "mode": "output-pressure",
+      "observed": {
+        "pid": 65551,
+        "parent": 65548,
+        "group": 65551,
+        "state": "L",
+        "identity": [
+          1791695074,
+          964972,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 65547,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "abort",
+          "drained": true,
+          "tracked": 2,
+          "observations": 6,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler output limit",
+      "elapsedMs": 257.70545799999945,
+      "lateWritePresent": false
+    }
+  ],
+  "scope": "Observed owned helper loss and output pressure; forced pipe closure is not descendant release or native Canvas evidence"
+}
