@@ -1,0 +1,17 @@
+{
+  "scope": "Owned public shared event carrier: ordinary secure byte archive versus same-process anonymous NSXPC connection; not cross-process or Canvas",
+  "predictions": [
+    "NSSecureCoding permits ordinary NSData archiving",
+    "Handle requires an XPC-aware coder while an ordinary secure string archives",
+    "Public NSXPC carries event identity; independent event signal does not change imported value; imported signal releases gated command"
+  ],
+  "deadlines": {
+    "compile_seconds": 15,
+    "helper_seconds": 15,
+    "alarm_seconds": 12,
+    "pending_ms": 20,
+    "rpc_seconds": 3,
+    "completion_seconds": 5
+  },
+  "parent_manifest_sha256": "0841c787c1afff6c0da6833cb5dd78dd5f82ed02c2669e948ae09a71109c615c"
+}

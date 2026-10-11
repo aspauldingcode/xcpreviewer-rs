@@ -715,3 +715,7 @@ Four owned audited peers receive two coalesced IOSurface send descriptors in an 
 ## 2026-10-11 — consumer close revision monotonicity
 
 Old correlated closed revisions0/1 after published2 discarded the accepted frame and terminally ignored restored-ready replies. Fixed lifecycle revision guard rejects stale close, retains wholeframe and recovers; valid stale/closed2 unchanged. Baseline contradiction retained,163840 independent completebytes,5 resealed faults. Fresh Node fixture control using historical SDK packets, no new native/SDK capture. See [scope](docs/reverse-engineering/2026-10-11-mcp-close-revision.md). Both milestones and native gates remain open.
+
+## 2026-10-11 — public shared-event carrier distinction
+
+Ordinary secure handle archive fails with no data/error4866 while secure string succeeds. Corrected same-process anonymous NSXPC reconstructs shared value3; independent event99 leaves it3; imported event7 releases owned gated work with one completed4 callback. Four native waits0,131072 full saved bytes, seven resealed faults. Initial observer limitations/prediction retained. Cross-process ownership and Canvas remain open. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-carrier.md).
