@@ -3,9 +3,25 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {SourceRevisionHost}=require('./source_revision_host.js');
 class SourceFileLoop {
- #host=new SourceRevisionHost();#builder;#file;#seen=null;#pending=null;#drain=Promise.resolve();#running=false;#abort=null;#closed=false;#pollTimer=null;#deadline=null;#events=[];
+ #host=new SourceRevisionHost();#builder;#file;#seen=null;#pending=null;#drain=Promise.resolve();#running=false;#abort=null;#closed=false;#pollTimer=null;#deadline=null;#events=[];#dropped=0;
  constructor(file,builder){assert.equal(typeof file,'string');assert.equal(typeof builder,'function');this.#file=file;this.#builder=builder;}
  events(){return this.#events.map(e=>({...e}));}
+ diagnostics(){
+  const events=this.events(),failure=[...events].reverse().find(e=>['rejected','invalid-source','unavailable-source'].includes(e.kind));
+  return {retainedEvents:events.length,droppedEvents:this.#dropped,latest:events.length?{...events[events.length-1]}:null,lastFailure:failure?{...failure}:null};
+ }
+ #record(event){
+  if(typeof event.error==='string'){
+   let error='',bytes=0;
+   // Bound work before UTF-8 accounting; preserve complete code points.
+   for(const char of event.error.slice(0,1024).replace(/[\u0000-\u001f\u007f]/g,' ')){
+    const size=Buffer.byteLength(char);if(bytes+size>512)break;error+=char;bytes+=size;
+   }
+   event={...event,error};
+  }
+  if(this.#events.length===64){this.#events.shift();this.#dropped=Math.min(Number.MAX_SAFE_INTEGER,this.#dropped+1);}
+  this.#events.push(event);
+ }
  snapshot(){return this.#host.snapshot();}
  async verifyLive(){await this.#drain;try{return await this.#host.verifyLive();}finally{this.#kick();}}
  status(){return {...this.#host.status(),loopClosed:this.#closed,building:this.#running,timers:Number(!!this.#pollTimer)+Number(!!this.#deadline)};}
@@ -33,9 +49,9 @@ class SourceFileLoop {
   }catch(e){key='read-error:'+String(e.code||e.message);reason='unavailable-source';}
   if(key===this.#seen){this.#kick();return this.#drain;}
   this.#seen=key;this.#pending=null;
-  if(reason){this.#host.invalidate();this.#events.push({kind:reason});return this.#drain;}
+  if(reason){this.#host.invalidate();this.#record({kind:reason});return this.#drain;}
   const ticket=this.#host.begin(source);this.#pending={source:Buffer.from(source),ticket};
-  this.#events.push({kind:'observed',generation:ticket.generation,sourceSha256:ticket.sourceSha256});
+  this.#record({kind:'observed',generation:ticket.generation,sourceSha256:ticket.sourceSha256});
   this.#kick();
   return this.#drain;
  }
@@ -48,8 +64,8 @@ class SourceFileLoop {
      const result=await this.#builder(job.source,{signal:this.#abort.signal});
      if(this.#closed)throw Error('File loop closed before publication');
      const frame=await this.#host.submit(job.ticket,result.build,result.expected);
-     this.#events.push({kind:'published',generation:job.ticket.generation,revision:frame.revision,sourceSha256:job.ticket.sourceSha256});
-    }catch(e){this.#events.push({kind:'rejected',generation:job.ticket.generation,error:String(e)});}
+     this.#record({kind:'published',generation:job.ticket.generation,revision:frame.revision,sourceSha256:job.ticket.sourceSha256});
+    }catch(e){this.#record({kind:'rejected',generation:job.ticket.generation,error:String(e)});}
     finally{this.#abort=null;}
    }
   }finally{this.#running=false;}
