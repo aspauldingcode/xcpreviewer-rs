@@ -35,16 +35,25 @@ class LiveWasmHost {
   }
   snapshot() {
     if (!this.#active) return null;
-    const {revision, token, frame, moduleSha256} = this.#active;
-    return {revision, token, moduleSha256, frame: Buffer.from(frame)};
+    const {revision, token, frame, moduleSha256, sourceRevision} = this.#active;
+    return {revision, token, moduleSha256, frame: Buffer.from(frame),
+      ...(sourceRevision ? {sourceRevision: {...sourceRevision}} : {})};
   }
-  async propose(moduleBytes, expected, width, height, stride, timeout = 1500) {
+  async propose(moduleBytes, expected, width, height, stride, timeout = 1500,
+    guard = () => true, sourceRevision = null) {
     assert(!this.#closed && !this.#busy, 'Host closed or proposal already active');
     assert(Buffer.isBuffer(moduleBytes) && moduleBytes.length <= 1048576);
     assert(Buffer.isBuffer(expected) && expected.length === 16384);
     assert([width, height, stride, timeout].every(Number.isSafeInteger));
     assert(width >= 1 && width <= 64 && height >= 1 && height <= 64);
     assert(stride >= width * 4 && stride <= 256 && timeout >= 50 && timeout <= 5000);
+    assert.equal(typeof guard, 'function');
+    let provenance = null;
+    if (sourceRevision) {
+      assert(Number.isSafeInteger(sourceRevision.generation) && sourceRevision.generation > 0);
+      assert(/^[0-9a-f]{64}$/.test(sourceRevision.sourceSha256));
+      provenance = Object.freeze({generation: sourceRevision.generation, sourceSha256: sourceRevision.sourceSha256});
+    }
     // Capture immutable proposal bytes before asynchronous work.
     const proposal = Buffer.from(moduleBytes), prediction = Buffer.from(expected);
     const release = this.#begin();
@@ -59,9 +68,11 @@ class LiveWasmHost {
       const frame = Buffer.from(value.frame);
       assert.deepEqual(frame, prediction, 'Complete allocation differs from independent expectation');
       assert(!this.#closed, 'Host closed during proposal');
+      assert.equal(guard(), true, 'Proposal superseded before publication');
       const old = this.#active;
       this.#active = {worker: candidate, frame, revision: ++this.#revision,
-        token: crypto.randomUUID(), moduleSha256: crypto.createHash('sha256').update(proposal).digest('hex')};
+        token: crypto.randomUUID(), moduleSha256: crypto.createHash('sha256').update(proposal).digest('hex'),
+        sourceRevision: provenance};
       committed = true;
       this.#candidate = null;
       if (old) await old.worker.terminate();
