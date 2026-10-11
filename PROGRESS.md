@@ -523,3 +523,8 @@ Retained prior FIFO deadline failure; regular/nonblocking/no-follow open and des
 ## Explicit observed compiler drain (2026-10-10)
 
 Optional pinned public macOS observer path now tracks sampled full-identity escaping children and coordinates drain before inherited-group retirement. Four actual success/failure/deadline/abort controls preserve wait status and prevent delayed writes;3 real fresh compiler allocations match49152 independent bytes. Four resealed cleanup/status/tail mutants reject. Canonical run20261011T045341Z-primary-live-wasm-swap-9a8e2b5f passes30 checks;32 clean candidate tests pass. Canonical anchor9347f0aeac93b9e72774a5d774df14dcca52b52d843ffcd869d380534077c142; evidence6d5512f2b1c2eb2a63c78d6d44feb11eae14702f1a90dca3a27e57e668de02cd. Explicit macOS observer dependency; default group-only path stays available. Unseen escapes, observation-to-signal race, native Canvas and scientific/delivery acceptance remain open.
+
+
+## Private supervisor input isolation (2026-10-10)
+
+A further actual EOF control found the target inherited the supervisor nonblocking abort-read pipe and exited1 with BlockingIOError. DEVNULL target stdin now isolates private commands; owned read returns EOF/status0. Before/fix evidencec228964baff9ee05c4a36d09647100dddb080ec0a37e8eca40b7e56494eb2420 retains the initial incorrect deadline prediction and corrected EAGAIN diagnosis. Canonical run20261011T045810Z-primary-live-wasm-swap-69015bde passes31 checks, anchor25f3808fa9237a8fb1774831d7eb85c268997b40ee338a68cd94443c6557d254.33 isolated candidate tests pass; false resealed EOF claim rejects. Native Canvas/scientific acceptance remains open.

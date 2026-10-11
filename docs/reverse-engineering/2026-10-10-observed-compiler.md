@@ -22,6 +22,13 @@ their respective failure reasons. Every case reports zero remaining live
 observed processes and has no delayed write after the child's natural lifetime.
 A pre-aborted request spawns no target.
 
+A further owned control found that the target initially inherited the supervisor's
+nonblocking abort-read pipe as stdin: an attempted stdin read raised
+`BlockingIOError` and exited1 instead of observing EOF. The target now receives
+`DEVNULL` stdin and cannot consume the supervisor's abort command. A real stdin
+read completes with EOF/status0. The before failure and corrected receipt are
+retained in the separate private-pipe evidence; a resealed false EOF claim fails.
+
 Three real frozen-CLI builds use this optional path through the existing source
 file loop. Their complete allocations match the separately pinned source/native
 reference fixture: 49,152 bytes, including padding and tail. There are no cache

@@ -73,7 +73,7 @@ def main():
     try:
         assert os.path.isabs(helper) and not os.path.islink(helper)
         assert hashlib.sha256(open(helper,'rb').read()).hexdigest()==expected
-        target=subprocess.Popen(sys.argv[4:],close_fds=True)
+        target=subprocess.Popen(sys.argv[4:],close_fds=True,stdin=subprocess.DEVNULL)
         while True:
             snapshot()
             try:command=os.read(0,64)

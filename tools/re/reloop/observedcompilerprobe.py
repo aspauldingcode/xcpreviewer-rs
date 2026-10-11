@@ -32,6 +32,7 @@ def corpus(out):
     atomic(out/'provenance.json',{'observer':observer,'source_sha256':digest(source),
                                 'compiler_sha256':digest('/usr/bin/clang'),'fresh':fresh})
     return {'observed_compiler_controls':len(result['controls']),
+            'observed_private_abort_pipe':result['stdinControl']['stdout']=='stdin-closed\n' and result['stdinControl']['report']['target_code']==0,
             'observed_compiler_late_writes_absent':all(r['lateWriteAbsent'] and r['record']['report']['drained'] for r in result['controls']),
             'observed_fresh_compiler_frames':fresh['fresh_compiler_frames'],
             'observed_fresh_compiler_bytes':fresh['fresh_compiler_bytes']}

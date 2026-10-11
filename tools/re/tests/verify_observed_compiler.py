@@ -42,4 +42,18 @@ def verify(folder):
     return {'controls':4,'fresh_allocation_bytes':49152,'mechanical_verification':'passed','scientific_delivery_review':'pending'}
 
 
+def verify_private(folder):
+    folder=Path(folder);manifest=json.loads((folder/'manifest.json').read_text())
+    assert set(manifest['files'])=={str(p.relative_to(folder)) for p in folder.rglob('*') if p.is_file() and p!=folder/'manifest.json'}
+    for name,row in manifest['files'].items():
+        p=folder/name;assert not p.is_symlink() and '..' not in Path(name).parts
+        b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256']
+    before=json.loads((folder/'before.json').read_text())['control']['record']
+    assert before['report']['target_code']==1 and 'BlockingIOError' in before['stderr']
+    after=json.loads((folder/'after.json').read_text())
+    assert after['stdout']=='stdin-closed\n' and after['report']['target_code']==0
+    assert after['report']['drained'] is True and after['report']['remaining_observed']==0
+    return {'target_stdin_eof':True,'mechanical_verification':'passed'}
+
+
 if __name__=='__main__':print(json.dumps(verify(sys.argv[1]),sort_keys=True))

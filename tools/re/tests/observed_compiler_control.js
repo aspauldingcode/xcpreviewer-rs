@@ -20,5 +20,6 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   controls.push({mode,observed,record,error:error?String(error):null,lateWriteAbsent:true});
  }
  const before=new AbortController();before.abort();let preabort=false;try{await runObserved(python,['-c','raise Exception()'],{observer,signal:before.signal});}catch(e){preabort=/before spawn/.test(String(e));}assert(preabort);
- fs.writeFileSync(path.join(out,'result.json'),JSON.stringify({controls,preabort,scope:'Explicit sampled full-identity public observer plus inherited group; unseen escapes and native Canvas release policy excluded'},null,2)+'\n');
+ const stdinControl=await runObserved(python,['-c','import os; assert os.read(0,1)==b""; print("stdin-closed")'],{observer,supervisorPython:python,timeout:1000});assert.equal(stdinControl.stdout,'stdin-closed\n');
+ fs.writeFileSync(path.join(out,'result.json'),JSON.stringify({controls,preabort,stdinControl,scope:'Explicit sampled full-identity public observer plus inherited group; unseen escapes and native Canvas release policy excluded'},null,2)+'\n');
 })().catch(e=>{console.error(e);process.exitCode=1;});

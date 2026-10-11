@@ -1,0 +1,25 @@
+{
+  "control": {
+    "error": "Error: Observed compiler failed: 1",
+    "record": {
+      "anchorCode": null,
+      "pid": 60554,
+      "report": {
+        "drained": true,
+        "failure": null,
+        "kind": "complete",
+        "observations": 5,
+        "remaining_observed": 0,
+        "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded",
+        "target_code": 1,
+        "tracked": 1
+      },
+      "signal": "SIGKILL",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nBlockingIOError: [Errno 35] Resource temporarily unavailable\n",
+      "stdout": ""
+    }
+  },
+  "failure": "Target inherited private nonblocking abort-read pipe instead of EOF; owned read raises BlockingIOError and exits1",
+  "first_prediction_failure": "Initial assertion expected deadline; actual nonblocking inherited fd raises EAGAIN. Retained corrected diagnosis, no deadline or safety expansion.",
+  "scope": "Owned Python target, no existing app or Canvas claim"
+}

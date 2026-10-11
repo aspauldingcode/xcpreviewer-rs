@@ -12,6 +12,15 @@ reader=importlib.util.module_from_spec(spec);spec.loader.exec_module(reader)
 
 
 class ObservedCompilerTests(unittest.TestCase):
+    def test_private_abort_pipe_eof_and_resealed_false_claim(self):
+        source=ROOT/'research/evidence/observed-compiler-private-pipe-2026-10-10'
+        self.assertTrue(reader.verify_private(source)['target_stdin_eof'])
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)/'evidence';shutil.copytree(source,folder)
+            p=folder/'after.json';d=json.loads(p.read_text());d['stdout']='';p.write_text(json.dumps(d))
+            manifest=json.loads((folder/'manifest.json').read_text());manifest['files']['after.json']={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()};(folder/'manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaises(AssertionError):reader.verify_private(folder)
+
     def test_native_controls_and_every_fresh_allocation_byte(self):
         self.assertEqual(reader.verify(ROOT/'research/evidence/observed-compiler-2026-10-10')['fresh_allocation_bytes'],49152)
 
