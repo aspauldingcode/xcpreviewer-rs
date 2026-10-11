@@ -775,3 +775,7 @@ FIFO blocks old primary build CLI until owned parent1.5sec kill/reap; symlink ta
 ## 2026-10-11 — bounded cache metadata reads
 
 Baseline index FIFO hangs until owned2sec kill/reap; fixed index/manifest reads use bounded nonblocking/no-follow regular descriptors, reject without extra build/publication. Four producers include retained missing-source harness failure;baseline manifest not run. Explicit fake compiler,100 modulebytes/six resealed faults; no renderer/padding claim. [Scope](docs/reverse-engineering/2026-10-11-cache-input.md). Both milestones/Canvas remain open.
+
+## 2026-10-11 — native external observed-model state
+
+Same owned ImageRenderer updates red→blue immediately on external model mutation and blue→red on reset; fresh renderer retains same model value, fresh default model resets red. Two fresh native waits0/16 phases/262144 fullbytes incl1728padding/250624tail/eight resealed faults/zero appwindows. SDK compile failure retained within four-producer budget. [Scope](docs/reverse-engineering/2026-10-11-native-observed-state.md). No Button/@State/Canvas refresh/transport claim;both milestones open.
