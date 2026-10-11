@@ -719,3 +719,7 @@ Old correlated closed revisions0/1 after published2 discarded the accepted frame
 ## 2026-10-11 — public shared-event carrier distinction
 
 Ordinary secure handle archive fails with no data/error4866 while secure string succeeds. Corrected same-process anonymous NSXPC reconstructs shared value3; independent event99 leaves it3; imported event7 releases owned gated work with one completed4 callback. Four native waits0,131072 full saved bytes, seven resealed faults. Initial observer limitations/prediction retained. Cross-process ownership and Canvas remain open. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-carrier.md).
+
+## 2026-10-11 — owned cross-process shared event
+
+Separate owned typed XPC peer signals shared event7 and releases sender GPU work; wrong-event-only99 leaves shared3 and another20ms timeout/zero callbacks until explicit sender7. Four parent waits0/peer exit0 and removed transient services; distinct public connection PIDs correlate.131072 fullbytes, ten resealed identity/exit/cleanup/order/padding faults. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-peer.md). R1/R2/R3/Canvas and both milestones remain open.

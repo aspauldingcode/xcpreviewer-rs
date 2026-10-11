@@ -1,0 +1,14 @@
+{
+  "parent_manifest_sha256": "7a56105dcb8c3775a44305aeac80cc4b157230e3238499d0f6613f9faadb7bef",
+  "scope": "Separate owned launchd XPC peer, public shared event handle; no Canvas or physical reclamation",
+  "required": "peer PID differs from parent and matches public connection identity; peer accepts exactly runner-owned parent PID; wrong event99 leaves imported3; imported7 releases completed command; finish reply then owned peer exit0 and service removed",
+  "limits": {
+    "experiments": 4,
+    "helper_seconds": 15,
+    "alarm_seconds": 12,
+    "rpc_seconds": 3,
+    "completion_seconds": 5,
+    "service_cleanup_seconds": 5
+  },
+  "negative": "Wrong-only owned peer leaves event3 and a second20ms wait times out with zero callbacks; explicit sender fallback7 then completes exact bytes"
+}

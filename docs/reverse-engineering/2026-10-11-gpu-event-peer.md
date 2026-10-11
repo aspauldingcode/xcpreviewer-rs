@@ -1,0 +1,37 @@
+# Owned cross-process shared-event signaling
+
+A separately executed owned XPC peer reconstructs a public `MTLSharedEventHandle`, observes shared value 3 and signals value 7, releasing the sender's event-gated Metal command. A changed wrong-event-only peer leaves the sender at 3 and its command pending through another bounded wait; explicit sender fallback signal 7 then completes the same full allocation. This supports a finite public cross-process event carrier and ordering boundary, not a private Canvas protocol.
+
+## Selection and parent evidence
+
+The graph planner separates research eligibility from delivery review. No unfinished running/reconciliation wake requires a second controller. The preceding carrier seal `7a56105dcb8c3775a44305aeac80cc4b157230e3238499d0f6613f9faadb7bef` falsifies ordinary secure NSData handle archiving and supports only same-process anonymous XPC reconstruction. This experiment supplies the previously missing separate receiving process. The retained approved private Xcode bridge is still offline; an initial sandbox status check cannot run `ps`, and the authorized read-only native status confirms running/responsive false. No bridge restart, app attach or workspace is attempted. REA remains independently available.
+
+## Owned service and identity
+
+Each run creates one random `org.xcpreviewer.owned-event-<UUID>` Mach service in the existing user's `gui/503` launchd domain. Its transient plist is stored under `/private/tmp`, with the exact newly compiled owned helper path, peer mode, random service name and runner-owned parent PID. It is not installed in LaunchAgents and has no KeepAlive. The parent helper initially waits on its stdin until the runner finishes bounded service registration, preventing an unregistered-service race.
+
+The launchd-started peer creates its own public Metal device and named NSXPC listener. Its delegate accepts a connection only when the public `processIdentifier` equals the expected live parent PID passed by the runner. Its reply records that accepted PID and its own PID. The parent's public connection `processIdentifier` must equal the reply peer PID and differ from its own PID; its own PID must match the subprocess launcher record. This is a finite process identity control, not an audit-token/code-signature authentication proof. The control does not publish encoded event handles or private wire bytes.
+
+After completed work, the parent sends a typed finish request and requires its Boolean reply within one second. The peer schedules an owned normal exit 0 after 100ms. The runner observes the exact job's last exit code 0, no running peer PID, and matching owned executable path, then boots out only that random owned service. A second print returns 113 (service absent), and temporary plist/stdout/stderr files are removed. All four service cleanups pass. No user Xcode/simulator process is terminated. These observations establish registry/process cleanup for this owned fixture, not global kernel event-right accounting or physical GPU memory reclamation.
+
+## Positive and negative synchronization
+
+The sender owns event value 3, a 16-KiB shared buffer initialized entirely to `0x5c`, and a default Metal command waiting for event 7. It encodes six 44-byte row fills at stride 256 with `0x77`. The initial 20ms semaphore wait times out with zero callbacks and event 3 before asking the peer to signal.
+
+The typed XPC method receives `MTLSharedEventHandle`, reconstructs through the peer's device, records 3, creates an independent event and signals it to 99, then records the imported event still at 3. The positive peer subsequently signals the imported event to 7. The reply arrives within three seconds; the original sender event observes 7 before any fallback. One completed-status-4 callback copies the entire buffer. Both unchanged positive executions match.
+
+The changed peer omits only the imported signal and retains the independent event99 control. Its reply and original sender event remain 3. A second 20ms completion wait times out (nonzero actual semaphore result 49 in both measured runs) with zero callbacks. The sender then explicitly sets its own event to 7; one completed-status-4 callback and exact bytes follow. This negative distinguishes a working XPC reply and unrelated event signal from the completion dependency. It does not claim automatic timeout cancellation or native Canvas recovery policy.
+
+The sender always releases its own event gate after the RPC attempt, including failure, before validating the result. No CPU buffer read occurs while GPU work is pending. Atomic callback counts and completion semaphore ordering protect the observer. Compile/subprocess caps remain 15 seconds, helper alarm 12 seconds, service registration/cleanup calls five seconds, RPC three seconds, completion five seconds; four native experiments consume the wake's four-experiment budget. No failing deadline is extended.
+
+## Provenance and independent verification
+
+Native environment: macOS 26.5.1 (25F80), Xcode 26.6 (17F113), arm64, Apple M1 unified memory. REA 6.2.0 binds positive owned artifact `8bd9d51afe217880f8ddc63345abf958f3925385bc226f1265e0c0ecc48fa573` (`ev_4adf6362b4b5d4fd3a051bf513470a8af1caab110b27f48f482829029e28ba73`) and changed wrong-only artifact `137b8b11ab65156007e3a38d3d1c300c38ac7e921ed395b239746417395a64f3` (`ev_2f6fd9306b8b0cdbe50e1dfedba786cc974937d8119fe0470fbdf851bed1d9ee`). Both REA target sessions close. Its static artifact identity/provenance is distinct from runtime subprocess and launchd measurements. Executables remain local; frozen helper sources and exact producer runner scripts are retained. Archived runners are provenance, not replay commands: they target sealed output directories and must not be rerun against those directories.
+
+Evidence: `research/evidence/gpu-event-peer-2026-10-11`, manifest `a2fc1388b339af82b3c0d52f5ac0b4f27b350d696ca515c15730a7d484792a89`. The reader independently requires four parent waits0, four owned peer last-exit0 observations, four absent service names, correlated distinct PIDs, callback/completion/event ordering and exact full allocation predictions. All initialization/completion bytes total 131,072, including row padding and allocation tail. Ten resealed faults alter parent wait, same-process substitution, accepted parent, wrong-event release, pending wait, completion status, peer exit, service cleanup, padding byte44 and tail byte16383; each rejects despite new valid hashes. The current helper must match the frozen changed source. Isolated candidate tests also verify the preceding carrier seal.
+
+## Remaining acceptance and next work
+
+Public owned XPC shared-event signaling now has separate-process positive and wrong-event-only controls with normal peer exit/service removal. Receiver failure before signal, peer loss with a pending command, imported event lifetime after disconnect, direct resource/right accounting and final reclamation remain unresolved. No claimed private Canvas envelope, live lifecycle trace, discrete GPU semantics or performance result follows. R1/R2/R3 and both milestones remain open.
+
+Next select owned peer failure or imported-event retention after disconnect with the same explicit sender fallback and cleanup guarantees; avoid repeating unchanged ordinary archive or local event controls. Native Canvas capture still requires restoration of the approved bridge, separately from available REA.

@@ -290,6 +290,15 @@
     "result": "4 native waits0; ordinary handle archive yields no data/error4866 while string succeeds. Corrected typed NSXPC reconstructs value3; independent99 leaves3; imported7 releases completed4/one callback.131072 full saved bytes,7 resealed faults. Baseline observer limitations retained.",
     "started_at": "2026-10-11T16:21:38.937031+00:00"
   },
+  "gpu_event_peer_checkpoint": {
+    "classification": "separate owned XPC peer positive and wrong-event negative supported; delivery review pending",
+    "evidence": "research/evidence/gpu-event-peer-2026-10-11",
+    "manifest_sha256": "a2fc1388b339af82b3c0d52f5ac0b4f27b350d696ca515c15730a7d484792a89",
+    "milestones_complete": false,
+    "next_wake_hint": "Separate public XPC carrier established with positive and wrong-only peers, all owned services removed. Next receiver failure before signal or imported event retention after disconnect; always sender fallback and bounded cleanup. Do not repeat ordinary NSData archive failure. Native approved bridge offline/no restart; R1/R2/R3 and both milestones open.",
+    "result": "4 native parent waits0/peer exit0/services absent113. Public connection PIDs correlate distinct sender/peer; peer signal7 releases command, wrong-only99 leaves3/pending callback0 then explicit parent7 completes4.131072 fullbytes,10 resealed faults. No native Canvas or physical reclamation.",
+    "started_at": "2026-10-11T16:29:07.712954+00:00"
+  },
   "gpu_queue_order_checkpoint": {
     "classification": "finite-owned native oracle supported; delivery review pending",
     "evidence": "research/evidence/gpu-queue-order-2026-10-11",
