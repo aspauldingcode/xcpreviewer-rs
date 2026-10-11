@@ -1822,6 +1822,27 @@
     "run_id": "20261011T055326Z-primary-live-wasm-swap-2866b28f",
     "scientific_delivery_review": "pending"
   },
+  "rust_wasm_checkpoint": {
+    "canonical_checks": 56,
+    "clean_archive_tests": 56,
+    "evidence_manifest_sha256": "07b13e3e2c7cc113a336b7e401867c75aa72aa70069d52572a4657a9224e2039",
+    "git_sync": "verified commit pending push",
+    "invalid_stride_controls": 336,
+    "manifest_sha256": "7ed5fa5bd1ae76a7ecdc85e1842a101af3ea291414b7f3ac34560f5943243855",
+    "memory_growth_rejections": 84,
+    "next": "Integrate configuration-derived Rust WASM with source revision pipeline using frozen compiler provenance; obtain actual second runtime and non-Apple/browser execution before platform acceptance. Native Canvas transport/final-release and capture gates remain open.",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T06:07:32.263604+00:00",
+    "resealed_mutants": 3,
+    "run_id": "20261011T060503Z-primary-live-wasm-swap-5cb279d3",
+    "rust_wasm_bytes": 1376256,
+    "rust_wasm_faults": 3,
+    "rust_wasm_frames": 84,
+    "rust_wasm_modules": 26,
+    "rust_wasm_native_bytes": 1310720,
+    "rust_wasm_zero_workers": true,
+    "scientific_delivery_review": "pending"
+  },
   "schema_version": 1,
   "skill_registry": "research/loop/skills.json",
   "source_file_loop_checkpoint": {
