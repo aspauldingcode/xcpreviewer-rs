@@ -16,6 +16,9 @@ class PreviewConsumer {
    for(let attempt=0;attempt<2;attempt++){
     const before=await this.#status(),r=await this.#request('frame'),frame=decodeFrameContent(r.structuredContent),after=await this.#status();
     try{assert.deepEqual(before,after);assert.deepEqual(after.frame,frame?frame.descriptor:null);}catch(_){continue;}
+    assert(Number.isSafeInteger(after.lifecycle.revision)&&after.lifecycle.revision>=0,'Invalid lifecycle revision');
+    assert(!frame||after.lifecycle.revision===frame.descriptor.revision,'Lifecycle publication mismatch');
+    assert(after.readiness.state!=='closed'||frame===null,'Closed preview retained frame');
     const previous=this.#accepted?.frame;
     if(previous){
      assert(frame||after.readiness.state==='closed','Accepted frame disappeared while open');
