@@ -10,6 +10,7 @@ import os
 import pathlib
 import re
 import shutil
+import stat
 import subprocess
 import tempfile
 from reloop.core import atomic,digest,load
@@ -19,6 +20,23 @@ from reloop.viewsource import stable_ir
 FILES=('view.c','view.ll','view.wasm')
 FLAGS=['--target=wasm32','-O2','-nostdlib','-fno-builtin']
 LINK_FLAGS=['-Wl,--no-entry','-Wl,--strip-all','-Wl,--initial-memory=131072','-Wl,--max-memory=131072','-Wl,--export=render','-Wl,--export=pixels','-Wl,--export=capacity']
+
+
+def read_metadata(path,limit):
+    """Bounded regular metadata read; local POSIX cache integrity only."""
+    fd=os.open(path,os.O_RDONLY|os.O_NONBLOCK|os.O_NOFOLLOW)
+    try:
+        before=os.fstat(fd)
+        if not stat.S_ISREG(before.st_mode) or before.st_size>limit:
+            raise ValueError('Bounded regular cache metadata required')
+        raw=os.read(fd,limit+1)
+        after=os.fstat(fd)
+        identity=lambda s:(s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns)
+        if len(raw)>limit or len(raw)!=before.st_size or identity(before)!=identity(after):
+            raise ValueError('Cache metadata changed during read')
+        return raw
+    finally:
+        os.close(fd)
 
 
 def fingerprint(value):return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
@@ -48,8 +66,9 @@ def entry(folder,key,identity,anchor):
     if folder.is_symlink() or not folder.is_dir():raise ValueError('Cache entry directory')
     if any(p.is_symlink() for p in folder.iterdir()):raise ValueError('Cache symlink rejected')
     if {p.name for p in folder.iterdir()}!=set(FILES)|{'manifest.json'}:raise ValueError('Cache inventory changed')
-    if digest(folder/'manifest.json')!=anchor:raise ValueError('Cache manifest anchor changed')
-    m=load(folder/'manifest.json')
+    raw=read_metadata(folder/'manifest.json',65536)
+    if hashlib.sha256(raw).hexdigest()!=anchor:raise ValueError('Cache manifest anchor changed')
+    m=json.loads(raw)
     if type(m) is not dict or set(m)!={'version','cache_key','identity','files'} or m['version']!=1 or type(m['version']) is not int or m['cache_key']!=key or fingerprint(m['identity'])!=fingerprint(identity) or type(m['files']) is not dict or set(m['files'])!=set(FILES):raise ValueError('Cache identity changed')
     for name in FILES:
         row=m['files'][name];p=folder/name
@@ -70,7 +89,7 @@ def build(source,cache,output,clang,wasm_ld,*,fault_before_commit=False):
         if index.is_symlink():raise ValueError('Cache index symlink')
         hit=index.exists()
         if hit:
-            pin=load(index)
+            pin=json.loads(read_metadata(index,4096))
             if type(pin) is not dict or set(pin)!={'version','entry_sha256'} or type(pin['version']) is not int or pin['version']!=1:raise ValueError('Cache index schema')
             anchor=pin['entry_sha256']
             if type(anchor) is not str or not re.fullmatch('[0-9a-f]{64}',anchor):raise ValueError('Cache index anchor')

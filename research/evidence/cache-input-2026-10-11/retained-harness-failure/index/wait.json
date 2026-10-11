@@ -1,0 +1,8 @@
+{
+  "pid": 11686,
+  "code": 1,
+  "timeout": false,
+  "reaped": true,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/tests/cache_input_control.py\", line 9, in <module>\n    a=cache.build(expression(4),out/'cache',out/'output',clang,ld);b=cache.build(expression(4),out/'cache',out/'output',clang,ld);assert b['cache_hit'] and len(calls)==2\n  File \"/Users/8amps/xcpreviewer-rs/research/evidence/cache-input-2026-10-11/baseline/sourcecache.py\", line 66, in build\n    identity={'version':1,'config':config,'target':'wasm32','flags':FLAGS,'link_flags':LINK_FLAGS,'builder_sha256':digest(__file__),'ir_normalizer_sha256':digest(pathlib.Path(__file__).with_name('viewsource.py')),'clang_invocation':str(clang),'wasm_ld_invocation':str(wasm_ld),'clang_sha256':digest(clang),'wasm_ld_sha256':digest(wasm_ld),'lowerer_sha256':digest(pathlib.Path(__file__).with_name('primarysource.py')),'kernel_sha256':hashlib.sha256(lower(config).encode()).hexdigest()}\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py\", line 38, in digest\n    with pathlib.Path(path).open('rb') as stream:\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1242, in open\n    return io.open(self, mode, buffering, encoding, errors, newline,\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1110, in _opener\n    return self._accessor.open(self, flags, mode)\nFileNotFoundError: [Errno 2] No such file or directory: '/Users/8amps/xcpreviewer-rs/research/evidence/cache-input-2026-10-11/baseline/viewsource.py'\n"
+}

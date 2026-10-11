@@ -51,6 +51,17 @@
       "track": "host-process-observation"
     }
   ],
+  "cache_input_checkpoint": {
+    "budget": "4 producers inclfailure,2sec outerwait/ownedreap2sec;no actual compiler/runtime/native claim",
+    "classification": "Cache index FIFO hang retained;bounded index/manifest reads fixed",
+    "evidence": "research/evidence/cache-input-2026-10-11",
+    "manifest_sha256": "afc23ac85ec852fda7f686b2c76bea1b67f073cbf554d8d2a23c1981039ec375",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed metadata FIFO controls. Compiler output caps/payload reads separate unknowns;choose demanded independent build/platform/native gate. Bridge/browser prerequisites unchanged.",
+    "result": "4 Python producers incl1 retained harnessfailure;baseline index owned2sec kill/reap-9;fixedindex/manifest0 rejected beforeextra compile/publication.100 fake modulebytes/6 resealed faults.",
+    "retained_failure": "Missing adjacent-source harness exit1 and ineffective00 module fault retained;corrected dependencies/fault without producer budget extension",
+    "started_at": "2026-10-11T20:35:37.990116+00:00"
+  },
   "cadence_minutes": 10,
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
   "failure_fingerprints": [

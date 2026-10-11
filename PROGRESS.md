@@ -771,3 +771,7 @@ Native parser rejects space/tab/newline after member-access dot while both lower
 ## 2026-10-11 — cached-build CLI regular input gate
 
 FIFO blocks old primary build CLI until owned parent1.5sec kill/reap; symlink target reaches parser. CLI now requires bounded ASCII POSIX regular descriptor/nonblocking/no-follow open and detects changed reads, closing descriptors. Four actual children;fixed rejects before build/cache with no timeout. Six resealed faults and actual descriptor/replacement/mutation controls. [Scope](docs/reverse-engineering/2026-10-11-source-cli-input.md). No compiler/render/native/platform acceptance;both milestones open.
+
+## 2026-10-11 — bounded cache metadata reads
+
+Baseline index FIFO hangs until owned2sec kill/reap; fixed index/manifest reads use bounded nonblocking/no-follow regular descriptors, reject without extra build/publication. Four producers include retained missing-source harness failure;baseline manifest not run. Explicit fake compiler,100 modulebytes/six resealed faults; no renderer/padding claim. [Scope](docs/reverse-engineering/2026-10-11-cache-input.md). Both milestones/Canvas remain open.
