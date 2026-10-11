@@ -1,0 +1,71 @@
+{
+  "controls": [
+    {
+      "mode": "split-utf8",
+      "expectedScope": "owned-é",
+      "record": {
+        "pid": 92149,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "owned-é"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 33.167
+    },
+    {
+      "mode": "invalid-utf8",
+      "expectedScope": "owned-é",
+      "record": {
+        "pid": 92151,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": null,
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "TypeError: The encoded data was not valid for encoding utf-8",
+      "elapsedMs": 19.341082999999998
+    },
+    {
+      "mode": "ascii-bytewise",
+      "expectedScope": "owned-ascii",
+      "record": {
+        "pid": 92154,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "owned-ascii"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 1891.688542
+    }
+  ],
+  "scope": "Explicit owned private-stream segmentation; no target launched"
+}

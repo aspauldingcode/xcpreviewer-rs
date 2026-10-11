@@ -46,12 +46,20 @@ def corpus(out):
                         str(out/'cancel-boundary'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
                         sys.executable,observer['helper'],observer['sha256']],check=True,timeout=8,stdout=stdout,stderr=stderr)
     boundary=json.loads((out/'cancel-boundary/result.json').read_text())
+    with (out/'framing-controls.stdout').open('wb') as stdout,(out/'framing-controls.stderr').open('wb') as stderr:
+        subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/observer_framing_control.js'),
+                        str(out/'framing-controls'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
+                        sys.executable],check=True,timeout=8,stdout=stdout,stderr=stderr)
+    framing=json.loads((out/'framing-controls/result.json').read_text())['controls']
     from reloop.ownedcompilerprobe import corpus as compiler
     fresh=compiler(out/'fresh',observer)
     assert digest(helper)==observer['sha256']
     atomic(out/'provenance.json',{'observer':observer,'source_sha256':digest(source),
                                 'compiler_sha256':digest('/usr/bin/clang'),'fresh':fresh})
-    return {'observed_terminal_rejections':sum(bool(r['error']) for r in terminal),
+    return {'observed_utf8_split_exact':framing[0]['error'] is None and framing[0]['record']['report']['scope']=='owned-é',
+            'observed_invalid_utf8_rejected':bool(framing[1]['error']) and framing[1]['record']['report'] is None,
+            'observed_ascii_bytewise_exact':framing[2]['error'] is None and framing[2]['record']['report']['scope']=='owned-ascii',
+            'observed_terminal_rejections':sum(bool(r['error']) for r in terminal),
             'observed_terminal_valid_control':terminal[0]['error'] is None,
             'observed_reparent_abort_drained':boundary['record']['report']['drained'] and boundary['record']['report']['target_code']==0 and boundary['record']['privateAbortRequested'] and boundary['lateWriteAbsent'],
             'observed_malformed_rows_rejected':len(malformed)==4 and all(r['error'] and r['record']['report']['drained'] is False for r in malformed),

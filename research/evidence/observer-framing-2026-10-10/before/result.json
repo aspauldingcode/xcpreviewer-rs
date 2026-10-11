@@ -1,0 +1,80 @@
+{
+  "controls": [
+    {
+      "mode": "split-utf8",
+      "expectedScope": "owned-é",
+      "record": {
+        "pid": 91652,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "owned-��"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 37.004958
+    },
+    {
+      "mode": "invalid-utf8",
+      "expectedScope": "owned-é",
+      "record": {
+        "pid": 91653,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "owned-��"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 18.3275
+    },
+    {
+      "mode": "ascii-bytewise",
+      "expectedScope": "owned-ascii",
+      "record": {
+        "pid": 91654,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "owned-ascii"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 1965.483375
+    }
+  ],
+  "scope": "Explicit owned private-stream segmentation; no target launched"
+}

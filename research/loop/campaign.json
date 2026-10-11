@@ -5074,6 +5074,18 @@
         {
           "equals": true,
           "path": "observed_reparent_abort_drained"
+        },
+        {
+          "equals": true,
+          "path": "observed_utf8_split_exact"
+        },
+        {
+          "equals": true,
+          "path": "observed_invalid_utf8_rejected"
+        },
+        {
+          "equals": true,
+          "path": "observed_ascii_bytewise_exact"
         }
       ],
       "depends_on": [],
