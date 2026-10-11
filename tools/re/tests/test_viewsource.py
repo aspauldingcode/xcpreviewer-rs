@@ -6,7 +6,7 @@ from reloop.core import validate_experiment
 class ViewSourceTests(unittest.TestCase):
     def test_supported_expression_and_ascii_whitespace(self):
         self.assertEqual(parse('Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 1).frame(width: 320, height: 160)'), {'color': 'red', 'width': 320, 'height': 160})
-        self.assertEqual(parse(' \nColor ( .sRGB , red : 0 , green : 0 , blue : 1 , opacity : 1 ) . frame ( width : 3 , height : 2 )\t'), {'color': 'blue', 'width': 3, 'height': 2})
+        self.assertEqual(parse(' \nColor ( .sRGB , red : 0 , green : 0 , blue : 1 , opacity : 1 ) .frame ( width : 3 , height : 2 )\t'), {'color': 'blue', 'width': 3, 'height': 2})
 
     def test_every_holdout_rejects(self):
         for source in HOLDOUTS:

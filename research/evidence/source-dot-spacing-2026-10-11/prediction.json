@@ -1,0 +1,8 @@
+{
+  "scope": "Custom expression lowerers versus pinned native Swift frontend syntax only; no typecheck, renderer or Canvas claim",
+  "prediction": "Member-access spacing accepted by lowerers must parse as Swift; native disagreement falsifies lexical compatibility. Four bounded invocations cover adjacent member identifier and space/tab/newline after dot. No frame-byte claim.",
+  "limits": {
+    "compiler_invocations": 4,
+    "each_seconds": 10
+  }
+}

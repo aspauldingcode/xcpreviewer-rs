@@ -12,7 +12,7 @@ from reloop.verification import bytes_equal
 
 COLOR=r'Color\s*\(\s*\.sRGB\s*,\s*red\s*:\s*([01])\s*,\s*green\s*:\s*([01])\s*,\s*blue\s*:\s*([01])\s*,\s*opacity\s*:\s*(0(?:\.[0-9]{1,3})?|1(?:\.0{1,3})?)\s*\)'
 SEPARATOR=r'(?:[ \t\r]*;[ \t\r\n]*|[ \t]*\r?\n[ \t\r\n]*)'
-GRAMMAR=re.compile(r'\s*ZStack\s*\{\s*'+COLOR+SEPARATOR+COLOR+SEPARATOR+COLOR+r'\s*;?\s*\}\s*\.\s*frame\s*\(\s*width\s*:\s*([0-9]{1,2})\s*,\s*height\s*:\s*([0-9]{1,2})\s*\)\s*',re.ASCII)
+GRAMMAR=re.compile(r'\s*ZStack\s*\{\s*'+COLOR+SEPARATOR+COLOR+SEPARATOR+COLOR+r'\s*;?\s*\}\s*\.frame\s*\(\s*width\s*:\s*([0-9]{1,2})\s*,\s*height\s*:\s*([0-9]{1,2})\s*\)\s*',re.ASCII)
 
 
 def parse(source):

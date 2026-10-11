@@ -1,0 +1,67 @@
+[
+  {
+    "index": 0,
+    "results": {
+      "primary": {
+        "accepted": true,
+        "config": {
+          "width": 17,
+          "height": 9,
+          "alphas": [
+            4,
+            2,
+            8
+          ],
+          "reverse": 0
+        }
+      },
+      "opaque": {
+        "accepted": true,
+        "config": {
+          "color": "red",
+          "width": 17,
+          "height": 9
+        }
+      }
+    }
+  },
+  {
+    "index": 1,
+    "results": {
+      "primary": {
+        "accepted": false,
+        "error": "Unsupported expression outside primary-layer ZStack.frame contract"
+      },
+      "opaque": {
+        "accepted": false,
+        "error": "Unsupported expression outside literal Color.frame contract"
+      }
+    }
+  },
+  {
+    "index": 2,
+    "results": {
+      "primary": {
+        "accepted": false,
+        "error": "Unsupported expression outside primary-layer ZStack.frame contract"
+      },
+      "opaque": {
+        "accepted": false,
+        "error": "Unsupported expression outside literal Color.frame contract"
+      }
+    }
+  },
+  {
+    "index": 3,
+    "results": {
+      "primary": {
+        "accepted": false,
+        "error": "Unsupported expression outside primary-layer ZStack.frame contract"
+      },
+      "opaque": {
+        "accepted": false,
+        "error": "Unsupported expression outside literal Color.frame contract"
+      }
+    }
+  }
+]

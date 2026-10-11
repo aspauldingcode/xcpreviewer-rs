@@ -763,3 +763,7 @@ Baseline hung close required owned parent kill/reap after5sec(-9). CLI now keeps
 ## 2026-10-11 — native syntax whitespace discrimination
 
 Four owned Swift frontend processes accept space/VT/FF/CR at Color-opening boundary for both custom subsets; all eight lowerer configurations agree. Proposed VT/FF rejection hypothesis contradicted; no grammar fix warranted. Actual waits0/no timeout/diagnostic; independent source/identity reader, seven resealed faults, current lowerer regressions. [Scope](docs/reverse-engineering/2026-10-11-source-whitespace.md). Native syntax only; both milestones/Canvas gates remain open.
+
+## 2026-10-11 — native member-access syntax rejection
+
+Native parser rejects space/tab/newline after member-access dot while both lowerers accepted. Tightened both grammars; preserved legal Color whitespace. Four waits0/1/1/1/no timeout, six invalid expressions now reject, independent source/diagnostic/identity reader and eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-source-dot-spacing.md). Native syntax only; both milestone/Canvas acceptance remain open.

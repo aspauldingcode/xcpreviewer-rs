@@ -8,7 +8,7 @@ from reloop.core import ROOT, PROJECT_ROOT, Controller, atomic, digest, load
 from reloop.portable import TOOLCHAIN, ORACLE_RUN, ORACLE_ANCHOR
 from reloop.verification import bytes_equal
 
-GRAMMAR = re.compile(r'\s*Color\s*\(\s*\.sRGB\s*,\s*red\s*:\s*([01])\s*,\s*green\s*:\s*0\s*,\s*blue\s*:\s*([01])\s*,\s*opacity\s*:\s*1\s*\)\s*\.\s*frame\s*\(\s*width\s*:\s*([0-9]{1,3})\s*,\s*height\s*:\s*([0-9]{1,3})\s*\)\s*', re.ASCII)
+GRAMMAR = re.compile(r'\s*Color\s*\(\s*\.sRGB\s*,\s*red\s*:\s*([01])\s*,\s*green\s*:\s*0\s*,\s*blue\s*:\s*([01])\s*,\s*opacity\s*:\s*1\s*\)\s*\.frame\s*\(\s*width\s*:\s*([0-9]{1,3})\s*,\s*height\s*:\s*([0-9]{1,3})\s*\)\s*', re.ASCII)
 
 
 def parse(source):
