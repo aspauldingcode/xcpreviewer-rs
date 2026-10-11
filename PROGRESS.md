@@ -513,3 +513,8 @@ Retained two actual failures where compiler target exits0/7 but its inherited ch
 ## Owned escaping-child controls (2026-10-10)
 
 Four owned setsid/reparenting controls plus a frozen replay distinguish inherited-group cleanup from explicit public full-identity descendant drain. Group-only targets0/7 retain late writes; observed descendants produce no late writes and preserve both statuses. Three identity-selector mutants receive no signal; five receipt corruptions reject. Clean candidate archive:27 relevant tests pass. Evidence: `research/evidence/owned-escape-2026-10-10/manifest.json` (92c1c3a3f8156131a93fb18272377f9369a26fce3080b1c89be006934d509ac0). Detached cleanup is not yet integrated into the shipped Node runner. Unseen escapes and observation-to-signal races remain excluded. Native Canvas and scientific/delivery acceptance remain open.
+
+
+## Nonblocking regular source gate (2026-10-10)
+
+Retained prior FIFO deadline failure; regular/nonblocking/no-follow open and descriptor recheck now reject nonregular and replaced source nodes. Seven actual filesystem controls, four resealed false-claim rejections, and30 clean candidate tests pass. Canonical run20261011T044308Z-primary-live-wasm-swap-027f20a9 passes26 checks including existing full native/independent allocation comparisons and fresh builds. Manifest50a679dae2cfe22b88aef573bc9604c35e44196bfea1e585ca19ac4764367d06; independent before/fix evidence9d66780eee61887bae4222643c6d098961e49fa415c4e8d79d433af0801c0f8a. Owned local POSIX scope; Windows/arbitrary filesystem latency, native Canvas, and scientific/delivery acceptance stay open.

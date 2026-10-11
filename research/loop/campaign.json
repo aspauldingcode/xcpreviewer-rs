@@ -1322,1567 +1322,1585 @@
       "timeout_seconds": 90
     },
     {
-      "id": "native-service-message-exact-entrypoints",
       "adapter": "disassembly",
-      "hypothesis": "Pinned ServiceMessage public serializer/deserializer entrypoints can be selected without nested closure contamination; inspect identifier alias use without claiming live correlation.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned ServiceMessage public serializer/deserializer entrypoints can be selected without nested closure contamination; inspect identifier alias use without claiming live correlation.",
+      "id": "native-service-message-exact-entrypoints",
       "params": {
         "query": "^[0-9a-f]+ T PreviewsMessagingHost.ServiceMessage.(propertyListValue.getter|init\\(propertyListValue:)"
       },
       "priority": 96,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 2
-        }
-      ]
-    },
-    {
-      "id": "native-service-message-identifier-sites",
-      "adapter": "disassembly",
-      "hypothesis": "Exact serializer content closure and messageType/payload initializer expose identifier encode/decode sites; selection excludes partial-apply thunks and does not establish live request/reply behavior.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact serializer content closure and messageType/payload initializer expose identifier encode/decode sites; selection excludes partial-apply thunks and does not establish live request/reply behavior.",
+      "id": "native-service-message-identifier-sites",
       "params": {
         "query": "^[0-9a-f]+ [tT] (closure #1 .* in PreviewsMessagingHost.ServiceMessage.propertyListValue.getter|PreviewsMessagingHost.ServiceMessage.init\\(messageType:)"
       },
       "priority": 96,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 2
-        }
-      ]
-    },
-    {
-      "id": "native-service-message-payload-getter",
-      "adapter": "disassembly",
-      "hypothesis": "The exact payload getter selected by the outer serializer exposes optional identifier insertion into the inner payload; static call sites do not prove live reply matching.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The exact payload getter selected by the outer serializer exposes optional identifier insertion into the inner payload; static call sites do not prove live reply matching.",
+      "id": "native-service-message-payload-getter",
       "params": {
         "query": "^[0-9a-f]+ T PreviewsMessagingHost.ServiceMessage.payload.getter"
       },
       "priority": 96,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        }
-      ]
-    },
-    {
-      "id": "owned-surface-settled-id-lookup",
-      "adapter": "surface_reuse",
-      "hypothesis": "Global ID lookup succeeds while sender aliases remain and becomes null at a bounded 100ms followup after owned peer exit/right/alias release; immediate lookup may remain reachable. No memory reclamation or ID-recycling guarantee.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_reuse",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "verified_final_id_lookup_cases"
+        },
+        {
+          "equals": 8,
+          "path": "verified_reuse_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Global ID lookup succeeds while sender aliases remain and becomes null at a bounded 100ms followup after owned peer exit/right/alias release; immediate lookup may remain reachable. No memory reclamation or ID-recycling guarantee.",
+      "id": "owned-surface-settled-id-lookup",
       "params": {},
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_final_id_lookup_cases",
-          "equals": 8
-        },
-        {
-          "path": "verified_reuse_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_bytes_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        }
-      ]
-    },
-    {
-      "id": "native-transport-encoded-reply-sites",
-      "adapter": "disassembly",
-      "hypothesis": "Exact encodedReplyHandler initializer and its two primary closures can be isolated to distinguish handler routing from identifier propagation; no live matching or private ABI execution claimed.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact encodedReplyHandler initializer and its two primary closures can be isolated to distinguish handler routing from identifier propagation; no live matching or private ABI execution claimed.",
+      "id": "native-transport-encoded-reply-sites",
       "params": {
         "query": "^[0-9a-f]+ [Tt] (PreviewsMessagingHost.TransportReply.init\\(encodedReplyHandler:|closure #[12] .* in PreviewsMessagingHost.TransportReply.init\\(encodedReplyHandler:)"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 3
-        }
-      ]
-    },
-    {
-      "id": "native-lazy-reply-encoding",
-      "adapter": "disassembly",
-      "hypothesis": "Exact LazyPropertyList encoded getter selected by the transport success callback isolates the encoding boundary; do not infer global absence of identifier routing.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact LazyPropertyList encoded getter selected by the transport success callback isolates the encoding boundary; do not infer global absence of identifier routing.",
+      "id": "native-lazy-reply-encoding",
       "params": {
         "query": "^[0-9a-f]+ T PreviewsMessagingHost.LazyPropertyList.encoded.getter"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        }
-      ]
-    },
-    {
-      "id": "native-plist-data-decode-controls",
-      "adapter": "plist_corpus",
-      "hypothesis": "Owned UVPropertyList retains all eight data inputs exactly. Two valid dictionaries decode exactly; six invalid-or-nondictionary inputs expose empty dictionaries, while Foundation legacy strings are explicitly distinct from binary-only Python expectations. No Swift optional-value/live reply claim.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "plist_corpus",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_semantics"
+        },
+        {
+          "equals": 8,
+          "path": "exact_input_bytes"
+        },
+        {
+          "equals": 2,
+          "path": "valid_dictionary_controls"
+        },
+        {
+          "equals": 6,
+          "path": "non_dictionary_empty_controls"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned UVPropertyList retains all eight data inputs exactly. Two valid dictionaries decode exactly; six invalid-or-nondictionary inputs expose empty dictionaries, while Foundation legacy strings are explicitly distinct from binary-only Python expectations. No Swift optional-value/live reply claim.",
+      "id": "native-plist-data-decode-controls",
       "params": {
         "decode_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        },
-        {
-          "path": "repeat_semantics",
-          "equals": 8
-        },
-        {
-          "path": "exact_input_bytes",
-          "equals": 8
-        },
-        {
-          "path": "valid_dictionary_controls",
-          "equals": 2
-        },
-        {
-          "path": "non_dictionary_empty_controls",
-          "equals": 6
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-resume-boundary",
-      "adapter": "disassembly",
-      "hypothesis": "Exact public Continuation.resume(with:callsite:) reveals the stateful resume boundary without substituting continuation construction for exactly-once runtime evidence.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact public Continuation.resume(with:callsite:) reveals the stateful resume boundary without substituting continuation construction for exactly-once runtime evidence.",
+      "id": "native-continuation-resume-boundary",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^[0-9a-f]+ T PreviewsFoundationHost.Continuation.resume\\(with:"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-resume-initializers",
-      "adapter": "disassembly",
-      "hypothesis": "Exact resume-bearing Continuation initializers locate the stored callback guard; the public resume method merely forwards through its stored callback pair.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact resume-bearing Continuation initializers locate the stored callback guard; the public resume method merely forwards through its stored callback pair.",
+      "id": "native-continuation-resume-initializers",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^[0-9a-f]+ T PreviewsFoundationHost.Continuation.init\\(callsite:.*resume:"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 2
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-guard-closure",
-      "adapter": "disassembly",
-      "hypothesis": "Exact initializer-owned callback closure reveals the completion guard before calling user resume; no concurrent runtime proof follows from static selection alone.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact initializer-owned callback closure reveals the completion guard before calling user resume; no concurrent runtime proof follows from static selection alone.",
+      "id": "native-continuation-guard-closure",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^[0-9a-f]+ t closure #1 @Sendable .* in PreviewsFoundationHost.Continuation.init\\(callsite:.*resume: @Sendable \\(PreviewsFoundationHost.Callsite,"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-guard-pattern",
-      "adapter": "disassembly",
-      "hypothesis": "Pinned closure has lock/fulfill/unlock order, calls user resume outside the lock and branches around it for outcome tag 1; static guard evidence does not prove runtime once-only behavior.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "guard_verified"
+        },
+        {
+          "equals": true,
+          "path": "callback_after_unlock"
+        },
+        {
+          "equals": 1,
+          "path": "skipped_outcome_tag"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned closure has lock/fulfill/unlock order, calls user resume outside the lock and branches around it for outcome tag 1; static guard evidence does not prove runtime once-only behavior.",
+      "id": "native-continuation-guard-pattern",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^[0-9a-f]+ t closure #1 @Sendable .* in PreviewsFoundationHost.Continuation.init\\(callsite:.*resume: @Sendable \\(PreviewsFoundationHost.Callsite,",
-        "guard_control": true
+        "guard_control": true,
+        "query": "^[0-9a-f]+ t closure #1 @Sendable .* in PreviewsFoundationHost.Continuation.init\\(callsite:.*resume: @Sendable \\(PreviewsFoundationHost.Callsite,"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "guard_verified",
-          "equals": true
-        },
-        {
-          "path": "callback_after_unlock",
-          "equals": true
-        },
-        {
-          "path": "skipped_outcome_tag",
-          "equals": 1
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-fulfillment-state",
-      "adapter": "disassembly",
-      "hypothesis": "The exact unit-state fulfillment specialization called under the closure lock identifies outcome tag 1 versus the first-fulfillment path; static mapping is not concurrent native execution.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The exact unit-state fulfillment specialization called under the closure lock identifies outcome tag 1 versus the first-fulfillment path; static mapping is not concurrent native execution.",
+      "id": "native-continuation-fulfillment-state",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^0000000000030a1c t generic specialization .* of closure #1 .*FulfillOnceState.fulfill\\(callsite:"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "portable-wasm-second-runtime-rejections",
-      "adapter": "portable_solid",
-      "hypothesis": "The unchanged C rectangle executes in independent WasmKit interpreter: every native red/red/blue byte and independent padded byte matches; eight injected first/final byte faults report exactly one mismatch and invalid checker cases reject. No SwiftUI frontend or other OS claim. Changed checker additionally rejects ten render requests without modifying any of 204800 buffer bytes in both engines; both execute exactly the same no-import checker module.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "portable_solid",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": true,
+          "path": "all_native_rgba_equal"
+        },
+        {
+          "equals": 614400,
+          "path": "native_compared_bytes"
+        },
+        {
+          "equals": true,
+          "path": "all_literal_and_padding_equal"
+        },
+        {
+          "equals": "WasmKit",
+          "path": "second_runtime"
+        },
+        {
+          "equals": 25,
+          "path": "second_runtime_controls"
+        },
+        {
+          "equals": true,
+          "path": "second_runtime_all_passed"
+        },
+        {
+          "equals": 614432,
+          "path": "second_runtime_compared_bytes"
+        },
+        {
+          "equals": 8,
+          "path": "second_runtime_mutation_controls"
+        },
+        {
+          "equals": 10,
+          "path": "second_runtime_invalid_requests"
+        },
+        {
+          "equals": 2048000,
+          "path": "second_runtime_unchanged_buffer_bytes"
+        },
+        {
+          "equals": true,
+          "path": "same_checker_v8_passed"
+        },
+        {
+          "equals": 0,
+          "path": "checker_imports"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The unchanged C rectangle executes in independent WasmKit interpreter: every native red/red/blue byte and independent padded byte matches; eight injected first/final byte faults report exactly one mismatch and invalid checker cases reject. No SwiftUI frontend or other OS claim. Changed checker additionally rejects ten render requests without modifying any of 204800 buffer bytes in both engines; both execute exactly the same no-import checker module.",
+      "id": "portable-wasm-second-runtime-rejections",
       "params": {
         "second_runtime": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "all_native_rgba_equal",
-          "equals": true
-        },
-        {
-          "path": "native_compared_bytes",
-          "equals": 614400
-        },
-        {
-          "path": "all_literal_and_padding_equal",
-          "equals": true
-        },
-        {
-          "path": "second_runtime",
-          "equals": "WasmKit"
-        },
-        {
-          "path": "second_runtime_controls",
-          "equals": 25
-        },
-        {
-          "path": "second_runtime_all_passed",
-          "equals": true
-        },
-        {
-          "path": "second_runtime_compared_bytes",
-          "equals": 614432
-        },
-        {
-          "path": "second_runtime_mutation_controls",
-          "equals": 8
-        },
-        {
-          "path": "second_runtime_invalid_requests",
-          "equals": 10
-        },
-        {
-          "path": "second_runtime_unchanged_buffer_bytes",
-          "equals": 2048000
-        },
-        {
-          "path": "same_checker_v8_passed",
-          "equals": true
-        },
-        {
-          "path": "checker_imports",
-          "equals": 0
-        }
-      ]
-    },
-    {
-      "id": "native-continuation-overfulfill-target",
-      "adapter": "disassembly",
-      "hypothesis": "The guard closure supplies x5=0x30a00 to the exact unit-state fulfillment body; selected target should expose the duplicate completion diagnostic handoff. Symbol/body evidence only, no runtime failure-policy claim. Heading-only selection failed to reveal instructions; changed bounded-address fallback must recover actual entry instructions.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": 1,
+          "path": "address_fallback_count"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The guard closure supplies x5=0x30a00 to the exact unit-state fulfillment body; selected target should expose the duplicate completion diagnostic handoff. Symbol/body evidence only, no runtime failure-policy claim. Heading-only selection failed to reveal instructions; changed bounded-address fallback must recover actual entry instructions.",
+      "id": "native-continuation-overfulfill-target",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^0000000000030a00 [tT] "
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "address_fallback_count",
-          "equals": 1
-        }
-      ]
-    },
-    {
-      "id": "native-overfulfill-policy-dispatch",
-      "adapter": "disassembly",
-      "hypothesis": "Selected duplicate handler target and OverfulfillHandle.assert expose policy dispatch; continuation default policy getter provides a tag to distinguish mode. Pinned static instructions only, no native assertion or callback execution.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "function_count"
+        },
+        {
+          "equals": 3,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Selected duplicate handler target and OverfulfillHandle.assert expose policy dispatch; continuation default policy getter provides a tag to distinguish mode. Pinned static instructions only, no native assertion or callback execution.",
+      "id": "native-overfulfill-policy-dispatch",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000002c944 [tT] |^000000000002cd8c [tT] |^000000000000481c [tT] default argument 2 of PreviewsFoundationHost.Continuation.init"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 3
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 3
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-overfulfill-failure-mode",
-      "adapter": "disassembly",
-      "hypothesis": "The recovered shared duplicate handler calls FulfillmentFailureMode.fail directly, not the public OverfulfillHandle.assert entry. Exact branch target 0x2bc40 should expose finite policy dispatch. Static tag branches only; no runtime execution or tag-name mapping assumed. Retain prior name-query miss and rejected indirect-path prediction.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        },
+        {
+          "equals": 2,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The recovered shared duplicate handler calls FulfillmentFailureMode.fail directly, not the public OverfulfillHandle.assert entry. Exact branch target 0x2bc40 should expose finite policy dispatch. Static tag branches only; no runtime execution or tag-name mapping assumed. Retain prior name-query miss and rejected indirect-path prediction.",
+      "id": "native-overfulfill-failure-mode",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000002c99c [tT] |^000000000002bc40 [tT] "
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 2
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 2
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "adapter": "disassembly",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
-      "id": "native-continuation-default-policy",
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": 2,
+          "path": "default_tag"
+        },
+        {
+          "equals": 16,
+          "path": "default_constant_bytes"
+        },
+        {
+          "equals": "assertion-helper",
+          "path": "default_static_branch"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Default continuation tag2 and exact copied 16-byte payload should select assertion helper under previously anchored policy predicates; a different payload falsifies this prediction. No named enum case or runtime claim.",
+      "id": "native-continuation-default-policy",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000000481c [tT] default argument 2 of PreviewsFoundationHost.Continuation.init",
-        "default_control": true
+        "default_control": true,
+        "query": "^000000000000481c [tT] default argument 2 of PreviewsFoundationHost.Continuation.init"
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "default_tag",
-          "equals": 2
-        },
-        {
-          "path": "default_constant_bytes",
-          "equals": 16
-        },
-        {
-          "path": "default_static_branch",
-          "equals": "assertion-helper"
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
-      "id": "native-cancelation-token-entry",
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Exact native CancelationToken.cancel entry should expose fulfillment guard and cancellation action handoff. Shared duplicate code alone is insufficient; recover actual entry instructions without invoking private Swift.",
+      "id": "native-cancelation-token-entry",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000012993c [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
-      "id": "native-cancelation-token-guard",
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "cancel_guard_verified"
+        },
+        {
+          "equals": true,
+          "path": "cancel_action_after_unlock"
+        },
+        {
+          "equals": 1,
+          "path": "cancel_skipped_outcome_tag"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Reviewed cancellation entry has unique lock/fulfill/unlock sites, exact outcome1 return boundary and first-fulfillment-only indirect tail dispatch outside lock. Mutated condition/identity/boundary must fail structural checker; no native runtime/transport claim.",
+      "id": "native-cancelation-token-guard",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000012993c [tT] ",
-        "cancel_control": true
+        "cancel_control": true,
+        "query": "^000000000012993c [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "cancel_guard_verified",
-          "equals": true
-        },
-        {
-          "path": "cancel_action_after_unlock",
-          "equals": true
-        },
-        {
-          "path": "cancel_skipped_outcome_tag",
-          "equals": 1
-        }
-      ]
-    },
-    {
-      "id": "native-default-assertion-helper",
-      "adapter": "disassembly",
-      "hypothesis": "The default payload(1,0)/tag2 policy reaches exact assertion-helper target 0x71290. Its body distinguishes a diagnostic helper from the fatal branch; no actual assertion execution or return guarantee assumed.",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The default payload(1,0)/tag2 policy reaches exact assertion-helper target 0x71290. Its body distinguishes a diagnostic helper from the fatal branch; no actual assertion execution or return guarantee assumed.",
+      "id": "native-default-assertion-helper",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^0000000000071290 [tT] "
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "owned-surface-late-ack-endpoints",
-      "adapter": "surface_failure",
-      "hypothesis": "Owned receive timeout does not itself revoke reply endpoint: live peer late ack should arrive while endpoint open, but fail INVALID_DEST after explicit revocation. Both paths gracefully release peer rights/CF aliases; all imported/post-timeout/retained bytes including padding match independently and repeat. No native Canvas policy inferred.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_failure",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "verified_late_ack_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_bytes_equal_cases"
+        },
+        {
+          "equals": 4,
+          "path": "open_endpoint_late_ack_cases"
+        },
+        {
+          "equals": 4,
+          "path": "revoked_endpoint_late_ack_cases"
+        },
+        {
+          "equals": 0,
+          "path": "failed_executions"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned receive timeout does not itself revoke reply endpoint: live peer late ack should arrive while endpoint open, but fail INVALID_DEST after explicit revocation. Both paths gracefully release peer rights/CF aliases; all imported/post-timeout/retained bytes including padding match independently and repeat. No native Canvas policy inferred.",
+      "id": "owned-surface-late-ack-endpoints",
       "params": {
         "control": "late_ack"
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "verified_late_ack_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_bytes_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "open_endpoint_late_ack_cases",
-          "equals": 4
-        },
-        {
-          "path": "revoked_endpoint_late_ack_cases",
-          "equals": 4
-        },
-        {
-          "path": "failed_executions",
-          "equals": 0
-        }
-      ]
-    },
-    {
-      "id": "native-unfulfilled-state-deinit",
-      "adapter": "disassembly",
-      "hypothesis": "Pinned FulfillOnceState destruction should distinguish fulfilled from abandoned state and expose diagnostic or cleanup behavior. Actual destructor bodies are required; no native destruction or surface release claim assumed.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "function_count"
+        },
+        {
+          "equals": 2,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned FulfillOnceState destruction should distinguish fulfilled from abandoned state and expose diagnostic or cleanup behavior. Actual destructor bodies are required; no native destruction or surface release claim assumed.",
+      "id": "native-unfulfilled-state-deinit",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000002b980 [tT] |^000000000002c170 [tT] "
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 2
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 2
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-fulfillment-state-metadata",
-      "adapter": "swift_metadata",
-      "hypothesis": "Pinned Foundation metadata exposes fulfillment-state case names and descriptor structure, independent of destructor instruction names. Metadata alone must not assign runtime case tags or claim abandonment execution. Initial acceptance used wrong result field; global parser has seven errors, retained explicitly. Changed target-specific case verifier must accept only unique waiting/fulfilled enum descriptor; no runtime tag mapping.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "swift_metadata",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": true,
+          "path": "state_metadata_verified"
+        },
+        {
+          "equals": [
+            "waiting",
+            "fulfilled"
+          ],
+          "path": "state_case_names"
+        },
+        {
+          "equals": 7,
+          "path": "parse_errors"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned Foundation metadata exposes fulfillment-state case names and descriptor structure, independent of destructor instruction names. Metadata alone must not assign runtime case tags or claim abandonment execution. Initial acceptance used wrong result field; global parser has seven errors, retained explicitly. Changed target-specific case verifier must accept only unique waiting/fulfilled enum descriptor; no runtime tag mapping.",
+      "id": "native-fulfillment-state-metadata",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "maximum": 1000,
         "state_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "state_metadata_verified",
-          "equals": true
-        },
-        {
-          "path": "state_case_names",
-          "equals": [
-            "waiting",
-            "fulfilled"
-          ]
-        },
-        {
-          "path": "parse_errors",
-          "equals": 7
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-unfulfilled-deinit-guard",
-      "adapter": "disassembly",
-      "hypothesis": "Exact deinit snapshot/case1-skip branch bypasses Unfulfilled allocation/failure policy and reaches common cleanup; other branch has diagnostic before cleanup on normal return. Mutation checker rejects changed case, skip destination, missing policy/allocation. No callback completion or resource-reclamation claim.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": true,
+          "path": "deinit_guard_verified"
+        },
+        {
+          "equals": 1,
+          "path": "deinit_skipped_case"
+        },
+        {
+          "equals": true,
+          "path": "deinit_policy_before_common_cleanup"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact deinit snapshot/case1-skip branch bypasses Unfulfilled allocation/failure policy and reaches common cleanup; other branch has diagnostic before cleanup on normal return. Mutation checker rejects changed case, skip destination, missing policy/allocation. No callback completion or resource-reclamation claim.",
+      "id": "native-unfulfilled-deinit-guard",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000002b980 [tT] ",
-        "deinit_control": true
+        "deinit_control": true,
+        "query": "^000000000002b980 [tT] "
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "deinit_guard_verified",
-          "equals": true
-        },
-        {
-          "path": "deinit_skipped_case",
-          "equals": 1
-        },
-        {
-          "path": "deinit_policy_before_common_cleanup",
-          "equals": true
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-cancelation-callback-boundary",
-      "adapter": "disassembly",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "function_count"
+        },
+        {
+          "equals": 4,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Recover both actual callback invoke entries and specialized constructors. Predict stored closure dispatch with possible isolated actor check, not fixed transport cancellation. Four unique instruction-bearing entries required.",
+      "id": "native-cancelation-callback-boundary",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000012(9770|9858|99f4|9a64) [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 4
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 4
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-cancelation-callback-control",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "function_count"
+        },
+        {
+          "equals": 4,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "callback_boundaries_verified"
+        },
+        {
+          "equals": 2,
+          "path": "callback_wrapper_count"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Pinned callback/constructor boundary checker must verify optional isolation call and stored closure dispatch; mutations or duplicate bodies fail. This does not map runtime witness tables or establish transport action.",
+      "id": "native-cancelation-callback-control",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000012(9770|9858|99f4|9a64) [tT] ",
-        "callback_control": true
+        "callback_control": true,
+        "query": "^000000000012(9770|9858|99f4|9a64) [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 4
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 4
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "callback_boundaries_verified",
-          "equals": true
-        },
-        {
-          "path": "callback_wrapper_count",
-          "equals": 2
-        }
-      ]
-    },
-    {
-      "id": "native-actor-isolation-verification",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Recover verifyIsolated body to distinguish actor scheduling from an isolation assertion/verification; name alone is insufficient.",
+      "id": "native-actor-isolation-verification",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^0000000000114e38 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-actor-isolation-control",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "isolation_precondition_verified"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Exact helper extent and single preconditionIsolated call/return must pass; wrong callee or inserted branch fails. Static caller behavior only, not runtime executor correctness.",
+      "id": "native-actor-isolation-control",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^0000000000114e38 [tT] ",
-        "isolation_control": true
+        "isolation_control": true,
+        "query": "^0000000000114e38 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "isolation_precondition_verified",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "native-invalidation-cancel-actions",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "function_count"
+        },
+        {
+          "equals": 3,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Recover actual invalidation-token closures to discriminate observer deregistration from direct transport cancellation. Three real entries required; names alone cannot assign effects.",
+      "id": "native-invalidation-cancel-actions",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000004(19cc|1f10|1f2c) [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 3
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 3
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-invalidation-remove-targets",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 5,
+          "path": "function_count"
+        },
+        {
+          "equals": 5,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Instruction-derived closure targets should reveal identifier-specific observer removal and result destruction. Five exact entries required; mutation and cleanup targets must be inspected rather than inferred from symbol names.",
+      "id": "native-invalidation-remove-targets",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^00000000000be(ea8|ecc) [tT] |^000000000004(28fc|2604|28d0) [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 5
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 5
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-invalidation-waiting-update",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "function_count"
+        },
+        {
+          "equals": 1,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Recover merged updateWaitingState body: test whether mutation is gated on actual state byte and whether already-fulfilled bypasses indirect update. Static outcomes are not runtime named ABI mapping.",
+      "id": "native-invalidation-waiting-update",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^00000000000beef0 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 1
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 1
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-invalidation-boundary-control",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "function_count"
+        },
+        {
+          "equals": 4,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "invalidation_boundaries_verified"
+        },
+        {
+          "equals": true,
+          "path": "cleanup_after_unlock"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Static weak-owner skip, shared lock/update/unlock/release/cleanup and byte1 mutation skip must pass finite checker; corrupt branches/callees/outcomes fail. No runtime or whole dictionary proof.",
+      "id": "native-invalidation-boundary-control",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000004(19cc|1f10|1f2c) [tT] |^00000000000beef0 [tT] ",
-        "invalidation_control": true
+        "invalidation_control": true,
+        "query": "^000000000004(19cc|1f10|1f2c) [tT] |^00000000000beef0 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 4
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 4
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "invalidation_boundaries_verified",
-          "equals": true
-        },
-        {
-          "path": "cleanup_after_unlock",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "owned-gpu-surface-completion",
-      "adapter": "surface_corpus",
-      "params": {
-        "gpu_control": true
-      },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_corpus",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "cases"
+        },
+        {
+          "equals": 4,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "After one bounded Metal completion handler for each red/red/blue render, CPU IOSurface snapshots should match independent BGRA literals and unchanged full allocation padding across four geometries and two repetitions. Status/error/identity faults must reject; no Canvas or GPU transfer claim.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 4
-        },
-        {
-          "path": "passed_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        }
-      ]
-    },
-    {
-      "id": "owned-gpu-surface-retained-access",
-      "adapter": "surface_corpus",
+      "id": "owned-gpu-surface-completion",
       "params": {
         "gpu_control": true
       },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "surface_corpus",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "cases"
+        },
+        {
+          "equals": 4,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 4,
+          "path": "retained_surface_cases"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "After bounded red/red/blue GPU completions, drained command scopes and explicit texture/queue reference drop, retained IOSurface CPU snapshot must still match full independent blue allocation including padding. Whole-lifetime reclamation and internal GPU holders remain unknown.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 4
-        },
-        {
-          "path": "passed_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        },
-        {
-          "path": "retained_surface_cases",
-          "equals": 4
-        }
-      ]
-    },
-    {
-      "id": "owned-gpu-surface-mach-receiver-exit",
-      "adapter": "surface_ipc",
+      "id": "owned-gpu-surface-retained-access",
       "params": {
-        "gpu_control": true,
-        "exit_order": "receiver"
+        "gpu_control": true
       },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "surface_ipc",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Completed GPU red/blue IOSurface transfers by audited Mach right to owned CPU peer, remains exact through peer mutation/clean or abrupt exit and port-only retained access. Full allocation/padding and rights/status/identity must independently pass. No Canvas or cross-process GPU execution.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "passed_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        }
-      ]
-    },
-    {
-      "id": "owned-gpu-surface-peer-readback",
-      "adapter": "surface_ipc",
+      "id": "owned-gpu-surface-mach-receiver-exit",
       "params": {
-        "gpu_control": true,
         "exit_order": "receiver",
-        "gpu_consumer_control": true
+        "gpu_control": true
       },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 32,
-      "priority": 100,
-      "hypothesis": "Audit-verified peer executes bounded GPU texture-to-buffer blit on imported completed BGRA surface. Independent full destination allocation pixels/padding must match before CPU mutations/clean or abrupt exit. No unsynchronized concurrent GPU or Canvas policy claim.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "passed_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        },
-        {
-          "path": "gpu_consumer_cases",
-          "equals": 8
-        }
-      ]
+      "timeout_seconds": 180
     },
     {
-      "id": "owned-gpu-peer-event-timeout",
       "adapter": "surface_ipc",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_consumer_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Audit-verified peer executes bounded GPU texture-to-buffer blit on imported completed BGRA surface. Independent full destination allocation pixels/padding must match before CPU mutations/clean or abrupt exit. No unsynchronized concurrent GPU or Canvas policy claim.",
+      "id": "owned-gpu-surface-peer-readback",
       "params": {
-        "gpu_control": true,
         "exit_order": "receiver",
         "gpu_consumer_control": true,
+        "gpu_control": true
+      },
+      "priority": 100,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "surface_ipc",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_consumer_cases"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_stall_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned peer GPU blit waits on event0 for value1. Initial20ms semaphore wait must time out with no callback; explicit signal then permits late completion, exact full-buffer readback and existing rights/exit cleanup. This is fixture-controlled stall/recovery, not Canvas timeout or GPU cancellation.",
+      "id": "owned-gpu-peer-event-timeout",
+      "params": {
+        "exit_order": "receiver",
+        "gpu_consumer_control": true,
+        "gpu_control": true,
         "gpu_stall_control": true
       },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 32,
-      "priority": 100,
-      "hypothesis": "Owned peer GPU blit waits on event0 for value1. Initial20ms semaphore wait must time out with no callback; explicit signal then permits late completion, exact full-buffer readback and existing rights/exit cleanup. This is fixture-controlled stall/recovery, not Canvas timeout or GPU cancellation.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "passed_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        },
-        {
-          "path": "gpu_consumer_cases",
-          "equals": 8
-        },
-        {
-          "path": "gpu_stall_cases",
-          "equals": 8
-        }
-      ]
+      "timeout_seconds": 180
     },
     {
-      "id": "owned-gpu-event-frame-reuse",
       "adapter": "surface_ipc",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 8,
+          "path": "cases"
+        },
+        {
+          "equals": 8,
+          "path": "passed_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 0,
+          "path": "helper_failures"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_consumer_cases"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_stall_cases"
+        },
+        {
+          "equals": 8,
+          "path": "gpu_reuse_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned receiver reuses the same imported surface, texture, destination buffer, queue and increasing event values through original/opposite/restored frames. Each pending deadline and late completion must pass; every source/destination allocation byte must match independent generation expectations. No Canvas generation ID or concurrent reuse claim.",
+      "id": "owned-gpu-event-frame-reuse",
       "params": {
-        "gpu_control": true,
         "exit_order": "receiver",
         "gpu_consumer_control": true,
-        "gpu_stall_control": true,
-        "gpu_reuse_control": true
+        "gpu_control": true,
+        "gpu_reuse_control": true,
+        "gpu_stall_control": true
       },
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 32,
-      "priority": 100,
-      "hypothesis": "Owned receiver reuses the same imported surface, texture, destination buffer, queue and increasing event values through original/opposite/restored frames. Each pending deadline and late completion must pass; every source/destination allocation byte must match independent generation expectations. No Canvas generation ID or concurrent reuse claim.",
-      "checks": [
-        {
-          "path": "cases",
-          "equals": 8
-        },
-        {
-          "path": "passed_cases",
-          "equals": 8
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "helper_failures",
-          "equals": 0
-        },
-        {
-          "path": "gpu_consumer_cases",
-          "equals": 8
-        },
-        {
-          "path": "gpu_stall_cases",
-          "equals": 8
-        },
-        {
-          "path": "gpu_reuse_cases",
-          "equals": 8
-        }
-      ]
+      "timeout_seconds": 180
     },
     {
-      "id": "native-invalidation-dictionary-bodies",
       "adapter": "disassembly",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "function_count"
+        },
+        {
+          "equals": 4,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Decode actual invalidation closure calls and inspect the selected specialized dictionary setter/remover. Discriminate nil-removal path from insertion and find actual storage writes/key removal. Four instruction bodies and pinned image required; no native invocation or final resource reclamation claim.",
+      "id": "native-invalidation-dictionary-bodies",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^000000000004(2604|28d0) [tT] |^00000000000e(df78|e75c) [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 4
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 4
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-invalidation-dictionary-dependencies",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 3,
+          "path": "function_count"
+        },
+        {
+          "equals": 3,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Follow decoded native call targets into isolated removal, native hash-bucket deletion and identifier-array remove-at. Require actual bodies before asserting effects; runtime state contents, selected callback and final resource release remain separate.",
+      "id": "native-invalidation-dictionary-dependencies",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "^00000000000(ee834|f82dc) [tT] |^0000000000018158 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 3
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 3
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-observer-removal-control",
-      "adapter": "disassembly",
-      "depends_on": [],
+      "priority": 100,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 32,
-      "priority": 100,
+      "checks": [
+        {
+          "equals": 7,
+          "path": "function_count"
+        },
+        {
+          "equals": 7,
+          "path": "entry_body_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "observer_removal_verified"
+        },
+        {
+          "equals": 16,
+          "path": "sentinel_bytes"
+        },
+        {
+          "equals": true,
+          "path": "hash_count_decrement"
+        },
+        {
+          "equals": true,
+          "path": "array_count_decrement"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Finite pinned instruction and encoded-target checker must verify observer-key setter sentinel, removal lookup/COW branch, ordered-key removal, native bucket occupancy/count mutation and array shift/count decrement. Mapped sentinel compares all16 bytes; static cleanup is not runtime transport or reclamation.",
+      "id": "native-observer-removal-control",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
-        "query": "^000000000004(2604|28d0) [tT] |^00000000000e(df78|e75c|e834) [tT] |^00000000000f82dc [tT] |^0000000000018158 [tT] ",
-        "dictionary_control": true
+        "dictionary_control": true,
+        "query": "^000000000004(2604|28d0) [tT] |^00000000000e(df78|e75c|e834) [tT] |^00000000000f82dc [tT] |^0000000000018158 [tT] "
       },
-      "checks": [
-        {
-          "path": "function_count",
-          "equals": 7
-        },
-        {
-          "path": "entry_body_count",
-          "equals": 7
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "observer_removal_verified",
-          "equals": true
-        },
-        {
-          "path": "sentinel_bytes",
-          "equals": 16
-        },
-        {
-          "path": "hash_count_decrement",
-          "equals": true
-        },
-        {
-          "path": "array_count_decrement",
-          "equals": true
-        }
-      ]
+      "priority": 100,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
-      "id": "native-rea-observer-pilot",
       "adapter": "rea_native",
-      "hypothesis": "Pinned REA/Ghidra recovers two observer removal wrappers and its call references agree with all eight encoded BL bytes from the independently mapped image.",
-      "depends_on": [],
-      "resources": [
-        "ghidra"
-      ],
-      "timeout_seconds": 480,
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": true,
+          "path": "rea_verified"
+        },
+        {
+          "equals": true,
+          "path": "provider_closed"
+        },
+        {
+          "equals": 2,
+          "path": "native_functions"
+        },
+        {
+          "equals": 2,
+          "path": "encoded_call_targets_verified"
+        },
+        {
+          "equals": 8,
+          "path": "compared_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned REA/Ghidra recovers two observer removal wrappers and its call references agree with all eight encoded BL bytes from the independently mapped image.",
+      "id": "native-rea-observer-pilot",
       "params": {},
       "priority": 90,
-      "checks": [
-        {
-          "path": "rea_verified",
-          "equals": true
-        },
-        {
-          "path": "provider_closed",
-          "equals": true
-        },
-        {
-          "path": "native_functions",
-          "equals": 2
-        },
-        {
-          "path": "encoded_call_targets_verified",
-          "equals": 2
-        },
-        {
-          "path": "compared_bytes",
-          "equals": 8
-        }
-      ]
-    },
-    {
-      "id": "owned-rea-engine-control",
-      "adapter": "rea_native",
-      "hypothesis": "Pinned REA/Ghidra decompiles an owned ARM64 control and its selected call reference agrees with all four independently mapped BL bytes.",
-      "depends_on": [],
       "resources": [
         "ghidra"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 480
+    },
+    {
+      "adapter": "rea_native",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": true,
+          "path": "rea_verified"
+        },
+        {
+          "equals": true,
+          "path": "provider_closed"
+        },
+        {
+          "equals": 1,
+          "path": "native_functions"
+        },
+        {
+          "equals": 1,
+          "path": "encoded_call_targets_verified"
+        },
+        {
+          "equals": 4,
+          "path": "compared_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned REA/Ghidra decompiles an owned ARM64 control and its selected call reference agrees with all four independently mapped BL bytes.",
+      "id": "owned-rea-engine-control",
       "params": {
         "owned_control": true
       },
       "priority": 89,
-      "checks": [
-        {
-          "path": "rea_verified",
-          "equals": true
-        },
-        {
-          "path": "provider_closed",
-          "equals": true
-        },
-        {
-          "path": "native_functions",
-          "equals": 1
-        },
-        {
-          "path": "encoded_call_targets_verified",
-          "equals": 1
-        },
-        {
-          "path": "compared_bytes",
-          "equals": 4
-        }
-      ]
+      "resources": [
+        "ghidra"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "native-token-callback-link",
       "adapter": "disassembly",
-      "hypothesis": "Distinct captured token callbacks reach recovered dictionary-removal wrappers only through weak-owner and state guarded locked update, with every captured instruction byte matching the pinned image.",
-      "depends_on": [],
-      "resources": [
-        "native-static"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": true,
+          "path": "token_link_verified"
+        },
+        {
+          "equals": 10,
+          "path": "entry_count"
+        },
+        {
+          "equals": 6,
+          "path": "captured_pointer_targets"
+        },
+        {
+          "equals": 13,
+          "path": "encoded_direct_targets"
+        },
+        {
+          "equals": true,
+          "path": "weak_owner_skip"
+        },
+        {
+          "equals": true,
+          "path": "state_high_byte_one_skips_callback"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": 632,
+          "path": "compared_instruction_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Distinct captured token callbacks reach recovered dictionary-removal wrappers only through weak-owner and state guarded locked update, with every captured instruction byte matching the pinned image.",
+      "id": "native-token-callback-link",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "query": "makeCancelationToken|^00000000000bee(a8|cc|f0)|^00000000000428fc",
         "token_link_control": true
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "token_link_verified",
-          "equals": true
-        },
-        {
-          "path": "entry_count",
-          "equals": 10
-        },
-        {
-          "path": "captured_pointer_targets",
-          "equals": 6
-        },
-        {
-          "path": "encoded_direct_targets",
-          "equals": 13
-        },
-        {
-          "path": "weak_owner_skip",
-          "equals": true
-        },
-        {
-          "path": "state_high_byte_one_skips_callback",
-          "equals": true
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "compared_instruction_bytes",
-          "equals": 632
-        }
-      ]
-    },
-    {
-      "id": "native-token-result-consumer",
-      "adapter": "disassembly",
-      "hypothesis": "The anonymous token result consumer masks the low byte and tail-calls bridge-object release only for numeric flag1; all20 bytes and exhaustive16-bit flags agree with independent expectations. The stub and pointer slot independently bind the same undefined Swift bridge release import.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "consumer_verified"
+        },
+        {
+          "equals": 20,
+          "path": "compared_instruction_bytes"
+        },
+        {
+          "equals": 65542,
+          "path": "flag_cases"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        },
+        {
+          "equals": true,
+          "path": "release_symbol_binding_verified"
+        },
+        {
+          "equals": 12,
+          "path": "stub_instruction_bytes_compared"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The anonymous token result consumer masks the low byte and tail-calls bridge-object release only for numeric flag1; all20 bytes and exhaustive16-bit flags agree with independent expectations. The stub and pointer slot independently bind the same undefined Swift bridge release import.",
+      "id": "native-token-result-consumer",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "cleanup_control": true,
         "ranges": [
           "42648:4265c",
           "1311c8:1311d4"
-        ],
-        "cleanup_control": true
+        ]
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "consumer_verified",
-          "equals": true
-        },
-        {
-          "path": "compared_instruction_bytes",
-          "equals": 20
-        },
-        {
-          "path": "flag_cases",
-          "equals": 65542
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        },
-        {
-          "path": "release_symbol_binding_verified",
-          "equals": true
-        },
-        {
-          "path": "stub_instruction_bytes_compared",
-          "equals": 12
-        }
-      ]
-    },
-    {
-      "id": "native-token-value-witness-bodies",
-      "adapter": "disassembly",
-      "hypothesis": "Complete helper bytes dispatch copy/destroy through resolved metadata table slots16/8; zero or odd cached words select the mangled-name runtime import, independently bound through stub and pointer tables.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "witness_dispatch_verified"
+        },
+        {
+          "equals": 216,
+          "path": "compared_witness_instruction_bytes"
+        },
+        {
+          "equals": 12,
+          "path": "metadata_stub_instruction_bytes_compared"
+        },
+        {
+          "equals": 65540,
+          "path": "metadata_cache_cases"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Complete helper bytes dispatch copy/destroy through resolved metadata table slots16/8; zero or odd cached words select the mangled-name runtime import, independently bound through stub and pointer tables.",
+      "id": "native-token-value-witness-bodies",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "ranges": [
@@ -2894,79 +2912,76 @@
         "witness_control": true
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "witness_dispatch_verified",
-          "equals": true
-        },
-        {
-          "path": "compared_witness_instruction_bytes",
-          "equals": 216
-        },
-        {
-          "path": "metadata_stub_instruction_bytes_compared",
-          "equals": 12
-        },
-        {
-          "path": "metadata_cache_cases",
-          "equals": 65540
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-token-symbolic-descriptors",
-      "adapter": "disassembly",
-      "hypothesis": "Encoded wrapper pointers identify two zero on-disk caches and length30 type records. Symbolic references, including embedded NULs, resolve through verified format6 dyld page-chain members to distinct concurrent/isolated storage state nominal contexts.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "token_descriptors_verified"
+        },
+        {
+          "equals": 72,
+          "path": "wrapper_instruction_bytes_compared"
+        },
+        {
+          "equals": 10,
+          "path": "symbolic_reference_count"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Encoded wrapper pointers identify two zero on-disk caches and length30 type records. Symbolic references, including embedded NULs, resolve through verified format6 dyld page-chain members to distinct concurrent/isolated storage state nominal contexts.",
+      "id": "native-token-symbolic-descriptors",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "descriptor_control": true,
         "ranges": [
           "beea8:beecc",
           "beecc:beef0"
-        ],
-        "descriptor_control": true
+        ]
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "token_descriptors_verified",
-          "equals": true
-        },
-        {
-          "path": "wrapper_instruction_bytes_compared",
-          "equals": 72
-        },
-        {
-          "path": "symbolic_reference_count",
-          "equals": 10
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-state-witness-bodies",
-      "adapter": "disassembly",
-      "hypothesis": "The State descriptor and generic pattern bind eight chained witness targets; complete destroy/copy bodies match mapped bytes, direct numeric tags0/1 select payload tables A/B, and finite aligned layout/trailer projections agree with independent expectations. Four runtime imports are declared, without actual invocation.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "state_pattern_verified"
+        },
+        {
+          "equals": 648,
+          "path": "body_instruction_bytes_compared"
+        },
+        {
+          "equals": 132098,
+          "path": "direct_tag_layout_cases"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "The State descriptor and generic pattern bind eight chained witness targets; complete destroy/copy bodies match mapped bytes, direct numeric tags0/1 select payload tables A/B, and finite aligned layout/trailer projections agree with independent expectations. Four runtime imports are declared, without actual invocation.",
+      "id": "native-state-witness-bodies",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "pattern_control": true,
         "ranges": [
           "ec10:ec18",
           "2d148:2d1e4",
@@ -2976,41 +2991,45 @@
           "1311f8:131204",
           "131378:131384",
           "1313e4:1313f0"
-        ],
-        "pattern_control": true
+        ]
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "state_pattern_verified",
-          "equals": true
-        },
-        {
-          "path": "body_instruction_bytes_compared",
-          "equals": 648
-        },
-        {
-          "path": "direct_tag_layout_cases",
-          "equals": 132098
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-token-storage-witness-bodies",
-      "adapter": "disassembly",
-      "hypothesis": "Declared storage/trace witness association and complete bodies delegate three/one reference words to independently bound Swift bridge retain/release imports. Owned finite null/alias models preserve complete bytes and event multiplicity without runtime invocation.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "storage_ownership_verified"
+        },
+        {
+          "equals": 192,
+          "path": "body_instruction_bytes_compared"
+        },
+        {
+          "equals": 130,
+          "path": "ownership_model_cases"
+        },
+        {
+          "equals": 3040,
+          "path": "owned_model_bytes_compared"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Declared storage/trace witness association and complete bodies delegate three/one reference words to independently bound Swift bridge retain/release imports. Owned finite null/alias models preserve complete bytes and event multiplicity without runtime invocation.",
+      "id": "native-token-storage-witness-bodies",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
+        "ownership_control": true,
         "ranges": [
           "42358:423dc",
           "42900:42904",
@@ -3019,43 +3038,38 @@
           "db94:dbc0",
           "1311c8:1311d4",
           "1311e0:1311ec"
-        ],
-        "ownership_control": true
+        ]
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "storage_ownership_verified",
-          "equals": true
-        },
-        {
-          "path": "body_instruction_bytes_compared",
-          "equals": 192
-        },
-        {
-          "path": "ownership_model_cases",
-          "equals": 130
-        },
-        {
-          "path": "owned_model_bytes_compared",
-          "equals": 3040
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-state-tag-boundary",
-      "adapter": "disassembly",
-      "hypothesis": "State waiting0/fulfilled1 case-index constants and reflected declarations independently associate with bound tag getter/injector/projector. Complete mapped bodies and encoded direct-tag branches support finite whole-buffer injection/read projections, preserving payload and padding without native invocation.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "state_tags_verified"
+        },
+        {
+          "equals": 424,
+          "path": "body_instruction_bytes_compared"
+        },
+        {
+          "equals": 132098,
+          "path": "direct_tag_buffer_cases"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "State waiting0/fulfilled1 case-index constants and reflected declarations independently associate with bound tag getter/injector/projector. Complete mapped bodies and encoded direct-tag branches support finite whole-buffer injection/read projections, preserving payload and padding without native invocation.",
+      "id": "native-state-tag-boundary",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "ranges": [
@@ -3066,35 +3080,31 @@
         "tag_control": true
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "state_tags_verified",
-          "equals": true
-        },
-        {
-          "path": "body_instruction_bytes_compared",
-          "equals": 424
-        },
-        {
-          "path": "direct_tag_buffer_cases",
-          "equals": 132098
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
-    },
-    {
-      "id": "native-update-result-witness",
-      "adapter": "disassembly",
-      "hypothesis": "Independent reflected result cases and declared generic witness links bound the separate update-result enum; numeric direct tags remain separate from State and live ownership.",
-      "depends_on": [],
       "resources": [
         "native-static"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "disassembly",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "result_witness_verified"
+        },
+        {
+          "equals": 684,
+          "path": "body_instruction_bytes_compared"
+        },
+        {
+          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+          "path": "image_sha256"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Independent reflected result cases and declared generic witness links bound the separate update-result enum; numeric direct tags remain separate from State and live ownership.",
+      "id": "native-update-result-witness",
       "params": {
         "binary": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/PreviewsFoundationHost",
         "ranges": [
@@ -3108,1015 +3118,1005 @@
         "result_control": true
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "result_witness_verified",
-          "equals": true
-        },
-        {
-          "path": "body_instruction_bytes_compared",
-          "equals": 684
-        },
-        {
-          "path": "image_sha256",
-          "equals": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
-        }
-      ]
+      "resources": [
+        "native-static"
+      ],
+      "timeout_seconds": 120
     },
     {
-      "id": "portable-literal-source-ir",
       "adapter": "portable_solid",
-      "hypothesis": "Strict explicit opaque sRGB red/blue Color.frame fragments lower through saved LLVM IR to import-free WASM; native red/repeat/blue pixels and independent padding literals agree exactly, unsupported source and invalid runtime stride reject.",
-      "depends_on": [],
-      "resources": [
-        "portable-reference"
-      ],
-      "timeout_seconds": 120,
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "source_modules"
+        },
+        {
+          "equals": true,
+          "path": "all_native_rgba_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_literal_padding_equal"
+        },
+        {
+          "equals": 15,
+          "path": "source_holdouts_rejected"
+        },
+        {
+          "equals": true,
+          "path": "repeat_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "repeat_module_bytes_equal"
+        },
+        {
+          "equals": 0,
+          "path": "wasm_imports"
+        },
+        {
+          "equals": 16,
+          "path": "negative_requests"
+        },
+        {
+          "equals": true,
+          "path": "invalid_buffer_unchanged"
+        },
+        {
+          "equals": true,
+          "path": "repeat_ir_bytes_equal"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Strict explicit opaque sRGB red/blue Color.frame fragments lower through saved LLVM IR to import-free WASM; native red/repeat/blue pixels and independent padding literals agree exactly, unsupported source and invalid runtime stride reject.",
+      "id": "portable-literal-source-ir",
       "params": {
         "source_control": true
       },
       "priority": 90,
-      "checks": [
-        {
-          "path": "source_modules",
-          "equals": 4
-        },
-        {
-          "path": "all_native_rgba_equal",
-          "equals": true
-        },
-        {
-          "path": "all_literal_padding_equal",
-          "equals": true
-        },
-        {
-          "path": "source_holdouts_rejected",
-          "equals": 15
-        },
-        {
-          "path": "repeat_pixels_equal",
-          "equals": true
-        },
-        {
-          "path": "repeat_module_bytes_equal",
-          "equals": true
-        },
-        {
-          "path": "wasm_imports",
-          "equals": 0
-        },
-        {
-          "path": "negative_requests",
-          "equals": 16
-        },
-        {
-          "path": "invalid_buffer_unchanged",
-          "equals": true
-        },
-        {
-          "path": "repeat_ir_bytes_equal",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "portable-source-second-interpreter",
-      "adapter": "portable_solid",
-      "hypothesis": "Unchanged saved source renderer IR, linked without LTO to an independent full-buffer checker, agrees in WasmKit and V8 against native/padding expectations; injected active/padding/unused allocation faults and invalid strides are detected. Checker geometry also rejects heights beyond the source contract.",
-      "depends_on": [],
       "resources": [
         "portable-reference"
       ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
-      "params": {
-        "source_control": true,
-        "second_runtime": true
-      },
-      "priority": 90,
-      "checks": [
-        {
-          "path": "source_modules",
-          "equals": 4
-        },
-        {
-          "path": "all_native_rgba_equal",
-          "equals": true
-        },
-        {
-          "path": "all_literal_padding_equal",
-          "equals": true
-        },
-        {
-          "path": "source_holdouts_rejected",
-          "equals": 15
-        },
-        {
-          "path": "repeat_pixels_equal",
-          "equals": true
-        },
-        {
-          "path": "repeat_module_bytes_equal",
-          "equals": true
-        },
-        {
-          "path": "wasm_imports",
-          "equals": 0
-        },
-        {
-          "path": "negative_requests",
-          "equals": 16
-        },
-        {
-          "path": "invalid_buffer_unchanged",
-          "equals": true
-        },
-        {
-          "path": "repeat_ir_bytes_equal",
-          "equals": true
-        },
-        {
-          "path": "source_second_runtime_controls",
-          "equals": 40
-        },
-        {
-          "path": "source_second_runtime_all_passed",
-          "equals": true
-        },
-        {
-          "path": "source_second_mutation_controls",
-          "equals": 12
-        },
-        {
-          "path": "source_checker_v8_agrees",
-          "equals": true
-        },
-        {
-          "path": "source_checker_imports",
-          "equals": 0
-        }
-      ]
+      "timeout_seconds": 120
     },
     {
-      "id": "portable-linux-owned-wasm",
-      "adapter": "linux_wasm",
-      "hypothesis": "Exact anchored owned source WASM modules execute on Linux ARM64 Wasmtime in the existing VM; independent full allocations, cross-host pixels, invalid strides and diagnostic faults agree, with zero imports and owned-container cleanup. Cleanup ownership and anchor/wheel rejection receive mutation-tested checks.",
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "source_modules"
+        },
+        {
+          "equals": true,
+          "path": "all_native_rgba_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_literal_padding_equal"
+        },
+        {
+          "equals": 15,
+          "path": "source_holdouts_rejected"
+        },
+        {
+          "equals": true,
+          "path": "repeat_pixels_equal"
+        },
+        {
+          "equals": true,
+          "path": "repeat_module_bytes_equal"
+        },
+        {
+          "equals": 0,
+          "path": "wasm_imports"
+        },
+        {
+          "equals": 16,
+          "path": "negative_requests"
+        },
+        {
+          "equals": true,
+          "path": "invalid_buffer_unchanged"
+        },
+        {
+          "equals": true,
+          "path": "repeat_ir_bytes_equal"
+        },
+        {
+          "equals": 40,
+          "path": "source_second_runtime_controls"
+        },
+        {
+          "equals": true,
+          "path": "source_second_runtime_all_passed"
+        },
+        {
+          "equals": 12,
+          "path": "source_second_mutation_controls"
+        },
+        {
+          "equals": true,
+          "path": "source_checker_v8_agrees"
+        },
+        {
+          "equals": 0,
+          "path": "source_checker_imports"
+        }
+      ],
       "depends_on": [],
+      "hypothesis": "Unchanged saved source renderer IR, linked without LTO to an independent full-buffer checker, agrees in WasmKit and V8 against native/padding expectations; injected active/padding/unused allocation faults and invalid strides are detected. Checker geometry also rejects heights beyond the source contract.",
+      "id": "portable-source-second-interpreter",
+      "params": {
+        "second_runtime": true,
+        "source_control": true
+      },
+      "priority": 90,
+      "resources": [
+        "portable-reference"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "linux_wasm",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": true,
+          "path": "linux_source_verified"
+        },
+        {
+          "equals": "Linux",
+          "path": "host_system"
+        },
+        {
+          "equals": 4,
+          "path": "standalone_modules"
+        },
+        {
+          "equals": 40,
+          "path": "diagnostic_controls"
+        },
+        {
+          "equals": 614432,
+          "path": "cross_host_pixel_bytes_compared"
+        },
+        {
+          "equals": 16,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": 0,
+          "path": "imports"
+        },
+        {
+          "equals": true,
+          "path": "owned_container_cleanup_verified"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact anchored owned source WASM modules execute on Linux ARM64 Wasmtime in the existing VM; independent full allocations, cross-host pixels, invalid strides and diagnostic faults agree, with zero imports and owned-container cleanup. Cleanup ownership and anchor/wheel rejection receive mutation-tested checks.",
+      "id": "portable-linux-owned-wasm",
+      "params": {},
+      "priority": 90,
       "resources": [
         "local-linux-vm"
       ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
-      "params": {},
-      "priority": 90,
-      "checks": [
-        {
-          "path": "linux_source_verified",
-          "equals": true
-        },
-        {
-          "path": "host_system",
-          "equals": "Linux"
-        },
-        {
-          "path": "standalone_modules",
-          "equals": 4
-        },
-        {
-          "path": "diagnostic_controls",
-          "equals": 40
-        },
-        {
-          "path": "cross_host_pixel_bytes_compared",
-          "equals": 614432
-        },
-        {
-          "path": "invalid_requests",
-          "equals": 16
-        },
-        {
-          "path": "imports",
-          "equals": 0
-        },
-        {
-          "path": "owned_container_cleanup_verified",
-          "equals": true
-        }
-      ]
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "verified_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
       "id": "owned-surface-bounded-name-churn",
-      "adapter": "surface_reuse",
-      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "name_reuse_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "verified_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
       "id": "owned-surface-bounded-name-churn-repeat",
-      "adapter": "surface_reuse",
-      "hypothesis": "After retiring owned surface send name, create/lookup/deallocate 128 replacement rights: stale lookup equals replacement ID iff exact numeric name recurs, otherwise null. Measure numeric index reuse without arbitrary recycling guarantees; exact complete original/replacement/final lookup allocations and send refs/cleanup.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "name_reuse_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "verified_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
       "id": "owned-surface-retained-name-churn",
-      "adapter": "surface_reuse",
-      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "name_reuse_control": true,
         "retained_right_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "verified_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
       "id": "owned-surface-retained-name-churn-repeat",
-      "adapter": "surface_reuse",
-      "hypothesis": "Retained original send right after producer CF release excludes replacement aliasing through128 owned right lifecycles; delayed full allocation remains original including padding/tail and original final right/name release passes. No mutable-frame snapshot or Canvas guarantee.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "name_reuse_control": true,
         "retained_right_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        }
-      ]
-    },
-    {
-      "id": "owned-surface-released-name-churn-contrast",
-      "adapter": "surface_reuse",
-      "hypothesis": "Same reviewed helper released-right contrast: stale numeric name resolves replacement only on exact recurrence during128 owned right lifecycles; full original/replacement/final allocations compare. No retained-right protection.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 120
+    },
+    {
+      "adapter": "surface_reuse",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "verified_cases"
+        },
+        {
+          "equals": 4,
+          "path": "repeat_equal_cases"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Same reviewed helper released-right contrast: stale numeric name resolves replacement only on exact recurrence during128 owned right lifecycles; full original/replacement/final allocations compare. No retained-right protection.",
+      "id": "owned-surface-released-name-churn-contrast",
       "params": {
         "name_reuse_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_cases",
-          "equals": 4
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 4
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "verified_executions"
+        },
+        {
+          "equals": 128,
+          "path": "controls"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
       "id": "owned-generation-commit-control",
-      "adapter": "surface_reuse",
-      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "generation_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_executions",
-          "equals": 16
-        },
-        {
-          "path": "controls",
-          "equals": 128
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "surface_reuse",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "verified_executions"
+        },
+        {
+          "equals": 128,
+          "path": "controls"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
       "id": "owned-generation-commit-control-repeat",
-      "adapter": "surface_reuse",
-      "hypothesis": "Native mutable/separate CPU frame controls feed eight explicit commit-policy cases: latest commits, superseded/duplicate/canceled/reset/wrong-content reject, frozen snapshots retain original bytes, delayed mutable old read rejects while separate old read commits. Reconstruction policy, not Canvas generation recovery.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 16,
       "params": {
         "generation_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "verified_executions",
-          "equals": 16
-        },
-        {
-          "path": "controls",
-          "equals": 128
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "browser_modules"
+        },
+        {
+          "equals": 2,
+          "path": "browser_repeats"
+        },
+        {
+          "equals": 1638400,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 6553600,
+          "path": "invalid_bytes"
+        },
+        {
+          "equals": true,
+          "path": "server_cleanup"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
       "id": "portable-browser-execution",
-      "adapter": "portable_solid",
-      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 32,
       "params": {
         "browser_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "browser_modules",
-          "equals": 4
-        },
-        {
-          "path": "browser_repeats",
-          "equals": 2
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1638400
-        },
-        {
-          "path": "invalid_bytes",
-          "equals": 6553600
-        },
-        {
-          "path": "server_cleanup",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     },
     {
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "browser_modules"
+        },
+        {
+          "equals": 2,
+          "path": "browser_repeats"
+        },
+        {
+          "equals": 1638400,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 6553600,
+          "path": "invalid_bytes"
+        },
+        {
+          "equals": true,
+          "path": "server_cleanup"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
       "id": "portable-browser-execution-repeat",
-      "adapter": "portable_solid",
-      "hypothesis": "Exact anchored source WASM executes in actual browser twice; complete baseline and every invalid-request allocation match independent anchored expectations; Canvas2D active RGBA readback exact.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 32,
       "params": {
         "browser_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "browser_modules",
-          "equals": 4
-        },
-        {
-          "path": "browser_repeats",
-          "equals": 2
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1638400
-        },
-        {
-          "path": "invalid_bytes",
-          "equals": 6553600
-        },
-        {
-          "path": "server_cleanup",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "native-alpha-quantized-compositing",
-      "adapter": "native_reference",
-      "hypothesis": "After retained symmetric half-rounding contradiction, quantize source alpha first and use complementary opaque blue; eighth and three-quarter holdouts discriminate unchanged integer model in two fresh processes per case.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "expected_cases"
+        },
+        {
+          "equals": 8,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 9792,
+          "path": "compared_rgba_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "After retained symmetric half-rounding contradiction, quantize source alpha first and use complementary opaque blue; eighth and three-quarter holdouts discriminate unchanged integer model in two fresh processes per case.",
+      "id": "native-alpha-quantized-compositing",
       "params": {
         "alpha_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "expected_cases",
-          "equals": 16
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 8
-        },
-        {
-          "path": "compared_rgba_bytes",
-          "equals": 9792
-        }
-      ]
-    },
-    {
-      "id": "compiler-artifact-limit-quiescence",
-      "adapter": "native_reference",
-      "hypothesis": "Tracked owned detached descendants cannot write after timeout/artifact abort; actual fresh SwiftUI compiler16MiB interruption leaves unchanged cache hashes at0,.2,1.2,3.2s after bounded cleanup.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": true,
+          "path": "all_detached_stable"
+        },
+        {
+          "equals": true,
+          "path": "timeout_observed"
+        },
+        {
+          "equals": true,
+          "path": "artifact_limit_observed"
+        },
+        {
+          "equals": true,
+          "path": "compiler_artifact_limit_observed"
+        },
+        {
+          "equals": true,
+          "path": "compiler_cache_stable"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Tracked owned detached descendants cannot write after timeout/artifact abort; actual fresh SwiftUI compiler16MiB interruption leaves unchanged cache hashes at0,.2,1.2,3.2s after bounded cleanup.",
+      "id": "compiler-artifact-limit-quiescence",
       "params": {
         "cleanup_control": true
       },
       "priority": 100,
-      "checks": [
-        {
-          "path": "all_detached_stable",
-          "equals": true
-        },
-        {
-          "path": "timeout_observed",
-          "equals": true
-        },
-        {
-          "path": "artifact_limit_observed",
-          "equals": true
-        },
-        {
-          "path": "compiler_artifact_limit_observed",
-          "equals": true
-        },
-        {
-          "path": "compiler_cache_stable",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 120
     },
     {
-      "id": "portable-alpha-rendering-control",
       "adapter": "portable_solid",
-      "hypothesis": "Explicit eighth-step alpha WASM matches pinned native alpha holdouts, independently predicted complete allocations/padding/tails; invalid requests preserve all bytes and WasmKit native-array checker detects pixel/padding/tail mutations.",
-      "depends_on": [],
-      "resources": [
-        "portable-reference"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 108,
+          "path": "frames"
+        },
+        {
+          "equals": true,
+          "path": "all_allocations_equal"
+        },
+        {
+          "equals": 1769472,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 16,
+          "path": "native_frames"
+        },
+        {
+          "equals": 9792,
+          "path": "native_bytes"
+        },
+        {
+          "equals": true,
+          "path": "all_native_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_repeats_equal"
+        },
+        {
+          "equals": 12,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": true,
+          "path": "all_invalid_unchanged"
+        },
+        {
+          "equals": 0,
+          "path": "imports"
+        },
+        {
+          "equals": 32,
+          "path": "second_runtime_controls"
+        },
+        {
+          "equals": true,
+          "path": "second_runtime_passed"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Explicit eighth-step alpha WASM matches pinned native alpha holdouts, independently predicted complete allocations/padding/tails; invalid requests preserve all bytes and WasmKit native-array checker detects pixel/padding/tail mutations.",
+      "id": "portable-alpha-rendering-control",
       "params": {
         "alpha_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "frames",
-          "equals": 108
-        },
-        {
-          "path": "all_allocations_equal",
-          "equals": true
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1769472
-        },
-        {
-          "path": "native_frames",
-          "equals": 16
-        },
-        {
-          "path": "native_bytes",
-          "equals": 9792
-        },
-        {
-          "path": "all_native_equal",
-          "equals": true
-        },
-        {
-          "path": "all_repeats_equal",
-          "equals": true
-        },
-        {
-          "path": "invalid_requests",
-          "equals": 12
-        },
-        {
-          "path": "all_invalid_unchanged",
-          "equals": true
-        },
-        {
-          "path": "imports",
-          "equals": 0
-        },
-        {
-          "path": "second_runtime_controls",
-          "equals": 32
-        },
-        {
-          "path": "second_runtime_passed",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "portable-reference"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "portable-alpha-browser-readback",
       "adapter": "portable_solid",
-      "hypothesis": "Actual browser executes exact pinned alpha module twice; full allocation/invalid buffers and sRGB alpha Canvas2D readback match independent native/model expectations.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 36,
+          "path": "browser_frames"
+        },
+        {
+          "equals": 589824,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 2359296,
+          "path": "invalid_bytes"
+        },
+        {
+          "equals": 22032,
+          "path": "canvas_bytes"
+        },
+        {
+          "equals": 9792,
+          "path": "native_bytes"
+        },
+        {
+          "equals": true,
+          "path": "server_cleanup"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Actual browser executes exact pinned alpha module twice; full allocation/invalid buffers and sRGB alpha Canvas2D readback match independent native/model expectations.",
+      "id": "portable-alpha-browser-readback",
       "params": {
         "alpha_browser_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "browser_frames",
-          "equals": 36
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 589824
-        },
-        {
-          "path": "invalid_bytes",
-          "equals": 2359296
-        },
-        {
-          "path": "canvas_bytes",
-          "equals": 22032
-        },
-        {
-          "path": "native_bytes",
-          "equals": 9792
-        },
-        {
-          "path": "server_cleanup",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "portable-alpha-linux-execution",
       "adapter": "linux_wasm",
-      "hypothesis": "Exact pinned alpha modules execute offline on existing Linux ARM64 Wasmtime; full native/model/cross-host allocations, invalid requests and independent checker mutations agree, owned-container cleanup preserves existing inventory.",
-      "depends_on": [],
-      "resources": [
-        "local-linux-vm"
-      ],
-      "timeout_seconds": 120,
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 108,
+          "path": "frames"
+        },
+        {
+          "equals": 1769472,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 1769472,
+          "path": "cross_host_bytes"
+        },
+        {
+          "equals": 9792,
+          "path": "native_bytes"
+        },
+        {
+          "equals": 12,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": 196608,
+          "path": "invalid_bytes"
+        },
+        {
+          "equals": 32,
+          "path": "checker_controls"
+        },
+        {
+          "equals": true,
+          "path": "owned_cleanup_verified"
+        },
+        {
+          "equals": true,
+          "path": "existing_containers_preserved"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact pinned alpha modules execute offline on existing Linux ARM64 Wasmtime; full native/model/cross-host allocations, invalid requests and independent checker mutations agree, owned-container cleanup preserves existing inventory.",
+      "id": "portable-alpha-linux-execution",
       "params": {
         "alpha_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "frames",
-          "equals": 108
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1769472
-        },
-        {
-          "path": "cross_host_bytes",
-          "equals": 1769472
-        },
-        {
-          "path": "native_bytes",
-          "equals": 9792
-        },
-        {
-          "path": "invalid_requests",
-          "equals": 12
-        },
-        {
-          "path": "invalid_bytes",
-          "equals": 196608
-        },
-        {
-          "path": "checker_controls",
-          "equals": 32
-        },
-        {
-          "path": "owned_cleanup_verified",
-          "equals": true
-        },
-        {
-          "path": "existing_containers_preserved",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "local-linux-vm"
+      ],
+      "timeout_seconds": 120
     },
     {
-      "id": "native-mixed-alpha-oracle",
       "adapter": "native_reference",
-      "hypothesis": "Predeclared straight versus exact/quantized premultiply-export formulas discriminate mixed byte-grid sRGB partial alpha:4 discovery,4 holdouts,2 endpoint controls;20 fresh captures compare every decoded RGBA byte and repeats. Model contradictions retained, not fitted.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 20,
+          "path": "captures"
+        },
+        {
+          "equals": 10,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": true,
+          "path": "models_discriminated"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Predeclared straight versus exact/quantized premultiply-export formulas discriminate mixed byte-grid sRGB partial alpha:4 discovery,4 holdouts,2 endpoint controls;20 fresh captures compare every decoded RGBA byte and repeats. Model contradictions retained, not fitted.",
+      "id": "native-mixed-alpha-oracle",
       "params": {
         "mixed_alpha_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 20
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 10
-        },
-        {
-          "path": "models_discriminated",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-even-holdouts",
-      "adapter": "native_reference",
-      "hypothesis": "Retain initial exact-half-up contradiction at three-quarter blue230; independent ties-to-even premultiplication with quantized alpha export predicts all original cases plus4 new rational half-tie holdouts before execution. No actual-data fitting.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 28,
+          "path": "captures"
+        },
+        {
+          "equals": 14,
+          "path": "repeat_equal_cases"
+        },
+        {
+          "equals": 28,
+          "path": "model_matches.premultiply-even-exact-alpha"
+        },
+        {
+          "equals": true,
+          "path": "new_even_holdouts_match"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Retain initial exact-half-up contradiction at three-quarter blue230; independent ties-to-even premultiplication with quantized alpha export predicts all original cases plus4 new rational half-tie holdouts before execution. No actual-data fitting.",
+      "id": "native-mixed-alpha-even-holdouts",
       "params": {
         "mixed_even_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 28
-        },
-        {
-          "path": "repeat_equal_cases",
-          "equals": 14
-        },
-        {
-          "path": "model_matches.premultiply-even-exact-alpha",
-          "equals": 28
-        },
-        {
-          "path": "new_even_holdouts_match",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-export-boundary",
-      "adapter": "native_reference",
-      "hypothesis": "Owned raw CGImage allocations and direct versus legacy TIFF-PNG exports discriminate where mixed-alpha rounding occurs. Independent half-up/even premultiplied models include zero padding; separate measured-raw unpremultiply relation predicts both export boundaries. No internal Color precision/Canvas claim.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 28,
+          "path": "captures"
+        },
+        {
+          "equals": true,
+          "path": "all_boundaries_repeat"
+        },
+        {
+          "equals": 28,
+          "path": "raw_export_matches"
+        },
+        {
+          "equals": 28,
+          "path": "legacy_export_matches"
+        },
+        {
+          "equals": 28,
+          "path": "direct_legacy_matches"
+        },
+        {
+          "equals": 2,
+          "path": "opaque_mapping_controls"
+        },
+        {
+          "equals": 28,
+          "path": "prior_native_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned raw CGImage allocations and direct versus legacy TIFF-PNG exports discriminate where mixed-alpha rounding occurs. Independent half-up/even premultiplied models include zero padding; separate measured-raw unpremultiply relation predicts both export boundaries. No internal Color precision/Canvas claim.",
+      "id": "native-mixed-alpha-export-boundary",
       "params": {
         "mixed_boundary_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 28
-        },
-        {
-          "path": "all_boundaries_repeat",
-          "equals": true
-        },
-        {
-          "path": "raw_export_matches",
-          "equals": 28
-        },
-        {
-          "path": "legacy_export_matches",
-          "equals": 28
-        },
-        {
-          "path": "direct_legacy_matches",
-          "equals": 28
-        },
-        {
-          "path": "opaque_mapping_controls",
-          "equals": 2
-        },
-        {
-          "path": "prior_native_matches",
-          "equals": 28
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-quartz-contrast",
-      "adapter": "native_reference",
-      "hypothesis": "Independent owned CGContext producer with original Double versus public NSColor inputs discriminates shared raster quantization against pinned ImageRenderer raw pixels; rational and float32 models predeclared, all720 allocation bytes including sentinel padding compare.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "allocations"
+        },
+        {
+          "equals": 28,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 40320,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 6048,
+          "path": "padding_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Independent owned CGContext producer with original Double versus public NSColor inputs discriminates shared raster quantization against pinned ImageRenderer raw pixels; rational and float32 models predeclared, all720 allocation bytes including sentinel padding compare.",
+      "id": "native-mixed-alpha-quartz-contrast",
       "params": {
         "mixed_quartz_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "allocations",
-          "equals": 56
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 28
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 40320
-        },
-        {
-          "path": "padding_bytes",
-          "equals": 6048
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-public-quartz-contrast",
-      "adapter": "native_reference",
-      "hypothesis": "Original Double and reconstructed public NSColor Quartz fills differ from native ImageRenderer; direct public Color.cgColor and NSColor.cgColor fills discriminate conversion/reconstruction boundary with unchanged native anchors and full padded allocation.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 112,
+          "path": "allocations"
+        },
+        {
+          "equals": 56,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 80640,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 12096,
+          "path": "padding_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Original Double and reconstructed public NSColor Quartz fills differ from native ImageRenderer; direct public Color.cgColor and NSColor.cgColor fills discriminate conversion/reconstruction boundary with unchanged native anchors and full padded allocation.",
+      "id": "native-mixed-alpha-public-quartz-contrast",
       "params": {
         "mixed_public_quartz_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "allocations",
-          "equals": 112
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 56
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 80640
-        },
-        {
-          "path": "padding_bytes",
-          "equals": 12096
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-normal-quartz-contrast",
-      "adapter": "native_reference",
-      "hypothesis": "Changing only owned CGContext blendMode.copy to normal over zero transparent active pixels discriminates a raster blend path cause of five native ImageRenderer half-tie counterexamples; same four public/source inputs, predictions and sentinel padding. No internal implementation claim.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 112,
+          "path": "allocations"
+        },
+        {
+          "equals": 56,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 80640,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 12096,
+          "path": "padding_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Changing only owned CGContext blendMode.copy to normal over zero transparent active pixels discriminates a raster blend path cause of five native ImageRenderer half-tie counterexamples; same four public/source inputs, predictions and sentinel padding. No internal implementation claim.",
+      "id": "native-mixed-alpha-normal-quartz-contrast",
       "params": {
         "mixed_normal_quartz_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "allocations",
-          "equals": 112
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 56
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 80640
-        },
-        {
-          "path": "padding_bytes",
-          "equals": 12096
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-blend-contrast",
-      "adapter": "native_reference",
-      "hypothesis": "Full allocation byte contrast of separately anchored copy/normal CGContext campaigns tests whether blend mode changes any active pixel or sentinel padding in this zero-background fixture.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 30,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 1,
+      "checks": [
+        {
+          "equals": 112,
+          "path": "pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_equal"
+        },
+        {
+          "equals": 80640,
+          "path": "compared_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Full allocation byte contrast of separately anchored copy/normal CGContext campaigns tests whether blend mode changes any active pixel or sentinel padding in this zero-background fixture.",
+      "id": "native-mixed-alpha-blend-contrast",
       "params": {
         "mixed_blend_compare_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "pairs",
-          "equals": 112
-        },
-        {
-          "path": "all_equal",
-          "equals": true
-        },
-        {
-          "path": "compared_bytes",
-          "equals": 80640
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-render-callback",
-      "adapter": "native_reference",
-      "hypothesis": "Owned ImageRenderer public render callback draws the fourteen mixed-alpha views into explicit padded CGContext; exactly one callback per target, two context blend states, independent source models and pinned native cgImage relation discriminate the drawing boundary.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 30
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "allocations"
+        },
+        {
+          "equals": 56,
+          "path": "callback_events"
+        },
+        {
+          "equals": 40320,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 6048,
+          "path": "padding_bytes"
+        },
+        {
+          "equals": 28,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 4,
+          "path": "opaque_source_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Owned ImageRenderer public render callback draws the fourteen mixed-alpha views into explicit padded CGContext; exactly one callback per target, two context blend states, independent source models and pinned native cgImage relation discriminate the drawing boundary.",
+      "id": "native-mixed-alpha-render-callback",
       "params": {
         "mixed_callback_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "allocations",
-          "equals": 56
-        },
-        {
-          "path": "callback_events",
-          "equals": 56
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 40320
-        },
-        {
-          "path": "padding_bytes",
-          "equals": 6048
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 28
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "opaque_source_matches",
-          "equals": 4
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-render-callback-layouts",
-      "adapter": "native_reference",
-      "hypothesis": "Public renderer callback missed native case12 blue by1 in every pixel:2x2 target stride68/80 and default/explicit-big RGBA format matrix isolates layout versus rendering boundary; full allocations and sentinel padding compared without pixel normalization.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 112,
+          "path": "allocations"
+        },
+        {
+          "equals": 112,
+          "path": "callback_events"
+        },
+        {
+          "equals": 74592,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 6048,
+          "path": "padding_bytes"
+        },
+        {
+          "equals": 56,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 8,
+          "path": "opaque_source_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Public renderer callback missed native case12 blue by1 in every pixel:2x2 target stride68/80 and default/explicit-big RGBA format matrix isolates layout versus rendering boundary; full allocations and sentinel padding compared without pixel normalization.",
+      "id": "native-mixed-alpha-render-callback-layouts",
       "params": {
         "mixed_callback_layout_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "allocations",
-          "equals": 112
-        },
-        {
-          "path": "callback_events",
-          "equals": 112
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 74592
-        },
-        {
-          "path": "padding_bytes",
-          "equals": 6048
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 56
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "opaque_source_matches",
-          "equals": 8
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     },
     {
       "adapter": "native_reference",
@@ -4189,842 +4189,854 @@
       "timeout_seconds": 30
     },
     {
-      "id": "native-mixed-alpha-rasterization-scale",
       "adapter": "native_reference",
-      "hypothesis": "Four predeclared public rasterization scales1/2/0.5/4, forward/reverse call order and fixed17x9 target/source, discriminate scale or cached-order dependence of the case12 callback/getter gap. Repeat controls and full target/padding comparisons; no universal model or Canvas transport.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "captures"
+        },
+        {
+          "equals": 224,
+          "path": "allocations"
+        },
+        {
+          "equals": 224,
+          "path": "callback_events"
+        },
+        {
+          "equals": 112,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 16,
+          "path": "opaque_source_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Four predeclared public rasterization scales1/2/0.5/4, forward/reverse call order and fixed17x9 target/source, discriminate scale or cached-order dependence of the case12 callback/getter gap. Repeat controls and full target/padding comparisons; no universal model or Canvas transport.",
+      "id": "native-mixed-alpha-rasterization-scale",
       "params": {
         "mixed_scale_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 56
-        },
-        {
-          "path": "allocations",
-          "equals": 224
-        },
-        {
-          "path": "callback_events",
-          "equals": 224
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 112
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "opaque_source_matches",
-          "equals": 16
-        }
-      ]
-    },
-    {
-      "id": "native-mixed-alpha-drawing-group",
-      "adapter": "native_reference",
-      "hypothesis": "Four scales did not change solid Color callback/getter gap. Explicit public drawingGroup(opaque:false,colorMode:nonLinear) changes the rendering boundary, at fixed source and target geometry and forward/reverse scales. Predict rasterized getter-like rounding or unchanged callback rounding; retain failures and all padded bytes.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 56,
+          "path": "captures"
+        },
+        {
+          "equals": 224,
+          "path": "allocations"
+        },
+        {
+          "equals": 224,
+          "path": "callback_events"
+        },
+        {
+          "equals": 112,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": 16,
+          "path": "opaque_source_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Four scales did not change solid Color callback/getter gap. Explicit public drawingGroup(opaque:false,colorMode:nonLinear) changes the rendering boundary, at fixed source and target geometry and forward/reverse scales. Predict rasterized getter-like rounding or unchanged callback rounding; retain failures and all padded bytes.",
+      "id": "native-mixed-alpha-drawing-group",
       "params": {
         "mixed_group_control": true
       },
       "priority": 94,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 56
-        },
-        {
-          "path": "allocations",
-          "equals": 224
-        },
-        {
-          "path": "callback_events",
-          "equals": 224
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 112
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "opaque_source_matches",
-          "equals": 16
-        }
-      ]
-    },
-    {
-      "id": "native-primary-layer-composition",
-      "adapter": "native_reference",
-      "hypothesis": "Independent rational stage/final quantization predictions for12 primary-color multi-layer alpha inputs, both layer orders, public modifier/no-modifier andscale1/2. Controls and holdouts declared before acquisition; getter and full padded callback allocations discriminate actual source-over output without assuming offscreen execution.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 48,
+          "path": "captures"
+        },
+        {
+          "equals": 192,
+          "path": "allocations"
+        },
+        {
+          "equals": 192,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": 64,
+          "path": "endpoint_source_matches"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": true,
+          "path": "positive_layer_order_change"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Independent rational stage/final quantization predictions for12 primary-color multi-layer alpha inputs, both layer orders, public modifier/no-modifier andscale1/2. Controls and holdouts declared before acquisition; getter and full padded callback allocations discriminate actual source-over output without assuming offscreen execution.",
+      "id": "native-primary-layer-composition",
       "params": {
         "primary_layer_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 48
-        },
-        {
-          "path": "allocations",
-          "equals": 192
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 192
-        },
-        {
-          "path": "endpoint_source_matches",
-          "equals": 64
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "positive_layer_order_change",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "native-primary-layer-holdouts",
-      "adapter": "native_reference",
-      "hypothesis": "Quantized source alpha and per-layer8bit source-over predicts all192 first-corpus callback targets but fails32 getter targets. Eight new alpha-triple holdouts, both layer orders, grouping andscale1/2 falsify callback generalization; retain every source prediction and getter contradiction.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "native_reference",
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 80,
+          "path": "captures"
+        },
+        {
+          "equals": 320,
+          "path": "allocations"
+        },
+        {
+          "equals": 320,
+          "path": "repeat_equal_pairs"
+        },
+        {
+          "equals": 64,
+          "path": "endpoint_source_matches"
+        },
+        {
+          "equals": true,
+          "path": "all_padding_unchanged"
+        },
+        {
+          "equals": true,
+          "path": "positive_layer_order_change"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Quantized source alpha and per-layer8bit source-over predicts all192 first-corpus callback targets but fails32 getter targets. Eight new alpha-triple holdouts, both layer orders, grouping andscale1/2 falsify callback generalization; retain every source prediction and getter contradiction.",
+      "id": "native-primary-layer-holdouts",
       "params": {
         "primary_layer_holdout_control": true
       },
       "priority": 94,
-      "checks": [
-        {
-          "path": "captures",
-          "equals": 80
-        },
-        {
-          "path": "allocations",
-          "equals": 320
-        },
-        {
-          "path": "repeat_equal_pairs",
-          "equals": 320
-        },
-        {
-          "path": "endpoint_source_matches",
-          "equals": 64
-        },
-        {
-          "path": "all_padding_unchanged",
-          "equals": true
-        },
-        {
-          "path": "positive_layer_order_change",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "portable-primary-layer-control",
-      "adapter": "portable_solid",
-      "hypothesis": "Import-free C-to-LLVM-to-WASM primary-layer source-over under explicit premultiplied callback-target contract matches independent Fraction predictions and full anchored native padded targets. Two runtimes and channel/alpha/padding/tail corruption; reject unsupported inputs without changing allocation. Native getters differ, no Canvas or SwiftUI equivalence.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "portable_solid",
       "artifact_limit_mb": 64,
+      "checks": [
+        {
+          "equals": 320,
+          "path": "frames"
+        },
+        {
+          "equals": true,
+          "path": "all_allocations_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_native_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_repeats_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_invalid_unchanged"
+        },
+        {
+          "equals": 0,
+          "path": "imports"
+        },
+        {
+          "equals": true,
+          "path": "second_runtime_passed"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Import-free C-to-LLVM-to-WASM primary-layer source-over under explicit premultiplied callback-target contract matches independent Fraction predictions and full anchored native padded targets. Two runtimes and channel/alpha/padding/tail corruption; reject unsupported inputs without changing allocation. Native getters differ, no Canvas or SwiftUI equivalence.",
+      "id": "portable-primary-layer-control",
       "params": {
         "layer_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "frames",
-          "equals": 320
-        },
-        {
-          "path": "all_allocations_equal",
-          "equals": true
-        },
-        {
-          "path": "all_native_equal",
-          "equals": true
-        },
-        {
-          "path": "all_repeats_equal",
-          "equals": true
-        },
-        {
-          "path": "all_invalid_unchanged",
-          "equals": true
-        },
-        {
-          "path": "imports",
-          "equals": 0
-        },
-        {
-          "path": "second_runtime_passed",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "portable-primary-layer-algorithm-mutants",
       "adapter": "portable_solid",
+      "artifact_limit_mb": 8,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "algorithm_mutants"
+        },
+        {
+          "equals": true,
+          "path": "all_detected"
+        },
+        {
+          "equals": true,
+          "path": "all_endpoints_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_witnesses_equal"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Frozen native byte checker rejects source-alpha truncation and reversed forward layer order algorithm mutants, while endpoint controls remain exact. Verify full per-case bytes with V8, aggregate rejection and witness counts with WasmKit.",
-      "depends_on": [],
-      "resources": [
-        "local-re-controller"
-      ],
-      "timeout_seconds": 90,
-      "artifact_limit_mb": 8,
+      "id": "portable-primary-layer-algorithm-mutants",
       "params": {
         "layer_mutation_control": true
       },
       "priority": 94,
-      "checks": [
-        {
-          "path": "algorithm_mutants",
-          "equals": 2
-        },
-        {
-          "path": "all_detected",
-          "equals": true
-        },
-        {
-          "path": "all_endpoints_equal",
-          "equals": true
-        },
-        {
-          "path": "all_witnesses_equal",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "linux-primary-layer-control",
-      "adapter": "linux_wasm",
-      "hypothesis": "Actual existing Linux ARM64 Wasmtime executes pinned primary-layer WASM and full native byte checker:320 complete independent/cross-host allocations,17 no-write invalid requests and200 native baseline/fault cases. Preserve existing containers and remove only owned nonce container; no native getter/PNG equivalence.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 90,
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "linux_wasm",
       "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 320,
+          "path": "frames"
+        },
+        {
+          "equals": 200,
+          "path": "checker_controls"
+        },
+        {
+          "equals": 160,
+          "path": "mutation_controls"
+        },
+        {
+          "equals": true,
+          "path": "owned_cleanup_verified"
+        },
+        {
+          "equals": true,
+          "path": "existing_containers_preserved"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Actual existing Linux ARM64 Wasmtime executes pinned primary-layer WASM and full native byte checker:320 complete independent/cross-host allocations,17 no-write invalid requests and200 native baseline/fault cases. Preserve existing containers and remove only owned nonce container; no native getter/PNG equivalence.",
+      "id": "linux-primary-layer-control",
       "params": {
         "layer_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "frames",
-          "equals": 320
-        },
-        {
-          "path": "checker_controls",
-          "equals": 200
-        },
-        {
-          "path": "mutation_controls",
-          "equals": 160
-        },
-        {
-          "path": "owned_cleanup_verified",
-          "equals": true
-        },
-        {
-          "path": "existing_containers_preserved",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "linux-primary-layer-algorithm-mutants",
-      "adapter": "linux_wasm",
-      "hypothesis": "Exact pinned source-alpha truncation and layer-order mutant modules are rejected on actual Linux Wasmtime. Compare all80 native case mismatch counts to anchored V8 and both witness/aggregate rejections; preserve existing containers.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 90,
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "linux_wasm",
       "artifact_limit_mb": 8,
+      "checks": [
+        {
+          "equals": 2,
+          "path": "algorithm_mutants"
+        },
+        {
+          "equals": 80,
+          "path": "native_cases"
+        },
+        {
+          "equals": true,
+          "path": "all_detected"
+        },
+        {
+          "equals": true,
+          "path": "all_cross_host_counts_equal"
+        },
+        {
+          "equals": true,
+          "path": "owned_cleanup_verified"
+        },
+        {
+          "equals": true,
+          "path": "existing_containers_preserved"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Exact pinned source-alpha truncation and layer-order mutant modules are rejected on actual Linux Wasmtime. Compare all80 native case mismatch counts to anchored V8 and both witness/aggregate rejections; preserve existing containers.",
+      "id": "linux-primary-layer-algorithm-mutants",
       "params": {
         "layer_mutation_control": true
       },
       "priority": 94,
-      "checks": [
-        {
-          "path": "algorithm_mutants",
-          "equals": 2
-        },
-        {
-          "path": "native_cases",
-          "equals": 80
-        },
-        {
-          "path": "all_detected",
-          "equals": true
-        },
-        {
-          "path": "all_cross_host_counts_equal",
-          "equals": true
-        },
-        {
-          "path": "owned_cleanup_verified",
-          "equals": true
-        },
-        {
-          "path": "existing_containers_preserved",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "portable-primary-source-subset",
-      "adapter": "portable_solid",
-      "hypothesis": "Whole-expression bounded primary-layer ZStack.frame parser rejects unsupported source; source-to-C-to-saved LLVM IR-to-import-free WASM preserves explicit premultiplied callback-target contract. Native holdout prefix, full allocations, repeat/whitespace module identities, two interpreters and corruption/no-write controls.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
+      "timeout_seconds": 90
+    },
+    {
+      "adapter": "portable_solid",
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "source_modules"
+        },
+        {
+          "equals": true,
+          "path": "all_allocations_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_native_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_invalid_unchanged"
+        },
+        {
+          "equals": 0,
+          "path": "imports"
+        },
+        {
+          "equals": true,
+          "path": "repeat_ir_equal"
+        },
+        {
+          "equals": true,
+          "path": "repeat_module_equal"
+        },
+        {
+          "equals": true,
+          "path": "second_runtime_passed"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Whole-expression bounded primary-layer ZStack.frame parser rejects unsupported source; source-to-C-to-saved LLVM IR-to-import-free WASM preserves explicit premultiplied callback-target contract. Native holdout prefix, full allocations, repeat/whitespace module identities, two interpreters and corruption/no-write controls.",
+      "id": "portable-primary-source-subset",
       "params": {
         "primary_source_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "source_modules",
-          "equals": 16
-        },
-        {
-          "path": "all_allocations_equal",
-          "equals": true
-        },
-        {
-          "path": "all_native_equal",
-          "equals": true
-        },
-        {
-          "path": "all_invalid_unchanged",
-          "equals": true
-        },
-        {
-          "path": "imports",
-          "equals": 0
-        },
-        {
-          "path": "repeat_ir_equal",
-          "equals": true
-        },
-        {
-          "path": "repeat_module_equal",
-          "equals": true
-        },
-        {
-          "path": "second_runtime_passed",
-          "equals": true
-        }
-      ]
-    },
-    {
-      "id": "portable-primary-source-separators",
-      "adapter": "portable_solid",
-      "hypothesis": "Independent owned Swift frontend parse-only controls discriminate missing expression separators; bounded subset must reject same invalid inputs without claiming semantic Swift typechecking.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 45,
+      "timeout_seconds": 180
+    },
+    {
+      "adapter": "portable_solid",
       "artifact_limit_mb": 2,
+      "checks": [
+        {
+          "equals": 1,
+          "path": "native_valid_controls"
+        },
+        {
+          "equals": 3,
+          "path": "native_invalid_controls"
+        },
+        {
+          "equals": true,
+          "path": "all_syntax_agree"
+        },
+        {
+          "equals": 3,
+          "path": "subset_invalid_rejected"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Independent owned Swift frontend parse-only controls discriminate missing expression separators; bounded subset must reject same invalid inputs without claiming semantic Swift typechecking.",
+      "id": "portable-primary-source-separators",
       "params": {
         "primary_syntax_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "native_valid_controls",
-          "equals": 1
-        },
-        {
-          "path": "native_invalid_controls",
-          "equals": 3
-        },
-        {
-          "path": "all_syntax_agree",
-          "equals": true
-        },
-        {
-          "path": "subset_invalid_rejected",
-          "equals": 3
-        }
-      ]
-    },
-    {
-      "id": "linux-primary-source-subset",
-      "adapter": "linux_wasm",
-      "hypothesis": "Pinned source-derived standalone/checker modules retain every allocation byte and fault count on actual Linux Wasmtime; invalid strides write nothing. No native getter/PNG or Canvas transport equivalence.",
-      "depends_on": [],
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 90,
+      "timeout_seconds": 45
+    },
+    {
+      "adapter": "linux_wasm",
       "artifact_limit_mb": 20,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "source_modules"
+        },
+        {
+          "equals": 64,
+          "path": "frames"
+        },
+        {
+          "equals": 1048576,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 1048576,
+          "path": "cross_host_bytes"
+        },
+        {
+          "equals": 20160,
+          "path": "native_target_bytes"
+        },
+        {
+          "equals": 64,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": 160,
+          "path": "checker_controls"
+        },
+        {
+          "equals": 128,
+          "path": "mutation_controls"
+        },
+        {
+          "equals": 16,
+          "path": "aggregate_controls"
+        },
+        {
+          "equals": true,
+          "path": "owned_cleanup_verified"
+        },
+        {
+          "equals": true,
+          "path": "existing_containers_preserved"
+        },
+        {
+          "equals": "Linux",
+          "path": "host_system"
+        },
+        {
+          "equals": 64,
+          "path": "invalid_checker_requests"
+        },
+        {
+          "equals": 8388608,
+          "path": "invalid_checker_bytes"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned source-derived standalone/checker modules retain every allocation byte and fault count on actual Linux Wasmtime; invalid strides write nothing. No native getter/PNG or Canvas transport equivalence.",
+      "id": "linux-primary-source-subset",
       "params": {
         "primary_source_control": true
       },
       "priority": 95,
-      "checks": [
-        {
-          "path": "source_modules",
-          "equals": 16
-        },
-        {
-          "path": "frames",
-          "equals": 64
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1048576
-        },
-        {
-          "path": "cross_host_bytes",
-          "equals": 1048576
-        },
-        {
-          "path": "native_target_bytes",
-          "equals": 20160
-        },
-        {
-          "path": "invalid_requests",
-          "equals": 64
-        },
-        {
-          "path": "checker_controls",
-          "equals": 160
-        },
-        {
-          "path": "mutation_controls",
-          "equals": 128
-        },
-        {
-          "path": "aggregate_controls",
-          "equals": 16
-        },
-        {
-          "path": "owned_cleanup_verified",
-          "equals": true
-        },
-        {
-          "path": "existing_containers_preserved",
-          "equals": true
-        },
-        {
-          "path": "host_system",
-          "equals": "Linux"
-        },
-        {
-          "path": "invalid_checker_requests",
-          "equals": 64
-        },
-        {
-          "path": "invalid_checker_bytes",
-          "equals": 8388608
-        }
-      ]
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 90
     },
     {
-      "id": "browser-primary-source-subset",
       "adapter": "portable_solid",
+      "artifact_limit_mb": 24,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "browser_modules"
+        },
+        {
+          "equals": 128,
+          "path": "browser_frames"
+        },
+        {
+          "equals": 2,
+          "path": "browser_repeats"
+        },
+        {
+          "equals": 2097152,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 2097152,
+          "path": "invalid_bytes"
+        },
+        {
+          "equals": 199648,
+          "path": "canvas_bytes"
+        },
+        {
+          "equals": 40320,
+          "path": "native_bytes"
+        },
+        {
+          "equals": 320,
+          "path": "checker_controls"
+        },
+        {
+          "equals": 256,
+          "path": "mutation_controls"
+        },
+        {
+          "equals": 32,
+          "path": "aggregate_controls"
+        },
+        {
+          "equals": 128,
+          "path": "invalid_checker_requests"
+        },
+        {
+          "equals": true,
+          "path": "server_cleanup"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Actual browser source-derived WASM preserves complete native/model allocations, invalid strides and exact checker faults; explicit unpremultiplication survives alpha-enabled sRGB Canvas2D byte readback.",
+      "id": "browser-primary-source-subset",
       "params": {
         "primary_browser_control": true
       },
-      "depends_on": [],
+      "priority": 95,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 150,
-      "artifact_limit_mb": 24,
-      "priority": 95,
-      "checks": [
-        {
-          "path": "browser_modules",
-          "equals": 16
-        },
-        {
-          "path": "browser_frames",
-          "equals": 128
-        },
-        {
-          "path": "browser_repeats",
-          "equals": 2
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 2097152
-        },
-        {
-          "path": "invalid_bytes",
-          "equals": 2097152
-        },
-        {
-          "path": "canvas_bytes",
-          "equals": 199648
-        },
-        {
-          "path": "native_bytes",
-          "equals": 40320
-        },
-        {
-          "path": "checker_controls",
-          "equals": 320
-        },
-        {
-          "path": "mutation_controls",
-          "equals": 256
-        },
-        {
-          "path": "aggregate_controls",
-          "equals": 32
-        },
-        {
-          "path": "invalid_checker_requests",
-          "equals": 128
-        },
-        {
-          "path": "server_cleanup",
-          "equals": true
-        }
-      ]
+      "timeout_seconds": 150
     },
     {
-      "id": "primary-source-cli-cache",
       "adapter": "portable_solid",
+      "artifact_limit_mb": 16,
+      "checks": [
+        {
+          "equals": 4,
+          "path": "cli_builds"
+        },
+        {
+          "equals": 2,
+          "path": "cache_hits"
+        },
+        {
+          "equals": true,
+          "path": "module_equal"
+        },
+        {
+          "equals": true,
+          "path": "ir_equal"
+        },
+        {
+          "equals": true,
+          "path": "semantic_cache_shared"
+        },
+        {
+          "equals": true,
+          "path": "source_provenance_distinct"
+        },
+        {
+          "equals": true,
+          "path": "changed_source_key_distinct"
+        },
+        {
+          "equals": 16,
+          "path": "frames"
+        },
+        {
+          "equals": 262144,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 5760,
+          "path": "native_target_bytes"
+        },
+        {
+          "equals": 16,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": 7,
+          "path": "failure_controls"
+        },
+        {
+          "equals": true,
+          "path": "all_failed_builds_preserve_pointer"
+        },
+        {
+          "equals": true,
+          "path": "staging_cleanup"
+        }
+      ],
+      "depends_on": [],
       "hypothesis": "Owned literal primary-layer CLI publishes exact pinned LLVM/WASM, reuses canonical semantic identity with exact source provenance and preserves last valid bundle pointer on unsupported source/cache/compiler/pre-publication failures.",
+      "id": "primary-source-cli-cache",
       "params": {
         "source_cli_control": true
       },
-      "depends_on": [],
+      "priority": 94,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 180,
-      "artifact_limit_mb": 16,
-      "priority": 94,
-      "checks": [
-        {
-          "path": "cli_builds",
-          "equals": 4
-        },
-        {
-          "path": "cache_hits",
-          "equals": 2
-        },
-        {
-          "path": "module_equal",
-          "equals": true
-        },
-        {
-          "path": "ir_equal",
-          "equals": true
-        },
-        {
-          "path": "semantic_cache_shared",
-          "equals": true
-        },
-        {
-          "path": "source_provenance_distinct",
-          "equals": true
-        },
-        {
-          "path": "changed_source_key_distinct",
-          "equals": true
-        },
-        {
-          "path": "frames",
-          "equals": 16
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 262144
-        },
-        {
-          "path": "native_target_bytes",
-          "equals": 5760
-        },
-        {
-          "path": "invalid_requests",
-          "equals": 16
-        },
-        {
-          "path": "failure_controls",
-          "equals": 7
-        },
-        {
-          "path": "all_failed_builds_preserve_pointer",
-          "equals": true
-        },
-        {
-          "path": "staging_cleanup",
-          "equals": true
-        }
-      ]
+      "timeout_seconds": 180
     },
     {
-      "id": "native-primary-extent-holdouts",
       "adapter": "native_reference",
-      "hypothesis": "Predeclared quantized primary model predicts every public callback target byte across compact/padded 1x1,13x7,64x64 extents, repeats and four holdout alpha cases in both orders.",
-      "depends_on": [],
-      "resources": [
-        "swift"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 256,
+      "checks": [
+        {
+          "equals": 40,
+          "path": "jobs"
+        },
+        {
+          "equals": 80,
+          "path": "captures"
+        },
+        {
+          "equals": 1310720,
+          "path": "full_allocation_bytes"
+        },
+        {
+          "equals": 80,
+          "path": "independent_matches"
+        },
+        {
+          "equals": 40,
+          "path": "repeat_pairs"
+        },
+        {
+          "equals": 40,
+          "path": "repeat_matches"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Predeclared quantized primary model predicts every public callback target byte across compact/padded 1x1,13x7,64x64 extents, repeats and four holdout alpha cases in both orders.",
+      "id": "native-primary-extent-holdouts",
       "params": {
         "primary_extent_control": true
       },
       "priority": 93,
-      "checks": [
-        {
-          "path": "jobs",
-          "equals": 40
-        },
-        {
-          "path": "captures",
-          "equals": 80
-        },
-        {
-          "path": "full_allocation_bytes",
-          "equals": 1310720
-        },
-        {
-          "path": "independent_matches",
-          "equals": 80
-        },
-        {
-          "path": "repeat_pairs",
-          "equals": 40
-        },
-        {
-          "path": "repeat_matches",
-          "equals": 40
-        }
-      ]
+      "resources": [
+        "swift"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "primary-source-frame-native-extents",
       "adapter": "portable_solid",
-      "hypothesis": "Pinned source-frame CLI matches every byte of40 native extent jobs across repeats, separately projected PNG pixels and transparent holdouts; verifier mutants rejected and failed runtime/cache/precommit requests preserve last valid output.",
-      "depends_on": [],
-      "resources": [
-        "wasm"
-      ],
-      "timeout_seconds": 180,
       "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 40,
+          "path": "native_jobs"
+        },
+        {
+          "equals": 84,
+          "path": "frames"
+        },
+        {
+          "equals": 1376256,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 80,
+          "path": "native_frames"
+        },
+        {
+          "equals": 1310720,
+          "path": "native_full_bytes"
+        },
+        {
+          "equals": 84,
+          "path": "independent_matches"
+        },
+        {
+          "equals": 80,
+          "path": "native_matches"
+        },
+        {
+          "equals": 84,
+          "path": "pngs"
+        },
+        {
+          "equals": 84,
+          "path": "png_matches"
+        },
+        {
+          "equals": 274656,
+          "path": "png_decoded_bytes"
+        },
+        {
+          "equals": 4,
+          "path": "transparent_frames"
+        },
+        {
+          "equals": 4,
+          "path": "verifier_faults"
+        },
+        {
+          "equals": 8,
+          "path": "failure_controls"
+        },
+        {
+          "equals": true,
+          "path": "last_good_preserved"
+        },
+        {
+          "equals": true,
+          "path": "staging_cleanup"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Pinned source-frame CLI matches every byte of40 native extent jobs across repeats, separately projected PNG pixels and transparent holdouts; verifier mutants rejected and failed runtime/cache/precommit requests preserve last valid output.",
+      "id": "primary-source-frame-native-extents",
       "params": {
         "extent_cli_control": true
       },
       "priority": 96,
-      "checks": [
-        {
-          "path": "native_jobs",
-          "equals": 40
-        },
-        {
-          "path": "frames",
-          "equals": 84
-        },
-        {
-          "path": "allocation_bytes",
-          "equals": 1376256
-        },
-        {
-          "path": "native_frames",
-          "equals": 80
-        },
-        {
-          "path": "native_full_bytes",
-          "equals": 1310720
-        },
-        {
-          "path": "independent_matches",
-          "equals": 84
-        },
-        {
-          "path": "native_matches",
-          "equals": 80
-        },
-        {
-          "path": "pngs",
-          "equals": 84
-        },
-        {
-          "path": "png_matches",
-          "equals": 84
-        },
-        {
-          "path": "png_decoded_bytes",
-          "equals": 274656
-        },
-        {
-          "path": "transparent_frames",
-          "equals": 4
-        },
-        {
-          "path": "verifier_faults",
-          "equals": 4
-        },
-        {
-          "path": "failure_controls",
-          "equals": 8
-        },
-        {
-          "path": "last_good_preserved",
-          "equals": true
-        },
-        {
-          "path": "staging_cleanup",
-          "equals": true
-        }
-      ]
+      "resources": [
+        "wasm"
+      ],
+      "timeout_seconds": 180
     },
     {
-      "id": "primary-live-wasm-swap",
       "adapter": "live_swap",
-      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close. Actual bounded file polling with prebuilt pinned fixture adapter retains last-good state on unsupported/invalid/deleted edits and aborts cooperative builders at closure/deadline. File changes during live verification queue until the host is idle. A frozen CLI freshly compiles three supported edits to pinned modules/full allocations; owned inherited POSIX compiler groups suppress late child writes on timeout/abort. A private inherited-group anchor remains alive until draining, preserving target exit status while preventing late child writes after successful or failing target exit.",
+      "artifact_limit_mb": 32,
+      "checks": [
+        {
+          "equals": 84,
+          "path": "frames"
+        },
+        {
+          "equals": 1310720,
+          "path": "native_bytes"
+        },
+        {
+          "equals": 1376256,
+          "path": "independent_bytes"
+        },
+        {
+          "equals": 6,
+          "path": "failed_proposals"
+        },
+        {
+          "equals": 4,
+          "path": "close_controls"
+        },
+        {
+          "equals": 5,
+          "path": "source_rejections"
+        },
+        {
+          "equals": 3,
+          "path": "source_revisions"
+        },
+        {
+          "equals": true,
+          "path": "zero_workers"
+        },
+        {
+          "equals": 2,
+          "path": "closed_guard_controls"
+        },
+        {
+          "equals": 3,
+          "path": "guard_rejections"
+        },
+        {
+          "equals": 3,
+          "path": "file_revisions"
+        },
+        {
+          "equals": 7,
+          "path": "file_controls"
+        },
+        {
+          "equals": 1,
+          "path": "file_builder_aborts"
+        },
+        {
+          "equals": 1,
+          "path": "file_deadline_aborts"
+        },
+        {
+          "equals": true,
+          "path": "file_loop_quiescent"
+        },
+        {
+          "equals": true,
+          "path": "file_serialized_read"
+        },
+        {
+          "equals": 3,
+          "path": "fresh_compiler_frames"
+        },
+        {
+          "equals": 49152,
+          "path": "fresh_compiler_bytes"
+        },
+        {
+          "equals": 2,
+          "path": "compiler_tree_controls"
+        },
+        {
+          "equals": true,
+          "path": "compiler_late_writes_absent"
+        },
+        {
+          "equals": 3,
+          "path": "source_frontend_cache_misses"
+        },
+        {
+          "equals": 2,
+          "path": "owned_orphan_controls"
+        },
+        {
+          "equals": true,
+          "path": "owned_target_exits_preserved"
+        },
+        {
+          "equals": 7,
+          "path": "file_input_controls"
+        },
+        {
+          "equals": true,
+          "path": "file_input_descriptors_closed"
+        },
+        {
+          "equals": true,
+          "path": "file_fifo_deadline_closed"
+        }
+      ],
       "depends_on": [],
+      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close. Actual bounded file polling with prebuilt pinned fixture adapter retains last-good state on unsupported/invalid/deleted edits and aborts cooperative builders at closure/deadline. File changes during live verification queue until the host is idle. A frozen CLI freshly compiles three supported edits to pinned modules/full allocations; owned inherited POSIX compiler groups suppress late child writes on timeout/abort. A private inherited-group anchor remains alive until draining, preserving target exit status while preventing late child writes after successful or failing target exit.",
+      "id": "primary-live-wasm-swap",
+      "params": {},
+      "priority": 96,
       "resources": [
         "local-re-controller"
       ],
-      "timeout_seconds": 120,
-      "artifact_limit_mb": 32,
-      "params": {},
-      "priority": 96,
-      "checks": [
-        {
-          "path": "frames",
-          "equals": 84
-        },
-        {
-          "path": "native_bytes",
-          "equals": 1310720
-        },
-        {
-          "path": "independent_bytes",
-          "equals": 1376256
-        },
-        {
-          "path": "failed_proposals",
-          "equals": 6
-        },
-        {
-          "path": "close_controls",
-          "equals": 4
-        },
-        {
-          "path": "source_rejections",
-          "equals": 5
-        },
-        {
-          "path": "source_revisions",
-          "equals": 3
-        },
-        {
-          "path": "zero_workers",
-          "equals": true
-        },
-        {
-          "path": "closed_guard_controls",
-          "equals": 2
-        },
-        {
-          "path": "guard_rejections",
-          "equals": 3
-        },
-        {
-          "path": "file_revisions",
-          "equals": 3
-        },
-        {
-          "path": "file_controls",
-          "equals": 7
-        },
-        {
-          "path": "file_builder_aborts",
-          "equals": 1
-        },
-        {
-          "path": "file_deadline_aborts",
-          "equals": 1
-        },
-        {
-          "path": "file_loop_quiescent",
-          "equals": true
-        },
-        {
-          "path": "file_serialized_read",
-          "equals": true
-        },
-        {
-          "path": "fresh_compiler_frames",
-          "equals": 3
-        },
-        {
-          "path": "fresh_compiler_bytes",
-          "equals": 49152
-        },
-        {
-          "path": "compiler_tree_controls",
-          "equals": 2
-        },
-        {
-          "path": "compiler_late_writes_absent",
-          "equals": true
-        },
-        {
-          "path": "source_frontend_cache_misses",
-          "equals": 3
-        },
-        {
-          "path": "owned_orphan_controls",
-          "equals": 2
-        },
-        {
-          "path": "owned_target_exits_preserved",
-          "equals": true
-        }
-      ]
+      "timeout_seconds": 120
     }
   ],
   "version": 1

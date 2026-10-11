@@ -1,0 +1,5 @@
+{
+  "retained_failure": "AssertionError undefined !== 0 at source_input_control.js:27",
+  "cause": "New control requested status.workers; shipped host exposes status.liveWorkers. The control stopped after FIFO deadline check and did not accept the new gate.",
+  "change": "Check the existing liveWorkers status field; no implementation or deadline adjustment."
+}

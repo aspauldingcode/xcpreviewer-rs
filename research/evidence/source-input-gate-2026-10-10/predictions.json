@@ -1,0 +1,7 @@
+{
+  "deadline": "FIFO input must permit finite500ms loop deadline to close automatically",
+  "nonregular": "No builder; no blocking open/read",
+  "regular": "One builder call; descriptor closed",
+  "replacement": "No-follow rejects symlink replacement; nonblocking open plus fstat rejects FIFO replacement and closes fd",
+  "scope": "Owned local POSIX fixtures; no Windows/unbounded filesystem latency claim"
+}

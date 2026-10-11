@@ -1,0 +1,131 @@
+{
+  "controls": [
+    {
+      "kind": "fifo",
+      "builds": 0,
+      "opened": 0,
+      "closed": 0,
+      "raced": false,
+      "deadlineAutoClosed": true,
+      "elapsedMs": 668.27725,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "directory",
+      "builds": 0,
+      "opened": 0,
+      "closed": 0,
+      "raced": false,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 0.13970800000004147,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "symlink",
+      "builds": 0,
+      "opened": 0,
+      "closed": 0,
+      "raced": false,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 0.06562500000006821,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "missing",
+      "builds": 0,
+      "opened": 0,
+      "closed": 0,
+      "raced": false,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 22.39145899999994,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "regular",
+      "builds": 1,
+      "opened": 1,
+      "closed": 1,
+      "raced": false,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 9.430207999999993,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "fifo-race",
+      "builds": 0,
+      "opened": 1,
+      "closed": 1,
+      "raced": true,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 14.845332999999982,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "symlink-race",
+      "builds": 0,
+      "opened": 0,
+      "closed": 0,
+      "raced": true,
+      "deadlineAutoClosed": false,
+      "elapsedMs": 0.30437499999993634,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    }
+  ],
+  "scope": "Owned local POSIX regular-file input and pathname replacement controls; no arbitrary filesystem latency or Windows acceptance"
+}

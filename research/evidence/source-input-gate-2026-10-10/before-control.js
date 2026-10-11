@@ -1,0 +1,1 @@
+const {SourceFileLoop}=require(process.argv[1]); const loop=new SourceFileLoop(process.argv[2],async()=>{throw Error('FIFO must not build')});process.stdout.write('entered\n');loop.start(25,500);setTimeout(()=>{process.stdout.write('settled\n');process.exit(0)},700);

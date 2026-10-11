@@ -19,9 +19,15 @@ class SourceFileLoop {
   if(this.#closed)return this.#drain;
   let source,key,reason;
   try{
-   assert(!fs.lstatSync(this.#file).isSymbolicLink(),'Symlink source rejected');
-   const fd=fs.openSync(this.#file,'r');
-   try{source=Buffer.alloc(4097);source=source.subarray(0,fs.readSync(fd,source,0,4097,0));}finally{fs.closeSync(fd);}
+   assert(fs.lstatSync(this.#file).isFile(),'Regular source file required');
+   const {O_RDONLY,O_NONBLOCK,O_NOFOLLOW}=fs.constants;
+   assert(Number.isInteger(O_NONBLOCK)&&Number.isInteger(O_NOFOLLOW),'Nonblocking no-follow source open unavailable');
+   const fd=fs.openSync(this.#file,O_RDONLY|O_NONBLOCK|O_NOFOLLOW);
+   try{
+    // Recheck the opened object: the pathname can change after lstat().
+    assert(fs.fstatSync(fd).isFile(),'Opened source must be regular');
+    source=Buffer.alloc(4097);source=source.subarray(0,fs.readSync(fd,source,0,4097,0));
+   }finally{fs.closeSync(fd);}
    key=crypto.createHash('sha256').update(source).digest('hex');
    if(!source.length||source.length>4096||!source.every(b=>b<128))reason='invalid-source';
   }catch(e){key='read-error:'+String(e.code||e.message);reason='unavailable-source';}
