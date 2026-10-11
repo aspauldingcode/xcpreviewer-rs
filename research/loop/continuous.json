@@ -73,6 +73,16 @@
     "started_at": "2026-10-11T21:35:11.030146+00:00"
   },
   "cadence_minutes": 10,
+  "capped_build_checkpoint": {
+    "budget": "Four producers: two compiler stages with30sec/4MiB child caps, V8/WasmKit15sec. REA universal imports fail separately and are retained.",
+    "classification": "Real capped compiler/cache hit and V8 full-byte qualification; WasmKit render result separately scoped",
+    "evidence": "research/evidence/capped-build-2026-10-11",
+    "manifest_sha256": "1f6e25a20d655446e75b0a1327d348aecb10d62c1880f00f8f66538a4c362d6d",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed real capped build. Choose demanded independent platform/resource/build-failure gate. WasmKit bytes not accepted; REA deep target analysis requires reviewed thinned artifacts. Native main-screen/bridge/browser prerequisites unchanged.",
+    "result": "Two real compiler stages exit0; cache hit no extra stages/pointer change; V8 eight allocations131072 bytes incl216padding/125960tail match; native720 prefix anchored; WasmKit render720 result only; eleven resealed faults.",
+    "started_at": "2026-10-11T21:56:04.762401+00:00"
+  },
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
   "compiler_output_checkpoint": {
     "budget": "Four emitters, three-second waits, child-only file cap4096 for controls. Production timeout30 seconds/file cap4MiB.",
