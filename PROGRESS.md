@@ -743,3 +743,7 @@ Readiness now marks worker0 publication stale; existing consumer adopts two stab
 ## 2026-10-11 — cached consumer adversarial histories
 
 Two repeat14-history packet replays reject forged identities/rollback/diagnostics/unstable status/cold unavailable reads and accept stale cached status or bounded healthy retry. Lifecycle mutation remained rejected by rollback (prediction contradicted); diagnostic mutation exposed missing check and exited1. All786432 relevant bytes and8 resealed faults verified. [Scope](docs/reverse-engineering/2026-10-11-mcp-cache-guards.md). Historical owned packets only; both milestones/native capture remain open.
+
+## 2026-10-11 — owned request-cap cleanup
+
+At256 request IDs, baseline refused close while retaining worker1/timers2/frame. Handler now awaits owned close before limit error; fixed worker0/timers0/frame null, IDs remain256, throwing cleanup reports sanitized failure. Four waits0,98304 independently expected bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-request-cap.md). Owned handler policy only; native R1/R2/both milestones remain open.

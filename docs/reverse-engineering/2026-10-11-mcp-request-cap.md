@@ -1,0 +1,21 @@
+# Owned preview cleanup at request exhaustion
+
+PreviewMcp now closes its owned preview before returning a request-limit error for a structurally valid fresh request after256 retained request IDs. The ID set remains bounded at256 and the error remains -32000/Session request limit. A rejected close no longer leaves live execution awaiting the finite session deadline. If close throws, the handler returns a distinct sanitized cleanup-failed message instead of claiming successful cleanup.
+
+## Selection and prediction
+
+The prior cached consumer guards are complete at their declared finite replay scope. This independent demanded isolation boundary was selected from the current source: request-limit rejection occurs before preview_close dispatch. Graph-loop has no unfinished running wake, one reviewed-binding-required candidate and incomplete milestones; live GitHub backlog retains A1/S1/V1 and native R1/R2. Approved bridge remains running/responsive false, retained session cb8b4afc-df18-46cd-b895-fc9b6941327f; no restart/workspace. No REA/native target is required for ordinary owned source and hand-authored WASM. Parent cached-history seal d31b0248d1f8617a417525bff4b5556cfa48a515cc3049460e1bcdf16d12bc15 and semantic reader were reverified.
+
+The control uses actual PreviewSession and PreviewMcp with a hand-authored no-import healthy WASM module and externally predicted16-KiB allocation. It initializes, starts one owned worker, samples it directly, fills the request budget with valid pings, and then sends preview_close with fresh ID257. The baseline prediction is immediate limit rejection without releasing worker/timers/frame. This is a delayed-cleanup defect, not a permanent leak: the existing finite session deadline and the control's finally block still close the worker.
+
+Two baseline executions confirm worker1/timers2/frame revision1 after the rejected close. Two fixed executions confirm worker0/timers0/closed/frame null before the same limit response. Another fresh ping remains rejected and ID storage remains256. A separate explicitly throwing owned close adapter confirms the fixed cleanup error contains no private failure text. Every control closes its actual owned session in finally.
+
+## Implementation and bounds
+
+The cap branch invokes the existing idempotent session close and awaits completion. Duplicate retained IDs and malformed envelopes still follow their existing earlier rejection branches; this experiment does not claim that those requests trigger cleanup. Any structurally valid fresh request reaching the cap closes the session, including ping, rather than granting unbounded cleanup request IDs. This ends the finite preview; clients need a new session after exhaustion. Handler framing, cancellation and outer deadlines remain caller responsibilities. Cooperative session close is measured here; arbitrary adapters with non-settling close are not bounded by this handler branch.
+
+## Evidence and verification
+
+Evidence manifest `39926fdf767f01ab7ce2f01d14669965638177748a8ea94bdceec86e94686d50` retains baseline/fixed runtime, exact fixture, waits, before/after states, limit responses and sanitized throwing-close response. Four producers exit0 within unchanged five-second outer caps. Separate reader compares98,304 independent bytes across four published and two retained baseline allocations: four active0x77 bytes and all remaining0xc3, including row padding and unused tail. It checks exact lifecycle accounting before/after/final close,256 retained IDs and both257/258 responses. Eight resealed faults (wait, worker, timers, ID bound, limit response, cleanup text, byte4 and tail16,383) must fail despite valid hashes. Isolated candidate also runs existing MCP handler, quarantine, identity and terminal regressions. Runtime source equals frozen fixed source.
+
+This establishes owned handler/session cleanup policy, not SDK framing, native Canvas cancellation/release, physical native resource reclamation, source compilation or platform conformance. Both milestones and native R1/R2/capture gates remain open. Next distinguish non-settling/failed owned adapter close and channel shutdown behavior if that unlocks demanded packaging; avoid unchanged successful cap or replay permutations.

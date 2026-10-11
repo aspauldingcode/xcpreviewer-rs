@@ -563,6 +563,15 @@
     "seal": "79e1fd30e48ce7473dec5fc3b14c2a88ce3fba119610d372f7629d7de1efbef2",
     "tests": "95 Python+7 Rust isolated archive tests"
   },
+  "mcp_request_cap_checkpoint": {
+    "classification": "request exhaustion delayed cleanup baseline retained; owned release fix supported; delivery pending",
+    "evidence": "research/evidence/mcp-request-cap-2026-10-11",
+    "manifest_sha256": "39926fdf767f01ab7ce2f01d14669965638177748a8ea94bdceec86e94686d50",
+    "milestones_complete": false,
+    "next_wake_hint": "Cap cleanup complete at actual owned session boundary. Next inspect failed/nonsettling adapter close and channel shutdown before packaging, if discriminating; do not repeat cap/history controls. Native bridge offline/no restart, browser review gate; milestones open.",
+    "result": "Two baseline capclose reject withworker1/timers2/frame; two fixed closebeforelimitworker0/timers0/frame null,IDs256, throwingclose sanitized.4 waits0,98304 fullbytes,8 resealed faults. Owned handler/session synthetic WASM only.",
+    "started_at": "2026-10-11T19:25:49.659312+00:00"
+  },
   "mcp_restore_checkpoint": {
     "artifact": "research/evidence/mcp-restore-2026-10-11/manifest.json",
     "delivery": "review-pending",

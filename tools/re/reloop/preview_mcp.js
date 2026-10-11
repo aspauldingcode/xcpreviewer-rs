@@ -20,7 +20,11 @@ class PreviewMcp {
   }
   const id=m.id,key=typeof id+':'+id;
   if(this.ids.has(key))return error(id,-32600,'Request ID reused');
-  if(this.ids.size>=256)return error(id,-32000,'Session request limit');
+  if(this.ids.size>=256){
+   // A finite request budget must not prevent release of the owned preview.
+   try{await this.session.close();}catch(_){return error(id,-32000,'Session request limit; cleanup failed');}
+   return error(id,-32000,'Session request limit');
+  }
   this.ids.add(key);
   const reply=result=>({jsonrpc:'2.0',id,result});
   if(m.method==='ping')return reply({});
