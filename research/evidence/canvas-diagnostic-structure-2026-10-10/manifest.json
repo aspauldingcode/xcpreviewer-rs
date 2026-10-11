@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "created_at": "2026-10-11T02:41:59.984647+00:00",
+  "scope": "Structural parser falsification and measured report replay, no new runtime claim",
+  "files": [
+    {
+      "path": "after-fix.json",
+      "bytes": 430,
+      "sha256": "4f8a3678c1794bb8a4ed44e34a824ebe46eb7affc9c60ebf517d76d64908b0ac"
+    },
+    {
+      "path": "before-fix.json",
+      "bytes": 339,
+      "sha256": "cc64e2904c7fc0e7a877718f9e1bd3bc493d2e4b6efbec35fab1b7c9b3d5beef"
+    },
+    {
+      "path": "missing_provider.txt",
+      "bytes": 1797,
+      "sha256": "cf9bc165968cdf0c5e4eca1d2f04ff3f663e1ae20704348902d0956c0fcc5e51"
+    },
+    {
+      "path": "parsed-reports-v2.json",
+      "bytes": 2989,
+      "sha256": "34a3b394cc12cfc0af1fdf871cbe3b432cd993e727d953d724be05ea57e11dd0"
+    },
+    {
+      "path": "prediction.json",
+      "bytes": 534,
+      "sha256": "c14644ffd96c4fc7e083417f342ed9d04923df5d424d5c5d25a79225cbf6bf14"
+    },
+    {
+      "path": "result.json",
+      "bytes": 570,
+      "sha256": "17fe9fa28735b0d90c028ca3942361d7dd030e44cb31aa2d069867e81bd199e7"
+    },
+    {
+      "path": "unsupported_section.txt",
+      "bytes": 1943,
+      "sha256": "d427e2c5b7f42af8d840dc68c78ee0f5dff5c43b72f1e4090eb9e4bf26da9007"
+    },
+    {
+      "path": "wrong_content_container.txt",
+      "bytes": 1915,
+      "sha256": "75c251ef16ce5fe13648e9697b5b4f7ac2a59e9c22afac2f7f436283395d3d6d"
+    },
+    {
+      "path": "wrong_states_container.txt",
+      "bytes": 1919,
+      "sha256": "a90944973a6e6c9bae7d2d829ad6126e9eac2c3c0ab5246f0136f90b578c122d"
+    }
+  ]
+}

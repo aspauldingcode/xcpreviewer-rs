@@ -1,0 +1,12 @@
+{
+  "scope": "UI diagnostic parsing only; no native wire claim",
+  "hypothesis": "Regex descendant search accepts success fields at an incorrect structural path, missing providers or unsupported sections",
+  "acceptance": "Measured reports unchanged; malformed structure rejected; exact provider/registry coverage preserved",
+  "bounds": {
+    "max_bytes": 65536,
+    "max_depth": 16,
+    "max_lines": 2048,
+    "max_registries": 32
+  },
+  "prior_manifest_sha256": "6b000655c0c2bcf26d15c6b2611c6c5b91d08714780bb143633c89e10ad4e9b0"
+}
