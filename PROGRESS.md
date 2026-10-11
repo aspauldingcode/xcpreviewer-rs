@@ -655,3 +655,7 @@ Independent Python process client drives pinned MCP initialization/tools and act
 ## Official MCP schema discriminator (2026-10-11)
 
 Pinned official2025-11-25 schema falsifies7 unknown-ID id:null error responses; current handler/stream omit unreadable IDs and preserve known IDs.36 repaired owned envelopes plus specialized results/input schemas and16 actual MCP/Rust transcript envelopes validate. Reused native reader independently checks65536 full allocation bytes without native rerun. Three resealed ID/content/capability faults reject.85 Python plus7 Rust archive tests. Seale89f7262fde27c316fcf905a60e912d2ec2f2c8c77fcd2ab26404c09392a221c. Official SDK/full behavioral/native Canvas acceptance remain open; both milestones open.
+
+### 2026-10-11: official MCP SDK interoperability
+
+Official client2.3.1 explicit legacy handshake now accepts owned stdio preview edits/rejection/recovery/close and EOF cleanup.2 actual server waits0,4 fresh Rust/V8 modules,81,920 complete independently checked bytes;3 retained harness/prediction failures and3 resealed negative controls;87 Python+7 Rust isolated tests. [Evidence and scope](docs/reverse-engineering/2026-10-11-mcp-sdk.md). Modern protocol/full MCP/native Canvas and both delivery milestones remain open.

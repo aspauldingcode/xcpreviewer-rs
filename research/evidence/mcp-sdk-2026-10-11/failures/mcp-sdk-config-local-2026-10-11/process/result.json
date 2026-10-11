@@ -1,0 +1,1036 @@
+{
+  "sdkVersion": "2.3.1",
+  "negotiation": "explicit legacy",
+  "records": [
+    {
+      "mode": "edits",
+      "wire": [
+        {
+          "direction": "send",
+          "message": {
+            "method": "initialize",
+            "params": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {},
+              "clientInfo": {
+                "name": "owned-official-sdk-control",
+                "version": "1"
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 0
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 0,
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "tools": {}
+              },
+              "serverInfo": {
+                "name": "owned-preview-handler",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "jsonrpc": "2.0",
+            "method": "notifications/initialized"
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/list",
+            "params": {},
+            "jsonrpc": "2.0",
+            "id": 1
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "result": {
+              "tools": [
+                {
+                  "name": "preview_start",
+                  "description": "Owned finite preview session: start",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_poll",
+                  "description": "Owned finite preview session: poll",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_status",
+                  "description": "Owned finite preview session: status",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_frame",
+                  "description": "Owned finite preview session: frame",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_close",
+                  "description": "Owned finite preview session: close",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_start",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 2
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":2,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 3
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_poll",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 4
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":4,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":2,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":2,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 5
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 5,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_poll",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 6
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 6,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":6,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":3,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":3,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 7
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 7,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_poll",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 8
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 8,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":8,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 9
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 9,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_close",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 10
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 10,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":true,\"revision\":0,\"loopClosed\":true,\"building\":false,\"timers\":0},\"frame\":null,\"diagnostics\":{\"retainedEvents\":8,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 11
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 11,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_start",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 12
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 12,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Preview operation failed"
+                }
+              ],
+              "isError": true
+            }
+          }
+        }
+      ],
+      "server": {
+        "name": "owned-preview-handler",
+        "version": "0.1.0"
+      },
+      "capabilities": {
+        "tools": {}
+      },
+      "tools": {
+        "tools": [
+          {
+            "name": "preview_start",
+            "description": "Owned finite preview session: start",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_poll",
+            "description": "Owned finite preview session: poll",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_status",
+            "description": "Owned finite preview session: status",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_frame",
+            "description": "Owned finite preview session: frame",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_close",
+            "description": "Owned finite preview session: close",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          }
+        ]
+      },
+      "values": [
+        {
+          "name": "start",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":2,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "poll",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":4,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":2,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":2,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "poll",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":6,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":3,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":3,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "poll",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":8,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "close",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":true,\"revision\":0,\"loopClosed\":true,\"building\":false,\"timers\":0},\"frame\":null,\"diagnostics\":{\"retainedEvents\":8,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":4,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "closed-start",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "Preview operation failed"
+              }
+            ],
+            "isError": true
+          }
+        }
+      ],
+      "wait": {
+        "timeout": false,
+        "code": 0
+      },
+      "lifecycle": {
+        "channel": {
+          "received": 14,
+          "writes": 13,
+          "suppressed": 0,
+          "closed": true,
+          "reason": "input-ended"
+        },
+        "final": {
+          "schemaVersion": 1,
+          "scope": "Finite primary source preview; local owned policy",
+          "lifecycle": {
+            "liveWorkers": 0,
+            "busy": false,
+            "closed": true,
+            "revision": 0,
+            "loopClosed": true,
+            "building": false,
+            "timers": 0
+          },
+          "frame": null,
+          "diagnostics": {
+            "retainedEvents": 8,
+            "droppedEvents": 0,
+            "latest": {
+              "kind": "rejected",
+              "generation": 4,
+              "error": "Error: Observed compiler failed: 2"
+            },
+            "lastFailure": {
+              "kind": "rejected",
+              "generation": 4,
+              "error": "Error: Observed compiler failed: 2"
+            }
+          }
+        },
+        "builds": [],
+        "failures": [
+          {
+            "error": "Error: Observed compiler failed: 2",
+            "record": {
+              "pid": 15492,
+              "anchorCode": null,
+              "signal": "SIGKILL",
+              "report": {
+                "kind": "complete",
+                "target_code": 2,
+                "failure": null,
+                "drained": true,
+                "tracked": 1,
+                "observations": 5,
+                "remaining_observed": 0,
+                "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+              },
+              "emergencyClosed": false,
+              "privateAbortRequested": false,
+              "stdout": "",
+              "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+            }
+          },
+          {
+            "error": "Error: Observed compiler failed: 2",
+            "record": {
+              "pid": 15499,
+              "anchorCode": null,
+              "signal": "SIGKILL",
+              "report": {
+                "kind": "complete",
+                "target_code": 2,
+                "failure": null,
+                "drained": true,
+                "tracked": 1,
+                "observations": 5,
+                "remaining_observed": 0,
+                "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+              },
+              "emergencyClosed": false,
+              "privateAbortRequested": false,
+              "stdout": "",
+              "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+            }
+          },
+          {
+            "error": "Error: Observed compiler failed: 2",
+            "record": {
+              "pid": 15506,
+              "anchorCode": null,
+              "signal": "SIGKILL",
+              "report": {
+                "kind": "complete",
+                "target_code": 2,
+                "failure": null,
+                "drained": true,
+                "tracked": 1,
+                "observations": 5,
+                "remaining_observed": 0,
+                "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+              },
+              "emergencyClosed": false,
+              "privateAbortRequested": false,
+              "stdout": "",
+              "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+            }
+          },
+          {
+            "error": "Error: Observed compiler failed: 2",
+            "record": {
+              "pid": 15513,
+              "anchorCode": null,
+              "signal": "SIGKILL",
+              "report": {
+                "kind": "complete",
+                "target_code": 2,
+                "failure": null,
+                "drained": true,
+                "tracked": 1,
+                "observations": 5,
+                "remaining_observed": 0,
+                "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+              },
+              "emergencyClosed": false,
+              "privateAbortRequested": false,
+              "stdout": "",
+              "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "mode": "eof",
+      "wire": [
+        {
+          "direction": "send",
+          "message": {
+            "method": "initialize",
+            "params": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {},
+              "clientInfo": {
+                "name": "owned-official-sdk-control",
+                "version": "1"
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 0
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 0,
+            "result": {
+              "protocolVersion": "2025-11-25",
+              "capabilities": {
+                "tools": {}
+              },
+              "serverInfo": {
+                "name": "owned-preview-handler",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "jsonrpc": "2.0",
+            "method": "notifications/initialized"
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/list",
+            "params": {},
+            "jsonrpc": "2.0",
+            "id": 1
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "result": {
+              "tools": [
+                {
+                  "name": "preview_start",
+                  "description": "Owned finite preview session: start",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_poll",
+                  "description": "Owned finite preview session: poll",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_status",
+                  "description": "Owned finite preview session: status",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_frame",
+                  "description": "Owned finite preview session: frame",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "name": "preview_close",
+                  "description": "Owned finite preview session: close",
+                  "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_start",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 2
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":2,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "direction": "send",
+          "message": {
+            "method": "tools/call",
+            "params": {
+              "name": "preview_frame",
+              "arguments": {}
+            },
+            "jsonrpc": "2.0",
+            "id": 3
+          }
+        },
+        {
+          "direction": "receive",
+          "message": {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "null"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "server": {
+        "name": "owned-preview-handler",
+        "version": "0.1.0"
+      },
+      "capabilities": {
+        "tools": {}
+      },
+      "tools": {
+        "tools": [
+          {
+            "name": "preview_start",
+            "description": "Owned finite preview session: start",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_poll",
+            "description": "Owned finite preview session: poll",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_status",
+            "description": "Owned finite preview session: status",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_frame",
+            "description": "Owned finite preview session: frame",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "preview_close",
+            "description": "Owned finite preview session: close",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          }
+        ]
+      },
+      "values": [
+        {
+          "name": "start",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"schemaVersion\":1,\"scope\":\"Finite primary source preview; local owned policy\",\"lifecycle\":{\"liveWorkers\":0,\"busy\":false,\"closed\":false,\"revision\":0,\"loopClosed\":false,\"building\":false,\"timers\":2},\"frame\":null,\"diagnostics\":{\"retainedEvents\":2,\"droppedEvents\":0,\"latest\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"},\"lastFailure\":{\"kind\":\"rejected\",\"generation\":1,\"error\":\"Error: Observed compiler failed: 2\"}}}"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame",
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "wait": {
+        "timeout": false,
+        "code": 0
+      },
+      "lifecycle": {
+        "channel": {
+          "received": 5,
+          "writes": 4,
+          "suppressed": 0,
+          "closed": true,
+          "reason": "input-ended"
+        },
+        "final": {
+          "schemaVersion": 1,
+          "scope": "Finite primary source preview; local owned policy",
+          "lifecycle": {
+            "liveWorkers": 0,
+            "busy": false,
+            "closed": true,
+            "revision": 0,
+            "loopClosed": true,
+            "building": false,
+            "timers": 0
+          },
+          "frame": null,
+          "diagnostics": {
+            "retainedEvents": 2,
+            "droppedEvents": 0,
+            "latest": {
+              "kind": "rejected",
+              "generation": 1,
+              "error": "Error: Observed compiler failed: 2"
+            },
+            "lastFailure": {
+              "kind": "rejected",
+              "generation": 1,
+              "error": "Error: Observed compiler failed: 2"
+            }
+          }
+        },
+        "builds": [],
+        "failures": [
+          {
+            "error": "Error: Observed compiler failed: 2",
+            "record": {
+              "pid": 15526,
+              "anchorCode": null,
+              "signal": "SIGKILL",
+              "report": {
+                "kind": "complete",
+                "target_code": 2,
+                "failure": null,
+                "drained": true,
+                "tracked": 1,
+                "observations": 5,
+                "remaining_observed": 0,
+                "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+              },
+              "emergencyClosed": false,
+              "privateAbortRequested": false,
+              "stdout": "",
+              "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

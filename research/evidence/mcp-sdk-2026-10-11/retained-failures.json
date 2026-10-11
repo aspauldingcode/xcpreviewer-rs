@@ -1,0 +1,17 @@
+[
+  {
+    "localSeal": "00a4de516d97f84d58ea1855f31dab4c463354036be6d900e168fdfe547f04d6",
+    "reason": "Harness incorrectly replaced observer object and referenced absent CLI; actual compiler wait2; no successful frames.",
+    "directory": "failures/mcp-sdk-harness-local-2026-10-11"
+  },
+  {
+    "localSeal": "b3edb481b0bb33248606b2b7f7e9b758746c6442048dd59f6d5711db4f481649",
+    "reason": "Incorrect prediction: readFrame after close returns null text result, not isError; CLI path also absent.",
+    "directory": "failures/mcp-sdk-prediction-local-2026-10-11"
+  },
+  {
+    "localSeal": "d9c097aca38db62968df360d70aa0cbff3ac65d0aebfea740734b5e6944a44be",
+    "reason": "Protocol-only run exit0 was insufficient: independent inspection found zero builds and absent CLI. Not accepted as native frame evidence.",
+    "directory": "failures/mcp-sdk-config-local-2026-10-11"
+  }
+]

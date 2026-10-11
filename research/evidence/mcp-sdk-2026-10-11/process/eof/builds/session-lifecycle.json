@@ -1,0 +1,83 @@
+{
+  "channel": {
+    "received": 5,
+    "writes": 4,
+    "suppressed": 0,
+    "closed": true,
+    "reason": "input-ended"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 2,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      "lastFailure": null
+    }
+  },
+  "builds": [
+    {
+      "receipt": {
+        "source_sha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8",
+        "module_sha256": "65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235",
+        "config": {
+          "width": 13,
+          "height": 7,
+          "alphas": [
+            4,
+            2,
+            8
+          ],
+          "reverse": 0
+        },
+        "rustc_sha256": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+        "toolchain_sha256": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828",
+        "sources": {
+          "contract.rs": "3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45",
+          "wasm-template.rs": "0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b"
+        },
+        "generated_sha256": "9ca027aa887f5aab8638b35253e73c37068f1688de0a377a22abc5503f7bbf2f",
+        "cache_hit": false,
+        "target": "wasm32-wasip1",
+        "scope": "Finite primary literal expression lowering; not general Swift compilation"
+      },
+      "execution": {
+        "pid": 16152,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 4,
+          "observations": 21,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "{\"source_sha256\": \"37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8\", \"module_sha256\": \"65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235\", \"config\": {\"width\": 13, \"height\": 7, \"alphas\": [4, 2, 8], \"reverse\": 0}, \"rustc_sha256\": \"210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da\", \"toolchain_sha256\": \"7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828\", \"sources\": {\"contract.rs\": \"3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45\", \"wasm-template.rs\": \"0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b\"}, \"generated_sha256\": \"9ca027aa887f5aab8638b35253e73c37068f1688de0a377a22abc5503f7bbf2f\", \"cache_hit\": false, \"target\": \"wasm32-wasip1\", \"scope\": \"Finite primary literal expression lowering; not general Swift compilation\"}\n",
+        "stderr": ""
+      },
+      "stage": "build-HtzMzl"
+    }
+  ],
+  "failures": []
+}

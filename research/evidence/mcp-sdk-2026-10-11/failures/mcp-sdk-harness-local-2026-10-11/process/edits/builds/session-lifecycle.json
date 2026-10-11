@@ -1,0 +1,52 @@
+{
+  "channel": {
+    "received": 13,
+    "writes": 12,
+    "suppressed": 0,
+    "closed": true,
+    "reason": "input-ended"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 0,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 8,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+      },
+      "lastFailure": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+      }
+    }
+  },
+  "builds": [],
+  "failures": [
+    {
+      "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+    },
+    {
+      "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+    },
+    {
+      "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+    },
+    {
+      "error": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined"
+    }
+  ]
+}
