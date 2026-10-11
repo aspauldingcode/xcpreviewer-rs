@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>Owned WASM browser control</title>
+<h1>Owned WASM browser control</h1><pre id="status">Running</pre><canvas id="preview"></canvas>
+<script>
+const cfg=__CONFIG__;
+const b64=a=>{let s='';for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode(...a.subarray(i,i+8192));return btoa(s)};
+(async()=>{
+ try{
+  const rows=[];
+  for(const job of cfg.jobs){
+   const bytes=await (await fetch('/source-'+job.index+'.wasm')).arrayBuffer();
+   const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
+   const module=await WebAssembly.compile(bytes);const instance=await WebAssembly.instantiate(module,{});const e=instance.exports;
+   const count=e.capacity(),ptr=e.pixels();const memory=new Uint8Array(e.memory.buffer,ptr,count);memory.fill(0xa5);
+   const rendered=e.render(job.stride);const baseline=b64(memory);const invalid=[];
+   for(const stride of [0,job.config.width*4-1,1281,0xffffffff])invalid.push({stride,result:e.render(stride),allocation:b64(memory)});
+   const c=document.getElementById('preview');c.width=job.config.width;c.height=job.config.height;const ctx=c.getContext('2d',{colorSpace:'srgb'});
+   const active=new Uint8ClampedArray(c.width*c.height*4);
+   for(let y=0;y<c.height;y++)active.set(memory.subarray(y*job.stride,y*job.stride+c.width*4),y*c.width*4);
+   ctx.putImageData(new ImageData(active,c.width,c.height),0,0);
+   rows.push({index:job.index,module_sha256:hash,imports:WebAssembly.Module.imports(module).length,capacity:count,rendered,allocation:baseline,invalid,canvas:b64(ctx.getImageData(0,0,c.width,c.height).data)});
+  }
+  const report={nonce:cfg.nonce,repeat:cfg.repeat,user_agent:navigator.userAgent,origin:location.origin,rows};
+  const reply=await fetch('/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});
+  if(!reply.ok)throw Error('report rejected '+reply.status);
+  document.getElementById('status').textContent='Complete: '+rows.length+' modules, 16 invalid requests, Canvas2D readback';
+ }catch(error){document.getElementById('status').textContent='Failed: '+String(error)}
+})();
+</script>

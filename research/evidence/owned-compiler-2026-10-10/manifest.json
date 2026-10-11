@@ -1,0 +1,2022 @@
+{
+  "created_at": "2026-10-11T04:15:11.306933+00:00",
+  "files": [
+    {
+      "bytes": 548,
+      "path": "config.json",
+      "sha256": "35da7a0fb46ac5a0455f0553433a3535a934f5f5a6311473ac1430ab5067f103"
+    },
+    {
+      "bytes": 0,
+      "path": "control.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "control.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1835,
+      "path": "frozen/tools/re/DumpPreviewFunctions.java",
+      "sha256": "22ccd929043d56c8ef7ffa4d208853cdae47e165cd8259054f5b930db898b702"
+    },
+    {
+      "bytes": 9401,
+      "path": "frozen/tools/re/README.md",
+      "sha256": "22116547e11c834b7d412a31d91ff6c56d771a67145e044708475e3301b75486"
+    },
+    {
+      "bytes": 13669,
+      "path": "frozen/tools/re/agent.py",
+      "sha256": "90298bdb48b0e17db101405754dffc741dde571f3af7808ae444b5d5072a68b5"
+    },
+    {
+      "bytes": 412,
+      "path": "frozen/tools/re/bootstrap-rea.sh",
+      "sha256": "00dcbe1f27c87f0889d0c382ade789635cb06151d158cb285bc2a3f46d54924d"
+    },
+    {
+      "bytes": 361,
+      "path": "frozen/tools/re/bootstrap.sh",
+      "sha256": "648c442dc9fb980e155af60781752115848b0232a5cd1a5ec289c4b764563674"
+    },
+    {
+      "bytes": 4877,
+      "path": "frozen/tools/re/collect.py",
+      "sha256": "8d9c4d324b556da10603055fd9877cad07694ece7e9386ce6a56fb981b740ec8"
+    },
+    {
+      "bytes": 1813,
+      "path": "frozen/tools/re/compare_images.py",
+      "sha256": "0a7e2128904cdee3617a20831c2cdcc9d7be71bb50d19655979e206775cd2707"
+    },
+    {
+      "bytes": 1207,
+      "path": "frozen/tools/re/decode_plist.py",
+      "sha256": "e59caece6fbb2b1b3fa3833fde442fd7b8998e1f329e1d5402a0132a9c4d715a"
+    },
+    {
+      "bytes": 4424,
+      "path": "frozen/tools/re/disassemble.py",
+      "sha256": "4490f93539d2e1e943a95680f130f3af4a8caf6818a22b4a518a5f16e94a29e7"
+    },
+    {
+      "bytes": 1426,
+      "path": "frozen/tools/re/dump-runtime.sh",
+      "sha256": "a571a848898de534eb27728010342e701b4f97c3f4c08b56fb6e55515da85ed7"
+    },
+    {
+      "bytes": 1246,
+      "path": "frozen/tools/re/fixtures/AlphaReference.swift",
+      "sha256": "f530385a29857a2eeeab629837d86e13711a8547e92ac4a773bc1b572c0dc393"
+    },
+    {
+      "bytes": 167,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-0.png",
+      "sha256": "1498cbf9ea2eb6bec3533655ad34e41fd3b23f41ed9608185ac5426beb01f144"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-1.png",
+      "sha256": "9acc1868e1023ce6a00af9fcc2f5499b2562b9f66bb886444fcbb047c8e72588"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-2.png",
+      "sha256": "cd3e7811b959da366781dae7e85e87b97c0deab8357774ecb26ed1c97e408d05"
+    },
+    {
+      "bytes": 178,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-3.png",
+      "sha256": "a2ea12d13a71ba3ff69ff2e5b0e9998a752fabb128143d9cc37da7a001dd1064"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-4.png",
+      "sha256": "1dac97d932c92891ea6736a203ba44dbba034ba33968c03d6d5913612dfb4f8a"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-5.png",
+      "sha256": "0f7c924d450326cac665b9fdf8e262476f47ddd7891430b8047497d74a328947"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-6.png",
+      "sha256": "68c9a3724f3270fd515130071b9572a5d840261911c068e5e193d429fd18dc7c"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/case-7.png",
+      "sha256": "4251f4d350e9c3469fa0033d8ec8c642f604daefd9b51ff0dcd0278948628a27"
+    },
+    {
+      "bytes": 1351,
+      "path": "frozen/tools/re/fixtures/AlphaRendererOracle/manifest.json",
+      "sha256": "a13813da4b1c4e33760d5d13dfbd30957bafb14f37e2e634e6c3d494aa3a8b57"
+    },
+    {
+      "bytes": 12654,
+      "path": "frozen/tools/re/fixtures/CanvasBlankOracle/baseline-blank.png",
+      "sha256": "c90810225e0635251d9a187bccbf513167b5c796c7ac01373f6555eb13c2386d"
+    },
+    {
+      "bytes": 12811,
+      "path": "frozen/tools/re/fixtures/CanvasBlankOracle/changed-title-blank.png",
+      "sha256": "1349c70d86c94bd44dfe46f546389e0233c2827d0ea9ab64acfb86aeb1923baa"
+    },
+    {
+      "bytes": 645,
+      "path": "frozen/tools/re/fixtures/CanvasBlankOracle/manifest.json",
+      "sha256": "82d93dc406a576aac46c96949bea451f9e2129e1967e5c592f4b0c46b7f07dd3"
+    },
+    {
+      "bytes": 24232,
+      "path": "frozen/tools/re/fixtures/CanvasLightOracle/changed.png",
+      "sha256": "14feafff64786a5a9f8ed235b8f8828d2fcfb33fd796a85aa31116972151e64c"
+    },
+    {
+      "bytes": 23440,
+      "path": "frozen/tools/re/fixtures/CanvasLightOracle/custom.png",
+      "sha256": "1a4a50ee364d1486b4aa06bb3d3f0323f58018bbae3c81e516f4ba21696263dd"
+    },
+    {
+      "bytes": 23440,
+      "path": "frozen/tools/re/fixtures/CanvasLightOracle/inline.png",
+      "sha256": "1a4a50ee364d1486b4aa06bb3d3f0323f58018bbae3c81e516f4ba21696263dd"
+    },
+    {
+      "bytes": 787,
+      "path": "frozen/tools/re/fixtures/CanvasLightOracle/manifest.json",
+      "sha256": "58254e25e2b474271bd664e1cb482a95bc5907df41c583060923d208d0d62e98"
+    },
+    {
+      "bytes": 13866,
+      "path": "frozen/tools/re/fixtures/CanvasSchemeOracle/dark-repeat.png",
+      "sha256": "8406711694133e2173c6c1ca7c486384c6d356fd25689b66be6b3ddab7cb85d5"
+    },
+    {
+      "bytes": 13866,
+      "path": "frozen/tools/re/fixtures/CanvasSchemeOracle/dark.png",
+      "sha256": "8406711694133e2173c6c1ca7c486384c6d356fd25689b66be6b3ddab7cb85d5"
+    },
+    {
+      "bytes": 23853,
+      "path": "frozen/tools/re/fixtures/CanvasSchemeOracle/light.png",
+      "sha256": "5f67dee97eaf3670f179cd1f7b2f0d085184a32c352948a811f5573537297b6a"
+    },
+    {
+      "bytes": 856,
+      "path": "frozen/tools/re/fixtures/CanvasSchemeOracle/manifest.json",
+      "sha256": "99bcfae0bd44714686fcda194271c6ce17f26ca68fe52008d1de0b3e93e620ac"
+    },
+    {
+      "bytes": 12388,
+      "path": "frozen/tools/re/fixtures/CanvasSolidOracle/blue.png",
+      "sha256": "13e9d80578a430418b235d5cd8d9063fd801ccf8ee670608627a15646488e9f3"
+    },
+    {
+      "bytes": 551,
+      "path": "frozen/tools/re/fixtures/CanvasSolidOracle/manifest.json",
+      "sha256": "dc60ff1540bc50e4ea662f92dfcf2db001e60d52ea72255c8cfe3afb7b3a0056"
+    },
+    {
+      "bytes": 12130,
+      "path": "frozen/tools/re/fixtures/CanvasSolidOracle/red.png",
+      "sha256": "0da81f8a44cf94df5d347073f8155741895288293ed0861418bb3599d6204fc1"
+    },
+    {
+      "bytes": 540,
+      "path": "frozen/tools/re/fixtures/CanvasTextOracle/manifest.json",
+      "sha256": "5299ee4039d5ed7de3fe80959d0600faf757fb0eadbde041c5c061ed9742a47c"
+    },
+    {
+      "bytes": 15110,
+      "path": "frozen/tools/re/fixtures/CanvasTextOracle/plain-text.png",
+      "sha256": "8d2c3ede9cbf795fece5ff46bee941fd252215a7c728b941749d4b85b54ff93b"
+    },
+    {
+      "bytes": 24565,
+      "path": "frozen/tools/re/fixtures/CanvasTextOracle/stack-no-background.png",
+      "sha256": "7618e322db23344d8e1101fad64e87b1f247887a8f0aebf0ace6f84a861bb4ad"
+    },
+    {
+      "bytes": 83,
+      "path": "frozen/tools/re/fixtures/LiteralViewSubset/blue.swift",
+      "sha256": "2679b3e5d7f4c29765976f7a700a1574964c4b1855617b305cfee32a36d4ec28"
+    },
+    {
+      "bytes": 79,
+      "path": "frozen/tools/re/fixtures/LiteralViewSubset/padded.swift",
+      "sha256": "63624de19e6bb98f93ef1e43ada05a928e1f9d70af773e6adaef364440be80a9"
+    },
+    {
+      "bytes": 83,
+      "path": "frozen/tools/re/fixtures/LiteralViewSubset/red.swift",
+      "sha256": "0e3adad47e2bd9d9b17c8636363e39b757e378d9ba19eb49b26af370938577bc"
+    },
+    {
+      "bytes": 2768,
+      "path": "frozen/tools/re/fixtures/MixedAlphaBoundaryReference.swift",
+      "sha256": "a46fb890f9f2980fe680bd79090a86e773428de3388d791d1b1862a34afe5b8f"
+    },
+    {
+      "bytes": 3733,
+      "path": "frozen/tools/re/fixtures/MixedAlphaCallbackLayoutReference.swift",
+      "sha256": "fff431886ea8c82d819b9f4b8169793ee55a1a439f6d5f7f4e324300cffe20c7"
+    },
+    {
+      "bytes": 3593,
+      "path": "frozen/tools/re/fixtures/MixedAlphaCallbackReference.swift",
+      "sha256": "fe2d23c974a9ba0cbe5ecfbb8b518a9d8e49d72e80db7a0368e6e3f7566711ab"
+    },
+    {
+      "bytes": 1630,
+      "path": "frozen/tools/re/fixtures/MixedAlphaEvenReference.swift",
+      "sha256": "197eb87b28d0619229f6f7a88475ef818a5f48bd1dadd379daca5eabf8308a90"
+    },
+    {
+      "bytes": 3875,
+      "path": "frozen/tools/re/fixtures/MixedAlphaGroupReference.swift",
+      "sha256": "f73af7e60c08de7fc06891ce757819df489d177422195cd51b9c0ca99a4636d9"
+    },
+    {
+      "bytes": 3706,
+      "path": "frozen/tools/re/fixtures/MixedAlphaNormalQuartzReference.swift",
+      "sha256": "e817a8aafba045f9727fb6d942385df5f5dfcce04366bc50d15a76ee6aaee0b4"
+    },
+    {
+      "bytes": 5438,
+      "path": "frozen/tools/re/fixtures/MixedAlphaOrderReference.swift",
+      "sha256": "903f9eef32679ef3d8c63e42f7ff28475ce8b368025139279496ee28de99cff5"
+    },
+    {
+      "bytes": 3704,
+      "path": "frozen/tools/re/fixtures/MixedAlphaPublicQuartzReference.swift",
+      "sha256": "5dc18f9b378ce3ad611498ff66415dc71e81a443a7aea03f27aee8adbd594d91"
+    },
+    {
+      "bytes": 3271,
+      "path": "frozen/tools/re/fixtures/MixedAlphaQuartzReference.swift",
+      "sha256": "56c395623c81014099361dc09b0d71c69d866ce53420ed227d891736befd41f8"
+    },
+    {
+      "bytes": 1499,
+      "path": "frozen/tools/re/fixtures/MixedAlphaReference.swift",
+      "sha256": "7f88d847ff8f7aeaad7bb8cfcbb635510036741f8a962eb60c244d8a00f0c783"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-0.png",
+      "sha256": "a4f4e525555026af32472362e252d8711617901cc83183e56b6510c505ac32e0"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-1.png",
+      "sha256": "9ed3af95ce3173592af68004d9c838921b8d57305024b1619500035ac5c1713d"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-10.png",
+      "sha256": "7971d86fedfd8efe29acf5feec161e943762c072698aeeaea3fca70c717c37e6"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-11.png",
+      "sha256": "74f472dc78268dd9c0b1df252311a2313fad3ef3d72a8fd3dcaf81750ff7fb52"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-12.png",
+      "sha256": "0bf2b39bb7b72a781f43f82ae1f5d095fd9e9c3349447473150c28e2558e781c"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-13.png",
+      "sha256": "d6475059adb06e0e3f93eab6aaeafec002892e7de08e84cc66ffd32a8fe4a5e3"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-2.png",
+      "sha256": "b481f686e62e8ef83b865e79ae196fe9580e155d2125b11ef5d666b4b8e708c6"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-3.png",
+      "sha256": "05c36c02b5a7fb9d5eb287396d3733e426f4725a9ddbf8b0da26d79545ddaec5"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-4.png",
+      "sha256": "9d9154350671452b25af32d2843bc3cf804929657774ca2eec8a8f80b7c3824f"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-5.png",
+      "sha256": "1227682b63cb173ef1385ef52a0eb7e1011605660d0fa663df4f843689f87822"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-6.png",
+      "sha256": "5498225b0ff793c6335a9ef7d0bb6050c258a3e91c32a0cf8a9b9d82a7ab2f68"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-7.png",
+      "sha256": "62c6a4b808654669d9a8611db5b9cecd3525df0bb7d8f854cad8c1a5673178d3"
+    },
+    {
+      "bytes": 167,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-8.png",
+      "sha256": "1498cbf9ea2eb6bec3533655ad34e41fd3b23f41ed9608185ac5426beb01f144"
+    },
+    {
+      "bytes": 179,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/case-9.png",
+      "sha256": "611e4885f939efd7d9f74dcafd12f98883381827d593216c6fb2e55e54893d0a"
+    },
+    {
+      "bytes": 2323,
+      "path": "frozen/tools/re/fixtures/MixedAlphaRendererOracle/manifest.json",
+      "sha256": "279c89da3c238b62bf2c4c3a6255f2bcbde178944c7e72003e5946f5eccb1c1d"
+    },
+    {
+      "bytes": 3824,
+      "path": "frozen/tools/re/fixtures/MixedAlphaScaleReference.swift",
+      "sha256": "764d38d186a5c2385a62458b12a0ece8cb8427aab15ec5ee15918567736c7cbf"
+    },
+    {
+      "bytes": 104,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-02.input.plist",
+      "sha256": "40df323dd2269fcddb334d0f5b0a56a7b9de0c784dc73c6e58f5ef61c5e21ee6"
+    },
+    {
+      "bytes": 104,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-02.reference.plist",
+      "sha256": "44466988eec03bccdf8abcb807ff11336cf558d1f0974c1bef47f40f09555350"
+    },
+    {
+      "bytes": 116,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-03.input.plist",
+      "sha256": "d0fa8cbf6fa169e1c3ea1576e59b3c400c95dcb5c13a0491eb0559a171ae8c16"
+    },
+    {
+      "bytes": 116,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-03.reference.plist",
+      "sha256": "d0fa8cbf6fa169e1c3ea1576e59b3c400c95dcb5c13a0491eb0559a171ae8c16"
+    },
+    {
+      "bytes": 115,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-04.input.plist",
+      "sha256": "c97dbe32ba3950e3ffec9e822b9ea8a3aaeda6e44665903a3a499b3a49c26cc3"
+    },
+    {
+      "bytes": 115,
+      "path": "frozen/tools/re/fixtures/PlistOracle/boundary-04.reference.plist",
+      "sha256": "c97dbe32ba3950e3ffec9e822b9ea8a3aaeda6e44665903a3a499b3a49c26cc3"
+    },
+    {
+      "bytes": 2276,
+      "path": "frozen/tools/re/fixtures/PlistOracle/manifest.json",
+      "sha256": "a457f7836aa99a1a3a7adcf0b2d21eda5810ea553cedd194e1bf905087464a32"
+    },
+    {
+      "bytes": 135,
+      "path": "frozen/tools/re/fixtures/PreviewLab/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata",
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+    },
+    {
+      "bytes": 8980,
+      "path": "frozen/tools/re/fixtures/PreviewLab/.swiftpm/xcode/package.xcworkspace/xcuserdata/8amps.xcuserdatad/UserInterfaceState.xcuserstate",
+      "sha256": "d4f5ecc3d54d07bef9e6c7eef338e3ff869e18301fbb120f8316b6a66c719d83"
+    },
+    {
+      "bytes": 345,
+      "path": "frozen/tools/re/fixtures/PreviewLab/.swiftpm/xcode/xcuserdata/8amps.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "sha256": "b69daa2343a33347b47dcd1cc780788946e657cea542b659616182ca2279c6e3"
+    },
+    {
+      "bytes": 262,
+      "path": "frozen/tools/re/fixtures/PreviewLab/Package.swift",
+      "sha256": "bd59d6a69a7c87f79d25c4dcbc77338b9c07672e59e47c9d2e7ddd01d9bc1024"
+    },
+    {
+      "bytes": 3823,
+      "path": "frozen/tools/re/fixtures/PreviewLab/PreviewLab.xcodeproj/project.pbxproj",
+      "sha256": "1ee671965dcfb221233970e970130946a1971a0b0d30625601e93440a60bcf45"
+    },
+    {
+      "bytes": 135,
+      "path": "frozen/tools/re/fixtures/PreviewLab/PreviewLab.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+    },
+    {
+      "bytes": 11837,
+      "path": "frozen/tools/re/fixtures/PreviewLab/PreviewLab.xcodeproj/project.xcworkspace/xcuserdata/8amps.xcuserdatad/UserInterfaceState.xcuserstate",
+      "sha256": "163f791403d0493cb5f5a0bab92f6501e208fac049b0be78c802d4e5a4808ad4"
+    },
+    {
+      "bytes": 2446,
+      "path": "frozen/tools/re/fixtures/PreviewLab/PreviewLab.xcodeproj/xcshareddata/xcschemes/PreviewLab.xcscheme",
+      "sha256": "340335da0c5cc3aff3d0fd0371b74a9cde457424ee86af023eb63060f45538a9"
+    },
+    {
+      "bytes": 3253,
+      "path": "frozen/tools/re/fixtures/PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+      "sha256": "393a1019a2b1244b0bbf6e7d15b62f2612e740b2a4a4843fbe838cb3ab222e48"
+    },
+    {
+      "bytes": 3046,
+      "path": "frozen/tools/re/fixtures/PrimaryExtentReference.swift",
+      "sha256": "3904f4703471ae13c3772a004827f7d580fd98e9eb01720443daa48554478aab"
+    },
+    {
+      "bytes": 4182,
+      "path": "frozen/tools/re/fixtures/PrimaryLayerHoldoutReference.swift",
+      "sha256": "01d283bc2d8d3248fabe05404a42a18c8a8bd5564760e44e688b1caa7abd52f1"
+    },
+    {
+      "bytes": 4088,
+      "path": "frozen/tools/re/fixtures/PrimaryLayerReference.swift",
+      "sha256": "64c245a97f521c8b1e0e0b9f0e94fc0342b168389a3f12638d214affd30ba0c1"
+    },
+    {
+      "bytes": 1453,
+      "path": "frozen/tools/re/fixtures/Reference.swift",
+      "sha256": "7d98bf18e767f001931cfc6700e8bb6c215c4417969598c83f3c45199e577a0e"
+    },
+    {
+      "bytes": 5677,
+      "path": "frozen/tools/re/fixtures/RendererOracle/baseline.png",
+      "sha256": "621dc97c9a4374f9066cdabcf89e00faa6dbd098022f124a3d1681b122df8169"
+    },
+    {
+      "bytes": 6758,
+      "path": "frozen/tools/re/fixtures/RendererOracle/changed.png",
+      "sha256": "d8369935344beefb48faec0b9a012e5c2b1c14dc679d0697980baa4c5f86666a"
+    },
+    {
+      "bytes": 1576,
+      "path": "frozen/tools/re/fixtures/RendererOracle/manifest.json",
+      "sha256": "c5703511203a96fb5a54f6b8d1f9a38516ca6adda28725f4a2e716511febce06"
+    },
+    {
+      "bytes": 1044,
+      "path": "frozen/tools/re/fixtures/SolidReference.swift",
+      "sha256": "d242680fa9062b4ae3d710d0cce5215cbee6838231ea7a7e6954d8f7684a2ad4"
+    },
+    {
+      "bytes": 1350,
+      "path": "frozen/tools/re/fixtures/SolidRendererOracle/blue.png",
+      "sha256": "22fe4e0ae20d4117e120a40500e0861b86e7ecaafb2cf2abd9ab48a23b35c4d1"
+    },
+    {
+      "bytes": 558,
+      "path": "frozen/tools/re/fixtures/SolidRendererOracle/manifest.json",
+      "sha256": "05ee5be6a434c74d59254e4907d480bf2b2b467b00d9fad7d95a2873e9807d0b"
+    },
+    {
+      "bytes": 1351,
+      "path": "frozen/tools/re/fixtures/SolidRendererOracle/red.png",
+      "sha256": "df0fecab60090ea50f496cdf668db1ee39c1b7d1c9fe519f72de9d3b027110bf"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceFailureOracle/after-timeout.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 1107,
+      "path": "frozen/tools/re/fixtures/SurfaceFailureOracle/manifest.json",
+      "sha256": "ffe20279950e10d420d04c6a98e28ab0548bcafe49cf05b47156a6601004a630"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceFailureOracle/not-in-use.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceIPCOracle/after-exit.bin",
+      "sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceIPCOracle/after-receiver-mutation.bin",
+      "sha256": "6494ebd516486b1d2b33239ad8b219ab78bded9ad469df4c1b5031e940b1077f"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceIPCOracle/before.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 1046,
+      "path": "frozen/tools/re/fixtures/SurfaceIPCOracle/manifest.json",
+      "sha256": "c47838b4353f26b28b60593c9ab261a97193990b5f0b7767d04dc0a347a5c4e2"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceOracle/after.bin",
+      "sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceOracle/before.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 953,
+      "path": "frozen/tools/re/fixtures/SurfaceOracle/manifest.json",
+      "sha256": "cb7dc615b9d0dacc7aa352809f932cc0ed41212a1f8e0e206a589bb9a1c8f9c5"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReceiverOracle/after-exit.bin",
+      "sha256": "45a2c03832e76020b19b454fdde3ac1125f87724f1d33808f155ec06c9acf99e"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReceiverOracle/after-owner-mutation.bin",
+      "sha256": "6494ebd516486b1d2b33239ad8b219ab78bded9ad469df4c1b5031e940b1077f"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReceiverOracle/before.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 1151,
+      "path": "frozen/tools/re/fixtures/SurfaceReceiverOracle/manifest.json",
+      "sha256": "f63539b470a21fe606f5205a9526b9f3b5b707239250056c73f43dda1f2d2b90"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReceiverOracle/port-only.bin",
+      "sha256": "6494ebd516486b1d2b33239ad8b219ab78bded9ad469df4c1b5031e940b1077f"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReuseOracle/delayed-reuse.bin",
+      "sha256": "267f0882014109547c2b8fafa6848c4acd486be63d3a1c4b48dc1fa79d4dae12"
+    },
+    {
+      "bytes": 256,
+      "path": "frozen/tools/re/fixtures/SurfaceReuseOracle/delayed-separate.bin",
+      "sha256": "0a29334e87dda28bd560d38e568ecf61799dbed36c27733456903076e0693811"
+    },
+    {
+      "bytes": 743,
+      "path": "frozen/tools/re/fixtures/SurfaceReuseOracle/manifest.json",
+      "sha256": "a67f713f6ad4ada9c605c0a00fb2a365c7de727de756c0df97f82d4aa98e380d"
+    },
+    {
+      "bytes": 1046,
+      "path": "frozen/tools/re/fixtures/XPCOracle/manifest.json",
+      "sha256": "7015e424f15b218ec2c2880b8987bd4bb080e11ee5e53fed79ffd3ed4cfbac80"
+    },
+    {
+      "bytes": 81,
+      "path": "frozen/tools/re/fixtures/XPCOracle/minimal-input.plist",
+      "sha256": "6ccabae4e2c059b93c9e52ecee48fca3eb18f717297a7636b272a5e5a175a427"
+    },
+    {
+      "bytes": 8,
+      "path": "frozen/tools/re/fixtures/XPCOracle/truncated-data.bin",
+      "sha256": "8053c006d6022564eeb6c0cfcaaf08c8055ef7724dabce8dfad7dd272dab5f04"
+    },
+    {
+      "bytes": 236,
+      "path": "frozen/tools/re/fixtures/debug.entitlements",
+      "sha256": "c325fb70404ffb102ce247c356481784e5e4fc76c06cad396349c002ae11dd26"
+    },
+    {
+      "bytes": 943,
+      "path": "frozen/tools/re/fixtures/portable_alpha.c",
+      "sha256": "e71849d28a33872e25b19efaa1905bccf4ecc62447d78aa207f952ee805f2cf7"
+    },
+    {
+      "bytes": 887,
+      "path": "frozen/tools/re/fixtures/portable_alpha_verify.c",
+      "sha256": "1bf9bafe9f4c578bd939a8747dfd5627c09f07530350ea9e3d81e13e26d369d4"
+    },
+    {
+      "bytes": 1003,
+      "path": "frozen/tools/re/fixtures/portable_layers.c",
+      "sha256": "509679e24bbdddbda92e1ba387d426d3924b329229c27186a77ed10d2d2aa270"
+    },
+    {
+      "bytes": 1017,
+      "path": "frozen/tools/re/fixtures/portable_layers_verify.c",
+      "sha256": "a48ba37946c1ee21b60e31d0879cc92cae30ad2e51772a200ebc1c61e6abda70"
+    },
+    {
+      "bytes": 877,
+      "path": "frozen/tools/re/fixtures/portable_solid.c",
+      "sha256": "5ac93da29afd1ece9d8c904f54c91d2b0830cfaddc50464fcb83f01caac226ec"
+    },
+    {
+      "bytes": 1793,
+      "path": "frozen/tools/re/fixtures/portable_solid_verify.c",
+      "sha256": "f4edf7f8fc9a4517d68bafde7b3ec8976e17a7dd1d49b69ec66ae8ed31677433"
+    },
+    {
+      "bytes": 1413,
+      "path": "frozen/tools/re/fixtures/trace_target.m",
+      "sha256": "18dd07dc8a07e14c355dc8398599b488dda3b81406104f7f92214393b8a689d5"
+    },
+    {
+      "bytes": 2014,
+      "path": "frozen/tools/re/libproc-loop.py",
+      "sha256": "89b8ddb73e93fe7462ddff73234f2125a365cc63de2b8e697563181008a38b6e"
+    },
+    {
+      "bytes": 676,
+      "path": "frozen/tools/re/live-swap-loop.py",
+      "sha256": "9a88e5818139d4c577f121cb490c4334b024c0ab6ecba10d74b7ba88bb2a8837"
+    },
+    {
+      "bytes": 2830,
+      "path": "frozen/tools/re/live-swap-probe.py",
+      "sha256": "6e3314e8927bf910d9aa0045f38402b7e766a9fc240c4f4fefbd76ecae65f76c"
+    },
+    {
+      "bytes": 595,
+      "path": "frozen/tools/re/message_keys.swift",
+      "sha256": "bf2e9a3b10e2032b3d4c688bac1df685cf30885c297c0ae3ccd68ddc66939cfe"
+    },
+    {
+      "bytes": 3492,
+      "path": "frozen/tools/re/native/OwnedProcessSnapshot.c",
+      "sha256": "f575177f88d6d8306f38d0fc16863396f5d666988d2a8d98c60e87392f162833"
+    },
+    {
+      "bytes": 3839,
+      "path": "frozen/tools/re/plist_decode_probe.m",
+      "sha256": "b1787d4b15b9a3345c4dcd2c9caf72c2f1dbdee195db1bd0c465464f395ec80c"
+    },
+    {
+      "bytes": 3307,
+      "path": "frozen/tools/re/plist_probe.m",
+      "sha256": "1590bc1b5dd280b7739269c0eb0ec786bb4502d82544aaf42333f4d7f444927f"
+    },
+    {
+      "bytes": 1224,
+      "path": "frozen/tools/re/preview_cli.py",
+      "sha256": "749db82caacc93131da40e0d574b938f34c78be601f52fbb38670ead4a358f3e"
+    },
+    {
+      "bytes": 4136,
+      "path": "frozen/tools/re/raw_coder_probe.m",
+      "sha256": "ef55ae7da54ef6a987aa2b26276f370344249c0552e7feb7835ef7c19dac1269"
+    },
+    {
+      "bytes": 907,
+      "path": "frozen/tools/re/rea/codex-tools.json",
+      "sha256": "3586f3f5bb2fea41a55dacc573ff0c860de796c00bed9832db0bb24634030a5f"
+    },
+    {
+      "bytes": 64648,
+      "path": "frozen/tools/re/rea/package-lock.json",
+      "sha256": "9071e1ec0b576b7b00bcb26fa73eec13328084767219b6eaff9f5b60e7e53fe3"
+    },
+    {
+      "bytes": 215,
+      "path": "frozen/tools/re/rea/package.json",
+      "sha256": "1f256786ea6f58a15d6d8bc25ffe411bb6f15de6adf9be6ba12af089831f5cf4"
+    },
+    {
+      "bytes": 298,
+      "path": "frozen/tools/re/rea/probe.c",
+      "sha256": "7d2b5139896c8e9e4d98494ce4758dca1df9b55725092f694ad8ab1bb866e270"
+    },
+    {
+      "bytes": 64,
+      "path": "frozen/tools/re/reloop/__init__.py",
+      "sha256": "6f46e7d98d93883aab8f81b0fd10af62597a1124c0c48642ae4f5c69f16caabb"
+    },
+    {
+      "bytes": 3349,
+      "path": "frozen/tools/re/reloop/alpha.py",
+      "sha256": "776736a549081d601d0d4370cd3c84031de0ddb7ddaa8ea5b54b9e1b50193b9b"
+    },
+    {
+      "bytes": 3923,
+      "path": "frozen/tools/re/reloop/bridgeprobe.py",
+      "sha256": "d49ae52e10d0b089d1d923369e995cd470ad5cf7e53bc8acbc4d741535e2898b"
+    },
+    {
+      "bytes": 2191,
+      "path": "frozen/tools/re/reloop/browser_alpha.html",
+      "sha256": "72ab0fe2b5f264877926f2f490e49d90314d8fb3033cca82bcf21bc1d4a41bf0"
+    },
+    {
+      "bytes": 3458,
+      "path": "frozen/tools/re/reloop/browser_primary_source.html",
+      "sha256": "0806a7bfd2cd840a0769da69029751a5d3ffae546e08f372e1b212f705653738"
+    },
+    {
+      "bytes": 2187,
+      "path": "frozen/tools/re/reloop/browser_source.html",
+      "sha256": "bf080918fdc4c396d7554ce1ace2151cb2b6871055a8c8989456f5da6068e82e"
+    },
+    {
+      "bytes": 7693,
+      "path": "frozen/tools/re/reloop/browseralpha.py",
+      "sha256": "199f56a53ab48dbc7e3cd837769e9e28c180b08c47239056632aa615e1498596"
+    },
+    {
+      "bytes": 9729,
+      "path": "frozen/tools/re/reloop/browsersource.py",
+      "sha256": "264a5283eb4e430bad3300f7f07757e54667d3ede8ace1fa706f5018cac06a93"
+    },
+    {
+      "bytes": 6567,
+      "path": "frozen/tools/re/reloop/browserwasm.py",
+      "sha256": "5a15363b89bb6d8776df00370a527257b078436c752064a2ef74b1edd5928803"
+    },
+    {
+      "bytes": 19843,
+      "path": "frozen/tools/re/reloop/canvas.py",
+      "sha256": "a144f5a402697fb6f58605cac3acd5d1c519cffd4cf33be7adf8de7b58a76f12"
+    },
+    {
+      "bytes": 5130,
+      "path": "frozen/tools/re/reloop/canvasdiagnostics.py",
+      "sha256": "c17a9f138488f717fa03aca9503fd77bc51850fb8b37fe6d8171b78543404c49"
+    },
+    {
+      "bytes": 2999,
+      "path": "frozen/tools/re/reloop/chained.py",
+      "sha256": "08a4788de8baa8557c2dd2a423dbbcba0da22788ac3581f4ab2765a9fc64a7d6"
+    },
+    {
+      "bytes": 2172,
+      "path": "frozen/tools/re/reloop/connected.py",
+      "sha256": "b3ba08f1e8cc980d6dc2ea7603bbcbc72a68cc3379a2cc04f1fb926e3a136aae"
+    },
+    {
+      "bytes": 13639,
+      "path": "frozen/tools/re/reloop/continuation.py",
+      "sha256": "db61609a561cf49ae697fb1d9199d7cebb9eb9793586bfdc2d68c8bcaae9e0f9"
+    },
+    {
+      "bytes": 32293,
+      "path": "frozen/tools/re/reloop/core.py",
+      "sha256": "2c0f2f15c90c6b43733076d2e33acb84646fa482cabbd854bf99a261c3898d95"
+    },
+    {
+      "bytes": 5935,
+      "path": "frozen/tools/re/reloop/corpus.py",
+      "sha256": "88003655ec44d5392061a19e9772d49eae1d2bdb3e2954ac2b1303525d64f8cf"
+    },
+    {
+      "bytes": 747,
+      "path": "frozen/tools/re/reloop/disassembly.py",
+      "sha256": "e5b03ed0caf06a24fa389f6cb7319663578c930d75996170c6966d7382af5819"
+    },
+    {
+      "bytes": 7540,
+      "path": "frozen/tools/re/reloop/discriminants.py",
+      "sha256": "1832d05ef6724d6bbd060ac45df0c3561265c0d87781b6ac595b7a4c1a33c53f"
+    },
+    {
+      "bytes": 6734,
+      "path": "frozen/tools/re/reloop/engine.py",
+      "sha256": "dd0cae421730678430b2a178d7a49dffb0eecc10053615d104d060d386ae200d"
+    },
+    {
+      "bytes": 9547,
+      "path": "frozen/tools/re/reloop/evidence.py",
+      "sha256": "f3cc6f82e0ed9390e4d09d97f31cca9a37d76fb4c0e75a8a75c0d6720f7a26b4"
+    },
+    {
+      "bytes": 11150,
+      "path": "frozen/tools/re/reloop/extentcli.py",
+      "sha256": "e5c6707fe7f97fdcc22e29772abbb31eebf99fec591d8e6845d89ecb4e0cf3e4"
+    },
+    {
+      "bytes": 3618,
+      "path": "frozen/tools/re/reloop/frida_hooks.js",
+      "sha256": "d6aabf97377643cecf8660a89d5ff8e0311264683675964957e0b5fc9e730afd"
+    },
+    {
+      "bytes": 3510,
+      "path": "frozen/tools/re/reloop/generation.py",
+      "sha256": "aeee42eeb01da4320a22d063e59422eb20bbf3cdb2f8a0bb3bdb8df481f38e42"
+    },
+    {
+      "bytes": 3724,
+      "path": "frozen/tools/re/reloop/ghidra.py",
+      "sha256": "95e3892e615131a12411df8191e20a091216aab1156b1a67496ba8767c2386da"
+    },
+    {
+      "bytes": 18036,
+      "path": "frozen/tools/re/reloop/graphloop.py",
+      "sha256": "2b20e5f96150e2133304af25cbd294980ae996a8a26bb0a781c489d30c79a7fa"
+    },
+    {
+      "bytes": 3320,
+      "path": "frozen/tools/re/reloop/libprocobserver.py",
+      "sha256": "0ae62eb368d52ab0b96798e421d5f36a368a02e8dc9a8623b4c4561eaa51e446"
+    },
+    {
+      "bytes": 3739,
+      "path": "frozen/tools/re/reloop/linux_alpha_runner.py",
+      "sha256": "fca23b9643589399db1471307534e7c708663c0ba78ff868d79e4717c0eedfe7"
+    },
+    {
+      "bytes": 2102,
+      "path": "frozen/tools/re/reloop/linux_layers_mutant_runner.py",
+      "sha256": "a81d9583b53b618929410c6cf1c3ae31c570feba5481c7b7ccc07f17e72e3351"
+    },
+    {
+      "bytes": 3782,
+      "path": "frozen/tools/re/reloop/linux_layers_runner.py",
+      "sha256": "5948eae2618b57460ef707ddbb1c0f16e4e9d73c7488e523b5ee6b482e4c3a1e"
+    },
+    {
+      "bytes": 4998,
+      "path": "frozen/tools/re/reloop/linux_source_runner.py",
+      "sha256": "60410854bf2105c35ee1bb777041137b4decf5e44f861ed3401d0f4dd23faff7"
+    },
+    {
+      "bytes": 3931,
+      "path": "frozen/tools/re/reloop/linux_wasm_runner.py",
+      "sha256": "39d88cb94cd2d317c68367a7c48529c533c56872a25b5e508ca55de00d2c1596"
+    },
+    {
+      "bytes": 5708,
+      "path": "frozen/tools/re/reloop/linuxalpha.py",
+      "sha256": "7eff3aac4b77a3dcefb0e25000f20492e6c43169e15b9e1e9abc9d70514ebdda"
+    },
+    {
+      "bytes": 8347,
+      "path": "frozen/tools/re/reloop/linuxlayers.py",
+      "sha256": "3a918bf80d6d919137c66b01551b01fb045dacf1628c38e7d2da4f333e2bec27"
+    },
+    {
+      "bytes": 8512,
+      "path": "frozen/tools/re/reloop/linuxsource.py",
+      "sha256": "f7d6d7e4a7c2557b7a0cad905387efadf29e6a7dc6f1a39abdee735cd5bd7596"
+    },
+    {
+      "bytes": 5862,
+      "path": "frozen/tools/re/reloop/linuxwasm.py",
+      "sha256": "0a88ad26c37b95b1f91a629582d879ada886f5f97bc1c81c1e8be49ae60a0d47"
+    },
+    {
+      "bytes": 2911,
+      "path": "frozen/tools/re/reloop/live_wasm_corpus.js",
+      "sha256": "be25552b7c64238f380c1ac9d21def566546c392d7ab48e787f7ee9904376e0b"
+    },
+    {
+      "bytes": 6947,
+      "path": "frozen/tools/re/reloop/live_wasm_host.js",
+      "sha256": "ec61ec042e94f048eb613fd55f60a00039ae2c7c97799fc11916c71235ddb418"
+    },
+    {
+      "bytes": 4121,
+      "path": "frozen/tools/re/reloop/livecorpus.py",
+      "sha256": "4ef42502c59db4816ca95b17094582889a565faffbb6f13a9b36da7cf407a329"
+    },
+    {
+      "bytes": 4868,
+      "path": "frozen/tools/re/reloop/liveswapprobe.py",
+      "sha256": "401d6f0699ae7e53b696d71851044cce77ee601b46de37a64167199a35263e86"
+    },
+    {
+      "bytes": 2498,
+      "path": "frozen/tools/re/reloop/lldb_capture.py",
+      "sha256": "0f9a62018becbffbe1237c8a402773fc4744ba95859bec52edb567015df3da9b"
+    },
+    {
+      "bytes": 2091,
+      "path": "frozen/tools/re/reloop/loopverify.py",
+      "sha256": "412768983e89ad5bc87e2f99c73499bbcd9c0b3d4b426273df1e18fe1ebcc27d"
+    },
+    {
+      "bytes": 3235,
+      "path": "frozen/tools/re/reloop/mcp_client.py",
+      "sha256": "fd7baa56e282f81a8ce6be25b36aa9cc1b3a18297c32fee665e528362293476d"
+    },
+    {
+      "bytes": 5081,
+      "path": "frozen/tools/re/reloop/mixedalpha.py",
+      "sha256": "71c5f5a4257f7a6251fe910d8bf47d9651941d889b3f0b119f59e870f9af713c"
+    },
+    {
+      "bytes": 7293,
+      "path": "frozen/tools/re/reloop/mixedboundary.py",
+      "sha256": "1abaf3adc4a2da5a14b79075040930a2393de69c93290c0cd244cc97e2bbb357"
+    },
+    {
+      "bytes": 6902,
+      "path": "frozen/tools/re/reloop/mixedcallback.py",
+      "sha256": "60dd0ccfc90d869c1c6d638ac3f6f04e747ae6a14b5d16d5e19629801429cae3"
+    },
+    {
+      "bytes": 8705,
+      "path": "frozen/tools/re/reloop/mixedorder.py",
+      "sha256": "5263a8a493171c0f046471fb0775e2849e1478a4ae5034068879a35de464ec94"
+    },
+    {
+      "bytes": 7616,
+      "path": "frozen/tools/re/reloop/mixedquartz.py",
+      "sha256": "f75257b387afed78478afe8026a708994c19dc2dfadb888ca9ffd01723fcb102"
+    },
+    {
+      "bytes": 5579,
+      "path": "frozen/tools/re/reloop/mixedscale.py",
+      "sha256": "b9bb402920bd952f4d832fe6ef77e7bdee424bfe1b32ac733c984de30c397690"
+    },
+    {
+      "bytes": 5445,
+      "path": "frozen/tools/re/reloop/namereuse.py",
+      "sha256": "316811e384cc0f9fadeaa582eded7878e469de4146a51e0c31caefdead1b265c"
+    },
+    {
+      "bytes": 5059,
+      "path": "frozen/tools/re/reloop/observerremoval.py",
+      "sha256": "7d2291a687673ea9daf8fcfd3a7cd389424a6119820feaebb39f1d953b6d54bc"
+    },
+    {
+      "bytes": 4191,
+      "path": "frozen/tools/re/reloop/owned_compiler.js",
+      "sha256": "eed0344ce6bb5ff469d33795de04fea5aa33acaa6e997b8db946988c8051a8c3"
+    },
+    {
+      "bytes": 12313,
+      "path": "frozen/tools/re/reloop/planner.py",
+      "sha256": "122ab5360fa3fa99cc27dc09a3efbc8c774961b98e7b8fcaf5ab8e81293c3aa3"
+    },
+    {
+      "bytes": 4506,
+      "path": "frozen/tools/re/reloop/plistdecode.py",
+      "sha256": "b406d7d46751cf06fd398b598d37670cc29b73151c081f6dcd5f63ac9bac5953"
+    },
+    {
+      "bytes": 4199,
+      "path": "frozen/tools/re/reloop/portable.py",
+      "sha256": "d582bcaff72052110fee133c5ef95a8e8822148ef304d65dc9bdcecfc8b950bf"
+    },
+    {
+      "bytes": 2227,
+      "path": "frozen/tools/re/reloop/portable_alpha_runner.js",
+      "sha256": "afc8e943f9407a59706683f02f34d9bfdbc947417445db31775ebe89e727317d"
+    },
+    {
+      "bytes": 801,
+      "path": "frozen/tools/re/reloop/portable_layers_fault_runner.js",
+      "sha256": "0207ae37be48fe0eaba4344953bcfe522104cd92ee0366134517aa2ef7cc753b"
+    },
+    {
+      "bytes": 2554,
+      "path": "frozen/tools/re/reloop/portable_layers_runner.js",
+      "sha256": "ba172dca637e6cc75feb748153baab35f34904284df99f979f006729a9f097f7"
+    },
+    {
+      "bytes": 1742,
+      "path": "frozen/tools/re/reloop/portable_solid_runner.js",
+      "sha256": "3b3b805f3347eaa9e2e1b1561ac360eb3bd54786fb18ccd786dc3b7700996a96"
+    },
+    {
+      "bytes": 1182,
+      "path": "frozen/tools/re/reloop/portable_verify_runner.js",
+      "sha256": "100c24206a1fca7262751ce94fa3a4dd5b57c0f2aa14d5b8a37e1f28353a7da8"
+    },
+    {
+      "bytes": 6270,
+      "path": "frozen/tools/re/reloop/portablealpha.py",
+      "sha256": "a6b7a7ec76bf8ffe6b543e1fbd1a35449b4dd0300cad43bb34932de96c06e55b"
+    },
+    {
+      "bytes": 10150,
+      "path": "frozen/tools/re/reloop/portablelayers.py",
+      "sha256": "aeadaccea415190ec6f54c51099ee6a2074445bed67a0985da91b8d347c62458"
+    },
+    {
+      "bytes": 3121,
+      "path": "frozen/tools/re/reloop/preview_hooks.js",
+      "sha256": "20aed24c639353fcbd4b6af840501ca3701ceca07526d76570a0fb5273ebdd9f"
+    },
+    {
+      "bytes": 2093,
+      "path": "frozen/tools/re/reloop/primary_source_runner.js",
+      "sha256": "c942c873eb470386fb3ba8b62bd6fbc0a1a5d29eecef46bc5c3ea969a622423c"
+    },
+    {
+      "bytes": 3954,
+      "path": "frozen/tools/re/reloop/primaryextent.py",
+      "sha256": "a648e181d82150d748928c57b1d6aebe0d8324c940a0b89cdd944704d8ff914c"
+    },
+    {
+      "bytes": 7018,
+      "path": "frozen/tools/re/reloop/primarylayers.py",
+      "sha256": "404ca7dabcf696932e8c4b307e62efffff1c679dc26581fbac1048fe609b9739"
+    },
+    {
+      "bytes": 12327,
+      "path": "frozen/tools/re/reloop/primarysource.py",
+      "sha256": "6189e6d02a7cb4dc62e572f2dbc00aa11dd6b8c9ea7a70d30f5ac423de5f62c0"
+    },
+    {
+      "bytes": 4587,
+      "path": "frozen/tools/re/reloop/processes.py",
+      "sha256": "c75b14564493b275ba1ef153fb570dbfb058dfa243822138edfa233a0822f467"
+    },
+    {
+      "bytes": 4185,
+      "path": "frozen/tools/re/reloop/processoracle.py",
+      "sha256": "9cc95ed80348ebe3f2941291debb9f77f725ea9e54686a8ca671437f91062c71"
+    },
+    {
+      "bytes": 2405,
+      "path": "frozen/tools/re/reloop/quiescence.py",
+      "sha256": "4eca4ee43d9d93ec87b20ce94289a0b5404e05b978a6b2118f91c9f466bfc9fa"
+    },
+    {
+      "bytes": 4049,
+      "path": "frozen/tools/re/reloop/rawcoder.py",
+      "sha256": "4e40ae7e0f1431374cc624ef9def60073badae792a4fcf56f63a5ff0cfd4fcf1"
+    },
+    {
+      "bytes": 8818,
+      "path": "frozen/tools/re/reloop/rea.py",
+      "sha256": "24648463d65b490e50c7587a4267fde57b725064427cd4f6b21df3a701ebc484"
+    },
+    {
+      "bytes": 3998,
+      "path": "frozen/tools/re/reloop/reference.py",
+      "sha256": "98f58941b9bc86fc053eb8f2a78b69b6b0f1adbee9524061357960e41c9eac71"
+    },
+    {
+      "bytes": 1330,
+      "path": "frozen/tools/re/reloop/report.py",
+      "sha256": "9d466a0c864731ef34257b2d7269ef66ceaca518274ddfc2d0563d2eff347a6d"
+    },
+    {
+      "bytes": 1706,
+      "path": "frozen/tools/re/reloop/responses.py",
+      "sha256": "e3dc09d62ac3a92794f5e6ffab0810779bc99f6d516d9990d42310baae1ad19a"
+    },
+    {
+      "bytes": 6381,
+      "path": "frozen/tools/re/reloop/resulttag.py",
+      "sha256": "a59f00eec7b88f567b567bb6981a7ac43c1689c888e49dbceaa1a6915aa4f81e"
+    },
+    {
+      "bytes": 4482,
+      "path": "frozen/tools/re/reloop/services.py",
+      "sha256": "2dc79277869d4174e130e508620a3c688f209e83f9007007c84cfcee843d1bac"
+    },
+    {
+      "bytes": 3397,
+      "path": "frozen/tools/re/reloop/source_file_loop.js",
+      "sha256": "1fc2119afb66aca80d493cdd9809a45b61dd5f94c4da8e21cfde6a0fc2abfce8"
+    },
+    {
+      "bytes": 2237,
+      "path": "frozen/tools/re/reloop/source_frame_runner.js",
+      "sha256": "2c44ebd257a84a0c3b16806e965f98a06e2728f35cc170936d9b5635b33e30a9"
+    },
+    {
+      "bytes": 1734,
+      "path": "frozen/tools/re/reloop/source_revision_host.js",
+      "sha256": "9f43a5bbedf543a66e626be721c8dd386c8be34c65001251c87ebd7acf65bbc7"
+    },
+    {
+      "bytes": 6947,
+      "path": "frozen/tools/re/reloop/sourcecache.py",
+      "sha256": "f679757030b9834df58afa770b39a8c61365f081c3651245094c852c5928bd50"
+    },
+    {
+      "bytes": 6703,
+      "path": "frozen/tools/re/reloop/sourcecacheprobe.py",
+      "sha256": "e02eae00ec07e702fdc8f7306fd081525065a32b553c556a5a51d9c7e9cbfcd4"
+    },
+    {
+      "bytes": 8162,
+      "path": "frozen/tools/re/reloop/sourceframe.py",
+      "sha256": "c11244a85e592a4800577d18a5bccf0e335c01bf65338762d30f36255c074741"
+    },
+    {
+      "bytes": 7406,
+      "path": "frozen/tools/re/reloop/sourceframeprobe.py",
+      "sha256": "d9e00d015a265fd8dd34bc70d1f3aad612ef00b4dedafabaa4cd901a326fef31"
+    },
+    {
+      "bytes": 5857,
+      "path": "frozen/tools/re/reloop/sourceinterpreter.py",
+      "sha256": "c148bdc28bd738b6bcc86b25e44ec67db283ee9ed6b1d48db8267a3f547654f9"
+    },
+    {
+      "bytes": 1115,
+      "path": "frozen/tools/re/reloop/sourceinterpreter_runner.js",
+      "sha256": "8d0b85d6dbf39bb67089ec77464740917601d4554162feeb846a2fccc1e3d942"
+    },
+    {
+      "bytes": 5558,
+      "path": "frozen/tools/re/reloop/statepattern.py",
+      "sha256": "4f0357809662d0228839280171c0b5b7adc42df370086e2bf9a036af1344ceb2"
+    },
+    {
+      "bytes": 5668,
+      "path": "frozen/tools/re/reloop/statetag.py",
+      "sha256": "2dd312ff7d5cfc4d70df874911f1d1df02550d3c9ed552703a0b05cd62c28728"
+    },
+    {
+      "bytes": 5930,
+      "path": "frozen/tools/re/reloop/storageownership.py",
+      "sha256": "c86222898194736d8a60cf19e87ca16ee68b62eef7aa6b7047af00d2ca865e14"
+    },
+    {
+      "bytes": 4342,
+      "path": "frozen/tools/re/reloop/stubbind.py",
+      "sha256": "9b1a1c354b5dc7279218afcb7d839aa21a26c9598e34c6d684334c08fed6e5f2"
+    },
+    {
+      "bytes": 4054,
+      "path": "frozen/tools/re/reloop/surface.py",
+      "sha256": "b4f69381094c0d3fcd0876642996adf3d43f92357ef296f06491dee1e4dd5dcc"
+    },
+    {
+      "bytes": 8237,
+      "path": "frozen/tools/re/reloop/surfacefailure.py",
+      "sha256": "8598c05bad7a422a7b342da0a9eb9965217c78f11ec5df3c6de32e47a216d851"
+    },
+    {
+      "bytes": 4780,
+      "path": "frozen/tools/re/reloop/surfacegpu.py",
+      "sha256": "36c47d691a29c30e03f158dfbd742bbd7d07107e61a9baa1ffc36f4d4a2feea2"
+    },
+    {
+      "bytes": 10554,
+      "path": "frozen/tools/re/reloop/surfacegpuipc.py",
+      "sha256": "a60f0881cd9b2e5843cd0c75c8989f8c787e636fabe536783ed04f3bcf76ead2"
+    },
+    {
+      "bytes": 7373,
+      "path": "frozen/tools/re/reloop/surfaceipc.py",
+      "sha256": "926b4351e4c9432bcf484460bf116f886b639fa80c61c94cf7e20ea7b50d0872"
+    },
+    {
+      "bytes": 3953,
+      "path": "frozen/tools/re/reloop/surfacelate.py",
+      "sha256": "d853be526e2cc2b4e9c3e101771432a1cfff22a5da767e6bfe2126d6c46c67d3"
+    },
+    {
+      "bytes": 5336,
+      "path": "frozen/tools/re/reloop/surfacepayload.py",
+      "sha256": "c54514ccfb42c0d45600d3520df168922a457028dbe4eb0cebe487ac0d05d143"
+    },
+    {
+      "bytes": 7357,
+      "path": "frozen/tools/re/reloop/surfacereuse.py",
+      "sha256": "e7f1de7c0782cc5b6f2748ac7c7f9e892deb62d83317de71bcde4ede6d622cbf"
+    },
+    {
+      "bytes": 6686,
+      "path": "frozen/tools/re/reloop/swiftmeta.py",
+      "sha256": "9f114a047b4b35bb2ffb9aba076c7d3c171c50f43e92d501545206aef6f4ef1f"
+    },
+    {
+      "bytes": 3172,
+      "path": "frozen/tools/re/reloop/tokenconsume.py",
+      "sha256": "73f26ca4f3c40ab283b909fb9a71d6f53d1f58a5248d00233b3823f5ff39f468"
+    },
+    {
+      "bytes": 4800,
+      "path": "frozen/tools/re/reloop/tokendescriptor.py",
+      "sha256": "d0aa8df5d27680b10455007b86d5f0355c385b4d86f16f40e52c2c7ecd4e4a1b"
+    },
+    {
+      "bytes": 4571,
+      "path": "frozen/tools/re/reloop/tokenlink.py",
+      "sha256": "d6f6bc388aa54a4117dbe1d018052559be911fa718981cb6f21d8919c071d5f2"
+    },
+    {
+      "bytes": 3605,
+      "path": "frozen/tools/re/reloop/tokenwitness.py",
+      "sha256": "90cb8e77847b90fdc83f8cb06468a8c099fa2e3ab8a388096af2a66083671a12"
+    },
+    {
+      "bytes": 5785,
+      "path": "frozen/tools/re/reloop/trace.py",
+      "sha256": "c352808851be055e0679f9296a3711e3ea1dcb46c4498df2bb000595e8a3f6bc"
+    },
+    {
+      "bytes": 3921,
+      "path": "frozen/tools/re/reloop/verification.py",
+      "sha256": "dc497403ccea0fc582f322700a4b2cc7405667fa8698cf860965a9e0bdd8d082"
+    },
+    {
+      "bytes": 9507,
+      "path": "frozen/tools/re/reloop/viewsource.py",
+      "sha256": "2db1d38ca14adbc1fd6cf28cb4570c6dfa659ab217014e44bff6e128e5d16a7e"
+    },
+    {
+      "bytes": 1467,
+      "path": "frozen/tools/re/reloop/viewsource_runner.js",
+      "sha256": "91afc39a3dcad08a5677af58444d550f9ee8f5c6e88129bdee43be76f721f23c"
+    },
+    {
+      "bytes": 3521,
+      "path": "frozen/tools/re/reloop/wasmkit.py",
+      "sha256": "ed7135d0c4d632a680e4d2ab005c6b99fd39cacb785f12128e9721a3eb7abcb7"
+    },
+    {
+      "bytes": 20973,
+      "path": "frozen/tools/re/reloop/worker.py",
+      "sha256": "336067a92bc00fe1d9b52d6f8d9842dad38d155cf11afdec29cd522b48ddf460"
+    },
+    {
+      "bytes": 5922,
+      "path": "frozen/tools/re/reloop/workgraph.py",
+      "sha256": "fb8a6e8584c4aa50d88b7a358230513b964eaecc9f3a342f28d379ad17b2e6d1"
+    },
+    {
+      "bytes": 8149,
+      "path": "frozen/tools/re/reloop/xcodebridge.py",
+      "sha256": "be22db6deeecd3a195268f9f5f00bf468769cb468a9627f2323f9d15d7b34da4"
+    },
+    {
+      "bytes": 9771,
+      "path": "frozen/tools/re/reloop/xpc.py",
+      "sha256": "bf4db2dd5925c5469b5e8230286d26c2b151ce359344eec0f4301a647a8ace60"
+    },
+    {
+      "bytes": 5241,
+      "path": "frozen/tools/re/runtime_dump.m",
+      "sha256": "d53e8752a022d9859048d7afc7d6f150821a4422a31a4a16c1df863066461368"
+    },
+    {
+      "bytes": 905,
+      "path": "frozen/tools/re/source_cli.py",
+      "sha256": "9c0ef1e7ab1304ef9db0e7a561fd6466a3ac0d928fe9aeeecb2cb8db7a63f3a1"
+    },
+    {
+      "bytes": 4958,
+      "path": "frozen/tools/re/summarize.py",
+      "sha256": "3b8a43c95583165b638d6a7f7f9631c30885e2a5eb025966aa811c35cf08cb4b"
+    },
+    {
+      "bytes": 15203,
+      "path": "frozen/tools/re/surface_failure_probe.c",
+      "sha256": "656cdb032f3e537f507c33bca2992d683a54bbfd935fac6c66d125f45ada1c15"
+    },
+    {
+      "bytes": 5235,
+      "path": "frozen/tools/re/surface_gpu_probe.m",
+      "sha256": "ee61b6266b92884c4196b2033000cdcee8132961dd509f9e0fe57aea154a7218"
+    },
+    {
+      "bytes": 11827,
+      "path": "frozen/tools/re/surface_gpu_producer.m",
+      "sha256": "704fc468f1b11a71573d65f99d1dba9b09bcce851ea5c5e73f3b8c1dac8f3fbd"
+    },
+    {
+      "bytes": 22936,
+      "path": "frozen/tools/re/surface_ipc_probe.c",
+      "sha256": "3b1cbe1d2ac70ea3e4111c19fc8f369ddf607e8dff2658362b2913474bc8cf8c"
+    },
+    {
+      "bytes": 5465,
+      "path": "frozen/tools/re/surface_name_reuse.m",
+      "sha256": "b88bcbe2e401b47fcac2c95fa995776178b78cb0731877789f985a10373b6d41"
+    },
+    {
+      "bytes": 4074,
+      "path": "frozen/tools/re/surface_probe.m",
+      "sha256": "d16a3a77c7efdd9fbca5937dad82cd3051212299b7977e0acc1df43a55857d11"
+    },
+    {
+      "bytes": 11140,
+      "path": "frozen/tools/re/surface_reuse_probe.c",
+      "sha256": "3484c52ff3e59edd2fd0474f7cdfcc15b887dafc54ae95cb8d251ef59590c469"
+    },
+    {
+      "bytes": 3098,
+      "path": "frozen/tools/re/tests/live_wasm_cancel_control.js",
+      "sha256": "c6a1eab6ec9c5c3a4c3b68e23a9300612d83c9dd6467f8f1d5f0a52b72b1cc30"
+    },
+    {
+      "bytes": 2697,
+      "path": "frozen/tools/re/tests/live_wasm_guard_control.js",
+      "sha256": "2032bf719434cc07ae1025d92be3bdd9d7445348aa21ad8a948ec3367acdc13f"
+    },
+    {
+      "bytes": 3481,
+      "path": "frozen/tools/re/tests/live_wasm_host_control.js",
+      "sha256": "7c878f94fb6450d15e0c193ab534f6c0ae21c4ba9f156c682b0c5ac66ccdc141"
+    },
+    {
+      "bytes": 3062,
+      "path": "frozen/tools/re/tests/owned_compiler_control.js",
+      "sha256": "ad3306350d351aa71791e11f8d901f8b32e8e57244e9eb74e34348c5a7eaab5a"
+    },
+    {
+      "bytes": 4703,
+      "path": "frozen/tools/re/tests/source_file_loop_control.js",
+      "sha256": "1025964f103c51ad39d2ceddf16aca075b4b1faea524f6eae8741b501ff76b11"
+    },
+    {
+      "bytes": 3004,
+      "path": "frozen/tools/re/tests/source_revision_control.js",
+      "sha256": "bcdf4452113531571f1b3553ec91a865be60d4f6b98152a4585d455cdb6810fe"
+    },
+    {
+      "bytes": 1511,
+      "path": "frozen/tools/re/tests/test_alpha.py",
+      "sha256": "f8b3505b5b9a56599990df2ec1a187da1098ef34e6403f8925dc7f63d389726d"
+    },
+    {
+      "bytes": 3760,
+      "path": "frozen/tools/re/tests/test_bridgeprobe.py",
+      "sha256": "0ed35445b72fce1a79959328fd962915b5c297c44215e3af2eec24561041baa0"
+    },
+    {
+      "bytes": 2960,
+      "path": "frozen/tools/re/tests/test_browseralpha.py",
+      "sha256": "ad4dadb1d8c93383ca88ee8967adc432039f2ba4745f96388b6c9454f3ba9723"
+    },
+    {
+      "bytes": 4832,
+      "path": "frozen/tools/re/tests/test_browsersource.py",
+      "sha256": "3709b9e174d268959614d2aac49c493bb28238748b2c1cc545b11e70418375b2"
+    },
+    {
+      "bytes": 3019,
+      "path": "frozen/tools/re/tests/test_browserwasm.py",
+      "sha256": "a69b6cb3b11684c51331a57693423d735dfd639303fd3d33972c9eda89b6f47b"
+    },
+    {
+      "bytes": 3988,
+      "path": "frozen/tools/re/tests/test_canvasdiagnostics.py",
+      "sha256": "0a47c825e83ba570c730bc390bbed1d0d95616683164047c257b8eca522eb012"
+    },
+    {
+      "bytes": 11334,
+      "path": "frozen/tools/re/tests/test_continuation.py",
+      "sha256": "c155f1f1ae0a552d7e231c76d287a3d11962a452e79686ac4518d20d67b21f3c"
+    },
+    {
+      "bytes": 5542,
+      "path": "frozen/tools/re/tests/test_core.py",
+      "sha256": "be2ef208cc1eacde7516b5e0e1e5ceda787de6636a5d8f72f4320010d52bc0e2"
+    },
+    {
+      "bytes": 1140,
+      "path": "frozen/tools/re/tests/test_disassembly.py",
+      "sha256": "26438e32837a8b12873b01720f945d72a0f9684d09b7a3738f3b91fd24baba18"
+    },
+    {
+      "bytes": 16573,
+      "path": "frozen/tools/re/tests/test_evidence.py",
+      "sha256": "3f3d4febea98d2f3991b2993de1bedf6ae17f32f8976504dbfd63a47b62a1eb4"
+    },
+    {
+      "bytes": 2285,
+      "path": "frozen/tools/re/tests/test_extentcli.py",
+      "sha256": "23a179bfd52370a12a44bffef3ac95ff0d6e7d65f2551673528947de6399695d"
+    },
+    {
+      "bytes": 1329,
+      "path": "frozen/tools/re/tests/test_generation.py",
+      "sha256": "a49009a3d37cb4e03113f11531d9deb376332605ce3f88a3c5e12d44b94806f6"
+    },
+    {
+      "bytes": 13223,
+      "path": "frozen/tools/re/tests/test_graphloop.py",
+      "sha256": "51a79755dc33892b6f6b2ae8feb1fc3b35105b456dc5a186d4c83ed19d2da3df"
+    },
+    {
+      "bytes": 4002,
+      "path": "frozen/tools/re/tests/test_libprocobserver.py",
+      "sha256": "cd80549435ef86b99bfa3f07b30c51c09ac572a8b2ac22914e8aacae0bb2fbd7"
+    },
+    {
+      "bytes": 4048,
+      "path": "frozen/tools/re/tests/test_linuxalpha.py",
+      "sha256": "b985faf8255a57d9a85a05bf11d21350cdaa9c0fe56059090f29590f3d1fe231"
+    },
+    {
+      "bytes": 5868,
+      "path": "frozen/tools/re/tests/test_linuxlayers.py",
+      "sha256": "11c461494a9abd4b1e20b0b231de6bc6358ccdbb88984562e5e2f8f764d9cd64"
+    },
+    {
+      "bytes": 5988,
+      "path": "frozen/tools/re/tests/test_linuxsource.py",
+      "sha256": "b2dcba1889a8176e1a2845f5949007d2d166ccb26da967e661ca48d50d26a7ac"
+    },
+    {
+      "bytes": 2536,
+      "path": "frozen/tools/re/tests/test_linuxwasm.py",
+      "sha256": "6997a79fa4d1052ca49a971e0a6851339dddce823f50305635bbdbace9a42814"
+    },
+    {
+      "bytes": 2260,
+      "path": "frozen/tools/re/tests/test_livecorpus.py",
+      "sha256": "0ebddd24fb902eb17502987334fcf34a1c5087bb660658f5a887b4b331798354"
+    },
+    {
+      "bytes": 1373,
+      "path": "frozen/tools/re/tests/test_liveswapbinding.py",
+      "sha256": "f39fc4702355695bc54c861947507ae97e31035f673953b9927c18d0dcd90648"
+    },
+    {
+      "bytes": 1062,
+      "path": "frozen/tools/re/tests/test_liveswapprobe.py",
+      "sha256": "fb43baf070ccfb885f9f950d4fbbb9b2f93030257f6a32f67e00b814326d27f3"
+    },
+    {
+      "bytes": 2605,
+      "path": "frozen/tools/re/tests/test_livewasmhost.py",
+      "sha256": "e59c5e3a1bc11031ba7565b79313a69ad167106ad4ebf6aa50265a522787023f"
+    },
+    {
+      "bytes": 2803,
+      "path": "frozen/tools/re/tests/test_mixedalpha.py",
+      "sha256": "afdb6ea4f36f1dbddbd86b25d270fb1f1b652677ceb6085cd091e512c838f1f2"
+    },
+    {
+      "bytes": 3213,
+      "path": "frozen/tools/re/tests/test_mixedboundary.py",
+      "sha256": "c66e13aae31aeecf07bf6694169b0c395ba21e87753dc4189637e01327099667"
+    },
+    {
+      "bytes": 3993,
+      "path": "frozen/tools/re/tests/test_mixedcallback.py",
+      "sha256": "4456a3314d555b248b14765ec55e91bc453e27c6409c0b68bd4d10f7888dd32a"
+    },
+    {
+      "bytes": 2578,
+      "path": "frozen/tools/re/tests/test_mixedorder.py",
+      "sha256": "9e1ad776f305ae9de0630b8467de6e20cc5145a0c33515fdb9a673b2a13d6ca9"
+    },
+    {
+      "bytes": 6689,
+      "path": "frozen/tools/re/tests/test_mixedquartz.py",
+      "sha256": "544308de0b7a1425b2b1a7f672c0e832776379abc5ab1587016772263bbdb50a"
+    },
+    {
+      "bytes": 2327,
+      "path": "frozen/tools/re/tests/test_mixedscale.py",
+      "sha256": "d5e74cc7be024e9af26dec8f8a71dbbcd47c038b2202dfe1be5dd543a5bd61a9"
+    },
+    {
+      "bytes": 3853,
+      "path": "frozen/tools/re/tests/test_namereuse.py",
+      "sha256": "1c4575fbd22c5f7693f8f5ba749e1016fc9d2dc700cb26a149ee86267b6fd531"
+    },
+    {
+      "bytes": 1145,
+      "path": "frozen/tools/re/tests/test_observation_timeout.py",
+      "sha256": "d0e37295610b0069f853c6ea3c70f9b8712e4f0c1ff4f6b42b5a307dc0181a39"
+    },
+    {
+      "bytes": 4010,
+      "path": "frozen/tools/re/tests/test_observerremoval.py",
+      "sha256": "54999ae687309beaf3485bd9fd0f66d41e4ace9382aebf9032cfbeec531bc025"
+    },
+    {
+      "bytes": 2396,
+      "path": "frozen/tools/re/tests/test_plistdecode.py",
+      "sha256": "10faaeeab25b70550a4ae30929a9703c57208bebbcf6f101feb5db81fe60db21"
+    },
+    {
+      "bytes": 2419,
+      "path": "frozen/tools/re/tests/test_portable.py",
+      "sha256": "4d7c543a27b760f0929a22c0d6b83106707264e82421505ec5c9931183831827"
+    },
+    {
+      "bytes": 1567,
+      "path": "frozen/tools/re/tests/test_portablealpha.py",
+      "sha256": "8fe7fa35aff45cda8f79c8a44f23ed42f6530c26da9b573558af63850b537290"
+    },
+    {
+      "bytes": 3141,
+      "path": "frozen/tools/re/tests/test_portablelayers.py",
+      "sha256": "d7a42d3949461579fe7fd4938aa3aeefb7400140fe6b8803386687c8990c3d24"
+    },
+    {
+      "bytes": 1359,
+      "path": "frozen/tools/re/tests/test_primaryextent.py",
+      "sha256": "b4a2644e67791885e2d0628986638a307e1eac7b3bb6f24200308e804d12615c"
+    },
+    {
+      "bytes": 3467,
+      "path": "frozen/tools/re/tests/test_primarylayers.py",
+      "sha256": "c924eed442f6abe58445043b51c45228f7ba34666b40eaa2a140f9f8319ab2e3"
+    },
+    {
+      "bytes": 2574,
+      "path": "frozen/tools/re/tests/test_primarysource.py",
+      "sha256": "97defed3674eeab6ed34b2da5876d93945968513264bc406cd7c329b2c2b26d3"
+    },
+    {
+      "bytes": 1800,
+      "path": "frozen/tools/re/tests/test_processes.py",
+      "sha256": "5eb8f588cf41a5aef2bc7f324f36a365fa51ae9afdff39c8e30cddb0d0bdd298"
+    },
+    {
+      "bytes": 4184,
+      "path": "frozen/tools/re/tests/test_protocol.py",
+      "sha256": "4a8caac2000330c5b58e3f5cd804135fb044b22bd651d255e0bc7f9704c24a17"
+    },
+    {
+      "bytes": 3976,
+      "path": "frozen/tools/re/tests/test_rawcoder.py",
+      "sha256": "e729fce8e0392ae56f2365aa41bff0b11031dcc9d0efe8fa6a304072955cfab0"
+    },
+    {
+      "bytes": 4433,
+      "path": "frozen/tools/re/tests/test_rea.py",
+      "sha256": "3ac7b2a4ffbbf1f40af9a79e7ca72feccfab432d08003fc1c9fe237d09c536d1"
+    },
+    {
+      "bytes": 1810,
+      "path": "frozen/tools/re/tests/test_resulttag.py",
+      "sha256": "58014b4078368d8dff73bebff52c98b1996af269244cafc9f3d8aa4863803b7a"
+    },
+    {
+      "bytes": 1707,
+      "path": "frozen/tools/re/tests/test_scoped_snapshot.py",
+      "sha256": "72fc4ce4094bcb38a7966dbb0b0711f79eb17055b6733f6069ee2303002ad1e6"
+    },
+    {
+      "bytes": 4504,
+      "path": "frozen/tools/re/tests/test_sourcecache.py",
+      "sha256": "904dd19e0e56e2f1bb260852eb2d212cd763cfa7466ddd48572fd9b40a435582"
+    },
+    {
+      "bytes": 1070,
+      "path": "frozen/tools/re/tests/test_sourcefileloop.py",
+      "sha256": "85db854f65a5b35e308cb537ef3457caad22315f5f349e22db62c91d40b88b1e"
+    },
+    {
+      "bytes": 8221,
+      "path": "frozen/tools/re/tests/test_sourceframe.py",
+      "sha256": "3e7abe85128bf139be98dd3685d3910848edc4d2dba24c2d80354778c06f5749"
+    },
+    {
+      "bytes": 957,
+      "path": "frozen/tools/re/tests/test_sourceinterpreter.py",
+      "sha256": "474be036e5044aa93a026b4d05a1f86bc6fdbb0e01a4cc497436ae639b929fe8"
+    },
+    {
+      "bytes": 998,
+      "path": "frozen/tools/re/tests/test_sourcerevision.py",
+      "sha256": "a3d11b5856e94495a6185ecd772b51e97932b8ecdd2dde16c836926cb9ea95f2"
+    },
+    {
+      "bytes": 2693,
+      "path": "frozen/tools/re/tests/test_statepattern.py",
+      "sha256": "fe23d39c2f375edf67b297712cdb580bd55d8491ba27f4b373e3cc2e16e7c8bb"
+    },
+    {
+      "bytes": 2988,
+      "path": "frozen/tools/re/tests/test_statetag.py",
+      "sha256": "dc982c4defb513a030aa209a6833c1bf5aa2a596e67727e0a2eb6393de894751"
+    },
+    {
+      "bytes": 2511,
+      "path": "frozen/tools/re/tests/test_storageownership.py",
+      "sha256": "ed65c13079dc6f421558d40a97776861c49aaadc7a002cb9f634619f966c0e5c"
+    },
+    {
+      "bytes": 3116,
+      "path": "frozen/tools/re/tests/test_stubbind.py",
+      "sha256": "5ef22fe2741a59bed17cadc6b5de00a85faef577e5bae7c22589aff324df336f"
+    },
+    {
+      "bytes": 2900,
+      "path": "frozen/tools/re/tests/test_surface.py",
+      "sha256": "69787dc4cf8dc5eac2bbb10194c3235da98853730f506f8d3960ae7222b91fa4"
+    },
+    {
+      "bytes": 4225,
+      "path": "frozen/tools/re/tests/test_surfacefailure.py",
+      "sha256": "3fe5c7e1ea7b16c00564ffffd8aa71e38b2f5a6ab094d17049609c2634049970"
+    },
+    {
+      "bytes": 2932,
+      "path": "frozen/tools/re/tests/test_surfacegpu.py",
+      "sha256": "29b124f14f45f0ba0da0a6610d1331e29838e188bf1ff8e1080d6edbc2b017b6"
+    },
+    {
+      "bytes": 10281,
+      "path": "frozen/tools/re/tests/test_surfacegpuipc.py",
+      "sha256": "db09c203b0315396dc97a5093b1f3b33eee925a71a09657a71ea4c1e5cd3fc0d"
+    },
+    {
+      "bytes": 6292,
+      "path": "frozen/tools/re/tests/test_surfaceipc.py",
+      "sha256": "735c6a618d46691cf14780d8767145aaf8f344c152978df31578f711c3862528"
+    },
+    {
+      "bytes": 2815,
+      "path": "frozen/tools/re/tests/test_surfacelate.py",
+      "sha256": "553cebb2e5969c655ec1f91b1a60bb303afd37c0501469800caf1440a8bc0f04"
+    },
+    {
+      "bytes": 4479,
+      "path": "frozen/tools/re/tests/test_surfacepayload.py",
+      "sha256": "78a7874721f5cbcc43e1745362886044a0376c9ce3bf2f536fd59ad9ea4a2be9"
+    },
+    {
+      "bytes": 4769,
+      "path": "frozen/tools/re/tests/test_surfacereuse.py",
+      "sha256": "07e06e3019cb8b5d157d172bbfcac3c3c26daba08ec6453cb60882730218c512"
+    },
+    {
+      "bytes": 2944,
+      "path": "frozen/tools/re/tests/test_tokenconsume.py",
+      "sha256": "852ec45b9c9dd8e4e43a42a5287f4027976a4abf4261f0785c0f7b12bcb4662c"
+    },
+    {
+      "bytes": 6189,
+      "path": "frozen/tools/re/tests/test_tokendescriptor.py",
+      "sha256": "bf5d42a57ce82a640be3a09cbd7df8b27e11c139c1e0ebaa71c8f0d9d01e8d15"
+    },
+    {
+      "bytes": 4276,
+      "path": "frozen/tools/re/tests/test_tokenlink.py",
+      "sha256": "241d04605f7d8c6763a3ad32a0c10e25be7a791b5dab2a4c77c96a4fd3f6698b"
+    },
+    {
+      "bytes": 2783,
+      "path": "frozen/tools/re/tests/test_tokenwitness.py",
+      "sha256": "2e320d13d2266bda10a5e643aa68eeae885d353c21cbcad4cf62b9b6dc489b9d"
+    },
+    {
+      "bytes": 5898,
+      "path": "frozen/tools/re/tests/test_transport.py",
+      "sha256": "a7e036e5ab5ceaa64414cde4cdd85d10cd78d37d9600cc88d2967c91adcde1ed"
+    },
+    {
+      "bytes": 3071,
+      "path": "frozen/tools/re/tests/test_viewsource.py",
+      "sha256": "840821a4ec97f72cc08418bd83bef9f733774b61700a8d07fb55f201e5eb1eaa"
+    },
+    {
+      "bytes": 3801,
+      "path": "frozen/tools/re/tests/test_workgraph.py",
+      "sha256": "e9c353f1f9a157bc5f973f1d7f981ac00fa3029345b3aebc25f7252f28e65e0f"
+    },
+    {
+      "bytes": 5873,
+      "path": "frozen/tools/re/tests/test_xcodebridge.py",
+      "sha256": "abcf585815db8d060f89a21f599a55253cfde4bfd0899f15a4f974db2708a8a4"
+    },
+    {
+      "bytes": 1315,
+      "path": "frozen/tools/re/xcode_tools.py",
+      "sha256": "20656645548a4278a00839c953c5fc91696f92e47e44e34ee0df8c1ed286e521"
+    },
+    {
+      "bytes": 8537,
+      "path": "frozen/tools/re/xpc_probe.m",
+      "sha256": "d15ef974ebf23b70ac4718dc3870628295614c8e4ec9d63484b528a76c255acf"
+    },
+    {
+      "bytes": 602,
+      "path": "provenance.json",
+      "sha256": "390e7a33d3ffb3245fa7a94bb28795d7cf4f41f99c31f0cb4e8b6cc5cb16b2a8"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/0-frame.raw",
+      "sha256": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/1-frame.raw",
+      "sha256": "44479be92b6b825d287fc9dd89edc4e4a416655463be83399ce4a0316819da29"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/2-frame.raw",
+      "sha256": "bd9bd4fcedf2ee4139566437f0d80f486ff048c37e7df6afe8cd4b0ae4deff62"
+    },
+    {
+      "bytes": 1108,
+      "path": "result/compiler/build-JHDRHY/execution.json",
+      "sha256": "c4d9bc87ac07dc98f1dd454c8837dd892ccf5f3a83eab2c6bd05cb633f6690a6"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-JHDRHY/published/.frame.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 795,
+      "path": "result/compiler/build-JHDRHY/published/current.json",
+      "sha256": "43d673ed209729566e838624fc3576c727e7933177a2dafa0acbf7486ee1674d"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/allocation.raw",
+      "sha256": "44479be92b6b825d287fc9dd89edc4e4a416655463be83399ce4a0316819da29"
+    },
+    {
+      "bytes": 2360,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/manifest.json",
+      "sha256": "e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668"
+    },
+    {
+      "bytes": 90,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/preview.png",
+      "sha256": "d6d611c3b759dc41f8d846bbdec545f55c495d8bf7118040ed5f83d7101ac325"
+    },
+    {
+      "bytes": 215,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/runtime.json",
+      "sha256": "4faaea36734749d9d41547e3a08f03aef0d4da78de2020d2cd9df8a832e2f656"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/runtime.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/runtime.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 201,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/source.swift",
+      "sha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/view.c",
+      "sha256": "6f97a61350ad94754baf603162fd986b5cf2a14bc8a5f6c7b02a20761993b0e0"
+    },
+    {
+      "bytes": 6230,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/view.ll",
+      "sha256": "45a57de0fb4fc361c2f39f139abf83ca6382792b5b339e0aa97229d05639ac1d"
+    },
+    {
+      "bytes": 1042,
+      "path": "result/compiler/build-JHDRHY/published/versions/e4cbf4689513b411ca2713231b1c46c93eee829760b717090bd5e72e94327668/view.wasm",
+      "sha256": "e6ed830835876483a45b808fef74719f2fca4a1abf39986c294982d832a17df1"
+    },
+    {
+      "bytes": 201,
+      "path": "result/compiler/build-JHDRHY/source.swift",
+      "sha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+    },
+    {
+      "bytes": 286,
+      "path": "result/compiler/build-Sbgj5p/failure.json",
+      "sha256": "46553b75526ea8897d99e205593ec9f2f5b729f180a6eed4d755f6b963fab8fa"
+    },
+    {
+      "bytes": 19,
+      "path": "result/compiler/build-Sbgj5p/source.swift",
+      "sha256": "6b6ce80d4e4d2ca781f13240bdcf1ea1d814ac0638e3704f4e08fa34566ab327"
+    },
+    {
+      "bytes": 1108,
+      "path": "result/compiler/build-oCkDO0/execution.json",
+      "sha256": "b3f890f789a2ea2d72cf55637e8aed15e6e44934e7513b69079715874b7cef67"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-oCkDO0/published/.frame.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 795,
+      "path": "result/compiler/build-oCkDO0/published/current.json",
+      "sha256": "d65015f6f642c5d53303a47db5b594b9538017d58b5698cafc2d62f1a76fd88d"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/allocation.raw",
+      "sha256": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461"
+    },
+    {
+      "bytes": 2360,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/manifest.json",
+      "sha256": "1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec"
+    },
+    {
+      "bytes": 90,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/preview.png",
+      "sha256": "3ed85221b8b6691fbe3d0dff92847bfee2950bcdeea5fc182c20b80e1d91da36"
+    },
+    {
+      "bytes": 215,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/runtime.json",
+      "sha256": "4faaea36734749d9d41547e3a08f03aef0d4da78de2020d2cd9df8a832e2f656"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/runtime.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/runtime.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 202,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/source.swift",
+      "sha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/view.c",
+      "sha256": "970fde8b4e264a8901db37e3f9e7cead1559bbfd70000127d579de3e457628b7"
+    },
+    {
+      "bytes": 6224,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/view.ll",
+      "sha256": "a6be64b4eb0a1181ae882b6bc48d4d6e017bae99ba0d5ff547faa9b27a66b2ae"
+    },
+    {
+      "bytes": 1055,
+      "path": "result/compiler/build-oCkDO0/published/versions/1e81c1f1cc19b092fb38048524b7b05b468be0632c3b565484baa2a6e0a2c7ec/view.wasm",
+      "sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e"
+    },
+    {
+      "bytes": 202,
+      "path": "result/compiler/build-oCkDO0/source.swift",
+      "sha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+    },
+    {
+      "bytes": 1108,
+      "path": "result/compiler/build-vqajTT/execution.json",
+      "sha256": "a4d8edd9a9f5fa6719be4170b8b05c087c4aba8ebc2fbc91be4b38604aadba5c"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-vqajTT/published/.frame.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 795,
+      "path": "result/compiler/build-vqajTT/published/current.json",
+      "sha256": "d143bafc7f9ac3b6579a1c6408c4575decc9ef4e1595a9df3bbba042e73af5be"
+    },
+    {
+      "bytes": 16384,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/allocation.raw",
+      "sha256": "bd9bd4fcedf2ee4139566437f0d80f486ff048c37e7df6afe8cd4b0ae4deff62"
+    },
+    {
+      "bytes": 2360,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/manifest.json",
+      "sha256": "4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915"
+    },
+    {
+      "bytes": 90,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/preview.png",
+      "sha256": "75beac2f9dc328ab586109739dc5c54312227236ffed54f342de331fc0046981"
+    },
+    {
+      "bytes": 215,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/runtime.json",
+      "sha256": "4faaea36734749d9d41547e3a08f03aef0d4da78de2020d2cd9df8a832e2f656"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/runtime.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/runtime.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 207,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/source.swift",
+      "sha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/view.c",
+      "sha256": "ff3d1b3d4ede43a0a94078028a954e084804a9af3ba8ff6efbb6582f03efd6b6"
+    },
+    {
+      "bytes": 6224,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/view.ll",
+      "sha256": "708471dbc646fd584c417ec8dedcf30bbac432f0f230eec68360ad912629358f"
+    },
+    {
+      "bytes": 1029,
+      "path": "result/compiler/build-vqajTT/published/versions/4c5cf20c0422436ce447f023249f6ad140c64e1ca1389ecdf42dc8651bd79915/view.wasm",
+      "sha256": "ddf48074631b4107f176f0d35fff6b4aa7fa3703b60b5370f1ffc4516865e99a"
+    },
+    {
+      "bytes": 207,
+      "path": "result/compiler/build-vqajTT/source.swift",
+      "sha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+    },
+    {
+      "bytes": 0,
+      "path": "result/compiler/cache/.build.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1812,
+      "path": "result/compiler/cache/entries/368b72f7a214e1e9f77415ceea821100b042f7145c6797602d4788baf903e664/manifest.json",
+      "sha256": "368b72f7a214e1e9f77415ceea821100b042f7145c6797602d4788baf903e664"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/cache/entries/368b72f7a214e1e9f77415ceea821100b042f7145c6797602d4788baf903e664/view.c",
+      "sha256": "ff3d1b3d4ede43a0a94078028a954e084804a9af3ba8ff6efbb6582f03efd6b6"
+    },
+    {
+      "bytes": 6224,
+      "path": "result/compiler/cache/entries/368b72f7a214e1e9f77415ceea821100b042f7145c6797602d4788baf903e664/view.ll",
+      "sha256": "708471dbc646fd584c417ec8dedcf30bbac432f0f230eec68360ad912629358f"
+    },
+    {
+      "bytes": 1029,
+      "path": "result/compiler/cache/entries/368b72f7a214e1e9f77415ceea821100b042f7145c6797602d4788baf903e664/view.wasm",
+      "sha256": "ddf48074631b4107f176f0d35fff6b4aa7fa3703b60b5370f1ffc4516865e99a"
+    },
+    {
+      "bytes": 1812,
+      "path": "result/compiler/cache/entries/dd52e281d99f2757ed3e5aaa2dd2ffad40e49922b0a415ebbb62a90a863ab4a7/manifest.json",
+      "sha256": "dd52e281d99f2757ed3e5aaa2dd2ffad40e49922b0a415ebbb62a90a863ab4a7"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/cache/entries/dd52e281d99f2757ed3e5aaa2dd2ffad40e49922b0a415ebbb62a90a863ab4a7/view.c",
+      "sha256": "970fde8b4e264a8901db37e3f9e7cead1559bbfd70000127d579de3e457628b7"
+    },
+    {
+      "bytes": 6224,
+      "path": "result/compiler/cache/entries/dd52e281d99f2757ed3e5aaa2dd2ffad40e49922b0a415ebbb62a90a863ab4a7/view.ll",
+      "sha256": "a6be64b4eb0a1181ae882b6bc48d4d6e017bae99ba0d5ff547faa9b27a66b2ae"
+    },
+    {
+      "bytes": 1055,
+      "path": "result/compiler/cache/entries/dd52e281d99f2757ed3e5aaa2dd2ffad40e49922b0a415ebbb62a90a863ab4a7/view.wasm",
+      "sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e"
+    },
+    {
+      "bytes": 1812,
+      "path": "result/compiler/cache/entries/f59674cfa639b14d4a5e1a18be39108e9f5ea7bbf3b88105f0b4f6e1fd07dd58/manifest.json",
+      "sha256": "f59674cfa639b14d4a5e1a18be39108e9f5ea7bbf3b88105f0b4f6e1fd07dd58"
+    },
+    {
+      "bytes": 1098,
+      "path": "result/compiler/cache/entries/f59674cfa639b14d4a5e1a18be39108e9f5ea7bbf3b88105f0b4f6e1fd07dd58/view.c",
+      "sha256": "6f97a61350ad94754baf603162fd986b5cf2a14bc8a5f6c7b02a20761993b0e0"
+    },
+    {
+      "bytes": 6230,
+      "path": "result/compiler/cache/entries/f59674cfa639b14d4a5e1a18be39108e9f5ea7bbf3b88105f0b4f6e1fd07dd58/view.ll",
+      "sha256": "45a57de0fb4fc361c2f39f139abf83ca6382792b5b339e0aa97229d05639ac1d"
+    },
+    {
+      "bytes": 1042,
+      "path": "result/compiler/cache/entries/f59674cfa639b14d4a5e1a18be39108e9f5ea7bbf3b88105f0b4f6e1fd07dd58/view.wasm",
+      "sha256": "e6ed830835876483a45b808fef74719f2fca4a1abf39986c294982d832a17df1"
+    },
+    {
+      "bytes": 105,
+      "path": "result/compiler/cache/keys/058ce77363f96a6ab3b3a4fb0e1ddcfddf281496b41022e48336c7ac5230f104.json",
+      "sha256": "3468983093f2e4521d2e923f4f020039de1caabe0e38c6a591d136c861ce825d"
+    },
+    {
+      "bytes": 105,
+      "path": "result/compiler/cache/keys/5e40e8b165d58c5f48d101df4d5c75fabe83423940a1cc34bbd8239de039539b.json",
+      "sha256": "e9cb520702bbcb2de710e46a5ea567a40c2f9079ecefb721c59e87981aa810d2"
+    },
+    {
+      "bytes": 105,
+      "path": "result/compiler/cache/keys/f9b0f6af23324cdf0d84bba0b920d5850858ad31eef5d9be31ac309a3975825e.json",
+      "sha256": "aabad65673bfaffbfe91f71012ea886e1f401a53ec99b96d448602b3c9b6f2d3"
+    },
+    {
+      "bytes": 1895,
+      "path": "result/compiler-result.json",
+      "sha256": "6f31d4cba9123cedfb3a0543bfec95cd12eabe15ee5edd0fa008a906191c7bd7"
+    },
+    {
+      "bytes": 19,
+      "path": "result/owned.swift",
+      "sha256": "6b6ce80d4e4d2ca781f13240bdcf1ea1d814ac0638e3704f4e08fa34566ab327"
+    },
+    {
+      "bytes": 4386,
+      "path": "verification.json",
+      "sha256": "2055824fdfa7e0685f8a5d2f75e9fda3599e0779b49fb99ab5e92c88a262b56a"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Freshly compiled frozen supported frontend, owned inherited compiler groups and observed late-write suppression; no escaping descendants or native Canvas release policy."
+}

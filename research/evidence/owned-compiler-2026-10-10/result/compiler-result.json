@@ -1,0 +1,69 @@
+{
+  "records": [
+    {
+      "revision": 1,
+      "comparedBytes": 16384,
+      "moduleEqualsPinned": true
+    },
+    {
+      "revision": 2,
+      "comparedBytes": 16384,
+      "moduleEqualsPinned": true
+    },
+    {
+      "revision": 3,
+      "comparedBytes": 16384,
+      "moduleEqualsPinned": true
+    }
+  ],
+  "builds": [
+    {
+      "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8",
+      "moduleSha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "cacheHit": false,
+      "stage": "build-oCkDO0",
+      "allocationBytes": 16384
+    },
+    {
+      "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f",
+      "moduleSha256": "e6ed830835876483a45b808fef74719f2fca4a1abf39986c294982d832a17df1",
+      "cacheHit": false,
+      "stage": "build-JHDRHY",
+      "allocationBytes": 16384
+    },
+    {
+      "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc",
+      "moduleSha256": "ddf48074631b4107f176f0d35fff6b4aa7fa3703b60b5370f1ffc4516865e99a",
+      "cacheHit": false,
+      "stage": "build-vqajTT",
+      "allocationBytes": 16384
+    }
+  ],
+  "controls": [
+    {
+      "mode": "timeout",
+      "error": "Error: Owned compiler deadline exceeded",
+      "rootSignal": "SIGKILL",
+      "childStarted": true,
+      "lateWriteAbsent": true
+    },
+    {
+      "mode": "abort",
+      "error": "Error: Owned compiler aborted",
+      "rootSignal": "SIGKILL",
+      "childStarted": true,
+      "lateWriteAbsent": true
+    }
+  ],
+  "unsupportedRetained": true,
+  "finalStatus": {
+    "liveWorkers": 0,
+    "busy": false,
+    "closed": true,
+    "revision": 3,
+    "loopClosed": true,
+    "building": false,
+    "timers": 0
+  },
+  "scope": "Fresh frozen-CLI compilation and owned inherited POSIX group abort/deadline; no detached escaping children or native Canvas semantics"
+}

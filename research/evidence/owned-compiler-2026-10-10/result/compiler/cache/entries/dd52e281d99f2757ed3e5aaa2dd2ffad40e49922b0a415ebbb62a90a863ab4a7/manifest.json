@@ -1,0 +1,55 @@
+{
+  "cache_key": "5e40e8b165d58c5f48d101df4d5c75fabe83423940a1cc34bbd8239de039539b",
+  "files": {
+    "view.c": {
+      "bytes": 1098,
+      "sha256": "970fde8b4e264a8901db37e3f9e7cead1559bbfd70000127d579de3e457628b7"
+    },
+    "view.ll": {
+      "bytes": 6224,
+      "sha256": "a6be64b4eb0a1181ae882b6bc48d4d6e017bae99ba0d5ff547faa9b27a66b2ae"
+    },
+    "view.wasm": {
+      "bytes": 1055,
+      "sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e"
+    }
+  },
+  "identity": {
+    "builder_sha256": "f679757030b9834df58afa770b39a8c61365f081c3651245094c852c5928bd50",
+    "clang_invocation": "/Users/8amps/Library/Developer/Toolchains/swift-6.3-RELEASE.xctoolchain/usr/bin/clang",
+    "clang_sha256": "71e012199d574fb2d285531d322e4a41a871c3d1ba8a9cadd11ce17d7740d638",
+    "config": {
+      "alphas": [
+        4,
+        2,
+        8
+      ],
+      "height": 7,
+      "reverse": 0,
+      "width": 13
+    },
+    "flags": [
+      "--target=wasm32",
+      "-O2",
+      "-nostdlib",
+      "-fno-builtin"
+    ],
+    "ir_normalizer_sha256": "2db1d38ca14adbc1fd6cf28cb4570c6dfa659ab217014e44bff6e128e5d16a7e",
+    "kernel_sha256": "970fde8b4e264a8901db37e3f9e7cead1559bbfd70000127d579de3e457628b7",
+    "link_flags": [
+      "-Wl,--no-entry",
+      "-Wl,--strip-all",
+      "-Wl,--initial-memory=131072",
+      "-Wl,--max-memory=131072",
+      "-Wl,--export=render",
+      "-Wl,--export=pixels",
+      "-Wl,--export=capacity"
+    ],
+    "lowerer_sha256": "6189e6d02a7cb4dc62e572f2dbc00aa11dd6b8c9ea7a70d30f5ac423de5f62c0",
+    "target": "wasm32",
+    "version": 1,
+    "wasm_ld_invocation": "/Users/8amps/Library/Developer/Toolchains/swift-6.3-RELEASE.xctoolchain/usr/bin/wasm-ld",
+    "wasm_ld_sha256": "733fdc5ad35e54b6a3452dad0e7583092d75fb248edfb20baceeb2b458db7962"
+  },
+  "version": 1
+}

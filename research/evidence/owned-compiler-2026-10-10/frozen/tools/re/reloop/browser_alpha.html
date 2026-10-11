@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><title>Owned alpha browser control</title>
+<h1>Owned alpha browser control</h1><pre id="status">Running</pre><canvas id="preview"></canvas>
+<script>
+const cfg=__CONFIG__;
+const b64=a=>{let s='';for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode(...a.subarray(i,i+8192));return btoa(s)};
+(async()=>{try{
+ const bytes=await(await fetch('/alpha.wasm')).arrayBuffer();
+ const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
+ const module=await WebAssembly.compile(bytes),rows=[];
+ for(const job of cfg.jobs){
+  const e=(await WebAssembly.instantiate(module,{})).exports;
+  const memory=new Uint8Array(e.memory.buffer,e.pixels(),e.capacity());memory.fill(0xa5);
+  const args=[17,9,80,job.n,job.bg],rendered=e.render(...args),allocation=b64(memory),invalid=[];
+  for(const request of [[17,9,67,job.n,job.bg],[17,9,257,job.n,job.bg],[17,9,80,9,job.bg],[17,9,80,job.n,2]])invalid.push({args:request,result:e.render(...request),allocation:b64(memory)});
+  const canvas=document.getElementById('preview');canvas.width=17;canvas.height=9;
+  const ctx=canvas.getContext('2d',{alpha:true,colorSpace:'srgb'}),active=new Uint8ClampedArray(612);
+  for(let y=0;y<9;y++)active.set(memory.subarray(y*80,y*80+68),y*68);
+  ctx.putImageData(new ImageData(active,17,9,{colorSpace:'srgb'}),0,0);
+  const readback=ctx.getImageData(0,0,17,9);
+  rows.push({index:job.index,n:job.n,bg:job.bg,capacity:e.capacity(),rendered,allocation,invalid,canvas:b64(readback.data),context:ctx.getContextAttributes(),image_color_space:readback.colorSpace});
+ }
+ const reply=await fetch('/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nonce:cfg.nonce,repeat:cfg.repeat,module_sha256:hash,imports:WebAssembly.Module.imports(module).length,user_agent:navigator.userAgent,origin:location.origin,rows})});
+ if(!reply.ok)throw Error('report rejected '+reply.status);
+ document.getElementById('status').textContent='Complete: 18 alpha frames, 72 invalid requests, Canvas2D readback';
+}catch(error){document.getElementById('status').textContent='Failed: '+String(error)}})();
+</script>

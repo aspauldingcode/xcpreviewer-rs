@@ -4922,7 +4922,7 @@
     {
       "id": "primary-live-wasm-swap",
       "adapter": "live_swap",
-      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close. Actual bounded file polling with prebuilt pinned fixture adapter retains last-good state on unsupported/invalid/deleted edits and aborts cooperative builders at closure/deadline. File changes during live verification queue until the host is idle.",
+      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close. Actual bounded file polling with prebuilt pinned fixture adapter retains last-good state on unsupported/invalid/deleted edits and aborts cooperative builders at closure/deadline. File changes during live verification queue until the host is idle. A frozen CLI freshly compiles three supported edits to pinned modules/full allocations; owned inherited POSIX compiler groups suppress late child writes on timeout/abort.",
       "depends_on": [],
       "resources": [
         "local-re-controller"
@@ -4995,6 +4995,26 @@
         {
           "path": "file_serialized_read",
           "equals": true
+        },
+        {
+          "path": "fresh_compiler_frames",
+          "equals": 3
+        },
+        {
+          "path": "fresh_compiler_bytes",
+          "equals": 49152
+        },
+        {
+          "path": "compiler_tree_controls",
+          "equals": 2
+        },
+        {
+          "path": "compiler_late_writes_absent",
+          "equals": true
+        },
+        {
+          "path": "source_frontend_cache_misses",
+          "equals": 3
         }
       ]
     }

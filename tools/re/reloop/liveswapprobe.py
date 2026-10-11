@@ -74,6 +74,8 @@ def corpus(out):
              'source_revisions': revisions['accepted_revisions'],
              'zero_workers': frames['final_status']['liveWorkers'] == 0 and revisions['final_status']['liveWorkers'] == 0,
              'scope': 'Frozen owned runtime policy controls, reused public native corpus; no Canvas sequencing or scientific delivery acceptance'}
+    from reloop.ownedcompilerprobe import corpus as fresh_compiler
+    facts.update(fresh_compiler(out / 'fresh-compiler'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
     return facts
 
