@@ -1,0 +1,8 @@
+{
+  "parent_manifest_sha256": "0841c787c1afff6c0da6833cb5dd78dd5f82ed02c2669e948ae09a71109c615c",
+  "scope": "Owned ARC weak-object lifetime, not kernel allocation reclamation or Canvas policy",
+  "prediction": "Default retained-reference command holds buffer after CPU owner drop, including during pending timeout. Encoded-uncommitted control separates encoding retention from executing GPU work. Measure weak liveness after command disposal/autoreleasepool drain; either nil or internal retention must be recorded without assuming reclamation.",
+  "subprocess_deadline_seconds": 15,
+  "helper_alarm_seconds": 20,
+  "repetitions": 2
+}

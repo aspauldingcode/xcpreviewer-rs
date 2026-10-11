@@ -263,6 +263,15 @@
     "retained_failure": "Before production diagnostics method absent; TypeError and original source retained. Existing unbounded event history fixed.",
     "scientific_delivery_review": "pending"
   },
+  "gpu_buffer_release_checkpoint": {
+    "classification": "finite-owned native object lifetime supported; delivery review pending",
+    "evidence": "research/evidence/gpu-buffer-release-2026-10-11",
+    "manifest_sha256": "9cb67c04646592908039c9a3f0f04e62fac07a56af58f8ab196f92d20affa4ea",
+    "milestones_complete": false,
+    "next_wake_hint": "Owned default retained-reference Metal object lifetime control complete. CPU owner drop preserves buffer during encoding/timeout; command/pool drain yields weak nil but not physical reclamation. Avoid unchanged rerun or indefinite extra models. Next demanded owner ledger/native failure boundary; actual R1 Mach/Canvas release and capture remain open. Approved bridge offline, no restart.",
+    "result": "2 actual helpers wait0; encoded-uncommitted and committed-timeout retain weakbuffer after CPU owner drop,4 buffer/command weak nil observations after pool drain;131072 independent full bytes,6 resealed faults;REA helperidentity/closed. No physical reclamation claim",
+    "started_at": "2026-10-11T15:15:48.534113+00:00"
+  },
   "gpu_queue_order_checkpoint": {
     "classification": "finite-owned native oracle supported; delivery review pending",
     "evidence": "research/evidence/gpu-queue-order-2026-10-11",

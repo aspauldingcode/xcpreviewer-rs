@@ -691,3 +691,7 @@ Fixed four correlated published-diagnostic contradictions after retaining old ac
 ## 2026-10-11 — native two-queue generation fence
 
 Two owned public Metal helpers pass: stale event2 completes reader with old frame while writer waits3; fresh event4 yields new frame. 229376 full allocation bytes independently checked, six resealed faults rejected; actual waits0, retained REA helper identity and tool-argument failure. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-queue-order.md). No Canvas/cross-process release acceptance; both milestones open.
+
+## 2026-10-11 — native buffer object lifetime
+
+Two owned Metal helpers measure CPU-owner drop retention in encoded-uncommitted and committed-timeout modes, then weak buffer/command nil after command disposal/pool drain.131072 full bytes independently checked, six resealed faults; actual waits0; REA identity retained/sessionclosed. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-buffer-release.md). Weak nil is not physical memory reclamation; Canvas/Mach release and both milestones remain open.
