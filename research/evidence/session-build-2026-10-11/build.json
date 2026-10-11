@@ -1,0 +1,97 @@
+{
+  "cold": {
+    "version": 1,
+    "cache_key": "4c216ac9bd06affca33d0cef7a64b5760beb0764b4cbd7d8a643f63853e912d2",
+    "entry_sha256": "b7c160eca155157fc8bb8fd5920349e4209bf886c1674d1d5ca86eafe17c499a",
+    "source_sha256": "f4d1de074fcba418e50e223988f0b8b5bbc8048e3832b9acf4e5cbabcba6a896",
+    "module_sha256": "1b9601269891f153c9de51d24004dc023682aa32a37935d489ebc7f855b73ab6",
+    "module": "versions/b7c160eca155157fc8bb8fd5920349e4209bf886c1674d1d5ca86eafe17c499a/view.wasm",
+    "config": {
+      "width": 17,
+      "height": 9,
+      "alphas": [
+        3,
+        3,
+        8
+      ],
+      "reverse": 0
+    },
+    "cache_hit": false,
+    "scope": "Strict explicit primary-layer source subset to cached WASM, atomic single published-bundle pointer. No runtime/state preservation, stale generation, watcher, native Canvas or general SwiftUI claim."
+  },
+  "hit": {
+    "version": 1,
+    "cache_key": "4c216ac9bd06affca33d0cef7a64b5760beb0764b4cbd7d8a643f63853e912d2",
+    "entry_sha256": "b7c160eca155157fc8bb8fd5920349e4209bf886c1674d1d5ca86eafe17c499a",
+    "source_sha256": "f4d1de074fcba418e50e223988f0b8b5bbc8048e3832b9acf4e5cbabcba6a896",
+    "module_sha256": "1b9601269891f153c9de51d24004dc023682aa32a37935d489ebc7f855b73ab6",
+    "module": "versions/b7c160eca155157fc8bb8fd5920349e4209bf886c1674d1d5ca86eafe17c499a/view.wasm",
+    "config": {
+      "width": 17,
+      "height": 9,
+      "alphas": [
+        3,
+        3,
+        8
+      ],
+      "reverse": 0
+    },
+    "cache_hit": true,
+    "scope": "Strict explicit primary-layer source subset to cached WASM, atomic single published-bundle pointer. No runtime/state preservation, stale generation, watcher, native Canvas or general SwiftUI claim."
+  },
+  "calls": [
+    {
+      "argv": [
+        "/Users/8amps/Library/Developer/Toolchains/swift-6.3-RELEASE.xctoolchain/usr/bin/clang",
+        "--target=wasm32",
+        "-O2",
+        "-nostdlib",
+        "-fno-builtin",
+        "-emit-llvm",
+        "-S",
+        "/Users/8amps/xcpreviewer-rs/research/evidence/session-build-2026-10-11/cache/.owned-build-6ylo9bdb/view.c",
+        "-o",
+        "/Users/8amps/xcpreviewer-rs/research/evidence/session-build-2026-10-11/cache/.owned-build-6ylo9bdb/view.ll"
+      ],
+      "pid": 76025,
+      "group": 76025,
+      "start_new_session": true,
+      "preexec_present": true,
+      "code": 0,
+      "timeout": false,
+      "timeout_seconds": 30,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/8amps/Library/Developer/Toolchains/swift-6.3-RELEASE.xctoolchain/usr/bin/clang",
+        "--target=wasm32",
+        "-O2",
+        "-nostdlib",
+        "-fno-builtin",
+        "-fuse-ld=/Users/8amps/Library/Developer/Toolchains/swift-6.3-RELEASE.xctoolchain/usr/bin/wasm-ld",
+        "/Users/8amps/xcpreviewer-rs/research/evidence/session-build-2026-10-11/cache/.owned-build-6ylo9bdb/view.ll",
+        "-Wl,--no-entry",
+        "-Wl,--strip-all",
+        "-Wl,--initial-memory=131072",
+        "-Wl,--max-memory=131072",
+        "-Wl,--export=render",
+        "-Wl,--export=pixels",
+        "-Wl,--export=capacity",
+        "-o",
+        "/Users/8amps/xcpreviewer-rs/research/evidence/session-build-2026-10-11/cache/.owned-build-6ylo9bdb/view.wasm"
+      ],
+      "pid": 76031,
+      "group": 76031,
+      "start_new_session": true,
+      "preexec_present": true,
+      "code": 0,
+      "timeout": false,
+      "timeout_seconds": 30,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "pointer_hex": "7b0a20202263616368655f6b6579223a202234633231366163396264303661666663613333643063656637613634623537363062656230373634623463626437643861363433663633383533653931326432222c0a202022636f6e666967223a207b0a2020202022616c70686173223a205b0a202020202020332c0a202020202020332c0a202020202020380a202020205d2c0a2020202022686569676874223a20392c0a202020202272657665727365223a20302c0a20202020227769647468223a2031370a20207d2c0a202022656e7472795f736861323536223a202262376331363065636131353531353766633862623866643539323033343965343230396266383836633136373464316435636138366561666531376334393961222c0a2020226d6f64756c65223a202276657273696f6e732f623763313630656361313535313537666338626238666435393230333439653432303962663838366331363734643164356361383665616665313763343939612f766965772e7761736d222c0a2020226d6f64756c655f736861323536223a202231623936303132363938393166313533633964653531643234303034646330323336383261613332613337393335643438396562633766383535623733616236222c0a202022736f757263655f736861323536223a202266346431646530373466636261343138653530653232333938386630623862356262633830343865333833326239616366346535636261626362613661383936222c0a20202276657273696f6e223a20310a7d0a"
+}

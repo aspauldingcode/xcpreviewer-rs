@@ -811,3 +811,7 @@ Real LLVM compilation succeeds under current child-only caps; repeat source hits
 ## 2026-10-11 — compiler timeout process-group cleanup
 
 Baseline compiler parent timeout leaves owned same-group child writing; fixed commands isolate a POSIX session and kill that group before rethrowing timeout. Direct parents are reaped and bounded heartbeat quiescence is observed. Four owned processes, 32 heartbeat bytes and eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-compiler-tree.md). Descendant reaping/physical release, escaped sessions and normal-success descendants remain separate; real build qualification under changed spawn boundary remains next. Both milestones open.
+
+## 2026-10-11 — real isolated-session build holdout
+
+Real LLVM stages under changed Popen/session boundary exit0 with owned group IDs equal spawnedPIDs; cache hit preserves pointer and skips recompilation. Native-backed holdout12 V8 allocations match all131072 bytes, including padding/tail and invalid-buffer preservation. WasmKit render720 result is separately scoped. Twelve resealed faults. [Scope](docs/reverse-engineering/2026-10-11-session-build.md). Both milestones remain open.

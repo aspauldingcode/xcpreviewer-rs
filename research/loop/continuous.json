@@ -2554,6 +2554,16 @@
     "scientific_delivery_review": "pending"
   },
   "schema_version": 1,
+  "session_build_checkpoint": {
+    "budget": "Four producers: compiler stages30sec/4MiB child caps; V8/WasmKit15sec. Known universal REA import failure not repeated.",
+    "classification": "Real LLVM isolated-session compilation and native-backed holdout runtime qualification",
+    "evidence": "research/evidence/session-build-2026-10-11",
+    "manifest_sha256": "e3a3e2e93f6a685fdfcdc506aac3c3d02e2dec2e04f4c9bdb5cb14d4fc2ad04a",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed real spawn qualification. Select a demanded independent acceptance gap; WasmKit memory acceptance, normal-success/escaped descendants, descendant reap and native physical release remain separate. Display/bridge/browser prerequisites unchanged.",
+    "result": "Two real compiler stages exit0 and groups equal spawnedPIDs; cache hit no extra stages/pointer change; V8 eight allocations131072 bytes incl216padding/125960tail match literal and anchored native720 prefix; WasmKit render720 result only; twelve resealed faults.",
+    "started_at": "2026-10-11T22:14:42.339612+00:00"
+  },
   "skill_registry": "research/loop/skills.json",
   "source_cli_input_checkpoint": {
     "budget": "4 actual CLI subprocesses each1.5sec/ownedkillreap2sec/pair8sec;no compiler/frame claim",
