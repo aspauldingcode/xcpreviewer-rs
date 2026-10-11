@@ -1,0 +1,151 @@
+{
+  "controls": [
+    {
+      "mode": "abort",
+      "observed": {
+        "pid": 52043,
+        "parent": 52042,
+        "group": 52042,
+        "state": "L",
+        "identity": [
+          1791700622,
+          557748,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      },
+      "execution": {
+        "pid": 52042,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "abort",
+          "drained": true,
+          "tracked": 1,
+          "observations": 5,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler aborted",
+      "retainedRevision": 1,
+      "retainedSha": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461",
+      "lateArtifactStable": true,
+      "artifactPresent": false,
+      "artifactSha": null
+    },
+    {
+      "mode": "deadline",
+      "observed": {
+        "pid": 52058,
+        "parent": 52054,
+        "group": 52054,
+        "state": "L",
+        "identity": [
+          1791700623,
+          116628,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      },
+      "execution": {
+        "pid": 52054,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "deadline",
+          "drained": true,
+          "tracked": 1,
+          "observations": 13,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "warning: constant `MEMORY` is never used\n --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:4:11\n  |\n4 | pub const MEMORY: u64 = 131072;\n  |           ^^^^^^\n  |\n  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default\n\nwarning: struct `FrameAbi` is never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:12:12\n   |\n12 | pub struct FrameAbi {\n   |            ^^^^^^^^\n\nwarning: variants `Memory`, `Capacity`, `Span`, `Rendered`, `Mismatch`, and `Revision` are never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:23:5\n   |\n19 | pub enum Error {\n   |          ----- variants in this enum\n...\n23 |     Memory,\n   |     ^^^^^^\n24 |     Capacity,\n   |     ^^^^^^^^\n25 |     Span,\n   |     ^^^^\n26 |     Rendered,\n   |     ^^^^^^^^\n27 |     Length,\n28 |     Mismatch(usize),\n   |     ^^^^^^^^\n29 |     Revision,\n   |     ^^^^^^^^\n   |\n   = note: `Error` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis\n\nwarning: function `validate` is never used\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:42:8\n   |\n42 | pub fn validate(\n   |        ^^^^^^^^\n\n"
+      },
+      "error": "Error: Observed compiler failed: deadline",
+      "retainedRevision": 1,
+      "retainedSha": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461",
+      "lateArtifactStable": true,
+      "artifactPresent": false,
+      "artifactSha": null
+    },
+    {
+      "mode": "stale",
+      "observed": {
+        "pid": 52099,
+        "parent": 52098,
+        "group": 52098,
+        "state": "L",
+        "identity": [
+          1791700623,
+          955400,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      },
+      "execution": {
+        "pid": 52098,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 6,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "warning: constant `MEMORY` is never used\n --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:4:11\n  |\n4 | pub const MEMORY: u64 = 131072;\n  |           ^^^^^^\n  |\n  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default\n\nwarning: struct `FrameAbi` is never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:12:12\n   |\n12 | pub struct FrameAbi {\n   |            ^^^^^^^^\n\nwarning: variants `Memory`, `Capacity`, `Span`, `Rendered`, `Mismatch`, and `Revision` are never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:23:5\n   |\n19 | pub enum Error {\n   |          ----- variants in this enum\n...\n23 |     Memory,\n   |     ^^^^^^\n24 |     Capacity,\n   |     ^^^^^^^^\n25 |     Span,\n   |     ^^^^\n26 |     Rendered,\n   |     ^^^^^^^^\n27 |     Length,\n28 |     Mismatch(usize),\n   |     ^^^^^^^^\n29 |     Revision,\n   |     ^^^^^^^^\n   |\n   = note: `Error` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis\n\nwarning: function `validate` is never used\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:42:8\n   |\n42 | pub fn validate(\n   |        ^^^^^^^^\n\nwarning: 4 warnings emitted\n\n"
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket",
+      "retainedRevision": 1,
+      "retainedSha": "13621c23ad70860d9eacd60f1a85dfee0b606fbcaea0e0f792745e7bff424461",
+      "lateArtifactStable": true,
+      "artifactPresent": true,
+      "artifactSha": "1f886ab073535d1cab3f897f5214cc37129461109b96874f74af92de27c7b41d"
+    }
+  ],
+  "recovery": {
+    "revision": 2,
+    "moduleSha": "62ec7aae9205bd7082da182661f33387689e7aabf0986108c20336c648d0d2ff",
+    "execution": {
+      "pid": 52116,
+      "anchorCode": null,
+      "signal": "SIGKILL",
+      "report": {
+        "kind": "complete",
+        "target_code": 0,
+        "failure": null,
+        "drained": true,
+        "tracked": 2,
+        "observations": 7,
+        "remaining_observed": 0,
+        "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+      },
+      "emergencyClosed": false,
+      "privateAbortRequested": false,
+      "stdout": "",
+      "stderr": "warning: constant `MEMORY` is never used\n --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:4:11\n  |\n4 | pub const MEMORY: u64 = 131072;\n  |           ^^^^^^\n  |\n  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default\n\nwarning: struct `FrameAbi` is never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:12:12\n   |\n12 | pub struct FrameAbi {\n   |            ^^^^^^^^\n\nwarning: variants `Memory`, `Capacity`, `Span`, `Rendered`, `Mismatch`, and `Revision` are never constructed\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:23:5\n   |\n19 | pub enum Error {\n   |          ----- variants in this enum\n...\n23 |     Memory,\n   |     ^^^^^^\n24 |     Capacity,\n   |     ^^^^^^^^\n25 |     Span,\n   |     ^^^^\n26 |     Rendered,\n   |     ^^^^^^^^\n27 |     Length,\n28 |     Mismatch(usize),\n   |     ^^^^^^^^\n29 |     Revision,\n   |     ^^^^^^^^\n   |\n   = note: `Error` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis\n\nwarning: function `validate` is never used\n  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T063558Z-primary-live-wasm-swap-803a7d05/output/rust-failure/contract.rs:42:8\n   |\n42 | pub fn validate(\n   |        ^^^^^^^^\n\nwarning: 4 warnings emitted\n\n"
+    }
+  },
+  "finalStatus": {
+    "liveWorkers": 0,
+    "busy": false,
+    "closed": true,
+    "revision": 2
+  },
+  "scope": "Actual owned Rust compiler workload cancellation/deadline and stale ticket; observed ancestry and late-file stability, not native Canvas release semantics"
+}

@@ -1781,6 +1781,23 @@
     }
   ],
   "runbook": "docs/reverse-engineering/continuous-loop.md",
+  "rust_failure_checkpoint": {
+    "canonical_checks": 73,
+    "clean_archive_tests": 62,
+    "controls": 3,
+    "evidence_manifest_sha256": "7cf4104e2fc7ac1774c4bd26cb0e8f44ee548ad0f2320eafd18a5398669c916a",
+    "git_sync": "verified commit pending push",
+    "manifest_sha256": "bd74b13116194130de09380fc44ceeb7649b0b231d3efacedb02463abc6ca1a1",
+    "next": "Pin target sysroot/linker inputs and extract reusable Rust source builder; exercise linker-phase cancellation and stale generations in actual file loop. Actual non-Apple/browser and native Canvas protocol/final-release/capture gates remain open.",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T06:38:29.739536+00:00",
+    "recovery_revision": 2,
+    "resealed_mutants": 3,
+    "retained_bytes": 49152,
+    "retained_failure": "20261011T063314Z-primary-live-wasm-swap-bd1d9244 failed before native execution on manifest dict/list mismatch; focused helper copy lost executable mode, corrected; changed-input focused control and fixed canonical pass",
+    "run_id": "20261011T063558Z-primary-live-wasm-swap-803a7d05",
+    "scientific_delivery_review": "pending"
+  },
   "rust_frame_checkpoint": {
     "allocation_bytes": 1376256,
     "canonical_checks": 46,

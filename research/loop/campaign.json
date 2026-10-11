@@ -5194,6 +5194,26 @@
         {
           "equals": true,
           "path": "rust_source_zero_workers"
+        },
+        {
+          "equals": 3,
+          "path": "rust_failure_controls"
+        },
+        {
+          "equals": 49152,
+          "path": "rust_failure_retained_bytes"
+        },
+        {
+          "equals": true,
+          "path": "rust_failure_late_artifacts_stable"
+        },
+        {
+          "equals": 2,
+          "path": "rust_failure_recovery_revision"
+        },
+        {
+          "equals": true,
+          "path": "rust_failure_zero_workers"
         }
       ],
       "depends_on": [],

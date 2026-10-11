@@ -1,0 +1,11 @@
+{
+  "observations": {
+    "rust_failure_controls": 3,
+    "rust_failure_late_artifacts_stable": true,
+    "rust_failure_recovery_revision": 2,
+    "rust_failure_retained_bytes": 49152,
+    "rust_failure_zero_workers": true
+  },
+  "prior_anchor": "7cf8a0b11b90f5f479e8409ba909a160ab77c738a88804b9ab5724ac0a631382",
+  "scope": "Actual owned Rust compiler workload cancellation/deadline and stale ticket; observed ancestry and late-file stability, not native Canvas release semantics"
+}
