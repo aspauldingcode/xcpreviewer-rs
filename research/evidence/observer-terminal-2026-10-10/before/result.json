@@ -1,0 +1,118 @@
+{
+  "controls": [
+    {
+      "mode": "valid",
+      "record": {
+        "pid": 82234,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 27.717209000000004
+    },
+    {
+      "mode": "trailing-partial",
+      "record": {
+        "pid": 82235,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 26.657957999999994
+    },
+    {
+      "mode": "missing-accounting",
+      "record": {
+        "pid": 82236,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 25.128291999999988
+    },
+    {
+      "mode": "negative-count",
+      "record": {
+        "pid": 82237,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": -1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 26.412958999999987
+    },
+    {
+      "mode": "boolean-count",
+      "record": {
+        "pid": 82238,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": true,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 25.101124999999996
+    }
+  ],
+  "scope": "Owned supervisor protocol fixtures; no target launched"
+}

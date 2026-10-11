@@ -1,0 +1,4 @@
+#!/Users/8amps/xcpreviewer-rs/research/venv/bin/python
+import os,time
+os.write(3,"{\"kind\":\"complete\",\"target_code\":0,\"failure\":null,\"drained\":true,\"remaining_observed\":0,\"scope\":\"Owned control fixture; no target launched\"}\n".encode())
+while True:time.sleep(3600)

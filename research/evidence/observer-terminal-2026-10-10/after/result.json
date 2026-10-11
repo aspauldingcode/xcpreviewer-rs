@@ -1,0 +1,98 @@
+{
+  "controls": [
+    {
+      "mode": "valid",
+      "record": {
+        "pid": 82699,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 25.486333999999996
+    },
+    {
+      "mode": "trailing-partial",
+      "record": {
+        "pid": 82700,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 1,
+          "remaining_observed": 0,
+          "scope": "Owned control fixture; no target launched"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed report truncated trailing data",
+      "elapsedMs": 19.975792000000006
+    },
+    {
+      "mode": "missing-accounting",
+      "record": {
+        "pid": 82701,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": null,
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'drained',\n    'failure',\n    'kind',\n-   'observations',\n    'remaining_observed',\n    'scope',\n    'target_code',\n-   'tracked'\n  ]\n",
+      "elapsedMs": 22.2885
+    },
+    {
+      "mode": "negative-count",
+      "record": {
+        "pid": 82702,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": null,
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Number.isSafeInteger(row.tracked)&&row.tracked>=0&&row.tracked<=256)\n",
+      "elapsedMs": 25.654291999999998
+    },
+    {
+      "mode": "boolean-count",
+      "record": {
+        "pid": 82705,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": null,
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(Number.isSafeInteger(row.observations)&&row.observations>=1)\n",
+      "elapsedMs": 18.937416999999996
+    }
+  ],
+  "scope": "Owned supervisor protocol fixtures; no target launched"
+}

@@ -1,0 +1,44 @@
+{
+  "original": {
+    "pid": 83045,
+    "parent": 83043,
+    "group": 83045,
+    "state": "L",
+    "identity": [
+      1791696219,
+      812742,
+      "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    ]
+  },
+  "reparented": {
+    "pid": 83045,
+    "parent": 1,
+    "group": 83045,
+    "state": "L",
+    "identity": [
+      1791696219,
+      812742,
+      "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    ]
+  },
+  "error": "Error: Observed compiler aborted",
+  "record": {
+    "pid": 83042,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 2,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": ""
+  }
+}

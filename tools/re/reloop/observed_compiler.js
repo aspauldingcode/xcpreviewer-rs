@@ -1,6 +1,21 @@
 'use strict';
 // Explicit macOS public observer dependency. Default inherited-group path stays available.
 const {spawn}=require('node:child_process'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+function validateComplete(row){
+ assert(row&&typeof row==='object'&&!Array.isArray(row));assert.equal(row.kind,'complete');
+ assert.equal(typeof row.drained,'boolean');assert(row.target_code===null||Number.isSafeInteger(row.target_code));
+ if(row.drained){
+  assert.deepEqual(Object.keys(row).sort(),['drained','failure','kind','observations','remaining_observed','scope','target_code','tracked'].sort());
+  assert(row.failure===null||typeof row.failure==='string');assert(Number.isSafeInteger(row.target_code));
+  assert(Number.isSafeInteger(row.tracked)&&row.tracked>=0&&row.tracked<=256);
+  assert(Number.isSafeInteger(row.observations)&&row.observations>=1);
+  assert.equal(row.remaining_observed,0);assert.equal(typeof row.scope,'string');assert(row.scope.length>0&&row.scope.length<=1024);
+ }else{
+  assert.deepEqual(Object.keys(row).sort(),['drained','failure','kind','target_code'].sort());
+  assert.equal(typeof row.failure,'string');assert(row.failure.length>0);
+ }
+ return row;
+}
 function runObserved(command,args,{observer,supervisorPython='python3',signal,timeout=5000,limit=65536,onObservation=()=>{}}={}){
  assert.equal(process.platform,'darwin');assert(observer&&path.isAbsolute(observer.helper)&&/^[a-f0-9]{64}$/.test(observer.sha256));
  assert(Number.isSafeInteger(timeout)&&timeout>=50&&timeout<=30000);assert(Number.isSafeInteger(limit)&&limit>=1&&limit<=1048576);assert.equal(typeof onObservation,'function');
@@ -24,14 +39,14 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
     try{
      const row=JSON.parse(line);assert(!report);
      if(row.kind==='observed'){assert(Array.isArray(row.rows));onObservation(row.rows);}
-     else{assert.equal(row.kind,'complete');report=row;if(row.drained!==true||row.remaining_observed!==0||!Number.isSafeInteger(row.target_code)||row.failure||row.target_code!==0)failure ||= Error('Observed compiler failed: '+String(row.failure||row.target_code));kill();}
-    }catch(e){cancel(e);}
+     else{report=validateComplete(row);if(row.drained!==true||row.remaining_observed!==0||!Number.isSafeInteger(row.target_code)||row.failure||row.target_code!==0)failure ||= Error('Observed compiler failed: '+String(row.failure||row.target_code));kill();}
+    }catch(e){cancel(e);kill();}
    }
   });
-  child.on('close',(code,term)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);
-   const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,stdout:stdout.toString(),stderr:stderr.toString()};
+  child.on('close',(code,term)=>{if(control.length)failure ||= Error('Observed report truncated trailing data');clearTimeout(timer);signal?.removeEventListener('abort',abort);
+   const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,privateAbortRequested:requested,stdout:stdout.toString(),stderr:stderr.toString()};
    if(failure||report?.drained!==true||report.remaining_observed!==0||report.target_code!==0||term!=='SIGKILL'){const e=failure||Error('Observed cleanup unverified');e.record=record;reject(e);}else resolve(record);
   });
  });
 }
-module.exports={runObserved};
+module.exports={runObserved,validateComplete};

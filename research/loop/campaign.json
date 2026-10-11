@@ -5062,6 +5062,18 @@
         {
           "equals": true,
           "path": "observed_malformed_rows_rejected"
+        },
+        {
+          "equals": 4,
+          "path": "observed_terminal_rejections"
+        },
+        {
+          "equals": true,
+          "path": "observed_terminal_valid_control"
+        },
+        {
+          "equals": true,
+          "path": "observed_reparent_abort_drained"
         }
       ],
       "depends_on": [],

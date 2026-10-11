@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(original&&reparented)
+
+    at /Users/8amps/xcpreviewer-rs/tools/re/tests/observer_cancel_boundary.js:15:2 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

@@ -36,12 +36,25 @@ def corpus(out):
                         str(out/'schema-controls'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
                         sys.executable],check=True,timeout=10,stdout=stdout,stderr=stderr)
     malformed=json.loads((out/'schema-controls/result.json').read_text())['controls']
+    with (out/'terminal-controls.stdout').open('wb') as stdout,(out/'terminal-controls.stderr').open('wb') as stderr:
+        subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/observer_terminal_control.js'),
+                        str(out/'terminal-controls'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
+                        sys.executable],check=True,timeout=8,stdout=stdout,stderr=stderr)
+    terminal=json.loads((out/'terminal-controls/result.json').read_text())['controls']
+    with (out/'cancel-boundary.stdout').open('wb') as stdout,(out/'cancel-boundary.stderr').open('wb') as stderr:
+        subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/observer_cancel_boundary.js'),
+                        str(out/'cancel-boundary'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
+                        sys.executable,observer['helper'],observer['sha256']],check=True,timeout=8,stdout=stdout,stderr=stderr)
+    boundary=json.loads((out/'cancel-boundary/result.json').read_text())
     from reloop.ownedcompilerprobe import corpus as compiler
     fresh=compiler(out/'fresh',observer)
     assert digest(helper)==observer['sha256']
     atomic(out/'provenance.json',{'observer':observer,'source_sha256':digest(source),
                                 'compiler_sha256':digest('/usr/bin/clang'),'fresh':fresh})
-    return {'observed_malformed_rows_rejected':len(malformed)==4 and all(r['error'] and r['record']['report']['drained'] is False for r in malformed),
+    return {'observed_terminal_rejections':sum(bool(r['error']) for r in terminal),
+            'observed_terminal_valid_control':terminal[0]['error'] is None,
+            'observed_reparent_abort_drained':boundary['record']['report']['drained'] and boundary['record']['report']['target_code']==0 and boundary['record']['privateAbortRequested'] and boundary['lateWriteAbsent'],
+            'observed_malformed_rows_rejected':len(malformed)==4 and all(r['error'] and r['record']['report']['drained'] is False for r in malformed),
             'observed_compiler_controls':len(result['controls']),
             'observed_loss_cleanup_rejected':failures[0]['record']['report']['drained'] is False and failures[0]['lateWritePresent'],
             'observed_loss_pipe_settlement':failures[0]['record']['emergencyClosed'] and failures[0]['elapsedMs']<6500,
