@@ -97,6 +97,8 @@ def corpus(out):
     assert facts['rust_target_linker_pin_verified'] and facts['rust_source_builder_frozen']
     from reloop.rustloopprobe import corpus as rust_loop
     facts.update(rust_loop(out / 'rust-source', out / 'rust-loop'))
+    from reloop.rusttimeoutprobe import corpus as rust_timeout
+    facts.update(rust_timeout(out / 'rust-source', out / 'rust-timeout'))
     from reloop.rustfailureprobe import corpus as rust_failure
     facts.update(rust_failure(out / 'rust-failure'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')

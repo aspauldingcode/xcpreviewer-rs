@@ -1,0 +1,9 @@
+{
+  "observations": {
+    "rust_file_abort_drained": true,
+    "rust_file_controls_bytes": 65536,
+    "rust_file_controls_quiescent": true,
+    "rust_file_stale_rejected": true
+  },
+  "scope": "Actual finite Rust source builder and owned file-loop generation/close boundaries; not linker-phase cancellation, kernel reclamation or native Canvas protocol"
+}

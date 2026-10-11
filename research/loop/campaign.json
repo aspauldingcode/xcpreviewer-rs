@@ -5238,6 +5238,22 @@
         {
           "equals": true,
           "path": "rust_file_controls_quiescent"
+        },
+        {
+          "equals": 3,
+          "path": "rust_file_failure_cases"
+        },
+        {
+          "equals": 147456,
+          "path": "rust_file_failure_bytes"
+        },
+        {
+          "equals": true,
+          "path": "rust_postcompile_failure_recorded"
+        },
+        {
+          "equals": true,
+          "path": "rust_file_timeout_recovered"
         }
       ],
       "depends_on": [],
