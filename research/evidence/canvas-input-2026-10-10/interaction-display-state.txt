@@ -1,0 +1,58 @@
+updateIdentifier: 10781
+    buildingState: Running
+    isUpdateInProgress: false
+    providers [
+        Registry[Registry-PreviewLab.swift#1[preview] (line 27)] {
+            status: Completed: Not attempted
+        }
+        Registry[Registry-PreviewLab.swift#2[preview] (line 36)] {
+            status: Completed: Not attempted
+        }
+        Registry[Registry-PreviewLab.swift#3[preview] (line 40)] {
+            status: Completed: Not attempted
+        }
+    ]
+    registries [
+        Registry-PreviewLab.swift#1[preview] {
+            status: Completed: Available
+            Primary layers {
+                canvasContent {
+                    isStale: true
+                    states {
+                        livePreview: disabled
+                        staticPreview: disabled
+                        Light Appearance: disabled
+                        Dark Appearance: disabled
+                    }
+                }
+            }
+        }
+        Registry-PreviewLab.swift#2[preview] {
+            status: Completed: Available
+            Text and interaction {
+                canvasContent {
+                    isStale: false
+                    states {
+                        livePreview: succeeded
+                        staticPreview: disabled
+                        Light Appearance: disabled
+                        Dark Appearance: disabled
+                    }
+                }
+            }
+        }
+        Registry-PreviewLab.swift#3[preview] {
+            status: Completed: Available
+            Layout edit {
+                canvasContent {
+                    isStale: true
+                    states {
+                        livePreview: disabled
+                        staticPreview: disabled
+                        Light Appearance: disabled
+                        Dark Appearance: disabled
+                    }
+                }
+            }
+        }
+    ]

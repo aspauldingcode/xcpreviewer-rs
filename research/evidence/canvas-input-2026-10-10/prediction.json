@@ -1,0 +1,13 @@
+{
+  "scope": "CUA input delivery in one owned Xcode 26.6 macOS Canvas fixture; source fixed before input controls",
+  "hypotheses": [
+    "Background or first activation consumes a click: explicitly raising the owned workspace should permit later increment clicks",
+    "Canvas action delivery differs from normal editor input: click controls remain unchanged even with raised window",
+    "Native Live mode executes the counter: observable Count transitions follow successful button input"
+  ],
+  "sequence": ["verify no prior workspace windows", "open retained owned project", "raise owned workspace", "resume Canvas", "select Text and interaction", "capture count baseline", "single click on fresh screenshot position", "capture result", "bounded alternate input if single click is inconclusive", "source title edit only if count transition is durably captured", "restore source and close owned workspace"],
+  "bounds": {"controller_lease_seconds": 480, "input_attempts": 4, "owned_workspaces": 1},
+  "failure_condition": "No rendered count change or user focus intervention: record input attribution as inconclusive, not a native state failure",
+  "provenance": "prior manifest 2f76309d1d01ade091e58373f7b9a7b08b1ff90d21e8620fa7f798a40013ac76; all 51 prior files rehashed successfully",
+  "native_protocol_claim": false
+}

@@ -1,0 +1,72 @@
+{
+  "primary": {
+    "schema_version": 1,
+    "authority": "xcode-ui-diagnostic-report",
+    "transport_observed": false,
+    "report_sha256": "9e3d8f20ecff244c5bedf5010483dcef4456b122c78bbdccb8989d879d9b3357",
+    "update_identifier": 10543,
+    "building_state": "Running",
+    "is_update_in_progress": false,
+    "registries": [
+      {
+        "id": "PreviewLab.swift#1[preview]",
+        "status": "Completed: Available",
+        "is_stale": false,
+        "live_preview": "succeeded",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": true
+      },
+      {
+        "id": "PreviewLab.swift#2[preview]",
+        "status": "Completed: Available",
+        "is_stale": true,
+        "live_preview": "disabled",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": false
+      },
+      {
+        "id": "PreviewLab.swift#3[preview]",
+        "status": "Completed: Available",
+        "is_stale": true,
+        "live_preview": "disabled",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": false
+      }
+    ]
+  },
+  "interaction": {
+    "schema_version": 1,
+    "authority": "xcode-ui-diagnostic-report",
+    "transport_observed": false,
+    "report_sha256": "db0b99a7ea89eaec7721e4109af015c8793767c57342707945628e9bc84d786e",
+    "update_identifier": 10781,
+    "building_state": "Running",
+    "is_update_in_progress": false,
+    "registries": [
+      {
+        "id": "PreviewLab.swift#1[preview]",
+        "status": "Completed: Available",
+        "is_stale": true,
+        "live_preview": "disabled",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": false
+      },
+      {
+        "id": "PreviewLab.swift#2[preview]",
+        "status": "Completed: Available",
+        "is_stale": false,
+        "live_preview": "succeeded",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": true
+      },
+      {
+        "id": "PreviewLab.swift#3[preview]",
+        "status": "Completed: Available",
+        "is_stale": true,
+        "live_preview": "disabled",
+        "static_preview": "disabled",
+        "reports_fresh_live_success": false
+      }
+    ]
+  }
+}
