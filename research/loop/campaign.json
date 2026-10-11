@@ -5214,6 +5214,14 @@
         {
           "equals": true,
           "path": "rust_failure_zero_workers"
+        },
+        {
+          "equals": true,
+          "path": "rust_target_linker_pin_verified"
+        },
+        {
+          "equals": true,
+          "path": "rust_source_builder_frozen"
         }
       ],
       "depends_on": [],
