@@ -1,0 +1,12 @@
+{
+  "scope": "Owned public native NSButton accessibility action and SwiftUI discovery with display-center placement; no physical input or Canvas",
+  "prediction": "NSButton role/hit should be AXButton, three accessibility presses should invoke target counter 1/2/3 and blue/red/blue frames. Replacing with SwiftUI at same owned center discriminates discovery boundary from invalid screen placement. Explicitly record absence/failure if any control fails.",
+  "limits": {
+    "producers": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "alarm_seconds": 12,
+    "tree_depth": 8,
+    "tree_nodes": 64
+  }
+}

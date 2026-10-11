@@ -695,6 +695,16 @@
     "result": "Two native waits exit 0; navigation children absent; hit returns AXGroup at [80,-62]; zero actions; 32768 complete initial red bytes including padding/tail; thirteen resealed faults; zero owned application windows.",
     "started_at": "2026-10-11T21:14:45.732089+00:00"
   },
+  "native_button_placement_checkpoint": {
+    "budget": "Three producers: one compile, two failed native runs. Compile 60 seconds; native 15 seconds; helper alarm 12 seconds.",
+    "classification": "Owned main-screen prerequisite unavailable; planned control and input not acquired",
+    "evidence": "research/evidence/native-button-placement-2026-10-11",
+    "manifest_sha256": "fa01891281b3b6a05f98475c983ebb2bdb0c4d0d02dd83b6389816025adc6644",
+    "milestones_complete": false,
+    "next_wake_hint": "Switch to independent native resource or portable feasibility task while main-screen prerequisite unresolved. Before future placement control, record public display availability and handle failure before allocating owned windows. No unchanged crash repeat or bridge/browser bypass.",
+    "result": "Two actual waits -5 without timeout; Code=3 maps to NSScreen.main guard; zero result/frame files and zero observed frame bytes; cleanup unverified; seven resealed false-acceptance corruptions rejected.",
+    "started_at": "2026-10-11T21:25:09.172129+00:00"
+  },
   "native_button_press_checkpoint": {
     "budget": "4producers;60seccompile/15secnative/alarm12;tree8levels64nodes",
     "classification": "Native input discovery failed:hidden owned host AXGroup only",

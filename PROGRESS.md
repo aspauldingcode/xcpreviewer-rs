@@ -791,3 +791,7 @@ Ordering the owned host behind other windows changes visibility to true and pres
 ## 2026-10-11 — navigation and hit-test discovery boundary
 
 Two owned SwiftUI probes expose no navigation children; public center hit-test returns AXGroup only and delivers zero actions. The screen point is [80, -62], so display placement remains unvalidated. Both owned windows close. All 32,768 initial-red bytes and thirteen resealed evidence faults are verified. [Scope and next prerequisites](docs/reverse-engineering/2026-10-11-native-button-hit.md). Both milestones remain open.
+
+## 2026-10-11 — owned main-screen prerequisite failure
+
+Two placement/control acquisitions fail at NSScreen.main with actual -5 waits and OwnedState Code=3. No input, result or frame was acquired; cleanup is unverified. Seven resealed false-acceptance corruptions are rejected. [Retained failure and retry prerequisite](docs/reverse-engineering/2026-10-11-native-button-placement.md). Switch to independent work while display availability remains unresolved. Both milestones remain open.
