@@ -1,0 +1,4 @@
+{
+  "acceptance": false,
+  "reason": "Channel closed=true denotes transport shutdown but successful and failed close adapters return indistinguishable summaries. Failure before release retains actual worker1/timers2/frame; failure after release hasworker0. No physical release inference follows an adapter result."
+}

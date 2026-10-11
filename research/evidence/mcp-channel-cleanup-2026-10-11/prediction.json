@@ -1,0 +1,9 @@
+{
+  "scope": "Actual owned session/WASM worker and actual MCP stdio framing over in-memory streams, injected close adapter failures; no SDK/native transport",
+  "parent_manifest_sha256": "39926fdf767f01ab7ce2f01d14669965638177748a8ea94bdceec86e94686d50",
+  "required": "Separate closed transport from close outcome: complete vs failed; failure before release worker1/cache retained, failure after release worker0/frame null. Finally directly close owned session.",
+  "limits": {
+    "runs": 4,
+    "seconds": 5
+  }
+}

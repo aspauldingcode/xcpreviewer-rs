@@ -3,9 +3,10 @@
 function serveMcp(input,output,handler,session,{deadline=10000,writeDeadline=1000}={}){
  if(!Number.isSafeInteger(deadline)||deadline<500||deadline>10000||!Number.isSafeInteger(writeDeadline)||writeDeadline<50||writeDeadline>1000)throw Error('Deadline bounds');
  const hasId=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&'id'in x;
- let buffer=Buffer.alloc(0),queue=[],active=null,task=null,stopped=false,received=0,writes=0,suppressed=0,closePromise=null,resolveDone;
+ let buffer=Buffer.alloc(0),queue=[],active=null,task=null,stopped=false,received=0,writes=0,suppressed=0,closePromise=null,cleanup='pending',resolveDone;
  const done=new Promise(r=>resolveDone=r),timer=setTimeout(()=>{void stop('channel-deadline');},deadline);
- const closeSession=()=>closePromise||(closePromise=Promise.resolve().then(()=>session.close()));
+ const closeSession=()=>closePromise||(closePromise=Promise.resolve().then(()=>session.close()).then(
+  value=>{cleanup='complete';return value;},error=>{cleanup='failed';throw error;}));
  async function write(packet){
   const bytes=Buffer.from(JSON.stringify(packet)+'\n');if(bytes.length>32768)throw Error('Response bound');++writes;
   if(!output.write(bytes))await new Promise((resolve,reject)=>{
@@ -18,7 +19,7 @@ function serveMcp(input,output,handler,session,{deadline=10000,writeDeadline=100
   if(active&&!active.writing&&!active.cancelled&&hasId(active.message)){active.cancelled=true;++suppressed;}
   suppressed+=queue.filter(x=>hasId(x.message)).length;queue=[];
   try{await closeSession();if(task)await task;output.end();}catch(_){output.destroy();}
-  finally{resolveDone({received,writes,suppressed,closed:true,reason});}
+  finally{resolveDone({received,writes,suppressed,closed:true,cleanup,reason});}
  }
  async function pump(){
   while(!stopped&&queue.length){

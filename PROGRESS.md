@@ -747,3 +747,7 @@ Two repeat14-history packet replays reject forged identities/rollback/diagnostic
 ## 2026-10-11 — owned request-cap cleanup
 
 At256 request IDs, baseline refused close while retaining worker1/timers2/frame. Handler now awaits owned close before limit error; fixed worker0/timers0/frame null, IDs remain256, throwing cleanup reports sanitized failure. Four waits0,98304 independently expected bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-request-cap.md). Owned handler policy only; native R1/R2/both milestones remain open.
+
+## 2026-10-11 — channel cleanup outcome
+
+Channel summary now separates transport closed from cleanup complete/failed. Actual owned worker controls distinguish throw before release(worker1) from throw after release(worker0); both failed adapters reported failed, all finally closed. Four waits0/12 controls,262144 independent bytes/eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-mcp-channel-cleanup.md). Non-settling close remains explicit; no SDK/native physical release/both milestone completion.

@@ -423,6 +423,15 @@
     "scope": "Owned MCP stream module and cooperative fake session; no external stdio/SDK/actual compiler/native Canvas acceptance",
     "synthetic_allocation_bytes": 16384
   },
+  "mcp_channel_cleanup_checkpoint": {
+    "classification": "close adapter outcome separated from transport closure; owned failure states measured; delivery pending",
+    "evidence": "research/evidence/mcp-channel-cleanup-2026-10-11",
+    "manifest_sha256": "ab1138f435e04463df90ade08031a25af8a9921d67fb83e74a03a32e1ea1add3",
+    "milestones_complete": false,
+    "next_wake_hint": "Cleanup reporting complete; do not repeat finite close permutations. Session.close must still settle; a process-owned watchdog may be required for demanded packaging. Native capture remains approved-bridge restoration prerequisite; browser review-gated; both milestones open.",
+    "result": "2 baseline/2 fixed producers cover12 controls: success complete; throws before/after release failed even though afterreleaseworker0. Beforefailureworker1 preserved until directfinalclose.262144 fullbytes/8 resealed faults. Actual owned channel/inmemory framing/synthetic WASM; no SDK/native claim.",
+    "started_at": "2026-10-11T19:35:35.222984+00:00"
+  },
   "mcp_close_revision_checkpoint": {
     "classification": "finite portable consumer fix supported; delivery review pending",
     "evidence": "research/evidence/mcp-close-revision-2026-10-11",
