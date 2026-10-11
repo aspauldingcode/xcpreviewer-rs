@@ -39,6 +39,7 @@ def corpus(out):
         shutil.copyfile(baseline / name, controls / name)
     run('tests/live_wasm_host_control.js', [controls], 15)
     run('tests/live_wasm_cancel_control.js', [controls, 'after', baseline], 15)
+    run('tests/live_wasm_guard_control.js', [controls, ROOT / 'tools/re/reloop/live_wasm_host.js', 'verify', baseline], 20)
     source = anchored('research/evidence/source-revision-2026-10-10', SOURCE_ANCHOR)
     source_inputs = out / 'source-inputs'; source_inputs.mkdir()
     for name in ['fixtures.json'] + ['%d-%s' % (i, suffix) for i in range(3)
@@ -48,6 +49,9 @@ def corpus(out):
     frames = json.loads((out / 'frames/result.json').read_text())
     faults = json.loads((controls / 'control-result.json').read_text())
     cancel = json.loads((controls / 'after-fix.json').read_text())
+    guards = json.loads((controls / 'guard-result.json').read_text())
+    if guards['failures'] or len(guards['controls']) != 5:
+        raise ValueError('Adapter reentrant guard gate failed')
     revisions = json.loads((controls / 'source-result.json').read_text())
     if not cancel['settled_at_close'] or cancel['status_at_close']['liveWorkers'] != 0:
         raise ValueError('Adapter cancellation gate failed')
@@ -56,6 +60,8 @@ def corpus(out):
              'independent_bytes': sum(r['independent_bytes'] for r in frames['records']),
              'failed_proposals': len(faults['faults']),
              'close_controls': 1 + len(cancel['extra_controls']),
+             'closed_guard_controls': sum(r['case'].startswith('close-in-guard-') for r in guards['controls']),
+             'guard_rejections': sum(r['case'].startswith('guard-') for r in guards['controls']),
              'source_rejections': len(revisions['controls']),
              'source_revisions': revisions['accepted_revisions'],
              'zero_workers': frames['final_status']['liveWorkers'] == 0 and revisions['final_status']['liveWorkers'] == 0,

@@ -69,6 +69,8 @@ class LiveWasmHost {
       assert.deepEqual(frame, prediction, 'Complete allocation differs from independent expectation');
       assert(!this.#closed, 'Host closed during proposal');
       assert.equal(guard(), true, 'Proposal superseded before publication');
+      // User guard may synchronously reenter close(); recheck before mutation.
+      assert(!this.#closed, 'Host closed by publication guard');
       const old = this.#active;
       this.#active = {worker: candidate, frame, revision: ++this.#revision,
         token: crypto.randomUUID(), moduleSha256: crypto.createHash('sha256').update(proposal).digest('hex'),

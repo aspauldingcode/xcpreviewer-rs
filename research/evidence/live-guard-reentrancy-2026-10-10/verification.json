@@ -1,0 +1,98 @@
+{
+  "after_failures": 0,
+  "before_failures": 2,
+  "independent_bytes_rechecked": 1376256,
+  "manifest_sha256": "7408abc331849997ac534f9be0c474f85a3063620af6990a3b17ea1d101cb747",
+  "native_bytes_rechecked": 1310720,
+  "regression_tests": 6,
+  "run_id": "20261011T035112Z-primary-live-wasm-swap-8279b44a",
+  "scientific_delivery_review": "pending",
+  "scope": "Owned synchronous guard reentrancy; prior Native callback targets reused. No native Canvas lifecycle claim.",
+  "verification": {
+    "checks": [
+      {
+        "actual": 84,
+        "expected": 84,
+        "passed": true,
+        "path": "frames",
+        "present": true
+      },
+      {
+        "actual": 1310720,
+        "expected": 1310720,
+        "passed": true,
+        "path": "native_bytes",
+        "present": true
+      },
+      {
+        "actual": 1376256,
+        "expected": 1376256,
+        "passed": true,
+        "path": "independent_bytes",
+        "present": true
+      },
+      {
+        "actual": 6,
+        "expected": 6,
+        "passed": true,
+        "path": "failed_proposals",
+        "present": true
+      },
+      {
+        "actual": 4,
+        "expected": 4,
+        "passed": true,
+        "path": "close_controls",
+        "present": true
+      },
+      {
+        "actual": 5,
+        "expected": 5,
+        "passed": true,
+        "path": "source_rejections",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "source_revisions",
+        "present": true
+      },
+      {
+        "actual": true,
+        "expected": true,
+        "passed": true,
+        "path": "zero_workers",
+        "present": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "passed": true,
+        "path": "closed_guard_controls",
+        "present": true
+      },
+      {
+        "actual": 3,
+        "expected": 3,
+        "passed": true,
+        "path": "guard_rejections",
+        "present": true
+      }
+    ],
+    "delivery_review": "review-pending",
+    "integrity": {
+      "external_anchor_matches": true,
+      "frozen_sources_unchanged": true,
+      "manifest_sha256": "7408abc331849997ac534f9be0c474f85a3063620af6990a3b17ea1d101cb747",
+      "run_id": "20261011T035112Z-primary-live-wasm-swap-8279b44a",
+      "scope": "Artifact consistency; authenticity requires a separately trusted manifest hash.",
+      "valid": true
+    },
+    "recomputed_verdict": "supports",
+    "scope": "Fresh-process artifact integrity and predeclared checks; not independent contract review.",
+    "valid": true
+  },
+  "wake_id": "c3e257616e8f493b9bd6a78b0a1802ba"
+}

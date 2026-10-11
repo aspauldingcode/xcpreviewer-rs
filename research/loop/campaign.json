@@ -4922,7 +4922,7 @@
     {
       "id": "primary-live-wasm-swap",
       "adapter": "live_swap",
-      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim.",
+      "hypothesis": "Frozen owned persistent WASM publication preserves every independent/native allocation byte and last-good state on failed proposals; close quiesces workers and stale source generations cannot publish. No native Canvas protocol claim. Reentrant publication guards cannot publish after close.",
       "depends_on": [],
       "resources": [
         "local-re-controller"
@@ -4963,6 +4963,14 @@
         {
           "path": "zero_workers",
           "equals": true
+        },
+        {
+          "path": "closed_guard_controls",
+          "equals": 2
+        },
+        {
+          "path": "guard_rejections",
+          "equals": 3
         }
       ]
     }

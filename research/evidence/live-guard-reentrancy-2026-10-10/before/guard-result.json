@@ -1,0 +1,52 @@
+{
+  "controls": [
+    {
+      "case": "close-in-guard-empty",
+      "error": "AssertionError [ERR_ASSERTION]: Host closed during publication",
+      "revision_before": 0,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 1
+      },
+      "snapshot_after_close": "published",
+      "allocation_bytes": 0,
+      "passed": false
+    },
+    {
+      "case": "close-in-guard-active",
+      "error": "AssertionError [ERR_ASSERTION]: Host closed during publication",
+      "revision_before": 1,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 2
+      },
+      "snapshot_after_close": "published",
+      "allocation_bytes": 16384,
+      "passed": false
+    },
+    {
+      "case": "guard-false",
+      "passed": true,
+      "allocation_bytes": 16384,
+      "retained_revision": 1
+    },
+    {
+      "case": "guard-throw",
+      "passed": true,
+      "allocation_bytes": 16384,
+      "retained_revision": 1
+    },
+    {
+      "case": "guard-promise",
+      "passed": true,
+      "allocation_bytes": 16384,
+      "retained_revision": 1
+    }
+  ],
+  "failures": 2,
+  "scope": "Owned callback reentrancy and closed-host invariants; no native Canvas state policy."
+}

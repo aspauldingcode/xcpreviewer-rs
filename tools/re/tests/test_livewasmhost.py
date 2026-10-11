@@ -38,3 +38,15 @@ class LiveWasmHostTests(unittest.TestCase):
             self.assertTrue(result['settled_at_close'])
             self.assertEqual(result['status_at_close']['liveWorkers'], 0)
             self.assertEqual(len(result['extra_controls']), 3)
+
+    def test_reentrant_guard_cannot_publish_after_close(self):
+        node = shutil.which('node')
+        if not node:
+            self.skipTest('Node unavailable')
+        with tempfile.TemporaryDirectory() as temporary:
+            subprocess.run([node, str(ROOT / 'tools/re/tests/live_wasm_guard_control.js'), temporary],
+                           check=True, timeout=20, capture_output=True)
+            result = json.loads((Path(temporary) / 'guard-result.json').read_text())
+            self.assertEqual(result['failures'], 0)
+            self.assertEqual(len(result['controls']), 5)
+            self.assertTrue(all(row['passed'] for row in result['controls']))
