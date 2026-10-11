@@ -1,0 +1,9 @@
+{
+  "scope": "Local unittest invocation/import failure; owned process controls already exited0",
+  "failure": "ModuleNotFoundError: No module named 'reloop'",
+  "cause": "Missing PYTHONPATH in independent unittest subprocess",
+  "correction": "Use candidate tools/re PYTHONPATH; adapt padding mutation to JSON-RPC text content",
+  "native_deadlines_changed": false,
+  "second_failure": "Integrity gate detected omitted fixture/manifest.json in writer inventory",
+  "second_correction": "Exclude only root manifest, retain nested fixture manifest"
+}

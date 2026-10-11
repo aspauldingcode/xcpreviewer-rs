@@ -645,3 +645,8 @@ Custom NDJSON rejects MCP initialize, proving transport mismatch. Separate bound
 ## Bounded MCP stream controls (2026-10-11)
 
 UTF-8/newline framing, serial queue8, bounded backpressure/EOF and optional cancellation implemented around PreviewMcp. Active tool cancellation closes owned session and suppresses pending reply; queued cancellation retains used ID. Ten cooperative fake-session stream controls,2 fresh Node replays,16384 independent synthetic bytes and3 resealed suppression/cleanup/allocation faults pass.81 Python plus7 Rust archive tests. Sealf47fb3de71f3ac8b34cc2332f3702f970cb66d6feaaed8db6bfe94f86b74f942. External stdio/actual compiler/SDK interop remains next; no native Canvas acceptance. Both milestone contracts open.
+
+
+## Actual owned MCP stdio preview (2026-10-11)
+
+Independent Python process client drives pinned MCP initialization/tools and actual Rust13x7→11x6→13x7 builds; unsupported CLI wait2 retains frame.65536 full allocation bytes,3 fresh modules and6 oracle controls pass. Four owned Node processes exit0/clean; early cancellation avoids build entry, entered cancellation and EOF record CLI wait-15/abort/drained with phase unlocalized. Four resealed exit/reply/wait/padding faults reject. Harness import and nested-manifest inventory errors retained and repaired without native reruns/deadline changes.83 Python plus7 Rust archive tests. Seal700c6bfe00763d9a5f54f450acc70444416755838185922e6c4deda87a71401e. Official SDK/full conformance/native Canvas acceptance remain open; both milestones open.
