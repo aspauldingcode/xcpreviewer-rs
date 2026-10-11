@@ -31,12 +31,18 @@ def corpus(out):
                         str(out/'failure-controls'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
                         sys.executable,observer['helper'],observer['sha256']],check=True,timeout=20,stdout=stdout,stderr=stderr)
     failures=json.loads((out/'failure-controls/result.json').read_text())['controls']
+    with (out/'schema-controls.stdout').open('wb') as stdout,(out/'schema-controls.stderr').open('wb') as stderr:
+        subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/observer_schema_control.js'),
+                        str(out/'schema-controls'),str(ROOT/'tools/re/reloop/observed_compiler.js'),
+                        sys.executable],check=True,timeout=10,stdout=stdout,stderr=stderr)
+    malformed=json.loads((out/'schema-controls/result.json').read_text())['controls']
     from reloop.ownedcompilerprobe import corpus as compiler
     fresh=compiler(out/'fresh',observer)
     assert digest(helper)==observer['sha256']
     atomic(out/'provenance.json',{'observer':observer,'source_sha256':digest(source),
                                 'compiler_sha256':digest('/usr/bin/clang'),'fresh':fresh})
-    return {'observed_compiler_controls':len(result['controls']),
+    return {'observed_malformed_rows_rejected':len(malformed)==4 and all(r['error'] and r['record']['report']['drained'] is False for r in malformed),
+            'observed_compiler_controls':len(result['controls']),
             'observed_loss_cleanup_rejected':failures[0]['record']['report']['drained'] is False and failures[0]['lateWritePresent'],
             'observed_loss_pipe_settlement':failures[0]['record']['emergencyClosed'] and failures[0]['elapsedMs']<6500,
             'observed_output_pressure_drained':failures[1]['record']['report']['drained'] and not failures[1]['lateWritePresent'],

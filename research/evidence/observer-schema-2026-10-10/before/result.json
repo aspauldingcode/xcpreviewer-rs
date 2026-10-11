@@ -1,0 +1,93 @@
+{
+  "controls": [
+    {
+      "mode": "null-group",
+      "record": {
+        "pid": 69599,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 10,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 584.29025
+    },
+    {
+      "mode": "negative-parent",
+      "record": {
+        "pid": 69621,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 10,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 586.316833
+    },
+    {
+      "mode": "invalid-microseconds",
+      "record": {
+        "pid": 69643,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 9,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "elapsedMs": 580.393333
+    },
+    {
+      "mode": "missing-group",
+      "record": {
+        "pid": 69750,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "KeyError: 'group'",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: KeyError: 'group'",
+      "elapsedMs": 47.59620799999993
+    }
+  ],
+  "scope": "Malformed owned helper output; no native process identity truth claim"
+}

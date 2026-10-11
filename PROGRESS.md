@@ -533,3 +533,8 @@ A further actual EOF control found the target inherited the supervisor nonblocki
 ## Observer-loss and output-pressure controls (2026-10-10)
 
 Two actual owned controls separate bounded pipe settlement from descendant release. Invalidated private helper reports drain unknown/false; escaped child retains stdout until emergency closure5506ms and later writes retained marker. Valid helper output pressure requests private abort and drains at258ms; no delayed write. Explicit emergencyClosed receipt now prevents accounting ambiguity. Four resealed false-claim controls reject;35 clean candidate tests pass. Canonical run20261011T050401Z-primary-live-wasm-swap-e9f4af29 passes34 checks, anchor600c6a736b2f1dce995e51c5f49feb7b420affc4522bff10d71ef551c1bd927a; evidence8dc52716ac13db373a4ecd5cc97ca7ca2069c326ffea1e06e4245f4a4f765b55. Lost-observer failure retained. Native Canvas/scientific/delivery acceptance remains open.
+
+
+## Owned observer schema gate (2026-10-10)
+
+Three actual bounded malformed helper responses previously produced success-shaped cleanup. Strict whole-response schema now rejects null group, negative parent, invalid microseconds and missing group before signalling; unknown target status remains unknown. Four before/after controls and three resealed false claims retained;38 isolated candidate tests pass. Canonical20261011T051314Z-primary-live-wasm-swap-037dbb3f passes35 checks, anchor6f626a8addf05e486982b949419888e1b81199b97629eb1d55a822f2eb07de59; evidence29bfaf86b71851d365f61dd962d5b9cbfde7dadfe884d3594c0a7c8da9c51146. Parser validation is not native identity authenticity or Canvas protocol acceptance. Both milestones remain open.

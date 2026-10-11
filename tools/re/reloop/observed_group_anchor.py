@@ -12,6 +12,32 @@ import sys
 import time
 
 
+def parse_snapshot(data):
+    """Validate the whole helper response before any identity is eligible to signal.
+
+    This schema check cannot attest that a compromised helper tells the truth.
+    Birth microseconds and process IDs follow the public libproc representation.
+    """
+    values = json.loads(data)
+    assert isinstance(values, list) and len(values) <= 256
+    rows = {}
+    for row in values:
+        assert isinstance(row, dict)
+        assert set(row) == {'pid', 'parent', 'group', 'state', 'identity'}
+        pid = row['pid']; ident = row['identity']
+        assert type(pid) is int and 0 < pid <= 2147483647 and pid not in rows
+        assert type(row['parent']) is int and 0 <= row['parent'] <= 2147483647
+        assert type(row['group']) is int and 0 < row['group'] <= 2147483647
+        assert row['state'] in ('L', 'Z')
+        assert isinstance(ident, list) and len(ident) == 3
+        assert type(ident[0]) is int and 0 <= ident[0] <= 9223372036854775807
+        assert type(ident[1]) is int and 0 <= ident[1] < 1000000
+        assert isinstance(ident[2], str) and ident[2].startswith('/') and '\0' not in ident[2]
+        raw = ident[2].encode('latin1'); assert len(raw) <= 4096
+        rows[pid] = dict(row, identity=(ident[0], ident[1], os.fsdecode(raw)))
+    return rows
+
+
 def main():
     helper, expected, milliseconds = sys.argv[1:4]
     known = {}; topology = {}; target = None; observations = 0; failure = None
@@ -29,15 +55,7 @@ def main():
         data = subprocess.run([helper,*args],capture_output=True,check=True,timeout=1)
         assert len(data.stdout) <= 1048576
         assert hashlib.sha256(open(helper,'rb').read()).hexdigest() == expected
-        rows = {}
-        for row in json.loads(data.stdout):
-            pid = row['pid']; ident = row['identity']
-            assert type(pid) is int and pid>0 and pid not in rows
-            assert len(ident)==3 and all(type(v) is int and v>=0 for v in ident[:2])
-            assert isinstance(ident[2],str) and ident[2].startswith('/')
-            ident[2]=os.fsdecode(ident[2].encode('latin1'));row['identity']=tuple(ident)
-            assert row['state'] in ('L','Z') and type(row['parent']) is int
-            rows[pid]=row
+        rows = parse_snapshot(data.stdout)
         if roots and target.pid not in rows and target.poll() is None:
             raise RuntimeError('Live owned target identity unavailable')
         selected = {target.pid} if roots else set()

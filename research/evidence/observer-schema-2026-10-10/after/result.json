@@ -1,0 +1,81 @@
+{
+  "controls": [
+    {
+      "mode": "null-group",
+      "record": {
+        "pid": 69894,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "AssertionError: ",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: AssertionError: ",
+      "elapsedMs": 49.67316699999999
+    },
+    {
+      "mode": "negative-parent",
+      "record": {
+        "pid": 69897,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "AssertionError: ",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: AssertionError: ",
+      "elapsedMs": 50.170709
+    },
+    {
+      "mode": "invalid-microseconds",
+      "record": {
+        "pid": 69900,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "AssertionError: ",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: AssertionError: ",
+      "elapsedMs": 47.732124999999996
+    },
+    {
+      "mode": "missing-group",
+      "record": {
+        "pid": 69903,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "AssertionError: ",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: AssertionError: ",
+      "elapsedMs": 47.716125000000005
+    }
+  ],
+  "scope": "Malformed owned helper output; no native process identity truth claim"
+}
