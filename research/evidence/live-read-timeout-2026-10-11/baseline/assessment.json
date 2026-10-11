@@ -1,0 +1,4 @@
+{
+  "acceptance": false,
+  "reason": "Both first and repeated live-read timeouts leave one unresponsive worker alive; cached bytes remain correct but execution cleanup fails."
+}

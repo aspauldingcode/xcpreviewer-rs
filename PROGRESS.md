@@ -731,3 +731,7 @@ Deliberate owned peer exits47 before signal and48 after signal both yield null r
 ## 2026-10-11 — retained event across local connection invalidation
 
 After first connection invalidation and original sender-variable drops, same peer/same imported property token signals7 through new connection. Dropped property instead leaves sender3/pending0callbacks; retained recoveryalias7 explicitly completes4/full bytes. Four parent waits0/peer exits0/services removed113;131072 fullbytes/eleven resealed faults. Recoveryalias/command retained; no sole-owner or physical release claim. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-disconnect.md). Both milestones/R1/R2/R3/Canvas remain open.
+
+## 2026-10-11 — live verification worker quarantine
+
+Hung pixels live-read deadline previously left worker alive, then repeated timeout; baseline retained. Fix retires failed worker, preserves cached revision1 bytes, rejects repeat as unavailable and recovers healthy revision2; close quiescent. Four producer waits0,196608 fullbytes/seven resealed faults. Next readiness/consumer integration must distinguish cached frame from unavailable execution. See [scope](docs/reverse-engineering/2026-10-11-live-read-timeout.md). Both milestones/native Canvas remain open.

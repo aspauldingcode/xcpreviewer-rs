@@ -1,0 +1,11 @@
+{
+  "scope": "Owned no-import hand-authored WASM and existing Node host policy; no new native/Swift rendering or browser/platform claim",
+  "hypothesis": "A live verification deadline should retire unresponsive worker without discarding cached accepted bytes; repeated read must reject without repeating hang; valid replacement must recover",
+  "baseline_expected_failure": "Existing verifyLive finally releases busy but leaves failed worker alive",
+  "limits": {
+    "runs": 4,
+    "node_seconds": 6,
+    "proposal_ms": 500,
+    "live_deadline_ms": 50
+  }
+}

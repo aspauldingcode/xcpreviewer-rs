@@ -383,6 +383,15 @@
     "run_id": "20261011T035112Z-primary-live-wasm-swap-8279b44a",
     "scientific_delivery_review": "pending"
   },
+  "live_read_timeout_checkpoint": {
+    "classification": "hung live verification worker leak retained; quarantine/replacement fix supported; delivery review pending",
+    "evidence": "research/evidence/live-read-timeout-2026-10-11",
+    "manifest_sha256": "f09294fd8236fe8705832d0b04bdb1f366e5f08a32a2e5ae8ea3e22664f8c23f",
+    "milestones_complete": false,
+    "next_wake_hint": "Integrate cached frame/live execution distinction into PreviewSession readiness and consumer recovery: current ready projection ignores liveWorkers0 after quarantine. Preserve cached accepted bytes and explicit refresh; avoid new malformed peer permutations. Native bridge offline/no restart; both milestones open.",
+    "result": "Baseline repeated deadlines leave1 hung worker; fixed deadline retires worker0, cached16KiB intact, repeat unavailable, valid revision2 recovers, closequiescent.4producerwaits0,196608 fullbytes,7 resealed faults. No new native/Swift/browser/platform claim.",
+    "started_at": "2026-10-11T16:56:57.761627+00:00"
+  },
   "live_swap_binding_checkpoint": {
     "delivery_review": "review-pending",
     "finished_at": "2026-10-11T03:43:42.877492+00:00",

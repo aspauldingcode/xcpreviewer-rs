@@ -1,0 +1,32 @@
+{
+  "fixed": true,
+  "first_error": "Error: Candidate deadline exceeded",
+  "second_error": "AssertionError [ERR_ASSERTION]: Candidate worker unavailable",
+  "rows": [
+    {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": false,
+      "revision": 1
+    },
+    {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": false,
+      "revision": 1
+    },
+    {
+      "liveWorkers": 1,
+      "busy": false,
+      "closed": false,
+      "revision": 2
+    }
+  ],
+  "final": {
+    "liveWorkers": 0,
+    "busy": false,
+    "closed": true,
+    "revision": 2
+  },
+  "snapshot_after_close": null
+}

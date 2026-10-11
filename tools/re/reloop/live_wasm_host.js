@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 
 function request(worker, message, timeout) {
+  assert(worker.threadId !== -1, 'Candidate worker unavailable');
   return new Promise((resolve, reject) => {
     const finish = (error, value) => {
       clearTimeout(timer);
@@ -97,6 +98,10 @@ class LiveWasmHost {
       assert(!this.#closed, 'Host closed during live verification');
       assert.deepEqual(Buffer.from(result.frame), active.frame);
       return this.snapshot();
+    } catch (error) {
+      // Quarantine failed execution while preserving the last accepted snapshot.
+      await active.worker.terminate();
+      throw error;
     } finally { this.#busy = false; release(); }
   }
   async close() {
