@@ -1,0 +1,14 @@
+[
+  {
+    "case": "module-bit",
+    "exit_code": 1,
+    "published_frames": 0,
+    "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '3da0b90d2bf7405e183e2a36ead04ac375ffad3afd8423edcf9070f66060902e'\n- '8f524462dd54b3a87b7979119402cc5c562b42a91adb1612b8eae8097a21cd5a'\n\n    at read (/Users/8amps/xcpreviewer-rs/tools/re/reloop/live_wasm_corpus.js:9:43)\n    at /Users/8amps/xcpreviewer-rs/tools/re/reloop/live_wasm_corpus.js:17:17\n    at Object.<anonymous> (/Users/8amps/xcpreviewer-rs/tools/re/reloop/live_wasm_corpus.js:40:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '3da0b90d2bf7405e183e2a36ead04ac375ffad3afd8423edcf9070f66060902e',\n  expected: '8f524462dd54b3a87b7979119402cc5c562b42a91adb1612b8eae8097a21cd5a',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+  },
+  {
+    "case": "native-reference-mismatch",
+    "exit_code": 1,
+    "published_frames": 0,
+    "stderr": "AssertionError [ERR_ASSERTION]: Native/independent gate before publication\n+ actual - expected\n... Skipped lines\n\n  Buffer(16384) [Uint8Array] [\n    96,\n    64,\n    95,\n    255,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n+   165,\n    195,\n    195,\n    195,\n    195,\n    195,\n...\n    195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195,\n-   195\n  ]\n\n    at /Users/8amps/xcpreviewer-rs/tools/re/reloop/live_wasm_corpus.js:18:57\n    at Object.<anonymous> (/Users/8amps/xcpreviewer-rs/tools/re/reloop/live_wasm_corpus.js:40:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [Buffer [Uint8Array]],\n  expected: [Buffer [Uint8Array]],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+  }
+]
