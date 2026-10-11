@@ -5254,6 +5254,18 @@
         {
           "equals": true,
           "path": "rust_file_timeout_recovered"
+        },
+        {
+          "equals": 8,
+          "path": "artifact_read_cases"
+        },
+        {
+          "equals": true,
+          "path": "artifact_read_descriptors_closed"
+        },
+        {
+          "equals": true,
+          "path": "artifact_read_bounded"
         }
       ],
       "depends_on": [],

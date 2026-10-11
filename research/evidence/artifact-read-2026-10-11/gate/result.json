@@ -1,0 +1,95 @@
+{
+  "controls": [
+    {
+      "mode": "valid",
+      "opened": 1,
+      "closed": 1,
+      "accepted": true,
+      "bytes": 17011,
+      "sha": "65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235",
+      "error": null,
+      "mutated": false,
+      "elapsedMs": 49
+    },
+    {
+      "mode": "empty",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Bounded regular artifact required",
+      "mutated": false,
+      "elapsedMs": 45
+    },
+    {
+      "mode": "oversize",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Bounded regular artifact required",
+      "mutated": false,
+      "elapsedMs": 46
+    },
+    {
+      "mode": "directory",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Bounded regular artifact required",
+      "mutated": false,
+      "elapsedMs": 48
+    },
+    {
+      "mode": "fifo",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Bounded regular artifact required",
+      "mutated": false,
+      "elapsedMs": 62
+    },
+    {
+      "mode": "symlink-swap",
+      "opened": 0,
+      "closed": 0,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "Error: ELOOP: too many symbolic links encountered, open '/Users/8amps/xcpreviewer-rs/research/runs/20261011T091718Z-primary-live-wasm-swap-6b44cd8e/output/artifact-gate/controls/symlink-swap/input'",
+      "mutated": false,
+      "elapsedMs": 49
+    },
+    {
+      "mode": "grow",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Artifact size changed during read",
+      "mutated": true,
+      "elapsedMs": 46
+    },
+    {
+      "mode": "mtime",
+      "opened": 1,
+      "closed": 1,
+      "accepted": false,
+      "bytes": 0,
+      "sha": null,
+      "error": "AssertionError [ERR_ASSERTION]: Artifact identity changed during read\n+ actual - expected\n\n+ 1791710319450999975n\n- 1791710309449722735n\n          ^\n",
+      "mutated": true,
+      "elapsedMs": 47
+    }
+  ],
+  "expectedBytes": 17011,
+  "expectedSha": "65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235",
+  "scope": "Actual owned filesystem artifact read controls; final-component no-follow, nonblocking descriptor and read identity, not general sandboxing or native Canvas transport"
+}

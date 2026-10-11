@@ -1,0 +1,36 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: file:///Users/8amps/xcpreviewer-rs/research/runs/20261011T091511Z-primary-live-wasm-swap-52198937/source/tools/re/tests/artifact_worker.js:2
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
+         ^
+
+ReferenceError: require is not defined in ES module scope, you can use import instead
+    at file:///Users/8amps/xcpreviewer-rs/research/runs/20261011T091511Z-primary-live-wasm-swap-52198937/source/tools/re/tests/artifact_worker.js:2:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0
+
+
+1 !== 0
+
+    at Object.<anonymous> (/Users/8amps/xcpreviewer-rs/research/runs/20261011T091511Z-primary-live-wasm-swap-52198937/source/tools/re/tests/artifact_control.js:5:195)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

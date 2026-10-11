@@ -1,0 +1,44 @@
+warning: constant `MEMORY` is never used
+ --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T091718Z-primary-live-wasm-swap-6b44cd8e/source/tools/re/rust/canvas-core/src/contract.rs:4:11
+  |
+4 | pub const MEMORY: u64 = 131072;
+  |           ^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `FrameAbi` is never constructed
+  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T091718Z-primary-live-wasm-swap-6b44cd8e/source/tools/re/rust/canvas-core/src/contract.rs:12:12
+   |
+12 | pub struct FrameAbi {
+   |            ^^^^^^^^
+
+warning: variants `Memory`, `Capacity`, `Span`, `Rendered`, `Mismatch`, and `Revision` are never constructed
+  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T091718Z-primary-live-wasm-swap-6b44cd8e/source/tools/re/rust/canvas-core/src/contract.rs:23:5
+   |
+19 | pub enum Error {
+   |          ----- variants in this enum
+...
+23 |     Memory,
+   |     ^^^^^^
+24 |     Capacity,
+   |     ^^^^^^^^
+25 |     Span,
+   |     ^^^^
+26 |     Rendered,
+   |     ^^^^^^^^
+27 |     Length,
+28 |     Mismatch(usize),
+   |     ^^^^^^^^
+29 |     Revision,
+   |     ^^^^^^^^
+   |
+   = note: `Error` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: function `validate` is never used
+  --> /Users/8amps/xcpreviewer-rs/research/runs/20261011T091718Z-primary-live-wasm-swap-6b44cd8e/source/tools/re/rust/canvas-core/src/contract.rs:42:8
+   |
+42 | pub fn validate(
+   |        ^^^^^^^^
+
+warning: 4 warnings emitted
+

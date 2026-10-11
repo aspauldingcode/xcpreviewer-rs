@@ -1,0 +1,90 @@
+[
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "Text(\"bad\")"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n;system(\"bad\")"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "HStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)Color(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)}.frame(width: 17, height: 9)"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack { Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0) Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5) Color(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25) }.frame(width: 17, height: 9) "
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\tColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\tColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\tColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\t}.frame(width: 17, height: 9)\t"
+  },
+  {
+    "error": "Invalid primary-layer geometry/order",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 65, height: 9)\n"
+  },
+  {
+    "error": "Invalid primary-layer geometry/order",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 0, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: width, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17.0, height: 9)\n"
+  },
+  {
+    "error": "Only alpha eighths accepted",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.1)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: value)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: -0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 2, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Only explicit sRGB primaries accepted",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 1, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 1, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n.opacity(0.5)"
+  },
+  {
+    "error": "Bounded ASCII primary-layer expression required",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: \uff11\uff17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.displayP3, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.displayP3, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.displayP3, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack(alignment: .top) {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Only explicit sRGB primaries accepted",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 0, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\nColor(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\nColor(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\nColor(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n\u0000"
+  },
+  {
+    "error": "Unsupported expression outside primary-layer ZStack.frame contract",
+    "source": "ZStack {\n/* comment */ Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)\n/* comment */ Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)\n/* comment */ Color(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)\n}.frame(width: 17, height: 9)\n"
+  }
+]
