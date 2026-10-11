@@ -294,6 +294,22 @@
     }
   ],
   "objective": "Recover and independently verify milestone1 native preview contract, then implement and verify milestone2 declared cross-platform WASM Canvas contract.",
+  "observed_compiler_checkpoint": {
+    "canonical_checks": 30,
+    "clean_archive_tests": 32,
+    "evidence_manifest_sha256": "6d5512f2b1c2eb2a63c78d6d44feb11eae14702f1a90dca3a27e57e668de02cd",
+    "fresh_compiler_bytes": 49152,
+    "git_sync": "verified commit pending push",
+    "manifest_sha256": "9347f0aeac93b9e72774a5d774df14dcca52b52d843ffcd869d380534077c142",
+    "next": "Falsify observer loss and output-pressure settlement with owned controls. Unknown cleanup must reject; retain unseen-escape and signal-race exclusions.",
+    "observed_controls": 4,
+    "outcome": "Explicit optional public observer drains sampled escaping children at success/failure/timeout/abort; statuses0/7/-15 preserved;3 fresh full allocations match pinned independent fixtures",
+    "private_canvas_bridge": "offline/unresponsive; no restart",
+    "recorded_at": "2026-10-11T04:56:05.828019+00:00",
+    "resealed_mutants": 4,
+    "run_id": "20261011T045341Z-primary-live-wasm-swap-9a8e2b5f",
+    "scientific_delivery_review": "pending"
+  },
   "owned_compiler_checkpoint": {
     "evidence_manifest_sha256": "89cce412d17c4a454aa92208961f00b86cd128cb2b419debc10eff17383e4eab",
     "finished_at": "2026-10-11T04:15:11.379833+00:00",

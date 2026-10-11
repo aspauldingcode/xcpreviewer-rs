@@ -518,3 +518,8 @@ Four owned setsid/reparenting controls plus a frozen replay distinguish inherite
 ## Nonblocking regular source gate (2026-10-10)
 
 Retained prior FIFO deadline failure; regular/nonblocking/no-follow open and descriptor recheck now reject nonregular and replaced source nodes. Seven actual filesystem controls, four resealed false-claim rejections, and30 clean candidate tests pass. Canonical run20261011T044308Z-primary-live-wasm-swap-027f20a9 passes26 checks including existing full native/independent allocation comparisons and fresh builds. Manifest50a679dae2cfe22b88aef573bc9604c35e44196bfea1e585ca19ac4764367d06; independent before/fix evidence9d66780eee61887bae4222643c6d098961e49fa415c4e8d79d433af0801c0f8a. Owned local POSIX scope; Windows/arbitrary filesystem latency, native Canvas, and scientific/delivery acceptance stay open.
+
+
+## Explicit observed compiler drain (2026-10-10)
+
+Optional pinned public macOS observer path now tracks sampled full-identity escaping children and coordinates drain before inherited-group retirement. Four actual success/failure/deadline/abort controls preserve wait status and prevent delayed writes;3 real fresh compiler allocations match49152 independent bytes. Four resealed cleanup/status/tail mutants reject. Canonical run20261011T045341Z-primary-live-wasm-swap-9a8e2b5f passes30 checks;32 clean candidate tests pass. Canonical anchor9347f0aeac93b9e72774a5d774df14dcca52b52d843ffcd869d380534077c142; evidence6d5512f2b1c2eb2a63c78d6d44feb11eae14702f1a90dca3a27e57e668de02cd. Explicit macOS observer dependency; default group-only path stays available. Unseen escapes, observation-to-signal race, native Canvas and scientific/delivery acceptance remain open.

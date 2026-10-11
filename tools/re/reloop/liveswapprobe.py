@@ -81,6 +81,8 @@ def corpus(out):
              'scope': 'Frozen owned runtime policy controls, reused public native corpus; no Canvas sequencing or scientific delivery acceptance'}
     from reloop.ownedcompilerprobe import corpus as fresh_compiler
     facts.update(fresh_compiler(out / 'fresh-compiler'))
+    from reloop.observedcompilerprobe import corpus as observed_compiler
+    facts.update(observed_compiler(out / 'observed-compiler'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
     return facts
 

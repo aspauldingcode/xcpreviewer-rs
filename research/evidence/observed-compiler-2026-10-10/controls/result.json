@@ -1,0 +1,138 @@
+{
+  "controls": [
+    {
+      "mode": "success",
+      "observed": {
+        "pid": 54243,
+        "parent": 54241,
+        "group": 54243,
+        "state": "L",
+        "identity": [
+          1791694435,
+          458862,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 54239,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 2,
+          "observations": 6,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": null,
+      "lateWriteAbsent": true
+    },
+    {
+      "mode": "failure",
+      "observed": {
+        "pid": 54315,
+        "parent": 54313,
+        "group": 54315,
+        "state": "L",
+        "identity": [
+          1791694438,
+          93360,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 54312,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 7,
+          "failure": null,
+          "drained": true,
+          "tracked": 2,
+          "observations": 6,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: 7",
+      "lateWriteAbsent": true
+    },
+    {
+      "mode": "timeout",
+      "observed": {
+        "pid": 54360,
+        "parent": 54358,
+        "group": 54360,
+        "state": "L",
+        "identity": [
+          1791694440,
+          731535,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 54356,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "deadline",
+          "drained": true,
+          "tracked": 2,
+          "observations": 19,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler failed: deadline",
+      "lateWriteAbsent": true
+    },
+    {
+      "mode": "abort",
+      "observed": {
+        "pid": 54486,
+        "parent": 54483,
+        "group": 54486,
+        "state": "L",
+        "identity": [
+          1791694443,
+          813871,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "record": {
+        "pid": 54482,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "abort",
+          "drained": true,
+          "tracked": 2,
+          "observations": 6,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "Error: Observed compiler aborted",
+      "lateWriteAbsent": true
+    }
+  ],
+  "preabort": true,
+  "scope": "Explicit sampled full-identity public observer plus inherited group; unseen escapes and native Canvas release policy excluded"
+}

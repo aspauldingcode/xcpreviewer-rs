@@ -10,7 +10,7 @@ CLI_RUN = '20261010T215404Z-primary-source-frame-cli-8a8fd3bc'
 CLI_ANCHOR = '9dba73bc8a5098d92441a4bd5e34ada36548f2cbb51387ba2844b6d008cdd4ac'
 
 
-def corpus(out):
+def corpus(out, observer=None):
     from reloop.liveswapprobe import anchored
     out = Path(out); out.mkdir()
     controller = Controller(PROJECT_ROOT)
@@ -26,6 +26,8 @@ def corpus(out):
                        'c53084d90de41c1e42cb8c17a38cf3b70e4fa0e6551a5937a4de7d536272e4ac')
     config = {'python': sys.executable, 'cli': str(run / 'source/tools/re/preview_cli.py'),
               'clang': str(clang), 'wasmLd': str(wasm), 'node': shutil.which('node'), 'input': str(fixture)}
+    if observer is not None:
+        config['observer'] = observer
     atomic(out / 'config.json', config)
     before = {k: digest(config[k]) for k in ['python', 'node', 'clang', 'wasmLd']}
     with (out / 'stdout').open('wb') as stdout, (out / 'stderr').open('wb') as stderr:

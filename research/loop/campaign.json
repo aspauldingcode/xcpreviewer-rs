@@ -5026,6 +5026,22 @@
         {
           "equals": true,
           "path": "file_fifo_deadline_closed"
+        },
+        {
+          "equals": 4,
+          "path": "observed_compiler_controls"
+        },
+        {
+          "equals": true,
+          "path": "observed_compiler_late_writes_absent"
+        },
+        {
+          "equals": 3,
+          "path": "observed_fresh_compiler_frames"
+        },
+        {
+          "equals": 49152,
+          "path": "observed_fresh_compiler_bytes"
         }
       ],
       "depends_on": [],

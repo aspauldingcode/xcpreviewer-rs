@@ -1,0 +1,20 @@
+{
+  "error": "Error: Observed compiler failed: 1",
+  "record": {
+    "pid": 54702,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 1,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 7,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "stdout": "{\"ok\": false, \"error_type\": \"ValueError\", \"error\": \"Unsupported expression outside primary-layer ZStack.frame contract\"}\n",
+    "stderr": ""
+  }
+}

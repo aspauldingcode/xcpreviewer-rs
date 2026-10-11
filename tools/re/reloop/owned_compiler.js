@@ -28,11 +28,12 @@ function runOwned(command,args,{signal,timeout=5000,limit=65536,supervisorPython
 }
 function compiler(options){
  const {python,cli,clang,wasmLd,node,root,oracle,stride=64}=options;assert.equal(typeof oracle,'function');fs.mkdirSync(root,{recursive:true});
+ const execute=options.observer?require('./observed_compiler.js').runObserved:runOwned;
  const records=[];
  const build=async(source,{signal})=>{
   const stage=fs.mkdtempSync(path.join(root,'build-'));const sourcePath=path.join(stage,'source.swift');fs.writeFileSync(sourcePath,source);
   let execution;
-  try{execution=await runOwned(python,[cli,sourcePath,'--cache',path.join(root,'cache'),'--output',path.join(stage,'published'),'--clang',clang,'--wasm-ld',wasmLd,'--node',node,'--stride',String(stride)],{signal,timeout:5000,supervisorPython:python});}
+  try{execution=await execute(python,[cli,sourcePath,'--cache',path.join(root,'cache'),'--output',path.join(stage,'published'),'--clang',clang,'--wasm-ld',wasmLd,'--node',node,'--stride',String(stride)],{signal,timeout:5000,supervisorPython:python,observer:options.observer});}
   catch(e){fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify({error:String(e),record:e.record},null,2));throw e;}
   const receipt=JSON.parse(execution.stdout);assert(receipt.ok);assert(/^[a-f0-9]{64}$/.test(receipt.entry_sha256));assert.equal(receipt.source_sha256,sha(source));
   const folder=path.join(stage,'published/versions',receipt.entry_sha256),rawManifest=fs.readFileSync(path.join(folder,'manifest.json'));assert.equal(sha(rawManifest),receipt.entry_sha256);
