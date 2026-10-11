@@ -51,7 +51,15 @@ def run_compiler(args,*,timeout=30,output_limit=4194304):
         cap=output_limit if hard==resource.RLIM_INFINITY else min(output_limit,hard)
         resource.setrlimit(resource.RLIMIT_FSIZE,(cap,cap))
     with tempfile.TemporaryFile() as out,tempfile.TemporaryFile() as err:
-        result=subprocess.run(args,stdout=out,stderr=err,timeout=timeout,preexec_fn=limit_child)
+        process=subprocess.Popen(args,stdout=out,stderr=err,start_new_session=True,preexec_fn=limit_child)
+        try:
+            code=process.wait(timeout=timeout)
+        except BaseException:
+            try:os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+            process.wait(timeout=2)
+            raise
+        result=subprocess.CompletedProcess(args,code)
         out.seek(0);err.seek(0)
         stdout=out.read(output_limit+1);stderr=err.read(output_limit+1)
         if result.returncode==-signal.SIGXFSZ or len(stdout)>=output_limit or len(stderr)>=output_limit:

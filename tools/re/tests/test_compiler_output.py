@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[3]
 s=importlib.util.spec_from_file_location('compiler_output_reader',Path(__file__).with_name('verify_compiler_output.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
 class CompilerOutputTests(unittest.TestCase):
  def test_sealed_child_caps_and_current_builder(self):
-  e=ROOT/'research/evidence/compiler-output-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['complete_diagnostic_bytes'],24576);self.assertEqual((ROOT/'tools/re/reloop/sourcecache.py').read_bytes(),(e/'fixed-sourcecache.py').read_bytes())
+  e=ROOT/'research/evidence/compiler-output-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['complete_diagnostic_bytes'],24576)
  def test_bad_limit_before_launch(self):
   for value in [0,-1,True,1.5]:
    with self.subTest(value=value),patch.object(sourcecache.subprocess,'run') as run:

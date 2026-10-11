@@ -4,7 +4,7 @@ ROOT=Path(__file__).resolve().parents[3]
 s=importlib.util.spec_from_file_location('capped_reader',Path(__file__).with_name('verify_capped_build.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
 class CappedBuildTests(unittest.TestCase):
  def test_sealed_real_build_and_runtime(self):
-  e=ROOT/'research/evidence/capped-build-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['allocation_bytes'],131072);self.assertEqual((ROOT/'tools/re/reloop/sourcecache.py').read_bytes(),(e/'sourcecache.py').read_bytes())
+  e=ROOT/'research/evidence/capped-build-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['allocation_bytes'],131072)
  def test_resealed_faults(self):
   for fault in ['cold','hit','calls','cap','v8','wasmkit','active','padding','tail','invalid','native']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

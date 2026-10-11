@@ -807,3 +807,7 @@ Build commands now use temporary output files and a child-only 4 MiB file cap, b
 ## 2026-10-11 — real capped-build qualification
 
 Real LLVM compilation succeeds under current child-only caps; repeat source hits cache without more compiler calls or pointer change. V8 matches 131,072 allocation bytes against independent literal and anchored 720-byte native prefix, including padding/tail and invalid-buffer preservation. WasmKit returns render size 720; memory acceptance remains separate. Eleven resealed faults. REA universal imports fail and are retained. [Scope](docs/reverse-engineering/2026-10-11-capped-build.md). Both milestones remain open.
+
+## 2026-10-11 — compiler timeout process-group cleanup
+
+Baseline compiler parent timeout leaves owned same-group child writing; fixed commands isolate a POSIX session and kill that group before rethrowing timeout. Direct parents are reaped and bounded heartbeat quiescence is observed. Four owned processes, 32 heartbeat bytes and eight resealed faults. [Scope](docs/reverse-engineering/2026-10-11-compiler-tree.md). Descendant reaping/physical release, escaped sessions and normal-success descendants remain separate; real build qualification under changed spawn boundary remains next. Both milestones open.

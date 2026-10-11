@@ -1,0 +1,10 @@
+{
+  "scope": "Owned POSIX compiler timeout session group and bounded heartbeat quiescence",
+  "processes": 4,
+  "baseline": "Parent reaped after timeout; child continues writes, then bounded self-exit",
+  "fixed": "Owned isolated session group killed on timeout; parent reaped and same-group child writes cease",
+  "descendant_reap_verified": false,
+  "normal_exit_descendants": "not measured or changed",
+  "escaped_session_children": "not accepted",
+  "milestones_complete": false
+}

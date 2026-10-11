@@ -94,6 +94,16 @@
     "result": "Four Python emitters: baseline stdout/stderr 8192 bytes/exit0; fixed 4096 bytes/SIGXFSZ -25/rejected; parent limits unchanged; 24576 complete diagnostic bytes and seven resealed faults.",
     "started_at": "2026-10-11T21:45:52.738952+00:00"
   },
+  "compiler_tree_checkpoint": {
+    "budget": "Four producer processes; timeout0.4sec, child lifetime1.3sec,parent2sec,reap2sec,post samples80ms.",
+    "classification": "Compiler timeout same-group child output persists in baseline; isolated-group cleanup fixed",
+    "evidence": "research/evidence/compiler-tree-2026-10-11",
+    "manifest_sha256": "871b4baefb8b97fa95f3cc7f085a6dd7546a94dc7eb54f46dbfacdbd019f35d7",
+    "milestones_complete": false,
+    "next_wake_hint": "Qualify real compilation under changed Popen/session boundary. Skip completed timeout-child control. Normal-success or escaped-session descendants, descendant reaping, Windows/thread safety and native Canvas physical release remain unaccepted. Display/bridge/browser prerequisites unchanged.",
+    "result": "Two parents/two forked children; baseline heartbeat advances after parent timeout then bounded self-exit; fixed same-group heartbeat stable after owned group kill; direct parents reaped -9/TimeoutExpired; 32 observation bytes and eight resealed faults. Descendant reap/physical release unknown.",
+    "started_at": "2026-10-11T22:06:04.595294+00:00"
+  },
   "failure_fingerprints": [
     {
       "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",
