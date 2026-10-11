@@ -19,6 +19,10 @@ class PreviewConsumer {
     assert(Number.isSafeInteger(after.lifecycle.revision)&&after.lifecycle.revision>=0,'Invalid lifecycle revision');
     assert(!frame||after.lifecycle.revision===frame.descriptor.revision,'Lifecycle publication mismatch');
     assert(after.readiness.state!=='closed'||frame===null,'Closed preview retained frame');
+    const publication=after.diagnostics.latest;
+    if(frame&&publication?.kind==='published')assert(
+     publication.revision===frame.descriptor.revision&&publication.generation===frame.descriptor.generation&&publication.sourceSha256===frame.descriptor.sourceSha256,
+     'Diagnostic publication mismatch');
     const previous=this.#accepted?.frame;
     if(previous){
      assert(frame||after.readiness.state==='closed','Accepted frame disappeared while open');

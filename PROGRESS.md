@@ -683,3 +683,7 @@ Scoped JS consumer validates status/frame/status identity, retries one deliberat
 ## 2026-10-11 — consumer terminal boundary
 
 Fixed closed-with-frame and lifecycle revision contradictions after retaining old accepting controls. Valid terminal clears pixels and suppresses later RPC. Four fresh bounded Node replays, 65,536 complete allocation bytes independently checked, four resealed faults rejected. Harness path alias failure retained. See [evidence and scope](docs/reverse-engineering/2026-10-11-mcp-terminal.md). Native capture/release/reuse and both milestones remain open.
+
+## 2026-10-11 — consumer diagnostic identity
+
+Fixed four correlated published-diagnostic contradictions after retaining old accepting results. Valid stale-source and terminal behavior preserved. Four fresh bounded verification replays,131072 independent allocation bytes including padding/tail; four resealed faults and prior8 consumer/2 terminal guards checked. See [evidence and scope](docs/reverse-engineering/2026-10-11-mcp-identity.md). Native R1/R2/capture and both milestones stay open.
