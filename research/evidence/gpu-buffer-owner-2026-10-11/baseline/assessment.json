@@ -1,0 +1,10 @@
+{
+  "prediction_supported": false,
+  "acceptance": false,
+  "contradiction": "CPU-only, unencoded and unretained encoded weak buffer remain alive after strong variable nil until same pool drains; previous inference of sole command owner is not supported",
+  "actual_helper_waits": [
+    0,
+    0
+  ],
+  "next_discriminator": "Place buffer construction/encoding and temporary references in nested pool, drain before weak liveness measurement while command owner remains outside that pool"
+}

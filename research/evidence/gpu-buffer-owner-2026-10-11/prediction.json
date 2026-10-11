@@ -1,0 +1,10 @@
+{
+  "parent_manifest_sha256": "9cb67c04646592908039c9a3f0f04e62fac07a56af58f8ab196f92d20affa4ea",
+  "scope": "Owned unsubmitted command resource retention; no execution of an unretained command with expired buffer",
+  "prediction": "CPU-only and retained-unencoded controls drop weak buffer to nil; retained-encoded holds it; unretained-encoded drops it. Every command remains unsubmitted and pool drain ends weak command/buffer liveness.",
+  "subprocess_deadline_seconds": 15,
+  "helper_alarm_seconds": 10,
+  "repetitions": 2,
+  "discriminator": "Nested construction/encoding autoreleasepool drained before weak liveness measurement; command/queue still owned outside construction pool",
+  "baseline_manifest_sha256": "b1d713bfd982b3606f8cfb1c5e0d95615571f424c3e6bf207c0b0bc110ae7a0b"
+}

@@ -695,3 +695,7 @@ Two owned public Metal helpers pass: stale event2 completes reader with old fram
 ## 2026-10-11 — native buffer object lifetime
 
 Two owned Metal helpers measure CPU-owner drop retention in encoded-uncommitted and committed-timeout modes, then weak buffer/command nil after command disposal/pool drain.131072 full bytes independently checked, six resealed faults; actual waits0; REA identity retained/sessionclosed. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-buffer-release.md). Weak nil is not physical memory reclamation; Canvas/Mach release and both milestones remain open.
+
+## 2026-10-11 — native owner attribution discriminator
+
+Initial four-mode owner prediction failed: same-pool CPU-only/unencoded/unretained buffers also stayed weak alive. Failed controls sealed. Nested construction pool drain separates ownership: only retained-encoded buffer stays alive while command owner remains. Four native waits0,425984 full bytes independently checked, six resealed faults; REA bothhelperidentities/closed. See [scope and correction](docs/reverse-engineering/2026-10-11-gpu-buffer-owner.md). Same-pool liveness does not identify a sole owner; physical/Canvas/Mach release and both milestones remain open.
