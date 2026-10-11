@@ -723,3 +723,7 @@ Ordinary secure handle archive fails with no data/error4866 while secure string 
 ## 2026-10-11 — owned cross-process shared event
 
 Separate owned typed XPC peer signals shared event7 and releases sender GPU work; wrong-event-only99 leaves shared3 and another20ms timeout/zero callbacks until explicit sender7. Four parent waits0/peer exit0 and removed transient services; distinct public connection PIDs correlate.131072 fullbytes, ten resealed identity/exit/cleanup/order/padding faults. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-peer.md). R1/R2/R3/Canvas and both milestones remain open.
+
+## 2026-10-11 — peer loss versus completion dependency
+
+Deliberate owned peer exits47 before signal and48 after signal both yield null reply/error4097; before remains event3/pending zero callbacks, after preserves event7. Explicit sender release then completes4/exact bytes. Four parent waits0, deliberate peer exits retained, four transient services removed113;131072 fullbytes/eleven resealed faults. Connection PID0 after loss is not live peer identity. See [scope and evidence](docs/reverse-engineering/2026-10-11-gpu-event-failure.md). Both milestones and R1/R2/R3/Canvas remain open.

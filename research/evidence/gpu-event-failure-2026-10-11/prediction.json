@@ -1,0 +1,14 @@
+{
+  "parent_manifest_sha256": "a2fc1388b339af82b3c0d52f5ac0b4f27b350d696ca515c15730a7d484792a89",
+  "scope": "Owned public XPC peer exit47 before shared signal versus exit48 after shared signal; no Canvas/physical release",
+  "required": "Both RPCs fail without reply; before leaves event3/zero callbacks through20mswait, after reaches7 despite failed reply. Explicit senderfallback7 yields completed4/full bytes. Peer exit and service removal retained.",
+  "experiments": 4,
+  "limits": {
+    "compile": 15,
+    "helper": 15,
+    "alarm": 12,
+    "rpc": 3,
+    "completion": 5,
+    "launchctl_call": 5
+  }
+}
