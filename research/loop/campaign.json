@@ -5266,6 +5266,14 @@
         {
           "equals": true,
           "path": "artifact_read_bounded"
+        },
+        {
+          "equals": 3,
+          "path": "rust_receipt_valid"
+        },
+        {
+          "equals": 34,
+          "path": "rust_receipt_mutants"
         }
       ],
       "depends_on": [],

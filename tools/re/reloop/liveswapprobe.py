@@ -102,6 +102,9 @@ def corpus(out):
     from reloop.artifactprobe import corpus as artifact_gate
     facts.update(artifact_gate(out / 'rust-source', out / 'artifact-gate'))
     assert facts['artifact_read_cases']==8 and facts['artifact_read_descriptors_closed']
+    from reloop.rustreceiptprobe import corpus as receipt_gate
+    facts.update(receipt_gate(out / 'rust-source', out / 'rust-receipt'))
+    assert facts['rust_receipt_valid']==3 and facts['rust_receipt_mutants']==34
     from reloop.rustfailureprobe import corpus as rust_failure
     facts.update(rust_failure(out / 'rust-failure'))
     (out / 'result.json').write_text(json.dumps({'observations': facts}, indent=2) + '\n')
