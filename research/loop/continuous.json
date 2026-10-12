@@ -1138,6 +1138,16 @@
     "scientific_delivery_review": "pending",
     "terminal_controls": 5
   },
+  "overflow_control_drain_checkpoint": {
+    "classification": "Actual owned control/output overflow abort and independentwaits; controlreceipt remainsunqualified, noCanvas/unseenescape claim",
+    "evidence": "research/evidence/overflow-control-drain-2026-10-12",
+    "manifest_sha256": "f912ccc642f95e5e7cee8dc33eeee977b6295cf628bff138e853e3cb33852306",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip control/stdout quota. Next stderr/mixedoutput actualwait cancellation or independentnativeoracle;controlquota receiptunqualified. ApprovedCanvasbridge required.",
+    "result": "Controloverflow requestsabortwithoutquotareset;2nativecontrolcases reportnull/emergencytrue butindependentparent43/child42. Stdoutpositive bounded\u226465536/validdrainreceipt.3peerfiles24bytes,18faults/4slots.",
+    "retained_failure": "Expected control quota rejection and client cleanup-unverified hard-deadline results retained; no unexpected acquisition failure. Historical failures retained.",
+    "started_at": "2026-10-12T10:41:46.355332+00:00"
+  },
   "owned_compiler_checkpoint": {
     "evidence_manifest_sha256": "89cce412d17c4a454aa92208961f00b86cd128cb2b419debc10eff17383e4eab",
     "finished_at": "2026-10-11T04:15:11.379833+00:00",

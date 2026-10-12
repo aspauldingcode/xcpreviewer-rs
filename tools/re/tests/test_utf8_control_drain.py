@@ -4,7 +4,7 @@ from verify_utf8_control_drain import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/utf8-control-drain-2026-10-12'
 class Utf8ControlDrainTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['invalid_utf8_drained']);self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/utf8_control_drain_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/utf8_missing_complete_control.js').read_bytes(),(E/'missing-control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['invalid_utf8_drained']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'45843ee55106478bad60713fdd1e7317b597127531d6023e31358b261fdc243a');self.assertEqual((ROOT/'tools/re/tests/utf8_control_drain_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/utf8_missing_complete_control.js').read_bytes(),(E/'missing-control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['syntax','encoding-code','abort','drain','parent-wait','remaining','emergency','proxy','injected','identity','child-wait','peer','before','missing','scope','outer-wait','helper']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

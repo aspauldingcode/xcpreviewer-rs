@@ -1012,3 +1012,8 @@ Parserexception nowrequestsabort and awaitscomplete;2actualnative proxycontrols 
 ### 2026-10-12 fatal UTF8 observation cleanup
 
 Decoderfailure nowrequestsabort;2actualnative controls parentwait43/childwait42 raw10752/16peerbytes,TypeErrorcodepreserved/drainedtracked2remaining0. Missingcomplete negative rejects/reportnull/emergencyClosed;17faults/4slots. See docs/reverse-engineering/2026-10-12-utf8-control-drain.md.
+
+
+### 2026-10-12 control/output quota cleanup
+
+Controloverflow requestsabort withoutquotareset;2Native control cases keep reportnull/emergencyClosed butindependent parentwait43/childwait42. Stdout positive ≤65536 retainedbytes/validdrainreceipt.3peerfiles24bytes/18faults/4slots;clientcontrolreceipt remainsunqualified. See docs/reverse-engineering/2026-10-12-overflow-control-drain.md.

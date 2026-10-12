@@ -1,0 +1,32 @@
+{
+  "control_limit": 65536,
+  "injected_bytes": 65537,
+  "protocol_before_abort": false,
+  "protocol_after_abort": true,
+  "control_receipt_accepted": false,
+  "control_emergency_closed": true,
+  "stdout_receipt_accepted": true,
+  "native_modes": [
+    "control-0",
+    "control-1",
+    "stdout"
+  ],
+  "parent_exit": 43,
+  "child_exit": 42,
+  "peer_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "producer_slots": 4,
+  "outer_seconds": 15,
+  "native_job_milliseconds": 3000,
+  "protocol_job_milliseconds": 50,
+  "hard_grace_milliseconds": 5000,
+  "scope": "Cumulative control quota rejection with independent owned actual drain; no quota reset or universal cleanup"
+}

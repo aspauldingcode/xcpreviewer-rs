@@ -1,0 +1,31 @@
+{
+  "kind": "control",
+  "phase": "after",
+  "error": "Error: Observed report limit",
+  "record": {
+    "pid": 44161,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": null,
+    "emergencyClosed": true,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "observed": [
+    [
+      {
+        "pid": 44163,
+        "parent": 44162,
+        "group": 44161,
+        "state": "L",
+        "identity": [
+          1791801429,
+          364931,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+        ]
+      }
+    ]
+  ],
+  "jobMilliseconds": 3000
+}
