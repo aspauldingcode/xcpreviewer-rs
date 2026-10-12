@@ -94,6 +94,16 @@
     "result": "Four Python emitters: baseline stdout/stderr 8192 bytes/exit0; fixed 4096 bytes/SIGXFSZ -25/rejected; parent limits unchanged; 24576 complete diagnostic bytes and seven resealed faults.",
     "started_at": "2026-10-11T21:45:52.738952+00:00"
   },
+  "compiler_success_admission_checkpoint": {
+    "budget": "Four producers rejectedroot+child,cleanPython,clang;3secPython,10secclang,finite24ticks50ms/3secfinish.",
+    "classification": "Production compiler success now rejects residual process group via read-only check; clean Python and actual clang still accepted",
+    "evidence": "research/evidence/compiler-success-admission-2026-10-11",
+    "manifest_sha256": "0a42a93e9d13c946e91b198388eca852a68c35e2eb57eef9fd268d13f79946a2",
+    "milestones_complete": false,
+    "next_wake_hint": "Qualify actual source-to-WASM cold/cache-hit build under new success guard and pinned native reference before broader delivery claim. Identity-aware escaped-descendant admission remains separate; staged user observer work must be preserved.",
+    "result": "SurvivorRuntimeError with1\u21927\u219224finitebytes;32controlledbytes;12resealedfaults; no new destructive success signal. Groupabsence not arbitrarytreequiescence; escaped/reused/zombie groups remain scoped.",
+    "started_at": "2026-10-12T02:12:43.526925+00:00"
+  },
   "compiler_success_descendant_checkpoint": {
     "budget": "Four producers two root/child pairs including failed harness;3sec run,24ticks50ms,3sec finishbound; no kill.",
     "classification": "Actual compiler root returns0 while finite owned descendant continues writing; normal success quiescence falsified",

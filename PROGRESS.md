@@ -863,3 +863,7 @@ New fixture retires FILE pointer before fclose. Owned ENOSPC close callback runs
 ## 2026-10-11 — compiler success descendant counterexample
 
 Actual run_compiler returns root 0 while owned finite child grows heartbeat 1→7→24 bytes. One qualified control, initial harness failure retained, four producers total and no kill. All 56 controlled bytes and twelve resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-success-descendant.md). Normal-success process-tree quiescence remains build acceptance work; no published artifact corruption claimed.
+
+## 2026-10-11 — conservative compiler success admission
+
+Production compiler boundary rejects residual process group after root 0 using read-only signal 0; clean Python and actual clang compile still pass. Owned finite child self-exits; all 32 controlled bytes/twelve resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-success-admission.md). Guard prevents known same-group success admission; escaped descendants and actual WASM build qualification remain open.

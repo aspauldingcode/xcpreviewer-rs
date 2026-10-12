@@ -59,6 +59,13 @@ def run_compiler(args,*,timeout=30,output_limit=4194304):
             except ProcessLookupError:pass
             process.wait(timeout=2)
             raise
+        # Root success is insufficient while any member of its session group
+        # remains. This read-only, fail-closed guard does not claim ownership
+        # of a reused group, and never signals it. Escaped groups are separate.
+        if code==0:
+            try:os.killpg(process.pid,0)
+            except ProcessLookupError:pass
+            else:raise RuntimeError('Compiler process group remains after successful root exit')
         result=subprocess.CompletedProcess(args,code)
         out.seek(0);err.seek(0)
         stdout=out.read(output_limit+1);stderr=err.read(output_limit+1)
