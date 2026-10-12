@@ -1,0 +1,98 @@
+[
+  {
+    "stage": "live",
+    "owner": {
+      "owner_phase": "live",
+      "child": 55836,
+      "query": {
+        "bytes": 136,
+        "pid": 55836,
+        "birth": [
+          1791777375,
+          896942
+        ],
+        "state": 2
+      }
+    },
+    "typed": {
+      "55836": {
+        "pid": 55836,
+        "expected_birth": [
+          1791777375,
+          896942
+        ],
+        "status": "live",
+        "observed_birth": [
+          1791777375,
+          896942
+        ]
+      }
+    },
+    "known": {
+      "55836": [
+        1791777375,
+        896942,
+        "/Users/8amps/xcpreviewer-rs/research/build/typed-retirement-2026-10-11/owner-query"
+      ]
+    },
+    "elapsed_seconds": 0.004767041999999999
+  },
+  {
+    "stage": "unreaped",
+    "owner": {
+      "owner_phase": "unreaped",
+      "child": 55836,
+      "query": {
+        "bytes": 0
+      }
+    },
+    "typed": {
+      "55836": {
+        "pid": 55836,
+        "expected_birth": [
+          1791777375,
+          896942
+        ],
+        "status": "unavailable",
+        "observed_birth": null
+      }
+    },
+    "known": {
+      "55836": [
+        1791777375,
+        896942,
+        "/Users/8amps/xcpreviewer-rs/research/build/typed-retirement-2026-10-11/owner-query"
+      ]
+    },
+    "elapsed_seconds": 0.0029384159999999993
+  },
+  {
+    "stage": "reaped",
+    "owner": {
+      "owner_phase": "reaped",
+      "child": 55836,
+      "query": {
+        "bytes": 0
+      }
+    },
+    "typed": {
+      "55836": {
+        "pid": 55836,
+        "expected_birth": [
+          1791777375,
+          896942
+        ],
+        "status": "unavailable",
+        "observed_birth": null
+      }
+    },
+    "known": {
+      "55836": [
+        1791777375,
+        896942,
+        "/Users/8amps/xcpreviewer-rs/research/build/typed-retirement-2026-10-11/owner-query"
+      ]
+    },
+    "elapsed_seconds": 0.002741500000000008
+  }
+]

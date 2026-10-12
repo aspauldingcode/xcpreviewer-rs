@@ -902,3 +902,8 @@ Fixed optional observer admitting missing final known children as implicit retir
 ### 2026-10-11 native zombie visibility
 
 Pinned observer omits the same known child both during independently waitidWNOWAIT-proved unreaped exit42 and after waitpid reap42; live birth/path identity was present first. Parent0,32exactbytes,6nativeprocesses,0signals;12resealedfaults. Current backend does not qualify matching-zombie admission. See docs/reverse-engineering/2026-10-11-zombie-visibility.md.
+
+
+### 2026-10-11 typed retirement observer counterexample
+
+Added explicit bounded birth/state diagnostic adapter. Native live and birth-mismatch controls pass; unreaped/reaped both unavailable. Changed direct owning-parent BSD query returns136bytes live then0/0; prediction of recovered zombie visibility falsified.64exactbytes,16native,0signals,14resealedfaults; no compiler admission bypass. See docs/reverse-engineering/2026-10-11-typed-retirement.md.

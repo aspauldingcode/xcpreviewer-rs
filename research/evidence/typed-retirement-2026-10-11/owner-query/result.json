@@ -1,0 +1,28 @@
+{
+  "ready": {
+    "phase": "ready",
+    "pid": 55835,
+    "parent": 55809,
+    "group": 55835,
+    "child": 55836,
+    "child_group": 55836,
+    "executable": "/Users/8amps/xcpreviewer-rs/research/build/typed-retirement-2026-10-11/owner-query"
+  },
+  "waitid": {
+    "phase": "unreaped",
+    "child": 55836,
+    "status": 42,
+    "code": 1,
+    "exited": true
+  },
+  "waitpid": {
+    "phase": "reaped",
+    "child": 55836,
+    "exit_code": 42,
+    "exited": true
+  },
+  "root_exit_code": 0,
+  "signals": [],
+  "native_subprocesses": 6,
+  "fixture_sha256": "957054fe737534f36c104a991f5389eb75d05892a27f8d4026a33b6ebb1171e1"
+}

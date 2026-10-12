@@ -1,0 +1,105 @@
+[
+  {
+    "stage": "live",
+    "roots": [
+      53369
+    ],
+    "known": {
+      "53371": [
+        1791777260,
+        648071,
+        "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+      ]
+    },
+    "rows": {
+      "53371": {
+        "pid": 53371,
+        "parent": 53369,
+        "group": 53371,
+        "state": "L",
+        "identity": [
+          1791777260,
+          648071,
+          "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+        ]
+      },
+      "53369": {
+        "pid": 53369,
+        "parent": 53351,
+        "group": 53369,
+        "state": "L",
+        "identity": [
+          1791777260,
+          622237,
+          "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+        ]
+      }
+    },
+    "typed": {
+      "53371": {
+        "pid": 53371,
+        "expected_birth": [
+          1791777260,
+          648071
+        ],
+        "status": "live",
+        "observed_birth": [
+          1791777260,
+          648071
+        ]
+      }
+    },
+    "observer_elapsed_seconds": 0.011543749999999964,
+    "typed_elapsed_seconds": 0.006852208000000193
+  },
+  {
+    "stage": "unreaped",
+    "roots": [],
+    "known": {
+      "53371": [
+        1791777260,
+        648071,
+        "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+      ]
+    },
+    "rows": {},
+    "typed": {
+      "53371": {
+        "pid": 53371,
+        "expected_birth": [
+          1791777260,
+          648071
+        ],
+        "status": "unavailable",
+        "observed_birth": null
+      }
+    },
+    "observer_elapsed_seconds": 0.007293666999999893,
+    "typed_elapsed_seconds": 0.006963791999999636
+  },
+  {
+    "stage": "reaped",
+    "roots": [],
+    "known": {
+      "53371": [
+        1791777260,
+        648071,
+        "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+      ]
+    },
+    "rows": {},
+    "typed": {
+      "53371": {
+        "pid": 53371,
+        "expected_birth": [
+          1791777260,
+          648071
+        ],
+        "status": "unavailable",
+        "observed_birth": null
+      }
+    },
+    "observer_elapsed_seconds": 0.008634916000000104,
+    "typed_elapsed_seconds": 0.007265499999999925
+  }
+]
