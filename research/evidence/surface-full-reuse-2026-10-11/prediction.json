@@ -1,0 +1,17 @@
+{
+  "scope": "Owned CPU audited Mach delayed reuse/separate controls with generation-changing unused-tail marker; no native Canvas wire/generation policy",
+  "input": {
+    "width": 17,
+    "height": 9,
+    "seed": 49,
+    "next_seed": 50
+  },
+  "prediction": "Active BGRA formula changes49to50; row padding staysA5; unused allocation tail marker equals seed. Retained first resource reads second frame including tail on reuse; separate first storage preserves49. Full allocations remain readable through CF aliases after received rights release; local right/lookup accounting remains independent.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "batch_seconds": 15,
+    "helper_alarm_seconds": 12,
+    "allocation_limit_bytes": 65536
+  }
+}

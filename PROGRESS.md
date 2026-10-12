@@ -823,3 +823,7 @@ Default live-swap binding now reuses its existing registered runner. New explici
 ## 2026-10-11 — full-allocation native handoff failures
 
 Audited owned CPU Mach import-error and timeout controls now compare full IOSurface allocations, including previously unchecked tail. Four snapshots match 65,536 bytes, including 2,160 padding and 60,928 tail bytes; explicit release/owned timeout peer status and local name removal verified. Twelve resealed faults. [Scope](docs/reverse-engineering/2026-10-11-surface-full-failure.md). R1 physical reclamation and native Canvas transport remain open. Independent native work remains available despite empty default graph frontier.
+
+## 2026-10-11 — full-allocation delayed reuse contrast
+
+Reused first handle sees updated image and generation-changing tail marker; separate first storage preserves prior frame. Ten snapshots match 163,840 allocation bytes including 5,400 padding and 152,320 tail bytes. Right/alias/lookup/peer cleanup observations pass; numeric global surface ID recurs across distinct fixture lifetimes. Fourteen resealed faults. [Scope](docs/reverse-engineering/2026-10-11-surface-full-reuse.md). Physical reclamation and native Canvas protocol remain open.
