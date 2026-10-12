@@ -1,0 +1,402 @@
+[
+  {
+    "phase": "before",
+    "mode": "valid",
+    "cancelledBeforeManualRelease": false,
+    "aborts": 0,
+    "manuallyReleased": true,
+    "accepted": 2,
+    "expectedIndex": 2,
+    "initialRevision": 1,
+    "finalRevision": 2,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "observed",
+        "generation": 3,
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket"
+      },
+      {
+        "kind": "published",
+        "generation": 3,
+        "revision": 2,
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 2,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "invalid",
+    "cancelledBeforeManualRelease": false,
+    "aborts": 0,
+    "manuallyReleased": true,
+    "accepted": 1,
+    "expectedIndex": 0,
+    "initialRevision": 1,
+    "finalRevision": 1,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "invalid-source"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "missing",
+    "cancelledBeforeManualRelease": false,
+    "aborts": 0,
+    "manuallyReleased": true,
+    "accepted": 1,
+    "expectedIndex": 0,
+    "initialRevision": 1,
+    "finalRevision": 1,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "unavailable-source"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "refresh",
+    "cancelledBeforeManualRelease": false,
+    "aborts": 0,
+    "manuallyReleased": true,
+    "accepted": 2,
+    "expectedIndex": 1,
+    "initialRevision": 1,
+    "finalRevision": 2,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "observed",
+        "generation": 3,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "AssertionError [ERR_ASSERTION]: Stale or foreign build ticket"
+      },
+      {
+        "kind": "published",
+        "generation": 3,
+        "revision": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 2,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "valid",
+    "cancelledBeforeManualRelease": true,
+    "aborts": 1,
+    "manuallyReleased": false,
+    "accepted": 2,
+    "expectedIndex": 2,
+    "initialRevision": 1,
+    "finalRevision": 2,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "observed",
+        "generation": 3,
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned superseded build aborted"
+      },
+      {
+        "kind": "published",
+        "generation": 3,
+        "revision": 2,
+        "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 2,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "invalid",
+    "cancelledBeforeManualRelease": true,
+    "aborts": 1,
+    "manuallyReleased": false,
+    "accepted": 1,
+    "expectedIndex": 0,
+    "initialRevision": 1,
+    "finalRevision": 1,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "invalid-source"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned superseded build aborted"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "missing",
+    "cancelledBeforeManualRelease": true,
+    "aborts": 1,
+    "manuallyReleased": false,
+    "accepted": 1,
+    "expectedIndex": 0,
+    "initialRevision": 1,
+    "finalRevision": 1,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "unavailable-source"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned superseded build aborted"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "refresh",
+    "cancelledBeforeManualRelease": true,
+    "aborts": 1,
+    "manuallyReleased": false,
+    "accepted": 2,
+    "expectedIndex": 1,
+    "initialRevision": 1,
+    "finalRevision": 2,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "observed",
+        "generation": 3,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned superseded build aborted"
+      },
+      {
+        "kind": "published",
+        "generation": 3,
+        "revision": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 2,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  }
+]

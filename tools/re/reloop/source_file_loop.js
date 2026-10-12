@@ -51,6 +51,8 @@ class SourceFileLoop {
   }catch(e){key='read-error:'+String(e.code||e.message);reason='unavailable-source';}
   if(key===this.#seen&&(!force||reason)){this.#kick();return this.#drain;}
   this.#seen=key;this.#pending=null;
+  // A changed/forced observation supersedes the active cooperative builder.
+  this.#abort?.abort();
   if(reason){this.#host.invalidate();this.#record({kind:reason});return this.#drain;}
   const ticket=this.#host.begin(source);this.#pending={source:Buffer.from(source),ticket};
   this.#record({kind:'observed',generation:ticket.generation,sourceSha256:ticket.sourceSha256});

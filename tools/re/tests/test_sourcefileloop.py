@@ -18,6 +18,6 @@ class SourceFileLoopTests(unittest.TestCase):
             result=json.loads((Path(out)/'file-loop-result.json').read_text())
             self.assertEqual(result['accepted'],3)
             self.assertEqual(len(result['controls']),7)
-            self.assertEqual(result['aborts'],1)
+            self.assertEqual(result['aborts'],2)
             self.assertEqual(result['deadlineAborts'],1)
             self.assertEqual(result['final_status']['liveWorkers'],0)

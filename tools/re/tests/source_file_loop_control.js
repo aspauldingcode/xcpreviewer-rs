@@ -23,7 +23,7 @@ const wait=async predicate=>{const deadline=Date.now()+2000;while(!predicate()){
   await loop.start(10,5000);let baseline=loop.snapshot();assert.deepEqual(baseline.frame,expected(0));assert.deepEqual(await loop.verifyLive(),baseline);
   await new Promise(r=>setTimeout(r,30));assert.equal(loop.events().filter(e=>e.kind==='published').length,1);controls.push('unchanged-file-skipped');
   write(sources[1]);await wait(()=>delayed);write(sources[2]);await wait(()=>loop.events().filter(e=>e.kind==='observed').length===3);release();
-  await wait(()=>loop.snapshot()?.revision===2 && !loop.status().building && !loop.status().busy);baseline=loop.snapshot();assert.deepEqual(baseline.frame,expected(2));assert.deepEqual(await loop.verifyLive(),baseline);assert(loop.events().some(e=>e.kind==='rejected'&&/Stale/.test(e.error)));controls.push('superseded-build-retained');
+  await wait(()=>loop.snapshot()?.revision===2 && !loop.status().building && !loop.status().busy);baseline=loop.snapshot();assert.deepEqual(baseline.frame,expected(2));assert.deepEqual(await loop.verifyLive(),baseline);assert(loop.events().some(e=>e.kind==='rejected'&&/Owned builder aborted/.test(e.error)));controls.push('superseded-build-retained');
   for(const [name,bytes] of [['unsupported',Buffer.from('Text("unsupported")')],['non-ascii',Buffer.from([255])],['oversized',Buffer.alloc(5000,65)]]){
    write(bytes);await loop.poll();assert.deepEqual(loop.snapshot(),baseline);assert.deepEqual(await loop.verifyLive(),baseline);controls.push(name+'-retained');
   }
@@ -32,7 +32,7 @@ const wait=async predicate=>{const deadline=Date.now()+2000;while(!predicate()){
   write(sources[0]);loop.poll();await reading;await loop.poll();assert.equal(loop.snapshot().revision,3);assert.deepEqual(loop.snapshot().frame,expected(0));
   fs.writeFileSync(path.join(out,'last-frame.raw'),loop.snapshot().frame);
   delayed=false;write(sources[1]);loop.poll();await wait(()=>delayed);await Promise.all([loop.close(),loop.close()]);
-  assert.equal(aborts,1);assert.equal(loop.snapshot(),null);assert.equal(loop.status().timers,0);assert.equal(loop.status().building,false);assert.equal(loop.status().liveWorkers,0);controls.push('close-aborted-builder');
+  assert.equal(aborts,2);assert.equal(loop.snapshot(),null);assert.equal(loop.status().timers,0);assert.equal(loop.status().building,false);assert.equal(loop.status().liveWorkers,0);controls.push('close-aborted-builder');
   const events=loop.events();await new Promise(r=>setTimeout(r,30));assert.deepEqual(loop.events(),events);
   let deadlineAborts=0;
   const deadlineLoop=new SourceFileLoop(file,(_source,{signal})=>new Promise((_resolve,reject)=>signal.addEventListener('abort',()=>{++deadlineAborts;reject(Error('Owned deadline abort'));},{once:true})));
