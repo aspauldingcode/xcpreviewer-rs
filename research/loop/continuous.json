@@ -88,6 +88,15 @@
     "result": "280syntheticrequests;old65/5records+failures;new64/4newest,drop1each.140failurefilesretained;invalidlimitrootcreationprevented;12resealedfaults;0Nativecompilerjobs.",
     "started_at": "2026-10-12T06:11:35.231912+00:00"
   },
+  "build_stage_budget_checkpoint": {
+    "classification": "Actual JS/filesystem per-builder new-stage count; synthetic execution boundary",
+    "evidence": "research/evidence/build-stage-budget-2026-10-11",
+    "manifest_sha256": "02a8a49dc0c888ce50ff0e641165a708f494be12ed3f861510bed018d5df852f",
+    "milestones_complete": false,
+    "next_wake_hint": "Per-stage byte and cross-instance/root quotas remain unknown. Select independent native timing/input once prerequisites change, or bounded output gate; preserve failure stages and unrelated content.",
+    "result": "Configured2stages enforced beforecreation/handoff;old3/new2,preabortcharges0,repeatedexhaustionnogrowth.5failurefiles/1010sourcebytes+12sentinelbytes retained,12resealedfaults,0Nativecompilerjobs.",
+    "started_at": "2026-10-12T06:21:29.743685+00:00"
+  },
   "cache_input_checkpoint": {
     "budget": "4 producers inclfailure,2sec outerwait/ownedreap2sec;no actual compiler/runtime/native claim",
     "classification": "Cache index FIFO hang retained;bounded index/manifest reads fixed",

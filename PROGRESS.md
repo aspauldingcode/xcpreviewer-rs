@@ -932,3 +932,8 @@ Already-aborted Rust builder requests now reject before per-job directory/source
 ### 2026-10-11 bounded retained build history
 
 Rust builder metadata now retains newest64 entries by default, configurable1–256, with dropped counts.280synthetic-boundary requests verify default/configured64/4, all140failureartifacts retained;invalidlimits create no root;12resealedfaults.0Nativecompilerjobs; rawdisk/per-entrybytes remain open. See docs/reverse-engineering/2026-10-11-bounded-build-history.md.
+
+
+### 2026-10-11 per-builder stage allocation budget
+
+Rust builder now limits newly allocated stages,default64/configurable1–256. Configured2stage control rejects third and repeated requests before handoff;preabort charges0. Five failurefiles/1010sourcebytes and12sentinelbytes preserved;12resealedfaults.0Nativecompilerjobs; byte/global quotas remain open. See docs/reverse-engineering/2026-10-11-build-stage-budget.md.

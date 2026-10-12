@@ -1,0 +1,158 @@
+{
+  "results": [
+    {
+      "phase": "before",
+      "preError": "Error: Rust build aborted before staging",
+      "preBudget": null,
+      "errors": [
+        "Error: Owned stage handoff 1",
+        "Error: Owned stage handoff 2",
+        "Error: Owned stage handoff 3"
+      ],
+      "stageCount": 3,
+      "syntheticHandoffs": 3,
+      "budget": null,
+      "history": {
+        "limit": 1,
+        "recordsDropped": 0,
+        "failuresDropped": 2
+      },
+      "records": [],
+      "failures": [
+        {
+          "error": "Error: Owned stage handoff 3",
+          "record": {
+            "syntheticJobId": 3,
+            "scope": "Synthetic execution boundary"
+          }
+        }
+      ],
+      "files": [
+        {
+          "stage": "build-27Mgq4",
+          "failure": {
+            "error": "Error: Owned stage handoff 3",
+            "record": {
+              "syntheticJobId": 3,
+              "scope": "Synthetic execution boundary"
+            }
+          }
+        },
+        {
+          "stage": "build-B5Msc6",
+          "failure": {
+            "error": "Error: Owned stage handoff 2",
+            "record": {
+              "syntheticJobId": 2,
+              "scope": "Synthetic execution boundary"
+            }
+          }
+        },
+        {
+          "stage": "build-vsOSDo",
+          "failure": {
+            "error": "Error: Owned stage handoff 1",
+            "record": {
+              "syntheticJobId": 1,
+              "scope": "Synthetic execution boundary"
+            }
+          }
+        }
+      ],
+      "retryError": null,
+      "sentinelPreserved": true
+    },
+    {
+      "phase": "after",
+      "preError": "Error: Rust build aborted before staging",
+      "preBudget": {
+        "stageLimit": 2,
+        "stagesCreated": 0
+      },
+      "errors": [
+        "Error: Owned stage handoff 1",
+        "Error: Owned stage handoff 2",
+        "Error: Rust build stage budget exhausted"
+      ],
+      "stageCount": 2,
+      "syntheticHandoffs": 2,
+      "budget": {
+        "stageLimit": 2,
+        "stagesCreated": 2
+      },
+      "history": {
+        "limit": 1,
+        "recordsDropped": 0,
+        "failuresDropped": 1
+      },
+      "records": [],
+      "failures": [
+        {
+          "error": "Error: Owned stage handoff 2",
+          "record": {
+            "syntheticJobId": 2,
+            "scope": "Synthetic execution boundary"
+          }
+        }
+      ],
+      "files": [
+        {
+          "stage": "build-NFRTBI",
+          "failure": {
+            "error": "Error: Owned stage handoff 2",
+            "record": {
+              "syntheticJobId": 2,
+              "scope": "Synthetic execution boundary"
+            }
+          }
+        },
+        {
+          "stage": "build-s8hHho",
+          "failure": {
+            "error": "Error: Owned stage handoff 1",
+            "record": {
+              "syntheticJobId": 1,
+              "scope": "Synthetic execution boundary"
+            }
+          }
+        }
+      ],
+      "retryError": "Error: Rust build stage budget exhausted",
+      "sentinelPreserved": true
+    }
+  ],
+  "invalid": [
+    {
+      "value": 0,
+      "rejected": true,
+      "rootCreated": false
+    },
+    {
+      "value": 257,
+      "rejected": true,
+      "rootCreated": false
+    },
+    {
+      "value": -1,
+      "rejected": true,
+      "rootCreated": false
+    },
+    {
+      "value": 1.5,
+      "rejected": true,
+      "rootCreated": false
+    },
+    {
+      "value": true,
+      "rejected": true,
+      "rootCreated": false
+    },
+    {
+      "value": "2",
+      "rejected": true,
+      "rootCreated": false
+    }
+  ],
+  "actualCompilerJobs": 0,
+  "scope": "Per-builder allocation count; synthetic execution boundary; no disk-byte or cross-instance quota"
+}

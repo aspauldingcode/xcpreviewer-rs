@@ -4,7 +4,7 @@ from verify_bounded_build_history import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/bounded-build-history-2026-10-11'
 class BoundedBuildHistoryTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['count_bound_verified']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'rust-builder-after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/bounded_build_history_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['count_bound_verified']);self.assertEqual(hashlib.sha256((E/'rust-builder-after.js').read_bytes()).hexdigest(),'f06ac0c13a30ea13ccba93c9fa20b7995d290f3e6a3afb76dc8f22b841998deb');self.assertEqual((ROOT/'tools/re/tests/bounded_build_history_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['limit','dropped','oldest','newest','failure-order','retained','invalid','native','disk','budget','receipt','missing']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:
