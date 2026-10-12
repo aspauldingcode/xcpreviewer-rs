@@ -997,3 +997,8 @@ Serialized failure record field admits≤512KiB;oversize omits with originalbyte
 ### 2026-10-12 observation callback drain ordering
 
 Synchronous callback errors requestabort and awaitcomplete beforeanchor release. Protocol before/after contrasts plus2nativeAA ownedrootcontrols actualwait−15/drainedremaining0;originalError retained;15faults. Sampledscope only. See docs/reverse-engineering/2026-10-12-observer-callback-drain.md.
+
+
+### 2026-10-12 callback descendant actual wait
+
+Acknowledgedsetsidchild callback abort:4actualnative controls parentwait43/childwait42 raw10752,drainedtracked2/remaining0,anchorSIGKILL.4peerfiles32bytes/16faults. Explicit childalarm added/requalified insecondpair within4slots;all retained. Sampledscope only. See docs/reverse-engineering/2026-10-12-callback-descendant-wait.md.

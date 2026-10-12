@@ -1,0 +1,71 @@
+{
+  "index": "2",
+  "originalPreserved": true,
+  "error": "Error: Owned descendant observation callback failure",
+  "record": {
+    "pid": 4366,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 43,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 2,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "trigger": {
+    "ready": {
+      "parent_pid": 4367,
+      "child_pid": 4369,
+      "child_ack": "ready",
+      "parent_group": 4366
+    },
+    "child": {
+      "pid": 4369,
+      "parent": 4367,
+      "group": 4369,
+      "state": "L",
+      "identity": [
+        1791794547,
+        508486,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+      ]
+    }
+  },
+  "observed": [
+    [
+      {
+        "pid": 4367,
+        "parent": 4366,
+        "group": 4366,
+        "state": "L",
+        "identity": [
+          1791794547,
+          485213,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 4369,
+        "parent": 4367,
+        "group": 4369,
+        "state": "L",
+        "identity": [
+          1791794547,
+          508486,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ]
+  ]
+}

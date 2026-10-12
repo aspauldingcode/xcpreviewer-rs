@@ -1,0 +1,23 @@
+{
+  "native_runs": 4,
+  "child_exit": 42,
+  "parent_exit": 43,
+  "tracked": 2,
+  "complete_failure": "abort",
+  "child_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "producer_slots": 4,
+  "node_seconds": 15,
+  "job_seconds": 3,
+  "owned_alarm_seconds": 6,
+  "scope": "Acknowledged owned fork/setsid child, sampled full identity; no unseen escape or Canvas claim",
+  "changed_control": "Explicit child alarm after fork; first two actual waits retained, second two use corrected fallback timer"
+}
