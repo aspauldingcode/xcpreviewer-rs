@@ -1,0 +1,28 @@
+{
+  "kind": "protocol",
+  "phase": "after",
+  "index": "after",
+  "error": "TypeError: The encoded data was not valid for encoding utf-8",
+  "errorCode": "ERR_ENCODING_INVALID_ENCODED_DATA",
+  "encodingError": true,
+  "record": {
+    "pid": 13504,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "drained": true,
+      "target_code": 43,
+      "failure": "abort",
+      "tracked": 0,
+      "observations": 1,
+      "remaining_observed": 0,
+      "scope": "Owned protocol fixture; no target launched"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "observed": []
+}

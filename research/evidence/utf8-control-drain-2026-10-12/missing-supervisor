@@ -1,0 +1,4 @@
+#!/Users/8amps/xcpreviewer-rs/research/venv/bin/python
+import os,time
+os.write(3,b"\xff")
+while True:time.sleep(3600)

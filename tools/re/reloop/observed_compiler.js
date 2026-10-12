@@ -36,7 +36,7 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
   child.on('error',e=>{failure ||= e;});
   child.stdio[3].on('data',b=>{
    controlBytes+=b.length;if(controlBytes>65536){failure ||= Error('Observed report limit');kill();return;}
-   try{control+=decoder.decode(b,{stream:true});}catch(e){failure ||= e;kill();return;}
+   try{control+=decoder.decode(b,{stream:true});}catch(e){cancel(e);return;}
    while(control.includes('\n')){
     const end=control.indexOf('\n'),line=control.slice(0,end);control=control.slice(end+1);
     try{

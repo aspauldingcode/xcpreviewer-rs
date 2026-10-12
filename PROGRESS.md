@@ -1007,3 +1007,8 @@ Acknowledgedsetsidchild callback abort:4actualnative controls parentwait43/child
 ### 2026-10-12 malformed observation cleanup
 
 Parserexception nowrequestsabort and awaitscomplete;2actualnative proxycontrols parentwait43/childwait42 raw10752/16peerbytes,drainedtracked2remaining0. Missingcomplete negative harddeadline rejects/reportnull/emergencyClosed;16faults/4slots. See docs/reverse-engineering/2026-10-12-malformed-control-drain.md.
+
+
+### 2026-10-12 fatal UTF8 observation cleanup
+
+Decoderfailure nowrequestsabort;2actualnative controls parentwait43/childwait42 raw10752/16peerbytes,TypeErrorcodepreserved/drainedtracked2remaining0. Missingcomplete negative rejects/reportnull/emergencyClosed;17faults/4slots. See docs/reverse-engineering/2026-10-12-utf8-control-drain.md.

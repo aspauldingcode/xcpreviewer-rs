@@ -1,0 +1,7 @@
+#!/Users/8amps/xcpreviewer-rs/research/venv/bin/python
+import os,time,json
+os.write(3,b"\xff")
+assert os.read(0,64)==b"abort\n"
+time.sleep(.05)
+os.write(3,(json.dumps({"kind":"complete","drained":True,"target_code":43,"failure":"abort","tracked":0,"observations":1,"remaining_observed":0,"scope":"Owned protocol fixture; no target launched"})+"\n").encode())
+while True:time.sleep(3600)

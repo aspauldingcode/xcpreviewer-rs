@@ -1,0 +1,30 @@
+{
+  "before_abort_requested": false,
+  "after_abort_requested": true,
+  "protocol_before_complete": false,
+  "protocol_after_complete": true,
+  "native_runs": 2,
+  "injected_bytes": [
+    255
+  ],
+  "parent_exit": 43,
+  "child_exit": 42,
+  "peer_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "producer_slots": 4,
+  "node_seconds": 15,
+  "job_seconds": 3,
+  "missing_job_milliseconds": 50,
+  "hard_grace_milliseconds": 5000,
+  "missing_completion_rejected": true,
+  "scope": "One invalid UTF8 chunk after a complete prior frame; arbitrary partial framing and byte overflow remain separate",
+  "producer_slots_used": 4
+}
