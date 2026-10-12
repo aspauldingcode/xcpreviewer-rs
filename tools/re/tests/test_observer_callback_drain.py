@@ -4,7 +4,7 @@ from verify_observer_callback_drain import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/observer-callback-drain-2026-10-12'
 class ObserverCallbackDrainTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['sampled_drained']);self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/observer_callback_drain_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/observed_group_anchor.py').read_bytes(),(E/'observed_group_anchor.py').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['sampled_drained']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'3f781300f8931852f33520acff5768dba787d331d5bad42d20bfbe892216b99a');self.assertEqual((ROOT/'tools/re/tests/observer_callback_drain_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/observed_group_anchor.py').read_bytes(),(E/'observed_group_anchor.py').read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','callback','abort','drain','wait','remaining','emergency','signal','parent','identity','before','scope','helper','outer-wait','late']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

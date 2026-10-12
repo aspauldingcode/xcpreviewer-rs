@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/callback-desc
 class CallbackDescendantWaitTests(unittest.TestCase):
  def test_seal_reader_sources(self):
   self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['owned_child_reaped']);self.assertEqual((ROOT/'tools/re/fixtures/CallbackDescendantWait.py').read_bytes(),(E/'target.py').read_bytes());self.assertEqual((ROOT/'tools/re/tests/callback_descendant_wait_control.js').read_bytes(),(E/'control.js').read_bytes())
-  for name in ['observed_compiler.js','observed_group_anchor.py']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
+  self.assertEqual(hashlib.sha256((E/'observed_compiler.js').read_bytes()).hexdigest(),'3f781300f8931852f33520acff5768dba787d331d5bad42d20bfbe892216b99a')
+  for name in ['observed_group_anchor.py']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','abort','drain','parent-wait','remaining','tracked','group','identity','ack','child-wait','raw-wait','peer','alarm','scope','outer-wait','helper']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

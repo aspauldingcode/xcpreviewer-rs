@@ -1002,3 +1002,8 @@ Synchronous callback errors requestabort and awaitcomplete beforeanchor release.
 ### 2026-10-12 callback descendant actual wait
 
 Acknowledgedsetsidchild callback abort:4actualnative controls parentwait43/childwait42 raw10752,drainedtracked2/remaining0,anchorSIGKILL.4peerfiles32bytes/16faults. Explicit childalarm added/requalified insecondpair within4slots;all retained. Sampledscope only. See docs/reverse-engineering/2026-10-12-callback-descendant-wait.md.
+
+
+### 2026-10-12 malformed observation cleanup
+
+Parserexception nowrequestsabort and awaitscomplete;2actualnative proxycontrols parentwait43/childwait42 raw10752/16peerbytes,drainedtracked2remaining0. Missingcomplete negative harddeadline rejects/reportnull/emergencyClosed;16faults/4slots. See docs/reverse-engineering/2026-10-12-malformed-control-drain.md.

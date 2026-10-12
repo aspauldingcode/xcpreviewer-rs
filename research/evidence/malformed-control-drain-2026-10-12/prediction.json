@@ -1,0 +1,25 @@
+{
+  "protocol_before_complete": false,
+  "protocol_after_complete": true,
+  "native_runs": 2,
+  "parent_exit": 43,
+  "child_exit": 42,
+  "peer_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "producer_slots": 4,
+  "node_seconds": 15,
+  "job_seconds": 3,
+  "scope": "One malformed observed JSON frame; actual pinned supervisor drain with acknowledged owned child; no general malformed stream/unseen escape claim",
+  "missing_completion_rejected": true,
+  "missing_job_milliseconds": 50,
+  "hard_grace_milliseconds": 5000,
+  "producer_slots_used": 4
+}

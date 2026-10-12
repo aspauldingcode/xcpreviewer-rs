@@ -43,7 +43,7 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
      const row=JSON.parse(line);assert(!report);
      if(row.kind==='observed'){assert(Array.isArray(row.rows));try{onObservation(row.rows);}catch(e){cancel(e);}}
      else{report=validateComplete(row);if(row.drained!==true||row.remaining_observed!==0||!Number.isSafeInteger(row.target_code)||row.failure||row.target_code!==0)failure ||= Error('Observed compiler failed: '+String(row.failure||row.target_code));kill();}
-    }catch(e){cancel(e);kill();}
+    }catch(e){cancel(e);}
    }
   });
   child.on('close',(code,term)=>{try{control+=decoder.decode();}catch(e){failure ||= e;}if(control.length)failure ||= Error('Observed report truncated trailing data');clearTimeout(timer);signal?.removeEventListener('abort',abort);
