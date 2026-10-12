@@ -1,0 +1,14 @@
+{
+  "scope": "Explicit controlled readiness protocol before first live-root snapshot, not generic compiler startup workaround",
+  "prediction": "Capture acknowledged root/child identities while rootlive; after actualroot0 reject still-live same-identity detachedchild without destructive signals. Clean acknowledged root admits. Signal denial and ungated startup remain unqualified.",
+  "limits": {
+    "producer_roles": 3,
+    "observer_samples_per_compiler": 64,
+    "snapshot_seconds": 2,
+    "ready_seconds": 1,
+    "compiler_seconds": 3,
+    "child_ticks": 32,
+    "child_tick_seconds": 0.05,
+    "completion_seconds": 3
+  }
+}

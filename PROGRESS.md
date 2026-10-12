@@ -883,3 +883,7 @@ Native observer fails live-root read; existing cleanup signal denied. Both failu
 ## 2026-10-11 — stable-phase observer diagnosis
 
 Four stable owned snapshots match independent parent/group/dyld paths; acknowledged child Popen/runtime PID agree, exit 0 and marker bytes pass. Thirteen resealed faults reject wrong identity/availability. [Scope](docs/reverse-engineering/2026-10-11-observer-stable-diagnostic.md). Earlier startup failure and signal permission remain unresolved; no compiler retry or signals.
+
+## 2026-10-11 — native ready-gated ancestry admission
+
+Actual root 0 is rejected while observed same-identity detached child remains live after reparenting; clean ready root admits. Known child self-exits and bounded retirement read sees no live lifetime. All 76 retained bytes/fourteen resealed faults pass; no destructive signals. [Scope](docs/reverse-engineering/2026-10-11-observer-ready-admission.md). Explicit owned readiness only; generic startup/LLVM observer/Canvas remain open.
