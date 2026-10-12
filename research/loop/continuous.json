@@ -891,6 +891,15 @@
     "result": "2 native waits0,16 phases/262144 complete bytes incl1728padding/250624tail,8 resealed faults,0 owned appwindows.1 retainedSDKcompilefailure plusfixedcompile consumes4producers.",
     "started_at": "2026-10-11T20:46:11.066935+00:00"
   },
+  "native_state_binding_checkpoint": {
+    "classification": "Native public view-owned State binding/ImageRenderer ownership; no UI-event or Canvas reset claim",
+    "evidence": "research/evidence/native-state-binding-2026-10-11",
+    "manifest_sha256": "7f9ecd5288bd62f5d0f8a2136cebce157b523fcb430a9267c715189b1add172e",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed view-owned binding/recreation. Next changed same-renderer content assignment/child.id state-reset discriminator; real UI input and Canvas lifecycle await approved bridge. Sharedprobe lastcapture must not be confused with cachedoriginal image.",
+    "result": "2nativeAA processes support9phase retainedbindingState:heldred\u2192blue,newrendererred,originalblue\u2192red.18alloc294912bytes/1944padding281952tail,15resealedfaults;zeroownedwindows/actualwait0.",
+    "started_at": "2026-10-12T06:40:33.128336+00:00"
+  },
   "next_actions": [
     "Implement and discriminate a public macOS libproc owned-process observer; stable ancestry and lifetime identities required before retrying blocked full extent CLI. Do not reset failure memory or raise native deadlines.",
     "Compare supported source-frame CLI output against the newly sealed native extent oracle, retaining separate raw premultiplied/converted PNG claims and last-result failure controls. Preserve concurrently edited source-frame/graph work.",

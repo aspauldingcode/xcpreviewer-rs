@@ -937,3 +937,8 @@ Rust builder metadata now retains newest64 entries by default, configurable1–2
 ### 2026-10-11 per-builder stage allocation budget
 
 Rust builder now limits newly allocated stages,default64/configurable1–256. Configured2stage control rejects third and repeated requests before handoff;preabort charges0. Five failurefiles/1010sourcebytes and12sentinelbytes preserved;12resealedfaults.0Nativecompilerjobs; byte/global quotas remain open. See docs/reverse-engineering/2026-10-11-build-stage-budget.md.
+
+
+### 2026-10-11 native view-owned State binding
+
+Captured public binding mutates held ImageRenderer privateState immediately;fresh samecontent renderer starts red whileoriginal stays blue;heldbinding reset restores. TwoNativeAA processes/18allocations294912bytes including1944padding281952tail pass;15resealedfaults;zeroownedwindows. No UI-event/Canvas reset claim. See docs/reverse-engineering/2026-10-11-native-state-binding.md.
