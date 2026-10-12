@@ -8,8 +8,8 @@ function rustSourceBuilder(cfg){
  assert.equal(typeof cfg.oracle,'function');assert(/^[a-f0-9]{64}$/.test(cfg.toolchainPin));assert(/^[a-f0-9]{64}$/.test(cfg.rustcSha));assert(path.isAbsolute(cfg.root));
  const historyLimit=cfg.historyLimit??64;assert(Number.isSafeInteger(historyLimit)&&historyLimit>=1&&historyLimit<=256,'Bounded build history limit required');
  const stageLimit=cfg.stageLimit??64;assert(Number.isSafeInteger(stageLimit)&&stageLimit>=1&&stageLimit<=256,'Bounded build stage limit required');
- fs.mkdirSync(cfg.root,{recursive:true});
  const timeout=cfg.timeout??5000;assert(Number.isSafeInteger(timeout)&&timeout>=50&&timeout<=5000,'Bounded Rust build deadline required');
+ fs.mkdirSync(cfg.root,{recursive:true});
  const records=[],failures=[];let recordsDropped=0,failuresDropped=0,stagesCreated=0;
  const retain=(list,value,kind)=>{if(list.length===historyLimit){list.shift();if(kind==='record')recordsDropped=Math.min(Number.MAX_SAFE_INTEGER,recordsDropped+1);else failuresDropped=Math.min(Number.MAX_SAFE_INTEGER,failuresDropped+1);}list.push(value);};
  const build=async(source,{signal})=>{

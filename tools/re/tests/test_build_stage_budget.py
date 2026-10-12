@@ -4,7 +4,7 @@ from verify_build_stage_budget import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/build-stage-budget-2026-10-11'
 class BuildStageBudgetTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['per_builder_budget_verified']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'rust-builder-after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/build_stage_budget_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['per_builder_budget_verified']);self.assertEqual(hashlib.sha256((E/'rust-builder-after.js').read_bytes()).hexdigest(),'00cead97e7669e44edd973a33b19673fb2a47ecadc38cc49102607047756228b');self.assertEqual((ROOT/'tools/re/tests/build_stage_budget_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['pre-charge','limit','count','handoff','retry','failure','source','sentinel','invalid','global','deleted','native']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

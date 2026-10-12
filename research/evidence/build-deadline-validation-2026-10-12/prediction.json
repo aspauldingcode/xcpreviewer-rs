@@ -1,0 +1,16 @@
+{
+  "before_invalid_new_root_created": true,
+  "after_invalid_new_root_created": false,
+  "existing_sentinel_unchanged": true,
+  "valid_boundaries": [
+    50,
+    5000
+  ],
+  "default_deadline": 5000,
+  "native_jobs": 0,
+  "budget": {
+    "node_seconds": 8,
+    "producer_slots": 4
+  },
+  "scope": "Actual builder construction/filesystem; synthetic blocked execution boundary"
+}
