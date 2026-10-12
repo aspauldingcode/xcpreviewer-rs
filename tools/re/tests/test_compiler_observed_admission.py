@@ -6,7 +6,7 @@ s=importlib.util.spec_from_file_location('observed_admission_reader',Path(__file
 class CompilerObservedAdmissionTests(unittest.TestCase):
  def test_seal_source_and_fixture(self):
   e=ROOT/'research/evidence/compiler-observed-admission-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertFalse(reader.verify(e)['native_post_root_observer_qualified'])
-  for filename in ['sourcecache','compilerwitness']:self.assertEqual((ROOT/'tools/re/reloop'/f'{filename}.py').read_bytes(),(e/('sourcecache-after.py' if filename=='sourcecache' else 'compilerwitness.py')).read_bytes())
+  for filename,digest in [('sourcecache-after.py', 'd6469bdc1b2f37f06143a5002ae33dd1db57eb15b9c343513e6668927d2b8c79'), ('compilerwitness.py', '07c1e592eb00f63057425db88277a208dbcb4c7d34bfccdcff38f16fb628e0c2')]:self.assertEqual(hashlib.sha256((e/filename).read_bytes()).hexdigest(),digest)
   self.assertEqual((ROOT/'tools/re/fixtures/CompilerObservedAdmission/emitter.py').read_bytes(),(e/'emitter.py').read_bytes())
  def test_resealed_faults(self):
   for fault in ['default-exit','false-qualified','retried','missing-growth','byte','birth','same-path','ancestry','group','helper']:

@@ -875,3 +875,7 @@ Two real LLVM stages pass signal-0 group absence checks; identical source cache 
 ## 2026-10-11 — explicit compiler ancestry admission
 
 Opt-in read-only ancestry witness added. Group-only control misses finite setsid child. Native observer catches launcher→app transition but initially rejects too early; failure retained, root refresh repaired with finite semantic tests. All 100 controlled bytes and ten resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-observed-admission.md). Post-fix native admission remains unqualified; no budget replenishment or user observer edits.
+
+## 2026-10-11 — observer qualification failure accounting
+
+Native observer fails live-root read; existing cleanup signal denied. Both failures retained, no bypass or retry. Production exception path now always attempts bounded root wait and preserves original failure with cleanup notes; independent controlled denial and clean-root checks pass all 57 bytes/ten resealed faults. [Scope](docs/reverse-engineering/2026-10-11-compiler-qualification-cleanup.md). Native observer/cold build qualification remains open.

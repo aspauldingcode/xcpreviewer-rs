@@ -1,0 +1,14 @@
+{
+  "scope": "Changed root-exec refresh: actual post-root rejection of observed detached child plus real cold/cache-hit WASM with explicit observer",
+  "prediction": "Observe child while root live, retain full identity through setsid/reparenting, actual root0 then reject known live child without new destructive success signals. Two real LLVM cold stages admit; same source cache hit starts no compiler or observer calls. WASM binary identity compared to independently verified previous build, no fresh runtime execution.",
+  "limits": {
+    "root_producer_roles": 4,
+    "compiler_deadline_seconds": 3,
+    "LLVM_deadline_seconds": 30,
+    "observer_samples_per_compiler": 64,
+    "observer_subprocess_deadline_seconds": 2,
+    "child_ticks": 32,
+    "child_tick_seconds": 0.05,
+    "finish_wait_seconds": 3
+  }
+}

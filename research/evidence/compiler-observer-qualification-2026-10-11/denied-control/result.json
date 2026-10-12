@@ -1,0 +1,21 @@
+{
+  "failure": {
+    "type": "RuntimeError",
+    "message": "Owned observer unavailable control",
+    "cleanup_errors": [
+      "group_signal: PermissionError(1, 'Owned signal denied control')"
+    ]
+  },
+  "root_pid": 90650,
+  "root_exit_code": 0,
+  "elapsed_seconds": 0.285162958,
+  "attempts": [
+    {
+      "pid": 90650,
+      "signal": 9,
+      "injected_permission_error": true
+    }
+  ],
+  "actual_signal_sent": false,
+  "marker_bytes": 8
+}

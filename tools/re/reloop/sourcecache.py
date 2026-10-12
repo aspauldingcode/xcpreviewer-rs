@@ -67,10 +67,17 @@ def run_compiler(args,*,timeout=30,output_limit=4194304,observer=None):
                     if remaining<=0:raise subprocess.TimeoutExpired(args,timeout)
                     try:code=process.wait(timeout=min(0.05,remaining));break
                     except subprocess.TimeoutExpired:pass
-        except BaseException:
-            try:os.killpg(process.pid,signal.SIGKILL)
+        except BaseException as failure:
+            cleanup_errors=[]
+            try:
+                if process.poll() is None:os.killpg(process.pid,signal.SIGKILL)
             except ProcessLookupError:pass
-            process.wait(timeout=2)
+            except OSError as error:cleanup_errors.append('group_signal: '+repr(error))
+            try:process.wait(timeout=2)
+            except (OSError,subprocess.TimeoutExpired) as error:cleanup_errors.append('root_wait: '+repr(error))
+            if cleanup_errors:
+                try:failure.compiler_cleanup_errors=tuple(cleanup_errors)
+                except Exception:pass
             raise
         # Root success is insufficient while any member of its session group
         # remains. This read-only, fail-closed guard does not claim ownership
