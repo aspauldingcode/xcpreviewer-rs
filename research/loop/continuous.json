@@ -2739,6 +2739,16 @@
     "retained_failure": "Isolatedv2 fixture test referenced previous SurfaceContentSeed directory; corrected to SurfaceSeedTiming. Native/reader intact. Archive/index/log retained /private/tmp/surface-seed-timing-v2-*; no native rerun.",
     "started_at": "2026-10-12T01:31:07.063619+00:00"
   },
+  "surface_stream_close_checkpoint": {
+    "budget": "Four producers:compile,parent,twopeers;compile60sec,batch15sec,alarm12sec,Mach3sec.",
+    "classification": "Owned FILE close-error path retires pointer before fclose, closes fd once, releases CF and suppresses completion; actual peer42 and bounded Mach timeout accounted",
+    "evidence": "research/evidence/surface-stream-close-2026-10-11",
+    "manifest_sha256": "490da0ea73fd4c21c691e0a0566bddd6c9108e67c1b63c5ed01e82e5dc1537f0",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed stream-close contrast; use SurfaceStreamClose fixed pointer retirement for future file failure probes. Capture bridge restoration still required; do not restart. Choose demanded portable/synchronization gap, avoiding unchanged resource microcontrols.",
+    "result": "Cleanpeer0/ack;fault fclose-1errno28/callback1/fdclosed/peer42/noack, parentMach268451843 then owned cleanup.20allocations327680bytes incl10800padding/304640tail;28resealedfaults. Physical reclaim/actualCanvas errors unaccepted.",
+    "started_at": "2026-10-12T01:52:07.997084+00:00"
+  },
   "window_policy": {
     "before_next_open": true,
     "capture_preflight_enforces": true,

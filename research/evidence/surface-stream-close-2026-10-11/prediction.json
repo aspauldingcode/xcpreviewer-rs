@@ -1,0 +1,12 @@
+{
+  "scope": "Owned libc funopen FILE close callback returns ENOSPC after actual owned fd closure; safe FILE pointer retirement and native peer completion suppression",
+  "prediction": "Clean close callback calledonce fdclosed ack14peerexit0. Fault fclose returns-1 errnoENOSPC, pointeralreadyNULL, callbackonce/fdclosed/CFreleased, noack14peerexit42. Parent boundedMachreceive timeout then actualpeer42 accounting and right/endpoint cleanup. Byte evidence unchanged.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "batch_seconds": 15,
+    "alarm_seconds": 12,
+    "mach_wait_seconds": 3
+  },
+  "distinction": "Source-controlled stream close callback error, not real disk-full or libc vulnerability; prior source/evidence immutable; no unsafe double-close baseline executed."
+}

@@ -855,3 +855,7 @@ Both distinct same-task aliases observe advanced seed before content edit or unl
 ## 2026-10-11 — remote seed/read-lock visibility
 
 Audited peer read-only lock succeeds while parent write access stays held. Remote seed 2 precedes edit and accompanies both old and changed bytes before unlock. Two peer controls compare all 20 allocations/327,680 bytes; twenty-two resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-remote-surface-seed.md). Controlled parent pauses preserve distinct concurrency/GPU/Canvas completion unknowns.
+
+## 2026-10-11 — owned stream-close failure cleanup
+
+New fixture retires FILE pointer before fclose. Owned ENOSPC close callback runs once, closes fd, releases CF, suppresses completion and exits 42; parent records bounded Mach timeout and cleanup. All 20 allocations/327,680 bytes compare; twenty-eight resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-stream-close.md). Historical evidence preserved; filesystem generality and actual Canvas errors remain open.
