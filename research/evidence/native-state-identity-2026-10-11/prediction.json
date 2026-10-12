@@ -1,0 +1,27 @@
+{
+  "expected_colors": [
+    "red",
+    "red",
+    "blue",
+    "blue",
+    "blue",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "red",
+    "red"
+  ],
+  "competing_claims": [
+    "Same-token content assignment preserves installed state; changing child id resets state and detached old binding cannot affect replacement",
+    "Content assignment recreates root state or old binding retargets replacement"
+  ],
+  "scope": "Owned public State binding, content setter and child id under ImageRenderer; no Canvas or UI input",
+  "budgets": {
+    "producer_slots": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "native_alarm_seconds": 12,
+    "native_repeats": 2
+  }
+}

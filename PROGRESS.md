@@ -942,3 +942,8 @@ Rust builder now limits newly allocated stages,default64/configurable1–256. Co
 ### 2026-10-11 native view-owned State binding
 
 Captured public binding mutates held ImageRenderer privateState immediately;fresh samecontent renderer starts red whileoriginal stays blue;heldbinding reset restores. TwoNativeAA processes/18allocations294912bytes including1944padding281952tail pass;15resealedfaults;zeroownedwindows. No UI-event/Canvas reset claim. See docs/reverse-engineering/2026-10-11-native-state-binding.md.
+
+
+### 2026-10-11 native content identity and State
+
+Same-renderer same-id content preserves blue State; changing child id resets red, returning id resets again; detached old binding getter changes leave replacement red. Two native processes/22alloc360448bytes including2376padding344608tail;15resealedfaults;wait0/zeroownedwindows. Public ImageRenderer reference only, Canvas/source-edit migration remains open. See docs/reverse-engineering/2026-10-11-native-state-identity.md.
