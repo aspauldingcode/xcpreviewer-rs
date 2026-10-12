@@ -910,6 +910,16 @@
     "retained_failure": "No producer failure; historical failures retained unchanged.",
     "started_at": "2026-10-12T07:00:11.938525+00:00"
   },
+  "native_state_geometry_checkpoint": {
+    "classification": "Native public ImageRenderer fixed-id geometry change preserves State; no Canvas/source-edit migration",
+    "evidence": "research/evidence/native-state-geometry-2026-10-12",
+    "manifest_sha256": "221d84acc89c70462b9df9ae5908826d12c33b99e78f4ee58f0d2318ab36b37b",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed binding/recreation,identity,palette,geometry. Prefer portable lifecycle gap or native display/export discriminator. Real Canvas input/transport requires approved bridge restoration.",
+    "result": "Two nativeAA processes callback/context17x9\u219211x5\u219217x9 with retainedblueState/heldbinding;idchange resetsred.22alloc360448bytes/2952padding347168tail;18resealedfaults;wait0/windows0.",
+    "retained_failure": "No producer failure; historical failures retained unchanged.",
+    "started_at": "2026-10-12T07:10:42.301940+00:00"
+  },
   "native_state_identity_checkpoint": {
     "classification": "Native owned ImageRenderer content setter and child id state reference; no Canvas/UI input",
     "evidence": "research/evidence/native-state-identity-2026-10-11",

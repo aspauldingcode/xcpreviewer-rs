@@ -952,3 +952,8 @@ Same-renderer same-id content preserves blue State; changing child id resets red
 ### 2026-10-11 native content parameter State preservation
 
 Changed palette under fixed child identity refreshes pixels while retaining private State; original held binding changes alternate palette, original content restoration stays blue, changed identity resets red. Two nativeAA processes/22alloc360448bytes/2376padding344608tail;15resealedfaults;wait0/windows0. ImageRenderer reference only, no Canvas/source-edit migration claim. See docs/reverse-engineering/2026-10-11-native-state-content.md.
+
+
+### 2026-10-12 native geometry update and State
+
+Fixed-id frame input changes callback/context17×9→11×5→17×9 while privateState and original held binding persist;idchange resetsred. TwoNativeAA processes/22alloc360448bytes/2952padding347168tail;18resealedfaults;wait0/windows0. Owned public ImageRenderer reference, no Canvas/source-edit migration claim. See docs/reverse-engineering/2026-10-12-native-state-geometry.md.
