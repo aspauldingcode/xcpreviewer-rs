@@ -1,0 +1,12 @@
+{
+  "scope": "Owned CPU IOSurface numeric global-ID lookup versus held Mach-right lifetime; no native Canvas protocol or physical reclamation",
+  "prediction": "Released ID may recur within64 fresh owned creations, then stale IOSurfaceLookup(id) resolves replacement bytes/seed50 tail rather than old49. Held right after original CF drop should preserve old49 and prevent observed ID reuse within same bound. Absence of recurrence is inconclusive, not a uniqueness proof.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "helper_alarm_seconds": 12,
+    "creations_per_helper": 64,
+    "lookup_followup_us": 100000
+  }
+}

@@ -827,3 +827,7 @@ Audited owned CPU Mach import-error and timeout controls now compare full IOSurf
 ## 2026-10-11 — full-allocation delayed reuse contrast
 
 Reused first handle sees updated image and generation-changing tail marker; separate first storage preserves prior frame. Ten snapshots match 163,840 allocation bytes including 5,400 padding and 152,320 tail bytes. Right/alias/lookup/peer cleanup observations pass; numeric global surface ID recurs across distinct fixture lifetimes. Fourteen resealed faults. [Scope](docs/reverse-engineering/2026-10-11-surface-full-reuse.md). Physical reclamation and native Canvas protocol remain open.
+
+## 2026-10-11 — stale global surface ID contrast
+
+Two released controls show IOSurfaceLookup(old_id) resolving replacement seed50 image/tail after old ID disappearance; held Mach right preserves original seed49 through 64 owned creations. All 73 allocations compare 1,196,032 bytes including row padding and unused tail; fourteen resealed faults pass. Explicit right cleanup and bounded lookup follow-up observed. [Scope](docs/reverse-engineering/2026-10-11-surface-global-id.md). Global IDs are not lifetime/frame versions; physical reclamation and native Canvas wire remain open.

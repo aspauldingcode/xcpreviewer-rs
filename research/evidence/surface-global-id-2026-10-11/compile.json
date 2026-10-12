@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+    "-isysroot",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-framework",
+    "CoreFoundation",
+    "-framework",
+    "IOSurface",
+    "-lbsm",
+    "/Users/8amps/xcpreviewer-rs/research/evidence/surface-global-id-2026-10-11/global_id_probe.c",
+    "-o",
+    "/Users/8amps/xcpreviewer-rs/research/build/surface-global-id"
+  ],
+  "code": 0,
+  "timeout": false,
+  "stdout": "",
+  "stderr": "In file included from /Users/8amps/xcpreviewer-rs/research/evidence/surface-global-id-2026-10-11/global_id_probe.c:2:\n/Users/8amps/xcpreviewer-rs/research/evidence/surface-global-id-2026-10-11/surface_ipc_probe.c:188:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  188 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /Users/8amps/xcpreviewer-rs/research/evidence/surface-global-id-2026-10-11/global_id_probe.c:2:\n/Users/8amps/xcpreviewer-rs/research/evidence/surface-global-id-2026-10-11/surface_ipc_probe.c:244:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  244 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail(\"rendezvous-register\",status);goto done;}registered=1;\n      |            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n2 warnings generated.\n"
+}
