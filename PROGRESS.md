@@ -917,3 +917,8 @@ Source loop now aborts obsolete cooperative builder on changed valid/invalid/mis
 ### 2026-10-11 reentrant abort-close ordering
 
 Source observation now respects synchronous close from cooperative builder abort callback. Eight actual V8/file controls reproduce prior shutdown error and verify fixed drain,1abort2builders0workers/timers. Eight baselineallocations131072bytes including672padding127488tail compare;13resealedfaults. See docs/reverse-engineering/2026-10-11-abort-close-reentry.md.
+
+
+### 2026-10-11 actual owned builder cancellation and recovery
+
+Actual live Rustc generation2 superseded through SourceFileLoop/RustSourceBuilder; owned CLI wait-15 and sampled abort/drain receipt pass. Fresh generation1/3 builds publish,2rejects; three allocations49152bytes including252padding47808tail match. Final workers/timers zero;18resealedfaults. See docs/reverse-engineering/2026-10-11-actual-builder-cancel.md.

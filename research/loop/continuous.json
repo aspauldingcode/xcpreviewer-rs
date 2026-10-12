@@ -15,6 +15,15 @@
     "restart": "Explicit owned start only; can require a new grant. No automatic approval bypass.",
     "scope": "Same Xcode/broker lifetime, no permanent grant claim"
   },
+  "actual_builder_cancel_checkpoint": {
+    "classification": "Actual owned Rust CLI job cooperative cancellation/recovery, sampled cleanup only",
+    "evidence": "research/evidence/actual-builder-cancel-2026-10-11",
+    "manifest_sha256": "634fff5175a8cfd4041085e09caf7d1d7607e0f6a3a38b2d4d3963698a08abeb",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed actual compiler-stage supersession. Choose distinct cancellation timing or independent owned-child wait capability; Rustcchild wait/unseenescapes remain unknown, SourcecacheEPERM unresolved. Native input/export/capture awaits approved bridge.",
+    "result": "FreshA root0; observedliveRustc Bgenerated/noWASM then superseded, CLIwait-15 abortreport/drained0remaining; freshC root0 publishesgen3, Bneveradmitted.3retainedallocations49152bytes/252padding47808tail,18resealedfaults.",
+    "started_at": "2026-10-12T05:51:01.483607+00:00"
+  },
   "admitted_build_checkpoint": {
     "budget": "Four producers twoLLVMstages30sec/4MiB, V8/WasmKit15sec. No producerretry.",
     "classification": "Real source-to-WASM cold/cache-hit path passes new read-only compiler success-group admission",

@@ -1,0 +1,378 @@
+{
+  "qualified": true,
+  "trigger": {
+    "compiler": {
+      "pid": 19818,
+      "parent": 19800,
+      "group": 19799,
+      "state": "L",
+      "identity": [
+        1791784028,
+        190430,
+        "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+      ]
+    },
+    "stage": "build-hI3R4l",
+    "generatedBeforeCancel": true,
+    "moduleAbsentBeforeCancel": true
+  },
+  "events": [
+    {
+      "kind": "observed",
+      "generation": 1,
+      "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+    },
+    {
+      "kind": "published",
+      "generation": 1,
+      "revision": 1,
+      "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+    },
+    {
+      "kind": "observed",
+      "generation": 2,
+      "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+    },
+    {
+      "kind": "observed",
+      "generation": 3,
+      "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+    },
+    {
+      "kind": "rejected",
+      "generation": 2,
+      "error": "Error: Observed compiler aborted"
+    },
+    {
+      "kind": "published",
+      "generation": 3,
+      "revision": 2,
+      "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+    }
+  ],
+  "records": [
+    {
+      "receipt": {
+        "source_sha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8",
+        "module_sha256": "65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235",
+        "config": {
+          "width": 13,
+          "height": 7,
+          "alphas": [
+            4,
+            2,
+            8
+          ],
+          "reverse": 0
+        },
+        "rustc_sha256": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+        "toolchain_sha256": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828",
+        "sources": {
+          "contract.rs": "3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45",
+          "wasm-template.rs": "0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b"
+        },
+        "generated_sha256": "c1f7b82df57275ec81dbfdf4cf3e0c94ba856a17ba08930655ffcfad09d60765",
+        "cache_hit": false,
+        "target": "wasm32-wasip1",
+        "scope": "Finite primary literal expression lowering; not general Swift compilation"
+      },
+      "execution": {
+        "pid": 19749,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 6,
+          "observations": 35,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "{\"source_sha256\": \"37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8\", \"module_sha256\": \"65c37c6d904ed43948d649da11d79932548b54ad8c0e10533e6d8f9d81ec0235\", \"config\": {\"width\": 13, \"height\": 7, \"alphas\": [4, 2, 8], \"reverse\": 0}, \"rustc_sha256\": \"210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da\", \"toolchain_sha256\": \"7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828\", \"sources\": {\"contract.rs\": \"3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45\", \"wasm-template.rs\": \"0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b\"}, \"generated_sha256\": \"c1f7b82df57275ec81dbfdf4cf3e0c94ba856a17ba08930655ffcfad09d60765\", \"cache_hit\": false, \"target\": \"wasm32-wasip1\", \"scope\": \"Finite primary literal expression lowering; not general Swift compilation\"}\n",
+        "stderr": ""
+      },
+      "stage": "build-ixh5Fr"
+    },
+    {
+      "receipt": {
+        "source_sha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc",
+        "module_sha256": "0411168ced081e6c1775593bdabf27750e7164a009914925022f3e6d86816cee",
+        "config": {
+          "width": 13,
+          "height": 7,
+          "alphas": [
+            7,
+            7,
+            1
+          ],
+          "reverse": 0
+        },
+        "rustc_sha256": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+        "toolchain_sha256": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828",
+        "sources": {
+          "contract.rs": "3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45",
+          "wasm-template.rs": "0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b"
+        },
+        "generated_sha256": "13d2ee09ad1472008a055d2a7a21177e57244fef54714fbb6442ba24f208a69c",
+        "cache_hit": false,
+        "target": "wasm32-wasip1",
+        "scope": "Finite primary literal expression lowering; not general Swift compilation"
+      },
+      "execution": {
+        "pid": 19827,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 4,
+          "observations": 26,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "{\"source_sha256\": \"d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc\", \"module_sha256\": \"0411168ced081e6c1775593bdabf27750e7164a009914925022f3e6d86816cee\", \"config\": {\"width\": 13, \"height\": 7, \"alphas\": [7, 7, 1], \"reverse\": 0}, \"rustc_sha256\": \"210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da\", \"toolchain_sha256\": \"7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828\", \"sources\": {\"contract.rs\": \"3bd6f3eea6d62e7edadb2806a70d99dabfa94598e5f024a3b5c16821ded70c45\", \"wasm-template.rs\": \"0f53ebcabf78495f9e6659ca0b61611744c189ecfb6ed544555ea472584fcf8b\"}, \"generated_sha256\": \"13d2ee09ad1472008a055d2a7a21177e57244fef54714fbb6442ba24f208a69c\", \"cache_hit\": false, \"target\": \"wasm32-wasip1\", \"scope\": \"Finite primary literal expression lowering; not general Swift compilation\"}\n",
+        "stderr": ""
+      },
+      "stage": "build-mIVYD9"
+    }
+  ],
+  "failures": [
+    {
+      "error": "Error: Observed compiler aborted",
+      "record": {
+        "pid": 19799,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "abort",
+          "drained": true,
+          "tracked": 5,
+          "observations": 15,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      }
+    }
+  ],
+  "observations": [
+    [
+      {
+        "pid": 19750,
+        "parent": 19749,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784026,
+          281442,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19755,
+        "parent": 19750,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784026,
+          436215,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19768,
+        "parent": 19750,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784026,
+          836329,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19782,
+        "parent": 19768,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784027,
+          229423,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/rust-lld"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19785,
+        "parent": 19750,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784027,
+          286301,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19791,
+        "parent": 19750,
+        "group": 19749,
+        "state": "L",
+        "identity": [
+          1791784027,
+          431342,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19800,
+        "parent": 19799,
+        "group": 19799,
+        "state": "L",
+        "identity": [
+          1791784027,
+          828199,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19804,
+        "parent": 19800,
+        "group": 19799,
+        "state": "L",
+        "identity": [
+          1791784027,
+          939485,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19811,
+        "parent": 19800,
+        "group": 19799,
+        "state": "L",
+        "identity": [
+          1791784028,
+          71779,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19818,
+        "parent": 19800,
+        "group": 19799,
+        "state": "L",
+        "identity": [
+          1791784028,
+          190430,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19821,
+        "parent": 19818,
+        "group": 19799,
+        "state": "L",
+        "identity": [
+          1791784028,
+          267577,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/aarch64-apple-darwin/bin/rust-lld"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19828,
+        "parent": 19827,
+        "group": 19827,
+        "state": "L",
+        "identity": [
+          1791784028,
+          466027,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19854,
+        "parent": 19828,
+        "group": 19827,
+        "state": "L",
+        "identity": [
+          1791784028,
+          896731,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19865,
+        "parent": 19828,
+        "group": 19827,
+        "state": "L",
+        "identity": [
+          1791784029,
+          86627,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 19874,
+        "parent": 19828,
+        "group": 19827,
+        "state": "L",
+        "identity": [
+          1791784029,
+          238132,
+          "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+        ]
+      }
+    ]
+  ],
+  "finalStatus": {
+    "liveWorkers": 0,
+    "busy": false,
+    "closed": true,
+    "revision": 2,
+    "loopClosed": true,
+    "building": false,
+    "timers": 0
+  },
+  "scope": "Actual owned Rust builds, cooperative supersession, sampled observed cleanup; not universal process quiescence or native Canvas"
+}
