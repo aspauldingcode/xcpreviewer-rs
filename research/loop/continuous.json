@@ -2843,6 +2843,16 @@
     "run_id": "20261011T044308Z-primary-live-wasm-swap-027f20a9",
     "scientific_delivery_review": "pending"
   },
+  "source_stage_failure_checkpoint": {
+    "classification": "Actual Node source staging failure retention with injected writes/execution; no native/diskfull claim",
+    "evidence": "research/evidence/source-stage-failure-2026-10-12",
+    "manifest_sha256": "e6b5d72052ecfac2ee2f35a4279317d1730db8cb5f31b1d65a5bdd782b37f1a4",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed source/logwrite controls. Next diagnosticbyte retention or actual receipt/artifact rejection in sourceloop; directoryallocation observability remains separate. Canvas approvedbridge required.",
+    "result": "Eightcontrols sourceENOSPC/EACCES/doublefailure nowretained;originalError preserved;chargedstage1,nohandoffonsourcefailure.2stagedsources404bytes,15faults,zeroactualcompilerjobs.",
+    "retained_failure": "No acquisition failure; historical failures retained unchanged.",
+    "started_at": "2026-10-12T07:40:26.659744+00:00"
+  },
   "source_whitespace_checkpoint": {
     "budget": "4 actual compiler processes, each10sec; no frame-byte claim; verification separately bounded",
     "classification": "Native parse-only lexical agreement; proposed VT/FF rejection contradicted",

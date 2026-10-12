@@ -4,7 +4,7 @@ from verify_build_failure_persistence import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/build-failure-persistence-2026-10-12'
 class BuildFailurePersistenceTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['original_error_preserved']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/build_failure_persistence_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['original_error_preserved']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'f6c739354d4483d9170d7395d7a4a67311d2521f486193c59b94b3084932d51b');self.assertEqual((ROOT/'tools/re/tests/build_failure_persistence_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','caught','before','diagnostic','failure','record','writes','persisted','budget','source','normal-log','scope','wait','jobs','prediction']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

@@ -16,9 +16,9 @@ function rustSourceBuilder(cfg){
   assert(Buffer.isBuffer(source)&&source.length>0&&source.length<=4096);
   if(signal?.aborted)throw Error('Rust build aborted before staging');
   if(stagesCreated>=stageLimit)throw Error('Rust build stage budget exhausted');
-  const stage=fs.mkdtempSync(path.join(cfg.root,'build-')),file=path.join(stage,'source.swift');++stagesCreated;fs.writeFileSync(file,source);
+  const stage=fs.mkdtempSync(path.join(cfg.root,'build-')),file=path.join(stage,'source.swift');++stagesCreated;
   let execution;
-  try{execution=await runObserved(cfg.python,[cfg.cli,file,'--output',path.join(stage,'result'),'--rustc',cfg.rustc,'--rustc-sha256',cfg.rustcSha,'--toolchain-pin',cfg.toolchainPin],{signal,timeout,observer:cfg.observer,supervisorPython:cfg.python,onObservation:cfg.onObservation});
+  try{fs.writeFileSync(file,source);execution=await runObserved(cfg.python,[cfg.cli,file,'--output',path.join(stage,'result'),'--rustc',cfg.rustc,'--rustc-sha256',cfg.rustcSha,'--toolchain-pin',cfg.toolchainPin],{signal,timeout,observer:cfg.observer,supervisorPython:cfg.python,onObservation:cfg.onObservation});
   assert(Buffer.byteLength(execution.stdout)<=16384,'Rust receipt size limit');const receipt=JSON.parse(execution.stdout);
   const target=path.join(stage,'result/view.wasm'),module=readArtifact(target),kernel=path.join(__dirname,'../rust/canvas-core/src'),sources={};
   for(const name of ['contract.rs','wasm-template.rs'])sources[name]=sha(readArtifact(path.join(kernel,name)));

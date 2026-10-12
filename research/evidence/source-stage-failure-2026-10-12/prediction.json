@@ -1,0 +1,15 @@
+{
+  "before_source_failure_retained": false,
+  "after_source_failure_retained": true,
+  "original_error_preserved": true,
+  "failed_stage_charged": true,
+  "controls": [
+    "ENOSPC",
+    "EACCES",
+    "source-and-log",
+    "execution"
+  ],
+  "native_jobs": 0,
+  "budget_seconds": 8,
+  "scope": "Actual builder with injected source/log/execution failures"
+}

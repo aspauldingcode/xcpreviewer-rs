@@ -967,3 +967,8 @@ Invalid timeout now rejects before artifact root creation.34actualNode/filesyste
 ### 2026-10-12 build failure persistence
 
 Failure log write errors no longer mask original execution Error; separate persistence_error retained in memory.6actualNode controls with injected ENOSPC/EACCES,6sources1212bytes,15faults,zero actualcompilerjobs/oraclecalls. See docs/reverse-engineering/2026-10-12-build-failure-persistence.md.
+
+
+### 2026-10-12 source staging failure retention
+
+Source write moved inside builder failure handler;source failures retain originalError and chargedstage, double logfailure has separate persistence_error.8actualNode injectedcontrols,2sources404bytes,15faults,zero actualcompilerjobs. See docs/reverse-engineering/2026-10-12-source-stage-failure.md.

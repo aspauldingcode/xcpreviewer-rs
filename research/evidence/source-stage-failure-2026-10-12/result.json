@@ -1,0 +1,173 @@
+{
+  "rows": [
+    {
+      "phase": "before",
+      "mode": "ENOSPC",
+      "stage": "build-7HZBCP",
+      "files": [],
+      "caught": "Error: Owned source failure ENOSPC",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 0,
+      "handoffs": 0,
+      "failures": [],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "EACCES",
+      "stage": "build-XMu3qb",
+      "files": [],
+      "caught": "Error: Owned source failure EACCES",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 0,
+      "handoffs": 0,
+      "failures": [],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "source-and-log",
+      "stage": "build-eirIu2",
+      "files": [],
+      "caught": "Error: Owned source failure source-and-log",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 0,
+      "handoffs": 0,
+      "failures": [],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "execution",
+      "stage": "build-Q1BHPu",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure execution",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 1,
+      "handoffs": 1,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure execution"
+        }
+      ],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "ENOSPC",
+      "stage": "build-TQzK5y",
+      "files": [
+        "failure.json"
+      ],
+      "caught": "Error: Owned source failure ENOSPC",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 1,
+      "handoffs": 0,
+      "failures": [
+        {
+          "error": "Error: Owned source failure ENOSPC"
+        }
+      ],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "EACCES",
+      "stage": "build-RVJoP9",
+      "files": [
+        "failure.json"
+      ],
+      "caught": "Error: Owned source failure EACCES",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 1,
+      "handoffs": 0,
+      "failures": [
+        {
+          "error": "Error: Owned source failure EACCES"
+        }
+      ],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "source-and-log",
+      "stage": "build-6EgDCI",
+      "files": [],
+      "caught": "Error: Owned source failure source-and-log",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 1,
+      "handoffs": 0,
+      "failures": [
+        {
+          "error": "Error: Owned source failure source-and-log",
+          "persistence_error": "Error: Owned log failure ENOSPC"
+        }
+      ],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "execution",
+      "stage": "build-Yb04QS",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure execution",
+      "originalPreserved": true,
+      "sourceWrites": 1,
+      "logWrites": 1,
+      "handoffs": 1,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure execution"
+        }
+      ],
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    }
+  ],
+  "syntheticHandoffs": 2,
+  "actualCompilerJobs": 0
+}
