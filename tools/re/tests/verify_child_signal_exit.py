@@ -1,0 +1,38 @@
+import json,hashlib,os
+from pathlib import Path
+MODES=['default-1','handler-0','handler-1'];PEER=bytes([0,1,2,255,10,42,99,128]);RUNTIME='/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python';LAUNCHER='/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9'
+def verify(folder):
+ e=Path(folder);m=json.loads((e/'manifest.json').read_text());assert set(m['files'])=={str(p.relative_to(e)) for p in e.rglob('*') if p.is_file() and p!=e/'manifest.json'}
+ for name,item in m['files'].items():
+  assert not Path(name).is_absolute() and '..' not in Path(name).parts;p=e/name;assert not p.is_symlink();b=p.read_bytes();assert len(b)==item['bytes'] and hashlib.sha256(b).hexdigest()==item['sha256']
+ p=json.loads((e/'prediction.json').read_text());assert p=={'modes':['default-0','default-1','handler-0','handler-1'],'root_codes':[43]*4,'child_raw_statuses':[15,15,10752,10752],'child_exited':[False,False,True,True],'child_exit_codes':[-1,-1,42,42],'child_signals':[15,15,None,None],'controlled_peer_bytes':16,'native_controls':4,'outer_seconds':15,'job_milliseconds':3000,'watcher_seconds':4,'watcher_outer_seconds':5,'private_abort':False,'child_reaped_qualified':False,'native_canvas_qualified':False}
+ assert json.loads((e/'scope.json').read_text())=={'attempts':4,'startup_failures':1,'verified_native_controls':3,'default_signal_controls':1,'handler_controls':2,'default_aa_qualified':False,'controlled_peer_bytes':16,'child_reaped_qualified':False,'failed_startup_cleanup_qualified':False}
+ allpids=[]
+ for mode,code in zip(MODES,[43]*3):
+  root=e/mode;x=json.loads((root/'result.json').read_text());rec=x['record'];policy='default' if mode.startswith('default') else 'handler';assert x['policy']==policy;assert x['mode']==mode and x['code']==code and x['released'] is True and x['error']==('Error: Observed compiler failed: 43' if code else None)
+  assert json.loads((e/('wait-'+mode+'.json')).read_text())=={'code':0,'timeout':False,'stdout':'owned child signal exit pass\n','stderr':''}
+  assert rec['privateAbortRequested'] is False and rec['emergencyClosed'] is False and rec['signal']=='SIGKILL' and rec['anchorCode'] is None
+  for stream in ['stdout','stderr']:assert rec[stream]=='' and rec[stream+'Bytes']==0 and rec[stream+'Sha256']==hashlib.sha256(b'').hexdigest()
+  report=rec['report'];assert report==json.loads((root/'underlying-complete.json').read_text());assert report['kind']=='complete' and report['drained'] is True and report['target_code']==code and report['failure'] is None and report['tracked']==2 and report['remaining_observed']==0 and report['observations']>=3 and report['scope']=='Observed full-identity ancestry and inherited group only; unseen escapes excluded'
+  proxy=json.loads((root/'anchor-pid.json').read_text());ready=json.loads((root/'ready.json').read_text());assert proxy['proxy_pid']==proxy['proxy_group']==rec['pid'] and ready['parent_group']==rec['pid'] and proxy['anchor_pid']!=rec['pid'] and ready['child_ack']=='ready'
+  release=json.loads((root/'release-observation.json').read_text());assert len(release)==1;child=release[0];assert child['pid']==ready['child_pid'] and child['parent']==ready['parent_pid'] and child['group']==child['pid'] and child['state']=='L' and child['identity'][2]==RUNTIME and type(child['identity'][0]) is int and child['identity'][0]>0 and type(child['identity'][1]) is int and 0<=child['identity'][1]<1000000
+  observed=[row for group in x['observed'] for row in group];assert child in observed;parents=[row for row in observed if row['pid']==ready['parent_pid']];assert parents and parents[0]['parent']==proxy['anchor_pid'] and parents[0]['group']==rec['pid'] and parents[0]['identity'][2] in [RUNTIME,LAUNCHER]
+  assert not (root/'child-wait.json').exists();assert ((root/'child.raw').read_bytes()==PEER if policy=='handler' else not (root/'child.raw').exists()) and (root/'gate').read_bytes()==b'go' and (root/'finish').read_bytes()==b'exit'
+  assert json.loads((root/'exit-intent.json').read_text())=={'parent_pid':ready['parent_pid'],'code':code,'without_child_wait':True}
+  assert json.loads((root/'registered.json').read_text())=={'root_pid':ready['parent_pid'],'child_pid':ready['child_pid'],'note_exit':2147483648,'note_exitstatus':67108864,'birth_rechecked':True}
+  assert json.loads((root/'watcher-wait.json').read_text())=={'status':0,'signal':None,'stdout':'','stderr':'','error':None}
+  events=json.loads((root/'kernel-exit-events.json').read_text());assert events==[{'pid':ready['parent_pid'],'filter':-5,'flags':32821,'fflags':2147483648|67108864,'data':43<<8,'exited':True,'exit_code':43},{'pid':ready['child_pid'],'filter':-5,'flags':32821,'fflags':2147483648|67108864,'data':15 if policy=='default' else 42<<8,'exited':policy=='handler','exit_code':-1 if policy=='default' else 42}]
+  if policy=='default':assert os.WIFSIGNALED(events[1]['data']) and os.WTERMSIG(events[1]['data'])==15
+  else:assert os.WIFEXITED(events[1]['data']) and os.WEXITSTATUS(events[1]['data'])==42
+  allpids.extend([ready['parent_pid'],ready['child_pid'],proxy['anchor_pid'],proxy['proxy_pid']])
+ assert len(set(allpids))==12 and json.loads((e/'slots.json').read_text())=={'used':4,'limit':4}
+ env=json.loads((e/'environment.json').read_text());assert env['node_sha256']=='768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e' and env['python_sha256']=='271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb' and env['runtime_sha256']=='057446db49d0bb2e41903364c55c7bfee7ac04d17f60c20cea044f59d0b84e00' and env['private_bridge_available'] is False
+ rea=json.loads((e/'rea-status.json').read_text());assert rea['open'] is False and rea['server_identity']['server']['version']=='6.2.0' and rea['target']['architecture']=='arm64' and rea['target']['sha256']=='718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5'
+ watcher=json.loads((e/'watcher.json').read_text());assert rea['watcher']['sha256']==watcher['sha256'] and rea['watcher']['architecture']=='arm64';assert len(watcher['sha256'])==64
+ header=json.loads((e/'header-constants.json').read_text());assert header['EVFILT_PROC']==-5 and header['NOTE_EXIT']==2147483648 and header['NOTE_EXITSTATUS']==67108864
+ failed=json.loads((e/'default-0/result.json').read_text());rec=failed['record'];assert failed['error']=='Error: Observed cleanup unverified' and failed['released'] is False and failed['observed']==[] and rec['report'] is None and rec['anchorCode']==1 and rec['signal'] is None and rec['privateAbortRequested'] is False and rec['emergencyClosed'] is False
+ assert "43/anchor-pid.json" in rec['stderr'] and "BrokenPipeError" in rec['stderr'] and rec['stderrBytes']==len(rec['stderr'].encode()) and rec['stderrSha256']==hashlib.sha256(rec['stderr'].encode()).hexdigest()
+ failedwait=json.loads((e/'wait-default-0.json').read_text());assert failedwait['code']==1 and failedwait['timeout'] is False and failedwait['stdout']=='' and 'Observed cleanup unverified' in failedwait['stderr']
+ assert not (e/'default-0/kernel-exit-events.json').exists() and not (e/'default-0/watcher-wait.json').exists()
+ check=json.loads((e/'failed-owned-pid-check.json').read_text());assert check['code']==0 and json.loads(check['stdout'])==[] and check['stderr']=='' and 'no reaping' in check['scope']
+ return {'native_controls':3,'startup_failures':1,'attempts':4,'root_wait_codes':[43]*3,'kernel_child_raw_statuses':[15,10752,10752],'controlled_peer_bytes':16,'default_aa_qualified':False,'child_reaped_qualified':False}

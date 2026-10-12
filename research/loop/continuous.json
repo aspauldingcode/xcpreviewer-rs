@@ -170,6 +170,32 @@
     "started_at": "2026-10-11T21:56:04.762401+00:00"
   },
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
+  "child_signal_exit_checkpoint": {
+    "classification": "3actualnative kernelchildsignal/exit contrasts plus1retainedstartupharnessfailure; reaping/defaultAA unqualified",
+    "evidence": "research/evidence/child-signal-exit-2026-10-12",
+    "manifest_sha256": "fe2e2bc0faf45ca36750497c026e87f30ba110e201d149f36135519f9b1e8e6a",
+    "milestones_complete": false,
+    "next_wake_hint": "New kernel lifecycle boundary: stopped ownedchild vs exiting. Default signal has one verified run only; failedstartupcleanup unknown. NativeCanvasrequiresapprovedbridge.",
+    "result": {
+      "attempts": 4,
+      "child_reaped_qualified": false,
+      "controlled_peer_bytes": 16,
+      "default_aa_qualified": false,
+      "kernel_child_raw_statuses": [
+        15,
+        10752,
+        10752
+      ],
+      "native_controls": 3,
+      "root_wait_codes": [
+        43,
+        43,
+        43
+      ],
+      "startup_failures": 1
+    },
+    "retained_failure": "Proxyargindex startuperror causedbrokencontrolpipe/cleanupunverified; initialproxy/logs retained. Fixedwithinremaining3of4slots. Failedstartupcleanup/reaping/defaultAA unqualified."
+  },
   "compiler_descendant_retirement_checkpoint": {
     "classification": "Source/model final-descendant admission hardening, no native execution",
     "evidence": "research/evidence/compiler-descendant-retirement-2026-10-11",

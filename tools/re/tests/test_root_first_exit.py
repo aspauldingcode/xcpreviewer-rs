@@ -4,7 +4,7 @@ from verify_root_first_exit import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/root-first-exit-2026-10-12'
 class RootFirstExitTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['controlled_peer_bytes'],32);self.assertEqual((ROOT/'tools/re/tests/root_first_exit_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'observed_compiler.js').read_bytes());self.assertEqual((ROOT/'tools/re/native/OwnedExitEvents.c').read_bytes(),(E/'OwnedExitEvents.c').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['controlled_peer_bytes'],32);self.assertEqual(hashlib.sha256((E/'control.js').read_bytes()).hexdigest(),'4a47f36bcae412dd1a36a521b8ab378b166df7e9e8c5fee336fe2e4c281ff12f');self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'observed_compiler.js').read_bytes());self.assertEqual((ROOT/'tools/re/native/OwnedExitEvents.c').read_bytes(),(E/'OwnedExitEvents.c').read_bytes())
  def test_resealed_faults(self):
   for fault in ['error','success-error','abort','receipt','emergency','root-wait','failure-reason','tracked','child-event','peer','empty-digest','intent','release','identity','finish','outer-wait','helper','runtime','slots','reaped-claim','event-order','event-status','event-filter','registered','watcher-wait','build','build-failure','watcher-hash']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

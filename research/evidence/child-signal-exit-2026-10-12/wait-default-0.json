@@ -1,0 +1,6 @@
+{
+  "code": 1,
+  "timeout": false,
+  "stdout": "",
+  "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Error: Observed cleanup unverified'\n- 'Error: Observed compiler failed: 43'\n                    ^\n\n    at /Users/8amps/xcpreviewer-rs/tools/re/tests/child_signal_exit_control.js:5:160 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 'Error: Observed cleanup unverified',\n  expected: 'Error: Observed compiler failed: 43',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+}

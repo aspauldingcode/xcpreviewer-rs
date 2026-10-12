@@ -1,0 +1,22 @@
+{
+  "mode": "default-0",
+  "code": 43,
+  "policy": "default",
+  "error": "Error: Observed cleanup unverified",
+  "record": {
+    "pid": 75869,
+    "anchorCode": 1,
+    "signal": null,
+    "report": null,
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/research/evidence/child-signal-exit-2026-10-12/proxy-supervisor\", line 7, in <module>\n    (root/'anchor-pid.json').write_text(json.dumps({'anchor_pid':anchor.pid,'proxy_pid':os.getpid(),'proxy_group':os.getpgrp()}))\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1275, in write_text\n    with self.open(mode='w', encoding=encoding, errors=errors) as f:\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1242, in open\n    return io.open(self, mode, buffering, encoding, errors, newline,\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1110, in _opener\n    return self._accessor.open(self, flags, mode)\nFileNotFoundError: [Errno 2] No such file or directory: '43/anchor-pid.json'\nTraceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 96, in main\n    snapshot()\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 76, in snapshot\n    if fresh:emit({'kind':'observed','rows':fresh})\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 48, in emit\n    os.write(3, (json.dumps(value)+'\\n').encode())\nBrokenPipeError: [Errno 32] Broken pipe\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 116, in <module>\n    if __name__=='__main__':main()\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 110, in main\n    emit({'kind':'complete','target_code':target.poll() if target else None,\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_group_anchor.py\", line 48, in emit\n    os.write(3, (json.dumps(value)+'\\n').encode())\nBrokenPipeError: [Errno 32] Broken pipe\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 2089,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "472dcf9872bc2ebc529b3a28ed98fb606fc6a3cec7407c01a9f584908b4b68f8"
+  },
+  "observed": [],
+  "released": false
+}

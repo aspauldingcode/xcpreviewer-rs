@@ -1042,3 +1042,7 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-12: root-first kernel exit accounting
 
 [Owned kernel-event adapter](docs/reverse-engineering/2026-10-12-root-first-exit.md) confirms roots43/0 exit before known setsid children42 during supervisor drain.4actualwatcherwait0,32exactpeerbytes;28resealedfaults. Exit events do not prove child reaping. Initial macro build failure/source retained, corrected. Both milestones open.
+
+### 2026-10-12: child signal versus ordinary exit
+
+[Owned kernel contrast](docs/reverse-engineering/2026-10-12-child-signal-exit.md) distinguishes defaultSIGTERM rawstatus15 from handlerexit42/raw10752.3verifiednativecontrols,16exactpeerbytes;20resealedfaults.1startupharnessfailure retained, fixed within original4slots. Default A/A, failedstartupcleanup and reaping remain unqualified. Both milestones open.
