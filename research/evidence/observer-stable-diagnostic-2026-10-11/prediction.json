@@ -1,0 +1,16 @@
+{
+  "scope": "Read-only observer on stable caller and acknowledged child, contrasting native compiler startup failure; no signal operations",
+  "alternatives": [
+    "Stable caller/child observed: earlier failure is phase-specific and not evidence of blanket backend loss.",
+    "Stable targets still inaccessible: observer availability is broader prerequisite.",
+    "Popen root differs from independently acknowledged program PID: do not conflate launcher and running process."
+  ],
+  "limits": {
+    "child_producers": 1,
+    "observer_subprocesses": 4,
+    "snapshot_seconds": 2,
+    "child_self_exit_seconds": 1,
+    "ready_seconds": 2,
+    "root_wait_seconds": 2
+  }
+}

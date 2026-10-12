@@ -879,3 +879,7 @@ Opt-in read-only ancestry witness added. Group-only control misses finite setsid
 ## 2026-10-11 — observer qualification failure accounting
 
 Native observer fails live-root read; existing cleanup signal denied. Both failures retained, no bypass or retry. Production exception path now always attempts bounded root wait and preserves original failure with cleanup notes; independent controlled denial and clean-root checks pass all 57 bytes/ten resealed faults. [Scope](docs/reverse-engineering/2026-10-11-compiler-qualification-cleanup.md). Native observer/cold build qualification remains open.
+
+## 2026-10-11 — stable-phase observer diagnosis
+
+Four stable owned snapshots match independent parent/group/dyld paths; acknowledged child Popen/runtime PID agree, exit 0 and marker bytes pass. Thirteen resealed faults reject wrong identity/availability. [Scope](docs/reverse-engineering/2026-10-11-observer-stable-diagnostic.md). Earlier startup failure and signal permission remain unresolved; no compiler retry or signals.

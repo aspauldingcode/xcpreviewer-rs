@@ -1,0 +1,3 @@
+import ctypes,os,pathlib,json,sys,time
+system=ctypes.CDLL('/usr/lib/libSystem.B.dylib');f=system._NSGetExecutablePath;f.argtypes=[ctypes.c_void_p,ctypes.POINTER(ctypes.c_uint32)];f.restype=ctypes.c_int;n=ctypes.c_uint32(4096);b=ctypes.create_string_buffer(n.value);assert f(b,ctypes.byref(n))==0
+row={'pid':os.getpid(),'parent':os.getppid(),'group':os.getpgrp(),'uid':os.getuid(),'euid':os.geteuid(),'executable':str(pathlib.Path(os.fsdecode(b.value)).resolve())};folder=pathlib.Path(sys.argv[1]);(folder/'ready.json').write_text(json.dumps(row)+'\n');time.sleep(1);(folder/'finished.bin').write_bytes(b'finished')

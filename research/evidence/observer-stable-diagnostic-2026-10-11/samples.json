@@ -1,0 +1,132 @@
+[
+  {
+    "label": "caller-0",
+    "target": 97007,
+    "expected": {
+      "pid": 97007,
+      "parent": 1750,
+      "group": 97007,
+      "uid": 503,
+      "euid": 503,
+      "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    },
+    "rows": {
+      "97009": {
+        "pid": 97009,
+        "parent": 97007,
+        "group": 97007,
+        "state": "L",
+        "identity": [
+          1791773929,
+          384241,
+          "/Users/8amps/xcpreviewer-rs/research/build/libproc-observer-aa9cd15f087d41ad8f7bbe00c4162499/owned-process-snapshot"
+        ]
+      },
+      "97007": {
+        "pid": 97007,
+        "parent": 1750,
+        "group": 97007,
+        "state": "L",
+        "identity": [
+          1791773929,
+          280180,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    },
+    "error": null,
+    "elapsed_seconds": 0.005663416999999997
+  },
+  {
+    "label": "caller-1",
+    "target": 97007,
+    "expected": {
+      "pid": 97007,
+      "parent": 1750,
+      "group": 97007,
+      "uid": 503,
+      "euid": 503,
+      "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    },
+    "rows": {
+      "97010": {
+        "pid": 97010,
+        "parent": 97007,
+        "group": 97007,
+        "state": "L",
+        "identity": [
+          1791773929,
+          440666,
+          "/Users/8amps/xcpreviewer-rs/research/build/libproc-observer-aa9cd15f087d41ad8f7bbe00c4162499/owned-process-snapshot"
+        ]
+      },
+      "97007": {
+        "pid": 97007,
+        "parent": 1750,
+        "group": 97007,
+        "state": "L",
+        "identity": [
+          1791773929,
+          280180,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    },
+    "error": null,
+    "elapsed_seconds": 0.005684042
+  },
+  {
+    "label": "child-0",
+    "target": 97011,
+    "expected": {
+      "pid": 97011,
+      "parent": 97007,
+      "group": 97011,
+      "uid": 503,
+      "euid": 503,
+      "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    },
+    "rows": {
+      "97011": {
+        "pid": 97011,
+        "parent": 97007,
+        "group": 97011,
+        "state": "L",
+        "identity": [
+          1791773929,
+          498884,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    },
+    "error": null,
+    "elapsed_seconds": 0.003960041999999997
+  },
+  {
+    "label": "child-1",
+    "target": 97011,
+    "expected": {
+      "pid": 97011,
+      "parent": 97007,
+      "group": 97011,
+      "uid": 503,
+      "euid": 503,
+      "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+    },
+    "rows": {
+      "97011": {
+        "pid": 97011,
+        "parent": 97007,
+        "group": 97011,
+        "state": "L",
+        "identity": [
+          1791773929,
+          498884,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    },
+    "error": null,
+    "elapsed_seconds": 0.005268667000000005
+  }
+]

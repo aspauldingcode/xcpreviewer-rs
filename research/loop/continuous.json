@@ -927,6 +927,16 @@
     "run_id": "20261011T051314Z-primary-live-wasm-swap-037dbb3f",
     "scientific_delivery_review": "pending"
   },
+  "observer_stable_diagnostic_checkpoint": {
+    "budget": "One finitechild plus4observerhelpers=5subprocesses; helper2sec,child1sec,ready2sec,wait2sec; no signals.",
+    "classification": "Four stable-phase owned libproc snapshots match independent parent/group/dyld identity; current child Popen/runtime PID agree",
+    "evidence": "research/evidence/observer-stable-diagnostic-2026-10-11",
+    "manifest_sha256": "670858535c2725ab9ceca4d902486ddbe729037e805a73726d831ab777cb7a7b",
+    "milestones_complete": false,
+    "next_wake_hint": "Stable-phase backend currently works. Next bounded readiness/exec-window discrimination or explicitly gated callback, retaining initial missing reads. Do not repeat unchanged full compiler failure or infer group signal permission; generic startup/nativepostroot/coldbuild remain unqualified. Preserve staged user backend.",
+    "result": "Stable caller2 and acknowledgedchild2 reads pass;birth/pathrepeat, actualchildexit0/marker8;13resealedfaults. Earlierstartup OSError/EPERM cause unresolved; nativecompilerobserverqualificationfalse.",
+    "started_at": "2026-10-12T03:03:13.358796+00:00"
+  },
   "observer_terminal_checkpoint": {
     "canonical_checks": 38,
     "clean_archive_tests": 40,
