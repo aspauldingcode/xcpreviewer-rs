@@ -1034,3 +1034,7 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-12: native raw-output accounting
 
 [Actual owned controls](docs/reverse-engineering/2026-10-12-native-raw-output.md) verify Unicode/invalid/mixed raw counts and hashes through production supervisor cancellation.4actualparentwait43/childwait42,32exactpeerbytes;22resealedfaults. Text expansion stays distinct from original byte counts. No Canvas or unseen-escape claim; both milestones open.
+
+### 2026-10-12: native failure versus cleanup acceptance
+
+[Actual owned controls](docs/reverse-engineering/2026-10-12-native-failure-wait.md) reject normal root43 job exits despite drained receipts; root0 controls resolve.4actualchildwait42/raw10752,32exactpeerbytes,zeroabortrequests;19resealedfaults. Known children finish before roots; root-first failure remains distinct. Both milestones open.

@@ -1,0 +1,22 @@
+#!/Users/8amps/xcpreviewer-rs/research/venv/bin/python
+import os,sys,json,time,threading,subprocess,hashlib
+from pathlib import Path
+root=Path(sys.argv[-2]);readfd,writefd=os.pipe()
+anchor=subprocess.Popen([sys.executable]+sys.argv[1:],stdin=subprocess.PIPE,pass_fds=(3,writefd),preexec_fn=lambda:os.dup2(writefd,3))
+os.close(writefd)
+(root/'anchor-pid.json').write_text(json.dumps({'anchor_pid':anchor.pid,'proxy_pid':os.getpid(),'proxy_group':os.getpgrp()}))
+def forward():
+ while True:
+  data=os.read(0,64)
+  if not data:return
+  anchor.stdin.write(data);anchor.stdin.flush()
+threading.Thread(target=forward,daemon=True).start()
+corrupted=False
+with os.fdopen(readfd,'rb',buffering=0) as stream:
+ while True:
+  line=stream.readline()
+  if not line:break
+  value=json.loads(line)
+  if value.get('kind')=='complete':(root/'underlying-complete.json').write_text(json.dumps(value))
+  os.write(3,line)
+while True:time.sleep(3600)

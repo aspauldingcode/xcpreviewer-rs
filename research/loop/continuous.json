@@ -961,6 +961,32 @@
     "result": "Two native waits exit 0; hidden and visible non-key hosts expose AXGroup only; zero actions; 32768 complete red bytes including 216 padding and 31328 tail; ten resealed faults; zero owned application windows.",
     "started_at": "2026-10-11T21:08:44.873471+00:00"
   },
+  "native_failure_wait_checkpoint": {
+    "classification": "4actualowned root nonzero/zero exit after knownchildwait; job/cleanup acceptance separate",
+    "evidence": "research/evidence/native-failure-wait-2026-10-12",
+    "manifest_sha256": "d6d7bbe09f9d4f1d926764224808affd11433025dffc4a96f9d60d3b8bd9989e",
+    "milestones_complete": false,
+    "next_wake_hint": "Root-before-known-child normal failure with independent owned child termination evidence; missingpublicrow is not reaped. Canvasrequiresapprovedbridge restoration.",
+    "result": {
+      "child_wait_codes": [
+        42,
+        42,
+        42,
+        42
+      ],
+      "controlled_peer_bytes": 32,
+      "failure_accepted_as_success": false,
+      "native_controls": 4,
+      "private_abort_requests": 0,
+      "root_wait_codes": [
+        43,
+        43,
+        0,
+        0
+      ]
+    },
+    "retained_failure": "Expected root43 job rejections retained with verified drained receipts; no unexpected producer failure."
+  },
   "native_observed_state_checkpoint": {
     "budget": "4producers incl2compile+2native;60seccompile/15secnative/alarm12;no deadlineextension",
     "classification": "Native external-model mutation immediate;renderer recreation and model replacement distinguished",
