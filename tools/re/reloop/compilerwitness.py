@@ -17,6 +17,7 @@ class CompilerWitness:
                 or row['state'] not in ['L','Z']):raise ValueError('Invalid compiler lifetime identity')
             if pid in self.known and tuple(identity)!=self.known[pid]:
                 if pid not in roots or tuple(identity[:2])!=self.known[pid][:2]:raise RuntimeError('Compiler observed lifetime identity changed')
+        if not set(roots)<=rows.keys():raise RuntimeError('Compiler active root missing from observation')
         owned={pid for pid in roots if pid in rows}
         owned.update(pid for pid,identity in self.known.items() if pid in rows and tuple(rows[pid]['identity'])==identity)
         while True:

@@ -1,0 +1,11 @@
+# Explicit compiler observer active-root coverage
+
+The optional compiler observer previously accepted an empty or unrelated-only snapshot while a caller explicitly requested its running root, provided that root had been seen earlier. A deterministic callback sequence falsifies active-root coverage: preflight empty, root observed, running-root snapshot omitted, final empty. The old witness admits; the changed witness rejects the third sample with `Compiler active root missing from observation`.
+
+`CompilerWitness.sample` now requires every requested root in the validated snapshot before committing identities. Empty preflight and final samples remain valid. A race in which the root exits between polling and sampling may now conservatively reject; no automatic delay, alternate observation, or permission workaround is introduced. The existing public libproc callback already performs its own live-root check; this change hardens the explicit callback contract for other adapters.
+
+Evidence: `research/evidence/compiler-observer-completeness-2026-10-11`. Six source controls compare omitted, unrelated-only, and complete snapshots before/after. The independent reader checks all fields and seven resealed faults. Tests cover multiple requested roots and the actual `run_compiler` exception/reap path using a fake process and intercepted signal function. No native process launched or signalled; the simulated cleanup call is not native permission evidence.
+
+The earlier ready-gated native post-root result remains frozen and hash-pinned in its historical test. This implementation does not qualify generic startup, callback wall-clock bounds, real LLVM observer admission, missed detached children, or native Canvas transport. A callback may still omit a known descendant during final admission; rejecting that ambiguity requires an explicit absence/liveness contract rather than treating missing rows as proof of death. Both milestones remain open.
+
+Next: design a bounded typed absence/liveness result for known descendants and independently falsify omitted-final versus verified-retired cases; preserve distinction from incomplete process inventory. Do not rerun the ready-gated pair unchanged.

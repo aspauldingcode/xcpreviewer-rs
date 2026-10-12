@@ -1,0 +1,80 @@
+{
+  "omitted": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 4,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Compiler active root missing from observation",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    }
+  },
+  "unrelated": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 4,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Compiler active root missing from observation",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    }
+  },
+  "complete": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 4,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    },
+    "after": {
+      "accepted": true,
+      "error": null,
+      "samples": 4,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    }
+  }
+}

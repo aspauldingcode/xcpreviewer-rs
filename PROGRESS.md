@@ -887,3 +887,8 @@ Four stable owned snapshots match independent parent/group/dyld paths; acknowled
 ## 2026-10-11 — native ready-gated ancestry admission
 
 Actual root 0 is rejected while observed same-identity detached child remains live after reparenting; clean ready root admits. Known child self-exits and bounded retirement read sees no live lifetime. All 76 retained bytes/fourteen resealed faults pass; no destructive signals. [Scope](docs/reverse-engineering/2026-10-11-observer-ready-admission.md). Explicit owned readiness only; generic startup/LLVM observer/Canvas remain open.
+
+
+### 2026-10-11 explicit observer active-root coverage
+
+Fixed optional compiler witness accepting omitted/unrelated-only active-root snapshots after prior observation. Six deterministic source controls and seven resealed faults; fake process verifies exception cleanup/reap without native launch or signals. Historical ready-gated native evidence stays frozen. Final known-descendant absence, generic startup, LLVM observer and Canvas gates remain open. See docs/reverse-engineering/2026-10-11-compiler-observer-completeness.md.

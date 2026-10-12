@@ -5,7 +5,7 @@ s=importlib.util.spec_from_file_location('ready_reader',Path(__file__).with_name
 class ObserverReadyAdmissionTests(unittest.TestCase):
  def test_seal_implementation_and_fixture(self):
   e=ROOT/'research/evidence/observer-ready-admission-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(reader.verify(e)['ready_gated_post_root_rejection_verified']);self.assertEqual((ROOT/'tools/re/fixtures/ObserverReadyAdmission/emitter.py').read_bytes(),(e/'emitter.py').read_bytes())
-  for name in ['sourcecache','compilerwitness']:self.assertEqual((ROOT/'tools/re/reloop'/(name+'.py')).read_bytes(),(e/(name+'.py')).read_bytes())
+  for name,digest in {'sourcecache': '3f79b2d298ee891151b451c9cc1922247e576411becc349fd48eca3473aed14d', 'compilerwitness': '07c1e592eb00f63057425db88277a208dbcb4c7d34bfccdcff38f16fb628e0c2'}.items():self.assertEqual(hashlib.sha256((e/(name+'.py')).read_bytes()).hexdigest(),digest)
  def test_resealed_faults(self):
   for fault in ['root-exit','accepted','old-error','clean','ready','birth','parent','group','zombie','signal','heartbeat','retirement','missing-final','path']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:
