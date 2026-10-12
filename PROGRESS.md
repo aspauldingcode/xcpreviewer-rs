@@ -819,3 +819,7 @@ Real LLVM stages under changed Popen/session boundary exit0 with owned group IDs
 ## 2026-10-11 — verified completed-research adoption
 
 Default live-swap binding now reuses its existing registered runner. New explicit anchored adoption validates current task scope, prerequisites and a fresh frozen-run verifier before idempotent research acceptance. Matching canonical run passes all88 declared checks; default graph has no ready candidates, while delivery review and both milestones remain open. API rejection controls and nine resealed false-promotion faults pass. [Scope and next prerequisites](docs/reverse-engineering/2026-10-11-graph-adoption.md). No corpus producers rerun; unrelated staged work preserved.
+
+## 2026-10-11 — full-allocation native handoff failures
+
+Audited owned CPU Mach import-error and timeout controls now compare full IOSurface allocations, including previously unchecked tail. Four snapshots match 65,536 bytes, including 2,160 padding and 60,928 tail bytes; explicit release/owned timeout peer status and local name removal verified. Twelve resealed faults. [Scope](docs/reverse-engineering/2026-10-11-surface-full-failure.md). R1 physical reclamation and native Canvas transport remain open. Independent native work remains available despite empty default graph frontier.

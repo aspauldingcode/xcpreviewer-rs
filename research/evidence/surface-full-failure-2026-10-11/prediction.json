@@ -1,0 +1,16 @@
+{
+  "scope": "Owned CPU IOSurface audited Mach failure handoffs; full allocation including unused tail, not physical reclamation or native Canvas wire",
+  "input": {
+    "width": 17,
+    "height": 9,
+    "seed": 49
+  },
+  "prediction": "Imported and retained allocations preserve independently declared active BGRA formula with alpha255 and all A5 row padding/unused tail through explicit import error and owned receiver timeout termination. Parent has one retained send reference and removes owned resource/peer/rendezvous names.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "batch_seconds": 15,
+    "helper_alarm_seconds": 12,
+    "surface_limit_bytes": 65536
+  }
+}

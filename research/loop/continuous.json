@@ -2629,6 +2629,16 @@
     "result": "4 compiler waits0/no timeout/no diagnostics,8 expressions agree. No runtime fix warranted;7 resealed semantic faults/current lowerer regressions. REA compiler/server identities retained and target closed.",
     "started_at": "2026-10-11T20:08:27.528862+00:00"
   },
+  "surface_full_failure_checkpoint": {
+    "budget": "Four processes including compile,parent,two peers;compile60sec,batch15sec,alarm12sec,Machwait3sec/timeout250ms. Resumed retained results without new native acquisition.",
+    "classification": "Native full allocation failure/timeout handoffs and local release accounting verified",
+    "evidence": "research/evidence/surface-full-failure-2026-10-11",
+    "manifest_sha256": "e6d6c1cb5bac06343c547dcfe0b633908b43ef900b511c8a2c03d9b85f332a72",
+    "milestones_complete": false,
+    "next_wake_hint": "Independent native allocation/release work remains possible even with no default ready graph candidate. Skip completed full-tail fault controls. Select discriminating R1/R2 or capture prerequisite gap; physical reclamation, GPU/Canvas semantics remain open; bridge/display/browser blockers unchanged.",
+    "result": "One batch/two distinct receivers: explicit import-error exit42 and owned timeout SIGKILL; parent one retained send ref then owned names removed. Four full16384-byte allocations match65536 bytes incl2160padding/60928tail; twelve resealed faults. Physical reclamation/Canvas wire unaccepted.",
+    "started_at": "2026-10-12T00:17:17.140019+00:00"
+  },
   "surface_queued_drop_checkpoint": {
     "classification": "finite native queued-before-import failure supported; delivery review pending",
     "evidence": "research/evidence/surface-queued-drop-2026-10-11",
