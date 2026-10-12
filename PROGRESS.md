@@ -987,3 +987,8 @@ Sixactual builder/source-loop/V8 sequences with interceptedcompiler rejectgen2,r
 ### 2026-10-12 failure record snapshot
 
 Failure records JSONsnapshotted before caller mutation;cycle/BigInt/throwing getter produce boundedrecord_error without maskingoriginalError.10actualNode controls,10sources2020bytes,15faults,zero actualcompilerjobs;recordbytequota remains open. See docs/reverse-engineering/2026-10-12-failure-record-snapshot.md.
+
+
+### 2026-10-12 retained failure record field cap
+
+Serialized failure record field admits≤512KiB;oversize omits with originalbytecount/record_error whilecallerError/fullrecord preserved.10actualNode boundary/emoji/escapedNUL controls,10sources2020bytes,16faults,zero actualcompilerjobs. Initialheap/globalquotas remain separate. See docs/reverse-engineering/2026-10-12-failure-record-size.md.

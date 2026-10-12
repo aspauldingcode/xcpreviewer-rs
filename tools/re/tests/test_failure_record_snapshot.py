@@ -4,7 +4,7 @@ from verify_failure_record_snapshot import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/failure-record-snapshot-2026-10-12'
 class FailureRecordSnapshotTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['snapshot_preserved']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/failure_record_snapshot_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['snapshot_preserved']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'7a505786f730453fe447ba5e43fed765bbdff93c52fecb6b3d4012c4434aa08d');self.assertEqual((ROOT/'tools/re/tests/failure_record_snapshot_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','getter','snapshot','before','read','diagnostic','metadata','budget','files','source','disk','scope','wait','jobs','prediction']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

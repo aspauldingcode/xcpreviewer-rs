@@ -1,0 +1,15 @@
+{
+  "limit_serialized_utf8_bytes": 524288,
+  "cases": [
+    "ascii-under",
+    "ascii-exact",
+    "ascii-over",
+    "emoji-over",
+    "control-escaped"
+  ],
+  "oversize_record_omitted": true,
+  "original_error_preserved": true,
+  "native_jobs": 0,
+  "budget_seconds": 12,
+  "scope": "Owned injected JSON records; retained failure record field only, initial stringify and total heap/disk separate"
+}
