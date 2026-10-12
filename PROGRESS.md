@@ -859,3 +859,7 @@ Audited peer read-only lock succeeds while parent write access stays held. Remot
 ## 2026-10-11 — owned stream-close failure cleanup
 
 New fixture retires FILE pointer before fclose. Owned ENOSPC close callback runs once, closes fd, releases CF, suppresses completion and exits 42; parent records bounded Mach timeout and cleanup. All 20 allocations/327,680 bytes compare; twenty-eight resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-stream-close.md). Historical evidence preserved; filesystem generality and actual Canvas errors remain open.
+
+## 2026-10-11 — compiler success descendant counterexample
+
+Actual run_compiler returns root 0 while owned finite child grows heartbeat 1→7→24 bytes. One qualified control, initial harness failure retained, four producers total and no kill. All 56 controlled bytes and twelve resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-success-descendant.md). Normal-success process-tree quiescence remains build acceptance work; no published artifact corruption claimed.

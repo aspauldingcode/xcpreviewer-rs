@@ -94,6 +94,16 @@
     "result": "Four Python emitters: baseline stdout/stderr 8192 bytes/exit0; fixed 4096 bytes/SIGXFSZ -25/rejected; parent limits unchanged; 24576 complete diagnostic bytes and seven resealed faults.",
     "started_at": "2026-10-11T21:45:52.738952+00:00"
   },
+  "compiler_success_descendant_checkpoint": {
+    "budget": "Four producers two root/child pairs including failed harness;3sec run,24ticks50ms,3sec finishbound; no kill.",
+    "classification": "Actual compiler root returns0 while finite owned descendant continues writing; normal success quiescence falsified",
+    "evidence": "research/evidence/compiler-success-descendant-2026-10-11",
+    "manifest_sha256": "fdeb1ea6146620340d79c5450dacfd19b3eb1cc7f56c3563537437d2bb9afad6",
+    "milestones_complete": false,
+    "next_wake_hint": "Implement identity-aware normal-success descendant admission using reviewed controller tracking; preserve unrelated staged observer work. Do not equate root0/per-filecaps/timeoutgroupkill with quiescence or use group presence alone to kill reused/user processes. Actual publication/races/nonPOSIX remain open.",
+    "result": "Qualified root returns0 at0.156sec heartbeat1 then7 thenfinal24;56controlledbytes;12resealedfaults. First supervisor CompletedProcess unpack failure retained, not secondsuccess. Four producers total; both children finite selfexit.",
+    "started_at": "2026-10-12T02:03:00.090864+00:00"
+  },
   "compiler_tree_checkpoint": {
     "budget": "Four producer processes; timeout0.4sec, child lifetime1.3sec,parent2sec,reap2sec,post samples80ms.",
     "classification": "Compiler timeout same-group child output persists in baseline; isolated-group cleanup fixed",

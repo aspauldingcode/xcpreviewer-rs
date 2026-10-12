@@ -1,0 +1,15 @@
+{
+  "scope": "Actual sourcecache run_compiler normal exit with a finite owned same-group child writing controlled bytes; not artifact publication or arbitrary compiler tree",
+  "alternatives": [
+    "run_compiler success waits for owned child quiescence",
+    "run_compiler returns root0 while child continues writing"
+  ],
+  "limits": {
+    "producer_processes": 4,
+    "run_compiler_timeout_seconds": 3,
+    "child_ticks": 24,
+    "child_tick_seconds": 0.05,
+    "finish_wait_seconds": 3
+  },
+  "cleanup": "Children self-terminate after finite24ticks; no process kill and no user process access."
+}
