@@ -1,0 +1,19 @@
+{
+  "scope": "Same-task original CF owner, Mach-import alias and numeric-global-lookup alias; explicit use count and balanced cross-alias decrement",
+  "prediction": "If per-process state shared across these aliases, all aliases observe0,1,2,1 then1 after first alias release,0 after final balanced decrement and0 after originalrelease. Distinct CF wrappers versus same wrapper measured separately by equality booleans. Full bytes stayseed49.",
+  "limits": {
+    "producer_processes": 3,
+    "compile_seconds": 60,
+    "helper_seconds": 15,
+    "alarm_seconds": 10
+  },
+  "header_provenance": {
+    "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceRef.h",
+    "sha256": "8ee2890f7a5392ac2040c2e0b3d3cb773cdebe3627ad3452881fc7d20a759bd5",
+    "lines": [
+      410,
+      427
+    ],
+    "summary": "SDK declares local per-process usage counter and system-wide in-use query; source declaration is distinct from observed runtime traces."
+  }
+}

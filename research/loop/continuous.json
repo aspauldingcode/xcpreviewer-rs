@@ -2650,6 +2650,16 @@
     "result": "4 compiler waits0/no timeout/no diagnostics,8 expressions agree. No runtime fix warranted;7 resealed semantic faults/current lowerer regressions. REA compiler/server identities retained and target closed.",
     "started_at": "2026-10-11T20:08:27.528862+00:00"
   },
+  "surface_alias_use_checkpoint": {
+    "budget": "Three producers:compile,twohelpers;compile60sec,helper15sec,alarm10sec.",
+    "classification": "Three distinct CF wrappers share per-process IOSurface explicit use count across balanced cross-alias calls",
+    "evidence": "research/evidence/surface-alias-use-2026-10-11",
+    "manifest_sha256": "be5fc8e52f69d8d754817afce5e655b918977f078faac4fdd675390c4d7abc3f",
+    "milestones_complete": false,
+    "next_wake_hint": "Check changed native capture prerequisite once without restart. Otherwise review seed/lock coverage; if absent test public IOSurface lock/content-seed changes against full-byte edits, keeping public seed separate from Canvas generation. Skip completed alias/use-count controls.",
+    "result": "Two fresh helpers same7-stage trace0/1/2/1/1/0/0; wrapperrelease retains remaining contribution.34allocations557056bytes including18360padding/517888tail;17resealedfaults. Physical reclaim/Canvas wire unaccepted.",
+    "started_at": "2026-10-12T01:11:57.196813+00:00"
+  },
   "surface_full_failure_checkpoint": {
     "budget": "Four processes including compile,parent,two peers;compile60sec,batch15sec,alarm12sec,Machwait3sec/timeout250ms. Resumed retained results without new native acquisition.",
     "classification": "Native full allocation failure/timeout handoffs and local release accounting verified",

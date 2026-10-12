@@ -839,3 +839,7 @@ Audited remote CF alias preserves original after parent CF/right release and pee
 ## 2026-10-11 — cross-task use-count cleanup
 
 Remote explicit use count makes global in-use true while parent local count is zero. Clean decrement and owned peer SIGKILL both preserve parent contribution; final parent decrement clears global in-use. All 15 allocations compare 245,760 bytes including padding/tail; nineteen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-remote-surface-use.md). Physical reclamation and Canvas completion remain open; approved capture broker socket still absent.
+
+## 2026-10-11 — same-task alias use-count sharing
+
+Three distinct CF wrappers share usage state: cross-alias increments/decrements yield repeated 0/1/2/1/1/0/0 trace; wrapper release preserves remaining contribution. All 34 full allocations compare 557,056 bytes including padding/tail; seventeen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-alias-use.md). Physical reclaim and Canvas generations remain open.
