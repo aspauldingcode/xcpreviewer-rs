@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+    "-isysroot",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-framework",
+    "CoreFoundation",
+    "-framework",
+    "IOSurface",
+    "-lbsm",
+    "/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/remote_alias_probe.c",
+    "-o",
+    "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-alias"
+  ],
+  "code": 0,
+  "timeout": false,
+  "stdout": "",
+  "stderr": "In file included from /Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/remote_alias_probe.c:1:\nIn file included from /Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/reuse_primitives.c:2:\n/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/surface_ipc_probe.c:188:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  188 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/remote_alias_probe.c:1:\nIn file included from /Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/reuse_primitives.c:2:\n/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/surface_ipc_probe.c:244:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  244 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail(\"rendezvous-register\",status);goto done;}registered=1;\n      |            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/remote_alias_probe.c:21:156: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n   21 |  if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox) || mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND) || bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |                                                                                                                                                            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/remote_alias_probe.c:1:\n/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/reuse_primitives.c:24:17: warning: unused function 'global_lookup_id' [-Wunused-function]\n   24 | static uint32_t global_lookup_id(uint32_t id) {\n      |                 ^~~~~~~~~~~~~~~~\n/Users/8amps/xcpreviewer-rs/research/evidence/remote-surface-alias-2026-10-11/reuse_primitives.c:29:12: warning: unused function 'reuse_peer' [-Wunused-function]\n   29 | static int reuse_peer(const char *service,pid_t parent,const char *mode,const char *folder) {\n      |            ^~~~~~~~~~\n5 warnings generated.\n"
+}

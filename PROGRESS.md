@@ -831,3 +831,7 @@ Reused first handle sees updated image and generation-changing tail marker; sepa
 ## 2026-10-11 — stale global surface ID contrast
 
 Two released controls show IOSurfaceLookup(old_id) resolving replacement seed50 image/tail after old ID disappearance; held Mach right preserves original seed49 through 64 owned creations. All 73 allocations compare 1,196,032 bytes including row padding and unused tail; fourteen resealed faults pass. Explicit right cleanup and bounded lookup follow-up observed. [Scope](docs/reverse-engineering/2026-10-11-surface-global-id.md). Global IDs are not lifetime/frame versions; physical reclamation and native Canvas wire remain open.
+
+## 2026-10-11 — remote CF alias release contrast
+
+Audited remote CF alias preserves original after parent CF/right release and peer resource-name removal through 64 owned creations. Clean CF release and owned peer SIGKILL each yield null global lookup then numeric-ID recurrence resolving replacement bytes. All 140 full allocations compare 2,293,760 bytes including padding/tail; seventeen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-remote-surface-alias.md). Physical reclamation and Canvas protocol remain open.

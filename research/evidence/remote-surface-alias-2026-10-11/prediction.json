@@ -1,0 +1,11 @@
+{
+  "scope": "Owned audited cross-task CF alias after both explicit resource send names/parent CF owner drop; clean release versus owned SIGKILL",
+  "prediction": "Remote CF alias remains readable old49 after64 parent creations and explicit parent ownership removal. Original ID does not recur while alias retained. After clean CF release or peer process teardown, lookup may disappear and old numericID may resolve replacement50 in bounded64 creations. Global lookup access is observed separately; absence alone does not prove destruction.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "helper_alarm_seconds": 12,
+    "creation_bound_per_phase": 64
+  }
+}
