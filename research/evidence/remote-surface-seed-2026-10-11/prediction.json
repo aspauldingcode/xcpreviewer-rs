@@ -1,0 +1,16 @@
+{
+  "scope": "Audited remote CF alias sees seed and full bytes during parent held write-lock interval; remote read-only lock may succeed or block",
+  "alternatives": [
+    "Remote seed visible by parent write-lock return while bytes still old; read-only lock returns before parent unlock.",
+    "Remote seed/bytes visibility requires parent unlock.",
+    "Read-only lock blocks until write unlock; bounded parent wait fails and cleanup retains failure."
+  ],
+  "ordering": "Parent pauses at audited Mach acknowledgements before edits/after edits before unlock; receiver copies only while parent awaits its acknowledgement. No simultaneous writes.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "batch_seconds": 15,
+    "alarm_seconds": 12,
+    "mach_wait_seconds": 3
+  }
+}

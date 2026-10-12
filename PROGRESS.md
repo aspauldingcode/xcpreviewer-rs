@@ -851,3 +851,7 @@ Write lock already returns next seed; no-op write changes seed without byte chan
 ## 2026-10-11 — seed visibility inside CPU lock
 
 Both distinct same-task aliases observe advanced seed before content edit or unlock; full in-lock before/after bytes discriminate edit timing. All 52 allocations compare 851,968 bytes; twenty-three resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-seed-timing.md). Cross-task visibility, synchronization and Canvas completion remain open.
+
+## 2026-10-11 — remote seed/read-lock visibility
+
+Audited peer read-only lock succeeds while parent write access stays held. Remote seed 2 precedes edit and accompanies both old and changed bytes before unlock. Two peer controls compare all 20 allocations/327,680 bytes; twenty-two resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-remote-surface-seed.md). Controlled parent pauses preserve distinct concurrency/GPU/Canvas completion unknowns.

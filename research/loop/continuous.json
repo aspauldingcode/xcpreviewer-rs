@@ -2372,6 +2372,16 @@
     "result": "Two contrasts each preserve seed49 through64 creations; postpeer100ms lookupnull then first replacement/stale numeric lookup seed50.140fullallocations/2293760bytes including75600padding/2132480tail; seventeen resealed faults. Physical reclaim/Canvas wire unaccepted.",
     "started_at": "2026-10-12T00:56:35.804255+00:00"
   },
+  "remote_surface_seed_checkpoint": {
+    "budget": "Four producers:compile,parent,twopeers;compile60sec,batch15sec,alarm12sec,Mach3sec.",
+    "classification": "Audited remote read-only access succeeds inside parent write interval; advanced seed visible before bytes change and unchanged across controlled edits",
+    "evidence": "research/evidence/remote-surface-seed-2026-10-11",
+    "manifest_sha256": "aa0c48d602876fe1dc09a305a0ef84dda0ef5ed6053e15fb3a15bb10e7a16a5d",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed remote seed/read-lock contrast. Capture bridge still requires restoration; do not restart. Select demanded independent synchronization or portable gate. Before file-I/O fault injection fix peer fclose error path (current acquisition successful closure only); retain existing source/evidence unchanged.",
+    "result": "Two peers repeat [1,2,2,2,3] metadata and full bytes;20allocations327680bytes including10800padding/304640tail;22resealedfaults. Parent pauses during reads; no arbitrary racing/GPU/Canvas completion claim.",
+    "started_at": "2026-10-12T01:42:32.580931+00:00"
+  },
   "remote_surface_use_checkpoint": {
     "bridge_prerequisite": "Approved broker socket absent; restoration required; no automatic restart",
     "budget": "Four producers:compile,parent,two peers;compile60sec,batch15sec,alarm12sec,Mach3sec.",

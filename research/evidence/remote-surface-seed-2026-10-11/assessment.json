@@ -1,0 +1,16 @@
+{
+  "scope": "Audited remote seed/read-only lock and bytes during controlled parent write interval; no simultaneous writers",
+  "producer_processes": 4,
+  "allocations": 20,
+  "full_bytes": 327680,
+  "padding_bytes": 10800,
+  "tail_bytes": 304640,
+  "held_write_read_controls": 4,
+  "classification": "Remote seed advances before parent edit; peer read-only lock succeeds before parent unlock and observes edited bytes at same seed",
+  "canvas_completion": false,
+  "gpu_synchronization": false,
+  "arbitrary_concurrency": false,
+  "milestones_complete": false,
+  "bridge_socket_exists": false,
+  "bridge_restart": false
+}
