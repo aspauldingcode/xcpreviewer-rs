@@ -1,0 +1,33 @@
+{
+  "modes": [
+    "failure-0",
+    "failure-1",
+    "success-0",
+    "success-1"
+  ],
+  "root_codes": [
+    43,
+    43,
+    0,
+    0
+  ],
+  "child_code": 42,
+  "peer_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "native_controls": 4,
+  "outer_seconds": 15,
+  "job_milliseconds": 3000,
+  "watcher_seconds": 4,
+  "watcher_outer_seconds": 5,
+  "private_abort": false,
+  "child_reaped_qualified": false,
+  "native_canvas_qualified": false
+}

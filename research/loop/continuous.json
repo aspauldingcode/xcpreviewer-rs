@@ -2743,6 +2743,33 @@
     "result": "Parent local[0,1,1,0]/global[1,1,1,0] in clean and abrupt modes; clean peer local0/globaltrue.15allocations245760bytes including8100padding/228480tail; nineteen resealed faults. Physical reclamation/Canvas completion unaccepted.",
     "started_at": "2026-10-12T01:01:34.649808+00:00"
   },
+  "root_first_exit_checkpoint": {
+    "classification": "Actual root-first exit and independent kernelchildexit events; reaping explicitly unqualified",
+    "evidence": "research/evidence/root-first-exit-2026-10-12",
+    "manifest_sha256": "4d718c087765d5e2d4a504167d9e82b01ea97fe1dcf0209f6fda823a4dc841dc",
+    "milestones_complete": false,
+    "next_wake_hint": "Default-signal child vs handler contrast with kernel event/rawstatus; skip unchanged root-first handler controls. Native Canvas requires restored approvedbridge.",
+    "result": {
+      "child_reaped_qualified": false,
+      "controlled_peer_bytes": 32,
+      "kernel_child_exit_codes": [
+        42,
+        42,
+        42,
+        42
+      ],
+      "native_controls": 4,
+      "private_abort_requests": 0,
+      "root_before_child_event_order": true,
+      "root_wait_codes": [
+        43,
+        43,
+        0,
+        0
+      ]
+    },
+    "retained_failure": "Initial Darwin wait-macro rvalue build failure retained; fixed lvalue compiles.4nativecontrols pass; childreaping remains unobserved."
+  },
   "runbook": "docs/reverse-engineering/continuous-loop.md",
   "rust_completion_checkpoint": {
     "actual_completed_modules": 5,
