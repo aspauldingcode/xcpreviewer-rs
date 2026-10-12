@@ -4,7 +4,7 @@ from verify_build_deadline_validation import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/build-deadline-validation-2026-10-12'
 class BuildDeadlineValidationTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['invalid_deadline_no_new_root_verified']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/build_deadline_validation_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['invalid_deadline_no_new_root_verified']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'edf649aa54604d1f30550f568adf22cfe9da3f88651797bb8cb43fb0ae291349');self.assertEqual((ROOT/'tools/re/tests/build_deadline_validation_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['root','before','existing','files','error','value','valid','budget','handoff','sentinel','scope','wait','prediction']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

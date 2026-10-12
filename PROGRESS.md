@@ -962,3 +962,8 @@ Fixed-id frame input changes callback/context17×9→11×5→17×9 while private
 ### 2026-10-12 builder deadline validation ordering
 
 Invalid timeout now rejects before artifact root creation.34actualNode/filesystem construction controls,14sentinels84bytes unchanged,valid50/5000/default pass,13resealedfaults,zero compilerjobs. Historical stage-budget evidence pinned independently. See docs/reverse-engineering/2026-10-12-build-deadline-validation.md.
+
+
+### 2026-10-12 build failure persistence
+
+Failure log write errors no longer mask original execution Error; separate persistence_error retained in memory.6actualNode controls with injected ENOSPC/EACCES,6sources1212bytes,15faults,zero actualcompilerjobs/oraclecalls. See docs/reverse-engineering/2026-10-12-build-failure-persistence.md.

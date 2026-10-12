@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "phase": "before",
+      "mode": "normal",
+      "caught": "Error: Owned build execution failure",
+      "originalPreserved": true,
+      "writes": 1,
+      "persisted": true,
+      "stage": "build-PFdMhB",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 0
+        }
+      },
+      "records": [],
+      "files": [
+        "failure.json",
+        "source.swift"
+      ]
+    },
+    {
+      "phase": "before",
+      "mode": "ENOSPC",
+      "caught": "Error: Owned failure log ENOSPC",
+      "originalPreserved": false,
+      "writes": 1,
+      "persisted": false,
+      "stage": "build-FofzWd",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 1
+        }
+      },
+      "records": [],
+      "files": [
+        "source.swift"
+      ]
+    },
+    {
+      "phase": "before",
+      "mode": "EACCES",
+      "caught": "Error: Owned failure log EACCES",
+      "originalPreserved": false,
+      "writes": 1,
+      "persisted": false,
+      "stage": "build-azkiCD",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 2
+        }
+      },
+      "records": [],
+      "files": [
+        "source.swift"
+      ]
+    },
+    {
+      "phase": "after",
+      "mode": "normal",
+      "caught": "Error: Owned build execution failure",
+      "originalPreserved": true,
+      "writes": 1,
+      "persisted": true,
+      "stage": "build-fUUHm7",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 3
+        }
+      },
+      "records": [],
+      "files": [
+        "failure.json",
+        "source.swift"
+      ]
+    },
+    {
+      "phase": "after",
+      "mode": "ENOSPC",
+      "caught": "Error: Owned build execution failure",
+      "originalPreserved": true,
+      "writes": 1,
+      "persisted": false,
+      "stage": "build-VfQEax",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 4
+        },
+        "persistence_error": "Error: Owned failure log ENOSPC"
+      },
+      "records": [],
+      "files": [
+        "source.swift"
+      ]
+    },
+    {
+      "phase": "after",
+      "mode": "EACCES",
+      "caught": "Error: Owned build execution failure",
+      "originalPreserved": true,
+      "writes": 1,
+      "persisted": false,
+      "stage": "build-oo4xjS",
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "failure": {
+        "error": "Error: Owned build execution failure",
+        "record": {
+          "scope": "Synthetic execution boundary",
+          "id": 5
+        },
+        "persistence_error": "Error: Owned failure log EACCES"
+      },
+      "records": [],
+      "files": [
+        "source.swift"
+      ]
+    }
+  ],
+  "syntheticHandoffs": 6,
+  "oracleCalls": 0,
+  "actualCompilerJobs": 0
+}

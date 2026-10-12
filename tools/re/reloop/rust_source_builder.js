@@ -26,7 +26,7 @@ function rustSourceBuilder(cfg){
   assert(execution.report.drained&&execution.report.remaining_observed===0&&execution.report.target_code===0);
   const expected=cfg.oracle(source);assert(Buffer.isBuffer(expected)&&expected.length===16384);retain(records,{receipt,execution,stage:path.basename(stage)},'record');
   return {build:{module,moduleSha256:receipt.module_sha256,sourceSha256:receipt.source_sha256,config:receipt.config,stride:cfg.stride??64},expected};
-  }catch(e){const failure={error:String(e),record:e.record||execution};retain(failures,failure,'failure');fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));throw e;}
+  }catch(e){const failure={error:String(e),record:e.record||execution};retain(failures,failure,'failure');try{fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));}catch(writeError){failure.persistence_error=String(writeError);}throw e;}
  };
  build.budget=()=>({stageLimit,stagesCreated});
  build.history=()=>({limit:historyLimit,recordsDropped,failuresDropped});

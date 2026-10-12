@@ -1,0 +1,13 @@
+{
+  "before_log_write_masks_original": true,
+  "after_original_error_preserved": true,
+  "after_persistence_diagnostic_retained": true,
+  "controls": [
+    "normal",
+    "ENOSPC",
+    "EACCES"
+  ],
+  "native_jobs": 0,
+  "budget_seconds": 8,
+  "scope": "Actual JS builder with injected execution/write failures; no real disk-full or compiler failure"
+}

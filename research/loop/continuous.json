@@ -98,6 +98,16 @@
     "retained_failure": "No acquisition failure; historical failures retained.",
     "started_at": "2026-10-12T07:20:48.536004+00:00"
   },
+  "build_failure_persistence_checkpoint": {
+    "classification": "Actual Node builder original error preservation with injected execution/log writes; no actual disk-full/native claim",
+    "evidence": "research/evidence/build-failure-persistence-2026-10-12",
+    "manifest_sha256": "c0fe65571470bfa61987d9e5ac2f15e5d798e1c6adecfdb7f61eb4ecf72ac755",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed failure-log mask. Next retained diagnostic byte-limit audit or actual receipt/artifact rejection/source-file-loop. Canvas requires approved bridge.",
+    "result": "Six controls:oldENOSPC/EACCES logerrors mask executionfailure;newpreserves identical originalError and separate persistence_error.6retainedsources1212bytes;15faults;0compilerjobs/0oraclecalls.",
+    "retained_failure": "No acquisition failure. Initial prior-reader invocation had unmatched parenthesis before execution; corrected without producer rerun. Historical native failures retained.",
+    "started_at": "2026-10-12T07:30:48.547278+00:00"
+  },
   "build_stage_budget_checkpoint": {
     "classification": "Actual JS/filesystem per-builder new-stage count; synthetic execution boundary",
     "evidence": "research/evidence/build-stage-budget-2026-10-11",
