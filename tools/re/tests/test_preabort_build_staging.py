@@ -4,7 +4,7 @@ from verify_preabort_build_staging import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/preabort-build-staging-2026-10-11'
 class PreabortBuildStagingTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['prestage_cancel_verified']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'rust-builder-after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/preabort_build_staging_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['prestage_cancel_verified']);self.assertEqual(hashlib.sha256((E/'rust-builder-after.js').read_bytes()).hexdigest(),'1f8abc8d09290e14a81012d51ef3106af401815b0873ec8e89c632cda13aabba');self.assertEqual((ROOT/'tools/re/tests/preabort_build_staging_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['spawns','errors','stages','bytes','pre-spawn','positive','records','disk-source','failure','scope','budget','missing']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

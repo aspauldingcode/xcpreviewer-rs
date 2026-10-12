@@ -5,9 +5,12 @@ const {readArtifact}=require('./bounded_artifact.js');
 const {validateRustReceipt}=require('./rust_receipt.js');
 const {runObserved}=require('./observed_compiler.js');const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 function rustSourceBuilder(cfg){
- assert.equal(typeof cfg.oracle,'function');assert(/^[a-f0-9]{64}$/.test(cfg.toolchainPin));assert(/^[a-f0-9]{64}$/.test(cfg.rustcSha));assert(path.isAbsolute(cfg.root));fs.mkdirSync(cfg.root,{recursive:true});
+ assert.equal(typeof cfg.oracle,'function');assert(/^[a-f0-9]{64}$/.test(cfg.toolchainPin));assert(/^[a-f0-9]{64}$/.test(cfg.rustcSha));assert(path.isAbsolute(cfg.root));
+ const historyLimit=cfg.historyLimit??64;assert(Number.isSafeInteger(historyLimit)&&historyLimit>=1&&historyLimit<=256,'Bounded build history limit required');
+ fs.mkdirSync(cfg.root,{recursive:true});
  const timeout=cfg.timeout??5000;assert(Number.isSafeInteger(timeout)&&timeout>=50&&timeout<=5000,'Bounded Rust build deadline required');
- const records=[],failures=[];
+ const records=[],failures=[];let recordsDropped=0,failuresDropped=0;
+ const retain=(list,value,kind)=>{if(list.length===historyLimit){list.shift();if(kind==='record')recordsDropped=Math.min(Number.MAX_SAFE_INTEGER,recordsDropped+1);else failuresDropped=Math.min(Number.MAX_SAFE_INTEGER,failuresDropped+1);}list.push(value);};
  const build=async(source,{signal})=>{
   assert(Buffer.isBuffer(source)&&source.length>0&&source.length<=4096);
   if(signal?.aborted)throw Error('Rust build aborted before staging');
@@ -19,10 +22,11 @@ function rustSourceBuilder(cfg){
   for(const name of ['contract.rs','wasm-template.rs'])sources[name]=sha(readArtifact(path.join(kernel,name)));
   validateRustReceipt(receipt,{source_sha256:sha(source),module_sha256:sha(module),rustc_sha256:cfg.rustcSha,toolchain_sha256:cfg.toolchainPin,generated_sha256:sha(readArtifact(path.join(stage,'result/module.rs'))),sources});
   assert(execution.report.drained&&execution.report.remaining_observed===0&&execution.report.target_code===0);
-  const expected=cfg.oracle(source);assert(Buffer.isBuffer(expected)&&expected.length===16384);records.push({receipt,execution,stage:path.basename(stage)});
+  const expected=cfg.oracle(source);assert(Buffer.isBuffer(expected)&&expected.length===16384);retain(records,{receipt,execution,stage:path.basename(stage)},'record');
   return {build:{module,moduleSha256:receipt.module_sha256,sourceSha256:receipt.source_sha256,config:receipt.config,stride:cfg.stride??64},expected};
-  }catch(e){const failure={error:String(e),record:e.record||execution};failures.push(failure);fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));throw e;}
+  }catch(e){const failure={error:String(e),record:e.record||execution};retain(failures,failure,'failure');fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));throw e;}
  };
+ build.history=()=>({limit:historyLimit,recordsDropped,failuresDropped});
  build.records=()=>JSON.parse(JSON.stringify(records));build.failures=()=>JSON.parse(JSON.stringify(failures));return build;
 }
 module.exports={rustSourceBuilder};

@@ -927,3 +927,8 @@ Actual live Rustc generation2 superseded through SourceFileLoop/RustSourceBuilde
 ### 2026-10-11 cancelled builder entry before staging
 
 Already-aborted Rust builder requests now reject before per-job directory/source creation. Eight actual JS/filesystem controls show4oldstages808bytes versus0fixed;2noncancelledhandoffs still reach interceptedspawn. Six sourcecopies1212exactbytes,12resealedfaults,0Nativejobs. See docs/reverse-engineering/2026-10-11-preabort-build-staging.md.
+
+
+### 2026-10-11 bounded retained build history
+
+Rust builder metadata now retains newest64 entries by default, configurable1–256, with dropped counts.280synthetic-boundary requests verify default/configured64/4, all140failureartifacts retained;invalidlimits create no root;12resealedfaults.0Nativecompilerjobs; rawdisk/per-entrybytes remain open. See docs/reverse-engineering/2026-10-11-bounded-build-history.md.

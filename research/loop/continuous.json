@@ -79,6 +79,15 @@
       "track": "host-process-observation"
     }
   ],
+  "bounded_build_history_checkpoint": {
+    "classification": "Actual builder JS/staging with synthetic execution; retained metadata entry count cap",
+    "evidence": "research/evidence/bounded-build-history-2026-10-11",
+    "manifest_sha256": "2d447b717afc442f1443115938e8d1823dfd4d76830cb7bbe1246b612bbd75c3",
+    "milestones_complete": false,
+    "next_wake_hint": "Stage disk quotas and per-entry diagnostic size remain unqualified. Bound scoped owned staging without deleting retained failures or unrelated work; skip completed synthetic history count control and unchanged libproc failures.",
+    "result": "280syntheticrequests;old65/5records+failures;new64/4newest,drop1each.140failurefilesretained;invalidlimitrootcreationprevented;12resealedfaults;0Nativecompilerjobs.",
+    "started_at": "2026-10-12T06:11:35.231912+00:00"
+  },
   "cache_input_checkpoint": {
     "budget": "4 producers inclfailure,2sec outerwait/ownedreap2sec;no actual compiler/runtime/native claim",
     "classification": "Cache index FIFO hang retained;bounded index/manifest reads fixed",
