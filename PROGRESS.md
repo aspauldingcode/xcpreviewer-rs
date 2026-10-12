@@ -977,3 +977,8 @@ Source write moved inside builder failure handler;source failures retain origina
 ### 2026-10-12 retained build diagnostic byte bound
 
 Error and persistence_error excerpts capped1024UTF8bytes at codepoint boundaries with originalbytecounts;caller originalError preserved.12actualNode injectedcontrols,12sources2424bytes,15faults,zero actualcompilerjobs. Totalrecord/diskquota remains separate. See docs/reverse-engineering/2026-10-12-build-diagnostic-bound.md.
+
+
+### 2026-10-12 receipt/artifact rejection through reload
+
+Sixactual builder/source-loop/V8 sequences with interceptedcompiler rejectgen2,retainbaseline/recovergen3,closeworkers/timers0.18wholealloc294912bytes/1512padding286848tail,16faults;0freshcompiler/nativeCanvas. See docs/reverse-engineering/2026-10-12-receipt-reload-rejection.md.

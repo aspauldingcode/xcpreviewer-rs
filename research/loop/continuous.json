@@ -1198,6 +1198,16 @@
       "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
     }
   ],
+  "receipt_reload_rejection_checkpoint": {
+    "classification": "Actual production builder/source-loop/V8 integration with intercepted compiler/copied owned artifacts; no freshcompile/nativeCanvas",
+    "evidence": "research/evidence/receipt-reload-rejection-2026-10-12",
+    "manifest_sha256": "787422a6b8c83946b9e0652be0506cd130265651a1aa321a07fd7257acae0e45",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip sixreceipt/artifact integration cases. Next failure-record mutation/byte retention or changed realcompiler/artifact boundary. ActualCanvas needs approvedbridge.",
+    "result": "Six malformedoutput sequences rejectgen2, retainA/recoverC gen3;18alloc294912bytes/1512padding286848tail,16faults,workers/timers0;18synthetic handoffs0freshcompiler.",
+    "retained_failure": "Reader rejected wrong historical sourceB pin; corrected against independent preview-session manifest hash201ed0fc..., no producer rerun. Historical native failures retained.",
+    "started_at": "2026-10-12T08:02:51.135337+00:00"
+  },
   "recent_evidence": [
     {
       "manifest_sha256": "3bd40600b17e4f045797487c34c42f4c49014269e0ab59f0ed2c4c4d47b394b4",
