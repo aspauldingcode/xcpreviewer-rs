@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/compiler-obse
 class ObserverCompletenessTests(unittest.TestCase):
  def test_seal_and_reader(self):
   self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),'882a117baa1726e0126d1a7cef41594a596f703161cbc0f0ae98c15065d37205');self.assertTrue(verify(E)['missing_active_root_rejected'])
-  self.assertEqual((ROOT/'tools/re/reloop/compilerwitness.py').read_bytes(),(E/'compilerwitness-after.py').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'compilerwitness-after.py').read_bytes()).hexdigest(),'76d7aacf9dbecde1bcd3e707ed7c9bb89fc3ce3066541a8787ead0aaa313902a')
  def test_resealed_faults(self):
   for fault in ['accepted','error','samples','identity','native','signals','startup']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

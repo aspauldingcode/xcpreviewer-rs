@@ -1,0 +1,208 @@
+{
+  "missing": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Compiler descendant retirement was not observed",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    }
+  },
+  "unrelated": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Compiler descendant retirement was not observed",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    }
+  },
+  "zombie": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    },
+    "after": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    }
+  },
+  "live": {
+    "before": {
+      "accepted": false,
+      "error": "Observed compiler descendants remain after successful root exit",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Observed compiler descendants remain after successful root exit",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    }
+  },
+  "wrong-birth": {
+    "before": {
+      "accepted": false,
+      "error": "Compiler observed lifetime identity changed",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    },
+    "after": {
+      "accepted": false,
+      "error": "Compiler observed lifetime identity changed",
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ],
+        "11": [
+          3,
+          4,
+          "/owned/child"
+        ]
+      }
+    }
+  },
+  "clean": {
+    "before": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    },
+    "after": {
+      "accepted": true,
+      "error": null,
+      "samples": 3,
+      "known": {
+        "10": [
+          1,
+          2,
+          "/owned/root"
+        ]
+      }
+    }
+  }
+}

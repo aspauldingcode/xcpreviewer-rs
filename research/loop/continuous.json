@@ -94,6 +94,15 @@
     "started_at": "2026-10-11T21:56:04.762401+00:00"
   },
   "checkpoint_rule": "Update after each work batch with evidence run IDs, acceptance changes, failure fingerprints and next actions. Re-read scheduler and GitHub for live state; this file is not a scheduler or proof of milestone completion.",
+  "compiler_descendant_retirement_checkpoint": {
+    "classification": "Source/model final-descendant admission hardening, no native execution",
+    "evidence": "research/evidence/compiler-descendant-retirement-2026-10-11",
+    "manifest_sha256": "bd414edcc4e5e66c63c901d042e6bfa59db81a0561f19d521900950db84fd7b3",
+    "milestones_complete": false,
+    "next_wake_hint": "Qualify owned matching-zombie native retirement under ready protocol before reaping; separately design typed absence evidence. Generic startup/LLVM observer/Canvas remain open.",
+    "result": "Old witness admits omitted final known child; fixed witness rejects ambiguity; observed matching Z and clean root pass.12sourcecontrols/8resealedfaults.",
+    "started_at": "2026-10-12T03:34:31.071308+00:00"
+  },
   "compiler_observed_admission_checkpoint": {
     "budget": "Four producers/two rootchildpairs plus3observer subprocesses; root3sec, observer2sec/samplemax64, child32ticks50ms,finish3sec. Exhausted rootbudget; no retry.",
     "classification": "Explicit compiler ancestry admission API implemented; group-only setsid escape falsified; native root-exec failure retained and refresh repaired by finite tests",

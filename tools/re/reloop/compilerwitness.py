@@ -29,5 +29,7 @@ class CompilerWitness:
     def admit(self, root):
         rows=self.sample(set())
         if root not in self.known:raise RuntimeError('Compiler root lifetime was not observed')
+        if any(pid!=root and pid not in rows for pid in self.known):
+            raise RuntimeError('Compiler descendant retirement was not observed')
         if any(pid!=root and pid in rows and tuple(rows[pid]['identity'])==identity and rows[pid]['state']!='Z' for pid,identity in self.known.items()):
             raise RuntimeError('Observed compiler descendants remain after successful root exit')

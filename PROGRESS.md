@@ -892,3 +892,8 @@ Actual root 0 is rejected while observed same-identity detached child remains li
 ### 2026-10-11 explicit observer active-root coverage
 
 Fixed optional compiler witness accepting omitted/unrelated-only active-root snapshots after prior observation. Six deterministic source controls and seven resealed faults; fake process verifies exception cleanup/reap without native launch or signals. Historical ready-gated native evidence stays frozen. Final known-descendant absence, generic startup, LLVM observer and Canvas gates remain open. See docs/reverse-engineering/2026-10-11-compiler-observer-completeness.md.
+
+
+### 2026-10-11 final compiler descendant retirement
+
+Fixed optional observer admitting missing final known children as implicit retirement. Twelve source controls, eight resealed faults and wrapper rejection without native signals; matching zombie row remains accepted under scoped process policy. Historical native evidence stays frozen; native zombie/absence/LLVM and Canvas acceptance remain open. See docs/reverse-engineering/2026-10-11-compiler-descendant-retirement.md.
