@@ -4,7 +4,7 @@ from verify_superseded_build_cancel import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/superseded-build-cancel-2026-10-11'
 class SupersededBuildCancelTests(unittest.TestCase):
  def test_seal_sources_and_reader(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['cooperative_supersession_cancel_verified']);self.assertEqual((ROOT/'tools/re/reloop/source_file_loop.js').read_bytes(),(E/'source-file-loop-after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/superseded_build_cancel_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['cooperative_supersession_cancel_verified']);self.assertEqual(hashlib.sha256((E/'source-file-loop-after.js').read_bytes()).hexdigest(),'ba6c57b283dc1781ff6667e3c725998f0785482b12d1a955e0bc7ef51a11eb65');self.assertEqual((ROOT/'tools/re/tests/superseded_build_cancel_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['abort','manual','old','generation','cleanup','padding','tail','prediction','native','budget','missing','error']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

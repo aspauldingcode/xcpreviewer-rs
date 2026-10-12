@@ -1,4 +1,13 @@
 {
+  "abort_close_reentry_checkpoint": {
+    "classification": "Owned actual V8/file callback reentry lifecycle fix; no native Canvas claim",
+    "evidence": "research/evidence/abort-close-reentry-2026-10-11",
+    "manifest_sha256": "27e16b965b987dabd0d982fde26239e13eaac5dcd81f6590306f4c74fe8ca626",
+    "milestones_complete": false,
+    "next_wake_hint": "Qualify actual owned cooperative build adapter cancellation with independent timeout/reap evidence. No arbitrary callback exceptions or native Canvas closure claim; libproc zombie unknown retained.",
+    "result": "Abort callback close previouslymakespollthrow Sourcehostclosed; fixed observation returnsdrain.8sequences/8allocations131072bytes,672padding127488tail,13resealedfaults;1abort2builders0workers/timers.",
+    "started_at": "2026-10-12T05:35:31.390160+00:00"
+  },
   "access_policy": {
     "approved_by_user": true,
     "mechanism": "Owned retained private Unix-socket broker",

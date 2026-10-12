@@ -912,3 +912,8 @@ Added explicit bounded birth/state diagnostic adapter. Native live and birth-mis
 ### 2026-10-11 cooperative superseded build cancellation
 
 Source loop now aborts obsolete cooperative builder on changed valid/invalid/missing input and forced refresh. Eight actual V8/file before/after controls preserve latest generation and retained frames; all16allocations/262144bytes including1344padding and254976tail pass;12resealedfaults. Final workers/timers zero. See docs/reverse-engineering/2026-10-11-superseded-build-cancel.md.
+
+
+### 2026-10-11 reentrant abort-close ordering
+
+Source observation now respects synchronous close from cooperative builder abort callback. Eight actual V8/file controls reproduce prior shutdown error and verify fixed drain,1abort2builders0workers/timers. Eight baselineallocations131072bytes including672padding127488tail compare;13resealedfaults. See docs/reverse-engineering/2026-10-11-abort-close-reentry.md.

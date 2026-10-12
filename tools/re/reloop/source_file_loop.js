@@ -53,6 +53,8 @@ class SourceFileLoop {
   this.#seen=key;this.#pending=null;
   // A changed/forced observation supersedes the active cooperative builder.
   this.#abort?.abort();
+  // Abort listeners may synchronously close the loop. Respect that closure.
+  if(this.#closed)return this.#drain;
   if(reason){this.#host.invalidate();this.#record({kind:reason});return this.#drain;}
   const ticket=this.#host.begin(source);this.#pending={source:Buffer.from(source),ticket};
   this.#record({kind:'observed',generation:ticket.generation,sourceSha256:ticket.sourceSha256});

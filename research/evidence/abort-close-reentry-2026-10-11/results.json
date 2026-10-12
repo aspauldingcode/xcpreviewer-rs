@@ -1,0 +1,322 @@
+[
+  {
+    "phase": "before",
+    "mode": "valid",
+    "observedError": "Source host closed",
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "invalid",
+    "observedError": "Source host closed",
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "missing",
+    "observedError": "Source host closed",
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "before",
+    "mode": "refresh",
+    "observedError": "Source host closed",
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "valid",
+    "observedError": null,
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "invalid",
+    "observedError": null,
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "missing",
+    "observedError": null,
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  },
+  {
+    "phase": "after",
+    "mode": "refresh",
+    "observedError": null,
+    "aborts": 1,
+    "buildCalls": 2,
+    "frameCleared": true,
+    "events": [
+      {
+        "kind": "observed",
+        "generation": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "published",
+        "generation": 1,
+        "revision": 1,
+        "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+      },
+      {
+        "kind": "observed",
+        "generation": 2,
+        "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+      },
+      {
+        "kind": "rejected",
+        "generation": 2,
+        "error": "Error: Owned abort callback closes loop"
+      }
+    ],
+    "finalStatus": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 1,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    }
+  }
+]

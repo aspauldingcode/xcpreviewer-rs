@@ -1,0 +1,19 @@
+{
+  "node": {
+    "path": "/nix/store/8cbb8r8mkaz6z7si022ks2b78qqy9sz4-nodejs-slim-24.19.0/bin/node",
+    "sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+    "version": "v24.19.0"
+  },
+  "corpus_manifest_sha256": "c53084d90de41c1e42cb8c17a38cf3b70e4fa0e6551a5937a4de7d536272e4ac",
+  "scope": "Actual owned V8 prebuilt WASM and reentrant abort-close source policy; no native Canvas",
+  "budgets": {
+    "node_seconds": 20,
+    "snapshot_bytes": 16384,
+    "control_sequences": 8
+  },
+  "dependencies": {
+    "source_revision_host.js": "9f43a5bbedf543a66e626be721c8dd386c8be34c65001251c87ebd7acf65bbc7",
+    "live_wasm_host.js": "a60785ae4278c97c650c02612407a6d042e9eb30a039f3a60d8d4b820df59fc6"
+  },
+  "private_bridge_available": false
+}
