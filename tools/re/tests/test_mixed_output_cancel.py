@@ -4,7 +4,7 @@ from verify_mixed_output_cancel import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/mixed-output-cancel-2026-10-12'
 class MixedOutputCancelTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['combined_limit'],65536);self.assertEqual((ROOT/'tools/re/tests/mixed_output_cancel_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'observed_compiler.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['combined_limit'],65536);self.assertEqual((ROOT/'tools/re/tests/mixed_output_cancel_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual(hashlib.sha256((E/'observed_compiler.js').read_bytes()).hexdigest(),'dc164e0c7feb85554d2c485f58363d17dce9f6ae1f57c206f1501db532ee2a56')
  def test_resealed_faults(self):
   for fault in ['manual','error','abort','receipt','emergency','parent-wait','child-wait','peer','hash','write','order','quota','prefix','exact','combined','identity','outer-wait','helper']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

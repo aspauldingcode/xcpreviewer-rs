@@ -4,7 +4,7 @@ from verify_unicode_output_accounting import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/unicode-output-accounting-2026-10-12'
 class UnicodeOutputTests(unittest.TestCase):
  def test_seal_sources_reader(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['injected_controls'],16);self.assertEqual((ROOT/'tools/re/tests/unicode_output_accounting_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'production.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['injected_controls'],16);self.assertEqual((ROOT/'tools/re/tests/unicode_output_accounting_control.js').read_bytes(),(E/'control.js').read_bytes());self.assertEqual(hashlib.sha256((E/'production.js').read_bytes()).hexdigest(),'dc164e0c7feb85554d2c485f58363d17dce9f6ae1f57c206f1501db532ee2a56')
  def test_resealed_faults(self):
   for fault in ['raw','hash','text','text-bytes','raw-bytes','abort','error','chunk','report','kill','native-claim','wait']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

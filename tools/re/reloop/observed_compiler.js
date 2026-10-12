@@ -47,7 +47,7 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
    }
   });
   child.on('close',(code,term)=>{try{control+=decoder.decode();}catch(e){failure ||= e;}if(control.length)failure ||= Error('Observed report truncated trailing data');clearTimeout(timer);signal?.removeEventListener('abort',abort);
-   const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,privateAbortRequested:requested,stdout:stdout.toString(),stderr:stderr.toString()};
+   const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,privateAbortRequested:requested,stdout:stdout.toString(),stderr:stderr.toString(),stdoutBytes:stdout.length,stderrBytes:stderr.length,stdoutSha256:crypto.createHash('sha256').update(stdout).digest('hex'),stderrSha256:crypto.createHash('sha256').update(stderr).digest('hex')};
    if(failure||report?.drained!==true||report.remaining_observed!==0||report.target_code!==0||term!=='SIGKILL'){const e=failure||Error('Observed cleanup unverified');e.record=record;reject(e);}else resolve(record);
   });
  });

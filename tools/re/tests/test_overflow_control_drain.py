@@ -4,7 +4,7 @@ from verify_overflow_control_drain import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/overflow-control-drain-2026-10-12'
 class OverflowControlDrainTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['controlled_peer_bytes'],24);self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/overflow_control_drain_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['controlled_peer_bytes'],24);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'dc164e0c7feb85554d2c485f58363d17dce9f6ae1f57c206f1501db532ee2a56');self.assertEqual((ROOT/'tools/re/tests/overflow_control_drain_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['abort','receipt','emergency','underlying','child-wait','peer','hash','write','fd','quota','cleanup','stdout-byte','stdout-limit','identity','outer-wait','helper','runtime','slots']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

@@ -1268,6 +1268,20 @@
       "run_id": "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
     }
   ],
+  "raw_output_accounting_checkpoint": {
+    "classification": "Production record raw counts/digests; finite injected-source evidence only",
+    "evidence": "research/evidence/raw-output-accounting-2026-10-12",
+    "manifest_sha256": "a9457eb6c3b639dae37905e819eef891658c1c2bdaf2415cd0480226ad506314",
+    "milestones_complete": false,
+    "next_wake_hint": "Discriminate repeated overflow retained vs discarded/total bytes. Native capture requires approved bridge restoration. Raw counts/digests do not prove native lifecycle.",
+    "result": {
+      "exact_input_bytes_compared": 2359380,
+      "injected_controls": 48,
+      "native_processes": 0,
+      "raw_count_digest_fields": 4
+    },
+    "retained_failure": "Expected output-limit rejections and original invalid UTF-8 text expansion retained. No unexpected producer failure."
+  },
   "receipt_reload_rejection_checkpoint": {
     "classification": "Actual production builder/source-loop/V8 integration with intercepted compiler/copied owned artifacts; no freshcompile/nativeCanvas",
     "evidence": "research/evidence/receipt-reload-rejection-2026-10-12",
