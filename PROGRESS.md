@@ -847,3 +847,7 @@ Three distinct CF wrappers share usage state: cross-alias increments/decrements 
 ## 2026-10-11 — public content seed versus full bytes
 
 Write lock already returns next seed; no-op write changes seed without byte changes. Active/padding/tail edits and exact restoration preserve resource ID and alias agreement. All 28 allocations compare 458,752 bytes; eighteen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-content-seed.md). Returned seed is not byte hash or recovered Canvas generation; internal update timing remains open.
+
+## 2026-10-11 — seed visibility inside CPU lock
+
+Both distinct same-task aliases observe advanced seed before content edit or unlock; full in-lock before/after bytes discriminate edit timing. All 52 allocations compare 851,968 bytes; twenty-three resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-seed-timing.md). Cross-task visibility, synchronization and Canvas completion remain open.

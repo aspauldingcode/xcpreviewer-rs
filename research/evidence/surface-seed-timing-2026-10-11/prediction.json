@@ -1,0 +1,15 @@
+{
+  "scope": "Same-task original/imported CF alias GetSeed while native write lock is held; owned allocation snapshots before and after byte edits",
+  "alternatives": {
+    "at_lock": "Both aliases GetSeed advance before byte edits; write lock seed already new and unlock same.",
+    "at_unlock": "GetSeed remains previous while locked despite advanced lock out-parameter; advances at unlock.",
+    "at_edit": "GetSeed changes only following direct memory edits."
+  },
+  "prediction": "Read-only remains1; no-op write tests lock/unlock independently of mutation; active/padding/tail/restore compare full bytes in-lock and after unlock. Public metadata timing is not Canvas/GPU completion.",
+  "limits": {
+    "producer_processes": 3,
+    "compile_seconds": 60,
+    "helper_seconds": 15,
+    "alarm_seconds": 10
+  }
+}

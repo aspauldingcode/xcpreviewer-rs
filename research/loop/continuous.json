@@ -2718,6 +2718,17 @@
     "result": "4 native waits0/peerexit46;two received copies coalescedname refs2;all destroy removesname, partial release/cleardescriptor refs1 then destroy removesname;196608 fullbytes,7 faults,REA identity/closed;no import/Canvas/physicalrelease claims",
     "started_at": "2026-10-11T15:56:19.532187+00:00"
   },
+  "surface_seed_timing_checkpoint": {
+    "budget": "Three producers:compile,twohelpers;60sec compile,15sec helper,10sec alarm.",
+    "classification": "Both same-task CF aliases observe advanced public seed by write-lock return, before controlled bytes change or unlock",
+    "evidence": "research/evidence/surface-seed-timing-2026-10-11",
+    "manifest_sha256": "e99a7333b9d7bad045a91b3919e0ebbd5a02a31bf4073e9c01d4d2d23e4b0be1",
+    "milestones_complete": false,
+    "next_wake_hint": "Check changed capture prerequisite once without restart. Otherwise audited remote observer seed visibility during parent held write lock; bounded Mach handshakes and explicit right/peer cleanup. Same-task advanced seed is not cross-task/GPU/Canvas completion evidence.",
+    "result": "Two fresh controls; before/after in-lock bytes isolated.52fullallocations851968bytes incl28080padding/792064tail;23resealedfaults. Scoped edit/unlock-only timing alternatives falsified; cross-task/GPU/Canvas completion unaccepted.",
+    "retained_failure": "Isolatedv2 fixture test referenced previous SurfaceContentSeed directory; corrected to SurfaceSeedTiming. Native/reader intact. Archive/index/log retained /private/tmp/surface-seed-timing-v2-*; no native rerun.",
+    "started_at": "2026-10-12T01:31:07.063619+00:00"
+  },
   "window_policy": {
     "before_next_open": true,
     "capture_preflight_enforces": true,

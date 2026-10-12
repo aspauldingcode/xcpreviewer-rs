@@ -1,0 +1,15 @@
+{
+  "scope": "Public native GetSeed through two same-task CF wrappers during held read/write lock; before/after controlled edits",
+  "producer_processes": 3,
+  "allocations": 52,
+  "full_bytes": 851968,
+  "padding_bytes": 28080,
+  "tail_bytes": 792064,
+  "classification": "Both aliases see advanced seed before edit and before unlock; no-op write also advances",
+  "cross_task_visibility": false,
+  "mutual_exclusion": false,
+  "canvas_completion": false,
+  "milestones_complete": false,
+  "bridge_socket_exists": false,
+  "bridge_restart": false
+}
