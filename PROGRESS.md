@@ -982,3 +982,8 @@ Error and persistence_error excerpts capped1024UTF8bytes at codepoint boundaries
 ### 2026-10-12 receipt/artifact rejection through reload
 
 Sixactual builder/source-loop/V8 sequences with interceptedcompiler rejectgen2,retainbaseline/recovergen3,closeworkers/timers0.18wholealloc294912bytes/1512padding286848tail,16faults;0freshcompiler/nativeCanvas. See docs/reverse-engineering/2026-10-12-receipt-reload-rejection.md.
+
+
+### 2026-10-12 failure record snapshot
+
+Failure records JSONsnapshotted before caller mutation;cycle/BigInt/throwing getter produce boundedrecord_error without maskingoriginalError.10actualNode controls,10sources2020bytes,15faults,zero actualcompilerjobs;recordbytequota remains open. See docs/reverse-engineering/2026-10-12-failure-record-snapshot.md.

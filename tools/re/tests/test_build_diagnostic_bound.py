@@ -4,7 +4,7 @@ from verify_build_diagnostic_bound import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/build-diagnostic-bound-2026-10-12'
 class BuildDiagnosticBoundTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['failure_controls'],12);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/build_diagnostic_bound_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['failure_controls'],12);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'a046fce2c6eff3ae516de5e6c2e06d8e66e092f212154336d2f5ed661116213d');self.assertEqual((ROOT/'tools/re/tests/build_diagnostic_bound_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','excerpt','boundary','count','metadata','log','before','writes','budget','source','disk','scope','wait','jobs','prediction']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

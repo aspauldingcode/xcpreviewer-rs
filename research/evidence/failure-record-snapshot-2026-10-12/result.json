@@ -1,0 +1,257 @@
+{
+  "rows": [
+    {
+      "phase": "before",
+      "mode": "mutable",
+      "stage": "build-BBh3RV",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure mutable",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure mutable",
+          "record": {
+            "scope": "Owned record",
+            "value": 2
+          }
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure mutable",
+        "record": {
+          "scope": "Owned record",
+          "value": 1
+        }
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "cycle",
+      "stage": "build-xyItsk",
+      "files": [
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure cycle",
+      "originalPreserved": true,
+      "readError": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle",
+      "failures": null,
+      "disk": null,
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "bigint",
+      "stage": "build-B8kBLw",
+      "files": [
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure bigint",
+      "originalPreserved": true,
+      "readError": "TypeError: Do not know how to serialize a BigInt",
+      "failures": null,
+      "disk": null,
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "getter",
+      "stage": "build-Pq0kcz",
+      "files": [
+        "source.swift"
+      ],
+      "caught": "Error: Owned record getter failure",
+      "originalPreserved": false,
+      "readError": null,
+      "failures": [],
+      "disk": null,
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "before",
+      "mode": "absent",
+      "stage": "build-xNdOKB",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure absent",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure absent"
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure absent"
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "mutable",
+      "stage": "build-vzdtRT",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure mutable",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure mutable",
+          "record": {
+            "scope": "Owned record",
+            "value": 1
+          }
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure mutable",
+        "record": {
+          "scope": "Owned record",
+          "value": 1
+        }
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "cycle",
+      "stage": "build-2qJqng",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure cycle",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure cycle",
+          "record_error": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle"
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure cycle",
+        "record_error": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle"
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "bigint",
+      "stage": "build-7dBQHj",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure bigint",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure bigint",
+          "record_error": "TypeError: Do not know how to serialize a BigInt"
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure bigint",
+        "record_error": "TypeError: Do not know how to serialize a BigInt"
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "getter",
+      "stage": "build-i8nKW9",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure getter",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure getter",
+          "record_error": "Error: Owned record getter failure"
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure getter",
+        "record_error": "Error: Owned record getter failure"
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    },
+    {
+      "phase": "after",
+      "mode": "absent",
+      "stage": "build-fwPNVs",
+      "files": [
+        "failure.json",
+        "source.swift"
+      ],
+      "caught": "Error: Owned execution failure absent",
+      "originalPreserved": true,
+      "readError": null,
+      "failures": [
+        {
+          "error": "Error: Owned execution failure absent"
+        }
+      ],
+      "disk": {
+        "error": "Error: Owned execution failure absent"
+      },
+      "budget": {
+        "stageLimit": 64,
+        "stagesCreated": 1
+      },
+      "records": []
+    }
+  ],
+  "syntheticHandoffs": 10,
+  "actualCompilerJobs": 0
+}

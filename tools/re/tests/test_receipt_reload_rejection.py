@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/receipt-reloa
 class ReceiptReloadRejectionTests(unittest.TestCase):
  def test_seal_reader_sources(self):
   self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['last_valid_frame_retained']);self.assertEqual((ROOT/'tools/re/tests/receipt_reload_rejection_control.js').read_bytes(),(E/'control.js').read_bytes())
-  for name in ['rust_source_builder.js','source_file_loop.js','rust_receipt.js','bounded_artifact.js','source_revision_host.js','live_wasm_host.js']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
+  self.assertEqual(hashlib.sha256((E/'rust_source_builder.js').read_bytes()).hexdigest(),'a046fce2c6eff3ae516de5e6c2e06d8e66e092f212154336d2f5ed661116213d')
+  for name in ['source_file_loop.js','rust_receipt.js','bounded_artifact.js','source_revision_host.js','live_wasm_host.js']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
  def test_resealed_faults(self):
   for fault in ['worker','busy','generation','published','oracle','handoff','budget','failure','report','stdout','baseline','pixel','padding','tail','scope','wait']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

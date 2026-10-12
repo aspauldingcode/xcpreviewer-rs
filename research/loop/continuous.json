@@ -433,6 +433,16 @@
       "status": "resolved-for-declared-build-contract"
     }
   ],
+  "failure_record_snapshot_checkpoint": {
+    "classification": "Actual builder failure-record JSONsnapshot with injectedrecords; no bytequota/native claim",
+    "evidence": "research/evidence/failure-record-snapshot-2026-10-12",
+    "manifest_sha256": "3a627bc4f43ce8317d50bfa53fc41b382e0757c5138c7033c69f9e27c08e4c6b",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip recordsnapshot controls. Next serializedrecord size cap or changed realcompiler/artifact boundary. NativeCanvas needs approvedbridge.",
+    "result": "10controls immutable snapshot1 despitecallermutation;cycle/BigInt/getter failure retainedasrecord_error;originalError preserved.10sources2020bytes,15faults,zeroactualcompilerjobs.",
+    "retained_failure": "No acquisition failure; historical failures retained.",
+    "started_at": "2026-10-12T08:11:17.621599+00:00"
+  },
   "file_diagnostics_checkpoint": {
     "clean_archive_tests": 78,
     "complete_bytes": 16384,
