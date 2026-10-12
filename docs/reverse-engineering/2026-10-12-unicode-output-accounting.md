@@ -1,0 +1,11 @@
+# Unicode compiler-output accounting discriminator
+
+Sixteen finite source controls inject stream events into the unchanged production JavaScript client, with an independent Python byte/text reader. No native supervisor, compiler or process target runs. The spawn, kill and completion events are injected; their receipt cannot establish native cleanup, release, reuse or Canvas semantics.
+
+The prediction distinguishes raw-buffer admission from text representation. Exact 65,536-byte emoji/accent inputs are admitted; 65,537-byte counterparts request cancellation. Split emoji bytes concatenate before decoding and preserve the complete scalar. A 65,536-byte all-FF input is admitted yet the saved string re-encodes to 196,608 UTF-8 bytes because each invalid byte becomes U+FFFD. An incomplete three-byte sequence becomes one replacement scalar; NUL and invalid-byte controls retain their separately predicted text. Both repetitions agree. Independent comparison covers 655,394 source input bytes, including every NUL/invalid byte.
+
+The raw quota remains effective for these finite events. The text fields do not preserve arbitrary input bytes or provide raw-byte accounting. This falsifies using Buffer.byteLength(record.stdout) as a universal raw-capture bound; previous ASCII tests remain valid within their scope. No fixed OS chunking or general decoder equivalence is claimed. Next implementation should expose retained raw-byte counts/digests (or an explicitly bounded raw representation) without treating lossy text as the original byte stream. This wake intentionally records the discriminator before changing the record schema.
+
+All 12 resealed corruption controls must fail the separate reader. Frozen source and owned raw inputs are published; no Apple binary/private dump is included. Prior native cleanup seal remains unchanged. Private approved Xcode bridge remains absent, requiring restoration before live Canvas work; no restart or GUI session occurred. Both milestones remain open.
+
+Evidence: `research/evidence/unicode-output-accounting-2026-10-12`; manifest SHA-256 `1be39dfaa5a82f4d988b47ee1f59a09eb24f6478d8ba7e9ad4daa65663bd92ce`. Tests execute sealed readers without rerunning acquisition.

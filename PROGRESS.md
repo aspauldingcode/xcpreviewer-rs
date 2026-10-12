@@ -1022,3 +1022,7 @@ Controloverflow requestsabort withoutquotareset;2Native control cases keep repor
 ### 2026-10-12 stderr/mixed output cancellation
 
 Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+32769stderr inbothorders cancel atcombinedlimit.4actualnative parentwait43/childwait42 raw10752/32peerbytes,18faults/4slots;no fixedchunk/encoding/Canvasclaim. See docs/reverse-engineering/2026-10-12-mixed-output-cancel.md.
+
+### 2026-10-12: Unicode output accounting discriminator
+
+[Finite source controls](docs/reverse-engineering/2026-10-12-unicode-output-accounting.md) distinguish raw-buffer quota from saved text:16 injected controls, exact/over-limit Unicode and split/invalid/NUL inputs.65,536 invalid bytes become196,608 UTF-8 text bytes; raw capture cannot be inferred from lossy strings.12 resealed faults; no native target launched. Next expose bounded raw-byte accounting. Both milestones remain open.
