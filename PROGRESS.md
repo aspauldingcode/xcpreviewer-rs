@@ -1030,3 +1030,7 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-12: retained raw-output accounting
 
 [Production record fix](docs/reverse-engineering/2026-10-12-raw-output-accounting.md) exposes admitted stdout/stderr byte counts and SHA-256 before lossy text conversion.48 before/after injected controls,14 resealed faults;2,359,380 exact input bytes. No native target launched; historical native evidence remains frozen. Both milestones open.
+
+### 2026-10-12: native raw-output accounting
+
+[Actual owned controls](docs/reverse-engineering/2026-10-12-native-raw-output.md) verify Unicode/invalid/mixed raw counts and hashes through production supervisor cancellation.4actualparentwait43/childwait42,32exactpeerbytes;22resealedfaults. Text expansion stays distinct from original byte counts. No Canvas or unseen-escape claim; both milestones open.

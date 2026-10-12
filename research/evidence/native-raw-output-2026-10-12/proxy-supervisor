@@ -1,0 +1,38 @@
+#!/Users/8amps/xcpreviewer-rs/research/venv/bin/python
+import os,sys,json,time,threading,subprocess,hashlib
+from pathlib import Path
+root=Path(sys.argv[-1]);readfd,writefd=os.pipe()
+anchor=subprocess.Popen([sys.executable]+sys.argv[1:],stdin=subprocess.PIPE,pass_fds=(3,writefd),preexec_fn=lambda:os.dup2(writefd,3))
+os.close(writefd)
+(root/'anchor-pid.json').write_text(json.dumps({'anchor_pid':anchor.pid,'proxy_pid':os.getpid(),'proxy_group':os.getpgrp()}))
+def forward():
+ while True:
+  data=os.read(0,64)
+  if not data:return
+  anchor.stdin.write(data);anchor.stdin.flush()
+threading.Thread(target=forward,daemon=True).start()
+corrupted=False
+with os.fdopen(readfd,'rb',buffering=0) as stream:
+ while True:
+  line=stream.readline()
+  if not line:break
+  value=json.loads(line)
+  if not corrupted and value.get('kind')=='observed' and (root/'ready.json').exists():
+   ready=json.loads((root/'ready.json').read_text())
+   children=[x for x in value['rows'] if x['pid']==ready['child_pid'] and x['group']==x['pid'] and x['parent']==ready['parent_pid']]
+   if children:
+    mode=root.name
+    if mode=='emoji-exact':plan=[(1,bytes.fromhex('f09f9880')*16384)]
+    elif mode=='invalid-exact':plan=[(2,b'\xff'*65536)]
+    elif mode=='unicode-over':plan=[(1,bytes.fromhex('f09f9880')*16384+b'x')]
+    elif mode=='mixed-invalid':plan=[(1,bytes.fromhex('f09f9880')*8192),(2,b'\xff'*32768)]
+    else:raise ValueError('Unknown owned mode')
+    (root/'injection.json').write_text(json.dumps({'original':value,'ready':ready,'mode':mode,'plan':[{'fd':fd,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()} for fd,data in plan]}))
+    writes=[]
+    for fd,data in plan:writes.append({'fd':fd,'requested_bytes':len(data),'written_bytes':os.write(fd,data)})
+    (root/'injection-write.json').write_text(json.dumps(writes))
+    os.write(3,line)
+    corrupted=True;continue
+  if value.get('kind')=='complete':(root/'underlying-complete.json').write_text(json.dumps(value))
+  os.write(3,line)
+while True:time.sleep(3600)
