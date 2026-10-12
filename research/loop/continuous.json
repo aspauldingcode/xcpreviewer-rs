@@ -2372,6 +2372,17 @@
     "result": "Two contrasts each preserve seed49 through64 creations; postpeer100ms lookupnull then first replacement/stale numeric lookup seed50.140fullallocations/2293760bytes including75600padding/2132480tail; seventeen resealed faults. Physical reclaim/Canvas wire unaccepted.",
     "started_at": "2026-10-12T00:56:35.804255+00:00"
   },
+  "remote_surface_use_checkpoint": {
+    "bridge_prerequisite": "Approved broker socket absent; restoration required; no automatic restart",
+    "budget": "Four producers:compile,parent,two peers;compile60sec,batch15sec,alarm12sec,Mach3sec.",
+    "classification": "Remote use count remains process-local; clean decrement and task teardown preserve parent contribution and permit final global in-use clearing",
+    "evidence": "research/evidence/remote-surface-use-2026-10-11",
+    "manifest_sha256": "e8eeac29bdc5f78ff87070ab5f8c2ec8b193b8fed4241570f276edca4d1cde9b",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed cross-task use-count pair. Check changed capture prerequisites once, or investigate whether same-task multiple CF aliases share explicit local use count; review existing coverage first. Physical reclaim/GPU/Canvas generations remain open.",
+    "result": "Parent local[0,1,1,0]/global[1,1,1,0] in clean and abrupt modes; clean peer local0/globaltrue.15allocations245760bytes including8100padding/228480tail; nineteen resealed faults. Physical reclamation/Canvas completion unaccepted.",
+    "started_at": "2026-10-12T01:01:34.649808+00:00"
+  },
   "runbook": "docs/reverse-engineering/continuous-loop.md",
   "rust_completion_checkpoint": {
     "actual_completed_modules": 5,

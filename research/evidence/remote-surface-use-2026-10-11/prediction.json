@@ -1,0 +1,11 @@
+{
+  "scope": "Owned cross-task explicit use counts after both resource Mach names removed; clean peer decrement versus owned peer task teardown",
+  "prediction": "Parent local count stays0 while remote alias increment makes globalinuse true. Parent increment local1; peer decrement or taskexit should leave parent local1/globaltrue, followed by parent decrement local0/globalfalse. Contrast tests contribution cleanup, not physical reclamation or Canvas completion.",
+  "limits": {
+    "producer_processes": 4,
+    "compile_seconds": 60,
+    "batch_seconds": 15,
+    "alarm_seconds": 12,
+    "mach_wait_seconds": 3
+  }
+}
