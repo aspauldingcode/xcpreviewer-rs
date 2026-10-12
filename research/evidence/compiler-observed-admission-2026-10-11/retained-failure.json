@@ -1,0 +1,9 @@
+{
+  "failure": "Root launcher executable path changed to Python.app at unchanged birth identity; over-strict root check rejected before successful root exit",
+  "qualified_observed_success_admission": false,
+  "budget_exhausted": true,
+  "producer_retry": false,
+  "fix": "Permit executable refresh only for currently live Popen root with identical birth identity; known detached child identity change still rejects",
+  "existing_failure_cleanup": "Exception branch uses existing owned process-group kill/wait; no destructive success-admission signal added",
+  "remaining": "Native post-root descendant rejection must be reacquired under changed implementation on later wake"
+}

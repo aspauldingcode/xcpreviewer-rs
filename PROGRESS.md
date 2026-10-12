@@ -871,3 +871,7 @@ Production compiler boundary rejects residual process group after root 0 using r
 ## 2026-10-11 — real WASM success admission qualification
 
 Two real LLVM stages pass signal-0 group absence checks; identical source cache hit skips compilation and preserves pointer. V8 all 131,072 bytes match native-backed expectations, WasmKit returns 720 separately; fifteen resealed faults pass. Historical test coupling failure retained and source hash pinned. [Scope](docs/reverse-engineering/2026-10-11-admitted-build.md). Escaped descendants and native Canvas remain open.
+
+## 2026-10-11 — explicit compiler ancestry admission
+
+Opt-in read-only ancestry witness added. Group-only control misses finite setsid child. Native observer catches launcher→app transition but initially rejects too early; failure retained, root refresh repaired with finite semantic tests. All 100 controlled bytes and ten resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-observed-admission.md). Post-fix native admission remains unqualified; no budget replenishment or user observer edits.

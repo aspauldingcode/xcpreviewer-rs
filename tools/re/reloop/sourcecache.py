@@ -15,6 +15,8 @@ import shutil
 import stat
 import subprocess
 import tempfile
+import time
+from reloop.compilerwitness import CompilerWitness
 from reloop.core import atomic,digest,load
 from reloop.primarysource import parse,lower
 from reloop.viewsource import stable_ir
@@ -42,10 +44,12 @@ def read_metadata(path,limit):
         os.close(fd)
 
 
-def run_compiler(args,*,timeout=30,output_limit=4194304):
+def run_compiler(args,*,timeout=30,output_limit=4194304,observer=None):
     """POSIX owned child: bounded file outputs and captured diagnostic memory."""
     if type(output_limit) is not int or output_limit<=0:
         raise ValueError('Compiler output limit required')
+    witness=CompilerWitness(observer) if observer is not None else None
+    if witness is not None:witness.sample(set())
     def limit_child():
         _,hard=resource.getrlimit(resource.RLIMIT_FSIZE)
         cap=output_limit if hard==resource.RLIM_INFINITY else min(output_limit,hard)
@@ -53,7 +57,16 @@ def run_compiler(args,*,timeout=30,output_limit=4194304):
     with tempfile.TemporaryFile() as out,tempfile.TemporaryFile() as err:
         process=subprocess.Popen(args,stdout=out,stderr=err,start_new_session=True,preexec_fn=limit_child)
         try:
-            code=process.wait(timeout=timeout)
+            if witness is None:code=process.wait(timeout=timeout)
+            else:
+                deadline=time.monotonic()+timeout
+                while True:
+                    if process.poll() is not None:code=process.returncode;break
+                    witness.sample({process.pid})
+                    remaining=deadline-time.monotonic()
+                    if remaining<=0:raise subprocess.TimeoutExpired(args,timeout)
+                    try:code=process.wait(timeout=min(0.05,remaining));break
+                    except subprocess.TimeoutExpired:pass
         except BaseException:
             try:os.killpg(process.pid,signal.SIGKILL)
             except ProcessLookupError:pass
@@ -63,6 +76,7 @@ def run_compiler(args,*,timeout=30,output_limit=4194304):
         # remains. This read-only, fail-closed guard does not claim ownership
         # of a reused group, and never signals it. Escaped groups are separate.
         if code==0:
+            if witness is not None:witness.admit(process.pid)
             try:os.killpg(process.pid,0)
             except ProcessLookupError:pass
             else:raise RuntimeError('Compiler process group remains after successful root exit')
@@ -119,7 +133,7 @@ def entry(folder,key,identity,anchor):
     return m
 
 
-def build(source,cache,output,clang,wasm_ld,*,fault_before_commit=False):
+def build(source,cache,output,clang,wasm_ld,*,fault_before_commit=False,compiler_observer=None):
     if type(source) is not str:raise ValueError('Source text required')
     config=parse(source);clang=pathlib.Path(clang).absolute();wasm_ld=pathlib.Path(wasm_ld).absolute()
     if not clang.is_file() or not wasm_ld.is_file():raise ValueError('Compiler/linker executable required')
@@ -140,7 +154,7 @@ def build(source,cache,output,clang,wasm_ld,*,fault_before_commit=False):
             try:
                 c=staging/'view.c';ir=staging/'view.ll';module=staging/'view.wasm';c.write_text(lower(config))
                 def command(args):
-                    r=run_compiler([str(a) for a in args])
+                    r=run_compiler([str(a) for a in args],**({'observer':compiler_observer} if compiler_observer is not None else {}))
                     if r.returncode:raise RuntimeError('Compiler failed: '+r.stderr.decode(errors='replace')[-4096:])
                 command([clang,*FLAGS,'-emit-llvm','-S',c,'-o',ir]);ir.write_text(stable_ir(ir.read_text()))
                 command([clang,*FLAGS,'-fuse-ld='+str(wasm_ld),ir,*LINK_FLAGS,'-o',module])

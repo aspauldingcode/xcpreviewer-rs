@@ -1,0 +1,14 @@
+{
+  "scope": "Explicit callback ancestry witness for normal-success admission; default group-only path remains separate",
+  "prediction": "Same controlled detached child escapes sessiongroup. Group-only default returns root0 while childwrites; explicit independently reviewed libproc snapshots observe rootchild lifetime and reject live known detached child after root0. No destructive success signal; children finite selfexit.",
+  "limits": {
+    "producer_processes": 4,
+    "observer_samples_per_compiler": 64,
+    "observer_subprocess_deadline_seconds": 2,
+    "compiler_deadline_seconds": 3,
+    "child_ticks": 32,
+    "child_tick_seconds": 0.05,
+    "completion_wait_seconds": 3
+  },
+  "dependency": "Callable explicit observer; staged user observer implementation used only by acquisition and never included in implementation commit"
+}

@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[3]
 s=importlib.util.spec_from_file_location('admission_reader',Path(__file__).with_name('verify_compiler_success_admission.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
 class CompilerSuccessAdmissionTests(unittest.TestCase):
  def test_seal_source_and_core(self):
-  e=ROOT/'research/evidence/compiler-success-admission-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(reader.verify(e)['survivor_success_rejected']);self.assertEqual((ROOT/'tools/re/fixtures/CompilerSuccessAdmission/emitter.py').read_bytes(),(e/'emitter.py').read_bytes());self.assertEqual((ROOT/'tools/re/reloop/sourcecache.py').read_bytes(),(e/'sourcecache-after.py').read_bytes())
+  e=ROOT/'research/evidence/compiler-success-admission-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(reader.verify(e)['survivor_success_rejected']);self.assertEqual((ROOT/'tools/re/fixtures/CompilerSuccessAdmission/emitter.py').read_bytes(),(e/'emitter.py').read_bytes());self.assertEqual(hashlib.sha256((e/'sourcecache-after.py').read_bytes()).hexdigest(),'cbd4376993873294c2bd9e894d83739dbf76c8796a391af6b3e5fcde5d8cc0aa')
  def test_resealed_faults(self):
   for fault in ['accepted','late','unfinished','signal','identity','first','later','final','plain','clang','compiler','removed-guard']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

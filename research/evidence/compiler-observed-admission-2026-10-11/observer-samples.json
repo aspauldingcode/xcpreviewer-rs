@@ -1,0 +1,65 @@
+[
+  {
+    "roots": [],
+    "known": {},
+    "rows": {},
+    "elapsed_seconds": 0.009325125000000156
+  },
+  {
+    "roots": [
+      73692
+    ],
+    "known": {},
+    "rows": {
+      "73692": {
+        "pid": 73692,
+        "parent": 73641,
+        "group": 73692,
+        "state": "L",
+        "identity": [
+          1791772458,
+          541242,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+        ]
+      }
+    },
+    "elapsed_seconds": 0.007390125000000136
+  },
+  {
+    "roots": [
+      73692
+    ],
+    "known": {
+      "73692": [
+        1791772458,
+        541242,
+        "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+      ]
+    },
+    "rows": {
+      "73695": {
+        "pid": 73695,
+        "parent": 73692,
+        "group": 73695,
+        "state": "L",
+        "identity": [
+          1791772458,
+          595293,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      },
+      "73692": {
+        "pid": 73692,
+        "parent": 73641,
+        "group": 73692,
+        "state": "L",
+        "identity": [
+          1791772458,
+          541242,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    },
+    "elapsed_seconds": 0.005504917000000109
+  }
+]
