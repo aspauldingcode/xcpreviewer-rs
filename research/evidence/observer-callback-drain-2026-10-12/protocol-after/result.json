@@ -1,0 +1,31 @@
+{
+  "kind": "protocol",
+  "phase": "after",
+  "index": "after",
+  "callbacks": 1,
+  "observed": [
+    []
+  ],
+  "error": "Error: Owned synchronous observation callback failure",
+  "originalPreserved": true,
+  "record": {
+    "pid": 280,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "drained": true,
+      "target_code": -15,
+      "failure": "abort",
+      "tracked": 0,
+      "observations": 1,
+      "remaining_observed": 0,
+      "scope": "Owned protocol fixture; no target launched"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "lateAbsent": true
+}

@@ -992,3 +992,8 @@ Failure records JSONsnapshotted before caller mutation;cycle/BigInt/throwing get
 ### 2026-10-12 retained failure record field cap
 
 Serialized failure record field admits≤512KiB;oversize omits with originalbytecount/record_error whilecallerError/fullrecord preserved.10actualNode boundary/emoji/escapedNUL controls,10sources2020bytes,16faults,zero actualcompilerjobs. Initialheap/globalquotas remain separate. See docs/reverse-engineering/2026-10-12-failure-record-size.md.
+
+
+### 2026-10-12 observation callback drain ordering
+
+Synchronous callback errors requestabort and awaitcomplete beforeanchor release. Protocol before/after contrasts plus2nativeAA ownedrootcontrols actualwait−15/drainedremaining0;originalError retained;15faults. Sampledscope only. See docs/reverse-engineering/2026-10-12-observer-callback-drain.md.

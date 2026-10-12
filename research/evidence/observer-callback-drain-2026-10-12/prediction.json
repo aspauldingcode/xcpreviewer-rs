@@ -1,0 +1,10 @@
+{
+  "before_callback_kills_without_complete": true,
+  "after_callback_requests_abort_and_waits_complete": true,
+  "native_target_wait_expected": -15,
+  "native_runs": 2,
+  "producer_slots": 4,
+  "node_seconds": 15,
+  "job_seconds": 3,
+  "scope": "Synchronous observation callback failure; malformed control parser behavior unchanged; sampled owned process cleanup only"
+}

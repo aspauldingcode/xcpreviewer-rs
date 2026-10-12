@@ -41,7 +41,7 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
     const end=control.indexOf('\n'),line=control.slice(0,end);control=control.slice(end+1);
     try{
      const row=JSON.parse(line);assert(!report);
-     if(row.kind==='observed'){assert(Array.isArray(row.rows));onObservation(row.rows);}
+     if(row.kind==='observed'){assert(Array.isArray(row.rows));try{onObservation(row.rows);}catch(e){cancel(e);}}
      else{report=validateComplete(row);if(row.drained!==true||row.remaining_observed!==0||!Number.isSafeInteger(row.target_code)||row.failure||row.target_code!==0)failure ||= Error('Observed compiler failed: '+String(row.failure||row.target_code));kill();}
     }catch(e){cancel(e);kill();}
    }

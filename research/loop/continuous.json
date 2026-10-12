@@ -1038,6 +1038,16 @@
     "run_id": "20261011T050401Z-primary-live-wasm-swap-e9f4af29",
     "scientific_delivery_review": "pending"
   },
+  "observer_callback_drain_checkpoint": {
+    "classification": "Owned protocol ordering + two actual sampled native root callback abort/drain controls; no arbitraryquiescence/Canvas",
+    "evidence": "research/evidence/observer-callback-drain-2026-10-12",
+    "manifest_sha256": "41fe2e6bf61667bbf825e35b5a450c65a36114e709813eea29a3f1300a18472f",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip callback rootcontrols. Next changed owneddescendant callback control withackidentity andactualwait or independentnativeoracle. Malformedprotocol path separate; approvedCanvasbridge required.",
+    "result": "Callback exception nowrequestsabortwithoutimmediatekill;protocol beforemissingcomplete/aftercomplete;nativeAA actualtargetwait-15/drainedremaining0/anchorSIGKILLafterreport;15faults.",
+    "retained_failure": "No acquisition failure; historical failures retained.",
+    "started_at": "2026-10-12T08:33:46.389232+00:00"
+  },
   "observer_framing_checkpoint": {
     "canonical_checks": 41,
     "clean_archive_tests": 42,
