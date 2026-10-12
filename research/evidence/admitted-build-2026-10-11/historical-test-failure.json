@@ -1,0 +1,7 @@
+{
+  "code": 1,
+  "stdout": "",
+  "stderr": ".F\n======================================================================\nFAIL: test_sealed_real_build_and_runtime (test_session_build.SessionBuildTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/tests/test_session_build.py\", line 7, in test_sealed_real_build_and_runtime\n    e=ROOT/'research/evidence/session-build-2026-10-11';self.assertEqual(hashlib.sha256((e/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(reader.verify(e)['allocation_bytes'],131072);self.assertEqual((ROOT/'tools/re/reloop/sourcecache.py').read_bytes(),(e/'sourcecache.py').read_bytes())\nAssertionError: b'\"\"\"[2505 chars]     # Root success is insufficient while any [7644 chars]'}\\n' != b'\"\"\"[2505 chars]     result=subprocess.CompletedProcess(args,c[7199 chars]'}\\n'\n\n----------------------------------------------------------------------\nRan 2 tests in 0.439s\n\nFAILED (failures=1)\n",
+  "reason": "Historical source equality incorrectly tied frozen session-build acquisition to changed production builder",
+  "native_rerun": false
+}

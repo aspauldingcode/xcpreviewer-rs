@@ -867,3 +867,7 @@ Actual run_compiler returns root 0 while owned finite child grows heartbeat 1→
 ## 2026-10-11 — conservative compiler success admission
 
 Production compiler boundary rejects residual process group after root 0 using read-only signal 0; clean Python and actual clang compile still pass. Owned finite child self-exits; all 32 controlled bytes/twelve resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-compiler-success-admission.md). Guard prevents known same-group success admission; escaped descendants and actual WASM build qualification remain open.
+
+## 2026-10-11 — real WASM success admission qualification
+
+Two real LLVM stages pass signal-0 group absence checks; identical source cache hit skips compilation and preserves pointer. V8 all 131,072 bytes match native-backed expectations, WasmKit returns 720 separately; fifteen resealed faults pass. Historical test coupling failure retained and source hash pinned. [Scope](docs/reverse-engineering/2026-10-11-admitted-build.md). Escaped descendants and native Canvas remain open.

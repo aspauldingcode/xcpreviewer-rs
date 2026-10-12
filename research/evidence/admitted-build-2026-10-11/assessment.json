@@ -1,0 +1,15 @@
+{
+  "scope": "Real LLVM source-to-WASM and exact supported native holdout under success-group admission guard; macOS only",
+  "producer_processes": 4,
+  "compiler_group_checks": 2,
+  "checks_read_only": true,
+  "group_outcomes": "absent",
+  "v8_full_bytes": 131072,
+  "padding_bytes": 216,
+  "tail_bytes": 125960,
+  "native_prefix_bytes": 720,
+  "wasmkit_result_only": 720,
+  "cache_hit_compilers": 0,
+  "milestones_complete": false,
+  "REA": "Server6.2.0 closed; known fat toolchain imports not repeated"
+}
