@@ -1,0 +1,16 @@
+{
+  "scope": "Native public modification seed versus CPU read/write access and full owned bytes; not Canvas generation",
+  "producer_processes": 3,
+  "allocations": 28,
+  "full_bytes": 458752,
+  "padding_bytes": 15120,
+  "tail_bytes": 426496,
+  "initial_seed": 1,
+  "final_seed": 6,
+  "lock_output_prediction": "Returned write lock seed is already before+1, not prelock value; unlock returns same. Internal update timing unknown without in-lock GetSeed.",
+  "seed_is_byte_hash": false,
+  "canvas_generation": false,
+  "milestones_complete": false,
+  "bridge_socket_exists": false,
+  "bridge_restart": false
+}

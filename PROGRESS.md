@@ -843,3 +843,7 @@ Remote explicit use count makes global in-use true while parent local count is z
 ## 2026-10-11 — same-task alias use-count sharing
 
 Three distinct CF wrappers share usage state: cross-alias increments/decrements yield repeated 0/1/2/1/1/0/0 trace; wrapper release preserves remaining contribution. All 34 full allocations compare 557,056 bytes including padding/tail; seventeen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-alias-use.md). Physical reclaim and Canvas generations remain open.
+
+## 2026-10-11 — public content seed versus full bytes
+
+Write lock already returns next seed; no-op write changes seed without byte changes. Active/padding/tail edits and exact restoration preserve resource ID and alias agreement. All 28 allocations compare 458,752 bytes; eighteen resealed faults pass. [Scope](docs/reverse-engineering/2026-10-11-surface-content-seed.md). Returned seed is not byte hash or recovered Canvas generation; internal update timing remains open.

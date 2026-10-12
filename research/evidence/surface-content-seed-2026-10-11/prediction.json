@@ -1,0 +1,19 @@
+{
+  "scope": "Public native IOSurface content seed versus CF alias, stable ID, read-only/noop/write lock and controlled byte mutations",
+  "prediction": "Read-only lock/snapshot leaves seed unchanged; write unlock increments even without changed bytes. Active/padding/tail changes and exact restoration each increment; original/alias agree. Thus seed is not byte hash and identical bytes can have different seed. Canvas generations remain separate.",
+  "header_provenance": {
+    "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceRef.h",
+    "sha256": "8ee2890f7a5392ac2040c2e0b3d3cb773cdebe3627ad3452881fc7d20a759bd5",
+    "lines": [
+      186,
+      208
+    ],
+    "summary": "SDK declares modification-seed return at lock and increment on write unlock; declaration separate from runtime."
+  },
+  "limits": {
+    "producer_processes": 3,
+    "compile_seconds": 60,
+    "helper_seconds": 15,
+    "alarm_seconds": 10
+  }
+}
