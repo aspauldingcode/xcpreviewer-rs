@@ -1017,3 +1017,8 @@ Decoderfailure nowrequestsabort;2actualnative controls parentwait43/childwait42 
 ### 2026-10-12 control/output quota cleanup
 
 Controloverflow requestsabort withoutquotareset;2Native control cases keep reportnull/emergencyClosed butindependent parentwait43/childwait42. Stdout positive ≤65536 retainedbytes/validdrainreceipt.3peerfiles24bytes/18faults/4slots;clientcontrolreceipt remainsunqualified. See docs/reverse-engineering/2026-10-12-overflow-control-drain.md.
+
+
+### 2026-10-12 stderr/mixed output cancellation
+
+Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+32769stderr inbothorders cancel atcombinedlimit.4actualnative parentwait43/childwait42 raw10752/32peerbytes,18faults/4slots;no fixedchunk/encoding/Canvasclaim. See docs/reverse-engineering/2026-10-12-mixed-output-cancel.md.

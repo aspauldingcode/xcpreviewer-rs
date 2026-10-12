@@ -1,0 +1,29 @@
+{
+  "modes": [
+    "stderr-exact",
+    "stderr-over",
+    "mixed-stdout-first",
+    "mixed-stderr-first"
+  ],
+  "combined_limit": 65536,
+  "exact_stderr_bytes": 65536,
+  "oversize_bytes": 65537,
+  "mixed_stdout_bytes": 32768,
+  "mixed_stderr_bytes": 32769,
+  "parent_exit": 43,
+  "child_exit": 42,
+  "peer_bytes": [
+    0,
+    1,
+    2,
+    255,
+    10,
+    42,
+    99,
+    128
+  ],
+  "producer_slots": 4,
+  "outer_seconds": 15,
+  "job_milliseconds": 3000,
+  "scope": "Owned actual stdout/stderr pipe quota and sampled target/child waits; no fixed chunk-prefix length for over-limit cases"
+}
