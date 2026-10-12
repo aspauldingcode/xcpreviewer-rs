@@ -922,3 +922,8 @@ Source observation now respects synchronous close from cooperative builder abort
 ### 2026-10-11 actual owned builder cancellation and recovery
 
 Actual live Rustc generation2 superseded through SourceFileLoop/RustSourceBuilder; owned CLI wait-15 and sampled abort/drain receipt pass. Fresh generation1/3 builds publish,2rejects; three allocations49152bytes including252padding47808tail match. Final workers/timers zero;18resealedfaults. See docs/reverse-engineering/2026-10-11-actual-builder-cancel.md.
+
+
+### 2026-10-11 cancelled builder entry before staging
+
+Already-aborted Rust builder requests now reject before per-job directory/source creation. Eight actual JS/filesystem controls show4oldstages808bytes versus0fixed;2noncancelledhandoffs still reach interceptedspawn. Six sourcecopies1212exactbytes,12resealedfaults,0Nativejobs. See docs/reverse-engineering/2026-10-11-preabort-build-staging.md.

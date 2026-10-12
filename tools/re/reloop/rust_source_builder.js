@@ -9,7 +9,9 @@ function rustSourceBuilder(cfg){
  const timeout=cfg.timeout??5000;assert(Number.isSafeInteger(timeout)&&timeout>=50&&timeout<=5000,'Bounded Rust build deadline required');
  const records=[],failures=[];
  const build=async(source,{signal})=>{
-  assert(Buffer.isBuffer(source)&&source.length>0&&source.length<=4096);const stage=fs.mkdtempSync(path.join(cfg.root,'build-')),file=path.join(stage,'source.swift');fs.writeFileSync(file,source);
+  assert(Buffer.isBuffer(source)&&source.length>0&&source.length<=4096);
+  if(signal?.aborted)throw Error('Rust build aborted before staging');
+  const stage=fs.mkdtempSync(path.join(cfg.root,'build-')),file=path.join(stage,'source.swift');fs.writeFileSync(file,source);
   let execution;
   try{execution=await runObserved(cfg.python,[cfg.cli,file,'--output',path.join(stage,'result'),'--rustc',cfg.rustc,'--rustc-sha256',cfg.rustcSha,'--toolchain-pin',cfg.toolchainPin],{signal,timeout,observer:cfg.observer,supervisorPython:cfg.python,onObservation:cfg.onObservation});
   assert(Buffer.byteLength(execution.stdout)<=16384,'Rust receipt size limit');const receipt=JSON.parse(execution.stdout);

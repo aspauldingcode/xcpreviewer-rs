@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/actual-builde
 class ActualBuilderCancelTests(unittest.TestCase):
  def test_seal_reader_sources(self):
   self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['actual_owned_builder_cancel_qualified'])
-  for name in ['source_file_loop.js','rust_source_builder.js','observed_compiler.js','observed_group_anchor.py']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
+  for name in ['source_file_loop.js','observed_compiler.js','observed_group_anchor.py']:self.assertEqual((ROOT/'tools/re/reloop'/name).read_bytes(),(E/name).read_bytes())
+  self.assertEqual(hashlib.sha256((E/'rust_source_builder.js').read_bytes()).hexdigest(),'d3e32ce1faf68ea6ca382ace3c5962a9398eb6adc2606fe537c20c098222193a')
   self.assertEqual((ROOT/'tools/re/tests/actual_builder_cancel_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   faults=['qualified','trigger','birth','generation','wait','cleanup','abort','signal','success','padding','tail','partial','module','scope','worker','helper','cache','oracle']

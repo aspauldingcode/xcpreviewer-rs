@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "phase": "before",
+      "cancelledRequests": 4,
+      "errors": [
+        "Error: Observed compiler aborted before spawn",
+        "Error: Observed compiler aborted before spawn",
+        "Error: Observed compiler aborted before spawn",
+        "Error: Observed compiler aborted before spawn"
+      ],
+      "preStages": [
+        "build-BfKcN2",
+        "build-RPj89e",
+        "build-hcbUGN",
+        "build-vadyUr"
+      ],
+      "preFailureCount": 4,
+      "preStagedSourceBytes": 808,
+      "preSpawnCount": 0,
+      "positiveError": "Error: Owned noncancelled spawn intercept",
+      "interceptedNoncancelledSpawns": 1,
+      "finalStages": [
+        "build-BfKcN2",
+        "build-Naz6VW",
+        "build-RPj89e",
+        "build-hcbUGN",
+        "build-vadyUr"
+      ],
+      "records": [],
+      "failures": [
+        {
+          "error": "Error: Observed compiler aborted before spawn"
+        },
+        {
+          "error": "Error: Observed compiler aborted before spawn"
+        },
+        {
+          "error": "Error: Observed compiler aborted before spawn"
+        },
+        {
+          "error": "Error: Observed compiler aborted before spawn"
+        },
+        {
+          "error": "Error: Owned noncancelled spawn intercept"
+        }
+      ]
+    },
+    {
+      "phase": "after",
+      "cancelledRequests": 4,
+      "errors": [
+        "Error: Rust build aborted before staging",
+        "Error: Rust build aborted before staging",
+        "Error: Rust build aborted before staging",
+        "Error: Rust build aborted before staging"
+      ],
+      "preStages": [],
+      "preFailureCount": 0,
+      "preStagedSourceBytes": 0,
+      "preSpawnCount": 0,
+      "positiveError": "Error: Owned noncancelled spawn intercept",
+      "interceptedNoncancelledSpawns": 1,
+      "finalStages": [
+        "build-0LOT92"
+      ],
+      "records": [],
+      "failures": [
+        {
+          "error": "Error: Owned noncancelled spawn intercept"
+        }
+      ]
+    }
+  ],
+  "actualChildSpawns": 0,
+  "scope": "Actual JS/filesystem with native spawn intercepted; not actual compiler cancellation"
+}

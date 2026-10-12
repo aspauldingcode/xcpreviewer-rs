@@ -1031,6 +1031,15 @@
     "scientific_delivery_review": "pending"
   },
   "pending_sync": false,
+  "preabort_build_staging_checkpoint": {
+    "classification": "Actual JS/filesystem cancelled-entry staging hardening; all native spawn intercepted",
+    "evidence": "research/evidence/preabort-build-staging-2026-10-11",
+    "manifest_sha256": "91446a3a2583afec7746c25f28ac74f0c99b6d597a8da53a686d9d342f59427d",
+    "milestones_complete": false,
+    "next_wake_hint": "Inspect bounded builder records/failure history and distinct active cancellation boundaries. Actual prior compiler evidence immutable; no native producer rerun or unavailable-as-retired conversion.",
+    "result": "8precancelled requests:before4stages808sourcebytes;after0.2noncancelledpositivehandoffs reachinterceptedspawn.6retainedsourcecopies1212exactbytes,12resealedfaults;0Nativejobs.",
+    "started_at": "2026-10-12T05:59:17.167997+00:00"
+  },
   "preview_channel_checkpoint": {
     "actual_completed_modules": 2,
     "clean_archive_tests": 82,

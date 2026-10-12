@@ -1,0 +1,11 @@
+# Already-cancelled builder jobs before staging
+
+`RustSourceBuilder` delegated its already-aborted signal to `runObserved`, which correctly rejected before spawning, but only after the builder created a per-job stage and wrote its source. Four already-cancelled jobs therefore created four source stages/808bytes and four failure records even though no compiler job could run.
+
+The builder now checks an already-aborted signal immediately after bounded source-buffer validation and before its per-job temporary directory or source write. It rejects with `Rust build aborted before staging`. The factory's root-directory setup remains unchanged. Unstarted cancellation is returned to the caller rather than generating a nonexistent job's failure artifact; active job failures continue through the existing retained failure path.
+
+Evidence: `research/evidence/preabort-build-staging-2026-10-11`. Eight actual JS/filesystem requests compare four already-cancelled jobs before/after. The previous version creates four stages; the fixed version creates none. Actual native child spawns are intercepted and never launched. Two noncancelled positive controls reach the existing observed-spawn boundary and intentionally fail there, proving that the new guard does not suppress that handoff. Those positive controls are a source-boundary test, not real compiler success or cancellation evidence.
+
+All six retained source copies compare byte-for-byte against a hash-pinned202byte source fixture,1212bytes total. Twelve resealed faults reject staging, spawn, error, source, record and scope corruption. Acquisition uses one existing Node v24.19.0 control process with an8second deadline and4096byte input cap. The prior actual compiler-stage cancellation evidence remains frozen; its implementation test now pins the historical builder hash after this legitimate source change. No native producer is rerun.
+
+This bounds unnecessary per-job side effects for requests already cancelled at entry. It does not prove bounded total build history, cleanup of existing stages, callback exception behavior, arbitrary compiler-tree release or native Canvas cancellation. Both milestones remain open. Next: inspect bounded long-running builder history and distinct active cancellation/failure boundaries; preserve partial failures and avoid unchanged native observer retries.
