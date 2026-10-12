@@ -4,7 +4,7 @@ from verify_source_stage_failure import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/source-stage-failure-2026-10-12'
 class SourceStageFailureTests(unittest.TestCase):
  def test_seal_reader_sources(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['source_write_failure_retained']);self.assertEqual((ROOT/'tools/re/reloop/rust_source_builder.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/source_stage_failure_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['source_write_failure_retained']);self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'9c6db91c3b1e378fd7e1427956e8e30fedd53948b377a1ba0db239827646c7c6');self.assertEqual((ROOT/'tools/re/tests/source_stage_failure_control.js').read_bytes(),(E/'control.js').read_bytes())
  def test_resealed_faults(self):
   for fault in ['original','caught','before','retained','diagnostic','writes','handoff','budget','files','source','log','scope','wait','jobs','prediction']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

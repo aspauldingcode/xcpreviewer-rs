@@ -4,6 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const {readArtifact}=require('./bounded_artifact.js');
 const {validateRustReceipt}=require('./rust_receipt.js');
 const {runObserved}=require('./observed_compiler.js');const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+function boundedDiagnostic(value){const original=String(value),size=Buffer.byteLength(original);if(size<=1024)return {text:original};let text='',bytes=0;for(const char of original){const n=Buffer.byteLength(char);if(bytes+n>1024)break;text+=char;bytes+=n;}return {text,originalBytes:size};}
 function rustSourceBuilder(cfg){
  assert.equal(typeof cfg.oracle,'function');assert(/^[a-f0-9]{64}$/.test(cfg.toolchainPin));assert(/^[a-f0-9]{64}$/.test(cfg.rustcSha));assert(path.isAbsolute(cfg.root));
  const historyLimit=cfg.historyLimit??64;assert(Number.isSafeInteger(historyLimit)&&historyLimit>=1&&historyLimit<=256,'Bounded build history limit required');
@@ -26,7 +27,7 @@ function rustSourceBuilder(cfg){
   assert(execution.report.drained&&execution.report.remaining_observed===0&&execution.report.target_code===0);
   const expected=cfg.oracle(source);assert(Buffer.isBuffer(expected)&&expected.length===16384);retain(records,{receipt,execution,stage:path.basename(stage)},'record');
   return {build:{module,moduleSha256:receipt.module_sha256,sourceSha256:receipt.source_sha256,config:receipt.config,stride:cfg.stride??64},expected};
-  }catch(e){const failure={error:String(e),record:e.record||execution};retain(failures,failure,'failure');try{fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));}catch(writeError){failure.persistence_error=String(writeError);}throw e;}
+  }catch(e){const diagnostic=boundedDiagnostic(e),failure={error:diagnostic.text,record:e.record||execution};if(diagnostic.originalBytes!==undefined)failure.error_original_bytes=diagnostic.originalBytes;retain(failures,failure,'failure');try{fs.writeFileSync(path.join(stage,'failure.json'),JSON.stringify(failure));}catch(writeError){const diagnostic=boundedDiagnostic(writeError);failure.persistence_error=diagnostic.text;if(diagnostic.originalBytes!==undefined)failure.persistence_error_original_bytes=diagnostic.originalBytes;}throw e;}
  };
  build.budget=()=>({stageLimit,stagesCreated});
  build.history=()=>({limit:historyLimit,recordsDropped,failuresDropped});

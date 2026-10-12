@@ -972,3 +972,8 @@ Failure log write errors no longer mask original execution Error; separate persi
 ### 2026-10-12 source staging failure retention
 
 Source write moved inside builder failure handler;source failures retain originalError and chargedstage, double logfailure has separate persistence_error.8actualNode injectedcontrols,2sources404bytes,15faults,zero actualcompilerjobs. See docs/reverse-engineering/2026-10-12-source-stage-failure.md.
+
+
+### 2026-10-12 retained build diagnostic byte bound
+
+Error and persistence_error excerpts capped1024UTF8bytes at codepoint boundaries with originalbytecounts;caller originalError preserved.12actualNode injectedcontrols,12sources2424bytes,15faults,zero actualcompilerjobs. Totalrecord/diskquota remains separate. See docs/reverse-engineering/2026-10-12-build-diagnostic-bound.md.
