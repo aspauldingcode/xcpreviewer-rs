@@ -900,6 +900,16 @@
     "result": "2nativeAA processes support9phase retainedbindingState:heldred\u2192blue,newrendererred,originalblue\u2192red.18alloc294912bytes/1944padding281952tail,15resealedfaults;zeroownedwindows/actualwait0.",
     "started_at": "2026-10-12T06:40:33.128336+00:00"
   },
+  "native_state_content_checkpoint": {
+    "classification": "Native owned ImageRenderer changed content parameter retains State; no Canvas/source-edit migration",
+    "evidence": "research/evidence/native-state-content-2026-10-11",
+    "manifest_sha256": "1ea180c6dab3f56af446eb2952e30a091104979acef2b08d690203d068747c5d",
+    "milestones_complete": false,
+    "next_wake_hint": "Skip completed binding,identity andpalette controls. Next fixed-id geometry/state/callback-size discriminator or portable lifecycle gap. Canvas requires approved bridge restoration.",
+    "result": "Two nativeAA processes retain blue State across green/yellow palette updates and originalpalette restoration; changed id resetsred.22alloc360448bytes/2376padding344608tail;15resealedfaults;wait0/windows0.",
+    "retained_failure": "No producer failure; historical failures retained unchanged.",
+    "started_at": "2026-10-12T07:00:11.938525+00:00"
+  },
   "native_state_identity_checkpoint": {
     "classification": "Native owned ImageRenderer content setter and child id state reference; no Canvas/UI input",
     "evidence": "research/evidence/native-state-identity-2026-10-11",

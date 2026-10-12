@@ -1,0 +1,27 @@
+{
+  "expected_colors": [
+    "red",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "green",
+    "yellow",
+    "green",
+    "blue",
+    "red",
+    "red"
+  ],
+  "competing_claims": [
+    "Changed palette input under fixed child identity reevaluates render but retains State and captured binding; changed identity resets it",
+    "Content input change resets state or fails to refresh pixels/binding target"
+  ],
+  "scope": "Owned public ImageRenderer state/content parameter reference; no source-edit or Canvas migration",
+  "budgets": {
+    "producer_slots": 4,
+    "compile_seconds": 60,
+    "native_seconds": 15,
+    "native_alarm_seconds": 12,
+    "native_repeats": 2
+  }
+}

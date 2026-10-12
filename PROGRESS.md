@@ -947,3 +947,8 @@ Captured public binding mutates held ImageRenderer privateState immediately;fres
 ### 2026-10-11 native content identity and State
 
 Same-renderer same-id content preserves blue State; changing child id resets red, returning id resets again; detached old binding getter changes leave replacement red. Two native processes/22alloc360448bytes including2376padding344608tail;15resealedfaults;wait0/zeroownedwindows. Public ImageRenderer reference only, Canvas/source-edit migration remains open. See docs/reverse-engineering/2026-10-11-native-state-identity.md.
+
+
+### 2026-10-11 native content parameter State preservation
+
+Changed palette under fixed child identity refreshes pixels while retaining private State; original held binding changes alternate palette, original content restoration stays blue, changed identity resets red. Two nativeAA processes/22alloc360448bytes/2376padding344608tail;15resealedfaults;wait0/windows0. ImageRenderer reference only, no Canvas/source-edit migration claim. See docs/reverse-engineering/2026-10-11-native-state-content.md.
