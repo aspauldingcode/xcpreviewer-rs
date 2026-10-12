@@ -897,3 +897,8 @@ Fixed optional compiler witness accepting omitted/unrelated-only active-root sna
 ### 2026-10-11 final compiler descendant retirement
 
 Fixed optional observer admitting missing final known children as implicit retirement. Twelve source controls, eight resealed faults and wrapper rejection without native signals; matching zombie row remains accepted under scoped process policy. Historical native evidence stays frozen; native zombie/absence/LLVM and Canvas acceptance remain open. See docs/reverse-engineering/2026-10-11-compiler-descendant-retirement.md.
+
+
+### 2026-10-11 native zombie visibility
+
+Pinned observer omits the same known child both during independently waitidWNOWAIT-proved unreaped exit42 and after waitpid reap42; live birth/path identity was present first. Parent0,32exactbytes,6nativeprocesses,0signals;12resealedfaults. Current backend does not qualify matching-zombie admission. See docs/reverse-engineering/2026-10-11-zombie-visibility.md.

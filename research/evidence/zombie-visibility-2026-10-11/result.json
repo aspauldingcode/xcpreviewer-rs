@@ -1,0 +1,29 @@
+{
+  "ready": {
+    "phase": "ready",
+    "pid": 41742,
+    "parent": 41731,
+    "group": 41742,
+    "child": 41743,
+    "child_group": 41743,
+    "executable": "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+  },
+  "unreaped": {
+    "phase": "unreaped",
+    "child": 41743,
+    "status": 42,
+    "code": 1,
+    "exited": true
+  },
+  "reaped": {
+    "phase": "reaped",
+    "child": 41743,
+    "exit_code": 42,
+    "exited": true
+  },
+  "root_exit_code": 0,
+  "signals": [],
+  "native_subprocesses": 6,
+  "zombie_row_present": false,
+  "retired_row_present": false
+}

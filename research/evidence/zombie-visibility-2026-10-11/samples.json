@@ -1,0 +1,60 @@
+[
+  {
+    "stage": "live",
+    "roots": [
+      41742
+    ],
+    "known": {},
+    "rows": {
+      "41743": {
+        "pid": 41743,
+        "parent": 41742,
+        "group": 41743,
+        "state": "L",
+        "identity": [
+          1791776655,
+          319644,
+          "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+        ]
+      },
+      "41742": {
+        "pid": 41742,
+        "parent": 41731,
+        "group": 41742,
+        "state": "L",
+        "identity": [
+          1791776655,
+          316224,
+          "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+        ]
+      }
+    },
+    "elapsed_seconds": 0.006957416999999966
+  },
+  {
+    "stage": "unreaped",
+    "roots": [],
+    "known": {
+      "41743": [
+        1791776655,
+        319644,
+        "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+      ]
+    },
+    "rows": {},
+    "elapsed_seconds": 0.00737645800000003
+  },
+  {
+    "stage": "reaped",
+    "roots": [],
+    "known": {
+      "41743": [
+        1791776655,
+        319644,
+        "/Users/8amps/xcpreviewer-rs/research/build/zombie-visibility-2026-10-11/zombie-visibility"
+      ]
+    },
+    "rows": {},
+    "elapsed_seconds": 0.009199999999999986
+  }
+]

@@ -2844,5 +2844,14 @@
     "cleanup_target_artifact": "workspace-lifecycle.json",
     "close_owned_workspace_when_finished": true,
     "verify_zero_owned_windows": true
+  },
+  "zombie_visibility_checkpoint": {
+    "classification": "Native current-observer visibility counterexample, independent waitid/waitpid control",
+    "evidence": "research/evidence/zombie-visibility-2026-10-11",
+    "manifest_sha256": "cf7b7989575232917c9ddbacad3176887e5d8f3d0b2b67812fb539fa5af3edd1",
+    "milestones_complete": false,
+    "next_wake_hint": "Implement separate public typed retirement adapter with birth+state report and no invented executable path; validate live/zombie/reaped against owning wait status. Preserve staged backend; no repeat unchanged native visibility pair.",
+    "result": "Knownlivechild identity present; owned waitidWNOWAIT exit42 proves unreaped, row absent; waitpidexit42 reap, row absent. Parent0,32exactbytes,6nativeprocesses,0signals,12resealedfaults.",
+    "started_at": "2026-10-12T03:45:59.188024+00:00"
   }
 }
