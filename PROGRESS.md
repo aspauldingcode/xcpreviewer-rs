@@ -1060,3 +1060,8 @@ Two owned controls independently report child SIGKILL9 after root wait43; defaul
 ### 2026-10-14: Independent ignored-SIGTERM verifier hardening
 
 Original native evidence remains sealed. Reader now independently rejects changed birth identity, ancestry/session topology, executable path, raw empty-output digests, broadened cleanup scope, malformed process state, root exit decode and watcher diagnostics. Fifteen resealed faults pass rejection checks; six isolated reader tests pass. No new native acquisition. Both milestones remain open.
+
+
+### 2026-10-14: Supervisor deadline with ignoring child
+
+Two actual owned controls independently report root SIGTERM15 and child SIGKILL9; supervisor target wait -15/failure deadline/drained true, client original deadline error retained without private abort/emergency closure. Fifteen resealed faults and six isolated reader tests pass. Child reaping and both milestone acceptance contracts remain open. Evidence `research/evidence/ignore-child-deadline-2026-10-14`; manifest `d7bf6100d00219454f30a3b7173b03e6556e31d9cb50b20c4e29d41cfcf81bae`. Next: private client abort contrast.

@@ -1,0 +1,71 @@
+{
+  "mode": "running-0",
+  "code": 43,
+  "policy": "running",
+  "error": "Error: Observed compiler failed: deadline",
+  "record": {
+    "pid": 15120,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": -15,
+      "failure": "deadline",
+      "drained": true,
+      "tracked": 2,
+      "observations": 54,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "observed": [
+    [
+      {
+        "pid": 15132,
+        "parent": 15127,
+        "group": 15120,
+        "state": "L",
+        "identity": [
+          1792009153,
+          143225,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 15137,
+        "parent": 15132,
+        "group": 15137,
+        "state": "L",
+        "identity": [
+          1792009153,
+          279662,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 15137,
+        "parent": 1,
+        "group": 15137,
+        "state": "L",
+        "identity": [
+          1792009153,
+          279662,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ]
+  ],
+  "released": true
+}
