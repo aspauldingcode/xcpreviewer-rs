@@ -1,0 +1,9 @@
+# SIGTERM-ignoring child contrast
+
+Two owned controls set SIGTERM to SIG_IGN before the child readiness acknowledgement. Each child creates its own session, is observed with full birth identity, and is independently registered for kernel NOTE_EXIT and NOTE_EXITSTATUS before the root exit gate is released. The existing supervisor performs its normal bounded drain. Both root waits return 43; both child kernel statuses independently decode to SIGKILL (9). The client retains the original compiler failure and a drained receipt with two tracked identities and zero remaining observed processes, without private abort or emergency closure.
+
+This contrasts with the sealed stopped/default-disposition controls, which reported SIGTERM (15). Signal disposition discriminates these finite Darwin controls. Kernel exit events establish termination; child reaping, unseen escape coverage, actual Rust descendant waits, physical storage reclamation and native Canvas protocol acceptance remain unqualified. No workspace was opened. The private capture bridge remains absent; it was not restarted. REA 6.2.0 was independently available on its newly started server, and the owned ARM64 exit watcher retained SHA-256 464058e04ba8cb220cbfb6ebb5d550f63deb48dc0d8031a67d54e7076dc3176d.
+
+The evidence is research/evidence/ignore-child-exit-2026-10-14. Each acquisition has a 15-second outer deadline and consumes one of two slots. The verifier independently decodes raw wait statuses and rejects six resealed faults, including wrong signal, changed disposition, birth gate, receipt, prediction and producer wait. No native acquisition is repeated during verification.
+
+Next: distinguish supervisor deadline from root-first failure with an ignoring child, preserving independent wait-status observation and bounded ownership gates.

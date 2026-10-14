@@ -1050,3 +1050,8 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-12: stopped-child prediction falsified
 
 [Independent stopped-state/exit gate](docs/reverse-engineering/2026-10-12-stopped-child-exit.md) confirms SSTOP4 twice, yet child kernel termination isSIGTERM15 in stopped and running contrasts.4nativecontrols,16exactmarkerbytes;22resealedfaults. OriginalSIGKILL9 prediction/assertion failure retained;3remaining slots passed revised expectation. Reaping and milestones remain open.
+
+
+### 2026-10-14: SIGTERM-ignoring child exit contrast
+
+Two owned controls independently report child SIGKILL9 after root wait43; default/stopped controls previously reported SIGTERM15. Six resealed faults reject corrupted disposition/status/receipt/identity/wait/prediction. Child reaping and both milestone acceptance contracts remain open. Evidence: `research/evidence/ignore-child-exit-2026-10-14`; manifest SHA-256 `165439fb1e3694fe80dd3c354644047aa4cd2abe55a537063de86bc347cab3ec`. Next: supervisor deadline contrast.

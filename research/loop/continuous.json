@@ -587,6 +587,25 @@
     "result": "Current canonical88-check contract and external run anchor match; fresh-process verification passes; idempotent accepted research record; default candidates empty, delivery review pending and both milestones false. No new producer executions.",
     "started_at": "2026-10-11T22:30:48.706610+00:00"
   },
+  "ignore_child_exit_checkpoint": {
+    "classification": "two owned native SIGTERM-ignoring child kernel exits",
+    "evidence": "research/evidence/ignore-child-exit-2026-10-14",
+    "manifest_sha256": "165439fb1e3694fe80dd3c354644047aa4cd2abe55a537063de86bc347cab3ec",
+    "next_wake_hint": "Supervisor deadline with ignoring child; do not repeat root-first disposition contrasts.",
+    "result": {
+      "child_reaped_qualified": false,
+      "child_signals": [
+        9,
+        9
+      ],
+      "native_controls": 2,
+      "root_codes": [
+        43,
+        43
+      ]
+    },
+    "retained_failure": "No producer failure; prior stopped-child failed prediction remains sealed. Native Canvas and child reaping remain unqualified."
+  },
   "last_completed": "Implemented frozen CLI/native extent verifier with transparent PNG and pixel/padding/tail/failure controls. Three changed attempts stop on host process-observation; no full extent acceptance. Fixed observation-timeout sealing and scoped command identity reads, preserving start/command guards and2s limits;9 targeted tests and323 isolated repository tests pass. Public libproc observation oracle selected next.",
   "last_github_sync": {
     "checkpoint": "Extent CLI observation failures and owned observer controls",
