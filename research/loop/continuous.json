@@ -341,6 +341,47 @@
     "result": "Two parents/two forked children; baseline heartbeat advances after parent timeout then bounded self-exit; fixed same-group heartbeat stable after owned group kill; direct parents reaped -9/TimeoutExpired; 32 observation bytes and eight resealed faults. Descendant reap/physical release unknown.",
     "started_at": "2026-10-11T22:06:04.595294+00:00"
   },
+  "completion_guard_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/completion-guard-corrected-2026-10-14",
+    "manifest_sha256": "1d51e5d0157a2159b9b9fdc35d707046173ac00751e4c738dbde82d10bdf5299",
+    "next_wake_hint": "Evaluate compiler phase recovery with verified observed-completion guard; retain original deadline evidence. Native Canvas capture bridge remains separate prerequisite.",
+    "result": {
+      "completion_guard_verified": true,
+      "controlled_payload_bytes": 32,
+      "native_canvas_protocol_qualified": false,
+      "native_compiler_builds": 0,
+      "outcomes": [
+        {
+          "first_terminal_poll_minus_deadline": -0.6424620420000001,
+          "mode": "delayed-zero",
+          "target_wait_code": 0
+        },
+        {
+          "first_terminal_poll_minus_deadline": -0.5510630000000001,
+          "mode": "delayed-failure",
+          "target_wait_code": 43
+        },
+        {
+          "first_terminal_poll_minus_deadline": 0.615536292,
+          "mode": "late",
+          "target_wait_code": 0
+        },
+        {
+          "first_terminal_poll_minus_deadline": -0.649213458,
+          "mode": "abort",
+          "target_wait_code": 0
+        }
+      ],
+      "owned_peer_jobs": 4
+    },
+    "retained_failure": "Original four-slot acquisition retained: invalid os.alarm caused three producer assertion failures. Corrected signal.alarm campaign used four additional explicitly scoped slots; all pass. Total eight jobs, no compiler builds.",
+    "started_at": "2026-10-14T22:11:13.255251+00:00",
+    "status": "verified"
+  },
   "deadline_poll_audit_checkpoint": {
     "checks": {
       "isolated_tests": 6,

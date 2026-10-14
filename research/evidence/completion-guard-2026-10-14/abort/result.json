@@ -1,0 +1,27 @@
+{
+  "mode": "abort",
+  "error": "Error: Observed compiler aborted",
+  "record": {
+    "pid": 78071,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 1,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 0,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/8amps/xcpreviewer-rs/tools/re/fixtures/OwnedCompletionBoundary.py\", line 9, in <module>\n    os.alarm(3)\nAttributeError: module 'os' has no attribute 'alarm'\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 207,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "5f398283202ed5f14f6b1de0ff229257e7cc73aedcfd56a66fbd8f75e026329b"
+  }
+}

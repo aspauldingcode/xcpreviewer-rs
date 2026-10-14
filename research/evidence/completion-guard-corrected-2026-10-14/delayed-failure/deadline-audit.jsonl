@@ -1,0 +1,17 @@
+{"kind": "audit_identity", "anchor_sha256": "48c73a15ac5720ec653271bc6ec523a090fb2bff4301f2308a9812faea4187b8", "milliseconds": 1000, "clock_implementation": "mach_absolute_time()", "sequence": 1}
+{"kind": "anchor_clock", "line": 45, "value": 0.123678125, "anchor_pid": 78328, "sequence": 2}
+{"kind": "target_spawn", "pid": 78332, "anchor_pid": 78328, "value": 0.127671291, "sequence": 3}
+{"kind": "target_poll", "pid": 78332, "code": null, "value": 0.12830825, "sequence": 4}
+{"kind": "target_poll", "pid": 78332, "code": 43, "value": 0.572615125, "sequence": 5}
+{"kind": "anchor_clock", "line": 54, "value": 0.572748, "anchor_pid": 78328, "sequence": 6}
+{"kind": "target_poll", "pid": 78332, "code": 43, "value": 0.572889625, "sequence": 7}
+{"kind": "anchor_clock", "line": 54, "value": 0.573119833, "anchor_pid": 78328, "sequence": 8}
+{"kind": "injected_delay_start", "value": 0.573199583, "terminal_observed_at": 0.572612333, "deadline": 1.123678125, "sequence": 9}
+{"kind": "injected_delay_end", "value": 1.17434875, "sequence": 10}
+{"kind": "anchor_clock", "line": 110, "value": 1.179417666, "anchor_pid": 78328, "sequence": 11}
+{"kind": "target_poll", "pid": 78332, "code": 43, "value": 1.179808708, "sequence": 12}
+{"kind": "anchor_clock", "line": 54, "value": 1.179870541, "anchor_pid": 78328, "sequence": 13}
+{"kind": "target_poll", "pid": 78332, "code": 43, "value": 1.537264416, "sequence": 14}
+{"kind": "anchor_clock", "line": 54, "value": 1.541090791, "anchor_pid": 78328, "sequence": 15}
+{"kind": "target_poll", "pid": 78332, "code": 43, "value": 1.939887666, "sequence": 16}
+{"kind": "anchor_clock", "line": 54, "value": 1.940873125, "anchor_pid": 78328, "sequence": 17}

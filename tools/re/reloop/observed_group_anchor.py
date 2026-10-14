@@ -43,20 +43,28 @@ def main():
     known = {}; topology = {}; target = None; observations = 0; failure = None
     os.set_blocking(0, False)
     deadline = time.monotonic()+int(milliseconds)/1000
+    completion_before_deadline = False
 
     def emit(value):
         os.write(3, (json.dumps(value)+'\n').encode())
 
+    def poll_target():
+        nonlocal completion_before_deadline
+        code = target.poll()
+        if code is not None and time.monotonic() < deadline:
+            completion_before_deadline = True
+        return code
+
     def snapshot():
         nonlocal observations
         assert hashlib.sha256(open(helper,'rb').read()).hexdigest() == expected
-        roots = [str(target.pid)] if target.poll() is None else []
+        roots = [str(target.pid)] if poll_target() is None else []
         args = roots+['%d:%d:%d' % (pid,*ident[:2]) for pid,ident in known.items()]
         data = subprocess.run([helper,*args],capture_output=True,check=True,timeout=1)
         assert len(data.stdout) <= 1048576
         assert hashlib.sha256(open(helper,'rb').read()).hexdigest() == expected
         rows = parse_snapshot(data.stdout)
-        if roots and target.pid not in rows and target.poll() is None:
+        if roots and target.pid not in rows and poll_target() is None:
             raise RuntimeError('Live owned target identity unavailable')
         selected = {target.pid} if roots else set()
         selected.update(pid for pid,ident in known.items() if pid in rows and rows[pid]['identity']==ident)
@@ -98,8 +106,9 @@ def main():
             except BlockingIOError:command=b''
             if command:
                 assert command==b'abort\n';failure='abort';break
-            if time.monotonic()>=deadline:failure='deadline';break
-            if target.poll() is not None:break
+            code = poll_target()
+            if time.monotonic()>=deadline and not completion_before_deadline:failure='deadline';break
+            if code is not None:break
             time.sleep(.025)
         # Capture the actual target wait status after bounded observed drain.
         drain();code=target.wait(timeout=1)

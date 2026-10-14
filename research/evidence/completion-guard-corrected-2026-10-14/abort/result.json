@@ -1,0 +1,27 @@
+{
+  "mode": "abort",
+  "error": "Error: Observed compiler aborted",
+  "record": {
+    "pid": 78556,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 0,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "\u0000\u0001\u0002�\n*c�",
+    "stderr": "",
+    "stdoutBytes": 8,
+    "stderrBytes": 0,
+    "stdoutSha256": "f96b5b4542708403f47d6bd8814e283c82cfc9f5d813ee7bf34c0526a77910ae",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

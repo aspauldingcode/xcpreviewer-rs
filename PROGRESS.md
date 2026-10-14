@@ -1110,3 +1110,16 @@ Pinned unchanged anchor body is instrumented with passthrough real monotonic cal
 ### 2026-10-14: Injected post-completion scheduling delay
 
 Two owned peer controls share0.2s delayed public observer. Both actual target waits0 are observed before1s deadline. Baseline resolves; explicit post-completion sleep crosses deadline and reclassifies completed peer as deadline, with drained receipt/no emergency closure. Real clocks/poll results pass through, no fabricated time/status. All16 sender payload bytes and receiver digests/text verified; eight resealed faults/six isolated tests pass. No compiler builds/pixel claims/deadline extension. Production policy unchanged and historical compiler cause unknown. Evidence `research/evidence/post-completion-delay-2026-10-14`, manifest `4be710fd1073a391fda6312839abad9fddcf7a96531710f86aac20aeecd9ed15`. Both milestones open. Next: observed-completion guard evaluation.
+
+
+### 2026-10-14: Preserve observed completion before deadline
+
+The supervisor previously reclassified an actual terminal target poll observed before the deadline when subsequent scheduling delay crossed that deadline. The production guard remembers only terminal completion observed by the supervisor's own monotonic clock before the deadline. Private abort is checked first. First terminal observation after the deadline remains a deadline failure; cleanup deadlines are unchanged.
+
+Four corrected owned native peers exercise delayed success (wait 0), delayed original failure (wait 43), genuine late completion (wait 0 first observed after deadline), and abort precedence (wait 0 with abort verdict). Explicit post-completion sleeps cross the deadline in the first two controls. Real poll results and clocks pass through unchanged. All 32 sender bytes, admitted receiver bytes/digests and UTF-8 replacement text match independent expectations. No pixel allocation or padding claim is made by these peer-only controls.
+
+The initial four-slot campaign used invalid os.alarm, producing three failed assertions; its fourth abort assertion passed but cannot qualify the intended fixture. All original failures are sealed in research/evidence/completion-guard-2026-10-14. The corrected signal.alarm campaign used four separately declared slots; total eight owned peer jobs and zero compiler builds. Neither campaign's budget was reset.
+
+Corrected evidence: research/evidence/completion-guard-corrected-2026-10-14, manifest SHA256 1d51e5d0157a2159b9b9fdc35d707046173ac00751e4c738dbde82d10bdf5299. Eight resealed fault mutations and six isolated tests verify acceptance separately from acquisition. Current REA ARM64 public helper identity is recorded in provenance-note.json; rea-status.json explicitly retains prior preflight provenance. Private Xcode capture bridge remains unavailable. No owned Xcode workspace was opened.
+
+Historical compiler timing causes remain unknown. This change establishes scoped production supervisor completion semantics, not physical resource reclamation, unseen process coverage or native Canvas protocol evidence. Both milestones and issues 15, 19, 22 and 25 remain open. Next: a bounded compiler recovery experiment using this guard, or independent native interaction evidence when its prerequisites change.

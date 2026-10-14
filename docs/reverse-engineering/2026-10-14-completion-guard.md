@@ -1,0 +1,11 @@
+# Observed completion deadline guard — 2026-10-14
+
+The supervisor previously reclassified an actual terminal target poll observed before the deadline when subsequent scheduling delay crossed that deadline. The production guard remembers only terminal completion observed by the supervisor's own monotonic clock before the deadline. Private abort is checked first. First terminal observation after the deadline remains a deadline failure; cleanup deadlines are unchanged.
+
+Four corrected owned native peers exercise delayed success (wait 0), delayed original failure (wait 43), genuine late completion (wait 0 first observed after deadline), and abort precedence (wait 0 with abort verdict). Explicit post-completion sleeps cross the deadline in the first two controls. Real poll results and clocks pass through unchanged. All 32 sender bytes, admitted receiver bytes/digests and UTF-8 replacement text match independent expectations. No pixel allocation or padding claim is made by these peer-only controls.
+
+The initial four-slot campaign used invalid os.alarm, producing three failed assertions; its fourth abort assertion passed but cannot qualify the intended fixture. All original failures are sealed in research/evidence/completion-guard-2026-10-14. The corrected signal.alarm campaign used four separately declared slots; total eight owned peer jobs and zero compiler builds. Neither campaign's budget was reset.
+
+Corrected evidence: research/evidence/completion-guard-corrected-2026-10-14, manifest SHA256 1d51e5d0157a2159b9b9fdc35d707046173ac00751e4c738dbde82d10bdf5299. Eight resealed fault mutations and six isolated tests verify acceptance separately from acquisition. Current REA ARM64 public helper identity is recorded in provenance-note.json; rea-status.json explicitly retains prior preflight provenance. Private Xcode capture bridge remains unavailable. No owned Xcode workspace was opened.
+
+Historical compiler timing causes remain unknown. This change establishes scoped production supervisor completion semantics, not physical resource reclamation, unseen process coverage or native Canvas protocol evidence. Both milestones and issues 15, 19, 22 and 25 remain open. Next: a bounded compiler recovery experiment using this guard, or independent native interaction evidence when its prerequisites change.
