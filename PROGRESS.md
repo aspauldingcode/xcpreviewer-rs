@@ -1070,3 +1070,8 @@ Two actual owned controls independently report root SIGTERM15 and child SIGKILL9
 ### 2026-10-14: Private abort with ignoring child
 
 Two actual owned private cancellation controls independently report root SIGTERM15 and child SIGKILL9. Original client abort error retained; supervisor wait -15/failure abort/drained true with no emergency closure. Asynchronous owned watcher permits independent cancellation. Eighteen resealed faults and six isolated reader tests pass. No child reaping or universal callback claim. Evidence `research/evidence/ignore-child-abort-2026-10-14`, manifest `6cd44a4174726c56de64192ef2542dbe59a4d36d32875815f4edcdac28243ff8`. Both milestones remain open. Next: independent compiler descendant-wait gap.
+
+
+### 2026-10-14: Actual Rustc direct-child waits
+
+Pinned actual Rustc is directly observed with full birth/path/parent/session rechecks before two owned SIGTERM cancellations, actual waits -15; two positive metadata builds wait0. Every deterministic source byte and empty output stream digest is independently verified. Eight resealed faults and six isolated reader tests pass. This establishes direct-parent wait capability, not existing supervisor descendant wait or Native Canvas acceptance. Evidence `research/evidence/rustc-child-wait-2026-10-14`, manifest `0aa66cc68048448ca0bcdecf65b07bf1e3f4c318b0b90052efdcaca2d5ac1d46`. Both milestones remain open.

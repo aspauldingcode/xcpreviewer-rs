@@ -1,0 +1,50 @@
+{
+  "mode": "cancel-1",
+  "pid": 25141,
+  "parent_pid": 25135,
+  "command": [
+    "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+    "--crate-name",
+    "owned_wait",
+    "--crate-type",
+    "lib",
+    "--emit",
+    "metadata",
+    "/Users/8amps/xcpreviewer-rs/research/evidence/rustc-child-wait-2026-10-14/cancel-1/input.rs",
+    "-o",
+    "/Users/8amps/xcpreviewer-rs/research/evidence/rustc-child-wait-2026-10-14/cancel-1/output.rmeta"
+  ],
+  "observation": {
+    "pid": 25141,
+    "parent": 25135,
+    "group": 25141,
+    "state": "L",
+    "identity": [
+      1792010393,
+      387151,
+      "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+    ]
+  },
+  "rechecked": [
+    {
+      "pid": 25141,
+      "parent": 25135,
+      "group": 25141,
+      "state": "L",
+      "identity": [
+        1792010393,
+        387151,
+        "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc"
+      ]
+    }
+  ],
+  "wait_code": -15,
+  "elapsed_seconds": 0.046808000000000016,
+  "stdout_bytes": 0,
+  "stderr_bytes": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_bytes": 1777780,
+  "source_sha256": "3415813df6c95337b4e6e7896ce99f335cf6d41a41f61556fef632a86c2bff27",
+  "output_present": false
+}

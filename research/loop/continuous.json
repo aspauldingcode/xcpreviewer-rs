@@ -3096,6 +3096,29 @@
     "rust_wasm_zero_workers": true,
     "scientific_delivery_review": "pending"
   },
+  "rustc_child_wait_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/rustc-child-wait-2026-10-14",
+    "manifest_sha256": "0aa66cc68048448ca0bcdecf65b07bf1e3f4c318b0b90052efdcaca2d5ac1d46",
+    "next_wake_hint": "Integrate actual compiler exit/wait oracle with existing builder cancellation; skip completed direct-parent controls.",
+    "result": {
+      "actual_rustc_wait_codes": [
+        -15,
+        -15,
+        0,
+        0
+      ],
+      "controlled_source_bytes": 3555616,
+      "native_controls": 4,
+      "supervisor_integration_qualified": false
+    },
+    "retained_failure": "No producer failure. Direct Rustc waits qualified; existing supervisor descendant wait and Canvas acceptance remain unqualified.",
+    "started_at": "2026-10-14T20:39:52.971329+00:00",
+    "status": "review-pending"
+  },
   "schema_version": 1,
   "session_build_checkpoint": {
     "budget": "Four producers: compiler stages30sec/4MiB child caps; V8/WasmKit15sec. Known universal REA import failure not repeated.",
