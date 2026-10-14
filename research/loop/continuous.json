@@ -3119,6 +3119,27 @@
     "started_at": "2026-10-14T20:39:52.971329+00:00",
     "status": "review-pending"
   },
+  "rustc_kernel_wait_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 11
+    },
+    "evidence": "research/evidence/rustc-kernel-wait-2026-10-14",
+    "manifest_sha256": "bce3ef86bcf8db11e78c597c16f34b01305a131dde6f2131c0d52a947d4db849",
+    "next_wake_hint": "Use acknowledged single-process registration in actual source builder supersession; retain registration races.",
+    "result": {
+      "actual_rustc_wait_codes": [
+        -15,
+        -15
+      ],
+      "controlled_source_bytes": 3555560,
+      "native_controls": 2,
+      "supervisor_integration_qualified": false
+    },
+    "retained_failure": "No producer failure. Correlated direct compiler waits qualified; existing supervisor integration and Canvas acceptance remain unqualified.",
+    "started_at": "2026-10-14T20:49:35.703535+00:00",
+    "status": "review-pending"
+  },
   "schema_version": 1,
   "session_build_checkpoint": {
     "budget": "Four producers: compiler stages30sec/4MiB child caps; V8/WasmKit15sec. Known universal REA import failure not repeated.",

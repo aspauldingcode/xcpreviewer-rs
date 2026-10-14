@@ -1075,3 +1075,8 @@ Two actual owned private cancellation controls independently report root SIGTERM
 ### 2026-10-14: Actual Rustc direct-child waits
 
 Pinned actual Rustc is directly observed with full birth/path/parent/session rechecks before two owned SIGTERM cancellations, actual waits -15; two positive metadata builds wait0. Every deterministic source byte and empty output stream digest is independently verified. Eight resealed faults and six isolated reader tests pass. This establishes direct-parent wait capability, not existing supervisor descendant wait or Native Canvas acceptance. Evidence `research/evidence/rustc-child-wait-2026-10-14`, manifest `0aa66cc68048448ca0bcdecf65b07bf1e3f4c318b0b90052efdcaca2d5ac1d46`. Both milestones remain open.
+
+
+### 2026-10-14: Correlated actual Rustc kernel and parent waits
+
+New signal-free single-process exit adapter independently registers full birth/path before cancellation. Two actual Rustc controls acknowledge registration before owned SIGTERM; parent waits -15 match kernel raw15, watcher waits0. Complete deterministic source bytes and empty outputs verified. Eleven resealed faults and six isolated tests pass. Existing supervisor descendant correlation and Native Canvas acceptance remain open. Evidence `research/evidence/rustc-kernel-wait-2026-10-14`, manifest `bce3ef86bcf8db11e78c597c16f34b01305a131dde6f2131c0d52a947d4db849`. Next: source builder supersession registration gate.
