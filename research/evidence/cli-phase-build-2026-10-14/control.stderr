@@ -1,0 +1,31 @@
+Error: Observed compiler failed: deadline
+    at Socket.<anonymous> (/Users/8amps/xcpreviewer-rs/tools/re/reloop/observed_compiler.js:45:176)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23) {
+  record: {
+    pid: 44165,
+    anchorCode: null,
+    signal: 'SIGKILL',
+    report: {
+      kind: 'complete',
+      target_code: -15,
+      failure: 'deadline',
+      drained: true,
+      tracked: 8,
+      observations: 73,
+      remaining_observed: 0,
+      scope: 'Observed full-identity ancestry and inherited group only; unseen escapes excluded'
+    },
+    emergencyClosed: false,
+    privateAbortRequested: false,
+    stdout: '',
+    stderr: '',
+    stdoutBytes: 0,
+    stderrBytes: 0,
+    stdoutSha256: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+    stderrSha256: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+  }
+}

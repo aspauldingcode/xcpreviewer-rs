@@ -1090,3 +1090,8 @@ Registration-gated source supersession independently captures actual Rustc raw k
 ### 2026-10-14: Independent toolchain snapshot timing
 
 Two current full snapshots take0.857/0.750 seconds, six compiler query waits0,61 inventoried files/233810837bytes per snapshot, unchanged pinned canonical identity. Query bytes/digests and full inventory entries independently verified; no binaries copied. Eight resealed faults/six isolated tests pass. Persistent current snapshot slowdown is contradicted; historical recovery deadline cause and recovery acceptance remain unqualified. No builder rerun/timeout extension. Evidence `research/evidence/toolchain-snapshot-timing-2026-10-14`, manifest `666005d77ad22e8d22ccbc00453867cf7adfa31a4eb24550499914dfe93b90d9`. Next: owned CLI phase marker. Both milestones open.
+
+
+### 2026-10-14: Owned CLI phase markers with retained deadline
+
+Pinned unchanged CLI phase wrapper localizes first instrumented deadline after successful compiler wait and before final identity marker, with no receipt/frame admitted. That first seal/failure stays retained. Remaining slot starts tracing after imports, same baseline source: six markers, successful receipt/frame and closure. Full16384-byte frame including84padding/15936tail,17011 paired module bytes and1288 historical warning bytes verified. Eight resealed faults/six isolated tests pass. Shared budget2/2, no extension/reset. Historical recovery cause remains unknown; baseline success does not qualify recovery. Evidence `cli-phase-build-2026-10-14` and `cli-phase-optimized-2026-10-14`. Both milestones open. Next: optimized phase wrapper for changed recovery diagnostic.

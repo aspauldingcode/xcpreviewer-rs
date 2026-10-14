@@ -215,6 +215,30 @@
     },
     "retained_failure": "Proxyargindex startuperror causedbrokencontrolpipe/cleanupunverified; initialproxy/logs retained. Fixedwithinremaining3of4slots. Failedstartupcleanup/reaping/defaultAA unqualified."
   },
+  "cli_phase_build_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/cli-phase-build-2026-10-14",
+    "manifest_sha256": "405d1222de1b7668d3f451bee2098b8b8d8e65bfb171f3543fb1f6ee4ae312a8",
+    "next_wake_hint": "Optimized phase wrapper in newly scoped recovery diagnostic; preserve earlier failed campaign and two-slot budget.",
+    "result": {
+      "first_deadline_retained": true,
+      "fresh_build_jobs": 2,
+      "historical_deadline_cause_qualified": false,
+      "module_bytes_equal": 17011,
+      "optimized_build_qualified": true,
+      "retained_frame_bytes": 16384
+    },
+    "retained_failure": "First trace-before-imports build hit deadline after compiler wait, before final identity marker; sealed unchanged. Optimized remaining slot succeeds, without qualifying historical cause or recovery.",
+    "second_slot_evidence": "research/evidence/cli-phase-optimized-2026-10-14",
+    "second_slot_manifest_sha256": "1b4a2a4b5ba6a218042bc95082780b68bc7798c5ad23af3b2ebdf30f0035b4cf",
+    "shared_build_limit": 2,
+    "shared_builds_used": 2,
+    "started_at": "2026-10-14T21:19:38.957344+00:00",
+    "status": "review-pending"
+  },
   "compiler_descendant_retirement_checkpoint": {
     "classification": "Source/model final-descendant admission hardening, no native execution",
     "evidence": "research/evidence/compiler-descendant-retirement-2026-10-11",
