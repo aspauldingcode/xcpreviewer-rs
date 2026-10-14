@@ -1085,3 +1085,8 @@ New signal-free single-process exit adapter independently registers full birth/p
 ### 2026-10-14: Actual builder compiler kernel capture; recovery failure retained
 
 Registration-gated source supersession independently captures actual Rustc raw kernel status15, watcher wait0 and CLI root abort wait-15/drained true. Baseline matches all32768 bytes including168padding/31872tail. Recovery generation3 hits supervisor deadline before generated-stage artifact; subsequent frame assertion fails with baseline retained. Three-build budget exhausted once, no retry/extension. Original producer failure/stage records sealed. Eight resealed faults and six isolated reader tests verify scoped partial measurements. Parent compiler wait and successful recovery remain unqualified. Evidence `research/evidence/builder-kernel-cancel-2026-10-14`, manifest `f531ba17e0232a64f1016dae2aab82c183122994e5b7f2fe055605ac625bc946`. Both milestones remain open. Next: independent recovery snapshot timing diagnosis.
+
+
+### 2026-10-14: Independent toolchain snapshot timing
+
+Two current full snapshots take0.857/0.750 seconds, six compiler query waits0,61 inventoried files/233810837bytes per snapshot, unchanged pinned canonical identity. Query bytes/digests and full inventory entries independently verified; no binaries copied. Eight resealed faults/six isolated tests pass. Persistent current snapshot slowdown is contradicted; historical recovery deadline cause and recovery acceptance remain unqualified. No builder rerun/timeout extension. Evidence `research/evidence/toolchain-snapshot-timing-2026-10-14`, manifest `666005d77ad22e8d22ccbc00453867cf7adfa31a4eb24550499914dfe93b90d9`. Next: owned CLI phase marker. Both milestones open.

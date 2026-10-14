@@ -3361,6 +3361,35 @@
     "result": "Cleanpeer0/ack;fault fclose-1errno28/callback1/fdclosed/peer42/noack, parentMach268451843 then owned cleanup.20allocations327680bytes incl10800padding/304640tail;28resealedfaults. Physical reclaim/actualCanvas errors unaccepted.",
     "started_at": "2026-10-12T01:52:07.997084+00:00"
   },
+  "toolchain_snapshot_timing_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/toolchain-snapshot-timing-2026-10-14",
+    "manifest_sha256": "666005d77ad22e8d22ccbc00453867cf7adfa31a4eb24550499914dfe93b90d9",
+    "next_wake_hint": "Owned actual CLI phase marker adapter; no unchanged builder rerun or extended timeout.",
+    "result": {
+      "durations_seconds": [
+        0.8568007910000001,
+        0.749968333
+      ],
+      "historical_deadline_cause_qualified": false,
+      "inventoried_bytes": 467621674,
+      "query_wait_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "snapshot_controls": 2
+    },
+    "retained_failure": "Historical recovery deadline remains sealed and unexplained. Current snapshot timing does not qualify recovery or historical cause.",
+    "started_at": "2026-10-14T21:08:44.288996+00:00",
+    "status": "review-pending"
+  },
   "typed_retirement_checkpoint": {
     "classification": "Native retirement prediction falsified; explicit diagnostic adapter delivered without compiler integration",
     "evidence": "research/evidence/typed-retirement-2026-10-11",

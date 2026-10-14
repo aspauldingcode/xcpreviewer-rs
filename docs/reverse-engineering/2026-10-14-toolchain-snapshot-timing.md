@@ -1,0 +1,11 @@
+# Independent toolchain snapshot timing
+
+The retained actual-builder recovery failure occurred before a generated-stage artifact, with a supervisor deadline and one tracked identity. A new bounded diagnostic wraps the existing toolchain inventory's compiler queries and file identity reads, preserving their behavior, to discriminate a persistent slow snapshot from an unobserved historical delay. It performs two independent snapshots without compiling a source module or rerunning the failed three-build campaign.
+
+The snapshots take approximately0.857 and0.750 seconds. Each executes three actual compiler queries with successful wait0, and inventories61 files totaling233,810,837 bytes. The two complete canonical identities independently match the previously pinned toolchain hash `7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828`. Query output byte counts and hashes are independently reconstructed from the pinned target directory, sysroot and version text. Every recorded file identity matches its canonical inventory entry. No compiler/linker/library binary is copied into evidence.
+
+These measurements falsify requiring a persistently greater-than-five-second snapshot under the measured current conditions. They do not establish the cause or exact phase of the historical recovery deadline, guarantee future timing, qualify successful recovery, or resolve compiler descendant reaping. Warm caches, scheduling and process startup are not separately controlled. No timeout was extended. The diagnostic retains the three-second per-query deadline and thirty-second outer deadline.
+
+Eight resealed faults reject inflated timing, corrupted toolchain pin, query wait/output, inventory, scope, REA identity and producer result. Six isolated reader tests pass. Evidence: `research/evidence/toolchain-snapshot-timing-2026-10-14`, manifest SHA-256 `666005d77ad22e8d22ccbc00453867cf7adfa31a4eb24550499914dfe93b90d9`. REA6.2.0 independently confirms the actual ARM64 Rustc SHA-256210df679…. The private approved capture bridge remains absent and was not restarted. Both milestones remain open.
+
+Next: add an owned phase marker adapter around actual CLI source validation, snapshot and generated-source creation to localize any future deadline. Do not repeat the failed builder campaign unchanged or replace its retained failure with these timing controls.
