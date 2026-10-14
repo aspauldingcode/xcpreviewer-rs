@@ -1,0 +1,39 @@
+import hashlib,json,shutil,tempfile,unittest
+from pathlib import Path
+from verify_guard_compiler_recovery import verify
+ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/guard-compiler-recovery-2026-10-14'
+class GuardCompilerRecoveryTests(unittest.TestCase):
+ def test_seal_reader_sources(self):
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertTrue(verify(E)['actual_owned_builder_cancel_qualified'])
+  self.assertEqual((ROOT/'tools/re/reloop/observed_group_anchor.py').read_bytes(),(E/'anchor.py').read_bytes())
+  self.assertEqual((ROOT/'tools/re/tests/builder_phase_recovery_control.js').read_bytes(),(E/'control.js').read_bytes())
+ def test_resealed_faults(self):
+  faults=['qualified','trigger','birth','generation','wait','cleanup','abort','signal','success','padding','tail','partial','module','scope','worker','helper','cache','oracle','kernel','registration']
+  for fault in faults:
+   with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:
+    e=Path(tmp)/'e';shutil.copytree(E,e);p=e/'result.json';d=json.loads(p.read_text());fail=d['failures'][0]['record']
+    if fault in ['padding','tail','oracle','kernel','registration']:
+     p=e/'baseline.raw';b=bytearray(p.read_bytes());b[52 if fault=='padding' else 448]^=1;p.write_bytes(b);d=None
+     if fault=='oracle':(e/'retained-at-cancel.raw').write_bytes(b);(e/'0-expected.raw').write_bytes(b)
+    elif fault=='partial':p=e/'builds'/d['trigger']['stage']/'result/view.wasm';p.write_bytes(b'partial');d=None
+    elif fault=='module':p=e/'builds'/d['records'][0]['stage']/'result/view.wasm';b=bytearray(p.read_bytes());b[-1]^=1;p.write_bytes(b);d=None
+    elif fault=='kernel':
+     p=e/'compiler-kernel-wait.json';d=json.loads(p.read_text());d['stdout']=d['stdout'].replace('\"raw_status\":15','\"raw_status\":9')
+    elif fault=='registration':d['trigger']['registration']['micros']=-1
+    elif fault=='scope':p=e/'scope.json';d=json.loads(p.read_text());d['arbitrary_process_quiescence_qualified']=True
+    elif fault=='helper':p=e/'environment.json';d=json.loads(p.read_text());d['observer_sha256']='0'*64
+    elif fault=='qualified':d['qualified']=False
+    elif fault=='trigger':d['trigger']['moduleAbsentBeforeCancel']=False
+    elif fault=='birth':d['trigger']['compiler']['identity'][0]+=1
+    elif fault=='generation':d['events'][-1]['generation']=2
+    elif fault=='wait':fail['report']['target_code']=0
+    elif fault=='cleanup':fail['report']['drained']=False
+    elif fault=='abort':fail['report']['failure']='deadline'
+    elif fault=='signal':fail['signal']='SIGTERM'
+    elif fault=='success':d['records'][0]['execution']['report']['target_code']=2
+    elif fault=='worker':d['finalStatus']['liveWorkers']=1
+    else:d['records'][0]['receipt']['cache_hit']=True
+    if d is not None:p.write_text(json.dumps(d))
+    (e/'manifest.json').write_text(json.dumps({'files':{str(q.relative_to(e)):{'bytes':q.stat().st_size,'sha256':hashlib.sha256(q.read_bytes()).hexdigest()} for q in e.rglob('*') if q.is_file() and q!=e/'manifest.json'}}))
+    with self.assertRaises(AssertionError):verify(e)
+SEAL='cd51dc98fcd0383e1b50a6efbd3577b3b28557796087e867944d47897c8a3a2e'

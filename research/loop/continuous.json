@@ -724,6 +724,31 @@
     "result": "Current canonical88-check contract and external run anchor match; fresh-process verification passes; idempotent accepted research record; default candidates empty, delivery review pending and both milestones false. No new producer executions.",
     "started_at": "2026-10-11T22:30:48.706610+00:00"
   },
+  "guard_compiler_recovery_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 20
+    },
+    "evidence": "research/evidence/guard-compiler-recovery-2026-10-14",
+    "manifest_sha256": "cd51dc98fcd0383e1b50a6efbd3577b3b28557796087e867944d47897c8a3a2e",
+    "next_wake_hint": "Actual guard-assisted recovery now qualified for finite owned source subset. Return to independent R1/R2/native interaction evidence; no repeat unchanged compiler recovery or missing bridge retries.",
+    "result": {
+      "accepted_builds": 2,
+      "actual_owned_builder_cancel_qualified": true,
+      "arbitrary_quiescence_qualified": false,
+      "cancelled_cli_wait_code": -15,
+      "compiler_kernel_signal": 15,
+      "compiler_parent_wait_qualified": false,
+      "fresh_build_jobs": 3,
+      "native_canvas_qualified": false,
+      "padding_bytes": 252,
+      "retained_bytes": 49152,
+      "unused_tail_bytes": 47808
+    },
+    "retained_failure": "Generation2 original abort retained; prior zero-wait deadline and recovery deadline failures unchanged. Successful changed-condition run does not establish historical causal explanation.",
+    "started_at": "2026-10-14T22:16:04.724628+00:00",
+    "status": "verified"
+  },
   "ignore_child_abort_checkpoint": {
     "checks": {
       "isolated_tests": 6,

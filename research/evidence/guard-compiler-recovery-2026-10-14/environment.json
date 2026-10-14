@@ -1,0 +1,18 @@
+{
+  "node": {
+    "path": "/nix/store/8cbb8r8mkaz6z7si022ks2b78qqy9sz4-nodejs-slim-24.19.0/bin/node",
+    "sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+    "version": "v24.19.0"
+  },
+  "corpus_manifest_sha256": "c53084d90de41c1e42cb8c17a38cf3b70e4fa0e6551a5937a4de7d536272e4ac",
+  "cli_sha256": "d49ba1209f4a2545250c34322414b7f92f50435f110220433cfd33e83fc00c31",
+  "rustc_sha256": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+  "observer_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+  "budgets": {
+    "node_seconds": 30,
+    "owned_build_jobs": 3,
+    "job_seconds": 5,
+    "supervisor_hard_grace_seconds": 5
+  },
+  "private_bridge_available": false
+}
