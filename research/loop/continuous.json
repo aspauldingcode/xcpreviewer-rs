@@ -146,6 +146,29 @@
     "started_at": "2026-10-14T20:59:10.166282+00:00",
     "status": "review-pending"
   },
+  "builder_phase_recovery_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/builder-phase-recovery-2026-10-14",
+    "manifest_sha256": "c27420b678797874359771e51d550a2e25bfcca645fc25f380bdc087df2d50b4",
+    "next_wake_hint": "Owned absolute supervisor deadline and exit-observation timing; no unchanged recovery retry or deadline policy change.",
+    "result": {
+      "actual_build_jobs": 1,
+      "compiler_cli_wait_code": 0,
+      "completion_before_deadline_qualified": false,
+      "deadline_verdict_retained": true,
+      "declared_build_limit": 3,
+      "published_frames": 0,
+      "recovery_qualified": false,
+      "retained_module_bytes": 17011,
+      "unused_build_slots": 2
+    },
+    "retained_failure": "Baseline publication prerequisite failed: valid receipt/CLI wait0 with supervisor deadline verdict. Only one of three slots used; supersession/recovery not attempted. Completion-before-deadline unknown.",
+    "started_at": "2026-10-14T21:28:56.804876+00:00",
+    "status": "review-pending"
+  },
   "cache_input_checkpoint": {
     "budget": "4 producers inclfailure,2sec outerwait/ownedreap2sec;no actual compiler/runtime/native claim",
     "classification": "Cache index FIFO hang retained;bounded index/manifest reads fixed",

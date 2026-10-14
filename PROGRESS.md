@@ -1095,3 +1095,8 @@ Two current full snapshots take0.857/0.750 seconds, six compiler query waits0,61
 ### 2026-10-14: Owned CLI phase markers with retained deadline
 
 Pinned unchanged CLI phase wrapper localizes first instrumented deadline after successful compiler wait and before final identity marker, with no receipt/frame admitted. That first seal/failure stays retained. Remaining slot starts tracing after imports, same baseline source: six markers, successful receipt/frame and closure. Full16384-byte frame including84padding/15936tail,17011 paired module bytes and1288 historical warning bytes verified. Eight resealed faults/six isolated tests pass. Shared budget2/2, no extension/reset. Historical recovery cause remains unknown; baseline success does not qualify recovery. Evidence `cli-phase-build-2026-10-14` and `cli-phase-optimized-2026-10-14`. Both milestones open. Next: optimized phase wrapper for changed recovery diagnostic.
+
+
+### 2026-10-14: Zero CLI wait and valid receipt under deadline verdict
+
+Optimized phase recovery diagnostic stops after baseline prerequisite fails: six markers,821-byte valid receipt,17011-byte known baseline WASM and actual CLI wait0 coexist with drained supervisor deadline verdict. Client rejects and publishes no frame; final closure zero workers/timers/revision0. Eight resealed faults/six isolated tests validate scoped boundary. One of three slots used; no supersession/recovery or unchanged retry. Completion-before-deadline remains unknown without absolute supervisor/exit timing. Evidence `research/evidence/builder-phase-recovery-2026-10-14`, manifest `c27420b678797874359771e51d550a2e25bfcca645fc25f380bdc087df2d50b4`. Both milestones open. Next: absolute timing adapter.

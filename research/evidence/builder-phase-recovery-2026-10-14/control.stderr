@@ -1,0 +1,10 @@
+AssertionError [ERR_ASSERTION]: Baseline actual build must qualify before cancellation
+    at /Users/8amps/xcpreviewer-rs/tools/re/tests/builder_phase_recovery_control.js:21:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
