@@ -341,6 +341,36 @@
     "result": "Two parents/two forked children; baseline heartbeat advances after parent timeout then bounded self-exit; fixed same-group heartbeat stable after owned group kill; direct parents reaped -9/TimeoutExpired; 32 observation bytes and eight resealed faults. Descendant reap/physical release unknown.",
     "started_at": "2026-10-11T22:06:04.595294+00:00"
   },
+  "deadline_poll_audit_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/deadline-poll-audit-2026-10-14",
+    "manifest_sha256": "ded812fbefea48a7ad2272f18b255aeb5c709f1379557d2011d439c8ae9b8d40",
+    "next_wake_hint": "Owned post-completion observer delay control, clearly labeled fault injection; no production policy change without evidence.",
+    "result": {
+      "actual_build_jobs": 2,
+      "false_deadline_observed": false,
+      "historical_completion_time_qualified": false,
+      "same_clock_outcomes": [
+        {
+          "deadline_verdict": true,
+          "first_terminal_poll_minus_deadline": 0.11682333299999925,
+          "target_code": -15
+        },
+        {
+          "deadline_verdict": false,
+          "first_terminal_poll_minus_deadline": -0.04139204200000002,
+          "target_code": 0
+        }
+      ],
+      "successful_frame_bytes": 16384
+    },
+    "retained_failure": "Case0 deadline/actual target wait-15 retained; case1 wait0 observed before deadline succeeds. No false deadline observed; historical zero-wait/deadline remains ambiguous.",
+    "started_at": "2026-10-14T21:41:00.370789+00:00",
+    "status": "review-pending"
+  },
   "failure_fingerprints": [
     {
       "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",

@@ -1100,3 +1100,8 @@ Pinned unchanged CLI phase wrapper localizes first instrumented deadline after s
 ### 2026-10-14: Zero CLI wait and valid receipt under deadline verdict
 
 Optimized phase recovery diagnostic stops after baseline prerequisite fails: six markers,821-byte valid receipt,17011-byte known baseline WASM and actual CLI wait0 coexist with drained supervisor deadline verdict. Client rejects and publishes no frame; final closure zero workers/timers/revision0. Eight resealed faults/six isolated tests validate scoped boundary. One of three slots used; no supersession/recovery or unchanged retry. Completion-before-deadline remains unknown without absolute supervisor/exit timing. Evidence `research/evidence/builder-phase-recovery-2026-10-14`, manifest `c27420b678797874359771e51d550a2e25bfcca645fc25f380bdc087df2d50b4`. Both milestones open. Next: absolute timing adapter.
+
+
+### 2026-10-14: Same-clock deadline and target poll audit
+
+Pinned unchanged anchor body is instrumented with passthrough real monotonic calls and actual target polls. Case0 deadline decision+32ms and first terminal wait-15+117ms retained; case1 wait0 observed41ms before its deadline admits full16384-byte baseline frame including84padding/15936tail. Both closures zero workers. No false deadline observed; historical zero-wait/deadline timing remains unknown. Eight resealed faults/six isolated tests pass. Two slots consumed once, no extended deadline. Evidence `research/evidence/deadline-poll-audit-2026-10-14`, manifest `ded812fbefea48a7ad2272f18b255aeb5c709f1379557d2011d439c8ae9b8d40`. Both milestones open. Next: labeled post-completion observer-delay control.
