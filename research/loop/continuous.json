@@ -587,6 +587,34 @@
     "result": "Current canonical88-check contract and external run anchor match; fresh-process verification passes; idempotent accepted research record; default candidates empty, delivery review pending and both milestones false. No new producer executions.",
     "started_at": "2026-10-11T22:30:48.706610+00:00"
   },
+  "ignore_child_abort_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 18
+    },
+    "classification": "two owned private abort controls independently observed by kernel exits",
+    "evidence": "research/evidence/ignore-child-abort-2026-10-14",
+    "finished_at": "2026-10-14T20:28:59.787733+00:00",
+    "manifest_sha256": "6cd44a4174726c56de64192ef2542dbe59a4d36d32875815f4edcdac28243ff8",
+    "native_budget": 2,
+    "next_action": "Verify independent status and resealed faults, then isolated publication.",
+    "next_wake_hint": "Independent acceptance gap: actual compiler descendant waits. Skip completed ignoring-child failure/deadline/abort controls.",
+    "result": {
+      "child_reaped_qualified": false,
+      "child_signals": [
+        9,
+        9
+      ],
+      "native_controls": 2,
+      "root_codes": [
+        -15,
+        -15
+      ]
+    },
+    "retained_failure": "Both original private abort job errors retained; no producer assertion failed. Child reaping and Native Canvas acceptance remain unqualified.",
+    "started_at": "2026-10-14T20:28:56.841875+00:00",
+    "status": "acquired-review-pending"
+  },
   "ignore_child_deadline_checkpoint": {
     "checks": {
       "isolated_tests": 6,

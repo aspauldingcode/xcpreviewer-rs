@@ -1065,3 +1065,8 @@ Original native evidence remains sealed. Reader now independently rejects change
 ### 2026-10-14: Supervisor deadline with ignoring child
 
 Two actual owned controls independently report root SIGTERM15 and child SIGKILL9; supervisor target wait -15/failure deadline/drained true, client original deadline error retained without private abort/emergency closure. Fifteen resealed faults and six isolated reader tests pass. Child reaping and both milestone acceptance contracts remain open. Evidence `research/evidence/ignore-child-deadline-2026-10-14`; manifest `d7bf6100d00219454f30a3b7173b03e6556e31d9cb50b20c4e29d41cfcf81bae`. Next: private client abort contrast.
+
+
+### 2026-10-14: Private abort with ignoring child
+
+Two actual owned private cancellation controls independently report root SIGTERM15 and child SIGKILL9. Original client abort error retained; supervisor wait -15/failure abort/drained true with no emergency closure. Asynchronous owned watcher permits independent cancellation. Eighteen resealed faults and six isolated reader tests pass. No child reaping or universal callback claim. Evidence `research/evidence/ignore-child-abort-2026-10-14`, manifest `6cd44a4174726c56de64192ef2542dbe59a4d36d32875815f4edcdac28243ff8`. Both milestones remain open. Next: independent compiler descendant-wait gap.

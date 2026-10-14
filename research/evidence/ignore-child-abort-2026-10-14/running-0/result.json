@@ -1,0 +1,71 @@
+{
+  "mode": "running-0",
+  "code": 43,
+  "policy": "running",
+  "error": "Error: Observed compiler aborted",
+  "record": {
+    "pid": 18852,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": -15,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 2,
+      "observations": 8,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "observed": [
+    [
+      {
+        "pid": 18874,
+        "parent": 18868,
+        "group": 18852,
+        "state": "L",
+        "identity": [
+          1792009738,
+          204952,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 18880,
+        "parent": 18874,
+        "group": 18880,
+        "state": "L",
+        "identity": [
+          1792009738,
+          445234,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 18880,
+        "parent": 1,
+        "group": 18880,
+        "state": "L",
+        "identity": [
+          1792009738,
+          445234,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ]
+  ],
+  "released": true
+}
