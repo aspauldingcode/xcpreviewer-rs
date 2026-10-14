@@ -127,6 +127,25 @@
     "result": "Configured2stages enforced beforecreation/handoff;old3/new2,preabortcharges0,repeatedexhaustionnogrowth.5failurefiles/1010sourcebytes+12sentinelbytes retained,12resealedfaults,0Nativecompilerjobs.",
     "started_at": "2026-10-12T06:21:29.743685+00:00"
   },
+  "builder_kernel_cancel_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/builder-kernel-cancel-2026-10-14",
+    "manifest_sha256": "f531ba17e0232a64f1016dae2aab82c183122994e5b7f2fe055605ac625bc946",
+    "next_wake_hint": "Diagnose recovery pre-generated-stage deadline with independent toolchain snapshot timing; do not repeat acquisition or extend deadline.",
+    "result": {
+      "baseline_retained_bytes": 32768,
+      "compiler_kernel_signal": 15,
+      "compiler_parent_wait_qualified": false,
+      "fresh_build_jobs": 3,
+      "recovery_qualified": false
+    },
+    "retained_failure": "Recovery generation3 supervisor deadline followed by producer frame assertion; entire three-build budget retained. Actual Rustc kernel termination captured, parent wait and recovery remain unqualified.",
+    "started_at": "2026-10-14T20:59:10.166282+00:00",
+    "status": "review-pending"
+  },
   "cache_input_checkpoint": {
     "budget": "4 producers inclfailure,2sec outerwait/ownedreap2sec;no actual compiler/runtime/native claim",
     "classification": "Cache index FIFO hang retained;bounded index/manifest reads fixed",

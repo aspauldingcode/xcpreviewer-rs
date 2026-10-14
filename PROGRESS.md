@@ -1080,3 +1080,8 @@ Pinned actual Rustc is directly observed with full birth/path/parent/session rec
 ### 2026-10-14: Correlated actual Rustc kernel and parent waits
 
 New signal-free single-process exit adapter independently registers full birth/path before cancellation. Two actual Rustc controls acknowledge registration before owned SIGTERM; parent waits -15 match kernel raw15, watcher waits0. Complete deterministic source bytes and empty outputs verified. Eleven resealed faults and six isolated tests pass. Existing supervisor descendant correlation and Native Canvas acceptance remain open. Evidence `research/evidence/rustc-kernel-wait-2026-10-14`, manifest `bce3ef86bcf8db11e78c597c16f34b01305a131dde6f2131c0d52a947d4db849`. Next: source builder supersession registration gate.
+
+
+### 2026-10-14: Actual builder compiler kernel capture; recovery failure retained
+
+Registration-gated source supersession independently captures actual Rustc raw kernel status15, watcher wait0 and CLI root abort wait-15/drained true. Baseline matches all32768 bytes including168padding/31872tail. Recovery generation3 hits supervisor deadline before generated-stage artifact; subsequent frame assertion fails with baseline retained. Three-build budget exhausted once, no retry/extension. Original producer failure/stage records sealed. Eight resealed faults and six isolated reader tests verify scoped partial measurements. Parent compiler wait and successful recovery remain unqualified. Evidence `research/evidence/builder-kernel-cancel-2026-10-14`, manifest `f531ba17e0232a64f1016dae2aab82c183122994e5b7f2fe055605ac625bc946`. Both milestones remain open. Next: independent recovery snapshot timing diagnosis.
