@@ -7,3 +7,7 @@ This contrasts with the sealed stopped/default-disposition controls, which repor
 The evidence is research/evidence/ignore-child-exit-2026-10-14. Each acquisition has a 15-second outer deadline and consumes one of two slots. The verifier independently decodes raw wait statuses and rejects six resealed faults, including wrong signal, changed disposition, birth gate, receipt, prediction and producer wait. No native acquisition is repeated during verification.
 
 Next: distinguish supervisor deadline from root-first failure with an ignoring child, preserving independent wait-status observation and bounded ownership gates.
+
+## Independent verifier hardening
+
+The first reader checked kernel signal, receipt and the watcher's reported birth gate but did not independently reject altered observation identities, topology, executable paths, retained output digests, expanded cleanup scope or malformed process states. The strengthened reader checks the recorded ancestry and session separation, positive birth seconds and microsecond bounds, runtime paths, exact release observation, proxy group ownership, bounded claim scope, empty-stream SHA-256 digests, both decoded exit records and watcher diagnostics. Its test pins the original external manifest hash and rejects fifteen resealed faults. The original native bundle remains unchanged; no new acquisition is claimed. These checks qualify the retained observations and kernel measurements, not child reaping or unseen process coverage.

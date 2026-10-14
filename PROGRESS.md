@@ -1055,3 +1055,8 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-14: SIGTERM-ignoring child exit contrast
 
 Two owned controls independently report child SIGKILL9 after root wait43; default/stopped controls previously reported SIGTERM15. Six resealed faults reject corrupted disposition/status/receipt/identity/wait/prediction. Child reaping and both milestone acceptance contracts remain open. Evidence: `research/evidence/ignore-child-exit-2026-10-14`; manifest SHA-256 `165439fb1e3694fe80dd3c354644047aa4cd2abe55a537063de86bc347cab3ec`. Next: supervisor deadline contrast.
+
+
+### 2026-10-14: Independent ignored-SIGTERM verifier hardening
+
+Original native evidence remains sealed. Reader now independently rejects changed birth identity, ancestry/session topology, executable path, raw empty-output digests, broadened cleanup scope, malformed process state, root exit decode and watcher diagnostics. Fifteen resealed faults pass rejection checks; six isolated reader tests pass. No new native acquisition. Both milestones remain open.

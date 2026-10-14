@@ -588,10 +588,31 @@
     "started_at": "2026-10-11T22:30:48.706610+00:00"
   },
   "ignore_child_exit_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "native_acquisitions_this_revision": 0,
+      "resealed_faults": 15
+    },
     "classification": "two owned native SIGTERM-ignoring child kernel exits",
+    "commit": "fd59aec3baf006aeef957f4c92b1205c1ce613aa",
+    "current_public_helper_rea": {
+      "architecture": "arm64",
+      "format": "mach-o",
+      "kind": "executable",
+      "path": "/Users/8amps/xcpreviewer-rs/research/build/libproc-observer-aa9cd15f087d41ad8f7bbe00c4162499/owned-process-snapshot",
+      "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+    },
     "evidence": "research/evidence/ignore-child-exit-2026-10-14",
+    "finished_at": "2026-10-14T20:02:20.603514+00:00",
+    "git_sync": "development/master atomically pushed",
+    "github_updates": [
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15#issuecomment-6177215505",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-6177220204",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6177222189",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/25#issuecomment-6177224894"
+    ],
     "manifest_sha256": "165439fb1e3694fe80dd3c354644047aa4cd2abe55a537063de86bc347cab3ec",
-    "next_wake_hint": "Supervisor deadline with ignoring child; do not repeat root-first disposition contrasts.",
+    "next_wake_hint": "Supervisor deadline with ignoring child; no repeated root-first controls.",
     "result": {
       "child_reaped_qualified": false,
       "child_signals": [
@@ -604,7 +625,10 @@
         43
       ]
     },
-    "retained_failure": "No producer failure; prior stopped-child failed prediction remains sealed. Native Canvas and child reaping remain unqualified."
+    "retained_failure": "No producer failure; prior stopped-child failed prediction remains sealed. Native Canvas and child reaping remain unqualified.",
+    "status": "verified-published",
+    "verified_at": "2026-10-14T20:03:31.308326+00:00",
+    "verifier_revision": "identity-topology-output-scope"
   },
   "last_completed": "Implemented frozen CLI/native extent verifier with transparent PNG and pixel/padding/tail/failure controls. Three changed attempts stop on host process-observation; no full extent acceptance. Fixed observation-timeout sealing and scoped command identity reads, preserving start/command guards and2s limits;9 targeted tests and323 isolated repository tests pass. Public libproc observation oracle selected next.",
   "last_github_sync": {
