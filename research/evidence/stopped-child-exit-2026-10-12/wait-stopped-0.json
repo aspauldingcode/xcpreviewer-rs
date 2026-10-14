@@ -1,0 +1,6 @@
+{
+  "code": 1,
+  "timeout": false,
+  "stdout": "",
+  "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n15 !== 9\n\n    at /Users/8amps/xcpreviewer-rs/tools/re/tests/stopped_child_exit_control.js:5:1086 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 15,\n  expected: 9,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+}

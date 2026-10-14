@@ -1,0 +1,49 @@
+{
+  "modes": [
+    "stopped-0",
+    "stopped-1",
+    "running-0",
+    "running-1"
+  ],
+  "root_codes": [
+    43,
+    43,
+    43,
+    43
+  ],
+  "child_raw_statuses": [
+    9,
+    9,
+    15,
+    15
+  ],
+  "stopped_status": 4,
+  "child_exited": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "child_exit_codes": [
+    -1,
+    -1,
+    -1,
+    -1
+  ],
+  "child_signals": [
+    9,
+    9,
+    15,
+    15
+  ],
+  "controlled_marker_bytes": 16,
+  "native_controls": 4,
+  "outer_seconds": 15,
+  "job_milliseconds": 3000,
+  "stop_wait_seconds": 1,
+  "watcher_seconds": 4,
+  "watcher_outer_seconds": 5,
+  "private_abort": false,
+  "child_reaped_qualified": false,
+  "native_canvas_qualified": false
+}

@@ -1,0 +1,71 @@
+{
+  "mode": "stopped-1",
+  "code": 43,
+  "policy": "stopped",
+  "error": "Error: Observed compiler failed: 43",
+  "record": {
+    "pid": 80165,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 43,
+      "failure": null,
+      "drained": true,
+      "tracked": 2,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "observed": [
+    [
+      {
+        "pid": 80167,
+        "parent": 80166,
+        "group": 80165,
+        "state": "L",
+        "identity": [
+          1791807413,
+          836597,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 80169,
+        "parent": 80167,
+        "group": 80169,
+        "state": "L",
+        "identity": [
+          1791807413,
+          865469,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ],
+    [
+      {
+        "pid": 80169,
+        "parent": 1,
+        "group": 80169,
+        "state": "L",
+        "identity": [
+          1791807413,
+          865469,
+          "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+        ]
+      }
+    ]
+  ],
+  "released": true
+}

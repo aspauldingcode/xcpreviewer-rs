@@ -3073,6 +3073,34 @@
     "result": "4 compiler waits0/no timeout/no diagnostics,8 expressions agree. No runtime fix warranted;7 resealed semantic faults/current lowerer regressions. REA compiler/server identities retained and target closed.",
     "started_at": "2026-10-11T20:08:27.528862+00:00"
   },
+  "stopped_child_exit_checkpoint": {
+    "classification": "4actualnative stopped/nonstopped kernel exit controls; originalSIGKILLprediction falsified, reapingunqualified",
+    "evidence": "research/evidence/stopped-child-exit-2026-10-12",
+    "manifest_sha256": "098288db1efb95f508f8c6da7e30bcf9d00e065357bdc5d53521a9f4db8d670b",
+    "milestones_complete": false,
+    "next_wake_hint": "SIGTERM-ignoring child contrast expectedSIGKILL9; use independentkernelstatus. Skip stopped/default repeats. NativeCanvasrequiresapprovedbridge.",
+    "result": {
+      "child_reaped_qualified": false,
+      "confirmed_stopped_controls": 2,
+      "controlled_marker_bytes": 16,
+      "kernel_child_raw_statuses": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "native_controls": 4,
+      "nonstopped_controls": 2,
+      "original_sigkill_prediction_falsified": true,
+      "root_wait_codes": [
+        43,
+        43,
+        43,
+        43
+      ]
+    },
+    "retained_failure": "Original stoppedchildSIGKILL9 prediction contradicted by confirmedSSTOP4/kernelSIGTERM15. Initialassertion/prediction/control retained; remaining3of4slots unchangednativebehavior."
+  },
   "superseded_build_cancel_checkpoint": {
     "classification": "Owned actual V8/file lifecycle policy, cooperative builder cancellation; not native Canvas",
     "evidence": "research/evidence/superseded-build-cancel-2026-10-11",

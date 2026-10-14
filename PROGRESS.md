@@ -1046,3 +1046,7 @@ Exactstderr65536 admittedthenmanualabort;stderr65537 andaggregate32768stdout+327
 ### 2026-10-12: child signal versus ordinary exit
 
 [Owned kernel contrast](docs/reverse-engineering/2026-10-12-child-signal-exit.md) distinguishes defaultSIGTERM rawstatus15 from handlerexit42/raw10752.3verifiednativecontrols,16exactpeerbytes;20resealedfaults.1startupharnessfailure retained, fixed within original4slots. Default A/A, failedstartupcleanup and reaping remain unqualified. Both milestones open.
+
+### 2026-10-12: stopped-child prediction falsified
+
+[Independent stopped-state/exit gate](docs/reverse-engineering/2026-10-12-stopped-child-exit.md) confirms SSTOP4 twice, yet child kernel termination isSIGTERM15 in stopped and running contrasts.4nativecontrols,16exactmarkerbytes;22resealedfaults. OriginalSIGKILL9 prediction/assertion failure retained;3remaining slots passed revised expectation. Reaping and milestones remain open.
