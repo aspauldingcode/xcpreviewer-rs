@@ -1105,3 +1105,8 @@ Optimized phase recovery diagnostic stops after baseline prerequisite fails: six
 ### 2026-10-14: Same-clock deadline and target poll audit
 
 Pinned unchanged anchor body is instrumented with passthrough real monotonic calls and actual target polls. Case0 deadline decision+32ms and first terminal wait-15+117ms retained; case1 wait0 observed41ms before its deadline admits full16384-byte baseline frame including84padding/15936tail. Both closures zero workers. No false deadline observed; historical zero-wait/deadline timing remains unknown. Eight resealed faults/six isolated tests pass. Two slots consumed once, no extended deadline. Evidence `research/evidence/deadline-poll-audit-2026-10-14`, manifest `ded812fbefea48a7ad2272f18b255aeb5c709f1379557d2011d439c8ae9b8d40`. Both milestones open. Next: labeled post-completion observer-delay control.
+
+
+### 2026-10-14: Injected post-completion scheduling delay
+
+Two owned peer controls share0.2s delayed public observer. Both actual target waits0 are observed before1s deadline. Baseline resolves; explicit post-completion sleep crosses deadline and reclassifies completed peer as deadline, with drained receipt/no emergency closure. Real clocks/poll results pass through, no fabricated time/status. All16 sender payload bytes and receiver digests/text verified; eight resealed faults/six isolated tests pass. No compiler builds/pixel claims/deadline extension. Production policy unchanged and historical compiler cause unknown. Evidence `research/evidence/post-completion-delay-2026-10-14`, manifest `4be710fd1073a391fda6312839abad9fddcf7a96531710f86aac20aeecd9ed15`. Both milestones open. Next: observed-completion guard evaluation.

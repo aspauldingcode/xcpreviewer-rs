@@ -1462,6 +1462,39 @@
     "scientific_delivery_review": "pending"
   },
   "pending_sync": false,
+  "post_completion_delay_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/post-completion-delay-2026-10-14",
+    "manifest_sha256": "4be710fd1073a391fda6312839abad9fddcf7a96531710f86aac20aeecd9ed15",
+    "next_wake_hint": "Evaluate observed-before-deadline completion guard, preserving genuine late completion and abort priority; verify both controls.",
+    "result": {
+      "controlled_payload_bytes": 16,
+      "historical_timing_qualified": false,
+      "native_compiler_builds": 0,
+      "outcomes": [
+        {
+          "deadline_verdict": false,
+          "first_terminal_poll_minus_deadline": -0.575021583,
+          "mode": "baseline",
+          "target_wait_code": 0
+        },
+        {
+          "deadline_verdict": true,
+          "first_terminal_poll_minus_deadline": -0.595137958,
+          "mode": "delayed",
+          "target_wait_code": 0
+        }
+      ],
+      "owned_peer_jobs": 2,
+      "post_completion_reclassification_observed": true
+    },
+    "retained_failure": "Predicted delayed client deadline error retained with actual wait0 observed before deadline; baseline resolves. Fault injection is explicit; historical compiler cause unknown. Production policy unchanged.",
+    "started_at": "2026-10-14T21:54:26.902337+00:00",
+    "status": "review-pending"
+  },
   "preabort_build_staging_checkpoint": {
     "classification": "Actual JS/filesystem cancelled-entry staging hardening; all native spawn intercepted",
     "evidence": "research/evidence/preabort-build-staging-2026-10-11",

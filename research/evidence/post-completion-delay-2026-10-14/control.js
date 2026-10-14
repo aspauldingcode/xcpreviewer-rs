@@ -1,0 +1,5 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {runObserved}=require('../reloop/observed_compiler.js');
+const evidence=path.resolve(process.argv[2]),mode=process.argv[3],root=path.join(evidence,mode),cfg=JSON.parse(fs.readFileSync(path.join(evidence,'config.json')));fs.mkdirSync(root);
+(async()=>{let record,error;try{record=await runObserved(cfg.python,[cfg.fixture,root],{observer:cfg.observer,supervisorPython:cfg.audit,timeout:1000});}catch(caught){error=caught;record=caught.record;}fs.writeFileSync(path.join(root,'result.json'),JSON.stringify({mode,error:error?String(error):null,record},null,2)+'\n');assert.equal(record.report.target_code,0);assert.equal(record.report.drained,true);assert.equal(record.emergencyClosed,false);assert.equal(record.privateAbortRequested,false);assert.equal(error?String(error):null,mode==='delayed'?'Error: Observed compiler failed: deadline':null);assert.equal(record.report.failure,mode==='delayed'?'deadline':null);console.log('owned post-completion delay pass');})().catch(error=>{console.error(error);process.exitCode=1;});
