@@ -1300,3 +1300,8 @@ Prepared50 exact-span statement candidates across the ten pinned pilot documents
 ### 2026-10-14: Canvas report-to-seal crosswalk
 
 Resolved ten pilot documents to eleven distinct sealed experiment manifests, including a hash-only quarantine report. All eleven declared file sets verify; nine report links mention their computed seal and two path-only references remain explicitly unanchored. Charged6,736,126 read bytes under128MiB; no native experiment rerun or product edit. Schema/byte checks do not establish semantic validity or milestone acceptance. Independent review and clean handoff remain pending. See docs/reverse-engineering/canvas-evidence-crosswalk.md.
+
+
+### 2026-10-14: Two repository evidence anchors and review package
+
+Resolved two report-missing digests against committed manifest bytes and independently recomputed Git blob identities. Historical documents remain unchanged and document-anchor flags stayfalse. Repository anchoring does not establish external trust or experiment semantics. Seven resealed trust/object faults reject. Prepared a concrete fresh-context evidence review brief for the50-candidate/ten-report/eleven-manifest pilot; authorization still needed under the user's serial-only/no-delegation instruction. No native probes, product edits or handoff approval. See docs/reverse-engineering/canvas-independent-review-brief.md.
