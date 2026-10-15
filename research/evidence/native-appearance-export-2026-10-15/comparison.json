@@ -1,0 +1,107 @@
+{
+  "scope": "Owned native export scheme override discriminator; all decoded packed channels compared",
+  "images": [
+    {
+      "case": "pinned-light",
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T233730Z@2x.png",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+      "rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+      "rgba_bytes": 921600,
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ]
+    },
+    {
+      "case": "pinned-dark",
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T233737Z@2x.png",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+      "rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+      "rgba_bytes": 921600,
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ]
+    },
+    {
+      "case": "inherited-light",
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T233829Z@2x.png",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+      "rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+      "rgba_bytes": 921600,
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ]
+    },
+    {
+      "case": "inherited-dark",
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T233832Z@2x.png",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "png_sha256": "059057122fe136aa0adb8341d031ef8df2886f7b807c351519c92100ccd27c33",
+      "rgba_sha256": "6fd4d54a5285f5fc3130821bd649aca62179ff46b2ca1f98caa3115e20c93812",
+      "rgba_bytes": 921600,
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ]
+    }
+  ],
+  "pinned_differing_channels": 0,
+  "inherited_differing_channels": 691173,
+  "pinned_vs_inherited_light_differing_channels": 0,
+  "limits": "Packed RGBA has no padding; native framebuffer padding/display conversion not observed. Native comparisons are not independent portable conformance.",
+  "recovery": {
+    "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T233951Z@2x.png",
+    "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+    "rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+    "different_from_baseline_channels": 0,
+    "size": [
+      640,
+      360
+    ]
+  },
+  "inherited_dark_extrema": [
+    [
+      30,
+      30
+    ],
+    [
+      30,
+      30
+    ],
+    [
+      30,
+      30
+    ],
+    [
+      255,
+      255
+    ]
+  ],
+  "inherited_dark_uniform": true,
+  "interpretation": "Pinned Light/Dark and inherited Light identical; inherited Dark is uniform dark with no content, so Dark content acceptance fails despite errors[]. Restoring inner-light modifier in same counter-control project restores exact baseline bytes. Session/order/cache confound remains; no general appearance or display parity."
+}
