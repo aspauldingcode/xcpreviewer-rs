@@ -1,0 +1,9 @@
+{
+  "baseline": "/Users/8amps/xcpreviewer-rs/research/evidence/scratch-budget-policy-v4-2026-10-15",
+  "baseline_sha256": "95f370a9ce8fafcddfe0b880261e7f1b42cfcfe659de60612de61950993c6c37",
+  "proposed_sha256": "6fb75fa71b16754ed98c83fbce74ef9348608956d3951ec7f27132a9ee38416d",
+  "single_delta": "Add COMPILER_INDEX_STORE_ENABLE=NO build argument; all accounting/cleanup/deadlines/caps unchanged",
+  "prediction": "Index.noindex transient-record race absent if index generation suppressed; build may still fail for independent causes",
+  "failure_policy": "Any measurement/guard/build failure retained; never widen allowance to obtain success",
+  "scope": "Research-only native owned fixture control; no Canvas acceptance"
+}

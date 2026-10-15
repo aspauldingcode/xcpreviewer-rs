@@ -1,0 +1,3 @@
+# Research-only next accounting revision
+
+Retains the v5 index-disabled driver. Only live disappearance grammar changes: same ModuleCache .pcm.tmp filename accepts zero or one alphanumeric subdirectory. Native v5 enumerated a direct CoreImage temporary file then lstat returned ENOENT. This does not prove compiler deletion; all live totals remain provisional. Strict final/root/directory/permission/link checks, caps, entry counting,32per-sample disappearance limit,16diagnostic path limit and guard deadlines unchanged.18 Python tests and15 JS controls pass, including direct path, strict final, permission and near-miss negatives. No native execution of v6 this wake. Not integrated; no Canvas/milestone acceptance.

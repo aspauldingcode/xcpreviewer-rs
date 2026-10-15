@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-15T22:37:34.920800+00:00",
+  "outer_exit": 1,
+  "stdout": "{\"parent\":\"/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-SO8UwE\",\"success\":false,\"error\":\"Error: Observed compiler aborted\",\"measurementError\":\"Error: Command failed: /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9 -S -c import json,sys,time;sys.path.insert(0,sys.argv[1]);from scratch_budget import measure;print(json.dumps(measure(sys.argv[2],identity=tuple(map(int,sys.argv[3:5])),deadline=time.monotonic()+1,max_entries=100000,live=sys.argv[5]==\\\"live\\\"))) /private/tmp/xcpreviewer-scratch-policy-v5 /var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-SO8UwE/scratch 16777234 151252255 live\\nTraceback (most recent call last):\\n  File \\\"<string>\\\", line 1, in <module>\\n  File \\\"/private/tmp/xcpreviewer-scratch-policy-v5/scratch_budget.py\\\", line 55, in measure\\n    row = path.lstat()\\n  File \\\"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\\\", line 1360, in lstat\\n    return self._accessor.lstat(self)\\nFileNotFoundError: [Errno 2] No such file or directory: '/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-SO8UwE/scratch/DerivedData/ModuleCache.noindex/CoreImage-812EEIV6KAFLWPWYGED4SNEL6-e785c1c4.pcm.tmp'\\n\",\"final\":{\"retained_logical\":127821166,\"scratch_logical\":26843545600,\"allocated\":128548864,\"files\":322,\"directories\":40,\"vanished_count\":0,\"vanished_paths\":[]},\"report\":{\"kind\":\"complete\",\"target_code\":-15,\"failure\":\"abort\",\"drained\":true,\"tracked\":129,\"observations\":180,\"remaining_observed\":0,\"scope\":\"Observed full-identity ancestry and inherited group only; unseen escapes excluded\"}}\n",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/xcpreviewer-scratch-policy-v5/scratch_budget.py\", line 55, in measure\n    row = path.lstat()\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1360, in lstat\n    return self._accessor.lstat(self)\nFileNotFoundError: [Errno 2] No such file or directory: '/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-SO8UwE/scratch/DerivedData/ModuleCache.noindex/CoreImage-812EEIV6KAFLWPWYGED4SNEL6-e785c1c4.pcm.tmp'\n",
+  "fixture_pins": {
+    "Sources/PreviewLab/PreviewLab.swift": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
+    "PreviewLab.xcodeproj/project.pbxproj": "1ee671965dcfb221233970e970130946a1971a0b0d30625601e93440a60bcf45"
+  },
+  "dependency_pins": {
+    "tools/re/reloop/observed_compiler.js": "9647fff3dbdbfd8e260fb2b566c74c5e1b58b8789877f36c469a7151c5a1f3d6",
+    "tools/re/reloop/observed_group_anchor.py": "48c73a15ac5720ec653271bc6ec523a090fb2bff4301f2308a9812faea4187b8",
+    "research/build/libproc-observer/owned-process-snapshot": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+  },
+  "runtime_pins": {
+    "/etc/profiles/per-user/8amps/bin/node": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+    "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+    "/Applications/Xcode.app/Contents/version.plist": "951ddf34d65d84d57684bd083ca7deebf8d5722eefb074f3cdf00f8304d5f511"
+  },
+  "toolchain": "Xcode 26.6\nBuild version 17F113\n",
+  "historical_identity_limit": "Historical GUI summary17F112 differs from current selected CLI17F113; no pure cross-version causal attribution",
+  "independent_review": "refresh_spec_review: one argument delta admissible;17 Python+15 JS controls pass; strict final/outer0/drain required",
+  "scope": "One owned CLI fixture build; no UI workspace opened; no Canvas acceptance"
+}
