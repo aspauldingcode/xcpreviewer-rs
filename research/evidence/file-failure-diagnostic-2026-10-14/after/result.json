@@ -1,0 +1,143 @@
+{
+  "phase": "after",
+  "cases": [
+    {
+      "kind": "opaque",
+      "builds": [
+        0,
+        1,
+        2
+      ],
+      "pollError": null,
+      "verifyError": null,
+      "diagnostics": {
+        "retainedEvents": 6,
+        "droppedEvents": 0,
+        "latest": {
+          "kind": "published",
+          "generation": 3,
+          "revision": 2,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        },
+        "lastFailure": {
+          "kind": "rejected",
+          "generation": 2,
+          "error": "Unprintable builder failure"
+        }
+      },
+      "events": [
+        {
+          "kind": "observed",
+          "generation": 1,
+          "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+        },
+        {
+          "kind": "published",
+          "generation": 1,
+          "revision": 1,
+          "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+        },
+        {
+          "kind": "observed",
+          "generation": 2,
+          "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+        },
+        {
+          "kind": "rejected",
+          "generation": 2,
+          "error": "Unprintable builder failure"
+        },
+        {
+          "kind": "observed",
+          "generation": 3,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        },
+        {
+          "kind": "published",
+          "generation": 3,
+          "revision": 2,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        }
+      ],
+      "revision": 2,
+      "finalStatus": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 2,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "ordinary",
+      "builds": [
+        0,
+        1,
+        2
+      ],
+      "pollError": null,
+      "verifyError": null,
+      "diagnostics": {
+        "retainedEvents": 6,
+        "droppedEvents": 0,
+        "latest": {
+          "kind": "published",
+          "generation": 3,
+          "revision": 2,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        },
+        "lastFailure": {
+          "kind": "rejected",
+          "generation": 2,
+          "error": "Error: Owned builder failure"
+        }
+      },
+      "events": [
+        {
+          "kind": "observed",
+          "generation": 1,
+          "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+        },
+        {
+          "kind": "published",
+          "generation": 1,
+          "revision": 1,
+          "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8"
+        },
+        {
+          "kind": "observed",
+          "generation": 2,
+          "sourceSha256": "fedcf8a6469cface25d9f4c28c3b041b957dca31ee511960827abf86c18e990f"
+        },
+        {
+          "kind": "rejected",
+          "generation": 2,
+          "error": "Error: Owned builder failure"
+        },
+        {
+          "kind": "observed",
+          "generation": 3,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        },
+        {
+          "kind": "published",
+          "generation": 3,
+          "revision": 2,
+          "sourceSha256": "d11ab052939b2b5b4b88e58fb0ee1e210772d2a756083bfd6f9d8f34452818cc"
+        }
+      ],
+      "revision": 2,
+      "finalStatus": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 2,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    }
+  ]
+}

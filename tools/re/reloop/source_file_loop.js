@@ -78,7 +78,10 @@ class SourceFileLoop {
      if(this.#closed)throw Error('File loop closed before publication');
      const frame=await this.#host.submit(job.ticket,result.build,result.expected);
      this.#record({kind:'published',generation:job.ticket.generation,revision:frame.revision,sourceSha256:job.ticket.sourceSha256});
-    }catch(e){this.#record({kind:'rejected',generation:job.ticket.generation,error:String(e)});}
+    }catch(e){
+     let error;try{error=String(e);}catch(_){error='Unprintable builder failure';}
+     this.#record({kind:'rejected',generation:job.ticket.generation,error});
+    }
     finally{this.#abort=null;}
    }
   }finally{this.#running=false;}
