@@ -1,0 +1,114 @@
+{
+  "artifact_pins": {
+    "documentary-asserts-v3-candidates-2026-10-15.json": "dab3a21d59b8a07ac0d0b8eb5acd4df8db6fbebd3e57bdcd98263e4adac6949f",
+    "documentary-asserts-v3-independent-review-2026-10-15.json": "37c8d4121bdcc9caa3418da5c5bbc152b7b090a844f7ae710a5c03fae72312b4",
+    "typed-pilot-v3-2026-10-15.json": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+    "typed-pilot-v3-independent-review-2026-10-15.json": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176"
+  },
+  "bounded_pilot_complete": true,
+  "limits": [
+    "Same ten-report Evidence/Claim development sample; no held-out/global/runtime/native/target-truth acceptance.",
+    "Review performed a concrete fix; this is verification plus repair, not a claim of independence from that repair.",
+    "Library query(data,...) expects data from load_reviewed; trusted pins remain the artifact trust boundary.",
+    "No fusion or accepted-edge write to a knowledge graph occurred; fuse_entities only groups read-only query results."
+  ],
+  "next_work": "Native or portable prerequisite selection is separate; stop graph scaffolding after this bounded pilot.",
+  "retained_failure": {
+    "correction": "Added explicit target_version to exact fusion key and preserve provided target_identity/target_version in result records; regression checks now cover path, identity and version boundaries.",
+    "current_pinned_sample_affected": false,
+    "description": "Before correction, two otherwise identical occurrence aliases with target_version build-A/build-B merged into one group.",
+    "expected_groups": 2,
+    "observed_groups_before_fix": 1
+  },
+  "review_findings": [
+    "All four exact candidate/review blobs are pinned before use. Current source hashes and spans and ontology are revalidated through documentary_relations.",
+    "Reviewed edge judgments must be unchanged, accepted, eligible, unrepaired and all checks true. Direction and endpoint binding regeneration remain exact.",
+    "Fusion requires same source digest/path/span/type/scope/grade/target identity/target version. Original IDs and path/line provenance survive aliases.",
+    "Result relation meaning remains ASSERTS documentary attribution, with truth_entailment, native_acceptance and global_graph_acceptance false.",
+    "Saved refresh/release examples still exactly match current bounded query output."
+  ],
+  "review_rounds": 1,
+  "reviewer_context": "/root/refresh_spec_review",
+  "tests": {
+    "failed_after_fix": 0,
+    "fusion_boundaries": [
+      {
+        "field": "scope",
+        "separated": true
+      },
+      {
+        "field": "source_grade",
+        "separated": true
+      },
+      {
+        "field": "source_path",
+        "separated": true
+      },
+      {
+        "field": "source_sha256",
+        "separated": true
+      },
+      {
+        "field": "target_version",
+        "separated": true
+      },
+      {
+        "field": "target_identity",
+        "separated": true
+      }
+    ],
+    "query_tests_passed": 4,
+    "saved_examples_exactly_match": true,
+    "targeted_controls": [
+      {
+        "control": "artifact-byte-tamper:typed-pilot-v3-2026-10-15.json",
+        "rejected": true
+      },
+      {
+        "control": "artifact-byte-tamper:typed-pilot-v3-independent-review-2026-10-15.json",
+        "rejected": true
+      },
+      {
+        "control": "artifact-byte-tamper:documentary-asserts-v3-candidates-2026-10-15.json",
+        "rejected": true
+      },
+      {
+        "control": "artifact-byte-tamper:documentary-asserts-v3-independent-review-2026-10-15.json",
+        "rejected": true
+      },
+      {
+        "control": "repinned-entity-tamper",
+        "rejected": true
+      },
+      {
+        "control": "repinned-endpoint-review-tamper",
+        "rejected": true
+      },
+      {
+        "control": "repinned-edge-truth-promotion",
+        "rejected": true
+      },
+      {
+        "control": "repinned-relation-review-rejection",
+        "rejected": true
+      },
+      {
+        "control": "repinned-relation-review-original-tamper",
+        "rejected": true
+      },
+      {
+        "control": "repinned-relation-review-check-failure",
+        "rejected": true
+      },
+      {
+        "control": "repinned-relation-review-truth-promotion",
+        "rejected": true
+      }
+    ]
+  },
+  "tests_sha256": "16df26222907c0f24e7f689be84a7b1ce0059ecbe8af9eb541ef00b7f5de1cf5",
+  "tool_author_context": "/root/canvas_evidence_review",
+  "tool_sha256": "36fc799d02d59c4d9dd96bb1500b39860779e928c9aba3ea3808dc7565ccbd84",
+  "verdict": "approved_after_concrete_fix",
+  "writes": "Tool fix, regression test extension and reports under Controller lock."
+}

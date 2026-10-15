@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-15T15:19:32.657369+00:00",
+  "files": [
+    {
+      "path": "research/canvas-reviews/documentary-query-2026-10-15.json",
+      "sha256": "1ee7ca6fa118c0240699a938d8aa15e0c0f767d08c128730186fac61c2f4bb58",
+      "size": 9181
+    },
+    {
+      "path": "research/canvas-reviews/documentary-query-2026-10-15.md",
+      "sha256": "d1197461bae3dc2b4aa2b30289c641d91e79a13631f287191e674d5311a4702d",
+      "size": 3370
+    },
+    {
+      "path": "research/canvas-reviews/documentary-query-independent-review-2026-10-15.json",
+      "sha256": "b3ae08e5ca1211edabdd93811b082796be059dc1586898aff0a34b8d2bdfd186",
+      "size": 4675
+    },
+    {
+      "path": "research/canvas-reviews/documentary-query-independent-review-2026-10-15.md",
+      "sha256": "f586aabb24077461a132ae18fda25e0f5af46dbd214a836abb2f18b3348ef435",
+      "size": 2006
+    },
+    {
+      "path": "tools/re/canvas_documentary_query.py",
+      "sha256": "36fc799d02d59c4d9dd96bb1500b39860779e928c9aba3ea3808dc7565ccbd84",
+      "size": 5613
+    },
+    {
+      "path": "tools/re/tests/test_canvas_documentary_query.py",
+      "sha256": "16df26222907c0f24e7f689be84a7b1ce0059ecbe8af9eb541ef00b7f5de1cf5",
+      "size": 2996
+    }
+  ],
+  "milestones_accepted": false,
+  "producer_context": "/root/canvas_evidence_review",
+  "reviewer_context": "/root/refresh_spec_review",
+  "reviewer_fix": "separate explicit target versions in fusion",
+  "scope": "read-only reviewed documentary retrieval; ASSERTS not truth or native evidence",
+  "tamper_controls_rejected": 11,
+  "tests_passed": 4
+}
