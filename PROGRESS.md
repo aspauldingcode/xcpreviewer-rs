@@ -1280,3 +1280,8 @@ Evidence `research/evidence/surface-use-count-2026-10-14`, manifest `7be8c766a39
 ### 2026-10-14: Canvas graph and clean-room research boundary
 
 Implemented typed evidence graph (ten-document pilot, 15 entities/five candidate relations) and 18-task research/verification/specification/implementation/delivery DAG. Scope/grade, independent review, full output/check coverage and budget validation fail closed. Added explicit hashed handoff allowlist with path/attribution checks; recipient isolation remains an external permission requirement. Legacy execution blocked under current clean-room boundary; read-only inspection remains available. No product reconstruction edits or native probes. Semantic pilot review, provenance audit and both milestone acceptances remain open. See docs/reverse-engineering/canvas-research-design.md.
+
+
+### 2026-10-14: Existing source provenance inventory
+
+Captured159 declared source/project files with working SHA-256 and tracked index identities. Retained initial155-file scope and corrected four omitted preview/MCP/compiler entrypoints. Every file remains quarantined, origin unestablished, license unassessed and handoff eligibility false. Zero assets in declared roots is not a whole-repository license conclusion. Bounded inventory tooling and independent evidence reader reject false clean-room/acceptance claims; no product edits or native probes. Review coverage and origin evidence next, without repeating the unchanged scan. See docs/reverse-engineering/provenance-inventory.md.

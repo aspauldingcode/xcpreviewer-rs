@@ -1699,6 +1699,35 @@
     "started_at": "2026-10-15T01:50:02.761423+00:00",
     "status": "verified"
   },
+  "provenance_inventory_checkpoint": {
+    "checks": {
+      "evidence_tests": 2,
+      "independent_review_complete": false,
+      "native_acquisition": false,
+      "product_edits": false,
+      "resealed_faults": 7,
+      "source_tool_tests": 2
+    },
+    "counts": {
+      "assets": 0,
+      "files": 159,
+      "handoff_eligible": 0,
+      "inventory_errors": 0
+    },
+    "created_at": "2026-10-15T03:01:59.438151+00:00",
+    "evidence": "research/evidence/provenance-inventory-2026-10-14",
+    "head_at_inventory": "5db63af17b4cf036065e87a984bacf4a2b0a7f3c",
+    "manifest_sha256": "738c8c0369f3410b0fd0b253ec5ad624104c7dc90d97563bce828f1f4cec935c",
+    "next_wake_hint": "Review declared roots for omitted delivery paths, then resolve file-specific origin/license/exposure with provenance evidence. Inventory is not acceptance and does not approve any handoff. Remain research-only; independent semantic/provenance reviewer still needed.",
+    "result": {
+      "files": 159,
+      "handoff_eligible": 0,
+      "independent_review_complete": false,
+      "scope_correction_retained": true,
+      "task_accepted": false
+    },
+    "status": "verified-inventory-review-pending"
+  },
   "quarantined_evidence": [
     {
       "next": "Discriminate compiler subprocess group/termination and cache quiescence using owned control.",
