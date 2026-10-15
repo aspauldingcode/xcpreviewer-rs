@@ -3533,8 +3533,17 @@
       "partial_bytes_compared": 98304,
       "resealed_faults": 8
     },
+    "commit": "5f9f793a228f8ea3559de91e0cd256048def4aae",
     "evidence": "research/evidence/surface-send-returned-2026-10-14",
-    "manifest_sha256": "db9e4e1544f5827e5431eb0b4ee9d5ff0d2d6182d9b1002e837b6448f756ddf1",
+    "finished_at": "2026-10-15T00:46:43.746705+00:00",
+    "git_sync": "development/master atomically pushed",
+    "github_updates": [
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15#issuecomment-6181761108",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-6181761852",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6181763005",
+      "https://github.com/aspauldingcode/xcpreviewer-rs/issues/25#issuecomment-6181764176"
+    ],
+    "manifest_sha256": "385cb1f21b9fbef2c4f11b827349f0144b2fc9baba7b3981dc4d78122d71404d",
     "next_wake_hint": "Native failed-send restoration measured: returned MOVE_SEND descriptor name may differ, COPY_SEND adds uref. Next discriminate explicit mach_msg_destroy on returned failed envelope; maintain original/returned name distinctions and bounded owned task scope.",
     "result": {
       "full_bytes_compared": 98304,
