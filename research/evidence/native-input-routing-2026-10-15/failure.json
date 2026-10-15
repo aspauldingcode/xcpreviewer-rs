@@ -1,0 +1,26 @@
+{
+  "scope": "Owned UI routing/control failure; operator transcript with selected actual tool observations",
+  "events": [
+    "Generic app activation selected unrelated window; stale owned ref rejected",
+    "Owned exact AXRaise followed by group disclosure succeeded",
+    "File text/image indexed click rejected: no AXPress despite advertised CLICK",
+    "CUA indexed row action later showed owned source editor, with intermediate unrelated window state",
+    "Two CUA actions rejected: The user changed /Applications/Xcode.app; attribution to human vs tool/context change unknown",
+    "Owned close-button attempts did not remove owned native tab11",
+    "Original unrelated workspace disappeared from native inventory during sequence; causal attribution unknown",
+    "Original project path reopened; exact owned workspace document path closed; final native inventory only restored unrelated tab12"
+  ],
+  "source_unchanged_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
+  "increment_attempted": false,
+  "input_accepted": false,
+  "cleanup": {
+    "owned_windows_final": 0,
+    "original_user_workspace_path_restored": true,
+    "original_tab_identity_restored": false,
+    "original_ui_runtime_continuity": "unknown",
+    "source_or_stop_actions_on_unrelated_project": false
+  },
+  "lock_failure": "Completion marker written before verified zero-owned inventory; recovery/path-based cleanup followed lease release. No claim of complete lock coverage.",
+  "quarantine": "Do not repeat app-global activation/indexed input/close route with unrelated workspace open until exact window binding independently verified",
+  "gate_status": "10 tests pass after four independent counterexamples fixed; proposal only, not integrated. Fresh native response/lease and filesystem baseline identities remain prerequisites."
+}
