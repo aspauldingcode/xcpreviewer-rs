@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "entity_types": {
+    "Target": "Pinned Xcode/OS/architecture identity",
+    "Session": "Owned workspace and process lifetime",
+    "Resource": "Surface, transport attachment or right identity",
+    "Frame": "Generation, geometry, color and allocation result",
+    "Event": "Timestamped request, render, completion, cancellation or release",
+    "Evidence": "Scoped source document or sealed experiment",
+    "Claim": "Observed, inferred or unknown proposition",
+    "Requirement": "Acceptance obligation with explicit scope",
+    "Specification": "Reviewed behavior-only handoff contract",
+    "Artifact": "Source, asset, test or implementation deliverable"
+  },
+  "relations": {
+    "SUPPORTS": {
+      "domain": [
+        "Evidence"
+      ],
+      "range": [
+        "Claim"
+      ]
+    },
+    "CONTRADICTS": {
+      "domain": [
+        "Evidence"
+      ],
+      "range": [
+        "Claim"
+      ]
+    },
+    "QUALIFIES": {
+      "domain": [
+        "Claim"
+      ],
+      "range": [
+        "Requirement"
+      ]
+    },
+    "LEAVES_OPEN": {
+      "domain": [
+        "Evidence",
+        "Claim"
+      ],
+      "range": [
+        "Requirement"
+      ]
+    },
+    "OBSERVES": {
+      "domain": [
+        "Evidence"
+      ],
+      "range": [
+        "Event",
+        "Frame",
+        "Resource",
+        "Session"
+      ]
+    },
+    "OCCURS_IN": {
+      "domain": [
+        "Event"
+      ],
+      "range": [
+        "Session"
+      ]
+    },
+    "USES": {
+      "domain": [
+        "Session"
+      ],
+      "range": [
+        "Target"
+      ]
+    },
+    "PRODUCES": {
+      "domain": [
+        "Event"
+      ],
+      "range": [
+        "Frame"
+      ]
+    },
+    "REFERENCES": {
+      "domain": [
+        "Frame",
+        "Event"
+      ],
+      "range": [
+        "Resource"
+      ]
+    },
+    "RELEASES": {
+      "domain": [
+        "Event"
+      ],
+      "range": [
+        "Resource"
+      ]
+    },
+    "SPECIFIES": {
+      "domain": [
+        "Specification"
+      ],
+      "range": [
+        "Requirement"
+      ]
+    },
+    "IMPLEMENTS": {
+      "domain": [
+        "Artifact"
+      ],
+      "range": [
+        "Specification"
+      ]
+    }
+  },
+  "fusion_key": [
+    "type",
+    "semantic_key",
+    "scope",
+    "target_version"
+  ],
+  "no_merge": [
+    "different target builds",
+    "owned oracle versus native Canvas",
+    "frame generation versus resource identity",
+    "static versus runtime evidence"
+  ],
+  "quality_gate": {
+    "minimum_reviewed_items": 50,
+    "minimum_precision": 0.9,
+    "current_status": "pilot; independent semantic review pending"
+  },
+  "competency_questions": [
+    "Which native observation supports a required Canvas behavior on this exact build?",
+    "Which inferences remain unmeasured?",
+    "Which source/control failures invalidate a claim?",
+    "Which missing prerequisite blocks the highest-value research?",
+    "Which resource identity survives which session or frame generation?",
+    "Which completion and release events were correlated in one owned session?",
+    "Which bytes include row padding and unused allocation tail?",
+    "Which repeated probes are already covered in the same scope/version?",
+    "Which specs can a fresh implementer receive without research exposure?",
+    "Which milestone checks still lack independent native or platform evidence?"
+  ]
+}

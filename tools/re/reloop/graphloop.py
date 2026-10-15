@@ -315,6 +315,9 @@ def run(controller, resume=None):
     config, communication = configuration(controller)
     path = controller.state / 'graph-loop.json'
     with controller.lock():
+        boundary = load(controller.root / 'research/loop/continuous.json', {}).get('clean_room_boundary', {})
+        if boundary.get('user_required') is True:
+            raise ValueError('Clean-room boundary active: legacy execution bindings require scope/role review. Use tools/re/canvas_graph.py plan; inspection remains available. No wake or budget was created.')
         ledger = load(path, {'schema_version': 1, 'accepted': {}, 'failures': {}, 'wakes': {}})
         active = ledger.get('active_wake')
         if resume is None and active and ledger['wakes'][active]['state'] in {'running', 'reconciliation-required'}:

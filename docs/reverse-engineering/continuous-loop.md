@@ -47,3 +47,8 @@ The user extended the loop on 2026-10-10 through the declared cross-platform WAS
 ## REA discovery engine
 
 The user requested REA integration. Follow [the pinned integration](rea-integration.md) when using it. `rea_native` is a reviewed sealed adapter; the separate Codex MCP registration exposes a native/Apple subset of the measured schema. Keep one provider session for related queries, verify image/profile identity and compare selected native instruction bytes independently. Retain failures and close the owned provider. Static dossiers, snapshots and reconstruction reports do not satisfy runtime or Canvas wire acceptance. Never repeat an unchanged expensive import failure; use a smaller owned control or another unblocked oracle.
+
+
+## Clean-room and Canvas graph amendment (2026-10-14)
+
+The user now requires an isolated implementation context. This exposed chat may investigate, prepare behavior-only specifications and implement research/verification tooling; it must not modify reconstruction/product behavior. Follow [Canvas research design](canvas-research-design.md) and run `python3 tools/re/canvas_graph.py validate` then `plan` before selection. Begin with provenance inventory and coverage audit; review completed scoped evidence before scheduling new probes. `graph-loop --execute` is denied while this boundary is active, pending explicit binding role/scope review. Read-only graph inspection remains available. Never substitute separate prompts for actual workspace/tool isolation. No current handoff is approved; no automatic delegation. Independent semantic and milestone reviews remain required. This amendment supersedes older instructions to implement product behavior in the same context.

@@ -1,0 +1,21 @@
+flowchart LR
+ P[Scope + pinned target] --> C[Prior coverage + provenance audit]
+ C --> R[Readiness: bridge, owned windows, descendant accounting]
+ R --> U[Repeatable input + refresh/state]
+ R --> D[Display/export color]
+ R --> T[Correlated Canvas transport]
+ T --> L[R1 release failure + R2 reuse/completion]
+ U --> V[Separate evidence verifier]
+ D --> V
+ L --> V
+ C --> Q[50-item graph quality review]
+ V --> S[Behavior-only specification]
+ Q --> S
+ S --> F[Separate spec/provenance reviewer]
+ F --> H[Hashed allowlist package]
+ H --> G{Fresh context + isolated workspace}
+ G --> I[Original implementation]
+ I --> B[Independent platform parity]
+ V --> M1[Full milestone 1 contract review]
+ B --> M2[Full milestone 2 contract review]
+ M1 --> M2

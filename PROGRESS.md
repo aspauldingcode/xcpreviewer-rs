@@ -1275,3 +1275,8 @@ Both helpers observe shared local count 0,1,2,1,0 through original and imported 
 Six full allocations compare against independently generated BGRA/padding expectations: 98,304 bytes, including 3,216 row-padding and 92,160 allocation-tail bytes. Initial reader expected stride64 for width13, but native stride is128; the failed geometry prediction is retained and corrected without repeating native jobs. Two native slots are exhausted. REA6.2 identifies owned ARM64 helper `205991b8c05c6cbae8c36f8623a7b2cec1f6ebe92062f35bb46dc7b2a8fe3187`, then closes it. Host26.5.1/25F80. No Apple binary is committed.
 
 Evidence `research/evidence/surface-use-count-2026-10-14`, manifest `7be8c766a3947b76cb91e9a0b537dfc00a97f71722e5284799f05846fe400723`. Eight resealed faults check the new reader; existing alias evidence is reverified. Both milestones and issues #15/#19/#22/#25 remain open. Private Xcode bridge remains absent and is not restarted. Next selection must review prior coverage before scheduling another probe.
+
+
+### 2026-10-14: Canvas graph and clean-room research boundary
+
+Implemented typed evidence graph (ten-document pilot, 15 entities/five candidate relations) and 18-task research/verification/specification/implementation/delivery DAG. Scope/grade, independent review, full output/check coverage and budget validation fail closed. Added explicit hashed handoff allowlist with path/attribution checks; recipient isolation remains an external permission requirement. Legacy execution blocked under current clean-room boundary; read-only inspection remains available. No product reconstruction edits or native probes. Semantic pilot review, provenance audit and both milestone acceptances remain open. See docs/reverse-engineering/canvas-research-design.md.

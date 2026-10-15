@@ -1,0 +1,859 @@
+{
+  "schema_version": 1,
+  "ontology": "research/loop/canvas-ontology.json",
+  "serial_by_default": true,
+  "automatic_delegation": false,
+  "knowledge": {
+    "nodes": [
+      {
+        "id": "e:native-state-identity",
+        "type": "Evidence",
+        "semantic_key": "native-state-identity",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+          "sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:native-state-binding",
+        "type": "Evidence",
+        "semantic_key": "native-state-binding",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+          "sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:native-state-content",
+        "type": "Evidence",
+        "semantic_key": "native-state-content",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+          "sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:native-state-geometry",
+        "type": "Evidence",
+        "semantic_key": "native-state-geometry",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+          "sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:surface-alias-use",
+        "type": "Evidence",
+        "semantic_key": "surface-alias-use",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+          "sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:remote-surface-use",
+        "type": "Evidence",
+        "semantic_key": "remote-surface-use",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+          "sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:mcp-refresh",
+        "type": "Evidence",
+        "semantic_key": "mcp-refresh",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+          "sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:mcp-quarantine",
+        "type": "Evidence",
+        "semantic_key": "mcp-quarantine",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+          "sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:surface-partial",
+        "type": "Evidence",
+        "semantic_key": "surface-partial",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+          "sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "e:observer-callback",
+        "type": "Evidence",
+        "semantic_key": "observer-callback",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "process-record",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+          "sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "observed"
+        }
+      },
+      {
+        "id": "c:alias-count",
+        "type": "Claim",
+        "semantic_key": "alias-count",
+        "text": "Same-task alias use-count research already exists.",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+          "sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "inferred"
+        }
+      },
+      {
+        "id": "c:remote-count",
+        "type": "Claim",
+        "semantic_key": "remote-count",
+        "text": "Cross-task use-count research already exists.",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+          "sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "inferred"
+        }
+      },
+      {
+        "id": "c:refresh-policy",
+        "type": "Claim",
+        "semantic_key": "refresh-policy",
+        "text": "Owned refresh behavior is distinct from native Canvas refresh.",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+          "sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "inferred"
+        }
+      },
+      {
+        "id": "c:state-id",
+        "type": "Claim",
+        "semantic_key": "state-id",
+        "text": "Public ImageRenderer identity controls exist; native UI input remains separate.",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+          "sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "inferred"
+        }
+      },
+      {
+        "id": "c:state-size",
+        "type": "Claim",
+        "semantic_key": "state-size",
+        "text": "Geometry/state reference exists; general migration remains unqualified.",
+        "scope": "scoped historical research; not Canvas protocol acceptance",
+        "target_version": "historical identity retained in source document",
+        "grade": "owned-oracle",
+        "provenance": {
+          "path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+          "sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+          "locator": "complete document; assertions require independent semantic review",
+          "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+          "confidence": "inferred"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "e:surface-alias-use",
+        "to": "c:alias-count",
+        "relation": "SUPPORTS",
+        "source": "e:surface-alias-use",
+        "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+        "confidence": "inferred"
+      },
+      {
+        "from": "e:remote-surface-use",
+        "to": "c:remote-count",
+        "relation": "SUPPORTS",
+        "source": "e:remote-surface-use",
+        "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+        "confidence": "inferred"
+      },
+      {
+        "from": "e:mcp-refresh",
+        "to": "c:refresh-policy",
+        "relation": "SUPPORTS",
+        "source": "e:mcp-refresh",
+        "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+        "confidence": "inferred"
+      },
+      {
+        "from": "e:native-state-identity",
+        "to": "c:state-id",
+        "relation": "SUPPORTS",
+        "source": "e:native-state-identity",
+        "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+        "confidence": "inferred"
+      },
+      {
+        "from": "e:native-state-geometry",
+        "to": "c:state-size",
+        "relation": "SUPPORTS",
+        "source": "e:native-state-geometry",
+        "extracted_at": "2026-10-15T02:50:57.307706+00:00",
+        "confidence": "inferred"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "provenance-inventory",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [],
+      "priority": 125,
+      "issue_ids": [
+        "S1",
+        "V1"
+      ],
+      "scope": "Classify existing source/assets/specs by exposure and license; no automatic clean-room label",
+      "grade_required": "process-record",
+      "acceptance_checks": [
+        "all-delivery-paths-classified",
+        "unknown-provenance-quarantined",
+        "assets-attributed",
+        "history-exposure-recorded"
+      ],
+      "outputs": [
+        "research/canvas-reviews/provenance-inventory.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "evidence-coverage-audit",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [],
+      "priority": 120,
+      "issue_ids": [
+        "R1",
+        "R2",
+        "P1"
+      ],
+      "scope": "Index historical evidence by target/scope/claim; skip completed probes",
+      "grade_required": "process-record",
+      "acceptance_checks": [
+        "ten-document-pilot-reviewed",
+        "seals-checked",
+        "duplicate-tracks-indexed",
+        "failures-retained",
+        "unknowns-explicit"
+      ],
+      "outputs": [
+        "research/canvas-reviews/evidence-coverage-audit.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "native-readiness",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [],
+      "priority": 118,
+      "issue_ids": [
+        "O2",
+        "O3"
+      ],
+      "scope": "Separate REA identity, approved bridge, owned UI readiness and compiler cleanup",
+      "grade_required": "process-record",
+      "acceptance_checks": [
+        "target-identities-pinned",
+        "bridge-status-separate",
+        "compiler-descendants-accounted",
+        "zero-owned-workspaces"
+      ],
+      "outputs": [
+        "research/canvas-reviews/native-readiness.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      },
+      "external_prerequisite": "Approved bridge restoration or independent permitted UI route; compiler descendant cleanup must be verified before native launch"
+    },
+    {
+      "id": "repeatable-input",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "native-readiness"
+      ],
+      "priority": 116,
+      "issue_ids": [
+        "O3",
+        "R2"
+      ],
+      "scope": "Owned Canvas input delivery; correlate event and state rather than infer from pixels",
+      "grade_required": "native-ui",
+      "acceptance_checks": [
+        "positive-input-repeat",
+        "negative-input-control",
+        "event-state-correlation",
+        "owned-window-closed"
+      ],
+      "outputs": [
+        "research/canvas-reviews/repeatable-input.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "refresh-state",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "repeatable-input"
+      ],
+      "priority": 114,
+      "issue_ids": [
+        "R2",
+        "H1"
+      ],
+      "scope": "Same-session source edits, refresh, errors and identity changes with state/reset observations",
+      "grade_required": "native-ui",
+      "acceptance_checks": [
+        "same-source-refresh",
+        "same-identity-edit",
+        "identity-change",
+        "error-recovery",
+        "stale-binding-control"
+      ],
+      "outputs": [
+        "research/canvas-reviews/refresh-state.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "display-export-color",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "native-readiness"
+      ],
+      "priority": 112,
+      "issue_ids": [
+        "O3",
+        "V1"
+      ],
+      "scope": "Canvas display versus exported/reference pixels with explicit ICC/alpha/scale geometry",
+      "grade_required": "native-ui",
+      "acceptance_checks": [
+        "lossless-native-export",
+        "icc-recorded",
+        "alpha-scale-recorded",
+        "same-content-correlation",
+        "padding-or-nonapplicability"
+      ],
+      "outputs": [
+        "research/canvas-reviews/display-export-color.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "capture-lifecycle",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "native-readiness"
+      ],
+      "priority": 119,
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2"
+      ],
+      "scope": "Actual Canvas request/reply/resource/frame/completion in a single owned session",
+      "grade_required": "native-correlated",
+      "acceptance_checks": [
+        "request-reply-linked",
+        "resource-vs-generation",
+        "completion-order",
+        "cancel-failure",
+        "transport-provenance",
+        "no-invented-abi"
+      ],
+      "outputs": [
+        "research/canvas-reviews/capture-lifecycle.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "release-failure-accounting",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "capture-lifecycle"
+      ],
+      "priority": 113,
+      "issue_ids": [
+        "R1"
+      ],
+      "scope": "Owned native Canvas failure/timeout release observations, distinct from CPU oracle rights",
+      "grade_required": "native-correlated",
+      "acceptance_checks": [
+        "before-transfer-failure",
+        "after-import-failure",
+        "before-ack-timeout",
+        "peer-exit-waits",
+        "rights-accounted",
+        "physical-reclaim-measured-or-explicitly-unknown"
+      ],
+      "outputs": [
+        "research/canvas-reviews/release-failure-accounting.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "reuse-completion",
+      "role": "investigator",
+      "kind": "research",
+      "requires": [
+        "capture-lifecycle"
+      ],
+      "priority": 113,
+      "issue_ids": [
+        "R2"
+      ],
+      "scope": "Delayed/stale consumers and reused resource generations under measured completion",
+      "grade_required": "native-correlated",
+      "acceptance_checks": [
+        "same-resource-new-generation",
+        "stale-frame-rejected",
+        "delayed-consumer",
+        "completion-correlation",
+        "gpu-sync-scope-explicit"
+      ],
+      "outputs": [
+        "research/canvas-reviews/reuse-completion.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 2,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "verify-ui",
+      "role": "evidence-verifier",
+      "kind": "verification",
+      "requires": [
+        "repeatable-input",
+        "refresh-state",
+        "display-export-color"
+      ],
+      "priority": 100,
+      "issue_ids": [
+        "O3",
+        "H1",
+        "V1"
+      ],
+      "scope": "Independent UI/state/color review",
+      "grade_required": "native-ui",
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "outputs": [
+        "research/canvas-reviews/verify-ui.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "verify-transport",
+      "role": "evidence-verifier",
+      "kind": "verification",
+      "requires": [
+        "release-failure-accounting",
+        "reuse-completion"
+      ],
+      "priority": 100,
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2"
+      ],
+      "scope": "Independent native lifecycle/transport review",
+      "grade_required": "native-correlated",
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "outputs": [
+        "research/canvas-reviews/verify-transport.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "verify-coverage",
+      "role": "evidence-verifier",
+      "kind": "verification",
+      "requires": [
+        "evidence-coverage-audit"
+      ],
+      "priority": 100,
+      "issue_ids": [
+        "V1"
+      ],
+      "scope": "Independent 50-item entity/relation review, precision>=90%, contradictions and scoped fusion",
+      "grade_required": "process-record",
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "outputs": [
+        "research/canvas-reviews/verify-coverage.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "behavior-spec",
+      "role": "spec-author",
+      "kind": "specification",
+      "requires": [
+        "verify-ui",
+        "verify-transport",
+        "verify-coverage"
+      ],
+      "priority": 95,
+      "issue_ids": [
+        "I1",
+        "F3"
+      ],
+      "scope": "Public interfaces, observable state, formats and errors only; excludes target implementation structure",
+      "grade_required": "public-spec",
+      "acceptance_checks": [
+        "externally-observed-requirements",
+        "public-standard-references",
+        "unsupported-behavior-explicit",
+        "no-source-offsets-pseudocode",
+        "testable-contract"
+      ],
+      "outputs": [
+        "research/canvas-reviews/behavior-spec.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "spec-firewall",
+      "role": "spec-reviewer",
+      "kind": "verification",
+      "requires": [
+        "behavior-spec",
+        "provenance-inventory"
+      ],
+      "priority": 94,
+      "issue_ids": [
+        "S1",
+        "V1"
+      ],
+      "scope": "Review every handoff byte and provenance; internal research graph never enters bundle",
+      "grade_required": "public-spec",
+      "acceptance_checks": [
+        "independent-context",
+        "behavior-only",
+        "allowlist-hashed",
+        "assets-attributed",
+        "tests-no-private-structure",
+        "isolated-workspace-plan"
+      ],
+      "outputs": [
+        "research/canvas-reviews/spec-firewall.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "milestone1-review",
+      "role": "evidence-verifier",
+      "kind": "verification",
+      "requires": [
+        "verify-ui",
+        "verify-transport",
+        "verify-coverage"
+      ],
+      "priority": 90,
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2",
+        "V1"
+      ],
+      "scope": "Review all existing milestone1 issue contracts, not only this graph subset",
+      "grade_required": "native-correlated",
+      "acceptance_checks": [
+        "github-contract-crosswalk",
+        "all-required-unknowns-resolved",
+        "no-owned-to-canvas-promotion",
+        "independent-acceptance-record"
+      ],
+      "outputs": [
+        "research/canvas-reviews/milestone1-review.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      },
+      "milestone_gate": 1
+    },
+    {
+      "id": "clean-implementation",
+      "role": "clean-implementer",
+      "kind": "implementation",
+      "requires": [
+        "spec-firewall"
+      ],
+      "priority": 85,
+      "issue_ids": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "H1",
+        "H2"
+      ],
+      "scope": "Implement solely from reviewed package in a fresh context and separate checkout without research history",
+      "grade_required": "public-spec",
+      "acceptance_checks": [
+        "fresh-context",
+        "research-tools-denied",
+        "bundle-only-inputs",
+        "original-code-assets",
+        "source-provenance-recorded"
+      ],
+      "outputs": [
+        "research/canvas-reviews/clean-implementation.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      },
+      "external_prerequisite": "User-authorized fresh isolated implementation context; no shared research checkout or inherited chat"
+    },
+    {
+      "id": "platform-parity",
+      "role": "delivery-verifier",
+      "kind": "verification",
+      "requires": [
+        "clean-implementation"
+      ],
+      "priority": 80,
+      "issue_ids": [
+        "V1",
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "scope": "Independent behavioral parity on declared macOS/Linux/Windows/browser targets",
+      "grade_required": "public-spec",
+      "acceptance_checks": [
+        "normal-edge-error-matrix",
+        "bytes-or-semantic-tolerances",
+        "edit-to-frame-latency",
+        "restart-reconnect",
+        "text-layout-input-state",
+        "target-matrix-complete"
+      ],
+      "outputs": [
+        "research/canvas-reviews/platform-parity.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      }
+    },
+    {
+      "id": "milestone2-review",
+      "role": "delivery-verifier",
+      "kind": "delivery",
+      "requires": [
+        "platform-parity",
+        "milestone1-review"
+      ],
+      "priority": 70,
+      "issue_ids": [
+        "D1",
+        "S1"
+      ],
+      "scope": "All existing milestone2 contracts plus provenance/licensing/installability/release review",
+      "grade_required": "public-spec",
+      "acceptance_checks": [
+        "github-contract-crosswalk",
+        "reproducible-builds",
+        "license-inventory",
+        "all-required-platforms",
+        "independent-acceptance-record"
+      ],
+      "outputs": [
+        "research/canvas-reviews/milestone2-review.json"
+      ],
+      "budget": {
+        "rounds": 1,
+        "native_jobs": 0,
+        "seconds_per_native_job": 15,
+        "artifact_bytes": 67108864
+      },
+      "milestone_gate": 2
+    }
+  ],
+  "attestations": {},
+  "handoff_policy": "No current artifact is approved for clean implementation. Do not export internal graph, history, decompilation or private dumps.",
+  "legacy_graph": "Existing workgraph/GitHub delivery contracts remain authoritative; this research/role graph adds gates and does not replace their acceptance."
+}

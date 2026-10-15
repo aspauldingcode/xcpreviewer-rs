@@ -1,0 +1,677 @@
+{
+  "automatic_delegation": false,
+  "execution_started": false,
+  "milestone1_complete": false,
+  "milestone2_complete": false,
+  "next_task": null,
+  "role": "evidence-verifier",
+  "tasks": [
+    {
+      "acceptance_checks": [
+        "all-delivery-paths-classified",
+        "unknown-provenance-quarantined",
+        "assets-attributed",
+        "history-exposure-recorded"
+      ],
+      "blockers": [
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "process-record",
+      "id": "provenance-inventory",
+      "issue_ids": [
+        "S1",
+        "V1"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/provenance-inventory.json"
+      ],
+      "priority": 125,
+      "requires": [],
+      "role": "investigator",
+      "scope": "Classify existing source/assets/specs by exposure and license; no automatic clean-room label",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "ten-document-pilot-reviewed",
+        "seals-checked",
+        "duplicate-tracks-indexed",
+        "failures-retained",
+        "unknowns-explicit"
+      ],
+      "blockers": [
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "process-record",
+      "id": "evidence-coverage-audit",
+      "issue_ids": [
+        "R1",
+        "R2",
+        "P1"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/evidence-coverage-audit.json"
+      ],
+      "priority": 120,
+      "requires": [],
+      "role": "investigator",
+      "scope": "Index historical evidence by target/scope/claim; skip completed probes",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "request-reply-linked",
+        "resource-vs-generation",
+        "completion-order",
+        "cancel-failure",
+        "transport-provenance",
+        "no-invented-abi"
+      ],
+      "blockers": [
+        "requires:native-readiness",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-correlated",
+      "id": "capture-lifecycle",
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/capture-lifecycle.json"
+      ],
+      "priority": 119,
+      "requires": [
+        "native-readiness"
+      ],
+      "role": "investigator",
+      "scope": "Actual Canvas request/reply/resource/frame/completion in a single owned session",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "target-identities-pinned",
+        "bridge-status-separate",
+        "compiler-descendants-accounted",
+        "zero-owned-workspaces"
+      ],
+      "blockers": [
+        "Approved bridge restoration or independent permitted UI route; compiler descendant cleanup must be verified before native launch",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "external_prerequisite": "Approved bridge restoration or independent permitted UI route; compiler descendant cleanup must be verified before native launch",
+      "grade_required": "process-record",
+      "id": "native-readiness",
+      "issue_ids": [
+        "O2",
+        "O3"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/native-readiness.json"
+      ],
+      "priority": 118,
+      "requires": [],
+      "role": "investigator",
+      "scope": "Separate REA identity, approved bridge, owned UI readiness and compiler cleanup",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "positive-input-repeat",
+        "negative-input-control",
+        "event-state-correlation",
+        "owned-window-closed"
+      ],
+      "blockers": [
+        "requires:native-readiness",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-ui",
+      "id": "repeatable-input",
+      "issue_ids": [
+        "O3",
+        "R2"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/repeatable-input.json"
+      ],
+      "priority": 116,
+      "requires": [
+        "native-readiness"
+      ],
+      "role": "investigator",
+      "scope": "Owned Canvas input delivery; correlate event and state rather than infer from pixels",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "same-source-refresh",
+        "same-identity-edit",
+        "identity-change",
+        "error-recovery",
+        "stale-binding-control"
+      ],
+      "blockers": [
+        "requires:repeatable-input",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-ui",
+      "id": "refresh-state",
+      "issue_ids": [
+        "R2",
+        "H1"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/refresh-state.json"
+      ],
+      "priority": 114,
+      "requires": [
+        "repeatable-input"
+      ],
+      "role": "investigator",
+      "scope": "Same-session source edits, refresh, errors and identity changes with state/reset observations",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "before-transfer-failure",
+        "after-import-failure",
+        "before-ack-timeout",
+        "peer-exit-waits",
+        "rights-accounted",
+        "physical-reclaim-measured-or-explicitly-unknown"
+      ],
+      "blockers": [
+        "requires:capture-lifecycle",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-correlated",
+      "id": "release-failure-accounting",
+      "issue_ids": [
+        "R1"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/release-failure-accounting.json"
+      ],
+      "priority": 113,
+      "requires": [
+        "capture-lifecycle"
+      ],
+      "role": "investigator",
+      "scope": "Owned native Canvas failure/timeout release observations, distinct from CPU oracle rights",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "same-resource-new-generation",
+        "stale-frame-rejected",
+        "delayed-consumer",
+        "completion-correlation",
+        "gpu-sync-scope-explicit"
+      ],
+      "blockers": [
+        "requires:capture-lifecycle",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-correlated",
+      "id": "reuse-completion",
+      "issue_ids": [
+        "R2"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/reuse-completion.json"
+      ],
+      "priority": 113,
+      "requires": [
+        "capture-lifecycle"
+      ],
+      "role": "investigator",
+      "scope": "Delayed/stale consumers and reused resource generations under measured completion",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "lossless-native-export",
+        "icc-recorded",
+        "alpha-scale-recorded",
+        "same-content-correlation",
+        "padding-or-nonapplicability"
+      ],
+      "blockers": [
+        "requires:native-readiness",
+        "separate-context:investigator"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 2,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-ui",
+      "id": "display-export-color",
+      "issue_ids": [
+        "O3",
+        "V1"
+      ],
+      "kind": "research",
+      "outputs": [
+        "research/canvas-reviews/display-export-color.json"
+      ],
+      "priority": 112,
+      "requires": [
+        "native-readiness"
+      ],
+      "role": "investigator",
+      "scope": "Canvas display versus exported/reference pixels with explicit ICC/alpha/scale geometry",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "blockers": [
+        "requires:evidence-coverage-audit"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "process-record",
+      "id": "verify-coverage",
+      "issue_ids": [
+        "V1"
+      ],
+      "kind": "verification",
+      "outputs": [
+        "research/canvas-reviews/verify-coverage.json"
+      ],
+      "priority": 100,
+      "requires": [
+        "evidence-coverage-audit"
+      ],
+      "role": "evidence-verifier",
+      "scope": "Independent 50-item entity/relation review, precision>=90%, contradictions and scoped fusion",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "blockers": [
+        "requires:release-failure-accounting",
+        "requires:reuse-completion"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-correlated",
+      "id": "verify-transport",
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2"
+      ],
+      "kind": "verification",
+      "outputs": [
+        "research/canvas-reviews/verify-transport.json"
+      ],
+      "priority": 100,
+      "requires": [
+        "release-failure-accounting",
+        "reuse-completion"
+      ],
+      "role": "evidence-verifier",
+      "scope": "Independent native lifecycle/transport review",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "different-producer-context",
+        "required-checks-complete",
+        "seals-independent",
+        "contradictions-reviewed"
+      ],
+      "blockers": [
+        "requires:repeatable-input",
+        "requires:refresh-state",
+        "requires:display-export-color"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-ui",
+      "id": "verify-ui",
+      "issue_ids": [
+        "O3",
+        "H1",
+        "V1"
+      ],
+      "kind": "verification",
+      "outputs": [
+        "research/canvas-reviews/verify-ui.json"
+      ],
+      "priority": 100,
+      "requires": [
+        "repeatable-input",
+        "refresh-state",
+        "display-export-color"
+      ],
+      "role": "evidence-verifier",
+      "scope": "Independent UI/state/color review",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "externally-observed-requirements",
+        "public-standard-references",
+        "unsupported-behavior-explicit",
+        "no-source-offsets-pseudocode",
+        "testable-contract"
+      ],
+      "blockers": [
+        "requires:verify-ui",
+        "requires:verify-transport",
+        "requires:verify-coverage",
+        "separate-context:spec-author"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "public-spec",
+      "id": "behavior-spec",
+      "issue_ids": [
+        "I1",
+        "F3"
+      ],
+      "kind": "specification",
+      "outputs": [
+        "research/canvas-reviews/behavior-spec.json"
+      ],
+      "priority": 95,
+      "requires": [
+        "verify-ui",
+        "verify-transport",
+        "verify-coverage"
+      ],
+      "role": "spec-author",
+      "scope": "Public interfaces, observable state, formats and errors only; excludes target implementation structure",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "independent-context",
+        "behavior-only",
+        "allowlist-hashed",
+        "assets-attributed",
+        "tests-no-private-structure",
+        "isolated-workspace-plan"
+      ],
+      "blockers": [
+        "requires:behavior-spec",
+        "requires:provenance-inventory",
+        "separate-context:spec-reviewer"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "public-spec",
+      "id": "spec-firewall",
+      "issue_ids": [
+        "S1",
+        "V1"
+      ],
+      "kind": "verification",
+      "outputs": [
+        "research/canvas-reviews/spec-firewall.json"
+      ],
+      "priority": 94,
+      "requires": [
+        "behavior-spec",
+        "provenance-inventory"
+      ],
+      "role": "spec-reviewer",
+      "scope": "Review every handoff byte and provenance; internal research graph never enters bundle",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "github-contract-crosswalk",
+        "all-required-unknowns-resolved",
+        "no-owned-to-canvas-promotion",
+        "independent-acceptance-record"
+      ],
+      "blockers": [
+        "requires:verify-ui",
+        "requires:verify-transport",
+        "requires:verify-coverage"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "native-correlated",
+      "id": "milestone1-review",
+      "issue_ids": [
+        "P1",
+        "R1",
+        "R2",
+        "V1"
+      ],
+      "kind": "verification",
+      "milestone_gate": 1,
+      "outputs": [
+        "research/canvas-reviews/milestone1-review.json"
+      ],
+      "priority": 90,
+      "requires": [
+        "verify-ui",
+        "verify-transport",
+        "verify-coverage"
+      ],
+      "role": "evidence-verifier",
+      "scope": "Review all existing milestone1 issue contracts, not only this graph subset",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "fresh-context",
+        "research-tools-denied",
+        "bundle-only-inputs",
+        "original-code-assets",
+        "source-provenance-recorded"
+      ],
+      "blockers": [
+        "User-authorized fresh isolated implementation context; no shared research checkout or inherited chat",
+        "requires:spec-firewall",
+        "separate-context:clean-implementer",
+        "isolated-workspace-and-reviewed-handoff-required"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "external_prerequisite": "User-authorized fresh isolated implementation context; no shared research checkout or inherited chat",
+      "grade_required": "public-spec",
+      "id": "clean-implementation",
+      "issue_ids": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "H1",
+        "H2"
+      ],
+      "kind": "implementation",
+      "outputs": [
+        "research/canvas-reviews/clean-implementation.json"
+      ],
+      "priority": 85,
+      "requires": [
+        "spec-firewall"
+      ],
+      "role": "clean-implementer",
+      "scope": "Implement solely from reviewed package in a fresh context and separate checkout without research history",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "normal-edge-error-matrix",
+        "bytes-or-semantic-tolerances",
+        "edit-to-frame-latency",
+        "restart-reconnect",
+        "text-layout-input-state",
+        "target-matrix-complete"
+      ],
+      "blockers": [
+        "requires:clean-implementation",
+        "separate-context:delivery-verifier"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "public-spec",
+      "id": "platform-parity",
+      "issue_ids": [
+        "V1",
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kind": "verification",
+      "outputs": [
+        "research/canvas-reviews/platform-parity.json"
+      ],
+      "priority": 80,
+      "requires": [
+        "clean-implementation"
+      ],
+      "role": "delivery-verifier",
+      "scope": "Independent behavioral parity on declared macOS/Linux/Windows/browser targets",
+      "state": "blocked"
+    },
+    {
+      "acceptance_checks": [
+        "github-contract-crosswalk",
+        "reproducible-builds",
+        "license-inventory",
+        "all-required-platforms",
+        "independent-acceptance-record"
+      ],
+      "blockers": [
+        "requires:platform-parity",
+        "requires:milestone1-review",
+        "separate-context:delivery-verifier"
+      ],
+      "budget": {
+        "artifact_bytes": 67108864,
+        "native_jobs": 0,
+        "rounds": 1,
+        "seconds_per_native_job": 15
+      },
+      "grade_required": "public-spec",
+      "id": "milestone2-review",
+      "issue_ids": [
+        "D1",
+        "S1"
+      ],
+      "kind": "delivery",
+      "milestone_gate": 2,
+      "outputs": [
+        "research/canvas-reviews/milestone2-review.json"
+      ],
+      "priority": 70,
+      "requires": [
+        "platform-parity",
+        "milestone1-review"
+      ],
+      "role": "delivery-verifier",
+      "scope": "All existing milestone2 contracts plus provenance/licensing/installability/release review",
+      "state": "blocked"
+    }
+  ]
+}
