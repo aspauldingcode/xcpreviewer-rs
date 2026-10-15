@@ -3,6 +3,7 @@ import json
 import shutil
 import tempfile
 import unittest
+import subprocess
 from pathlib import Path
 from verify_source_short_read import verify
 
@@ -14,7 +15,10 @@ class SourceShortReadTests(unittest.TestCase):
     def test_real_file_measurements(self):
         self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),'56003fc77eaeadfbd631fb31485239e79fc8409563bd1eee03d4590e236ed900')
         self.assertTrue(verify(E)['source_short_read_fix_qualified'])
-        self.assertEqual((E/'after/source_file_loop.js').read_bytes(),(ROOT/'tools/re/reloop/source_file_loop.js').read_bytes())
+        self.assertEqual(hashlib.sha256((E/'after/source_file_loop.js').read_bytes()).hexdigest(),'0747cd8c9fa9f7437e4533099cc18124cbdb4e5386d243a1dbf0b5529fd1f201')
+        with tempfile.TemporaryDirectory() as tmp:
+            subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/short_read_control.js'),tmp,'after',str(ROOT/'research/evidence/source-revision-2026-10-10')],check=True,capture_output=True,timeout=8)
+            self.assertEqual(json.loads((Path(tmp)/'result.json').read_text()),json.loads((E/'after/result.json').read_text()))
 
     def test_resealed_faults(self):
         for fault in ['count','position','hex','published','build','oversize','event','close','worker','padding','tail','before']:

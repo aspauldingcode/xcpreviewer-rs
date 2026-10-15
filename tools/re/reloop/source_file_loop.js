@@ -3,7 +3,7 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {SourceRevisionHost}=require('./source_revision_host.js');
 class SourceFileLoop {
- #host=new SourceRevisionHost();#builder;#file;#seen=null;#pending=null;#drain=Promise.resolve();#running=false;#abort=null;#closed=false;#pollTimer=null;#deadline=null;#events=[];#dropped=0;
+ #host=new SourceRevisionHost();#builder;#file;#seen=null;#observation=null;#pending=null;#drain=Promise.resolve();#running=false;#abort=null;#closed=false;#pollTimer=null;#deadline=null;#events=[];#dropped=0;
  constructor(file,builder){assert.equal(typeof file,'string');assert.equal(typeof builder,'function');this.#file=file;this.#builder=builder;}
  events(){return this.#events.map(e=>({...e}));}
  diagnostics(){
@@ -56,11 +56,12 @@ class SourceFileLoop {
    if(!source.length||source.length>4096||!source.every(b=>b<128))reason='invalid-source';
   }catch(e){key='read-error:'+String(e.code||e.message);reason='unavailable-source';}
   if(key===this.#seen&&(!force||reason)){this.#kick();return this.#drain;}
+  const observation={};this.#observation=observation;
   this.#seen=key;this.#pending=null;
   // A changed/forced observation supersedes the active cooperative builder.
   this.#abort?.abort();
   // Abort listeners may synchronously close the loop. Respect that closure.
-  if(this.#closed)return this.#drain;
+  if(this.#closed||observation!==this.#observation)return this.#drain;
   if(reason){this.#host.invalidate();this.#record({kind:reason});return this.#drain;}
   const ticket=this.#host.begin(source);this.#pending={source:Buffer.from(source),ticket};
   this.#record({kind:'observed',generation:ticket.generation,sourceSha256:ticket.sourceSha256});

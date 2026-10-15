@@ -3055,6 +3055,27 @@
       "run_id": "20261011T042223Z-primary-live-wasm-swap-ddcf94bc"
     }
   ],
+  "reentrant_file_checkpoint": {
+    "budget": {
+      "limit": 4,
+      "used": 4
+    },
+    "evidence": "research/evidence/reentrant-file-observation-2026-10-14",
+    "manifest_sha256": "13d58a153a91eb02a586ab26eaea26764addfa1c736ef811ba617b82aa72b922",
+    "next_wake_hint": "Nested file observation ordering qualified for owned reconstruction. Native Canvas refresh/state reset remains blocked on approved private bridge restoration. Select independent eligible work.",
+    "prediction": "A nested observation from an abort listener supersedes the outer observation. Before may publish older source and skip the newest file; after must publish newest source.",
+    "result": {
+      "allocation_tail_bytes": 63744,
+      "cases": 4,
+      "full_frame_bytes": 65536,
+      "latest_nested_source_wins": true,
+      "native_canvas_refresh_qualified": false,
+      "row_padding_bytes": 336
+    },
+    "retained_failure": "Both before controls publish source 0 while source 2 is on disk; subsequent poll skips source 2. Both after controls publish source 2.",
+    "scope": "Actual file replacement and prebuilt owned WASM reconstruction, not native Canvas refresh/state",
+    "status": "verified"
+  },
   "remote_surface_alias_checkpoint": {
     "budget": "Four producers:compile,parent,two fork/exec peers;60sec compile,15sec batch,12sec alarm,64creation bounds.",
     "classification": "Audited remote CF alias preserves original after parent and explicit resource right removal; clean release and owned SIGKILL both permit numeric-ID recurrence",
