@@ -1,0 +1,11 @@
+# Destruction of returned failed IOSurface envelopes — 2026-10-14
+
+Two newly owned native task controls extend the full-queue timeout experiment with exactly one mach_msg_destroy of the returned failed attachment envelope. Before destruction COPY_SEND has original/returned resource urefs2 at one name; MOVE_SEND has original urefs0 and returned urefs1 at a different name. The destination endpoint has2 urefs in both cases.
+
+After destruction COPY_SEND retains exactly its original1 resource uref, MOVE_SEND returned urefs fall to0, and both destination endpoints retain1 original uref. The probe then explicitly removes remaining original resource and endpoint rights and the private receive right. Original and returned names are checked separately after cleanup. The original queue filler remains the sole queued message and an immediate receive after draining it times out. Legacy output field resource_refs_after_failure denotes the post-destruction measurement in this derived probe; the first JSONL row records the separate before-destruction values.
+
+All98304 bytes across six allocation captures match independently constructed17x9/stride128/seed49 expectations, including3240 padding bytes and91392 unused tail bytes. Retained CF aliases remain readable after right cleanup. This measures public Mach right accounting and retained alias usability, not physical reclamation or native Canvas transport.
+
+Evidence research/evidence/surface-send-destroy-2026-10-14; manifest SHA256 bc202e0c981843dd6af7f4c536c5bfc54e1c77c4290526839e9753fdb3699c4c. Two declared slots, two executions, alarms5s/outer7s, bounded30s compilation and exclusive controller lock. No existing app/process interaction or Xcode workspace. Ten resealed faults and six isolated tests separate verification from acquisition. REA6.2.0 independently identified owned ARM64 probe SHA256 07b235981af5ce1d1cb79e5640f842fe19e62ea153f49021cec1c1b5a0653614. No binaries published.
+
+Earlier compile/sandbox failures and partial returned-name cleanup measurements remain sealed. Both milestones and issues15/19/22/25 remain open. Next: independent resource/generation reuse or receiver/completion ordering; no unchanged repetition of this qualified boundary. Private Xcode bridge remains unavailable and is separate from live REA.

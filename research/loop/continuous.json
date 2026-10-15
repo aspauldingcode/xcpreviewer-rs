@@ -3527,6 +3527,42 @@
     "retained_failure": "Isolatedv2 fixture test referenced previous SurfaceContentSeed directory; corrected to SurfaceSeedTiming. Native/reader intact. Archive/index/log retained /private/tmp/surface-seed-timing-v2-*; no native rerun.",
     "started_at": "2026-10-12T01:31:07.063619+00:00"
   },
+  "surface_send_destroy_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 10
+    },
+    "evidence": "research/evidence/surface-send-destroy-2026-10-14",
+    "manifest_sha256": "bc202e0c981843dd6af7f4c536c5bfc54e1c77c4290526839e9753fdb3699c4c",
+    "next_wake_hint": "Failed full-queue envelope restoration and one-time destruction now qualified for owned COPY_SEND/MOVE_SEND. Next compare descriptor reuse or receiver/completion ordering without assuming numeric names/resource IDs encode generation. Private Canvas bridge remains separate prerequisite.",
+    "result": {
+      "failed_envelope_destruction_qualified": true,
+      "full_bytes_compared": 98304,
+      "native_canvas_protocol_qualified": false,
+      "outcomes": [
+        {
+          "mode": "copy",
+          "name_changed": false,
+          "original_refs": 1,
+          "returned_refs": 1
+        },
+        {
+          "mode": "move",
+          "name_changed": true,
+          "original_refs": 0,
+          "returned_refs": 0
+        }
+      ],
+      "owned_task_controls": 2,
+      "padding_bytes": 3240,
+      "physical_reclamation_qualified": false,
+      "returned_rights_accounted": true,
+      "unused_tail_bytes": 91392
+    },
+    "retained_failure": "Prior sandbox/compile failures and partial MOVE returned-name accounting remain retained. This changed two-control campaign measures exactly one destruction of returned failed envelope; no retries or budget reset. Full repository verification archive exceeded30s; retained v2 archive/log. Changed to candidate-tree archive restricted to code and three required evidence sets, same30s bound, no native rerun.",
+    "started_at": "2026-10-15T00:57:12.231961+00:00",
+    "status": "verified"
+  },
   "surface_send_timeout_checkpoint": {
     "checks": {
       "isolated_tests": 6,
