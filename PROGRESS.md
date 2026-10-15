@@ -1290,3 +1290,8 @@ Captured159 declared source/project files with working SHA-256 and tracked index
 ### 2026-10-14: Selected reconstruction history audit
 
 Audited six delivery-boundary paths against two committed analysis-document anchors. All twelve ancestry checks are true and separately corroborated by retained ancestry-path lists. This establishes repository ordering only, not derivation, exposure, originality or copying. All six remain quarantined; independent provenance review, license assessment and handoff eligibility remain unresolved. Seven resealed faults reject false clean-room/ancestry claims. No native probes or product edits. See docs/reverse-engineering/provenance-history.md.
+
+
+### 2026-10-14: Exact-span Canvas evidence pilot review catalog
+
+Prepared50 exact-span statement candidates across the ten pinned pilot documents, with source hashes, line/character locations and unchanged evidence scope/grade/version. All semantic review, precision, fusion and acceptance remain explicitly unqualified: independently reviewed0, precisionnull, quality gatefalse. This is internal research, not a clean implementation handoff. Eight negative controls reject false evidence/acceptance promotion. No native probes or product edits. See docs/reverse-engineering/canvas-claim-catalog.md; separate-context semantic review remains required.

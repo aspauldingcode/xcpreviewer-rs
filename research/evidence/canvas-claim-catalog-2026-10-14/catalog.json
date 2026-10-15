@@ -1,0 +1,1068 @@
+{
+  "extraction": "Deterministic exact-span document statements; no automatic semantic support edges or fusion",
+  "handoff_approved": false,
+  "per_document": 5,
+  "pilot_documents": 10,
+  "quality_gate": {
+    "independently_reviewed": 0,
+    "passed": false,
+    "precision": null,
+    "required_precision": 0.9,
+    "required_reviewed_items": 50
+  },
+  "records": [
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        62,
+        207
+      ],
+      "id": "6cd67cdd9642736eb05f1b269e5e666465ace2a79f70584461fb09e3503e6b60",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This controlled experiment extends the completed binding/recreation reference with one retained ImageRenderer and an explicit child `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        208,
+        327
+      ],
+      "id": "ef418df8a9a66ee5f740bfe9bd616fefd9306d4a7f862eba4da972a0352f6287",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        328,
+        378
+      ],
+      "id": "28da6d7725df405cd1a5d61e9ad3e699460bdd90d21e8e34b112196040314d0d",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Mutation occurs after rendering, outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        379,
+        460
+      ],
+      "id": "e152e9e6534f68644c14857b48993204dd81f1a6033139b0d8c0f94255de7925",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "No window, accessibility action, physical input or private Swift ABI is involved.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        462,
+        642
+      ],
+      "id": "1e3d4c83e8d042e1af0c90851dac26ceca69a8e6708c7e0e844a64d4e1158ca9",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        59,
+        187
+      ],
+      "id": "81dbef8c26b6cb23d25207d1b168cc6e3e933ac6f2dc25a102ee8580f5a85699",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This changes the ownership boundary from the completed external `@ObservedObject` control to a private view-owned `@State Bool`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        188,
+        335
+      ],
+      "id": "2fd353bc21dcac64088702696b1772c8dda6afd9476f88d1795fcb960d01a1b8",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        336,
+        423
+      ],
+      "id": "ed0fc75887ab477c190a78cea40723323a7dd585b25eb32322a1195c397b1214",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "No button, accessibility action, private state ABI or UI-event delivery is substituted.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        425,
+        505
+      ],
+      "id": "0843db5a57cda5a47c792fac28c26afbcf714cf0bb5ee6d2500de00174b58322",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two fresh owned native processes support the declared retained-state prediction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        506,
+        646
+      ],
+      "id": "ec125434bf371e3d8e5d544f1b00454f1b30dcc790894a3a3eb5f53471fb7c91",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        67,
+        168
+      ],
+      "id": "7849d0cbb8b7f5abfc35d5e53149ca2d5675a0381effb41030b8fe9bdfabf9d4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "One retained public ImageRenderer hosts a child with private `@State Bool` and explicit `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        169,
+        328
+      ],
+      "id": "e077ea9d6950eabb2743b009de1bd5633b25e033516ec2d5bdbbd05876025c5f",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Unlike the completed unchanged-content identity control, this fixture changes a plain content input that selects a color palette while child identity remains0.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        329,
+        446
+      ],
+      "id": "52750e26806f8b036891d588ddca9abb7cc4e2694424e68cfb888ffe1f503290",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An owned plain main-actor probe captures the public Binding during body evaluation; mutation occurs outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        447,
+        531
+      ],
+      "id": "6cab79fed411a5dc2e49890761f97323b2d1fc9ccd78502461cbdf5af011b880",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "There is no window, physical input, accessibility action or private Swift state ABI.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        533,
+        609
+      ],
+      "id": "41b281fd852efe6a4e45b7e860d6e16c6765fde8e208316c62fb69c147ec32ec",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The independent predeclared prediction passes in two fresh native processes.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        58,
+        153
+      ],
+      "id": "90cb0cba00a7844723cac0fc7ad5f05cb30ede44dc6879988a48be8c3be9ccb5",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This owned fixture changes fixed-identity content geometry after the completed palette control.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        154,
+        240
+      ],
+      "id": "c7ac93b5528afad91afa76371e910bf1df3a3c6a935f1c7a5452e8aa028a40aa",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        241,
+        351
+      ],
+      "id": "99670b545d1b84a6e9382b3fa676d7c8f46a7286a181c4b57423ebe67cd370f4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        352,
+        404
+      ],
+      "id": "f518d56925f89e3531ae2ffa49f5dbedf0872c8578860e83e6550d494493f217",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The public frame input switches17\u00d79 to11\u00d75 and back.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        405,
+        578
+      ],
+      "id": "27ea8d6f832726cb15ef1484a13e3ac57738dac434eb67e18af739ea22c1d56a",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        52,
+        129
+      ],
+      "id": "5896dd67e104c220b828d9937cd095945ba4b9823d39ef6dd2d3c22be0fe253b",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The cross-task probe distinguished local use count from remote contributions.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        130,
+        260
+      ],
+      "id": "c79b6f54c13d2ae3357840e7d351c1a051994b4973cfb37d2ce07914f37c7dbc",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This fresh control resolves the next ambiguity: a local count could belong to a CF wrapper or to shared per-process surface state.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        261,
+        375
+      ],
+      "id": "022775e7087ec5efbe39e58b82ad8a6c9880d65f020dde857f7cbaf070bc0999",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The SDK declaration describes per-process usage, but that source declaration is separate from runtime observation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        376,
+        490
+      ],
+      "id": "d6160d1449120b671882608307de86502c94fb5df3dbfaf16206ea690d5a41da",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The pinned header path/hash and line range are in prediction.json; no Apple header or private binary is published.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        492,
+        622
+      ],
+      "id": "7fd28915c18e9bfa42d3209878532f1c3862a864fd4918c711b2f2bc4e0a39d2",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        50,
+        115
+      ],
+      "id": "b118b0be2db106b6f33888e933bed209fb00ac2ed65259966549cea140c666e2",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The previous native use-state controls were local to one process.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        116,
+        251
+      ],
+      "id": "e1abe92a13246da5e6ce83b35dd8dcb0bc3b7ce3528fbdec46f07467d492ee03",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        252,
+        369
+      ],
+      "id": "4fca23f3b4037981798b1d21ad471e5f51998dedec3c1cc430cc7ca6a7bf48ad",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        370,
+        467
+      ],
+      "id": "d380f13cc794e6e78cbd1bc2a966694be47de010db7062494f20a35a32927ce3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        468,
+        565
+      ],
+      "id": "6cf479f349079ded9dd3ab275bd045bf7da9d3e96c471fe750a6162ef60e0c31",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "All values are observations on this host, not global reference-count or Canvas completion claims.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        49,
+        120
+      ],
+      "id": "02ad396ed5d7e56b021c491a8d5d6804c8a37899702613893bcae1250599c936",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        121,
+        166
+      ],
+      "id": "49dab70e963752421f060b27072bf31db0b7a45a952544f123fb4cdfe4644bfa",
+      "line_span": [
+        3,
+        4
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The local\nPreviewSession API gains refresh().",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        167,
+        232
+      ],
+      "id": "aa50882d4f49a23bb70a7341107cec350d653d3ba9198461f0a0b783c07e8c37",
+      "line_span": [
+        4,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Ordinary poll observes content changes and\nskips unchanged input.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        233,
+        377
+      ],
+      "id": "924323930f967149c53144519aed06d8eb5e2b78f2c2af10c69977269be75889",
+      "line_span": [
+        5,
+        7
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        378,
+        487
+      ],
+      "id": "fe1967127854d79b2e840ed522d4e4ba981e854273dc95bbc852526aa3f96b47",
+      "line_span": [
+        7,
+        8
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        46,
+        146
+      ],
+      "id": "fb67620bf68409cf6dcab9ffcff70c260e59fe43bca51073b4d9768cc9d98aff",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        147,
+        310
+      ],
+      "id": "ab4545b647381d8cdc0239e07e24ccadce30f3bcc22590cc4f9114e0c60a4a40",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        311,
+        401
+      ],
+      "id": "9f359bc7820db4eee44354e853c0a5ee7e6cde32464218f8ceebf025e78146d5",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Refresh creates a healthy stateless instance and advances publication revision/generation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        402,
+        468
+      ],
+      "id": "386ffc3fe1b5613f4d95abf94668510a7c95817b03a64237070fc98504737a81",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Close still clears the frame and makes consumer sampling terminal.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        470,
+        614
+      ],
+      "id": "e91579f5d307846cec416fd72da49e0dfd366b203e136a4e63e43c75889fa030",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This is owned portable policy, measured through actual PreviewSession, PreviewMcp handler and PreviewConsumer with hand-authored no-import WASM.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        73,
+        200
+      ],
+      "id": "73874f0d7989f978597fc78be09ef73fa79e3345842795f31bc4e6c6cf1161a3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        201,
+        255
+      ],
+      "id": "5866e803e51d9cb21320da9f610a9df6c941b79bb39075edbde43a78be4e58ec",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        291,
+        391
+      ],
+      "id": "9517eb9543b058c8a55de2588f29d847f9bbcff2cd6d9c861832bb4d0689dd9b",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The receive-only name retains its receive right before and after destruction of the failed envelope.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        393,
+        546
+      ],
+      "id": "9fc289bc57d9ce09b01ab1f66db58f736a3e525e483d8f2bc65193a172c44613",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "With the first descriptor COPY_SEND, its original/returned name is unchanged and one send reference remains before and after failed-envelope destruction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        547,
+        709
+      ],
+      "id": "b999a40cc3c6fbf7d73fe3ffe7ee48f58fe9cd61ec912486290cb9ca08c529c2",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        45,
+        152
+      ],
+      "id": "8435b8fe5a8e23d33c8a779eab1b0721b60c6b64fa746aa10e74f49c3992c6c3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        153,
+        427
+      ],
+      "id": "56a508fee6a79c124124f718e1143168e004e0b9d28d0152447ded219d6c12ca",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        428,
+        492
+      ],
+      "id": "8339e138b6cf8edc25efc7f464edfb33059864ee6060a4827f13f5d784e18063",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The rejected promise is consumed to prevent unhandled rejection.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        493,
+        625
+      ],
+      "id": "059af539c33175d4ea321ea95c4cf29a9fcd23b1700ccb23663cb14a41b0e2b4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document"
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        627,
+        743
+      ],
+      "id": "d610eba0e13a05d9c64357320325db8700ec4760ac29e0397de0b773e84c7981",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "pending",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document"
+    }
+  ],
+  "schema_version": 1,
+  "statement_candidates": 50,
+  "task_accepted": false
+}
