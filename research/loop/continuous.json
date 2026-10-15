@@ -3563,6 +3563,42 @@
     "started_at": "2026-10-15T00:57:12.231961+00:00",
     "status": "verified"
   },
+  "surface_send_retry_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/surface-send-retry-2026-10-14",
+    "manifest_sha256": "dd67a2fa3a3f083e487f8bec30dafe634551bc4268ffb3d11e416e67151c47d6",
+    "next_wake_hint": "Returned-envelope retry now qualified for two owned task modes. Select independent lifecycle/transport or resource-generation boundary; do not treat numeric ID/name equality across tasks as allocation or frame identity.",
+    "result": {
+      "cross_task_numeric_id_identity_qualified": false,
+      "full_bytes_compared": 131072,
+      "native_canvas_protocol_qualified": false,
+      "outcomes": [
+        {
+          "mode": "copy",
+          "retry_code": 0,
+          "surface_id": 122,
+          "task_local_names": 1
+        },
+        {
+          "mode": "move",
+          "retry_code": 0,
+          "surface_id": 122,
+          "task_local_names": 3
+        }
+      ],
+      "owned_task_controls": 2,
+      "padding_bytes": 4320,
+      "physical_reclamation_qualified": false,
+      "returned_envelope_retry_qualified": true,
+      "unused_tail_bytes": 121856
+    },
+    "retained_failure": "Prior failure/restoration/destruction controls remain sealed. This two-slot retry campaign passes, with no retries or budget reset. Previous issue15 comment reconciliation using recent since-filter succeeded and found no matching comment; external publication can resume without duplicate write.",
+    "started_at": "2026-10-15T01:06:54.452791+00:00",
+    "status": "verified"
+  },
   "surface_send_timeout_checkpoint": {
     "checks": {
       "isolated_tests": 6,
