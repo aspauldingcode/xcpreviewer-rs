@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-15T22:09:46.394846+00:00",
+  "scope": "Research-only bounded accounting and rejected build-runner proposal; no native build executed",
+  "tests_passed": 12,
+  "accounting_changes": [
+    "fresh private mkdtemp run root with dev/ino identity",
+    "early combined entry cap",
+    "cooperative per-entry deadline plus separate2s measurement subprocess"
+  ],
+  "independent_verifier": "refresh_spec_review",
+  "actual_build_eligible": false,
+  "retained_falsification": "Mock lifecycle control returned success despite cleanup dict reporting drained=false and one observed process remaining",
+  "blocking_findings": [
+    "Missing explicit verified cleanup success admission",
+    "Constructor failure after launch can leave descendants",
+    "Injected observer/tree operations lack visible hard bounds in wrapper",
+    "Rejected root identity still followed by pathname report write",
+    "Report written after final accounting without reserved bound"
+  ],
+  "next_action": "Repair runner lifecycle admission and independent report sink before native build. Inspect actual pinned dependency contracts; preserve original failed runner. No production integration or budget reset."
+}

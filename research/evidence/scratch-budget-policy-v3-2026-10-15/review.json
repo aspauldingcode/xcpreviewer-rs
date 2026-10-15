@@ -1,0 +1,19 @@
+{
+  "tests_js": 15,
+  "independent_verifier": "refresh_spec_review",
+  "prebuild_sink_falsification": "1MiB invalid UTF8 expands to3MiB;2MiB reserve rejected,4MiB reserved and actual encoded bytes prechecked",
+  "one_native_build": {
+    "outer_exit": 1,
+    "success": false,
+    "target_wait": -15,
+    "private_abort": true,
+    "drained": true,
+    "remaining_observed": 0,
+    "tracked": 7,
+    "observations": 115,
+    "emergency_closed": false
+  },
+  "cause_scope": "Compiler temporary pathname vanished during live lstat; deletion cause not independently proven",
+  "conclusion": "Failed closed; actual build success remains unknown; observed cleanup only, unseen escapes excluded",
+  "raw_scratch": "Local temp only, unsealed and not published"
+}

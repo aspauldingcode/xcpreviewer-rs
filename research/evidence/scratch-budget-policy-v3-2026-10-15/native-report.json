@@ -1,0 +1,181 @@
+{
+  "scope": "Owned CLI build with previously qualified observed guard; no Canvas or image acceptance",
+  "parent": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-eV4cv6",
+  "root": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-eV4cv6/scratch",
+  "identity": [
+    16777234,
+    151238280
+  ],
+  "argv": [
+    "xcodebuild",
+    "-quiet",
+    "-project",
+    "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "-scheme",
+    "PreviewLab",
+    "-configuration",
+    "Debug",
+    "-sdk",
+    "macosx",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-destination-timeout",
+    "3",
+    "-derivedDataPath",
+    "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-eV4cv6/scratch/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build"
+  ],
+  "success": false,
+  "error": "Error: Observed compiler aborted",
+  "measurementError": "Error: Command failed: /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9 -S -c import json,sys,time;sys.path.insert(0,sys.argv[1]);from scratch_budget import measure;print(json.dumps(measure(sys.argv[2],identity=tuple(map(int,sys.argv[3:5])),deadline=time.monotonic()+1,max_entries=100000))) /private/tmp/xcpreviewer-scratch-policy-v3 /var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-eV4cv6/scratch 16777234 151238280\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/xcpreviewer-scratch-policy-v3/scratch_budget.py\", line 51, in measure\n    row = path.lstat()\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1360, in lstat\n    return self._accessor.lstat(self)\nFileNotFoundError: [Errno 2] No such file or directory: '/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-eV4cv6/scratch/DerivedData/ModuleCache.noindex/BN9Y5VQ6XBK3/_Builtin_tgmath-2OQWMRBVRD4OJ-4cbc2d9f.pcm.tmp'\n",
+  "samples": [
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0
+    },
+    {
+      "retained_logical": 266,
+      "scratch_logical": 0,
+      "allocated": 4096,
+      "files": 1,
+      "directories": 3
+    },
+    {
+      "retained_logical": 1330,
+      "scratch_logical": 0,
+      "allocated": 20480,
+      "files": 5,
+      "directories": 7
+    },
+    {
+      "retained_logical": 1750,
+      "scratch_logical": 0,
+      "allocated": 24576,
+      "files": 6,
+      "directories": 9
+    },
+    {
+      "retained_logical": 5896,
+      "scratch_logical": 0,
+      "allocated": 36864,
+      "files": 9,
+      "directories": 14
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16
+    },
+    {
+      "retained_logical": 736675,
+      "scratch_logical": 26843545600,
+      "allocated": 913408,
+      "files": 62,
+      "directories": 38
+    },
+    {
+      "retained_logical": 896317,
+      "scratch_logical": 26843545600,
+      "allocated": 1093632,
+      "files": 70,
+      "directories": 38
+    },
+    {
+      "retained_logical": 939377,
+      "scratch_logical": 26843545600,
+      "allocated": 1138688,
+      "files": 72,
+      "directories": 40
+    }
+  ],
+  "final": {
+    "retained_logical": 8486205,
+    "scratch_logical": 26843545600,
+    "allocated": 8818688,
+    "files": 134,
+    "directories": 40
+  },
+  "record": {
+    "pid": 92706,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": -15,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 7,
+      "observations": 115,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdoutBytes": 0,
+    "stderrBytes": 24,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "23b50d81c65e172a3a39d38234b74de6d8015d338faa77094f07a2f4b38439d1"
+  }
+}
