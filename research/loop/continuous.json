@@ -3747,6 +3747,30 @@
     "result": "Cleanpeer0/ack;fault fclose-1errno28/callback1/fdclosed/peer42/noack, parentMach268451843 then owned cleanup.20allocations327680bytes incl10800padding/304640tail;28resealedfaults. Physical reclaim/actualCanvas errors unaccepted.",
     "started_at": "2026-10-12T01:52:07.997084+00:00"
   },
+  "thenable_callback_checkpoint": {
+    "checks": {
+      "fresh_primitive_controls": 12,
+      "fresh_raw_stream_controls": 24,
+      "isolated_tests": 6,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/thenable-callback-2026-10-14",
+    "manifest_sha256": "d7ea916d9d6d23b371cf5425f0b76665b09fb70c6aeb6a555368442f4b31ac3b",
+    "next_wake_hint": "Thenable callback rejection qualified for owned observer. Choose independent eligible native or portable experiment; async callbacks remain unsupported.",
+    "result": {
+      "async_callback_supported": false,
+      "controlled_child_bytes": 16,
+      "native_canvas_protocol_qualified": false,
+      "owned_native_jobs": 2,
+      "plain_sync_return_preserved": true,
+      "rejected_promise_consumed": true,
+      "source_cases": 12,
+      "thenable_results_rejected": true
+    },
+    "retained_failure": "Before source rejected Promise escapes to controlled unhandled rejection; thenable and pending results accepted. Native after controls pass. No unsafe before native acquisition.",
+    "started_at": "2026-10-15T02:01:37.742008+00:00",
+    "status": "verified"
+  },
   "toolchain_snapshot_timing_checkpoint": {
     "checks": {
       "isolated_tests": 6,

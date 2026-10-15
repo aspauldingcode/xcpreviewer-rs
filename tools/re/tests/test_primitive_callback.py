@@ -1,4 +1,4 @@
-import hashlib,json,shutil,tempfile,unittest
+import hashlib,json,shutil,tempfile,unittest,subprocess
 from pathlib import Path
 from verify_primitive_callback import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/primitive-callback-2026-10-14'
@@ -7,7 +7,12 @@ class PrimitiveCallbackTests(unittest.TestCase):
  def test_source_and_native_controls(self):
   self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),'cc30d90cbf294b92d37b9ab76e5d31b4bb899d038eeb2f71ace5a4e0e044d71f')
   self.assertTrue(verify(E)['primitive_failure_preserved'])
-  self.assertEqual((E/'after.js').read_bytes(),(ROOT/'tools/re/reloop/observed_compiler.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'0b786699d5d3759ad6ef30e584ff8a6a3a42ae73a023e6e91504c254beadd631')
+  with tempfile.TemporaryDirectory() as tmp:
+   fresh=Path(tmp)/'e';shutil.copytree(E,fresh)
+   prod=ROOT/'tools/re/reloop/observed_compiler.js';(fresh/'after.js').write_bytes(prod.read_bytes())
+   subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/primitive_callback_control.js'),str(fresh),'after',str(prod)],capture_output=True,check=True,timeout=8)
+   self.assertEqual(json.loads((fresh/'after-results.json').read_text()),json.loads((E/'after-results.json').read_text()))
 
  def test_resealed_faults(self):
   for fault in ['reason','immutable','identity','opaque','before','abort','kill','native','drain','root-wait','child-wait','payload']:

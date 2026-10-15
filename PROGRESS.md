@@ -1227,3 +1227,16 @@ Twenty-four before/after source controls cover strings, zero, false, null, undef
 Evidence: research/evidence/primitive-callback-2026-10-14; manifest SHA256 cc30d90cbf294b92d37b9ab76e5d31b4bb899d038eeb2f71ace5a4e0e044d71f. Two source phase slots and two native slots, no reset. Each source/native parent has an eight-second outer bound, native targets have six-second alarms, and acquisition uses the exclusive controller lock. REA 6.2.0 verifies the ARM64 public observer SHA256 718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5. No binaries are published.
 
 Six isolated tests include twelve resealed faults, frozen historical raw-output checks and twenty-four fresh current-client raw stream controls. Historical source remains hash-pinned rather than incorrectly required to equal the latest client. No async/Promise-returning callback support is qualified. No Xcode workspace was opened; private bridge remains unavailable. Both milestones and issues 15, 19, 22 and 25 stay open. Next: an independently scoped remaining lifecycle/callback or native interaction boundary.
+
+
+### 2026-10-14: Synchronous observation callback contract
+
+Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path. Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted. The rejected promise is consumed to prevent unhandled rejection. Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.
+
+Two owned native controls return resolved and rejected promises after observing a root and its ready detached child. Both request private abort, retain root completion 43 and actual child wait 42, report drained with zero remaining observed processes, and preserve all 16 controlled payload bytes against independent expectations. No emergency cleanup was required. Source and native acquisition budgets each remain two of two consumed.
+
+The independent sealed reader checks source hashes, full raw payloads, receipts, identities, cancellation and outcomes. Twelve resealed faults must fail verification. Current primitive-error handling receives twelve fresh source regressions; raw output accounting receives 24 fresh controls. Historical native evidence stays frozen.
+
+This rejects unsupported asynchronous callback results; it does not await callbacks or add asynchronous callback support. Job deadlines and owned drain semantics are unchanged. Evidence qualifies the owned observer adapter, not native Canvas protocol, physical IOSurface reclamation, arbitrary noncooperative JavaScript or unseen processes. The private Xcode bridge remains absent; REA availability is separate. Both milestones and issues #15, #19, #22 and #25 remain open.
+
+Evidence: `research/evidence/thenable-callback-2026-10-14`; manifest SHA-256 `d7ea916d9d6d23b371cf5425f0b76665b09fb70c6aeb6a555368442f4b31ac3b`. Next work: choose an independent eligible native or portable experiment; do not repeat these completed callback controls.

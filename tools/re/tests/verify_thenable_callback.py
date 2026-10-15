@@ -1,0 +1,48 @@
+import hashlib
+import json
+from pathlib import Path
+
+
+def verify(folder):
+    e=Path(folder);manifest=json.loads((e/'manifest.json').read_text())
+    assert set(manifest['files'])=={str(p.relative_to(e)) for p in e.rglob('*') if p.is_file() and p.name!='manifest.json'}
+    for name,item in manifest['files'].items():
+        assert not Path(name).is_absolute() and '..' not in Path(name).parts
+        p=e/name;raw=p.read_bytes();assert not p.is_symlink() and len(raw)==item['bytes'] and hashlib.sha256(raw).hexdigest()==item['sha256']
+    pins={'before':'0b786699d5d3759ad6ef30e584ff8a6a3a42ae73a023e6e91504c254beadd631','after':'9647fff3dbdbfd8e260fb2b566c74c5e1b58b8789877f36c469a7151c5a1f3d6'}
+    modes=['resolved','rejected','pending','thenable','getter','plain']
+    policy='Observed observation callback must be synchronous'
+    for phase in ['before','after']:
+        assert hashlib.sha256((e/(phase+'.js')).read_bytes()).hexdigest()==pins[phase]
+        assert json.loads((e/(phase+'-wait.json')).read_text())=={'code':0,'timeout':False,'stdout':'','stderr':''}
+        rows=json.loads((e/(phase+'-results.json')).read_text());assert [r['mode'] for r in rows]==modes
+        for row in rows:
+            mode=row['mode'];cancelled=phase=='after' and mode!='plain'
+            assert row['writes']==(['abort\n'] if cancelled else []) and row['kills']==[{'pid':-900001,'signal':'SIGKILL'}]
+            assert row['error']==({'name':'Error','message':'Owned then getter' if mode=='getter' else policy} if cancelled else None)
+            assert row['unhandled']==([{'name':'Error','message':'Owned async rejection'}] if phase=='before' and mode=='rejected' else [])
+            assert row['thenCalls']==(1 if phase=='after' and mode=='thenable' else 0)
+            assert row['getterCalls']==(1 if phase=='after' and mode=='getter' else 0)
+            record=row['record'];assert record['privateAbortRequested'] is cancelled and record['emergencyClosed'] is False and record['signal']=='SIGKILL'
+            assert record['pid']==900001 and record['anchorCode'] is None
+            for stream in ['stdout','stderr']:
+                assert record[stream]=='' and record[stream+'Bytes']==0 and record[stream+'Sha256']==hashlib.sha256(b'').hexdigest()
+            assert record['report']=={'kind':'complete','drained':True,'target_code':43 if cancelled else 0,'failure':'abort' if cancelled else None,'observations':1,'tracked':0,'remaining_observed':0,'scope':'Injected source control, no native process'}
+    assert json.loads((e/'source-slots.json').read_text())==json.loads((e/'native-slots.json').read_text())=={'used':2,'limit':2}
+    rea=json.loads((e/'current-rea.json').read_text());cfg=json.loads((e/'config.json').read_text())
+    assert rea['target']['sha256']==cfg['observer']['sha256']=='718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5'
+    assert rea['target']['architecture']=='arm64' and rea['server']['version']=='6.2.0'
+    for mode,message in [('resolved',policy),('rejected',policy)]:
+        root=e/('native-'+mode);d=json.loads((root/'result.json').read_text());r=d['record'];p=r['report'];child=d['trigger']['child'];ready=d['trigger']['ready']
+        assert d['index']==mode and d['syncContractRejected'] is True and d['error']=='Error: '+message
+        assert r['privateAbortRequested'] is True and r['emergencyClosed'] is False and r['signal']=='SIGKILL'
+        assert p['drained'] is True and p['failure']=='abort' and p['target_code']==43 and p['remaining_observed']==0 and p['tracked']==2
+        assert any(child==row for batch in d['observed'] for row in batch)
+        assert child['pid']==ready['child_pid'] and child['group']==child['pid'] and child['parent']==ready['parent_pid'] and child['state']=='L'
+        assert ready['child_ack']=='ready' and ready['parent_group']==r['pid'] and child['identity'][0]>0 and 0<=child['identity'][1]<1000000
+        wait=json.loads((root/'child-wait.json').read_text());assert wait=={'pid':child['pid'],'raw_status':42<<8,'exited':True,'exit_code':42}
+        assert (root/'child.raw').read_bytes()==bytes([0,1,2,255,10,42,99,128])
+        assert json.loads((e/('native-'+mode+'-wait.json')).read_text())=={'code':0,'stdout':'owned thenable callback native pass\n','stderr':'','timeout':False}
+        for stream in ['stdout','stderr']:
+            assert r[stream]=='' and r[stream+'Bytes']==0 and r[stream+'Sha256']==hashlib.sha256(b'').hexdigest()
+    return {'source_cases':12,'owned_native_jobs':2,'controlled_child_bytes':16,'thenable_results_rejected':True,'rejected_promise_consumed':True,'plain_sync_return_preserved':True,'async_callback_supported':False,'native_canvas_protocol_qualified':False}
