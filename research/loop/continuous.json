@@ -3527,6 +3527,42 @@
     "retained_failure": "Isolatedv2 fixture test referenced previous SurfaceContentSeed directory; corrected to SurfaceSeedTiming. Native/reader intact. Archive/index/log retained /private/tmp/surface-seed-timing-v2-*; no native rerun.",
     "started_at": "2026-10-12T01:31:07.063619+00:00"
   },
+  "surface_send_timeout_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "partial_bytes_compared": 98304,
+      "resealed_faults": 8
+    },
+    "evidence": "research/evidence/surface-send-returned-2026-10-14",
+    "manifest_sha256": "db9e4e1544f5827e5431eb0b4ee9d5ff0d2d6182d9b1002e837b6448f756ddf1",
+    "next_wake_hint": "Native failed-send restoration measured: returned MOVE_SEND descriptor name may differ, COPY_SEND adds uref. Next discriminate explicit mach_msg_destroy on returned failed envelope; maintain original/returned name distinctions and bounded owned task scope.",
+    "result": {
+      "full_bytes_compared": 98304,
+      "native_canvas_protocol_qualified": false,
+      "outcomes": [
+        {
+          "mode": "copy",
+          "name_changed": false,
+          "original_refs": 2,
+          "returned_refs": 2
+        },
+        {
+          "mode": "move",
+          "name_changed": true,
+          "original_refs": 0,
+          "returned_refs": 1
+        }
+      ],
+      "owned_task_controls": 2,
+      "padding_bytes": 3240,
+      "physical_reclamation_qualified": false,
+      "returned_rights_accounted": true,
+      "unused_tail_bytes": 91392
+    },
+    "retained_failure": "Initial compile missing libbsm retained, then corrected without consuming native slots. Sandboxed two-case surface creation failed; two native-access partial controls found COPY refs2/MOVE original refs0. Two changed returned-name controls explicitly release restored rights. Six task executions total; no reset. Initial partial MOVE right cleanup unqualified.",
+    "started_at": "2026-10-14T22:28:07.432590+00:00",
+    "status": "verified"
+  },
   "surface_stream_close_checkpoint": {
     "budget": "Four producers:compile,parent,twopeers;compile60sec,batch15sec,alarm12sec,Mach3sec.",
     "classification": "Owned FILE close-error path retires pointer before fclose, closes fd once, releases CF and suppresses completion; actual peer42 and bounded Mach timeout accounted",

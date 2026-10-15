@@ -1,0 +1,26 @@
+In file included from /Users/8amps/xcpreviewer-rs/tools/re/surface_send_timeout.c:3:
+/Users/8amps/xcpreviewer-rs/tools/re/surface_ipc_probe.c:187:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]
+  187 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;
+      |        ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here
+   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);
+      | ^
+In file included from /Users/8amps/xcpreviewer-rs/tools/re/surface_send_timeout.c:3:
+/Users/8amps/xcpreviewer-rs/tools/re/surface_ipc_probe.c:243:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]
+  243 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail("rendezvous-register",status);goto done;}registered=1;
+      |            ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here
+   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);
+      | ^
+/Users/8amps/xcpreviewer-rs/tools/re/surface_send_timeout.c:48:31: warning: 'mach_port_destroy' is deprecated: first deprecated in macOS 12.0 - Inherently unsafe API: instead manage rights with mach_port_destruct(), mach_port_deallocate() or mach_port_mod_refs() [-Wdeprecated-declarations]
+   48 |     if(MACH_PORT_VALID(inbox))mach_port_destroy(mach_task_self(),inbox);
+      |                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/mach_port.h:150:15: note: 'mach_port_destroy' has been explicitly marked deprecated here
+  150 | kern_return_t mach_port_destroy
+      |               ^
+3 warnings generated.
+Undefined symbols for architecture arm64:
+  "_audit_token_to_pid", referenced from:
+      _peer_matches in surface_send_timeout-557f3c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
