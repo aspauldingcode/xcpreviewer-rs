@@ -1,0 +1,2941 @@
+{
+  "reviewer_context": "/root/canvas_evidence_review; fresh serial internal evidence verifier; supplied brief/task only, research exposed; NOT clean implementer",
+  "producer_context": "Historical report/owned-control producers recorded in scoped evidence; main investigator /root; original producer chat IDs unavailable in sealed inputs",
+  "date": "2026-10-15",
+  "statement_candidates_reviewed": 50,
+  "verdict_counts": {
+    "supported within scope": 46,
+    "merely a report statement": 3,
+    "insufficient evidence": 1
+  },
+  "quality_gate": {
+    "eligible_original_entity_relation_items": 0,
+    "denominator": 0,
+    "precision": null,
+    "passed": false,
+    "reason": "Input rows are exact report statements, not typed entity/relation predictions with explicit endpoints. Reviewer classifications below are new proposals, not an independently scored extraction sample. Statement support fraction is not entity/relation precision."
+  },
+  "seals": [
+    {
+      "manifest": "research/evidence/canvas-evidence-crosswalk-2026-10-14/manifest.json",
+      "files": 4,
+      "bytes": 16641,
+      "failures": [],
+      "sha256": "4baf3723ffef607c37c9b378ded5518c4fbb094d6eb13c2bf46c7154b5936bda"
+    },
+    {
+      "manifest": "research/evidence/canvas-anchor-reconciliation-2026-10-14/manifest.json",
+      "files": 4,
+      "bytes": 12060,
+      "failures": [],
+      "sha256": "352825a865df85ebacafa2adc4c99a64771ad0131967ccf4dfe385884c63659a"
+    },
+    {
+      "manifest": "research/evidence/provenance-inventory-2026-10-14/manifest.json",
+      "files": 6,
+      "bytes": 203090,
+      "failures": [],
+      "sha256": "738c8c0369f3410b0fd0b253ec5ad624104c7dc90d97563bce828f1f4cec935c"
+    },
+    {
+      "manifest": "research/evidence/provenance-history-2026-10-14/manifest.json",
+      "files": 5,
+      "bytes": 67099,
+      "failures": [],
+      "sha256": "468cfc75d6584bd8eb13b89dd71e8b16c18ecec3b9914e981c01980cbfa46003"
+    },
+    {
+      "manifest": "research/evidence/native-state-identity-2026-10-11/manifest.json",
+      "files": 32,
+      "bytes": 378946,
+      "failures": [],
+      "sha256": "e9ccbd6170ac6cb6c17a4dbc2c29f338798100c6d4aa16821b4fc19cd080b110"
+    },
+    {
+      "manifest": "research/evidence/native-state-binding-2026-10-11/manifest.json",
+      "files": 28,
+      "bytes": 310974,
+      "failures": [],
+      "sha256": "7f9ecd5288bd62f5d0f8a2136cebce157b523fcb430a9267c715189b1add172e"
+    },
+    {
+      "manifest": "research/evidence/native-state-content-2026-10-11/manifest.json",
+      "files": 32,
+      "bytes": 379553,
+      "failures": [],
+      "sha256": "1ea180c6dab3f56af446eb2952e30a091104979acef2b08d690203d068747c5d"
+    },
+    {
+      "manifest": "research/evidence/native-state-geometry-2026-10-12/manifest.json",
+      "files": 32,
+      "bytes": 379870,
+      "failures": [],
+      "sha256": "221d84acc89c70462b9df9ae5908826d12c33b99e78f4ee58f0d2318ab36b37b"
+    },
+    {
+      "manifest": "research/evidence/surface-alias-use-2026-10-11/manifest.json",
+      "files": 45,
+      "bytes": 594618,
+      "failures": [],
+      "sha256": "be5fc8e52f69d8d754817afce5e655b918977f078faac4fdd675390c4d7abc3f"
+    },
+    {
+      "manifest": "research/evidence/remote-surface-use-2026-10-11/manifest.json",
+      "files": 30,
+      "bytes": 301198,
+      "failures": [],
+      "sha256": "e8eeac29bdc5f78ff87070ab5f8c2ec8b193b8fed4241570f276edca4d1cde9b"
+    },
+    {
+      "manifest": "research/evidence/mcp-refresh-2026-10-11/manifest.json",
+      "files": 176,
+      "bytes": 1831459,
+      "failures": [],
+      "sha256": "79e1fd30e48ce7473dec5fc3b14c2a88ce3fba119610d372f7629d7de1efbef2"
+    },
+    {
+      "manifest": "research/evidence/mcp-quarantine-2026-10-11/manifest.json",
+      "files": 56,
+      "bytes": 352045,
+      "failures": [],
+      "sha256": "962e6e7da74ff4b2191c1fdf1687bd5e586d2ef0590dfa0b3677e597e5edd2ee"
+    },
+    {
+      "manifest": "research/evidence/surface-partial-cleanup-2026-10-14/manifest.json",
+      "files": 19,
+      "bytes": 129262,
+      "failures": [],
+      "sha256": "d8c5acef6c6154e836c639869591d0e18d226576cc7bcbf9b9cf6ce6488f1d76"
+    },
+    {
+      "manifest": "research/evidence/surface-partial-right-2026-10-14/manifest.json",
+      "files": 19,
+      "bytes": 129116,
+      "failures": [],
+      "sha256": "25583eef6084ed9e9ef387fab81b794774c1505a04c4966659a2b00b8b59e28e"
+    },
+    {
+      "manifest": "research/evidence/thenable-callback-2026-10-14/manifest.json",
+      "files": 26,
+      "bytes": 35362,
+      "failures": [],
+      "sha256": "d7ea916d9d6d23b371cf5425f0b76665b09fb70c6aeb6a555368442f4b31ac3b"
+    }
+  ],
+  "anchor_rechecks": [
+    {
+      "manifest": "research/evidence/native-state-binding-2026-10-11/manifest.json",
+      "commit": "959d7d600eb86d1d4df5a8ad601199c80a19965e",
+      "blob_sha256_matches": true,
+      "git_blob_matches": true,
+      "document_mentions_seal": false,
+      "independent_external_trust": false
+    },
+    {
+      "manifest": "research/evidence/surface-partial-right-2026-10-14/manifest.json",
+      "commit": "f60d1ef99f4e07893113a58440d8b337c51f3ce8",
+      "blob_sha256_matches": true,
+      "git_blob_matches": true,
+      "document_mentions_seal": false,
+      "independent_external_trust": false
+    }
+  ],
+  "independent_full_allocation_checks": [
+    {
+      "control": "research/evidence/native-state-identity-2026-10-11",
+      "allocations": 22,
+      "bytes": 360448,
+      "failures": [],
+      "method": "independent fixed RGBA8 endpoint reconstruction including a5 row padding and c3 allocation tail; recorded prediction phase order"
+    },
+    {
+      "control": "research/evidence/native-state-binding-2026-10-11",
+      "allocations": 18,
+      "bytes": 294912,
+      "failures": [],
+      "method": "independent fixed RGBA8 endpoint reconstruction including a5 row padding and c3 allocation tail; recorded prediction phase order"
+    },
+    {
+      "control": "research/evidence/native-state-content-2026-10-11",
+      "allocations": 22,
+      "bytes": 360448,
+      "failures": [],
+      "method": "independent fixed RGBA8 endpoint reconstruction including a5 row padding and c3 allocation tail; recorded prediction phase order"
+    },
+    {
+      "control": "research/evidence/native-state-geometry-2026-10-12",
+      "allocations": 22,
+      "bytes": 360448,
+      "failures": [],
+      "method": "independent fixed RGBA8 endpoint reconstruction including a5 row padding and c3 allocation tail; recorded prediction phase order"
+    },
+    {
+      "control": "research/evidence/surface-alias-use-2026-10-11",
+      "allocations": 34,
+      "bytes": 557056,
+      "failures": [],
+      "method": "independent seed49 BGRA formula, a5 row padding; partial-right tail a5, alias/remote tail seed49"
+    },
+    {
+      "control": "research/evidence/remote-surface-use-2026-10-11",
+      "allocations": 15,
+      "bytes": 245760,
+      "failures": [],
+      "method": "independent seed49 BGRA formula, a5 row padding; partial-right tail a5, alias/remote tail seed49"
+    },
+    {
+      "control": "research/evidence/surface-partial-right-2026-10-14",
+      "allocations": 6,
+      "bytes": 98304,
+      "failures": [],
+      "method": "independent seed49 BGRA formula, a5 row padding; partial-right tail a5, alias/remote tail seed49"
+    },
+    {
+      "control": "research/evidence/surface-partial-cleanup-2026-10-14",
+      "allocations": 6,
+      "bytes": 98304,
+      "failures": [],
+      "method": "independent seed49 BGRA formula, a5 row padding; partial-right tail a5, alias/remote tail seed49"
+    }
+  ],
+  "rows": [
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        62,
+        207
+      ],
+      "id": "6cd67cdd9642736eb05f1b269e5e666465ace2a79f70584461fb09e3503e6b60",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This controlled experiment extends the completed binding/recreation reference with one retained ImageRenderer and an explicit child `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document",
+      "row_number": 1,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact + Session configuration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Owned Swift source constructs one renderer/root with explicit child token; extension/completed history is report context, not an independent lifecycle observation.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-identity",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-identity-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-identity-2026-10-11/state-identity",
+              "helper_sha256": "8df2408390072e39b7485b6e0b9c6406cd46613c79dc09fa04eb5d3451baf638",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:54:44.957940+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-identity-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Report retains mistaken eleven-row expectation, trailing REA JSON escape and reader parse failure; no producer rerun claimed."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        208,
+        327
+      ],
+      "id": "ef418df8a9a66ee5f740bfe9bd616fefd9306d4a7f862eba4da972a0352f6287",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document",
+      "row_number": 2,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact declaration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source declares private Bool State and capture method invoked from body; runtime captures exist in both phase logs.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-identity",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-identity-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-identity-2026-10-11/state-identity",
+              "helper_sha256": "8df2408390072e39b7485b6e0b9c6406cd46613c79dc09fa04eb5d3451baf638",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:54:44.957940+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-identity-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Report retains mistaken eleven-row expectation, trailing REA JSON escape and reader parse failure; no producer rerun claimed."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        328,
+        378
+      ],
+      "id": "28da6d7725df405cd1a5d61e9ad3e699460bdd90d21e8e34b112196040314d0d",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Mutation occurs after rendering, outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document",
+      "row_number": 3,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event ordering",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source draws baseline/repeat before mutating held binding; mutation is outside body helper.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-identity",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-identity-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-identity-2026-10-11/state-identity",
+              "helper_sha256": "8df2408390072e39b7485b6e0b9c6406cd46613c79dc09fa04eb5d3451baf638",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:54:44.957940+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-identity-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Report retains mistaken eleven-row expectation, trailing REA JSON escape and reader parse failure; no producer rerun claimed."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        379,
+        460
+      ],
+      "id": "e152e9e6534f68644c14857b48993204dd81f1a6033139b0d8c0f94255de7925",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "No window, accessibility action, physical input or private Swift ABI is involved.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document",
+      "row_number": 4,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded exclusion",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source has no input/accessibility/private ABI path and result records owned_windows=0. This is a scoped fixture exclusion, not proof about every system process.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-identity",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-identity-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-identity-2026-10-11/state-identity",
+              "helper_sha256": "8df2408390072e39b7485b6e0b9c6406cd46613c79dc09fa04eb5d3451baf638",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:54:44.957940+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-identity-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Report retains mistaken eleven-row expectation, trailing REA JSON escape and reader parse failure; no producer rerun claimed."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        462,
+        642
+      ],
+      "id": "1e3d4c83e8d042e1af0c90851dac26ceca69a8e6708c7e0e844a64d4e1158ca9",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-identity",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "target_version": "historical identity retained in source document",
+      "row_number": 5,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: observed frame sequence",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Two distinct wait records accompany red/red/blue/blue allocations reconstructed independently. 10ms is requested runloop duration, not measured latency.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-identity",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-identity-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-identity-2026-10-11/state-identity",
+              "helper_sha256": "8df2408390072e39b7485b6e0b9c6406cd46613c79dc09fa04eb5d3451baf638",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:54:44.957940+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-identity-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Report retains mistaken eleven-row expectation, trailing REA JSON escape and reader parse failure; no producer rerun claimed."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        59,
+        187
+      ],
+      "id": "81dbef8c26b6cb23d25207d1b168cc6e3e933ac6f2dc25a102ee8580f5a85699",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This changes the ownership boundary from the completed external `@ObservedObject` control to a private view-owned `@State Bool`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document",
+      "row_number": 6,
+      "verdict": "merely a report statement",
+      "proposed_type_or_exclusion": "Claim: historical comparison",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Current source confirms private State; completed external ObservedObject comparison is outside this ten-document sealed pilot.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-binding",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-binding-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-binding-2026-10-11/state-binding",
+              "helper_sha256": "eaa9f4561f485942cdbe81d58c124e121d76ccb050f557fa8ed1ed9393c42c38",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:38:36.920081+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-binding-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        188,
+        335
+      ],
+      "id": "2fd353bc21dcac64088702696b1772c8dda6afd9476f88d1795fcb960d01a1b8",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document",
+      "row_number": 7,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact + Event ordering",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Binding capture and out-of-render mutation are explicit in owned source and getter/action rows.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-binding",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-binding-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-binding-2026-10-11/state-binding",
+              "helper_sha256": "eaa9f4561f485942cdbe81d58c124e121d76ccb050f557fa8ed1ed9393c42c38",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:38:36.920081+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-binding-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        336,
+        423
+      ],
+      "id": "ed0fc75887ab477c190a78cea40723323a7dd585b25eb32322a1195c397b1214",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "No button, accessibility action, private state ABI or UI-event delivery is substituted.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document",
+      "row_number": 8,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded exclusion",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Owned source uses public Binding setter; no button/UI-delivery path is present. Does not qualify physical input.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-binding",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-binding-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-binding-2026-10-11/state-binding",
+              "helper_sha256": "eaa9f4561f485942cdbe81d58c124e121d76ccb050f557fa8ed1ed9393c42c38",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:38:36.920081+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-binding-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        425,
+        505
+      ],
+      "id": "0843db5a57cda5a47c792fac28c26afbcf714cf0bb5ee6d2500de00174b58322",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two fresh owned native processes support the declared retained-state prediction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document",
+      "row_number": 9,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded repeated observation",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Two acquisition records and phase allocations support the finite prediction; acquisition provenance is producer recorded, not independently witnessed live.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-binding",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-binding-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-binding-2026-10-11/state-binding",
+              "helper_sha256": "eaa9f4561f485942cdbe81d58c124e121d76ccb050f557fa8ed1ed9393c42c38",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:38:36.920081+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-binding-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        506,
+        646
+      ],
+      "id": "ec125434bf371e3d8e5d544f1b00454f1b30dcc790894a3a3eb5f53471fb7c91",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-binding",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "target_version": "historical identity retained in source document",
+      "row_number": 10,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: observed frame sequence",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Held renderer red/red/blue/blue endpoints match direct allocation reconstruction; no general State lifetime inferred.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-binding",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-binding-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-binding-2026-10-11/state-binding",
+              "helper_sha256": "eaa9f4561f485942cdbe81d58c124e121d76ccb050f557fa8ed1ed9393c42c38",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T06:38:36.920081+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-binding-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        67,
+        168
+      ],
+      "id": "7849d0cbb8b7f5abfc35d5e53149ca2d5675a0381effb41030b8fe9bdfabf9d4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "One retained public ImageRenderer hosts a child with private `@State Bool` and explicit `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document",
+      "row_number": 11,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact configuration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "StateContentReference.swift and retained identities/rows agree for one renderer and token-bearing child.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-content",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-content-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-content-2026-10-11/state-content",
+              "helper_sha256": "98f68f212d53beea57042f3834559828a756230b8269108a81c214b9484dca10",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:00:11.929362+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-content-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        169,
+        328
+      ],
+      "id": "e077ea9d6950eabb2743b009de1bd5633b25e033516ec2d5bdbbd05876025c5f",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Unlike the completed unchanged-content identity control, this fixture changes a plain content input that selects a color palette while child identity remains0.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document",
+      "row_number": 12,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event + Frame association",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Alternate palette input changes under token0 in source and logs; green/yellow/blue endpoint allocations support the bounded contrast.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-content",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-content-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-content-2026-10-11/state-content",
+              "helper_sha256": "98f68f212d53beea57042f3834559828a756230b8269108a81c214b9484dca10",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:00:11.929362+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-content-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        329,
+        446
+      ],
+      "id": "52750e26806f8b036891d588ddca9abb7cc4e2694424e68cfb888ffe1f503290",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An owned plain main-actor probe captures the public Binding during body evaluation; mutation occurs outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document",
+      "row_number": 13,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event ordering",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Owned capture method is called during color/body evaluation; setter calls occur outside it.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-content",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-content-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-content-2026-10-11/state-content",
+              "helper_sha256": "98f68f212d53beea57042f3834559828a756230b8269108a81c214b9484dca10",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:00:11.929362+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-content-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        447,
+        531
+      ],
+      "id": "6cab79fed411a5dc2e49890761f97323b2d1fc9ccd78502461cbdf5af011b880",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "There is no window, physical input, accessibility action or private Swift state ABI.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document",
+      "row_number": 14,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded exclusion",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Zero owned windows recorded; inspected fixture has no physical-input/accessibility/private ABI calls.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-content",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-content-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-content-2026-10-11/state-content",
+              "helper_sha256": "98f68f212d53beea57042f3834559828a756230b8269108a81c214b9484dca10",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:00:11.929362+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-content-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        533,
+        609
+      ],
+      "id": "41b281fd852efe6a4e45b7e860d6e16c6765fde8e208316c62fb69c147ec32ec",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The independent predeclared prediction passes in two fresh native processes.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-content",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "target_version": "historical identity retained in source document",
+      "row_number": 15,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded prediction agreement",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Both recorded phase sets match fixed independent endpoint reconstruction. Independent means byte expectation separate from probe getters; not external acquisition trust.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-content",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-content-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-content-2026-10-11/state-content",
+              "helper_sha256": "98f68f212d53beea57042f3834559828a756230b8269108a81c214b9484dca10",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:00:11.929362+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-content-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        58,
+        153
+      ],
+      "id": "90cb0cba00a7844723cac0fc7ad5f05cb30ede44dc6879988a48be8c3be9ccb5",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This owned fixture changes fixed-identity content geometry after the completed palette control.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document",
+      "row_number": 16,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact + Event configuration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Geometry fixture changes compact input at fixed token; after completed palette is report chronology, not a separate measured edge.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-geometry",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-geometry-2026-10-12/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-geometry-2026-10-12/state-geometry",
+              "helper_sha256": "e5a78252a9fca0a0e852d51b5923db0bd3b9ad2c26432244fd91474e60fc2a51",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:10:42.295542+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-geometry-2026-10-12"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        154,
+        240
+      ],
+      "id": "c7ac93b5528afad91afa76371e910bf1df3a3c6a935f1c7a5452e8aa028a40aa",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document",
+      "row_number": 17,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact configuration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source declares one retained public renderer and private State child under explicit id.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-geometry",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-geometry-2026-10-12/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-geometry-2026-10-12/state-geometry",
+              "helper_sha256": "e5a78252a9fca0a0e852d51b5923db0bd3b9ad2c26432244fd91474e60fc2a51",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:10:42.295542+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-geometry-2026-10-12"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        241,
+        351
+      ],
+      "id": "99670b545d1b84a6e9382b3fa676d7c8f46a7286a181c4b57423ebe67cd370f4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document",
+      "row_number": 18,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event ordering",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source capture/mutation separation and action metadata agree.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-geometry",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-geometry-2026-10-12/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-geometry-2026-10-12/state-geometry",
+              "helper_sha256": "e5a78252a9fca0a0e852d51b5923db0bd3b9ad2c26432244fd91474e60fc2a51",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:10:42.295542+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-geometry-2026-10-12"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        352,
+        404
+      ],
+      "id": "f518d56925f89e3531ae2ffa49f5dbedf0872c8578860e83e6550d494493f217",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The public frame input switches17\u00d79 to11\u00d75 and back.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document",
+      "row_number": 19,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Frame geometry + Event",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Source compact frame input and both logged callback sizes change 17x9 to11x5 and back; byte extents independently match.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-geometry",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-geometry-2026-10-12/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-geometry-2026-10-12/state-geometry",
+              "helper_sha256": "e5a78252a9fca0a0e852d51b5923db0bd3b9ad2c26432244fd91474e60fc2a51",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:10:42.295542+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-geometry-2026-10-12"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        405,
+        578
+      ],
+      "id": "27ea8d6f832726cb15ef1484a13e3ac57738dac434eb67e18af739ea22c1d56a",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:native-state-geometry",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "target_version": "historical identity retained in source document",
+      "row_number": 20,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: comparison method",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Destination dimensions are chosen from content.compact before callback; callback reports independently compared size. No native allocation-resizing claim.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:native-state-geometry",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/native-state-geometry-2026-10-12/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+              "compiler_sha256": "2ed38571e92c0283091838c1649e27650ad9c99950288e883c7b2dc6c4ce89fb",
+              "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/native-state-geometry-2026-10-12/state-geometry",
+              "helper_sha256": "e5a78252a9fca0a0e852d51b5923db0bd3b9ad2c26432244fd91474e60fc2a51",
+              "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+              "private_bridge_available": false,
+              "platform_verified_at": "2026-10-12T07:10:42.295542+00:00"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/native-state-geometry-2026-10-12"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        52,
+        129
+      ],
+      "id": "5896dd67e104c220b828d9937cd095945ba4b9823d39ef6dd2d3c22be0fe253b",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The cross-task probe distinguished local use count from remote contributions.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document",
+      "row_number": 21,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: cross-task scoped inference",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Remote wait stdout records parent counts0,1,1,0 versus global1,1,1,0 with peer contribution; no global reference-count inference.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-alias-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-alias-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/surface-alias-use",
+              "helper_sha256": "a6e459246b10526907d3bf72c9b5fa56830e5ff40f414d5e280b23141857f7a6",
+              "platform": "darwin",
+              "scope": "Owned same-task alias use-count contrast control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-alias-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        130,
+        260
+      ],
+      "id": "c79b6f54c13d2ae3357840e7d351c1a051994b4973cfb37d2ce07914f37c7dbc",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This fresh control resolves the next ambiguity: a local count could belong to a CF wrapper or to shared per-process surface state.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document",
+      "row_number": 22,
+      "verdict": "merely a report statement",
+      "proposed_type_or_exclusion": "Claim: research question; exclude from precision",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Sentence announces ambiguity and purpose. Distinct-wrapper count trace supports a later conclusion, but this sentence itself is not a typed runtime assertion.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-alias-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-alias-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/surface-alias-use",
+              "helper_sha256": "a6e459246b10526907d3bf72c9b5fa56830e5ff40f414d5e280b23141857f7a6",
+              "platform": "darwin",
+              "scope": "Owned same-task alias use-count contrast control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-alias-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        261,
+        375
+      ],
+      "id": "022775e7087ec5efbe39e58b82ad8a6c9880d65f020dde857f7cbaf070bc0999",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The SDK declaration describes per-process usage, but that source declaration is separate from runtime observation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document",
+      "row_number": 23,
+      "verdict": "insufficient evidence",
+      "proposed_type_or_exclusion": "Claim: static declaration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Sealed prediction records header hash and summary; actual header bytes were not part of bounded review. Runtime observations cannot verify this static declaration claim.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-alias-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-alias-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/surface-alias-use",
+              "helper_sha256": "a6e459246b10526907d3bf72c9b5fa56830e5ff40f414d5e280b23141857f7a6",
+              "platform": "darwin",
+              "scope": "Owned same-task alias use-count contrast control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-alias-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        376,
+        490
+      ],
+      "id": "d6160d1449120b671882608307de86502c94fb5df3dbfaf16206ea690d5a41da",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The pinned header path/hash and line range are in prediction.json; no Apple header or private binary is published.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document",
+      "row_number": 24,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Evidence provenance attribute",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "prediction.json contains header path/hash/lines410-427; manifest contains owned source and observations, not that header/private binary. Does not independently verify header contents.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-alias-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-alias-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/surface-alias-use",
+              "helper_sha256": "a6e459246b10526907d3bf72c9b5fa56830e5ff40f414d5e280b23141857f7a6",
+              "platform": "darwin",
+              "scope": "Owned same-task alias use-count contrast control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-alias-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        492,
+        622
+      ],
+      "id": "7fd28915c18e9bfa42d3209878532f1c3862a864fd4918c711b2f2bc4e0a39d2",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-alias-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "target_version": "historical identity retained in source document",
+      "row_number": 25,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact + Session + Resource",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Alias source and two wait stdout traces report distinct wrappers and same surface identity; complete seed49 allocations independently match.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-alias-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-alias-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/surface-alias-use",
+              "helper_sha256": "a6e459246b10526907d3bf72c9b5fa56830e5ff40f414d5e280b23141857f7a6",
+              "platform": "darwin",
+              "scope": "Owned same-task alias use-count contrast control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-alias-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        50,
+        115
+      ],
+      "id": "b118b0be2db106b6f33888e933bed209fb00ac2ed65259966549cea140c666e2",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The previous native use-state controls were local to one process.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 26,
+      "verdict": "merely a report statement",
+      "proposed_type_or_exclusion": "Claim: historical scope comparison",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Previous controls are outside reviewed ten-document sample; cannot certify their full process scope from this sentence.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:remote-surface-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/remote-surface-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-use",
+              "helper_sha256": "f25d16c43719e8db42c99c2ff2e7b6b95f8762f9755c01e9ecc653d0863f38bd",
+              "platform": "darwin",
+              "scope": "Owned cross-task use-count cleanup control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/remote-surface-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        116,
+        251
+      ],
+      "id": "e1abe92a13246da5e6ce83b35dd8dcb0bc3b7ce3528fbdec46f07467d492ee03",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 27,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event + Resource ordering",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Owned peer/parent source removes resource Mach names before count phase and retained wait/peer observations agree. CF lifetime stays separate.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:remote-surface-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/remote-surface-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-use",
+              "helper_sha256": "f25d16c43719e8db42c99c2ff2e7b6b95f8762f9755c01e9ecc653d0863f38bd",
+              "platform": "darwin",
+              "scope": "Owned cross-task use-count cleanup control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/remote-surface-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        252,
+        369
+      ],
+      "id": "4fca23f3b4037981798b1d21ad471e5f51998dedec3c1cc430cc7ca6a7bf48ad",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 28,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Session + Resource + Event",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Owned fork/exec/audit source and peer metadata show retained aliases and peer increment; no Canvas completion relationship established.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:remote-surface-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/remote-surface-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-use",
+              "helper_sha256": "f25d16c43719e8db42c99c2ff2e7b6b95f8762f9755c01e9ecc653d0863f38bd",
+              "platform": "darwin",
+              "scope": "Owned cross-task use-count cleanup control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/remote-surface-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        370,
+        467
+      ],
+      "id": "d380f13cc794e6e78cbd1bc2a966694be47de010db7062494f20a35a32927ce3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 29,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event contrast",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "clean and abrupt retained records report peer_exit0/signal0 versus peer_exit-1/signal9; only owned child contrast qualified.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:remote-surface-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/remote-surface-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-use",
+              "helper_sha256": "f25d16c43719e8db42c99c2ff2e7b6b95f8762f9755c01e9ecc653d0863f38bd",
+              "platform": "darwin",
+              "scope": "Owned cross-task use-count cleanup control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/remote-surface-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        468,
+        565
+      ],
+      "id": "6cf479f349079ded9dd3ab275bd045bf7da9d3e96c471fe750a6162ef60e0c31",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "All values are observations on this host, not global reference-count or Canvas completion claims.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:remote-surface-use",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 30,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: scope exclusion",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Appropriate restriction: public host observations, not global ownership count or Canvas completion.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:remote-surface-use",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/remote-surface-use-2026-10-11/environment.json",
+            "record": {
+              "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+              "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+              "helper": "/Users/8amps/xcpreviewer-rs/research/build/remote-surface-use",
+              "helper_sha256": "f25d16c43719e8db42c99c2ff2e7b6b95f8762f9755c01e9ecc653d0863f38bd",
+              "platform": "darwin",
+              "scope": "Owned cross-task use-count cleanup control, no user processes/workspaces"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/remote-surface-use-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        49,
+        120
+      ],
+      "id": "02ad396ed5d7e56b021c491a8d5d6804c8a37899702613893bcae1250599c936",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document",
+      "row_number": 31,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact declaration + protocol observation",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen handler names has six entries with refresh last; retained initialize response is0.2.2 and tool-list agrees.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-refresh",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-refresh-2026-10-11/consumer-config.json",
+            "record": {
+              "cli": "/Users/8amps/xcpreviewer-rs/research/evidence/mcp-refresh-2026-10-11/runtime/tools/re/rust_source_cli.py",
+              "observer": {
+                "helper": "/Users/8amps/xcpreviewer-rs/research/runs/20261011T093849Z-primary-live-wasm-swap-6bc05646/output/observed-compiler/owned-process-snapshot",
+                "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+              },
+              "python": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python",
+              "rustc": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+              "rustcSha": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+              "toolchainPin": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-refresh-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        121,
+        166
+      ],
+      "id": "49dab70e963752421f060b27072bf31db0b7a45a952544f123fb4cdfe4644bfa",
+      "line_span": [
+        3,
+        4
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The local\nPreviewSession API gains refresh().",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document",
+      "row_number": 32,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact API declaration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen PreviewSession source exposes refresh delegating to loop; wire control exercises it.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-refresh",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-refresh-2026-10-11/consumer-config.json",
+            "record": {
+              "cli": "/Users/8amps/xcpreviewer-rs/research/evidence/mcp-refresh-2026-10-11/runtime/tools/re/rust_source_cli.py",
+              "observer": {
+                "helper": "/Users/8amps/xcpreviewer-rs/research/runs/20261011T093849Z-primary-live-wasm-swap-6bc05646/output/observed-compiler/owned-process-snapshot",
+                "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+              },
+              "python": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python",
+              "rustc": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+              "rustcSha": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+              "toolchainPin": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-refresh-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        167,
+        232
+      ],
+      "id": "aa50882d4f49a23bb70a7341107cec350d653d3ba9198461f0a0b783c07e8c37",
+      "line_span": [
+        4,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Ordinary poll observes content changes and\nskips unchanged input.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document",
+      "row_number": 33,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: owned polling behavior",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen loop skips identical observed digest; wire sequence unchanged poll retains revision1/generation1. This is portable local policy.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-refresh",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-refresh-2026-10-11/consumer-config.json",
+            "record": {
+              "cli": "/Users/8amps/xcpreviewer-rs/research/evidence/mcp-refresh-2026-10-11/runtime/tools/re/rust_source_cli.py",
+              "observer": {
+                "helper": "/Users/8amps/xcpreviewer-rs/research/runs/20261011T093849Z-primary-live-wasm-swap-6bc05646/output/observed-compiler/owned-process-snapshot",
+                "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+              },
+              "python": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python",
+              "rustc": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+              "rustcSha": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+              "toolchainPin": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-refresh-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        233,
+        377
+      ],
+      "id": "924323930f967149c53144519aed06d8eb5e2b78f2c2af10c69977269be75889",
+      "line_span": [
+        5,
+        7
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document",
+      "row_number": 34,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: owned refresh behavior",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Force observation starts host generation for regular nonempty ASCII <=4096 bytes even with same digest; unavailable/invalid source still deduplicates. Wire control advances same-source generation.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-refresh",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-refresh-2026-10-11/consumer-config.json",
+            "record": {
+              "cli": "/Users/8amps/xcpreviewer-rs/research/evidence/mcp-refresh-2026-10-11/runtime/tools/re/rust_source_cli.py",
+              "observer": {
+                "helper": "/Users/8amps/xcpreviewer-rs/research/runs/20261011T093849Z-primary-live-wasm-swap-6bc05646/output/observed-compiler/owned-process-snapshot",
+                "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+              },
+              "python": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python",
+              "rustc": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+              "rustcSha": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+              "toolchainPin": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-refresh-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        378,
+        487
+      ],
+      "id": "fe1967127854d79b2e840ed522d4e4ba981e854273dc95bbc852526aa3f96b47",
+      "line_span": [
+        7,
+        8
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-refresh",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "target_version": "historical identity retained in source document",
+      "row_number": 35,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: owned acceptance rule",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen pump submits builder build/expected to host before publication; scoped to independent configured expectation, not arbitrary semantic validation or Canvas parity.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-refresh",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-refresh-2026-10-11/consumer-config.json",
+            "record": {
+              "cli": "/Users/8amps/xcpreviewer-rs/research/evidence/mcp-refresh-2026-10-11/runtime/tools/re/rust_source_cli.py",
+              "observer": {
+                "helper": "/Users/8amps/xcpreviewer-rs/research/runs/20261011T093849Z-primary-live-wasm-swap-6bc05646/output/observed-compiler/owned-process-snapshot",
+                "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+              },
+              "python": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python",
+              "rustc": "/Users/8amps/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rustc",
+              "rustcSha": "210df6794001b73ec3d453878707fa1e0bdcb63c427024a6e6574bbe5615a4da",
+              "toolchainPin": "7d5588c16d38123c2dbe4e1b33ed482eaa74e424b7f5776df7ba2d2792e86828"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-refresh-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        46,
+        146
+      ],
+      "id": "fb67620bf68409cf6dcab9ffcff70c260e59fe43bca51073b4d9768cc9d98aff",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 36,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: readiness policy",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Fixed recorded status has accepted descriptor revision1 and liveWorkers0 with stale readiness; failed fixture remains disqualified.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-quarantine",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-quarantine-2026-10-11/environment.json",
+            "record": {
+              "node": "24.19.0",
+              "v8": "13.6.233.17-node.51",
+              "platform": "darwin",
+              "arch": "arm64"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-quarantine-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "retained-harness-failure stride4 baseline/fixed exit1 before initial frame; acceptance=false; only corrected stride64 comparison eligible."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        147,
+        310
+      ],
+      "id": "ab4545b647381d8cdc0239e07e24ccadce30f3bcc22590cc4f9114e0c60a4a40",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 37,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: cached consumer policy",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Corrected fixed control retains accepted descriptor/allocation, uses two stable status reads and does not represent unavailable pixel reads as successful. Fresh consumer fallback not qualified.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-quarantine",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-quarantine-2026-10-11/environment.json",
+            "record": {
+              "node": "24.19.0",
+              "v8": "13.6.233.17-node.51",
+              "platform": "darwin",
+              "arch": "arm64"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-quarantine-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "retained-harness-failure stride4 baseline/fixed exit1 before initial frame; acceptance=false; only corrected stride64 comparison eligible."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        311,
+        401
+      ],
+      "id": "9f359bc7820db4eee44354e853c0a5ee7e6cde32464218f8ceebf025e78146d5",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Refresh creates a healthy stateless instance and advances publication revision/generation.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 38,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: bounded recovery",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Corrected fixed trace refresh yields liveWorkers1 revision2/generation2 with unchanged source and changed module/allocation; stateless owned fixture only.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-quarantine",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-quarantine-2026-10-11/environment.json",
+            "record": {
+              "node": "24.19.0",
+              "v8": "13.6.233.17-node.51",
+              "platform": "darwin",
+              "arch": "arm64"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-quarantine-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "retained-harness-failure stride4 baseline/fixed exit1 before initial frame; acceptance=false; only corrected stride64 comparison eligible."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        402,
+        468
+      ],
+      "id": "386ffc3fe1b5613f4d95abf94668510a7c95817b03a64237070fc98504737a81",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Close still clears the frame and makes consumer sampling terminal.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 39,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: terminal close policy",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Fixed final status frame null, closed true, zero workers/timers; consumer terminal sample makes no additional RPC in inspected control.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-quarantine",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-quarantine-2026-10-11/environment.json",
+            "record": {
+              "node": "24.19.0",
+              "v8": "13.6.233.17-node.51",
+              "platform": "darwin",
+              "arch": "arm64"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-quarantine-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "retained-harness-failure stride4 baseline/fixed exit1 before initial frame; acceptance=false; only corrected stride64 comparison eligible."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        470,
+        614
+      ],
+      "id": "e91579f5d307846cec416fd72da49e0dfd366b203e136a4e63e43c75889fa030",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "This is owned portable policy, measured through actual PreviewSession, PreviewMcp handler and PreviewConsumer with hand-authored no-import WASM.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:mcp-quarantine",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "target_version": "historical identity retained in source document",
+      "row_number": 40,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: evidence scope",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen control uses actual owned session/handler/consumer sources with hand-authored WASM; no SDK/native compiler/Canvas transport inference.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:mcp-quarantine",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/mcp-quarantine-2026-10-11/environment.json",
+            "record": {
+              "node": "24.19.0",
+              "v8": "13.6.233.17-node.51",
+              "platform": "darwin",
+              "arch": "arm64"
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/mcp-quarantine-2026-10-11"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "retained-harness-failure stride4 baseline/fixed exit1 before initial frame; acceptance=false; only corrected stride64 comparison eligible."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        73,
+        200
+      ],
+      "id": "73874f0d7989f978597fc78be09ef73fa79e3345842795f31bc4e6c6cf1161a3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document",
+      "row_number": 41,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Event + Resource configuration",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Both original and cleanup C fixtures construct valid IOSurface first descriptor followed by receive-only name requested MOVE_SEND; reviewed source/JSON agree.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-partial",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-partial-cleanup-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-cleanup-2026-10-14/surface-send-timeout",
+              "sha256": "30302e9fae7108856afb51a29b821ebd057db0e291967605aea72a7e10adf5c4",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          },
+          {
+            "path": "research/evidence/surface-partial-right-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-right-2026-10-14/surface-send-timeout",
+              "sha256": "d6c61e22accb91b9ac179a562edef8eee67a52e03a4676bdbbab73eaa0c5b330",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-partial-cleanup-2026-10-14",
+        "research/evidence/surface-partial-right-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        201,
+        255
+      ],
+      "id": "5866e803e51d9cb21320da9f610a9df6c941b79bb39075edbde43a78be4e58ec",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document",
+      "row_number": 42,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: observed error",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Both copy/move original stdout rows report send_code268435466 equal recorded invalid_right_constant; no generic Mach error guarantee.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-partial",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-partial-cleanup-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-cleanup-2026-10-14/surface-send-timeout",
+              "sha256": "30302e9fae7108856afb51a29b821ebd057db0e291967605aea72a7e10adf5c4",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          },
+          {
+            "path": "research/evidence/surface-partial-right-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-right-2026-10-14/surface-send-timeout",
+              "sha256": "d6c61e22accb91b9ac179a562edef8eee67a52e03a4676bdbbab73eaa0c5b330",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-partial-cleanup-2026-10-14",
+        "research/evidence/surface-partial-right-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        291,
+        391
+      ],
+      "id": "9517eb9543b058c8a55de2588f29d847f9bbcff2cd6d9c861832bb4d0689dd9b",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The receive-only name retains its receive right before and after destruction of the failed envelope.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document",
+      "row_number": 43,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: receive-right observation",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Original copy/move traces retain type131072 before/after failed-envelope destroy and query return0; this names the second receive-only resource.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-partial",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-partial-cleanup-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-cleanup-2026-10-14/surface-send-timeout",
+              "sha256": "30302e9fae7108856afb51a29b821ebd057db0e291967605aea72a7e10adf5c4",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          },
+          {
+            "path": "research/evidence/surface-partial-right-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-right-2026-10-14/surface-send-timeout",
+              "sha256": "d6c61e22accb91b9ac179a562edef8eee67a52e03a4676bdbbab73eaa0c5b330",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-partial-cleanup-2026-10-14",
+        "research/evidence/surface-partial-right-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        393,
+        546
+      ],
+      "id": "9fc289bc57d9ce09b01ab1f66db58f736a3e525e483d8f2bc65193a172c44613",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "With the first descriptor COPY_SEND, its original/returned name is unchanged and one send reference remains before and after failed-envelope destruction.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document",
+      "row_number": 44,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: COPY_SEND accounting",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Original copy trace same numeric name, before/after send refs1; cleanup follow-up additionally queries final removal. Identity is not ownership.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-partial",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-partial-cleanup-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-cleanup-2026-10-14/surface-send-timeout",
+              "sha256": "30302e9fae7108856afb51a29b821ebd057db0e291967605aea72a7e10adf5c4",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          },
+          {
+            "path": "research/evidence/surface-partial-right-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-right-2026-10-14/surface-send-timeout",
+              "sha256": "d6c61e22accb91b9ac179a562edef8eee67a52e03a4676bdbbab73eaa0c5b330",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-partial-cleanup-2026-10-14",
+        "research/evidence/surface-partial-right-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        547,
+        709
+      ],
+      "id": "b999a40cc3c6fbf7d73fe3ffe7ee48f58fe9cd61ec912486290cb9ca08c529c2",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "owned-oracle",
+      "source_node": "e:surface-partial",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "target_version": "historical identity retained in source document",
+      "row_number": 45,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: MOVE_SEND accounting",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Original move trace same numeric name with send refs0 both before/after envelope destroy; no usable restored send right or physical reclamation inferred.",
+      "evidence_grade": "owned-oracle",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:surface-partial",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion.",
+        "identity_records": [
+          {
+            "path": "research/evidence/surface-partial-cleanup-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-cleanup-2026-10-14/surface-send-timeout",
+              "sha256": "30302e9fae7108856afb51a29b821ebd057db0e291967605aea72a7e10adf5c4",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          },
+          {
+            "path": "research/evidence/surface-partial-right-2026-10-14/identity.json",
+            "record": {
+              "binary": "/Users/8amps/xcpreviewer-rs/research/build/surface-partial-right-2026-10-14/surface-send-timeout",
+              "sha256": "d6c61e22accb91b9ac179a562edef8eee67a52e03a4676bdbbab73eaa0c5b330",
+              "private_capture_bridge_available": false,
+              "owned_case_limit": 2
+            }
+          }
+        ]
+      },
+      "underlying_controls": [
+        "research/evidence/surface-partial-cleanup-2026-10-14",
+        "research/evidence/surface-partial-right-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        45,
+        152
+      ],
+      "id": "8435b8fe5a8e23d33c8a779eab1b0721b60c6b64fa746aa10e74f49c3992c6c3",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document",
+      "row_number": 46,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: source-only historical defect",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Frozen before-results show asynchronous return modes bypass private abort; rejected promise emits controlled unhandled rejection. Unsafe before native behavior unmeasured.",
+      "evidence_grade": "process-record",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:observer-callback",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion."
+      },
+      "underlying_controls": [
+        "research/evidence/thenable-callback-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Before native jobs not launched; source-only before behavior; arbitrary noncooperative callbacks and unseen processes excluded."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        153,
+        427
+      ],
+      "id": "56a508fee6a79c124124f718e1143168e004e0b9d28d0152447ded219d6c12ca",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document",
+      "row_number": 47,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: source control contrast",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Six before plus six after records: four async-result modes reject; getter error propagated unchanged by wrapping path, plain accepted. Does not mean getter threw in old implementation.",
+      "evidence_grade": "process-record",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:observer-callback",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion."
+      },
+      "underlying_controls": [
+        "research/evidence/thenable-callback-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Before native jobs not launched; source-only before behavior; arbitrary noncooperative callbacks and unseen processes excluded."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        428,
+        492
+      ],
+      "id": "8339e138b6cf8edc25efc7f464edfb33059864ee6060a4827f13f5d784e18063",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "The rejected promise is consumed to prevent unhandled rejection.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document",
+      "row_number": 48,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Artifact behavior + bounded observation",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "after.js attaches rejection handler through Promise.resolve; after rejected record unhandled=[] versus before one error. No arbitrary thenable/noncooperative JS guarantee.",
+      "evidence_grade": "process-record",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:observer-callback",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion."
+      },
+      "underlying_controls": [
+        "research/evidence/thenable-callback-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Before native jobs not launched; source-only before behavior; arbitrary noncooperative callbacks and unseen processes excluded."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        493,
+        625
+      ],
+      "id": "059af539c33175d4ea321ea95c4cf29a9fcd23b1700ccb23663cb14a41b0e2b4",
+      "line_span": [
+        3,
+        3
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document",
+      "row_number": 49,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Claim: source-only boundary",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "before.js/control source uses injected event emitter and unhandled listener; sealed native controls are after only. Cannot prove absence of all unrecorded executions.",
+      "evidence_grade": "process-record",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:observer-callback",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion."
+      },
+      "underlying_controls": [
+        "research/evidence/thenable-callback-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Before native jobs not launched; source-only before behavior; arbitrary noncooperative callbacks and unseen processes excluded."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    },
+    {
+      "assertion_level": "document-statement-only",
+      "char_span": [
+        627,
+        743
+      ],
+      "id": "d610eba0e13a05d9c64357320325db8700ec4760ac29e0397de0b773e84c7981",
+      "line_span": [
+        5,
+        5
+      ],
+      "qualified_for_acceptance": false,
+      "quote": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child.",
+      "scope": "scoped historical research; not Canvas protocol acceptance",
+      "semantic_review": "completed bounded independent evidence review",
+      "source_grade": "process-record",
+      "source_node": "e:observer-callback",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "target_version": "historical identity retained in source document",
+      "row_number": 50,
+      "verdict": "supported within scope",
+      "proposed_type_or_exclusion": "Session + Event + process observation",
+      "proposed_relation": "No original typed entity/relation extraction supplied; no accepted graph edge emitted.",
+      "review_reason": "Resolved/rejected native result records capture root and ready detached child identities, private abort, root43 and child42; unseen escapes excluded.",
+      "evidence_grade": "process-record",
+      "review_scope": "scoped historical research; not Canvas protocol acceptance",
+      "target_identity": {
+        "historical_target_only": true,
+        "source_node": "e:observer-callback",
+        "target_version_from_extraction": "historical identity retained in source document",
+        "identity_limits": "Not a complete pinned Xcode Target; retain per-control tool/helper identity; no cross-build fusion."
+      },
+      "underlying_controls": [
+        "research/evidence/thenable-callback-2026-10-14"
+      ],
+      "retained_failures_and_limits": [
+        "Native Canvas refresh/input/transport and milestone claims remain unqualified; private bridge absent in records.",
+        "Before native jobs not launched; source-only before behavior; arbitrary noncooperative callbacks and unseen processes excluded."
+      ],
+      "eligible_original_entity_relation_precision_item": false
+    }
+  ],
+  "handoff_approved": false,
+  "clean_implementation_context": false,
+  "task_accepted": false
+}

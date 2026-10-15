@@ -1,0 +1,31 @@
+{
+  "author_context": "/root",
+  "reviewer_context": "/root/refresh_spec_review",
+  "verdict": "approved_for_bounded_original_implementation",
+  "behavior_only_reviewed": true,
+  "provenance_reviewed": true,
+  "spec_sha256": "7d74b65b4f00672387a911a24bc0dba63420d526c8bb4e912a286a077561d124",
+  "specification": "research/canvas-specs/portable-refresh-v1.md",
+  "inputs_read": [
+    "research/canvas-specs/portable-refresh-v1.md",
+    "research/canvas-reviews/serial-independent-evidence-review-2026-10-15.md"
+  ],
+  "behavior_findings": "The narrow unchanged-poll, explicit-refresh, rejection retention/retry, recovery and terminal-close rules align with the independently reviewed owned portable preview observations. Broader callback lifecycle, string domain, validation and concurrency requirements are original product requirements; they do not claim native parity. Global milestone gates are outside this review.",
+  "provenance_findings": "The callback API is researcher-authored original API design. The specification contains no copied implementation source or assets. Review was limited to the two listed textual inputs; no product source, decompilation, historical implementation, private traces or assets were read or exported. This is a bounded review of the supplied contract and its declared origin, not independent forensic proof of all upstream originality.",
+  "changes": "Explicitly distinguished researcher-authored original callback/lifecycle requirements and string handling from the narrower observed regular-ASCII refresh behavior.",
+  "limitations": [
+    "Context and directory separation are not enforced by a tool/filesystem sandbox.",
+    "No clean-room certification, legal provenance certification, native parity, milestone promotion, graph attestation or issue closure is claimed."
+  ],
+  "export": {
+    "path": "/private/tmp/xcpreviewer-refresh-build-20261015/SPEC.md",
+    "sha256": "7d74b65b4f00672387a911a24bc0dba63420d526c8bb4e912a286a077561d124",
+    "input_allowlist": [
+      "/private/tmp/xcpreviewer-refresh-build-20261015/SPEC.md"
+    ],
+    "exported_files": [
+      "SPEC.md"
+    ],
+    "excluded": "Review report and research paths were not exported. Fresh builder receives only the exported specification as project input."
+  }
+}

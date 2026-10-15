@@ -1,0 +1,43 @@
+# Serial independent Canvas evidence review — 2026-10-15
+
+Internal research only. Reviewer context: `/root/canvas_evidence_review`, a fresh serial evidence-verifier context supplied the review task/brief, without the investigator's full conversation. Main investigator: `/root`. Historical evidence producers are identified by their sealed control sources, helper hashes and recorded waits; original producer chat identifiers are unavailable. This reviewer is now research-exposed and cannot serve as an unexposed implementer. No product edit, native acquisition, compile, UI action, process control, graph attestation, issue closure, milestone promotion or clean handoff occurred.
+
+The companion `serial-independent-evidence-review-2026-10-15.json` contains all 50 exact candidate IDs, quotes/spans, source hashes, proposed claim/entity categories or exclusions, grades, scopes, target identity records, underlying controls, retained failures and individual verdicts. These classifications are review proposals, not newly accepted graph edges.
+
+## Result and denominator
+
+All 50 statement candidates were reviewed. Forty-six are supported within the explicitly bounded owned fixture/source scope; three are merely report statements (rows 6, 22, 26); one has insufficient evidence (row 23, SDK declaration contents). No candidate was found contradicted within its retained scope. Mixed historical framing in otherwise supported rows is explicitly qualified in the row reasons.
+
+The entity/relation precision gate remains **unqualified**, with eligible original entity/relation predictions **0**, precision denominator **0**, and precision **null**. The original candidates contain report sentences, not independently evaluable typed entities or relation endpoint predictions. The reviewer's proposed classifications cannot be counted as an independent evaluation of themselves. 46/50 is a statement-support tally, not entity or relation precision, and must not be used to pass the ontology's >=50-item, >=0.9 gate. This graph extraction gate does not create a new global prohibition on drafting a narrowly supported behavior contract.
+
+## Checks actually performed
+
+Independently recomputed byte length and SHA-256 for all 514 listed files (5,121,293 listed bytes) in 15 manifests: the crosswalk, reconciliation, two provenance bundles and eleven underlying inventories. All matched. All ten report source digests and all eleven crosswalk-pinned manifest digests matched. Every candidate's exact character slice matched its quote. These inventory checks establish byte identity only; file counts include frozen/nested records and do not claim repository completeness.
+
+Both additional commit/blob anchors were independently read using their recorded commits and matched recorded manifest SHA-256/blob IDs. Original `document_mentions_seal=false` and `independent_external_trust=false` remain false. This does not retroactively insert seals into the reports or verify external provenance; current remote ancestry was not re-audited.
+
+Reconstructed all 145 public-owned raw allocations independently: 84 State allocations plus 61 IOSurface allocations, totaling 2,375,680 bytes. Fixed RGBA endpoints/geometry and seed49 BGRA formula, padding and complete unused tails matched. Acquisition/wait metadata and owned source ordering were inspected. No live acquisition was rerun. The first reviewer calculation incorrectly reused the alias/remote seed49 tail for partial-right controls; all twelve partial-right files rejected that expectation. Source inspection showed their allocation tail is initialized a5. Correcting that reviewer expectation, without changing any evidence, made the twelve comparisons pass. This reviewer harness mistake is retained here rather than treated as producer failure or suppressed evidence.
+
+Frozen MCP handler/session/loop/host source and wire/status/control records were inspected; corrected quarantine results were compared with retained failure scope. Frozen before/after callback source/control records and owned native callback result metadata were inspected. Their full historical semantic-verifier/fault suites were not rerun, and MCP/callback allocations were not independently reconstructed in this bounded review. Reported test/fault counts therefore remain historical producer statements, not fresh reviewer test results. The SDK header's recorded path/hash/line range was inspected in prediction.json, but the header itself was not read, leaving row23 insufficient.
+
+## Scope and failures that survive review
+
+Public ImageRenderer binding/identity/palette/geometry observations are owned offscreen reference controls on the recorded macOS26.5.1/build25F80 and MacOSX26.5 SDK, not Xcode Canvas observations. The source selects destination CGContext geometry; native allocation resizing is not inferred. The 10ms runloop interval is requested, not measured latency. Probe last getters can belong to a fresh renderer while an original cached image stays blue; detached getter mutation is not current rendered state. No source-edit State migration, physical input or deallocation claim follows.
+
+IOSurface/Mach results separate CF wrapper, backing surface, Mach name, local use count and global in-use. Unchanged numeric names do not imply owned send rights; COPY_SEND and MOVE_SEND partial-error accounting differ. Process-local/global in-use traces do not identify a kernel teardown instruction, physical reclaim timing, Canvas generation or completion.
+
+The identity report retains earlier reader parse, eleven-row expectation and REA JSON-escape mistakes. Quarantine's two stride4 failures occurred before frame acquisition and cannot support a quarantine comparison; only corrected stride64 runs do. Callback before behavior is source-only, and unsafe before native runs remain unperformed; the owned after controls exclude unseen process escapes and arbitrary noncooperative JavaScript. Byte seals and the word independent in producer reports do not certify externally trusted provenance.
+
+The provenance assessments still quarantine all 159 declared files, with zero handoff-eligible files and no independent provenance approval. This bounded evidence review did not resolve originality, legal provenance, repository-wide completeness, or the missing approved private capture bridge. Complete pinned Xcode target identity is absent from some pilot controls; per-control identity records must remain attached, and cross-build fusion is inappropriate.
+
+## Smallest actionable behavior contract
+
+**A behavior-only draft can legitimately proceed to independent specification review now**, scoped to the owned portable preview's explicit refresh, not native Canvas refresh parity. Suggested minimum observable slice:
+
+1. In an open session with an accepted frame and unchanged supported regular ASCII source, ordinary poll retains accepted revision/generation. Explicit refresh requests another build; a fully verified successful proposal publishes a greater generation/revision even when source digest is unchanged.
+2. A rejected refresh keeps the prior accepted frame; another explicit refresh of that same rejected source retries. A later successful refresh recovers readiness without erasing retained failure history.
+3. Close clears frame availability. Refresh after close returns failure. Refresh creates a fresh stateless preview instance; preserving user State is outside this slice.
+
+Evidence binding: rows31–35; `research/evidence/mcp-refresh-2026-10-11/manifest.json`, SHA-256 `79e1fd30e48ce7473dec5fc3b14c2a88ce3fba119610d372f7629d7de1efbef2`; frozen `runtime/tools/re/reloop/{preview_mcp,preview_session,source_file_loop,source_revision_host}.js`, `process/refresh/partial.json` and owned boundary controls. The historical wire trace distinguishes revision1/generation1 unchanged poll, revision2/generation2 refresh, generation3/4 rejection retaining revision2, and revision3/generation5 recovery. This is useful evidence for reviewing an observable local feature, not permission to copy the research implementation.
+
+The next eligible action is to prepare an **internal, narrowly scoped behavior-only candidate specification** with acceptance examples and unknowns, then have it reviewed serially in a separate context. Review source-origin/export eligibility separately before any clean implementer handoff. Do not export this research report or its paths/private details to a clean implementer. This review authorizes no export or implementation-context classification. Native transport, input, State migration and milestone acceptance remain separate, unresolved obligations; they need not block reviewing this local portable refresh slice.

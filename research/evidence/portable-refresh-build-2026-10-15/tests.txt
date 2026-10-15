@@ -1,0 +1,26 @@
+✔ independent: synchronous build and validator reentrancy cannot consume generations (15.831542ms)
+✔ independent: busy rejection preserves observed source and original failing attempt (10.804791ms)
+✔ independent: async validation gates publication and rejects truthy nonboolean (3.126833ms)
+✔ independent: synchronous close from build; late completion (0.801958ms)
+✔ independent: synchronous close from build; late rejection (1.026125ms)
+✔ independent: synchronous close from validate; late completion (0.882667ms)
+✔ independent: synchronous close from validate; late rejection (0.398625ms)
+✔ independent: snapshots isolate bookkeeping; candidate remains documented caller-owned reference (4.57925ms)
+✔ callbacks required; no implicit validation (10.050916ms)
+✔ poll deduplication, explicit retry, failures and recovery (25.260041ms)
+✔ validation is awaited; false and rejection preserve accepted frame (2.880291ms)
+✔ busy build cannot be disturbed and publishes once (2.815666ms)
+✔ close during build, late resolve cannot publish (0.810666ms)
+✔ close during build, late reject cannot publish (1.094875ms)
+✔ close during validation, late resolve cannot publish (7.156ms)
+✔ close during validation, late reject cannot publish (2.1435ms)
+✔ close removes accepted frame and sessions remain independent (7.991083ms)
+✔ invalid source consumes no generation (12.32775ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 646.018958

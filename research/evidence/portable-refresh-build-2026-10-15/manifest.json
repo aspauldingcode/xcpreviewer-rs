@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-15T14:21:44.229526+00:00",
+  "files": [
+    {
+      "path": "packages/portable-preview-refresh/PROVENANCE.md",
+      "sha256": "73dc92bac3f7636efb3f70cbbb7cf9c88626bfbf66bccb3fac3eca9b16f5b024",
+      "size": 1068
+    },
+    {
+      "path": "packages/portable-preview-refresh/README.md",
+      "sha256": "ccd1681cf8ab290db3c8cd6206ca0c60f15c79cebe27e9e32769b572a2dfbe55",
+      "size": 4184
+    },
+    {
+      "path": "packages/portable-preview-refresh/SPEC.md",
+      "sha256": "7d74b65b4f00672387a911a24bc0dba63420d526c8bb4e912a286a077561d124",
+      "size": 4594
+    },
+    {
+      "path": "packages/portable-preview-refresh/VERIFICATION.md",
+      "sha256": "16463b3dadcfd146f594cc98598e2ddc03ed56dc5bb9b257489d69f6adbbe4ee",
+      "size": 2926
+    },
+    {
+      "path": "packages/portable-preview-refresh/index.js",
+      "sha256": "577e7d3d41bb749ee010a0eebd282ec67d4a04414358a35c8704164983df75d6",
+      "size": 3351
+    },
+    {
+      "path": "packages/portable-preview-refresh/package.json",
+      "sha256": "bde84dbb48b48b1aa96682c3b9b6b9f7bf8402f12a589181fe409dd2a6ad51f3",
+      "size": 280
+    },
+    {
+      "path": "packages/portable-preview-refresh/test/independent-verification.test.js",
+      "sha256": "305129bd10ccbe6c9bddd5eb1251761775896921d2b1e06562438a6abfa543b9",
+      "size": 4289
+    },
+    {
+      "path": "packages/portable-preview-refresh/test/session.test.js",
+      "sha256": "f6f7fde6048ec08e613e3f5dbec3d33951923b145e93a5e31848c3693fc4c2a4",
+      "size": 5170
+    }
+  ],
+  "implementation_context": "/root/refresh_builder",
+  "milestones_accepted": false,
+  "sandbox_enforced_clean_room": false,
+  "schema_version": 1,
+  "scope": "original standalone portable refresh session; no native Canvas parity",
+  "spec_review_context": "/root/refresh_spec_review",
+  "tests": {
+    "failed": 0,
+    "node_version": "v24.19.0",
+    "passed": 18
+  },
+  "verification_context": "/root/refresh_build_verify"
+}

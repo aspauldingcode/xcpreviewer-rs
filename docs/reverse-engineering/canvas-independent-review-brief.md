@@ -1,6 +1,6 @@
-# Proposed separate-context Canvas evidence review
+# Separate-context Canvas evidence review
 
-Status: ready for user-authorized serial delegation. No reviewer has been launched. This investigator cannot count its own interpretation as independent review. The user's serial-only/no-delegation-without-authorization instruction remains in force.
+Status: user authorized one fresh serial evidence reviewer; review completed in `/root/canvas_evidence_review`. Internal results: `research/canvas-reviews/serial-independent-evidence-review-2026-10-15.md` and companion JSON. Investigator and reviewer did not act as simultaneous writers. The investigator cannot count its own interpretation as independent review.
 
 ## Role and boundary
 
@@ -24,6 +24,6 @@ Evaluate the ontology's entity/relation precision requirement on at least50 elig
 
 Write a review report with producer/reviewer context identifiers, all row-level judgments, actual reviewed/eligible counts, declared precision denominator and unresolved questions. Keep source paths and private/internal research only in this internal report. The existing graph acceptance format also requires exact output/check/grade/scope binding; do not add attestations until those records and the independent review satisfy the contract. Do not label the current repository clean-room.
 
-## Permission still needed
+## Authorization and next boundary
 
-The user explicitly required serial work unless delegation is authorized. Request authorization for one fresh evidence reviewer, run it serially, and keep production implementation blocked. Authorizing this reviewer would not authorize an implementer or an export.
+The user authorized this serial reviewer and routine serial follow-up work. That authorization does not itself establish source-origin/export eligibility or make this research-exposed context a clean implementer. The review identifies a bounded owned portable refresh contract eligible for internal behavior-only specification drafting and independent review. Native Canvas protocol and milestone acceptance remain unqualified; no clean handoff or product edit occurred in this review.

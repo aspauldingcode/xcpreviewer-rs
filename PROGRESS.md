@@ -1305,3 +1305,7 @@ Resolved ten pilot documents to eleven distinct sealed experiment manifests, inc
 ### 2026-10-14: Two repository evidence anchors and review package
 
 Resolved two report-missing digests against committed manifest bytes and independently recomputed Git blob identities. Historical documents remain unchanged and document-anchor flags stayfalse. Repository anchoring does not establish external trust or experiment semantics. Seven resealed trust/object faults reject. Prepared a concrete fresh-context evidence review brief for the50-candidate/ten-report/eleven-manifest pilot; authorization still needed under the user's serial-only/no-delegation instruction. No native probes, product edits or handoff approval. See docs/reverse-engineering/canvas-independent-review-brief.md.
+
+## 2026-10-15: original standalone portable refresh build
+
+Human authorized serial reviewers and BUILD. Fresh evidence review completed all 50 statements (46 supported within scope, 3 report-only, 1 insufficient); entity/relation precision remains unqualified. Separate specification review approved a bounded original callback API. Fresh implementation context built packages/portable-preview-refresh from the behavior specification alone; separate delivery verifier added eight tests. All 18 Node tests pass, including busy/reentrancy and close during build/validation. No native Canvas parity, tool-enforced clean-room isolation or milestone acceptance claimed. Existing reconstruction and user changes preserved. Native capture bridge and broader integration remain separate obligations.
