@@ -113,6 +113,16 @@
       "range": [
         "Specification"
       ]
+    },
+    "ASSERTS": {
+      "domain": [
+        "Evidence"
+      ],
+      "range": [
+        "Claim"
+      ],
+      "description": "The scoped source report explicitly states the Claim proposition. Documentary attribution only; does not imply truth, runtime observation or semantic support.",
+      "truth_entailment": false
     }
   },
   "fusion_key": [

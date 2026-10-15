@@ -1321,3 +1321,7 @@ Replaced the prior zero-denominator gap with 50 explicit typed entity prediction
 ## 2026-10-15: conservative typed extraction rules and v2 review
 
 Added reusable research producer and five tests that reject grouped singleton identities and timestamp-free Events. Automatic v2 extraction produces 10 report Evidence and 40 documentary Claim entities. Separate reviewer accepts 50/50 (100%) on this restricted development sample. Prior 70% failed pilot retained unchanged. Development-set reuse and changed type mix are explicit; no held-out/global precision, runtime identity, relation, native Canvas or milestone acceptance follows. Evidence: research/evidence/typed-pilot-v2-review-2026-10-15. Next review documentary relations on surviving endpoints while native capture remains blocked separately.
+
+## 2026-10-15: documentary ASSERTS relation stage
+
+Added precise Evidence-to-Claim ASSERTS relation with truth_entailment=false, separating report assertions from corroborated SUPPORTS evidence. Producer requires pinned independent entity review and unchanged source/span/endpoints before emitting 40 documentary edge candidates. Separate verifier accepts 40/40, checks deterministic output, and runs eight producer plus six graph tests. Relation precision is 100% on this restricted development sample, but minimum50 remains unmet; no accepted graph edges, fusion, native truth or milestones promoted. Original entity failures retained. Evidence: research/evidence/documentary-asserts-review-2026-10-15.

@@ -110,6 +110,73 @@ def produce(root):
                            'Relation extraction deferred until entity review'],
             'native_canvas_parity':False,'handoff_approved':False,'accepted_graph_edges':[]}
 
+
+PINNED_V2_REVIEW_SHA256 = '4ae9800e28d64838fefcfd6616564875e830668ffa3977a6facc6d5ed9636424'
+
+def documentary_relations(root, candidate_raw, review_raw, expected_review_sha256=PINNED_V2_REVIEW_SHA256):
+    """Derive pending ASSERTS only after exact, independently accepted endpoint review."""
+    if digest(review_raw) != expected_review_sha256:
+        raise ValueError('Independent review hash mismatch')
+    candidate=json.loads(candidate_raw);review=json.loads(review_raw)
+    if (review.get('candidate_sha256') != digest(candidate_raw) or
+            review.get('independent_of_v2_producer') is not True or
+            review.get('reviewer_context') == review.get('producer_context') or
+            review.get('producer_context') != candidate.get('producer_context')):
+        raise ValueError('Invalid independent candidate review binding')
+    ontology=json.loads((root/'research/loop/canvas-ontology.json').read_text())
+    spec=ontology['relations'].get('ASSERTS',{})
+    if spec.get('domain') != ['Evidence'] or spec.get('range') != ['Claim'] or spec.get('truth_entailment') is not False:
+        raise ValueError('ASSERTS documentary domain/range contract mismatch')
+    originals=candidate['candidates'];judgments=review['rows']
+    if len({r['id'] for r in originals}) != len(originals) or len({r['id'] for r in judgments}) != len(judgments):
+        raise ValueError('Duplicate endpoint or judgment')
+    indexed={r['id']:r for r in judgments}
+    if set(indexed) != {r['id'] for r in originals}:
+        raise ValueError('Missing/foreign endpoint review')
+    by_source={};claims=[]
+    for endpoint in originals:
+        judgment=indexed[endpoint['id']]
+        if (judgment.get('original_prediction') != endpoint or judgment.get('verdict') != 'accept' or
+                judgment.get('eligible') is not True or judgment.get('type_fit') is not True or
+                judgment.get('repair_applied') is not False or not judgment.get('checks') or
+                any(v is not True for v in judgment['checks'].values())):
+            raise ValueError('Endpoint not independently accepted unchanged')
+        kind=endpoint['proposed_type']
+        if kind not in {'Evidence','Claim'} or endpoint['ontology_definition'] != ontology['entity_types'][kind]:
+            raise ValueError('Endpoint type mismatch')
+        if kind=='Claim' and judgment.get('explicit_proposition_fit') is not True:
+            raise ValueError('Claim not reviewed as explicit proposition')
+        path=Path(endpoint['source_path'])
+        if path.is_absolute() or '..' in path.parts or any((root/Path(*path.parts[:i])).is_symlink() for i in range(1,len(path.parts)+1)):
+            raise ValueError('Unsafe endpoint source')
+        raw=(root/path).read_bytes();text=raw.decode();start,end=endpoint['char_span']
+        if digest(raw)!=endpoint['source_sha256'] or not 0<=start<end<=len(text) or text[start:end]!=endpoint['surface_form']:
+            raise ValueError('Endpoint source hash/span mismatch')
+        key=(str(path),endpoint['source_sha256'])
+        if kind=='Evidence':
+            if key in by_source:raise ValueError('Ambiguous report endpoint')
+            by_source[key]=endpoint
+        else:claims.append(endpoint)
+    edges=[]
+    for claim in claims:
+        source=by_source.get((claim['source_path'],claim['source_sha256']))
+        if source is None:raise ValueError('No reviewed same-source report endpoint')
+        edges.append({'id':'documentary-asserts-'+str(len(edges)+1).zfill(3),
+                      'prediction_kind':'relation','relation':'ASSERTS','from':source['id'],'to':claim['id'],
+                      'domain':'Evidence','range':'Claim','source_path':claim['source_path'],
+                      'source_sha256':claim['source_sha256'],'char_span':claim['char_span'],
+                      'quote':claim['surface_form'],'report_title_char_span':source['char_span'],
+                      'scope':'Report asserts this proposition; no truth/runtime support entailment',
+                      'endpoint_review_sha256':digest(review_raw),'candidate_sha256':digest(candidate_raw),
+                      'review_status':'pending separate relation verifier','accepted_graph_edge':False})
+    return {'schema_version':1,'producer_context':'/root/canvas_evidence_review','relation':'ASSERTS',
+            'candidate_sha256':digest(candidate_raw),'endpoint_review_sha256':digest(review_raw),
+            'ontology_sha256':digest((root/'research/loop/canvas-ontology.json').read_bytes()),
+            'relation_predictions':len(edges),'candidates':edges,'independently_reviewed':0,
+            'relation_precision':None,'relation_minimum_items':50,'quality_gate_passed':False,
+            'development_set_reuse':True,'held_out':False,'native_canvas_parity':False,
+            'truth_entailment':False,'accepted_graph_edges':[],'handoff_approved':False}
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);args=parser.parse_args()
     print(json.dumps(produce(args.root),indent=2))

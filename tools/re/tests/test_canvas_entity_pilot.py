@@ -40,3 +40,51 @@ class EntityPilotRulesTests(unittest.TestCase):
             raw=(root/row['source_path']).read_bytes()
             self.assertEqual(digest(raw),row['source_sha256'])
             self.assertEqual(raw.decode()[slice(*row['char_span'])],row['surface_form'])
+
+
+class DocumentaryRelationTests(unittest.TestCase):
+    def setUp(self):
+        import json
+        self.root=Path(__file__).resolve().parents[3]
+        self.raw=(self.root/'research/canvas-reviews/typed-pilot-v2-2026-10-15.json').read_bytes()
+        self.review_raw=(self.root/'research/canvas-reviews/typed-pilot-v2-independent-review-2026-10-15.json').read_bytes()
+        self.review=json.loads(self.review_raw)
+
+    def test_actual_forty_deterministic_documentary_edges(self):
+        from canvas_entity_pilot import documentary_relations
+        a=documentary_relations(self.root,self.raw,self.review_raw)
+        self.assertEqual(a,documentary_relations(self.root,self.raw,self.review_raw))
+        self.assertEqual(a['relation_predictions'],40)
+        self.assertEqual({e['relation'] for e in a['candidates']},{'ASSERTS'})
+        self.assertFalse(a['truth_entailment']);self.assertFalse(a['quality_gate_passed'])
+        self.assertEqual(a['accepted_graph_edges'],[])
+
+    def test_missing_rejected_or_repaired_endpoint_review_fails(self):
+        import copy,json
+        from canvas_entity_pilot import documentary_relations
+        for fault in ['missing','reject','repair','type','source_check','original','independent','proposition']:
+            with self.subTest(fault=fault):
+                review=copy.deepcopy(self.review);row=review['rows'][1]
+                if fault=='missing':review['rows'].pop()
+                elif fault=='reject':row['verdict']='reject'
+                elif fault=='repair':row['repair_applied']=True
+                elif fault=='type':row['type_fit']=False
+                elif fault=='source_check':row['checks']['hash']=False
+                elif fault=='original':row['original_prediction']['source_sha256']='0'*64
+                elif fault=='independent':review['reviewer_context']=review['producer_context']
+                else:row['explicit_proposition_fit']=False
+                raw=json.dumps(review).encode()
+                with self.assertRaises(ValueError):documentary_relations(self.root,self.raw,raw,digest(raw))
+
+    def test_review_pin_candidate_hash_and_domain_range_fail_closed(self):
+        import json,tempfile
+        from canvas_entity_pilot import documentary_relations
+        with self.assertRaises(ValueError):documentary_relations(self.root,self.raw,self.review_raw+b' ')
+        with self.assertRaises(ValueError):documentary_relations(self.root,self.raw+b' ',self.review_raw)
+        original=json.loads((self.root/'research/loop/canvas-ontology.json').read_text())
+        for bad in [{'domain':['Claim']},{'range':['Evidence']},{'truth_entailment':True}]:
+            with tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);(root/'research/loop').mkdir(parents=True)
+                ontology=json.loads(json.dumps(original));ontology['relations']['ASSERTS'].update(bad)
+                (root/'research/loop/canvas-ontology.json').write_text(json.dumps(ontology))
+                with self.assertRaises(ValueError):documentary_relations(root,self.raw,self.review_raw)

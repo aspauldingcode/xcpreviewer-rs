@@ -469,6 +469,23 @@
     "started_at": "2026-10-14T21:41:00.370789+00:00",
     "status": "review-pending"
   },
+  "documentary_asserts_checkpoint": {
+    "accepted": 40,
+    "at": "2026-10-15T14:59:45.451652+00:00",
+    "development_set_reuse": true,
+    "evidence": "research/evidence/documentary-asserts-review-2026-10-15",
+    "gate_qualified": false,
+    "held_out": false,
+    "native_bridge_available": false,
+    "next_action": "extend independent relation sample without duplicating scored edges; keep truth and native transport separate",
+    "precision": 1.0,
+    "predictions": 40,
+    "qualification_scope": "40 documentary ASSERTS relations; minimum50 unmet",
+    "rejected": 0,
+    "relation_pass": "40/40 valid documentary edges; minimum50 unmet; no fusion",
+    "standing_serial_authorization": true,
+    "status": "verified-documentary-relations-below-sample-minimum"
+  },
   "failure_fingerprints": [
     {
       "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",

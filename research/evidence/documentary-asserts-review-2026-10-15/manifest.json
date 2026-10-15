@@ -1,0 +1,53 @@
+{
+  "accepted": 40,
+  "at": "2026-10-15T14:59:45.427915+00:00",
+  "development_set_reuse": true,
+  "files": [
+    {
+      "path": "research/canvas-reviews/documentary-asserts-candidates-2026-10-15-method.md",
+      "sha256": "b345ffdc2cd6b80982e1a34b44883d687d5f0dc6726d093167e5bdedd52d4a17",
+      "size": 3161
+    },
+    {
+      "path": "research/canvas-reviews/documentary-asserts-candidates-2026-10-15.json",
+      "sha256": "b75b9006c1b27fe090742ceb92f906465020df148001e9447a3905643418aaa7",
+      "size": 42234
+    },
+    {
+      "path": "research/canvas-reviews/documentary-asserts-independent-review-2026-10-15.json",
+      "sha256": "d074e6d6ecb623c0ee80a4f8cad0e28ecab4c9a80f909d7f07e494b67261d78d",
+      "size": 78652
+    },
+    {
+      "path": "research/canvas-reviews/documentary-asserts-independent-review-2026-10-15.md",
+      "sha256": "1a23e270970d350443f4f90b82e23f097dff98480eafe5c406a3f3cf4fc3c10e",
+      "size": 3502
+    },
+    {
+      "path": "tools/re/canvas_entity_pilot.py",
+      "sha256": "f9b4f23a95409f265a3c2a118c111f71121c72a7adf2c8948c0e4f72e791c37a",
+      "size": 11348
+    },
+    {
+      "path": "tools/re/tests/test_canvas_entity_pilot.py",
+      "sha256": "46b79fd472d1f24ffb674b9b2d377c6e83abc868e364f39e5f22af31873afcbe",
+      "size": 6037
+    },
+    {
+      "path": "research/loop/canvas-ontology.json",
+      "sha256": "92396578b80c763d13660a5aaaaa269a7ef5c2a03b101018c989bf365bddfc2b",
+      "size": 3680
+    }
+  ],
+  "gate_qualified": false,
+  "held_out": false,
+  "milestones_accepted": false,
+  "precision": 1.0,
+  "predictions": 40,
+  "producer_context": "/root/canvas_evidence_review",
+  "qualification_scope": "40 documentary ASSERTS relations; minimum50 unmet",
+  "rejected": 0,
+  "relations_reviewed": 40,
+  "reviewer_context": "/root/refresh_spec_review",
+  "scope": "internal typed report-entity extraction; not target behavior acceptance"
+}
