@@ -1,10 +1,19 @@
-import json,hashlib,shutil,tempfile,unittest
+import json,hashlib,shutil,tempfile,unittest,subprocess
 from pathlib import Path
 from verify_raw_output_accounting import verify
 ROOT=Path(__file__).resolve().parents[3];E=ROOT/'research/evidence/raw-output-accounting-2026-10-12'
 class RawOutputTests(unittest.TestCase):
  def test_seal_sources_reader(self):
-  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['injected_controls'],48);self.assertEqual((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes(),(E/'after.js').read_bytes());self.assertEqual((ROOT/'tools/re/tests/raw_output_accounting_control.js').read_bytes(),(E/'control.js').read_bytes())
+  self.assertEqual(hashlib.sha256((E/'manifest.json').read_bytes()).hexdigest(),SEAL);self.assertEqual(verify(E)['injected_controls'],48)
+  self.assertEqual(hashlib.sha256((E/'after.js').read_bytes()).hexdigest(),'417d121a6181d060f96a944ba6fe1b03b8b22c3ddc161f866f1bf6a420e7ad93')
+  self.assertEqual((ROOT/'tools/re/tests/raw_output_accounting_control.js').read_bytes(),(E/'control.js').read_bytes())
+  # Historical source stays frozen; current client must match every accepted raw event.
+  with tempfile.TemporaryDirectory() as tmp:
+   fresh=Path(tmp)/'e';shutil.copytree(E,fresh)
+   (fresh/'after.js').write_bytes((ROOT/'tools/re/reloop/observed_compiler.js').read_bytes())
+   p=fresh/'prediction.json';prediction=json.loads(p.read_text());prediction['phases']=['after'];p.write_text(json.dumps(prediction))
+   subprocess.run([shutil.which('node'),str(ROOT/'tools/re/tests/raw_output_accounting_control.js'),str(fresh)],capture_output=True,check=True,timeout=8)
+   self.assertEqual(json.loads((fresh/'results.json').read_text()),json.loads((E/'results.json').read_text())[24:])
  def test_resealed_faults(self):
   for fault in ['raw','count','stderr-count','digest','stderr-digest','text-digest','text','phase','abort','later-count','report','chunk','claim','wait']:
    with self.subTest(fault=fault),tempfile.TemporaryDirectory() as tmp:

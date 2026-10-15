@@ -27,7 +27,8 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
   const decoder=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true});
   let failure=null,report=null,control='',controlBytes=0,stdout=Buffer.alloc(0),stderr=Buffer.alloc(0),requested=false,emergencyClosed=false;
   const kill=()=>{if(child.pid&&child.exitCode===null&&child.signalCode===null){try{process.kill(-child.pid,'SIGKILL');}catch(e){if(e.code!=='ESRCH')failure ||= e;}}};
-  const cancel=reason=>{failure ||= reason;if(!requested){requested=true;child.stdin.write('abort\n');}};
+  const normalize=reason=>{try{return reason instanceof Error?reason:Error(String(reason));}catch(_){return Error('Observed non-Error failure');}};
+  const cancel=reason=>{failure ||= normalize(reason);if(!requested){requested=true;child.stdin.write('abort\n');}};
   const abort=()=>cancel(Error('Observed compiler aborted'));signal?.addEventListener('abort',abort,{once:true});
   const timer=setTimeout(()=>{emergencyClosed=true;failure ||= Error('Observed supervisor hard deadline; cleanup unverified');kill();for(const stream of [child.stdin,child.stdout,child.stderr,child.stdio[3]])stream.destroy();},timeout+5000);
   const collect=(kind,b)=>{if(stdout.length+stderr.length+b.length>limit){cancel(Error('Observed compiler output limit'));return;}if(kind==='stdout')stdout=Buffer.concat([stdout,b]);else stderr=Buffer.concat([stderr,b]);};
@@ -48,7 +49,12 @@ function runObserved(command,args,{observer,supervisorPython='python3',signal,ti
   });
   child.on('close',(code,term)=>{try{control+=decoder.decode();}catch(e){failure ||= e;}if(control.length)failure ||= Error('Observed report truncated trailing data');clearTimeout(timer);signal?.removeEventListener('abort',abort);
    const record={pid:child.pid,anchorCode:code,signal:term,report,emergencyClosed,privateAbortRequested:requested,stdout:stdout.toString(),stderr:stderr.toString(),stdoutBytes:stdout.length,stderrBytes:stderr.length,stdoutSha256:crypto.createHash('sha256').update(stdout).digest('hex'),stderrSha256:crypto.createHash('sha256').update(stderr).digest('hex')};
-   if(failure||report?.drained!==true||report.remaining_observed!==0||report.target_code!==0||term!=='SIGKILL'){const e=failure||Error('Observed cleanup unverified');e.record=record;reject(e);}else resolve(record);
+   if(failure||report?.drained!==true||report.remaining_observed!==0||report.target_code!==0||term!=='SIGKILL'){
+    let e=normalize(failure||Error('Observed cleanup unverified'));
+    try{Object.defineProperty(e,'record',{value:record,enumerable:true,configurable:true,writable:true});}
+    catch(_){let message;try{message=e.message;}catch(_){message='Observed failure record unavailable';}e=Error(typeof message==='string'?message:'Observed failure record unavailable');e.record=record;}
+    reject(e);
+   }else resolve(record);
   });
  });
 }

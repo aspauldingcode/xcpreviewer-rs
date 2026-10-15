@@ -1634,6 +1634,29 @@
     "resealed_mutants": 3,
     "scientific_delivery_review": "pending"
   },
+  "primitive_callback_checkpoint": {
+    "checks": {
+      "fresh_raw_stream_controls": 24,
+      "isolated_tests": 6,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/primitive-callback-2026-10-14",
+    "manifest_sha256": "cc30d90cbf294b92d37b9ab76e5d31b4bb899d038eeb2f71ace5a4e0e044d71f",
+    "next_wake_hint": "Synchronous primitive/immutable failure handling now qualified. Promise-returning observer callbacks remain unqualified; choose bounded discriminating experiment or independent native/source gate without repeating completed sync controls.",
+    "result": {
+      "async_callback_qualified": false,
+      "controlled_child_bytes": 16,
+      "immutable_error_wrapped": true,
+      "native_canvas_protocol_qualified": false,
+      "ordinary_error_identity_preserved": true,
+      "owned_native_jobs": 2,
+      "primitive_failure_preserved": true,
+      "source_cases": 24
+    },
+    "retained_failure": "Before source controls retain five unsettled close-handler TypeErrors, five overwritten falsy reasons and opaque non-Error rejection. Frozen/read-only errors now wrapped safely, ordinary Error identity preserved. Native after controls pass; no unsafe before native crash launched.",
+    "started_at": "2026-10-15T01:50:02.761423+00:00",
+    "status": "verified"
+  },
   "quarantined_evidence": [
     {
       "next": "Discriminate compiler subprocess group/termination and cache quiescence using owned control.",
