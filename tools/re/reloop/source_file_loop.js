@@ -44,7 +44,13 @@ class SourceFileLoop {
    try{
     // Recheck the opened object: the pathname can change after lstat().
     assert(fs.fstatSync(fd).isFile(),'Opened source must be regular');
-    source=Buffer.alloc(4097);source=source.subarray(0,fs.readSync(fd,source,0,4097,0));
+    source=Buffer.alloc(4097);let used=0;
+    while(used<source.length){
+     const count=fs.readSync(fd,source,used,source.length-used,used);
+     if(count===0)break;
+     used+=count;
+    }
+    source=source.subarray(0,used);
    }finally{fs.closeSync(fd);}
    key=crypto.createHash('sha256').update(source).digest('hex');
    if(!source.length||source.length>4096||!source.every(b=>b<128))reason='invalid-source';

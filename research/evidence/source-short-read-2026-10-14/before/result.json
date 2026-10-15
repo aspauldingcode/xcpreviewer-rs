@@ -1,0 +1,126 @@
+{
+  "mode": "before",
+  "cases": [
+    {
+      "kind": "valid",
+      "sourceBytes": 202,
+      "sourceSha256": "37c2bf5abe8c1124cd2e57d8fe3de47964e626398faab3029a41d097bebc77a8",
+      "opens": 1,
+      "closes": 1,
+      "reads": [
+        {
+          "offset": 0,
+          "requested": 4097,
+          "position": 0,
+          "count": 7,
+          "hex": "5a537461636b20"
+        }
+      ],
+      "builds": [
+        {
+          "bytes": 7,
+          "sha256": "cb9cd8af912a082d685eaaed997f95b7e9f9b3b58a6cc95fa09b50098b754df6"
+        }
+      ],
+      "events": [
+        {
+          "kind": "observed",
+          "generation": 1,
+          "sourceSha256": "cb9cd8af912a082d685eaaed997f95b7e9f9b3b58a6cc95fa09b50098b754df6"
+        },
+        {
+          "kind": "rejected",
+          "generation": 1,
+          "error": "AssertionError [ERR_ASSERTION]: Owned adapter requires complete source"
+        }
+      ],
+      "published": false,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "oversize",
+      "sourceBytes": 4097,
+      "sourceSha256": "225e68d4d9603bdfca93fe3896ba95ab8a10e6505172d8a386af21c5525b950a",
+      "opens": 1,
+      "closes": 1,
+      "reads": [
+        {
+          "offset": 0,
+          "requested": 4097,
+          "position": 0,
+          "count": 7,
+          "hex": "41414141414141"
+        }
+      ],
+      "builds": [
+        {
+          "bytes": 7,
+          "sha256": "0f0cf9286f065a2f38e3c4e4886578e35af4050c108e507998a05888c98667ea"
+        }
+      ],
+      "events": [
+        {
+          "kind": "observed",
+          "generation": 1,
+          "sourceSha256": "0f0cf9286f065a2f38e3c4e4886578e35af4050c108e507998a05888c98667ea"
+        },
+        {
+          "kind": "rejected",
+          "generation": 1,
+          "error": "AssertionError [ERR_ASSERTION]: Owned adapter requires complete source"
+        }
+      ],
+      "published": false,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    },
+    {
+      "kind": "empty",
+      "sourceBytes": 0,
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "opens": 1,
+      "closes": 1,
+      "reads": [
+        {
+          "offset": 0,
+          "requested": 4097,
+          "position": 0,
+          "count": 0,
+          "hex": ""
+        }
+      ],
+      "builds": [],
+      "events": [
+        {
+          "kind": "invalid-source"
+        }
+      ],
+      "published": false,
+      "status": {
+        "liveWorkers": 0,
+        "busy": false,
+        "closed": true,
+        "revision": 0,
+        "loopClosed": true,
+        "building": false,
+        "timers": 0
+      }
+    }
+  ],
+  "scope": "Real owned file reads capped to7 bytes per call; prebuilt owned WASM adapter, no compiler or native Canvas protocol"
+}

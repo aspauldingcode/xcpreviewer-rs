@@ -3391,6 +3391,30 @@
     "run_id": "20261011T044308Z-primary-live-wasm-swap-027f20a9",
     "scientific_delivery_review": "pending"
   },
+  "source_short_read_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/source-short-read-2026-10-14",
+    "manifest_sha256": "56003fc77eaeadfbd631fb31485239e79fc8409563bd1eee03d4590e236ed900",
+    "next_wake_hint": "Bounded source short reads fixed. Select independent source/state/interaction boundary; preserve no-follow, cap, descriptor closure and retained-frame semantics. Native capture bridge remains separate prerequisite.",
+    "result": {
+      "fresh_compiler_builds": 0,
+      "full_allocation_bytes": 16384,
+      "native_canvas_protocol_qualified": false,
+      "natural_short_reads_observed": false,
+      "padding_bytes": 84,
+      "read_chunk_cap": 7,
+      "real_file_cases": 6,
+      "source_byte_cap": 4097,
+      "source_short_read_fix_qualified": true,
+      "unused_tail_bytes": 15936
+    },
+    "retained_failure": "Before-fix real capped reads deliver only7 bytes to builder for valid/oversized files; original rejected prefixes retained. After-fix loops to EOF/sentinel without new allocation growth. No natural short-read frequency or native Canvas claim.",
+    "started_at": "2026-10-15T01:36:49.645481+00:00",
+    "status": "verified"
+  },
   "source_stage_failure_checkpoint": {
     "classification": "Actual Node source staging failure retention with injected writes/execution; no native/diskfull claim",
     "evidence": "research/evidence/source-stage-failure-2026-10-12",
