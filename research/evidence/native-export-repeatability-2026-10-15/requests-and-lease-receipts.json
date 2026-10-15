@@ -1,0 +1,43 @@
+{
+  "provenance": "Faithful transcript of calling-chat tool arguments and exec_command outputs; not a separately generated native server trace",
+  "requests": [
+    {
+      "tool": "mcp__xcode__RenderPreview",
+      "arguments": {
+        "previewDefinitionIndexInFile": 1,
+        "sourceFilePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+        "tabIdentifier": "windowtab9",
+        "timeout": 30
+      }
+    },
+    {
+      "tool": "mcp__xcode__RenderPreview",
+      "arguments": {
+        "previewDefinitionIndexInFile": 1,
+        "sourceFilePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+        "tabIdentifier": "windowtab10",
+        "timeout": 30
+      }
+    }
+  ],
+  "lease_receipts": [
+    {
+      "exec_session_id": 25814,
+      "exit_code": 0,
+      "stdout": {
+        "lock_released": true,
+        "completion_marker": true
+      }
+    },
+    {
+      "exec_session_id": 59301,
+      "exit_code": 0,
+      "stdout": {
+        "lock_released": true,
+        "completion_marker": true
+      }
+    }
+  ],
+  "lease_source": "session-lock.py",
+  "limits": "Window inventories and snapshots independently reviewed; lock receipt provenance is calling-chat tool transcript, not independently attested lock event capture."
+}

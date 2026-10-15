@@ -1,0 +1,46 @@
+{
+  "scope": "Two native RenderPreview snapshots across closed/reopened owned workspace; A/A repeatability, not independent portable conformance",
+  "images": [
+    {
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T231739Z@2x.png",
+      "png_bytes": 15541,
+      "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ],
+      "decoded_rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+      "decoded_rgba_bytes": 921600,
+      "packed_stride": 2560
+    },
+    {
+      "path": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/default/RenderPreview/RenderPreview_result_2026-10-15T231832Z@2x.png",
+      "png_bytes": 15541,
+      "png_sha256": "59de2fc2065b6620fab3a5deb27bfedfbce04ecf87d0896df3e5922e2a3f26d9",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA",
+      "info_keys": [
+        "srgb",
+        "exif",
+        "dpi"
+      ],
+      "decoded_rgba_sha256": "fcc73d0e275b1a00eaf5169caee7eb28befc99a1d0f194cfd94097f96b5a3fcf",
+      "decoded_rgba_bytes": 921600,
+      "packed_stride": 2560
+    }
+  ],
+  "png_file_equal": true,
+  "decoded_all_bytes_equal": true,
+  "different_channels": 0,
+  "expected_visible_content": "Canvas baseline; Count:0; Increment, directly inspected first native snapshot",
+  "limitations": "No row padding in Pillow packed RGBA view. Native internal framebuffer padding/format not observed. PNG equality/decoded equality measured across native outputs, not against independent layout/text raster oracle. No input delivery or IPC accepted."
+}

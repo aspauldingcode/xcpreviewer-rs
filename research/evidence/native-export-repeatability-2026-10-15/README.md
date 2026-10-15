@@ -1,0 +1,5 @@
+# Native snapshot repeatability
+
+Actual registered Xcode RenderPreview succeeded twice for preview1 of the unchanged owned fixture, across closed/reopened workspaces. Both PNGs15541bytes are byte-identical; all921600decoded packed RGBA bytes agree at640x360. First image directly inspected: Canvas baseline,Count0,Increment on white. Source/project pins retained. Each owned workspace closed before next; final actual native listing has zero owned windows and one preserved unrelated workspace.
+
+This qualifies two scoped native exports, not input delivery, refresh migration/reset semantics, display/export equivalence, portable parity or private transport. Packed Pillow output has no row padding; native framebuffer padding is unobserved. Native A/A comparison is not an independent raster expectation. Old private broker is unhealthy/offline and was not restarted; actual Codex native MCP works separately. REA identity aligned6.2.0,targetopenfalse. Running Xcode PID4382/version26.6; historicalGUI17F112 versus current diskCLI17F113 distinction retained.
