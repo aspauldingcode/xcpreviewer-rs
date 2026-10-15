@@ -1,0 +1,32 @@
+{
+  "decision": "review-existing-evidence",
+  "matches": [
+    {
+      "document": "docs/reverse-engineering/2026-10-09-surface-failure.md",
+      "title": "Failed handoff cleanup and surface recycling state",
+      "anchors": []
+    },
+    {
+      "document": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "title": "Cross-task use-count and global in-use cleanup",
+      "anchors": [
+        {
+          "manifest": "research/evidence/remote-surface-use-2026-10-11/manifest.json",
+          "sha256": "e8eeac29bdc5f78ff87070ab5f8c2ec8b193b8fed4241570f276edca4d1cde9b"
+        }
+      ]
+    },
+    {
+      "document": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "title": "Same-task aliases share explicit use-count state",
+      "anchors": [
+        {
+          "manifest": "research/evidence/surface-alias-use-2026-10-11/manifest.json",
+          "sha256": "be5fc8e52f69d8d754817afce5e655b918977f078faac4fdd675390c4d7abc3f"
+        }
+      ]
+    }
+  ],
+  "delivery_accepted": false,
+  "limitation": "Text discovery only. Read scope and verify the cited seal before choosing or skipping research."
+}

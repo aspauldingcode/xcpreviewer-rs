@@ -3789,6 +3789,32 @@
     "result": "Cleanpeer0/ack;fault fclose-1errno28/callback1/fdclosed/peer42/noack, parentMach268451843 then owned cleanup.20allocations327680bytes incl10800padding/304640tail;28resealedfaults. Physical reclaim/actualCanvas errors unaccepted.",
     "started_at": "2026-10-12T01:52:07.997084+00:00"
   },
+  "surface_use_count_checkpoint": {
+    "budget": {
+      "limit": 2,
+      "used": 2
+    },
+    "evidence": "research/evidence/surface-use-count-2026-10-14",
+    "manifest_sha256": "7be8c766a3947b76cb91e9a0b537dfc00a97f71722e5284799f05846fe400723",
+    "native_deadline_seconds": 5,
+    "next_wake_hint": "Run tools/re/coverage_lookup.py with candidate concepts before any ad hoc acquisition; inspect matching sealed scopes and skip completed research. Use-count aliases are already covered. Native capture and physical reclamation remain open.",
+    "prediction": "Discriminate per-wrapper versus resource-shared local counts under alias increments. Zero in-use may coexist with retained send/CF rights and readable bytes; it cannot establish physical reclamation.",
+    "research_novelty": false,
+    "result": {
+      "allocation_tail_bytes": 92160,
+      "full_allocation_bytes": 98304,
+      "in_use_false_with_readable_alias": true,
+      "local_count_shared_across_aliases": true,
+      "native_canvas_protocol_qualified": false,
+      "owned_native_jobs": 2,
+      "padding_bytes": 3216,
+      "physical_reclamation_qualified": false,
+      "zero_local_count_with_in_use_true": true
+    },
+    "retained_failure": "Initial reader assumed stride64 for width13 but native reports128; retained reader failure, corrected geometry expectation without repeating native jobs. No native execution failure. Prediction refined: all local-zero states with Mach right retained have IsInUse true; after right release and original CF release, alias-only IsInUse false with readable bytes. Initial exact send uref count was queried but not serialized; no numeric initial-count claim.",
+    "selection_failure": "Manual selection missed prior surface-alias-use and use-state controls. Retain acquired repeat without acceptance advancement; added bounded prior-document/manifest lookup to review before new ad hoc probes.",
+    "status": "verified-redundant"
+  },
   "thenable_callback_checkpoint": {
     "checks": {
       "fresh_primitive_controls": 12,
