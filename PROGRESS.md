@@ -1285,3 +1285,8 @@ Implemented typed evidence graph (ten-document pilot, 15 entities/five candidate
 ### 2026-10-14: Existing source provenance inventory
 
 Captured159 declared source/project files with working SHA-256 and tracked index identities. Retained initial155-file scope and corrected four omitted preview/MCP/compiler entrypoints. Every file remains quarantined, origin unestablished, license unassessed and handoff eligibility false. Zero assets in declared roots is not a whole-repository license conclusion. Bounded inventory tooling and independent evidence reader reject false clean-room/acceptance claims; no product edits or native probes. Review coverage and origin evidence next, without repeating the unchanged scan. See docs/reverse-engineering/provenance-inventory.md.
+
+
+### 2026-10-14: Selected reconstruction history audit
+
+Audited six delivery-boundary paths against two committed analysis-document anchors. All twelve ancestry checks are true and separately corroborated by retained ancestry-path lists. This establishes repository ordering only, not derivation, exposure, originality or copying. All six remain quarantined; independent provenance review, license assessment and handoff eligibility remain unresolved. Seven resealed faults reject false clean-room/ancestry claims. No native probes or product edits. See docs/reverse-engineering/provenance-history.md.

@@ -1,0 +1,205 @@
+{
+  "analysis_anchors": [
+    {
+      "additions": [
+        {
+          "commit": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "tree_entry": "100644 blob 62b03c61654c2afe52236ee0a0c991283d256abb\tdocs/reverse-engineering/2026-10-08-initial-findings.md"
+        }
+      ],
+      "path": "docs/reverse-engineering/2026-10-08-initial-findings.md"
+    },
+    {
+      "additions": [
+        {
+          "commit": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "tree_entry": "100644 blob f8c3546ad393158ce9aed33f44aacdb63db2988a\tdocs/reverse-engineering/2026-10-09-unfulfilled-deinit.md"
+        }
+      ],
+      "path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md"
+    }
+  ],
+  "candidates": [
+    {
+      "additions": [
+        {
+          "commit": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "tree_entry": "100644 blob 539ab206c59e737c0c157e6e46fe6847e27120f0\ttools/re/rust/canvas-core/src/contract.rs"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/rust/canvas-core/src/contract.rs"
+    },
+    {
+      "additions": [
+        {
+          "commit": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "tree_entry": "100644 blob 3ab70d38b603ad0fc628be36e6f479212a95c4e1\ttools/re/rust/canvas-core/src/wasm-template.rs"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "08ecbb3db8e94d9558c0488e228ad4da0adf15a7",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/rust/canvas-core/src/wasm-template.rs"
+    },
+    {
+      "additions": [
+        {
+          "commit": "73460c5b8127e93211630bbe1e18b033670f30a1",
+          "tree_entry": "100644 blob eba1580adad311afb46cc95a49c80f17739cfb83\ttools/re/rust/canvas-core/src/lib.rs"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "73460c5b8127e93211630bbe1e18b033670f30a1",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "73460c5b8127e93211630bbe1e18b033670f30a1",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/rust/canvas-core/src/lib.rs"
+    },
+    {
+      "additions": [
+        {
+          "commit": "c1e3c9e47c3d794b72c69265e24d680dea7cb13c",
+          "tree_entry": "100644 blob 2e272cd6d1a26e23fff4334f9adb4edf578b428a\ttools/re/reloop/live_wasm_host.js"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "c1e3c9e47c3d794b72c69265e24d680dea7cb13c",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "c1e3c9e47c3d794b72c69265e24d680dea7cb13c",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/reloop/live_wasm_host.js"
+    },
+    {
+      "additions": [
+        {
+          "commit": "d766ff3b9908aa91407cb804b0cd62f3d1ef22ce",
+          "tree_entry": "100644 blob 2e3d3a9f2572a4a6365bb85bdc2a10f48d56d104\ttools/re/reloop/source_revision_host.js"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "d766ff3b9908aa91407cb804b0cd62f3d1ef22ce",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "d766ff3b9908aa91407cb804b0cd62f3d1ef22ce",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/reloop/source_revision_host.js"
+    },
+    {
+      "additions": [
+        {
+          "commit": "7ca978d506fa0a1d34fba38ea50d509c70bfc17c",
+          "tree_entry": "100644 blob e31c5958ba9bf796e84bcab1d854410354571156\ttools/re/preview_mcp_stdio.js"
+        }
+      ],
+      "clean_handoff_eligible": false,
+      "comparisons": [
+        {
+          "analysis_addition": "22bfe6b32e781e8532196c2ff573d19840081e23",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-08-initial-findings.md",
+          "candidate_addition": "7ca978d506fa0a1d34fba38ea50d509c70bfc17c",
+          "same_commit": false
+        },
+        {
+          "analysis_addition": "33688a773420254080fcf5d22121a073f1edbcaa",
+          "analysis_is_ancestor": true,
+          "analysis_path": "docs/reverse-engineering/2026-10-09-unfulfilled-deinit.md",
+          "candidate_addition": "7ca978d506fa0a1d34fba38ea50d509c70bfc17c",
+          "same_commit": false
+        }
+      ],
+      "disposition": "quarantined-pending-independent-provenance-review",
+      "origin": "not-established",
+      "path": "tools/re/preview_mcp_stdio.js"
+    }
+  ],
+  "conclusion": "Ancestry establishes repository ordering only. It does not establish file derivation, agent exposure, originality, license or independent implementation.",
+  "head": "1da896c787784ee462f5da1b08f60b74c84fc010",
+  "history_method": "Path additions only, no rename-following, no claim of initial conceptual authorship",
+  "independent_review_complete": false,
+  "limits": {
+    "additions_per_path": 32,
+    "anchors": 8,
+    "paths": 32,
+    "subprocess_seconds": 15,
+    "total_seconds": 60
+  },
+  "schema_version": 1,
+  "task_accepted": false
+}

@@ -1699,6 +1699,27 @@
     "started_at": "2026-10-15T01:50:02.761423+00:00",
     "status": "verified"
   },
+  "provenance_history_checkpoint": {
+    "analysis_anchors": 2,
+    "candidate_paths": 6,
+    "checks": {
+      "independent_review_complete": false,
+      "resealed_faults": 7
+    },
+    "created_at": "2026-10-15T03:10:50.630396+00:00",
+    "evidence": "research/evidence/provenance-history-2026-10-14",
+    "manifest_sha256": "468cfc75d6584bd8eb13b89dd71e8b16c18ecec3b9914e981c01980cbfa46003",
+    "next_wake_hint": "Use retained six-path/two-analysis-anchor ancestry to investigate origin evidence. Do not infer copying or independence from Git ordering; inspect unresolved authorship/context/license provenance. No automatic clean handoff.",
+    "result": {
+      "analysis_anchors": 2,
+      "ancestry_checks": 12,
+      "candidate_paths": 6,
+      "handoff_eligible": 0,
+      "independent_review_complete": false,
+      "task_accepted": false
+    },
+    "status": "verified-history-review-pending"
+  },
   "provenance_inventory_checkpoint": {
     "checks": {
       "evidence_tests": 2,
