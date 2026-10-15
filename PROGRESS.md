@@ -1295,3 +1295,8 @@ Audited six delivery-boundary paths against two committed analysis-document anch
 ### 2026-10-14: Exact-span Canvas evidence pilot review catalog
 
 Prepared50 exact-span statement candidates across the ten pinned pilot documents, with source hashes, line/character locations and unchanged evidence scope/grade/version. All semantic review, precision, fusion and acceptance remain explicitly unqualified: independently reviewed0, precisionnull, quality gatefalse. This is internal research, not a clean implementation handoff. Eight negative controls reject false evidence/acceptance promotion. No native probes or product edits. See docs/reverse-engineering/canvas-claim-catalog.md; separate-context semantic review remains required.
+
+
+### 2026-10-14: Canvas report-to-seal crosswalk
+
+Resolved ten pilot documents to eleven distinct sealed experiment manifests, including a hash-only quarantine report. All eleven declared file sets verify; nine report links mention their computed seal and two path-only references remain explicitly unanchored. Charged6,736,126 read bytes under128MiB; no native experiment rerun or product edit. Schema/byte checks do not establish semantic validity or milestone acceptance. Independent review and clean handoff remain pending. See docs/reverse-engineering/canvas-evidence-crosswalk.md.
