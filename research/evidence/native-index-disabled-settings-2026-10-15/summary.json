@@ -1,0 +1,45 @@
+{
+  "scope": "Configuration-only index-store override control; no compiler/build/render",
+  "argv": [
+    "/usr/bin/xcrun",
+    "xcodebuild",
+    "-project",
+    "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "-scheme",
+    "PreviewLab",
+    "-configuration",
+    "Debug",
+    "-sdk",
+    "macosx",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-destination-timeout",
+    "3",
+    "COMPILER_INDEX_STORE_ENABLE=NO",
+    "-showBuildSettings",
+    "-json"
+  ],
+  "outcome": {
+    "execution": "success",
+    "exit_code": 0,
+    "duration_seconds": 2.283
+  },
+  "events": [
+    {
+      "event": "process_started",
+      "pid": 52193,
+      "process_group": 52193
+    },
+    {
+      "event": "owned_descendant_cleanup",
+      "tracked_processes": 2,
+      "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+    }
+  ],
+  "effective": {
+    "PROJECT_FILE_PATH": "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "CONFIGURATION": "Debug",
+    "COMPILER_INDEX_STORE_ENABLE": "NO"
+  },
+  "override_confirmed": true
+}

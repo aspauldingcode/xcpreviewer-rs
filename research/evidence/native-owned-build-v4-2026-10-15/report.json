@@ -1,0 +1,548 @@
+{
+  "scope": "Owned CLI build with previously qualified observed guard; no Canvas or image acceptance",
+  "parent": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-IkwLkZ",
+  "root": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-IkwLkZ/scratch",
+  "identity": [
+    16777234,
+    151247194
+  ],
+  "argv": [
+    "xcodebuild",
+    "-quiet",
+    "-project",
+    "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "-scheme",
+    "PreviewLab",
+    "-configuration",
+    "Debug",
+    "-sdk",
+    "macosx",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-destination-timeout",
+    "3",
+    "-derivedDataPath",
+    "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-IkwLkZ/scratch/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build"
+  ],
+  "success": false,
+  "error": "Error: Observed compiler aborted",
+  "measurementError": "Error: Command failed: /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9 -S -c import json,sys,time;sys.path.insert(0,sys.argv[1]);from scratch_budget import measure;print(json.dumps(measure(sys.argv[2],identity=tuple(map(int,sys.argv[3:5])),deadline=time.monotonic()+1,max_entries=100000,live=sys.argv[5]==\"live\"))) /private/tmp/xcpreviewer-scratch-policy-v4 /var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-IkwLkZ/scratch 16777234 151247194 live\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/xcpreviewer-scratch-policy-v4/scratch_budget.py\", line 55, in measure\n    row = path.lstat()\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1360, in lstat\n    return self._accessor.lstat(self)\nFileNotFoundError: [Errno 2] No such file or directory: '/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-IkwLkZ/scratch/DerivedData/Index.noindex/DataStore/v5/records/0M/NSSpeechSynthesizer.h-HLRDYG6EZN0M-temp-6c58ac0e'\n",
+  "samples": [
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 266,
+      "scratch_logical": 0,
+      "allocated": 4096,
+      "files": 1,
+      "directories": 3,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 1750,
+      "scratch_logical": 0,
+      "allocated": 24576,
+      "files": 6,
+      "directories": 9,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 1750,
+      "scratch_logical": 0,
+      "allocated": 24576,
+      "files": 6,
+      "directories": 9,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 736674,
+      "scratch_logical": 26843545600,
+      "allocated": 913408,
+      "files": 62,
+      "directories": 36,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 939380,
+      "scratch_logical": 26843545600,
+      "allocated": 1138688,
+      "files": 72,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 1707344,
+      "scratch_logical": 26843545600,
+      "allocated": 1966080,
+      "files": 101,
+      "directories": 40,
+      "vanished_count": 1,
+      "vanished_paths": [
+        "DerivedData/ModuleCache.noindex/30Y4M81D3Z58V/ptrcheck-2OQWMRBVRD4OJ-eda363ef.pcm.tmp"
+      ],
+      "provisional": true
+    },
+    {
+      "retained_logical": 9388412,
+      "scratch_logical": 26843545600,
+      "allocated": 9760768,
+      "files": 154,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 12197860,
+      "scratch_logical": 26843545600,
+      "allocated": 12644352,
+      "files": 186,
+      "directories": 40,
+      "vanished_count": 1,
+      "vanished_paths": [
+        "DerivedData/ModuleCache.noindex/2IDQWVRU079Z0/ApplicationServices-3NXEUUZF9JJBD-d82c1fff.pcm.tmp"
+      ],
+      "provisional": true
+    },
+    {
+      "retained_logical": 13573468,
+      "scratch_logical": 26843545600,
+      "allocated": 14053376,
+      "files": 192,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 14437650,
+      "scratch_logical": 26843545600,
+      "allocated": 14958592,
+      "files": 210,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 16390194,
+      "scratch_logical": 26843545600,
+      "allocated": 16941056,
+      "files": 226,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 18410498,
+      "scratch_logical": 26843545600,
+      "allocated": 18980864,
+      "files": 243,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 27931418,
+      "scratch_logical": 26843545600,
+      "allocated": 28512256,
+      "files": 249,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 45525314,
+      "scratch_logical": 26843545600,
+      "allocated": 46108672,
+      "files": 249,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 52921050,
+      "scratch_logical": 26843545600,
+      "allocated": 53522432,
+      "files": 260,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 55810810,
+      "scratch_logical": 26843545600,
+      "allocated": 56426496,
+      "files": 267,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 63449746,
+      "scratch_logical": 26843545600,
+      "allocated": 64077824,
+      "files": 277,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 72780746,
+      "scratch_logical": 26843545600,
+      "allocated": 73420800,
+      "files": 282,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 84384818,
+      "scratch_logical": 26843545600,
+      "allocated": 85041152,
+      "files": 290,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 92809282,
+      "scratch_logical": 26843545600,
+      "allocated": 93474816,
+      "files": 292,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 97318642,
+      "scratch_logical": 26843545600,
+      "allocated": 97984512,
+      "files": 294,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 111316498,
+      "scratch_logical": 26843545600,
+      "allocated": 111992832,
+      "files": 301,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 117367042,
+      "scratch_logical": 26843545600,
+      "allocated": 118079488,
+      "files": 313,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 123761546,
+      "scratch_logical": 26843545600,
+      "allocated": 124481536,
+      "files": 318,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 127881138,
+      "scratch_logical": 26843545600,
+      "allocated": 128614400,
+      "files": 324,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 127881138,
+      "scratch_logical": 26843545600,
+      "allocated": 128614400,
+      "files": 324,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 127881138,
+      "scratch_logical": 26843545600,
+      "allocated": 128614400,
+      "files": 324,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 150296002,
+      "scratch_logical": 26843545600,
+      "allocated": 151035904,
+      "files": 326,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 150296002,
+      "scratch_logical": 26843545600,
+      "allocated": 151035904,
+      "files": 328,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 150671713,
+      "scratch_logical": 26843545600,
+      "allocated": 151482368,
+      "files": 349,
+      "directories": 48,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 152858053,
+      "scratch_logical": 26843545600,
+      "allocated": 153690112,
+      "files": 357,
+      "directories": 51,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 153071121,
+      "scratch_logical": 26843545600,
+      "allocated": 153923584,
+      "files": 364,
+      "directories": 53,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 155399377,
+      "scratch_logical": 26843545600,
+      "allocated": 156258304,
+      "files": 366,
+      "directories": 54,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 158684433,
+      "scratch_logical": 26843545600,
+      "allocated": 161157120,
+      "files": 955,
+      "directories": 481,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 159731973,
+      "scratch_logical": 26843545600,
+      "allocated": 162648064,
+      "files": 1156,
+      "directories": 578,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 164851205,
+      "scratch_logical": 26843545600,
+      "allocated": 169115648,
+      "files": 1731,
+      "directories": 807,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 166758257,
+      "scratch_logical": 26843545600,
+      "allocated": 171270144,
+      "files": 1830,
+      "directories": 885,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 169488585,
+      "scratch_logical": 26843545600,
+      "allocated": 174284800,
+      "files": 1954,
+      "directories": 914,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 170763609,
+      "scratch_logical": 26843545600,
+      "allocated": 175714304,
+      "files": 2030,
+      "directories": 935,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    }
+  ],
+  "final": {
+    "retained_logical": 174887837,
+    "scratch_logical": 26843545600,
+    "allocated": 181006336,
+    "files": 2566,
+    "directories": 1073,
+    "vanished_count": 0,
+    "vanished_paths": []
+  },
+  "record": {
+    "pid": 51186,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": -15,
+      "failure": "abort",
+      "drained": true,
+      "tracked": 139,
+      "observations": 311,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": true,
+    "stdoutBytes": 0,
+    "stderrBytes": 24,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "23b50d81c65e172a3a39d38234b74de6d8015d338faa77094f07a2f4b38439d1"
+  }
+}
