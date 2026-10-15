@@ -1617,6 +1617,16 @@
     "status": "verified-standalone-build",
     "tests_passed": 18
   },
+  "portable_refresh_realm_checkpoint": {
+    "actual_browser_verified": false,
+    "at": "2026-10-15T14:28:40.680801+00:00",
+    "evidence": "research/evidence/portable-refresh-realm-2026-10-15",
+    "next_action": "review browser host integration requirements; native gate still blocked separately",
+    "normal_tests_passed": 18,
+    "private_bridge_available": false,
+    "realm_tests_passed": 1,
+    "status": "verified-browser-like-realm-feasibility"
+  },
   "post_completion_delay_checkpoint": {
     "checks": {
       "isolated_tests": 6,
@@ -3617,6 +3627,12 @@
     "next_wake_hint": "Skip completed whitespace controls. Bridge restoration/browser review prerequisites unchanged. Select native interaction/reset/display-export when eligible, otherwise demanded independent portable acceptance; no more completed MCP cleanup permutations.",
     "result": "4 compiler waits0/no timeout/no diagnostics,8 expressions agree. No runtime fix warranted;7 resealed semantic faults/current lowerer regressions. REA compiler/server identities retained and target closed.",
     "started_at": "2026-10-11T20:08:27.528862+00:00"
+  },
+  "standing_work_authorization": {
+    "clean_room_boundaries_preserved": true,
+    "routine_work": true,
+    "serial_reviewers": true,
+    "source": "human: permission to do anything; never ask routine permissions; BUILD"
   },
   "stopped_child_exit_checkpoint": {
     "classification": "4actualnative stopped/nonstopped kernel exit controls; originalSIGKILLprediction falsified, reapingunqualified",

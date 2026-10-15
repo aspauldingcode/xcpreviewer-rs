@@ -1,0 +1,27 @@
+✔ independent: synchronous build and validator reentrancy cannot consume generations (247.512833ms)
+✔ independent: busy rejection preserves observed source and original failing attempt (9.797167ms)
+✔ independent: async validation gates publication and rejects truthy nonboolean (9.296083ms)
+✔ independent: synchronous close from build; late completion (3.426667ms)
+✔ independent: synchronous close from build; late rejection (0.493167ms)
+✔ independent: synchronous close from validate; late completion (0.796875ms)
+✔ independent: synchronous close from validate; late rejection (3.636ms)
+✔ independent: snapshots isolate bookkeeping; candidate remains documented caller-owned reference (7.521417ms)
+﹣ portable realm: no Node globals/imports; refresh lifecycle and terminal close (19.045292ms) # Requires --experimental-vm-modules
+✔ callbacks required; no implicit validation (13.715666ms)
+✔ poll deduplication, explicit retry, failures and recovery (52.348417ms)
+✔ validation is awaited; false and rejection preserve accepted frame (6.506791ms)
+✔ busy build cannot be disturbed and publishes once (17.042833ms)
+✔ close during build, late resolve cannot publish (4.707292ms)
+✔ close during build, late reject cannot publish (0.407375ms)
+✔ close during validation, late resolve cannot publish (1.667833ms)
+✔ close during validation, late reject cannot publish (0.9035ms)
+✔ close removes accepted frame and sessions remain independent (56.655667ms)
+✔ invalid source consumes no generation (67.921125ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 8768.692
