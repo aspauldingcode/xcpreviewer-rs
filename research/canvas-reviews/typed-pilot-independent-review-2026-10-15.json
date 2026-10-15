@@ -1,0 +1,2864 @@
+{
+  "accepted": 35,
+  "candidate_file_sha256": "968f368a32ded184b6b251b3c742d71d53e82c3005ff523d3294230b2ab563f9",
+  "combined_entity_relation_gate_qualified": false,
+  "eligible_denominator": 50,
+  "entity_gate_qualified": false,
+  "independent_of_new_extraction": true,
+  "ontology_digest_matches": true,
+  "ontology_sha256": "22f7d8842e20e32e3a787fafa0115970ececb86ed16eb47a3bb5c62200d0d31f",
+  "precision": 0.7,
+  "producer_context": "/root/canvas_evidence_review",
+  "rejected": 15,
+  "relation_denominator": 0,
+  "relation_precision": null,
+  "review_rounds": 1,
+  "reviewed": 50,
+  "reviewer_context": "/root/refresh_spec_review",
+  "rows": [
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-001",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Native same-renderer content identity and view-owned State",
+        "char_span": [
+          2,
+          60
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          60
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Native same-renderer content identity and view-owned State",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-001",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+        "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Native same-renderer content identity and view-owned State",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-002",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+        "char_span": [
+          208,
+          327
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          62,
+          460
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "This controlled experiment extends the completed binding/recreation reference with one retained ImageRenderer and an explicit child `.id(token)`. The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation. Mutation occurs after rendering, outside the body. No window, accessibility action, physical input or private Swift ABI is involved.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-002",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#208:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+        "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-003",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+        "char_span": [
+          462,
+          642
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          462,
+          1295
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn. Assigning a new root content value with token0 keeps blue. Setting the newly captured current0 binding true is a positive control. Switching the child id to1 resets red; setting its captured binding true changes it to blue. Switching back to0 resets red rather than resurrecting the old blue state. The retained old current0 binding still accepts false/true getter transitions, but neither changes the replacement red image. Captured body count is1,1,2,2,2,2,3,4,5,5,5. Same-token content assignment does not cause another observed child body evaluation in this fixture. Detached binding getter changes must not be confused with current rendered state.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-003",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#462:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+        "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-004",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Out-of-body binding mutation event",
+        "char_span": [
+          328,
+          378
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          62,
+          460
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "This controlled experiment extends the completed binding/recreation reference with one retained ImageRenderer and an explicit child `.id(token)`. The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation. Mutation occurs after rendering, outside the body. No window, accessibility action, physical input or private Swift ABI is involved.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-004",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#328:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+        "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Mutation occurs after rendering, outside the body.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Generic relative-order binding mutation, not an individually timestamped request, render, completion, cancellation or release.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-005",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Baseline/repeat red frame results",
+        "char_span": [
+          533,
+          558
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          462,
+          1295
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn. Assigning a new root content value with token0 keeps blue. Setting the newly captured current0 binding true is a positive control. Switching the child id to1 resets red; setting its captured binding true changes it to blue. Switching back to0 resets red rather than resurrecting the old blue state. The retained old current0 binding still accepts false/true getter transitions, but neither changes the replacement red image. Captured body count is1,1,2,2,2,2,3,4,5,5,5. Same-token content assignment does not cause another observed child body evaluation in this fixture. Detached binding getter changes must not be confused with current rendered state.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-005",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#533:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+        "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "baseline and repeated red",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit baseline/repeat plural frame group is proposed as one Frame; no singular result is selected.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-006",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Native view-owned State binding and renderer recreation",
+        "char_span": [
+          2,
+          57
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          57
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Native view-owned State binding and renderer recreation",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-006",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+        "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Native view-owned State binding and renderer recreation",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-007",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+        "char_span": [
+          188,
+          335
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          59,
+          423
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "This changes the ownership boundary from the completed external `@ObservedObject` control to a private view-owned `@State Bool`. An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering. No button, accessibility action, private state ABI or UI-event delivery is substituted.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-007",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#188:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+        "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-008",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+        "char_span": [
+          506,
+          646
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          425,
+          986
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two fresh owned native processes support the declared retained-state prediction. The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue. A fresh renderer constructed from the same original content value starts red. The original renderer still returns blue. A fresh default root also starts red. Setting the original held binding false immediately restores the original renderer to red, including after a runloop turn. Captured getter transitions are false\u2192true and true\u2192false.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-008",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#506:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+        "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-009",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Held binding true mutation",
+        "char_span": [
+          549,
+          578
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          425,
+          986
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two fresh owned native processes support the declared retained-state prediction. The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue. A fresh renderer constructed from the same original content value starts red. The original renderer still returns blue. A fresh default root also starts red. Setting the original held binding false immediately restores the original renderer to red, including after a runloop turn. Captured getter transitions are false\u2192true and true\u2192false.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-009",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#549:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+        "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "setting the held binding true",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Binding mutation trigger is outside the enumerated Event definition and has no timestamp.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-010",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Original retained blue frame result",
+        "char_span": [
+          725,
+          766
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          425,
+          986
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two fresh owned native processes support the declared retained-state prediction. The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue. A fresh renderer constructed from the same original content value starts red. The original renderer still returns blue. A fresh default root also starts red. Setting the original held binding false immediately restores the original renderer to red, including after a runloop turn. Captured getter transitions are false\u2192true and true\u2192false.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-010",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#725:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+        "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The original renderer still returns blue.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Context identifies a concrete accepted rendering result with color, geometry or publication identity; Frame does not require every attribute in the mention.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-011",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Native changed content parameter with retained view-owned State",
+        "char_span": [
+          2,
+          65
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          65
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Native changed content parameter with retained view-owned State",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-011",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+        "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Native changed content parameter with retained view-owned State",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-012",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Unlike the completed unchanged-content identity control, this fixture changes a plain content input that selects a color palette while child identity remains0.",
+        "char_span": [
+          169,
+          328
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          67,
+          531
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "One retained public ImageRenderer hosts a child with private `@State Bool` and explicit `.id(token)`. Unlike the completed unchanged-content identity control, this fixture changes a plain content input that selects a color palette while child identity remains0. An owned plain main-actor probe captures the public Binding during body evaluation; mutation occurs outside the body. There is no window, physical input, accessibility action or private Swift state ABI.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-012",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#169:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+        "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Unlike the completed unchanged-content identity control, this fixture changes a plain content input that selects a color palette while child identity remains0.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-013",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The independent predeclared prediction passes in two fresh native processes.",
+        "char_span": [
+          533,
+          609
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          533,
+          1364
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The independent predeclared prediction passes in two fresh native processes. Initial/repeat red become blue through the captured binding, immediately and after a10ms runloop turn. Assigning alternate palette content with fixed identity changes blue to green; unchanged repeat stays green. The original held binding sets false and produces yellow, then true and produces green. Restoring original palette under identity0 produces blue, demonstrating retained State across both actual content parameter changes. Changing identity to1 produces default red; mutating the detached old binding false leaves that replacement red. Body capture counts1,1,2,2,3,3,4,5,6,7,7 distinguish actual reevaluation from cached repeats. Root/child parameter associations, binding getters and one retained renderer/probe identity are checked per phase.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-013",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#533:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+        "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The independent predeclared prediction passes in two fresh native processes.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-014",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Fixed-identity palette assignment",
+        "char_span": [
+          713,
+          768
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          533,
+          1364
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The independent predeclared prediction passes in two fresh native processes. Initial/repeat red become blue through the captured binding, immediately and after a10ms runloop turn. Assigning alternate palette content with fixed identity changes blue to green; unchanged repeat stays green. The original held binding sets false and produces yellow, then true and produces green. Restoring original palette under identity0 produces blue, demonstrating retained State across both actual content parameter changes. Changing identity to1 produces default red; mutating the detached old binding false leaves that replacement red. Body capture counts1,1,2,2,3,3,4,5,6,7,7 distinguish actual reevaluation from cached repeats. Root/child parameter associations, binding getters and one retained renderer/probe identity are checked per phase.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-014",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#713:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+        "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Assigning alternate palette content with fixed identity",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Content assignment is not one of the ontology Event kinds and is not timestamped.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-015",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Yellow frame result after held binding false",
+        "char_span": [
+          863,
+          878
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          533,
+          1364
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The independent predeclared prediction passes in two fresh native processes. Initial/repeat red become blue through the captured binding, immediately and after a10ms runloop turn. Assigning alternate palette content with fixed identity changes blue to green; unchanged repeat stays green. The original held binding sets false and produces yellow, then true and produces green. Restoring original palette under identity0 produces blue, demonstrating retained State across both actual content parameter changes. Changing identity to1 produces default red; mutating the detached old binding false leaves that replacement red. Body capture counts1,1,2,2,3,3,4,5,6,7,7 distinguish actual reevaluation from cached repeats. Root/child parameter associations, binding getters and one retained renderer/probe identity are checked per phase.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-015",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#863:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+        "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "produces yellow",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Context identifies a concrete accepted rendering result with color, geometry or publication identity; Frame does not require every attribute in the mention.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-016",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Native geometry changes with retained view-owned State",
+        "char_span": [
+          2,
+          56
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          56
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Native geometry changes with retained view-owned State",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-016",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+        "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Native geometry changes with retained view-owned State",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-017",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The public frame input switches17\u00d79 to11\u00d75 and back.",
+        "char_span": [
+          352,
+          404
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          58,
+          658
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "This owned fixture changes fixed-identity content geometry after the completed palette control. One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`. A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body. The public frame input switches17\u00d79 to11\u00d75 and back. The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction. There is no proposedSize mutation, window, physical input or private state ABI.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-017",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#352:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+        "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The public frame input switches17\u00d79 to11\u00d75 and back.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-018",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+        "char_span": [
+          405,
+          578
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          58,
+          658
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "This owned fixture changes fixed-identity content geometry after the completed palette control. One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`. A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body. The public frame input switches17\u00d79 to11\u00d75 and back. The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction. There is no proposedSize mutation, window, physical input or private state ABI.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-018",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#405:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+        "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-019",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Fixed-identity compact content assignment",
+        "char_span": [
+          817,
+          861
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          660,
+          1343
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Both fresh native processes support the predeclared geometry/state prediction. Baseline and repeat red become blue immediately and after a10ms runloop turn. Setting compact content with child identity0 changes callback/context size to11\u00d75 while retaining blue State. Repeating stays blue. The original held binding false renders compact red, then true renders compact blue. Restoring original content with identity0 restores17\u00d79 blue. Changing identity to1 resets17\u00d79 red; mutating the old held binding false leaves the replacement red. Body capture counts1,1,2,2,3,3,4,5,6,7,7 and compact/token associations pass. Only within-process retained renderer/probe identities are compared.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-019",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#817:Event",
+        "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+        "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Setting compact content with child identity0",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Content assignment is not one of the ontology Event kinds and is not timestamped.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-020",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Compact frame geometry result",
+        "char_span": [
+          870,
+          898
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          660,
+          1343
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Both fresh native processes support the predeclared geometry/state prediction. Baseline and repeat red become blue immediately and after a10ms runloop turn. Setting compact content with child identity0 changes callback/context size to11\u00d75 while retaining blue State. Repeating stays blue. The original held binding false renders compact red, then true renders compact blue. Restoring original content with identity0 restores17\u00d79 blue. Changing identity to1 resets17\u00d79 red; mutating the old held binding false leaves the replacement red. Body capture counts1,1,2,2,3,3,4,5,6,7,7 and compact/token associations pass. Only within-process retained renderer/probe identities are compared.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-020",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#870:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+        "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "callback/context size to11\u00d75",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Context identifies a concrete accepted rendering result with color, geometry or publication identity; Frame does not require every attribute in the mention.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-021",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Same-task aliases share explicit use-count state",
+        "char_span": [
+          2,
+          50
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          50
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Same-task aliases share explicit use-count state",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-021",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+        "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Same-task aliases share explicit use-count state",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-022",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The pinned header path/hash and line range are in prediction.json; no Apple header or private binary is published.",
+        "char_span": [
+          376,
+          490
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          52,
+          490
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The cross-task probe distinguished local use count from remote contributions. This fresh control resolves the next ambiguity: a local count could belong to a CF wrapper or to shared per-process surface state. The SDK declaration describes per-process usage, but that source declaration is separate from runtime observation. The pinned header path/hash and line range are in prediction.json; no Apple header or private binary is published.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-022",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#376:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+        "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The pinned header path/hash and line range are in prediction.json; no Apple header or private binary is published.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-023",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+        "char_span": [
+          492,
+          622
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          492,
+          1346
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias. All three CF wrapper pointers are distinct in both executions, while each lookup verifies the original surface ID. The helper deallocates its one resource Mach right and verifies its local name disappears before count measurements. With only CF wrappers retained, all three report local/global 0. Increment through the Mach-import alias makes all three local counts 1/global true. Increment through the global-lookup alias makes all three local counts 2/global true. Decrement through the original wrapper makes all three local counts 1/global true. Thus this balanced decrement crosses wrapper identity; the measured usage state belongs to shared per-process surface state, rather than an isolated counter on each wrapper.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-023",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#492:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+        "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-024",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Owned IOSurface backing resource",
+        "char_span": [
+          526,
+          549
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          492,
+          1346
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias. All three CF wrapper pointers are distinct in both executions, while each lookup verifies the original surface ID. The helper deallocates its one resource Mach right and verifies its local name disappears before count measurements. With only CF wrappers retained, all three report local/global 0. Increment through the Mach-import alias makes all three local counts 1/global true. Increment through the global-lookup alias makes all three local counts 2/global true. Decrement through the original wrapper makes all three local counts 1/global true. Thus this balanced decrement crosses wrapper identity; the measured usage state belongs to shared per-process surface state, rather than an isolated counter on each wrapper.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-024",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Surface, transport attachment or right identity",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Resource",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#526:Resource",
+        "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+        "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "an owned 17x9 IOSurface",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Each of two helpers creates a different surface. The canonical singular backing resource merges two resource identities without selecting a run.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-025",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Mach-import alias use-count increment",
+        "char_span": [
+          920,
+          959
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          492,
+          1346
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias. All three CF wrapper pointers are distinct in both executions, while each lookup verifies the original surface ID. The helper deallocates its one resource Mach right and verifies its local name disappears before count measurements. With only CF wrappers retained, all three report local/global 0. Increment through the Mach-import alias makes all three local counts 1/global true. Increment through the global-lookup alias makes all three local counts 2/global true. Decrement through the original wrapper makes all three local counts 1/global true. Thus this balanced decrement crosses wrapper identity; the measured usage state belongs to shared per-process surface state, rather than an isolated counter on each wrapper.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-025",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#920:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+        "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Increment through the Mach-import alias",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Use-count increment is outside the listed Event kinds and lacks a timestamp; relative ordering does not supply one.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-026",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Cross-task use-count and global in-use cleanup",
+        "char_span": [
+          2,
+          48
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          48
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Cross-task use-count and global in-use cleanup",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-026",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+        "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Cross-task use-count and global in-use cleanup",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-027",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+        "char_span": [
+          252,
+          369
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          50,
+          565
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The previous native use-state controls were local to one process. This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared. The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count. Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child. All values are observations on this host, not global reference-count or Canvas completion claims.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-027",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#252:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+        "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-028",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child.",
+        "char_span": [
+          370,
+          467
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          50,
+          565
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The previous native use-state controls were local to one process. This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared. The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count. Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child. All values are observations on this host, not global reference-count or Canvas completion claims.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-028",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#370:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+        "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-029",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Two named Mach resource attachments; group mention, no individual IDs",
+        "char_span": [
+          190,
+          233
+        ],
+        "confidence": "medium",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          50,
+          565
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The previous native use-state controls were local to one process. This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared. The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count. Two modes contrast explicit peer decrement and normal exit with SIGKILL of only that owned child. All values are observations on this host, not global reference-count or Canvas completion claims.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-029",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Surface, transport attachment or right identity",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Resource",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#190:Resource",
+        "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+        "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "both explicit IOSurface Mach resource names",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Both Mach resource names explicitly denotes two distinct attachments; one Resource identity cannot represent this group.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-030",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Peer explicit use-count decrement",
+        "char_span": [
+          746,
+          772
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          567,
+          1318
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "In both modes the parent's IOSurfaceGetUseCount is 0 while IOSurfaceIsInUse is true and the peer reports local count 1/global true. Parent increment changes its local count to 1. The peer's clean decrement leaves its local count 0/global true, because the parent still contributes. The parent waits for actual exit 0 in clean mode or signal 9 in abrupt mode, then still observes local count 1/global true. Its own final decrement produces local count 0/global false. Therefore local use count is not a count of remote users, and peer cleanup does not erase the parent's contribution. The abrupt contrast observes no remaining global in-use contribution once the parent decrements; it does not identify the exact kernel teardown instruction or latency.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-030",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#746:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+        "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The peer's clean decrement",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Use-count decrement is not necessarily a resource release and is not an individually timestamped event.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-031",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Explicit owned refresh and failed-build retry",
+        "char_span": [
+          2,
+          47
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          47
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Explicit owned refresh and failed-build retry",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-031",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+        "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Explicit owned refresh and failed-build retry",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-032",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Ordinary poll observes content changes and skips unchanged input.",
+        "char_span": [
+          167,
+          232
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          49,
+          678
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools. The local\nPreviewSession API gains refresh(). Ordinary poll observes content changes and\nskips unchanged input. Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation. A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame. Closed refresh fails. Repeated\nmissing/empty refreshes deduplicate the existing observation and never invoke the\nbuilder. Refresh does not alter the source file or extend existing deadlines.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-032",
+        "line_span": [
+          4,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#167:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+        "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Ordinary poll observes content changes and\nskips unchanged input.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-033",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Explicit refresh reads the current regular bounded ASCII source and starts a fresh generation even when its digest matches the last observation.",
+        "char_span": [
+          233,
+          377
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          49,
+          678
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools. The local\nPreviewSession API gains refresh(). Ordinary poll observes content changes and\nskips unchanged input. Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation. A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame. Closed refresh fails. Repeated\nmissing/empty refreshes deduplicate the existing observation and never invoke the\nbuilder. Refresh does not alter the source file or extend existing deadlines.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-033",
+        "line_span": [
+          5,
+          7
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#233:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+        "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-034",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Explicit same-source refresh request",
+        "char_span": [
+          1289,
+          1320
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1073,
+          1844
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The official SDK 2.3.1 used its actual stdio transport against one owned server,\nthrough the established wait-recording supervisor. An unchanged poll returned\nidentical revision 1/generation 1 status and full frame. An explicit same-source\nrefresh compiled again and published revision 2/generation 2. An unsupported\nASCII source rejected at generation 3 and retained revision 2. Refreshing the\nunchanged rejected source retried the compiler and rejected at generation 4,\nagain retaining the accepted frame. Restoring supported source and refreshing\npublished revision 3/generation 5, with historical failure still retained and\ncurrent readiness ready. Close cleared availability; a closed refresh returned\na generic isError tool result without exposing compiler details.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-034",
+        "line_span": [
+          20,
+          21
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#1289:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+        "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "An explicit same-source\nrefresh",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Refresh request is a plausible event trigger, but the report mention has no timestamp and cannot satisfy the existing timestamped Event definition.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-035",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Accepted frame publication revision1/generation1",
+        "char_span": [
+          1242,
+          1287
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1073,
+          1844
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "The official SDK 2.3.1 used its actual stdio transport against one owned server,\nthrough the established wait-recording supervisor. An unchanged poll returned\nidentical revision 1/generation 1 status and full frame. An explicit same-source\nrefresh compiled again and published revision 2/generation 2. An unsupported\nASCII source rejected at generation 3 and retained revision 2. Refreshing the\nunchanged rejected source retried the compiler and rejected at generation 4,\nagain retaining the accepted frame. Restoring supported source and refreshing\npublished revision 3/generation 5, with historical failure still retained and\ncurrent readiness ready. Close cleared availability; a closed refresh returned\na generic isError tool result without exposing compiler details.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-035",
+        "line_span": [
+          20,
+          20
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#1242:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+        "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "revision 1/generation 1 status and full frame",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Context identifies a concrete accepted rendering result with color, geometry or publication identity; Frame does not require every attribute in the mention.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-036",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Cached publication after worker quarantine",
+        "char_span": [
+          2,
+          44
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          44
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Cached publication after worker quarantine",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-036",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+        "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Cached publication after worker quarantine",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-037",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+        "char_span": [
+          46,
+          146
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          46,
+          468
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero. An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity. Refresh creates a healthy stateless instance and advances publication revision/generation. Close still clears the frame and makes consumer sampling terminal.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-037",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#46:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+        "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-038",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+        "char_span": [
+          147,
+          310
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          46,
+          468
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero. An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity. Refresh creates a healthy stateless instance and advances publication revision/generation. Close still clears the frame and makes consumer sampling terminal.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-038",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#147:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+        "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-039",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Direct frame read timeout",
+        "char_span": [
+          1810,
+          1842
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1501,
+          2189
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "One corrected baseline and one fixed producer execution exit0 under eight-second outer deadlines, completing the four-run budget including retained failures. The first module returns its pixels pointer three times then hangs on the fourth call: proposal validation and initial consumer sampling succeed, then a direct frame request times out and quarantines its worker. In baseline readiness remains ready and the consumer requests the dead worker again, fails and retains its prior accepted bytes. Fixed readiness becomes stale and the existing consumer adopts the stable unavailable status using its identical cached descriptor and bytes. No new pixel read is represented as successful.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-039",
+        "line_span": [
+          13,
+          13
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#1810:Event",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+        "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "a direct frame request times out",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Timeout trigger is plausible cancellation/completion behavior, but this report mention lacks a timestamp or an explicit timestamp binding.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-040",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Consumer prior accepted allocation result",
+        "char_span": [
+          1974,
+          1998
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1501,
+          2189
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "One corrected baseline and one fixed producer execution exit0 under eight-second outer deadlines, completing the four-run budget including retained failures. The first module returns its pixels pointer three times then hangs on the fourth call: proposal validation and initial consumer sampling succeed, then a direct frame request times out and quarantines its worker. In baseline readiness remains ready and the consumer requests the dead worker again, fails and retains its prior accepted bytes. Fixed readiness becomes stale and the existing consumer adopts the stable unavailable status using its identical cached descriptor and bytes. No new pixel read is represented as successful.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-040",
+        "line_span": [
+          13,
+          13
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Generation, geometry, color and allocation result",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Frame",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#1974:Frame",
+        "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+        "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "its prior accepted bytes",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Context identifies a concrete accepted rendering result with color, geometry or publication identity; Frame does not require every attribute in the mention.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-041",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Later invalid descriptor and earlier IOSurface ownership \u2014 2026-10-14",
+        "char_span": [
+          2,
+          71
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          71
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": " Later invalid descriptor and earlier IOSurface ownership \u2014 2026-10-14",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-041",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+        "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Later invalid descriptor and earlier IOSurface ownership \u2014 2026-10-14",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-042",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+        "char_span": [
+          201,
+          255
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          73,
+          391
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND. Both sends report MACH_SEND_INVALID_RIGHT (268435466). The destination queue stays empty. The receive-only name retains its receive right before and after destruction of the failed envelope.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-042",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#201:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+        "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-043",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+        "char_span": [
+          547,
+          709
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          393,
+          1050
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "With the first descriptor COPY_SEND, its original/returned name is unchanged and one send reference remains before and after failed-envelope destruction. With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward. No usable original send reference is restored. The destination retains one send reference; header remote type remains COPY_SEND (19), and descriptor dispositions remain the request types. This differs from both invalid-destination and full-queue timeout outcomes. Internal kernel copy-in/rollback ordering was not traced and is not claimed.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-043",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#547:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+        "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-044",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Receive-only Mach resource name",
+        "char_span": [
+          145,
+          164
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          73,
+          391
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND. Both sends report MACH_SEND_INVALID_RIGHT (268435466). The destination queue stays empty. The receive-only name retains its receive right before and after destruction of the failed envelope.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-044",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Surface, transport attachment or right identity",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Resource",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#145:Resource",
+        "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+        "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "a receive-only name",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "The two-control context does not select one receive-only name/right identity; a role label alone cannot resolve a singular Resource.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-045",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Failed-envelope destruction",
+        "char_span": [
+          356,
+          390
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          73,
+          391
+        ],
+        "evidence_grade": "owned-oracle",
+        "evidence_quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND. Both sends report MACH_SEND_INVALID_RIGHT (268435466). The destination queue stays empty. The receive-only name retains its receive right before and after destruction of the failed envelope.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-045",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#356:Event",
+        "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+        "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "destruction of the failed envelope",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Destruction is a plausible release trigger, but refers to envelopes across controls without an individual timestamp or selected occurrence.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-046",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Report: Synchronous observation callback contract",
+        "char_span": [
+          2,
+          43
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          1,
+          43
+        ],
+        "evidence_grade": "process-record",
+        "evidence_quote": " Synchronous observation callback contract",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-046",
+        "line_span": [
+          1,
+          1
+        ],
+        "notes": "This entity is the scoped research report itself, never the native target or an acquisition session.",
+        "ontology_definition": "Scoped source document or sealed experiment",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Evidence",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#2:Evidence",
+        "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+        "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Synchronous observation callback contract",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Title identifies this scoped source report, satisfying Evidence; no native target identity is inferred.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-047",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+        "char_span": [
+          45,
+          152
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          45,
+          625
+        ],
+        "evidence_grade": "process-record",
+        "evidence_quote": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path. Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted. The rejected promise is consumed to prevent unhandled rejection. Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-047",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#45:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+        "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-048",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "The rejected promise is consumed to prevent unhandled rejection.",
+        "char_span": [
+          428,
+          492
+        ],
+        "confidence": "high",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          45,
+          625
+        ],
+        "evidence_grade": "process-record",
+        "evidence_quote": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path. Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted. The rejected promise is consumed to prevent unhandled rejection. Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-048",
+        "line_span": [
+          3,
+          3
+        ],
+        "notes": "Explicit report proposition; correctness of extraction and correctness of proposition are distinct judgments.",
+        "ontology_definition": "Observed, inferred or unknown proposition",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Claim",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#428:Claim",
+        "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+        "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "The rejected promise is consumed to prevent unhandled rejection.",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Explicit report proposition correctly typed as Claim; acceptance establishes extraction fidelity, not truth or independent runtime verification.",
+      "repair_applied": false,
+      "verdict": "accept"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-049",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Owned private-abort requests; paired control event mention",
+        "char_span": [
+          744,
+          770
+        ],
+        "confidence": "medium",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          627,
+          1063
+        ],
+        "evidence_grade": "process-record",
+        "evidence_quote": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child. Both request private abort, retain root completion 43 and actual child wait 42, report drained with zero remaining observed processes, and preserve all 16 controlled payload bytes against independent expectations. No emergency cleanup was required. Source and native acquisition budgets each remain two of two consumed.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-049",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Timestamped request, render, completion, cancellation or release",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Event",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#744:Event",
+        "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+        "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "Both request private abort",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "Both explicitly groups two abort requests and supplies neither individual timestamp nor occurrence identity.",
+      "repair_applied": false,
+      "verdict": "reject"
+    },
+    {
+      "checks": {
+        "context_contains_mention": true,
+        "context_span_matches": true,
+        "line_span_matches": true,
+        "mention_span_matches": true,
+        "ontology_definition_matches": true,
+        "scope_bounded": true,
+        "source_sha256_matches": true
+      },
+      "eligible": true,
+      "id": "typed-pilot-050",
+      "original_prediction": {
+        "accepted_graph_entity": false,
+        "canonical_form_proposal": "Owned root and ready detached child process lifetimes; group mention",
+        "char_span": [
+          707,
+          742
+        ],
+        "confidence": "medium",
+        "domain": null,
+        "domain_range_reason": "Entity prediction, not a relation; no relation endpoints asserted.",
+        "evidence_char_span": [
+          627,
+          1063
+        ],
+        "evidence_grade": "process-record",
+        "evidence_quote": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child. Both request private abort, retain root completion 43 and actual child wait 42, report drained with zero remaining observed processes, and preserve all 16 controlled payload bytes against independent expectations. No emergency cleanup was required. Source and native acquisition budgets each remain two of two consumed.",
+        "extracted_at": "2026-10-15T14:38:06.652202+00:00",
+        "id": "typed-pilot-050",
+        "line_span": [
+          5,
+          5
+        ],
+        "notes": "Runtime/event/resource mention bounded to this report and fixture; no cross-document or cross-build fusion.",
+        "ontology_definition": "Owned workspace and process lifetime",
+        "prediction_kind": "entity",
+        "producer_context": "/root/canvas_evidence_review; research-exposed evidence reviewer now acting as extraction producer; cannot independently grade this extraction",
+        "proposed_type": "Session",
+        "range": null,
+        "review_status": "pending separate verifier",
+        "scope": "Scoped historical owned fixture/report only; not native Canvas protocol acceptance",
+        "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#707:Session",
+        "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+        "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+        "span_convention": "Unicode character offsets, zero-based half-open",
+        "surface_form": "a root and its ready detached child",
+        "target_identity": {
+          "identified_native_target": false,
+          "note": "No Target entity or Xcode build ID is inferred from this mention. Refer to separate sealed evidence if target binding is later proposed."
+        }
+      },
+      "reason": "A root and detached child are two process roles, not one owned workspace/process lifetime; workspace/session identity is absent.",
+      "repair_applied": false,
+      "verdict": "reject"
+    }
+  ],
+  "scope": "Report-level extraction review only; no raw evidence/native/UI/compile acquisition or truth certification. Balanced convenience sample, not representative runtime NER. No fusion, graph attestations, issue closure, milestone promotion or product edit.",
+  "scoring_policy": "All 50 original typed predictions are eligible and remain in denominator, including incorrect types and grouped mentions. No repaired predictions are scored. Timestamped Event definition is applied literally: narrative relative ordering without an explicit timestamp binding is insufficient.",
+  "sources": [
+    {
+      "path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851"
+    },
+    {
+      "path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608"
+    }
+  ]
+}

@@ -4002,6 +4002,20 @@
     "started_at": "2026-10-14T21:08:44.288996+00:00",
     "status": "review-pending"
   },
+  "typed_pilot_review_checkpoint": {
+    "accepted": 35,
+    "at": "2026-10-15T14:41:05.035682+00:00",
+    "evidence": "research/evidence/typed-pilot-review-2026-10-15",
+    "gate_qualified": false,
+    "native_bridge_available": false,
+    "next_action": "revise extraction rules for grouped identities and Event definition; run new separately scored sample before fusion",
+    "precision": 0.7,
+    "predictions": 50,
+    "rejected": 15,
+    "relation_pass": "blocked until valid entity endpoints",
+    "standing_serial_authorization": true,
+    "status": "independent-review-failed-quality-gate"
+  },
   "typed_retirement_checkpoint": {
     "classification": "Native retirement prediction falsified; explicit diagnostic adapter delivered without compiler integration",
     "evidence": "research/evidence/typed-retirement-2026-10-11",
