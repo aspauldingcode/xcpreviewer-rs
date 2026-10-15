@@ -3520,6 +3520,30 @@
     "started_at": "2026-10-15T01:16:36.114109+00:00",
     "status": "verified"
   },
+  "surface_partial_right_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "prior_bytes_compared": 98304,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/surface-partial-cleanup-2026-10-14",
+    "manifest_sha256": "d8c5acef6c6154e836c639869591d0e18d226576cc7bcbf9b9cf6ce6488f1d76",
+    "next_wake_hint": "Partial invalid-right error differs from invalid destination and timeout. Select independent remaining lifecycle/native interaction evidence; do not repeat scoped send ownership cases unchanged or infer ownership from returned numeric names.",
+    "result": {
+      "full_bytes_compared": 98304,
+      "kernel_internal_copyin_order_traced": false,
+      "moved_first_right_restored": false,
+      "native_canvas_protocol_qualified": false,
+      "owned_task_controls": 2,
+      "padding_bytes": 3240,
+      "partial_descriptor_failure_qualified": true,
+      "physical_reclamation_qualified": false,
+      "unused_tail_bytes": 91392
+    },
+    "retained_failure": "Initial two controls lacked final zero-send-ref query; retain them as scoped transition evidence. Two changed follow-ups explicitly verify zero send refs, no reset. Four owned tasks total. Earlier MOVE_SEND right is not restored after later invalid descriptor; kernel internal ordering untraced.",
+    "started_at": "2026-10-15T01:28:12.506432+00:00",
+    "status": "verified"
+  },
   "surface_queued_drop_checkpoint": {
     "classification": "finite native queued-before-import failure supported; delivery review pending",
     "evidence": "research/evidence/surface-queued-drop-2026-10-11",
