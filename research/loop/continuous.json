@@ -3498,6 +3498,28 @@
     "result": "Two released helpers observe oldID null then immediate replacement ID recurrence and stale lookup seed50/fulltail. Held right preserves old49/fulltail through64 creations.73 snapshots/1196032 full bytes incl39420padding/1111936tail match; fourteen resealed faults; explicit local right cleanup and100ms null follow-up. Physical reclamation unaccepted.",
     "started_at": "2026-10-12T00:41:39.423811+00:00"
   },
+  "surface_invalid_destroy_checkpoint": {
+    "checks": {
+      "isolated_tests": 6,
+      "resealed_faults": 12
+    },
+    "evidence": "research/evidence/surface-invalid-destroy-2026-10-14",
+    "manifest_sha256": "a18ecb92916246ca58361d2df158cf9bd12fcb24d6621da910765e4d5fb9ef11",
+    "next_wake_hint": "Invalid-destination original ownership differs from normalized timeout restoration. Select unmeasured owned send error or independent native interaction; do not generalize two Mach error cases to every send result.",
+    "result": {
+      "full_bytes_compared": 98304,
+      "invalid_destination_ownership_qualified": true,
+      "kernel_internal_copyin_order_traced": false,
+      "native_canvas_protocol_qualified": false,
+      "owned_task_controls": 2,
+      "padding_bytes": 3240,
+      "physical_reclamation_qualified": false,
+      "unused_tail_bytes": 91392
+    },
+    "retained_failure": "Prior send failure/restoration/destruction/retry evidence remains sealed. This two-slot invalid-destination campaign passes, no retries or reset. Internal kernel copy-in order remains untraced.",
+    "started_at": "2026-10-15T01:16:36.114109+00:00",
+    "status": "verified"
+  },
   "surface_queued_drop_checkpoint": {
     "classification": "finite native queued-before-import failure supported; delivery review pending",
     "evidence": "research/evidence/surface-queued-drop-2026-10-11",
