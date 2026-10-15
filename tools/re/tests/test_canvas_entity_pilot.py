@@ -88,3 +88,35 @@ class DocumentaryRelationTests(unittest.TestCase):
                 ontology=json.loads(json.dumps(original));ontology['relations']['ASSERTS'].update(bad)
                 (root/'research/loop/canvas-ontology.json').write_text(json.dumps(ontology))
                 with self.assertRaises(ValueError):documentary_relations(root,self.raw,self.review_raw)
+
+
+class BoundedClaimLimitTests(unittest.TestCase):
+    def test_invalid_limits_fail_at_both_entrypoints(self):
+        root=Path(__file__).resolve().parents[3]
+        raw=b'# Tiny report\n\nThe frame remains blue throughout the retained comparison.\n'
+        for invalid in [True,False,0,-1,9,1000000,1.5,'5',None]:
+            with self.subTest(invalid=invalid):
+                with self.assertRaises(ValueError):produce(root,invalid)
+                with self.assertRaises(ValueError):extract_document(Path('tiny.md'),raw,digest(raw),invalid)
+
+    def test_default_is_exact_original_v2_and_extended_sample_deterministic(self):
+        import json
+        root=Path(__file__).resolve().parents[3]
+        original=json.loads((root/'research/canvas-reviews/typed-pilot-v2-2026-10-15.json').read_bytes())
+        self.assertEqual(produce(root),original)
+        self.assertEqual(produce(root,4),original)
+        extended=produce(root,5,generation='v3')
+        self.assertEqual(extended,produce(root,5,generation='v3'))
+        self.assertEqual(len(extended['candidates']),60)
+        self.assertTrue(all(row['id'].startswith('typed-pilot-v3-') for row in extended['candidates']))
+        for path in {r['source_path'] for r in original['candidates']}:
+            old=[r['surface_form'] for r in original['candidates'] if r['source_path']==path]
+            new=[r['surface_form'] for r in extended['candidates'] if r['source_path']==path]
+            self.assertEqual(new[:len(old)],old)
+        with self.assertRaises(ValueError):produce(root,5,generation='v999')
+
+    def test_short_document_not_padded_at_maximum(self):
+        raw=b'# Short report\n\nThe frame remains blue throughout the retained comparison.\n'
+        rows=extract_document(Path('short.md'),raw,digest(raw),8)
+        self.assertEqual(len(rows),2)
+        self.assertEqual([r['proposed_type'] for r in rows],['Evidence','Claim'])

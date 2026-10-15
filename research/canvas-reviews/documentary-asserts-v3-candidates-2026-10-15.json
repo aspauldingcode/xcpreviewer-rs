@@ -1,0 +1,1272 @@
+{
+  "accepted_graph_edges": [],
+  "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+  "candidates": [
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        208,
+        327
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-001",
+      "id": "documentary-asserts-001",
+      "prediction_kind": "relation",
+      "quote": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        60
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "to": "typed-pilot-v3-002"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        328,
+        378
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-001",
+      "id": "documentary-asserts-002",
+      "prediction_kind": "relation",
+      "quote": "Mutation occurs after rendering, outside the body.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        60
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "to": "typed-pilot-v3-003"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        379,
+        460
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-001",
+      "id": "documentary-asserts-003",
+      "prediction_kind": "relation",
+      "quote": "No window, accessibility action, physical input or private Swift ABI is involved.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        60
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "to": "typed-pilot-v3-004"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        462,
+        642
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-001",
+      "id": "documentary-asserts-004",
+      "prediction_kind": "relation",
+      "quote": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        60
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "to": "typed-pilot-v3-005"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        643,
+        701
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-001",
+      "id": "documentary-asserts-005",
+      "prediction_kind": "relation",
+      "quote": "Assigning a new root content value with token0 keeps blue.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        60
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "to": "typed-pilot-v3-006"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        188,
+        335
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-007",
+      "id": "documentary-asserts-006",
+      "prediction_kind": "relation",
+      "quote": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        57
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "to": "typed-pilot-v3-008"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        336,
+        423
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-007",
+      "id": "documentary-asserts-007",
+      "prediction_kind": "relation",
+      "quote": "No button, accessibility action, private state ABI or UI-event delivery is substituted.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        57
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "to": "typed-pilot-v3-009"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        506,
+        646
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-007",
+      "id": "documentary-asserts-008",
+      "prediction_kind": "relation",
+      "quote": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        57
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "to": "typed-pilot-v3-010"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        647,
+        724
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-007",
+      "id": "documentary-asserts-009",
+      "prediction_kind": "relation",
+      "quote": "A fresh renderer constructed from the same original content value starts red.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        57
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "to": "typed-pilot-v3-011"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        725,
+        766
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-007",
+      "id": "documentary-asserts-010",
+      "prediction_kind": "relation",
+      "quote": "The original renderer still returns blue.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        57
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "to": "typed-pilot-v3-012"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        67,
+        168
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-013",
+      "id": "documentary-asserts-011",
+      "prediction_kind": "relation",
+      "quote": "One retained public ImageRenderer hosts a child with private `@State Bool` and explicit `.id(token)`.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        65
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "to": "typed-pilot-v3-014"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        329,
+        446
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-013",
+      "id": "documentary-asserts-012",
+      "prediction_kind": "relation",
+      "quote": "An owned plain main-actor probe captures the public Binding during body evaluation; mutation occurs outside the body.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        65
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "to": "typed-pilot-v3-015"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        447,
+        531
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-013",
+      "id": "documentary-asserts-013",
+      "prediction_kind": "relation",
+      "quote": "There is no window, physical input, accessibility action or private Swift state ABI.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        65
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "to": "typed-pilot-v3-016"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        533,
+        609
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-013",
+      "id": "documentary-asserts-014",
+      "prediction_kind": "relation",
+      "quote": "The independent predeclared prediction passes in two fresh native processes.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        65
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "to": "typed-pilot-v3-017"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        610,
+        712
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-013",
+      "id": "documentary-asserts-015",
+      "prediction_kind": "relation",
+      "quote": "Initial/repeat red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        65
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "to": "typed-pilot-v3-018"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        58,
+        153
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-019",
+      "id": "documentary-asserts-016",
+      "prediction_kind": "relation",
+      "quote": "This owned fixture changes fixed-identity content geometry after the completed palette control.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        56
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "to": "typed-pilot-v3-020"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        154,
+        240
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-019",
+      "id": "documentary-asserts-017",
+      "prediction_kind": "relation",
+      "quote": "One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        56
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "to": "typed-pilot-v3-021"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        241,
+        351
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-019",
+      "id": "documentary-asserts-018",
+      "prediction_kind": "relation",
+      "quote": "A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        56
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "to": "typed-pilot-v3-022"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        405,
+        578
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-019",
+      "id": "documentary-asserts-019",
+      "prediction_kind": "relation",
+      "quote": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        56
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "to": "typed-pilot-v3-023"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        579,
+        658
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-019",
+      "id": "documentary-asserts-020",
+      "prediction_kind": "relation",
+      "quote": "There is no proposedSize mutation, window, physical input or private state ABI.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        56
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "to": "typed-pilot-v3-024"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        492,
+        622
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-025",
+      "id": "documentary-asserts-021",
+      "prediction_kind": "relation",
+      "quote": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        50
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "to": "typed-pilot-v3-026"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        623,
+        737
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-025",
+      "id": "documentary-asserts-022",
+      "prediction_kind": "relation",
+      "quote": "All three CF wrapper pointers are distinct in both executions, while each lookup verifies the original surface ID.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        50
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "to": "typed-pilot-v3-027"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        855,
+        919
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-025",
+      "id": "documentary-asserts-023",
+      "prediction_kind": "relation",
+      "quote": "With only CF wrappers retained, all three report local/global 0.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        50
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "to": "typed-pilot-v3-028"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        1609,
+        1685
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-025",
+      "id": "documentary-asserts-024",
+      "prediction_kind": "relation",
+      "quote": "All CF owners are then released; a separate 100 ms lookup follow-up is null.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        50
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "to": "typed-pilot-v3-029"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        1686,
+        1766
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-025",
+      "id": "documentary-asserts-025",
+      "prediction_kind": "relation",
+      "quote": "No claim is made about an unbalanced usage counter being repaired by CF release.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        50
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "to": "typed-pilot-v3-030"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        116,
+        251
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-031",
+      "id": "documentary-asserts-026",
+      "prediction_kind": "relation",
+      "quote": "This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        48
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "to": "typed-pilot-v3-032"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        252,
+        369
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-031",
+      "id": "documentary-asserts-027",
+      "prediction_kind": "relation",
+      "quote": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        48
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "to": "typed-pilot-v3-033"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        468,
+        565
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-031",
+      "id": "documentary-asserts-028",
+      "prediction_kind": "relation",
+      "quote": "All values are observations on this host, not global reference-count or Canvas completion claims.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        48
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "to": "typed-pilot-v3-034"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        567,
+        698
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-031",
+      "id": "documentary-asserts-029",
+      "prediction_kind": "relation",
+      "quote": "In both modes the parent's IOSurfaceGetUseCount is 0 while IOSurfaceIsInUse is true and the peer reports local count 1/global true.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        48
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "to": "typed-pilot-v3-035"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        699,
+        745
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-031",
+      "id": "documentary-asserts-030",
+      "prediction_kind": "relation",
+      "quote": "Parent increment changes its local count to 1.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        48
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "to": "typed-pilot-v3-036"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        49,
+        120
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-037",
+      "id": "documentary-asserts-031",
+      "prediction_kind": "relation",
+      "quote": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        47
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "to": "typed-pilot-v3-038"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        121,
+        166
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-037",
+      "id": "documentary-asserts-032",
+      "prediction_kind": "relation",
+      "quote": "The local\nPreviewSession API gains refresh().",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        47
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "to": "typed-pilot-v3-039"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        167,
+        232
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-037",
+      "id": "documentary-asserts-033",
+      "prediction_kind": "relation",
+      "quote": "Ordinary poll observes content changes and\nskips unchanged input.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        47
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "to": "typed-pilot-v3-040"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        233,
+        377
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-037",
+      "id": "documentary-asserts-034",
+      "prediction_kind": "relation",
+      "quote": "Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        47
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "to": "typed-pilot-v3-041"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        378,
+        487
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-037",
+      "id": "documentary-asserts-035",
+      "prediction_kind": "relation",
+      "quote": "A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        47
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "to": "typed-pilot-v3-042"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        46,
+        146
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-043",
+      "id": "documentary-asserts-036",
+      "prediction_kind": "relation",
+      "quote": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        44
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "to": "typed-pilot-v3-044"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        147,
+        310
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-043",
+      "id": "documentary-asserts-037",
+      "prediction_kind": "relation",
+      "quote": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        44
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "to": "typed-pilot-v3-045"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        311,
+        401
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-043",
+      "id": "documentary-asserts-038",
+      "prediction_kind": "relation",
+      "quote": "Refresh creates a healthy stateless instance and advances publication revision/generation.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        44
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "to": "typed-pilot-v3-046"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        402,
+        468
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-043",
+      "id": "documentary-asserts-039",
+      "prediction_kind": "relation",
+      "quote": "Close still clears the frame and makes consumer sampling terminal.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        44
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "to": "typed-pilot-v3-047"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        470,
+        614
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-043",
+      "id": "documentary-asserts-040",
+      "prediction_kind": "relation",
+      "quote": "This is owned portable policy, measured through actual PreviewSession, PreviewMcp handler and PreviewConsumer with hand-authored no-import WASM.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        44
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "to": "typed-pilot-v3-048"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        73,
+        200
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-049",
+      "id": "documentary-asserts-041",
+      "prediction_kind": "relation",
+      "quote": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        71
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "to": "typed-pilot-v3-050"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        201,
+        255
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-049",
+      "id": "documentary-asserts-042",
+      "prediction_kind": "relation",
+      "quote": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        71
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "to": "typed-pilot-v3-051"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        291,
+        391
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-049",
+      "id": "documentary-asserts-043",
+      "prediction_kind": "relation",
+      "quote": "The receive-only name retains its receive right before and after destruction of the failed envelope.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        71
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "to": "typed-pilot-v3-052"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        393,
+        546
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-049",
+      "id": "documentary-asserts-044",
+      "prediction_kind": "relation",
+      "quote": "With the first descriptor COPY_SEND, its original/returned name is unchanged and one send reference remains before and after failed-envelope destruction.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        71
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "to": "typed-pilot-v3-053"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        547,
+        709
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-049",
+      "id": "documentary-asserts-045",
+      "prediction_kind": "relation",
+      "quote": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        71
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "to": "typed-pilot-v3-054"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        45,
+        152
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-055",
+      "id": "documentary-asserts-046",
+      "prediction_kind": "relation",
+      "quote": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        43
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "to": "typed-pilot-v3-056"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        153,
+        427
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-055",
+      "id": "documentary-asserts-047",
+      "prediction_kind": "relation",
+      "quote": "Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        43
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "to": "typed-pilot-v3-057"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        428,
+        492
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-055",
+      "id": "documentary-asserts-048",
+      "prediction_kind": "relation",
+      "quote": "The rejected promise is consumed to prevent unhandled rejection.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        43
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "to": "typed-pilot-v3-058"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        493,
+        625
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-055",
+      "id": "documentary-asserts-049",
+      "prediction_kind": "relation",
+      "quote": "Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        43
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "to": "typed-pilot-v3-059"
+    },
+    {
+      "accepted_graph_edge": false,
+      "candidate_sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "char_span": [
+        627,
+        743
+      ],
+      "domain": "Evidence",
+      "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "from": "typed-pilot-v3-055",
+      "id": "documentary-asserts-050",
+      "prediction_kind": "relation",
+      "quote": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child.",
+      "range": "Claim",
+      "relation": "ASSERTS",
+      "report_title_char_span": [
+        2,
+        43
+      ],
+      "review_status": "pending separate relation verifier",
+      "scope": "Report asserts this proposition; no truth/runtime support entailment",
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "to": "typed-pilot-v3-060"
+    }
+  ],
+  "development_set_reuse": true,
+  "endpoint_review_sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+  "execution_scope": "Existing producer logic executed on separately reviewed v3 endpoints; development set only",
+  "handoff_approved": false,
+  "held_out": false,
+  "independently_reviewed": 0,
+  "native_canvas_parity": false,
+  "ontology_sha256": "92396578b80c763d13660a5aaaaa269a7ef5c2a03b101018c989bf365bddfc2b",
+  "producer_context": "/root",
+  "quality_gate_passed": false,
+  "relation": "ASSERTS",
+  "relation_minimum_items": 50,
+  "relation_precision": null,
+  "relation_predictions": 50,
+  "schema_version": 1,
+  "truth_entailment": false
+}

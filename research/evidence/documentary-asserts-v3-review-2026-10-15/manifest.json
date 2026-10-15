@@ -1,0 +1,69 @@
+{
+  "accepted": 50,
+  "at": "2026-10-15T15:10:10.501704+00:00",
+  "development_set_reuse": true,
+  "entity_predictions_reviewed": 60,
+  "files": [
+    {
+      "path": "research/canvas-reviews/documentary-asserts-v3-candidates-2026-10-15.json",
+      "sha256": "dab3a21d59b8a07ac0d0b8eb5acd4df8db6fbebd3e57bdcd98263e4adac6949f",
+      "size": 52556
+    },
+    {
+      "path": "research/canvas-reviews/documentary-asserts-v3-independent-review-2026-10-15.json",
+      "sha256": "37c8d4121bdcc9caa3418da5c5bbc152b7b090a844f7ae710a5c03fae72312b4",
+      "size": 94276
+    },
+    {
+      "path": "research/canvas-reviews/documentary-asserts-v3-independent-review-2026-10-15.md",
+      "sha256": "667b0b0ccf89dfedcf82185ec6ee610656dc8d57aeb55e6934d5230264f75ca6",
+      "size": 3695
+    },
+    {
+      "path": "research/canvas-reviews/typed-pilot-v3-2026-10-15-method.md",
+      "sha256": "2bc27fd295f7f0d6dee364b4afd0820dce9f0317667a152c313e23ccf3d14e38",
+      "size": 2403
+    },
+    {
+      "path": "research/canvas-reviews/typed-pilot-v3-2026-10-15.json",
+      "sha256": "796d91cd547cc1ddccef9f3ce1c1f145de4b49b41b23111f070bc649b8a245bb",
+      "size": 67165
+    },
+    {
+      "path": "research/canvas-reviews/typed-pilot-v3-independent-review-2026-10-15.json",
+      "sha256": "db8cd660d72dbfdb5bd84a09598b43d6db9bdefaac99d4739675c350d7e5a176",
+      "size": 146055
+    },
+    {
+      "path": "research/canvas-reviews/typed-pilot-v3-independent-review-2026-10-15.md",
+      "sha256": "997694242d1b32098085496eef82f2fe730644cef2886ac4cdb5e9bd199cb273",
+      "size": 4545
+    },
+    {
+      "path": "tools/re/canvas_entity_pilot.py",
+      "sha256": "28c2988fcbfa8ec70d28248fb31d326cc74add8cba3e8f7f6246f821aeecac7f",
+      "size": 12030
+    },
+    {
+      "path": "tools/re/tests/test_canvas_entity_pilot.py",
+      "sha256": "2849f75a4064aafe6fa9f43a5b3e67efa14ebc745b68f428f9e547a0ae7865dd",
+      "size": 7945
+    },
+    {
+      "path": "research/loop/canvas-ontology.json",
+      "sha256": "92396578b80c763d13660a5aaaaa269a7ef5c2a03b101018c989bf365bddfc2b",
+      "size": 3680
+    }
+  ],
+  "gate_qualified": true,
+  "held_out": false,
+  "milestones_accepted": false,
+  "precision": 1.0,
+  "predictions": 50,
+  "producer_context": "/root/canvas_evidence_review",
+  "qualification_scope": "50 documentary ASSERTS relations in development sample only",
+  "rejected": 0,
+  "relations_reviewed": 50,
+  "reviewer_context": "/root/refresh_spec_review",
+  "scope": "internal typed report-entity extraction; not target behavior acceptance"
+}

@@ -44,7 +44,12 @@ def sentence_spans(text):
             if quote:
                 yield start, end, quote
 
+def validate_claim_limit(claim_limit):
+    if type(claim_limit) is not int or not 1 <= claim_limit <= 8:
+        raise ValueError("claim_limit must be an integer from 1 through 8")
+
 def extract_document(path, raw, expected_sha256, claim_limit=4):
+    validate_claim_limit(claim_limit)
     if digest(raw) != expected_sha256:
         raise ValueError('Source digest mismatch: '+str(path))
     text = raw.decode('utf-8')
@@ -80,7 +85,10 @@ def extract_document(path, raw, expected_sha256, claim_limit=4):
                         'review_status':'pending separate verifier','accepted_graph_entity':False})
     return records
 
-def produce(root):
+def produce(root, claim_limit=4, *, generation="v2"):
+    validate_claim_limit(claim_limit)
+    if generation not in {"v2", "v3"}:
+        raise ValueError("Unsupported candidate generation")
     ontology=json.loads((root/'research/loop/canvas-ontology.json').read_text())
     graph=json.loads((root/'research/loop/canvas-graph.json').read_text())
     documents=[n for n in graph['knowledge']['nodes'] if n['type']=='Evidence'][:10]
@@ -91,9 +99,9 @@ def produce(root):
         provenance=node['provenance']; path=Path(provenance['path'])
         if path.is_absolute() or '..' in path.parts:
             raise ValueError('Unsafe report path')
-        extracted=extract_document(path,(root/path).read_bytes(),provenance['sha256'])
+        extracted=extract_document(path,(root/path).read_bytes(),provenance['sha256'],claim_limit)
         for row in extracted:
-            row.update(id='typed-pilot-v2-'+str(len(records)+1).zfill(3),
+            row.update(id='typed-pilot-'+generation+'-'+str(len(records)+1).zfill(3),
                        ontology_definition=ontology['entity_types'][row['proposed_type']],
                        source_grade=node['grade'])
             records.append(row)
@@ -178,5 +186,9 @@ def documentary_relations(root, candidate_raw, review_raw, expected_review_sha25
             'truth_entailment':False,'accepted_graph_edges':[],'handoff_approved':False}
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);args=parser.parse_args()
-    print(json.dumps(produce(args.root),indent=2))
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--claim-limit',type=int,default=4);parser.add_argument('--generation',choices=['v2','v3'],default='v2');args=parser.parse_args()
+    try:
+        result=produce(args.root,args.claim_limit,generation=args.generation)
+    except ValueError as error:
+        parser.error(str(error))
+    print(json.dumps(result,indent=2))

@@ -486,6 +486,24 @@
     "standing_serial_authorization": true,
     "status": "verified-documentary-relations-below-sample-minimum"
   },
+  "documentary_v3_checkpoint": {
+    "accepted": 50,
+    "at": "2026-10-15T15:10:10.508803+00:00",
+    "development_set_reuse": true,
+    "entity_predictions_reviewed": 60,
+    "evidence": "research/evidence/documentary-asserts-v3-review-2026-10-15",
+    "gate_qualified": true,
+    "held_out": false,
+    "native_bridge_available": false,
+    "next_action": "review scoped fusion/query serving; prioritize actual browser or native readiness when prerequisites change",
+    "precision": 1.0,
+    "predictions": 50,
+    "qualification_scope": "50 documentary ASSERTS relations in development sample only",
+    "rejected": 0,
+    "relation_pass": "50/50 documentary edges; restricted development numeric threshold met; no global native gate",
+    "standing_serial_authorization": true,
+    "status": "verified-bounded-documentary-entity-relation-pilot"
+  },
   "failure_fingerprints": [
     {
       "fingerprint": "f8d3ba243293b92dec71f2dc59634ec746dbb8dc2c621c54084e938d6e957e5c",

@@ -1,0 +1,1592 @@
+{
+  "schema_version": 2,
+  "producer_context": "/root/canvas_evidence_review",
+  "method": "automatic conservative title and declarative Claim mention extraction",
+  "round": 1,
+  "maximum_rounds": 1,
+  "candidates": [
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Native same-renderer content identity and view-owned State",
+      "char_span": [
+        2,
+        60
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-001",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The owned child has private `@State Bool`; a plain main-actor probe captures its public Binding during body evaluation.",
+      "char_span": [
+        208,
+        327
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#208:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-002",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Mutation occurs after rendering, outside the body.",
+      "char_span": [
+        328,
+        378
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#328:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-003",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "No window, accessibility action, physical input or private Swift ABI is involved.",
+      "char_span": [
+        379,
+        460
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#379:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-004",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The predeclared prediction is supported in two fresh native processes: baseline and repeated red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "char_span": [
+        462,
+        642
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#462:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-005",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Assigning a new root content value with token0 keeps blue.",
+      "char_span": [
+        643,
+        701
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-identity.md",
+      "source_sha256": "12c35c5cd9abd1ff04a7507aa10977b1031736e74fb73eb34f0fc2336930ecbb",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-identity.md#643:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-006",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Native view-owned State binding and renderer recreation",
+      "char_span": [
+        2,
+        57
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-007",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "An owned probe captures its public `Binding` while the view body is evaluated, then the main actor mutates that captured binding outside rendering.",
+      "char_span": [
+        188,
+        335
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#188:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-008",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "No button, accessibility action, private state ABI or UI-event delivery is substituted.",
+      "char_span": [
+        336,
+        423
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#336:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-009",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The held ImageRenderer starts/repeats red; setting the held binding true immediately changes it to blue and a10ms runloop turn retains blue.",
+      "char_span": [
+        506,
+        646
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#506:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-010",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "A fresh renderer constructed from the same original content value starts red.",
+      "char_span": [
+        647,
+        724
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#647:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-011",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The original renderer still returns blue.",
+      "char_span": [
+        725,
+        766
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-binding.md",
+      "source_sha256": "baa0a0ed5a0a0371770377f7de0aa57fc4c590a2815b854c0292ac8fa81e5dc2",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-binding.md#725:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-012",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Native changed content parameter with retained view-owned State",
+      "char_span": [
+        2,
+        65
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-013",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "One retained public ImageRenderer hosts a child with private `@State Bool` and explicit `.id(token)`.",
+      "char_span": [
+        67,
+        168
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#67:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-014",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "An owned plain main-actor probe captures the public Binding during body evaluation; mutation occurs outside the body.",
+      "char_span": [
+        329,
+        446
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#329:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-015",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "There is no window, physical input, accessibility action or private Swift state ABI.",
+      "char_span": [
+        447,
+        531
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#447:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-016",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The independent predeclared prediction passes in two fresh native processes.",
+      "char_span": [
+        533,
+        609
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#533:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-017",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Initial/repeat red become blue through the captured binding, immediately and after a10ms runloop turn.",
+      "char_span": [
+        610,
+        712
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-native-state-content.md",
+      "source_sha256": "d490b4cc562f1c19f9bb777e0b8c21d7be7f97f51758cfbed9695f407c8d1793",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-native-state-content.md#610:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-018",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Native geometry changes with retained view-owned State",
+      "char_span": [
+        2,
+        56
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-019",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "This owned fixture changes fixed-identity content geometry after the completed palette control.",
+      "char_span": [
+        58,
+        153
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#58:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-020",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "One public ImageRenderer hosts private child `@State Bool` with explicit `.id(token)`.",
+      "char_span": [
+        154,
+        240
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#154:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-021",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "A plain main-actor probe captures its public Binding during body evaluation; mutation occurs outside the body.",
+      "char_span": [
+        241,
+        351
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#241:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-022",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The destination CGContext dimensions are selected independently from the declared fixture input, not inferred from the callback; callback size is compared to the prediction.",
+      "char_span": [
+        405,
+        578
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#405:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-023",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "There is no proposedSize mutation, window, physical input or private state ABI.",
+      "char_span": [
+        579,
+        658
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-12-native-state-geometry.md",
+      "source_sha256": "b4c530e037d118ae3f70fc55acad1ea60d1017f229bf537b2f0f27ff7a148769",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-12-native-state-geometry.md#579:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-024",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Same-task aliases share explicit use-count state",
+      "char_span": [
+        2,
+        50
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-025",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Each of two fresh helpers creates an owned 17x9 IOSurface and obtains a Mach-import CF alias and a numeric-global-lookup CF alias.",
+      "char_span": [
+        492,
+        622
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#492:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-026",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "All three CF wrapper pointers are distinct in both executions, while each lookup verifies the original surface ID.",
+      "char_span": [
+        623,
+        737
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#623:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-027",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "With only CF wrappers retained, all three report local/global 0.",
+      "char_span": [
+        855,
+        919
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#855:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-028",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "All CF owners are then released; a separate 100 ms lookup follow-up is null.",
+      "char_span": [
+        1609,
+        1685
+      ],
+      "line_span": [
+        7,
+        7
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#1609:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-029",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "No claim is made about an unbalanced usage counter being repaired by CF release.",
+      "char_span": [
+        1686,
+        1766
+      ],
+      "line_span": [
+        7,
+        7
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-surface-alias-use.md",
+      "source_sha256": "fec3177ad7fc422d12ba53fc2d0595ce905f48bbc5a6e8cf1b9c25b0f2cb6280",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-surface-alias-use.md#1686:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-030",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Cross-task use-count and global in-use cleanup",
+      "char_span": [
+        2,
+        48
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-031",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "This experiment tests the separate cross-task contribution boundary after both explicit IOSurface Mach resource names have disappeared.",
+      "char_span": [
+        116,
+        251
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#116:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-032",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The parent retains a CF alias; an audited fork/exec peer retains another CF alias and increments its local use count.",
+      "char_span": [
+        252,
+        369
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#252:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-033",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "All values are observations on this host, not global reference-count or Canvas completion claims.",
+      "char_span": [
+        468,
+        565
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#468:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-034",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "In both modes the parent's IOSurfaceGetUseCount is 0 while IOSurfaceIsInUse is true and the peer reports local count 1/global true.",
+      "char_span": [
+        567,
+        698
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#567:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-035",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Parent increment changes its local count to 1.",
+      "char_span": [
+        699,
+        745
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-remote-surface-use.md",
+      "source_sha256": "26f62c5c661ea9b9bd9a2f13f74e1ab64671509c78a15ec71d44a5a9a0eb7d7a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-remote-surface-use.md#699:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-036",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Explicit owned refresh and failed-build retry",
+      "char_span": [
+        2,
+        47
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-037",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Handler 0.2.2 adds `preview_refresh` after the existing five MCP tools.",
+      "char_span": [
+        49,
+        120
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#49:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-038",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The local\nPreviewSession API gains refresh().",
+      "char_span": [
+        121,
+        166
+      ],
+      "line_span": [
+        3,
+        4
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#121:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-039",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Ordinary poll observes content changes and\nskips unchanged input.",
+      "char_span": [
+        167,
+        232
+      ],
+      "line_span": [
+        4,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#167:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-040",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Explicit refresh reads the current regular bounded ASCII\nsource and starts a fresh generation even when its digest matches the last\nobservation.",
+      "char_span": [
+        233,
+        377
+      ],
+      "line_span": [
+        5,
+        7
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#233:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-041",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "A successful proposal must pass the complete independent byte\ncomparison before replacing the accepted frame.",
+      "char_span": [
+        378,
+        487
+      ],
+      "line_span": [
+        7,
+        8
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-refresh.md",
+      "source_sha256": "60450dab8eb3ca278d4e045020f693831f153793409eaf1d937c53ccf014b94c",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-refresh.md#378:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-042",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Cached publication after worker quarantine",
+      "char_span": [
+        2,
+        44
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-043",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Preview readiness now exposes stale execution when an accepted frame exists but liveWorkers is zero.",
+      "char_span": [
+        46,
+        146
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#46:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-044",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "An existing consumer keeps its independently accepted allocation, adopts this stale status through two stable status reads, and requires exact descriptor identity.",
+      "char_span": [
+        147,
+        310
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#147:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-045",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Refresh creates a healthy stateless instance and advances publication revision/generation.",
+      "char_span": [
+        311,
+        401
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#311:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-046",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Close still clears the frame and makes consumer sampling terminal.",
+      "char_span": [
+        402,
+        468
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#402:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-047",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "This is owned portable policy, measured through actual PreviewSession, PreviewMcp handler and PreviewConsumer with hand-authored no-import WASM.",
+      "char_span": [
+        470,
+        614
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md",
+      "source_sha256": "dd22ff1aefaba59a819a8ad1cb883df7d5a16f922eac6fe55032fbc72b05128a",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-11-mcp-quarantine.md#470:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-048",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Later invalid descriptor and earlier IOSurface ownership \u2014 2026-10-14",
+      "char_span": [
+        2,
+        71
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-049",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Two owned native controls send a valid IOSurface descriptor followed by a receive-only name incorrectly requested as MOVE_SEND.",
+      "char_span": [
+        73,
+        200
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#73:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-050",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Both sends report MACH_SEND_INVALID_RIGHT (268435466).",
+      "char_span": [
+        201,
+        255
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#201:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-051",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The receive-only name retains its receive right before and after destruction of the failed envelope.",
+      "char_span": [
+        291,
+        391
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#291:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-052",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "With the first descriptor COPY_SEND, its original/returned name is unchanged and one send reference remains before and after failed-envelope destruction.",
+      "char_span": [
+        393,
+        546
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#393:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-053",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "With MOVE_SEND, the same numeric name remains in the failed envelope but queries already report zero send references before destruction, and still zero afterward.",
+      "char_span": [
+        547,
+        709
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-surface-partial-right.md",
+      "source_sha256": "d8969ed2e4d99898477c7b345b87d732bb648b4865eb085167e606fd8c1c7851",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-surface-partial-right.md#547:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-054",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "owned-oracle"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Evidence",
+      "surface_form": "Synchronous observation callback contract",
+      "char_span": [
+        2,
+        43
+      ],
+      "line_span": [
+        1,
+        1
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#2:Evidence",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-identity",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-055",
+      "ontology_definition": "Scoped source document or sealed experiment",
+      "source_grade": "process-record"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Observation callbacks returning promises or thenables previously escaped the synchronous cancellation path.",
+      "char_span": [
+        45,
+        152
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#45:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-056",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "process-record"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Twelve frozen source controls retain before/after results: resolved, rejected, pending and custom thenable results now reject with an explicit synchronous-contract error; throwing then getters retain their original error, and plain synchronous return values remain accepted.",
+      "char_span": [
+        153,
+        427
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#153:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-057",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "process-record"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "The rejected promise is consumed to prevent unhandled rejection.",
+      "char_span": [
+        428,
+        492
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#428:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-058",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "process-record"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Before behavior is captured with a controlled source-only unhandled-rejection listener; unsafe before native jobs were not launched.",
+      "char_span": [
+        493,
+        625
+      ],
+      "line_span": [
+        3,
+        3
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#493:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-059",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "process-record"
+    },
+    {
+      "prediction_kind": "entity",
+      "proposed_type": "Claim",
+      "surface_form": "Two owned native controls return resolved and rejected promises after observing a root and its ready detached child.",
+      "char_span": [
+        627,
+        743
+      ],
+      "line_span": [
+        5,
+        5
+      ],
+      "source_path": "docs/reverse-engineering/2026-10-14-thenable-callback.md",
+      "source_sha256": "3035dec96eafad4876721e2dcd0c93b090d6d3d77cc2962eb510c2c111e8e608",
+      "semantic_key_proposal": "docs/reverse-engineering/2026-10-14-thenable-callback.md#627:Claim",
+      "scope": "Documentary report assertion only; historical owned fixture; no native Canvas parity",
+      "assertion_level": "report-proposition-not-truth",
+      "domain": null,
+      "range": null,
+      "domain_range_reason": "Entity prediction; relation endpoints not asserted",
+      "review_status": "pending separate verifier",
+      "accepted_graph_entity": false,
+      "id": "typed-pilot-v3-060",
+      "ontology_definition": "Observed, inferred or unknown proposition",
+      "source_grade": "process-record"
+    }
+  ],
+  "entity_predictions": 60,
+  "relation_predictions": 0,
+  "independently_reviewed": 0,
+  "precision": null,
+  "quality_gate_passed": false,
+  "development_set_reuse": true,
+  "held_out": false,
+  "type_coverage": [
+    "Evidence",
+    "Claim"
+  ],
+  "limitations": [
+    "No runtime identity roles extracted from report prose",
+    "Grammar heuristic does not verify proposition truth",
+    "Same ten development reports; no held-out or global precision claim",
+    "Relation extraction deferred until entity review"
+  ],
+  "native_canvas_parity": false,
+  "handoff_approved": false,
+  "accepted_graph_edges": [],
+  "generation": "v3",
+  "per_document_claim_limit": 5,
+  "predecessor": "research/canvas-reviews/typed-pilot-v2-2026-10-15.json"
+}

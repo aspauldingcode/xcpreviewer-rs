@@ -1325,3 +1325,7 @@ Added reusable research producer and five tests that reject grouped singleton id
 ## 2026-10-15: documentary ASSERTS relation stage
 
 Added precise Evidence-to-Claim ASSERTS relation with truth_entailment=false, separating report assertions from corroborated SUPPORTS evidence. Producer requires pinned independent entity review and unchanged source/span/endpoints before emitting 40 documentary edge candidates. Separate verifier accepts 40/40, checks deterministic output, and runs eight producer plus six graph tests. Relation precision is 100% on this restricted development sample, but minimum50 remains unmet; no accepted graph edges, fusion, native truth or milestones promoted. Original entity failures retained. Evidence: research/evidence/documentary-asserts-review-2026-10-15.
+
+## 2026-10-15: complete bounded documentary pilot sample
+
+Generalized producer claim limits with strict actual-integer1..8 validation, preserving default v2 output exactly and rejecting invalid/empty padding. Automatic v3 produces 60 entity predictions (10 Evidence,50 Claim), separately reviewed60/60. Existing relation generator bound to exact v3 review yields50 ASSERTS candidates; separate verifier checks50/50 and deterministic output. Eleven producer and six graph tests pass. Numeric sample thresholds now met only for this documentary development slice; prior 70% failure and40-edge partial sample preserved. No held-out/global/runtime identity/native Canvas/milestone claims, accepted edges or fusion. Evidence: research/evidence/documentary-asserts-v3-review-2026-10-15.
