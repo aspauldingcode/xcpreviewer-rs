@@ -1317,3 +1317,7 @@ Independent verifier loaded the original refresh module in an isolated JavaScrip
 ## 2026-10-15: discriminating typed graph pilot review
 
 Replaced the prior zero-denominator gap with 50 explicit typed entity predictions in a bounded producer pass. Separate verifier checked all 50 originals: all source hashes/spans matched, but only 35 predictions accepted and 15 rejected (70% precision). The >=90% gate fails; no fusion, relation promotion or milestone acceptance occurred. Failures identify grouped identities and Event-definition mismatches; rejected predictions retained unchanged. Next revise extraction rules rather than manually repair scored output, then independently score a new sample. Private bridge still absent; no repeated native acquisition. Evidence: research/evidence/typed-pilot-review-2026-10-15.
+
+## 2026-10-15: conservative typed extraction rules and v2 review
+
+Added reusable research producer and five tests that reject grouped singleton identities and timestamp-free Events. Automatic v2 extraction produces 10 report Evidence and 40 documentary Claim entities. Separate reviewer accepts 50/50 (100%) on this restricted development sample. Prior 70% failed pilot retained unchanged. Development-set reuse and changed type mix are explicit; no held-out/global precision, runtime identity, relation, native Canvas or milestone acceptance follows. Evidence: research/evidence/typed-pilot-v2-review-2026-10-15. Next review documentary relations on surviving endpoints while native capture remains blocked separately.

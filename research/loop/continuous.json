@@ -4016,6 +4016,23 @@
     "standing_serial_authorization": true,
     "status": "independent-review-failed-quality-gate"
   },
+  "typed_pilot_v2_checkpoint": {
+    "accepted": 50,
+    "at": "2026-10-15T14:51:33.190308+00:00",
+    "development_set_reuse": true,
+    "evidence": "research/evidence/typed-pilot-v2-review-2026-10-15",
+    "gate_qualified": true,
+    "held_out": false,
+    "native_bridge_available": false,
+    "next_action": "review scoped documentary relation extraction; runtime identity extraction and native evidence remain unqualified",
+    "precision": 1.0,
+    "predictions": 50,
+    "qualification_scope": "Evidence/Claim documentary development sample only",
+    "rejected": 0,
+    "relation_pass": "eligible only for reviewed documentary endpoints; no native promotion",
+    "standing_serial_authorization": true,
+    "status": "verified-conservative-documentary-extraction"
+  },
   "typed_retirement_checkpoint": {
     "classification": "Native retirement prediction falsified; explicit diagnostic adapter delivered without compiler integration",
     "evidence": "research/evidence/typed-retirement-2026-10-11",
