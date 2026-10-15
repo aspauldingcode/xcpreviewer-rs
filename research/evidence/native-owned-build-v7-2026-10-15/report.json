@@ -1,0 +1,1509 @@
+{
+  "scope": "Owned CLI build with previously qualified observed guard; no Canvas or image acceptance",
+  "parent": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-LA43xa",
+  "root": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-LA43xa/scratch",
+  "identity": [
+    16777234,
+    151255709
+  ],
+  "argv": [
+    "xcodebuild",
+    "-quiet",
+    "-project",
+    "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "-scheme",
+    "PreviewLab",
+    "-configuration",
+    "Debug",
+    "-sdk",
+    "macosx",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-destination-timeout",
+    "3",
+    "-derivedDataPath",
+    "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-LA43xa/scratch/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "COMPILER_INDEX_STORE_ENABLE=NO",
+    "build"
+  ],
+  "observedHistory": [
+    {
+      "at_ms": 91.832584,
+      "rows": [
+        {
+          "pid": 67086,
+          "parent": 67085,
+          "group": 67085,
+          "state": "L",
+          "identity": [
+            1792105678,
+            42499,
+            "/usr/bin/xcrun"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 125.69775,
+      "rows": [
+        {
+          "pid": 67086,
+          "parent": 67085,
+          "group": 67085,
+          "state": "L",
+          "identity": [
+            1792105678,
+            42499,
+            "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 1982.541584,
+      "rows": [
+        {
+          "pid": 67158,
+          "parent": 67086,
+          "group": 67158,
+          "state": "L",
+          "identity": [
+            1792105679,
+            916695,
+            "/Applications/Xcode.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/MacOS/SWBBuildService"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 2357.597917,
+      "rows": [
+        {
+          "pid": 67170,
+          "parent": 67158,
+          "group": 67170,
+          "state": "L",
+          "identity": [
+            1792105680,
+            272911,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 2508.663667,
+      "rows": [
+        {
+          "pid": 67170,
+          "parent": 67158,
+          "group": 67170,
+          "state": "L",
+          "identity": [
+            1792105680,
+            272911,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-driver"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 2720.081834,
+      "rows": [
+        {
+          "pid": 67170,
+          "parent": 67158,
+          "group": 67170,
+          "state": "L",
+          "identity": [
+            1792105680,
+            272911,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 2862.184125,
+      "rows": [
+        {
+          "pid": 67190,
+          "parent": 67158,
+          "group": 67190,
+          "state": "L",
+          "identity": [
+            1792105680,
+            788909,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 3043.360375,
+      "rows": [
+        {
+          "pid": 67196,
+          "parent": 67158,
+          "group": 67196,
+          "state": "L",
+          "identity": [
+            1792105680,
+            974355,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+          ]
+        },
+        {
+          "pid": 67197,
+          "parent": 67158,
+          "group": 67197,
+          "state": "L",
+          "identity": [
+            1792105680,
+            975402,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 3186.8795,
+      "rows": [
+        {
+          "pid": 67203,
+          "parent": 67196,
+          "group": 67196,
+          "state": "L",
+          "identity": [
+            1792105681,
+            118881,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld"
+          ]
+        },
+        {
+          "pid": 67204,
+          "parent": 67197,
+          "group": 67197,
+          "state": "L",
+          "identity": [
+            1792105681,
+            118880,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4435.812417,
+      "rows": [
+        {
+          "pid": 67249,
+          "parent": 67158,
+          "group": 67249,
+          "state": "L",
+          "identity": [
+            1792105682,
+            386822,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67246,
+          "parent": 67158,
+          "group": 67246,
+          "state": "L",
+          "identity": [
+            1792105682,
+            386094,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67245,
+          "parent": 67158,
+          "group": 67245,
+          "state": "L",
+          "identity": [
+            1792105682,
+            384681,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67247,
+          "parent": 67158,
+          "group": 67247,
+          "state": "L",
+          "identity": [
+            1792105682,
+            386334,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4481.810417,
+      "rows": [
+        {
+          "pid": 67250,
+          "parent": 67158,
+          "group": 67250,
+          "state": "L",
+          "identity": [
+            1792105682,
+            391347,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67251,
+          "parent": 67158,
+          "group": 67251,
+          "state": "L",
+          "identity": [
+            1792105682,
+            392895,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67252,
+          "parent": 67158,
+          "group": 67252,
+          "state": "L",
+          "identity": [
+            1792105682,
+            394510,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67253,
+          "parent": 67158,
+          "group": 67253,
+          "state": "L",
+          "identity": [
+            1792105682,
+            397990,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4567.777709,
+      "rows": [
+        {
+          "pid": 67264,
+          "parent": 67158,
+          "group": 67264,
+          "state": "L",
+          "identity": [
+            1792105682,
+            494525,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67266,
+          "parent": 67158,
+          "group": 67266,
+          "state": "L",
+          "identity": [
+            1792105682,
+            511894,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67258,
+          "parent": 67158,
+          "group": 67258,
+          "state": "L",
+          "identity": [
+            1792105682,
+            488123,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67259,
+          "parent": 67158,
+          "group": 67259,
+          "state": "L",
+          "identity": [
+            1792105682,
+            489137,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67260,
+          "parent": 67158,
+          "group": 67260,
+          "state": "L",
+          "identity": [
+            1792105682,
+            489624,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67261,
+          "parent": 67158,
+          "group": 67261,
+          "state": "L",
+          "identity": [
+            1792105682,
+            490133,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67262,
+          "parent": 67158,
+          "group": 67262,
+          "state": "L",
+          "identity": [
+            1792105682,
+            490669,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67263,
+          "parent": 67158,
+          "group": 67263,
+          "state": "L",
+          "identity": [
+            1792105682,
+            491821,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4643.997667,
+      "rows": [
+        {
+          "pid": 67267,
+          "parent": 67158,
+          "group": 67267,
+          "state": "L",
+          "identity": [
+            1792105682,
+            541075,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67268,
+          "parent": 67158,
+          "group": 67268,
+          "state": "L",
+          "identity": [
+            1792105682,
+            549713,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4644.030959,
+      "rows": [
+        {
+          "pid": 67271,
+          "parent": 67158,
+          "group": 67271,
+          "state": "L",
+          "identity": [
+            1792105682,
+            561836,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67272,
+          "parent": 67158,
+          "group": 67272,
+          "state": "L",
+          "identity": [
+            1792105682,
+            568881,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67274,
+          "parent": 67158,
+          "group": 67274,
+          "state": "L",
+          "identity": [
+            1792105682,
+            583245,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4672.917084,
+      "rows": [
+        {
+          "pid": 67275,
+          "parent": 67158,
+          "group": 67275,
+          "state": "L",
+          "identity": [
+            1792105682,
+            617122,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4714.325167,
+      "rows": [
+        {
+          "pid": 67278,
+          "parent": 67158,
+          "group": 67278,
+          "state": "L",
+          "identity": [
+            1792105682,
+            643367,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67277,
+          "parent": 67158,
+          "group": 67277,
+          "state": "L",
+          "identity": [
+            1792105682,
+            638646,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4759.078625,
+      "rows": [
+        {
+          "pid": 67281,
+          "parent": 67158,
+          "group": 67281,
+          "state": "L",
+          "identity": [
+            1792105682,
+            687539,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67282,
+          "parent": 67158,
+          "group": 67282,
+          "state": "L",
+          "identity": [
+            1792105682,
+            688022,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4797.730125,
+      "rows": [
+        {
+          "pid": 67284,
+          "parent": 67158,
+          "group": 67284,
+          "state": "L",
+          "identity": [
+            1792105682,
+            725192,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67285,
+          "parent": 67158,
+          "group": 67285,
+          "state": "L",
+          "identity": [
+            1792105682,
+            725839,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67286,
+          "parent": 67158,
+          "group": 67286,
+          "state": "L",
+          "identity": [
+            1792105682,
+            726267,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4915.10125,
+      "rows": [
+        {
+          "pid": 67288,
+          "parent": 67158,
+          "group": 67288,
+          "state": "L",
+          "identity": [
+            1792105682,
+            769742,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67289,
+          "parent": 67158,
+          "group": 67289,
+          "state": "L",
+          "identity": [
+            1792105682,
+            770381,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67290,
+          "parent": 67158,
+          "group": 67290,
+          "state": "L",
+          "identity": [
+            1792105682,
+            770877,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67291,
+          "parent": 67158,
+          "group": 67291,
+          "state": "L",
+          "identity": [
+            1792105682,
+            776443,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67292,
+          "parent": 67158,
+          "group": 67292,
+          "state": "L",
+          "identity": [
+            1792105682,
+            776779,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67293,
+          "parent": 67158,
+          "group": 67293,
+          "state": "L",
+          "identity": [
+            1792105682,
+            777345,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67294,
+          "parent": 67158,
+          "group": 67294,
+          "state": "L",
+          "identity": [
+            1792105682,
+            777861,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4915.156917,
+      "rows": [
+        {
+          "pid": 67298,
+          "parent": 67158,
+          "group": 67298,
+          "state": "L",
+          "identity": [
+            1792105682,
+            841695,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67299,
+          "parent": 67158,
+          "group": 67299,
+          "state": "L",
+          "identity": [
+            1792105682,
+            842818,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67300,
+          "parent": 67158,
+          "group": 67300,
+          "state": "L",
+          "identity": [
+            1792105682,
+            843290,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4937.356625,
+      "rows": [
+        {
+          "pid": 67301,
+          "parent": 67158,
+          "group": 67301,
+          "state": "L",
+          "identity": [
+            1792105682,
+            851234,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67302,
+          "parent": 67158,
+          "group": 67302,
+          "state": "L",
+          "identity": [
+            1792105682,
+            854262,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 4972.062334,
+      "rows": [
+        {
+          "pid": 67304,
+          "parent": 67158,
+          "group": 67304,
+          "state": "L",
+          "identity": [
+            1792105682,
+            902017,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67305,
+          "parent": 67158,
+          "group": 67305,
+          "state": "L",
+          "identity": [
+            1792105682,
+            902791,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5009.980167,
+      "rows": [
+        {
+          "pid": 67307,
+          "parent": 67158,
+          "group": 67307,
+          "state": "L",
+          "identity": [
+            1792105682,
+            945441,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67308,
+          "parent": 67158,
+          "group": 67308,
+          "state": "L",
+          "identity": [
+            1792105682,
+            960165,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5087.235334,
+      "rows": [
+        {
+          "pid": 67311,
+          "parent": 67158,
+          "group": 67311,
+          "state": "L",
+          "identity": [
+            1792105683,
+            7927,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5151.507292,
+      "rows": [
+        {
+          "pid": 67314,
+          "parent": 67158,
+          "group": 67314,
+          "state": "L",
+          "identity": [
+            1792105683,
+            76422,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5426.716459,
+      "rows": [
+        {
+          "pid": 67321,
+          "parent": 67158,
+          "group": 67321,
+          "state": "L",
+          "identity": [
+            1792105683,
+            277182,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67322,
+          "parent": 67158,
+          "group": 67322,
+          "state": "L",
+          "identity": [
+            1792105683,
+            288583,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67323,
+          "parent": 67158,
+          "group": 67323,
+          "state": "L",
+          "identity": [
+            1792105683,
+            289164,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67324,
+          "parent": 67158,
+          "group": 67324,
+          "state": "L",
+          "identity": [
+            1792105683,
+            289582,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67325,
+          "parent": 67158,
+          "group": 67325,
+          "state": "L",
+          "identity": [
+            1792105683,
+            289968,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5432.352959,
+      "rows": [
+        {
+          "pid": 67328,
+          "parent": 67158,
+          "group": 67328,
+          "state": "L",
+          "identity": [
+            1792105683,
+            344685,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67329,
+          "parent": 67158,
+          "group": 67329,
+          "state": "L",
+          "identity": [
+            1792105683,
+            347172,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67330,
+          "parent": 67158,
+          "group": 67330,
+          "state": "L",
+          "identity": [
+            1792105683,
+            358883,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5476.332375,
+      "rows": [
+        {
+          "pid": 67332,
+          "parent": 67158,
+          "group": 67332,
+          "state": "L",
+          "identity": [
+            1792105683,
+            390742,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67333,
+          "parent": 67158,
+          "group": 67333,
+          "state": "L",
+          "identity": [
+            1792105683,
+            401002,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5507.598459,
+      "rows": [
+        {
+          "pid": 67335,
+          "parent": 67158,
+          "group": 67335,
+          "state": "L",
+          "identity": [
+            1792105683,
+            451701,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5541.431375,
+      "rows": [
+        {
+          "pid": 67337,
+          "parent": 67158,
+          "group": 67337,
+          "state": "L",
+          "identity": [
+            1792105683,
+            474791,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5581.637834,
+      "rows": [
+        {
+          "pid": 67339,
+          "parent": 67158,
+          "group": 67339,
+          "state": "L",
+          "identity": [
+            1792105683,
+            518277,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67340,
+          "parent": 67158,
+          "group": 67340,
+          "state": "L",
+          "identity": [
+            1792105683,
+            528863,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67341,
+          "parent": 67158,
+          "group": 67341,
+          "state": "L",
+          "identity": [
+            1792105683,
+            532087,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5664.223375,
+      "rows": [
+        {
+          "pid": 67345,
+          "parent": 67158,
+          "group": 67345,
+          "state": "L",
+          "identity": [
+            1792105683,
+            584616,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67346,
+          "parent": 67158,
+          "group": 67346,
+          "state": "L",
+          "identity": [
+            1792105683,
+            589266,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5702.783334,
+      "rows": [
+        {
+          "pid": 67348,
+          "parent": 67158,
+          "group": 67348,
+          "state": "L",
+          "identity": [
+            1792105683,
+            649936,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67349,
+          "parent": 67158,
+          "group": 67349,
+          "state": "L",
+          "identity": [
+            1792105683,
+            650506,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5744.260709,
+      "rows": [
+        {
+          "pid": 67351,
+          "parent": 67158,
+          "group": 67351,
+          "state": "L",
+          "identity": [
+            1792105683,
+            657067,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 5921.372917,
+      "rows": [
+        {
+          "pid": 67364,
+          "parent": 67158,
+          "group": 67364,
+          "state": "L",
+          "identity": [
+            1792105683,
+            828140,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 6105.61125,
+      "rows": [
+        {
+          "pid": 67374,
+          "parent": 67158,
+          "group": 67374,
+          "state": "L",
+          "identity": [
+            1792105684,
+            50149,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        },
+        {
+          "pid": 67375,
+          "parent": 67158,
+          "group": 67375,
+          "state": "L",
+          "identity": [
+            1792105684,
+            50571,
+            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend"
+          ]
+        }
+      ]
+    }
+  ],
+  "historyTruncated": true,
+  "success": true,
+  "error": null,
+  "measurementError": null,
+  "samples": [
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 0,
+      "scratch_logical": 0,
+      "allocated": 0,
+      "files": 0,
+      "directories": 0,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 1064,
+      "scratch_logical": 0,
+      "allocated": 16384,
+      "files": 4,
+      "directories": 6,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 1750,
+      "scratch_logical": 0,
+      "allocated": 24576,
+      "files": 6,
+      "directories": 9,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 6247,
+      "scratch_logical": 0,
+      "allocated": 49152,
+      "files": 12,
+      "directories": 16,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 10026,
+      "scratch_logical": 0,
+      "allocated": 65536,
+      "files": 16,
+      "directories": 16,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 736840,
+      "scratch_logical": 26843545600,
+      "allocated": 917504,
+      "files": 65,
+      "directories": 38,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 938367,
+      "scratch_logical": 26843545600,
+      "allocated": 1134592,
+      "files": 72,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 3960371,
+      "scratch_logical": 26843545600,
+      "allocated": 4210688,
+      "files": 123,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 11045023,
+      "scratch_logical": 26843545600,
+      "allocated": 11395072,
+      "files": 166,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 13572455,
+      "scratch_logical": 26843545600,
+      "allocated": 14000128,
+      "files": 192,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 13661514,
+      "scratch_logical": 26843545600,
+      "allocated": 14110720,
+      "files": 198,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 14673668,
+      "scratch_logical": 26843545600,
+      "allocated": 15155200,
+      "files": 217,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 17684444,
+      "scratch_logical": 26843545600,
+      "allocated": 18198528,
+      "files": 238,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 27930444,
+      "scratch_logical": 26843545600,
+      "allocated": 28459008,
+      "files": 248,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 45579524,
+      "scratch_logical": 26843545600,
+      "allocated": 46112768,
+      "files": 254,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 53097812,
+      "scratch_logical": 26843545600,
+      "allocated": 53653504,
+      "files": 264,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 62294412,
+      "scratch_logical": 26843545600,
+      "allocated": 62869504,
+      "files": 277,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 77139588,
+      "scratch_logical": 26843545600,
+      "allocated": 77729792,
+      "files": 284,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 86310228,
+      "scratch_logical": 26843545600,
+      "allocated": 86917120,
+      "files": 292,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 97317820,
+      "scratch_logical": 26843545600,
+      "allocated": 97931264,
+      "files": 294,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 113263508,
+      "scratch_logical": 26843545600,
+      "allocated": 113901568,
+      "files": 307,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 122848060,
+      "scratch_logical": 26843545600,
+      "allocated": 123510784,
+      "files": 315,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 127821932,
+      "scratch_logical": 26843545600,
+      "allocated": 128499712,
+      "files": 324,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 127880412,
+      "scratch_logical": 26843545600,
+      "allocated": 128561152,
+      "files": 324,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 150239668,
+      "scratch_logical": 26843545600,
+      "allocated": 150925312,
+      "files": 325,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 150295268,
+      "scratch_logical": 26843545600,
+      "allocated": 150982656,
+      "files": 326,
+      "directories": 40,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 151055178,
+      "scratch_logical": 26843545600,
+      "allocated": 151838720,
+      "files": 359,
+      "directories": 43,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 151055178,
+      "scratch_logical": 26843545600,
+      "allocated": 151838720,
+      "files": 359,
+      "directories": 43,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 151997188,
+      "scratch_logical": 26843545600,
+      "allocated": 152920064,
+      "files": 369,
+      "directories": 43,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    },
+    {
+      "retained_logical": 152925143,
+      "scratch_logical": 0,
+      "allocated": 153853952,
+      "files": 369,
+      "directories": 43,
+      "vanished_count": 0,
+      "vanished_paths": [],
+      "provisional": true
+    }
+  ],
+  "final": {
+    "retained_logical": 152925143,
+    "scratch_logical": 0,
+    "allocated": 153853952,
+    "files": 369,
+    "directories": 43,
+    "vanished_count": 0,
+    "vanished_paths": []
+  },
+  "record": {
+    "pid": 67085,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 146,
+      "observations": 233,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

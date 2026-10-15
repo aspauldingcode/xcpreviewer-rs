@@ -1,0 +1,5 @@
+{
+  "exit": 0,
+  "stdout": "{\"checks\":{\"real_owned_exit\":true,\"omission_rejected\":true,\"diagnostic_captured\":true,\"output_cap_rejected\":true},\"results\":[{\"name\":\"real-owned-exit\",\"error\":null,\"report\":{\"kind\":\"complete\",\"target_code\":0,\"failure\":null,\"drained\":true,\"tracked\":1,\"observations\":10,\"remaining_observed\":0,\"scope\":\"Observed full-identity ancestry and inherited group only; unseen escapes excluded\"},\"privateAbortRequested\":false},{\"name\":\"injected-live-omission\",\"error\":\"Error: Observed compiler failed: RuntimeError: Live owned target identity unavailable\",\"report\":{\"kind\":\"complete\",\"target_code\":null,\"failure\":\"RuntimeError: Live owned target identity unavailable\",\"drained\":false},\"privateAbortRequested\":false},{\"name\":\"diagnostic-output-cap\",\"error\":\"Error: Observed compiler output limit\",\"report\":{\"kind\":\"complete\",\"target_code\":null,\"failure\":\"RuntimeError: Live owned target identity unavailable\",\"drained\":false},\"privateAbortRequested\":true}]}\n",
+  "stderr": ""
+}

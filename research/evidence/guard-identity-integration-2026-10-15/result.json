@@ -1,0 +1,119 @@
+{
+  "scope": "Actual JS/Python pipes and owned child lifetime; injected missing observer is not native libproc failure evidence. Fault groups killed as fallback, cleanup unverified.",
+  "root": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/guard-integration-cWo0kK",
+  "source_pins": {
+    "js": "9647fff3dbdbfd8e260fb2b566c74c5e1b58b8789877f36c469a7151c5a1f3d6",
+    "anchor": "626377ee7463c0dccc908df14b2afcba99c7454a7e0f25a2c98a024616012014",
+    "native_helper": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+  },
+  "results": [
+    {
+      "name": "real-owned-exit",
+      "cap": 65536,
+      "error": null,
+      "record": {
+        "pid": 66663,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 0,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 10,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "",
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observations": [
+        {
+          "pid": 66664,
+          "parent": 66663,
+          "group": 66663,
+          "state": "L",
+          "identity": [
+            1792105610,
+            27481,
+            "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+          ]
+        },
+        {
+          "pid": 66664,
+          "parent": 66663,
+          "group": 66663,
+          "state": "L",
+          "identity": [
+            1792105610,
+            27481,
+            "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "injected-live-omission",
+      "cap": 65536,
+      "error": "Error: Observed compiler failed: RuntimeError: Live owned target identity unavailable",
+      "record": {
+        "pid": 66678,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "RuntimeError: Live owned target identity unavailable",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "{\"kind\": \"missing_live_target_identity\", \"at_monotonic\": 0.045604583, \"observation_started\": 0.026125291, \"helper_args\": [\"66679\"], \"target_pid\": 66679, \"poll_before\": null, \"poll_after\": null, \"known_target_identity\": null, \"known_count\": 0, \"returned_count\": 0, \"observations\": 0, \"helper_stdout_bytes\": 3, \"helper_stdout_prefix\": \"[]\\n\", \"helper_stdout_complete\": true, \"helper_stdout_sha256\": \"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570\"}\n",
+        "stdoutBytes": 0,
+        "stderrBytes": 465,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "47274e33afd25675345aebd093dec921d7fee488618ce81a2df4d87bbe797c65"
+      },
+      "observations": []
+    },
+    {
+      "name": "diagnostic-output-cap",
+      "cap": 32,
+      "error": "Error: Observed compiler output limit",
+      "record": {
+        "pid": 66681,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": null,
+          "failure": "RuntimeError: Live owned target identity unavailable",
+          "drained": false
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": "",
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observations": []
+    }
+  ],
+  "checks": {
+    "real_owned_exit": true,
+    "omission_rejected": true,
+    "diagnostic_captured": true,
+    "output_cap_rejected": true
+  }
+}
