@@ -1,0 +1,15 @@
+{
+  "role": "independent research-infrastructure verifier",
+  "reviewer": "refresh_spec_review",
+  "tests_passed": 9,
+  "initial_failure_retained": "Unreadable nested subtree containing1GiB retained file was silently omitted and admitted by original proposal",
+  "repair_verified": "Independent original counterexample now raises PermissionError",
+  "disposition": "May retain as research-only proposal; not integrated and no native build approval implied",
+  "remaining_limits": [
+    "Concurrent mutation invalidates snapshot",
+    "Paths and exact sizes do not authenticate cache content",
+    "st_blocks excludes directory metadata, exclusive physical ownership and peaks",
+    "Entry cap applied after traversal does not bound traversal duration"
+  ],
+  "source_sha256": "fc9e0bc7ada66df04632b2383174146270c114bf1ea75c862f15fe4331c09c8c"
+}
