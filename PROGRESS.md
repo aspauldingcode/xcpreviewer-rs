@@ -1333,3 +1333,7 @@ Generalized producer claim limits with strict actual-integer1..8 validation, pre
 ## 2026-10-15: bounded documentary pilot serving complete
 
 Added read-only query tool over exact pinned entity/relation reviews with bounded keyword results, original source spans/hashes and ASSERTS labels. Conservative alias fusion preserves original IDs and separates scope/grade/source/target. Independent verifier found explicit target-version merge defect, fixed it and retained failing-control record. Four tests and 11 tamper controls pass; saved refresh/release queries remain deterministic. No native truth, SUPPORTS promotion, global graph acceptance or milestones claimed. Evidence: research/evidence/documentary-query-2026-10-15. Stop graph scaffolding now; next work must address concrete native readiness or permitted actual browser prerequisite.
+
+## 2026-10-15: analysis services and real browser restored
+
+GhidraVibe engine5.14.2-headless and extension0.1.1 restored; Semeru21.0.3/2G. REA6.2.0 identity/provider verified separately. UCU permissions healthy and unlocked. Installed Chrome155 actual session lifecycle passes9 checks and rejects dedup-disabled mutant; independent review preserves2 sandboxEPERM failures. Xcode26.6 launched but initialized broker calls close and direct tools/list times out; no workspace or permission toggle changed. Native capture remains unverified. Local evidence: research/evidence/analysis-restoration-2026-10-15. Automatic approval review blocked GitHub publication; no workaround used.

@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Portable refresh browser checks</title>
+<pre id="result" data-status="running">{"status":"running"}</pre>
+<script type="module">
+import { createSession } from './index.js';
+const result = document.querySelector('#result');
+const checks = [];
+const assert = (condition, name) => { if (!condition) throw Error(name); checks.push(name); };
+const deferred = () => { let resolve; const promise = new Promise(r => { resolve = r; }); return { promise, resolve }; };
+const rejects = async (promise, expected) => { try { await promise; } catch (error) { if (error.code === expected) return; throw error; } throw Error(`Expected ${expected}`); };
+try {
+  let builds = 0;
+  const session = createSession({ build: async source => { builds++; return source; }, validate: async frame => frame !== 'bad' });
+  assert(session.status().revision === 0 && !session.frame().available, 'initial');
+  await session.poll('A'); await session.poll('A');
+  assert(builds === 1 && session.status().revision === 1, 'poll deduplication');
+  await session.refresh('A');
+  assert(builds === 2 && session.status().revision === 2, 'explicit refresh');
+  await rejects(session.refresh('bad'), 'VALIDATION_FAILED');
+  assert(session.frame().value === 'A' && session.status().revision === 2, 'failure retains frame');
+  await rejects(session.refresh('bad'), 'VALIDATION_FAILED');
+  assert(session.status().generation === 4 && session.status().failures.length === 2, 'rejected source retry');
+  await session.refresh('B');
+  assert(session.status().state === 'ready' && session.status().revision === 3 && session.status().failures.length === 2, 'recovery retains history');
+  const gate = deferred(), entered = deferred(); let signal;
+  const racing = createSession({ build: (source, abort) => { signal = abort; return source; }, validate: async () => { entered.resolve(); return gate.promise; } });
+  const pending = racing.refresh('A');
+  const closed = rejects(pending, 'CLOSED');
+  await entered.promise;
+  await rejects(racing.refresh('B'), 'BUSY');
+  assert(racing.status().generation === 1 && !racing.frame().available, 'busy during validation');
+  racing.close(); racing.close(); gate.resolve(true); await closed;
+  assert(signal.aborted && racing.status().state === 'closed' && !racing.frame().available && racing.status().revision === 0, 'close during validation blocks late publication');
+  await rejects(racing.refresh('A'), 'CLOSED');
+  assert(session.status().state === 'ready' && session.frame().value === 'B', 'independent sessions');
+  result.dataset.status = 'pass'; result.textContent = JSON.stringify({ status: 'pass', checks });
+} catch (error) {
+  result.dataset.status = 'fail'; result.textContent = JSON.stringify({ status: 'fail', checks, error: String(error.message || error) });
+}
+</script>

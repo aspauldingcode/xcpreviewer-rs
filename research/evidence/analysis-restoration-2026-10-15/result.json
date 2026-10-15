@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-15T16:38:20.917798+00:00",
+  "browser": {
+    "dedup_mutant_rejected": true,
+    "independent_review": "qualified main-acquired records; browser HTML matched",
+    "independent_sandbox_failures_retained": 2,
+    "positive_checks": 9,
+    "version": "Chrome for Testing155.0.8059.39"
+  },
+  "finished_at": "2026-10-15T16:46:48.904569+00:00",
+  "ghidra": {
+    "analysis_ok": true,
+    "automatic_restart_installed": false,
+    "engine": "5.14.2-headless",
+    "jvm": "IBM Semeru21.0.3 OpenJ9",
+    "memory_limit": "2G",
+    "owned_exec_sessions": [
+      66678,
+      10601
+    ],
+    "runtime": "research/build/ghidra-restored-runtime",
+    "vibe": "0.1.1"
+  },
+  "human_authorization": "fix it now; graph-engineering + REA + GhidraVibe; universal computer use authorized",
+  "next_action": "use healthy REA/GhidraVibe for scoped investigation; diagnose actual Xcode external-tools settings when accessible, no automatic broker restart or permission bypass",
+  "publication": "blocked by automatic approval review; local result retained",
+  "scope": "service restoration only; native capture and milestone acceptance remain unresolved",
+  "xcode": {
+    "build": "17F112",
+    "capture_ready": false,
+    "observed_failures": [
+      "two owned broker initializations followed by MCP bridge closed on XcodeListWindows",
+      "direct initialized xcode-tools server version24952 then tools/list deadline12s; owned bridge terminated and waited -15",
+      "UCU welcome/settings intermittently visible; later no accessible/on-screen window; no settings changed"
+    ],
+    "pid": 50437,
+    "upstream_authorization_prompt_observed": false,
+    "version": "26.6",
+    "workspace_opened_by_this_repair": false
+  }
+}
