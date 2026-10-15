@@ -1,0 +1,7 @@
+{
+  "independent_verifier": "refresh_spec_review",
+  "disposition": "Correct rejection; cleanup UNVERIFIED",
+  "finding": "Live root omitted from helper while subsequent target.poll still None; exception skips drain; parent inherited-group SIGKILL is fallback action, not verified observed/detached descendant drain. emergencyClosedfalse only means hard timer did not fire.",
+  "control_result": "Eight short-lived owned Python controls all actual target0/scopeddraintrue; no reproduction or causal explanation for compiler case",
+  "next_requirements": "Before another compiler run, bounded helper args/raw response/timestamps/root identity history and before/after polls; eventual actual wait where safely observable. Keep unresolved live-root identity loss fatal. Tests for omission/exit/exec transition/helper failure/descendant cleanup required for repair."
+}

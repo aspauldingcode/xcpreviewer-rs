@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-15T22:46:56.315104+00:00",
+  "outer_exit": 1,
+  "stdout": "{\"parent\":\"/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/xcpreviewer-build-v3-VYSwix\",\"success\":false,\"error\":\"Error: Observed compiler failed: RuntimeError: Live owned target identity unavailable\",\"measurementError\":null,\"final\":{\"retained_logical\":152908136,\"scratch_logical\":0,\"allocated\":153853952,\"files\":369,\"directories\":43,\"vanished_count\":0,\"vanished_paths\":[]},\"report\":{\"kind\":\"complete\",\"target_code\":null,\"failure\":\"RuntimeError: Live owned target identity unavailable\",\"drained\":false}}\n",
+  "stderr": "",
+  "fixture_pins": {
+    "Sources/PreviewLab/PreviewLab.swift": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
+    "PreviewLab.xcodeproj/project.pbxproj": "1ee671965dcfb221233970e970130946a1971a0b0d30625601e93440a60bcf45"
+  },
+  "dependency_pins": {
+    "tools/re/reloop/observed_compiler.js": "9647fff3dbdbfd8e260fb2b566c74c5e1b58b8789877f36c469a7151c5a1f3d6",
+    "tools/re/reloop/observed_group_anchor.py": "48c73a15ac5720ec653271bc6ec523a090fb2bff4301f2308a9812faea4187b8",
+    "research/build/libproc-observer/owned-process-snapshot": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5"
+  },
+  "runtime_pins": {
+    "/etc/profiles/per-user/8amps/bin/node": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+    "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+    "/Applications/Xcode.app/Contents/version.plist": "951ddf34d65d84d57684bd083ca7deebf8d5722eefb074f3cdf00f8304d5f511"
+  },
+  "toolchain": "Xcode 26.6\nBuild version 17F113\n",
+  "historical_identity_limit": "Historical GUI summary17F112 differs from current selected CLI17F113; no pure cross-version causal attribution",
+  "independent_review": "refresh_spec_review: v6 optional single ModuleCache subdir admissible;18 Python+15 JS controls pass; strict final/outer0/drain required",
+  "scope": "One owned CLI fixture build; no UI workspace opened; no Canvas acceptance"
+}
