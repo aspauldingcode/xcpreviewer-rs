@@ -1,0 +1,8 @@
+{
+  "owned_interaction_admitted": false,
+  "gate_exit": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/ax-binding-input-leaf-20261016/admit.py\", line 29, in <module>\n    p=Path(__file__).parent;v=admitted(json.loads((p/'fixture-record.json').read_text()),json.loads((p/'inventory-record.json').read_text()),str(p/'owned-documents'));(p/'admission.json').write_text(json.dumps(v,indent=2)+'\\n');print(json.dumps(v))\n  File \"/private/tmp/ax-binding-input-leaf-20261016/admit.py\", line 11, in admitted\n    need(f['status']=='owned_interaction_control_admitted' and f['admitted'] is True and f['scope']=='owned-two-window-AXPress-interaction')\n  File \"/private/tmp/ax-binding-input-leaf-20261016/admit.py\", line 8, in need\n    if not v:raise ValueError('Owned interaction admission rejected')\nValueError: Owned interaction admission rejected\n",
+  "reason": "Native78; selection rejects before AXPress; callbackcounts0; later controls unreached",
+  "native_input_qualified": false,
+  "live_Xcode_route_qualified": false
+}

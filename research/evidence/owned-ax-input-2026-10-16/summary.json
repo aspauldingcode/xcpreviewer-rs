@@ -1,0 +1,79 @@
+{
+  "cases": {
+    "input": {
+      "pid": 93197,
+      "native_target_code": 78,
+      "selection": {
+        "accepted": false,
+        "reason": "button_not_unique"
+      },
+      "callback_counts": {
+        "a": 0,
+        "b": 0,
+        "unknown": 0
+      },
+      "AXPress_reached": false,
+      "stale_or_overlap_action_controls_reached": false,
+      "geometry_unique_pairs": 4,
+      "actual_AX_and_CG_reorder": true,
+      "immediate_close_count": 0,
+      "postexit_windows": 0,
+      "strict_admission": false
+    },
+    "input-trace": {
+      "pid": 94166,
+      "native_target_code": 78,
+      "selection": {
+        "partial_button_matches": 1,
+        "accepted": false,
+        "reason": "button_traversal_rejected",
+        "detail": {
+          "AX_error": -25212,
+          "role": "AXButton",
+          "reason": "children_read"
+        }
+      },
+      "callback_counts": {
+        "a": 0,
+        "b": 0,
+        "unknown": 0
+      },
+      "AXPress_reached": false,
+      "stale_or_overlap_action_controls_reached": false,
+      "geometry_unique_pairs": 4,
+      "actual_AX_and_CG_reorder": true,
+      "immediate_close_count": 0,
+      "postexit_windows": 0,
+      "strict_admission": false
+    },
+    "input-leaf": {
+      "pid": 94845,
+      "native_target_code": 78,
+      "selection": {
+        "partial_button_matches": 1,
+        "accepted": false,
+        "reason": "button_traversal_rejected",
+        "detail": {
+          "AX_error": -25212,
+          "role": "AXImage",
+          "reason": "children_read"
+        }
+      },
+      "callback_counts": {
+        "a": 0,
+        "b": 0,
+        "unknown": 0
+      },
+      "AXPress_reached": false,
+      "stale_or_overlap_action_controls_reached": false,
+      "geometry_unique_pairs": 4,
+      "actual_AX_and_CG_reorder": true,
+      "immediate_close_count": 0,
+      "postexit_windows": 0,
+      "strict_admission": false
+    }
+  },
+  "native_input_qualified": false,
+  "live_Xcode_route_qualified": false,
+  "milestones_complete": false
+}
