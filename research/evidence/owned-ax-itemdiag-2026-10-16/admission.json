@@ -1,0 +1,8 @@
+{
+  "owned_fixture_admitted": false,
+  "reason": "Native78; returned owned AX refs report AXApplication roles, no window documents/geometry. Strict combined gate rejects.",
+  "gate_exit": 1,
+  "gate_stderr": "Traceback (most recent call last):\n  File \"/private/tmp/ax-binding-itemdiag-20261016/admit.py\", line 48, in <module>\n    result=admitted(json.loads((root/'fixture-record.json').read_text()),json.loads((root/'inventory-record.json').read_text()),str(root/'owned-documents'))\n  File \"/private/tmp/ax-binding-itemdiag-20261016/admit.py\", line 16, in admitted\n    need(row['error'] is None and integer(p['target_code'],0) and p['failure'] is None and p['drained'] is True and integer(p['remaining_observed'],0) and r['emergencyClosed'] is False and r['privateAbortRequested'] is False)\n  File \"/private/tmp/ax-binding-itemdiag-20261016/admit.py\", line 7, in need\n    if not v:raise ValueError('Owned fixture admission rejected')\nValueError: Owned fixture admission rejected\n",
+  "native_input_qualified": false,
+  "live_Xcode_route_qualified": false
+}

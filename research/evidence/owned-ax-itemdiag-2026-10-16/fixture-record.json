@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-itemdiag-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-itemdiag-20261016/owned-documents"
+  ],
+  "source_sha256": "c63b875e89330f4b5aee07c98260a83d0b305c9c051a904fc3369c497f63dca9",
+  "binary_sha256": "c115fea22496f4e2254b26b29ffa63b093f57594e702cf807ddffb2c02215af3",
+  "error": "Error: Observed compiler failed: 78",
+  "record": {
+    "pid": 80686,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 78,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 21,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_fixture_rejected\",\"phases\":[{\"status\":\"observed\",\"observation_started_ns\":70147631998000,\"observation_finished_ns\":70147644340000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"expected_AX_CF_type\":134,\"fixture_window_id\":0,\"document\":\"\",\"item_detail\":{\"AXRole\":{\"CF_type\":7,\"string\":\"AXApplication\",\"string_truncated\":false,\"error\":0},\"AXChildren\":{\"error\":0,\"CF_type\":19,\"count\":2},\"AXTitle\":{\"CF_type\":7,\"string\":\"probe\",\"string_truncated\":false,\"error\":0},\"AXDocument\":{\"error\":-25205,\"CF_type\":0},\"pid_error\":0,\"AXSubrole\":{\"error\":-25205,\"CF_type\":0},\"pid\":80687},\"button_ancestor_matches\":false,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":7917,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":7918,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[],\"item_CF_type\":134,\"AX_geometry\":{\"size_CF_type\":0,\"position_error\":-25205,\"position_CF_type\":0,\"size_error\":-25205}},{\"expected_AX_CF_type\":134,\"fixture_window_id\":0,\"document\":\"\",\"item_detail\":{\"AXRole\":{\"CF_type\":7,\"string\":\"AXApplication\",\"string_truncated\":false,\"error\":0},\"AXChildren\":{\"error\":0,\"CF_type\":19,\"count\":2},\"AXTitle\":{\"CF_type\":7,\"string\":\"probe\",\"string_truncated\":false,\"error\":0},\"AXDocument\":{\"error\":-25205,\"CF_type\":0},\"pid_error\":0,\"AXSubrole\":{\"error\":-25205,\"CF_type\":0},\"pid\":80687},\"button_ancestor_matches\":false,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":7917,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":7918,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[],\"item_CF_type\":134,\"AX_geometry\":{\"size_CF_type\":0,\"position_error\":-25205,\"position_CF_type\":0,\"size_error\":-25205}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2}],\"pid\":80687,\"admitted\":false,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":0,\"trusted\":1}\n",
+    "stderr": "2026-10-16 08:59:25.584 probe[80687:2795699] ApplePersistence=NO\n",
+    "stdoutBytes": 1877,
+    "stderrBytes": 65,
+    "stdoutSha256": "414047809d063b9d400ad3a070a79502698de4ad84ccd33867879f510ffbbc55",
+    "stderrSha256": "992437afe85e31c462d999792dec9a402dfa1603156131bf5b1d69dd2e7d69f0"
+  }
+}
