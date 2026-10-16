@@ -1,0 +1,8 @@
+{
+  "independent_verifier": "refresh_spec_review",
+  "disposition": "Dark and recovered Light sentinel content verified; firstLightfailed; no successful A-B-A claim",
+  "image_checks": "Both320x200/256000packedRGBAbytes/stride1280,opaque; all1036outerborderpixelsmatchliteralcolors; unique sentinel andcorrectmode labels visually verified",
+  "verifier_checks": "Independently ran all64000pixel/sourcecolor-subspace checks,8pixelborder/nonuniform and12mutations;187622changedchannels reproduce. Nonuniformity not glyph correctness.",
+  "post_review_hardening": "Producer made bundle-relative input paths, pinned source/PNG/analysis hashes, rejects Python-O; positive/12negatives and optimized rejection pass. These IO/hardening changes not independently re-reviewed.",
+  "limits": "No universal darkblank; prior blankcause/rasterglyphoracle/reliability/portableparity/input/state/wire unknown. Lease receipt calling-chat bound, notserverattestation/processdeallocation."
+}

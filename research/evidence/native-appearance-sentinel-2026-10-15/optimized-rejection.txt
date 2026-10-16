@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/private/tmp/sentinel-verification/verify.py", line 41, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/sentinel-verification/verify.py", line 23, in main
+    raise RuntimeError('Python optimization disables verifier checks')
+RuntimeError: Python optimization disables verifier checks

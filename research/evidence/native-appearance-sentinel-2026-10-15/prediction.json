@@ -1,0 +1,11 @@
+{
+  "scope": "Original owned appearance-reporting fixture; API-only snapshot oracle",
+  "sequence": [
+    "Light Appearance",
+    "Dark Appearance",
+    "Light Appearance"
+  ],
+  "prediction": "At2x320x200,opaque corners Light=(0,255,0,255),Dark=(255,0,255,255); unique SENTINEL20261015 and MODE label visible. Light recovery should agree with firstLight.",
+  "failures": "Blank uniform host frame, wrong dimensions/corners or missing sentinel rejects content even when errors[] empty. No unchanged dark retry; A-B-A recovery changesvariant.",
+  "limits": "No full text raster independent oracle; packed PNG decode not native framebuffer padding; no UIinput/privatewire/portable equivalence"
+}

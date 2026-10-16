@@ -1,0 +1,7 @@
+# Appearance-reporting native sentinel
+
+The unfinished experiment from 23:47 UTC was resumed without another native run. The intended Light–Dark–Light sequence began with PreviewFailedError/EvolvingError/RichCancelationError and no image. Dark and subsequent Light requests produced 320×200 opaque magenta and green images with the unique sentinel and correct visible mode labels. This is not a successful A–B–A repeatability result. Nonblank Dark output falsifies a universal dark-blank claim; the earlier fixture's blank output remains unexplained.
+
+Every decoded channel byte was checked: 64,000 pixels and 256,000 packed RGBA bytes per image, opacity, the source-derived color subspace, an exact eight-pixel border, and nonuniformity. Twelve mutations reject; the images differ in 187,622 channels. An independent reviewer verified the outer border, visible labels, and pixel verifier. Nonuniformity does not prove glyph correctness. Packed stride is 1,280 with no padding; internal native framebuffer padding remains unobserved.
+
+Run `python3 verify.py` with Pillow installed. Inputs use bundle-relative paths and pinned hashes; optimized Python is rejected. Input-path, pinning, and optimization hardening followed the independent core review and were checked by the producer. The initial native failure is retained verbatim. The lease and empty window inventory support owned-window closure, not process deallocation. No input, state, transport, portable-conformance, or milestone acceptance follows.
