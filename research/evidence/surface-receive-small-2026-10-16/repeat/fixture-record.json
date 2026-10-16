@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/surface-receive-small-repeat-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/surface-receive-small-repeat-20261016/owned-documents"
+  ],
+  "source_sha256": "dc9f6e18aeb1ece17a7978555c28e8076c05df05e18bbbae18048540cdc38f69",
+  "binary_sha256": "0da59c4534379e02d85433509cdff4e1f8c3d477fbbe7fb60955ed396cdb745a",
+  "error": null,
+  "record": {
+    "pid": 33741,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":33742,\"mode\":0,\"small_code\":0,\"receive_code\":0,\"imported\":true,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":1,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":2,\"refs_destroyed\":1,\"resource_name\":8711,\"received_name\":8711,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n{\"pid\":33742,\"mode\":1,\"small_code\":268451844,\"receive_code\":0,\"imported\":true,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":1,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":2,\"refs_destroyed\":1,\"resource_name\":9223,\"received_name\":9223,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n{\"pid\":33742,\"mode\":2,\"small_code\":268451844,\"receive_code\":268451843,\"imported\":false,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":0,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":1,\"refs_destroyed\":1,\"resource_name\":8719,\"received_name\":0,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n",
+    "stderr": "owned_tree_pid:33742\n",
+    "stdoutBytes": 1228,
+    "stderrBytes": 21,
+    "stdoutSha256": "e49830c22a431a14395714380b08d308e187519102899f82efef2119bea07c96",
+    "stderrSha256": "9477e238116dbb6f065d0c89c554a7ccc1b81d0b449cff5e08e11c5f52e28dfb"
+  }
+}

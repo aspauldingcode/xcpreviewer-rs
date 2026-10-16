@@ -1,0 +1,23 @@
+{
+  "wake": "2026-10-16T20:07:32.485Z",
+  "native_dispatch_deadline": "2026-10-16T20:22:32Z",
+  "hypotheses": [
+    "Small receive with LARGE retains the single queued descriptor for full receive",
+    "Without LARGE the size error consumes the message; immediate full receive times out without an imported descriptor",
+    "Unexpected status,queue/reference correlation,branch files or allocation bytes falsifies the scoped expectation"
+  ],
+  "controls": [
+    "correct-buffer receive",
+    "small receive with LARGE"
+  ],
+  "experimental_change": "small receive without LARGE on separately created owned endpoint/surface in same process",
+  "native_bounds": "alarm8s/guard10s/outer20s,exclusivecontroller;compile30s/outer40s",
+  "failure_policy": "retain first unexpected outcome; no retry/deadline renewal",
+  "not_claimed": [
+    "failed-receive-headersemantics",
+    "kernelinternaldestructororder",
+    "physicalreclamation",
+    "crosspeer",
+    "Canvasprotocol"
+  ]
+}

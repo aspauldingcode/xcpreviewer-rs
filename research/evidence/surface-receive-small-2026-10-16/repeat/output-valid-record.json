@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/surface-receive-small-20261016/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "dc9f6e18aeb1ece17a7978555c28e8076c05df05e18bbbae18048540cdc38f69",
+  "binary_sha256": "0da59c4534379e02d85433509cdff4e1f8c3d477fbbe7fb60955ed396cdb745a",
+  "error": null,
+  "record": {
+    "pid": 33126,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 0,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":33127,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:33127\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "ced54dfd0ea5323ec94a231cf07bec9a22e02f411e3ea4b8ce733720da69538b",
+    "stderrSha256": "e5ae4e6911305f20001ccff715fd8c0d9ef4df12fed222099d229ab83a32b885"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "runs": [
+    {
+      "run": "first",
+      "pid": 33202,
+      "stdout_bytes": 1228,
+      "stdout_sha256": "62a1fa0c22e613fcc42e34424b4a30327607e5f301f7629a613cb89bd763b209",
+      "binary_sha256": "0da59c4534379e02d85433509cdff4e1f8c3d477fbbe7fb60955ed396cdb745a",
+      "native_exit": 0
+    },
+    {
+      "run": "repeat",
+      "pid": 33742,
+      "stdout_bytes": 1228,
+      "stdout_sha256": "e49830c22a431a14395714380b08d308e187519102899f82efef2119bea07c96",
+      "binary_sha256": "0da59c4534379e02d85433509cdff4e1f8c3d477fbbe7fb60955ed396cdb745a",
+      "native_exit": 0
+    }
+  ],
+  "cases": 6,
+  "full_bytes_compared": 393216,
+  "padding_bytes": 12960,
+  "unused_tail_bytes": 365568,
+  "each_run_independent_expected_allocations_match": true,
+  "allocation_bytes_equal_across_runs": true,
+  "raw_JSONL_bytes_equal_claimed": false,
+  "retained_modes": [
+    0,
+    1
+  ],
+  "retained_queue_sequence": [
+    1,
+    1,
+    0
+  ],
+  "retained_reference_sequence": [
+    1,
+    1,
+    2,
+    1,
+    0
+  ],
+  "consumed_mode": 2,
+  "consumed_queue_sequence": [
+    1,
+    0,
+    0
+  ],
+  "consumed_reference_sequence": [
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "MACH_RCV_TOO_LARGE": 268451844,
+  "MACH_RCV_TIMED_OUT": 268451843,
+  "transfer_bytes": 64,
+  "header_limit_bytes": 24,
+  "local_removed_name_query_status": 15,
+  "physical_reclamation_qualified": false,
+  "cross_task_delivery_qualified": false,
+  "native_canvas_protocol_qualified": false,
+  "milestones_complete": false
+}
