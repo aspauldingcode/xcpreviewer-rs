@@ -1,0 +1,22 @@
+{
+  "output-valid": {
+    "actual_target_code": 0,
+    "scoped_drained": true,
+    "expected_failure_retained": false
+  },
+  "output-invalid": {
+    "actual_target_code": 81,
+    "scoped_drained": true,
+    "expected_failure_retained": true
+  },
+  "output-large": {
+    "actual_target_code": 82,
+    "scoped_drained": true,
+    "expected_failure_retained": true
+  },
+  "output-write": {
+    "actual_target_code": 83,
+    "scoped_drained": true,
+    "expected_failure_retained": true
+  }
+}

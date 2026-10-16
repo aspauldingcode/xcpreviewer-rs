@@ -1,0 +1,34 @@
+{
+  "phase": "output-invalid",
+  "command": "/private/tmp/ax-binding-tree-reviewed-20261016/probe",
+  "args": [
+    "--output-control",
+    "output-invalid"
+  ],
+  "source_sha256": "a7311a9f4e380491b35675e12fdb58ff8ae73f08d6800c20e0aadf56a4b07f38",
+  "binary_sha256": "b1869ce3756a8c2d3e35a4039405a1059991675cf17e07b2d85d531762feaa0a",
+  "error": "Error: Observed compiler failed: 81",
+  "record": {
+    "pid": 5025,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 81,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "owned_tree_pid:5026\nowned_output_serialization_failed\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 54,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "af5312ad01e2200e0bd19c1595ff84e85f9f98b350840a748d7a6000a3ea75da"
+  }
+}

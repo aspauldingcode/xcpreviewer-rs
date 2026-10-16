@@ -1,0 +1,85 @@
+{
+  "absence_policy_resolved": false,
+  "binary_sha256": "b1869ce3756a8c2d3e35a4039405a1059991675cf17e07b2d85d531762feaa0a",
+  "declared_buttons_observed": {
+    "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/": 1,
+    "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/": 1
+  },
+  "fixture_pid": 5377,
+  "immediate_close_count": 0,
+  "inventory_code": 0,
+  "live_Xcode_route_qualified": false,
+  "milestones_complete": false,
+  "native_fixture_code": 0,
+  "native_input_qualified": false,
+  "nodes": 8,
+  "observed_roles": [
+    "AXWindow",
+    "AXButton",
+    "AXImage",
+    "AXStaticText",
+    "AXWindow",
+    "AXButton",
+    "AXImage",
+    "AXStaticText"
+  ],
+  "output_controls": {
+    "output-invalid": {
+      "actual_target_code": 81,
+      "expected_failure_retained": true,
+      "scoped_drained": true
+    },
+    "output-large": {
+      "actual_target_code": 82,
+      "expected_failure_retained": true,
+      "scoped_drained": true
+    },
+    "output-valid": {
+      "actual_target_code": 0,
+      "expected_failure_retained": false,
+      "scoped_drained": true
+    },
+    "output-write": {
+      "actual_target_code": 83,
+      "expected_failure_retained": true,
+      "scoped_drained": true
+    }
+  },
+  "postexit_windows": 0,
+  "root_documents": [
+    {
+      "declared_native_window_id": 8249,
+      "document": "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/",
+      "index": 0
+    },
+    {
+      "declared_native_window_id": 8248,
+      "document": "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/",
+      "index": 4
+    }
+  ],
+  "stdout_bytes": 10663,
+  "stdout_sha256": "ec7a3d1e223f8046ab6c65ac9f649b1622e3d99f62ff83fe45f4c2b900674849",
+  "terminal_statuses": [
+    {
+      "contains_AXChildren": false,
+      "error": -25212,
+      "role": "AXButton"
+    },
+    {
+      "contains_AXChildren": false,
+      "error": -25212,
+      "role": "AXImage"
+    },
+    {
+      "contains_AXChildren": false,
+      "error": -25212,
+      "role": "AXButton"
+    },
+    {
+      "contains_AXChildren": false,
+      "error": -25212,
+      "role": "AXImage"
+    }
+  ]
+}

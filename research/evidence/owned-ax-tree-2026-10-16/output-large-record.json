@@ -1,0 +1,34 @@
+{
+  "phase": "output-large",
+  "command": "/private/tmp/ax-binding-tree-reviewed-20261016/probe",
+  "args": [
+    "--output-control",
+    "output-large"
+  ],
+  "source_sha256": "a7311a9f4e380491b35675e12fdb58ff8ae73f08d6800c20e0aadf56a4b07f38",
+  "binary_sha256": "b1869ce3756a8c2d3e35a4039405a1059991675cf17e07b2d85d531762feaa0a",
+  "error": "Error: Observed compiler failed: 82",
+  "record": {
+    "pid": 5102,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 82,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "owned_tree_pid:5103\nowned_output_limit\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 39,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "b3c6a2c9bb170efd56d6879f8e07339eb6e6d4adbcd7d7896f13d868c5c3d8a2"
+  }
+}

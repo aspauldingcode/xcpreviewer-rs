@@ -1,0 +1,72 @@
+{
+  "initial_producer_check": "Unjustified whole-report byte-equality assertion failed; observed_declared_buttons comes from unordered set. No native bytes/results changed.",
+  "controlled_frozen_replay": [
+    {
+      "seed": "0",
+      "optimized": false,
+      "exit": 0,
+      "report_sha256": "d87a7e5603558129687d3f9804285dd803b2b498191af98d7ca8faf763edafaf",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/"
+      ]
+    },
+    {
+      "seed": "0",
+      "optimized": true,
+      "exit": 0,
+      "report_sha256": "d87a7e5603558129687d3f9804285dd803b2b498191af98d7ca8faf763edafaf",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/"
+      ]
+    },
+    {
+      "seed": "1",
+      "optimized": false,
+      "exit": 0,
+      "report_sha256": "55f439045280ceb6df44b42b9d4a50287b38c8c1ab8a16818d9f589017cf9c2a",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/"
+      ]
+    },
+    {
+      "seed": "1",
+      "optimized": true,
+      "exit": 0,
+      "report_sha256": "55f439045280ceb6df44b42b9d4a50287b38c8c1ab8a16818d9f589017cf9c2a",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/"
+      ]
+    },
+    {
+      "seed": "2",
+      "optimized": false,
+      "exit": 0,
+      "report_sha256": "55f439045280ceb6df44b42b9d4a50287b38c8c1ab8a16818d9f589017cf9c2a",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/"
+      ]
+    },
+    {
+      "seed": "2",
+      "optimized": true,
+      "exit": 0,
+      "report_sha256": "55f439045280ceb6df44b42b9d4a50287b38c8c1ab8a16818d9f589017cf9c2a",
+      "canonical_semantic_sha256": "15dcec305ef2172aad7866e52d11ab79d67b60eea5bc042fa2752b458fe71d28",
+      "observed_button_key_order": [
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/a.xcodeproj/",
+        "file:///private/tmp/ax-binding-tree-reviewed-20261016/owned-documents/b.xcodeproj/"
+      ]
+    }
+  ],
+  "scope": "Semantic admission invariant normal/-O across selected hash seeds; owned report key ordering not a native wire/golden contract."
+}
