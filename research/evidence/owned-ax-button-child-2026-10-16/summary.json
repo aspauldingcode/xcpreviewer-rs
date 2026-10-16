@@ -1,0 +1,39 @@
+{
+  "actual_native_fixture_code": 78,
+  "binary_sha256": "561c9351404d5a1f25fabefa5e7c8ea0fdcc320171d3d1edba96baad32143a70",
+  "diagnostic_admission": {
+    "absence_policy_resolved": false,
+    "bounded_one_level_child_diagnostic_admitted": false,
+    "diagnostic_reached": false,
+    "early_phase": {
+      "equals_current_app_root": true,
+      "expected_AX_CF_type": 134,
+      "independent_app_roots_equal_control": true,
+      "item_CF_type": 134,
+      "item_detail": {
+        "AXRole": {
+          "CF_type": 7,
+          "error": 0,
+          "string": "AXApplication",
+          "string_truncated": false
+        },
+        "pid": 18526,
+        "pid_error": 0
+      },
+      "returned_items_equal": true,
+      "second_item_equals_app_root": true,
+      "status": "AX_item_role_rejected"
+    },
+    "live_Xcode_route_qualified": false,
+    "native_input_qualified": false,
+    "projection_crosscheck_admitted": false
+  },
+  "expected_native_fixture_code": 78,
+  "fixture_pid": 18526,
+  "immediate_close_count": 0,
+  "inventory_code": 0,
+  "milestones_complete": false,
+  "postexit_windows": 0,
+  "stdout_bytes": 562,
+  "stdout_sha256": "6bf63aff0b9ae382b0ccb2ebd412cf51f4d54fe6a413b86d302a5328afb1841e"
+}

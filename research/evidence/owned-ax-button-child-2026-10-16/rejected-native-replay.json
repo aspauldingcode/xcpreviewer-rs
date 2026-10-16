@@ -1,0 +1,16 @@
+[
+  {
+    "flags": [],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/ax-binding-button-child-20261016/admit.py\", line 50, in <module>\n    p=Path(__file__).parent;v=admitted(parsed((p/'fixture-record.json').read_text()),parsed((p/'inventory-record.json').read_text()),str(p/'owned-documents'));(p/'admission.json').write_text(json.dumps(v,indent=2,sort_keys=True)+'\\n');print(json.dumps(v,sort_keys=True))\n  File \"/private/tmp/ax-binding-button-child-20261016/admit.py\", line 16, in admitted\n    o=f['public_object_oracle'];need(o['finished'] is False and o['failure_reason']=='object_selector_unavailable' and o['main_thread'] is True and o['absence_policy_resolved'] is False and o['input_eligibility_qualified'] is False)\nKeyError: 'finished'\n"
+  },
+  {
+    "flags": [
+      "-O"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/ax-binding-button-child-20261016/admit.py\", line 50, in <module>\n    p=Path(__file__).parent;v=admitted(parsed((p/'fixture-record.json').read_text()),parsed((p/'inventory-record.json').read_text()),str(p/'owned-documents'));(p/'admission.json').write_text(json.dumps(v,indent=2,sort_keys=True)+'\\n');print(json.dumps(v,sort_keys=True))\n  File \"/private/tmp/ax-binding-button-child-20261016/admit.py\", line 16, in admitted\n    o=f['public_object_oracle'];need(o['finished'] is False and o['failure_reason']=='object_selector_unavailable' and o['main_thread'] is True and o['absence_policy_resolved'] is False and o['input_eligibility_qualified'] is False)\nKeyError: 'finished'\n"
+  }
+]

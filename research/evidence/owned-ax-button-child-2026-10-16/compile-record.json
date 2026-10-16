@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-fobjc-arc",
+    "-framework",
+    "Cocoa",
+    "-framework",
+    "ApplicationServices",
+    "/private/tmp/ax-binding-button-child-20261016/probe.m",
+    "-o",
+    "/private/tmp/ax-binding-button-child-20261016/probe"
+  ],
+  "source_sha256": "66dd82fa751040e6114c4bc71501678125aef3eee32c1d70743f6e2cd23460ba",
+  "binary_sha256": "561c9351404d5a1f25fabefa5e7c8ea0fdcc320171d3d1edba96baad32143a70",
+  "error": null,
+  "record": {
+    "pid": 17837,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 58,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "/private/tmp/ax-binding-button-child-20261016/probe.m:84:20: warning: 'accessibilityAttributeNames' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n   84 |   id names=[object accessibilityAttributeNames];if(![names isKindOfClass:[NSArray class]]||[names count]>64){out[@\"failure\"]=@\"names_type_or_bound\";return out;}\n      |                    ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:31:1: note: 'accessibilityAttributeNames' has been explicitly marked deprecated here\n   31 | - (NSArray<NSAccessibilityAttributeName> *)accessibilityAttributeNames API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n/private/tmp/ax-binding-button-child-20261016/probe.m:88:21: warning: 'accessibilityAttributeValue:' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n   88 |    id value=[object accessibilityAttributeValue:attribute];\n      |                     ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:32:1: note: 'accessibilityAttributeValue:' has been explicitly marked deprecated here\n   32 | - (nullable id)accessibilityAttributeValue:(NSAccessibilityAttributeName)attribute API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n/private/tmp/ax-binding-button-child-20261016/probe.m:104:19: warning: 'accessibilityAttributeNames' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n  104 |   id names=[known accessibilityAttributeNames];if(![names isKindOfClass:[NSArray class]]||[names count]>64||![names containsObject:NSAccessibilityChildrenAttribute]){out[@\"failure\"]=@\"children_not_advertised_or_bound\";return out;}\n      |                   ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:31:1: note: 'accessibilityAttributeNames' has been explicitly marked deprecated here\n   31 | - (NSArray<NSAccessibilityAttributeName> *)accessibilityAttributeNames API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n/private/tmp/ax-binding-button-child-20261016/probe.m:106:22: warning: 'accessibilityAttributeValue:' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n  106 |   id children=[known accessibilityAttributeValue:NSAccessibilityChildrenAttribute];\n      |                      ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:32:1: note: 'accessibilityAttributeValue:' has been explicitly marked deprecated here\n   32 | - (nullable id)accessibilityAttributeValue:(NSAccessibilityAttributeName)attribute API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n4 warnings generated.\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 3606,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "c77538966725c388752696e902c493f7c29b55c7049fbe5319c4fbab89f86c40"
+  }
+}

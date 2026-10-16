@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/ax-binding-button-child-20261016/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "66dd82fa751040e6114c4bc71501678125aef3eee32c1d70743f6e2cd23460ba",
+  "binary_sha256": "561c9351404d5a1f25fabefa5e7c8ea0fdcc320171d3d1edba96baad32143a70",
+  "error": null,
+  "record": {
+    "pid": 18274,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":18276,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:18276\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "8f0f33829eb70a7a83b4b3a3552284031fc6620a466bc8576e735041c2a31a70",
+    "stderrSha256": "fdaa2371b8c2a3f17d7da48b185d2a9dcce73c50735dead078fbb75fbe3f576f"
+  }
+}

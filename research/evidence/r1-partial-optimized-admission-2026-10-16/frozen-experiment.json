@@ -1,0 +1,166 @@
+{
+  "historical_manifest_sha256": "d8c5acef6c6154e836c639869591d0e18d226576cc7bcbf9b9cf6ce6488f1d76",
+  "historical_files_verified": 19,
+  "rows": [
+    {
+      "verifier": "original",
+      "optimized": false,
+      "fault": "positive",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "original",
+      "optimized": false,
+      "fault": "wait_code",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/original-verifier.py\", line 26, in verify\n    assert json.loads((root/'wait.json').read_text()) == {'code':0,'timeout':False}\nAssertionError\n"
+    },
+    {
+      "verifier": "original",
+      "optimized": false,
+      "fault": "endpoint_refs",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/original-verifier.py\", line 36, in verify\n    assert r['before_endpoint'] == r['after_endpoint'] == 1\nAssertionError\n"
+    },
+    {
+      "verifier": "original",
+      "optimized": false,
+      "fault": "padding",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/original-verifier.py\", line 41, in verify\n    assert (root/name).read_bytes() == expected\nAssertionError\n"
+    },
+    {
+      "verifier": "original",
+      "optimized": false,
+      "fault": "tail",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/original-verifier.py\", line 41, in verify\n    assert (root/name).read_bytes() == expected\nAssertionError\n"
+    },
+    {
+      "verifier": "original",
+      "optimized": true,
+      "fault": "positive",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "original",
+      "optimized": true,
+      "fault": "wait_code",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "original",
+      "optimized": true,
+      "fault": "endpoint_refs",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "original",
+      "optimized": true,
+      "fault": "padding",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "original",
+      "optimized": true,
+      "fault": "tail",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "repaired",
+      "optimized": false,
+      "fault": "positive",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "repaired",
+      "optimized": false,
+      "fault": "wait_code",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 34, in verify\n    _require(json.loads((root / 'wait.json').read_text()) == {'code': 0, 'timeout': False})\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": false,
+      "fault": "endpoint_refs",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 46, in verify\n    _require(r['before_endpoint'] == r['after_endpoint'] == 1)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": false,
+      "fault": "padding",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 51, in verify\n    _require((root / name).read_bytes() == expected)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": false,
+      "fault": "tail",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 51, in verify\n    _require((root / name).read_bytes() == expected)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": true,
+      "fault": "positive",
+      "exit": 0,
+      "stdout": "{\"owned_task_controls\": 2, \"full_bytes_compared\": 98304, \"padding_bytes\": 3240, \"unused_tail_bytes\": 91392, \"partial_descriptor_failure_qualified\": true, \"moved_first_right_restored\": false, \"kernel_internal_copyin_order_traced\": false, \"physical_reclamation_qualified\": false, \"native_canvas_protocol_qualified\": false}\n",
+      "stderr": ""
+    },
+    {
+      "verifier": "repaired",
+      "optimized": true,
+      "fault": "wait_code",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 34, in verify\n    _require(json.loads((root / 'wait.json').read_text()) == {'code': 0, 'timeout': False})\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": true,
+      "fault": "endpoint_refs",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 46, in verify\n    _require(r['before_endpoint'] == r['after_endpoint'] == 1)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": true,
+      "fault": "padding",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 51, in verify\n    _require((root / name).read_bytes() == expected)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    },
+    {
+      "verifier": "repaired",
+      "optimized": true,
+      "fault": "tail",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 51, in verify\n    _require((root / name).read_bytes() == expected)\n  File \"/private/tmp/r1-partial-optimized-20261016/repaired-verifier.py\", line 3, in _require\n    raise AssertionError('Partial-right evidence admission rejected')\nAssertionError: Partial-right evidence admission rejected\n"
+    }
+  ]
+}

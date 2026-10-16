@@ -1,6 +1,8 @@
 import hashlib
 import json
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -28,3 +30,23 @@ class SurfacePartialRightTests(unittest.TestCase):
                     r[fault] = value;p.write_text(json.dumps(r)+'\n')
                 (e/'manifest.json').write_text(json.dumps({'files':{str(q.relative_to(e)):{'bytes':q.stat().st_size,'sha256':hashlib.sha256(q.read_bytes()).hexdigest()} for q in e.rglob('*') if q.is_file() and q.name != 'manifest.json'}}))
                 with self.assertRaises(AssertionError): verify(e)
+
+    def test_additional_admission_faults(self):
+        for fault in ['wait_code', 'endpoint_refs', 'padding', 'tail']:
+            with self.subTest(fault=fault), tempfile.TemporaryDirectory() as temporary:
+                e = Path(temporary)/'e';shutil.copytree(E,e)
+                if fault == 'wait_code':
+                    (e/'move/wait.json').write_text(json.dumps({'code':7,'timeout':False}))
+                elif fault == 'endpoint_refs':
+                    p = e/'move/stdout.jsonl';row = json.loads(p.read_text())
+                    row['after_endpoint'] = 2;p.write_text(json.dumps(row)+'\n')
+                else:
+                    p = e/'move/alias-after-cleanup.bin';raw = bytearray(p.read_bytes())
+                    raw[68 if fault == 'padding' else 16383] ^= 1;p.write_bytes(raw)
+                (e/'manifest.json').write_text(json.dumps({'files':{str(q.relative_to(e)):{'bytes':q.stat().st_size,'sha256':hashlib.sha256(q.read_bytes()).hexdigest()} for q in e.rglob('*') if q.is_file() and q.name != 'manifest.json'}}))
+                with self.assertRaises(AssertionError): verify(e)
+
+    def test_optimized_admission(self):
+        tests = ['test_native_invalid_destination','test_resealed_faults','test_additional_admission_faults']
+        result = subprocess.run([sys.executable,'-O','-m','unittest',*[__name__+'.SurfacePartialRightTests.'+name for name in tests]],cwd=Path(__file__).parent,capture_output=True,text=True,timeout=30)
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
