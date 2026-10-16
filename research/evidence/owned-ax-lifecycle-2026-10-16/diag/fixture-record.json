@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-diag-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-diag-20261016/owned-documents"
+  ],
+  "source_sha256": "54e074a607a312cb5e4f09d962027ba127d827090dcd5fcf2fb81a5ad729757c",
+  "binary_sha256": "3a6f9ef31f5b68ab2b3c5e8ac25e65da976c409138d4d3044abd9936e6f24f28",
+  "error": "Error: Observed compiler failed: 78",
+  "record": {
+    "pid": 108,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 78,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 26,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_fixture_rejected\",\"phases\":[{\"status\":\"two_AX_windows_unavailable\",\"own_CG_ids\":[5305,5306],\"observation_started_ns\":26609345266000,\"own_CG_available\":1,\"AX_timeout_setting_error\":0,\"observation_finished_ns\":26609441448000,\"returned_CF_type\":0,\"AX_windows_error\":-25208,\"AX_window_count\":-1}],\"pid\":110,\"admitted\":false,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":2,\"trusted\":1}\n",
+    "stderr": "2026-10-15 20:53:47.374 probe[110:2084315] ApplePersistence=NO\n",
+    "stdoutBytes": 428,
+    "stderrBytes": 63,
+    "stdoutSha256": "6b1e103fc56367951f46a89eeda30a8846d54187d25d7881a6956f56ce3be62c",
+    "stderrSha256": "b3e59ee637d47fa69f46c479465c38e11ca068ba249282890d40f2a7df13c379"
+  }
+}

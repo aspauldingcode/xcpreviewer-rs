@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-geometry-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-geometry-20261016/owned-documents"
+  ],
+  "source_sha256": "797beadcd8f6dc928ffaafb449fe2b275a686ceddb394c456cfe5d34d10106b2",
+  "binary_sha256": "8068b0218d8df126478b62da538925a3f725f019229729f603f23b89844cfda7",
+  "error": "Error: Observed compiler failed: 78",
+  "record": {
+    "pid": 3866,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 78,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 26,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_fixture_rejected\",\"phases\":[{\"status\":\"observed\",\"observation_started_ns\":26972408488000,\"observation_finished_ns\":26972437156000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":5511,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5512,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5511],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":5512,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5512,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5512],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":400},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2},{\"status\":\"observed\",\"observation_started_ns\":26972441422000,\"observation_finished_ns\":26972442855000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":5511,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5512,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5511],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":5512,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5512,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5512],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":400},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2},{\"status\":\"observed\",\"observation_started_ns\":26972555560000,\"observation_finished_ns\":26972556763000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":5512,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":5512,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5512,5511],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":5511,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-geometry-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":5512,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":5511,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[5512,5511],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2}],\"pid\":3867,\"admitted\":false,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":2,\"trusted\":1}\n",
+    "stderr": "2026-10-15 20:59:50.469 probe[3867:2101684] ApplePersistence=NO\n",
+    "stdoutBytes": 4098,
+    "stderrBytes": 64,
+    "stdoutSha256": "fae397607c985dfb85f0705df0e0256a67151c3ccf909577a393d3b910f748a6",
+    "stderrSha256": "782247db74794aa4fcc6993d9366d3bddea4cc2fb00c459b0d963d9250d3450b"
+  }
+}
