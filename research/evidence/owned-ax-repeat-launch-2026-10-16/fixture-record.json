@@ -1,0 +1,30 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-orderpump-repeat-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-orderpump-repeat-20261016/owned-documents"
+  ],
+  "source_sha256": "d9d0f20e6cd640d7248ccbd29736ea4492a32eaa6dc2e090ff2aa083a47bb1d2",
+  "binary_sha256": "bdd66ffc6d75fbe4ade6041c4abf1bb98d0d56bc39ae07fedb168d74a7cfcc4b",
+  "error": "Error: Observed compiler failed: PermissionError: [Errno 13] Permission denied: '/private/tmp/ax-binding-orderpump-repeat-20261016/probe'",
+  "record": {
+    "pid": 63929,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": null,
+      "failure": "PermissionError: [Errno 13] Permission denied: '/private/tmp/ax-binding-orderpump-repeat-20261016/probe'",
+      "drained": false
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
