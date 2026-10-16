@@ -1,0 +1,7 @@
+{
+  "independent_verifier": "refresh_spec_review",
+  "disposition": "Retainable research-only frozen consumer; no product integration approval",
+  "tests": "11 independently rerun tests pass; producer also runs optimizedPython and frozen replay successfully",
+  "retained_failures": "Separate caller RGBA/PNG binding corrected; duplicate JSON keys, nonfinite values, double-leading-slash path and optional metadata types initially accepted, now reject. Initial misleading alpha/uniform test gap corrected with internally decoded PNG negatives.",
+  "limits": "Expected mapping seals must be verified independently by caller. Normalized path is response-shape only; no tool-supplied path opened. Frozen color content is not live provenance or glyph correctness. Replay CLI and optimized run producer-checked after core review."
+}

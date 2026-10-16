@@ -1,0 +1,26 @@
+{
+  "scope": "Frozen research consumer replay; no native execution",
+  "rows": [
+    {
+      "case": "sentinel_light",
+      "status": "native_failure_retained",
+      "reason": "Native tool reports failure or invalid error flag"
+    },
+    {
+      "case": "sentinel_dark",
+      "grade": "frozen-owned-sentinel-color-content",
+      "content_accepted": true,
+      "live_provenance": false,
+      "glyph_raster_verified": false
+    },
+    {
+      "case": "sentinel_recovered_light",
+      "grade": "frozen-owned-sentinel-color-content",
+      "content_accepted": true,
+      "live_provenance": false,
+      "glyph_raster_verified": false
+    }
+  ],
+  "repeatability_accepted": false,
+  "live_provenance": false
+}

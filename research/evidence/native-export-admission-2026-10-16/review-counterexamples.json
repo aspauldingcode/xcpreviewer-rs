@@ -1,0 +1,12 @@
+{
+  "independent_verifier": "refresh_spec_review",
+  "initial_disposition": "Strict normalization pending fixes",
+  "accepted_counterexamples": [
+    "Duplicate errors keys overwrite a failure",
+    "Double-leading-slash path",
+    "Invalid optional metadata types",
+    "JSON NaN in metadata"
+  ],
+  "test_gap": "Original test name claimed alpha/uniform mutations but did not exercise encoded PNG admission; corrected with internally decoded in-memory PNG negatives",
+  "trusted_expected_mapping": "Caller must verify the separate input seal; no live provenance or glyph claim"
+}
