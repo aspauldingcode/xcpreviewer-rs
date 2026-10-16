@@ -1,0 +1,34 @@
+{
+  "phase": "inventory",
+  "command": "/private/tmp/ax-binding-pump-20261016/probe",
+  "args": [
+    "--inventory",
+    "16554"
+  ],
+  "source_sha256": "b4bc0bdd6ac6c42e5f494584e2db7e8b3cbceb4ff2ce19285e4f0bd22a87249f",
+  "binary_sha256": "f9d442e662a177d4b65221573b26d65a811e7d0b88da4e3c492dd3623f981138",
+  "error": null,
+  "record": {
+    "pid": 16683,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"owned_on_screen_windows\":0,\"target_pid\":16554}\n",
+    "stderr": "",
+    "stdoutBytes": 49,
+    "stderrBytes": 0,
+    "stdoutSha256": "31204e5307809239bb5811c274724cd1ee4ecd2b6b3e70bcf1aad17c22bd915f",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

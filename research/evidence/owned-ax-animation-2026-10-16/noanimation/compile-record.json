@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-fobjc-arc",
+    "-framework",
+    "Cocoa",
+    "-framework",
+    "ApplicationServices",
+    "/private/tmp/ax-binding-noanimation-20261016/probe.m",
+    "-o",
+    "/private/tmp/ax-binding-noanimation-20261016/probe"
+  ],
+  "source_sha256": "b8dde92771233995ed7fa9ac745beac27d094a04c195e4ef7da51f573fbac2c8",
+  "binary_sha256": "095fd4801bc8b964faa2b687e61cac7c63d9b38f3a30b38475fe6a86aac2cb4a",
+  "error": null,
+  "record": {
+    "pid": 18549,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 44,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

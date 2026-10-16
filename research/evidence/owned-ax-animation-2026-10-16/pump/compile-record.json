@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-fobjc-arc",
+    "-framework",
+    "Cocoa",
+    "-framework",
+    "ApplicationServices",
+    "/private/tmp/ax-binding-pump-20261016/probe.m",
+    "-o",
+    "/private/tmp/ax-binding-pump-20261016/probe"
+  ],
+  "source_sha256": "b4bc0bdd6ac6c42e5f494584e2db7e8b3cbceb4ff2ce19285e4f0bd22a87249f",
+  "binary_sha256": "f9d442e662a177d4b65221573b26d65a811e7d0b88da4e3c492dd3623f981138",
+  "error": null,
+  "record": {
+    "pid": 16280,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 58,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
