@@ -1,0 +1,34 @@
+{
+  "phase": "inventory",
+  "command": "/private/tmp/ax-binding-legacy-diagnostic-20261016/probe",
+  "args": [
+    "--inventory",
+    "14606"
+  ],
+  "source_sha256": "2fa643c48a289e14bc1e2b431aa4c536218efa6712b80f90a0dd448de8590a11",
+  "binary_sha256": "6301f15b80740bb3be64fee5b135dcff8e605d3e7d2a12eca13bc82af0ec3153",
+  "error": null,
+  "record": {
+    "pid": 14689,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"owned_on_screen_windows\":0,\"target_pid\":14606}\n",
+    "stderr": "owned_tree_pid:14690\n",
+    "stdoutBytes": 49,
+    "stderrBytes": 21,
+    "stdoutSha256": "78ecc4f643cd614f9b543435c5ae3a6d916dc9f176a3ab4125d2d240d12f56c5",
+    "stderrSha256": "f049a40f86d8306fd76af21cea5f328283edb15b839bb869e42387941a10111a"
+  }
+}

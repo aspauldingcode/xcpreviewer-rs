@@ -1,0 +1,15 @@
+......E
+======================================================================
+ERROR: test_supported_and_unavailable (test_admit.DiagnosticTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/ax-binding-legacy-diagnostic-20261016/test_admit.py", line 17, in test_supported_and_unavailable
+    self.assertTrue(admitted(f,i,ROOT)['bounded_expected_rejection_diagnostic_admitted'])
+  File "/private/tmp/ax-binding-legacy-diagnostic-20261016/admit.py", line 14, in admitted
+    need(integer(f['pid']) and integer(i['target_pid'],f['pid']) and integer(i['owned_on_screen_windows'],0) and integer(f['own_on_screen_after_close'],0) and inventory['binary_sha256']==fixture['binary_sha256'])
+KeyError: 'binary_sha256'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.051s
+
+FAILED (errors=1)

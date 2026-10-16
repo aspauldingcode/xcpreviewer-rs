@@ -1,0 +1,107 @@
+{
+  "actual_native_fixture_code": 78,
+  "binary_sha256": "6301f15b80740bb3be64fee5b135dcff8e605d3e7d2a12eca13bc82af0ec3153",
+  "diagnostic_admission": {
+    "absence_policy_resolved": false,
+    "actual_diagnostic": {
+      "absence_policy_resolved": false,
+      "declared_button": {
+        "AXChildren": {
+          "count": 1,
+          "kind": "array"
+        },
+        "AXIdentifier": {
+          "kind": "not_advertised"
+        },
+        "AXRole": {
+          "kind": "string",
+          "truncated": false,
+          "value": "AXUnknown"
+        },
+        "getter_exception": false,
+        "names": [
+          "AXRole",
+          "AXRoleDescription",
+          "AXHelp",
+          "AXFocused",
+          "AXParent",
+          "AXChildren",
+          "AXChildrenInNavigationOrder",
+          "AXWindow",
+          "AXTopLevelUIElement",
+          "AXPosition",
+          "AXSize",
+          "AXEnabled"
+        ],
+        "names_selector": true,
+        "value_selector": true
+      },
+      "declared_button_modern_identifier": {
+        "kind": "string",
+        "truncated": false,
+        "value": "owned-binding-button"
+      },
+      "declared_button_modern_role": {
+        "kind": "string",
+        "truncated": false,
+        "value": "AXUnknown"
+      },
+      "input_eligibility_qualified": false,
+      "is_declared_content_view": false,
+      "main_thread": true,
+      "missing_object": {
+        "AXChildren": {
+          "count": 0,
+          "kind": "array"
+        },
+        "AXIdentifier": {
+          "kind": "not_advertised"
+        },
+        "AXRole": {
+          "kind": "string",
+          "truncated": false,
+          "value": "AXStaticText"
+        },
+        "getter_exception": false,
+        "names": [
+          "AXSelectedTextRange",
+          "AXNumberOfCharacters",
+          "AXEnabled",
+          "AXFrame",
+          "AXParent",
+          "AXSize",
+          "AXFocused",
+          "AXChildren",
+          "AXPlaceholderValue",
+          "AXRole",
+          "AXTopLevelUIElement",
+          "AXInsertionPointLineNumber",
+          "AXHelp",
+          "AXValue",
+          "AXPosition",
+          "AXWindow",
+          "AXRoleDescription",
+          "AXChildrenInNavigationOrder",
+          "AXVisibleCharacterRange",
+          "AXSelectedText"
+        ],
+        "names_selector": true,
+        "value_selector": true
+      },
+      "scope": "missing-modern-selector-owned-object-only"
+    },
+    "bounded_expected_rejection_diagnostic_admitted": false,
+    "live_Xcode_route_qualified": false,
+    "native_input_qualified": false,
+    "projection_crosscheck_admitted": false,
+    "rejection_reason": "Planned consumer incorrectly predicts direct declared NSButton modern role AXButton; actual AXUnknown"
+  },
+  "expected_native_fixture_code": 78,
+  "fixture_pid": 14606,
+  "immediate_close_count": 0,
+  "inventory_code": 0,
+  "milestones_complete": false,
+  "postexit_windows": 0,
+  "stdout_bytes": 12087,
+  "stdout_sha256": "978e5d4436cd06edd130bb88401890868e3b9f3a7d83dd4839cf512a78bf2827"
+}

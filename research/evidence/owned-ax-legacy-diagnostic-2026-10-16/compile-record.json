@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-fobjc-arc",
+    "-framework",
+    "Cocoa",
+    "-framework",
+    "ApplicationServices",
+    "/private/tmp/ax-binding-legacy-diagnostic-20261016/probe.m",
+    "-o",
+    "/private/tmp/ax-binding-legacy-diagnostic-20261016/probe"
+  ],
+  "source_sha256": "2fa643c48a289e14bc1e2b431aa4c536218efa6712b80f90a0dd448de8590a11",
+  "binary_sha256": "6301f15b80740bb3be64fee5b135dcff8e605d3e7d2a12eca13bc82af0ec3153",
+  "error": null,
+  "record": {
+    "pid": 14361,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 34,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "/private/tmp/ax-binding-legacy-diagnostic-20261016/probe.m:84:20: warning: 'accessibilityAttributeNames' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n   84 |   id names=[object accessibilityAttributeNames];if(![names isKindOfClass:[NSArray class]]||[names count]>64){out[@\"failure\"]=@\"names_type_or_bound\";return out;}\n      |                    ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:31:1: note: 'accessibilityAttributeNames' has been explicitly marked deprecated here\n   31 | - (NSArray<NSAccessibilityAttributeName> *)accessibilityAttributeNames API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n/private/tmp/ax-binding-legacy-diagnostic-20261016/probe.m:88:21: warning: 'accessibilityAttributeValue:' is deprecated: first deprecated in macOS 10.10 - Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h) [-Wdeprecated-declarations]\n   88 |    id value=[object accessibilityAttributeValue:attribute];\n      |                     ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAccessibility.h:32:1: note: 'accessibilityAttributeValue:' has been explicitly marked deprecated here\n   32 | - (nullable id)accessibilityAttributeValue:(NSAccessibilityAttributeName)attribute API_DEPRECATED(\"Use the NSAccessibility protocol methods instead (see NSAccessibilityProtocols.h)\", macos(10.1,10.10));\n      | ^\n2 warnings generated.\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 1776,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "6708c10c707b0a4e7a5ff2b20fc969212139bd72f0444b6e7773894e8e07d797"
+  }
+}
