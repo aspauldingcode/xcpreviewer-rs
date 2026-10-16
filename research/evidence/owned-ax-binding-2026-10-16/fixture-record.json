@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-native-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-native-20261016/owned-documents"
+  ],
+  "source_sha256": "377c90b3d04ddc92d53af09ca22cf8fbb738a1bbe46ca313a7403aa0316f0c48",
+  "binary_sha256": "bbcaf4cbd4a6bb866af7cd529c3928a457af22a3f312fde6b653e0eb565c1037",
+  "error": "Error: Observed compiler failed: 78",
+  "record": {
+    "pid": 87427,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 78,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 23,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_fixture_rejected\",\"phases\":[{\"status\":\"two_AX_windows_unavailable\"}],\"pid\":87428,\"admitted\":false,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":2,\"trusted\":1}\n",
+    "stderr": "2026-10-15 20:47:13.524 probe[87428:2049015] ApplePersistence=NO\n",
+    "stdoutBytes": 206,
+    "stderrBytes": 65,
+    "stdoutSha256": "6bf54a97406e23b0a3eedee79de6ef9b1d92348db29779cb577ce5bbdbda6f2e",
+    "stderrSha256": "5f165810f5d3f6cb085aaaf75e523c62095f34ddc87771016b1f20f0628dace0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "phase": "run",
+  "command": "/private/tmp/ax-binding-native-20261016/probe",
+  "args": [],
+  "source_sha256": "1e6356c21fd3a109f0278ae3933e9c7da0c80f52ecc5ce1aeaa28b36790141d5",
+  "binary_sha256": "ca05733573b1d8b24f222ee507037680776c4dcbe407142e75d489bb261b0559",
+  "error": null,
+  "record": {
+    "pid": 74349,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"trusted_preflight_only\",\"scope\":\"owned-two-window-public-API-read-only\",\"trusted\":1,\"pid\":74361}\n",
+    "stderr": "",
+    "stdoutBytes": 108,
+    "stderrBytes": 0,
+    "stdoutSha256": "342160681214714775613b05488c6d22dc389025fb54a8cfcd81d857fa8439d9",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
