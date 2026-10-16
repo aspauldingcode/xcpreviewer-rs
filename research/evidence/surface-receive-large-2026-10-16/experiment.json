@@ -1,0 +1,18 @@
+{
+  "wake": "2026-10-16T19:56:02.472Z",
+  "native_dispatch_deadline": "2026-10-16T20:11:02Z",
+  "hypotheses": [
+    "MACH_RCV_LARGE reports required size and preserves queued owned descriptor for successful full receive",
+    "Unexpected consumption, altered local reference counts or bytes falsifies the scoped recovery expectation"
+  ],
+  "control": "Correctly sized receive without small receive on separately created own surface/endpoint in same task",
+  "native_bounds": "alarm8s/observer10s/outer20s; exclusivecontroller; compile30s/outer40s",
+  "not_claimed": [
+    "cross-taskdelivery",
+    "globalrefs",
+    "physicalreclamation",
+    "Canvasprotocol",
+    "privatebridgeavailability"
+  ],
+  "failure_policy": "retain first failure; no unchanged retry or deadline renewal"
+}
