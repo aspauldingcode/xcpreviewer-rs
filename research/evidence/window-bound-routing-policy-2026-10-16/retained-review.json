@@ -1,0 +1,13 @@
+{
+  "verifier": "refresh_spec_review",
+  "initial_tests": 7,
+  "initial_accepted_invalid_inputs": ["advertised=NO_CLICK string admits CLICK", "ax_actions=NotAXPress string admits PRESS", "float foreground/hit IDs compare equal to integers", "NUL-containing document path"],
+  "initial_model_gap": "Element ancestor window not bound to admitted window",
+  "revision": "Require explicit bounded capability collections, exact integer click observations, NUL-free bounded canonical lexical paths and explicit matching element ancestor Window",
+  "revised_independent_tests": 12,
+  "optimized_independent_tests": 12,
+  "source_hashes_independently_matched": true,
+  "disposition": "Retainable abstract policy only; no further concrete bypass found in reviewed inputs. No native qualification or integration approval.",
+  "remaining": ["authentic and fresh observations", "action-time races", "real filesystem ownership and alias identity", "native identity ranges", "deployed binary/source alignment", "real two-owned-window execution"],
+  "producer_followup": "Pinned source dispatch control separately verifies the click-to-PRESS arm and rejects altered bytes; not independently executed by reviewer."
+}

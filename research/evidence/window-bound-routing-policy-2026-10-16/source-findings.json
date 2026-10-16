@@ -1,0 +1,19 @@
+{
+  "scope": "Local source inspection only; active deployed binary/source alignment unverified",
+  "sources": [
+    {
+      "path": "/Users/8amps/src/unified-computer-use/src/tools.rs",
+      "sha256": "6e2a0a316261007771f191f949b2b17c096dffdd835d4e5cf38b06d78736dfe2",
+      "bytes": 26513
+    },
+    {
+      "path": "/Users/8amps/src/unified-computer-use/vendor/axbridge.swift",
+      "sha256": "cb6bb024246963498cffd32d89f519addb9a926c474cb986f7836a0e33cd374b",
+      "bytes": 76109
+    }
+  ],
+  "source_dispatch_arm": "\"press\" | \"click\" | \"PRESS\" => \"PRESS\",",
+  "observed_source_effect": "lowercase click is forwarded as PRESS; Swift PRESS requires AXPress, while separate CLICK supports geometry. Consistent with retained no-AXPress errors, not proof of active binary origin.",
+  "window_binding": "resolve walks app child indices. Role/label guards do not bind ancestor window identity. Pointer route uses first on-screen app window; app focus is not explicit window ownership.",
+  "limits": "No installed code modified. No GUI/native test or runtime attribution. Separate cua_repl route not attributed to this source. No Git metadata found in this source directory."
+}
