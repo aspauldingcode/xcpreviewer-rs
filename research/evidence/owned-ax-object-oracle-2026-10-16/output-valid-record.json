@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/ax-binding-object-oracle-20261016/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "3cb4af4e4ab44fbdaea5248fd041b0103a6e57178fc1302e7039e7efeedbb714",
+  "binary_sha256": "1980b00de239cfced14a8aa0558ecccb6313a2c54a8a175f7eb35d5094af94be",
+  "error": null,
+  "record": {
+    "pid": 11467,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":11468,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:11468\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "fba4c2834e889a579d41cc74c569740659ae19fc43a42c52f1bffb9f4d1306a5",
+    "stderrSha256": "bfd4b0c7eb5c8c85392314677a53af20478b78935285b696c24f307bebbaf084"
+  }
+}
