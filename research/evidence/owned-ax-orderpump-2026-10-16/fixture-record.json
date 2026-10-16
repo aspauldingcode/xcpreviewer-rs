@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-orderpump-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-orderpump-20261016/owned-documents"
+  ],
+  "source_sha256": "d9d0f20e6cd640d7248ccbd29736ea4492a32eaa6dc2e090ff2aa083a47bb1d2",
+  "binary_sha256": "bdd66ffc6d75fbe4ade6041c4abf1bb98d0d56bc39ae07fedb168d74a7cfcc4b",
+  "error": null,
+  "record": {
+    "pid": 28650,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 34,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_geometry_correlation_admitted\",\"phases\":[{\"status\":\"observed\",\"observation_started_ns\":28236806175000,\"observation_finished_ns\":28236821735000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":6677,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6678,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6677],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":6678,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6678,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6678],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":400},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2},{\"status\":\"observed\",\"observation_started_ns\":28236936883000,\"observation_finished_ns\":28236938835000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":6678,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":6678,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6678],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":400},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":6677,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":true,\"CG_geometry\":[{\"id\":6678,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6677],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2},{\"status\":\"observed\",\"observation_started_ns\":28237054000000,\"observation_finished_ns\":28237055712000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":6678,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/b.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":6678,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6678,6677],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}},{\"fixture_window_id\":6677,\"document\":\"file:\\/\\/\\/private\\/tmp\\/ax-binding-orderpump-20261016\\/owned-documents\\/a.xcodeproj\\/\",\"button_ancestor_matches\":true,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":6678,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":6677,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[6678,6677],\"AX_geometry\":{\"size_CF_type\":137,\"size_error\":0,\"AX_rect\":{\"Width\":200,\"Height\":132,\"Y\":758,\"X\":160},\"size_AX_type\":2,\"position_error\":0,\"position_AX_type\":1,\"position_CF_type\":137}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2}],\"pid\":28654,\"admitted\":true,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":0,\"trusted\":1}\n",
+    "stderr": "2026-10-15 21:20:54.750 probe[28654:2221566] ApplePersistence=NO\n",
+    "stdoutBytes": 4117,
+    "stderrBytes": 65,
+    "stdoutSha256": "43e4c734eba8dab192513fe855b388b2add81dbb3fab9fa673883ce3994bc159",
+    "stderrSha256": "1d5d4b461ec01cf215f5bd614af5825beba91186f1ba5417ae81bdbae47ea237"
+  }
+}
