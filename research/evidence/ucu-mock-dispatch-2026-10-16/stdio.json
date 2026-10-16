@@ -1,0 +1,63 @@
+{
+  "requests": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "owned-routing-control",
+          "version": "1"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tools/call",
+      "params": {
+        "name": "computer_act",
+        "arguments": {
+          "target": "ax-owned-mock",
+          "op": "click",
+          "ref": "ax:0.0",
+          "label": "Owned sentinel click"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "tools/call",
+      "params": {
+        "name": "computer_act",
+        "arguments": {
+          "target": "ax-owned-mock",
+          "op": "press",
+          "ref": "ax:0.0",
+          "label": "Owned sentinel press"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "tools/call",
+      "params": {
+        "name": "computer_act",
+        "arguments": {
+          "target": "ax-owned-mock",
+          "op": "CLICK",
+          "ref": "ax:0.0",
+          "label": "Owned sentinel CLICK"
+        }
+      }
+    }
+  ],
+  "stdout": "{\"id\":1,\"jsonrpc\":\"2.0\",\"result\":{\"capabilities\":{\"tools\":{\"listChanged\":false}},\"instructions\":\"Prefer computer_observe and stable refs. Use computer_run to batch verified actions. Do not publish, submit for review, change production IAM, or invite external testers unless the user set confirm=true. Never bypass macOS permission prompts, CAPTCHA, or sign-in.\",\"protocolVersion\":\"2025-06-18\",\"serverInfo\":{\"name\":\"unified-computer-use\",\"version\":\"0.1.0\"}}}\n{\"id\":2,\"jsonrpc\":\"2.0\",\"result\":{\"content\":[{\"text\":\"{\\n  \\\"code\\\": \\\"error\\\",\\n  \\\"elapsed_ms\\\": 82,\\n  \\\"error\\\": \\\"MOCK: element offers CLICK but no AXPress\\\",\\n  \\\"ok\\\": false\\n}\",\"type\":\"text\"}],\"isError\":true,\"structuredContent\":{\"code\":\"error\",\"elapsed_ms\":82,\"error\":\"MOCK: element offers CLICK but no AXPress\",\"ok\":false}}}\n{\"id\":3,\"jsonrpc\":\"2.0\",\"result\":{\"content\":[{\"text\":\"{\\n  \\\"code\\\": \\\"error\\\",\\n  \\\"elapsed_ms\\\": 0,\\n  \\\"error\\\": \\\"MOCK: element offers CLICK but no AXPress\\\",\\n  \\\"ok\\\": false\\n}\",\"type\":\"text\"}],\"isError\":true,\"structuredContent\":{\"code\":\"error\",\"elapsed_ms\":0,\"error\":\"MOCK: element offers CLICK but no AXPress\",\"ok\":false}}}\n{\"id\":4,\"jsonrpc\":\"2.0\",\"result\":{\"content\":[{\"text\":\"{\\n  \\\"elapsed_ms\\\": 0,\\n  \\\"executor\\\": \\\"accessibility\\\",\\n  \\\"ok\\\": true,\\n  \\\"result\\\": {\\n    \\\"forwarded\\\": \\\"CLICK\\\",\\n    \\\"mock_only\\\": true\\n  }\\n}\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"elapsed_ms\":0,\"executor\":\"accessibility\",\"ok\":true,\"result\":{\"forwarded\":\"CLICK\",\"mock_only\":true}}}}\n",
+  "stderr": "mcp ready in 0ms\n",
+  "returncode": 0,
+  "seconds": 0.08954675
+}

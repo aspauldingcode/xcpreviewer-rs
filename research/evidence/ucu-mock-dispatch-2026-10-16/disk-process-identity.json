@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "files": [
+        {
+          "path": "/Users/8amps/.local/bin/ucu",
+          "bytes": 3382048,
+          "sha256": "40d62e6f51cebbc9d32578d166c79a745d193bd7e3c6a19ff31cdddb6a872894",
+          "mtime_ns": 1791832358211025250,
+          "inode": 148303610
+        },
+        {
+          "path": "/Users/8amps/src/unified-computer-use/target/release/ucu",
+          "bytes": 3382048,
+          "sha256": "40d62e6f51cebbc9d32578d166c79a745d193bd7e3c6a19ff31cdddb6a872894",
+          "mtime_ns": 1791832358211025250,
+          "inode": 148303068
+        }
+      ],
+      "all_bytes_equal": true
+    },
+    {
+      "files": [
+        {
+          "path": "/Users/8amps/.local/bin/axbridge",
+          "bytes": 283048,
+          "sha256": "0246682f4f8ca82afec28e210c44fae9d030e67891831102d9dd1f48d9b9d0ff",
+          "mtime_ns": 1791831885992280757,
+          "inode": 148303611
+        },
+        {
+          "path": "/Users/8amps/src/unified-computer-use/target/release/build/unified-computer-use-84c4df686a1775fe/out/axbridge",
+          "bytes": 283048,
+          "sha256": "0246682f4f8ca82afec28e210c44fae9d030e67891831102d9dd1f48d9b9d0ff",
+          "mtime_ns": 1791831885992280757,
+          "inode": 148300063
+        }
+      ],
+      "all_bytes_equal": true
+    }
+  ],
+  "process_path_rows": [
+    " 3039  2750 /Users/8amps/.local/bin/ucu",
+    " 3050  3039 /Users/8amps/.local/bin/axbridge",
+    " 9337  7633 /Users/8amps/.local/bin/ucu",
+    " 9338  9337 /Users/8amps/.local/bin/axbridge",
+    "38356  2750 /Users/8amps/.local/bin/ucu",
+    "38360 38356 /Users/8amps/.local/bin/axbridge"
+  ],
+  "process_sample_only": true,
+  "limitations": [
+    "Multiple UCU/bridge instances observed; no current-chat instance correlation",
+    "Disk/build output equality does not prove source reproducibility or mapped in-memory image identity"
+  ]
+}

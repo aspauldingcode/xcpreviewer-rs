@@ -1,0 +1,14 @@
+{
+  "result": {
+    "frozen_receipts_consistent": true,
+    "scope": "UCU disk binary with mocked bridge; no native input"
+  },
+  "rejected": [
+    "wrong_op",
+    "wrong_label",
+    "wrong_peer_id",
+    "missing_ack",
+    "changed_request",
+    "nonzero_exit"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "binary_sha256": "40d62e6f51cebbc9d32578d166c79a745d193bd7e3c6a19ff31cdddb6a872894",
+  "mock_sha256": "269cc32d44cd3bff05434d0e2befda1e098995689e40214d935823839ff24786",
+  "root_wait_status": 0,
+  "observed_dispatch": [
+    "PRESS",
+    "PRESS",
+    "CLICK"
+  ],
+  "mcp_errors": [
+    true,
+    true,
+    false
+  ],
+  "peer_pids_absent": [
+    34758
+  ],
+  "native_ui_executed": false,
+  "grade": "actual-UCU-binary-with-mock-AX-peer",
+  "limitations": [
+    "No live MCP instance attribution",
+    "No real Swift axbridge execution",
+    "No real element/window binding",
+    "Peer absence is not wait/reap proof",
+    "communicate capture time-bounded;256KiB cap checked only after exit",
+    "Binary-to-current-source reproducibility not established"
+  ]
+}

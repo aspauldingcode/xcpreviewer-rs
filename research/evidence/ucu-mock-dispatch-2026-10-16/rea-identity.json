@@ -1,0 +1,215 @@
+{
+  "at": "2026-10-16T03:06:57Z",
+  "rea_identity": {
+    "package": {
+      "name": "rea-agents",
+      "version": "6.2.0",
+      "root_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents",
+      "build_commit": null
+    },
+    "server": {
+      "name": "rea",
+      "version": "6.2.0",
+      "started_at": "2026-10-15T20:32:32.110Z",
+      "command_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents/scripts/rea.mjs"
+    },
+    "alignment": {
+      "state": "aligned",
+      "reasons": [],
+      "remediation": null
+    }
+  },
+  "evidence": {
+    "evidence_id": "ev_3aecbdb9349550edbd1475704917089dc24cae79021139e72fe9b76f11430590",
+    "operation": "inspect_macho",
+    "authority": "shipped-artifact",
+    "confidence": "observed",
+    "subject": {
+      "name": "ucu",
+      "digest": {
+        "sha256": "40d62e6f51cebbc9d32578d166c79a745d193bd7e3c6a19ff31cdddb6a872894"
+      },
+      "format": "mach-o",
+      "architecture": "arm64",
+      "local_path": "/Users/8amps/.local/bin/ucu"
+    },
+    "limitations": [
+      "Imports and exports combine dyld_info and nm; stripped or toolchain-hidden symbols may be absent.",
+      "vtool output is retained as provenance but only otool build metadata is normalized."
+    ],
+    "uuid": "26CB30F3-7A68-3DB1-BC69-BFB9EC23A58F",
+    "architectures": {
+      "items": [
+        {
+          "name": "arm64",
+          "cpu_type": null,
+          "cpu_subtype": null,
+          "file_offset": null,
+          "size": null,
+          "alignment": null
+        }
+      ],
+      "total": 1,
+      "exhaustive": true,
+      "limitations": []
+    },
+    "build_metadata": {
+      "items": [
+        {
+          "platform": "1",
+          "minimum_os": "11.0",
+          "sdk": "26.5",
+          "tools": [
+            {
+              "name": "3",
+              "version": "1267.0"
+            }
+          ]
+        }
+      ],
+      "total": 1,
+      "exhaustive": true,
+      "limitations": []
+    },
+    "provenance": [
+      {
+        "tool": "file",
+        "command": [
+          "/usr/bin/file",
+          "-b",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "a4ba66d26a9cfdc70637c78cdacef920f94147f6aa45ccc73858e493589ef94d",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 31,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "lipo",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo",
+          "-detailed_info",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "661f3514be6992bb66346e3e48d974fc0ce5b9be5eab55321eabf4818fb3bf28",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 122,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "otool",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-otool",
+          "-h",
+          "-l",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "be184bb7054565eae25193e45e4235ea2d372c1eb6288ce900b2fad6d9dcc3f3",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 7175,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "nm",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-nm",
+          "-gjU",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "d910f3acb104791e5475254000ede2aa129aa1a42eafcc7f5bdb27afffc642dc",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 81242,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "dyld_info",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyld_info",
+          "-imports",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "af56890ce0c564d0df60929914018f484a75db2a42011acda629b39ce2c66aeb",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 5983,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "dyld_info",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyld_info",
+          "-exports",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "af56890ce0c564d0df60929914018f484a75db2a42011acda629b39ce2c66aeb",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 99065,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "dwarfdump",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-dwarfdump",
+          "--uuid",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "e49099fc871e88f10cd7865dfbde5a8f574da31d03f197a70fcad1daaff4e32d",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 79,
+        "stderr_bytes": 0
+      },
+      {
+        "tool": "vtool",
+        "command": [
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/vtool",
+          "-show-build",
+          "$ARTIFACT"
+        ],
+        "tool_version": null,
+        "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+        "executable_sha256": "c87bf9bb62dc6a3c5d7faf5c5f8dabc94aba865161a3e08b9f1871150e938fe6",
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stdout_bytes": 173,
+        "stderr_bytes": 0
+      }
+    ]
+  },
+  "scope": "Selected REA normalized metadata and provenance; complete raw symbol/disassembly dumps remain local and are not included. No deep Ghidra analysis invoked."
+}
