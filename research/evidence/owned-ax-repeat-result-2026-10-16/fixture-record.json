@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/ax-binding-orderpump-repeat-exec-20261016/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/ax-binding-orderpump-repeat-exec-20261016/owned-documents"
+  ],
+  "source_sha256": "d9d0f20e6cd640d7248ccbd29736ea4492a32eaa6dc2e090ff2aa083a47bb1d2",
+  "binary_sha256": "bdd66ffc6d75fbe4ade6041c4abf1bb98d0d56bc39ae07fedb168d74a7cfcc4b",
+  "error": "Error: Observed compiler failed: 78",
+  "record": {
+    "pid": 70435,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 78,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 24,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"status\":\"owned_fixture_rejected\",\"phases\":[{\"status\":\"observed\",\"observation_started_ns\":60727023873000,\"observation_finished_ns\":60727033644000,\"own_cg_windows\":2,\"AX_timeout_setting_error\":0,\"rows\":[{\"fixture_window_id\":0,\"document\":\"\",\"button_ancestor_matches\":false,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":7913,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":7914,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[],\"AX_geometry\":{\"size_CF_type\":0,\"position_error\":-25205,\"position_CF_type\":0,\"size_error\":-25205}},{\"fixture_window_id\":0,\"document\":\"\",\"button_ancestor_matches\":false,\"unique_candidate_equals_fixture\":false,\"CG_geometry\":[{\"id\":7913,\"rect\":{\"X\":160,\"Height\":132,\"Y\":758,\"Width\":200}},{\"id\":7914,\"rect\":{\"X\":400,\"Height\":132,\"Y\":758,\"Width\":200}}],\"candidate_ids\":[],\"AX_geometry\":{\"size_CF_type\":0,\"position_error\":-25205,\"position_CF_type\":0,\"size_error\":-25205}}],\"returned_CF_type\":19,\"AX_windows_error\":0,\"AX_window_count\":2}],\"pid\":70439,\"admitted\":false,\"scope\":\"owned-two-window-public-API-read-only\",\"own_on_screen_after_close\":0,\"trusted\":1}\n",
+    "stderr": "2026-10-16 06:22:24.897 probe[70439:2733593] ApplePersistence=NO\n",
+    "stdoutBytes": 1123,
+    "stderrBytes": 65,
+    "stdoutSha256": "91905332233012d3a35e7fa897e9e62d7952b57d0b75e0247cd43efb75a1bae9",
+    "stderrSha256": "6fe64d8fdb4743725adf307dd370b235734f553eb1c0d2a4ca04c829f7559613"
+  }
+}
