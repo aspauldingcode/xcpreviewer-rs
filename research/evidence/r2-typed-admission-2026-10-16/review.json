@@ -1,0 +1,11 @@
+{
+  "verifier": "refresh_spec_review",
+  "retained_original_matches_repository": true,
+  "original_predicates_ast_identical": 18,
+  "removable_assertions_remain": false,
+  "new_constraints": "Exact integer compile/wait codes, sender/receiver PIDs and surface/lookup IDs",
+  "positive": "Independent normal and optimized pass",
+  "negative": "All14existing faults and new float-ID/float-PID/boolean-wait/padding/tail reject both modes",
+  "disposition": "Safe scoped research-verifier integration; not complete schema hardening or new native evidence",
+  "producer_integration": "4tests pass with original14faults,3typedfaults and optimized subprocess covering both"
+}

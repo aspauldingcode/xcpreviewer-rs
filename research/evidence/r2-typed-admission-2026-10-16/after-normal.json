@@ -1,0 +1,42 @@
+{
+  "optimized": false,
+  "verifier": "verify_surface_full_reuse.py",
+  "cases": [
+    {
+      "fault": "positive",
+      "accepted": true,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "float_ids",
+      "accepted": false,
+      "result": null
+    },
+    {
+      "fault": "float_pids",
+      "accepted": false,
+      "result": null
+    },
+    {
+      "fault": "false_wait",
+      "accepted": false,
+      "result": null
+    },
+    {
+      "fault": "padding",
+      "accepted": false,
+      "result": null
+    },
+    {
+      "fault": "tail",
+      "accepted": false,
+      "result": null
+    }
+  ]
+}
