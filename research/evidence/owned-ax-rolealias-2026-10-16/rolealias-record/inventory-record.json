@@ -1,0 +1,34 @@
+{
+  "phase": "inventory",
+  "command": "/private/tmp/ax-binding-rolealias-record-20261016/probe",
+  "args": [
+    "--inventory",
+    "88098"
+  ],
+  "source_sha256": "cb8b7f1882eb39c0197cfdd63fb4582c037bd8fe2abe9c3f23fe9f9e97f3798f",
+  "binary_sha256": "e61cd88fe860a3b4e4c8a543cc159c3bf06a2eb1ddcffe350d358a013f276177",
+  "error": null,
+  "record": {
+    "pid": 88192,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"owned_on_screen_windows\":0,\"target_pid\":88098}\n",
+    "stderr": "",
+    "stdoutBytes": 49,
+    "stderrBytes": 0,
+    "stdoutSha256": "db12483cb1a1826a6064b9cc1e09b1f673136ee94912e68a48538765a5af6a8c",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

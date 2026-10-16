@@ -1,0 +1,19 @@
+{
+  "initial_test_failure": "Producer used wrong fixed Unix test times; assertion rejected. No target executed. Corrected tests derive same explicit UTC deadline.",
+  "corrected_tests": [
+    {
+      "late": false,
+      "exit": 91,
+      "stdout": "",
+      "expected_exit": 91
+    },
+    {
+      "late": true,
+      "exit": 75,
+      "stdout": "{\"status\": \"wake_budget_expired_before_dispatch\", \"phase\": \"fixture\", \"observed_utc\": \"2026-10-16T17:43:08+00:00\", \"deadline_utc\": \"2026-10-16T17:41:28+00:00\", \"required_reserve_seconds\": 40, \"native_launched\": false}\n",
+      "expected_exit": 75
+    }
+  ],
+  "os_exec_mocked": true,
+  "native_executed": false
+}

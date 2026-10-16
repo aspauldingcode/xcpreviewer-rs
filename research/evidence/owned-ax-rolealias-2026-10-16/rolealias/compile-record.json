@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-fobjc-arc",
+    "-framework",
+    "Cocoa",
+    "-framework",
+    "ApplicationServices",
+    "/private/tmp/ax-binding-rolealias-20261016/probe.m",
+    "-o",
+    "/private/tmp/ax-binding-rolealias-20261016/probe"
+  ],
+  "source_sha256": "d3deae60f406023537477f170c335a31ee3b46da1be5e63fc59e40eea123dfec",
+  "binary_sha256": "f513612b23157f7421d6a146fd1cbb60f36eac72d403a72ece93491ccb138285",
+  "error": null,
+  "record": {
+    "pid": 86892,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 40,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
