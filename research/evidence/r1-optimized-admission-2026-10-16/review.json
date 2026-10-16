@@ -1,0 +1,11 @@
+{
+  "verifier": "refresh_spec_review",
+  "before_matches_repository": true,
+  "replacement_predicates_ast_identical": 25,
+  "original_asserts_remain": false,
+  "positive": "Independent normal and optimized pass",
+  "negatives": "All10existing resealed faults and4selected padding/tail/refs/nonzero-wait controls reject independently normal and optimized",
+  "rejection_type": "AssertionError preserved",
+  "disposition": "Safe research-verifier integration; no native evidence expansion or unrelated verifier security certification",
+  "integration": "Producer integrated explicit predicates and optimized regression;3tests pass, including10fault subcontrols in both normal and optimized child"
+}

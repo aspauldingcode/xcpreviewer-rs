@@ -1,0 +1,69 @@
+{
+  "prior_manifest": "bc202e0c981843dd6af7f4c536c5bfc54e1c77c4290526839e9753fdb3699c4c",
+  "cases": [
+    {
+      "fault": "padding",
+      "optimized": false,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 53, in verify\n    _require((root/name).read_bytes() == expected)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "padding",
+      "optimized": true,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 53, in verify\n    _require((root/name).read_bytes() == expected)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "tail",
+      "optimized": false,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 53, in verify\n    _require((root/name).read_bytes() == expected)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "tail",
+      "optimized": true,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 53, in verify\n    _require((root/name).read_bytes() == expected)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "refs",
+      "optimized": false,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 43, in verify\n    _require(names['returned_refs'] == (0 if move else 1) and names['returned_name_removed'] is True)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "refs",
+      "optimized": true,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 43, in verify\n    _require(names['returned_refs'] == (0 if move else 1) and names['returned_name_removed'] is True)\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "nonzero_wait",
+      "optimized": false,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 34, in verify\n    _require(json.loads((root/'wait.json').read_text()) == {'code':0,'timeout':False})\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    },
+    {
+      "fault": "nonzero_wait",
+      "optimized": true,
+      "exit": 1,
+      "accepted": false,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 34, in verify\n    _require(json.loads((root/'wait.json').read_text()) == {'code':0,'timeout':False})\n  File \"/private/tmp/r1-verifier-20261016/verify_surface_send_destroy.py\", line 9, in _require\n    raise AssertionError(\"Surface send-destroy evidence rejected\")\nAssertionError: Surface send-destroy evidence rejected\n"
+    }
+  ]
+}
