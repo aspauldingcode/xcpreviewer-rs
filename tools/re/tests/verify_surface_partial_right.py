@@ -16,6 +16,7 @@ def verify(folder):
         raw = p.read_bytes()
         _require(not p.is_symlink() and len(raw) == item['bytes'] and (hashlib.sha256(raw).hexdigest() == item['sha256']))
     _require(json.loads((e / 'slots.json').read_text()) == {'used': 2, 'limit': 2})
+    _require(type(json.loads((e / 'compile-wait.json').read_text())['code']) is int)
     _require(json.loads((e / 'compile-wait.json').read_text()) == {'code': 0})
     identity = json.loads((e / 'identity.json').read_text())
     rea = json.loads((e / 'current-rea.json').read_text())
@@ -31,11 +32,13 @@ def verify(folder):
     for mode in ['copy', 'move']:
         root = e / mode
         move = mode == 'move'
+        _require(type(json.loads((root / 'wait.json').read_text())['code']) is int and json.loads((root / 'wait.json').read_text())['timeout'] is False)
         _require(json.loads((root / 'wait.json').read_text()) == {'code': 0, 'timeout': False})
         _require((root / 'stderr').read_bytes() == b'')
         rows = [json.loads(line) for line in (root / 'stdout.jsonl').read_text().splitlines()]
         _require(len(rows) == 1)
         r = rows[0]
+        _require(all(type(r[key]) is int for key in ['pid', 'send_code', 'invalid_right_constant', 'original_name', 'returned_name', 'second_name', 'first_disposition', 'second_disposition', 'remote_type', 'before_original', 'before_returned', 'before_endpoint', 'after_original', 'after_returned', 'after_endpoint', 'invalid_type_before', 'invalid_query_after', 'invalid_type_after', 'empty_receive_code', 'remaining_send_refs', 'stride', 'allocation_bytes']))
         _require(r['move'] is move and r['pid'] > 0)
         pids.append(r['pid'])
         _require(type(r['original_name']) is int and r['original_name'] > 0 and (r['original_name'] == r['returned_name']))

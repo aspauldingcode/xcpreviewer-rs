@@ -47,6 +47,27 @@ class SurfacePartialRightTests(unittest.TestCase):
                 with self.assertRaises(AssertionError): verify(e)
 
     def test_optimized_admission(self):
-        tests = ['test_native_invalid_destination','test_resealed_faults','test_additional_admission_faults']
+        tests = ['test_native_invalid_destination','test_resealed_faults','test_additional_admission_faults','test_typed_admission_faults']
         result = subprocess.run([sys.executable,'-O','-m','unittest',*[__name__+'.SurfacePartialRightTests.'+name for name in tests]],cwd=Path(__file__).parent,capture_output=True,text=True,timeout=30)
         self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+
+    def test_typed_admission_faults(self):
+        faults = ['pid_float','returned_name_float','second_name_float','endpoint_bool','remaining_refs_bool','compile_code_bool','wait_code_bool','timeout_int','send_code_float','stride_float']
+        for fault in faults:
+            with self.subTest(fault=fault), tempfile.TemporaryDirectory() as temporary:
+                e = Path(temporary)/'e';shutil.copytree(E,e)
+                p = e/'move/stdout.jsonl';row = json.loads(p.read_text())
+                if fault.endswith('_float'):
+                    key = fault[:-6];row[key] = float(row[key]);p.write_text(json.dumps(row)+'\n')
+                elif fault == 'endpoint_bool':
+                    row['after_endpoint'] = True;p.write_text(json.dumps(row)+'\n')
+                elif fault == 'remaining_refs_bool':
+                    row['remaining_send_refs'] = False;p.write_text(json.dumps(row)+'\n')
+                elif fault == 'compile_code_bool':
+                    (e/'compile-wait.json').write_text(json.dumps({'code':False}))
+                elif fault == 'wait_code_bool':
+                    (e/'move/wait.json').write_text(json.dumps({'code':False,'timeout':False}))
+                else:
+                    (e/'move/wait.json').write_text(json.dumps({'code':0,'timeout':0}))
+                (e/'manifest.json').write_text(json.dumps({'files':{str(q.relative_to(e)):{'bytes':q.stat().st_size,'sha256':hashlib.sha256(q.read_bytes()).hexdigest()} for q in e.rglob('*') if q.is_file() and q.name != 'manifest.json'}}))
+                with self.assertRaises(AssertionError): verify(e)
