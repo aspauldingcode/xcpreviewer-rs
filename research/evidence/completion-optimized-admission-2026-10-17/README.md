@@ -1,0 +1,11 @@
+# Completion evidence admission under Python optimization
+
+The historical completion-guard and post-completion-delay consumers used 29 and21 Python assertions respectively. Python `-O` removes those checks. A frozen, resealed fault matrix independently reproduces ten false acceptances under optimization: each consumer accepts changed target wait status, drain state, stdout digest, payload bytes and terminal-observation time. Both original consumers reject those same faults normally.
+
+The repair replaces all50 assertions with explicit `_require` calls raising `AssertionError`. Every predicate AST and its order are preserved. This is research evidence tooling, with no change to native controller or reconstruction/product behavior. Both repaired consumers accept their original anchored evidence and reject all ten matrix faults in normal and optimized subprocesses (48 configurations across original/repaired, two modes, two consumers and six inputs). Five repository test methods pass in each interpreter mode, including the existing eight resealed faults per consumer and new optimized subprocess regression controls.
+
+The first audit accidentally selected the older pre-correction completion-guard artifact. Its positive replay failed the original consumer. The corrected historical anchor was selected without relaxing any predicate; the initial audit source and failure explanation remain retained.
+
+Independent review in `/root/refresh_spec_review` confirmed predicate preservation, error API, all48 frozen outcomes and scope. No native process, Xcode workspace, broker, Mach endpoint or REA target was created. Frozen payloads are eight bytes per case; historical timing classifications remain limited to their owned controls. This does not recover Canvas completion ordering, physical reclamation or general reliability. JSON type coercion and other untested admission properties are outside this repair. Both milestones remain open.
+
+`anchors.json` pins the two unchanged historical manifests. `seal.json` pins this source/matrix/test/review bundle; `verify-frozen.py` checks its integrity and predicate correspondence without launching native work. `audit.py` can regenerate the matrix offline in a writable copy of this folder against the anchored repository corpus. Do not run it directly inside the sealed folder because it writes `matrix.json`.

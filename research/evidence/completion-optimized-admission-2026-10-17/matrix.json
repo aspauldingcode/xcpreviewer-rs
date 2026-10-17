@@ -1,0 +1,434 @@
+[
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "positive",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "positive",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "positive",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "positive",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_completion_guard.py\", line 31, in verify\n    assert report['target_code'] == (43 if mode == 'delayed-failure' else 0)\nAssertionError\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "wait",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "wait",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "admission-20261017/verify_completion_guard.py\", line 36, in verify\n    _require(report['target_code'] == (43 if mode == 'delayed-failure' else 0))\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "wait",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "admission-20261017/verify_completion_guard.py\", line 36, in verify\n    _require(report['target_code'] == (43 if mode == 'delayed-failure' else 0))\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "wait",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_completion_guard.py\", line 30, in verify\n    assert report['drained'] is True and report['remaining_observed'] == 0\nAssertionError\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "drain",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "drain",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "n-admission-20261017/verify_completion_guard.py\", line 35, in verify\n    _require(report['drained'] is True and report['remaining_observed'] == 0)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "drain",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "n-admission-20261017/verify_completion_guard.py\", line 35, in verify\n    _require(report['drained'] is True and report['remaining_observed'] == 0)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "drain",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_completion_guard.py\", line 37, in verify\n    assert record[stream+'Sha256'] == hashlib.sha256(expected).hexdigest()\nAssertionError\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "hash",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "hash",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "n-admission-20261017/verify_completion_guard.py\", line 42, in verify\n    _require(record[stream+'Sha256'] == hashlib.sha256(expected).hexdigest())\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "hash",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "n-admission-20261017/verify_completion_guard.py\", line 42, in verify\n    _require(record[stream+'Sha256'] == hashlib.sha256(expected).hexdigest())\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "hash",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_completion_guard.py\", line 34, in verify\n    assert (root/'owned.raw').read_bytes() == payload\nAssertionError\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "payload",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "payload",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 39, in verify\n    _require((root/'owned.raw').read_bytes() == payload)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "payload",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 39, in verify\n    _require((root/'owned.raw').read_bytes() == payload)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "payload",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_completion_guard.py\", line 55, in verify\n    assert terminal['value'] < deadline and starts[0]['terminal_observed_at'] < deadline\nAssertionError\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "terminal-time",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_completion_guard.py",
+    "fault": "terminal-time",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "261017/verify_completion_guard.py\", line 60, in verify\n    _require(terminal['value'] < deadline and starts[0]['terminal_observed_at'] < deadline)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "terminal-time",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "261017/verify_completion_guard.py\", line 60, in verify\n    _require(terminal['value'] < deadline and starts[0]['terminal_observed_at'] < deadline)\n  File \"/private/tmp/completion-admission-20261017/verify_completion_guard.py\", line 10, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_completion_guard.py",
+    "fault": "terminal-time",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "positive",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "positive",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "positive",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "positive",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": " last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_post_completion_delay.py\", line 24, in verify\n    assert report['drained'] is True and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None)\nAssertionError\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "wait",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "wait",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "rue and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "wait",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "rue and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "wait",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": " last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_post_completion_delay.py\", line 24, in verify\n    assert report['drained'] is True and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None)\nAssertionError\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "drain",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "drain",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "rue and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "drain",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "rue and report['target_code'] == 0 and report['remaining_observed'] == 0 and report['failure'] == ('deadline' if mode == 'delayed' else None))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "drain",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": " call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_post_completion_delay.py\", line 27, in verify\n    assert record['stdoutBytes'] == 8 and record['stdoutSha256'] == hashlib.sha256(expected).hexdigest() and record['stdout'] == expected.decode('utf8',errors='replace')\nAssertionError\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "hash",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "hash",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "es'] == 8 and record['stdoutSha256'] == hashlib.sha256(expected).hexdigest() and record['stdout'] == expected.decode('utf8',errors='replace'))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "hash",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "es'] == 8 and record['stdoutSha256'] == hashlib.sha256(expected).hexdigest() and record['stdout'] == expected.decode('utf8',errors='replace'))\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "hash",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_post_completion_delay.py\", line 26, in verify\n    assert (root/'owned.raw').read_bytes() == expected\nAssertionError\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "payload",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "payload",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "p/completion-admission-20261017/verify_post_completion_delay.py\", line 31, in verify\n    _require((root/'owned.raw').read_bytes() == expected)\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "payload",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "p/completion-admission-20261017/verify_post_completion_delay.py\", line 31, in verify\n    _require((root/'owned.raw').read_bytes() == expected)\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "payload",
+    "version": "fixed",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/private/tmp/completion-admission-20261017/original-verify_post_completion_delay.py\", line 38, in verify\n    assert terminal['pid'] == spawn['pid'] and terminal['code'] == 0 and terminal['value'] < deadline\nAssertionError\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "terminal-time",
+    "version": "original",
+    "optimized": false
+  },
+  {
+    "accepted": true,
+    "code": 0,
+    "stderr": "",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "terminal-time",
+    "version": "original",
+    "optimized": true
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "pletion_delay.py\", line 43, in verify\n    _require(terminal['pid'] == spawn['pid'] and terminal['code'] == 0 and terminal['value'] < deadline)\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "terminal-time",
+    "version": "fixed",
+    "optimized": false
+  },
+  {
+    "accepted": false,
+    "code": 1,
+    "stderr": "pletion_delay.py\", line 43, in verify\n    _require(terminal['pid'] == spawn['pid'] and terminal['code'] == 0 and terminal['value'] < deadline)\n  File \"/private/tmp/completion-admission-20261017/verify_post_completion_delay.py\", line 8, in _require\n    raise AssertionError(\"Completion evidence rejected\")\nAssertionError: Completion evidence rejected\n",
+    "consumer": "verify_post_completion_delay.py",
+    "fault": "terminal-time",
+    "version": "fixed",
+    "optimized": true
+  }
+]
