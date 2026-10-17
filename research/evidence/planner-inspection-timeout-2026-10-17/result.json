@@ -1,0 +1,8 @@
+{
+  "status": "profile_timeout_12s",
+  "stdout": null,
+  "stderr": "Timeout (0:00:04)!\nThread 0x00000001f9e4de80 (most recent call first):\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 743 in __fspath__\n",
+  "at": "2026-10-17T23:49:50.959735+00:00",
+  "prior_failure": "Read-only graph-loop inspection timed out after45seconds; no execution requested",
+  "observation": "Single changed method: bounded Python stack sampling; no native fixture or writer"
+}

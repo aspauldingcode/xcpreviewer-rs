@@ -1,0 +1,5 @@
+# Read-only planner inspection timeout
+
+The normal graph-loop inspection exceeded its45second caller deadline. One changed observation method used Python faulthandler stack sampling and a12second caller deadline; it also timed out. Only a truncated pathlib.__fspath__ frame was returned, which does not identify the cause. Neither operation requested graph execution or a native fixture. Do not interpret the last empty frontier as freshly verified after these failures. Prior candidate/audit seal identities still match and issue22 has no new review; private bridge remains offline.
+
+No timeout extension, process takeover, native job or product change occurred. Retain the failure and stop repeated full planner attempts while prerequisites are unchanged. On later wakes use cheap durable policy/state checks, and require changed host responsiveness or a discriminating bounded method before another full inspection. Independent review/account, private bridge, UI quarantine and clean-room blockers remain. Both milestones remain open.
