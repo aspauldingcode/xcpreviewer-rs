@@ -1,0 +1,11 @@
+# Finite mutation audit of the pending prerequisite gate tests
+
+The preceding gate candidate remains pending independent review. This follow-up evaluates its tests against five precisely defined source mutations rather than treating a passing original suite as sufficient evidence. Every mutation must replace one unique source span and remain valid Python. Runs execute only Python tests with synthetic files, a fake controller and fake subprocess dispatch; no compiler, native probe, REA target or Xcode session launches.
+
+The initial five-method suite passes normally and under optimization but fails to detect three missing checks: output-control arguments, owned PID domain, and recursive finite-number validation. Removing the output-control dependency or stderr integrity check is detected. All initial subprocess outputs and mutant source hashes are retained; these are test-coverage failures, not newly observed gate implementation failures.
+
+One additional test method adds nine rejection cases: three wrong control argument arrays, PID 1 and 2147483648 with consistently rehashed streams, absent and duplicate PID markers, and nested literal 1e999 in otherwise valid compile/control metadata. The recursive-number cases use ignored diagnostic metadata so another predicate cannot accidentally reject the mutant. Finite nested diagnostic metadata remains an admissible positive control.
+
+The corrected six-method suite passes on the unmodified candidate and detects all five mutations in both normal and optimized execution. Across initial and corrected suites, 24 bounded Python subprocesses execute. Frozen verification reruns the complete matrix and compares semantic outcomes and source hashes rather than timing-dependent unittest output. Original tests and failed mutation outcomes are retained without changing the preceding seal.
+
+This is a finite verifier audit, not universal gate correctness, independent semantic approval, or native enforcement evidence. The helper and adapter implementation are unchanged. No active research module or native adapter is installed. Before native reuse, a separate verifier must review the candidate together with this test extension; the prior account-usage review blocker remains. Both milestone contracts remain unmet.
