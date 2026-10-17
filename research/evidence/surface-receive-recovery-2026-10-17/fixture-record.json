@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/surface-receive-recover-20261017/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/surface-receive-recover-20261017/owned-documents"
+  ],
+  "source_sha256": "9ec34d68129dc48de7dbfd6afe35f4d9351d1bcfa70950c54c39b9486e2cc6d2",
+  "binary_sha256": "33080111d083434bd534f9102320edeaaca7deb92162eacd6b85fc2a6197a363",
+  "error": null,
+  "record": {
+    "pid": 12488,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":12489,\"mode\":0,\"small_code\":0,\"receive_code\":0,\"imported\":true,\"retry_imported\":true,\"surface_id\":34,\"retry_surface_id\":34,\"resend_code\":0,\"retry_receive_code\":0,\"queued_before_resend\":0,\"queued_after_resend\":1,\"refs_after_resend\":1,\"refs_retry_received\":2,\"refs_retry_destroyed\":1,\"retry_received_name\":9747,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":1,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":2,\"refs_destroyed\":1,\"resource_name\":9747,\"received_name\":9747,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n{\"pid\":12489,\"mode\":1,\"small_code\":268451844,\"receive_code\":0,\"imported\":true,\"retry_imported\":true,\"surface_id\":34,\"retry_surface_id\":34,\"resend_code\":0,\"retry_receive_code\":0,\"queued_before_resend\":0,\"queued_after_resend\":1,\"refs_after_resend\":1,\"refs_retry_received\":2,\"refs_retry_destroyed\":1,\"retry_received_name\":9479,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":1,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":2,\"refs_destroyed\":1,\"resource_name\":9479,\"received_name\":9479,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n{\"pid\":12489,\"mode\":2,\"small_code\":268451844,\"receive_code\":268451843,\"imported\":false,\"retry_imported\":true,\"surface_id\":34,\"retry_surface_id\":34,\"resend_code\":0,\"retry_receive_code\":0,\"queued_before_resend\":0,\"queued_after_resend\":1,\"refs_after_resend\":1,\"refs_retry_received\":2,\"refs_retry_destroyed\":1,\"retry_received_name\":9779,\"transfer_size\":64,\"header_size\":24,\"queued_before\":1,\"queued_after\":0,\"queued_final\":0,\"refs_before\":1,\"refs_after\":1,\"refs_received\":1,\"refs_destroyed\":1,\"resource_name\":9779,\"received_name\":0,\"resource_query_after\":15,\"endpoint_query_after\":15,\"remaining_refs\":0,\"endpoint_removed\":true,\"stride\":128,\"allocation_bytes\":16384}\n",
+    "stderr": "owned_tree_pid:12489\n",
+    "stdoutBytes": 1966,
+    "stderrBytes": 21,
+    "stdoutSha256": "c2305385ed80da8de41a6d6c7588a9f722e04284fb7272d6a02dee2fa651ce28",
+    "stderrSha256": "ca5b735644aaaa6233031015eef8e7a1f6a83b6987ab9fef55ff545fc4b44dff"
+  }
+}

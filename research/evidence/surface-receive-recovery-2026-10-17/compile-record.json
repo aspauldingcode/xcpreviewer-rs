@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "IOSurface",
+    "-framework",
+    "CoreFoundation",
+    "-lbsm",
+    "/private/tmp/surface-receive-recover-20261017/probe.c",
+    "-o",
+    "/private/tmp/surface-receive-recover-20261017/probe"
+  ],
+  "source_sha256": "9ec34d68129dc48de7dbfd6afe35f4d9351d1bcfa70950c54c39b9486e2cc6d2",
+  "binary_sha256": "33080111d083434bd534f9102320edeaaca7deb92162eacd6b85fc2a6197a363",
+  "error": null,
+  "record": {
+    "pid": 12234,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 22,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "In file included from /private/tmp/surface-receive-recover-20261017/probe.c:3:\n/private/tmp/surface-receive-recover-20261017/surface_ipc_probe.c:187:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  187 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /private/tmp/surface-receive-recover-20261017/probe.c:3:\n/private/tmp/surface-receive-recover-20261017/surface_ipc_probe.c:243:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  243 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail(\"rendezvous-register\",status);goto done;}registered=1;\n      |            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n2 warnings generated.\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 1388,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "ac236dea5007de9a018979e799404422b35db143b8041e6cce5018b1f6244d5d"
+  }
+}
