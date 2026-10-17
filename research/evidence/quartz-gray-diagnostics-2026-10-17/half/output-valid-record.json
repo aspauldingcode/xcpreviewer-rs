@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/quartz-gray-half-20261017/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "2d3e32a9709edfb1e7daaa1c6a90c128afc39b1e41c37d1faf8195a0ab77ee89",
+  "binary_sha256": "cd1618fccddf7f2a3b397c635226169ee6c2514cfe52fac72da12fd7121bc10f",
+  "error": null,
+  "record": {
+    "pid": 86275,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":86276,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:86276\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "987c069655a2c4debc4c8ec01a9fe52d365f58318e419fd042d068a348a1fa66",
+    "stderrSha256": "073a4e7df80a5ed35d230729d2059aefca10689327739b12baf14ed0fbadadce"
+  }
+}

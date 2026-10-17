@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/quartz-gray-half-20261017/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/quartz-gray-half-20261017/owned-documents"
+  ],
+  "source_sha256": "2d3e32a9709edfb1e7daaa1c6a90c128afc39b1e41c37d1faf8195a0ab77ee89",
+  "binary_sha256": "cd1618fccddf7f2a3b397c635226169ee6c2514cfe52fac72da12fd7121bc10f",
+  "error": null,
+  "record": {
+    "pid": 86328,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase0-route0.raw\",\"half_bits\":[14412,14412,14412],\"height\":9,\"high\":false,\"phase\":0,\"pid\":86329,\"route\":0,\"sha256\":\"fa7b980ca91a784b101e1b8be97f669b596690d7e0077fa6b06c6912f0b31efb\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.53709876537322998,0.53709876537322998,0.53709876537322998,1],\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase0-route1.raw\",\"half_bits\":[14412,14412,14412],\"height\":9,\"high\":false,\"phase\":0,\"pid\":86329,\"route\":1,\"sha256\":\"82688e0271c6cac78032107f02e4f6c9a5b84efaebc9b540c7ddd6fb9b036915\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.537109375,0.537109375,0.537109375,1],\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase1-route0.raw\",\"half_bits\":[14818,14818,14818],\"height\":9,\"high\":true,\"phase\":1,\"pid\":86329,\"route\":0,\"sha256\":\"41a1748a62c9143ae7ae5cd1b03aa090f1c7b5553d1904c8e47d20a34f37118f\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.73535698652267456,0.73535698652267456,0.73535698652267456,1],\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase1-route1.raw\",\"half_bits\":[14818,14818,14818],\"height\":9,\"high\":true,\"phase\":1,\"pid\":86329,\"route\":1,\"sha256\":\"120a9c8e64c7b498b32222ae61e0041238cf3ee177e2f0b89f269a183e5f44b4\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.7353515625,0.7353515625,0.7353515625,1],\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase2-route0.raw\",\"half_bits\":[14412,14412,14412],\"height\":9,\"high\":false,\"phase\":2,\"pid\":86329,\"route\":0,\"sha256\":\"fa7b980ca91a784b101e1b8be97f669b596690d7e0077fa6b06c6912f0b31efb\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.53709876537322998,0.53709876537322998,0.53709876537322998,1],\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase2-route1.raw\",\"half_bits\":[14412,14412,14412],\"height\":9,\"high\":false,\"phase\":2,\"pid\":86329,\"route\":1,\"sha256\":\"82688e0271c6cac78032107f02e4f6c9a5b84efaebc9b540c7ddd6fb9b036915\",\"source_color_space\":\"kCGColorSpaceSRGB\",\"source_components\":[0.537109375,0.537109375,0.537109375,1],\"stride\":288,\"width\":17}\n",
+    "stderr": "owned_tree_pid:86329\n",
+    "stdoutBytes": 2839,
+    "stderrBytes": 21,
+    "stdoutSha256": "f541221463c501228e60e7a44410c22d1e8b18c464b35506f6a1f555f0354ba3",
+    "stderrSha256": "c92956f083ab0b50af4eaa1c094aaa0dcab0903a6301fea01f04b293079b72b5"
+  }
+}

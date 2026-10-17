@@ -1,0 +1,41 @@
+{
+  "wake": "2026-10-17T18:11:37.854Z",
+  "native_deadline_utc": "2026-10-17T18:26:37Z",
+  "scope": "Dependent IEEEhalf-quantized encoded-sRGB source counterexample; SAMEwake deadline, no ImageRenderer/SwiftUI/AppKit import",
+  "basis": "Independent Quartz/NSColor diagnostic did not reproduce historicalcallback bytes. Standard IEEEFloat16 rounding of encoded-sRGB quarter/half is a distinct predeclared quantization hypothesis, not fitted output constants.",
+  "source_hypothesis": {
+    "quarter_half_bits": 14412,
+    "half_half_bits": 14818,
+    "rounding": "Float16(Float(CGColor linear\u2192sRGB components)); independent Python struct e quantizer and standard IEC sRGB encoding predict same bits"
+  },
+  "routes": [
+    "unquantized CGColor linear\u2192sRGB thenlinearfloat32fill",
+    "same source with each RGBcomponent explicitly Float16-rounded beforeCGColorconstruction"
+  ],
+  "expectations": {
+    "baseline": "Unquantizedfullallocations mustequal previous independent Quartzroute1 captures",
+    "half": "Compare everybyte to externallycapturedfailedImageRenderer callback and reportexactmatch/difference; notinternaldatatypeproof orcolorcorrectnessgolden",
+    "all": "expectedhalf-sourcebits/components, layout/hash/padding/tail/alpha/uniformgray/ABArestore mustpass"
+  },
+  "limits": {
+    "compile_count": 1,
+    "output_control_count": 1,
+    "fixture_count": 1,
+    "allocations": 6,
+    "native_alarm_seconds": 10,
+    "native_guard_seconds": 15,
+    "outer_seconds": 20
+  },
+  "totals": {
+    "bytes": 24576,
+    "padding_bytes": 864,
+    "tail_bytes": 9024
+  },
+  "claims_excluded": [
+    "actual ImageRenderer internals useFloat16",
+    "arbitrarycolors/transfercurves",
+    "display/Canvas",
+    "fitted reconstructionrule"
+  ],
+  "failure_policy": "Retainfailures; no relaxation/repeat/deadlineextension"
+}

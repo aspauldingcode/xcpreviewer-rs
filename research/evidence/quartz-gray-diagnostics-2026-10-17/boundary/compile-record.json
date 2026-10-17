@@ -1,0 +1,38 @@
+{
+  "phase": "compile",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+  "args": [
+    "-parse-as-library",
+    "-target",
+    "arm64-apple-macos13.0",
+    "/private/tmp/quartz-gray-boundary-20261017/probe.swift",
+    "-o",
+    "/private/tmp/quartz-gray-boundary-20261017/probe"
+  ],
+  "source_sha256": "c43fc88db050a6a66093a6f129537c86aa7397deeebe768619334e65f2ac7bca",
+  "binary_sha256": "8940ecd3f78bfbfd636765d601d761ba0b3698f153c48824221b24b66f8ddcad",
+  "error": null,
+  "record": {
+    "pid": 76836,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 4,
+      "observations": 74,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

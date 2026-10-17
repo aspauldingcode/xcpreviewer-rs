@@ -1,0 +1,14 @@
+{
+ "wake":"2026-10-17T18:11:37.854Z", "native_deadline_utc":"2026-10-17T18:26:37Z",
+ "scope":"Independent public Quartz/NSColor source-resolution and conversion diagnostic; no ImageRenderer construction or render call",
+ "question":"Can public color conversion/bridging reproduce the prior retained ImageRenderer gray callback discrepancy without constructing ImageRenderer?",
+ "routes":["CGColor(linearSRGB) direct fill","direct CGColor converted to sRGB then fill linear context","NSColor(Color(.sRGBLinear)).cgColor fill","same NSColor converted to linear NSColorSpace then cgColor fill"],
+ "inputs":"Opaque gray quarter/half/quarter in fresh per-phase source colors; all routes share explicit caller-owned float32 linear-sRGB context layout",
+ "independent_expectations":{"direct":"All3route0 allocations exactly IEEEfloat32 quarter/half/quarter RGB, alpha1 and0xa5padding/tail", "all_routes":"constant grayscale spatial invariant, finite0...1 channels, alpha1, high>low, complete phase0==phase2 restoration; all padding/tail exact", "comparisons":"Every byte compared with analytic direct template and parent-seal-pinned previous failed callback and previous linearCGdraw buffers. Equality/difference is a diagnostic observation, not accepted numeric goldens. Unmatched uniform bridge values remain numerically unqualified."},
+ "layout":{"width":17,"height":9,"stride":288,"bpc":32,"bpp":128,"bitmap_info":8449,"allocation":4096,"fill":165},
+ "limits":{"compile_count":1,"output_controls":1,"fixture_count":1,"native_alarm_seconds":10,"native_guard_seconds":15,"outer_seconds":20,"allocations":12},
+ "totals":{"direct_exact_bytes":12288,"all_bytes_compared":49152,"padding_bytes":1728,"tail_bytes":18048},
+ "prior_anchor":"39a4e3b488eca1bd1c4302daaff480f25b8f37050b1a87c72aa36132cbe0ee6e",
+ "claims_excluded":["bridge numeric color correctness","cause of ImageRenderer internals","arbitrary transfer curve compatibility","provider bytes","display/ICC fidelity","Canvas/state lifecycle","fitted reconstruction rule"],
+ "failure_policy":"Retain failures; no unchanged native repeat, expectation relaxation or deadline extension"
+}

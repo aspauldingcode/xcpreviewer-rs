@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/quartz-gray-boundary-20261017/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "c43fc88db050a6a66093a6f129537c86aa7397deeebe768619334e65f2ac7bca",
+  "binary_sha256": "8940ecd3f78bfbfd636765d601d761ba0b3698f153c48824221b24b66f8ddcad",
+  "error": null,
+  "record": {
+    "pid": 77142,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":77143,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:77143\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "3fd39ca69956129b4e1397f18ede994000e0fa788aaa33ea3bedbab3d0854637",
+    "stderrSha256": "f0fd13ea9cd30b01cdfd6d9d0c911903f25280fcd32d109266093811e7d10609"
+  }
+}
