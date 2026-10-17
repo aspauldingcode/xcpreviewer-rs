@@ -1,0 +1,38 @@
+{
+  "phase": "compile",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+  "args": [
+    "-parse-as-library",
+    "-target",
+    "arm64-apple-macos13.0",
+    "/private/tmp/color-mode-gray-20261017/probe.swift",
+    "-o",
+    "/private/tmp/color-mode-gray-20261017/probe"
+  ],
+  "source_sha256": "ca403c3600dfbdc04caf1312c876435b376b26919fa550b8b51a288079a72339",
+  "binary_sha256": "b9a360169ffc36eb58adeb4eef5dade0576ee7babe68f6ef799c42812a79be14",
+  "error": null,
+  "record": {
+    "pid": 67126,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 4,
+      "observations": 42,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

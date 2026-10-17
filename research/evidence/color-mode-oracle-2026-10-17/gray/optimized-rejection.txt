@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/color-mode-gray-20261017/admit.py", line 33, in <module>
+    if __name__=='__main__':print(json.dumps(admitted(Path(__file__).parent)))
+  File "/private/tmp/color-mode-gray-20261017/admit.py", line 24, in admitted
+    need(len(matched)==1)
+  File "/private/tmp/color-mode-gray-20261017/record_admit.py", line 6, in need
+    if not v:raise ValueError('Receive-size evidence rejected')
+ValueError: Receive-size evidence rejected

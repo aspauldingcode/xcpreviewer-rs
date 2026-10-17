@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/color-mode-endpoints-20261017/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "32860f9ce48e33947dc3fa15aa756d7a1146546dbb1476e58b7d1bae3f1da3ca",
+  "binary_sha256": "2775a33bb00258bbb0466fecaaaabc54f5c281cbce200f017d7af31447e508cc",
+  "error": null,
+  "record": {
+    "pid": 63363,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":63364,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:63364\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "acf895d29135b27bbff3bf231d7b57bad15b97061b0016757251c1d0775d7cb0",
+    "stderrSha256": "d4f9f7aa194566a632dc9693fee63a3c52dd158aed4aacb0949c2f3fcdaf7cb1"
+  }
+}

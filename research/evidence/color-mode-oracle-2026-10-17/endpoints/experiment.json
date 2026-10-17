@@ -1,0 +1,12 @@
+{
+ "wake":"2026-10-17T17:56:07.944Z", "native_deadline_utc":"2026-10-17T18:11:07Z",
+ "scope":"Independent owned ImageRenderer public colorMode export/reference oracle; no Xcode workspace, display capture or product behavior",
+ "selection":"R1 release-before-import control is complete; private Canvas bridge remains offline and typed private completion runtime is unavailable. Existing color references pin nonLinear. Probe public nonLinear/linear/extendedLinear mode storage metadata and fixed float32 destination bytes across cgImage draw vs render callback.",
+ "predictions":{"target_bytes":"All opaque sRGB red/blue endpoints map exactly to little-endian float32 linear-sRGB RGBA [1,0,0,1]/[0,0,1,1] in both routes and all modes, including row padding/tail retained0xa5", "control":"Within each mode use fresh-renderer red/blue/red phases; final red restores exact initial destination bytes", "metadata_hypothesis":"colorMode may change cgImage export bpc/bpp/stride/colorSpace/bitmap flags even when fixed-destination endpoints agree. CGImage metadata is measured and compared, not assumed; provider raw bytes not captured or qualified", "failure":"Any target byte, callback count, dimensions, metadata shape, output wait/drain/hash or deadline disagreement rejects this expectation without relaxation or automatic native retry"},
+ "layout":{"width":17,"height":9,"stride":288,"bits_per_component":32,"bits_per_pixel":128,"bitmap_info":8449,"alpha_info":1,"color_space":"kCGColorSpaceLinearSRGB","allocation":4096,"active_row_bytes":272,"fill":165},
+ "limits":{"compile_count":1,"output_controls":1,"fixture_count":1,"allocations":18,"compile_guard_seconds":30,"native_alarm_seconds":10,"native_guard_seconds":15,"native_outer_seconds":20,"artifact_bytes":2097152},
+ "independent_totals":{"bytes":73728,"padding_bytes":2592,"tail_bytes":27072},
+ "claims_excluded":["CGImage provider raw byte equivalence", "monitor/ICC/display fidelity", "mixed-color transfer curves", "fractional alpha", "arbitrary extended range", "native Canvas transport/lifecycle", "state refresh/reset", "crossplatform product compatibility"],
+ "compiler":"Existing direct Swift compiler for a single owned research fixture, no Xcode project/build workflow or new installation",
+ "failure_policy":"Retain failure; no unchanged native repeat or absolute deadline extension"
+}

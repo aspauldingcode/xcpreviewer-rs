@@ -1,0 +1,45 @@
+{
+  "wake": "2026-10-17T17:56:07.944Z",
+  "native_deadline_utc": "2026-10-17T18:11:07Z",
+  "scope": "Dependent public color-mode gray precision discriminator; shared wake deadline/budget, no new tick or deadline extension",
+  "parent_evidence": "/private/tmp/color-mode-endpoints-20261017",
+  "basis": "Actual endpoint probe reports linear cgImage8bpc32bpp LinearSRGB vs extendedLinear16bpc64bpp ExtendedLinearSRGB, with exact commonfloat32dest endpoints",
+  "hypotheses": {
+    "linear": "For each complete gray allocation allow only predeclared IEEE float32 exact quarter/half OR normalized8bit64/255 and128/255. Classify which value each route supplies; no arbitrary fitted float",
+    "extendedLinear": "Both routes must preserve exact binary quarter/half in every active component",
+    "restoration": "Fresh-renderer quarter/half/quarter must restore identical complete destinationbytes perroute/mode"
+  },
+  "layout": {
+    "width": 17,
+    "height": 9,
+    "stride": 288,
+    "bpc": 32,
+    "bpp": 128,
+    "bitmap_info": 8449,
+    "allocation": 4096,
+    "pad_and_tail_fill": 165
+  },
+  "limits": {
+    "compile_count": 1,
+    "output_controls": 1,
+    "fixture_count": 1,
+    "alarm_seconds": 10,
+    "native_guard_seconds": 15,
+    "outer_seconds": 20,
+    "allocations": 12
+  },
+  "totals": {
+    "bytes": 49152,
+    "padding_bytes": 1728,
+    "tail_bytes": 18048
+  },
+  "claims_excluded": [
+    "arbitrary float/color/transfer functions",
+    "fractional alpha",
+    "CGImage provider bytes",
+    "display",
+    "Canvas lifecycle",
+    "state reset"
+  ],
+  "failure_policy": "Retain failure; no relaxation of candidate patterns, native rerun or extension beyond18:11:07UTC"
+}
