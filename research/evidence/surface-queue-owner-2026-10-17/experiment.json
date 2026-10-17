@@ -1,0 +1,11 @@
+{
+ "wake":"2026-10-17T17:46:07.839Z", "native_deadline_utc":"2026-10-17T18:01:07Z",
+ "scope":"Owned queued-resource handoff after sender-owned CF and Mach resource handles are released, gated before receiver import",
+ "selection":"Completed queued-endpoint drop and live-peer COPY/MOVE recovery retained sender CF. New separate audited control endpoint prevents receiver reading resource inbox until sender releases both local resource handles. No stale global-ID lookup or reclamation test.",
+ "predictions":{"sender_release":"COPY firstnamequery0 then explicit deallocate/query15; MOVE firstnamequery15. Original CFRelease/null precedes audited stage6 authorization in both tiers", "queue_survival":"After authorization, receiver queue1; correct/LARGE cases permit audited import and complete independent bytes without sender-held resource handles", "discard":"noLARGE returns268451844/queue0 then fullreceive268451843, no import/audit and no resource-query observation", "receiver_alias":"Successful import ownsrefs1 then mach_msg_destroy/query15; CFalias preserves full baseline and permits byte0XOR0x5a mutation before CFRelease", "cleanup":"receiver inbox/control query15, peerexit0, sender peerendpoint typesDEAD_NAME1048576 then deallocationqueries15, randomrendezvousgone"},
+ "limits":{"compile_count":1,"output_controls":1,"fixture_count":1,"fixture_cases":6,"parent_alarm_seconds":12,"child_alarm_seconds":12,"guard_native_seconds":15,"outer_native_seconds":20,"artifact_bytes":2097152},
+ "independent_expected_bytes":{"width":17,"height":9,"stride":128,"allocation":16384,"seed":49,"padding_fill":165,"mutated":"byte0 XOR0x5a","allocations":18,"bytes":294912,"padding_bytes":9720,"tail_bytes":274176},
+ "claims_excluded":["all global/internal references released", "physical reclamation", "globalID lookup/lifetime", "actual Canvas sequencing/transport/completion", "GPU", "general reliability", "cross-case identity inferred from repeated numeric SID/name"],
+ "prerequisites":"Independent source/consumer/gate review, source/compile/REA identity, output control and fixed pre/postlock deadline",
+ "failure_policy":"Retain failures; no unchanged fixture repeat, no absolute deadline extension"
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/surface-queue-owner-20261017/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "badc56a7410702899b142e27b51089b2f5ca6e20ad22af952004d7b1900fc82e",
+  "binary_sha256": "a8554fa6ebca4301fd7a3672c16c559861578a32a41172ec5f3addae89a34c0e",
+  "error": null,
+  "record": {
+    "pid": 51066,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 0,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":51067,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:51067\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "0b56d8ad8a904d659629d1ad45798d6e5426b1f44b8b909a6a15c24371321baf",
+    "stderrSha256": "74ac39f7ea9847d5946affb0a400c62615cdc99df4d0b7f569dce30ad7583cbe"
+  }
+}

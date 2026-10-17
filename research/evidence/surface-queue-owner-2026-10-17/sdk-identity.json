@@ -1,0 +1,20 @@
+{
+  "architecture": "arm64",
+  "sdk_root": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+  "header_sha256": {
+    "usr/include/mach/message.h": "86e9e87ba2a736236613f2c0a8563dbacaeec1a761654b12812eaf8599b55e67",
+    "usr/include/mach/kern_return.h": "2d4b89f7cf91cf7bffafe457cdba8884c3f2e5596a9ef7d5e4a9ea4b239558d8",
+    "usr/include/mach/port.h": "e4d48a100252a8d07ef5221e4cac1ea727fb975271a8382e0a6faf121c5c8a56"
+  },
+  "independent_user_ABI_expectations": {
+    "mach_msg_header_size": 24,
+    "body_size": 4,
+    "port_descriptor_size": 12,
+    "owned_transfer_size": 64,
+    "MACH_RCV_TOO_LARGE": 268451844,
+    "KERN_INVALID_NAME": 15,
+    "MACH_RCV_TIMED_OUT": 268451843,
+    "MACH_PORT_TYPE_DEAD_NAME": 1048576
+  },
+  "scope": "PublicSDK declarations/own struct calculation, not emitted native measurements"
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/surface-queue-owner-20261017/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/surface-queue-owner-20261017/owned-documents"
+  ],
+  "source_sha256": "badc56a7410702899b142e27b51089b2f5ca6e20ad22af952004d7b1900fc82e",
+  "binary_sha256": "a8554fa6ebca4301fd7a3672c16c559861578a32a41172ec5f3addae89a34c0e",
+  "error": null,
+  "record": {
+    "pid": 51168,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"sender_pid\":51169,\"receiver_pid\":51171,\"mode\":0,\"surface_id\":20,\"receiver_exit\":0,\"initial_move\":false,\"initial_disposition\":19,\"initial_query\":0,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":51169,\"receiver_pid\":51172,\"mode\":1,\"surface_id\":20,\"receiver_exit\":0,\"initial_move\":false,\"initial_disposition\":19,\"initial_query\":0,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":51169,\"receiver_pid\":51174,\"mode\":2,\"surface_id\":74,\"receiver_exit\":0,\"initial_move\":false,\"initial_disposition\":19,\"initial_query\":0,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":51169,\"receiver_pid\":51175,\"mode\":0,\"surface_id\":74,\"receiver_exit\":0,\"initial_move\":true,\"initial_disposition\":17,\"initial_query\":15,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":51169,\"receiver_pid\":51176,\"mode\":1,\"surface_id\":74,\"receiver_exit\":0,\"initial_move\":true,\"initial_disposition\":17,\"initial_query\":15,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":51169,\"receiver_pid\":51177,\"mode\":2,\"surface_id\":74,\"receiver_exit\":0,\"initial_move\":true,\"initial_disposition\":17,\"initial_query\":15,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n",
+    "stderr": "owned_tree_pid:51169\n",
+    "stdoutBytes": 2832,
+    "stderrBytes": 21,
+    "stdoutSha256": "11968642590c498e86919ce33afef29de46eba3a1c20f48c91e23eec65579a0c",
+    "stderrSha256": "e906dc18fc7d6be39ff98852605aa6fbd97d028ec1c4e03cd519378b55831cba"
+  }
+}
