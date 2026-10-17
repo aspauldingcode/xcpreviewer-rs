@@ -1,0 +1,24 @@
+{
+  "source_sha256": "9ec34d68129dc48de7dbfd6afe35f4d9351d1bcfa70950c54c39b9486e2cc6d2",
+  "synthetic_tests": 2,
+  "negative_subcases": 35,
+  "normal_and_optimized_pass": true,
+  "native_compiled": false,
+  "native_launched": false,
+  "original_deadline_utc": "2026-10-16T20:32:32+00:00",
+  "dispatch_rejection": {
+    "status": "wake_budget_expired_before_dispatch",
+    "phase": "compile",
+    "observed_utc": "2026-10-17T04:13:20.543438+00:00",
+    "deadline_utc": "2026-10-16T20:32:32+00:00",
+    "required_reserve_seconds": 100,
+    "native_launched": false
+  },
+  "declared_expected_bytes_per_fixture": 294912,
+  "declared_padding_bytes": 9720,
+  "declared_unused_tail_bytes": 274176,
+  "final_review_pending": true,
+  "physical_reclamation_qualified": false,
+  "native_canvas_protocol_qualified": false,
+  "milestones_complete": false
+}
