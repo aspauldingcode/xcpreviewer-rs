@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "IOSurface",
+    "-framework",
+    "CoreFoundation",
+    "-lbsm",
+    "/private/tmp/surface-cross-move-20261017/probe.c",
+    "-o",
+    "/private/tmp/surface-cross-move-20261017/probe"
+  ],
+  "source_sha256": "5fcd7e7ef73bb130e5f3d1b2ffb6a4c868dab1ba32bcb44ab14e8b17d8d19f82",
+  "binary_sha256": "4be958198bbed13191cf0c95c2b38c389e28d18c35336799195ca99d14cdf50e",
+  "error": null,
+  "record": {
+    "pid": 39106,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 22,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "In file included from /private/tmp/surface-cross-move-20261017/probe.c:3:\n/private/tmp/surface-cross-move-20261017/surface_ipc_probe.c:187:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  187 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /private/tmp/surface-cross-move-20261017/probe.c:3:\n/private/tmp/surface-cross-move-20261017/surface_ipc_probe.c:243:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  243 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail(\"rendezvous-register\",status);goto done;}registered=1;\n      |            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n/private/tmp/surface-cross-move-20261017/probe.c:31:152: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n   31 |  if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox)||mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND)||bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |                                                                                                                                                        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n3 warnings generated.\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 2216,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "b997010dd5e3cf01b92f9402dd2a1bbfd7d6e9309153c11f6cf40b7d85feaafd"
+  }
+}

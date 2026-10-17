@@ -1,0 +1,11 @@
+{
+ "wake":"2026-10-17T17:36:07.892Z", "native_deadline_utc":"2026-10-17T17:51:07Z",
+ "scope":"Paired owned COPY_SEND/MOVE_SEND initial descriptors across audit-verified receive-size error and CF-held resource reacquisition; no product behavior",
+ "selection":"Prior queued-endpoint drop COPY/MOVE control is complete but destroys the receiver endpoint and does not test receive-size-error recovery to a live peer. Prior cross-task recovery kept a COPY_SEND resource in the sender. This separates loss of the sender's initial Mach name from retained CF ownership and later fresh delivery.",
+ "predictions":{"copy":"initial descriptor19 preserves sender localrefs1 and namequery0 after send/stage1", "move":"initial descriptor17 consumes sole sender local Mach right, namequery15 after send/stage1, while CF-held bytes remain independently exact; create a new local resource right with refs1 before retry", "first_receive":"same correct/LARGE/noLARGE queue/timeout/import contrast in each disposition tier", "recovery":"stage1 audited ack precedes byte0 XOR0x5a mutation and fresh id92 COPY_SEND; all6peers import changed fullbytes, release local right/query15 with CFaliasreadback, endpointquery15 and actualexit0", "sender_final":"local refs1 after retry and peer exit then local query15; random rendezvous removed"},
+ "limits":{"compile_count":1,"output_controls":1,"fixture_count":1,"fixture_cases":6,"parent_alarm_seconds":12,"child_alarm_seconds":12,"guard_native_seconds":15,"outer_native_seconds":20,"artifact_bytes":2097152},
+ "independent_expected_bytes":{"width":17,"height":9,"stride":128,"allocation":16384,"seed":49,"padding_fill":165,"mutation":"byte0 XOR0x5a","allocations":40,"bytes":655360,"padding_bytes":21600,"tail_bytes":609280},
+ "claims_excluded":["global reference accounting", "all-ownership final release", "physical reclamation", "actual Canvas sequencing/transport/completion", "GPU", "general reliability", "cross-case or cross-task identity inferred from numeric names"],
+ "prerequisites":"Independent source/consumer/gate review; compile pins, REA owned target identity, valid output control and fixed pre/postlock deadline",
+ "failure_policy":"Retain failures; no unchanged fixture repeat and no extension of absolute native deadline"
+}
