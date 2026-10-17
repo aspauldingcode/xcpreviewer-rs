@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/surface-cross-receive-20261017/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/surface-cross-receive-20261017/owned-documents"
+  ],
+  "source_sha256": "2ef510c48aa0d4c92bbcb5fd5fd9fdb883d6737e443f7d93a39aa0ea3cdd713f",
+  "binary_sha256": "86fa4c8c079fceacb626a149c55fc219603b2b82e270d331a79118a88831e193",
+  "error": null,
+  "record": {
+    "pid": 30442,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 2,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"sender_pid\":30443,\"receiver_pid\":30445,\"mode\":0,\"surface_id\":85,\"receiver_exit\":0,\"sender_refs_before\":1,\"sender_refs_after_error\":1,\"sender_refs_after_retry\":1,\"sender_refs_after_exit\":1,\"sender_removed_query\":15,\"rendezvous_removed\":true,\"audit_ready_verified\":true,\"audit_stage1_verified\":true,\"audit_stage3_verified\":true}\n{\"sender_pid\":30443,\"receiver_pid\":30446,\"mode\":1,\"surface_id\":85,\"receiver_exit\":0,\"sender_refs_before\":1,\"sender_refs_after_error\":1,\"sender_refs_after_retry\":1,\"sender_refs_after_exit\":1,\"sender_removed_query\":15,\"rendezvous_removed\":true,\"audit_ready_verified\":true,\"audit_stage1_verified\":true,\"audit_stage3_verified\":true}\n{\"sender_pid\":30443,\"receiver_pid\":30448,\"mode\":2,\"surface_id\":85,\"receiver_exit\":0,\"sender_refs_before\":1,\"sender_refs_after_error\":1,\"sender_refs_after_retry\":1,\"sender_refs_after_exit\":1,\"sender_removed_query\":15,\"rendezvous_removed\":true,\"audit_ready_verified\":true,\"audit_stage1_verified\":true,\"audit_stage3_verified\":true}\n",
+    "stderr": "owned_tree_pid:30443\n",
+    "stdoutBytes": 987,
+    "stderrBytes": 21,
+    "stdoutSha256": "b7a338cfad641ed51f3cc98d7f4a7bf312f94cba93eed3d9f3025dd531374561",
+    "stderrSha256": "1b46f8027ece4f04c2ac1a61300d700caca6597b5ee730330022932c3b91ca52"
+  }
+}

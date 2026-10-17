@@ -1,0 +1,11 @@
+{
+ "wake":"2026-10-17T17:26:07.816Z", "native_deadline_utc":"2026-10-17T17:41:07Z",
+ "scope":"Owned cross-task COPY_SEND receive-size/error recovery; research probe only",
+ "question":"Does the one-task LARGE-vs-discard contrast persist in an audit-verified receiver process, while a distinct sender retains its resource and delivers a mutated fresh envelope after the receiver's first error/consume stage?",
+ "predictions":{"correct":"receiver queue1 then fullreceive0 and independently matching baseline", "large":"TOO_LARGE with queue retained1 then audited fullreceive0", "small":"TOO_LARGE with queue0 then immediate timeout; no first import or first audit claim", "recovery":"receiver stage1 acknowledgement precedes sender mutation and fresh id92 COPY_SEND; receiver imports expected changed fullallocation and releases local right while CFalias stays readable", "release":"sender local sendrefs1 throughout copy/error/retry/peerexit then namequery15; receiver importedname query15 after destroy, endpoint query15; actual childexit0 and rendezvousremoved"},
+ "limits":{"compile_count":1,"output_controls":1,"fixture_count":1,"parent_alarm_seconds":12,"child_alarm_seconds":12,"guard_native_seconds":15,"outer_native_seconds":20,"artifact_bytes":1048576},
+ "claims_excluded":["actual Canvas transport/generation/completion", "physical reclamation", "global reference accounting", "GPU synchronization", "general reliability", "same numeric names across tasks imply identity"],
+ "independent_expected_bytes":{"width":17,"height":9,"stride":128,"allocation":16384,"seed":49,"padding_fill":165,"mutation":"byte0 XOR0x5a","allocations":20,"bytes":327680,"padding_bytes":10800,"tail_bytes":304640},
+ "native_prerequisites":"Independent review of source/consumer/absolute postlock gate, output control, compile pin and REA target binding; no bridge or UI needed",
+ "failure_policy":"Retain nonzero or incomplete result; no unchanged native retry and no budget extension"
+}
