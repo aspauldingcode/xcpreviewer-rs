@@ -1,0 +1,70 @@
+{
+  "phases": [
+    {
+      "argv": [
+        "/usr/bin/xcrun",
+        "swiftc",
+        "-module-cache-path",
+        "/private/tmp/callback-compile-20261018/cli-compile/ModuleCache",
+        "/private/tmp/callback-compile-20261018/ReceiptWriter.swift",
+        "/private/tmp/callback-compile-20261018/main.swift",
+        "-o",
+        "/private/tmp/callback-compile-20261018/cli-compile/probe"
+      ],
+      "result": {
+        "execution": "success",
+        "exit_code": 0,
+        "duration_seconds": 16.165
+      },
+      "events": [
+        {
+          "event": "process_started",
+          "pid": 12422,
+          "process_group": 12422
+        },
+        {
+          "event": "owned_descendant_cleanup",
+          "tracked_processes": 7,
+          "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+        }
+      ]
+    },
+    {
+      "argv": [
+        "/usr/bin/xcrun",
+        "swiftc",
+        "-typecheck",
+        "-parse-as-library",
+        "-module-cache-path",
+        "/private/tmp/callback-compile-20261018/ui-typecheck/ModuleCache",
+        "/private/tmp/callback-compile-20261018/ReceiptWriter.swift",
+        "/private/tmp/callback-compile-20261018/PreviewFixture.swift"
+      ],
+      "result": {
+        "execution": "success",
+        "exit_code": 0,
+        "duration_seconds": 35.844
+      },
+      "events": [
+        {
+          "event": "process_started",
+          "pid": 13030,
+          "process_group": 13030
+        },
+        {
+          "event": "heartbeat",
+          "elapsed_seconds": 30.0
+        },
+        {
+          "event": "owned_descendant_cleanup",
+          "tracked_processes": 4,
+          "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+        }
+      ]
+    }
+  ],
+  "executable_invocations": 0,
+  "ui_sessions": 0,
+  "receipt_publications": 0,
+  "deadline_closed": true
+}

@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/usr/bin/xcrun",
+    "swiftc",
+    "-module-cache-path",
+    "/private/tmp/callback-compile-20261018/cli-compile/ModuleCache",
+    "/private/tmp/callback-compile-20261018/ReceiptWriter.swift",
+    "/private/tmp/callback-compile-20261018/main.swift",
+    "-o",
+    "/private/tmp/callback-compile-20261018/cli-compile/probe"
+  ],
+  "result": {
+    "execution": "success",
+    "exit_code": 0,
+    "duration_seconds": 16.165
+  },
+  "events": [
+    {
+      "event": "process_started",
+      "pid": 12422,
+      "process_group": 12422
+    },
+    {
+      "event": "owned_descendant_cleanup",
+      "tracked_processes": 7,
+      "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+    }
+  ]
+}

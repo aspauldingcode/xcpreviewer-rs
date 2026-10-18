@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/usr/bin/xcrun",
+    "swiftc",
+    "-typecheck",
+    "-parse-as-library",
+    "-module-cache-path",
+    "/private/tmp/callback-compile-20261018/ui-typecheck/ModuleCache",
+    "/private/tmp/callback-compile-20261018/ReceiptWriter.swift",
+    "/private/tmp/callback-compile-20261018/PreviewFixture.swift"
+  ],
+  "result": {
+    "execution": "success",
+    "exit_code": 0,
+    "duration_seconds": 35.844
+  },
+  "events": [
+    {
+      "event": "process_started",
+      "pid": 13030,
+      "process_group": 13030
+    },
+    {
+      "event": "heartbeat",
+      "elapsed_seconds": 30.0
+    },
+    {
+      "event": "owned_descendant_cleanup",
+      "tracked_processes": 4,
+      "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+    }
+  ]
+}
