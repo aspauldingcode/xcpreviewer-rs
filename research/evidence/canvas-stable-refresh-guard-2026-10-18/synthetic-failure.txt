@@ -1,0 +1,2 @@
+Before native action, strengthened project-ancestry gate rejected the positive synthetic fixture with Error: unqualified control at authorize. The fixture placed Canvas as a sibling of project1 rather than a child. Correct the fixture indentation; retain the stricter real ownership guard. No guarded native action had run.
+After correcting the positive fixture, a duplicate-button negative fixture expected an exception but inserted the second button at the wrong ancestor depth. Correct its indentation so both controls inhabit the same preview; retain this failed mutant.

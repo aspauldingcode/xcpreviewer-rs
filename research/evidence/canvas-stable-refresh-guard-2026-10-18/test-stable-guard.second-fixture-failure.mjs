@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {assess,authorize,PROJECT,SOURCE} from './stable-guard.mjs';
+const root=`0 standard window PreviewLab, ID: Xcode.WorkspaceWindow, Secondary Actions: Raise, URL: file://${SOURCE}\n\t1 split group PreviewLab.xcodeproj, ID: Workspace window tab content, Description: ${PROJECT}\n`;
+const ready='\t90 text Value: PreviewLab: Ready │ now, ID: Activity Text\n';
+const child=s=>s.split('\n').filter(Boolean).map(l=>'\t'+l).join('\n')+'\n';
+const paused=root+child('\t2 container\n\t\t3 text Canvas paused\n\t\t4 button Description: Refresh Canvas, ID: arrow.clockwise\n')+ready;
+const active=root+child('\t2 container Description: Canvas\n\t\t3 container Description: Text and interaction\n\t\t\t4 text Count: 0\n\t\t\t5 button Increment\n')+ready;
+assert.equal(authorize(assess(paused),assess(paused),'refresh',1,2),4);
+assert.equal(authorize(assess(active),assess(active),'increment',1,2),5);
+assert.throws(()=>authorize(assess(paused),assess(paused.replace('4 button','8 button')),'refresh',1,2),/stale/);
+assert.throws(()=>authorize(assess(active),assess(active),'increment',2,2),/deadline/);
+for(const bad of [active.replace('Description: Text and interaction','Description: Layout edit'),active.replace('Description: Canvas\n','Description: Source Editor\n'),active.replace('5 button Increment','5 button Increment\n\t\t\t6 button Increment'),active.replace('Count: 0','Count: 1')])assert.throws(()=>authorize(assess(bad),assess(bad),'increment',1,2));
+for(const bad of [active.replace(SOURCE,SOURCE+'-other'),active.replace(PROJECT,PROJECT+'-other'),active.replace('0 standard window','0 window'),active.replace(': Ready │',': Indexing │'),active+'\t91 busy indicator 0\n',active+'\t90 text duplicate\n'])assert.throws(()=>assess(bad));
+const editorOnly=root+'\t2 text entry area Description: Source Editor, Value: Button("Increment")\nCount: 0\n'+ready;
+assert.equal(assess(editorOnly).increment,null);
+const split=active.replace('\t\t\t\t5 button Increment','\t\t\t6 container Description: Text and interaction\n\t\t\t\t5 button Increment');
+assert.throws(()=>authorize(assess(split),assess(split),'increment',1,2));
+const wrongAncestor=active.replace('\t2 container Description: Canvas','\t8 container other\n\t\t2 container Description: Canvas');
+// This remains under project1; removing the actual project ancestry must fail.
+const outside=active.replace('\t\t2 container Description: Canvas','9 container Description: Canvas');
+assert.throws(()=>authorize(assess(outside),assess(outside),'increment',1,2));
+console.log(JSON.stringify({passed:true,assertions:17,native_execution:false}));
