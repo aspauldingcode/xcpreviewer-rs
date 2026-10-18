@@ -1,0 +1,93 @@
+{
+  "phase": 1,
+  "request": {
+    "name": "RenderPreview",
+    "arguments": {
+      "tabIdentifier": "windowtab3",
+      "sourceFilePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+      "timeout": 45
+    }
+  },
+  "source_sha256": "9de5467b89566ffb8f266ac2c8f54fdd213ee57dbb327aae00c76a6a4fab6df1",
+  "started_at": "2026-10-18T17:06:39.783397+00:00",
+  "before_identity": {
+    "pid": 11898,
+    "expected_identity": [
+      1792343196,
+      159799,
+      "/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab"
+    ],
+    "selector": "11898:1792343196:159799",
+    "helper_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+    "started_at": "2026-10-18T17:06:39.783897+00:00",
+    "returncode": 0,
+    "stdout": "[{\"pid\":11898,\"parent\":1,\"group\":11898,\"state\":\"L\",\"identity\":[1792343196,159799,\"/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab\"]}]\n",
+    "stderr": "",
+    "root": {
+      "pid": 11898,
+      "parent": 1,
+      "group": 11898,
+      "state": "L",
+      "identity": [
+        1792343196,
+        159799,
+        "/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab"
+      ]
+    },
+    "status": "observed",
+    "elapsed_seconds": 0.02723745800000188
+  },
+  "response": {
+    "content": [
+      {
+        "text": "{\"errors\":[],\"previewSnapshotPath\":\"\\/var\\/folders\\/yj\\/rl1ct2jx2psdw8j3g4cth94c0000gq\\/T\\/ActionArtifacts\\/FAEC36EA-F366-47C2-AAA1-1493BD117627\\/RenderPreview\\/RenderPreview_result_2026-10-18T170640Z@2x.png\",\"supportedLocalizations\":[],\"supportedPreviewVariantOverrides\":{\"Color Scheme\":[\"Light Appearance\",\"Dark Appearance\"]}}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "errors": [],
+      "previewSnapshotPath": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/FAEC36EA-F366-47C2-AAA1-1493BD117627/RenderPreview/RenderPreview_result_2026-10-18T170640Z@2x.png",
+      "supportedLocalizations": [],
+      "supportedPreviewVariantOverrides": {
+        "Color Scheme": [
+          "Light Appearance",
+          "Dark Appearance"
+        ]
+      }
+    }
+  },
+  "png_sha256": "6013a83b3756ef70c230fdea36a5627819b1f03454f013b838de21eb97aa1904",
+  "decoded": {
+    "pid": 11898,
+    "state_token_hex": "1c4b03e6fd594aa8bd290dc4f9eea88f",
+    "rgba_sha256": "09ccd3701e26e1891d689bb315090da8025b004688ce61c10f3fa7c069364001",
+    "rgba_bytes_checked": 196608,
+    "telemetry_derived_expectation": true,
+    "native_cause_proven": false
+  },
+  "after_identity": {
+    "pid": 11898,
+    "expected_identity": null,
+    "selector": "11898",
+    "helper_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+    "started_at": "2026-10-18T17:06:40.323793+00:00",
+    "returncode": 0,
+    "stdout": "[{\"pid\":11898,\"parent\":1,\"group\":11898,\"state\":\"L\",\"identity\":[1792343196,159799,\"/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab\"]}]\n",
+    "stderr": "",
+    "root": {
+      "pid": 11898,
+      "parent": 1,
+      "group": 11898,
+      "state": "L",
+      "identity": [
+        1792343196,
+        159799,
+        "/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab"
+      ]
+    },
+    "status": "observed",
+    "elapsed_seconds": 0.01946487499999705
+  },
+  "status": "measured",
+  "elapsed_seconds": 0.5601759169999987
+}

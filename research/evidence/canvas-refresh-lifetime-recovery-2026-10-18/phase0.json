@@ -1,0 +1,66 @@
+{
+  "phase": 0,
+  "request": {
+    "name": "RenderPreview",
+    "arguments": {
+      "tabIdentifier": "windowtab3",
+      "sourceFilePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+      "timeout": 45
+    }
+  },
+  "source_sha256": "9de5467b89566ffb8f266ac2c8f54fdd213ee57dbb327aae00c76a6a4fab6df1",
+  "started_at": "2026-10-18T17:06:21.586227+00:00",
+  "response": {
+    "content": [
+      {
+        "text": "{\"errors\":[],\"previewSnapshotPath\":\"\\/var\\/folders\\/yj\\/rl1ct2jx2psdw8j3g4cth94c0000gq\\/T\\/ActionArtifacts\\/FAEC36EA-F366-47C2-AAA1-1493BD117627\\/RenderPreview\\/RenderPreview_result_2026-10-18T170638Z@2x.png\",\"supportedLocalizations\":[],\"supportedPreviewVariantOverrides\":{\"Color Scheme\":[\"Light Appearance\",\"Dark Appearance\"]}}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "errors": [],
+      "previewSnapshotPath": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/ActionArtifacts/FAEC36EA-F366-47C2-AAA1-1493BD117627/RenderPreview/RenderPreview_result_2026-10-18T170638Z@2x.png",
+      "supportedLocalizations": [],
+      "supportedPreviewVariantOverrides": {
+        "Color Scheme": [
+          "Light Appearance",
+          "Dark Appearance"
+        ]
+      }
+    }
+  },
+  "png_sha256": "263f9a373fd2ddc63ae9e1961592ef51b3805f896750d6bf5073803d92ebc218",
+  "decoded": {
+    "pid": 11898,
+    "state_token_hex": "f4c282d6ca974d4e9184755a2b966d51",
+    "rgba_sha256": "8b351c7c0621944330ada479166cef94feb7274bcf865af1957f9694cb83631d",
+    "rgba_bytes_checked": 196608,
+    "telemetry_derived_expectation": true,
+    "native_cause_proven": false
+  },
+  "after_identity": {
+    "pid": 11898,
+    "expected_identity": null,
+    "selector": "11898",
+    "helper_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+    "started_at": "2026-10-18T17:06:39.728947+00:00",
+    "returncode": 0,
+    "stdout": "[{\"pid\":11898,\"parent\":1,\"group\":11898,\"state\":\"L\",\"identity\":[1792343196,159799,\"/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab\"]}]\n",
+    "stderr": "",
+    "root": {
+      "pid": 11898,
+      "parent": 1,
+      "group": 11898,
+      "state": "L",
+      "identity": [
+        1792343196,
+        159799,
+        "/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-gnojrxpsjiwcbvevahzxirhfuzqh/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab"
+      ]
+    },
+    "status": "observed",
+    "elapsed_seconds": 0.04887945800000182
+  },
+  "status": "measured",
+  "elapsed_seconds": 18.191483082999998
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "RenderPreview request-boundary UUID/PID telemetry plus five public libproc fullidentity sample points; no UIinteraction/privatewire",
+  "absolute_deadline_utc": "2026-10-18T17:12:00Z",
+  "native_render_calls_maximum": 3,
+  "render_timeout_seconds": 45,
+  "broker_timeout_seconds": 55,
+  "deadline_reserve_seconds": 70,
+  "observer_calls_maximum": 5,
+  "observer_timeout_seconds": 2,
+  "observer_sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+  "predictions": {
+    "same_full_identity_changed_token": "Different snapshot state values at request boundary under matching sampled PID/birthtime/path; causal UIreset policy stillunknown",
+    "changed_or_missing_full_identity": "Do not qualify process reuse; firstmissing/failed/zombie sample stops further nativecalls; no exit/reclamation claim",
+    "same_token": "May be retained/cached; do not claim state retention"
+  },
+  "source": "Byte-identical to prior independently reviewed UUID telemetry source",
+  "pixel_goldens": "Telemetry-derived expectations only, not independent rendering conformance",
+  "cleanup": "Exactownedproject close thenzeroownedwindows; no brokerrestart",
+  "predecessor_unexecuted_seal_sha256": "39b6d385b8e8b68007273415f68306c4b437dc4dde204a0121880c18abd232bf",
+  "predecessor_deadline_closed": "2026-10-18T16:31:00Z",
+  "external_change": "Approval-service retry time09:50PDT has passed; separate non-native checkpoint/sealing approvals succeeded at17:00UTC. Native execution still requires standard auto-review and this separately reviewed new plan; no bypass.",
+  "workspace_reuse": "Exact prior owned project, closed and zero windows verified after aborted old plan; source unchanged, no second workspace created"
+}

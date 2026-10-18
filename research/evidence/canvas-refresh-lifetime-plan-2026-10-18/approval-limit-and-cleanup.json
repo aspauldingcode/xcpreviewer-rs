@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-18T17:01:37.527237+00:00",
+  "native_render_calls": 0,
+  "native_observer_calls": 0,
+  "phase_record_files": 0,
+  "rejection": "Automatic approval review failed: usage limit; action not executed. Not an unsafe determination. Original attempt was not retried, no approval bypass or purchase.",
+  "original_absolute_deadline_utc": "2026-10-18T16:31:00Z",
+  "original_deadline_closed": true,
+  "cleanup": {
+    "windows": {
+      "content": [
+        {
+          "text": "{\"message\":\"No workspace windows found\"}",
+          "type": "text"
+        }
+      ],
+      "structuredContent": {
+        "message": "No workspace windows found"
+      }
+    },
+    "bridge_status": {
+      "running": true,
+      "record": {
+        "bridge_pid": 63652,
+        "identity": "Sun Oct 18 08:53:59 2026     /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -m reloop.xcodebridge",
+        "initialized": true,
+        "pid": 63649,
+        "scope": "One retained approved connection; no auto-restart or permission bypass",
+        "session_id": "faec36ea-f366-47c2-aaa1-1493bd117627",
+        "started_at": "2026-10-18T15:53:59.648959+00:00",
+        "xcode_pid": 60975
+      },
+      "responsive": true
+    },
+    "owned_workspace_windows": 0,
+    "operator_observation": "CUA exactownedworkspaceURL freshly checked, its closebutton clicked, Welcome restored"
+  },
+  "next_action": "Seal unexecuted proposal and synthetic deadline controls. Fresh execution requires separate new review after approval capacity restoration; do not renew original plan or retry its expired capture."
+}
