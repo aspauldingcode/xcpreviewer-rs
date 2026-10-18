@@ -1,0 +1,17 @@
+Timeout (0:00:03)!
+Thread 0x00000001f9e4de80 (most recent call first):
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 39 in <lambda>
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 39 in digest
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 343 in <listcomp>
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 343 in artifacts
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 351 in verify
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/graphloop.py", line 62 in trusted
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/graphloop.py", line 132 in overlay
+  File "/private/tmp/planner-stage-diagnostic.py", line 10 in wrapped
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/graphloop.py", line 152 in frontier
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/graphloop.py", line 202 in inspect
+  File "/private/tmp/planner-stage-diagnostic.py", line 15 in <module>
+Timeout (0:00:03)!
+Thread 0x00000001f9e4de80 (most recent call first):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1242 in open
+  File "/Users/8amps/xcpreviewer-rs/tools/re/reloop/core.py", line 41 in digest

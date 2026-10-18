@@ -1,0 +1,182 @@
+{
+  "artifact": {
+    "verification_calls": 49,
+    "unique_runs": 49,
+    "declared_files_across_calls": 25006,
+    "declared_bytes_across_calls": 1509278707,
+    "verification_seconds": 9.847599206,
+    "result": {
+      "event": "graph_result",
+      "seconds": 9.996214334,
+      "next_task": "primary-live-wasm-swap",
+      "all_milestones_complete": false,
+      "quarantined_runs": [
+        "20261010T165829Z-native-alpha-compositing-oracle-93967a61"
+      ],
+      "research_frontier": [
+        {
+          "id": "primary-live-wasm-swap",
+          "state": "ready"
+        },
+        {
+          "id": "native-correlated-capture",
+          "state": "blocked"
+        },
+        {
+          "id": "typed-continuation-runtime",
+          "state": "blocked"
+        },
+        {
+          "id": "compiler-artifact-limit-quiescence",
+          "state": "complete"
+        },
+        {
+          "id": "owned-process-observer-integration",
+          "state": "complete"
+        },
+        {
+          "id": "owned-generation-commit-control",
+          "state": "complete"
+        },
+        {
+          "id": "owned-process-observation-oracle",
+          "state": "complete"
+        },
+        {
+          "id": "primary-source-frame-native-extents",
+          "state": "complete"
+        },
+        {
+          "id": "native-alpha-compositing-oracle",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-export-boundary",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-oracle",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-quartz-contrast",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-rasterization-scale",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-render-callback",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-render-order",
+          "state": "complete"
+        },
+        {
+          "id": "native-primary-layer-composition",
+          "state": "complete"
+        },
+        {
+          "id": "linux-primary-source-subset",
+          "state": "complete"
+        },
+        {
+          "id": "portable-primary-source-subset",
+          "state": "complete"
+        },
+        {
+          "id": "browser-primary-source-subset",
+          "state": "blocked"
+        },
+        {
+          "id": "linux-primary-layer-control",
+          "state": "complete"
+        },
+        {
+          "id": "portable-alpha-browser-readback",
+          "state": "complete"
+        },
+        {
+          "id": "portable-alpha-linux-execution",
+          "state": "complete"
+        },
+        {
+          "id": "portable-alpha-rendering-control",
+          "state": "complete"
+        },
+        {
+          "id": "portable-primary-layer-control",
+          "state": "complete"
+        },
+        {
+          "id": "native-primary-extent-holdouts",
+          "state": "complete"
+        },
+        {
+          "id": "native-mixed-alpha-drawing-group",
+          "state": "complete"
+        },
+        {
+          "id": "primary-source-cli-cache",
+          "state": "complete"
+        },
+        {
+          "id": "primary-source-frame-cli",
+          "state": "complete"
+        },
+        {
+          "id": "portable-browser-execution",
+          "state": "complete"
+        }
+      ]
+    }
+  },
+  "full-cost": {
+    "verification_calls": 52,
+    "unique_runs": 50,
+    "declared_files_across_calls": 28463,
+    "declared_bytes_across_calls": 1545590117,
+    "verification_seconds": 6.0690476680000005,
+    "result": {
+      "event": "graph_result",
+      "seconds": 7.838921125,
+      "all_milestones_complete": false,
+      "execution_started": false,
+      "candidates": [],
+      "blocked_tasks": [
+        {
+          "task": "native-correlated-capture",
+          "state": "blocked",
+          "blocker": {
+            "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
+            "retry_requires": "Use pinned light view context; do not repeat resolved blank-contrast attempts. Change observation/instrumentation for live transport and expand independent pixel coverage.",
+            "track": "native-canvas"
+          },
+          "missing_evidence": []
+        },
+        {
+          "task": "typed-continuation-runtime",
+          "state": "blocked",
+          "blocker": {
+            "reason": "No Modules directory in PreviewsFoundationHost framework; no safe typed native Continuation construction boundary currently established. Do not fabricate private Swift ABI declarations.",
+            "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution.",
+            "track": "private-swift-continuation-runtime"
+          },
+          "missing_evidence": []
+        },
+        {
+          "task": "browser-primary-source-subset",
+          "state": "blocked",
+          "blocker": {
+            "reason": "Computer-use reported locked Mac; automatic approval review rejected actual browser launch and prohibited workaround. No runtime experiment executed.",
+            "retry_requires": "User unlocks Mac; browser prerequisite available and blocked action approved. Do not use indirect/headless/Node route to bypass rejection.",
+            "track": "browser-locked-host"
+          },
+          "missing_evidence": []
+        }
+      ]
+    }
+  }
+}
