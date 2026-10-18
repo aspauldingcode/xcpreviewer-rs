@@ -1,0 +1,15 @@
+import {assess,authorize} from './guard.mjs';
+export function normalize(ax){
+ const marker='\nSelected:\n';if(!ax.includes(marker))return ax;
+ if(ax.split(marker).length!==2)throw Error('Multiple Selected summaries');
+ const [tree,tail]=ax.split(marker),sep='\n\nNote: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).';
+ if(!tail.includes(sep))throw Error('Unknown Selected footer');
+ const remainder=tail.slice(tail.indexOf(sep)+sep.length);if(!['','\n'].includes(remainder))throw Error('Unknown footer content');
+ const summary=tail.slice(0,tail.indexOf(sep)),known=new Map();
+ for(const line of tree.split('\n')){const m=line.match(/^\t*(\d+) (.*)$/);if(!m)continue;const i=Number(m[1]);if(known.has(i))throw Error('Duplicate tree index');known.set(i,m[2]);}
+ const rows=summary.split('\n'),seen=new Set();if(rows.length<1||rows.length>16)throw Error('Selected summary bound');
+ for(const row of rows){const m=row.match(/^\t(\d+) (.*)$/);if(!m)throw Error('Selected row syntax');const i=Number(m[1]);if(seen.has(i)||known.get(i)!==m[2]||!m[2].includes('(selected)'))throw Error('Selected row mismatch');seen.add(i);}
+ return tree;
+}
+export function assessReport(ax,b){return assess(normalize(ax),b);}
+export {authorize};

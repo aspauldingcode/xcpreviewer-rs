@@ -1,0 +1,27 @@
+"""Remove only a validated CUA Selected summary; never deduplicate the AX tree."""
+import re
+
+def normalize(ax):
+ marker='\nSelected:\n'
+ if marker not in ax:return ax
+ if ax.count(marker)!=1:raise ValueError('Multiple Selected summaries')
+ tree,tail=ax.split(marker);sep='\n\nNote: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).'
+ if sep not in tail:raise ValueError('Unknown Selected footer')
+ summary,remainder=tail.split(sep,1)
+ if remainder not in ('','\n'):raise ValueError('Unknown footer content')
+ known={}
+ for line in tree.splitlines():
+  m=re.fullmatch(r'\t*(\d+) (.*)',line)
+  if not m:continue
+  index=int(m[1])
+  if index in known:raise ValueError('Duplicate tree index')
+  known[index]=m[2]
+ seen=set();rows=summary.splitlines()
+ if not 1<=len(rows)<=16:raise ValueError('Selected summary bound')
+ for line in rows:
+  m=re.fullmatch(r'\t(\d+) (.*)',line)
+  if not m:raise ValueError('Selected row syntax')
+  index=int(m[1]);label=m[2]
+  if index in seen or index not in known or label!=known[index] or '(selected)' not in label:raise ValueError('Selected row does not repeat tree node')
+  seen.add(index)
+ return tree
