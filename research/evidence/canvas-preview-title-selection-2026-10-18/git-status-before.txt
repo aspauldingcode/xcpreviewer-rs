@@ -1,0 +1,61 @@
+ M .gitignore
+ M PROGRESS.md
+ M README.md
+ M docs/reverse-engineering/continuous-loop.md
+ M research/loop/campaign.json
+ M research/loop/continuous.json
+ M research/loop/skills.json
+ M research/loop/workgraph.json
+ M schemas/re-experiment.schema.json
+ M tools/re/agent.py
+A  tools/re/libproc-loop.py
+A  tools/re/native/OwnedProcessSnapshot.c
+MM tools/re/reloop/core.py
+A  tools/re/reloop/libprocobserver.py
+M  tools/re/reloop/processes.py
+A  tools/re/reloop/processoracle.py
+MM tools/re/reloop/worker.py
+AM tools/re/tests/test_libprocobserver.py
+?? docs/reverse-engineering/2026-10-10-libproc-observer.md
+?? docs/reverse-engineering/2026-10-14-state-scheme-failure.md
+?? docs/reverse-engineering/canvas-edit-comparison.md
+?? docs/reverse-engineering/canvas-rse-delivery.mmd
+?? docs/reverse-engineering/canvas-rse-loop-design.json
+?? docs/reverse-engineering/canvas-rse-task-graph.md
+?? docs/reverse-engineering/graph-runner.md
+?? docs/reverse-engineering/source-frame-cli.md
+?? examples/
+?? research/evidence/canvas-edit-2026-10-10/
+?? research/evidence/graph-runner-2026-10-10.json
+?? research/evidence/libproc-observer-2026-10-10.json
+?? research/evidence/libproc-validation-2026-10-10/
+?? research/evidence/mcp-channel-preliminary-local-2026-10-11/
+?? research/evidence/mcp-consumer-deadline-local-2026-10-11/
+?? research/evidence/mcp-consumer-recording-local-2026-10-11/
+?? research/evidence/mcp-frame-duplicate-local-2026-10-11/
+?? research/evidence/mcp-process-first-local-2026-10-11/
+?? research/evidence/mcp-process-harness-failure-2026-10-11.json
+?? research/evidence/mcp-sdk-config-local-2026-10-11/
+?? research/evidence/mcp-sdk-harness-local-2026-10-11/
+?? research/evidence/mcp-sdk-prediction-local-2026-10-11/
+?? research/evidence/native-build-diagnostics-2026-10-15/
+?? research/evidence/native-input-readiness-2026-10-15/
+?? research/evidence/native-owned-build-2026-10-15/
+?? research/evidence/native-owned-build-cache-off-2026-10-15/
+?? research/evidence/native-scheme-settings-2026-10-15/
+?? research/evidence/native-state-scheme-2026-10-14/
+?? research/evidence/preview-channel-count-pass-2026-10-11/
+?? research/evidence/preview-channel-first-pass-2026-10-11/
+?? research/evidence/preview-mcp-handler-preliminary-local-2026-10-11/
+?? research/evidence/preview-stdio-initial-local-2026-10-11/
+?? research/evidence/source-frame-cli-2026-10-10.json
+?? research/evidence/xcode-project-gate-2026-10-15/
+?? research/evidence/xcode-session-routing-2026-10-15/
+?? research/loop/graph-runner.json
+?? research/loop/observer-runner.json
+?? tools/re/fixtures/StateSchemeReference.swift
+?? tools/re/preview_cli.py
+?? tools/re/reloop/source_frame_runner.js
+?? tools/re/reloop/sourceframe.py
+?? tools/re/reloop/sourceframeprobe.py
+?? tools/re/tests/test_sourceframe.py
