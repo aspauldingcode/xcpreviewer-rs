@@ -1,0 +1,33 @@
+{
+  "authority": "Operator transcriptions of CUA calls; full AX and screenshot bytes not retained",
+  "workspace_opens": 1,
+  "refresh_clicks": 1,
+  "preview_selection_clicks": 0,
+  "increment_clicks": 0,
+  "coordinate_clicks": 0,
+  "renderpreview_calls": 0,
+  "AX_observations": 12,
+  "passive_readiness_observations": 4,
+  "receipt_observations": 0,
+  "matching_nonbusy_refresh_signatures": true,
+  "previous_refresh_signature_length": 6697,
+  "fresh_refresh_signature_length": 6697,
+  "refresh_index": 73,
+  "refresh_completed_by": "2026-10-18T22:45:30.116Z",
+  "closed_by": "2026-10-18T22:46:40.904Z",
+  "outcome": "readiness_observation_cap_exhausted",
+  "callback_view_rendered": false,
+  "AX_exposure_qualified": false,
+  "native_Selected_summary_encountered": false,
+  "normalized_guard_used_for_native_Refresh": true,
+  "summary_boundary_native_verified": false,
+  "readiness_samples": [
+    {"ordinal":1,"activity":"Indexing Paused","assessment":"busy"},
+    {"ordinal":2,"activity":"Ready","assessment":"refresh73; selectionnull; signature6697"},
+    {"ordinal":3,"activity":"Building Automatic6/13","assessment":"busy; Canvas busy indicator"},
+    {"ordinal":4,"activity":"Ready","assessment":"busy; Canvas busy indicator"}
+  ],
+  "failure_diagnostic": "After readiness cap, one passive combined AX/screenshot showed Ready activity but Canvas busy indicator and empty dark preview region. No title navigation followed. The diagnostic was not used to replenish action/readiness budget.",
+  "cleanup": "Fresh exact root source URL and project tab identity, unique root child close103; Welcome result; retained broker zero windows and source unchanged before original deadline",
+  "receipt_status": "Not observed in this experiment; no empty-directory or denied-I/O inference"
+}
