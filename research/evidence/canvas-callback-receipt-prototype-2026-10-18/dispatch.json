@@ -1,0 +1,21 @@
+{
+  "status": "unexecuted_reserve_rejected",
+  "actual_driver_exit_code": 1,
+  "native_jobs_started": 0,
+  "absence_checked": [
+    "compile",
+    "positive",
+    "duplicate",
+    "probe",
+    "binary.json",
+    "receipts",
+    "result.json"
+  ],
+  "deadline_utc": "2026-10-18T18:08:00Z",
+  "minimum_compile_reserve_seconds": 65,
+  "old_plan_closed": true,
+  "no_retry_or_deadline_extension": true,
+  "UI_fixture_compiled": false,
+  "observed_at": "2026-10-18T18:08:46.358028+00:00",
+  "reason": "The separately reviewed dispatch reached its initial reserve guard too late. No compiler/CLI control was launched; this is not a Swift compile or native filesystem failure."
+}

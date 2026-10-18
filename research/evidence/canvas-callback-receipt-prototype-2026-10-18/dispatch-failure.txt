@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/private/tmp/canvas-callback-receipts-20261018/run-controls.py", line 29, in <module>
+    pins();reserve(65)
+  File "/private/tmp/canvas-callback-receipts-20261018/run-controls.py", line 11, in reserve
+    if DEADLINE-datetime.datetime.now(datetime.timezone.utc).timestamp()<seconds:raise ValueError('Native reserve missed; no renewal')
+ValueError: Native reserve missed; no renewal
