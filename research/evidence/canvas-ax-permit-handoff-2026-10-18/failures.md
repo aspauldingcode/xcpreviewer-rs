@@ -1,0 +1,3 @@
+The native five-second age guard rejected beforeAX after one permit crossed shell/model/CUA calls. Exact error retained in operation.json; failing-call age was not retained, so later33.298seconddiagnostic is not a measurement of that call. Lease recorded terminal error; no permit retry or deadline extension. No native callback exposure claim.
+
+Offline inspection of the new local JS proposal found its initial clock record was stored by reference. Before final review, start fields were copied/frozen and a mutable-clock-record regression added. Initial source retained as local-readiness-initial.mjs. Neither proposal was used natively.
