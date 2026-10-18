@@ -1,0 +1,24 @@
+{
+  "authority": "Operator transcription of tool calls/results; raw full AX and screenshot bytes not archived.",
+  "workspace_opens": 1,
+  "refresh_clicks": 0,
+  "preview_selection_clicks": 0,
+  "increment_clicks": 0,
+  "renderpreview_calls": 0,
+  "receipt_observations_during_plan": 0,
+  "deadline_met": false,
+  "original_plan_closed": true,
+  "cleanup_reconciled_late": true,
+  "callback_access_qualified": false,
+  "receipt_files_found_during_late_read": 0,
+  "initial_observed_project_url": "file:///tmp/callback-ui-access-20261018/workspace/PreviewLab.xcodeproj",
+  "late_observed_source_url": "file:///tmp/callback-ui-access-20261018/workspace/Sources/PreviewLab/PreviewLab.swift",
+  "source_open_cause": "Unattributed; no source-navigation action was issued by this recorded plan.",
+  "failures": [
+    "CUA pure dynamic function construction rejected: Code generation from strings disallowed for this context; explicit literal prepared afterward. No input from failed preparation.",
+    "Approved UI session expired with cleanup unverified after project opening; no further experiment action or deadline renewal.",
+    "Initial late cleanup tool call returned ScreenCaptureKit stream error -3811; execution unknown. Fresh state still showed owned workspace; a subsequent fresh ownership guard closed it.",
+    "Initial reconciliation broker call denied by sandbox; approved escalation reused same retained broker without restart."
+  ],
+  "cleanup": "Fresh CUA project/source URL and project-tab ownership checks; one unique close; resulting Welcome. Broker independently returned zero workspace windows and source hash unchanged."
+}
