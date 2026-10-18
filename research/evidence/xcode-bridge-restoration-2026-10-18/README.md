@@ -1,0 +1,11 @@
+# Human-requested Xcode bridge restoration
+
+The user explicitly requested fixing the bridge and opening Xcode with a project. Xcode was at Welcome with no workspace open; historical broker was offline/unhealthy. Created an owned copy of the appearance sentinel fixture and opened its exact project path through Xcode UI. No user project was opened, edited or closed.
+
+Started one new owned retained broker against the currently running Xcode process. This was human-requested restoration, not heartbeat auto-restart. No settings, system protections, Apple signatures or user Xcode/simulator process lifetime were changed. MCP initialization and discovery succeeded; XcodeListWindows identified the exact owned workspace, XcodeGlob found its Swift file, and XcodeRead returned that source.
+
+RenderPreview returned a content-bearing320×200 opaque dark snapshot. Supported color-scheme overrides were obtained from that response. Before subsequent calls, light/dark corner and repeat predictions were recorded. Light output has green corners and the MODE LIGHT label; restored dark has magenta corners and MODE DARK. SENTINEL20261015 is visually present in each. Returned PNG RGBA A/A matches all256,000bytes (PNG files also match); variants differ and all64,000pixels are opaque. This establishes recovered owned RenderPreview content and variant controls, not complete Canvas display equivalence, input/state semantics or private lifecycle/wire correlation.
+
+Cleanup: fresh AX state identified the exact owned source/workspace URL; its close button returned Xcode to Welcome. Retained broker then returned no workspace windows. Broker remains running/responsive and user Xcode remains running. Historical broker lifetime had ended; opening a project plus a fresh approved session restored service. This joint intervention does not isolate a single root cause or prove connection persistence across future Xcode exits.
+
+Raw backend records and owned PNGs are retained. Source is unchanged. No Apple executable or private binary capture is included. User authorization and ownership/cleanup are operator observations; offline replay verifies recorded artifacts/pixels, not live endpoint responsiveness. Both milestones remain open.

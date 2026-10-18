@@ -1,0 +1,28 @@
+{
+  "scope": "Owned public Quartz same-linear-space 8-bit to Float32 byte-domain discriminator; no ImageRenderer or Canvas",
+  "absolute_deadline_utc": "2026-10-18T16:00:00Z",
+  "plan_parent_seal_sha256": "781de2556221aa3dd97ce7bafe13c0e79ce5435a08fc4d59ad431580b3f13cc5",
+  "prior_plan_status": "Prospective source/predictions previously reviewed and sealed; execution requires this fresh consumer/adapter review",
+  "predictions": [
+    "division",
+    "multiply-by-rounded-binary32-reciprocal",
+    "neither; retain unmodified discrepancy"
+  ],
+  "allocation_bytes_per_frame": 16384,
+  "frames": 2,
+  "source_bytes": 3120,
+  "output_bytes": 32768,
+  "geometry": [
+    256,
+    3,
+    4112
+  ],
+  "source_stride": 1040,
+  "padding_bytes_per_frame": 48,
+  "tail_bytes_per_frame": 4048,
+  "maximum_native_launches": {
+    "compile": 1,
+    "output-valid": 1,
+    "fixture": 1
+  }
+}

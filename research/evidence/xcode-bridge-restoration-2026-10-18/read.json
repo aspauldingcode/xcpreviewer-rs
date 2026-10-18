@@ -1,0 +1,16 @@
+{
+  "content": [
+    {
+      "text": "{\"content\":\"     1\\timport SwiftUI\\n     2\\t\\n     3\\tstruct AppearanceSentinel: View {\\n     4\\t    @Environment(\\\\.colorScheme) private var scheme\\n     5\\t    var body: some View {\\n     6\\t        ZStack {\\n     7\\t            Color(.sRGB, red: scheme == .dark ? 1 : 0,\\n     8\\t                  green: scheme == .dark ? 0 : 1,\\n     9\\t                  blue: scheme == .dark ? 1 : 0, opacity: 1)\\n    10\\t            VStack {\\n    11\\t                Text(\\\"SENTINEL 20261015\\\")\\n    12\\t                Text(scheme == .dark ? \\\"MODE DARK\\\" : \\\"MODE LIGHT\\\")\\n    13\\t            }.foregroundStyle(Color.black)\\n    14\\t        }.frame(width: 160, height: 100)\\n    15\\t    }\\n    16\\t}\\n    17\\t\\n    18\\t@main\\n    19\\tstruct PreviewLabApp: App {\\n    20\\t    var body: some Scene { WindowGroup { AppearanceSentinel() } }\\n    21\\t}\\n    22\\t\\n    23\\t#Preview(\\\"Appearance sentinel\\\", traits: .fixedLayout(width: 160, height: 100)) {\\n    24\\t    AppearanceSentinel()\\n    25\\t}\\n    26\\t\",\"filePath\":\"PreviewLab\\/Sources\\/PreviewLab\\/PreviewLab.swift\",\"fileSize\":744,\"linesRead\":26,\"startLine\":1,\"totalLines\":26}",
+      "type": "text"
+    }
+  ],
+  "structuredContent": {
+    "content": "     1\timport SwiftUI\n     2\t\n     3\tstruct AppearanceSentinel: View {\n     4\t    @Environment(\\.colorScheme) private var scheme\n     5\t    var body: some View {\n     6\t        ZStack {\n     7\t            Color(.sRGB, red: scheme == .dark ? 1 : 0,\n     8\t                  green: scheme == .dark ? 0 : 1,\n     9\t                  blue: scheme == .dark ? 1 : 0, opacity: 1)\n    10\t            VStack {\n    11\t                Text(\"SENTINEL 20261015\")\n    12\t                Text(scheme == .dark ? \"MODE DARK\" : \"MODE LIGHT\")\n    13\t            }.foregroundStyle(Color.black)\n    14\t        }.frame(width: 160, height: 100)\n    15\t    }\n    16\t}\n    17\t\n    18\t@main\n    19\tstruct PreviewLabApp: App {\n    20\t    var body: some Scene { WindowGroup { AppearanceSentinel() } }\n    21\t}\n    22\t\n    23\t#Preview(\"Appearance sentinel\", traits: .fixedLayout(width: 160, height: 100)) {\n    24\t    AppearanceSentinel()\n    25\t}\n    26\t",
+    "filePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+    "fileSize": 744,
+    "linesRead": 26,
+    "startLine": 1,
+    "totalLines": 26
+  }
+}

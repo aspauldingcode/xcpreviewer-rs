@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/quartz-byte-native-20261018/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/quartz-byte-native-20261018/owned-documents"
+  ],
+  "source_sha256": "299e18ac07870bef8f859a32d3b76326b1a16ed3770e6c5eb280c49f538b3362",
+  "binary_sha256": "b3367623f514284588faf5cd11f4adb5b06214f1d7ddec5a5b5efc96d9a4f800",
+  "error": null,
+  "record": {
+    "pid": 60135,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"allocation_bytes\":16384,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase0.raw\",\"height\":3,\"phase\":0,\"pid\":60136,\"sha256\":\"5f5a596aa14f29becbdc98c1006e449ec528a355d490e60904e3a0e38b54b0c9\",\"source_sha256\":\"5185a7f13df7e67ee3ae065e74f3e88f661165e6beaf1d5dd791709bff52bc97\",\"stride\":4112,\"width\":256}\n{\"allocation_bytes\":16384,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"phase1.raw\",\"height\":3,\"phase\":1,\"pid\":60136,\"sha256\":\"5f5a596aa14f29becbdc98c1006e449ec528a355d490e60904e3a0e38b54b0c9\",\"source_sha256\":\"5185a7f13df7e67ee3ae065e74f3e88f661165e6beaf1d5dd791709bff52bc97\",\"stride\":4112,\"width\":256}\n",
+    "stderr": "owned_tree_pid:60136\n",
+    "stdoutBytes": 648,
+    "stderrBytes": 21,
+    "stdoutSha256": "c2410e90aab748245d78f629050a54b6264a89ef0c46c8964a1e6c0d79655832",
+    "stderrSha256": "392e559dec124b97dc9cb098ea0cdae6d0c1b7c0b57e59922ee038b5ec2950ad"
+  }
+}

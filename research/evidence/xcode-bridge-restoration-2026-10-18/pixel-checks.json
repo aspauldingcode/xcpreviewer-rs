@@ -1,0 +1,140 @@
+{
+  "snapshots": [
+    {
+      "name": "dark-initial",
+      "size": [
+        320,
+        200
+      ],
+      "mode": "RGBA",
+      "corners_rgba": [
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ]
+      ],
+      "expected_corner_rgba": [
+        255,
+        0,
+        255,
+        255
+      ],
+      "opaque_pixels": 64000,
+      "rgba_sha256": "51371cb89e0367b8e12ba57f0eb9f2ceb46534bd0cc7f9cfd603d642de3ad140",
+      "png_sha256": "7eb758bc299b9cae30ff8124f881c716e71b97e3840d82af446cc2e3a89750b4",
+      "non_background_pixels": 3686
+    },
+    {
+      "name": "light",
+      "size": [
+        320,
+        200
+      ],
+      "mode": "RGBA",
+      "corners_rgba": [
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ]
+      ],
+      "expected_corner_rgba": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "opaque_pixels": 64000,
+      "rgba_sha256": "35c09636b19e4d96501a2c75790a5a962bab24b165f72c87fc7b48a3986c5462",
+      "png_sha256": "bef2890dbee73115d10e4b3a4baa3744d2279f15aa75fb99e37488d81e86ca97",
+      "non_background_pixels": 3613
+    },
+    {
+      "name": "dark-restored",
+      "size": [
+        320,
+        200
+      ],
+      "mode": "RGBA",
+      "corners_rgba": [
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ]
+      ],
+      "expected_corner_rgba": [
+        255,
+        0,
+        255,
+        255
+      ],
+      "opaque_pixels": 64000,
+      "rgba_sha256": "51371cb89e0367b8e12ba57f0eb9f2ceb46534bd0cc7f9cfd603d642de3ad140",
+      "png_sha256": "7eb758bc299b9cae30ff8124f881c716e71b97e3840d82af446cc2e3a89750b4",
+      "non_background_pixels": 3686
+    }
+  ],
+  "decoded_rgba_bytes_compared": 256000,
+  "dark_repeat_mismatch_bytes": 0,
+  "variant_changed": true,
+  "scope": "Raw returned RenderPreview PNG pixels; no display ICC equivalence or private IPC qualification"
+}

@@ -1,0 +1,27 @@
+{
+  "declared_before_variant_calls": true,
+  "scope": "Owned RenderPreview exported snapshot A/B/A; not private lifecycle transport or display equivalence",
+  "geometry": [
+    320,
+    200
+  ],
+  "opaque_corner_rgba": {
+    "Dark Appearance": [
+      255,
+      0,
+      255,
+      255
+    ],
+    "Light Appearance": [
+      0,
+      255,
+      0,
+      255
+    ]
+  },
+  "expected_labels": [
+    "SENTINEL 20261015",
+    "MODE DARK / MODE LIGHT"
+  ],
+  "dark_repeat_expectation": "all decoded RGBA bytes equal; retain any failure"
+}

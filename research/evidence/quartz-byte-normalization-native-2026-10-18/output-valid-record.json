@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/quartz-byte-native-20261018/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "299e18ac07870bef8f859a32d3b76326b1a16ed3770e6c5eb280c49f538b3362",
+  "binary_sha256": "b3367623f514284588faf5cd11f4adb5b06214f1d7ddec5a5b5efc96d9a4f800",
+  "error": null,
+  "record": {
+    "pid": 60126,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":60127,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:60127\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "8582a73eb88cb226c5696d1166fba6530ed8f96b2cb8e86d741e58380a45b0bc",
+    "stderrSha256": "2cdc18ecf4d1b9f383bb289f8667236e6fba188e498299f85cefa46571ada2bc"
+  }
+}
