@@ -1,0 +1,19 @@
+{
+  "result": {
+    "execution": "success",
+    "exit_code": 0,
+    "duration_seconds": 1.461
+  },
+  "events": [
+    {
+      "event": "process_started",
+      "pid": 35040,
+      "process_group": 35040
+    },
+    {
+      "event": "owned_descendant_cleanup",
+      "tracked_processes": 1,
+      "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+    }
+  ]
+}

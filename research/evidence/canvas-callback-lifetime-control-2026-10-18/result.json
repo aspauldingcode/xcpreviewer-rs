@@ -1,0 +1,93 @@
+{
+  "controls": [
+    {
+      "name": "positive",
+      "identity": {
+        "nonce": "60fd2da461f6404ea93e47eb59d6831a",
+        "pid": 34960,
+        "view": "01234567-89ab-cdef-0123-456789abcdef"
+      },
+      "files_hex": {
+        "pid-34960-view-01234567-89ab-cdef-0123-456789abcdef-sequence-0.json": "7b22636f756e74223a302c226576656e74223a22617070656172222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33343936302c22736368656d61223a312c2273657175656e6365223a302c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a",
+        "pid-34960-view-01234567-89ab-cdef-0123-456789abcdef-sequence-1.json": "7b22636f756e74223a312c226576656e74223a22696e6372656d656e74222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33343936302c22736368656d61223a312c2273657175656e6365223a312c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a",
+        "pid-34960-view-01234567-89ab-cdef-0123-456789abcdef-sequence-2.json": "7b22636f756e74223a322c226576656e74223a22696e6372656d656e74222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33343936302c22736368656d61223a312c2273657175656e6365223a322c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a",
+        "pid-34960-view-01234567-89ab-cdef-0123-456789abcdef-sequence-3.json": "7b22636f756e74223a332c226576656e74223a22696e6372656d656e74222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33343936302c22736368656d61223a312c2273657175656e6365223a332c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a"
+      },
+      "report": {
+        "child_pid": 34960,
+        "child_wait": 0,
+        "timed_out": false,
+        "stdout_hex": "6f776e656420726563656970742077726974657220636f6d706c657465640a",
+        "stderr_hex": "",
+        "wrapper_pid": 34954,
+        "hold_seconds": 1,
+        "elapsed_before_hold": 0.019901958999999997
+      },
+      "execution": {
+        "result": {
+          "execution": "success",
+          "exit_code": 0,
+          "duration_seconds": 1.394
+        },
+        "events": [
+          {
+            "event": "process_started",
+            "pid": 34954,
+            "process_group": 34954
+          },
+          {
+            "event": "owned_descendant_cleanup",
+            "tracked_processes": 1,
+            "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+          }
+        ]
+      },
+      "bytes_compared": 625
+    },
+    {
+      "name": "duplicate",
+      "identity": {
+        "nonce": "60fd2da461f6404ea93e47eb59d6831a",
+        "pid": 35043,
+        "view": "01234567-89ab-cdef-0123-456789abcdef"
+      },
+      "files_hex": {
+        ".pending-pid-35043-view-01234567-89ab-cdef-0123-456789abcdef-sequence-0.json": "7b22636f756e74223a312c226576656e74223a22696e6372656d656e74222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33353034332c22736368656d61223a312c2273657175656e6365223a302c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a",
+        "pid-35043-view-01234567-89ab-cdef-0123-456789abcdef-sequence-0.json": "7b22636f756e74223a302c226576656e74223a22617070656172222c226e6f6e6365223a223630666432646134363166363430346561393365343765623539643638333161222c22706964223a33353034332c22736368656d61223a312c2273657175656e6365223a302c2276696577223a2230313233343536372d383961622d636465662d303132332d343536373839616263646566227d0a"
+      },
+      "report": {
+        "child_pid": 35043,
+        "child_wait": 1,
+        "timed_out": false,
+        "stdout_hex": "",
+        "stderr_hex": "6f776e6564207265636569707420777269746572206661696c65643a204572726f7220446f6d61696e3d4e53504f5349584572726f72446f6d61696e20436f64653d3137202246696c6520657869737473220a",
+        "wrapper_pid": 35040,
+        "hold_seconds": 1,
+        "elapsed_before_hold": 0.021567709000000004
+      },
+      "execution": {
+        "result": {
+          "execution": "success",
+          "exit_code": 0,
+          "duration_seconds": 1.461
+        },
+        "events": [
+          {
+            "event": "process_started",
+            "pid": 35040,
+            "process_group": 35040
+          },
+          {
+            "event": "owned_descendant_cleanup",
+            "tracked_processes": 1,
+            "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+          }
+        ]
+      },
+      "bytes_compared": 311
+    }
+  ],
+  "UI_input_qualified": false,
+  "scope": "Owned CLI receipts with observed wrapper root and actual child wait. Child continuous observation not established.",
+  "deadline_closed": true
+}
