@@ -1,0 +1,33 @@
+{
+  "scope": "Owned ImageRenderer CGImage provider export bytes and draw readback; opaque mixed samples only; noUI/privateCanvas",
+  "deadline_utc": "2026-10-18T15:35:31Z",
+  "shared_wake_deadline": true,
+  "samples": [
+    [
+      0.0625,
+      0.375,
+      0.8125
+    ],
+    [
+      0.2,
+      0.6,
+      0.9
+    ],
+    [
+      0.0625,
+      0.375,
+      0.8125
+    ]
+  ],
+  "modes": [
+    "linear",
+    "extendedLinear"
+  ],
+  "predictions": [
+    "linear export:8bpcRGBA nearest encoded-sRGB bytes with LinearSRGB metadata and tight68stride",
+    "extended export:16bpc IEEEhalf little-endian linearRGBA with ExtendedLinearSRGB metadata and tight136stride",
+    "Float32 linear readback equals decoded provider channels exactly including all pad/tail"
+  ],
+  "prediction_failure": "Retain unchanged strict rejection and rawowned bytes; no fit/retry",
+  "native_jobs": 1
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/color-export-holdouts-20261018/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/color-export-holdouts-20261018/owned-documents"
+  ],
+  "source_sha256": "1e705272b6854dc75b30f23c2bbbb321f305b12d0c5e8aba251c8c306698d19b",
+  "binary_sha256": "f1614c0404c0b4834f255b51da616405b28dd5eb94363305f15d70a97eb90cc2",
+  "error": null,
+  "record": {
+    "pid": 48598,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 11,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode0-phase0-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":1,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_color_space\":\"kCGColorSpaceLinearSRGB\",\"image_height\":9,\"image_stride\":68,\"image_width\":17,\"input_linear\":[0.0625,0.375,0.8125],\"mode\":0,\"phase\":0,\"pid\":48599,\"provider_bytes\":612,\"provider_file\":\"mode0-phase0-provider.raw\",\"provider_sha256\":\"9cc13594d760624843d6a7f0a4c82148ecd630489a1d19949a0256edea7cd7f3\",\"sha256\":\"f560f196e0d0d83ac994e475dce1f44ad02b8e4e6e5357d760e51e62406f28e9\",\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode0-phase1-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":1,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_color_space\":\"kCGColorSpaceLinearSRGB\",\"image_height\":9,\"image_stride\":68,\"image_width\":17,\"input_linear\":[0.20000000000000001,0.59999999999999998,0.90000000000000002],\"mode\":0,\"phase\":1,\"pid\":48599,\"provider_bytes\":612,\"provider_file\":\"mode0-phase1-provider.raw\",\"provider_sha256\":\"c969855c69ca75d7b1b893ce6f835a4dc8a68124265b12558f8a2e25fb7d166d\",\"sha256\":\"d36d27efac16408eab7277243d8c25a2153e7929966d3957c58c46a7d9a46e94\",\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode0-phase2-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":1,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_color_space\":\"kCGColorSpaceLinearSRGB\",\"image_height\":9,\"image_stride\":68,\"image_width\":17,\"input_linear\":[0.0625,0.375,0.8125],\"mode\":0,\"phase\":2,\"pid\":48599,\"provider_bytes\":612,\"provider_file\":\"mode0-phase2-provider.raw\",\"provider_sha256\":\"9cc13594d760624843d6a7f0a4c82148ecd630489a1d19949a0256edea7cd7f3\",\"sha256\":\"f560f196e0d0d83ac994e475dce1f44ad02b8e4e6e5357d760e51e62406f28e9\",\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode1-phase0-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":4353,\"image_bits_per_component\":16,\"image_bits_per_pixel\":64,\"image_color_space\":\"kCGColorSpaceExtendedLinearSRGB\",\"image_height\":9,\"image_stride\":136,\"image_width\":17,\"input_linear\":[0.0625,0.375,0.8125],\"mode\":1,\"phase\":0,\"pid\":48599,\"provider_bytes\":1224,\"provider_file\":\"mode1-phase0-provider.raw\",\"provider_sha256\":\"ea0f652cf12a909d5d20b252bedfabdbad698933d26e3fd142a893328d43d102\",\"sha256\":\"4161d41cb777c4761375950ec37062d0d2b6b09443ef0170f9152c7541a2c0dc\",\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode1-phase1-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":4353,\"image_bits_per_component\":16,\"image_bits_per_pixel\":64,\"image_color_space\":\"kCGColorSpaceExtendedLinearSRGB\",\"image_height\":9,\"image_stride\":136,\"image_width\":17,\"input_linear\":[0.20000000000000001,0.59999999999999998,0.90000000000000002],\"mode\":1,\"phase\":1,\"pid\":48599,\"provider_bytes\":1224,\"provider_file\":\"mode1-phase1-provider.raw\",\"provider_sha256\":\"c20569f2de64810a7a01c3529392ca34fdb68cc07a42594a65d6c5a6d52b170a\",\"sha256\":\"094565ec0f5348e3296a909d19a9aa0816ca6876155917e4dafde00e87eac0cc\",\"stride\":288,\"width\":17}\n{\"allocation_bytes\":4096,\"alpha_info\":1,\"bitmap_info\":8449,\"bits_per_component\":32,\"bits_per_pixel\":128,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"file\":\"mode1-phase2-readback.raw\",\"height\":9,\"image_alpha_info\":1,\"image_bitmap_info\":4353,\"image_bits_per_component\":16,\"image_bits_per_pixel\":64,\"image_color_space\":\"kCGColorSpaceExtendedLinearSRGB\",\"image_height\":9,\"image_stride\":136,\"image_width\":17,\"input_linear\":[0.0625,0.375,0.8125],\"mode\":1,\"phase\":2,\"pid\":48599,\"provider_bytes\":1224,\"provider_file\":\"mode1-phase2-provider.raw\",\"provider_sha256\":\"ea0f652cf12a909d5d20b252bedfabdbad698933d26e3fd142a893328d43d102\",\"sha256\":\"4161d41cb777c4761375950ec37062d0d2b6b09443ef0170f9152c7541a2c0dc\",\"stride\":288,\"width\":17}\n",
+    "stderr": "owned_tree_pid:48599\n",
+    "stdoutBytes": 4352,
+    "stderrBytes": 21,
+    "stdoutSha256": "58dab79d7d5159238059a91f7277e777caad028d0b5355c12f58cf5cfb0d1f6c",
+    "stderrSha256": "109391e20397f2fbf18d592652fff836092ddec4abbaadf218b4409f5a67c26b"
+  }
+}

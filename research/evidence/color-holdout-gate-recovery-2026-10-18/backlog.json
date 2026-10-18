@@ -1,0 +1,144 @@
+{
+  "args": [
+    "gh",
+    "issue",
+    "list",
+    "--repo",
+    "aspauldingcode/xcpreviewer-rs",
+    "--state",
+    "open",
+    "--json",
+    "number,title,milestone",
+    "--limit",
+    "100"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "issues": [
+    {
+      "number": 26,
+      "title": "D1: Packaging, releases and operator docs",
+      "milestone": 2
+    },
+    {
+      "number": 25,
+      "title": "S1: Hardening and platform acceptance",
+      "milestone": 2
+    },
+    {
+      "number": 24,
+      "title": "A2: C ABI and language bindings",
+      "milestone": 2
+    },
+    {
+      "number": 23,
+      "title": "A1: Preview-facing MCP and user workflow",
+      "milestone": 2
+    },
+    {
+      "number": 22,
+      "title": "V1: Independent conformance system",
+      "milestone": 2
+    },
+    {
+      "number": 21,
+      "title": "B1: Cost and latency qualification",
+      "milestone": 2
+    },
+    {
+      "number": 20,
+      "title": "H2: Developer canvas",
+      "milestone": 2
+    },
+    {
+      "number": 19,
+      "title": "H1: Transactional hot reload",
+      "milestone": 2
+    },
+    {
+      "number": 18,
+      "title": "I5: End-to-end portable CLI slice",
+      "milestone": 2
+    },
+    {
+      "number": 17,
+      "title": "I4: Layout and software rendering",
+      "milestone": 2
+    },
+    {
+      "number": 16,
+      "title": "I3: Runtime and host imports",
+      "milestone": 2
+    },
+    {
+      "number": 15,
+      "title": "I2: Swift compatibility/build adapter",
+      "milestone": 2
+    },
+    {
+      "number": 14,
+      "title": "I1: Rust workspace and core contracts",
+      "milestone": 2
+    },
+    {
+      "number": 13,
+      "title": "F3: Design portable protocol and ABI",
+      "milestone": 2
+    },
+    {
+      "number": 12,
+      "title": "F2: Compiler/runtime feasibility spike",
+      "milestone": 2
+    },
+    {
+      "number": 11,
+      "title": "F1: Choose first portable subset",
+      "milestone": 2
+    },
+    {
+      "number": 10,
+      "title": "P3: Native decoder/replay adapter",
+      "milestone": 1
+    },
+    {
+      "number": 9,
+      "title": "P2: Recover bounded wire semantics",
+      "milestone": 1
+    },
+    {
+      "number": 8,
+      "title": "P1: Recover one actual preview lifecycle",
+      "milestone": 1
+    },
+    {
+      "number": 7,
+      "title": "R3: Format and synchronization coverage",
+      "milestone": 1
+    },
+    {
+      "number": 6,
+      "title": "R2: Resource reuse and completion model",
+      "milestone": 1
+    },
+    {
+      "number": 5,
+      "title": "R1: Receiver-first exit and release accounting",
+      "milestone": 1
+    },
+    {
+      "number": 4,
+      "title": "O3: Stable reference fixtures",
+      "milestone": 1
+    },
+    {
+      "number": 3,
+      "title": "O2: Native capture diagnosis",
+      "milestone": 1
+    },
+    {
+      "number": 2,
+      "title": "O1: Reconcile target/environment identities and invalid evidence",
+      "milestone": 1
+    }
+  ]
+}

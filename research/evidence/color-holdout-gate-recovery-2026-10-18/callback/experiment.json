@@ -1,0 +1,43 @@
+{
+  "scope": "Owned offscreen opaque mixed-color half-source holdout; no native Canvas/private protocol or UI",
+  "deadline_utc": "2026-10-18T15:35:31Z",
+  "cases": [
+    [
+      0.0625,
+      0.375,
+      0.8125
+    ],
+    [
+      0.2,
+      0.6,
+      0.9
+    ],
+    [
+      0.0625,
+      0.375,
+      0.8125
+    ]
+  ],
+  "prediction": "Analytical linear Float32 baseline exact; compare explicit IEC sRGB IEEE-half source route to ImageRenderer callbacks, accepting either match or falsification without fitting",
+  "modes": [
+    "linear",
+    "extendedLinear"
+  ],
+  "routes": [
+    "direct_linear",
+    "half_encoded_srgb",
+    "renderer_callback"
+  ],
+  "geometry": [
+    17,
+    9,
+    288,
+    4096
+  ],
+  "native_jobs": 1,
+  "review": "pending source/plan; prerequisite candidate independently approved with corrected tests",
+  "limitations": [
+    "Half-source sufficiency never proves renderer internal datatype",
+    "No display/export color equivalence or Canvas acceptance"
+  ]
+}

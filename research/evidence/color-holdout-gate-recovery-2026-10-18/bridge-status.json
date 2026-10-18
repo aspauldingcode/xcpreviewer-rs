@@ -1,0 +1,11 @@
+{
+  "args": [
+    "python3",
+    "tools/re/agent.py",
+    "xcode-bridge",
+    "status"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"running\": false,\n  \"record\": {\n    \"bridge_pid\": 7528,\n    \"identity\": \"Thu Oct 15 13:38:36 2026     /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -m reloop.xcodebridge\",\n    \"initialized\": true,\n    \"pid\": 7521,\n    \"scope\": \"One retained approved connection; no auto-restart or permission bypass\",\n    \"session_id\": \"889d88c3-d076-43fa-9e6c-f2de1fb89ed3\",\n    \"started_at\": \"2026-10-15T20:38:36.118883+00:00\",\n    \"unhealthy\": true,\n    \"xcode_pid\": 4382\n  },\n  \"responsive\": false\n}\n"
+}

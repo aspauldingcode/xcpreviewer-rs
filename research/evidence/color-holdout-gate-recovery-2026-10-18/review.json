@@ -1,0 +1,9 @@
+{
+  "reviewer": "/root/refresh_spec_review",
+  "separate_context": true,
+  "serial": true,
+  "gate": "Approved reviewed candidate and corrected six-method suite for fresh pinned owned experiments within trusted filesystem scope. No hostile-writer authentication, freshness or atomic-file guarantee.",
+  "callback": "Pass for sealing: all 73728 bytes compared, 24576 analytical direct bytes exact, six half-source/callback pairs exact.",
+  "export": "Pass for sealing as provider predictions supported; combined export/readback prediction falsified. Original admission rejected normally and under -O. 5508 provider bytes exact; mode0 readback mismatch bytes 153/459/153; mode1 exact. Padding/tail and A/B/A verified. Frozen diagnostic reproduces, rejection retained.",
+  "limitations": "Observed readbacks are diagnostic samples, not replacement goldens. Internal conversion cause, display and Canvas transport remain unproven."
+}

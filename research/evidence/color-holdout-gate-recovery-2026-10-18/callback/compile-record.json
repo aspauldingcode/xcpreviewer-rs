@@ -1,0 +1,38 @@
+{
+  "phase": "compile",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+  "args": [
+    "-parse-as-library",
+    "-target",
+    "arm64-apple-macos13.0",
+    "/private/tmp/color-half-holdouts-20261018/probe.swift",
+    "-o",
+    "/private/tmp/color-half-holdouts-20261018/probe"
+  ],
+  "source_sha256": "7913ad4ce992281efb4e4499eae9f8fd19e9eabf9af39e4e81c21786b1f92782",
+  "binary_sha256": "b368673586fd7d9014c10cba24c2abd3034572bf2dc7ee2723a3e97e9f3ca4a3",
+  "error": null,
+  "record": {
+    "pid": 46356,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 4,
+      "observations": 66,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

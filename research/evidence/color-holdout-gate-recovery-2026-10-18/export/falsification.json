@@ -1,0 +1,129 @@
+{
+  "export_predictions_admitted": false,
+  "diagnostic_only": true,
+  "provider_bytes_compared": 5508,
+  "readback_bytes_compared": 24576,
+  "full_bytes_compared": 30084,
+  "readback_padding_bytes": 864,
+  "readback_tail_bytes": 9024,
+  "results": [
+    {
+      "mode": 0,
+      "phase": 0,
+      "provider_bytes": 612,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 153,
+      "expected_readback_pixel": [
+        0.27843138575553894,
+        0.6470588445663452,
+        0.9137254953384399,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.27843138575553894,
+        0.6470588445663452,
+        0.9137255549430847,
+        1.0
+      ]
+    },
+    {
+      "mode": 0,
+      "phase": 1,
+      "provider_bytes": 612,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 459,
+      "expected_readback_pixel": [
+        0.48627451062202454,
+        0.7960784435272217,
+        0.9529411792755127,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.4862745404243469,
+        0.7960785031318665,
+        0.9529412388801575,
+        1.0
+      ]
+    },
+    {
+      "mode": 0,
+      "phase": 2,
+      "provider_bytes": 612,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 153,
+      "expected_readback_pixel": [
+        0.27843138575553894,
+        0.6470588445663452,
+        0.9137254953384399,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.27843138575553894,
+        0.6470588445663452,
+        0.9137255549430847,
+        1.0
+      ]
+    },
+    {
+      "mode": 1,
+      "phase": 0,
+      "provider_bytes": 1224,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 0,
+      "expected_readback_pixel": [
+        0.0625,
+        0.375,
+        0.8125,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.0625,
+        0.375,
+        0.8125,
+        1.0
+      ]
+    },
+    {
+      "mode": 1,
+      "phase": 1,
+      "provider_bytes": 1224,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 0,
+      "expected_readback_pixel": [
+        0.199951171875,
+        0.60009765625,
+        0.89990234375,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.199951171875,
+        0.60009765625,
+        0.89990234375,
+        1.0
+      ]
+    },
+    {
+      "mode": 1,
+      "phase": 2,
+      "provider_bytes": 1224,
+      "provider_mismatch_bytes": 0,
+      "readback_mismatch_bytes": 0,
+      "expected_readback_pixel": [
+        0.0625,
+        0.375,
+        0.8125,
+        1.0
+      ],
+      "observed_readback_pixel": [
+        0.0625,
+        0.375,
+        0.8125,
+        1.0
+      ]
+    }
+  ],
+  "scope": "Declared opaque mixed provider/readback samples only",
+  "renderer_internal_cause_proven": false,
+  "display_qualified": false,
+  "canvas_qualified": false
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "optimized": false,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/color-export-holdouts-20261018/admit.py\", line 34, in <module>\n    if __name__=='__main__':print(json.dumps(admitted(Path(__file__).parent)))\n  File \"/private/tmp/color-export-holdouts-20261018/admit.py\", line 30, in admitted\n    need(data==readback);buffers[(mode,phase)]=(actual,data);results.append({'mode':mode,'phase':phase,'provider_bytes':len(actual),'expected_readback_pixel':list(struct.unpack('<4f',pixel))})\n  File \"/private/tmp/color-export-holdouts-20261018/record_admit.py\", line 6, in need\n    if not v:raise ValueError('Receive-size evidence rejected')\nValueError: Receive-size evidence rejected\n"
+  },
+  {
+    "optimized": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/color-export-holdouts-20261018/admit.py\", line 34, in <module>\n    if __name__=='__main__':print(json.dumps(admitted(Path(__file__).parent)))\n  File \"/private/tmp/color-export-holdouts-20261018/admit.py\", line 30, in admitted\n    need(data==readback);buffers[(mode,phase)]=(actual,data);results.append({'mode':mode,'phase':phase,'provider_bytes':len(actual),'expected_readback_pixel':list(struct.unpack('<4f',pixel))})\n  File \"/private/tmp/color-export-holdouts-20261018/record_admit.py\", line 6, in need\n    if not v:raise ValueError('Receive-size evidence rejected')\nValueError: Receive-size evidence rejected\n"
+  }
+]
