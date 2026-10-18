@@ -1,0 +1,11 @@
+{
+  "status": "unavailable",
+  "api": "cua App.click(Vec2)",
+  "source": "Current cua_repl returned API documentation",
+  "facts": [
+    "Vec2 is [x:number,y:number]",
+    "Native App exposes click(target:number|Vec2,options)",
+    "Documentation does not specify macOS coordinate units/origin or a screenshot-to-action transform"
+  ],
+  "conclusion": "Two assumed factors/origin0 do not establish real API containment. No native coordinate delivery authorized or executed."
+}
