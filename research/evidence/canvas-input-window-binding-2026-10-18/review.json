@@ -1,0 +1,12 @@
+{
+  "producer_context": "/root",
+  "reviewer_context": "/root/refresh_spec_review",
+  "preexecution": "approved readiness-only after atomic checkpoint/reserve fixes; no input or RenderPreview calls",
+  "retained_review_corrections": [
+    "Lease expiry must retain cleanup-unverified operator reconciliation block",
+    "Explicit Text and interaction selection required",
+    "Use atomic durable checkpoint writes",
+    "Reject backend calls without9second reserve"
+  ],
+  "postcapture_review": "pending"
+}
