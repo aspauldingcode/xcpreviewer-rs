@@ -1,0 +1,35 @@
+{
+  "scope": "RenderPreview request boundary only, source unchanged, no UI interaction or edit/reset policy claim",
+  "measurements": [
+    {
+      "pid": 72157,
+      "state_token_hex": "65f80c9164a44f548f078f089eeb9992",
+      "rgba_sha256": "df67b6740262c83b7e13995ab6a42719e0ba5710213bd25944cadc23f5f368d7",
+      "rgba_bytes_checked": 196608,
+      "telemetry_derived_expectation": true,
+      "native_cause_proven": false
+    },
+    {
+      "pid": 72157,
+      "state_token_hex": "adf2074954bc4ae996220fd029a6de05",
+      "rgba_sha256": "22869d9620c6fb2005c308d33b81d3b5240a3507631c636c558c4fd705a378dd",
+      "rgba_bytes_checked": 196608,
+      "telemetry_derived_expectation": true,
+      "native_cause_proven": false
+    },
+    {
+      "pid": 72157,
+      "state_token_hex": "59addfc2460d4eb58d575fe360fe9cb1",
+      "rgba_sha256": "de0fa354e5affe5d0c2cee88d96b08ea234bb3c256a2d3f6c5ff4bafd2747c3d",
+      "rgba_bytes_checked": 196608,
+      "telemetry_derived_expectation": true,
+      "native_cause_proven": false
+    }
+  ],
+  "pid_same_across_requests": true,
+  "state_token_same_across_requests": false,
+  "visible_rgba_bytes_checked": 589824,
+  "state_tokens_are_measurements_not_independent_goldens": true,
+  "private_canvas_transport_qualified": false,
+  "general_state_retention_qualified": false
+}

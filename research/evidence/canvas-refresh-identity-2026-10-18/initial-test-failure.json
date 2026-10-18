@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "..\n======================================================================\nFAIL: test_interior_palette_alpha_and_redundancy (__main__.TelemetryTests) (xy=(0, 72))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/tmp/canvas-refresh-identity-20261018/test_decode.py\", line 25, in test_interior_palette_alpha_and_redundancy\n    with self.subTest(xy=xy),self.assertRaises(Exception):decode(self.p)\nAssertionError: Exception not raised\n\n----------------------------------------------------------------------\nRan 3 tests in 0.772s\n\nFAILED (failures=1)\n",
+  "cause": "One negative test assigned the existing blue pixel, so it did not mutate the sample."
+}

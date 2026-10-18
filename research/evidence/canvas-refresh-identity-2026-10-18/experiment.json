@@ -1,0 +1,29 @@
+{
+  "scope": "Owned native RenderPreview refresh identity telemetry; no reconstruction behavior changes",
+  "absolute_deadline_utc": "2026-10-18T16:15:00Z",
+  "calls": 3,
+  "per_call_render_timeout_seconds": 45,
+  "broker_timeout_seconds": 55,
+  "predictions": {
+    "same_pid_same_token": "Consistent with retained host/state or reused/cached result; not distinguishing these",
+    "same_pid_changed_token": "Observed state identity changes across requests within the same reported process; internal cause unknown",
+    "changed_pid_changed_token": "Host restart confounds state lifetime inference",
+    "changed_pid_same_token": "Unexpected/cached/collision; retain as inconclusive"
+  },
+  "pixel_contract": {
+    "size": [
+      512,
+      96
+    ],
+    "four_bands_24_pixels_each": true,
+    "cell_size": [
+      4,
+      24
+    ],
+    "pid_copies": 4,
+    "token_bits": 128,
+    "token_complement_band": true
+  },
+  "source_runtime_transport": "Snapshot telemetry only; no private messages captured; decoded token is observed state and not independent golden",
+  "cleanup": "Close exact owned workspace and confirm zero owned windows; keep live retained broker"
+}
