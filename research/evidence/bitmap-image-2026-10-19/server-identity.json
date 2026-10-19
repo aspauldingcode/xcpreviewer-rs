@@ -1,0 +1,36 @@
+{
+  "package": {
+    "name": "rea-agents",
+    "version": "6.2.0",
+    "root_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents",
+    "build_commit": null
+  },
+  "server": {
+    "name": "rea",
+    "version": "6.2.0",
+    "started_at": "2026-10-15T20:32:32.110Z",
+    "command_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents/scripts/rea.mjs"
+  },
+  "alignment": {
+    "state": "aligned",
+    "reasons": [],
+    "remediation": null
+  },
+  "protocol": "2025-06-18",
+  "ghidra": {
+    "ok": true,
+    "data": {
+      "vibe_mcp": "0.1.1",
+      "analysis_mcp": "http://127.0.0.1:8089",
+      "analysis": {
+        "ok": true,
+        "text": "Connection OK - GhidraMCP Headless Server v5.14.2-headless"
+      },
+      "ensure": {
+        "ok": true,
+        "ensured": false,
+        "url": "http://127.0.0.1:8089"
+      }
+    }
+  }
+}
