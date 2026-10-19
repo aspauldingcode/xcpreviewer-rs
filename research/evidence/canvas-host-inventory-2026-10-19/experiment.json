@@ -1,0 +1,9 @@
+{
+ "scope":"One passive public prior-owned-PID and CUA app-inventory feasibility comparison; no app selection or launch",
+ "deadline_utc":"2026-10-19T03:10:00Z",
+ "maximum_public_snapshots":1,"maximum_CUA_inventory_calls":1,
+ "maximum_app_selections":0,"maximum_workspace_opens":0,"maximum_clicks":0,"maximum_receipt_reads":0,
+ "predictions":"Prior owned host may have exited after workspace closure, persisted with exact birth/path, or PID may have been reused. Inventory may report an exact bundle path or only an ambiguous display name/bundle identifier. One metadata comparison discriminates these prerequisites; never treat names alone as authority.",
+ "expected":{"pid":76585,"identity":[1792364725,325211,"/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-aybvehbjrqcwptcgpubkgsryjlxa/Build/Products/Debug/PreviewLab.app/Contents/MacOS/PreviewLab"],"bundle_path":"/Users/8amps/Library/Developer/Xcode/DerivedData/PreviewLab-aybvehbjrqcwptcgpubkgsryjlxa/Build/Products/Debug/PreviewLab.app"},
+ "failure_policy":"Lock conflict, pin/clock/shape/backend failure stops affected probe; retain diagnostics. No retry, app selection, guessed getApp, process signal, launch or deadline extension. No fresh callback/window/view claim from historical PID anchor. Preserve unrelated apps/workspaces."
+}

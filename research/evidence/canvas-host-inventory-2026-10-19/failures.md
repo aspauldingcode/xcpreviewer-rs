@@ -1,0 +1,3 @@
+Separate preexecution review reproduced float-valued observed birth fields qualifying by Python equality. Initial matcher retained. Corrected matcher validates exact integer birth fields, microsecond range and absolute executable path before equality; Boolean/float/range/path negatives added. No native execution occurred before correction; original deadline unchanged.
+
+Post-execution scope audit found the direct helper root omission did not independently distinguish an exited PID from an unobservable live PID. A processNone reason had overstated absence. Native evidence is unchanged; reporting was weakened, the admitted matcher retained separately, and no additional native existence probe or retry occurred.
