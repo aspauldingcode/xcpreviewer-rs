@@ -1,0 +1,62 @@
+{
+  "scope": "Shipped ARM64 static recovery and original portable typed-tree decoder, not live wire parity",
+  "targets": {
+    "PreviewsMessagingHost": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+    "PreviewsFoundationHost": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d"
+  },
+  "functions": {
+    "bitmap_decode": "0x4ad50",
+    "region_decode": "0x4bcf8",
+    "region_key": "0x4bb20",
+    "byte_order_raw": "0x4a1f8",
+    "rect_decode_wrapper": "0x9f6f8",
+    "rect_decode_specialized": "0xaab10",
+    "point_key": "0x9eb3c",
+    "size_key": "0x9f3a0"
+  },
+  "bitmap": {
+    "required": [
+      "data",
+      "width",
+      "height",
+      "bytesPerRow"
+    ],
+    "bitmapInfo": "Optional UInt32; present bypasses byteOrder entirely, including malformed legacy field",
+    "fallback_byteOrder": {
+      "little": 8194,
+      "big": 16386
+    },
+    "defaults": {
+      "bitsPerComponent": 8,
+      "bitsPerPixel": 32,
+      "colorSpace": "kCGColorSpaceSRGB"
+    },
+    "independent_instruction_locators": {
+      "byte_order_flags": "0x4ae14-0x4ae24",
+      "bits_component": "0x4ae70-0x4ae7c",
+      "bits_pixel": "0x4aec0-0x4aecc"
+    }
+  },
+  "region": {
+    "required": [
+      "path",
+      "rect"
+    ],
+    "optional": [
+      "serializedAccessibilityElement"
+    ],
+    "rect": "Flat required CGFloat x,y,width,height fields; no nested origin/size dictionaries"
+  },
+  "runtime_constant": "Public CoreGraphics sRGB CFString independently read in owned Python, no private Swift ABI call",
+  "tests_passed": 16,
+  "limitations": [
+    "No binary/XML plist parser yet",
+    "Native Foundation number/null coercion and error identity not established; Rust input types deliberately explicit",
+    "No native geometry validation inferred",
+    "No live packet, input delivery, rendering parity or milestone completion",
+    "Ghidra pseudocode elides Swift error-register edges; instruction checks retained locally"
+  ],
+  "frida": "Changed owned PreviewLab PID88175 route canceled before session/script creation after5seconds; no interception or swizzling executed",
+  "xcode_builtin_mcp_used": false,
+  "implementation_sha256": "e988eb0bba101c5df7beece99a2610571ceb9125c35f26c549b6fab06688a150"
+}

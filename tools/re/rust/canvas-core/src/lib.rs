@@ -2,6 +2,7 @@
 #![forbid(unsafe_code)]
 pub mod contract;
 pub mod render_payload;
+pub mod payload_codec;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
