@@ -1,0 +1,3 @@
+# Separate preexecution review
+
+`/root/refresh_spec_review` verified the 80-byte module matched its builder and that the memory limits, store/grow opcodes and five independent predictions agreed. It verified approved pins and ran all four Python fault-control methods normally and under `-O`. It approved exactly one bounded non-browser Node assay under the fixed 17:00 UTC deadline, exclusive lock, one-shot marker and ten-second timeout. Unexpected results were to be retained without retry. It excluded browser, second-engine, product and Canvas qualification and did not execute the engine fixture. Final frozen evidence review is recorded separately in the durable checkpoint.
