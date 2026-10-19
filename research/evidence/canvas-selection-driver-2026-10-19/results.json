@@ -1,0 +1,24 @@
+{
+  "test-selection-only.mjs": {
+    "cases": 13,
+    "native_execution": false,
+    "refresh_dispatches": 0,
+    "scope": "Owned mock app/readiness/action integration; no native authority"
+  },
+  "test-selection-registry.mjs": {
+    "cases": 11,
+    "native_execution": false,
+    "cutoff_unit": "seconds; converted to action milliseconds",
+    "scope": "mock registry-driver integration"
+  },
+  "test-session-driver.mjs": {
+    "cases": 6,
+    "native_execution": false,
+    "scope": "trusted mock policy; no native authority"
+  },
+  "test-binding-counterexample.mjs": {
+    "pre_fix_mismatch_dispatch_reproduced": true,
+    "post_fix_mismatch_rejected": true,
+    "native_execution": false
+  }
+}

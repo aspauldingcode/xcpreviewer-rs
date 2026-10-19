@@ -1,0 +1,42 @@
+[
+  {
+    "mutant": "abort-not-latched",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file://<owned-mutant-directory>/test-selection-only.mjs:51:258 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "refresh-substitution",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "file://<owned-mutant-directory>/guard.mjs:18\nexport function authorize(previous,fresh,kind,now,stop){if(!previous||previous.signature!==fresh.signature)throw Error('stale');if(!Number.isFinite(now)||!Number.isFinite(stop)||now>=stop)throw Error('deadline');if(!['refresh','selection'].includes(kind)||fresh[kind]===null)throw Error('unqualified');return fresh[kind];}\n                                                                                                                                                                                                                                                                                         ^\n\nError: unqualified\n    at authorize (file://<owned-mutant-directory>/guard.mjs:18:282)\n    at guardedClick (file://<owned-mutant-directory>/action.mjs:6:14)\n    at async perform (file://<owned-mutant-directory>/session-driver.mjs:7:152)\n    at async Object.next (file://<owned-mutant-directory>/selection-only.mjs:20:5)\n    at async file://<owned-mutant-directory>/test-selection-only.mjs:24:45\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "effect-overclaim",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    decision: 'selection_dispatched',\n+   effect_verified: true\n-   effect_verified: false\n  }\n\n    at file://<owned-mutant-directory>/test-selection-only.mjs:24:35 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: { decision: 'selection_dispatched', effect_verified: true },\n  expected: { decision: 'selection_dispatched', effect_verified: false },\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "action-clock-wrong-unit",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file://<owned-mutant-directory>/test-selection-registry.mjs:8:48 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /deadline/,\n  operator: 'rejects',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "workspace-not-bound",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected exception.\n    at file://<owned-mutant-directory>/test-selection-registry.mjs:14:43 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /projects binding/,\n  operator: 'throws',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  }
+]

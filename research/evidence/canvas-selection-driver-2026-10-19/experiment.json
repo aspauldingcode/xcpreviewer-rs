@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-19T03:40:17.968641+00:00",
+  "kind": "offline-research-adapter",
+  "predictions": [
+    "Paused/no-selection readiness waits without Refresh",
+    "Fresh action busy/stale/deadline failure terminates and prevents reuse",
+    "Concurrent rejection before queued dispatch prevents click",
+    "Workspace/config disagreement rejects before registry binding",
+    "Selection dispatch never claims independently verified effect"
+  ],
+  "native_execution": false,
+  "product_changes": false,
+  "selection_cases": 13,
+  "registry_cases": 11,
+  "original_driver_cases": 6,
+  "mutants": 5,
+  "future_native_authorized_by_this_bundle": false,
+  "native_experiment_calls": 0,
+  "bridge_status_and_window_queries": true
+}

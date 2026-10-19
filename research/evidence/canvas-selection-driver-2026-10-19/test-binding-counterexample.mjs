@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';
+import {createSelectionRegistry as before} from './selection-registry-before-binding-fix.mjs';
+import {createSelectionRegistry as after} from './selection-registry.mjs';
+const b=JSON.parse(fs.readFileSync(new URL('./binding.json',import.meta.url))),old='/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b';
+const ax=fs.readFileSync(new URL('./prior-final-projection.ax.txt',import.meta.url),'utf8').replaceAll(old,'/private/tmp/callback-ui-access-20261018/workspace');
+const c={session:'a'.repeat(32),workspace:'/private/tmp/DIFFERENT/PreviewLab.xcodeproj',source_sha256:'b'.repeat(64),stopWall:300,cleanupWall:360};
+let t=0,clicks=0;const clock=()=>({wall:t,mono:t}),app={async getAXState(){return ax},async click(){clicks++}};
+const s=before().bind(c,clock,app,b);t=15;assert.equal((await s.next()).decision,'selection_dispatched');assert.equal(clicks,1);
+assert.throws(()=>after().bind(c,clock,app,b),/projects binding/);assert.equal(clicks,1);
+console.log(JSON.stringify({pre_fix_mismatch_dispatch_reproduced:true,post_fix_mismatch_rejected:true,native_execution:false}));
