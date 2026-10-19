@@ -1,0 +1,49 @@
+{
+  "classification": "agent crash and diagnostics notification stream; view-input hypothesis falsified",
+  "decoder_address": "0xafd2c",
+  "decoder_bytes": 716,
+  "diagnostics_discriminants": [
+    "willProvide",
+    "canSymbolicate",
+    "unavailable"
+  ],
+  "encoder_address": "0xaf9c0",
+  "encoder_bytes": 692,
+  "error_branch_checks": [
+    "modern optional decode error exits at0xaff08; no legacy fallback",
+    "legacy bool required decode error exits at0xaff50",
+    "pid decode error exits at0xaffc0"
+  ],
+  "implementation_scope": "agentCrashed only; agentCrashedDiagnostics explicitly unsupported pending CrashReport recovery",
+  "key_getter_address": "0xaf90c",
+  "legacy_fallback": {
+    "diagnosticsComing_false": "unavailable",
+    "diagnosticsComing_true": "willProvide"
+  },
+  "modern_field": "agentBehavior",
+  "native_runtime_verified": false,
+  "outer_discriminants": [
+    "agentCrashed",
+    "agentCrashedDiagnostics"
+  ],
+  "outer_keys": {
+    "0": "discriminant",
+    "1": "crashReport",
+    "2": "pid",
+    "3": "agentBehavior",
+    "4": "diagnosticsComing"
+  },
+  "pid_type": "Int32",
+  "serializer_legacy_bool": {
+    "canSymbolicate": false,
+    "unavailable": false,
+    "willProvide": true
+  },
+  "stream": "Ultraviolet.PreviewRemoteEvents",
+  "stream_getter_address": "0xae744",
+  "strings": {
+    "0xc7610": "Ultraviolet.PreviewRemoteEvents",
+    "0xc7630": "diagnosticsComing",
+    "0xc7650": "agentCrashedDiagnostics"
+  }
+}

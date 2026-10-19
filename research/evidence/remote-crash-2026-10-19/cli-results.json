@@ -1,0 +1,33 @@
+{
+  "positive": [
+    {
+      "fixture": "modern-willProvide",
+      "exit": 0,
+      "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=WillProvide"
+    },
+    {
+      "fixture": "modern-canSymbolicate",
+      "exit": 0,
+      "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=CanSymbolicate"
+    },
+    {
+      "fixture": "modern-unavailable",
+      "exit": 0,
+      "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=Unavailable"
+    },
+    {
+      "fixture": "legacy-true",
+      "exit": 0,
+      "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=WillProvide"
+    },
+    {
+      "fixture": "legacy-false",
+      "exit": 0,
+      "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=Unavailable"
+    }
+  ],
+  "negative": {
+    "exit": 1,
+    "stderr": "Missing(\"discriminant\")"
+  }
+}

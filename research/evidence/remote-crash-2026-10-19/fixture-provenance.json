@@ -1,0 +1,60 @@
+{
+  "producer": "Independent Python plistlib serializer using source-recovered field expectations",
+  "native_capture": false,
+  "fixtures": {
+    "modern-willProvide": {
+      "sha256": "4f562a38946e8fae62c675b6e7ef55d573bb37caac4665577450d43176f8fd8d",
+      "bytes": 142,
+      "value": {
+        "discriminant": "agentCrashed",
+        "pid": 12345,
+        "agentBehavior": {
+          "discriminant": "willProvide"
+        },
+        "diagnosticsComing": true
+      }
+    },
+    "modern-canSymbolicate": {
+      "sha256": "1df8d5282aa6152eeba541f145ddd758024163ab392b833db53abe85d4727f57",
+      "bytes": 145,
+      "value": {
+        "discriminant": "agentCrashed",
+        "pid": 12345,
+        "agentBehavior": {
+          "discriminant": "canSymbolicate"
+        },
+        "diagnosticsComing": false
+      }
+    },
+    "modern-unavailable": {
+      "sha256": "56075a96423777a5c3b830cd40ebb728e2213e3cd153f7c98bfccb7248ab55d5",
+      "bytes": 142,
+      "value": {
+        "discriminant": "agentCrashed",
+        "pid": 12345,
+        "agentBehavior": {
+          "discriminant": "unavailable"
+        },
+        "diagnosticsComing": false
+      }
+    },
+    "legacy-true": {
+      "sha256": "751251245299d6b5c709558ffe26dc5f450c86441a3935e8f51fb61a5e0ee459",
+      "bytes": 108,
+      "value": {
+        "discriminant": "agentCrashed",
+        "pid": 12345,
+        "diagnosticsComing": true
+      }
+    },
+    "legacy-false": {
+      "sha256": "3135b8a89b610f3c62fb982e0fef9984437bf9f354249493b18fa60563d0d7e9",
+      "bytes": 108,
+      "value": {
+        "discriminant": "agentCrashed",
+        "pid": 12345,
+        "diagnosticsComing": false
+      }
+    }
+  }
+}
