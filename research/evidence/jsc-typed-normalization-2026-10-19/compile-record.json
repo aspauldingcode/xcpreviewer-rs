@@ -1,0 +1,43 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-x",
+    "objective-c",
+    "-fobjc-arc",
+    "-framework",
+    "Foundation",
+    "-framework",
+    "JavaScriptCore",
+    "/private/tmp/jsc-typed-normalization-20261019/probe.c",
+    "-o",
+    "/private/tmp/jsc-typed-normalization-20261019/probe"
+  ],
+  "source_sha256": "330114a76e2f3a88a783b0a2456bdc66ee8326a11566dc150e3a0700d9c44e41",
+  "binary_sha256": "b9c4f88f75f852a573f45bec82c9f7bd637b059c1f70efaf9a12a51cee0bbb48",
+  "error": null,
+  "record": {
+    "pid": 33750,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 27,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

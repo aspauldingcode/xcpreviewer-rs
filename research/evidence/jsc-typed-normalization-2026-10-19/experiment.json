@@ -1,0 +1,21 @@
+{
+  "deadline_utc": "2026-10-19T09:55:00Z",
+  "question": "Does the exact independently measured JSC typed descriptor profile admit scalar WASM/JS operations matching the frozen native/V8/Python bytes?",
+  "changed_prerequisite": "Sealed JSC metadata diagnostic observed additional type field; both old scalar attempts remain rejected. This fresh assay requires exact name/kind/type and i32 parameter/result profile.",
+  "expected": {
+    "bytes": 65536,
+    "padding": 768,
+    "tail": 15616,
+    "scalar_calls": 9216,
+    "invalid_host_inputs_rejected": 5
+  },
+  "limits": {
+    "compile": 1,
+    "output_control": 1,
+    "fixture": 1,
+    "source_alarm_seconds": 10,
+    "guard_seconds": 15,
+    "outer_seconds": 20
+  },
+  "scope": "Two engines on one Darwin host if supported; no frame-memory ABI, renderer, native UI/Canvas or non-Apple acceptance."
+}

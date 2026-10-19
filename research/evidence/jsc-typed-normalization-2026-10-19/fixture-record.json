@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/jsc-typed-normalization-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/jsc-typed-normalization-20261019/owned-documents"
+  ],
+  "source_sha256": "330114a76e2f3a88a783b0a2456bdc66ee8326a11566dc150e3a0700d9c44e41",
+  "binary_sha256": "b9c4f88f75f852a573f45bec82c9f7bd637b059c1f70efaf9a12a51cee0bbb48",
+  "error": null,
+  "record": {
+    "pid": 34276,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 10,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"canvas_qualified\":false,\"engine\":\"public JavaScriptCore JSContext\",\"environment\":{\"framework_identifier\":\"com.apple.JavaScriptCore\",\"framework_path\":\"\\/System\\/Library\\/Frameworks\\/JavaScriptCore.framework\",\"framework_version\":\"21624.2.5.11.4\",\"machine\":\"arm64\",\"os_version\":\"Version 26.5.1 (Build 25F80)\",\"release\":\"25.5.0\",\"system\":\"Darwin\"},\"export_key_order\":[[\"name\",\"kind\",\"type\"],[\"name\",\"kind\",\"type\"]],\"exports\":[{\"kind\":\"function\",\"name\":\"multiplyBits\",\"type\":{\"parameters\":[\"i32\"],\"results\":[\"i32\"]}},{\"kind\":\"function\",\"name\":\"divideBits\",\"type\":{\"parameters\":[\"i32\"],\"results\":[\"i32\"]}}],\"imports\":[],\"invalid_inputs\":[{\"dispatch_delta\":0,\"label\":\"negative\",\"rejected\":true},{\"dispatch_delta\":0,\"label\":\"large\",\"rejected\":true},{\"dispatch_delta\":0,\"label\":\"fraction\",\"rejected\":true},{\"dispatch_delta\":0,\"label\":\"nonfinite\",\"rejected\":true},{\"dispatch_delta\":0,\"label\":\"boolean\",\"rejected\":true}],\"metadata_json_order_matches\":false,\"module_bytes\":81,\"native_UI_execution\":false,\"non_Apple_OS_verified\":false,\"pid\":34277,\"product_integration\":false,\"rows\":[{\"allocation_bytes\":16384,\"file\":\"wasm-multiply.raw\",\"method\":\"wasm-multiply\"},{\"allocation_bytes\":16384,\"file\":\"wasm-divide.raw\",\"method\":\"wasm-divide\"},{\"allocation_bytes\":16384,\"file\":\"js-multiply.raw\",\"method\":\"js-multiply\"},{\"allocation_bytes\":16384,\"file\":\"js-divide.raw\",\"method\":\"js-divide\"}],\"scalar_dispatches\":9216,\"sections\":[1,3,7,10],\"status\":\"supported\"}\n",
+    "stderr": "owned_tree_pid:34277\n",
+    "stdoutBytes": 1442,
+    "stderrBytes": 21,
+    "stdoutSha256": "a13323663ffa6eb323342a2d71127177cacb512b639a5fe1a4e510bea6629c40",
+    "stderrSha256": "028d912bbf394d72fccc715ba85deb8eb706b3d4ec0b1dcec7dba92b78dac96e"
+  }
+}

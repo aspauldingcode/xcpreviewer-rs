@@ -1,0 +1,30 @@
+(function(){
+const raw=new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 6, 1, 96, 1, 127, 1, 127, 3, 3, 2, 0, 0, 7, 29, 2, 12, 109, 117, 108, 116, 105, 112, 108, 121, 66, 105, 116, 115, 0, 0, 10, 100, 105, 118, 105, 100, 101, 66, 105, 116, 115, 0, 1, 10, 27, 2, 12, 0, 32, 0, 179, 67, 129, 128, 128, 59, 148, 188, 11, 12, 0, 32, 0, 179, 67, 0, 0, 127, 67, 149, 188, 11]);
+const need=(v,s)=>{if(!v)throw Error(s)};
+need(JSON.stringify(Array.from(raw.subarray(0,8)))==='[0,97,115,109,1,0,0,0]','header');
+let offset=8;const sections=[];
+while(offset<raw.length){const id=raw[offset++];let n=0,shift=0,b;do{need(offset<raw.length&&shift<35,'section length');b=raw[offset++];n+=(b&127)*2**shift;shift+=7}while(b&128);need(Number.isSafeInteger(n)&&offset+n<=raw.length,'section bounds');sections.push(id);offset+=n}
+need(JSON.stringify(sections)==='[1,3,7,10]','no imports/memory/start/custom sections');
+if(typeof WebAssembly!=='object')return JSON.stringify({status:'unsupported',webassembly_type:typeof WebAssembly,rows:[],scalar_dispatches:0});
+need(WebAssembly.validate(raw),'WASM validation');const module=new WebAssembly.Module(raw),imports=WebAssembly.Module.imports(module),exports=WebAssembly.Module.exports(module);
+const metadata_json_order_matches=JSON.stringify(exports)===JSON.stringify([{name:'multiplyBits',kind:'function'},{name:'divideBits',kind:'function'}]);
+need(imports.length===0&&exports.length===2&&exports.every((e,i)=>JSON.stringify(Object.keys(e).sort())==='[\"kind\",\"name\",\"type\"]'&&e.name===['multiplyBits','divideBits'][i]&&e.kind==='function'&&e.type&&JSON.stringify(Object.keys(e.type).sort())==='[\"parameters\",\"results\"]'&&JSON.stringify(e.type.parameters)==='[\"i32\"]'&&JSON.stringify(e.type.results)==='[\"i32\"]'),'measured typed module shape');
+const instance=new WebAssembly.Instance(module,{});const scratch=new DataView(new ArrayBuffer(4));let calls=0;
+function bits(method,code){
+ if(typeof code!=='number'||!Number.isInteger(code)||code<0||code>255)throw Error('byte domain');
+ calls++;
+ if(method==='wasm-multiply')return instance.exports.multiplyBits(code)>>>0;
+ if(method==='wasm-divide')return instance.exports.divideBits(code)>>>0;
+ const value=method==='js-multiply'?Math.fround(Math.fround(code)*Math.fround(1/255)):Math.fround(code/255);
+ scratch.setFloat32(0,value,true);return scratch.getUint32(0,true);
+}
+const invalid=[];
+for(const [label,value] of [['negative',-1],['large',256],['fraction',.5],['nonfinite',NaN],['boolean',true]]){const before=calls;let rejected=false;try{bits('wasm-multiply',value)}catch{rejected=true}need(rejected&&calls===before,'invalid domain dispatch');invalid.push({label,rejected,dispatch_delta:calls-before})}
+const rows=[];
+for(const method of ['wasm-multiply','wasm-divide','js-multiply','js-divide']){
+ const bytes=new Uint8Array(16384).fill(0xa5),view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
+ for(let y=0;y<3;y++)for(let x=0;x<256;x++){for(let c=0;c<3;c++)view.setUint32(y*4160+x*16+c*4,bits(method,(x+c*85)&255),true);view.setUint32(y*4160+x*16+12,0x3f800000,true)}
+ const file=method+'.raw';rows.push({method,file,allocation_bytes:bytes.length,hex:Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('')});
+}
+return JSON.stringify({status:'supported',metadata_json_order_matches,export_key_order:exports.map(e=>Object.keys(e)),module_bytes:raw.length,sections,imports,exports,invalid_inputs:invalid,scalar_dispatches:calls,rows});
+})()
