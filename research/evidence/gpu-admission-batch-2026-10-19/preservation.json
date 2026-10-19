@@ -1,0 +1,58 @@
+[
+  {
+    "reader": "verify_gpu_buffer_owner.py",
+    "predicates": 24,
+    "all_preserved_in_order": true,
+    "before_sha256": "6f8b9ab55c33e232d45ef2ef6f6cf844cf1eb64b5090f04947b303655e227133",
+    "after_sha256": "8dc458c8f616457beab07ac54b7fbb3a59d2e38b17d0964e69e3203d4c1eb272"
+  },
+  {
+    "reader": "verify_gpu_buffer_release.py",
+    "predicates": 20,
+    "all_preserved_in_order": true,
+    "before_sha256": "29822cb874b6a21cbc89e924a5d7940ed8d432aa932364a79ac00c3187434214",
+    "after_sha256": "f775dfe10b5408e7c76a914892824011293792b52781462fef73392b8bb7778f"
+  },
+  {
+    "reader": "verify_gpu_event_carrier.py",
+    "predicates": 20,
+    "all_preserved_in_order": true,
+    "before_sha256": "7efad3d90580c35c4fc1433d2cfa0a03cd8b1af99db05876d08be12f7fabda8c",
+    "after_sha256": "274e296aba4ae780e27cb7aae3fdfa69fcf85d033838ece7dd66cdb46441b9fd"
+  },
+  {
+    "reader": "verify_gpu_event_disconnect.py",
+    "predicates": 27,
+    "all_preserved_in_order": true,
+    "before_sha256": "68c17a8584c5df10a502923aa3fe1354fa7163503079d03f4ad2e10e798bf48f",
+    "after_sha256": "44ca9c395b17b68832fb8699108ffa3109fb5436bfcb9543ebb50afe8c4ffa33"
+  },
+  {
+    "reader": "verify_gpu_event_failure.py",
+    "predicates": 23,
+    "all_preserved_in_order": true,
+    "before_sha256": "719a4af984428644bfcfe6708563248e2fa162788d9fed33bf76bd9dd141c0a5",
+    "after_sha256": "e17069dc5a14d31ece7a524cba26a5f59862b2db0b3a8963660eb9185aaea646"
+  },
+  {
+    "reader": "verify_gpu_event_peer.py",
+    "predicates": 22,
+    "all_preserved_in_order": true,
+    "before_sha256": "a4870da7d92b57435de4e842cda770e6f4425314299ecd2b94f8af425f01acd7",
+    "after_sha256": "cc76f6d6efcc28ec1fbbb8e1b271269b0ea30c494c9ef6976ce2efc5dc1c6128"
+  },
+  {
+    "reader": "verify_gpu_queue_order.py",
+    "predicates": 15,
+    "all_preserved_in_order": true,
+    "before_sha256": "0874bdcb99a5b05ea9c0c89acb68ebb46030527dd69a5e9297f6fdc676b3fbec",
+    "after_sha256": "ba9d3671013d26f2e44e5508b67a29f7209d4a5466e806a26bfb5f9d7e14e98d"
+  },
+  {
+    "reader": "verify_gpu_submission_lifetime.py",
+    "predicates": 27,
+    "all_preserved_in_order": true,
+    "before_sha256": "4021d9651df56cedfbea4fb7c1afe5ca012e7d7af0f359b804a5e0d9719dba07",
+    "after_sha256": "59729724c89415f1d58f77ac1f46bce3adcce1992d2f9bcb0f8fcfd63eed9eed"
+  }
+]

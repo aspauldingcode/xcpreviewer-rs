@@ -1,0 +1,20 @@
+import base64,hashlib,importlib.util,json,shutil,tempfile,unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[3]
+s=importlib.util.spec_from_file_location('gpu_owner_reader',Path(__file__).with_name('verify_gpu_buffer_owner.py'));reader=importlib.util.module_from_spec(s);s.loader.exec_module(reader)
+class GpuBufferOwnerTests(unittest.TestCase):
+ def test_native_contradiction_and_isolated_owner_controls(self):
+  self.assertEqual((ROOT/'tools/re/gpu_buffer_owner.m').read_bytes(),(ROOT/'research/evidence/gpu-buffer-owner-2026-10-11/gpu_buffer_owner.m').read_bytes());self.assertEqual(reader.verify(ROOT/'research/evidence/gpu-buffer-owner-2026-10-11')['complete_bytes'],425984)
+ def test_resealed_wait_weak_submitted_policy_null_and_padding(self):
+  for kind in ['wait','weak','submitted','policy','null','padding']:
+   with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+    e=Path(tmp)/'e';shutil.copytree(ROOT/'research/evidence/gpu-buffer-owner-2026-10-11',e);p=e/'result-0.json';d=json.loads(p.read_text());row=d['rows'][3]
+    if kind=='wait':(e/'wait-0.json').write_text(json.dumps({'code':1,'timeout':False,'stderr':''}))
+    elif kind=='weak':row['weak_buffer_alive_after_cpu_drop']=True
+    elif kind=='submitted':row['submitted']=True
+    elif kind=='policy':row['retained_references']=True
+    elif kind=='null':row['after']=row['before']
+    else:
+     row=d['rows'][2];b=bytearray(base64.b64decode(row['after']));b[44]^=1;row['after']=base64.b64encode(b).decode()
+    p.write_text(json.dumps(d));(e/'manifest.json').write_text(json.dumps({'files':{str(p.relative_to(e)):{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in e.rglob('*') if p.is_file() and p!=e/'manifest.json'}}))
+    with self.assertRaises(AssertionError):reader.verify(e)

@@ -1,0 +1,7 @@
+{
+  "phase": "prepublication frozen runner hardening",
+  "previous_behavior": "Original frozen test bootstrap imported installed reader before override, safe for measured matching source but unnecessarily dependent on future checkout contents.",
+  "correction": "Retained prototype and its four reports. Rebind only the three loader bootstrap statements to an explicitly selected frozen reader; all test methods and assertions remain unchanged.",
+  "native_execution": false,
+  "matrix_counts_unchanged": true
+}

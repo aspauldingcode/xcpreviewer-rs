@@ -1,0 +1,3 @@
+# Separate review
+
+/root/refresh_spec_review independently verified the exact 178 assert-to-require AST replacements, current original-source identities and all eight historical anchors. It replayed the 16 existing tests, confirming 63 accepted optimized faults before correction and rejection in both modes afterward, and approved integration of only the eight research readers and optimized regression test. Existing and new tests passed after integration. A subsequent frozen-runner hardening replaces the original three loader bootstrap statements instead of importing a future installed reader; its prototype and unchanged before/after results are retained for final review. No native acquisition was performed by either context.
