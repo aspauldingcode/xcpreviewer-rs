@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "scope": "Direct static recovery plus original adapter and retained attach/build failures; raw decompilation excluded",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3174,
+      "sha256": "478ab6296caa624422ce0129f9b55cb199c8edaf0893d6564d6541c86f823451"
+    },
+    {
+      "path": "findings.json",
+      "bytes": 1527,
+      "sha256": "4aee19548b420c659b0e04ddecfb4ca809e9feb853ecf67478f29649f70b1be4"
+    },
+    {
+      "path": "frida-api-failure.json",
+      "bytes": 540,
+      "sha256": "de2d998508cece591630f1bc107d3e9b99ac14084e925ca3e3757c5ab5832a78"
+    },
+    {
+      "path": "frida-observe.json",
+      "bytes": 503,
+      "sha256": "92f13d7dca3ebb52b15237640556aa1e8906c61af60ac44b5749ad4b4957911c"
+    },
+    {
+      "path": "frida_observe.py",
+      "bytes": 1804,
+      "sha256": "cf46b762618c7b07347ffcd282f9bb9d05fcbc09319f42dd7f5dc8c117f3bf46"
+    },
+    {
+      "path": "frida_observe_before.py",
+      "bytes": 1809,
+      "sha256": "bf062f14bffd8afa9935aacb1e4b72b595721a7cf87d934169732e6319d8ce4b"
+    },
+    {
+      "path": "rust-tests-stable.log",
+      "bytes": 1634,
+      "sha256": "35f8d56f8e6d27d78a8cdf6d1c1e662943dd027a0f9b1ff46b8c210a65ea15f9"
+    },
+    {
+      "path": "rust-tests.log",
+      "bytes": 429,
+      "sha256": "e7acc9f5fdf53ce888db987ebbf549bdbded259f5d755bee487474ddf98b5f1a"
+    },
+    {
+      "path": "target-identities.json",
+      "bytes": 737,
+      "sha256": "f971f985f0c0c7d909da147db4c577255910248ce67514089eeb8cddd46891c5"
+    }
+  ]
+}

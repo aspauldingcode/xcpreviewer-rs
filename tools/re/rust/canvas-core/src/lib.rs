@@ -1,6 +1,7 @@
 //! Owned portable frame store.
 #![forbid(unsafe_code)]
 pub mod contract;
+pub mod render_payload;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

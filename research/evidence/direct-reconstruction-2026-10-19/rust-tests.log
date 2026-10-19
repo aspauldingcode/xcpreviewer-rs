@@ -1,0 +1,8 @@
+   Compiling canvas-core v0.1.0 (/Users/8amps/xcpreviewer-rs/tools/re/rust/canvas-core)
+error[E0463]: can't find crate for `std`
+  |
+  = note: the `aarch64-apple-darwin` target may not be installed
+  = help: consider downloading the target with `rustup target add aarch64-apple-darwin`
+
+For more information about this error, try `rustc --explain E0463`.
+error: could not compile `canvas-core` (lib test) due to 1 previous error

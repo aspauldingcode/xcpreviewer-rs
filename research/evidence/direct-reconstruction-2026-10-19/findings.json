@@ -1,0 +1,30 @@
+{
+  "authority": "shipped-arm64-static-decompilation-and-independent-disassembly",
+  "target_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "decoder_entry": "0x8d9a0",
+  "decoder_observed_body_bytes": 656,
+  "key_getter": "0x8d6ac",
+  "recovered_fields": [
+    "bitmapDescription",
+    "selectableRegions",
+    "snapshotCornerRadius",
+    "scaleFactor"
+  ],
+  "required_fields": [
+    "bitmapDescription",
+    "selectableRegions"
+  ],
+  "optional_defaults": {
+    "snapshotCornerRadius": 0.0,
+    "scaleFactor": 3.0
+  },
+  "constant_confirmation": {
+    "corner_select": "0x8dbc8-0x8dbd0",
+    "scale_select": "0x8dbfc-0x8dc08",
+    "storage": "0x8dc28: outer output offsets0x58 and0x60"
+  },
+  "decompiler_caution": "Swift large-string pointers include a bias; pseudocode labels did not directly name the correct key literals. Native address decoding corroborated actual strings. Swift throwing/error-register paths need instruction-level checks; pseudocode removed several error blocks.",
+  "implementation_scope": "Original generic decoded-fields adapter only. No complete plist wire decoder, Swift ABI binding, inner bitmap/region implementation, renderer integration or runtime parity claim.",
+  "frida_outcome": "Cancellation before session creation, no script loaded; first invalid Python keyword failed before attachment and was corrected using installed Cancellable context API.",
+  "raw_analysis": "Local only under research/raw/direct-canvas-re-20261019; excluded from publication."
+}
