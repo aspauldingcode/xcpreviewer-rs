@@ -1,0 +1,105 @@
+{
+  "records": [
+    {
+      "variant": "positive",
+      "source": "settlement.mjs",
+      "source_sha256": "59d8d760b570ae730d4d9ff0f081725d8f7e720a26466ddc19460b08556d457c",
+      "syntax_exit": 0,
+      "exit": 0,
+      "stdout": "{\"cases\":[{\"case\":\"timeout_race_counterexample\",\"passed\":true},{\"case\":\"pending_open_blocks_zero_cleanup\",\"passed\":true},{\"case\":\"late_settlement_reconciles_without_deadline_success\",\"passed\":true},{\"case\":\"rejecting_open_may_have_effect\",\"passed\":true},{\"case\":\"no_dispatch_after_stop\",\"passed\":true},{\"case\":\"stop_between_registration_and_dispatch\",\"passed\":true},{\"case\":\"deadline_between_registration_and_dispatch\",\"passed\":true},{\"case\":\"expiry_cannot_reverse_after_clock_regression\",\"passed\":true},{\"case\":\"preexpiry_clock_regression_blocks_dispatch\",\"passed\":true},{\"case\":\"deadline_boundary_is_expired\",\"passed\":true},{\"case\":\"clock_failure_does_not_prevent_cleanup\",\"passed\":true},{\"case\":\"clock_exception_stays_invalid_after_recovery\",\"passed\":true},{\"case\":\"one_open_attempt\",\"passed\":true},{\"case\":\"serial_operation_bound\",\"passed\":true},{\"case\":\"expired_start_has_no_effect\",\"passed\":true},{\"case\":\"close_receipt_owner_mismatch\",\"passed\":true},{\"case\":\"zero_receipt_owner_mismatch\",\"passed\":true},{\"case\":\"nonzero_windows_reject\",\"passed\":true},{\"case\":\"boolean_zero_reject\",\"passed\":true},{\"case\":\"close_pending_never_clean\",\"passed\":true},{\"case\":\"zero_pending_never_clean\",\"passed\":true},{\"case\":\"single_call_observation_failure_still_closes\",\"passed\":true},{\"case\":\"no_unchanged_cleanup_retry\",\"passed\":true},{\"case\":\"snapshot_cannot_clear_pending\",\"passed\":true},{\"case\":\"immutable_owner_binding\",\"passed\":true}],\"environment\":{\"node\":\"v24.19.0\",\"platform\":\"darwin\",\"arch\":\"arm64\"},\"native_UI_execution\":false,\"native_eligible\":false,\"scope\":\"Deterministic injected callback feasibility only; timer event is controlled, no real provider cancellation or deadline bound verified\"}\n",
+      "stderr": "",
+      "expected_failed_case": null,
+      "native_UI_execution": false
+    },
+    {
+      "variant": "before_dispatch",
+      "source": "settlement-before-dispatch-recheck.mjs",
+      "source_sha256": "f7828c1983ee1d19b3bb0060965158685899975fff232857c8cf714bbeb3683e",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: stop_between_registration_and_dispatch: Missing expected rejection.\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Missing expected rejection.\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:157\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:1 {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: undefined,\n    operator: 'rejects',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "stop_between_registration_and_dispatch",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "before_clock",
+      "source": "settlement-before-clock-latch.mjs",
+      "source_sha256": "0cab6f0303d83033bd739dcac54de9e995828cbaf41c5f6ae8c0e45b44605bd9",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: expiry_cannot_reverse_after_clock_regression: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:15:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:15:229\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:15:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "expiry_cannot_reverse_after_clock_regression",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "missing_pending",
+      "source": "variants/missing_pending.mjs",
+      "source_sha256": "39034f39eef11009981992bc8f9cbc0fe784672bea0b26e28cacd3baf8cdb6dd",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: pending_open_blocks_zero_cleanup: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:9:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:9:247\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:9:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "pending_open_blocks_zero_cleanup",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "missing_dispatch_recheck",
+      "source": "variants/missing_dispatch_recheck.mjs",
+      "source_sha256": "84ec0ed7becffb5a469cafccd8ca5c3aa955cce88c5858bea2e6c1adfcc0bdcb",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: stop_between_registration_and_dispatch: Missing expected rejection.\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Missing expected rejection.\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:157\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:13:1 {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: undefined,\n    operator: 'rejects',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "stop_between_registration_and_dispatch",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "late_is_timely",
+      "source": "variants/late_is_timely.mjs",
+      "source_sha256": "deb3840af19c0c3a63746c60ed10427b59084abe3b0d65176a0e5fda166163a6",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: late_settlement_reconciles_without_deadline_success: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:342\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "late_settlement_reconciles_without_deadline_success",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "foreign_close",
+      "source": "variants/foreign_close.mjs",
+      "source_sha256": "dc9871f0ea907d864411eb9412b5ab2916659c79750b8238242e04200b2dcc5d",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: close_receipt_owner_mismatch: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:23:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:23:167\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:23:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "close_receipt_owner_mismatch",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "coerced_zero",
+      "source": "variants/coerced_zero.mjs",
+      "source_sha256": "859c481f58a71e3f31b4d9a7fcee094de73bc5246176658702eb6c0ef5fcc097",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: boolean_zero_reject: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:26:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:26:115\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:26:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "boolean_zero_reject",
+      "native_UI_execution": false
+    },
+    {
+      "variant": "model_native_eligible",
+      "source": "variants/model_native_eligible.mjs",
+      "source_sha256": "4b3f8af5e23b64df207544bff819750e75cd8ca865fa3874626d22aeddb2f55d",
+      "syntax_exit": 0,
+      "exit": 1,
+      "stdout": "",
+      "stderr": "file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7\nasync function test(name,body){try{await body()}catch(error){throw Error(name+': '+error.message,{cause:error})}rows.push({case:name,passed:true});}\n                                                                   ^\n\nError: late_settlement_reconciles_without_deadline_success: Expected values to be strictly equal:\n\ntrue !== false\n\n    at test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:68)\n    at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:1 {\n  [cause]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  true !== false\n  \n      at file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:385\n      at async test (file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:7:36)\n      at async file:///private/tmp/canvas-cleanup-settlement-20261019/test-settlement.mjs:10:1 {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n}\n\nNode.js v24.19.0\n",
+      "expected_failed_case": "late_settlement_reconciles_without_deadline_success",
+      "native_UI_execution": false
+    }
+  ],
+  "native_UI_execution": false,
+  "real_provider_settlement_qualified": false
+}
