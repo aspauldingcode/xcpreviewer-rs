@@ -1,0 +1,6 @@
+{
+  "phase": "py_compile cache write",
+  "error": "PermissionError: /Users/8amps/Library/Caches/com.apple.python/private/tmp/bridge-deadline-20261019",
+  "source_execution": false,
+  "correction": "Use ast.parse for syntax without writing outside task roots; no permission bypass"
+}
