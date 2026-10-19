@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/jsc-export-metadata-20261019/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "330114a76e2f3a88a783b0a2456bdc66ee8326a11566dc150e3a0700d9c44e41",
+  "binary_sha256": "b9c4f88f75f852a573f45bec82c9f7bd637b059c1f70efaf9a12a51cee0bbb48",
+  "error": null,
+  "record": {
+    "pid": 27924,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":27925,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:27925\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "6fd21346f56852cad1407881aa7d2004adf02933cb2459193125efc45bfafbc8",
+    "stderrSha256": "c4c24fb4bdd79b8b38aeb8271fb0b8cab9227f5848c394c2b7e93d17f34e2369"
+  }
+}

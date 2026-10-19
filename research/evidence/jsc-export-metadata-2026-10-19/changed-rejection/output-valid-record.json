@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/jsc-normalization-order-20261019/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "330114a76e2f3a88a783b0a2456bdc66ee8326a11566dc150e3a0700d9c44e41",
+  "binary_sha256": "b9c4f88f75f852a573f45bec82c9f7bd637b059c1f70efaf9a12a51cee0bbb48",
+  "error": null,
+  "record": {
+    "pid": 26510,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":26511,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:26511\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "cb1ea2cfab36d7f0b5c320d69fbb7d54a1fc400005fcff39811023bc4dfc1229",
+    "stderrSha256": "49a381967ca1a85d5f0fb8a7e7b4a57f094ed84d716b62b60e740e3b1232b8b8"
+  }
+}

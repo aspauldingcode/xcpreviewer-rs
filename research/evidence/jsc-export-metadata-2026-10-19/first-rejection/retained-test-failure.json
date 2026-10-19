@@ -1,0 +1,5 @@
+{
+  "phase": "preexecution_synthetic",
+  "failure": "test_contract status=unsupported raised KeyError(webassembly_type) instead of ValueError; rejected, no native execution",
+  "change": "Require unsupported field membership before reading; malformed evidence remains rejected."
+}

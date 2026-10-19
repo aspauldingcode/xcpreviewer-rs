@@ -1,0 +1,15 @@
+{
+  "deadline_utc": "2026-10-19T09:45:00Z",
+  "question": "Read actual public JSC WASM export metadata without assuming descriptor key set or order. Two prior strict-shape controls rejected before arithmetic.",
+  "hypotheses": [
+    "Descriptor has additional/different fields",
+    "Unexpected names/kinds or wrapper-check defect"
+  ],
+  "predictions": "Record exact metadata and own/enumerable keys; zero scalar dispatch, no raw buffers or arithmetic qualification. Retain both preceding failures.",
+  "scope": "Owned offscreen metadata diagnostic only; no flags, UI, product or runtime generality.",
+  "limits": {
+    "compile": 1,
+    "output_control": 1,
+    "fixture": 1
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "attempts": [
+    {
+      "attempt": "first-rejection",
+      "target_exit": 2,
+      "qualified": false
+    },
+    {
+      "attempt": "changed-rejection",
+      "target_exit": 2,
+      "qualified": false
+    },
+    {
+      "attempt": "metadata-only",
+      "metadata_verified": true,
+      "extra_descriptor_field": "type",
+      "scalar_conformance": false,
+      "full_bytes_compared": 0,
+      "environment": {
+        "framework_identifier": "com.apple.JavaScriptCore",
+        "framework_path": "/System/Library/Frameworks/JavaScriptCore.framework",
+        "framework_version": "21624.2.5.11.4",
+        "machine": "arm64",
+        "os_version": "Version 26.5.1 (Build 25F80)",
+        "release": "25.5.0",
+        "system": "Darwin"
+      }
+    }
+  ],
+  "both_failures_retained": true,
+  "property_order_only_explanation_supported": false,
+  "second_engine_scalar_conformance": false,
+  "canvas_qualified": false
+}

@@ -1,0 +1,19 @@
+{
+  "deadline_utc": "2026-10-19T09:45:00Z",
+  "question": "Does an owned public offscreen JavaScriptCore JSContext expose WebAssembly, and do the same explicit scalar operations match the sealed V8 and Quartz bytes?",
+  "predictions": {
+    "unsupported": "typeof WebAssembly differs from object; zero scalar dispatch and rows; retain unsupported without flags/retry",
+    "supported": "Exact 65536 independent bytes and 9216 scalar calls; 5 invalid host inputs rejected; four buffers with 768 padding and 15616 tail bytes"
+  },
+  "limits": {
+    "compile": 1,
+    "output_control": 1,
+    "fixture": 1,
+    "source_alarm_seconds": 10,
+    "guard_seconds": 15,
+    "outer_seconds": 20
+  },
+  "scope": "Same Darwin host, second engine only if supported; no product, frame-memory ABI, native Canvas or non-Apple qualification",
+  "changed_input": "Replace JSON.stringify descriptor object-property-order equality with exact key-set/name/kind checks; also record original equality and actual key order. Original failed attempt stays rejected.",
+  "failure_hypothesis": "First attempt failed module-shape string equality after successful WASM validate/module construction. Engine descriptor property order may differ while identical names/kinds remain supported; new source records both predicates to discriminate."
+}

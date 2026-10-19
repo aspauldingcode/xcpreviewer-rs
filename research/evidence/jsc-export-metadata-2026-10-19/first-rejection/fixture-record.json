@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/jsc-normalization-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/jsc-normalization-20261019/owned-documents"
+  ],
+  "source_sha256": "330114a76e2f3a88a783b0a2456bdc66ee8326a11566dc150e3a0700d9c44e41",
+  "binary_sha256": "b9c4f88f75f852a573f45bec82c9f7bd637b059c1f70efaf9a12a51cee0bbb48",
+  "error": "Error: Observed compiler failed: 2",
+  "record": {
+    "pid": 24657,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 2,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "owned_tree_pid:24658\nowned_js_exception:Error: module shape\nrejected:evaluation\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 80,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "bbe8d62a774f32c31e458d41bd47363774682d0a25d961a24ce0dc2f76f27f0f"
+  }
+}
