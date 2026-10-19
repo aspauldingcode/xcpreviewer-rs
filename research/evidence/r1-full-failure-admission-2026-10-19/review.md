@@ -1,0 +1,3 @@
+# Separate review
+
+Before integration, /root/refresh_spec_review independently reproduced 17 invalid acceptances normally and all 29 under optimization. It verified that the candidate rejects all 29 in both modes, preserves all 14 original predicates and the 65,536-byte positive, matches the installed original source, and actually injects the conflicting prior-record duplicate. It approved integration of only the research reader and regression test, requiring retained counterexamples and relevant post-integration tests. No new native execution or Canvas evidence was claimed or performed. Existing and new tests subsequently passed normally and optimized. Final frozen publication review is recorded separately in the durable checkpoint.
