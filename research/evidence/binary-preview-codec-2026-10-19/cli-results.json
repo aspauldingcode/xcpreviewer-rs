@@ -1,0 +1,18 @@
+[
+  {
+    "fixture": "payload-defaults",
+    "stdout": "width=3 height=2 stride=40 bytes=80 bitmap_info=8194 bits_per_component=8 bits_per_pixel=32 corner=0 scale=3 regions=1",
+    "all_bytes_equal": true,
+    "bytes": 80,
+    "sha256": "8afeccf31bf9f73cd8af1a4c0288ad4f0bb8e1d0774d48632c4ef1b5df82e779",
+    "synthetic_padding_bytes": 56
+  },
+  {
+    "fixture": "payload-explicit",
+    "stdout": "width=3 height=2 stride=40 bytes=80 bitmap_info=8194 bits_per_component=8 bits_per_pixel=32 corner=6.5 scale=2 regions=1",
+    "all_bytes_equal": true,
+    "bytes": 80,
+    "sha256": "8afeccf31bf9f73cd8af1a4c0288ad4f0bb8e1d0774d48632c4ef1b5df82e779",
+    "synthetic_padding_bytes": 56
+  }
+]

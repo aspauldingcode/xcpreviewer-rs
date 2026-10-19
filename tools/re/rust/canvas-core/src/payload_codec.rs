@@ -8,6 +8,8 @@ use std::collections::BTreeMap;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum Value {
+    Null,
+    Boolean(bool),
     Data(Vec<u8>),
     Integer(i64),
     Real(f64),

@@ -1,0 +1,26 @@
+{
+  "producer": "Python standard-library plistlib binary serializer",
+  "fixtures": {
+    "payload-defaults": {
+      "bytes": 415,
+      "sha256": "b4b5267cc60a242841948ecb610fb3049fa6c85068eab47c2f0a7aa326ecf781"
+    },
+    "payload-explicit": {
+      "bytes": 469,
+      "sha256": "ecf5a47a03f8c1a14ce6197263a8e22ccde72f21312f49d363b83cbcced60f47"
+    },
+    "unicode": {
+      "bytes": 747,
+      "sha256": "1e88d9069c91037856935e6d80079fefd019332a8ac6f74521b20a1f4271c466"
+    },
+    "wide-references": {
+      "bytes": 3836,
+      "sha256": "1b313ea084e2e119aa4df0b4f43ec84ec3158fd74a101e21b5c0510fd14d303b"
+    }
+  },
+  "native_claim": false,
+  "bitmap_bytes": 80,
+  "active_per_row": 12,
+  "padding_per_row": 28,
+  "rows": 2
+}

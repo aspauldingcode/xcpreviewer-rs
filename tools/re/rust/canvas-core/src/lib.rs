@@ -3,6 +3,7 @@
 pub mod contract;
 pub mod render_payload;
 pub mod payload_codec;
+pub mod binary_plist;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

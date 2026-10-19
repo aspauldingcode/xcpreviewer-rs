@@ -1,0 +1,17 @@
+[
+  {
+    "command": "agent.py graph plan",
+    "exit": 2,
+    "reason": "graph subcommand accepts no plan positional; corrected to graph; no state mutation"
+  },
+  {
+    "command": "gh issue list (default sandbox)",
+    "exit": 1,
+    "reason": "network unavailable in restricted sandbox; authorized escalated read succeeded"
+  },
+  {
+    "command": "git diff --cached --check (owned paths)",
+    "exit": 2,
+    "reason": "Captured Rust test stdout had an extra blank line at EOF; log ending normalized, no code or test result changed; commit not attempted."
+  }
+]
