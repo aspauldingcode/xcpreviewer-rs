@@ -1,0 +1,25 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /root/. Input:
+
+'Error: Selected row mismatch'
+
+    at async file:///private/tmp/selection-native-20261019/test-owned-opener-initial.mjs:5:24 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: Error: Selected row mismatch
+      at normalize (file:///private/tmp/selection-native-20261019/normalized-guard.mjs:11:195)
+      at assessReport (file:///private/tmp/selection-native-20261019/normalized-guard.mjs:14:50)
+      at qualifyOpened (file:///private/tmp/selection-native-20261019/owned-opener.mjs:27:6)
+      at Object.open (file:///private/tmp/selection-native-20261019/owned-opener.mjs:35:238)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///private/tmp/selection-native-20261019/test-owned-opener-initial.mjs:5:24,
+  expected: /root/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';import vm from 'node:vm';import fs from 'node:fs';
+const source=fs.readFileSync(new URL('./caller-bootstrap.js',import.meta.url),'utf8');
+const plan=JSON.parse(fs.readFileSync(new URL('./experiment.json',import.meta.url))),binding=JSON.parse(fs.readFileSync(new URL('./binding.json',import.meta.url)));
+const context=vm.createContext({config:{session:plan.nonce,workspace:plan.workspace,source_sha256:plan.source_sha256,stopWall:300,cleanupWall:360},binding,t:0,reads:0,clicks:0});
+vm.runInContext(source,context);vm.runInContext("var control=globalThis.xcpreviewerSelectionRegistry.bind(config,()=>({wall:t,mono:t}),{async getAXState(){reads++;throw Error('mock failure')},async click(){clicks++}},binding)",context);
+assert.equal(vm.runInContext('control.snapshot().gate.context.session',context),plan.nonce);
+assert.equal(vm.runInContext('control.snapshot().gate.context.source_sha256',context),plan.source_sha256);
+assert.throws(()=>vm.runInContext("globalThis.xcpreviewerSelectionRegistry.bind(config,()=>({wall:t,mono:t}),{},binding)",context),/already bound/);
+vm.runInContext(source,context);assert.throws(()=>vm.runInContext("globalThis.xcpreviewerSelectionRegistry.bind(config,()=>({wall:t,mono:t}),{},binding)",context),/already bound/);
+vm.runInContext('control.snapshot().gate.context.source_sha256="changed";t=15',context);assert.equal(vm.runInContext('control.snapshot().gate.context.source_sha256',context),plan.source_sha256);
+await assert.rejects(vm.runInContext('control.next()',context),/mock failure/);assert.equal(vm.runInContext('control.snapshot().terminal',context),true);assert.equal(context.clicks,0);
+await assert.rejects(vm.runInContext('control.next()',context),/terminal/);assert.equal(context.reads,1);
+console.log(JSON.stringify({literal_IIFE:true,next_call_duplicate_rejected:true,terminal_failure_retained:true,context_copy:true,native_execution:false}));
