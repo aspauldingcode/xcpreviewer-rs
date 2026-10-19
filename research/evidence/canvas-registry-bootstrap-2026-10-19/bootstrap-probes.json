@@ -1,0 +1,10 @@
+{
+ "authority":"Operator transcription of pure JavaScript CUA tool outputs; no UI calls",
+ "native_admission_failure":{"error":"ownedRegistry is not defined","before_any_UI_call":true},
+ "context_diagnostic":{"at":"2026-10-19T03:15:37.347Z","cua":"object","ownedRegistry":"undefined","createSessionRegistry":"function","createReadiness":"function","assess":"function","normalize":"function","guardedClick":"function","xcode":"object"},
+ "conditional_var":{"same_call":{"nested":"object","top":"object","nonce":"c2418f5ffd644b9fa598c00d12425958"},"next_call":{"nested":"undefined","top":"object","top_nonce":"c2418f5ffd644b9fa598c00d12425958"}},
+ "top_level_self_initializer_repeated":{"first_call_bound":true,"second_call_error":"registry was reset","duplicate_binding_rejected":false},
+ "nullish_property_initializer":{"first_call_bound":true,"next_call_duplicate_rejected":true},
+ "strict_hasOwn_property_initializer":{"first_call_bound":true,"next_call_duplicate_rejected":true,"UI_calls":0},
+ "limits":"These controlled behavior observations do not identify CUA implementation internals or guarantee persistence across runtime resets. No corrected bootstrap was used for Xcode/native UI actions. Pure model bindings used fictitious PIDs/paths and grant no target authority."
+}
