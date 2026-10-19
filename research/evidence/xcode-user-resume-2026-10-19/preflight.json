@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-10-19T21:12:28.638433+00:00",
+  "scope": "User-authorized build of existing owned PreviewLab workspace; no new workspace or source edit; no Canvas protocol acceptance.",
+  "source_sha256": "b16ebc7869ee49c14eaba424900e9b2d5ac5f0eb4ce8a646ae7fc0d5f4e940d1",
+  "workspace": "/private/tmp/callback-ui-access-20261018/workspace/PreviewLab.xcodeproj",
+  "lock_seconds": 180,
+  "planned_checks": [
+    "Xcode build terminal status",
+    "Canvas visible state",
+    "exact workspace close and refreshed zero window proof"
+  ],
+  "direct_xcode_mcp_error": "Transport closed",
+  "unified_observe_error": "Xcode has no accessible window",
+  "cua_observe": "owned workspace path and My Mac destination observed",
+  "bridge": "existing retained upstream answered XcodeListWindows"
+}

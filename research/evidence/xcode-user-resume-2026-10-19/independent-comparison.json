@@ -1,0 +1,138 @@
+{
+  "primary": {
+    "decoded_bytes": 49152,
+    "sha256": "58f78d34c00d2245e99626207f0d12a177dad10f671ab10ff847c6f1b6b7688d",
+    "observed_uniform_rgba": [
+      0,
+      145,
+      255,
+      255
+    ],
+    "chunks": [
+      {
+        "type": "IHDR",
+        "bytes": 13
+      },
+      {
+        "type": "sRGB",
+        "bytes": 1
+      },
+      {
+        "type": "eXIf",
+        "bytes": 108
+      },
+      {
+        "type": "pHYs",
+        "bytes": 9
+      },
+      {
+        "type": "IDAT",
+        "bytes": 362
+      },
+      {
+        "type": "IEND",
+        "bytes": 0
+      }
+    ],
+    "filters": {
+      "1": 1,
+      "2": 95
+    },
+    "pillow_complete_agreement": true
+  },
+  "dark": {
+    "decoded_bytes": 49152,
+    "sha256": "58f78d34c00d2245e99626207f0d12a177dad10f671ab10ff847c6f1b6b7688d",
+    "observed_uniform_rgba": [
+      0,
+      145,
+      255,
+      255
+    ],
+    "chunks": [
+      {
+        "type": "IHDR",
+        "bytes": 13
+      },
+      {
+        "type": "sRGB",
+        "bytes": 1
+      },
+      {
+        "type": "eXIf",
+        "bytes": 108
+      },
+      {
+        "type": "pHYs",
+        "bytes": 9
+      },
+      {
+        "type": "IDAT",
+        "bytes": 362
+      },
+      {
+        "type": "IEND",
+        "bytes": 0
+      }
+    ],
+    "filters": {
+      "1": 1,
+      "2": 95
+    },
+    "pillow_complete_agreement": true
+  },
+  "light": {
+    "decoded_bytes": 49152,
+    "sha256": "7d3cd2cbefd5b7876906857840a87703e3c87184c6720649f19d16bdb20e093c",
+    "observed_uniform_rgba": [
+      0,
+      136,
+      255,
+      255
+    ],
+    "chunks": [
+      {
+        "type": "IHDR",
+        "bytes": 13
+      },
+      {
+        "type": "sRGB",
+        "bytes": 1
+      },
+      {
+        "type": "eXIf",
+        "bytes": 108
+      },
+      {
+        "type": "pHYs",
+        "bytes": 9
+      },
+      {
+        "type": "IDAT",
+        "bytes": 361
+      },
+      {
+        "type": "IEND",
+        "bytes": 0
+      }
+    ],
+    "filters": {
+      "1": 1,
+      "2": 95
+    },
+    "pillow_complete_agreement": true
+  },
+  "comparison": {
+    "complete_decoded_bytes": 147456,
+    "default_equals_dark": true,
+    "dark_vs_light_mismatches_per_channel": [
+      0,
+      12288,
+      0,
+      0
+    ],
+    "green_delta": 9,
+    "padding": "PNG decoded rows are tightly packed; no native allocation padding observed or claimed.",
+    "expectation_grade": "Post-acquisition relation independently decoded; no prior absolute-color prediction."
+  }
+}
