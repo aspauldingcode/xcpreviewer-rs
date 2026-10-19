@@ -1,0 +1,85 @@
+{
+  "capture_timing": "Post-acquisition source locator extraction; corrected provider/domain copies are post-acquisition",
+  "claims": [
+    {
+      "source": "shipped/NativeUiHelperRuntime.js",
+      "source_sha256": "6043909e6b5e3c61ea88ff1a269a4c6c36a075708007ef9db2da3227b609ef36",
+      "char_span": [
+        1994,
+        2262
+      ],
+      "line_span": [
+        41,
+        47
+      ],
+      "quote": "const output = await execFileOutput(executable, [JSON.stringify(parameters)], {\n            timeout: 30_000,\n            maxBuffer: NATIVE_UI_HELPER_MAX_BUFFER,\n            env: selectedEnvironment,\n            ...(signal === undefined ? {} : { signal }),\n        });\n",
+      "claim": "Runtime invoke passes signal/timeout with no stopSignal in this selected call",
+      "grade": "static source only",
+      "UI_runtime_observed": false
+    },
+    {
+      "source": "shipped/NativeUiHelperRuntime.js",
+      "source_sha256": "6043909e6b5e3c61ea88ff1a269a4c6c36a075708007ef9db2da3227b609ef36",
+      "char_span": [
+        1339,
+        1943
+      ],
+      "line_span": [
+        24,
+        39
+      ],
+      "quote": "await execFileOutput(\"/usr/bin/xcrun\", [\n                \"swiftc\",\n                \"-module-cache-path\",\n                join(root, \"modules\"),\n                fileURLToPath(new URL(\"../../bridge/native/NativeUIChildren.swift\", import.meta.url)),\n                main,\n                \"-o\",\n                output,\n            ], {\n                timeout: 60_000,\n                maxBuffer: 1024 * 1024,\n                stopSignal: SWIFTC_INTERRUPT,\n                env: { ...selectedEnvironment, TMPDIR: compilerTemporary },\n                ...(signal === undefined ? {} : { signal }),\n            });\n",
+      "claim": "Compiler call selects the separate stoppable branch",
+      "grade": "static source only",
+      "UI_runtime_observed": false
+    },
+    {
+      "source": "shipped/NativeUiHelperRuntime.js",
+      "source_sha256": "6043909e6b5e3c61ea88ff1a269a4c6c36a075708007ef9db2da3227b609ef36",
+      "char_span": [
+        2543,
+        2684
+      ],
+      "line_span": [
+        56,
+        59
+      ],
+      "quote": "        close: async () => {\n            if (root !== undefined)\n                await rm(root, { recursive: true, force: true });\n        },",
+      "claim": "Runtime close removes the temporary helper root",
+      "grade": "static source only",
+      "UI_runtime_observed": false
+    },
+    {
+      "source": "shipped/DomainNativeUiObservation.js",
+      "source_sha256": "9f8dce5f206adc39664e890167f2c16bafac8cfe1fcb6a05fcd3ca0c7e07b8f8",
+      "char_span": [
+        4733,
+        4771
+      ],
+      "line_span": [
+        135,
+        135
+      ],
+      "quote": "    restore: z.literal(\"leave-as-is\"),",
+      "claim": "Result schema specifies leave-as-is restoration",
+      "grade": "static source only",
+      "UI_runtime_observed": false
+    },
+    {
+      "source": "shipped/ProviderNativeUiObservation.js",
+      "source_sha256": "2092c719f3534e42b2807c5577d5854b0b44c33b12913b39f246002fa2e5da8b",
+      "char_span": [
+        1468,
+        1518
+      ],
+      "line_span": [
+        28,
+        30
+      ],
+      "quote": "    finally {\n        await runtime.close();\n    }",
+      "claim": "Observation finally awaits runtime close",
+      "grade": "static source only",
+      "UI_runtime_observed": false
+    }
+  ]
+}

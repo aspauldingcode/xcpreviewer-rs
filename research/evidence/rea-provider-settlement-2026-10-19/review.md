@@ -1,0 +1,3 @@
+# Separate preexecution review
+
+`/root/refresh_spec_review` verified the installed library/runtime/source pins and four Python methods normally and optimized. It approved one probe invocation containing two owned-child controls before unchanged17:30UTC under the stated watchdog/observer bounds. It checked that instrumentation returns original child handles and that readiness, actual exit/close and scoped observer drain are separate observations. It excluded target AX/UI settlement or cleanup eligibility and performed no runtime probe. The subsequent source-capture collision correction and final frozen evidence are reviewed separately in the durable checkpoint.

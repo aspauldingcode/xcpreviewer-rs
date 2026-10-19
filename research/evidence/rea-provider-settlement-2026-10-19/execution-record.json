@@ -1,0 +1,30 @@
+{
+  "command": "/nix/store/8cbb8r8mkaz6z7si022ks2b78qqy9sz4-nodejs-slim-24.19.0/bin/node",
+  "args": [
+    "/private/tmp/rea-provider-settlement-20261019/probe.mjs"
+  ],
+  "error": null,
+  "record": {
+    "pid": 67688,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 21,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":67690,\"environment\":{\"node\":\"v24.19.0\",\"v8\":\"13.6.233.17-node.51\",\"arch\":\"arm64\",\"platform\":\"darwin\"},\"library_sha256\":\"bb7ab64eb9c27acf5f85bcfbb716d0c95d048a82b09ff54aee8560843f0dfaba\",\"instrumentation\":\"execFile wrapper returns original child unchanged; owned exit/close listeners only\",\"rows\":[{\"mode\":\"default\",\"nonce\":\"2ddab702bb116e8c0d5e80601b813702\",\"folder\":\"default\",\"pid\":67693,\"abort_at\":334455967.561583,\"error_name\":\"AbortError\",\"error_code\":\"ABORT_ERR\",\"stdout\":\"{\\\"owned_child_pid\\\":67693,\\\"nonce\\\":\\\"2ddab702bb116e8c0d5e80601b813702\\\"}\\n\",\"stderr\":\"\",\"settled_at\":334455968.152583,\"marker_present_at_settlement\":false,\"exit_code_at_settlement\":null,\"signal_code_at_settlement\":null,\"exit_seen_at_settlement\":false,\"close_seen_at_settlement\":false,\"exit_at\":334456225.5145,\"exit_code\":0,\"exit_signal\":null,\"close_at\":334456225.588458,\"close_code\":0,\"close_signal\":null,\"marker_sha256\":\"7b70e3a27c21108f0cbeede96790acba076a582268afeb03cd04539b1c2643a1\",\"marker_bytes\":1024},{\"mode\":\"stoppable\",\"nonce\":\"abd3af1d768c2b230470eb79a87bcdcd\",\"folder\":\"stoppable\",\"pid\":67709,\"abort_at\":334456296.293541,\"exit_at\":334456557.9405,\"exit_code\":0,\"exit_signal\":null,\"close_at\":334456558.092083,\"close_code\":0,\"close_signal\":null,\"error_name\":\"AbortError\",\"error_code\":\"ABORT_ERR\",\"stdout\":\"{\\\"owned_child_pid\\\":67709,\\\"nonce\\\":\\\"abd3af1d768c2b230470eb79a87bcdcd\\\"}\\n\",\"stderr\":\"\",\"settled_at\":334456558.118875,\"marker_present_at_settlement\":true,\"exit_code_at_settlement\":0,\"signal_code_at_settlement\":null,\"exit_seen_at_settlement\":true,\"close_seen_at_settlement\":true,\"marker_sha256\":\"7b70e3a27c21108f0cbeede96790acba076a582268afeb03cd04539b1c2643a1\",\"marker_bytes\":1024}],\"native_UI_execution\":false,\"provider_target_UI_settlement_qualified\":false,\"product_integration\":false}\n",
+    "stderr": "",
+    "stdoutBytes": 1792,
+    "stderrBytes": 0,
+    "stdoutSha256": "5c07f01df235db9db16d54c993f8804711c12f5151fb21dee29b79c7392b3f09",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
