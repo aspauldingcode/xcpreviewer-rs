@@ -1,0 +1,1 @@
+The initial python3 -m py_compile validation attempted to create bytecode under the configured system cache prefix and failed with PermissionError. No native/control call occurred. Corrected validation compiled source in memory under -B and passed, without changing cache settings or permissions.
