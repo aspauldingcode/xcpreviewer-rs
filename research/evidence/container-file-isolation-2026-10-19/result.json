@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "case": "allowed-input",
+      "pass": true,
+      "bytes": 1024,
+      "sha256": "785b0751fc2c53dc14a4ce3d800e69ef9ce1009eb327ccf458afe09c242c26c9"
+    },
+    {
+      "case": "allowed-output",
+      "pass": true,
+      "bytes": 1024,
+      "sha256": "3af6dbef8362452d2b45ad97deb9e43180fb90aac309860e26e123860cce62a7"
+    },
+    {
+      "case": "input-write",
+      "pass": true,
+      "errno": 30,
+      "expected_errno": 30
+    },
+    {
+      "case": "root-write",
+      "pass": true,
+      "errno": 30,
+      "expected_errno": 30
+    },
+    {
+      "case": "unmounted-host-read",
+      "pass": true,
+      "errno": 2,
+      "expected_errno": 2
+    },
+    {
+      "case": "research-read",
+      "pass": true,
+      "errno": 2,
+      "expected_errno": 2
+    },
+    {
+      "case": "absolute-symlink-escape",
+      "pass": true,
+      "errno": 2,
+      "expected_errno": 2
+    },
+    {
+      "case": "relative-symlink-escape",
+      "pass": true,
+      "errno": 2,
+      "expected_errno": 2
+    }
+  ],
+  "passed": true,
+  "uid": 503,
+  "gid": 20,
+  "host": {
+    "system": "Linux",
+    "node": "0db7c20c78bf",
+    "release": "6.8.0-147-generic",
+    "version": "#147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026",
+    "machine": "aarch64",
+    "processor": "aarch64"
+  },
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "cap_eff": "0000000000000000",
+  "no_new_privs": "1",
+  "interfaces": [
+    "lo"
+  ],
+  "model_tool_isolation_proven": false,
+  "handoff_approved": false
+}

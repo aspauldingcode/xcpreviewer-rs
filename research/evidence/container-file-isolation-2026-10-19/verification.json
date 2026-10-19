@@ -1,0 +1,17 @@
+{
+  "recorded": {
+    "complete_independent_file_bytes": 2048,
+    "cases": 8,
+    "owned_cleanup_verified": true,
+    "container_process_only": true,
+    "handoff_approved": false
+  },
+  "rejected_mutants": [
+    "missing-case",
+    "promoted-model-isolation",
+    "false-exit",
+    "cleanup-unobserved",
+    "denial-not-enoent",
+    "extra-host-mount"
+  ]
+}
