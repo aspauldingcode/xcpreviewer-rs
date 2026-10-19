@@ -1,0 +1,13 @@
+{
+  "scope": "Candidate subprocess file access boundary only, not model context/tool isolation or clean-room certification.",
+  "prediction": "Allow original package reads and output writes; reject excluded sibling/research reads, symlink escape and package mutation.",
+  "negative_control": "Unsandboxed owned excluded sentinel read must succeed.",
+  "limits": {
+    "calls": 7,
+    "timeout_seconds_each": 5,
+    "whole_run_seconds": 45
+  },
+  "product_or_agent_launched": false,
+  "approved_spec_exported": false,
+  "profile_sha256": "030f8ebe48409fcfd17bf942107d9d5d615760a28703a63e47974da5d4eadb12"
+}
