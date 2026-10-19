@@ -1,0 +1,100 @@
+[
+  {
+    "reader": "verify_remote_surface_alias.py",
+    "predicates": 18,
+    "all_preserved_in_order": true,
+    "before_sha256": "3d1dd02319a99e3098beead41179112d5952e271db7383df96a8cb9465b0afb7",
+    "after_sha256": "67fc86ba7e2ae38759f0b3971665a1fd26e0a549901ff2990afe7c4e7292f5fc"
+  },
+  {
+    "reader": "verify_remote_surface_seed.py",
+    "predicates": 17,
+    "all_preserved_in_order": true,
+    "before_sha256": "924a134324e18fa173f0058c27be741e3f82943d3fb80eb23cef720b2bfcc786",
+    "after_sha256": "53c882893aa0cbe1e64c10738e797156f2729957bdffc709be546a94a3556cfa"
+  },
+  {
+    "reader": "verify_remote_surface_use.py",
+    "predicates": 19,
+    "all_preserved_in_order": true,
+    "before_sha256": "7c61b4e156b1bd2553877bd7d783c82e2e30e6b98981065d981c256533e033f8",
+    "after_sha256": "68184db80d3bd445996b9c0ac3144c713c5ffa7bb87cad9bfd907fe374460fbb"
+  },
+  {
+    "reader": "verify_surface_alias_use.py",
+    "predicates": 15,
+    "all_preserved_in_order": true,
+    "before_sha256": "926821efce6ca0b632fa76d768827eab5eb03313662b08dbb6604f29d13be65b",
+    "after_sha256": "e45c86483fe87baf9d62af312277f7b04ab3c5ab87977c38f2d50dcd68d134d2"
+  },
+  {
+    "reader": "verify_surface_content_seed.py",
+    "predicates": 15,
+    "all_preserved_in_order": true,
+    "before_sha256": "7d4e62c8cee602994035d96f703ee7130dfcf45210d768853abc8910cbed2716",
+    "after_sha256": "3e4650daf8eb4c24f188318fa1138fd8bf99f18f23a7b69789b39ab13d0f0c71"
+  },
+  {
+    "reader": "verify_surface_global_id.py",
+    "predicates": 14,
+    "all_preserved_in_order": true,
+    "before_sha256": "010200c76b060c97f9a3ff9c91aa2b17ccc53504a06b3b7d60e9eab42fd0513a",
+    "after_sha256": "670b8f6e673b32173d760934aebaca876460f48231787142ecc56f3107c69ca1"
+  },
+  {
+    "reader": "verify_surface_invalid_destroy.py",
+    "predicates": 21,
+    "all_preserved_in_order": true,
+    "before_sha256": "702cfa253876c894449ccddd3000750d22a2316a9ceba8e2f5b353a6dd69cce1",
+    "after_sha256": "6941a6caf767fc1ad33a6c203624366e429c7dd7431b6f4586e909673fea903a"
+  },
+  {
+    "reader": "verify_surface_queued_drop.py",
+    "predicates": 17,
+    "all_preserved_in_order": true,
+    "before_sha256": "5fcd645ba7a2ceb44418050e83e37fb6be60f2becb41039b784a8cf5200dee88",
+    "after_sha256": "5bc3b55baa5f8386e1ec2be020c3b7b96cb0377df09f94dc4352185ca66c54c5"
+  },
+  {
+    "reader": "verify_surface_rejected_envelope.py",
+    "predicates": 17,
+    "all_preserved_in_order": true,
+    "before_sha256": "b212e11f0b7f98ffd30219b637b59c60fc2e3bb954340f62dade3809ea660a3d",
+    "after_sha256": "954a9f85820ad6998ceead7db7fb54c9b5dc487c9dec2e56d16b4ec9893fd6a7"
+  },
+  {
+    "reader": "verify_surface_seed_timing.py",
+    "predicates": 15,
+    "all_preserved_in_order": true,
+    "before_sha256": "1a5b53b10c6afc7981dae7ebc43f77c92e0afd620f1f41730325c67ac0ba49f2",
+    "after_sha256": "723e3b8a1b51969e0d5f752c3c477f93bfe2aa0e818b071b9fbd66cd8a4a1272"
+  },
+  {
+    "reader": "verify_surface_send_retry.py",
+    "predicates": 24,
+    "all_preserved_in_order": true,
+    "before_sha256": "f67cac2b6a3587d89938a2c4d314f89e8f1f68593dd1a9e16b5481f15ff8a159",
+    "after_sha256": "f4860e537983164a5ef907a1f137132571e1db073352e07a8c0fce96c5bea48a"
+  },
+  {
+    "reader": "verify_surface_send_timeout.py",
+    "predicates": 24,
+    "all_preserved_in_order": true,
+    "before_sha256": "2e88ff9e6451aa2194009ae06e3948f037cc87f50dab05850a56adf01c3b3672",
+    "after_sha256": "29ac45e4e7eedacaefdf006427c54df20ffb4d1fa8e9dd4c88a3f1e834a03c8f"
+  },
+  {
+    "reader": "verify_surface_stream_close.py",
+    "predicates": 18,
+    "all_preserved_in_order": true,
+    "before_sha256": "4e5c90df68e22bf610f088156ad37679ee0b8092d787ea442ad52e24b3f59f3b",
+    "after_sha256": "fe5e9be430d1a52ab81c53f119f24425f178a515ec170fb4d794cffe46488725"
+  },
+  {
+    "reader": "verify_surface_use_count.py",
+    "predicates": 13,
+    "all_preserved_in_order": true,
+    "before_sha256": "3acf892195159d21e3f707ec450772a8a0debceb1e7650aefa2e145b0998a51e",
+    "after_sha256": "5f4ec0c10a4e1ebf72015413ad6adba2adc3cb2a1b4d57af85b5e6ab35f458ee"
+  }
+]

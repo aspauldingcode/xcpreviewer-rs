@@ -1,0 +1,3 @@
+# Separate review
+
+/root/refresh_spec_review independently verified all 247 exact assert-to-require AST replacements, installed original reader/test identities and 14 anchored fixtures. It replayed all four matrices, confirming 206 optimized false acceptances plus six distinct file-error fallthroughs before correction and all 28 existing tests passing afterward in both modes. It approved integration of only 14 research readers and the grouped regression, requiring retention of the six-error distinction and initial reports. No native execution was performed; byte expectations and normal admission policy remain unchanged. Integrated tests and final frozen replay are retained for final publication review in the durable checkpoint.
