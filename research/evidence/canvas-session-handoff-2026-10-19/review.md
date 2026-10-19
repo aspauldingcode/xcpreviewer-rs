@@ -1,0 +1,3 @@
+Separate serial verifier /root/refresh_spec_review first ran18cases and reproduced a missing post-await click check: close while click pending, resolve it, receive success. Required await+closed/cutoff recheck and late-dispatch unknown accounting. No native calls/edits.
+
+Corrected review ran20cases plus executable before/after counterexamples and approved evidence-only publication. Late results now reject while dispatch stays recorded; no undo/effect claim. Prior implementations retained. Closure records, supplied registry identity, app/config/clock, lease/source binding remain trusted external prerequisites. No native handoff/action authority approved. Reviewer used synthetic tests only.

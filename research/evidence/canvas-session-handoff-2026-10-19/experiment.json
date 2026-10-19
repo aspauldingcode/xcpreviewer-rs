@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-19T04:00:53.850817+00:00",
+  "kind": "offline-caller-handoff",
+  "predictions": [
+    "Closed prior context must match trusted closure record",
+    "Provided registry retains old nonce rejection without recreation",
+    "Retired wrappers cannot access a newly installed global holder",
+    "Closed holder and post-cutoff pending results cannot report success",
+    "Counters and close state cannot be reset through public getters"
+  ],
+  "native_experiment_started": false,
+  "CUA_calls": 0,
+  "fixture_source_edited": false,
+  "native_handoff_integrated": false,
+  "bridge_status_window_queries": true,
+  "case_groups": 20,
+  "mutants": 5,
+  "product_changes": false,
+  "next_native_plan_review_required": true
+}

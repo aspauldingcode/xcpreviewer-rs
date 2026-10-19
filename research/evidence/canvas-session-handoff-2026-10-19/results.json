@@ -1,0 +1,23 @@
+{
+  "test-handoff.mjs": {
+    "cases": 20,
+    "native_execution": false,
+    "retained_registry_old_nonce_rejected": true,
+    "retired_old_wrapper_zero_reads": true,
+    "scope": "Trusted closure record and mock app; no authentication/ownership proof"
+  },
+  "test-counterexamples.mjs": {
+    "initial_closed_reset_reproduced": true,
+    "initial_counter_reset_reproduced": true,
+    "corrected_rejects_both": true,
+    "pre_fix_late_click_success_reproduced": true,
+    "corrected_suppresses_late_click_result": true,
+    "native_execution": false
+  },
+  "test-owned-opener.mjs": {
+    "cases": 12,
+    "native_execution": false,
+    "explicit_clickCount": 2,
+    "scope": "Synthetic Welcome projection and pinned owned AX projection; no native validation"
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "mutant": "old-wrapper-not-retired",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file://<owned-mutant-directory>/test-handoff.mjs:13:123 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /retired/,\n  operator: 'rejects',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "late-click-result-allowed",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file://<owned-mutant-directory>/test-handoff.mjs:31:185 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /closed/,\n  operator: 'rejects',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "late-AX-result-allowed",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file://<owned-mutant-directory>/test-handoff.mjs:23:167 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /closed/,\n  operator: 'rejects',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "boolean-zero-accepted",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected exception.\n    at file://<owned-mutant-directory>/test-handoff.mjs:15:246 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /closure record/,\n  operator: 'throws',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  },
+  {
+    "mutant": "closed-holder-allowed",
+    "syntax_valid": true,
+    "rejected": true,
+    "returncode": 1,
+    "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file://<owned-mutant-directory>/test-handoff.mjs:21:44 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: /closed/,\n  operator: 'rejects',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+  }
+]

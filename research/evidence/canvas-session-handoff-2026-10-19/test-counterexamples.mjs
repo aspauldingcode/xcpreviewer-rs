@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';
+import {admitFresh as beforeClick} from './handoff-before-click-fix.mjs';
+import {admitFresh as initial} from './handoff-initial.mjs';import {admitFresh as fixed} from './handoff.mjs';import {createSelectionRegistry} from './selection-registry.mjs';
+const binding=JSON.parse(fs.readFileSync(new URL('./binding.json',import.meta.url)));let reads=0;
+function setup(){const registry=createSelectionRegistry(),config={session:'a'.repeat(32),source_sha256:'b'.repeat(64),workspace:binding.projects[0],stopWall:300,cleanupWall:360},clock=()=>({wall:0,mono:0}),previous={config,closed:true,app:{async getAXState(){return 'old'},async click(){}}};previous.control=registry.bind(config,clock,previous.app,binding);return {registry,previous,closure:{nonce:config.session,source_sha256:config.source_sha256,workspace:config.workspace,experiment_deadline_closed:true,cleanup_reconciliation_required:false,owned_workspace_windows_after:0,seal_sha256:'c'.repeat(64)},config:{...config,session:'d'.repeat(32),source_sha256:'e'.repeat(64)},clock,app:{async getAXState(){reads++;return 'new'},async click(){}},binding};}
+{const h=initial(setup());h.close();h.closed=false;assert.equal(await h.app.getAXState(),'new');assert.equal(reads,1);}
+{const h=fixed(setup());h.close();assert.throws(()=>{h.closed=false},TypeError);await assert.rejects(h.app.getAXState(),/closed/);assert.equal(reads,1);}
+{const h=initial(setup());for(let i=0;i<16;i++)await h.app.getAXState();h.AXAttempts=0;await h.app.getAXState();assert.equal(reads,18);}
+{const h=fixed(setup());for(let i=0;i<16;i++)await h.app.getAXState();assert.throws(()=>{h.AXAttempts=0},TypeError);await assert.rejects(h.app.getAXState(),/cap/);assert.equal(reads,34);}
+{let release;const wait=new Promise(r=>release=r),s=setup();s.app.click=async()=>wait;const h=beforeClick(s),first=h.app.click(11);h.close();release('success-after-close');assert.equal(await first,'success-after-close');assert.equal(h.clickAttempts.length,1);}
+{let release;const wait=new Promise(r=>release=r),s=setup();s.app.click=async()=>wait;const h=fixed(s),first=h.app.click(11);h.close();release('success-after-close');await assert.rejects(first,/closed/);assert.equal(h.clickAttempts.length,1);}
+console.log(JSON.stringify({initial_closed_reset_reproduced:true,initial_counter_reset_reproduced:true,corrected_rejects_both:true,pre_fix_late_click_success_reproduced:true,corrected_suppresses_late_click_result:true,native_execution:false}));
