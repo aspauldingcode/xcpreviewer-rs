@@ -1,0 +1,3 @@
+# Separate preexecution review
+
+`/root/refresh_spec_review` verified matching pins and eight Python methods normally and under `-O`. It approved one compile/output/fixture under the unchanged17:10UTC gates and current closed-artifact binding. It checked bounded hex transfer, preserved raw export descriptors and their separate name/kind projection, independent complete arrays and the required sealed Node producer relation. It required retention without retry of unsupported or mismatching outcomes and limited success to two non-browser engines on this Darwin host. It performed no native execution. Final sealed replay review is recorded separately in the durable checkpoint.

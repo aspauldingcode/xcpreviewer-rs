@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/jsc-memory-growth-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/jsc-memory-growth-20261019/owned-documents"
+  ],
+  "source_sha256": "1a553286d1a79b01cee006bab5352cb35bde6818e29f71f58b58abdeebe9845f",
+  "binary_sha256": "d909aacf5b89fbac4d1508266eb0f2d2565c94fac26e85876e728d941d9f09d5",
+  "error": null,
+  "record": {
+    "pid": 44755,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 11,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"browser_execution\":false,\"canvas_qualified\":false,\"engine\":\"public JavaScriptCore JSContext\",\"engine_exports\":[{\"kind\":\"memory\",\"name\":\"memory\",\"type\":{\"maximum\":2,\"minimum\":1,\"shared\":false}},{\"kind\":\"function\",\"name\":\"store8\",\"type\":{\"parameters\":[\"i32\",\"i32\"],\"results\":[]}},{\"kind\":\"function\",\"name\":\"grow\",\"type\":{\"parameters\":[\"i32\"],\"results\":[\"i32\"]}}],\"environment\":{\"framework_identifier\":\"com.apple.JavaScriptCore\",\"framework_path\":\"\\/System\\/Library\\/Frameworks\\/JavaScriptCore.framework\",\"framework_version\":\"21624.2.5.11.4\",\"machine\":\"arm64\",\"os_version\":\"Version 26.5.1 (Build 25F80)\",\"release\":\"25.5.0\",\"system\":\"Darwin\"},\"events\":[{\"buffer_changed\":true,\"data_view_error\":\"TypeError\",\"new_buffer_bytes\":65536,\"old_buffer_bytes\":0,\"old_view_bytes\":0,\"phase\":\"zero-grow\",\"return_value\":1,\"stale_read_undefined\":true,\"stale_write_affected_current\":false},{\"buffer_changed\":true,\"data_view_error\":\"TypeError\",\"new_buffer_bytes\":131072,\"old_buffer_bytes\":0,\"old_view_bytes\":0,\"phase\":\"positive-grow\",\"return_value\":1,\"stale_read_undefined\":true,\"stale_write_affected_current\":false},{\"buffer_same\":true,\"error\":\"RangeError\",\"new_buffer_bytes\":131072,\"phase\":\"js-failed-grow\",\"view_bytes\":131072},{\"buffer_same\":true,\"new_buffer_bytes\":131072,\"phase\":\"wasm-failed-grow\",\"return_value\":-1,\"view_bytes\":131072}],\"exports\":[{\"kind\":\"memory\",\"name\":\"memory\"},{\"kind\":\"function\",\"name\":\"store8\"},{\"kind\":\"function\",\"name\":\"grow\"}],\"imports\":[],\"module_bytes\":80,\"module_sha256\":\"970468fb9b02b07bd628c530877571db3d2ca614f73e8498b6fdd40455b3c0c6\",\"native_canvas_evidence\":false,\"native_UI_execution\":false,\"non_Apple_OS_verified\":false,\"pid\":44757,\"product_integration\":false,\"rows\":[{\"bytes\":65536,\"file\":\"initial.raw\",\"sha256\":\"8fdcb1efc4e90414656d77f4f9ed83adf231a2afc755cf4f2e6dc3db695a676e\",\"stage\":\"initial\"},{\"bytes\":65536,\"file\":\"zero-grow.raw\",\"sha256\":\"9a9501efe574a8c95ca6d68e009210f5d50f34287f7861b75e095841151a7a15\",\"stage\":\"zero-grow\"},{\"bytes\":131072,\"file\":\"positive-grow.raw\",\"sha256\":\"d1abacf81477d29603f8758e87f32ccbbc2ffe9b03a6ee7072825e28db84a56e\",\"stage\":\"positive-grow\"},{\"bytes\":131072,\"file\":\"js-failed-grow.raw\",\"sha256\":\"15be6810c88600311002ddcfa46f5d3db327709ba612de1ee2074282162a46de\",\"stage\":\"js-failed-grow\"},{\"bytes\":131072,\"file\":\"wasm-failed-grow.raw\",\"sha256\":\"fd8e4fd2567f0fd187b5bd99a11de5412f3655a2d1d3a0b1fae2c3e1eb7f1641\",\"stage\":\"wasm-failed-grow\"}]}\n",
+    "stderr": "owned_tree_pid:44757\n",
+    "stdoutBytes": 2398,
+    "stderrBytes": 21,
+    "stdoutSha256": "9c902ecd80070edb696ca1404829de5278e6bd2f0d9dc2371a7c4b8f0b54be40",
+    "stderrSha256": "a996d38b9e3acdd9adb6d4b953eabe2026200bc640055f8517df990c56e410ae"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-x",
+    "objective-c",
+    "-fobjc-arc",
+    "-framework",
+    "Foundation",
+    "-framework",
+    "JavaScriptCore",
+    "/private/tmp/jsc-memory-growth-20261019/probe.c",
+    "-o",
+    "/private/tmp/jsc-memory-growth-20261019/probe"
+  ],
+  "source_sha256": "1a553286d1a79b01cee006bab5352cb35bde6818e29f71f58b58abdeebe9845f",
+  "binary_sha256": "d909aacf5b89fbac4d1508266eb0f2d2565c94fac26e85876e728d941d9f09d5",
+  "error": null,
+  "record": {
+    "pid": 44127,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 25,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

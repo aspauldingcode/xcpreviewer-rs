@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-10-19T16:58:04.151643+00:00",
+  "timing": "before acquisition",
+  "commands": {
+    "os": {
+      "argv": [
+        "/usr/bin/sw_vers"
+      ],
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+      "stderr": "",
+      "exit": 0
+    },
+    "architecture": {
+      "argv": [
+        "/usr/bin/uname",
+        "-m"
+      ],
+      "stdout": "arm64\n",
+      "stderr": "",
+      "exit": 0
+    },
+    "xcode": {
+      "argv": [
+        "/usr/bin/xcodebuild",
+        "-version"
+      ],
+      "stdout": "Xcode 26.6\nBuild version 17F113\n",
+      "stderr": "",
+      "exit": 0
+    },
+    "clang": {
+      "argv": [
+        "/usr/bin/xcrun",
+        "clang",
+        "--version"
+      ],
+      "stdout": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+      "stderr": "",
+      "exit": 0
+    }
+  }
+}
