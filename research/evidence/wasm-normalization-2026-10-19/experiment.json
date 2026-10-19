@@ -1,0 +1,25 @@
+{
+  "deadline_utc": "2026-10-19T09:35:00Z",
+  "scope": "Research scalar arithmetic conformance only; no Canvas renderer/product integration",
+  "executions": 1,
+  "outer_seconds": 10,
+  "module_bytes": 81,
+  "module_sha256": "460ce52e8cfb8034e424a87c1e0647441769833137c4d39f4ad8ffc103b90d43",
+  "paths": [
+    "WASM f32 reciprocal multiply",
+    "WASM f32 divide",
+    "JavaScript Math.fround multiply",
+    "JavaScript Math.fround divide"
+  ],
+  "full_bytes": 65536,
+  "padding_bytes": 768,
+  "tail_bytes": 15616,
+  "reference": "Frozen independent Python predictions and separately sealed public Quartz opaque-byte/Float32-input routes",
+  "acceptance_limits": [
+    "single Node/V8 host",
+    "no second runtime",
+    "no non-Apple OS",
+    "no display/Canvas",
+    "no product integration"
+  ]
+}

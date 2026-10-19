@@ -1,0 +1,8 @@
+{
+  "exit": 0,
+  "stdout": "{\"pid\":14489,\"environment\":{\"node\":\"v24.19.0\",\"v8\":\"13.6.233.17-node.51\",\"platform\":\"darwin\",\"arch\":\"arm64\"},\"module_sha256\":\"460ce52e8cfb8034e424a87c1e0647441769833137c4d39f4ad8ffc103b90d43\",\"module_bytes\":81,\"sections\":[1,3,7,10],\"imports\":[],\"exports\":[{\"name\":\"multiplyBits\",\"kind\":\"function\"},{\"name\":\"divideBits\",\"kind\":\"function\"}],\"invalid_inputs\":[{\"label\":\"negative\",\"rejected\":true,\"dispatch_delta\":0},{\"label\":\"large\",\"rejected\":true,\"dispatch_delta\":0},{\"label\":\"fraction\",\"rejected\":true,\"dispatch_delta\":0},{\"label\":\"nonfinite\",\"rejected\":true,\"dispatch_delta\":0},{\"label\":\"boolean\",\"rejected\":true,\"dispatch_delta\":0}],\"scalar_dispatches\":9216,\"rows\":[{\"method\":\"wasm-multiply\",\"file\":\"wasm-multiply.raw\",\"allocation_bytes\":16384,\"sha256\":\"e2beddfcdb0c35c9eead4e1d9a4521e49ce0bbbf205e2f09ecc0dc2bf6579f54\"},{\"method\":\"wasm-divide\",\"file\":\"wasm-divide.raw\",\"allocation_bytes\":16384,\"sha256\":\"f131e310e6da692c21b05bf39a5f8afaceeb8aa5c551dbe261c21c5f6b13d755\"},{\"method\":\"js-multiply\",\"file\":\"js-multiply.raw\",\"allocation_bytes\":16384,\"sha256\":\"e2beddfcdb0c35c9eead4e1d9a4521e49ce0bbbf205e2f09ecc0dc2bf6579f54\"},{\"method\":\"js-divide\",\"file\":\"js-divide.raw\",\"allocation_bytes\":16384,\"sha256\":\"f131e310e6da692c21b05bf39a5f8afaceeb8aa5c551dbe261c21c5f6b13d755\"}],\"native_UI_execution\":false,\"product_integration\":false,\"second_runtime_verified\":false,\"non_Apple_OS_verified\":false}\n",
+  "stderr": "",
+  "completed_at": "2026-10-19T09:25:44.669960+00:00",
+  "deadline_utc": "2026-10-19T09:35:00Z",
+  "executions": 1
+}
