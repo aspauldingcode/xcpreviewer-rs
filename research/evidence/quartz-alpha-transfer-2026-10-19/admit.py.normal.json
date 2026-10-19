@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/quartz-alpha-transfer-20261019/admit.py\", line 42, in <module>\n    if __name__=='__main__':print(json.dumps(admit(Path(__file__).resolve().parent)))\n  File \"/private/tmp/quartz-alpha-transfer-20261019/admit.py\", line 41, in admit\n    result=observed(root);need(result['primary_alpha_invariant_exact'] and result['transfer_on_premultiplied_candidate_rejected'] and result['opaque_gray_conversion_operational_range'],'primary/range contract');return result\n  File \"/private/tmp/quartz-alpha-transfer-20261019/phase_prerequisites.py\", line 20, in require\n    raise PrerequisiteRejected(reason)\nphase_prerequisites.PrerequisiteRejected: primary/range contract\n"
+}

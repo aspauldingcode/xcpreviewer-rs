@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/quartz-alpha-transfer-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/quartz-alpha-transfer-20261019/owned-documents"
+  ],
+  "source_sha256": "b27073c2252e3d91cae9d7d03431f012687fb5d9fbef7d78149accf59ca77924",
+  "binary_sha256": "ff496dcd320198912f3e55212e73dc893c24a4e81474495a8377a162953a31a3",
+  "error": null,
+  "record": {
+    "pid": 83730,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":83731,\"route\":0,\"provider_file\":\"route0-provider.raw\",\"file\":\"route0-readback.raw\",\"provider_sha256\":\"690fa98d5b4ea42b51dd311b6b77616b6014b8c5af28d869ffdf462c7b28fffb\",\"sha256\":\"fd265d80eb0dfafd4363a98a74ec6072d18177e67f83748fb796f8870756d5fb\",\"provider_bytes\":9408,\"width\":768,\"height\":3,\"image_stride\":3136,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_bitmap_info\":1,\"stride\":12352,\"allocation_bytes\":49152,\"bits_per_component\":32,\"bits_per_pixel\":128,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"source_color_space\":\"kCGColorSpaceSRGB\"}\n{\"pid\":83731,\"route\":1,\"provider_file\":\"route1-provider.raw\",\"file\":\"route1-readback.raw\",\"provider_sha256\":\"690fa98d5b4ea42b51dd311b6b77616b6014b8c5af28d869ffdf462c7b28fffb\",\"sha256\":\"8ae0e532a698f012857bb5656caa33c0e4aa182c0fa6df4e20e54a012f8f1a77\",\"provider_bytes\":9408,\"width\":768,\"height\":3,\"image_stride\":3136,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_bitmap_info\":1,\"stride\":12352,\"allocation_bytes\":49152,\"bits_per_component\":32,\"bits_per_pixel\":128,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"source_color_space\":\"kCGColorSpaceLinearSRGB\"}\n{\"pid\":83731,\"route\":2,\"provider_file\":\"route2-provider.raw\",\"file\":\"route2-readback.raw\",\"provider_sha256\":\"d42722df101d5671da28c92c966c9cb774dfd5c2e2c14a4faf4483672f16706d\",\"sha256\":\"4469a7bdbf3ec38e5a141d34c2279cce3079f3642203cdcd38058a31a6e89e3a\",\"provider_bytes\":9408,\"width\":768,\"height\":3,\"image_stride\":3136,\"image_bits_per_component\":8,\"image_bits_per_pixel\":32,\"image_bitmap_info\":1,\"stride\":12352,\"allocation_bytes\":49152,\"bits_per_component\":32,\"bits_per_pixel\":128,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"source_color_space\":\"kCGColorSpaceSRGB\"}\n",
+    "stderr": "owned_tree_pid:83731\n",
+    "stdoutBytes": 1743,
+    "stderrBytes": 21,
+    "stdoutSha256": "7e65aee3649dee152d561af73fc3cc25550041ebdf798d35a51fde54a23d4126",
+    "stderrSha256": "62e8e8dee915e98569fea73b355ec3e33624d7862a2e9a057dc35922a4f8047c"
+  }
+}

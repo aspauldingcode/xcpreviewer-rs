@@ -1,0 +1,3 @@
+# Separate preexecution review
+
+/root/refresh_spec_review approved one compile/output/fixture under the unchanged14:10UTC deadline and current closed-artifact binding. It verified source/consumer pins, the unchanged installed prerequisite helper, four normal/optimized synthetic methods and all layouts/padding/tail counts. Approval explicitly scoped 8-bit premultiplied sources into Float32 destinations, required retention of any primary or gray mismatch without fitting or retry, and distinguished gray's operational interval from exact qualification. No native execution was performed by the verifier. Post-acquisition diagnostics, recorded-evidence tests and final frozen publication are reviewed separately through the durable checkpoint.

@@ -1,0 +1,40 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "CoreGraphics",
+    "-framework",
+    "CoreFoundation",
+    "/private/tmp/quartz-alpha-transfer-20261019/probe.c",
+    "-o",
+    "/private/tmp/quartz-alpha-transfer-20261019/probe"
+  ],
+  "source_sha256": "b27073c2252e3d91cae9d7d03431f012687fb5d9fbef7d78149accf59ca77924",
+  "binary_sha256": "ff496dcd320198912f3e55212e73dc893c24a4e81474495a8377a162953a31a3",
+  "error": null,
+  "record": {
+    "pid": 83135,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 21,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
