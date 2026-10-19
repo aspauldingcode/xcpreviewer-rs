@@ -1,0 +1,175 @@
+{
+  "optimized": true,
+  "verifier": "/private/tmp/r2-json-admission-20261019/before_verify.py",
+  "cases": [
+    {
+      "fault": "positive",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "generation_bool",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "generation_float",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_manifest",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_compile",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_wait",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_row",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_peer_generation",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_peer_audit",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_environment",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "duplicate_rea",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "nonfinite_nan",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "nonfinite_infinity",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "nonfinite_overflow",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    }
+  ],
+  "native_execution": false
+}

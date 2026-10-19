@@ -1,0 +1,97 @@
+{
+  "optimized": true,
+  "verifier": "/private/tmp/r2-json-admission-20261019/verify_surface_full_reuse.py",
+  "cases": [
+    {
+      "fault": "positive",
+      "accepted": true,
+      "error": null,
+      "result": {
+        "full_allocation_bytes": 163840,
+        "padding_bytes": 5400,
+        "unused_tail_bytes": 152320,
+        "observed_cross_lifetime_id_recurrence": true,
+        "physical_reclamation": false
+      }
+    },
+    {
+      "fault": "generation_bool",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "generation_float",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_manifest",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_compile",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_wait",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_row",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_peer_generation",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_peer_audit",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_environment",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "duplicate_rea",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "nonfinite_nan",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "nonfinite_infinity",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    },
+    {
+      "fault": "nonfinite_overflow",
+      "accepted": false,
+      "error": "AssertionError",
+      "result": null
+    }
+  ],
+  "native_execution": false
+}
