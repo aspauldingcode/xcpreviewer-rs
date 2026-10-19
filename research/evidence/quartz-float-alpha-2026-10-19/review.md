@@ -1,0 +1,3 @@
+# Separate review provenance
+
+`/root/refresh_spec_review` verified that source/comparator/tests matched the sealed preflight and that all acquisition pins and the installed prerequisite helper matched. It ran ten offline methods normally and under `-O`, inspected command/receipt/chronology/inventory/artifact binding, and approved exactly one compile/output/fixture before the unchanged 16:48 UTC deadline. It required preservation of numerical mismatches and the linear-control prerequisite and excluded internal-cause, display or Canvas qualification. The verifier performed no native execution. Final frozen evidence is reviewed separately and recorded in the durable checkpoint.

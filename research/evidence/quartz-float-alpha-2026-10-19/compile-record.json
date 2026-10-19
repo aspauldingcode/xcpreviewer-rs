@@ -1,0 +1,40 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "CoreGraphics",
+    "-framework",
+    "CoreFoundation",
+    "/private/tmp/quartz-float-alpha-20261019/probe.c",
+    "-o",
+    "/private/tmp/quartz-float-alpha-20261019/probe"
+  ],
+  "source_sha256": "b0bc41c2e956332e6669a2cc3dfc52c469902eb8c97ebbf6dc66440afbc11f2d",
+  "binary_sha256": "177ebf5981ada26ff7d8cfd24979178b289e3d2b69e165497c5abb34e47d8b73",
+  "error": null,
+  "record": {
+    "pid": 24863,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 22,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

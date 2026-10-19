@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/quartz-float-alpha-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/quartz-float-alpha-20261019/owned-documents"
+  ],
+  "source_sha256": "b0bc41c2e956332e6669a2cc3dfc52c469902eb8c97ebbf6dc66440afbc11f2d",
+  "binary_sha256": "177ebf5981ada26ff7d8cfd24979178b289e3d2b69e165497c5abb34e47d8b73",
+  "error": null,
+  "record": {
+    "pid": 25474,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":25476,\"route\":0,\"provider_file\":\"route0-provider.raw\",\"file\":\"route0-readback.raw\",\"provider_sha256\":\"c5a207f5ec791078dc0b6235886ec08d1db951a99d5eaac2a8c249165adfe51d\",\"sha256\":\"6813314b71744930fec2b8899eeea31a01b45ed932b8c273aa4b79400c5ccea6\",\"provider_bytes\":37056,\"width\":768,\"height\":3,\"image_stride\":12352,\"image_bits_per_component\":32,\"image_bits_per_pixel\":128,\"image_bitmap_info\":8449,\"stride\":12352,\"allocation_bytes\":49152,\"bits_per_component\":32,\"bits_per_pixel\":128,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"source_color_space\":\"kCGColorSpaceSRGB\"}\n{\"pid\":25476,\"route\":1,\"provider_file\":\"route1-provider.raw\",\"file\":\"route1-readback.raw\",\"provider_sha256\":\"c5a207f5ec791078dc0b6235886ec08d1db951a99d5eaac2a8c249165adfe51d\",\"sha256\":\"8ae0e532a698f012857bb5656caa33c0e4aa182c0fa6df4e20e54a012f8f1a77\",\"provider_bytes\":37056,\"width\":768,\"height\":3,\"image_stride\":12352,\"image_bits_per_component\":32,\"image_bits_per_pixel\":128,\"image_bitmap_info\":8449,\"stride\":12352,\"allocation_bytes\":49152,\"bits_per_component\":32,\"bits_per_pixel\":128,\"bitmap_info\":8449,\"color_space\":\"kCGColorSpaceLinearSRGB\",\"source_color_space\":\"kCGColorSpaceLinearSRGB\"}\n",
+    "stderr": "owned_tree_pid:25476\n",
+    "stdoutBytes": 1178,
+    "stderrBytes": 21,
+    "stdoutSha256": "28c280e7cfc1172e253e28e51ed80594d8eb298b96e0674d2be4a786d578dbc2",
+    "stderrSha256": "a6df175f91502e095b7e07adea6c077637b8e0dcac1a2434bd28633aeb6ec3c2"
+  }
+}

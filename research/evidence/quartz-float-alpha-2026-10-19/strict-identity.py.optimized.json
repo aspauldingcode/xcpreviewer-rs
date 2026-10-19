@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/quartz-float-alpha-20261019/strict-identity.py\", line 6, in <module>\n    c.require(all(row['identity']['exact'] for row in value['routes']), 'independent identity prediction rejected')\n  File \"/private/tmp/quartz-float-alpha-20261019/compare.py\", line 13, in require\n    raise ValueError(message)\nValueError: independent identity prediction rejected\n"
+}
