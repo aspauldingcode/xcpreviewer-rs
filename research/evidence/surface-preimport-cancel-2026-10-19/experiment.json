@@ -1,0 +1,46 @@
+{
+  "native_deadline_utc": "2026-10-19T08:28:00Z",
+  "scope": "Owned CPU Mach/IOSurface dequeue-to-import cancellation, not Canvas wire",
+  "cases": [
+    "copy-import",
+    "copy-cancel",
+    "move-import",
+    "move-cancel"
+  ],
+  "predictions": {
+    "sender": "Explicit original local CF/Mach handles released before audited stage6 authorization",
+    "receiver": "Full audited message queued1 to0, sendrefs1, cancel branch destroys received descriptor before any CF lookup, local name query15",
+    "positive": "Import branch full bytes+CF alias survive right destroy, byte0XOR0x5a matches independent allocation",
+    "cleanup": "Both receiver endpoints absent15; audited ack7 and actual child waitexit0; parent deadnames then removal15 and random rendezvous removed"
+  },
+  "limits": {
+    "compile": 1,
+    "output_control": 1,
+    "fixture": 1,
+    "cases": 4,
+    "native_seconds": 15,
+    "outer_seconds": 20,
+    "parent_child_alarm": 12
+  },
+  "byte_expectation": {
+    "width": 17,
+    "height": 9,
+    "stride": 128,
+    "allocation": 16384,
+    "seed": 49,
+    "fill": 165,
+    "allocations": 10,
+    "bytes": 163840,
+    "padding_bytes": 5400,
+    "tail_bytes": 152320
+  },
+  "excluded": [
+    "all kernel/internal references",
+    "physical reclamation",
+    "native Canvas protocol/completion",
+    "GPU",
+    "A/A reliability",
+    "cross-case identity from reused numeric IDs"
+  ],
+  "failure_policy": "Fixed pre/postlock gates, own process observer/drain, retain failures, no unchanged repeat or deadline extension"
+}

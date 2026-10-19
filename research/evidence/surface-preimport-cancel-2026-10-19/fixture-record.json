@@ -1,0 +1,34 @@
+{
+  "phase": "fixture",
+  "command": "/private/tmp/surface-preimport-cancel-20261019/probe",
+  "args": [
+    "--fixture",
+    "/private/tmp/surface-preimport-cancel-20261019/owned-documents"
+  ],
+  "source_sha256": "b37f5db24581b86da8f43e72ebe52ed4c86aa42328056b271d1d250a0bcdae1d",
+  "binary_sha256": "388e57b29bb62165527bc2744e53371d379a7bafdd902b546c7cd91be09475e5",
+  "error": null,
+  "record": {
+    "pid": 55063,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 6,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"sender_pid\":55064,\"receiver_pid\":55067,\"mode\":0,\"surface_id\":124,\"receiver_exit\":0,\"initial_move\":false,\"initial_disposition\":19,\"initial_query\":0,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":55064,\"receiver_pid\":55068,\"mode\":1,\"surface_id\":124,\"receiver_exit\":0,\"initial_move\":false,\"initial_disposition\":19,\"initial_query\":0,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":55064,\"receiver_pid\":55070,\"mode\":0,\"surface_id\":124,\"receiver_exit\":0,\"initial_move\":true,\"initial_disposition\":17,\"initial_query\":15,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n{\"sender_pid\":55064,\"receiver_pid\":55071,\"mode\":1,\"surface_id\":124,\"receiver_exit\":0,\"initial_move\":true,\"initial_disposition\":17,\"initial_query\":15,\"resource_query_before_go\":15,\"sender_cf_released_before_go\":true,\"sender_resource_handle_cleared\":true,\"remote_type_after_exit\":1048576,\"control_type_after_exit\":1048576,\"remote_query_after_release\":15,\"control_query_after_release\":15,\"audit_ready_verified\":true,\"audit_completion_verified\":true,\"rendezvous_removed\":true}\n",
+    "stderr": "owned_tree_pid:55064\n",
+    "stdoutBytes": 1892,
+    "stderrBytes": 21,
+    "stdoutSha256": "c21692496cb122857d6069e830373818bc186af7e620b3b92f0bcb86603d6759",
+    "stderrSha256": "ab07a94448c8c2881be1c58872e692580f7b9f1dd8b51012faaa81c1c59881ef"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/surface-preimport-cancel-20261019/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "b37f5db24581b86da8f43e72ebe52ed4c86aa42328056b271d1d250a0bcdae1d",
+  "binary_sha256": "388e57b29bb62165527bc2744e53371d379a7bafdd902b546c7cd91be09475e5",
+  "error": null,
+  "record": {
+    "pid": 54872,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 5,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":54873,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:54873\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "ec27c941f369bf56941c8209b0e32c7e67a7f13c880f2d47b260e31db3a14b60",
+    "stderrSha256": "70e718cb2ab2b371bc7d54b1ea18b669043a434e1430ba82c89e1d85045a2f17"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "IOSurface",
+    "-framework",
+    "CoreFoundation",
+    "-lbsm",
+    "/private/tmp/surface-preimport-cancel-20261019/probe.c",
+    "-o",
+    "/private/tmp/surface-preimport-cancel-20261019/probe"
+  ],
+  "source_sha256": "b37f5db24581b86da8f43e72ebe52ed4c86aa42328056b271d1d250a0bcdae1d",
+  "binary_sha256": "388e57b29bb62165527bc2744e53371d379a7bafdd902b546c7cd91be09475e5",
+  "error": null,
+  "record": {
+    "pid": 54503,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 24,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "In file included from /private/tmp/surface-preimport-cancel-20261019/probe.c:3:\n/private/tmp/surface-preimport-cancel-20261019/surface_ipc_probe.c:187:8: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  187 |     if(bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\nIn file included from /private/tmp/surface-preimport-cancel-20261019/probe.c:3:\n/private/tmp/surface-preimport-cancel-20261019/surface_ipc_probe.c:243:12: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n  243 |     status=bootstrap_register(bootstrap_port,service,inbox);if(status){fail(\"rendezvous-register\",status);goto done;}registered=1;\n      |            ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n/private/tmp/surface-preimport-cancel-20261019/probe.c:33:152: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]\n   33 |  if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&inbox)||mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND)||bootstrap_register(bootstrap_port,service,inbox))goto done;registered=1;\n      |                                                                                                                                                        ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here\n   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);\n      | ^\n3 warnings generated.\n",
+    "stdoutBytes": 0,
+    "stderrBytes": 2246,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "2ef7fc10d511073af8c6ccbcce14877652e28aaed641310a55027618fb7c81e2"
+  }
+}
