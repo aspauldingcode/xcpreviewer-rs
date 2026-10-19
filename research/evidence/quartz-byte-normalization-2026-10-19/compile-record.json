@@ -1,0 +1,40 @@
+{
+  "phase": "compile",
+  "command": "/usr/bin/xcrun",
+  "args": [
+    "clang",
+    "-framework",
+    "CoreGraphics",
+    "-framework",
+    "CoreFoundation",
+    "/private/tmp/quartz-byte-normalization-20261019/probe.c",
+    "-o",
+    "/private/tmp/quartz-byte-normalization-20261019/probe"
+  ],
+  "source_sha256": "e37d3dd36f4ab4534e71a1fe48bb09d76cbef767e56eb4bfe6e61cd29ad66bc3",
+  "binary_sha256": "4f1bd4fe9edacabfb880f84275ef2a8b940452704eef6c4ee0ca81e138fc4b1f",
+  "error": null,
+  "record": {
+    "pid": 3473,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 3,
+      "observations": 22,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "",
+    "stderr": "",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

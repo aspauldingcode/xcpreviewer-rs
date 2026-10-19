@@ -1,0 +1,109 @@
+{
+  "admission": {
+    "normalization_candidates_supported": [
+      "multiply"
+    ],
+    "float32_baseline_exact": true,
+    "full_bytes_compared": 48512,
+    "provider_bytes_compared": 15744,
+    "readback_bytes_compared": 32768,
+    "readback_padding_bytes": 384,
+    "readback_tail_bytes": 7808,
+    "comparisons": [
+      {
+        "route": 0,
+        "comparisons": [
+          {
+            "candidate": "divide",
+            "mismatch_bytes": 1152,
+            "first_mismatch": 48
+          },
+          {
+            "candidate": "multiply",
+            "mismatch_bytes": 0,
+            "first_mismatch": null
+          }
+        ]
+      },
+      {
+        "route": 1,
+        "comparisons": [
+          {
+            "candidate": "divide",
+            "mismatch_bytes": 0,
+            "first_mismatch": null
+          },
+          {
+            "candidate": "multiply",
+            "mismatch_bytes": 1152,
+            "first_mismatch": 48
+          }
+        ]
+      }
+    ],
+    "renderer_internal_cause_proven": false,
+    "display_qualified": false,
+    "canvas_qualified": false
+  },
+  "historical_predeclared_comparison": {
+    "predeclared_reciprocal_comparison": [
+      {
+        "mode": 0,
+        "phase": 0,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      },
+      {
+        "mode": 0,
+        "phase": 1,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      },
+      {
+        "mode": 0,
+        "phase": 2,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      },
+      {
+        "mode": 1,
+        "phase": 0,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      },
+      {
+        "mode": 1,
+        "phase": 1,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      },
+      {
+        "mode": 1,
+        "phase": 2,
+        "provider_matches": true,
+        "readback_mismatch_bytes": 0,
+        "readback_length": 4096
+      }
+    ],
+    "old_strict_export_admission_changed": false,
+    "renderer_internal_cause_proven": false,
+    "display_qualified": false,
+    "canvas_qualified": false
+  },
+  "native_executions": {
+    "compile": 1,
+    "output_control": 1,
+    "fixture": 1
+  },
+  "retry": false,
+  "deadline_extended": false,
+  "native_UI_execution": false,
+  "source_sha256": "e37d3dd36f4ab4534e71a1fe48bb09d76cbef767e56eb4bfe6e61cd29ad66bc3",
+  "binary_sha256": "4f1bd4fe9edacabfb880f84275ef2a8b940452704eef6c4ee0ca81e138fc4b1f",
+  "milestones_complete": false
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/quartz-byte-normalization-20261019/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "e37d3dd36f4ab4534e71a1fe48bb09d76cbef767e56eb4bfe6e61cd29ad66bc3",
+  "binary_sha256": "4f1bd4fe9edacabfb880f84275ef2a8b940452704eef6c4ee0ca81e138fc4b1f",
+  "error": null,
+  "record": {
+    "pid": 3781,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 1,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":3782,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:3782\n",
+    "stdoutBytes": 45,
+    "stderrBytes": 20,
+    "stdoutSha256": "7b2e9bcf69190bdb62b3fbe04add681fb05894c37f61e96aa4be59b5f34dce28",
+    "stderrSha256": "e332e8fc7d2a18db0f598ead70da1f1f6c62bfbd9e7f7fa707f708e9b9e9a1b3"
+  }
+}
