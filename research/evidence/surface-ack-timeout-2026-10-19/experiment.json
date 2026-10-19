@@ -1,0 +1,34 @@
+{
+  "native_deadline_utc": "2026-10-19T08:43:00Z",
+  "question": "Does causally withholding completion acknowledgment after explicit receiver resource release produce a bounded empty-queue receive timeout, with later audited ack and real child exit still separately admitted?",
+  "cases": [
+    "move-timely",
+    "move-withheld"
+  ],
+  "order": "release right+CF ->8 -> parent9 -> timely7 OR withheld10 -> parent50ms timeout ->11 -> late7; receiver endpoints removed before7; waitpid exit0",
+  "predicted_timeout_code": 268451843,
+  "byte_expectation": {
+    "allocations": 8,
+    "bytes": 131072,
+    "padding": 4320,
+    "unused_tail": 121856
+  },
+  "limits": {
+    "compile": 1,
+    "output": 1,
+    "fixture": 1,
+    "parent_child_alarm_seconds": 12,
+    "guard_seconds": 15,
+    "outer_seconds": 20
+  },
+  "excluded": [
+    "automatic timeout reclamation",
+    "global/internal reference counts",
+    "physical reclamation",
+    "actual Canvas completion/cancellation",
+    "GPU",
+    "A/A reliability",
+    "numeric SID reuse identity"
+  ],
+  "failure_policy": "retain; no native retry or deadline renewal"
+}

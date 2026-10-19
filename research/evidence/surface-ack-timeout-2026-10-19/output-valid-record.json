@@ -1,0 +1,34 @@
+{
+  "phase": "output-valid",
+  "command": "/private/tmp/surface-ack-timeout-20261019/probe",
+  "args": [
+    "--output-control",
+    "output-valid"
+  ],
+  "source_sha256": "441b1dd03561c57d35a0eb37fba81ff13147bf192c0b83af23f4c086ac9bb525",
+  "binary_sha256": "3adaf8b2f8b3bd0b96c43f90fcac0271b66023a1932bce1dfb7596742ea5ba74",
+  "error": null,
+  "record": {
+    "pid": 61426,
+    "anchorCode": null,
+    "signal": "SIGKILL",
+    "report": {
+      "kind": "complete",
+      "target_code": 0,
+      "failure": null,
+      "drained": true,
+      "tracked": 0,
+      "observations": 4,
+      "remaining_observed": 0,
+      "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+    },
+    "emergencyClosed": false,
+    "privateAbortRequested": false,
+    "stdout": "{\"pid\":61427,\"status\":\"owned_output_control\"}\n",
+    "stderr": "owned_tree_pid:61427\n",
+    "stdoutBytes": 46,
+    "stderrBytes": 21,
+    "stdoutSha256": "271309b41e2b21e8211b8835a9355614b42d24490a26cdcada3435fb3e37a41e",
+    "stderrSha256": "0a9a52a6373bb3709d4883f985d4ae256955773ddb643669d8d1008b1a887c7a"
+  }
+}
