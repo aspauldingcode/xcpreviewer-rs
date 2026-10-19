@@ -1,0 +1,15 @@
+{
+  "args": [
+    "docker",
+    "--context",
+    "colima",
+    "image",
+    "inspect",
+    "--format",
+    "{\"id\":{{json .Id}},\"os\":{{json .Os}},\"architecture\":{{json .Architecture}}}",
+    "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109"
+  ],
+  "exit": 0,
+  "stdout": "{\"id\":\"sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109\",\"os\":\"linux\",\"architecture\":\"arm64\"}\n",
+  "stderr": ""
+}

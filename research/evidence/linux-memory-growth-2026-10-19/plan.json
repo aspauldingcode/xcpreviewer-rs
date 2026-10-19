@@ -1,0 +1,23 @@
+{
+  "owner": "a56dcd542e6e47d0b3afb5cd898d6981",
+  "name": "xcpreviewer-memory-a56dcd542e6e",
+  "context": "colima",
+  "image": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
+  "image_identity": {
+    "id": "sha256:4d93e034ce6cd5ed51447f399bc76b0d9b45fcb47dd0175ee928a3848ab35109",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "wheel_sha256": "263b924576d9519c43d5a1acff50a03ab03209d16d26c53543c9ab9a409fb93f",
+  "runtime_root": "/Users/8amps/xcpreviewer-rs/research/build/linux-wasmtime",
+  "deadline_utc": "2026-10-19T17:20:00Z",
+  "scope": "Linux Wasmtime core memory growth/copies only; JS buffer detachment not measured",
+  "read_only_root": true,
+  "network": "none",
+  "memory_limit": "256m",
+  "pids_limit": 64,
+  "cpu_limit": 1,
+  "runtime_validator_sha256": "0a88ad26c37b95b1f91a629582d879ada886f5f97bc1c81c1e8be49ae60a0d47",
+  "uid": 503,
+  "gid": 20
+}

@@ -1,0 +1,3 @@
+# Separate preexecution review
+
+`/root/refresh_spec_review` verified approved pins, runtime-validator identity and four Python methods normally/optimized. It approved exactly one owned container assay before unchanged17:20UTC, with90-second reserve and stated limits. It checked cached-image/offline/isolated mounts and owner-checked cleanup preserving existing containers, and excluded VM start/pull/unrelated removal. It scoped the result to Linux/Wasmtime core memory and fresh copies, excluding JavaScript stale views, browser and Canvas. It performed no Docker or Wasmtime execution. The post-acquisition strict inspection-status correction and final sealed package are reviewed separately in the durable checkpoint.

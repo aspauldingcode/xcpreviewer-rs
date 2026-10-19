@@ -1,0 +1,74 @@
+{
+  "pid": 1,
+  "host_system": "Linux",
+  "architecture": "aarch64",
+  "kernel": "6.8.0-147-generic",
+  "python": "3.12.3",
+  "wasmtime": "49.0.0",
+  "module_sha256": "970468fb9b02b07bd628c530877571db3d2ca614f73e8498b6fdd40455b3c0c6",
+  "module_bytes": 80,
+  "imports": 0,
+  "module_min_pages": 1,
+  "module_max_pages": 2,
+  "store_memory_limit_bytes": 196608,
+  "fuel_per_call": 100000,
+  "rows": [
+    {
+      "stage": "initial",
+      "file": "initial.raw",
+      "bytes": 65536,
+      "sha256": "8fdcb1efc4e90414656d77f4f9ed83adf231a2afc755cf4f2e6dc3db695a676e"
+    },
+    {
+      "stage": "zero-grow",
+      "file": "zero-grow.raw",
+      "bytes": 65536,
+      "sha256": "9a9501efe574a8c95ca6d68e009210f5d50f34287f7861b75e095841151a7a15"
+    },
+    {
+      "stage": "positive-grow",
+      "file": "positive-grow.raw",
+      "bytes": 131072,
+      "sha256": "d1abacf81477d29603f8758e87f32ccbbc2ffe9b03a6ee7072825e28db84a56e"
+    },
+    {
+      "stage": "host-failed-grow",
+      "file": "host-failed-grow.raw",
+      "bytes": 131072,
+      "sha256": "15be6810c88600311002ddcfa46f5d3db327709ba612de1ee2074282162a46de"
+    },
+    {
+      "stage": "wasm-failed-grow",
+      "file": "wasm-failed-grow.raw",
+      "bytes": 131072,
+      "sha256": "fd8e4fd2567f0fd187b5bd99a11de5412f3655a2d1d3a0b1fae2c3e1eb7f1641"
+    }
+  ],
+  "events": [
+    {
+      "phase": "zero-grow",
+      "return_value": 1,
+      "pages": 1
+    },
+    {
+      "phase": "positive-grow",
+      "return_value": 1,
+      "pages": 2
+    },
+    {
+      "phase": "host-failed-grow",
+      "error": "WasmtimeError",
+      "pages": 2
+    },
+    {
+      "phase": "wasm-failed-grow",
+      "return_value": -1,
+      "pages": 2
+    }
+  ],
+  "fresh_copy_reads": true,
+  "js_host_view_semantics_measured": false,
+  "browser_verified": false,
+  "canvas_qualified": false,
+  "product_integration": false
+}
