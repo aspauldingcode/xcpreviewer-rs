@@ -10,6 +10,10 @@ pub enum XpcValue {
     Int64(i64),
     Bool(bool),
     Null,
+    /// Exact native UUID bytes; no text/version interpretation or regeneration.
+    Uuid([u8; 16]),
+    /// Signed native XPC date payload in nanoseconds, without clock conversion.
+    DateNanos(i64),
     /// Raw IEEE-754 binary64 bits; equality preserves signed zero and NaN payloads.
     /// No floating-point arithmetic or normalization is performed by the codec.
     DoubleBits(u64),

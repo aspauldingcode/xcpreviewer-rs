@@ -62,6 +62,10 @@ impl<'a> Reader<'a> {
         }
         match self.word()? {
             0x1000 => Ok(Null),
+            0xa000 => Ok(Uuid(self.take(16)?.try_into().unwrap())),
+            0x7000 => Ok(DateNanos(i64::from_le_bytes(
+                self.take(8)?.try_into().unwrap(),
+            ))),
             0x5000 => Ok(DoubleBits(u64::from_le_bytes(
                 self.take(8)?.try_into().unwrap(),
             ))),
@@ -208,6 +212,14 @@ impl Writer {
         }
         match v {
             Null => self.word(0x1000)?,
+            Uuid(bytes) => {
+                self.word(0xa000)?;
+                self.append(bytes)?;
+            }
+            DateNanos(nanos) => {
+                self.word(0x7000)?;
+                self.append(&nanos.to_le_bytes())?;
+            }
             DoubleBits(bits) => {
                 self.word(0x5000)?;
                 self.append(&bits.to_le_bytes())?;
