@@ -240,3 +240,5 @@ pub mod scene_identity;
 pub mod workspace_action;
 
 pub mod service_error;
+
+pub mod nserror_archive;

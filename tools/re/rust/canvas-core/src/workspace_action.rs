@@ -46,8 +46,8 @@ impl WorkspaceActionInvocation {
     }
 }
 
-/// Measured nullable NSError completion argument. Archives stay opaque; this
-/// adapter does not interpret bplist17, reconstruct NSError or assert validity.
+/// Measured nullable NSError completion argument. Archive ownership is preserved;
+/// decoded_error optionally interprets only the bounded nil-userInfo profile.
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct WorkspaceActionCompletion {
     pub error_archive: Option<Vec<u8>>,
@@ -113,5 +113,13 @@ impl WorkspaceActionCompletion {
     /// Opaque archive bytes are preserved; discarded unrelated fields are not.
     pub fn to_wire_reply(&self) -> Result<Vec<u8>, crate::xpc_wire::Error> {
         crate::xpc_wire::encode_body(&self.to_xpc())
+    }
+}
+
+impl WorkspaceActionCompletion {
+    /// Decode only the observed canonical NSError domain/code/nil-userInfo
+    /// archive profile. Unsupported archives return an error and remain owned.
+    pub fn decoded_error(&self) -> Result<Option<crate::nserror_archive::ArchivedNSError>, crate::nserror_archive::Error> {
+        self.error_archive.as_deref().map(crate::nserror_archive::ArchivedNSError::decode).transpose()
     }
 }

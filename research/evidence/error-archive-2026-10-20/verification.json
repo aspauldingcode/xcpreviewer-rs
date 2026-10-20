@@ -1,0 +1,96 @@
+{
+  "byte_corruptions_rejected": 1102,
+  "cases": [
+    {
+      "bytes": 104,
+      "case": "primary",
+      "code": 17,
+      "domain": "Owned.Reply",
+      "native_secure_roundtrip": true,
+      "sha256": "943b1bf585e67eacbdb5d34e31a859936a8cedfa50efc866d42fa5ac9c00c9fc"
+    },
+    {
+      "bytes": 108,
+      "case": "unicode",
+      "code": 29,
+      "domain": "Owned.Reply.\u2603",
+      "native_secure_roundtrip": true,
+      "sha256": "e29d25d08edec7536b72f80b75c61c1668af7e306a2ca49241cdb4e960bae16b"
+    },
+    {
+      "bytes": 117,
+      "case": "negative",
+      "code": -129,
+      "domain": "Owned.Negative",
+      "native_secure_roundtrip": true,
+      "sha256": "68ad5c51d506664b24abc17633c3a443e60c09b992b221c9f22bd41b26f6b1cb"
+    },
+    {
+      "bytes": 82,
+      "case": "zero",
+      "code": 0,
+      "domain": "",
+      "native_secure_roundtrip": true,
+      "sha256": "537f2d799431e81244ba8e6656fe00341707a2f387873fec95ae597d1e244ab4"
+    },
+    {
+      "bytes": 103,
+      "case": "wide16",
+      "code": 256,
+      "domain": "Owned.Wide",
+      "native_secure_roundtrip": true,
+      "sha256": "620e3c496d4ab3703cb94e1859e26b703da7e7318440864d6ed981bb34b0f6a4"
+    },
+    {
+      "bytes": 105,
+      "case": "wide32",
+      "code": 65536,
+      "domain": "Owned.Wide",
+      "native_secure_roundtrip": true,
+      "sha256": "4dd518445987b8bad462e8e0338698d3a2a9cecb5df7002f0208e50bf0cc54b4"
+    },
+    {
+      "bytes": 141,
+      "case": "max",
+      "code": 9223372036854775807,
+      "domain": "Owned.Maximum.Domain.Long",
+      "native_secure_roundtrip": true,
+      "sha256": "130109feac04bba8339afa6b139abd233efe558c883109d8678137f792dc5d5d"
+    },
+    {
+      "bytes": 123,
+      "case": "min",
+      "code": -9223372036854775808,
+      "domain": "Owned.Minimum.\ud83d\ude00",
+      "native_secure_roundtrip": true,
+      "sha256": "2d9021c4f721e2467705ef2ae079ebe98f45acb16179d85a1c96a111629eb6a8"
+    },
+    {
+      "bytes": 114,
+      "case": "len15",
+      "code": 255,
+      "domain": "123456789012345",
+      "native_secure_roundtrip": true,
+      "sha256": "817a5acfc84cb2a25c05bf184c0a7dfc9c3b0bec8ca030abbd0c669e31fd8b6f"
+    },
+    {
+      "bytes": 105,
+      "case": "holdout",
+      "code": 65535,
+      "domain": "Holdout.\u00e9\ud83e\udd80",
+      "native_secure_roundtrip": true,
+      "sha256": "b7cf6e90e0c593546363a632d17c04252c92f392cefe9fa72cb490b8513efcfb"
+    }
+  ],
+  "core_tests_passed": 130,
+  "existing_captured_archives_equal": 212,
+  "fresh_native_replay": true,
+  "native_archive_bytes_verified": 1102,
+  "native_nonempty_userinfo_negative_bytes": 241,
+  "native_nonempty_userinfo_negative_sha256": "6ceca6f455aa58e1b52fb5691539be0bd202e900cf39af31a9c937143d240b5e",
+  "new_product_source_changes": true,
+  "private_callable_ABI_invented": false,
+  "receipt_mutations_rejected": 58,
+  "scope": "canonical NSError domain/code/nil archived userInfo; no arbitrary bplist17 graphs or nonempty userInfo",
+  "unsupported_native_userinfo_archive_rejected": true
+}
