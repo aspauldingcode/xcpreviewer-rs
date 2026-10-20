@@ -1,0 +1,22 @@
+{
+  "compiler_rejection": "Captured id address was const; fixed with a local id copy before NSInvocation.setArgument.",
+  "native_traps": [
+    {
+      "method": "BSServiceConnection.activate",
+      "offset": 1188,
+      "owned_binary": "run4/oracle",
+      "source_invariant": "Interface identifier must match endpoint service identifier.",
+      "uuid_matched_owned_crash_report": true
+    },
+    {
+      "method": "BSServiceConnection.activate",
+      "offset": 2304,
+      "owned_binary": "run6/oracle",
+      "source_invariant": "A nonempty local interface requires a target.",
+      "uuid_matched_owned_crash_report": true
+    }
+  ],
+  "policy": "Known activation failures are quarantined locally and excluded from replay. No private ivars/object state fabricated. No product code changed.",
+  "research_guard_rejection": "setServer:nil returns a BSObjCProtocol named BSEmptyServiceInterface, not a nil object; initial nil-object guard exited11 before activation.",
+  "source_only_prerequisite": "Activation also requires an invalidation handler; callback ABI/queue/target configuration must be recovered before any new owned activation control."
+}
