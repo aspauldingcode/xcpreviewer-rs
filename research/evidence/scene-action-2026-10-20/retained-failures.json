@@ -1,0 +1,22 @@
+[
+  {
+    "result": "SIGTRAP5, fatal unimplemented init(info:responder:)",
+    "scope": "Runtime availability/signature alone did not guarantee callable initializer. Failure retained; no private Swift ABI replacement invented.",
+    "stage": "unmodified native initializer"
+  },
+  {
+    "correction": "Diagnostic stage/encoding logs show NSMethodSignature returned Q rather than provisional q. Corrected invocation to actual Q; receiver actual class remains PreviewsServicesUI.UVPreviewSceneAction.",
+    "result": "SIGABRT6 at strict key argument signature guard",
+    "stage": "first owned swizzle oracle"
+  },
+  {
+    "correction": "Do not trust the initial analytical names. Correct getter mapping recorded by address:0x270af08d8 payload,0x270af0a38 fence. Raw source labels are provisional.",
+    "result": "Rename attempts rejected Old function name is required",
+    "stage": "Ghidra provisional helper labels"
+  },
+  {
+    "correction": "Independent LLVM instructions retained in analysis; no complete reply/timeout implementation or native acceptance claimed.",
+    "result": "PIC/unreachable-block warnings omit reachable cleanup/response blocks",
+    "stage": "reply decompilation"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "image": "PreviewsServicesUI",
+  "mapped_elf_sha256": "eaa6462e60e28bdf3d40f1ade402b3a363415e3179b5d3cabdb032bfa1c6b556",
+  "native_llvm_ghidra_probe_bytes_equal": 160,
+  "native_oracle_scope": "Owned swizzled construction only. Real exported init(info:responder:) traps; equal32-byte classes and0 extra ivars verified before temporarily substituting BSAction initializer, then original IMP restored. Native slot label methods and base settings-copy behavior observed. No action sent, no responder registered and no native Swift ABI invoked.",
+  "slots": {
+    "0": "messageType",
+    "1": "payload",
+    "2": "fenceHandle"
+  },
+  "source": {
+    "build": "0x270af12a0: BSSettings slot0 String; slot1 copied dictionary when present; slot2 optional fence object",
+    "fence_getter": "0x270af0a38: slot2 typed fence object; absent nil",
+    "key_description": "0x270af0e5c, unsigned index<3; native ObjC thunk agrees for -1,0,1,2,3,4",
+    "message_type_getter": "0x270af07e0; required slot0 String; missing info/slot throws",
+    "missing_payload_corrob": "0x29ce5a7b0 equals dlsym _swiftEmptyArrayStorage; helper0x270af141c count0 returns0x29ce5a7b8 equal dlsym _swiftEmptyDictionarySingleton",
+    "payload_copy_selector": "Runtime selector at0x29e30fdd8 is initWithDictionary:",
+    "payload_getter": "0x270af08d8: slot1 dictionary; absent builds empty dictionary",
+    "receiver": "0x270af4304 casts to UVPreviewSceneAction, checks messageReceiver, decodes fields and message type, invokes callback; errors/logging/reply paths not fully qualified",
+    "reply": "0x270af2ffc ->0x270af0b4c; source suggests response info uses slot1 payload, but PIC/decompiler control-flow warnings mean reply codec/timeout not implemented",
+    "sender": "0x270af3408 builds action and invokes supplied actionSender closure; no actual transport observed"
+  },
+  "uuid": "899379ca784a339c9c7385c74b587018"
+}
