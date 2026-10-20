@@ -1,0 +1,48 @@
+{
+  "caller": {
+    "address": "0x2addc",
+    "branch": "A LocalMacPlatformSupport flag at a metadata-derived field offset chooses layer-hosted or surface viewable; flag meaning not recovered",
+    "bytes": 244,
+    "direct_call": "0x2ae54 ->0x34208",
+    "name": "DefaultMacOSPreviewArchiver.createStaticViewable resume",
+    "scope": "Selected macOS static archiver only, not universal iOS/iPadOS or all live-output paths"
+  },
+  "consumer": {
+    "address": "0x34208",
+    "bytes": 992,
+    "instruction_corrob": {
+      "0x34538": "FMUL D8,D8,D0",
+      "0x34548": "FMUL D9,D9,D0",
+      "0x34590": "zero corner-radius register"
+    },
+    "program": "PreviewsDeveloperTools",
+    "steps": [
+      "Decode IOSurfacePayload",
+      "Wrap each SelectableRegion as AddressableSelectableRegion preserving order; no rectangle scale in this loop",
+      "Keep UInt32 surfaceID",
+      "Compute pixel width=payload.width*scale and pixel height=payload.height*scale",
+      "PreviewGeometry selection supported, cornerRadius0 and scaleFactor retained"
+    ]
+  },
+  "decoder": {
+    "address": "0x947dc",
+    "bytes": 556,
+    "fields_required_in_order": [
+      "surfaceID:UInt32",
+      "scaleFactor:CGFloat",
+      "width:CGFloat",
+      "height:CGFloat",
+      "selectableRegions:Array<SelectableRegion>"
+    ],
+    "independent_reflection": "0xd6bc0,kind2,recordsize12,5 cases",
+    "key_getter": "0x945b0,164 bytes",
+    "long_string": "actual bytes0xc6ca0,not biased pointer0xc6c80",
+    "program": "PreviewsMessagingHost"
+  },
+  "not_recovered": [
+    "Agent-side surface creation/publication and transport envelope",
+    "IncrementalCaptureIOSurface command behavior",
+    "Synchronization/fences/actual resource-ID recycle after all references release",
+    "Addressable ModelPath parsing compatibility"
+  ]
+}

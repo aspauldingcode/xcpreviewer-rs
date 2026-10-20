@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-20T00:54:03.443602+00:00",
+  "creator_reference_released_with_receiver_retained": true,
+  "final_reclamation_or_gpu_completion_proven": false,
+  "milestones_complete": false,
+  "native_canvas_transport_captured": false,
+  "native_generation_bytes_each": 128,
+  "next": [
+    "Trace agent-side IOSurfacePayload publication and incremental capture; recover outer association and completion",
+    "Do not use surfaceID as frame revision or freshness proof; qualify actual native frame association",
+    "Keep actual input dispatch and CrashListener cancellation independent"
+  ],
+  "private_swift_decoder_or_receiver_invoked": false,
+  "required_fields": 5,
+  "same_owned_id_observed_with_changed_contents": true,
+  "selected": "IOSurface payload codec/receiver geometry and same-ID changed-content native control",
+  "tests_passed": 61
+}

@@ -10,6 +10,7 @@ pub mod remote_crash;
 pub mod crash_report;
 pub mod crash_listener;
 pub mod iosurface_snapshot;
+pub mod iosurface_payload;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

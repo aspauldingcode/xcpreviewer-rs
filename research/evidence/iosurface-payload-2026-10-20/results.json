@@ -1,0 +1,25 @@
+{
+  "native": {
+    "same_surface_id_new_contents": true,
+    "creator_reference_released_before_second_lookup": true,
+    "lookup_succeeds_with_retained_receiver_after_creator_release": true,
+    "prior_snapshot_unchanged": true,
+    "zero_id_returns_nil": true,
+    "runtime_initializer_signature_verified": true,
+    "initializer_argument": "UInt32",
+    "width": 3,
+    "height": 2,
+    "stride": 64,
+    "allocation": 4096,
+    "snapshot_bytes": 128,
+    "padding_bytes": 104,
+    "provider_bytes": 128,
+    "copied_source_mutation_isolated": true,
+    "image_bitmap_info": 8194
+  },
+  "independent_snapshot_bytes_equal": 128,
+  "independent_output_bytes_equal": 56,
+  "verifier_mutants_rejected": 3,
+  "xcode_canvas_transport_observed": false,
+  "final_deallocation_proven": false
+}
