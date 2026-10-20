@@ -1,0 +1,65 @@
+{
+  "cases": {
+    "native": {
+      "complex_body_bytes": 388,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "dd82ce78746ba9037955b9bfa66317d304d992bb0f200195fddc4e529f5c03d7",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "acfbe5e1d8b696ec63f89bb8997a8fb86f38c7337cd48c30436f08f2046e9a2a",
+      "wire_bytes": 360,
+      "wire_sha256": "549d9c7f0b33213ba55672264d493b0a5a8b932c01dbd1e45953fd80b075d5de"
+    },
+    "native-alias": {
+      "complex_body_bytes": 388,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 0,
+      "receiver_body_sha256": "0201dbc57e1a86584edad8d3fd4e8bce1816536d472241f318562b97859d4e08",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "0ec0386086886a6462cff84e98b24bcf80c8ff23c40399dd6e6a5f6ab68c8eeb",
+      "wire_bytes": 360,
+      "wire_sha256": "549d9c7f0b33213ba55672264d493b0a5a8b932c01dbd1e45953fd80b075d5de"
+    },
+    "portable": {
+      "complex_body_bytes": 388,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "b87d8cd8dc4cba30adb24db83343c713ee0b1f4ea52754690dbf736a70c2d7bb",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "33cf5b8984e3e5c1c3ff489220bfab829262b1b19ed7a1007db921e489ec6b34",
+      "wire_bytes": 360,
+      "wire_sha256": "ed78f0dbf931f1a11fa420d870c012a9c6976c88695c9041600f8163b6f5a5dc"
+    },
+    "portable-alias": {
+      "complex_body_bytes": 388,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 0,
+      "receiver_body_sha256": "79f0386133c81ba824d20716d3c2d380eabab2ec0f3f0921692a1a8d7aa427d9",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "657cc3bc441734fdbdf0d69a4c06140cfafa95aa3ac7344d1dfa262881eb9f34",
+      "wire_bytes": 360,
+      "wire_sha256": "ed78f0dbf931f1a11fa420d870c012a9c6976c88695c9041600f8163b6f5a5dc"
+    },
+    "wrong-order": {
+      "complex_body_bytes": 388,
+      "native_callback_matches": false,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "fdc4dbfd3e41ad36c095a7357cf22cbb0f4550fa8a06c0bb38e9a9307587598e",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "b5889e640d0f8ff24b57272e7c2d39443b6aca5f92f1fd8f718c2d1be77a6df6",
+      "wire_bytes": 360,
+      "wire_sha256": "ed78f0dbf931f1a11fa420d870c012a9c6976c88695c9041600f8163b6f5a5dc"
+    }
+  },
+  "complex_body_bytes_compared": 1940,
+  "faults_rejected": 65,
+  "final_right_retirement_proven": false,
+  "native_canvas_transport": false,
+  "native_xpc_cross_process": true,
+  "wrong_order_semantic_failure_detected": true
+}
