@@ -1,0 +1,46 @@
+{
+  "all_native_resource_release_accounted": false,
+  "cases": [
+    {
+      "SDK_release": "mach_port_deallocate",
+      "actual_release_event_observed": true,
+      "caller_symbol": "_xpc_message_request_destroy",
+      "dead_name_urefs_before": 0,
+      "destroyed_body_bytes_verified": 0,
+      "exact_name_invalid_after": true,
+      "mode": "withheld",
+      "release_window": "explicit held-reply release"
+    },
+    {
+      "SDK_release": "mach_port_deallocate",
+      "actual_release_event_observed": true,
+      "caller_symbol": "_xpc_message_request_destroy",
+      "dead_name_urefs_before": 1,
+      "destroyed_body_bytes_verified": 0,
+      "exact_name_invalid_after": true,
+      "mode": "peer-loss-withheld",
+      "release_window": "explicit held-reply release"
+    },
+    {
+      "SDK_release": "mach_msg_destroy (void)",
+      "actual_release_event_observed": true,
+      "caller_symbol": "_xpc_serializer_dispose",
+      "dead_name_urefs_before": 1,
+      "destroyed_body_bytes_verified": 20,
+      "exact_name_invalid_after": true,
+      "mode": "peer-loss-late",
+      "release_window": "late SDK call plus bounded helper-worker event"
+    }
+  ],
+  "destroy_body_byte_mutations_rejected": 20,
+  "fresh_native_replay": true,
+  "kernel_failed_send_observed": false,
+  "new_accounting_and_destroy_body_mutations_rejected": 61,
+  "new_product_source_changes": false,
+  "portable_core_tests_historical_only": 126,
+  "prior_projection_mutations_rejected": 1246,
+  "source_bytes_verified_separately": 1412,
+  "target_operation_settlement": false,
+  "total_bytes_verified": 956,
+  "void_destroy_return_not_kernel_status": true
+}

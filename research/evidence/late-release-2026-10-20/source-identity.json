@@ -1,0 +1,18 @@
+{
+  "BaseBoard_uuid": "03f3fd646bf3326a8004c4ee9563571a",
+  "BoardServices_uuid": "b4561aecee523447960b4d2f2f3ef720",
+  "REA": "Aligned rea-agents6.2.0 server/catalog; Ghidra12.1.2 profileffc0049f2a7145a7ce0f2c83661923f203052819c7f4036409bc4545f0a43b5a; mapped libxpc target SHA verified; raw bundle6records retained locally; provider closed.",
+  "SDK_destroy_declaration": "mach/mach.h:97 extern void mach_msg_destroy(mach_msg_header_t *);",
+  "libxpc_mapped_sha256": "be92683dd727339d21ad82f4d3624e97757c327a4387172fc1a7d4acef5417fc",
+  "libxpc_uuid": "c40fcae87a173d8287cb3da4802adef1",
+  "prior_evidence": "research/evidence/peer-loss-2026-10-20",
+  "prior_seal_sha256": "013010afab10cf138d61338f59732462fd89b0b3e49519df82dce9f268e70743",
+  "sdk_headers_sha256": {
+    "mach.h": "3380446992e918d0a7b8a3aaceef66094e8f4b47c01b42c4362720ac2fda8b4e",
+    "mach_port.h": "c088bfd374e15020d6c0eadc43031d06a8fb05bfa5d1b1828d65d28618717a0f",
+    "message.h": "86e9e87ba2a736236613f2c0a8563dbacaeec1a761654b12812eaf8599b55e67",
+    "port.h": "e4d48a100252a8d07ef5221e4cac1ea727fb975271a8382e0a6faf121c5c8a56"
+  },
+  "sdk_root": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach",
+  "source_scope": "Five complete inclusive function bodies1412B match fresh UUID-guarded own loaded libxpc, pinned ELF and independent LLVM. Public SDK xpc_connection_send_message entry prefix matches. Pseudocode is not original source and includes inferred variables/flow beyond some reported bodies; no such outside-body flow accepted as byte-verified evidence. Static dispatch result handling does not prove runtime result or failed kernel send."
+}
