@@ -1,0 +1,63 @@
+{
+  "report_enum_domain": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "report_targets": [
+    "0x384d0",
+    "0x38490",
+    "0x384d4",
+    "0x384ec",
+    "0x384a0",
+    "0x38510",
+    "0x38520",
+    "0x384fc",
+    "0x38540",
+    "0x384b4"
+  ],
+  "report_keys": [
+    "id",
+    "name",
+    "bugType",
+    "pid",
+    "time",
+    "asi",
+    "termination",
+    "images",
+    "frames",
+    "logFilePath"
+  ],
+  "image_keys": [
+    "uuid",
+    "arch",
+    "base",
+    "path",
+    "name"
+  ],
+  "frame_keys": [
+    "imageIndex",
+    "imageOffset",
+    "symbol",
+    "symbolLocation",
+    "sourceFile",
+    "sourceLine"
+  ],
+  "termination_keys": [
+    "flags",
+    "code",
+    "namespace",
+    "details",
+    "indicator",
+    "byProc",
+    "byPid",
+    "reasons"
+  ]
+}

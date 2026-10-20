@@ -1,0 +1,26 @@
+[
+  {
+    "binary": "inspect-preview-crash",
+    "fixture": "crash-report-model/event-report.bplist",
+    "stdout": "stream=Ultraviolet.PreviewRemoteEvents diagnostics_report=00112233-4455-6677-8899-AABBCCDDEEFF pid=12345 images=1 frames=1",
+    "exit": 0
+  },
+  {
+    "binary": "inspect-preview-request",
+    "fixture": "crash-report-model/request-report.bplist",
+    "stdout": "request=symbolicateCrashedDiagnostics report=00112233-4455-6677-8899-AABBCCDDEEFF pid=12345 images=1 frames=1",
+    "exit": 0
+  },
+  {
+    "binary": "inspect-preview-request",
+    "fixture": "crash-report/screenshot-request.bplist",
+    "stdout": "request=requestScreenshot",
+    "exit": 0
+  },
+  {
+    "binary": "inspect-preview-crash",
+    "fixture": "remote-crash/modern-canSymbolicate.bplist",
+    "stdout": "stream=Ultraviolet.PreviewRemoteEvents pid=12345 agent_behavior=CanSymbolicate",
+    "exit": 0
+  }
+]

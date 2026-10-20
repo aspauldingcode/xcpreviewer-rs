@@ -1,0 +1,69 @@
+{
+  "absent_id_policy": "decode_with_entropy consumes16 caller bytes only for missing id, masks version4/variant RFC4122; decode without an entropy provider explicitly errors only on absent id. This is a portable boundary, not hidden OS entropy.",
+  "frame": {
+    "optional": {
+      "sourceFile": "String",
+      "sourceLine": "Int64",
+      "symbol": "String",
+      "symbolLocation": "Int64"
+    },
+    "required": {
+      "imageIndex": "Int64 on pinned host",
+      "imageOffset": "Int64 on pinned host"
+    }
+  },
+  "image": {
+    "optional": {
+      "arch": "String",
+      "name": "String",
+      "path": "String"
+    },
+    "required": {
+      "base": "Int64 on pinned host",
+      "uuid": "String, deliberately not parsed as UUID"
+    }
+  },
+  "implemented_remote_event_cases": [
+    "agentCrashed",
+    "agentCrashedDiagnostics"
+  ],
+  "implemented_remote_request_cases": [
+    "requestScreenshot",
+    "symbolicateCrashedDiagnostics"
+  ],
+  "nested_key_descriptors": {
+    "Frame": "0xd4408,6 records",
+    "Image": "0xd4460,5 records",
+    "Termination": "0xd44ac,8 records"
+  },
+  "report": {
+    "optional": {
+      "asi": "Dictionary<String,String[]>",
+      "id": "UUID string; absent native branch creates new UUID",
+      "logFilePath": "String",
+      "termination": "CrashTermination"
+    },
+    "required": {
+      "bugType": "String",
+      "frames": "CrashFrame[]",
+      "images": "CrashImage[]",
+      "name": "String",
+      "pid": "Int32",
+      "time": "Date"
+    }
+  },
+  "report_key_switch": "Descriptor0xd4380 independently establishes exactly10 enum records; ten jump-table targets at0xb6d30 plus valid case instructions give matching strings. Prior out-of-domain inference remains excluded.",
+  "termination": {
+    "all_optional": {
+      "byPid": "Int64",
+      "byProc": "String",
+      "code": "Int64",
+      "details": "String[]",
+      "flags": "Int64",
+      "indicator": "String",
+      "namespace": "String",
+      "reasons": "String[]"
+    }
+  },
+  "uuid_source_adapter": "FoundationHost0x9fae8 calls public Foundation.UUID(uuidString:); ID wraps that UUID"
+}

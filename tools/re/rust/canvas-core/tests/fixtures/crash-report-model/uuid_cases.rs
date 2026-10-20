@@ -1,0 +1,13 @@
+// Public Foundation UUID oracle expectations.
+const UUID_CASES:&[(&str,Option<&str>)]=&[
+("00112233-4455-6677-8899-aabbccddeeff",Some("00112233-4455-6677-8899-AABBCCDDEEFF")),
+("00112233-4455-6677-8899-AABBCCDDEEFF",Some("00112233-4455-6677-8899-AABBCCDDEEFF")),
+("00112233445566778899aabbccddeeff",None),
+("{00112233-4455-6677-8899-aabbccddeeff}",None),
+(" 00112233-4455-6677-8899-aabbccddeeff",None),
+("00112233-4455-6677-8899-aabbccddeeff ",None),
+("00112233-4455-6677-8899-aabbccddeefg",None),
+("00000000-0000-0000-0000-000000000000",Some("00000000-0000-0000-0000-000000000000")),
+("",None),
+("00112233−4455-6677-8899-aabbccddeeff",None),
+];

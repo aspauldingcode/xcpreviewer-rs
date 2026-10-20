@@ -7,6 +7,7 @@ pub mod binary_plist;
 pub mod bitmap_image;
 pub mod preview_geometry;
 pub mod remote_crash;
+pub mod crash_report;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

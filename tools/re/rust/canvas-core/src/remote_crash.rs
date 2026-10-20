@@ -1,6 +1,6 @@
-//! Partial RemoteEventPayload codec: agentCrashed notifications only.
+//! Remote crash notification, diagnostics report and request codecs.
 //! PreviewRemoteEvents is a crash/diagnostics stream, not pointer/touch input.
-//! CrashReport decoding and transport/lifecycle settlement remain unsupported.
+//! Transport and lifecycle settlement remain separate acceptance tracks.
 use crate::{binary_plist, payload_codec::Value};
 use std::collections::BTreeMap;
 pub const STREAM_IDENTIFIER: &str = "Ultraviolet.PreviewRemoteEvents";
@@ -22,7 +22,9 @@ pub enum Error {
     Type(&'static str),
     Range(&'static str),
     UnknownDiscriminant(String),
+    /// Narrow helpers cannot represent a report; use the full event/request enums.
     UnsupportedCrashReport,
+    Report(crate::crash_report::Error),
 }
 type Fields = BTreeMap<String, Value>;
 fn dictionary<'a>(v: &'a Value, key: &'static str) -> Result<&'a Fields, Error> {
@@ -129,5 +131,92 @@ impl ScreenshotRequest {
             "discriminant".into(),
             Value::String("requestScreenshot".into()),
         )]))
+    }
+}
+
+/// Complete structural coverage of the two recovered event cases. Native error
+/// payloads, transport and resource settlement are separate acceptance tracks.
+#[derive(Clone, Debug, PartialEq)]
+pub enum RemoteEventPayload {
+    AgentCrashed(AgentCrashNotification),
+    AgentCrashedDiagnostics(crate::crash_report::CrashReport),
+}
+#[derive(Clone, Debug, PartialEq)]
+pub enum RemoteEventRequest {
+    RequestScreenshot,
+    SymbolicateCrashedDiagnostics(crate::crash_report::CrashReport),
+}
+fn report(
+    v: &Value,
+    entropy: &mut impl FnMut() -> Result<[u8; 16], crate::crash_report::Error>,
+) -> Result<crate::crash_report::CrashReport, Error> {
+    crate::crash_report::CrashReport::decode_with_entropy(v, entropy).map_err(Error::Report)
+}
+impl RemoteEventPayload {
+    pub fn decode(v: &Value) -> Result<Self, Error> {
+        Self::decode_with_entropy(v, &mut || Err(crate::crash_report::Error::EntropyRequired))
+    }
+    pub fn decode_binary(bytes: &[u8]) -> Result<Self, Error> {
+        Self::decode(&binary_plist::decode(bytes).map_err(Error::Plist)?)
+    }
+    pub fn decode_with_entropy(
+        v: &Value,
+        entropy: &mut impl FnMut() -> Result<[u8; 16], crate::crash_report::Error>,
+    ) -> Result<Self, Error> {
+        let d = dictionary(v, "remoteEventPayload")?;
+        match discriminant(d)? {
+            "agentCrashed" => Ok(Self::AgentCrashed(AgentCrashNotification::decode(v)?)),
+            "agentCrashedDiagnostics" => Ok(Self::AgentCrashedDiagnostics(report(
+                required(d, "crashReport")?,
+                entropy,
+            )?)),
+            s => Err(Error::UnknownDiscriminant(s.into())),
+        }
+    }
+    pub fn to_value(&self) -> Value {
+        match self {
+            Self::AgentCrashed(n) => n.to_value(),
+            Self::AgentCrashedDiagnostics(r) => Value::Dictionary(Fields::from([
+                (
+                    "discriminant".into(),
+                    Value::String("agentCrashedDiagnostics".into()),
+                ),
+                ("crashReport".into(), r.to_value()),
+            ])),
+        }
+    }
+}
+impl RemoteEventRequest {
+    pub fn decode(v: &Value) -> Result<Self, Error> {
+        Self::decode_with_entropy(v, &mut || Err(crate::crash_report::Error::EntropyRequired))
+    }
+    pub fn decode_binary(bytes: &[u8]) -> Result<Self, Error> {
+        Self::decode(&binary_plist::decode(bytes).map_err(Error::Plist)?)
+    }
+    pub fn decode_with_entropy(
+        v: &Value,
+        entropy: &mut impl FnMut() -> Result<[u8; 16], crate::crash_report::Error>,
+    ) -> Result<Self, Error> {
+        let d = dictionary(v, "remoteEventRequest")?;
+        match discriminant(d)? {
+            "requestScreenshot" => Ok(Self::RequestScreenshot),
+            "symbolicateCrashedDiagnostics" => Ok(Self::SymbolicateCrashedDiagnostics(report(
+                required(d, "crashReport")?,
+                entropy,
+            )?)),
+            s => Err(Error::UnknownDiscriminant(s.into())),
+        }
+    }
+    pub fn to_value(&self) -> Value {
+        match self {
+            Self::RequestScreenshot => ScreenshotRequest.to_value(),
+            Self::SymbolicateCrashedDiagnostics(r) => Value::Dictionary(Fields::from([
+                (
+                    "discriminant".into(),
+                    Value::String("symbolicateCrashedDiagnostics".into()),
+                ),
+                ("crashReport".into(), r.to_value()),
+            ])),
+        }
     }
 }

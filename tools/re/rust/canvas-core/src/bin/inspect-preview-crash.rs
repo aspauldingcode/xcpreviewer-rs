@@ -1,5 +1,5 @@
 //! Inspect supported crash notifications without acting on any process.
-use canvas_core::remote_crash::{AgentCrashNotification, STREAM_IDENTIFIER};
+use canvas_core::remote_crash::{RemoteEventPayload, STREAM_IDENTIFIER};
 fn run() -> Result<(), String> {
     use std::io::Read;
     let args = std::env::args_os().skip(1).collect::<Vec<_>>();
@@ -14,11 +14,20 @@ fn run() -> Result<(), String> {
     if bytes.len() > 64 * 1024 * 1024 {
         return Err("input exceeds 64 MiB".into());
     }
-    let e = AgentCrashNotification::decode_binary(&bytes).map_err(|e| format!("{e:?}"))?;
-    println!(
-        "stream={STREAM_IDENTIFIER} pid={} agent_behavior={:?}",
-        e.pid, e.agent_behavior
-    );
+    let e = RemoteEventPayload::decode_binary(&bytes).map_err(|e| format!("{e:?}"))?;
+    match e {
+        RemoteEventPayload::AgentCrashed(e) => println!(
+            "stream={STREAM_IDENTIFIER} pid={} agent_behavior={:?}",
+            e.pid, e.agent_behavior
+        ),
+        RemoteEventPayload::AgentCrashedDiagnostics(r) => println!(
+            "stream={STREAM_IDENTIFIER} diagnostics_report={} pid={} images={} frames={}",
+            r.id.canonical(),
+            r.pid,
+            r.images.len(),
+            r.frames.len()
+        ),
+    }
     Ok(())
 }
 fn main() {

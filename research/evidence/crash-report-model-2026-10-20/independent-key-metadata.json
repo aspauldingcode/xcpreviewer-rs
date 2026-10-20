@@ -1,0 +1,63 @@
+{
+  "report": {
+    "descriptor": "0xd4380",
+    "kind": 2,
+    "record_size": 12,
+    "count": 10,
+    "case_names": [
+      "id",
+      "name",
+      "bugType",
+      "pid",
+      "time",
+      "asi",
+      "termination",
+      "images",
+      "frames",
+      "logFilePath"
+    ]
+  },
+  "frame": {
+    "descriptor": "0xd4408",
+    "kind": 2,
+    "record_size": 12,
+    "count": 6,
+    "case_names": [
+      "imageIndex",
+      "imageOffset",
+      "symbol",
+      "symbolLocation",
+      "sourceFile",
+      "sourceLine"
+    ]
+  },
+  "image": {
+    "descriptor": "0xd4460",
+    "kind": 2,
+    "record_size": 12,
+    "count": 5,
+    "case_names": [
+      "uuid",
+      "arch",
+      "base",
+      "path",
+      "name"
+    ]
+  },
+  "termination": {
+    "descriptor": "0xd44ac",
+    "kind": 2,
+    "record_size": 12,
+    "count": 8,
+    "case_names": [
+      "flags",
+      "code",
+      "namespace",
+      "details",
+      "indicator",
+      "byProc",
+      "byPid",
+      "reasons"
+    ]
+  }
+}
