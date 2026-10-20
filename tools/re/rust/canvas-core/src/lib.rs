@@ -8,6 +8,7 @@ pub mod bitmap_image;
 pub mod preview_geometry;
 pub mod remote_crash;
 pub mod crash_report;
+pub mod crash_listener;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

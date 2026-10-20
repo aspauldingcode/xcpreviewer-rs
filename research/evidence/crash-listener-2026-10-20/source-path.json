@@ -1,0 +1,30 @@
+{
+  "cache_source_mapping": "Prior service cache branch tag0 is PID, tag1 is processName; no name caching inferred. Cache expiration/eviction remain unknown.",
+  "coder_program": "PreviewsMessagingHost",
+  "coders": {
+    "message": "0x36fe8,340 bytes",
+    "process_body": "0x3b1dc,376 bytes",
+    "request": "0x3742c,320 bytes",
+    "response": "0x37900,272 bytes"
+  },
+  "continuations": {
+    "0x239dc": "308 bytes; daemon-connection error branch or await typed CrashListener transport sender",
+    "0x23b10": "100 bytes; sender result branches into send or sender-error continuation",
+    "0x23b74": "356 bytes; sends typed TwoWayMessage expecting NextCrashResponse, awaits returned Task value",
+    "0x23cd8": "92 bytes; reply result branches",
+    "0x23d34": "864 bytes; extracts required CrashReport, releases task/sender/request temporaries, deallocates local async storage",
+    "0x24094": "292 bytes; connection-error local cleanup",
+    "0x241b8": "308 bytes; sender-error local cleanup",
+    "0x242ec": "920 bytes; reply-error logs, willThrow and local cleanup"
+  },
+  "independent_metadata_domains": 6,
+  "keys_and_discriminants": {
+    "message_discriminants": "0x36cd4; long-string actual bytes0xc4f40",
+    "process_discriminants": "0x38060",
+    "request": "0x37320",
+    "response": "0x37810",
+    "shared_keys": "0x3c9e8 -> shared body"
+  },
+  "program": "PreviewsPlatforms",
+  "scope": "Selected source continuations only; local value/task-storage cleanup is not remote target cancellation or resource reclamation. Swift error-register propagation is supported by selected instructions; do not use inferred C prototypes as callable private Swift ABI."
+}

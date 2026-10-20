@@ -1,0 +1,31 @@
+{
+  "CrashListenerMessage": {
+    "nextCrashReport": "required NextCrashRequest under payload",
+    "startListeningIfNeeded": "No payload decoded; unrelated payload ignored"
+  },
+  "NextCrashRequest": {
+    "process": "required ProcessIdentifier",
+    "timeout": "required Double"
+  },
+  "NextCrashResponse": {
+    "crashReport": "required CrashReport"
+  },
+  "ProcessIdentifier": {
+    "pid": "required Int32",
+    "processName": "required String",
+    "tag_key": "discriminant",
+    "value_key": "payload"
+  },
+  "original_portable_policy": [
+    "Strict Value Real for Double; native Foundation numeric coercion/error/null parity not qualified",
+    "Preserve negative, zero, signed-zero, infinity and NaN rather than invent timeout validation; not a timeout execution policy",
+    "No positive/live-PID restriction; data only, no process operation",
+    "Absent report ID delegates explicit caller entropy boundary from existing report codec"
+  ],
+  "unknowns": [
+    "Transport service/channel identifiers and outer envelope fields",
+    "Daemon-side timeout and cancellation implementation",
+    "Caller Future cancellation propagation and cache eviction",
+    "Runtime captures, resource release/reuse/fences and final settlement"
+  ]
+}

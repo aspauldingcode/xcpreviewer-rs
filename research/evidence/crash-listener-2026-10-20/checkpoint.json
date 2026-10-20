@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-20T00:34:08.565466+00:00",
+  "binary_fixtures": 4,
+  "independent_key_domains": 6,
+  "milestones_complete": false,
+  "native_target_cancellation_proven": false,
+  "next": [
+    "Recover CrashListener service identity and outer envelope/correlation",
+    "Recover daemon-side nextCrashReport timeout/cancellation behavior and caller Future cancellation/cache eviction",
+    "Correlate actual owned runtime resources; keep view-input path independent"
+  ],
+  "private_runtime_observed": false,
+  "selected": "Crash-listener typed protocol and service send/reply/error source path",
+  "tests_passed": 54
+}
