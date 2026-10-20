@@ -1,6 +1,7 @@
-//! Selected service NSError field projection, separate from CPX envelopes.
+//! Selected service NSError field projection and optional archive diagnostics.
 //! Code descriptions come from the pinned native factory; runtime coverage is
-//! the owned reply-operation-failure case. This does not decode error archives.
+//! the owned reply-operation-failure case. The archive entry point delegates to
+//! the separately bounded string-valued NSErrorDetails profile.
 use crate::settings_xpc::XpcValue;
 use std::collections::BTreeMap;
 pub const DOMAIN: &str = "BSServiceConnectionErrorDomain";
@@ -24,7 +25,7 @@ pub struct ServiceConnectionError {
     pub additional_info: BTreeMap<String, XpcValue>,
 }
 #[derive(Clone, Debug, PartialEq, Eq)]
-pub enum Error { Domain, UserInfo, CodeDescription, FailureReason }
+pub enum Error { Domain, UserInfo, CodeDescription, FailureReason, Archive(crate::nserror_archive::Error) }
 impl ServiceConnectionError {
     pub fn from_fields(domain: &str, code: i64, user_info: &XpcValue) -> Result<Self, Error> {
         if domain != DOMAIN { return Err(Error::Domain); }
@@ -46,5 +47,14 @@ impl ServiceConnectionError {
         info.insert("BSErrorCodeDescription".into(), XpcValue::String(code_description(self.code).into()));
         info.insert("NSLocalizedFailureReason".into(), XpcValue::String(self.failure_reason.clone()));
         XpcValue::Dictionary(info)
+    }
+}
+
+impl ServiceConnectionError {
+    /// Project the measured string-valued archive diagnostics into this model.
+    pub fn from_archive(bytes: &[u8]) -> Result<Self, Error> {
+        let details = crate::nserror_archive::NSErrorDetails::decode(bytes).map_err(Error::Archive)?;
+        let info = XpcValue::Dictionary(details.user_info.into_iter().map(|(k,v)|(k,XpcValue::String(v))).collect());
+        Self::from_fields(&details.error.domain, details.error.code, &info)
     }
 }

@@ -1,0 +1,8 @@
+{
+  "bounds": "1MiB input and total decoded string bytes,65536UTF16 units/text,1024array items,4096 text entries. Unknown/forward references, duplicate keys, numeric/nested arbitrary objects reject as original fail-closed policy.",
+  "hostile_fixture": "Original synthetic45054B dictionary with1024shared16384char values demonstrates reference expansion. Error::Limit rejects before unbounded decoded allocation. It is not a native capture.",
+  "negative": "Valid native numeric userInfo archive196B decodes natively but optional string-profile decoder returns UnsupportedUserInfo. Old canonical nil-userInfo encoder/decoder and opaque APIs remain unchanged.",
+  "not_proven": "Arbitrary bplist17 graphs/classes/references, native malformed-input acceptance, details re-encoding, actual Canvas lifecycle/transport, complete native resource/target settlement or milestone parity.",
+  "ordering": "Independent NSDictionary allKeys on original input provides key-array ordering expectation in each native control. No universal insertion/sorted/enumeration order claimed. Portable map semantic order is separate from retained archive bytes.",
+  "supported": "NSError domain/code plus NSDictionary string keys/string values, nil/empty userInfo, measured backward string references to prior text boundaries. Semantic projection preserves original completion archive; no new details encoder or byte-order canonicalization."
+}

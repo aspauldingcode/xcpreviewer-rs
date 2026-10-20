@@ -1,6 +1,7 @@
 //! Bounded canonical NSError bplist17 profile measured through BSXPCCoder.
-//! Supports domain/code and nil archived userInfo only. This is not a general
-//! bplist17/object-graph decoder; opaque completion archives remain preserved.
+//! ArchivedNSError retains the canonical nil-userInfo profile. NSErrorDetails
+//! adds string-valued dictionary decoding. Arbitrary object graphs remain
+//! unsupported and original completion archive bytes stay preserved.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct ArchivedNSError { pub domain: String, pub code: i64 }
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -66,5 +67,106 @@ impl ArchivedNSError {
         out.extend_from_slice(b"\x7bNSUserInfo\0\xe0");
         if out.len() > MAX_BYTES { return Err(Error::Limit) }
         let end = (out.len() - 1) as u64; out[outer..outer+8].copy_from_slice(&end.to_le_bytes()); out[inner..inner+8].copy_from_slice(&end.to_le_bytes()); Ok(out)
+    }
+}
+
+
+/// Selected string-valued NSError userInfo. Original archive ownership and
+/// byte order belong to the completion; this is a semantic decoding view.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct NSErrorDetails {
+    pub error: ArchivedNSError,
+    pub user_info: std::collections::BTreeMap<String, String>,
+}
+struct DetailCursor<'a> {
+    inner: Cursor<'a>,
+    strings: std::collections::BTreeMap<usize, String>,
+    decoded_bytes: usize,
+}
+impl DetailCursor<'_> {
+    fn charge(&mut self, bytes: usize) -> Result<(), Error> {
+        self.decoded_bytes = self.decoded_bytes.checked_add(bytes).ok_or(Error::Limit)?;
+        if self.decoded_bytes > MAX_BYTES { return Err(Error::Limit) }
+        Ok(())
+    }
+    fn container(&mut self, tag: u8) -> Result<usize, Error> {
+        self.inner.expect(&[tag])?;
+        let mut raw = [0u8; 8]; raw.copy_from_slice(self.inner.take(8)?);
+        let end = usize::try_from(u64::from_le_bytes(raw)).map_err(|_| Error::Bounds)?;
+        if end >= self.inner.bytes.len() || end + 1 < self.inner.at { return Err(Error::Bounds) }
+        Ok(end)
+    }
+    fn text(&mut self) -> Result<String, Error> {
+        let start = self.inner.at;
+        let tag = self.inner.take(1)?[0];
+        let value = match tag {
+            0x60..=0x6f => {
+                let units = if tag == 0x6f { usize::try_from(self.inner.integer()?).map_err(|_| Error::Limit)? } else { (tag & 15) as usize };
+                if units > MAX_DOMAIN_UNITS { return Err(Error::Limit) }
+                let bytes = self.inner.take(units.checked_mul(2).ok_or(Error::Bounds)?)?;
+                let units: Vec<_> = bytes.chunks_exact(2).map(|v| u16::from_le_bytes([v[0],v[1]])).collect();
+                String::from_utf16(&units).map_err(|_| Error::Utf16)?
+            }
+            0x70..=0x7f => {
+                let count = if tag == 0x7f { usize::try_from(self.inner.integer()?).map_err(|_| Error::Limit)? } else { (tag & 15) as usize };
+                if count == 0 || count > MAX_DOMAIN_UNITS { return Err(Error::Limit) }
+                let bytes = self.inner.take(count)?;
+                if bytes.last() != Some(&0) || !bytes[..count-1].is_ascii() { return Err(Error::Profile) }
+                String::from_utf8(bytes[..count-1].to_vec()).map_err(|_| Error::Profile)?
+            }
+            0x81 | 0x82 | 0x84 | 0x88 => {
+                let mut raw = [0u8;8]; let width = (tag & 15) as usize;
+                raw[..width].copy_from_slice(self.inner.take(width)?);
+                let offset = usize::try_from(u64::from_le_bytes(raw)).map_err(|_| Error::Bounds)?;
+                if offset >= start { return Err(Error::Profile) }
+                let value = self.strings.get(&offset).cloned().ok_or(Error::Profile)?;
+                self.charge(value.len())?; return Ok(value);
+            }
+            _ => return Err(Error::UnsupportedUserInfo),
+        };
+        if self.strings.len() >= 4096 { return Err(Error::Limit) }
+        self.charge(value.len())?; self.strings.insert(start, value.clone()); Ok(value)
+    }
+    fn expected_text(&mut self, text: &str) -> Result<(), Error> {
+        if self.text()? == text { Ok(()) } else { Err(Error::Profile) }
+    }
+    fn array(&mut self) -> Result<Vec<String>, Error> {
+        let end = self.container(0xa0)?; let mut values = Vec::new();
+        while self.inner.at <= end {
+            if values.len() >= 1024 { return Err(Error::Limit) }
+            values.push(self.text()?);
+        }
+        if self.inner.at != end + 1 { return Err(Error::Profile) }
+        Ok(values)
+    }
+}
+impl NSErrorDetails {
+    /// Decode the observed NSDictionary NS.keys/NS.objects string profile.
+    /// Numeric/nested objects and arbitrary graph references remain unsupported.
+    pub fn decode(bytes: &[u8]) -> Result<Self, Error> {
+        if bytes.len() > MAX_BYTES { return Err(Error::Limit) }
+        let mut c = DetailCursor { inner: Cursor { bytes, at: 0 }, strings: Default::default(), decoded_bytes: 0 };
+        c.inner.expect(b"bplist17")?;
+        let outer = c.container(0xd0)?; c.expected_text("bsx")?;
+        let object_end = c.container(0xd0)?;
+        if outer + 1 != bytes.len() || object_end != outer { return Err(Error::Profile) }
+        c.expected_text("$class")?; c.expected_text("NSError")?;
+        c.expected_text("NSCode")?; let code = c.inner.integer()?;
+        c.expected_text("NSDomain")?; let domain = c.text()?;
+        c.expected_text("NSUserInfo")?;
+        let mut user_info = std::collections::BTreeMap::new();
+        if c.inner.bytes.get(c.inner.at) == Some(&0xe0) { c.inner.take(1)?; }
+        else {
+            let end = c.container(0xd0)?;
+            c.expected_text("$class")?; c.expected_text("NSDictionary")?;
+            c.expected_text("NS.keys")?; let keys = c.array()?;
+            c.expected_text("NS.objects")?; let values = c.array()?;
+            if keys.len() != values.len() || c.inner.at != end + 1 { return Err(Error::Profile) }
+            for (key,value) in keys.into_iter().zip(values) {
+                if user_info.insert(key,value).is_some() { return Err(Error::Profile) }
+            }
+        }
+        if c.inner.at != bytes.len() { return Err(Error::Profile) }
+        Ok(Self { error: ArchivedNSError { domain, code }, user_info })
     }
 }

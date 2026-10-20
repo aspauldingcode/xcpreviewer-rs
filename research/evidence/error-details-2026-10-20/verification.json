@@ -1,0 +1,99 @@
+{
+  "actual_native_callback_archive": {
+    "actual_native_callback": true,
+    "actual_native_factory_error3_archive_bytes": 427,
+    "equal_independent_authored_field_control": true,
+    "new_archive_is_local_encoding_not_captured_error_reply": true
+  },
+  "byte_corruptions_rejected": 1260,
+  "cases": [
+    {
+      "bytes": 241,
+      "case": "single",
+      "code": 17,
+      "domain": "Owned.Info",
+      "native_roundtrip_equal": true,
+      "portable_supported": true,
+      "sha256": "6ceca6f455aa58e1b52fb5691539be0bd202e900cf39af31a9c937143d240b5e",
+      "user_info": {
+        "NSLocalizedFailureReason": "owned.reason"
+      },
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    },
+    {
+      "bytes": 427,
+      "case": "diagnostic",
+      "code": 3,
+      "domain": "BSServiceConnectionErrorDomain",
+      "native_roundtrip_equal": true,
+      "portable_supported": true,
+      "sha256": "d06367cd4c889dfcd60ba926a8f8bf5551cc8641500fc68171748b910efaca2f",
+      "user_info": {
+        "BSErrorCodeDescription": "OperationFailed",
+        "NSLocalizedFailureReason": "XPC error received on message reply handler"
+      },
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    },
+    {
+      "bytes": 218,
+      "case": "unicode",
+      "code": -129,
+      "domain": "Owned.\u2603",
+      "native_roundtrip_equal": true,
+      "portable_supported": true,
+      "sha256": "b0275e752468c51c3d15cbc9c7b6daf89c26e2dc9499b02d1d3c6e4835ef2b5a",
+      "user_info": {
+        "cl\u00e9.\u2603": "value.\ud83d\ude00",
+        "second": "other"
+      },
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    },
+    {
+      "bytes": 104,
+      "case": "empty",
+      "code": 0,
+      "domain": "Owned.Empty",
+      "native_roundtrip_equal": true,
+      "portable_supported": true,
+      "sha256": "195d752d429f6d383fce8fc1350b820f67c7eebb3615acfe143c76e0470c4e6d",
+      "user_info": {},
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    },
+    {
+      "bytes": 196,
+      "case": "numeric",
+      "code": 7,
+      "domain": "Owned.Unsupported",
+      "native_roundtrip_equal": true,
+      "portable_supported": false,
+      "sha256": "6635b94ae3874128da92e7c67bb0c8f7fa24cd73ac2bc68b5f3a8174a436f9c0",
+      "user_info": {
+        "number": 42
+      },
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    },
+    {
+      "bytes": 270,
+      "case": "holdout",
+      "code": 256,
+      "domain": "Owned.Holdout.\ud83d\ude00",
+      "native_roundtrip_equal": true,
+      "portable_supported": true,
+      "sha256": "e2e1f2976a01a48e947c8636f8c247c10261694bff15e3c14d9b7b398f087132",
+      "user_info": {
+        "detail": "a different holdout value",
+        "status": "ready"
+      },
+      "wire_key_order_expectation_source": "independent NSDictionary allKeys on original error.userInfo"
+    }
+  ],
+  "core_tests_passed": 134,
+  "dictionary_wire_order_not_universal": true,
+  "fresh_native_replay": true,
+  "generic_bplist17": false,
+  "new_product_source_changes": true,
+  "receipt_mutations_rejected": 30,
+  "reference_expansion_limit_test": true,
+  "supported_native_bytes_verified": 1260,
+  "unsupported_numeric_bytes": 196
+}

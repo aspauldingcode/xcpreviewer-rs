@@ -123,3 +123,10 @@ impl WorkspaceActionCompletion {
         self.error_archive.as_deref().map(crate::nserror_archive::ArchivedNSError::decode).transpose()
     }
 }
+
+impl WorkspaceActionCompletion {
+    /// Optional string-valued native error details; original archive stays owned.
+    pub fn decoded_error_details(&self) -> Result<Option<crate::nserror_archive::NSErrorDetails>, crate::nserror_archive::Error> {
+        self.error_archive.as_deref().map(crate::nserror_archive::NSErrorDetails::decode).transpose()
+    }
+}
