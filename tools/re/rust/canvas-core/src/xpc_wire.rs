@@ -18,11 +18,14 @@ pub enum Error {
     Tag(u32),
     Container,
     Trailing,
+    Descriptors,
 }
 struct Reader<'a> {
     bytes: &'a [u8],
     pos: usize,
     nodes: usize,
+    descriptor_count: Option<u32>,
+    descriptor_order: Vec<u32>,
 }
 impl<'a> Reader<'a> {
     fn take(&mut self, n: usize) -> Result<&'a [u8], Error> {
@@ -58,6 +61,17 @@ impl<'a> Reader<'a> {
             return Err(Error::Limit);
         }
         match self.word()? {
+            0xb000 => {
+                let Some(count) = self.descriptor_count else {
+                    return Err(Error::Tag(0xb000));
+                };
+                let ordinal = self.descriptor_order.len() as u32;
+                if ordinal >= count {
+                    return Err(Error::Descriptors);
+                }
+                self.descriptor_order.push(ordinal);
+                Ok(DescriptorRef(ordinal))
+            }
             0x2000 => match self.word()? {
                 0 => Ok(Bool(false)),
                 1 => Ok(Bool(true)),
@@ -129,6 +143,9 @@ impl<'a> Reader<'a> {
     }
 }
 pub fn decode_body(bytes: &[u8]) -> Result<XpcValue, Error> {
+    decode_internal(bytes, None)
+}
+fn decode_internal(bytes: &[u8], descriptors: Option<u32>) -> Result<XpcValue, Error> {
     if bytes.len() > MAX_BYTES {
         return Err(Error::Limit);
     }
@@ -139,6 +156,8 @@ pub fn decode_body(bytes: &[u8]) -> Result<XpcValue, Error> {
         bytes,
         pos: 4,
         nodes: 0,
+        descriptor_count: descriptors,
+        descriptor_order: Vec::new(),
     };
     if r.word()? != 5 {
         return Err(Error::Version);
@@ -147,11 +166,18 @@ pub fn decode_body(bytes: &[u8]) -> Result<XpcValue, Error> {
     if r.pos != bytes.len() {
         return Err(Error::Trailing);
     }
+    if let Some(count) = descriptors {
+        if r.descriptor_order.len() != count as usize {
+            return Err(Error::Descriptors);
+        }
+    }
     Ok(value)
 }
 struct Writer {
     bytes: Vec<u8>,
     nodes: usize,
+    descriptor_count: Option<u32>,
+    descriptor_order: Vec<u32>,
 }
 impl Writer {
     fn append(&mut self, b: &[u8]) -> Result<(), Error> {
@@ -177,6 +203,19 @@ impl Writer {
             return Err(Error::Limit);
         }
         match v {
+            DescriptorRef(index) => {
+                let Some(count) = self.descriptor_count else {
+                    return Err(Error::Tag(0xb000));
+                };
+                if *index >= count {
+                    return Err(Error::Descriptors);
+                }
+                if self.descriptor_order.len() >= 1024 {
+                    return Err(Error::Limit);
+                }
+                self.descriptor_order.push(*index);
+                self.word(0xb000)?;
+            }
             Bool(b) => {
                 self.word(0x2000)?;
                 self.word(u32::from(*b))?;
@@ -248,10 +287,47 @@ impl Writer {
 /// Canonical sorted-key encoding of this observed subset; native dictionary
 /// iteration order is not promised. No endpoint or attachment is synthesized.
 pub fn encode_body(value: &XpcValue) -> Result<Vec<u8>, Error> {
+    Ok(encode_internal(value, None)?.body)
+}
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct EncodedWithDescriptors {
+    pub body: Vec<u8>,
+    /// Backend must emit descriptors in this order relative to its input table.
+    /// Repeated indices require the backend's independently valid copy policy.
+    pub descriptor_order: Vec<u32>,
+}
+/// Opt-in syntax projection. Caller validates/owns the actual attachment table.
+/// All declared descriptors must be consumed; no handle is acquired or released.
+pub fn decode_body_with_descriptors(bytes: &[u8], count: u32) -> Result<XpcValue, Error> {
+    if count > 1024 {
+        return Err(Error::Limit);
+    }
+    decode_internal(bytes, Some(count))
+}
+/// Preserve logical bindings when canonical key ordering changes traversal.
+/// This returns a permutation/reference plan, never native OS capabilities.
+pub fn encode_body_with_descriptors(
+    value: &XpcValue,
+    count: u32,
+) -> Result<EncodedWithDescriptors, Error> {
+    if count > 1024 {
+        return Err(Error::Limit);
+    }
+    encode_internal(value, Some(count))
+}
+fn encode_internal(
+    value: &XpcValue,
+    descriptors: Option<u32>,
+) -> Result<EncodedWithDescriptors, Error> {
     let mut w = Writer {
         bytes: b"CPX@\x05\0\0\0".to_vec(),
         nodes: 0,
+        descriptor_count: descriptors,
+        descriptor_order: Vec::new(),
     };
     w.value(value, 0)?;
-    Ok(w.bytes)
+    Ok(EncodedWithDescriptors {
+        body: w.bytes,
+        descriptor_order: w.descriptor_order,
+    })
 }

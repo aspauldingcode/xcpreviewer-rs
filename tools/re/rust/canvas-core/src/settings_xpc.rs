@@ -11,6 +11,8 @@ pub enum XpcValue {
     Bool(bool),
     Data(Vec<u8>),
     String(String),
+    /// Opaque attachment-table ordinal, never a portable OS descriptor/right.
+    DescriptorRef(u32),
 }
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct ArchivedSettings {

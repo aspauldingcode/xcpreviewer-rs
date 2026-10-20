@@ -1,0 +1,87 @@
+{
+  "byte_faults_rejected": 8,
+  "cases": {
+    "native": {
+      "descriptor_order": [
+        1,
+        0
+      ],
+      "native": {
+        "body_sha256": "f88ea12a92166aa49e342ef10ca7a020561a6bdf8700a9e9813dcac60281f808",
+        "descriptor_count": 2,
+        "entire_complex_body_bytes": 388,
+        "expected_read_a": 23,
+        "expected_read_b": 23,
+        "kernel_disposition_rewrite_offsets": [
+          14,
+          26
+        ],
+        "payload_matched": true,
+        "same_kernel_port_name_in_alias_case": false,
+        "source_same_fd_number_reused": true,
+        "wire_bytes": 360,
+        "wire_sha256": "549d9c7f0b33213ba55672264d493b0a5a8b932c01dbd1e45953fd80b075d5de"
+      },
+      "portable": {
+        "body_sha256": "3a6e0800a106381c0d92cb0dc6a67ea58a72b999d812fcde44a2e677a814151c",
+        "descriptor_count": 2,
+        "entire_complex_body_bytes": 388,
+        "expected_read_a": 23,
+        "expected_read_b": 23,
+        "kernel_disposition_rewrite_offsets": [
+          14,
+          26
+        ],
+        "payload_matched": true,
+        "same_kernel_port_name_in_alias_case": false,
+        "source_same_fd_number_reused": true,
+        "wire_bytes": 360,
+        "wire_sha256": "ed78f0dbf931f1a11fa420d870c012a9c6976c88695c9041600f8163b6f5a5dc"
+      }
+    },
+    "native-alias": {
+      "descriptor_order": [
+        1,
+        0
+      ],
+      "native": {
+        "body_sha256": "8a732b6f7359766bd082b61731990c221fe64f96e9a9dec3d8a88dbbf4ab6340",
+        "descriptor_count": 2,
+        "entire_complex_body_bytes": 388,
+        "expected_read_a": 23,
+        "expected_read_b": 0,
+        "kernel_disposition_rewrite_offsets": [
+          14,
+          26
+        ],
+        "payload_matched": true,
+        "same_kernel_port_name_in_alias_case": true,
+        "source_same_fd_number_reused": false,
+        "wire_bytes": 360,
+        "wire_sha256": "549d9c7f0b33213ba55672264d493b0a5a8b932c01dbd1e45953fd80b075d5de"
+      },
+      "portable": {
+        "body_sha256": "d812ea5c2c1e62e7d3c28f78fa25ffb05e3ac5118bc92836b1d00c1fa41f9fae",
+        "descriptor_count": 2,
+        "entire_complex_body_bytes": 388,
+        "expected_read_a": 23,
+        "expected_read_b": 0,
+        "kernel_disposition_rewrite_offsets": [
+          14,
+          26
+        ],
+        "payload_matched": true,
+        "same_kernel_port_name_in_alias_case": true,
+        "source_same_fd_number_reused": false,
+        "wire_bytes": 360,
+        "wire_sha256": "ed78f0dbf931f1a11fa420d870c012a9c6976c88695c9041600f8163b6f5a5dc"
+      }
+    }
+  },
+  "cross_process_canvas": false,
+  "final_right_retirement_proven": false,
+  "intentional_wrong_order_semantic_failure_detected": true,
+  "os_capability_execution_implemented": false,
+  "portable_projection_only": true,
+  "total_complex_body_bytes_compared": 1552
+}
