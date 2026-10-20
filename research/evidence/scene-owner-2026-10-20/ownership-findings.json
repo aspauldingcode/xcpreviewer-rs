@@ -1,0 +1,107 @@
+{
+  "classes": [
+    {
+      "class": "_TtCC15PreviewShellKit22PreviewSceneAgentProxyP33_3E64D4B6ABF6A6AD0F98F116D965CFCA13SceneDelegate",
+      "ivars": [
+        {
+          "encoding": "",
+          "name": "sceneMessenger",
+          "offset": 32
+        }
+      ],
+      "methods": [
+        {
+          "address": "0x27066deb4",
+          "owner": "/System/Library/PrivateFrameworks/PreviewShellKit.framework/Versions/A/PreviewShellKit",
+          "selector": "scene:didReceiveActions:",
+          "types": "v32@0:8@16@24"
+        }
+      ],
+      "present": true,
+      "superclass": "NSObject"
+    },
+    {
+      "class": "PSScene",
+      "ivars": [
+        {
+          "encoding": "@\"FBScene\"",
+          "name": "_scene",
+          "offset": 8
+        }
+      ],
+      "methods": [],
+      "present": true,
+      "superclass": "NSObject"
+    },
+    {
+      "class": "FBScene",
+      "ivars": [
+        {
+          "encoding": "@\"<NSObject>\"",
+          "name": "_clientToken",
+          "offset": 56
+        },
+        {
+          "encoding": "@\"<FBSceneClient>\"",
+          "name": "_client",
+          "offset": 64
+        },
+        {
+          "encoding": "B",
+          "name": "_legacy",
+          "offset": 218
+        },
+        {
+          "encoding": "B",
+          "name": "_active",
+          "offset": 219
+        },
+        {
+          "encoding": "B",
+          "name": "_invalidated",
+          "offset": 221
+        }
+      ],
+      "methods": [
+        {
+          "address": "0x24fff525c",
+          "owner": "/System/Library/PrivateFrameworks/FrontBoard.framework/Versions/A/FrontBoard",
+          "selector": "sendActions:",
+          "types": "v24@0:8@16"
+        },
+        {
+          "address": "0x24fff6140",
+          "owner": "/System/Library/PrivateFrameworks/FrontBoard.framework/Versions/A/FrontBoard",
+          "selector": "sendActions:toExtension:",
+          "types": "v32@0:8@16#24"
+        }
+      ],
+      "present": true,
+      "superclass": "NSObject"
+    },
+    {
+      "class": "FBSScene",
+      "ivars": [],
+      "methods": [
+        {
+          "address": "0x1a81f69f8",
+          "owner": "/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices",
+          "selector": "sendActions:",
+          "types": "v24@0:8@16"
+        },
+        {
+          "address": "0x1a81fc414",
+          "owner": "/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices",
+          "selector": "sendActions:toExtension:",
+          "types": "v32@0:8@16#24"
+        }
+      ],
+      "present": true,
+      "superclass": "NSObject"
+    }
+  ],
+  "host_client_selector": "host:didReceiveActions:forExtension:",
+  "host_forwarding_selector": "sendActions:toExtension:",
+  "live_dynamic_scene_class_observed": false,
+  "source_field_offset_global": 32
+}

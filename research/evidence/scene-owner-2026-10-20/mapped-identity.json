@@ -1,0 +1,40 @@
+{
+  "bindings": [
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "FBSceneSendActions",
+      "prefix32_sha256": "3ce75de6af08944a268cb84b90945a3332adfc7f01d0a5862522dd14400bcbe6",
+      "unslid_address": "0x24281925c"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "FBSceneSendActionsToExtension",
+      "prefix32_sha256": "1e763b5de4f682e997569a2ded04655fe1ecee36e3b5237df1e40648eb507ed2",
+      "unslid_address": "0x24281a140"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "WorkspaceReceiveActions",
+      "prefix32_sha256": "c15b3f0aeb94f093e3a1de80573ec0a8c11254fc7cf4ab3116aef176f5f82dbb",
+      "unslid_address": "0x2427e6938"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "LocalReceiveActions",
+      "prefix32_sha256": "64abdb5195bba030482f0521b70b6defdca608797705c8e074ad1433710c60aa",
+      "unslid_address": "0x24280a334"
+    }
+  ],
+  "canvas_protocol_observed": false,
+  "container_profile": "ARM64 ELF analysis view of own loaded image; live rebased data, ASLR VA, no LINKEDIT; entrypoints resolved only",
+  "elf_sha256": "ca04587cdaa657e9002add48d56fc8c362feca472e67daf796c8dcc28fdf784e",
+  "image_path": "/System/Library/PrivateFrameworks/FrontBoard.framework/Versions/A/FrontBoard",
+  "mapped_bytes": 920568,
+  "private_entrypoints_invoked": false,
+  "segments": 6,
+  "uuid": "77495253204f3556bc193f42134ab49c"
+}
