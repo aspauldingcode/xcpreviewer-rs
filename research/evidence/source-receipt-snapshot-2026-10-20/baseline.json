@@ -1,0 +1,45 @@
+{
+  "failures": 3,
+  "final_owned_workers": 0,
+  "node": "v24.19.0",
+  "results": [
+    {
+      "accepted": true,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": null,
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "changing-module-reject",
+      "module_property_reads": 3,
+      "passed": false,
+      "published_module_sha256": "e6ed830835876483a45b808fef74719f2fca4a1abf39986c294982d832a17df1",
+      "receipt_matches_published_module": false
+    },
+    {
+      "accepted": false,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": "AssertionError [ERR_ASSERTION]: Complete allocation differs from independent expectation",
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "changing-module-accept",
+      "module_property_reads": 3,
+      "passed": false,
+      "published_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "receipt_matches_published_module": true
+    },
+    {
+      "accepted": false,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": "Error: CompileError: WebAssembly.compile(): expected magic word 00 61 73 6d, found 00 00 00 00 @+0",
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "receipt-getter-mutates-input",
+      "module_property_reads": 3,
+      "passed": false,
+      "published_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "receipt_matches_published_module": true
+    }
+  ],
+  "scope": "Owned JS source/module receipt snapshot policy, not native Canvas or artifact authenticity",
+  "v8": "13.6.233.17-node.51"
+}

@@ -1,0 +1,71 @@
+{
+  "failures": 0,
+  "final_owned_workers": 0,
+  "fresh_V8_replay": true,
+  "full_snapshot_bytes_compared": 49152,
+  "native_Canvas_sequence": false,
+  "new_product_source_changes": true,
+  "node": "v24.19.0",
+  "regression_tests_passed": 8,
+  "results": [
+    {
+      "accepted": false,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": "AssertionError [ERR_ASSERTION]: Complete allocation differs from independent expectation",
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "changing-module-reject",
+      "module_property_reads": 1,
+      "passed": true,
+      "published_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "receipt_matches_published_module": true
+    },
+    {
+      "accepted": true,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": null,
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "changing-module-accept",
+      "module_property_reads": 1,
+      "passed": true,
+      "published_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "receipt_matches_published_module": true
+    },
+    {
+      "accepted": true,
+      "declared_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "error": null,
+      "full_frame_bytes_verified": 16384,
+      "live_workers_before_close": 1,
+      "mode": "receipt-getter-mutates-input",
+      "module_property_reads": 1,
+      "passed": true,
+      "published_module_sha256": "4dacf7c144daef769fa079f02bdcf9e003187aa3e9d1e08efbb834043a5ccd6e",
+      "receipt_matches_published_module": true
+    },
+    {
+      "accepted": false,
+      "error": "AssertionError [ERR_ASSERTION]: ASCII source required",
+      "full_frame_bytes_verified": 0,
+      "mode": "non-ascii-overridden-every",
+      "passed": true,
+      "source_hash_matches_original": false,
+      "source_override_calls": 0
+    },
+    {
+      "accepted": true,
+      "error": null,
+      "full_frame_bytes_verified": 0,
+      "mode": "valid-source-mutating-every",
+      "passed": true,
+      "source_hash_matches_original": true,
+      "source_override_calls": 0
+    }
+  ],
+  "reused_corpus_revisions": 84,
+  "reused_independent_allocation_bytes_compared": 1376256,
+  "reused_native_bytes_compared": 1310720,
+  "scope": "Owned JS source/module receipt snapshot policy, not native Canvas or artifact authenticity",
+  "v8": "13.6.233.17-node.51"
+}

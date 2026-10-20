@@ -7,10 +7,11 @@ class SourceRevisionHost {
   begin(source) {
     assert(!this.#closed,'Source host closed');
     assert(Buffer.isBuffer(source) && source.length>0 && source.length<=4096);
-    assert(source.every(byte=>byte<128),'ASCII source required');
+    const snapshot=Buffer.from(source);
+    assert(snapshot.every(byte=>byte<128),'ASCII source required');
     assert(this.#generation<Number.MAX_SAFE_INTEGER);
     this.#latest=Object.freeze({generation:++this.#generation,
-      sourceSha256:crypto.createHash('sha256').update(source).digest('hex')});
+      sourceSha256:crypto.createHash('sha256').update(snapshot).digest('hex')});
     return this.#latest;
   }
   invalidate(){
@@ -20,11 +21,19 @@ class SourceRevisionHost {
   }
   submit(ticket,build,expected,timeout=1500) {
     assert(!this.#closed && ticket===this.#latest,'Stale or foreign build ticket');
-    assert.equal(build.sourceSha256,ticket.sourceSha256,'Build source receipt mismatch');
-    assert(Buffer.isBuffer(build.module));
-    assert.equal(crypto.createHash('sha256').update(build.module).digest('hex'),build.moduleSha256,
+    // Builder properties may be accessors. Snapshot the module before later
+    // receipt/configuration reads can mutate the caller's buffer or source.
+    const sourceSha256=build.sourceSha256;
+    const bytes=build.module;
+    assert(Buffer.isBuffer(bytes));
+    const module=Buffer.from(bytes);
+    const moduleSha256=build.moduleSha256,config=build.config;
+    const width=config.width,height=config.height,stride=build.stride;
+    assert(!this.#closed && ticket===this.#latest,'Stale or foreign build ticket');
+    assert.equal(sourceSha256,ticket.sourceSha256,'Build source receipt mismatch');
+    assert.equal(crypto.createHash('sha256').update(module).digest('hex'),moduleSha256,
       'Build module receipt mismatch');
-    return this.#host.propose(build.module,expected,build.config.width,build.config.height,build.stride,timeout,
+    return this.#host.propose(module,expected,width,height,stride,timeout,
       ()=>!this.#closed && ticket===this.#latest,ticket);
   }
   snapshot(){return this.#host.snapshot();}
