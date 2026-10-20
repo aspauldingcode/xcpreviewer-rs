@@ -1,0 +1,36 @@
+{
+  "default_hardware_events": {
+    "actual_target": "0x270879964",
+    "conclusion": "Protocol extension default returns empty stream. A concrete scene can override; this default does not deliver native input.",
+    "exact_dlsym_export": "PreviewsFoundationOS.EventStream.empty.getter",
+    "slot": "0x2a79c7220",
+    "tail_stub": "0x27073a590",
+    "va": "0x270697b34"
+  },
+  "handle_preferences_resolved": {
+    "actual_target": "0x2707a0280",
+    "behavior": "Lookup by seed; matching promise succeeds with supplied timing; remove seed entry afterward. Unknown seed does not create/cache a completion. Native callbacks/scheduling/reentrancy not observed.",
+    "exact_dlsym_export": "PreviewsFoundationOS.Promise.succeed(with:)",
+    "pending_dictionary_offset": "0x18",
+    "slot": "0x2a79c7978",
+    "success_stub": "0x27073af00",
+    "va": "0x2706993e8"
+  },
+  "mapped_elf_sha256": "502390d64e869a003fd0e69663591285f03b8241223bca8ec580b81dccb13e76",
+  "resolve_handshake": {
+    "duplicate_seed": "Build error, remove prior pending seed, return Future.failed. Old promise deinit/cancellation/observer consequences unknown.",
+    "error_literal_va": "0x270746fa0",
+    "failed_future_target": "0x2707890b8",
+    "future_create_target": "0x27079f2b4",
+    "new_seed": "Future.create then insert promise by seed and send scene message; fence cleanup/handshake lifecycle still unqualified",
+    "source_error_literal": "can't resolve preferences twice for the same update",
+    "va": "0x270698cf0"
+  },
+  "resolve_out_of_band": {
+    "scope": "Separate preference/fence action path observed in source; not executed; no GPU/fence completion claim",
+    "va": "0x2706992dc"
+  },
+  "runtime_image": "/System/Library/PrivateFrameworks/PreviewShellKit.framework/Versions/A/PreviewShellKit",
+  "runtime_limit": "Dlopen/resolution/own-memory observations only. No private Swift function invoked, event sent, native future created, Canvas workspace opened or Xcode attach performed.",
+  "uuid": "b66e691cf2d13a7294ed78d92a28c252"
+}

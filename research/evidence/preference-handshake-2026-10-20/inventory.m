@@ -1,0 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <objc/runtime.h>
+#include <dlfcn.h>
+#include <mach-o/dyld.h>
+#include <mach-o/loader.h>
+int main(void){@autoreleasepool{const char *path="/System/Library/PrivateFrameworks/PreviewShellKit.framework/Versions/A/PreviewShellKit";void *h=dlopen(path,RTLD_NOW|RTLD_LOCAL);if(!h){fprintf(stderr,"%s\n",dlerror());return 2;}NSMutableArray *out=[NSMutableArray array];unsigned n=0;Class *cs=objc_copyClassList(&n);for(unsigned k=0;k<n;k++){const char *image=class_getImageName(cs[k]);if(!image||!strstr(image,"PreviewShellKit.framework"))continue;unsigned m=0;Method *ms=class_copyMethodList(cs[k],&m);for(unsigned i=0;i<m;i++){const char *name=sel_getName(method_getName(ms[i]));if(!strcasestr(name,"event")&&!strcasestr(name,"mouse")&&!strcasestr(name,"key")&&!strcasestr(name,"scroll"))continue;[out addObject:@{@"class":@(class_getName(cs[k])),@"selector":@(name),@"types":@(method_getTypeEncoding(ms[i])),@"address":[NSString stringWithFormat:@"0x%llx",(unsigned long long)method_getImplementation(ms[i])]}];}free(ms);}free(cs);NSData *d=[NSJSONSerialization dataWithJSONObject:out options:NSJSONWritingPrettyPrinted error:NULL];fwrite(d.bytes,1,d.length,stdout);puts("");return 0;}}
