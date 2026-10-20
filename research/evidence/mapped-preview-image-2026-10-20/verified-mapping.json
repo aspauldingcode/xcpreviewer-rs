@@ -1,0 +1,33 @@
+{
+  "bindings": [
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "__previews_injection_jit_link_entrypoint",
+      "prefix32_sha256": "1757c5dd55e052db2c1f9d12ed058d7b9a86740a41010041c303cb8282c63d76",
+      "unslid_address": "0x263151b54"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "__previews_injection_perform_first_jit_link",
+      "prefix32_sha256": "e611fe4ab303a8a659f7340e7863daefea7d30d8c6763c549c3438a5a3cc16ff",
+      "unslid_address": "0x263152260"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "__previews_injection_run_user_entrypoint",
+      "prefix32_sha256": "7bbe22d82d3b815b17e6bd8250cd15757181d819ebd6ec83af47e82c80fc009e",
+      "unslid_address": "0x2631520f0"
+    }
+  ],
+  "canvas_protocol_observed": false,
+  "container_profile": "ARM64 ELF analysis view of own loaded image; live rebased data, ASLR VA, no LINKEDIT; entrypoints resolved only",
+  "elf_sha256": "02cab2365785bdebfbce31fef3889e7dd1e1b4f45a852b892648a89185e8770f",
+  "image_path": "/System/Library/PrivateFrameworks/PreviewsInjection.framework/Versions/A/PreviewsInjection",
+  "mapped_bytes": 686920,
+  "private_entrypoints_invoked": false,
+  "segments": 6,
+  "uuid": "c1a5cfb75f9935948e7004d4134de878"
+}

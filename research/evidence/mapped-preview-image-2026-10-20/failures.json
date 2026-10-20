@@ -1,0 +1,26 @@
+[
+  {
+    "cause": "Helper executable not found in server PATH; cache find/resolve Python fallback works",
+    "correction": "Used existing installed helper by absolute path with already-owned Java/runtime; no service restart/configuration change",
+    "method": "GhidraVibe MCP dyld_import_image",
+    "result": "unsupported dyld fallback for import"
+  },
+  {
+    "correction": "No larger-heap retry. Switched to bounded own-process image mapping, bypassing cache-wide fixup expansion. Full text exception diagnostics retained locally; oversized automatic binary dumps removed with attribution metadata to restore artifact budget.",
+    "deadline": 90,
+    "heap": "2G",
+    "method": "Selected-image DyldCacheFileSystem import",
+    "result": "Java heap space during DyldCacheSlideInfo5.getSlideFixups",
+    "seconds": 55.652
+  },
+  {
+    "correction": "Version2 emits explicit segment section headers; independent LLVM disassembly succeeds for all3 probes",
+    "method": "Initial sectionless ELF LLVM disassembly",
+    "result": "No executable sections, despite valid mapped bytes and Ghidra import"
+  },
+  {
+    "correction": "Used existing LLVM; installed nothing",
+    "method": "Optional Python disassembler check",
+    "result": "capstone module unavailable"
+  }
+]
