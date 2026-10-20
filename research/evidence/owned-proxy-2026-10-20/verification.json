@@ -1,0 +1,32 @@
+{
+  "later_effects_excluded": false,
+  "mach_calls": 13,
+  "mach_sends": 10,
+  "native_cases": 1,
+  "observations": {
+    "activate_invoked": true,
+    "callback_on_owned_queue": 1,
+    "callback_same_connection": 1,
+    "configured_interface": true,
+    "connection_class": "BSServiceInitiatingConnection",
+    "endpoint_class": "BSServiceConnectionEndpoint",
+    "instance": "owned.null.instance",
+    "invalidate_invocations": 2,
+    "invalidation_callbacks": 1,
+    "is_null_endpoint": true,
+    "message_class": "BSXPCServiceConnectionMessage",
+    "message_nil_after_activation": false,
+    "mode": "configured",
+    "observation_window_ms": 200,
+    "scene_action_signature_arguments": 0,
+    "second_callback_wait_timed_out": 1,
+    "service": "owned.null.service",
+    "target_nil_after_activation": true,
+    "valid_after_activation": false,
+    "valid_after_invalidate": false,
+    "valid_before_activation": true
+  },
+  "receipt_mutations_rejected": 21,
+  "settlement": false,
+  "workspace_delivery": false
+}
