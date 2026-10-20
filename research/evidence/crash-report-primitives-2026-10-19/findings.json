@@ -1,0 +1,42 @@
+{
+  "crash_report_ID_decoder": "0x397dc",
+  "crash_report_decoder": {
+    "address": "0x386e4",
+    "bytes": 2260,
+    "implementation": "not yet implemented"
+  },
+  "crash_report_encoder_fields": {
+    "address": "0x38fe4",
+    "bytes": 1828
+  },
+  "crash_report_frontier": [
+    "Optional ID; absent branch constructs a new ID via Foundation UUID",
+    "Required name/bugType strings, Int32 pid, Date time, Image[] and Frame[]",
+    "Optional ASI dictionary of string arrays, Termination and logFilePath",
+    "Validate bounded key-switch domain and nested wire adapters before full port"
+  ],
+  "crash_termination_decoder": "0x3aa6c",
+  "date_getter_witness": "0x9ac30",
+  "date_initializer_witness": "0x9ac48",
+  "date_representation": "Date identity value; binary plist date tag0x33 stores Float64 CF absolute seconds since2001-01-01",
+  "quarantined_inference": "Ghidra report-key witness follows raw getter0x38468 with spurious out-of-domain switch cases and broad CFG; exclude it as a complete report-key proof. Independent 8-byte witness assembly retained.",
+  "request_decoder": {
+    "address": "0xaef7c",
+    "bytes": 476
+  },
+  "request_discriminant_getter": "0xae8bc",
+  "request_encoder": {
+    "address": "0xaebd8",
+    "bytes": 512
+  },
+  "request_key_getter": "0xaeb8c",
+  "request_string_literals": {
+    "0xc76c0": "symbolicateCrashedDiagnostics",
+    "0xc76e0": "requestScreenshot"
+  },
+  "request_variants": {
+    "requestScreenshot": "No decoded payload; unrelated crashReport fields ignored",
+    "symbolicateCrashedDiagnostics": "Required CrashReport; explicitly unsupported by original codec"
+  },
+  "subscription_hypothesis": "falsified; these variants are screenshot/symbolication requests, not generic subscribe/unsubscribe"
+}

@@ -108,3 +108,26 @@ impl AgentCrashNotification {
         ]))
     }
 }
+
+/// Partial request codec. The requestScreenshot case has no decoded payload.
+/// This type describes a request; it does not invoke capture or send a message.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ScreenshotRequest;
+impl ScreenshotRequest {
+    pub fn decode(value: &Value) -> Result<Self, Error> {
+        match discriminant(dictionary(value, "remoteEventRequest")?)? {
+            "requestScreenshot" => Ok(Self),
+            "symbolicateCrashedDiagnostics" => Err(Error::UnsupportedCrashReport),
+            s => Err(Error::UnknownDiscriminant(s.into())),
+        }
+    }
+    pub fn decode_binary(bytes: &[u8]) -> Result<Self, Error> {
+        Self::decode(&binary_plist::decode(bytes).map_err(Error::Plist)?)
+    }
+    pub fn to_value(self) -> Value {
+        Value::Dictionary(BTreeMap::from([(
+            "discriminant".into(),
+            Value::String("requestScreenshot".into()),
+        )]))
+    }
+}

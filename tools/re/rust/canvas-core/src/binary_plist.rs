@@ -150,6 +150,11 @@ impl Reader<'_> {
             0x00 => return Ok(Value::Null),
             0x08 => return Ok(Value::Boolean(false)),
             0x09 => return Ok(Value::Boolean(true)),
+            0x33 => {
+                return Ok(Value::Date(f64::from_be_bytes(
+                    self.span(payload, 8)?.try_into().unwrap(),
+                )))
+            }
             _ => (),
         }
         match kind {

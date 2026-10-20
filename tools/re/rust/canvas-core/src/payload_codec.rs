@@ -10,6 +10,8 @@ use std::collections::BTreeMap;
 pub enum Value {
     Null,
     Boolean(bool),
+    /// Seconds since 2001-01-01T00:00:00Z in a native plist date value.
+    Date(f64),
     Data(Vec<u8>),
     Integer(i64),
     Real(f64),

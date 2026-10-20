@@ -1,0 +1,13 @@
+[
+  {
+    "correction": "Corrected read-only query; no native call or code change from failed command",
+    "failure": "SyntaxError: unmatched parenthesis before source query executed",
+    "operation": "Combined cached-symbol query"
+  },
+  {
+    "correction": "Corrected both before verification; original candidate retained locally; final tests and native replay pass",
+    "executed_as_test": false,
+    "failure": "Two manually typed expected constants did not match independent Python/native values",
+    "operation": "Preverification native-date expected constant transcription"
+  }
+]
