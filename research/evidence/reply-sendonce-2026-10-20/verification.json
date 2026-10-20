@@ -1,0 +1,40 @@
+{
+  "all_native_resource_release_accounted": false,
+  "body_byte_mutations_rejected": 976,
+  "cases": [
+    {
+      "distinct_receive_and_send_once_names": true,
+      "exact_send_once_name_invalid_after": true,
+      "explicit_abandon_deallocate_observations": 0,
+      "mode": "delivered",
+      "send_observations": 1,
+      "send_once_refs_before": 1
+    },
+    {
+      "distinct_receive_and_send_once_names": true,
+      "exact_send_once_name_invalid_after": true,
+      "explicit_abandon_deallocate_observations": 1,
+      "mode": "withheld",
+      "send_observations": 0,
+      "send_once_refs_before": 1
+    },
+    {
+      "distinct_receive_and_send_once_names": true,
+      "exact_send_once_name_invalid_after": true,
+      "explicit_abandon_deallocate_observations": 0,
+      "mode": "late-after-invalidate",
+      "send_observations": 1,
+      "send_once_refs_before": 1
+    }
+  ],
+  "corrupt_evidence_rejected": 1015,
+  "failed_output_values_ignored": true,
+  "fresh_native_replay": true,
+  "global_port_object_destruction": false,
+  "native_SEND_ONCE_type": 262144,
+  "new_product_source_changes": false,
+  "portable_core_tests_historical_only": 126,
+  "request_reply_bytes_verified": 976,
+  "source_disposition_MOVE_SEND_ONCE": 18,
+  "target_operation_settlement": false
+}

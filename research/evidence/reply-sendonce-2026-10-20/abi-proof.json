@@ -1,0 +1,52 @@
+{
+  "kernel_release": "25.5.0",
+  "kernel_source_version": "xnu-12377.121.6",
+  "macos": "26.5.1",
+  "build": "25F80",
+  "source_header": "https://raw.githubusercontent.com/apple-oss-distributions/xnu/xnu-12377.121.6/osfmk/mach/message.h",
+  "source_implementation": "https://raw.githubusercontent.com/apple-oss-distributions/xnu/xnu-12377.121.6/libsyscall/mach/mach_msg.c",
+  "header_locations": {
+    "option64_uint64_typedef": 985,
+    "vector_fields_and_size": 581,
+    "vector_option": 1021,
+    "exact_external_declaration": 1373,
+    "argument_packing": 1410
+  },
+  "implementation_signature_line": 86,
+  "prototype": "mach_msg_return_t mach_msg2_internal(void*,uint64_t,uint64_t,uint64_t,uint64_t,uint64_t,uint64_t,uint64_t)",
+  "vector_size": 24,
+  "vector_option": 4294967296,
+  "vector_layout": [
+    {
+      "field": "msgv_data",
+      "offset": 0,
+      "bytes": 8
+    },
+    {
+      "field": "msgv_rcv_addr",
+      "offset": 8,
+      "bytes": 8
+    },
+    {
+      "field": "msgv_send_size",
+      "offset": 16,
+      "bytes": 4
+    },
+    {
+      "field": "msgv_rcv_size",
+      "offset": 20,
+      "bytes": 4
+    }
+  ],
+  "runtime_image_uuid": "cc1cf985bc653725809f4c1e36b8f4ba",
+  "runtime_symbols": [
+    "mach_msg2_internal",
+    "mach_msg2_trap"
+  ],
+  "metadata_only_native_capture": true,
+  "private_entrypoints_called": false,
+  "independent_generated_native_register_count": 8,
+  "independent_llvm_eight_register_forwarding": true,
+  "ghidra_types_are_not_source_authority": true,
+  "review_resolution": "Initial rejection alleged an invented/unrecovered ABI. Exact matching official header plus runtime dlsym image binding and independent shipped assembly now recover/confirm that ABI; no private Swift prototype involved."
+}

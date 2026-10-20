@@ -1,0 +1,5 @@
+{
+  "coverage": "Final release window requires both global active gate and owner-thread TLS marker; only synchronous owned xpc_release(heldReply) window in own helper is inspected. SDK original calls/arguments/results forwarded unchanged. No broad inventory or other task access.",
+  "limits": "KERN_INVALID_NAME15 proves exact own-name absence. Output buffers of failed SDK queries ignored. It does not prove all aliases/global object destruction, allocator reclamation or no-later-effects. Send snapshots are sequential and race with native reply handling. Observed ordering does not imply universal timing or global target-operation settlement.",
+  "startup_failure": "First deallocate wrapper accessed thread-local release_depth even while observation inactive. dyld invoked public mach_port_deallocate during __pthread_init; TLV bootstrap aborted with SIGTRAP before main. Raw original source/build/stderr/crash retained locally. Corrected wrappers test global inactive gate before accessing any TLS; explicit observation begins only after runtime initialization. Fresh delivered/withheld/late controls and separate sealed replay exit0."
+}

@@ -1,0 +1,15 @@
+{
+  "BaseBoard_uuid": "03f3fd646bf3326a8004c4ee9563571a",
+  "BoardServices_uuid": "b4561aecee523447960b4d2f2f3ef720",
+  "SDK_declarations": "mach_port.h:162 mach_port_deallocate(ipc_space_t,mach_port_name_t); :189 mach_port_mod_refs(ipc_space_t,mach_port_name_t,mach_port_right_t,mach_port_delta_t); message.h:242 MOVE_SEND_ONCE18",
+  "native_identity": "Fresh loaded module UUID/signature guards. Source-authoritative exact-XNU Mach2 ABI reused. New right queries/interposed functions use public SDK types/declarations.",
+  "prior_evidence": "research/evidence/reply-rights-2026-10-20",
+  "prior_seal_sha256": "2c25f716c4f81cbc463d44db80da35be3450cd9012161efe27961ab5c304411a",
+  "provider_scope": "Existing sealed REA/Ghidra reply-handler and error3 analyses reused; no fresh private ABI or repeated provider import needed.",
+  "sdk_headers_sha256": {
+    "mach_port.h": "c088bfd374e15020d6c0eadc43031d06a8fb05bfa5d1b1828d65d28618717a0f",
+    "message.h": "86e9e87ba2a736236613f2c0a8563dbacaeec1a761654b12812eaf8599b55e67",
+    "port.h": "e4d48a100252a8d07ef5221e4cac1ea727fb975271a8382e0a6faf121c5c8a56"
+  },
+  "sdk_root": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach"
+}
