@@ -1,0 +1,45 @@
+{
+  "body_byte_mutations_rejected": 1576,
+  "cases": [
+    {
+      "all_bytes_equal": true,
+      "bytes": 312,
+      "mach2_calls": 8,
+      "mode": "primary",
+      "sha256": "3c74a86ed3501b3cbf6ee4fc2b6e933b199bf84ba49278ab8c21fec6601bfa78"
+    },
+    {
+      "all_bytes_equal": true,
+      "bytes": 320,
+      "mach2_calls": 8,
+      "mode": "holdout",
+      "sha256": "487c91cfd33edf0d0e07d6e6825734b24b70586f8ae2d4924b8639c7d9f9599e"
+    },
+    {
+      "all_bytes_equal": true,
+      "bytes": 312,
+      "mach2_calls": 8,
+      "mode": "error-primary",
+      "sha256": "3c74a86ed3501b3cbf6ee4fc2b6e933b199bf84ba49278ab8c21fec6601bfa78"
+    },
+    {
+      "all_bytes_equal": true,
+      "bytes": 320,
+      "mach2_calls": 8,
+      "mode": "error-holdout",
+      "sha256": "487c91cfd33edf0d0e07d6e6825734b24b70586f8ae2d4924b8639c7d9f9599e"
+    },
+    {
+      "all_bytes_equal": true,
+      "bytes": 312,
+      "mach2_calls": 8,
+      "mode": "wrong-slot",
+      "sha256": "3c74a86ed3501b3cbf6ee4fc2b6e933b199bf84ba49278ab8c21fec6601bfa78"
+    }
+  ],
+  "mach_header_parity": false,
+  "portable_canonical_all_bytes_equal": 5,
+  "portable_native_order_identical_claim": false,
+  "scene_execution": false,
+  "settlement": false
+}
