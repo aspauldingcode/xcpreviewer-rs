@@ -232,3 +232,5 @@ pub mod delivery_signal;
 pub mod settings_xpc;
 
 pub mod action_xpc;
+
+pub mod xpc_wire;

@@ -1,0 +1,36 @@
+{
+  "attachments_supported": false,
+  "cases": {
+    "body": {
+      "body_mutants_rejected": 8,
+      "native_accepts_portable_order": true,
+      "native_bytes": 328,
+      "native_sha256": "c878192b9e6a07f12230dbe471ab0b2d5f33208f56165d2be459238f57386547",
+      "portable_bytes": 328,
+      "portable_sha256": "728567f75fcd4c7445257ecf792f28f769b290fe46622eeb9e546a4ef01600c4",
+      "semantic_tree_equal": true
+    },
+    "holdout-body": {
+      "body_mutants_rejected": 8,
+      "native_accepts_portable_order": true,
+      "native_bytes": 352,
+      "native_sha256": "e84196b6a309ffa682bb28c5dae6f335b82cab37f8ce4a121ebc2df7a9740487",
+      "portable_bytes": 352,
+      "portable_sha256": "729d16e1a978a156eb3bd951385520961d26281a604a6e6238f30b44e02a6db8",
+      "semantic_tree_equal": true
+    }
+  },
+  "live_canvas_transport": false,
+  "native_acceptance_cases": 2,
+  "supported_observed_tags": [
+    8192,
+    12288,
+    16384,
+    32768,
+    36864,
+    57344,
+    61440
+  ],
+  "total_native_portable_body_bytes_compared": 1360,
+  "wire_version": 5
+}

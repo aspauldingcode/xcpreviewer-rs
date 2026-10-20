@@ -1,0 +1,10 @@
+{
+  "caller_attribution_rejected": {
+    "path": "research/raw/reply-body-20261020/rejected-stack-probe.stdout",
+    "reason": "Large stack replacement buffer caused builtin return-address capture to identify the owned stack-probe return site rather than libxpc. Disassembly shows stack probe then LR spill. Rejected source and disassembly retained; TLS buffer removes this large-frame path. Accepted fresh replay requires libxpc UUID on send and receive."
+  },
+  "lock_scope": "Corrected exploratory TLS samples were provisional; final accepted current-source build, native captures, portable encoding and native acceptance ran together under exclusive controller lock in replay-verified.",
+  "malformed_native_inputs": "None: mutations are passed only to independent Python/portable decoders.",
+  "native_crashes": 0,
+  "unexported_private_symbols": "Seven candidate private serializer symbols returned null via dlsym; no private prototype was invented or called. Controlled native serialization and public Mach observation supplied independent evidence instead. Raw resolver output retained."
+}
