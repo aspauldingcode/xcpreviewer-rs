@@ -1,0 +1,47 @@
+{
+  "all_native_resource_release_accounted": false,
+  "cases": [
+    {
+      "completion_before_explicit_invalidation": false,
+      "error_code": 3,
+      "exact_receive_name_invalid_after_peer_cancel": false,
+      "mode": "withheld",
+      "release_observed": true,
+      "reply_right_before_explicit_release": "send-once",
+      "selected_kernel_reply_sends": 0
+    },
+    {
+      "completion_before_explicit_invalidation": true,
+      "error_code": 3,
+      "exact_receive_name_invalid_after_peer_cancel": true,
+      "mode": "peer-loss-withheld",
+      "release_observed": true,
+      "reply_right_before_explicit_release": "dead-name",
+      "selected_kernel_reply_sends": 0
+    },
+    {
+      "completion_before_explicit_invalidation": true,
+      "error_code": 3,
+      "exact_receive_name_invalid_after_peer_cancel": true,
+      "mode": "peer-loss-late",
+      "release_observed": false,
+      "reply_right_before_explicit_release": "unobserved",
+      "selected_kernel_reply_sends": 0
+    }
+  ],
+  "corrupt_evidence_rejected": 1246,
+  "fresh_kernel_reply_body_bytes": 0,
+  "fresh_native_replay": true,
+  "global_port_object_destruction": false,
+  "late_SDK_send_attempt_is_not_kernel_send": true,
+  "native_error_factory_restored": true,
+  "native_error_factory_source_offsets": [
+    432180,
+    431340,
+    363308
+  ],
+  "new_product_source_changes": false,
+  "portable_core_tests_historical_only": 126,
+  "request_body_bytes_verified": 936,
+  "target_operation_settlement": false
+}
