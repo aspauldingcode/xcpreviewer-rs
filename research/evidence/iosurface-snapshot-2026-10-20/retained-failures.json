@@ -1,0 +1,14 @@
+[
+  {
+    "correction": "Explicit public IOSurfaceObjC.h import; no private header invented",
+    "failure": "IOSurface umbrella C header does not declare Objective-C class",
+    "native_execution": false,
+    "stage": "Initial owned host compile"
+  },
+  {
+    "correction": "Check computed extent as a native precondition; warnings remain errors",
+    "failure": "Unused computed extent under -Werror",
+    "native_execution": false,
+    "stage": "Second compile"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "architecture": "arm64",
+  "functions": {
+    "0x345e8": "208 bytes: constructor records surfaceID and PreviewGeometry",
+    "0x34c60": "96 bytes: IOSurfacePreviewViewable.snapshot async entry",
+    "0x34cc0": "448 bytes: snapshot resume"
+  },
+  "independent_instruction_constants": {
+    "0x34d90": "LSL X27,X0,3",
+    "0x34dc0": "MOV W5,0x2002",
+    "0x34dc4": "MOV W6,8"
+  },
+  "native_boundary": "Only owned IOSurface Objective-C initializer invoked via NSInvocation after checking runtime signature return@,3 arguments,argument2 I. Public typed getters and CoreGraphics construction follow source. No guessed private Swift ABI.",
+  "sha256": "d70f346fc8c8f7085f0a8b05fe160776b5464a3a6efc146259076fd12aa21cc2",
+  "snapshot_resume_steps": [
+    "Allocates Objective-C IOSurface and calls initWithSurfaceID: using stored UInt32",
+    "Nil lookup branches to nil image result",
+    "Reads baseAddress, bytesPerRow and height; checked signed multiplication stride*height",
+    "Foundation Data(bytes:count:) copies exactly stride*height, including row padding",
+    "Reads width/height/stride/bytesPerElement; BitmapDescription fixed bitmapInfo0x2002,bitsPerComponent8,bitsPerPixel=bytesPerElement*8,sRGB",
+    "Calls BitmapDescription.makeImage; cleans local bitmap/surface/data values; selected instructions include an error-register cleanup branch lost from decompiler output"
+  ],
+  "source_scope": "No explicit surface lock/fence call in this selected resume. Caller/GPU synchronization is unknown, not unnecessary. Swift makeImage/error behavior not directly invoked by the oracle.",
+  "target": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsDeveloperTools.framework/Versions/A/PreviewsDeveloperTools"
+}

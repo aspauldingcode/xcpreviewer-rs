@@ -1,0 +1,4 @@
+/private/tmp/iosurface-snapshot-20261020/oracle.m:15:84: error: unused variable 'extent' [-Werror,-Wunused-variable]
+   15 |  size_t stride=IOSurfaceGetBytesPerRow(surface),height=IOSurfaceGetHeight(surface),extent=stride*height,alloc=IOSurfaceGetAllocSize(surface);
+      |                                                                                    ^~~~~~
+1 error generated.

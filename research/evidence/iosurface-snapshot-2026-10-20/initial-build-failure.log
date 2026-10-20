@@ -1,0 +1,70 @@
+/private/tmp/iosurface-snapshot-20261020/oracle.m:22:2: error: unknown type name 'IOSurface'; did you mean 'IOSurfaceID'?
+   22 |  IOSurface *object=[IOSurface alloc];SEL sel=NSSelectorFromString(@"initWithSurfaceID:");
+      |  ^~~~~~~~~
+      |  IOSurfaceID
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h:14:18: note: 'IOSurfaceID' declared here
+   14 | typedef uint32_t IOSurfaceID;
+      |                  ^
+/private/tmp/iosurface-snapshot-20261020/oracle.m:22:21: error: use of undeclared identifier 'IOSurface'; did you mean 'surface'?
+   22 |  IOSurface *object=[IOSurface alloc];SEL sel=NSSelectorFromString(@"initWithSurfaceID:");
+      |                     ^~~~~~~~~
+      |                     surface
+/private/tmp/iosurface-snapshot-20261020/oracle.m:12:15: note: 'surface' declared here
+   12 |  IOSurfaceRef surface=IOSurfaceCreate((CFDictionaryRef)props);if(!surface)return 3;
+      |               ^
+/private/tmp/iosurface-snapshot-20261020/oracle.m:22:21: error: receiver type 'IOSurfaceRef' (aka 'struct __IOSurface *') is not 'id' or interface pointer, consider casting it to 'id' [-Werror,-Wreceiver-expr]
+   22 |  IOSurface *object=[IOSurface alloc];SEL sel=NSSelectorFromString(@"initWithSurfaceID:");
+      |                     ^~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:22:13: error: incompatible pointer types initializing 'IOSurfaceID *' (aka 'unsigned int *') with an expression of type 'id' [-Werror,-Wincompatible-pointer-types]
+   22 |  IOSurface *object=[IOSurface alloc];SEL sel=NSSelectorFromString(@"initWithSurfaceID:");
+      |             ^      ~~~~~~~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:23:26: error: receiver type 'IOSurfaceID *' (aka 'unsigned int *') is not 'id' or interface pointer, consider casting it to 'id' [-Werror,-Wreceiver-expr]
+   23 |  NSMethodSignature *sig=[object methodSignatureForSelector:sel];
+      |                          ^~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:25:81: error: incompatible pointer types assigning to 'id _Nullable' from 'IOSurfaceID *' (aka 'unsigned int *') [-Werror,-Wincompatible-pointer-types]
+   25 |  NSInvocation *call=[NSInvocation invocationWithMethodSignature:sig];call.target=object;call.selector=sel;[call setArgument:&sid atIndex:2];[call invoke];IOSurface *resolved=nil;[call getReturnValue:&resolved];
+      |                                                                                 ^~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:25:155: error: unknown type name 'IOSurface'; did you mean 'IOSurfaceID'?
+   25 |  NSInvocation *call=[NSInvocation invocationWithMethodSignature:sig];call.target=object;call.selector=sel;[call setArgument:&sid atIndex:2];[call invoke];IOSurface *resolved=nil;[call getReturnValue:&resolved];
+      |                                                                                                                                                           ^~~~~~~~~
+      |                                                                                                                                                           IOSurfaceID
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h:14:18: note: 'IOSurfaceID' declared here
+   14 | typedef uint32_t IOSurfaceID;
+      |                  ^
+/private/tmp/iosurface-snapshot-20261020/oracle.m:27:13: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   27 |  if(resolved.width!=3||resolved.height!=2||resolved.bytesPerRow!=64||resolved.bytesPerElement!=4)return 9;
+      |     ~~~~~~~~^~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:27:32: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   27 |  if(resolved.width!=3||resolved.height!=2||resolved.bytesPerRow!=64||resolved.bytesPerElement!=4)return 9;
+      |                        ~~~~~~~~^~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:27:52: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   27 |  if(resolved.width!=3||resolved.height!=2||resolved.bytesPerRow!=64||resolved.bytesPerElement!=4)return 9;
+      |                                            ~~~~~~~~^~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:27:78: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   27 |  if(resolved.width!=3||resolved.height!=2||resolved.bytesPerRow!=64||resolved.bytesPerElement!=4)return 9;
+      |                                                                      ~~~~~~~~^~~~~~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:28:45: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   28 |  NSData *data=[NSData dataWithBytes:resolved.baseAddress length:resolved.bytesPerRow*resolved.height];
+      |                                     ~~~~~~~~^~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:28:73: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   28 |  NSData *data=[NSData dataWithBytes:resolved.baseAddress length:resolved.bytesPerRow*resolved.height];
+      |                                                                 ~~~~~~~~^~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:28:94: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   28 |  NSData *data=[NSData dataWithBytes:resolved.baseAddress length:resolved.bytesPerRow*resolved.height];
+      |                                                                                      ~~~~~~~~^~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:31:41: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   31 |  CGImageRef image=CGImageCreate(resolved.width,resolved.height,8,resolved.bytesPerElement*8,resolved.bytesPerRow,cs,(CGBitmapInfo)0x2002,provider,NULL,false,kCGRenderingIntentDefault);if(!image)return 11;
+      |                                 ~~~~~~~~^~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:31:56: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   31 |  CGImageRef image=CGImageCreate(resolved.width,resolved.height,8,resolved.bytesPerElement*8,resolved.bytesPerRow,cs,(CGBitmapInfo)0x2002,provider,NULL,false,kCGRenderingIntentDefault);if(!image)return 11;
+      |                                                ~~~~~~~~^~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:31:74: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   31 |  CGImageRef image=CGImageCreate(resolved.width,resolved.height,8,resolved.bytesPerElement*8,resolved.bytesPerRow,cs,(CGBitmapInfo)0x2002,provider,NULL,false,kCGRenderingIntentDefault);if(!image)return 11;
+      |                                                                  ~~~~~~~~^~~~~~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:31:101: error: member reference base type 'IOSurfaceID *' (aka 'unsigned int *') is not a structure or union
+   31 |  CGImageRef image=CGImageCreate(resolved.width,resolved.height,8,resolved.bytesPerElement*8,resolved.bytesPerRow,cs,(CGBitmapInfo)0x2002,provider,NULL,false,kCGRenderingIntentDefault);if(!image)return 11;
+      |                                                                                             ~~~~~~~~^~~~~~~~~~~~
+/private/tmp/iosurface-snapshot-20261020/oracle.m:42:121: error: receiver type 'IOSurfaceID *' (aka 'unsigned int *') is not 'id' or interface pointer, consider casting it to 'id' [-Werror,-Wreceiver-expr]
+   42 |  CGContextRelease(ctx);CFRelease(copied);CGImageRelease(image);CGColorSpaceRelease(cs);CGDataProviderRelease(provider);[resolved release];CFRelease(surface);return 0;
+      |                                                                                                                         ^~~~~~~~
+19 errors generated.

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-20T00:44:07.815372+00:00",
+  "final_deallocation_or_gpu_completion_proven": false,
+  "milestones_complete": false,
+  "native_output_bytes": 56,
+  "native_snapshot_bytes": 128,
+  "native_snapshot_padding_bytes": 104,
+  "next": [
+    "Trace IOSurfacePayload creation/publication and viewable consumption; lifetime/reuse/completion before capture acceptance",
+    "Correlate owned runtime operations with actual surface transport; preserve synchronization unknown",
+    "CrashListener service identity and daemon cancellation remain independently open"
+  ],
+  "private_swift_snapshot_invoked": false,
+  "runtime_verified_private_objc_initializer": true,
+  "selected": "Actual IOSurface receiver snapshot and owned copy reconstruction",
+  "tests_passed": 57,
+  "verifier_mutants_rejected": 3,
+  "xcode_canvas_transport_observed": false
+}
