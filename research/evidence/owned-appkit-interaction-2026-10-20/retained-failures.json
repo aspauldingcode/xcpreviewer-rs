@@ -1,0 +1,34 @@
+{
+  "limitations": [
+    "Historical failure logs retained locally; intermediate source revisions were not all frozen. Final replay retains the executed original source.",
+    "Initial agent REA result metadata projection was empty; no agent-provider identity claim accepted. Closed it and verified the known mapped event-framework profile instead.",
+    "No assertion that these local coordinates, ordering prerequisites or capture profile are the native Canvas transport/transform."
+  ],
+  "native_controls": [
+    {
+      "exit": 13,
+      "scope": "No click accepted. Initial early return relied on owned process exit; later tools explicitly close the exact window and independently query WindowServer.",
+      "stage": "initial hidden-window control"
+    },
+    {
+      "exit": 13,
+      "observation": "Input12,7 decoded12,-1003; clicks0. Primary screen1680x1050; global CG location12,1043 did not fix this event path.",
+      "stage": "diagnostic and screen-coordinate controls"
+    },
+    {
+      "exit": 13,
+      "observation": "Explicit local top-left CG location12,33 decoded12,7, but hidden window still did not receive click.",
+      "stage": "window-local coordinate control while hidden"
+    },
+    {
+      "exit": 13,
+      "observation": "Actual clicks1, but decoded/delivered coordinates differ fractionally from nominal12,7 /12,33. This falsified the exact nominal-coordinate assertion.",
+      "stage": "ordered-window control with nominal exact coordinate assertion"
+    },
+    {
+      "exit": 0,
+      "observation": "Private decode matches independent NSEvent conversion; ordered owned window receives one click and changes its view; all pixels verified.",
+      "stage": "corrected independent public coordinate expectation"
+    }
+  ]
+}

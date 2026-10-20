@@ -1,0 +1,23 @@
+{
+  "agent_binary_static_inventory": {
+    "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Xcode/Agents/XCPreviewAgent.app/Contents/MacOS/XCPreviewAgent",
+    "scope": "ARM64 symbol/library inventory only; no concrete dispatch located and agent not executed",
+    "sha256": "f2979b6d9bfe45ab055326fab18dbfee33d8f86e91150d2b22c7b017a6b9226e"
+  },
+  "capture_icc_bytes": 4064,
+  "capture_icc_sha256": "86dc86f10f233708f83c37128a89abaf6a7597c87b92cf039b4fe81677990a36",
+  "event_framework": {
+    "path": "/System/Library/PrivateFrameworks/PreviewsServicesUI.framework/Versions/A/PreviewsServicesUI",
+    "uuid": "899379ca784a339c9c7385c74b587018"
+  },
+  "event_method_prefix_bytes_reverified": 128,
+  "ghidra_reused_health": "GhidraMCP5.14.2-headless / Vibe0.1.1",
+  "prior_event_evidence": "research/evidence/hardware-event-2026-10-20",
+  "rea": {
+    "alignment": "aligned",
+    "provider_closed": true,
+    "target": "PreviewsServicesUI-mapped-v2.elf",
+    "target_sha256": "eaa6462e60e28bdf3d40f1ade402b3a363415e3179b5d3cabdb032bfa1c6b556",
+    "version": "6.2.0"
+  }
+}
