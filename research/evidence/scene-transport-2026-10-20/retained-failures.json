@@ -1,0 +1,18 @@
+{
+  "other": [
+    "Initial REA path absent; reopened exact path from prior sealed provenance.",
+    "Initial Ghidra function entry landed mid-body at0x270669b00; deleted and recreated at LLVM prologue0x270669ad0. No acceptance based on old body.",
+    "Constructor/import-pointer and direct-reference searches found no named binding in sampled image; this does not prove absence of inlining or specialization.",
+    "First image-owner inventory filtered wrong framework and returned empty; corrected native owner filter."
+  ],
+  "rejected_captures": [
+    {
+      "path": "research/raw/scene-transport-20261020/mapped",
+      "reason": "Owned mapper SIGSEGV from stale literal loop count4 with two names; zero-length metadata. Replaced bound by sizeof array. Not accepted."
+    },
+    {
+      "path": "research/raw/scene-transport-20261020/mapped-corrected",
+      "reason": "Sender probe used miscomputed unslid address and read a different image; metadata/probe rejected. Replaced with UUID-pinned header-relative offset and executable-segment guard. Not accepted."
+    }
+  ]
+}

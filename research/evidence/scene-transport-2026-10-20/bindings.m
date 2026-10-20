@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+#include <dlfcn.h>
+#include <mach/mach.h>
+#include <mach/mach_vm.h>
+int main(void){@autoreleasepool{if(!dlopen("/System/Library/PrivateFrameworks/PreviewShellKit.framework/Versions/A/PreviewShellKit",RTLD_NOW|RTLD_LOCAL))return 2;uint64_t slots[]={0x2a79c89f8,0x2a79c8a60};const char *names[]={"$s18PreviewsServicesUI14SceneMessengerC13receiveActionyySo8BSActionCF","$s18PreviewsServicesUI20UVPreviewSceneActionCMa"};NSMutableArray *rows=[NSMutableArray array];for(unsigned i=0;i<2;i++){uint64_t p=0;mach_vm_size_t n=0;if(mach_vm_read_overwrite(mach_task_self(),slots[i],8,(mach_vm_address_t)&p,&n)||n!=8)return 3;uintptr_t actual=p&0xffffffffffffULL;void *expected=dlsym(RTLD_DEFAULT,names[i]);if(!expected||actual!=(uintptr_t)expected)return 4;[rows addObject:@{@"slot":[NSString stringWithFormat:@"0x%llx",slots[i]],@"exact_dlsym_symbol":@(names[i]),@"exact_match":@YES}];}NSData *d=[NSJSONSerialization dataWithJSONObject:rows options:NSJSONWritingPrettyPrinted error:NULL];fwrite(d.bytes,1,d.length,stdout);puts("");return 0;}}

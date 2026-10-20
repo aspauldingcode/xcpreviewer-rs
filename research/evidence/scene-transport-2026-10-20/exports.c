@@ -1,0 +1,3 @@
+#include <stdio.h>
+#include <dlfcn.h>
+int main(void){void *h=dlopen("/System/Library/PrivateFrameworks/PreviewsServicesUI.framework/Versions/A/PreviewsServicesUI",RTLD_NOW|RTLD_LOCAL);if(!h)return 2;const char *names[]={"$s18PreviewsServicesUI14SceneMessengerC12actionSenderACyxq_GyAA09UVPreviewD6ActionCc_tcfC","$s18PreviewsServicesUI14SceneMessengerC12actionSenderACyxq_GyAA09UVPreviewD6ActionCc_tcfc" ,"$s18PreviewsServicesUI14SceneMessengerCMa","$s18PreviewsServicesUI14SceneMessengerCMn"};for(unsigned n=0;n<4;n++){void *p=dlsym(h,names[n]);if(!p)return 3;printf("0x%llx %s\n",(unsigned long long)p,names[n]);}return 0;}
