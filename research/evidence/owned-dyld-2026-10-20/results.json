@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "flags": "2002",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return",
+        "release-enter",
+        "release-return"
+      ],
+      "same_created_image_released": true,
+      "all_56_bytes_equal": true,
+      "padding_and_tail_bytes": 32,
+      "dyld_independent_library_listing": true,
+      "trace_pid_equals_owned_child": true,
+      "negative_no_trace": true
+    },
+    {
+      "flags": "4002",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return",
+        "release-enter",
+        "release-return"
+      ],
+      "same_created_image_released": true,
+      "all_56_bytes_equal": true,
+      "padding_and_tail_bytes": 32,
+      "dyld_independent_library_listing": true,
+      "trace_pid_equals_owned_child": true,
+      "negative_no_trace": true
+    },
+    {
+      "flags": "2001",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return",
+        "release-enter",
+        "release-return"
+      ],
+      "same_created_image_released": true,
+      "all_56_bytes_equal": true,
+      "padding_and_tail_bytes": 32,
+      "dyld_independent_library_listing": true,
+      "trace_pid_equals_owned_child": true,
+      "negative_no_trace": true
+    },
+    {
+      "flags": "4001",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return",
+        "release-enter",
+        "release-return"
+      ],
+      "same_created_image_released": true,
+      "all_56_bytes_equal": true,
+      "padding_and_tail_bytes": 32,
+      "dyld_independent_library_listing": true,
+      "trace_pid_equals_owned_child": true,
+      "negative_no_trace": true
+    },
+    {
+      "control": "one explicit retain, two explicit releases",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return",
+        "retain-enter",
+        "retain-return",
+        "release-enter",
+        "release-return",
+        "release-enter",
+        "release-return"
+      ],
+      "all_56_bytes_equal": true,
+      "trace_pid_equals_owned_child": true
+    },
+    {
+      "failure": "zero-width CGImageCreate returns NULL",
+      "events": [
+        "loaded",
+        "create-enter",
+        "create-return"
+      ],
+      "null_return": true,
+      "release_events": 0,
+      "synchronous_api_return_observed": true,
+      "trace_pid_equals_owned_child": true
+    }
+  ],
+  "verifier_mutants_rejected": 4,
+  "private_runtime_invoked": false,
+  "target": "new owned public CoreGraphics hosts only",
+  "timeout_alone_proves_settlement": false,
+  "release_call_proves_final_deallocation": false
+}

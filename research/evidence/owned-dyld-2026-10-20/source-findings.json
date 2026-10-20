@@ -1,0 +1,41 @@
+{
+  "architecture": "arm64",
+  "ghidra": {
+    "language": "AARCH64:LE:64:AppleSilicon",
+    "server": "5.14.2-headless",
+    "vibe": "0.1.1"
+  },
+  "independent_corroboration": "Bounded ARM64 disassembly of0x230a0..0x23574 retained locally; named symbols independently identify request/response and service. Imported names/decompiler output do not establish live wire messages or ABI signatures.",
+  "native_transport_invoked": false,
+  "rea_server": {
+    "alignment": "aligned",
+    "path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents/scripts/rea.mjs",
+    "session_closed": true,
+    "started_at": "2026-10-15T20:32:32.110Z",
+    "target_sha256": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd",
+    "version": "6.2.0"
+  },
+  "recovered_functions": [
+    {
+      "address": "0x230a0",
+      "bytes": 1236,
+      "finding": "Checks a cached Future for one ProcessIdentifier tag branch, otherwise constructs a Future and conditionally caches it. Branch tag mapping and cache eviction/cancellation semantics remain unqualified.",
+      "role": "CrashReportService.nextCrashReport(for:timeout:)"
+    },
+    {
+      "address": "0x23574",
+      "bytes": 504,
+      "finding": "Allocates typed NextCrashRequest, NextCrashResponse and TransportSender<CrashListenerInterface> storage before task-switching. This is source evidence only.",
+      "role": "Async operation entry"
+    },
+    {
+      "address": "0x2376c",
+      "bytes": 624,
+      "finding": "Calls typed NextCrashRequest(process:timeout:) initializer using stored inputs, then awaits ConcurrentOnDemand<DaemonConnection<DaemonClientRole>>. Later send/reply/error/cancellation continuations are not yet recovered.",
+      "role": "First async resume"
+    }
+  ],
+  "target": "PreviewsPlatforms",
+  "timeout_proves_target_settlement": false,
+  "view_input_path": false
+}
