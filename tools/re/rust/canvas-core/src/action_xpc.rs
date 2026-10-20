@@ -80,3 +80,22 @@ impl ActionInfo {
     pub fn archived_settings(&self) -> &ArchivedSettings { &self.archived }
     pub fn property_list(&self, slot: u64) -> Option<&BTreeMap<String, Value>> { self.property_lists.get(&slot).map(|p| &p.dictionary) }
 }
+
+impl ActionEnvelope {
+    /// Selected base BSAction argument wrapper. Subclasses, responder endpoints
+    /// and unobserved fields reject through the existing no-responder decoder.
+    pub fn from_service_argument(value: &XpcValue) -> Result<Self, Error> {
+        let root = dictionary(value)?;
+        class(root, "bsx_class", "BSAction")?;
+        let mut body = root.clone();
+        body.remove("bsx_class");
+        Self::from_xpc(&XpcValue::Dictionary(body))
+    }
+    /// Wrap the existing selected BSAction value with the native argument class.
+    /// Does not choose NSSet ordering or export a reply endpoint.
+    pub fn to_service_argument(&self) -> XpcValue {
+        let XpcValue::Dictionary(mut body) = self.to_xpc() else { unreachable!() };
+        body.insert("bsx_class".into(), XpcValue::String("BSAction".into()));
+        XpcValue::Dictionary(body)
+    }
+}

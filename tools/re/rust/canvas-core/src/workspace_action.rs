@@ -45,3 +45,37 @@ impl WorkspaceActionInvocation {
         Dictionary(d)
     }
 }
+
+/// Measured nullable NSError completion argument. Archives stay opaque; this
+/// adapter does not interpret bplist17, reconstruct NSError or assert validity.
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
+pub struct WorkspaceActionCompletion {
+    pub error_archive: Option<Vec<u8>>,
+}
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum CompletionError { Envelope, ErrorClass, Archive }
+impl WorkspaceActionCompletion {
+    /// Strict projection of the selected reply argument payload. Unknown keys
+    /// reject as original policy; the native selected decoder ignores slot 2.
+    pub fn from_xpc(value: &XpcValue) -> Result<Self, CompletionError> {
+        use XpcValue::*;
+        let Dictionary(d) = value else { return Err(CompletionError::Envelope) };
+        if d.keys().any(|k| k != "1") { return Err(CompletionError::Envelope); }
+        let Some(value) = d.get("1") else { return Ok(Self::default()) };
+        let Dictionary(error) = value else { return Err(CompletionError::Envelope) };
+        if error.len() != 2 { return Err(CompletionError::Envelope); }
+        if error.get("bsx_class") != Some(&String("NSError".into())) { return Err(CompletionError::ErrorClass); }
+        let Some(Data(bytes)) = error.get("root") else { return Err(CompletionError::Archive) };
+        Ok(Self { error_archive: Some(bytes.clone()) })
+    }
+    /// Preserve every archive byte, without synthesizing or validating archives.
+    pub fn to_xpc(&self) -> XpcValue {
+        use XpcValue::*;
+        Dictionary(match &self.error_archive {
+            None => BTreeMap::new(),
+            Some(bytes) => BTreeMap::from([("1".into(), Dictionary(BTreeMap::from([
+                ("bsx_class".into(), String("NSError".into())), ("root".into(), Data(bytes.clone())),
+            ])))]),
+        })
+    }
+}

@@ -1,0 +1,53 @@
+{
+  "archive_byte_mutations_rejected": 316,
+  "captures": [
+    {
+      "archive_bytes": 0,
+      "captured_cpx_headers": 2,
+      "error_present": false,
+      "matching_invocation_bodies": 0,
+      "mode": "primary",
+      "xpc_equal": true
+    },
+    {
+      "archive_bytes": 0,
+      "captured_cpx_headers": 2,
+      "error_present": false,
+      "matching_invocation_bodies": 0,
+      "mode": "holdout",
+      "xpc_equal": true
+    },
+    {
+      "archive_bytes": 104,
+      "captured_cpx_headers": 2,
+      "error_present": true,
+      "matching_invocation_bodies": 0,
+      "mode": "error-primary",
+      "xpc_equal": true
+    },
+    {
+      "archive_bytes": 108,
+      "captured_cpx_headers": 2,
+      "error_present": true,
+      "matching_invocation_bodies": 0,
+      "mode": "error-holdout",
+      "xpc_equal": true
+    },
+    {
+      "archive_bytes": 104,
+      "captured_cpx_headers": 2,
+      "error_present": false,
+      "matching_invocation_bodies": 0,
+      "mode": "wrong-slot",
+      "xpc_equal": true
+    }
+  ],
+  "native_cases": 5,
+  "native_error_archive_decoded_portably": false,
+  "native_request_wire_parity": false,
+  "receipt_mutations_rejected": 70,
+  "scene_execution": false,
+  "settlement": false,
+  "unique_positive_native_archive_bytes_preserved_in_rust": 212,
+  "whole_invocation_dictionary_equalities": 5
+}
