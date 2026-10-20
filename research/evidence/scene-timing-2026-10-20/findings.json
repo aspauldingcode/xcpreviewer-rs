@@ -1,0 +1,50 @@
+{
+  "fence_helpers": {
+    "require": "0x270af29ec,248 bytes: nil throws; present retained/returned",
+    "requireNil": "0x270af2afc,240 bytes: present throws; nil accepted",
+    "scope": "Presence/validation, not signal or GPU completion"
+  },
+  "host_message": {
+    "bytes": 740,
+    "bytes_raw_getter": 112,
+    "constructor_va": "0x270af9e60",
+    "message_type_getter_va": "0x270afaec4",
+    "payload_helpers": {
+      "0x270af7748": "420 bytes; eventData Data extraction",
+      "0x270af78ec": "384 bytes; seed/eventData keyed optional scalar extraction"
+    },
+    "source_limits": "Native Swift functions/constructors not called. Foundation numeric coercion and exact errors unqualified. No invented outer wire envelope.",
+    "types": {
+      "confirmReadyForDisplayAfterSceneResize": "No payload consumed; fence forbidden",
+      "hardwareEvent": "Fence forbidden; eventData required and native UVHardwareEvent decode; portable event codec unsupported",
+      "preferencesResolved": "Required seed payload; fence may be present or absent"
+    }
+  },
+  "image": "PreviewsServicesUI",
+  "next": "UVHardwareEvent runtime methods and actual eventData encoding/validation; then real dispatch/capture correlation",
+  "profile": "Owned mapped ARM64 ELF with live rebased data/ASLR; no LINKEDIT, not original disk binary",
+  "seed": {
+    "bytes": 24,
+    "constructor_va": "0x270af28d8",
+    "instructions": [
+      "ADRP global",
+      "LDR64",
+      "ADD64 immediate1 (no overflow/atomic operation)",
+      "STR64 global",
+      "STR64 indirect result",
+      "RET"
+    ],
+    "observed_global_initial_in_owned_load": 0,
+    "scope": "Process-global source counter. Caller synchronization unknown. Portable counter is caller-owned explicit state, not a replacement global service."
+  },
+  "timing": {
+    "bytes": 76,
+    "getter_va": "0x270af2118",
+    "raw_values": [
+      "fenced",
+      "async"
+    ],
+    "source": "Gets fence handle; present -> fenced, absent -> async; no fence wait in selected getter"
+  },
+  "uuid": "899379ca784a339c9c7385c74b587018"
+}

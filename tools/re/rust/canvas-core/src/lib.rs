@@ -11,6 +11,7 @@ pub mod crash_report;
 pub mod crash_listener;
 pub mod iosurface_snapshot;
 pub mod iosurface_payload;
+pub mod scene_timing;
 pub use contract::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]

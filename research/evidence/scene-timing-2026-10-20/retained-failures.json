@@ -1,0 +1,13 @@
+[
+  {
+    "correction": "Retained full responses before parsing and selected valid JSON data; all7 probes/224 bytes then matched. No native experiment repeated.",
+    "failure": "JSONDecodeError while assuming first response content was JSON; no byte certificate emitted",
+    "stage": "First final Ghidra byte-check helper"
+  },
+  {
+    "correction": "Recorded actual keeper identities and final file/seal verification under exclusive Controller lock; use longer keeper for subsequent multi-step analysis",
+    "effect": "No unrelated session accepted input and no second native writer ran",
+    "failure": "A stale session release was rejected; later short-lived keeper had expired before final read-only byte checks",
+    "stage": "Acquisition cleanup"
+  }
+]
