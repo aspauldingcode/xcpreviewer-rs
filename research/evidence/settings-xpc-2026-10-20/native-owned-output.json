@@ -1,0 +1,373 @@
+[
+  {
+    "mode": 0,
+    "roundtrip": {
+      "0": {
+        "flag": 9223372036854775807,
+        "object": null
+      },
+      "1": {
+        "flag": 9223372036854775807,
+        "object": null
+      },
+      "42": {
+        "flag": 9223372036854775807,
+        "object": null
+      },
+      "65535": {
+        "flag": 9223372036854775807,
+        "object": null
+      }
+    },
+    "xpc": {
+      "type": "dictionary",
+      "value": {}
+    }
+  },
+  {
+    "mode": 1,
+    "roundtrip": {
+      "0": {
+        "flag": 1,
+        "object": null
+      },
+      "1": {
+        "flag": 9223372036854775807,
+        "object": "owned"
+      },
+      "42": {
+        "flag": 1,
+        "object": null
+      },
+      "65535": {
+        "flag": 9223372036854775807,
+        "object": [
+          1,
+          "two"
+        ]
+      }
+    },
+    "xpc": {
+      "type": "dictionary",
+      "value": {
+        "flags": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "0"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "42"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "objects": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "1"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQMQAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUAZW8AdwBuAGUAZAA=",
+                      "bytes": 50,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "65535"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQXgAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUA0F4AAAAAAAAAdyRjbGFzcwB4TlNBcnJheQB7TlMub2JqZWN0cwCgXgAAAAAAAAARAWN0AHcAbwA=",
+                      "bytes": 95,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "mode": 2,
+    "roundtrip": {
+      "0": {
+        "flag": 1,
+        "object": null
+      },
+      "1": {
+        "flag": 9223372036854775807,
+        "object": null
+      },
+      "42": {
+        "flag": 0,
+        "object": null
+      },
+      "65535": {
+        "flag": 9223372036854775807,
+        "object": [
+          1,
+          "two"
+        ]
+      }
+    },
+    "xpc": {
+      "type": "dictionary",
+      "value": {
+        "flags": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "0"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "42"
+                },
+                {
+                  "type": "bool",
+                  "value": false
+                }
+              ]
+            }
+          ]
+        },
+        "objects": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "65535"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQXgAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUA0F4AAAAAAAAAdyRjbGFzcwB4TlNBcnJheQB7TlMub2JqZWN0cwCgXgAAAAAAAAARAWN0AHcAbwA=",
+                      "bytes": 95,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "mode": 3,
+    "roundtrip": {
+      "0": {
+        "flag": 1,
+        "object": "replacement"
+      },
+      "1": {
+        "flag": 9223372036854775807,
+        "object": "owned"
+      },
+      "42": {
+        "flag": 1,
+        "object": null
+      },
+      "65535": {
+        "flag": 1,
+        "object": [
+          1,
+          "two"
+        ]
+      }
+    },
+    "xpc": {
+      "type": "dictionary",
+      "value": {
+        "flags": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "0"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "42"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "65535"
+                },
+                {
+                  "type": "bool",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "objects": {
+          "type": "array",
+          "value": [
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "0"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQPQAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUAa3IAZQBwAGwAYQBjAGUAbQBlAG4AdAA=",
+                      "bytes": 62,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "1"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQMQAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUAZW8AdwBuAGUAZAA=",
+                      "bytes": 50,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "value": [
+                {
+                  "type": "uint64",
+                  "value": "65535"
+                },
+                {
+                  "type": "dictionary",
+                  "value": {
+                    "root": {
+                      "base64": "YnBsaXN0MTfQXgAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUA0F4AAAAAAAAAdyRjbGFzcwB4TlNBcnJheQB7TlMub2JqZWN0cwCgXgAAAAAAAAARAWN0AHcAbwA=",
+                      "bytes": 95,
+                      "type": "data"
+                    }
+                  }
+                },
+                {
+                  "type": "int64",
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

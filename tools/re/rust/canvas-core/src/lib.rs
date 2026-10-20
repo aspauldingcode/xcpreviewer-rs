@@ -228,3 +228,5 @@ pub mod action_reply;
 pub mod scene_reply;
 
 pub mod delivery_signal;
+
+pub mod settings_xpc;
