@@ -1,0 +1,11 @@
+{
+  "abstract_method_scope": {
+    "path": "research/raw/delivery-queue-20261020/mapped-owner-corrected",
+    "reason": "Valid BoardServices capture initially selected abstract BSServiceQueue method. It traps; not the implementation executed by the native oracle. Factory-returned BSServiceDispatchQueue override is independently observed and probed in mapped-complete. No abstract method was invoked."
+  },
+  "wrong_owner_capture": {
+    "exit_code": 18,
+    "path": "research/raw/delivery-queue-20261020/mapped",
+    "reason": "Guessed FrontBoardServices owner rejected by native IMP/dladdr identity guard. Direct owner observation resolved BoardServices; wrong-owner image is excluded."
+  }
+}

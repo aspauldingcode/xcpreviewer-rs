@@ -1,0 +1,16 @@
+{
+  "cleanup_winners_each_case": 1,
+  "container_corruptions_rejected": 3,
+  "early_signal_capture_still_retained": true,
+  "evidence": "research/evidence/delivery-queue-2026-10-20",
+  "final_owned_capture_deallocations_each_case": 1,
+  "milestones_complete": false,
+  "native_cases": 2,
+  "native_ghidra_probe_bytes_equal": 64,
+  "native_mapped_bytes_verified": 646248,
+  "native_workspace_execution": false,
+  "next_action": "Observe actual workspace queue class and proxy completion/fallback with permitted live instrumentation, and recover protocol serialization. Do not equate a signalled receipt with capture release or target settlement; completed standalone queue controls need not repeat.",
+  "receipt_corruptions_rejected": 7,
+  "requested_delay_seconds": 0.08,
+  "target_settlement_proven": false
+}

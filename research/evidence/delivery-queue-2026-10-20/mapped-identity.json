@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "AbstractServiceQueuePerformAfter",
+      "prefix32_sha256": "b08a2051b36eed3aad8922496770f61c1709513db4f5a0af621e7c6746070d6b",
+      "unslid_address": "0x19ab18768"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "DispatchServiceQueuePerformAfter",
+      "prefix32_sha256": "630c9989cdb845259c91314bf00aa1a6156b6f72b28e9d4df09a80a78190c27a",
+      "unslid_address": "0x19ab13f28"
+    }
+  ],
+  "canvas_protocol_observed": false,
+  "container_profile": "ARM64 ELF analysis view of own loaded image; live rebased data, ASLR VA, no LINKEDIT; entrypoints resolved only",
+  "elf_sha256": "c54922ecd497361e02b953006462d9d60b0a31cbf9094788bb730ee5cfc6c4f1",
+  "image_path": "/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices",
+  "mapped_bytes": 646248,
+  "private_entrypoints_invoked": false,
+  "segments": 6,
+  "uuid": "b4561aecee523447960b4d2f2f3ef720"
+}

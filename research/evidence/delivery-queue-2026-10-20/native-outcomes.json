@@ -1,0 +1,36 @@
+{
+  "early": {
+    "callback_within_one_second": 1,
+    "capture_deallocations_after_timer_barrier": 1,
+    "capture_deallocations_before_queue_resume": 0,
+    "cleanup_winners_before_queue_resume": 1,
+    "cleanup_winners_final": 1,
+    "elapsed_seconds": 0.089352417,
+    "external_actions_sent": 0,
+    "fallback_callbacks": 1,
+    "mode": "early",
+    "queue_class": "BSServiceDispatchQueue",
+    "queue_method_address": "0x1a82eff28",
+    "queue_method_owner": "/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices",
+    "scene_constructors_invoked": 0,
+    "scheduled_seconds": 0.08,
+    "signal_before_queue_resume": true
+  },
+  "fallback": {
+    "callback_within_one_second": 1,
+    "capture_deallocations_after_timer_barrier": 1,
+    "capture_deallocations_before_queue_resume": 0,
+    "cleanup_winners_before_queue_resume": 0,
+    "cleanup_winners_final": 1,
+    "elapsed_seconds": 0.083171959,
+    "external_actions_sent": 0,
+    "fallback_callbacks": 1,
+    "mode": "fallback",
+    "queue_class": "BSServiceDispatchQueue",
+    "queue_method_address": "0x1a82eff28",
+    "queue_method_owner": "/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices",
+    "scene_constructors_invoked": 0,
+    "scheduled_seconds": 0.08,
+    "signal_before_queue_resume": false
+  }
+}
