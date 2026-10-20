@@ -1,0 +1,14 @@
+{
+  "evidence": "research/evidence/scene-client-2026-10-20",
+  "milestones_complete": false,
+  "native_ghidra_method_probe_bytes_equal": 64,
+  "native_signal_race_attempts": 128,
+  "native_signal_race_winners": 16,
+  "native_signal_races": 16,
+  "native_workspace_send_executed": false,
+  "next_action": "Recover client protocol serialization and observe actual owned workspace proxy completion/fallback ordering. Preserve receipt admission versus callback completion/capture release/target settlement distinction; native atomic-signal controls are complete.",
+  "receipt_mutants_rejected": 6,
+  "rust_tests_passed": 83,
+  "target_settlement_proven": false,
+  "workspace_watchdog_source_seconds": 5
+}
