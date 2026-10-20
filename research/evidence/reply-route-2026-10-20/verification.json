@@ -1,0 +1,34 @@
+{
+  "cross_process_canvas_transport": false,
+  "final_right_retirement_proven": false,
+  "native_kernel_reply_cases": {
+    "native": {
+      "body_sha256": "78fd28e3ccb132d043a724774553b4457f4a22b19a178df3b5746b7297a41117",
+      "call_sites_image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "callback_payload_and_owned_queue_match": true,
+      "entire_body_bytes_equal": 284,
+      "message_bytes": 308,
+      "message_id": 536870912,
+      "receive_initial_capacity": 308,
+      "receive_required_message_bytes": 308,
+      "receive_retry_capacity": 360,
+      "send_disposition": 18
+    },
+    "native-changed": {
+      "body_sha256": "bffe8b089e93b10dba5bf8324977d472b18a2b8323a7be096a6e570c9f2a5168",
+      "call_sites_image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "callback_payload_and_owned_queue_match": true,
+      "entire_body_bytes_equal": 316,
+      "message_bytes": 340,
+      "message_id": 536870912,
+      "receive_initial_capacity": 308,
+      "receive_required_message_bytes": 340,
+      "receive_retry_capacity": 392,
+      "send_disposition": 18
+    }
+  },
+  "no_send_finite_control": true,
+  "positive_hook_control": true,
+  "receipt_mutations_rejected": 12,
+  "total_body_bytes_compared": 600
+}

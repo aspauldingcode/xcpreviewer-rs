@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "NativeReplySendCallSite",
+      "prefix32_sha256": "6792e3a106dca3e24e5c3dac808f886f1f70120f49d29eaac4d3626d719628d1",
+      "unslid_address": "0x1801f34ec"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "NativeReplyReceiveCallSite",
+      "prefix32_sha256": "6f0941dfc37c76dd6cec5e93e2eb7ce4b1a866eca7adf6ab737790f80d1f8865",
+      "unslid_address": "0x1801f311c"
+    }
+  ],
+  "canvas_protocol_observed": false,
+  "container_profile": "ARM64 ELF analysis view of own loaded image; live rebased data, ASLR VA, no LINKEDIT; entrypoints resolved only",
+  "elf_sha256": "be92683dd727339d21ad82f4d3624e97757c327a4387172fc1a7d4acef5417fc",
+  "image_path": "/usr/lib/system/libxpc.dylib",
+  "mapped_bytes": 379984,
+  "private_entrypoints_invoked": false,
+  "segments": 6,
+  "uuid": "c40fcae87a173d8287cb3da4802adef1"
+}

@@ -1,0 +1,20 @@
+{
+  "compiler_failure": {
+    "path": "research/raw/reply-route-20261020/rejected-deprecated-cleanup.build",
+    "reason": "Werror rejected deprecated mach_port_destroy before helper execution; replaced with owned send deallocation and receive mod_refs(-1), with checked results."
+  },
+  "native_receive_retry": {
+    "classification": "Expected native path observed, not a harness failure",
+    "name": "MACH_RCV_TOO_LARGE",
+    "required_message_sizes": [
+      308,
+      340
+    ],
+    "result": 268451844,
+    "retry_capacities": [
+      360,
+      392
+    ]
+  },
+  "unresolved": "No cross-process Canvas capture, final right retirement, no-later-effect or portable endpoint import."
+}
