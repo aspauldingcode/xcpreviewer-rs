@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-20T01:39:25.418942+00:00",
+  "contained_decoder_crash": true,
+  "milestones_complete": false,
+  "native_event_bytes_equal": 732,
+  "native_input_posted": false,
+  "native_instruction_bytes_equal": 128,
+  "next": [
+    "Find actual hardwareEvent receiver/dispatch and correlate owned input with changed native frame",
+    "Recover portable input semantics and coordinate transforms without treating CoreGraphics bytes as WASM format",
+    "Continue native fence signal/wait, seed/surface/frame and resource lifecycle acceptance"
+  ],
+  "selected": "Native hardware event data codec and isolated validation; original opt-in event carrier",
+  "tests_passed": 67
+}

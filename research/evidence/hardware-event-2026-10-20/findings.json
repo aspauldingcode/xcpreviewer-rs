@@ -1,0 +1,27 @@
+{
+  "ghidra_program": "PreviewsServicesUI-mapped-v2.elf",
+  "instruction_bytes_native_container_llvm_ghidra_equal": 128,
+  "invalid": {
+    "12_bytes_text": "native/public rejected",
+    "130_byte_truncation": "Both public and private decoder processes SIGSEGV; not ordinary NSError rejection",
+    "empty": "native/public rejected"
+  },
+  "methods": {
+    "data": "Serializes underlying event; owned oracle exactly matches CGEventCreateData on all three cases",
+    "initWithData:error:": "Decodes event data; nil produces NSError; valid decoded underlying roundtrips through public CGEventCreateData",
+    "initWithUnderlying:": "Stores CGEventRef in receiver after superclass initialization",
+    "underlying": "Returns stored event pointer"
+  },
+  "native_event_data_bytes_equal": 732,
+  "rea_aligned": true,
+  "rea_version": "6.2.0",
+  "runtime_imp_probes": 4,
+  "scope": "Owned newly created events; no posting, Xcode session, transport or input delivery observed. Three cases do not prove all CGEvent types/platforms or portable decoding. Core callback trusts caller validator; no native fallback.",
+  "target": "PreviewsServicesUI",
+  "uuid": "899379ca784a339c9c7385c74b587018",
+  "valid_cases": [
+    "leftMouseDown",
+    "keyDown",
+    "scrollWheel"
+  ]
+}

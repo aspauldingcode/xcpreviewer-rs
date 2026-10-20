@@ -54,6 +54,9 @@ pub enum Error {
     MissingSeed,
     SeedType,
     UnsupportedHardwareEvent,
+    MissingEventData,
+    EventDataType,
+    InvalidHardwareEvent,
 }
 impl HostSceneMessageKind {
     pub fn parse(tag: &str) -> Result<Self, Error> {
@@ -74,9 +77,9 @@ impl HostSceneMessageKind {
         }
     }
 }
-/// Partial known-message adapter. Hardware event bytes require the native event
-/// codec/validation, which is deliberately unsupported rather than accepted as
-/// if arbitrary data were a valid event. F owns its own lifetime/drop policy.
+/// Known host-message parts. Event validation is an explicit platform boundary;
+/// the default decoder cannot validate CoreGraphics event data. F owns its
+/// lifetime/drop policy. No method here posts an event or executes native code.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum HostSceneMessage<F> {
     PreferencesResolved {
@@ -84,6 +87,9 @@ pub enum HostSceneMessage<F> {
         fence: Option<F>,
     },
     ConfirmReadyForDisplayAfterSceneResize,
+    HardwareEvent {
+        event_data: Vec<u8>,
+    },
 }
 impl<F> HostSceneMessage<F> {
     pub fn decode_parts(
@@ -107,12 +113,43 @@ impl<F> HostSceneMessage<F> {
             HostSceneMessageKind::HardwareEvent => Err(Error::UnsupportedHardwareEvent),
         }
     }
+    /// Extract the native eventData carrier only after the supplied validator
+    /// accepts it. The callback must validate the complete CoreGraphics event;
+    /// a successful callback is trusted, not independently established here.
+    /// Native validation should run in an isolated bounded worker: malformed
+    /// truncated data crashed both observed Apple decoders. A callback failure
+    /// must include worker crash/timeout, not just ordinary native rejection.
+    /// This does not supply a portable CoreGraphics event decoder or dispatch.
+    pub fn decode_parts_with_event_validator(
+        tag: &str,
+        payload: &BTreeMap<String, Value>,
+        fence: Option<F>,
+        validate: impl FnOnce(&[u8]) -> bool,
+    ) -> Result<Self, Error> {
+        let kind = HostSceneMessageKind::parse(tag)?;
+        kind.validate_fence(fence.is_some())?;
+        if kind != HostSceneMessageKind::HardwareEvent {
+            return Self::decode_parts(tag, payload, fence);
+        }
+        let bytes = match payload.get("eventData").ok_or(Error::MissingEventData)? {
+            Value::Data(bytes) => bytes,
+            _ => return Err(Error::EventDataType),
+        };
+        if !validate(bytes) {
+            return Err(Error::InvalidHardwareEvent);
+        }
+        Ok(Self::HardwareEvent {
+            event_data: bytes.clone(),
+        })
+    }
     pub fn timing(&self) -> SceneTiming {
         match self {
             Self::PreferencesResolved { fence, .. } => {
                 SceneTiming::from_fence_presence(fence.is_some())
             }
-            Self::ConfirmReadyForDisplayAfterSceneResize => SceneTiming::Async,
+            Self::ConfirmReadyForDisplayAfterSceneResize | Self::HardwareEvent { .. } => {
+                SceneTiming::Async
+            }
         }
     }
 }

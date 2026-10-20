@@ -1,0 +1,18 @@
+[
+  {
+    "diagnosis": "Initial all-in-one run crashed. Stage-logged run localizes to truncated130-byte event, after three valid full-byte comparisons and empty/text rejections. No false passing receipt emitted.",
+    "returncode": -11,
+    "stage": "combined oracle"
+  },
+  {
+    "interpretation": "Same malformed input crashes both new owned decoder processes. Future native validation must fail closed across crash/timeout; input format validation remains open.",
+    "private_returncode": -11,
+    "public_returncode": -11,
+    "stage": "isolated truncation controls"
+  },
+  {
+    "failure": "Sandbox network returned empty stdout; succeeded through permitted escalated gh read",
+    "scope": "No issue closure or milestone acceptance inferred",
+    "stage": "initial backlog read"
+  }
+]

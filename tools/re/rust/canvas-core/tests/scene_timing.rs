@@ -108,3 +108,77 @@ fn original_token_ownership_drops_once_on_error_and_success() {
     drop(m);
     assert_eq!(count.get(), 3);
 }
+
+#[test]
+fn event_carrier_preserves_every_byte_after_explicit_validation() {
+    // Original opaque fixture, not an invented native event encoding.
+    let bytes = vec![0, 255, 0, 1, 2, 0, 0];
+    let p = BTreeMap::from([("eventData".into(), Value::Data(bytes.clone()))]);
+    let called = Cell::new(0);
+    let m =
+        HostSceneMessage::<()>::decode_parts_with_event_validator("hardwareEvent", &p, None, |b| {
+            called.set(called.get() + 1);
+            assert_eq!(b, bytes);
+            true
+        })
+        .unwrap();
+    assert_eq!(called.get(), 1);
+    assert_eq!(m, HostSceneMessage::HardwareEvent { event_data: bytes });
+    assert_eq!(m.timing(), SceneTiming::Async);
+    assert_eq!(
+        HostSceneMessage::<()>::decode_parts("hardwareEvent", &p, None),
+        Err(Error::UnsupportedHardwareEvent)
+    );
+}
+#[test]
+fn event_validation_rejection_and_field_fence_order() {
+    let empty = BTreeMap::new();
+    let data = BTreeMap::from([("eventData".into(), Value::Data(vec![0]))]);
+    let wrong = BTreeMap::from([("eventData".into(), Value::Integer(0))]);
+    let never = |_: &[u8]| -> bool { panic!("validator must not run") };
+    assert_eq!(
+        HostSceneMessage::decode_parts_with_event_validator(
+            "hardwareEvent",
+            &data,
+            Some(()),
+            never
+        ),
+        Err(Error::UnexpectedFence)
+    );
+    assert_eq!(
+        HostSceneMessage::<()>::decode_parts_with_event_validator(
+            "hardwareEvent",
+            &empty,
+            None,
+            never
+        ),
+        Err(Error::MissingEventData)
+    );
+    assert_eq!(
+        HostSceneMessage::<()>::decode_parts_with_event_validator(
+            "hardwareEvent",
+            &wrong,
+            None,
+            never
+        ),
+        Err(Error::EventDataType)
+    );
+    assert_eq!(
+        HostSceneMessage::<()>::decode_parts_with_event_validator(
+            "hardwareEvent",
+            &data,
+            None,
+            |_| false
+        ),
+        Err(Error::InvalidHardwareEvent)
+    );
+    assert_eq!(
+        HostSceneMessage::<()>::decode_parts_with_event_validator(
+            "confirmReadyForDisplayAfterSceneResize",
+            &empty,
+            None,
+            never
+        ),
+        Ok(HostSceneMessage::ConfirmReadyForDisplayAfterSceneResize)
+    );
+}

@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "flags": 131072,
+      "accepted": true,
+      "timestamp": 123456789,
+      "type": 1,
+      "status": "accepted"
+    },
+    {
+      "flags": 131072,
+      "accepted": true,
+      "timestamp": 123456789,
+      "type": 10,
+      "status": "accepted"
+    },
+    {
+      "flags": 131072,
+      "accepted": true,
+      "timestamp": 123456789,
+      "type": 22,
+      "status": "accepted"
+    },
+    {
+      "accepted": false,
+      "status": "rejected"
+    },
+    {
+      "accepted": false,
+      "status": "rejected"
+    },
+    {
+      "accepted": false,
+      "status": "crash",
+      "returncode": -11
+    },
+    {
+      "accepted": false,
+      "status": "invalid_response"
+    },
+    {
+      "accepted": false,
+      "status": "timeout"
+    },
+    {
+      "accepted": false,
+      "status": "worker_error",
+      "returncode": 1
+    }
+  ],
+  "valid": 3,
+  "native_reject": 2,
+  "native_crash_contained": 1,
+  "boundary_faults_rejected": 3
+}
