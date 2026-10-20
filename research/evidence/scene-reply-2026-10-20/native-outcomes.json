@@ -1,0 +1,44 @@
+{
+  "absent": {
+    "callback_arrived_within_500ms": 1,
+    "callback_payload_equal": true,
+    "callbacks": 1,
+    "dictionary_equal": false,
+    "external_action_sent": false,
+    "mode": "absent",
+    "payload_present": false,
+    "response_class": "BSActionResponse",
+    "response_payload_equal": true,
+    "serialized_property_list_equal": false,
+    "settings_snapshot_survives_slot_replacement": true,
+    "slot1_class": null
+  },
+  "empty": {
+    "callback_arrived_within_500ms": 1,
+    "callback_payload_equal": true,
+    "callbacks": 1,
+    "dictionary_equal": true,
+    "external_action_sent": false,
+    "mode": "empty",
+    "payload_present": true,
+    "response_class": "BSActionResponse",
+    "response_payload_equal": true,
+    "serialized_property_list_equal": true,
+    "settings_snapshot_survives_slot_replacement": true,
+    "slot1_class": "UVPropertyList"
+  },
+  "structured": {
+    "callback_arrived_within_500ms": 1,
+    "callback_payload_equal": true,
+    "callbacks": 1,
+    "dictionary_equal": true,
+    "external_action_sent": false,
+    "mode": "structured",
+    "payload_present": true,
+    "response_class": "BSActionResponse",
+    "response_payload_equal": true,
+    "serialized_property_list_equal": true,
+    "settings_snapshot_survives_slot_replacement": true,
+    "slot1_class": "UVPropertyList"
+  }
+}
