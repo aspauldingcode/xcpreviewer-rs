@@ -1,0 +1,27 @@
+{
+  "body_bytes_compared": 96,
+  "byte_faults_rejected": 18,
+  "cases": {
+    "abrupt": {
+      "all_bytes_compared_with_sdk_name_rebinding_and_disposition_rewrite": true,
+      "body_bytes": 48,
+      "content_bytes": 31,
+      "content_sha256": "4bf4d6891049102bbad7897129dc2cbdeea19d11071965b53a4ec0a23a5451b1",
+      "receiver_sha256": "d04ddfc7a02df174dba6eced76e352018d38769e8a6177c2273bda88259c2dbd",
+      "sender_sha256": "1e5d820f28633a799083c494c32e613c1bb93a816ce162b944e69be8d37cd860"
+    },
+    "clean": {
+      "all_bytes_compared_with_sdk_name_rebinding_and_disposition_rewrite": true,
+      "body_bytes": 48,
+      "content_bytes": 31,
+      "content_sha256": "4bf4d6891049102bbad7897129dc2cbdeea19d11071965b53a4ec0a23a5451b1",
+      "receiver_sha256": "cda37282101bdef01089cce74aca80d268bb1e27c9caa10d8e49050ff0afcdc1",
+      "sender_sha256": "1e5d820f28633a799083c494c32e613c1bb93a816ce162b944e69be8d37cd860"
+    },
+    "no-send": {
+      "fresh_queue_empty": true,
+      "reaped": true
+    }
+  },
+  "scope": "Owned public Mach/fileport peers; not native Canvas or XPC cross-process encoding; no final kernel reclamation claim"
+}

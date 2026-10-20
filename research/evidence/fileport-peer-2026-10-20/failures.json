@@ -1,0 +1,5 @@
+{
+  "rejected_compile": "Strict -Werror rejected the existing bootstrap_register rendezvous API because SDK marks it deprecated. Diagnostic retained; no helper ran. Explicit -Wno-error=deprecated-declarations permits this already-used SDK API while keeping the warning visible; no privileges or protection changes.",
+  "remaining": "Actual XPC cross-process encoding, native Canvas correlation and final kernel object reclamation are not established.",
+  "scope": "No peer injection, private ABI, Xcode bridge or product changes. Fresh replay runs only three newly owned helpers, each bounded to five seconds. Native receive/send use500ms; peer reap polling1s and rendezvous removal polling1s. Failure cleanup can kill only the forked PID created by this helper."
+}
