@@ -1,0 +1,5 @@
+{
+  "initial_harness_limitation": "First native run lacked final callback/deallocation semaphores and observed the callback only after later cleanup. Revised probe holds reply capability, releases caller block/token references and drains inner autoreleasepool, then waits for actual callback and deallocation before peer cancellation. Initial receipts retained; helper exit/timeouts are not settlement.",
+  "missing_procedure": "REA analyze_function0x1a82c46c0 returned no procedure. Exact native ObjC metadata plus independent LLVM show an8-byte thunk setting reason2 then branching to recovered0x1a8313bfc; follow target without invented callable C ABI or source modification.",
+  "scope": "No fresh native failure or user action required. Exact full native-resource reclamation and global no-later-effects remain open."
+}

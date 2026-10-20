@@ -1,0 +1,10 @@
+{
+  "BaseBoard_uuid": "03f3fd646bf3326a8004c4ee9563571a",
+  "BoardServices_uuid": "b4561aecee523447960b4d2f2f3ef720",
+  "GhidraVibe": "0.1.1/headless5.14.2; existing server healthy, not restarted",
+  "REA_closed": true,
+  "REA_provider": "Ghidra12.1.2",
+  "mapped_sha256": "c54922ecd497361e02b953006462d9d60b0a31cbf9094788bb730ee5cfc6c4f1",
+  "runtime_identity": "Fresh native BoardServices/BaseBoard UUID and exact selector signature guards in each case; existing exact-XNU Mach2 observation ABI.",
+  "source_runtime_boundary": "Source wrapper, state guard and snapshot/field-clearing paths are distinct from actual pending callback lifetime. Do not identify all snapshotted blocks as pending reply callbacks. Actual later callback counterexample controls the invalidation claim."
+}
