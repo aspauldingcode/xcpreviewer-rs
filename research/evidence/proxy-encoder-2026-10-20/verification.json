@@ -1,0 +1,48 @@
+{
+  "actual_scene_execution": false,
+  "completion_means": "Owned SDK peer returned an empty reply; no scene execution or acknowledgement semantics inferred.",
+  "independent_whole_dictionary_equalities": 2,
+  "native_cases": 2,
+  "native_mach_byte_parity": false,
+  "native_set_elements_tested": 0,
+  "receipt_mutations_rejected": 32,
+  "receipts": [
+    {
+      "action_completion_callbacks": 1,
+      "action_invoked": true,
+      "activate_invoked": true,
+      "activation_callbacks": 1,
+      "boardservices_uuid_verified": true,
+      "connection_class": "BSServiceInitiatingConnection",
+      "independent_xpc_equal": 1,
+      "invocation_received": 1,
+      "is_null_endpoint": false,
+      "message_class": "BSXPCServiceConnectionMessage",
+      "owned_peer_connections": 1,
+      "scene_action_signature_arguments": 6,
+      "target_class": "BSXPCServiceConnectionProxy<FBSWorkspaceServiceServerInterface>",
+      "target_nil_after_activation": false,
+      "valid_after_activation": true,
+      "valid_after_invalidate": false
+    },
+    {
+      "action_completion_callbacks": 1,
+      "action_invoked": true,
+      "activate_invoked": true,
+      "activation_callbacks": 1,
+      "boardservices_uuid_verified": true,
+      "connection_class": "BSServiceInitiatingConnection",
+      "independent_xpc_equal": 1,
+      "invocation_received": 1,
+      "is_null_endpoint": false,
+      "message_class": "BSXPCServiceConnectionMessage",
+      "owned_peer_connections": 1,
+      "scene_action_signature_arguments": 6,
+      "target_class": "BSXPCServiceConnectionProxy<FBSWorkspaceServiceServerInterface>",
+      "target_nil_after_activation": false,
+      "valid_after_activation": true,
+      "valid_after_invalidate": false
+    }
+  ],
+  "target_settlement": false
+}

@@ -1,0 +1,19 @@
+{
+  "owned_native_traps": [
+    {
+      "binary": "run1/oracle",
+      "exact_uuid_matched_crash": true,
+      "method": "BSXPCServiceConnectionEndpoint.initWithXPCEndpoint:oneshot:nonLaunching:targetPID:targetDescription:",
+      "offset": 912,
+      "reason": "Missing required target description. Fixed with owned string dictionary field t."
+    },
+    {
+      "binary": "run2/oracle",
+      "exact_uuid_matched_crash": true,
+      "method": "BSXPCServiceConnection.createMessageWithOptions:",
+      "offset": 860,
+      "reason": "Cannot create message before handshake finishes. Fixed by replying through SDK-created reply dictionaries and waiting for typed activation callback before message/proxy APIs."
+    }
+  ],
+  "source_only": "Generated protocol-specific proxy IMP and argument encoder recovered; no guessed private C/Swift ABI invoked. One scoped static selector-reference read left mapped image and failed; retained without arbitrary dereference."
+}

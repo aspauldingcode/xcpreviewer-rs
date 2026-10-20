@@ -236,3 +236,5 @@ pub mod action_xpc;
 pub mod xpc_wire;
 
 pub mod scene_identity;
+
+pub mod workspace_action;
