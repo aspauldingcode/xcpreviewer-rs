@@ -44,3 +44,22 @@ impl SceneReply {
             .unwrap_or_default()
     }
 }
+
+/// Sender callback projection: native response error takes precedence over
+/// payload decoding, and a missing wrapper succeeds with an empty dictionary.
+/// The caller supplies already validated native error fields and extracted
+/// wrapper bytes. This function does not access native objects or run timers.
+pub fn decode_response(
+    error: Option<crate::action_reply::ActionError>,
+    payload_data: Option<&[u8]>,
+) -> Result<crate::action_reply::ReplyOutcome<BTreeMap<String, Value>>, Error> {
+    use crate::action_reply::ReplyOutcome;
+    if let Some(error) = error {
+        return Ok(ReplyOutcome::Failure(error));
+    }
+    Ok(ReplyOutcome::Success(
+        SceneReply::from_property_list_data(payload_data)?
+            .payload
+            .unwrap_or_default(),
+    ))
+}

@@ -74,3 +74,46 @@ fn wrong_payload_types_and_corrupt_native_serializations_reject() {
         ));
     }
 }
+
+#[test]
+fn sender_response_error_precedes_malformed_payload_and_absence_normalizes() {
+    use canvas_core::{action_reply::ActionError, scene_reply::decode_response};
+    for error in [
+        ActionError {
+            domain: "Owned.SceneReply".into(),
+            code: 71,
+        },
+        ActionError::local_timeout(),
+    ] {
+        for bytes in [
+            None,
+            Some(b"malformed wrapper".as_slice()),
+            Some(STRUCTURED),
+        ] {
+            assert_eq!(
+                decode_response(Some(error.clone()), bytes),
+                Ok(ReplyOutcome::Failure(error.clone()))
+            );
+        }
+    }
+    assert_eq!(
+        decode_response(None, None),
+        Ok(ReplyOutcome::Success(BTreeMap::new()))
+    );
+    assert_eq!(
+        decode_response(None, Some(EMPTY)),
+        decode_response(None, None)
+    );
+    assert!(matches!(
+        decode_response(None, Some(b"malformed wrapper")),
+        Err(Error::PropertyList(_))
+    ));
+    let expected = SceneReply::from_property_list_data(Some(STRUCTURED))
+        .unwrap()
+        .payload
+        .unwrap();
+    assert_eq!(
+        decode_response(None, Some(STRUCTURED)),
+        Ok(ReplyOutcome::Success(expected))
+    );
+}

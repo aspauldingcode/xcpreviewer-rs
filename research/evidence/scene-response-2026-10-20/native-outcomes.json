@@ -1,0 +1,44 @@
+{
+  "both-fields": {
+    "callback": {
+      "error_code": 71,
+      "error_domain": "Owned.SceneReply",
+      "on_configured_queue": 1,
+      "slot1_class": "__NSCFConstantString"
+    },
+    "callback_arrived_within_500ms": 1,
+    "callbacks": 1,
+    "deadline_set_as_dispatch_time_uint64": true,
+    "external_action_sent": false,
+    "mode": "both-fields",
+    "native_responder": "BSActionResponder"
+  },
+  "deadline": {
+    "callback": {
+      "error_code": 2,
+      "error_domain": "BSActionErrorDomain",
+      "on_configured_queue": 1,
+      "slot1_class": null
+    },
+    "callback_arrived_within_500ms": 1,
+    "callbacks": 1,
+    "deadline_set_as_dispatch_time_uint64": true,
+    "external_action_sent": false,
+    "mode": "deadline",
+    "native_responder": "BSActionResponder"
+  },
+  "factory-error": {
+    "callback": {
+      "error_code": 71,
+      "error_domain": "Owned.SceneReply",
+      "on_configured_queue": 1,
+      "slot1_class": null
+    },
+    "callback_arrived_within_500ms": 1,
+    "callbacks": 1,
+    "deadline_set_as_dispatch_time_uint64": true,
+    "external_action_sent": false,
+    "mode": "factory-error",
+    "native_responder": "BSActionResponder"
+  }
+}
