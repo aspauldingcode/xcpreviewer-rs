@@ -1,0 +1,91 @@
+{
+  "files": [
+    {
+      "bytes": 4981,
+      "path": "README.md",
+      "sha256": "339bad6672ad41e351b75ba6a0207e39d65b602615cd103bbe52e01567b6e3eb"
+    },
+    {
+      "bytes": 285,
+      "path": "build-verification.json",
+      "sha256": "cebb1a628c4f0eac70de79d93a17f50cf1c82dc81b5ae268dcb072ec2d01d36b"
+    },
+    {
+      "bytes": 6578,
+      "path": "endpoint.m",
+      "sha256": "8c072259db0093050273db9ff772e4c0666442f2a4e3211e9d87793d86943958"
+    },
+    {
+      "bytes": 183,
+      "path": "environment.json",
+      "sha256": "c5cc9b03facf63b5fc0de92a61495a1bfb8c57955d05fe42c3f0c6d4207213e5"
+    },
+    {
+      "bytes": 714,
+      "path": "failures.json",
+      "sha256": "ba6bedced71f9770f559f325f702114ec96537ddc56975270a29bbfc8b4e7b15"
+    },
+    {
+      "bytes": 81,
+      "path": "image-verification.json",
+      "sha256": "62316944144774f24209d46de13d9afc79fb2bc7387fea2bc0682d8fff144d92"
+    },
+    {
+      "bytes": 603,
+      "path": "implementation-pins.json",
+      "sha256": "40c28a037d88a543d4a2fb600367011ef4885d49adce3ce9567fab2c51a4a59a"
+    },
+    {
+      "bytes": 1556,
+      "path": "metadata.m",
+      "sha256": "4a3642a5ba3d113faf76e6272a8b8135645b64bd59cd349a0671a4fedd8ea112"
+    },
+    {
+      "bytes": 1321,
+      "path": "native-metadata.json",
+      "sha256": "f2cbed679d9e9498e29bf949a597c4868cd665e8c89844e31c7acee9e5a28b1f"
+    },
+    {
+      "bytes": 2631,
+      "path": "native-owned-endpoint-sanitized.json",
+      "sha256": "2cdeb97440be581ebf3c8196ff13eea3ef677381ee2c915cd536f08f4f5323ba"
+    },
+    {
+      "bytes": 5370,
+      "path": "native-owned-output.json",
+      "sha256": "1a67fa6450973bffdb7f9de5ffe9edd993bd2de97c86acc3feff8676b4fac8b2"
+    },
+    {
+      "bytes": 4866,
+      "path": "oracle.m",
+      "sha256": "fb7e0f78d8bbe7c90169d93e19b2c9ceded84cdb1e5566b6fdc1052ebbf41b49"
+    },
+    {
+      "bytes": 5163,
+      "path": "raw-provenance.json",
+      "sha256": "d27f0ba304783809dc3c0e20880a1a918efc693a5dcdf303ee4e1ce600d92eaa"
+    },
+    {
+      "bytes": 1239,
+      "path": "replay.py",
+      "sha256": "7007c13804312eb44a8823335e951fa1fe7eb0391e40b50fe06555ecdbc5ae8a"
+    },
+    {
+      "bytes": 356,
+      "path": "verification.json",
+      "sha256": "483502660f71cc9dbe6b484155a4d1f01a1ad62dde5c448334152840324cd193"
+    },
+    {
+      "bytes": 1157,
+      "path": "verify-image.py",
+      "sha256": "012cf635234291f91a7267975da51ef9489b34a1954b61e19550a3cc1387962c"
+    },
+    {
+      "bytes": 3889,
+      "path": "verify.py",
+      "sha256": "6bb8ced69281f7ea5af9731995ad769feae11ab8ca51511b7a15edd4633b6ed8"
+    }
+  ],
+  "schema": 1,
+  "scope": "Native owned action serialization and same-process reply callback; portable no-responder typed envelope, not live Canvas or kernel route"
+}

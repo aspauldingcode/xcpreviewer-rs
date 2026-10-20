@@ -10,6 +10,7 @@ pub enum XpcValue {
     Int64(i64),
     Bool(bool),
     Data(Vec<u8>),
+    String(String),
 }
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct ArchivedSettings {

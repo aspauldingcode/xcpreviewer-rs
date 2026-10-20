@@ -1,0 +1,96 @@
+[
+  {
+    "callback_arrived": 1,
+    "callback_on_owned_queue": true,
+    "callback_payload_matches": true,
+    "callbacks": 1,
+    "decoded_info_nil": 0,
+    "decoded_values": {
+      "0": "owned.message",
+      "1": "owned.payload"
+    },
+    "info_nil": 0,
+    "mode": 4,
+    "xpc": {
+      "type": "dictionary",
+      "value": {
+        "i": {
+          "type": "dictionary",
+          "value": {
+            "bsx_class": {
+              "type": "string",
+              "value": "BSSettings"
+            },
+            "objects": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "array",
+                  "value": [
+                    {
+                      "type": "uint64",
+                      "value": "0"
+                    },
+                    {
+                      "type": "dictionary",
+                      "value": {
+                        "root": {
+                          "base64": "YnBsaXN0MTfQQQAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUAbW8AdwBuAGUAZAAuAG0AZQBzAHMAYQBnAGUA",
+                          "bytes": 66,
+                          "type": "data"
+                        }
+                      }
+                    },
+                    {
+                      "type": "int64",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "array",
+                  "value": [
+                    {
+                      "type": "uint64",
+                      "value": "1"
+                    },
+                    {
+                      "type": "dictionary",
+                      "value": {
+                        "root": {
+                          "base64": "YnBsaXN0MTfQQQAAAAAAAAB/ERNfX0JTWFBDU2VjdXJlVmFsdWUAbW8AdwBuAGUAZAAuAHAAYQB5AGwAbwBhAGQA",
+                          "bytes": 66,
+                          "type": "data"
+                        }
+                      }
+                    },
+                    {
+                      "type": "int64",
+                      "value": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "r": {
+          "type": "dictionary",
+          "value": {
+            "bsar_aid": {
+              "type": "string",
+              "value": "<owned diagnostic redacted>"
+            },
+            "bsmpr_p": {
+              "type": "mach send once right"
+            },
+            "bsmpr_t": {
+              "type": "string",
+              "value": "<owned diagnostic redacted>"
+            }
+          }
+        }
+      }
+    }
+  }
+]
