@@ -1,0 +1,39 @@
+{
+  "actual_native_error_info": {
+    "BSErrorCodeDescription": "OperationFailed",
+    "NSLocalizedFailureReason": "XPC error received on message reply handler"
+  },
+  "cases": [
+    {
+      "factory_hits": 0,
+      "hook_restored": true,
+      "mode": "delivered",
+      "native_error_info_equal": false,
+      "native_source_chain_offsets": []
+    },
+    {
+      "factory_hits": 1,
+      "hook_restored": true,
+      "mode": "withheld",
+      "native_error_info_equal": true,
+      "native_source_chain_offsets": [
+        432180,
+        431340,
+        363308
+      ]
+    },
+    {
+      "factory_hits": 0,
+      "hook_restored": true,
+      "mode": "late-after-invalidate",
+      "native_error_info_equal": false,
+      "native_source_chain_offsets": []
+    }
+  ],
+  "constructor_mutations_rejected": 18,
+  "fresh_native_replay": true,
+  "portable_core_tests": 126,
+  "prior_lifetime_receipt_controls_retained": true,
+  "private_callable_ABI_used": false,
+  "target_operation_settlement": false
+}
