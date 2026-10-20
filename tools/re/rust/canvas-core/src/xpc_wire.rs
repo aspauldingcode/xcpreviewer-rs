@@ -61,6 +61,10 @@ impl<'a> Reader<'a> {
             return Err(Error::Limit);
         }
         match self.word()? {
+            0x1000 => Ok(Null),
+            0x5000 => Ok(DoubleBits(u64::from_le_bytes(
+                self.take(8)?.try_into().unwrap(),
+            ))),
             0xb000 => {
                 let Some(count) = self.descriptor_count else {
                     return Err(Error::Tag(0xb000));
@@ -203,6 +207,11 @@ impl Writer {
             return Err(Error::Limit);
         }
         match v {
+            Null => self.word(0x1000)?,
+            DoubleBits(bits) => {
+                self.word(0x5000)?;
+                self.append(&bits.to_le_bytes())?;
+            }
             DescriptorRef(index) => {
                 let Some(count) = self.descriptor_count else {
                     return Err(Error::Tag(0xb000));

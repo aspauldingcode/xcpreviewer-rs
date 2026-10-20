@@ -1,0 +1,87 @@
+{
+  "cases": {
+    "native": {
+      "complex_body_bytes": 572,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "536ceaf3b3b86488bd371563e111360221b13b3d0d187536016313bad70c70d9",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "e0634c48aa1a5277a559ddeadb9c110a4b83fdcce17a40463c800fe68ce0c0fb",
+      "wire_bytes": 544,
+      "wire_sha256": "385668f53af75b2bbe65314838180bd0ed4c9348ce3daa077500c8fcd7f431ee"
+    },
+    "native-alias": {
+      "complex_body_bytes": 572,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 0,
+      "receiver_body_sha256": "6bdea1a5f8e98a4c51ecf34904107a11e9f64e62b3c1aad02197784aa11e18c2",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "96103243dd1342ac7d6ebf442cc9575c249c97c6c298393ad7f48b73d8a880d2",
+      "wire_bytes": 544,
+      "wire_sha256": "385668f53af75b2bbe65314838180bd0ed4c9348ce3daa077500c8fcd7f431ee"
+    },
+    "native-holdout": {
+      "complex_body_bytes": 596,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "30032c58b00d51e202a69c4a516e4375cb491cea4e2886612778996bb1021b85",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "434a97b5e1aec5922e461b0be166a44c15d71379279e1059b4bfa409e4e8a94b",
+      "wire_bytes": 568,
+      "wire_sha256": "c867e85eea7f28d7a59f80cac2c061898e6dbc800b36ed651e78667d7c1379ad"
+    },
+    "portable": {
+      "complex_body_bytes": 572,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "83aeecb65510f66b0a0ae1bc1b449688a651b9789d1dc955ef1fbe3d173327d2",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "7ebd2e4b2b30b3f1d9ee4c74be76aaef3c6f24a49ee074cd53743c8be895d172",
+      "wire_bytes": 544,
+      "wire_sha256": "2b1c697439bcc78eb320869edf8ce6ee297b0836b10b3422b2c96fa9ac0bc2fd"
+    },
+    "portable-alias": {
+      "complex_body_bytes": 572,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 0,
+      "receiver_body_sha256": "359369a527f527196dce44d8f43d9cb1034d622b34564ba44f9763427fdf4955",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "886171d3a994a8392a8fbf1cec6f2b810b41fa6b34205b5b186fe8b3607f873e",
+      "wire_bytes": 544,
+      "wire_sha256": "2b1c697439bcc78eb320869edf8ce6ee297b0836b10b3422b2c96fa9ac0bc2fd"
+    },
+    "portable-holdout": {
+      "complex_body_bytes": 596,
+      "native_callback_matches": true,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "459c8dae0d2a7fb2f2bd1e59042c7484f1edd32630e8a8133a78cc43199e6ae0",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "cc2555f97e2551990cb95ce20cbe3e460d17d05a18941e931b32100eb371aa85",
+      "wire_bytes": 568,
+      "wire_sha256": "61ae5f2538eca8459f9c8a531ee0bbf8b560699468167f5eb453c54aa68b2d90"
+    },
+    "wrong-order": {
+      "complex_body_bytes": 572,
+      "native_callback_matches": false,
+      "read_a": 23,
+      "read_b": 23,
+      "receiver_body_sha256": "32a3e3adb0b5bec5bf4aa7a56b1d86553024aad6e20479ad56e3161b07cce84b",
+      "sender_audit_matches_owned_child": true,
+      "sender_body_sha256": "213d05c0be9ca986571d031c799a14cfc8f9bb71eea48fc0ccd4d65c2632b7cd",
+      "wire_bytes": 544,
+      "wire_sha256": "2b1c697439bcc78eb320869edf8ce6ee297b0836b10b3422b2c96fa9ac0bc2fd"
+    }
+  },
+  "complex_body_bytes_compared": 4052,
+  "faults_rejected": 91,
+  "final_right_retirement_proven": false,
+  "native_canvas_transport": false,
+  "native_xpc_cross_process": true,
+  "wrong_order_semantic_failure_detected": true
+}

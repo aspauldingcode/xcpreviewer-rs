@@ -9,6 +9,10 @@ pub enum XpcValue {
     UInt64(u64),
     Int64(i64),
     Bool(bool),
+    Null,
+    /// Raw IEEE-754 binary64 bits; equality preserves signed zero and NaN payloads.
+    /// No floating-point arithmetic or normalization is performed by the codec.
+    DoubleBits(u64),
     Data(Vec<u8>),
     String(String),
     /// Opaque attachment-table ordinal, never a portable OS descriptor/right.
