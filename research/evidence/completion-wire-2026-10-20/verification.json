@@ -1,0 +1,50 @@
+{
+  "archive_semantic_encoding_portable": false,
+  "cases": [
+    {
+      "all_reply_body_bytes_equal": true,
+      "bytes": 20,
+      "mode": "primary",
+      "native_completion_error_present": false,
+      "sha256": "c6e9fc24649d7adf5c38a5a2bbabff17fe21de28fcaaa2a3ae851139d0802611"
+    },
+    {
+      "all_reply_body_bytes_equal": true,
+      "bytes": 20,
+      "mode": "holdout",
+      "native_completion_error_present": false,
+      "sha256": "c6e9fc24649d7adf5c38a5a2bbabff17fe21de28fcaaa2a3ae851139d0802611"
+    },
+    {
+      "all_reply_body_bytes_equal": true,
+      "bytes": 184,
+      "mode": "error-primary",
+      "native_completion_error_present": true,
+      "sha256": "810252401f7dcfe5ce1c382d345b3e4eb63171885bf5cda8da21e8d3139843a8"
+    },
+    {
+      "all_reply_body_bytes_equal": true,
+      "bytes": 188,
+      "mode": "error-holdout",
+      "native_completion_error_present": true,
+      "sha256": "f3ce56512534c5e3c652a02713549a4e55233123b7ed74a3e30cdf606ec73fc6"
+    },
+    {
+      "all_reply_body_bytes_equal": true,
+      "bytes": 184,
+      "mode": "wrong-slot",
+      "native_completion_error_present": false,
+      "sha256": "5e7fc149b0246a56644d54802c4b84258a94a609198f242823a296bac6276e5a"
+    }
+  ],
+  "independent_capture_sets_verified": 2,
+  "mach_header_parity": false,
+  "portable_actual_body_bytes": 596,
+  "portable_core_tests": 120,
+  "portable_exact_positive_output_bytes": 412,
+  "reply_byte_mutants_rejected": 596,
+  "reserved_service_return_envelope_guard": true,
+  "target_operation_settlement": false,
+  "total_retained_reply_bytes_compared": 1192,
+  "wrong_slot_projects_to_empty": true
+}

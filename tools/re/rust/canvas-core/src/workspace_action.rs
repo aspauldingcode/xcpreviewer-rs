@@ -79,3 +79,41 @@ impl WorkspaceActionCompletion {
         })
     }
 }
+
+/// Failure to decode the supported XPC body or project its completion argument.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum CompletionReplyError {
+    Wire(crate::xpc_wire::Error),
+    Value(CompletionError),
+}
+impl WorkspaceActionCompletion {
+    /// Select numbered argument 1 from a native reply dictionary. The measured
+    /// slot-2 negative control is ignored by the native callback decoder. This
+    /// projection ignores unrelated keys; full NSError unarchiving, arbitrary
+    /// argument classes and transport-level error envelopes remain unsupported.
+    /// Use `from_xpc` when strict rejection of unrelated fields is desired.
+    pub fn from_native_arguments(value: &XpcValue) -> Result<Self, CompletionError> {
+        let XpcValue::Dictionary(d) = value else { return Err(CompletionError::Envelope) };
+        // Reserved service-level returns require a different decoder. Reject
+        // their presence rather than silently projecting them to nil success.
+        if d.contains_key("BSXPCReturnError") || d.contains_key("BSXPCReturnValue") {
+            return Err(CompletionError::Envelope);
+        }
+        let selected = match d.get("1") {
+            None => BTreeMap::new(),
+            Some(v) => BTreeMap::from([("1".into(), v.clone())]),
+        };
+        Self::from_xpc(&XpcValue::Dictionary(selected))
+    }
+    /// Decode a complete descriptor-free CPX version-5 reply body, then select
+    /// the supported completion argument. Mach framing/rights are not consumed.
+    pub fn from_wire_reply(bytes: &[u8]) -> Result<Self, CompletionReplyError> {
+        let value = crate::xpc_wire::decode_body(bytes).map_err(CompletionReplyError::Wire)?;
+        Self::from_native_arguments(&value).map_err(CompletionReplyError::Value)
+    }
+    /// Encode the selected argument using the existing canonical body writer.
+    /// Opaque archive bytes are preserved; discarded unrelated fields are not.
+    pub fn to_wire_reply(&self) -> Result<Vec<u8>, crate::xpc_wire::Error> {
+        crate::xpc_wire::encode_body(&self.to_xpc())
+    }
+}

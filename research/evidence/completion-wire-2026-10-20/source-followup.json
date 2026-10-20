@@ -1,0 +1,41 @@
+{
+  "CFString_error_key_binding_verified": true,
+  "CFString_xrefs": [
+    "0x1a82c3444",
+    "0x1a82c3720",
+    "0x1a82c3744",
+    "0x1a82cd874",
+    "0x1a82cf47c"
+  ],
+  "GhidraVibe": "0.1.1",
+  "GhidraVibe_server": "5.14.2-headless",
+  "REA_body_instruction_addresses_equal_declared_ranges": true,
+  "analysis_profile_sha256": "ffc0049f2a7145a7ce0f2c83661923f203052819c7f4036409bc4545f0a43b5a",
+  "body_bytes_verified": 1728,
+  "complete_body_ranges": [
+    {
+      "end": "0x1a82c38a7",
+      "start": "0x1a82c33a4"
+    },
+    {
+      "end": "0x1a82c3987",
+      "start": "0x1a82c38ac"
+    },
+    {
+      "end": "0x1a82c3a67",
+      "start": "0x1a82c398c"
+    },
+    {
+      "end": "0x1a82c3a6f",
+      "start": "0x1a82c3a6c"
+    }
+  ],
+  "direct_cstring_xrefs_empty": true,
+  "handler_entry": "0x1a82c33a4",
+  "independent_llvm_opcode_bytes_equal_ELF": true,
+  "mapped_sha256": "c54922ecd497361e02b953006462d9d60b0a31cbf9094788bb730ee5cfc6c4f1",
+  "new_callable_private_prototype": false,
+  "provider": "REA Ghidra 12.1.2",
+  "runtime_reserved_error_control": false,
+  "scope": "Static reserved-error-key references and complete decoder instruction-byte verification only; no callable ABI or runtime reserved-error semantics claimed."
+}
