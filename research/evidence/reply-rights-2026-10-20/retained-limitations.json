@@ -1,0 +1,7 @@
+{
+  "alias_scope": "get_refs(send_once) at the receive name is0 while receive-status mps_sorights is1. The outstanding send-once right can have another namespace name; absence of a send-once uref at the receive name is not absence of outstanding reply capability. No broad port enumeration used.",
+  "failed_queries": "Initial verifier also checked zero-initialized output buffers after failed SDK calls. Final verifier ignores all failed output-buffer values and mutates only meaningful valid results/status/name/disposition fields. Original verifier retained locally. Failed get_refs/get_attributes output zeros are not valid zero-right measurements.",
+  "harness_field": "Receipt header_bits stores the low32 packed Mach2 bits argument; local disposition decoded from that kernel-call argument. Header_name is independently read from data-header msgh_local_port and equals high32 packed local name. Full dynamic Mach header byte parity is not claimed.",
+  "name_absence": "KERN_INVALID_NAME15 observes absence of the exact owned local name. It does not prove global kernel port-object destruction, absence of moved/renamed rights, allocator reclamation, all native resource release or target-operation settlement.",
+  "timing": "SDK snapshots consist of sequential public queries, not an atomic kernel transaction. Controlled no-send phases and explicit callback/dealloc waits anchor observations; no universal timing/lifetime guarantee."
+}

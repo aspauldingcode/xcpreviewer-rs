@@ -1,0 +1,106 @@
+{
+  "all_native_resource_release_accounted": false,
+  "cases": [
+    {
+      "local_disposition_make_send_once": true,
+      "mode": "delivered",
+      "phases": [
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_before",
+          "receive_right_refs": null,
+          "type_status": 15
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_after",
+          "receive_right_refs": null,
+          "type_status": 15
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_late",
+          "receive_right_refs": null,
+          "type_status": 15
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_final",
+          "receive_right_refs": null,
+          "type_status": 15
+        }
+      ],
+      "same_exact_own_name_and_Mach2_header": true
+    },
+    {
+      "local_disposition_make_send_once": true,
+      "mode": "withheld",
+      "phases": [
+        {
+          "outstanding_send_once_rights": 1,
+          "phase": "rights_before",
+          "receive_right_refs": 1,
+          "type_status": 0
+        },
+        {
+          "outstanding_send_once_rights": 1,
+          "phase": "rights_after",
+          "receive_right_refs": 1,
+          "type_status": 0
+        },
+        {
+          "outstanding_send_once_rights": 1,
+          "phase": "rights_late",
+          "receive_right_refs": 1,
+          "type_status": 0
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_final",
+          "receive_right_refs": null,
+          "type_status": 15
+        }
+      ],
+      "same_exact_own_name_and_Mach2_header": true
+    },
+    {
+      "local_disposition_make_send_once": true,
+      "mode": "late-after-invalidate",
+      "phases": [
+        {
+          "outstanding_send_once_rights": 1,
+          "phase": "rights_before",
+          "receive_right_refs": 1,
+          "type_status": 0
+        },
+        {
+          "outstanding_send_once_rights": 1,
+          "phase": "rights_after",
+          "receive_right_refs": 1,
+          "type_status": 0
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_late",
+          "receive_right_refs": null,
+          "type_status": 15
+        },
+        {
+          "outstanding_send_once_rights": null,
+          "phase": "rights_final",
+          "receive_right_refs": null,
+          "type_status": 15
+        }
+      ],
+      "same_exact_own_name_and_Mach2_header": true
+    }
+  ],
+  "fresh_native_replay": true,
+  "global_port_object_destruction": false,
+  "new_product_source_changes": false,
+  "portable_core_tests_historical_only": 126,
+  "prior_lifetime_controls_preserved": true,
+  "request_reply_bytes_verified": 976,
+  "right_receipt_mutations_rejected": 158,
+  "target_operation_settlement": false
+}
