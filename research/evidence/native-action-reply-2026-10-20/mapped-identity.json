@@ -1,0 +1,47 @@
+{
+  "bindings": [
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "initWithInfo:timeout:forResponseOnQueue:withHandler:",
+      "prefix32_sha256": "ac6119d9de96283e19e3dd61266b837bc7ec317212b47ed137b8ad415eb8e5bc",
+      "unslid_address": "0x18868c1dc"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "sendResponse:",
+      "prefix32_sha256": "2eba8f1ec77a24ce2f1847a79765a041b3b7c6c736c7c3165b2a0d28385ead18",
+      "unslid_address": "0x1887089b8"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "sendResponse:withCompletion:",
+      "prefix32_sha256": "8d2862a2e27b3530e7dd63676409021751ba2e4fa86057ecc4dd453ba8e47578",
+      "unslid_address": "0x188708a6c"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "invalidate",
+      "prefix32_sha256": "c83f4db3be10fb2de28c1077f9d36d7424d9d568256b217e3f11cba09e4427ce",
+      "unslid_address": "0x188708b70"
+    },
+    {
+      "direct_probe_segment_container_equal": true,
+      "llvm_disassembled": true,
+      "name": "canSendResponse",
+      "prefix32_sha256": "a5811a37a281867d6b420ce6bd38c9d967fbc8400b5245796cbc33f2169a6071",
+      "unslid_address": "0x188684900"
+    }
+  ],
+  "canvas_protocol_observed": false,
+  "container_profile": "ARM64 ELF analysis view of own loaded image; live rebased data, ASLR VA, no LINKEDIT; entrypoints resolved only",
+  "elf_sha256": "3c8e97d02afbbf1abd44108642e3cdeb38d73a508fa77d29741e8969058f1190",
+  "image_path": "/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard",
+  "mapped_bytes": 1129680,
+  "private_entrypoints_invoked": false,
+  "segments": 6,
+  "uuid": "03f3fd646bf3326a8004c4ee9563571a"
+}

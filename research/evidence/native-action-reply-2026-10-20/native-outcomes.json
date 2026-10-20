@@ -1,0 +1,74 @@
+{
+  "error": {
+    "callback_arrived_within_500ms": 1,
+    "callbacks_at_final_queue_barrier": [
+      {
+        "error_code": 17,
+        "error_domain": "Owned.ActionError",
+        "response_class": "BSActionResponse"
+      }
+    ],
+    "can_send_after_wait": false,
+    "can_send_before": true,
+    "external_action_sent": false,
+    "mode": "error",
+    "owned_handler_capture_deallocations_after_action_release": 1,
+    "post_invalidation_observation_ms": 150,
+    "valid_after_wait": false,
+    "valid_before": true
+  },
+  "invalidate": {
+    "callback_arrived_within_500ms": 1,
+    "callbacks_at_final_queue_barrier": [
+      {
+        "error_code": 5,
+        "error_domain": "BSActionErrorDomain",
+        "response_class": "BSActionResponse"
+      }
+    ],
+    "can_send_after_wait": false,
+    "can_send_before": true,
+    "external_action_sent": false,
+    "mode": "invalidate",
+    "owned_handler_capture_deallocations_after_action_release": 1,
+    "post_invalidation_observation_ms": 150,
+    "valid_after_wait": false,
+    "valid_before": true
+  },
+  "reply": {
+    "callback_arrived_within_500ms": 1,
+    "callbacks_at_final_queue_barrier": [
+      {
+        "error_code": null,
+        "error_domain": null,
+        "response_class": "BSActionResponse"
+      }
+    ],
+    "can_send_after_wait": false,
+    "can_send_before": true,
+    "external_action_sent": false,
+    "mode": "reply",
+    "owned_handler_capture_deallocations_after_action_release": 1,
+    "post_invalidation_observation_ms": 150,
+    "valid_after_wait": false,
+    "valid_before": true
+  },
+  "timeout": {
+    "callback_arrived_within_500ms": 1,
+    "callbacks_at_final_queue_barrier": [
+      {
+        "error_code": 2,
+        "error_domain": "BSActionErrorDomain",
+        "response_class": "BSActionResponse"
+      }
+    ],
+    "can_send_after_wait": false,
+    "can_send_before": true,
+    "external_action_sent": false,
+    "mode": "timeout",
+    "owned_handler_capture_deallocations_after_action_release": 1,
+    "post_invalidation_observation_ms": 150,
+    "valid_after_wait": false,
+    "valid_before": true
+  }
+}
