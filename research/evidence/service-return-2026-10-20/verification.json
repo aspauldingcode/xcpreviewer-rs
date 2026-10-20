@@ -1,0 +1,62 @@
+{
+  "callback_receipt_mutations_rejected": 28,
+  "cases": [
+    {
+      "bytes": 184,
+      "mode": "argument-primary",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": false,
+      "sha256": "810252401f7dcfe5ce1c382d345b3e4eb63171885bf5cda8da21e8d3139843a8"
+    },
+    {
+      "bytes": 200,
+      "mode": "reserved-error-primary",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": false,
+      "sha256": "f4ef29bf707b033dfddd749071af670d664287121510c7e58f879a19b0e115e7"
+    },
+    {
+      "bytes": 204,
+      "mode": "reserved-error-holdout",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": false,
+      "sha256": "2bb0e59ea15b433df13018bb6feb97827f6f6ecd88949a6072c7f301b2230e74"
+    },
+    {
+      "bytes": 200,
+      "mode": "reserved-value-primary",
+      "native_error_present": false,
+      "reserved_error_precedes_numbered": false,
+      "sha256": "f1dc13baac91bdfeea91d5b03caf23e21d3e57b0b12f1fba614734bc9083549d"
+    },
+    {
+      "bytes": 364,
+      "mode": "combined-error-primary",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": false,
+      "sha256": "c06e69c771479eb8bc655b620ce9bb28046a0668a8b3da9615282014ba498679"
+    },
+    {
+      "bytes": 372,
+      "mode": "conflict-primary",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": true,
+      "sha256": "adb1975e380375497b1c9e420457f7142dc169ccec6e7607af8176df5fed192f"
+    },
+    {
+      "bytes": 376,
+      "mode": "conflict-holdout",
+      "native_error_present": true,
+      "reserved_error_precedes_numbered": true,
+      "sha256": "8cfb3ef64b4dccc30ef89f51e8887637a0dfa07515518e3b168fb8798162af9b"
+    }
+  ],
+  "fresh_native_replay": true,
+  "historical_completion_body_bytes": 596,
+  "opaque_positive_archive_bytes": 212,
+  "portable_core_tests": 122,
+  "portable_native_service_body_bytes": 1900,
+  "reply_byte_mutations_rejected": 1900,
+  "scene_execution": false,
+  "target_operation_settlement": false
+}

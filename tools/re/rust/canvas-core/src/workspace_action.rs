@@ -89,17 +89,15 @@ pub enum CompletionReplyError {
 impl WorkspaceActionCompletion {
     /// Select numbered argument 1 from a native reply dictionary. The measured
     /// slot-2 negative control is ignored by the native callback decoder. This
-    /// projection ignores unrelated keys; full NSError unarchiving, arbitrary
-    /// argument classes and transport-level error envelopes remain unsupported.
+    /// projection prefers the measured BSXPCReturnError over numbered slot 1;
+    /// BSXPCReturnValue is ignored for this void-returning callback. Full NSError
+    /// unarchiving and arbitrary argument classes remain unsupported.
     /// Use `from_xpc` when strict rejection of unrelated fields is desired.
     pub fn from_native_arguments(value: &XpcValue) -> Result<Self, CompletionError> {
         let XpcValue::Dictionary(d) = value else { return Err(CompletionError::Envelope) };
-        // Reserved service-level returns require a different decoder. Reject
-        // their presence rather than silently projecting them to nil success.
-        if d.contains_key("BSXPCReturnError") || d.contains_key("BSXPCReturnValue") {
-            return Err(CompletionError::Envelope);
-        }
-        let selected = match d.get("1") {
+        // Actual native conflict controls show the reserved NSError replaces
+        // numbered argument 1. Invalid recognized values remain fail-closed.
+        let selected = match d.get("BSXPCReturnError").or_else(|| d.get("1")) {
             None => BTreeMap::new(),
             Some(v) => BTreeMap::from([("1".into(), v.clone())]),
         };

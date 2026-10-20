@@ -50,11 +50,40 @@ fn actual_native_completion_wire_corpus_when_supplied() {
 }
 
 #[test]
-fn reserved_service_returns_never_become_clean_callback_completions() {
-    for key in ["BSXPCReturnError", "BSXPCReturnValue"] {
-        let value = X::Dictionary(BTreeMap::from([(key.into(), X::Null)]));
-        assert!(Completion::from_native_arguments(&value).is_err());
-        let bytes = xpc_wire::encode_body(&value).unwrap();
-        assert!(matches!(Completion::from_wire_reply(&bytes), Err(CompletionReplyError::Value(_))));
+fn malformed_reserved_error_rejects_but_void_return_value_is_ignored() {
+    let value = X::Dictionary(BTreeMap::from([("BSXPCReturnError".into(), X::Null)]));
+    assert!(Completion::from_native_arguments(&value).is_err());
+    let bytes = xpc_wire::encode_body(&value).unwrap();
+    assert!(matches!(Completion::from_wire_reply(&bytes), Err(CompletionReplyError::Value(_))));
+    let value = X::Dictionary(BTreeMap::from([("BSXPCReturnValue".into(), X::Null)]));
+    assert_eq!(Completion::from_native_arguments(&value).unwrap(), Completion::default());
+}
+#[test]
+fn reserved_error_precedes_numbered_error_and_remains_owned() {
+    let numbered = Completion { error_archive: Some(vec![1,2,3]) }.to_xpc();
+    let reserved = Completion { error_archive: Some(vec![9,8,7]) }.to_xpc();
+    let X::Dictionary(mut d) = numbered else { unreachable!() };
+    let X::Dictionary(mut e) = reserved else { unreachable!() };
+    d.insert("BSXPCReturnError".into(), e.remove("1").unwrap());
+    let value = X::Dictionary(d);
+    assert!(Completion::from_xpc(&value).is_err());
+    let decoded = Completion::from_native_arguments(&value).unwrap();
+    assert_eq!(decoded.error_archive, Some(vec![9,8,7]));
+    assert_eq!(Completion::from_wire_reply(&decoded.to_wire_reply().unwrap()).unwrap(), decoded);
+}
+#[test]
+fn actual_native_reserved_return_corpus_when_supplied() {
+    let Some(folder) = std::env::var_os("XCPREVIEW_NATIVE_SERVICE_RETURNS") else { return };
+    let folder = std::path::PathBuf::from(folder); let mut total=0;
+    for mode in ["argument-primary","reserved-error-primary","reserved-error-holdout","reserved-value-primary","combined-error-primary","conflict-primary","conflict-holdout"] {
+        let bytes=std::fs::read(folder.join(format!("{mode}.body"))).unwrap();total+=bytes.len();
+        let decoded=Completion::from_wire_reply(&bytes).unwrap();
+        if mode=="reserved-value-primary" { assert_eq!(decoded,Completion::default()); }
+        else {
+            let expected=std::fs::read(folder.join(format!("{mode}.archive"))).unwrap();
+            assert_eq!(decoded.error_archive.as_ref().unwrap(),&expected);
+        }
+        assert_eq!(Completion::from_wire_reply(&decoded.to_wire_reply().unwrap()).unwrap(),decoded);
     }
+    eprintln!("verified 7 actual native service-return bodies, {total} bytes consumed; reserved error precedence matches");
 }
