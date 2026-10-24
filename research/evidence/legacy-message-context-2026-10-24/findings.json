@@ -1,0 +1,116 @@
+{
+  "pins": {
+    "PreviewsDeveloperTools": "d70f346fc8c8f7085f0a8b05fe160776b5464a3a6efc146259076fd12aa21cc2",
+    "PreviewsMessagingHost": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+    "PreviewsPipeline": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053"
+  },
+  "uuids": {
+    "PreviewsDeveloperTools": "0a6dfe3a0a5d38229112a2851e5c3915",
+    "PreviewsMessagingHost": "ce1040273729381b8f0cc774e404c0ce",
+    "PreviewsPipeline": "c6ed2a5e6f2e3a41a1586d2f65e00a58"
+  },
+  "import_bindings": {
+    "0x9975c": {
+      "name": "_$s21PreviewsMessagingHost16AgentMessageTypeOMa",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "0x991c8": {
+      "name": "_$s16PreviewsPipeline28PlatformPreviewUpdateContextV15defaultArchiver17overrideArchivers19legacyHostedMessage0k6StaticM0AcA0dH0_p_Say0A13MessagingHost15ContentOverrideV_AaH_ptGAI05AgentM4TypeOANtcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsPipeline.framework/Versions/A/PreviewsPipeline"
+    },
+    "0x991d4": {
+      "name": "_$s16PreviewsPipeline28PlatformPreviewUpdateContextV15defaultArchiver17overrideArchivers19legacyHostedMessage0k6StaticM0AcA0dH0_p_Say0A13MessagingHost15ContentOverrideV_AaH_ptGAI05AgentM4TypeOANtcfcfA1_",
+      "library": "@rpath/SharedFrameworks/PreviewsPipeline.framework/Versions/A/PreviewsPipeline"
+    }
+  },
+  "default_bindings": {
+    "0x5aff40": {
+      "name": "_$s21PreviewsMessagingHost16AgentMessageTypeO6renderyA2CmFWC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "0x5aff48": {
+      "name": "_$s21PreviewsMessagingHost16AgentMessageTypeO7displayyA2CmFWC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "0x5aff50": {
+      "name": "_$s21PreviewsMessagingHost16AgentMessageTypeOMa",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    }
+  },
+  "enum_slot_chain": {
+    "target": 14672,
+    "pointer_format": 6,
+    "chain_hops": 947,
+    "slot": 977504
+  },
+  "hosted_default": "display",
+  "static_default": "render",
+  "selected_bytes_verified": 580,
+  "selected_ranges": [
+    {
+      "target": "PreviewsDeveloperTools",
+      "start": "0x24d24",
+      "bytes": 20,
+      "sha256": "c9ba9c0782496559d34cea8771b6aa505d7eab5c2bcce87118a8f7e38b7b8fb2"
+    },
+    {
+      "target": "PreviewsDeveloperTools",
+      "start": "0x24e64",
+      "bytes": 12,
+      "sha256": "514a46f9b3ea73a593c719952e49f4747b46a4d74c2e8b267a7e8ef1fb0f77a5"
+    },
+    {
+      "target": "PreviewsDeveloperTools",
+      "start": "0x2561c",
+      "bytes": 12,
+      "sha256": "75e156499f839b2aa6f53b4d93b828ccf45fccd086148b67a312b676dad91c93"
+    },
+    {
+      "target": "PreviewsDeveloperTools",
+      "start": "0x25674",
+      "bytes": 8,
+      "sha256": "b348c580c773e2c41126139027ac16a54872d885798f5927e431bcec6f645e65"
+    },
+    {
+      "target": "PreviewsDeveloperTools",
+      "start": "0x25810",
+      "bytes": 116,
+      "sha256": "09a9fcf2df437abcc18cdcb1dba912cfa2320c9ed3acc54cf8c30a7ec445abcc"
+    },
+    {
+      "target": "PreviewsPipeline",
+      "start": "0x21a8",
+      "bytes": 40,
+      "sha256": "a79aa88b187378e69b9e565e88cc43acc71972b265bf03ab09148c8f7b69d7de"
+    },
+    {
+      "target": "PreviewsPipeline",
+      "start": "0x2340",
+      "bytes": 60,
+      "sha256": "788d6114651a7ace4b4cd0e253ee7dba053305fc8a2ecf891ea80d12ed1eebcd"
+    },
+    {
+      "target": "PreviewsPipeline",
+      "start": "0xc889c",
+      "bytes": 300,
+      "sha256": "629bb560944eaddff2b17ebc6477df1615cd9566a3fe5aa57ac95d0d9a553e20"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x3950",
+      "bytes": 4,
+      "sha256": "1c679ae62d730d8dc1f0c663b96846651f7d23afb7e316dced62e250e17dd3c9"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x33b8",
+      "bytes": 8,
+      "sha256": "50ff6a2e26da11ded3d153f8e2bad564a1904f4f7edd1197add2581fcd323099"
+    }
+  ],
+  "request_metadata_type_resolved": "LocalMacPlatformSupport at first selector",
+  "selected_kind_destination": "legacyStaticPreviewMessage in PlatformPreviewUpdateContext",
+  "source_only": true,
+  "native_witness_invoked": false,
+  "transport_send_observed": false
+}

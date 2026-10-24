@@ -61,3 +61,16 @@ impl AgentMessageKind {
         }
     }
 }
+
+/// Scoped legacy message selection from PlatformPreviewUpdateContext.
+/// These values configure subsequent updates; creating this value sends nothing.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct LegacyAgentMessages {
+    pub hosted: AgentMessageKind,
+    pub static_message: AgentMessageKind,
+}
+impl Default for LegacyAgentMessages {
+    fn default() -> Self {
+        Self { hosted: AgentMessageKind::Display, static_message: AgentMessageKind::Render }
+    }
+}

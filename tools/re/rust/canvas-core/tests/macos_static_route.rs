@@ -22,3 +22,21 @@ fn unsupported_layer_route_never_falls_back_and_surface_errors_propagate() {
         assert!(matches!(M::IOSurface.decode_surface_reply(&invalid),Err(Error::Surface(_))));
     }
 }
+
+#[test]
+fn macos_override_preserves_hosted_default() {
+    for method in [M::LayerHost, M::IOSurface] {
+        let messages=method.legacy_messages();
+        assert_eq!(messages.hosted,K::Display);
+        assert_eq!(messages.static_message,method.request_kind());
+        assert!(!messages.hosted.is_incremental());
+        assert!(!messages.static_message.is_incremental());
+    }
+}
+#[test]
+fn generic_defaults_keep_hosted_and_static_distinct() {
+    let messages=canvas_core::agent_message_kind::LegacyAgentMessages::default();
+    assert_eq!(messages.hosted,K::Display);
+    assert_eq!(messages.static_message,K::Render);
+    assert_ne!(messages.hosted,messages.static_message);
+}

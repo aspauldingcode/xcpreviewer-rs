@@ -1,6 +1,6 @@
 //! Scoped macOS static capture routing recovered from DeveloperTools.
 //! This does not open a connection, own a surface, or establish frame freshness.
-use crate::{agent_message_kind::AgentMessageKind, iosurface_payload, payload_codec::Value};
+use crate::{agent_message_kind::{AgentMessageKind, LegacyAgentMessages}, iosurface_payload, payload_codec::Value};
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MacOSStaticRenderingMethod {
     LayerHost,
@@ -13,6 +13,11 @@ pub enum Error {
     Surface(iosurface_payload::Error),
 }
 impl MacOSStaticRenderingMethod {
+    /// The native macOS path keeps the hosted default and overrides static kind.
+    /// This is configuration only, not request transmission or capture execution.
+    pub fn legacy_messages(self) -> LegacyAgentMessages {
+        LegacyAgentMessages { static_message: self.request_kind(), ..LegacyAgentMessages::default() }
+    }
     pub const fn request_kind(self) -> AgentMessageKind {
         match self {
             Self::LayerHost => AgentMessageKind::LayerHost,
