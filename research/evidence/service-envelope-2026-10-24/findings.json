@@ -1,0 +1,108 @@
+{
+  "pins": {
+    "PreviewsMessagingHost": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+    "PreviewsPlatforms": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd"
+  },
+  "uuids": {
+    "PreviewsMessagingHost": "ce1040273729381b8f0cc774e404c0ce",
+    "PreviewsPlatforms": "bd66c84173de3e93a37c15f9b1a0246e"
+  },
+  "outer_keys": [
+    "messageType",
+    "payload"
+  ],
+  "payload_identifier_key": "__unique_service_message_identifier",
+  "forward_outer_kind": "forward",
+  "metadata_message_type_case": 6,
+  "metadata_content_case": 4,
+  "internal_ordinals_are_wire_values": false,
+  "import_bindings": {
+    "0xb1900": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV12archiveValue_3foryxSg_AA0dE3Key_ptAA0dE13RepresentableRzlF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb190c": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV14unarchiveValue3forxAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb1948": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV22unarchiveOptionalValue3forxSgAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0x45f50": {
+      "symbol": "_$s21PreviewsMessagingHost14ServiceMessageVyA2C7ContentOcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "0x45f74": {
+      "symbol": "_$s21PreviewsMessagingHost14TransportReplyV4file4line6column8function10fulfillingACs12StaticStringV_S2uAJ0a10FoundationC07PromiseCyxGtcAK25PropertyListRepresentableRzlufC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "0x46850": {
+      "symbol": "_$s22PreviewsFoundationHost6FutureC9dsoHandle4file4line6column8function8callbackACyxGSV_s12StaticStringVS2uALyAA7PromiseCyxGXEtcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    }
+  },
+  "selected_ranges": [
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x5f308",
+      "bytes": 68,
+      "sha256": "6a22cfaddf14a1f6b46d26307922cfe8d8e6c60c469b38f25d4ec21d7e862f66"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x5f438",
+      "bytes": 28,
+      "sha256": "57b070c16badff78cc21cee37b510137424a6964d2e4a3923f9f25b70aa81a39"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x60874",
+      "bytes": 24,
+      "sha256": "1a980da0d2398bdbfc4126dec345f7a72c36a8604778cd07c691e8dda48f3839"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x5f684",
+      "bytes": 444,
+      "sha256": "6b6dd2d2486695f9c1c3bf75b53412931ca31961f366ca25449450d8fa1179ee"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x5fc0c",
+      "bytes": 56,
+      "sha256": "135b106b604b5dd36e6b683107ce848bc392d72441711a3de06f6f212574c2c0"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x6018c",
+      "bytes": 132,
+      "sha256": "b95c6cd185f747dad84287c70bf17679bd2d8229ffd5591b096c3ae5e2bf5615"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x5ece4",
+      "bytes": 96,
+      "sha256": "c245b47e1b57dcfaf0fea7c2b8ae02d183b3425780a1c4887438d62d17389c67"
+    },
+    {
+      "target": "PreviewsPlatforms",
+      "start": "0x33134",
+      "bytes": 428,
+      "sha256": "37ad5834596bc02abb8c78b6904e21a51ed123a38a793f6c564955e5c82e55e7"
+    },
+    {
+      "target": "PreviewsPlatforms",
+      "start": "0x327e0",
+      "bytes": 1220,
+      "sha256": "4fb3d3e178315947e02ece364e5e51e8313eb150fa2402991c0d5515cca63d96"
+    }
+  ],
+  "selected_source_bytes_verified": 2496,
+  "fixture_bytes": 523,
+  "source_only": true,
+  "native_functions_invoked": false,
+  "actual_transport_observed": false,
+  "reply_matching": false,
+  "identifier_generation_recovered": false
+}

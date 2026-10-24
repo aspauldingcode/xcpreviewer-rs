@@ -1,0 +1,17 @@
+   Compiling canvas-core v0.1.0 (/Users/8amps/xcpreviewer-rs/tools/re/rust/canvas-core)
+error[E0382]: borrow of moved value: `d`
+  --> tools/re/rust/canvas-core/tests/service_envelope.rs:16:209
+   |
+16 | ...ry(mut d)=fixture() else {panic!()};d.insert("messageType".into(),Value::String("captureIOSurface".into()));assert_eq!(E::decode(&Value::Dictionary(d)),Err(Error::UnsupportedMessageType));d.in...
+   |       -----                                                                                                                                            - value moved here                      ^ value borrowed here after move
+   |       |
+   |       move occurs because `d` has type `BTreeMap<std::string::String, canvas_core::payload_codec::Value>`, which does not implement the `Copy` trait
+   |
+help: consider cloning the value if the performance cost is acceptable
+   |
+16 |  let Value::Dictionary(mut d)=fixture() else {panic!()};d.insert("messageType".into(),Value::String("captureIOSurface".into()));assert_eq!(E::decode(&Value::Dictionary(d.clone())),Err(Error::UnsupportedMessageType));d.insert("messageType".into(),Value::String("forward".into()));d.insert("payload".into(),Value::Null);assert_eq!(E::decode(&Value::Dictionary(d)),Err(Error::Type("payload")));
+   |                                                                                                                                                                          ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `canvas-core` (test "service_envelope") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

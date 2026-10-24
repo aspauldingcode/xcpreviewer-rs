@@ -248,3 +248,5 @@ pub mod agent_message_kind;
 pub mod macos_static_route;
 
 pub mod forward_payload;
+
+pub mod service_envelope;
