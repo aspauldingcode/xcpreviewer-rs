@@ -26,6 +26,7 @@ class SourceRevisionHost {
     const sourceSha256=build.sourceSha256;
     const bytes=build.module;
     assert(Buffer.isBuffer(bytes));
+    assert(bytes.length<=1048576,'Module exceeds 1 MiB limit');
     const module=Buffer.from(bytes);
     const moduleSha256=build.moduleSha256,config=build.config;
     const width=config.width,height=config.height,stride=build.stride;

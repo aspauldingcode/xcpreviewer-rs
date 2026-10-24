@@ -1,0 +1,9 @@
+# Source module bound before snapshot allocation
+
+The source revision host now enforces the existing live-host 1 MiB module limit before allocating its private module copy, hashing the module, or reading later builder receipt/configuration properties. This is original portable resource policy, not a recovered native Canvas rule.
+
+A 1,048,577-byte module with a throwing receipt getter reproduced the ordering gap: the original code read the getter once. The corrected code rejects at the size bound with zero receipt reads. A previously accepted actual V8 instance remains live; all 16,384 frame bytes match the frozen independent expectation. Close leaves zero owned workers. The unchanged limit at LiveWasmHost remains in place. No claim is made that receipts authenticate untrusted builders.
+
+Nine source-receipt, source-generation, file-loop, live-host and full-corpus regression tests pass. Existing source receipt snapshots and frozen frame references were reused; no new Apple/native runtime measurement, Canvas transport observation or cross-platform acceptance is claimed. The prior seal and all ten members plus twelve implementation pins were verified before modification. Baseline failure is retained separately.
+
+The graph's primary-live-wasm-swap recommendation is stale relative to completed swap/corpus/source-loop checkpoints. Both GitHub milestones and the matching issues remain open. Native follow-up should target missing concrete reuse/completion or correlated Canvas lifecycle semantics, using identity-checked providers and a changed safe observation boundary. No guessed private Swift ABI or built-in Xcode MCP/bridge is permitted. Existing owned UI cleanup prerequisite still applies. Provider status requests did not return within the observation window; no provider restoration or restart was attempted.

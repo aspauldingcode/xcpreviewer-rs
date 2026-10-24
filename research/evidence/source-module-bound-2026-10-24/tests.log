@@ -1,0 +1,14 @@
+test_getters_and_source_overrides_cannot_change_snapshot_identity (test_sourcereceiptsnapshot.SourceReceiptSnapshotTests) ... ok
+test_oversized_module_rejects_before_receipt_read (test_sourcereceiptsnapshot.SourceReceiptSnapshotTests) ... ok
+test_stale_builds_and_atomic_source_provenance (test_sourcerevision.SourceRevisionTests) ... ok
+test_actual_file_edits_and_close (test_sourcefileloop.SourceFileLoopTests) ... ok
+test_actual_worker_instances_and_failed_proposals (test_livewasmhost.LiveWasmHostTests) ... ok
+test_close_waits_for_candidate_and_operation_quiescence (test_livewasmhost.LiveWasmHostTests) ... ok
+test_reentrant_guard_cannot_publish_after_close (test_livewasmhost.LiveWasmHostTests) ... ok
+test_changed_module_fails_before_publication (test_livecorpus.LiveCorpusTests) ... ok
+test_full_native_and_independent_allocations (test_livecorpus.LiveCorpusTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 6.132s
+
+OK

@@ -1,0 +1,35 @@
+{
+  "graph_next_task": "primary-live-wasm-swap",
+  "graph_loop_active_wake": null,
+  "graph_loop_execution_started": false,
+  "milestones_complete": false,
+  "backlog": {
+    "6": {
+      "title": "R2: Resource reuse and completion model",
+      "state": "OPEN",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6"
+    },
+    "17": {
+      "title": "I4: Layout and software rendering",
+      "state": "OPEN",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/17"
+    },
+    "19": {
+      "title": "H1: Transactional hot reload",
+      "state": "OPEN",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19"
+    },
+    "22": {
+      "title": "V1: Independent conformance system",
+      "state": "OPEN",
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22"
+    }
+  },
+  "provider_check": {
+    "requests": [
+      "REA binary_session expected6.2.0/path",
+      "GhidraVibe health"
+    ],
+    "outcome": "No tool response received before orchestration wait ended; cell terminated. Read-only status requests did not request native analysis or target execution. No identity/health conclusion. Request-side termination does not prove server-side request settlement."
+  }
+}
