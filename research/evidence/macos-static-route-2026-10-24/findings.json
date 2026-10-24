@@ -1,0 +1,47 @@
+{
+  "target_sha256": "d70f346fc8c8f7085f0a8b05fe160776b5464a3a6efc146259076fd12aa21cc2",
+  "uuid": "0a6dfe3a0a5d38229112a2851e5c3915",
+  "field": "LocalMacPlatformSupport.staticRenderingMethod",
+  "field_index": 5,
+  "metadata_field_offset_slot": "0x24",
+  "case_names": [
+    "layerHost",
+    "ioSurface"
+  ],
+  "request_import_bindings": [
+    {
+      "pointer": "0xc5a30",
+      "symbol": "_$s21PreviewsMessagingHost16AgentMessageTypeO05layerC0yA2CmFWC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    {
+      "pointer": "0xc5a38",
+      "symbol": "_$s21PreviewsMessagingHost16AgentMessageTypeO16captureIOSurfaceyA2CmFWC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    }
+  ],
+  "request_selection": "zero selects layerHost, nonzero selects captureIOSurface; request-side metadata type provenance not fully traced",
+  "static_consumer": "Field is independently bound to staticRenderingMethod; zero selects MacOSLayerHostedPreviewViewable.create at0xc458, nonzero IOSurfacePreviewViewable.create at0x34208",
+  "selected_ranges": [
+    {
+      "start": "0x25810",
+      "bytes": 60,
+      "sha256": "8848fe48dd32796fdd7b2103ea7a98ef74e2a125ac69b0ea0f1f9afb24a0dcc9"
+    },
+    {
+      "start": "0x28404",
+      "bytes": 60,
+      "sha256": "6ba9271521a342e4bdc15a61988179a901c4a60c9c431b23041471464cc41cd8"
+    },
+    {
+      "start": "0x2addc",
+      "bytes": 244,
+      "sha256": "b5b87f1805d7ab425bc79bd364be7525aac260e43d978cda016f03c882c72df4"
+    }
+  ],
+  "selected_bytes_verified": 364,
+  "source_only": true,
+  "native_execution": false,
+  "frame_association": false,
+  "completion_semantics": false
+}
