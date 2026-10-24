@@ -1,0 +1,7 @@
+{
+  "initial_candidate": "Reject all floating values >=2^63",
+  "observed_public_swift_dictionary_cast": "NSNumber(Double(2^63)) as? Int yields Int.max",
+  "neighbor_control": "nextUp above2^63 rejected; nextDown belowInt.min rejected",
+  "correction": "Include exactly upper endpoint, use Rust saturating cast there",
+  "private_function_invoked": false
+}

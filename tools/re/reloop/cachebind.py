@@ -7,9 +7,9 @@ from pathlib import Path
 import struct,re,hashlib
 
 def v5_code_pointer(page, first, offset, value_add):
-    if len(page) not in (4096,16384) or first==0xffff or not 0<=first<len(page)//8 or offset%8 or not 0<=offset<=len(page)-8 or not 0<=value_add<1<<64:
+    if len(page) not in (4096,16384) or first==0xffff or not 0<=first<=len(page)-8 or first%8 or offset%8 or not 0<=offset<=len(page)-8 or not 0<=value_add<1<<64:
         raise ValueError('Invalid/absent v5 page chain or slot')
-    cursor=first*8
+    cursor=first
     for hops in range(len(page)//8):
         if not 0<=cursor<=len(page)-8:raise ValueError('Chain outside page')
         word=struct.unpack_from('<Q',page,cursor)[0]
