@@ -1,0 +1,95 @@
+{
+  "pins": {
+    "PreviewsMessagingHost": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+    "PreviewsPlatforms": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd"
+  },
+  "uuids": {
+    "PreviewsMessagingHost": "ce1040273729381b8f0cc774e404c0ce",
+    "PreviewsPlatforms": "bd66c84173de3e93a37c15f9b1a0246e"
+  },
+  "keys": [
+    "messageType",
+    "messagePayload",
+    "pid",
+    "previewContextType",
+    "previewInterfaceOrientation",
+    "sceneIdentifier"
+  ],
+  "domain_raw_values": [
+    "application",
+    "widget",
+    "complication"
+  ],
+  "orientation_raw_values": [
+    "portrait",
+    "portraitUpsideDown",
+    "landscapeLeft",
+    "landscapeRight"
+  ],
+  "required_keys": [
+    "messageType",
+    "messagePayload",
+    "pid"
+  ],
+  "optional_keys": [
+    "previewContextType",
+    "previewInterfaceOrientation",
+    "sceneIdentifier"
+  ],
+  "missing_orientation_fallback": "portrait",
+  "import_bindings": {
+    "required": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV14unarchiveValue3forxAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "optional": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV22unarchiveOptionalValue3forxSgAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "incremental": {
+      "symbol": "_$s21PreviewsMessagingHost16AgentMessageTypeO18incrementalVariantACvg",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    },
+    "forward_init": {
+      "symbol": "_$s21PreviewsMessagingHost14ForwardPayloadV11messageType0fE03pid13contentDomain27previewInterfaceOrientation15sceneIdentifierAcA012AgentMessageG0O_0a10FoundationC012PropertyListVs5Int32VAA014PreviewContentJ0OSgAA0V6TraitsV0M0OSgSSSgtcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsMessagingHost.framework/Versions/A/PreviewsMessagingHost"
+    }
+  },
+  "selected_ranges": [
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x66d70",
+      "bytes": 220,
+      "sha256": "9890e98c6f1991a7a5c6ee9c432bdab54019c18447debba6da5e6bbd8bd71223"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x67178",
+      "bytes": 876,
+      "sha256": "9b164acf0dae8045662f716764bfddf1ce00487ece2def4a7c461c6fe72c2105"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x95ec4",
+      "bytes": 104,
+      "sha256": "ab6d95ea6b878ce3f421b06488217f9aefb30d80f2026beb30501f56475a230c"
+    },
+    {
+      "target": "PreviewsMessagingHost",
+      "start": "0x8f898",
+      "bytes": 152,
+      "sha256": "cd171484270602f52e9696123ed1a3f33d3c1b4cae5d0adde9cbdde4c38abae4"
+    },
+    {
+      "target": "PreviewsPlatforms",
+      "start": "0x35038",
+      "bytes": 328,
+      "sha256": "b75856cfe3c7b6b94d9dcd64e50d5f5f5a70920fa501131ca3a7c034347a7e8d"
+    }
+  ],
+  "selected_source_bytes_verified": 1680,
+  "source_only": true,
+  "actual_transport_observed": false,
+  "native_functions_invoked": false,
+  "limits": "Getter projection covers13 valid tags in bounded instruction subset. No native coercion/null, serializer byte equality, reply or settlement parity."
+}
