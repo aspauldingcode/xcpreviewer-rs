@@ -1,0 +1,13 @@
+# Agent command kinds and incremental classification
+
+Pinned PreviewsMessagingHost SHA-2560413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c, UUIDce1040273729381b8f0cc774e404c0ce. Offline LLVM analysis follows the inconclusive REA/GhidraVibe status check; neither provider was restarted. This is shipped-source evidence, not runtime execution.
+
+Ten reflected names match independently exported native enum-case ordinals0..9. IncrementalVariant at0x88594 dispatches through a ten-byte jump table: previewInstances/render/display/layerHost/captureIOSurface map to their incremental counterparts. Already-incremental cases take the diagnostic branch and return the original kind. isIncremental at0x88734 classifies odd valid tags. Values outside the independently established ten-case domain are not assigned valid semantics. Raw-value getter/init ranges and string/branch tables were inspected; actual Swift String dictionary operations were not invoked. Native unknown-string/coercion parity is not qualified.
+
+The original portable Rust API provides exact string parsing, formatting, incremental classification and pairing. It explicitly rejects unknown strings. It does not reproduce diagnostic logging. No private Swift ABI, capture execution, state reset, frame association, cancellation, resource lifetime or completion rule is invented. The internal native ordinal is not exported as a wire encoding.
+
+The independent verifier checks reflection, exported ordinals, branch targets, selected instructions, string locations and every byte of four selected bodies (696B) against separately emitted LLVM instruction words. Raw disassembly/symbol tables remain local; only original reconstruction and sanitized findings/hashes are published. Run verify.py with existing Xcode image and LLVM tools; its20-second subprocess bound is not a native target-settlement claim.
+
+136 Rust tests pass, including two new tests covering all ten cases/five pairs and eight unsupported near-matches. Optional prior native-archive tests were not supplied new runtime inputs; this is a source/reconstruction regression run. The first cargo launch failed because cargo was absent from PATH; the existing absolute stable toolchain succeeded, with the failure retained. No install or native runtime retry occurred.
+
+Next: follow actual captureIOSurface/incrementalCaptureIOSurface command consumers into payload publication/reply association. This classifier alone establishes neither capture behavior nor any milestone acceptance. Native UI cleanup requirements and no-Xcode-MCP/bridge restriction remain in force.

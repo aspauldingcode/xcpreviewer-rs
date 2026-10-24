@@ -1,0 +1,93 @@
+{
+  "target_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "cases": [
+    {
+      "kind": "previewInstances",
+      "incremental": "incrementalPreviewInstances",
+      "is_incremental": false,
+      "native_tag": 0
+    },
+    {
+      "kind": "incrementalPreviewInstances",
+      "incremental": "incrementalPreviewInstances",
+      "is_incremental": true,
+      "native_tag": 1
+    },
+    {
+      "kind": "render",
+      "incremental": "incrementalRender",
+      "is_incremental": false,
+      "native_tag": 2
+    },
+    {
+      "kind": "incrementalRender",
+      "incremental": "incrementalRender",
+      "is_incremental": true,
+      "native_tag": 3
+    },
+    {
+      "kind": "display",
+      "incremental": "incrementalDisplay",
+      "is_incremental": false,
+      "native_tag": 4
+    },
+    {
+      "kind": "incrementalDisplay",
+      "incremental": "incrementalDisplay",
+      "is_incremental": true,
+      "native_tag": 5
+    },
+    {
+      "kind": "layerHost",
+      "incremental": "incrementalLayerHost",
+      "is_incremental": false,
+      "native_tag": 6
+    },
+    {
+      "kind": "incrementalLayerHost",
+      "incremental": "incrementalLayerHost",
+      "is_incremental": true,
+      "native_tag": 7
+    },
+    {
+      "kind": "captureIOSurface",
+      "incremental": "incrementalCaptureIOSurface",
+      "is_incremental": false,
+      "native_tag": 8
+    },
+    {
+      "kind": "incrementalCaptureIOSurface",
+      "incremental": "incrementalCaptureIOSurface",
+      "is_incremental": true,
+      "native_tag": 9
+    }
+  ],
+  "body_bytes_verified": 696,
+  "bodies": [
+    {
+      "start": "0x88594",
+      "bytes": 268,
+      "sha256": "503ceb274f155afd88adf0f26ebd17ded5035e7a8e3ee18c6830410adc7d108f"
+    },
+    {
+      "start": "0x88734",
+      "bytes": 24,
+      "sha256": "5d6f893a611d14c620987c4011f1ea66968451ac9180f4d184d2743b444a27df"
+    },
+    {
+      "start": "0x8874c",
+      "bytes": 116,
+      "sha256": "5d7af5f22a234a940dfbc71dadcf00bde9e7087e29621d78a5d07f15864f4e35"
+    },
+    {
+      "start": "0x887c0",
+      "bytes": 288,
+      "sha256": "dcc9b9543867e8d0f843b8a7bec2e227ce498ed366b52bc8162c2db7590e97f0"
+    }
+  ],
+  "source_only": true,
+  "private_functions_invoked": false,
+  "native_canvas_transport": false,
+  "provider": "LLVM offline after inconclusive REA/GhidraVibe check; no provider target opened"
+}

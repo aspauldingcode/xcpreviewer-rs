@@ -242,3 +242,5 @@ pub mod workspace_action;
 pub mod service_error;
 
 pub mod nserror_archive;
+
+pub mod agent_message_kind;
