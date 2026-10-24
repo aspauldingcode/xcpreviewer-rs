@@ -1,0 +1,10 @@
+[
+  {
+    "operation": "initial ad-hoc slide lookup",
+    "error": "OSError: [Errno 22] Invalid argument",
+    "cause": "selected slide mapping fields were overwritten while iterating later unrelated mappings, leading to negative file seek",
+    "resolution": "new resolver retains one uniquely selected mapping and validates it against ordinary mapping before page-chain traversal",
+    "cache_modified": false,
+    "private_function_invoked": false
+  }
+]

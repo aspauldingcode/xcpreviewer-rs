@@ -1,0 +1,8 @@
+[
+  {
+    "stage": "git diff --cached --check",
+    "error": "verify.py:56: new blank line at EOF",
+    "commit_or_push_occurred": false,
+    "resolution": "Remove trailing blank line, retain first candidate seal/verifier locally, reseal pending unpublished checkpoint and replay verification"
+  }
+]

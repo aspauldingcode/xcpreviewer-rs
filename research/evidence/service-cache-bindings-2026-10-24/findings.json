@@ -1,0 +1,1459 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "source_only": true,
+  "private_functions_invoked": false,
+  "pac_signing_or_bypass": false,
+  "live_ipc_observed": false,
+  "target_settlement_proven": false,
+  "bindings": [
+    {
+      "target": "0x19d765a10",
+      "chain_hops": 548,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a249120",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330c8e4",
+      "stub_sha256": "bc1a8239ea54b1574e2f43b832cd59ece24550ed663787876f4ec0cf9789bd85",
+      "image": "/usr/lib/swift/libswiftos.dylib",
+      "image_uuid": "49255e533f003f06a64a76a63c798956",
+      "exports": [
+        {
+          "name": "_$s2os6LoggerV9logObjectSo03OS_a1_C0Cvg",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f20",
+        "0x26330519c",
+        "0x2633055a0",
+        "0x2633057e4",
+        "0x263305a74",
+        "0x263305be0"
+      ]
+    },
+    {
+      "target": "0x19d766734",
+      "chain_hops": 553,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a249148",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330c904",
+      "stub_sha256": "220f016b3f9aa983c2ed1eccdc8f950ce905b61451d714bac218eefde8d64a97",
+      "image": "/usr/lib/swift/libswiftos.dylib",
+      "image_uuid": "49255e533f003f06a64a76a63c798956",
+      "exports": [
+        {
+          "name": "_$s2os6LoggerVMa",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304e60",
+        "0x2633050dc",
+        "0x263305418"
+      ]
+    },
+    {
+      "target": "0x1ad84cc20",
+      "chain_hops": 1853,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a2479e8",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330c934",
+      "stub_sha256": "c5ec028ffa0484076b4d09f683fa5228e7faca34613fe40b86c1aa2a76fc77dd",
+      "image": "/usr/lib/swift/libswiftXPC.dylib",
+      "image_uuid": "0aa69d52271b38e0a1568bd7f73a4c9c",
+      "exports": [
+        {
+          "name": "_$s3XPC0A16_TYPE_DICTIONARYs13OpaquePointerVvg",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x2633054fc"
+      ]
+    },
+    {
+      "target": "0x193d7ca50",
+      "chain_hops": 1463,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a242db8",
+      "page_origin": "0x29a240000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ca14",
+      "stub_sha256": "2d70544a341425b9670aa32e1ea2a37b31ad5e38b3f4f34c5ca96fc23242241e",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_$sSS7cStringSSSPys4Int8VG_tcfC",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305b70"
+      ]
+    },
+    {
+      "target": "0x19d756f14",
+      "chain_hops": 558,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a249170",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ca54",
+      "stub_sha256": "70dce74f7e83aff829164b30761c10723903294a2842876e048e3cf3fc011d95",
+      "image": "/usr/lib/swift/libswiftos.dylib",
+      "image_uuid": "49255e533f003f06a64a76a63c798956",
+      "exports": [
+        {
+          "name": "_$sSo13os_log_type_ta0A0E5debugABvgZ",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f28",
+        "0x2633051a4",
+        "0x2633057ec",
+        "0x263305a7c",
+        "0x263305be8"
+      ]
+    },
+    {
+      "target": "0x19d756080",
+      "chain_hops": 563,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a249198",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ca74",
+      "stub_sha256": "75edb98b734170fcd22f39c5a63f60c412b5017b73f699c9bfd1c9315b25fbcb",
+      "image": "/usr/lib/swift/libswiftos.dylib",
+      "image_uuid": "49255e533f003f06a64a76a63c798956",
+      "exports": [
+        {
+          "name": "_$sSo13os_log_type_ta0A0E7defaultABvgZ",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x2633055a8"
+      ]
+    },
+    {
+      "target": "0x1801bbd40",
+      "chain_hops": 1273,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24a7c8",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cc14",
+      "stub_sha256": "ebba6a7259f51af2d416e228a508338811436fdb6cf532a02bf9f6f6e6917de8",
+      "image": "/usr/lib/system/libsystem_blocks.dylib",
+      "image_uuid": "cc947089488d316ba9c746dec0f73145",
+      "exports": [
+        {
+          "name": "__Block_copy",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305358"
+      ]
+    },
+    {
+      "target": "0x1801bc0d4",
+      "chain_hops": 1276,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24a7e0",
+      "page_origin": "0x29a248000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cc24",
+      "stub_sha256": "f76a3b68ff394a1c782ba40aa0e56190445675cbb05d6397b7bf3cb37701b6e7",
+      "image": "/usr/lib/system/libsystem_blocks.dylib",
+      "image_uuid": "cc947089488d316ba9c746dec0f73145",
+      "exports": [
+        {
+          "name": "__Block_release",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305394"
+      ]
+    },
+    {
+      "target": "0x180218b18",
+      "chain_hops": 748,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24d760",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cc64",
+      "stub_sha256": "07faaee52a724589b24897e4b3f462c31accf8d330a279854f129f91413bc6c6",
+      "image": "/usr/lib/system/libsystem_trace.dylib",
+      "image_uuid": "d0fabab35ae73f108c6260cbf5d70850",
+      "exports": [
+        {
+          "name": "__os_log_impl",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304fd0",
+        "0x263305254",
+        "0x2633056d4",
+        "0x263305890",
+        "0x263305b1c",
+        "0x263305c84"
+      ]
+    },
+    {
+      "target": "0x193be3270",
+      "chain_hops": 908,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245c60",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cc74",
+      "stub_sha256": "f82fb08c97c785f32c2d2fc1e73ca92a231547cbe286aeeaf28b0ef992d42f66",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "__swift_stdlib_bridgeErrorToNSError",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305688"
+      ]
+    },
+    {
+      "target": "0x18009a8c0",
+      "chain_hops": 1922,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a23fc10",
+      "page_origin": "0x29a23c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ccf4",
+      "stub_sha256": "e6d96f610aa0a62b62bc6aa0ed6474412f04d43dbcbca20d580d5082583e755b",
+      "image": "/usr/lib/libobjc.A.dylib",
+      "image_uuid": "ff1d8ae4abef35f1a30a1183b9cb414f",
+      "exports": [
+        {
+          "name": "_objc_allocWithZone",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305a00"
+      ]
+    },
+    {
+      "target": "0x180094004",
+      "chain_hops": 1972,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a23fda0",
+      "page_origin": "0x29a23c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cd84",
+      "stub_sha256": "1a5110fe874415f1a02768c5a3de40e423dceacbf4da4230fae915647692111e",
+      "image": "/usr/lib/libobjc.A.dylib",
+      "image_uuid": "ff1d8ae4abef35f1a30a1183b9cb414f",
+      "exports": [
+        {
+          "name": "_objc_release",
+          "flags": 0
+        },
+        {
+          "name": "_objc_release_x0",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305000",
+        "0x263305018",
+        "0x26330528c",
+        "0x2633052a4",
+        "0x263305738",
+        "0x2633058cc",
+        "0x2633058f4",
+        "0x2633059d0",
+        "0x263305b54",
+        "0x263305cbc",
+        "0x263305cd4",
+        "0x263305d24",
+        "0x263305d2c",
+        "0x263305d34",
+        "0x263305d40",
+        "0x263305d8c",
+        "0x263305d94"
+      ]
+    },
+    {
+      "target": "0x18009390c",
+      "chain_hops": 1993,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a23fe48",
+      "page_origin": "0x29a23c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cd94",
+      "stub_sha256": "6be7d297d1cea2c2c6f13def0dca934b8b28ab44af56fc8b11a0f5d1537cd005",
+      "image": "/usr/lib/libobjc.A.dylib",
+      "image_uuid": "ff1d8ae4abef35f1a30a1183b9cb414f",
+      "exports": [
+        {
+          "name": "_objc_retain",
+          "flags": 0
+        },
+        {
+          "name": "_objc_retain_x0",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305a40",
+        "0x263305d04",
+        "0x263305d6c"
+      ]
+    },
+    {
+      "target": "0x1802187d0",
+      "chain_hops": 771,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24d818",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cde4",
+      "stub_sha256": "1a72d59ee5d2857d7a34b7516e2170ee609d1cf76e9ab6babc2f4fac3b1e56c1",
+      "image": "/usr/lib/system/libsystem_trace.dylib",
+      "image_uuid": "d0fabab35ae73f108c6260cbf5d70850",
+      "exports": [
+        {
+          "name": "_os_log_type_enabled",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f38",
+        "0x2633051b4",
+        "0x2633055bc",
+        "0x2633057fc",
+        "0x263305a94",
+        "0x263305bfc"
+      ]
+    },
+    {
+      "target": "0x193bd3f28",
+      "chain_hops": 920,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245cc0",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cdf4",
+      "stub_sha256": "8ed70a1eaed40d98cb318de42645162a7601b997d4b9e873ad42f8d99b3a71cf",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_allocError",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305660",
+        "0x263305980",
+        "0x263305b94"
+      ]
+    },
+    {
+      "target": "0x193bb5ac0",
+      "chain_hops": 921,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245cc8",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ce04",
+      "stub_sha256": "a41b5c2d92ed0e554b0e2ccc08ea28e9322d6b3962934eaa7315543fdac9c5f6",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_allocObject",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x2633052f0"
+      ]
+    },
+    {
+      "target": "0x193bb7e64",
+      "chain_hops": 932,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245d20",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ce34",
+      "stub_sha256": "2a1741bac255f206702c46ceedb356600eb35e96e70c8818cc6e8479b84f11ed",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_bridgeObjectRelease",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f98",
+        "0x26330521c",
+        "0x263305630",
+        "0x263305860",
+        "0x263305aec",
+        "0x263305c54"
+      ]
+    },
+    {
+      "target": "0x193bd4194",
+      "chain_hops": 975,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245e78",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cea4",
+      "stub_sha256": "329cfd6fad934e87c2238e8da891d81b0a93332d5014f2b3f163c169e2736a59",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_errorRelease",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x2633059a8"
+      ]
+    },
+    {
+      "target": "0x193bb3a64",
+      "chain_hops": 1047,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a2460b8",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cf54",
+      "stub_sha256": "7fb831c9fb5b84cdcce4ab1ae48681bae8abff4b8b590799dd2bf46f97158e3d",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_once",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x26330509c",
+        "0x2633053d8",
+        "0x263305db4",
+        "0x263305dd4"
+      ]
+    },
+    {
+      "target": "0x193bb8010",
+      "chain_hops": 1050,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a2460d0",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cf64",
+      "stub_sha256": "ab61988916f7900793084ba6968ac9f1e121afb71a1475ed09b0f57e48857cd4",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_release",
+          "flags": 0
+        },
+        {
+          "name": "_swift_release_preservemost",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304fac",
+        "0x263305020",
+        "0x263305230",
+        "0x2633052ac",
+        "0x263305378",
+        "0x2633056b0",
+        "0x26330586c",
+        "0x2633058dc",
+        "0x2633059d8",
+        "0x263305af8",
+        "0x263305c60",
+        "0x263305cdc",
+        "0x263305d48",
+        "0x263303d38"
+      ]
+    },
+    {
+      "target": "0x193bb7f24",
+      "chain_hops": 1054,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a2460f0",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cf84",
+      "stub_sha256": "b147eb962a7bca576fdf48d50453983b3b0b4b8f500ceb3712be0bf3b1d370bf",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_retain",
+          "flags": 0
+        },
+        {
+          "name": "_swift_retain_preservemost",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f18",
+        "0x263305194",
+        "0x263305368",
+        "0x263305370",
+        "0x263305588",
+        "0x263305780",
+        "0x2633057dc",
+        "0x263305a6c",
+        "0x263305bdc",
+        "0x263303d20"
+      ]
+    },
+    {
+      "target": "0x193bb59d0",
+      "chain_hops": 1060,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246120",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cfb4",
+      "stub_sha256": "7d672ea2886f1c7fec342b0a61b55050417a2a220b79241d9ef7c751f912a14a",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_slowAlloc",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304f48",
+        "0x263304f58",
+        "0x2633051c4",
+        "0x2633051d8",
+        "0x2633055cc",
+        "0x2633055e0",
+        "0x2633055f0",
+        "0x263305810",
+        "0x263305824",
+        "0x263305aa4",
+        "0x263305ab4",
+        "0x263305c0c",
+        "0x263305c1c"
+      ]
+    },
+    {
+      "target": "0x193bbbe64",
+      "chain_hops": 1061,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246128",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cfc4",
+      "stub_sha256": "0b79039e9b385869b3259d2e391bd467a5d03e8837b5eadcadb7c5e8447fe820",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_slowDealloc",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263304fe8",
+        "0x263304ff8",
+        "0x263305270",
+        "0x263305284",
+        "0x2633056fc",
+        "0x26330571c",
+        "0x263305730",
+        "0x2633058b0",
+        "0x2633058c4",
+        "0x263305b38",
+        "0x263305b4c",
+        "0x263305ca0",
+        "0x263305cb4"
+      ]
+    },
+    {
+      "target": "0x193bb8290",
+      "chain_hops": 1069,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246168",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d004",
+      "stub_sha256": "00cf2fdfcceac74ed4aa6e94646adad45f3e7ed730a7d139340645c7581027b1",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_unknownObjectRelease",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305060",
+        "0x26330539c",
+        "0x263305540",
+        "0x263303d5c"
+      ]
+    },
+    {
+      "target": "0x193bb8244",
+      "chain_hops": 1071,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246178",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d014",
+      "stub_sha256": "34e92a9202227441baec31be6282fa5137fde9708dfbc3d6bc1c88b86a7f1203",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_unknownObjectRetain",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305518",
+        "0x263305520",
+        "0x263303d28"
+      ]
+    },
+    {
+      "target": "0x1801cc56c",
+      "chain_hops": 873,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24db48",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d0c4",
+      "stub_sha256": "962d5864ff99fcaf5f0f6f025e8205db191486492ac3ad2826626be64c567ef9",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_connection_send_message",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305058"
+      ]
+    },
+    {
+      "target": "0x1801cc8f4",
+      "chain_hops": 874,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24db50",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d0d4",
+      "stub_sha256": "e750a7ba5ca1a151c8a0770bea698a1121ae1f5ccf4767d1ac68b4233236e9fd",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_connection_send_message_with_reply",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x26330538c"
+      ]
+    },
+    {
+      "target": "0x1801cd638",
+      "chain_hops": 893,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24dbe8",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d104",
+      "stub_sha256": "86115299a2032e4148de5c7780b979f00eba7ccab5c28fdb5f40f039b809756c",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_copy_description",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x263305b6c"
+      ]
+    },
+    {
+      "target": "0x1801e67b0",
+      "chain_hops": 914,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24dc90",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d114",
+      "stub_sha256": "3141816fa38a57698f762a2970be27953250167bf80bfc2792557eecde413e1c",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_dictionary_create_empty",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x26330503c",
+        "0x2633052c8"
+      ]
+    },
+    {
+      "target": "0x1801c0e88",
+      "chain_hops": 964,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24de20",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d184",
+      "stub_sha256": "11d80a9f7fce312413f78654fd764165d9dbfbce84722178749aab1263d76dca",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_get_type",
+          "flags": 0
+        }
+      ],
+      "call_sites": [
+        "0x2633054f4"
+      ]
+    }
+  ],
+  "selected_ranges": [
+    {
+      "offset": "0x4e30",
+      "bytes": 628,
+      "sha256": "0eee372e5207155ef1a7082de535ff5ac41ea9857b02e10d7e128723f5ad3e13"
+    },
+    {
+      "offset": "0x50a4",
+      "bytes": 828,
+      "sha256": "3c34cd4726a9b2760b43f3b60a95e4a2d27a5b7258c44a5e5114a440cd47c506"
+    },
+    {
+      "offset": "0x53e0",
+      "bytes": 2556,
+      "sha256": "3aef842ac4673924eeaa8f3ee3b850efbddb639f06d88b1022b3015fd731cc3d"
+    },
+    {
+      "offset": "0x3d00",
+      "bytes": 96,
+      "sha256": "ad8f16e3aab364121e6c20dde73ced7e0c3d59b6a24dd36bf3b404087d9d3c29"
+    },
+    {
+      "offset": "0x8e28",
+      "bytes": 12,
+      "sha256": "dc3b2f508b614fb8472bde2819f2bcefd6e60ad9a52cec20c8f0a007b24a8cf9"
+    }
+  ],
+  "selected_source_bytes_verified": 4600,
+  "stub_instruction_bytes_verified": 480,
+  "corrupted_real_chain_rejected": true,
+  "libxpc_exports_independently_confirmed": true,
+  "cache_reads": [
+    {
+      "address": "0x263300000",
+      "bytes": 66624,
+      "sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079705600
+    },
+    {
+      "address": "0x26330c8e4",
+      "bytes": 16,
+      "sha256": "bc1a8239ea54b1574e2f43b832cd59ece24550ed663787876f4ec0cf9789bd85",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757028
+    },
+    {
+      "address": "0x29a248000",
+      "bytes": 16384,
+      "sha256": "9f21ef160548f73b2c701bc3ed9215de2f893aa147e54073119c4d3c27cbd798",
+      "cache_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "file_offset": 147243008
+    },
+    {
+      "address": "0x19d755000",
+      "bytes": 32,
+      "sha256": "7ea53c0a7243bf8317e6b388e15a17eb9f9a4a37d2fb2ec05d70d6a722ca71d7",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 493670400
+    },
+    {
+      "address": "0x19d755020",
+      "bytes": 4064,
+      "sha256": "10a364cc39626cf5fe140749b3f1abe5fef1508ab701e28179e438c45e66632f",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 493670432
+    },
+    {
+      "address": "0x200625d58",
+      "bytes": 23064,
+      "sha256": "c990341515f5672b40faede888b286492778ff488ecf1b88019c7a9af974f04b",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 22863192
+    },
+    {
+      "address": "0x26330c904",
+      "bytes": 16,
+      "sha256": "220f016b3f9aa983c2ed1eccdc8f950ce905b61451d714bac218eefde8d64a97",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757060
+    },
+    {
+      "address": "0x26330c934",
+      "bytes": 16,
+      "sha256": "c5ec028ffa0484076b4d09f683fa5228e7faca34613fe40b86c1aa2a76fc77dd",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757108
+    },
+    {
+      "address": "0x29a244000",
+      "bytes": 16384,
+      "sha256": "f2f64cd9c756f9214dd640e904e5dff34278fd6a61ca1395906bbf98c16f844d",
+      "cache_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "file_offset": 147226624
+    },
+    {
+      "address": "0x1ad811000",
+      "bytes": 32,
+      "sha256": "6f378a346966fe8703440495dedb59b2d9dc7d5035f91596fb85007faa1cea04",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 762875904
+    },
+    {
+      "address": "0x1ad811020",
+      "bytes": 4320,
+      "sha256": "4ba9fd072650cecfa8b070523b1984b33f34fe1fe927a885f253d5cb9c949db5",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 762875936
+    },
+    {
+      "address": "0x200b000c0",
+      "bytes": 18888,
+      "sha256": "355b79e8999ce84ea0fcaa84759a2f79e3bfc2308779c465b458ebdd693fdcae",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 27951296
+    },
+    {
+      "address": "0x26330ca14",
+      "bytes": 16,
+      "sha256": "2d70544a341425b9670aa32e1ea2a37b31ad5e38b3f4f34c5ca96fc23242241e",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757332
+    },
+    {
+      "address": "0x29a240000",
+      "bytes": 16384,
+      "sha256": "c0af17947eec6cd36857b6ea36ae7aa5cffac8796f2d8d342ede2df72639a64a",
+      "cache_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "file_offset": 147210240
+    },
+    {
+      "address": "0x193bb0000",
+      "bytes": 32,
+      "sha256": "e5220004d3ac4e32b374e3651f50adac83acf81a939b08e1e91b48e11d55227b",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 330465280
+    },
+    {
+      "address": "0x193bb0020",
+      "bytes": 5736,
+      "sha256": "da051e4435455add984e6aff52beb79ca4029082bb68bc305966821e30116481",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 330465312
+    },
+    {
+      "address": "0x200217c40",
+      "bytes": 430480,
+      "sha256": "f951e0eaf98fd47afd4f849836245293d115798fb00309715685fe8a39323e58",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 18611264
+    },
+    {
+      "address": "0x26330ca54",
+      "bytes": 16,
+      "sha256": "70dce74f7e83aff829164b30761c10723903294a2842876e048e3cf3fc011d95",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757396
+    },
+    {
+      "address": "0x26330ca74",
+      "bytes": 16,
+      "sha256": "75edb98b734170fcd22f39c5a63f60c412b5017b73f699c9bfd1c9315b25fbcb",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757428
+    },
+    {
+      "address": "0x26330cc14",
+      "bytes": 16,
+      "sha256": "ebba6a7259f51af2d416e228a508338811436fdb6cf532a02bf9f6f6e6917de8",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757844
+    },
+    {
+      "address": "0x1801bb000",
+      "bytes": 32,
+      "sha256": "5b26a08ffd71af25aa3b066fed157e6f8fb1e40e158af37525c7d49cdce47f25",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1257472
+    },
+    {
+      "address": "0x1801bb020",
+      "bytes": 2888,
+      "sha256": "92ed5f556b2731faa0c788f91f78b5b493918033b8afed0e090a78d3b1728407",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1257504
+    },
+    {
+      "address": "0x1ffb964e0",
+      "bytes": 408,
+      "sha256": "856666ea91bd9e1d896af7c934d3d2b5402d795703a9a0d55c8d5f5569a94b3b",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 11789536
+    },
+    {
+      "address": "0x26330cc24",
+      "bytes": 16,
+      "sha256": "f76a3b68ff394a1c782ba40aa0e56190445675cbb05d6397b7bf3cb37701b6e7",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757860
+    },
+    {
+      "address": "0x26330cc64",
+      "bytes": 16,
+      "sha256": "07faaee52a724589b24897e4b3f462c31accf8d330a279854f129f91413bc6c6",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757924
+    },
+    {
+      "address": "0x29a24c000",
+      "bytes": 16384,
+      "sha256": "6a428d97a95522c0dd644af4c0e40b8f98804a550bad61a232ea0aba5c0a4018",
+      "cache_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "file_offset": 147259392
+    },
+    {
+      "address": "0x180214000",
+      "bytes": 32,
+      "sha256": "081e44d0ba46926ffc5a8036576265f0dc85c79e09b8849127f6d283f8c81d20",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1622016
+    },
+    {
+      "address": "0x180214020",
+      "bytes": 4992,
+      "sha256": "5f160972c94ee3338cb4c23c1412a3509e7a84de561de88fb91b1a428359ae34",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1622048
+    },
+    {
+      "address": "0x1ffb9b528",
+      "bytes": 4624,
+      "sha256": "44e264119c5853a0a226e0a32cd5df7f2b26e07648e6f5b50ce830e9b3abfea3",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 11810088
+    },
+    {
+      "address": "0x26330cc74",
+      "bytes": 16,
+      "sha256": "f82fb08c97c785f32c2d2fc1e73ca92a231547cbe286aeeaf28b0ef992d42f66",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079757940
+    },
+    {
+      "address": "0x26330ccf4",
+      "bytes": 16,
+      "sha256": "e6d96f610aa0a62b62bc6aa0ed6474412f04d43dbcbca20d580d5082583e755b",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758068
+    },
+    {
+      "address": "0x29a23c000",
+      "bytes": 16384,
+      "sha256": "4ac007c7b7595efaf86e38d487f1923aca36ea68b669e94bb29ea3b03bfc655f",
+      "cache_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "file_offset": 147193856
+    },
+    {
+      "address": "0x18008c000",
+      "bytes": 32,
+      "sha256": "96cb10a7e2412968d2e68c1f009dc6309e569279fcd2716528b35f5f565ead21",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 16384
+    },
+    {
+      "address": "0x18008c020",
+      "bytes": 4336,
+      "sha256": "2b819cb27c79cde514b43f75f1a200e0795218395120f35f408e293a2dc4f5f0",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 16416
+    },
+    {
+      "address": "0x1ffb92510",
+      "bytes": 9400,
+      "sha256": "89319b68d72f926bbee22b4e9667e46fa6e7ece99b6c0c73d3ade7a81f509307",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 11773200
+    },
+    {
+      "address": "0x26330cd84",
+      "bytes": 16,
+      "sha256": "1a5110fe874415f1a02768c5a3de40e423dceacbf4da4230fae915647692111e",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758212
+    },
+    {
+      "address": "0x26330cd94",
+      "bytes": 16,
+      "sha256": "6be7d297d1cea2c2c6f13def0dca934b8b28ab44af56fc8b11a0f5d1537cd005",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758228
+    },
+    {
+      "address": "0x26330cde4",
+      "bytes": 16,
+      "sha256": "1a72d59ee5d2857d7a34b7516e2170ee609d1cf76e9ab6babc2f4fac3b1e56c1",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758308
+    },
+    {
+      "address": "0x26330cdf4",
+      "bytes": 16,
+      "sha256": "8ed70a1eaed40d98cb318de42645162a7601b997d4b9e873ad42f8d99b3a71cf",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758324
+    },
+    {
+      "address": "0x26330ce04",
+      "bytes": 16,
+      "sha256": "a41b5c2d92ed0e554b0e2ccc08ea28e9322d6b3962934eaa7315543fdac9c5f6",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758340
+    },
+    {
+      "address": "0x26330ce34",
+      "bytes": 16,
+      "sha256": "2a1741bac255f206702c46ceedb356600eb35e96e70c8818cc6e8479b84f11ed",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758388
+    },
+    {
+      "address": "0x26330cea4",
+      "bytes": 16,
+      "sha256": "329cfd6fad934e87c2238e8da891d81b0a93332d5014f2b3f163c169e2736a59",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758500
+    },
+    {
+      "address": "0x26330cf54",
+      "bytes": 16,
+      "sha256": "7fb831c9fb5b84cdcce4ab1ae48681bae8abff4b8b590799dd2bf46f97158e3d",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758676
+    },
+    {
+      "address": "0x26330cf64",
+      "bytes": 16,
+      "sha256": "ab61988916f7900793084ba6968ac9f1e121afb71a1475ed09b0f57e48857cd4",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758692
+    },
+    {
+      "address": "0x26330cf84",
+      "bytes": 16,
+      "sha256": "b147eb962a7bca576fdf48d50453983b3b0b4b8f500ceb3712be0bf3b1d370bf",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758724
+    },
+    {
+      "address": "0x26330cfb4",
+      "bytes": 16,
+      "sha256": "7d672ea2886f1c7fec342b0a61b55050417a2a220b79241d9ef7c751f912a14a",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758772
+    },
+    {
+      "address": "0x26330cfc4",
+      "bytes": 16,
+      "sha256": "0b79039e9b385869b3259d2e391bd467a5d03e8837b5eadcadb7c5e8447fe820",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758788
+    },
+    {
+      "address": "0x26330d004",
+      "bytes": 16,
+      "sha256": "00cf2fdfcceac74ed4aa6e94646adad45f3e7ed730a7d139340645c7581027b1",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758852
+    },
+    {
+      "address": "0x26330d014",
+      "bytes": 16,
+      "sha256": "34e92a9202227441baec31be6282fa5137fde9708dfbc3d6bc1c88b86a7f1203",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079758868
+    },
+    {
+      "address": "0x26330d0c4",
+      "bytes": 16,
+      "sha256": "962d5864ff99fcaf5f0f6f025e8205db191486492ac3ad2826626be64c567ef9",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079759044
+    },
+    {
+      "address": "0x1801bf000",
+      "bytes": 32,
+      "sha256": "06b5f3ac15c36b402c3bddc005c18bb6620ac51b187593e5c9031e8413f78bf7",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1273856
+    },
+    {
+      "address": "0x1801bf020",
+      "bytes": 4976,
+      "sha256": "08809a1bee58e7b1c95c403511ddd073e935326f3b30910447e82b8c984cb707",
+      "cache_file": "dyld_shared_cache_arm64e.01",
+      "file_offset": 1273888
+    },
+    {
+      "address": "0x1ffb966a0",
+      "bytes": 18672,
+      "sha256": "835640fef218e622d95b6d5f98b09447ce9d834bfdb2128f32f2866625900bbb",
+      "cache_file": "dyld_shared_cache_arm64e.04.dyldlinkedit",
+      "file_offset": 11789984
+    },
+    {
+      "address": "0x26330d0d4",
+      "bytes": 16,
+      "sha256": "e750a7ba5ca1a151c8a0770bea698a1121ae1f5ccf4767d1ac68b4233236e9fd",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079759060
+    },
+    {
+      "address": "0x26330d104",
+      "bytes": 16,
+      "sha256": "86115299a2032e4148de5c7780b979f00eba7ccab5c28fdb5f40f039b809756c",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079759108
+    },
+    {
+      "address": "0x26330d114",
+      "bytes": 16,
+      "sha256": "3141816fa38a57698f762a2970be27953250167bf80bfc2792557eecde413e1c",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079759124
+    },
+    {
+      "address": "0x26330d184",
+      "bytes": 16,
+      "sha256": "11d80a9f7fce312413f78654fd764165d9dbfbce84722178749aab1263d76dca",
+      "cache_file": "dyld_shared_cache_arm64e.05",
+      "file_offset": 1079759236
+    }
+  ]
+}
