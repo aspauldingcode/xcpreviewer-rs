@@ -1,0 +1,84 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "import_bindings": {
+    "0xb1d14": {
+      "symbol": "_$s2os21OSAllocatedUnfairLockV22PreviewsFoundationHostE5valueACyxGx_tcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb2284": {
+      "symbol": "_$ss23CustomStringConvertibleP11descriptionSSvgTj",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0xb1c6c": {
+      "symbol": "_$s22PreviewsFoundationHost26SynchronousAccessProvidingPAAE9syncWrite15defaultCallsite_qd__AA0J0V_qd__5ValueQzzYbKXEtKs8SendableRd__lF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb277c": {
+      "symbol": "_swift_once",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0xe47e0": {
+      "symbol": "_$ss6UInt64VN",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0xe47e8": {
+      "symbol": "_$ss6UInt64Vs23CustomStringConvertiblesWP",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0xb15b8": {
+      "symbol": "_$s16PreviewsServices0A17ServiceConnectionC4send7message12replyHandlerySo14UVPropertyListC_yAHSg_s5Error_pSgtctF",
+      "library": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices"
+    },
+    "0xb15c4": {
+      "symbol": "_$s16PreviewsServices0A17ServiceConnectionC4send7messageySo14UVPropertyListC_tF",
+      "library": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices"
+    }
+  },
+  "initial_counter": 0,
+  "counter_bits": 64,
+  "returns_old_value": true,
+  "wraps": true,
+  "format": "UInt64.description",
+  "owned_swift_format_expected": [
+    "0",
+    "1",
+    "9",
+    "10",
+    "999",
+    "4294967296",
+    "9223372036854775808",
+    "18446744073709551615"
+  ],
+  "global_counter_slot": "0xf8720",
+  "one_way_import": "0xb15c4",
+  "two_way_import": "0xb15b8",
+  "two_way_callback_thunk": "0x40114",
+  "selected_ranges": [
+    {
+      "start": "0x60574",
+      "bytes": 412,
+      "sha256": "a278f19154630c970d2e2238ddfd5afd604e2880c7cdd4eec23c36a0bed44fc5"
+    },
+    {
+      "start": "0x609dc",
+      "bytes": 72,
+      "sha256": "cd2c2f14bf6fde3acea423b4a45c07b5d3befe3d6cbdd73de479a537b6ec708f"
+    },
+    {
+      "start": "0x74790",
+      "bytes": 704,
+      "sha256": "c0bbf67ae689cd94e27aa9c2368e895c81912ba6ca07c8b4b687561f9a7056a4"
+    },
+    {
+      "start": "0x74b00",
+      "bytes": 416,
+      "sha256": "2772a0f7a2078a185e9d9f78c21578504c61f9fbad0d15afd408d88919c3e2ee"
+    }
+  ],
+  "selected_source_bytes_verified": 1604,
+  "private_framework_execution_observed": false,
+  "public_swift_format_control_executed": true,
+  "identifier_reply_matching_proven": false,
+  "target_settlement_proven": false
+}

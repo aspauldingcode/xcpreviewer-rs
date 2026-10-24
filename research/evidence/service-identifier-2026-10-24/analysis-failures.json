@@ -1,0 +1,9 @@
+[
+  {
+    "operation": "indirect pointer import lookup",
+    "error": "KeyError: 'addr'",
+    "cause": "diagnostic script used wrong existing section field name",
+    "resolution": "read stubbind.index schema; use address, then re-run bounded pointer lookup successfully",
+    "native_target_invoked": false
+  }
+]

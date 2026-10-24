@@ -11,6 +11,11 @@ pub struct ForwardServiceEnvelope {
 #[derive(Clone,Debug,PartialEq,Eq)]
 pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error)}
 impl ForwardServiceEnvelope {
+    /// Allocate an identifier from the shared process sequence for a new
+    /// forwarding request. This constructs a value and sends nothing.
+    pub fn new(forward:ForwardPayload)->Self {
+        Self {identifier:Some(crate::service_identifier::next_service_identifier()),forward}
+    }
     /// Only the recovered forwarding subset. Unsupported outer kinds fail
     /// explicitly rather than being confused with the inner agent command.
     pub fn decode(value:&Value)->Result<Self,Error> {
@@ -24,7 +29,7 @@ impl ForwardServiceEnvelope {
         Ok(Self {identifier,forward})
     }
     pub fn decode_binary(bytes:&[u8])->Result<Self,Error> {Self::decode(&binary_plist::decode(bytes).map_err(Error::Plist)?)}
-    /// Caller supplies the identifier; native ID generation is not reconstructed.
+    /// Preserve the assigned or caller-supplied optional identifier.
     pub fn to_value(&self)->Value {
         let Value::Dictionary(mut payload)=self.forward.to_value() else {unreachable!()};
         if let Some(id)=&self.identifier {payload.insert(IDENTIFIER_KEY.into(),Value::String(id.clone()));}
