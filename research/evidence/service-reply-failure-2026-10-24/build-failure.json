@@ -1,0 +1,8 @@
+{
+  "phase": "owned public SDK C control compilation",
+  "initial_result": "Six const-qualification conversion errors with -Werror at public XPC singleton macros",
+  "correction": "Explicit xpc_object_t conversions at public API call boundaries; no declaration or ABI changed, no mutation of constants",
+  "second_build_success": true,
+  "process_runtime_bound_seconds": 5,
+  "native_private_function_executed": false
+}
