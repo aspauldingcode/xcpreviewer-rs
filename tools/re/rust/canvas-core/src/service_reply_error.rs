@@ -22,6 +22,16 @@ fn integer(value: &Value) -> Option<i64> {
     }
 }
 impl ServiceReplyError {
+    /// Build the recovered outbound value dictionary before UVPropertyList/XPC
+    /// serialization. This does not validate arbitrary Objective-C userInfo,
+    /// implement the native encoding fallback, or report transport completion.
+    pub fn to_dictionary(&self) -> BTreeMap<String, Value> {
+        BTreeMap::from([
+            ("domain".into(), Value::String(self.domain.clone())),
+            ("code".into(), Value::Integer(self.code)),
+            ("userInfo".into(), Value::Dictionary(self.user_info.clone())),
+        ])
+    }
     /// The native helper requires domain:String, code:Int and userInfo:[String:Any].
     /// Additional root keys are ignored. No special error marker is required.
     pub fn recognize(fields: &BTreeMap<String, Value>) -> Option<Self> {
