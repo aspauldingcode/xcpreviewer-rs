@@ -1,0 +1,100 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "messaging_image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "messaging_uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "messaging_imports": {
+    "0xb22c0": {
+      "symbol": "_$ss26_stdlib_isOSVersionAtLeastyBi1_Bw_BwBwtF",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0xb1558": {
+      "symbol": "_$s10Foundation4DataV36_unconditionallyBridgeFromObjectiveCyACSo6NSDataCSgFZ",
+      "library": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation"
+    },
+    "0xb1930": {
+      "symbol": "_$s22PreviewsFoundationHost12PropertyListV22serializableDictionaryACSDySSypG_tcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    }
+  },
+  "messaging_defined_selectors": [
+    {
+      "address": "0xb28e0",
+      "defined_symbol": "_objc_msgSend$data"
+    },
+    {
+      "address": "0xb2960",
+      "defined_symbol": "_objc_msgSend$dictionary"
+    }
+  ],
+  "lazy_cases": [
+    "deserialized",
+    "serialized"
+  ],
+  "serialized_mode_gate": [
+    14,
+    4,
+    0
+  ],
+  "original_uv_object_passed_on_nonerror": true,
+  "selected_ranges": [
+    {
+      "image": "PreviewsServices",
+      "offset": "0x5a08",
+      "bytes": 72,
+      "sha256": "27332a590135475d96cac986a438298f13c82fc3ec41582026e8d8447ee2e737"
+    },
+    {
+      "image": "PreviewsServices",
+      "offset": "0x5d0c",
+      "bytes": 20,
+      "sha256": "ff1a8a53b7ba04a89ae5aa024f8324d1e9f55cf9b9015fa5bfd76042bf898053"
+    },
+    {
+      "image": "PreviewsServices",
+      "offset": "0x5d74",
+      "bytes": 20,
+      "sha256": "caf86907e4c3ded14399a482a6522c646ab03f4c2b068a656a4727b759fdda28"
+    },
+    {
+      "image": "PreviewsServices",
+      "offset": "0x5e00",
+      "bytes": 8,
+      "sha256": "e3ad855994a5d076f6200cd8046e70550fcd90b860bb740f7c32262a7586a66d"
+    },
+    {
+      "image": "PreviewsServices",
+      "offset": "0x101e0",
+      "bytes": 24,
+      "sha256": "af24b8989d04036e4dfc9586787ad6bf55ba243fb948c14ba6a80bf5c25b13eb"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "offset": "0x3fcb8",
+      "bytes": 208,
+      "sha256": "90a74c90f7e4f04ec2dccf2dfdfb94bc4556e852d626b40645670b276b863a6d"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "offset": "0x3fee8",
+      "bytes": 88,
+      "sha256": "e3d94a2646da9c655599cc04935d5816ed95a58570d200069725d7e6ac7f2861"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "offset": "0xb28e0",
+      "bytes": 20,
+      "sha256": "4a87cd99c1106061112c650262c084ac6b241db42853fb76bc66a938bd02de7e"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "offset": "0xb2960",
+      "bytes": 20,
+      "sha256": "e745ca9bfe9d063017dc3cc5b94b50d5699eeae4ea01c4198e0aeb4608133663"
+    }
+  ],
+  "selected_source_bytes_verified": 480,
+  "private_swift_abi_declared": false,
+  "native_service_callback_invoked": false,
+  "live_ipc_observed": false,
+  "target_settlement_proven": false
+}
