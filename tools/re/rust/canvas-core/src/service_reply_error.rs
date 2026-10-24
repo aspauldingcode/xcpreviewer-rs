@@ -22,6 +22,27 @@ fn integer(value: &Value) -> Option<i64> {
     }
 }
 impl ServiceReplyError {
+    /// Project the native one-time fallback after an actual encoding attempt.
+    /// `encoded_entry_count` is the destination XPC dictionary count observed by
+    /// the caller, not this value map's length. A nonempty result needs no retry.
+    /// The caller supplies NSError.localizedDescription: this portable adapter
+    /// does not recreate Foundation localization or invoke UVPropertyList/XPC.
+    /// It neither validates the retry result nor proves that a send completed.
+    pub fn retry_dictionary_if_empty(
+        &self, encoded_entry_count: usize, localized_description: &str,
+    ) -> Option<BTreeMap<String, Value>> {
+        if encoded_entry_count != 0 { return None; }
+        let fallback = Self {
+            domain: self.domain.clone(),
+            code: self.code,
+            user_info: BTreeMap::from([
+                ("NSLocalizedDescription".into(), Value::String(localized_description.into())),
+                ("NSDebugDescription".into(), Value::String(
+                    "Failed to encode full userInfo due to incompatible types".into())),
+            ]),
+        };
+        Some(fallback.to_dictionary())
+    }
     /// Build the recovered outbound value dictionary before UVPropertyList/XPC
     /// serialization. This does not validate arbitrary Objective-C userInfo,
     /// implement the native encoding fallback, or report transport completion.
