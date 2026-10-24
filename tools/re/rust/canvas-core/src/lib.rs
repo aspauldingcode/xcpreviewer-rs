@@ -258,3 +258,5 @@ pub mod service_identifier;
 pub mod service_reply_error;
 
 pub mod service_reply_failure;
+
+pub mod service_property_list;

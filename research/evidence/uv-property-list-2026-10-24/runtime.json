@@ -1,0 +1,101 @@
+[
+  {
+    "all_data" : true,
+    "data_bytes" : 42,
+    "decoded_count" : 0,
+    "keys" : [
+      "data"
+    ],
+    "matches_input" : true,
+    "name" : "empty",
+    "payload_matches_data" : true,
+    "restored" : 1,
+    "xpc_count" : 1
+  },
+  {
+    "data_type" : 1,
+    "extra" : 17,
+    "name" : "empty_overwrite",
+    "xpc_count" : 2
+  },
+  {
+    "all_data" : true,
+    "data_bytes" : 301,
+    "decoded_count" : 7,
+    "keys" : [
+      "data"
+    ],
+    "matches_input" : true,
+    "name" : "nested",
+    "payload_matches_data" : true,
+    "restored" : 1,
+    "xpc_count" : 1
+  },
+  {
+    "data_type" : 1,
+    "extra" : 17,
+    "name" : "nested_overwrite",
+    "xpc_count" : 2
+  },
+  {
+    "all_data" : true,
+    "data_bytes" : 0,
+    "decoded_count" : 0,
+    "keys" : [
+      "data"
+    ],
+    "matches_input" : false,
+    "name" : "invalid_error",
+    "payload_matches_data" : true,
+    "restored" : 0,
+    "xpc_count" : 1
+  },
+  {
+    "data_type" : 1,
+    "extra" : 17,
+    "name" : "invalid_error_overwrite",
+    "xpc_count" : 2
+  },
+  {
+    "decoded_count" : 0,
+    "name" : "missing",
+    "restored" : 0
+  },
+  {
+    "decoded_count" : 0,
+    "name" : "wrong_type",
+    "restored" : 0
+  },
+  {
+    "decoded_count" : 0,
+    "name" : "empty_data",
+    "restored" : 0
+  },
+  {
+    "decoded_count" : 0,
+    "name" : "malformed",
+    "restored" : 1
+  },
+  {
+    "decoded_count" : 0,
+    "name" : "array_root",
+    "restored" : 1
+  },
+  {
+    "decoded_count" : 1,
+    "name" : "xml",
+    "restored" : 1
+  },
+  {
+    "name" : "mutable_data_copy",
+    "stored_data_follows_mutation" : true,
+    "wire_differs_from_mutated_source" : 1,
+    "wire_keeps_pre_mutation_bytes" : true,
+    "xpc_count" : 1
+  },
+  {
+    "matches_input" : true,
+    "name" : "copy_after_source_pool_exit",
+    "restored" : 1
+  }
+]
