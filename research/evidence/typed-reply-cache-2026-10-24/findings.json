@@ -1,0 +1,90 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "services_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "cache_location": {
+    "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e.05",
+    "mapping_address": 9174319104,
+    "mapping_file_offset": 0,
+    "image_address": 10254024704,
+    "image_file_offset": 1079705600,
+    "bytes": 66624
+  },
+  "services_selected_ranges": [
+    {
+      "offset": "0xa20c",
+      "bytes": 72,
+      "sha256": "1960d3e7c805ca33f86cf8907276a0fd0ae95eeb75190d68a7a2a9eff916b7cb"
+    },
+    {
+      "offset": "0x4e30",
+      "bytes": 628,
+      "sha256": "0eee372e5207155ef1a7082de535ff5ac41ea9857b02e10d7e128723f5ad3e13"
+    },
+    {
+      "offset": "0x50a4",
+      "bytes": 828,
+      "sha256": "3c34cd4726a9b2760b43f3b60a95e4a2d27a5b7258c44a5e5114a440cd47c506"
+    }
+  ],
+  "messaging_selected_ranges": [
+    {
+      "start": "0x3e890",
+      "bytes": 356,
+      "sha256": "ee6a2fb89e41a113ec347e6393df916e5bd10528d319974eeccbe220dfe48e16"
+    },
+    {
+      "start": "0x3ea1c",
+      "bytes": 256,
+      "sha256": "9b42cd432eab4df7e0b64f29a38af67d6c985967ef6e6c1dc436966a119b5d26"
+    },
+    {
+      "start": "0x3ec20",
+      "bytes": 156,
+      "sha256": "9b007b9631a6529571b15e889719bdc6031f8e8a01ee00a689f63694f7d1365e"
+    },
+    {
+      "start": "0x3f758",
+      "bytes": 24,
+      "sha256": "bad4aae91ee4504d7b0d353a55edaadef9bca4731af9f003bdd97797ae929e18"
+    },
+    {
+      "start": "0x1f48",
+      "bytes": 4,
+      "sha256": "110f46b5b35c069160560c6ad6786f647dd44e8760a52a46fc22dbbcd7630b91"
+    }
+  ],
+  "foundation_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "foundation_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "foundation_selected_ranges": [
+    {
+      "start": "0x724b8",
+      "bytes": 324,
+      "sha256": "5b0c5128be8952ee306539fc0252e7fb5a5c30c270d5eea28a6e05d8b1b385ce"
+    },
+    {
+      "start": "0xf0998",
+      "bytes": 572,
+      "sha256": "95abf325fc9be1bd6f82c640282c71502659db627239c77cb1aefabfe4a2961a"
+    }
+  ],
+  "selected_source_bytes_verified": 3220,
+  "typed_reply_imports": {
+    "0xb1888": {
+      "symbol": "_$s22PreviewsFoundationHost12ContinuationV9contramap8callsite9transformACyqd__q_GAA8CallsiteV_xqd__Ybcts8SendableRd__lF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb1894": {
+      "symbol": "_$s22PreviewsFoundationHost12ContinuationVAAs5Error_pRs_rlE12tryContramap8callsite9transformACyqd__qd_0_GAA8CallsiteV_xqd__YbKcts8SendableRd__sADRd_0_r0_lF",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    },
+    "0xb1c24": {
+      "symbol": "_$s22PreviewsFoundationHost25PropertyListRepresentablePAAE08propertyE0xAA0dE0V_tKcfC",
+      "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    }
+  },
+  "private_functions_invoked": false,
+  "cache_wrapper_executed": false,
+  "services_import_labels_trusted": false,
+  "live_ipc_observed": false,
+  "target_settlement_proven": false
+}

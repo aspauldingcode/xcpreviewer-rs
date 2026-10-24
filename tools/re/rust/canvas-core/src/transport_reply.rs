@@ -46,3 +46,29 @@ pub fn select_reply<E>(payload: Option<LazyReply>, error: Option<E>) -> Result<L
         None => Err(error.map_or(ReplyError::EmptyReply, ReplyError::Remote)),
     }
 }
+
+/// Distinguish callback selection, lazy parsing and typed payload failures.
+/// Error variants are an original portable diagnostic interface.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum TypedReplyError<E, D> {
+    Reply(ReplyError<E>),
+    Decode(DecodeError),
+    Payload(D),
+}
+/// Convert a successful lazy reply into a typed value, matching the recovered
+/// throwing contramap sequence: resolve PropertyList, then decode its type.
+/// Remote/empty/parse failures never invoke the caller's payload decoder.
+pub fn decode_reply_with<T, E, D>(
+    payload: Option<LazyReply>,
+    error: Option<E>,
+    decode: impl FnOnce(&Value) -> Result<T, D>,
+) -> Result<T, TypedReplyError<E, D>> {
+    let reply = select_reply(payload, error).map_err(TypedReplyError::Reply)?;
+    let fields = reply.property_list().map_err(TypedReplyError::Decode)?;
+    decode(&Value::Dictionary(fields)).map_err(TypedReplyError::Payload)
+}
+/// The native Void success transform ignores LazyPropertyList without parsing.
+/// Acknowledgement reports only callback-level success, never target settlement.
+pub fn acknowledge_reply<E>(payload: Option<LazyReply>, error: Option<E>) -> Result<(), ReplyError<E>> {
+    select_reply(payload, error).map(|_| ())
+}

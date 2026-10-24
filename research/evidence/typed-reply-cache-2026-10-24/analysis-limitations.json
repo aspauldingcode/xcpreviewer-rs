@@ -1,0 +1,20 @@
+{
+  "standalone_services_file_missing": true,
+  "cache_read_succeeded": true,
+  "dyld_info_man_documents_cache_paths": true,
+  "dyld_info_section_addresses_add_base_twice_in_display": true,
+  "use_cache_map_and_raw_mappings_instead": true,
+  "dyld_info_unresolved_imports_mislabelled_UVLog_block_invoke": true,
+  "those_import_names_not_used_for_claims": true,
+  "diagnostic_help_attempts": [
+    {
+      "command": "dyld_info -help",
+      "result": "unknown option"
+    },
+    {
+      "command": "dyld_analyzer -help",
+      "result": "no input directory specified"
+    }
+  ],
+  "private_runtime_or_transport_executed": false
+}
