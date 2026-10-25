@@ -4,11 +4,12 @@ use canvas_core::{
     content_results::{ContentOverridePayload, PreviewVariant},
     multi_select_configuration::MultiSelectConfiguration,
     payload_codec::Value,
+    selection_behavior::SelectionBehavior,
     single_select_configuration::SingleSelectConfiguration,
     variants_configuration::{PreviewVariantsConfiguration, Section},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -54,6 +55,7 @@ fn run() -> Result<(), String> {
         && kind != "section"
         && kind != "single-selection"
         && kind != "multi-selection"
+        && kind != "selection-behavior"
     {
         return Err(USAGE.into());
     }
@@ -76,7 +78,40 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "multi-selection" {
+    let normalized: Value = if kind == "selection-behavior" {
+        let value =
+            SelectionBehavior::decode(&value).map_err(|e| format!("selection-behavior: {e:?}"))?;
+        if !canonical {
+            writeln!(
+                out,
+                "result=selection-behavior\ndiscriminant={}",
+                value.discriminant()
+            )
+            .map_err(|e| e.to_string())?;
+            match &value {
+                SelectionBehavior::SingleSelect(value) => {
+                    writeln!(out, "style={}", value.style.as_str()).map_err(|e| e.to_string())?;
+                    string(&mut out, "defaultVariant", Some(&value.default_variant))
+                        .map_err(|e| e.to_string())?;
+                }
+                SelectionBehavior::MultiSelect(value) => {
+                    writeln!(out, "defaultVariants={}", value.default_variants.len())
+                        .map_err(|e| e.to_string())?;
+                    for (index, id) in value.default_variants.iter().take(8).enumerate() {
+                        string(&mut out, &format!("defaultVariant{index}"), Some(id))
+                            .map_err(|e| e.to_string())?;
+                    }
+                    writeln!(
+                        out,
+                        "defaultVariantsShown={}",
+                        value.default_variants.len().min(8)
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+            }
+        }
+        value.to_value()
+    } else if kind == "multi-selection" {
         let value = MultiSelectConfiguration::decode(&value)
             .map_err(|e| format!("multi-selection: {e:?}"))?;
         if !canonical {

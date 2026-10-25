@@ -1,0 +1,41 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "ranges": [
+    {
+      "start": "0x1b44",
+      "bytes": 124,
+      "sha256": "147adf2bd5662d3c0e933d9886ef20f12670bf15b48b4087527bc75969ea8331"
+    },
+    {
+      "start": "0x9fe30",
+      "bytes": 88,
+      "sha256": "e0b1b297fb855251b513665f68e0ac16263420df94e7f7e3593cbd62e4b87c66"
+    },
+    {
+      "start": "0xa03ac",
+      "bytes": 984,
+      "sha256": "a9ca8c47030a20bbe05e6113cba97eb4ae6c1de81fcc5a04022993225b8eff52"
+    },
+    {
+      "start": "0x9ea4c",
+      "bytes": 68,
+      "sha256": "03c9fa4f41db6aa4473eef839e0fd85c2e0ca3a87a21b06097789fa6359594b6"
+    }
+  ],
+  "selected_source_bytes_verified": 1264,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "discriminants": [
+    "singleSelect",
+    "multiSelect"
+  ],
+  "keys": [
+    "discriminant",
+    "singleSelectConfiguration",
+    "multiSelectConfiguration"
+  ],
+  "routing": "required closed discriminant first; require only selected payload; selected errors propagate without fallback",
+  "encoding": "discriminant plus only active configuration",
+  "pending_child_dependency": "childVariantConfigurations optional Dictionary<PreviewVariant.ID,PreviewOverridesConfiguration>; recursive, not an array; duplicate canonical key and nested failure semantics unqualified"
+}

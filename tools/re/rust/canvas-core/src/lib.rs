@@ -302,3 +302,5 @@ pub mod single_select_configuration;
 
 pub mod variant_id_set;
 pub mod multi_select_configuration;
+
+pub mod selection_behavior;
