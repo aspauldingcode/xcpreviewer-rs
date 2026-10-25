@@ -1,0 +1,2 @@
+research/evidence/overrides-tree-2026-10-25/collision.swift:6: trailing whitespace.
++let entries=ns.allKeys.map {key -> [String:Any] in let k=key as! String;return ["keyBytes":Array(k.utf8),"value":ns[key]!]}

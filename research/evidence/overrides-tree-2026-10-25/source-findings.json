@@ -1,0 +1,48 @@
+{
+  "messaging_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "foundation_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "ranges": [
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x9e5f8",
+      "bytes": 1388,
+      "sha256": "6dc4c92c776aace623b7ce9192bf2a07f2601c94c0b04d74bc2bbb4b085bcfc3"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x9e600",
+      "bytes": 324,
+      "sha256": "609c0b4edfe9f1082eede3000ebca68646e9b6804c0176dfc0e136171709de77"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0xaa850",
+      "bytes": 284,
+      "sha256": "0010ec141e51a10af01fa2a9b105206e815d816b35426a929be3646407480f1e"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x1116cc",
+      "bytes": 332,
+      "sha256": "fbfda0c719fb530505e1033363e46075c528fd1dddcc3842a4a36c4b511dcd47"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0xadba8",
+      "bytes": 1024,
+      "sha256": "e3ebf802165b61b1660184c62c1d916d606236c4caeb76324b329fb32bc35a98"
+    }
+  ],
+  "selected_source_bytes_verified": 3352,
+  "native_private_decoder_invoked": false,
+  "fields": [
+    "required title:String",
+    "required SelectionBehavior",
+    "required ordered variants:[PreviewVariant]",
+    "optional recursive child dictionary defaulting to empty"
+  ],
+  "encoding": "all four fields including empty child dictionary",
+  "dictionary_conversion": "map all key/value conversions before constructing KeyValueMap by subscript assignment; errors propagate",
+  "portable_boundary": "reject raw canonical-equivalent child keys; native Foundation-to-Swift bridging collapse is not reproduced",
+  "portable_depth_limit": 64
+}

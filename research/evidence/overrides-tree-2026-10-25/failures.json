@@ -1,0 +1,12 @@
+{
+  "verification_failures": [
+    "Strengthened source binding expectation used single underscore; actual Mach-O binding is double underscore. Excerpt inspection initially omitted __file__; corrected expected binding and explicit path. See source-initial-failure.txt.",
+    "Publication whitespace check rejected a trailing space in owned collision.swift before commit. Removed only trailing whitespace; original diagnostic retained. No behavior changed.",
+    "The retained whitespace diagnostic itself included the original trailing space and failed publication check. Normalized published diagnostic whitespace; both raw diagnostics remain local with pinned hashes in raw-provenance.json."
+  ],
+  "expected_rejections": 15,
+  "raw_key_boundary_rejections": 2,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "access_scope": "Private Swift import limitation retained from predecessor; not retried. No guessed ABI. Full grouped reply and ambiguous raw-key bridging remain pending; recursive typed configuration values implemented.2 raw boundary inputs accepted by original native composition are deliberately rejected by portable code, not native rejection parity."
+}

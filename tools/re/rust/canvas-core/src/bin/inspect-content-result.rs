@@ -3,13 +3,14 @@ use canvas_core::{
     binary_plist, binary_plist_writer,
     content_results::{ContentOverridePayload, PreviewVariant},
     multi_select_configuration::MultiSelectConfiguration,
+    overrides_configuration::PreviewOverridesConfiguration,
     payload_codec::Value,
     selection_behavior::SelectionBehavior,
     single_select_configuration::SingleSelectConfiguration,
     variants_configuration::{PreviewVariantsConfiguration, Section},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -40,7 +41,7 @@ fn run() -> Result<(), String> {
     let mut args = std::env::args_os().skip(1);
     let first = args.next().ok_or(USAGE)?;
     if first == "--help" && args.next().is_none() {
-        println!("{USAGE}\nValues only. Choose the expected kind explicitly; whole groups and full override-selection configuration are not supported.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
+        println!("{USAGE}\nValues only. Choose the expected kind explicitly; whole groups are not supported.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
         return Ok(());
     }
     let canonical = first == "--canonical";
@@ -56,6 +57,7 @@ fn run() -> Result<(), String> {
         && kind != "single-selection"
         && kind != "multi-selection"
         && kind != "selection-behavior"
+        && kind != "overrides-configuration"
     {
         return Err(USAGE.into());
     }
@@ -78,7 +80,45 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "selection-behavior" {
+    let normalized: Value = if kind == "overrides-configuration" {
+        let value = PreviewOverridesConfiguration::decode(&value)
+            .map_err(|e| format!("overrides-configuration: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=overrides-configuration").map_err(|e| e.to_string())?;
+            string(&mut out, "title", Some(&value.title)).map_err(|e| e.to_string())?;
+            writeln!(
+                out,
+                "selectionBehavior={}\nvariants={}\nchildren={}",
+                value.selection_behavior.discriminant(),
+                value.variants.len(),
+                value.child_variant_configurations.len()
+            )
+            .map_err(|e| e.to_string())?;
+            for (index, variant) in value.variants.iter().take(4).enumerate() {
+                string(&mut out, &format!("variant{index}.id"), Some(&variant.id))
+                    .map_err(|e| e.to_string())?;
+            }
+            for (index, (id, child)) in value
+                .child_variant_configurations
+                .iter()
+                .take(4)
+                .enumerate()
+            {
+                string(&mut out, &format!("child{index}.id"), Some(id))
+                    .map_err(|e| e.to_string())?;
+                string(&mut out, &format!("child{index}.title"), Some(&child.title))
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(
+                out,
+                "variantsShown={}\nchildrenShown={}",
+                value.variants.len().min(4),
+                value.child_variant_configurations.len().min(4)
+            )
+            .map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "selection-behavior" {
         let value =
             SelectionBehavior::decode(&value).map_err(|e| format!("selection-behavior: {e:?}"))?;
         if !canonical {
