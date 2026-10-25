@@ -10,6 +10,8 @@ cat variant.bplist | cargo run --offline \
   --bin inspect-content-result -- --canonical variant - > normalized.bplist
 ```
 
+Additional modes: `configuration` decodes PreviewVariantsConfiguration with a required title and required ordered sections array; `section` decodes an optional title and required ordered variants array. Empty arrays are accepted; missing arrays reject. Nested variants use the same compatibility rules below. Configuration summaries show at most four sections and four entries per shown section, with counts; canonical output retains everything. These modes do not decode whole groups, override selection configuration or apply a selection.
+
 Select the expected kind explicitly: `variant` means one PreviewVariant entry;
 `override` means ContentOverridePayload, an optional selected override string.
 This command does not infer the kind, match a request, inspect a whole grouped
@@ -41,5 +43,5 @@ exit status before consuming output; a write failure may leave partial stdout.
 The same command runs under actual WASI preview1. Standard input needs no
 filesystem preopens; named input needs a host-granted directory. Verification
 uses explicit standard-I/O handles, no preopens and no inherited environment.
-Browser execution, private decoder/runtime parity, grouped configurations and
+Browser execution, private decoder/runtime parity, whole grouped replies and selection configurations, and
 actual rendering/lifecycle/resource settlement remain outside this result.

@@ -295,3 +295,5 @@ pub mod prepare_relaunch;
 pub mod content_requests;
 
 pub mod content_results;
+
+pub mod variants_configuration;

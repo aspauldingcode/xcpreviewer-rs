@@ -3,9 +3,10 @@ use canvas_core::{
     binary_plist, binary_plist_writer,
     content_results::{ContentOverridePayload, PreviewVariant},
     payload_codec::Value,
+    variants_configuration::{PreviewVariantsConfiguration, Section},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -19,11 +20,24 @@ fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Resu
         writeln!(out, "{key}=absent")
     }
 }
+fn section_summary(out: &mut impl Write, key: &str, section: &Section) -> std::io::Result<()> {
+    string(out, &format!("{key}.title"), section.title.as_deref())?;
+    writeln!(out, "{key}.variants={}", section.variants.len())?;
+    for (index, variant) in section.variants.iter().take(4).enumerate() {
+        string(out, &format!("{key}.variant{index}.id"), Some(&variant.id))?;
+        string(
+            out,
+            &format!("{key}.variant{index}.displayName"),
+            Some(&variant.display_name),
+        )?;
+    }
+    writeln!(out, "{key}.variantsShown={}", section.variants.len().min(4))
+}
 fn run() -> Result<(), String> {
     let mut args = std::env::args_os().skip(1);
     let first = args.next().ok_or(USAGE)?;
     if first == "--help" && args.next().is_none() {
-        println!("{USAGE}\nValues only. Choose the expected kind explicitly; groups/configurations are not supported.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
+        println!("{USAGE}\nValues only. Choose the expected kind explicitly; whole groups and selection configuration are not supported.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
         return Ok(());
     }
     let canonical = first == "--canonical";
@@ -32,7 +46,7 @@ fn run() -> Result<(), String> {
     } else {
         first
     };
-    if kind != "variant" && kind != "override" {
+    if kind != "variant" && kind != "override" && kind != "configuration" && kind != "section" {
         return Err(USAGE.into());
     }
     let input = args.next().ok_or(USAGE)?;
@@ -54,7 +68,29 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "variant" {
+    let normalized: Value = if kind == "configuration" {
+        let value = PreviewVariantsConfiguration::decode(&value)
+            .map_err(|e| format!("configuration: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=configuration").map_err(|e| e.to_string())?;
+            string(&mut out, "title", Some(&value.title)).map_err(|e| e.to_string())?;
+            writeln!(out, "sections={}", value.sections.len()).map_err(|e| e.to_string())?;
+            for (index, section) in value.sections.iter().take(4).enumerate() {
+                section_summary(&mut out, &format!("section{index}"), section)
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "sectionsShown={}", value.sections.len().min(4))
+                .map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "section" {
+        let value = Section::decode(&value).map_err(|e| format!("section: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=section").map_err(|e| e.to_string())?;
+            section_summary(&mut out, "section", &value).map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "variant" {
         let value = PreviewVariant::decode(&value).map_err(|e| format!("variant: {e:?}"))?;
         if !canonical {
             writeln!(out, "result=variant").map_err(|e| e.to_string())?;
