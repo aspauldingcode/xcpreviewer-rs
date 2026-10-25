@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/private/tmp/diagnostic-collection-20261024/source-verify.py", line 27, in <module>
+    assert call(0xe07b0)==0x12f284 and call(0xe07c8)==0x131294
+  File "/private/tmp/diagnostic-collection-20261024/source-verify.py", line 8, in call
+    v=word(a);assert v>>26 in [5,37];n=v&0x3ffffff;return a+4*(n-(1<<26) if n&(1<<25) else n)
+AssertionError

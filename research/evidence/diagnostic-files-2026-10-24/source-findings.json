@@ -1,0 +1,50 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "imports": {
+    "0x12f2e4": "_$s10Foundation3URLV22appendingPathComponent_11isDirectoryACSS_SbtF",
+    "0x12f2f0": "_$s10Foundation3URLV22appendingPathComponentyACSSF",
+    "0x12faa0": "_$sSS10FoundationE8EncodingV4utf8ACvgZ",
+    "0x1305f8": "_$sSy10FoundationE5write2to10atomically8encodingyAA3URLV_SbSSAAE8EncodingVtKF",
+    "0x131120": "_os_unfair_lock_lock",
+    "0x13112c": "_os_unfair_lock_unlock"
+  },
+  "ranges": [
+    {
+      "start": "0xe2980",
+      "bytes": 440,
+      "sha256": "905ad71a1eb5d455b5e9a91d7a8e445e35d341fd2f4c96bbd8de002748f61ada"
+    },
+    {
+      "start": "0xe0638",
+      "bytes": 628,
+      "sha256": "a6b31c83f029d3620c4bc3122ab971fc3046e5d7dad45d75d3fa502738b3b0f1"
+    },
+    {
+      "start": "0x5f728",
+      "bytes": 128,
+      "sha256": "27316a36a45f3a12f553e3a95fed0816230d9fc3826fcb4e4141b3c1d19e810a"
+    },
+    {
+      "start": "0x1e5c",
+      "bytes": 4,
+      "sha256": "110f46b5b35c069160560c6ad6786f647dd44e8760a52a46fc22dbbcd7630b91"
+    }
+  ],
+  "selected_source_bytes_verified": 1200,
+  "file_entry_fields": [
+    "name",
+    "optional_folder",
+    "contents"
+  ],
+  "deferred_ordered_append": true,
+  "write_utf8_atomically": true,
+  "present_folder_creates_intermediate_directories": true,
+  "wrapper_collect_order": [
+    "main",
+    "cause"
+  ],
+  "canonical_remote_leaf_collect": "no-op",
+  "directory_creation_error_discarded_before_write": true,
+  "private_collector_invoked": false
+}

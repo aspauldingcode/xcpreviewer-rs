@@ -1,0 +1,20 @@
+{
+  "rejected_interpretation": "Initial candidate treated directory creation as fatal. Before publication, error-disposal audit found conversion/release/clear followed by filename/write fallthrough. Prior candidate seal, code, observations and logs retained locally under research/raw/diagnostic-files-rejected-20261024; no rejected candidate was committed.",
+  "rejected_seal_sha256": "0c56c6e27b7709c5e78c54e462ba862da8916d945e18eda765a1fe752e6dbfa3",
+  "expected_negative_control": {
+    "action": "Create directory at owned existing file, discard create error, then attempt atomic file write",
+    "create_domain": "NSCocoaErrorDomain",
+    "create_code": 516,
+    "write_domain": "NSCocoaErrorDomain",
+    "write_code": 512,
+    "operations": [
+      "directory",
+      "create",
+      "file",
+      "write"
+    ]
+  },
+  "source_assertion_failure": "Disposal verifier initially checked0xe07c8 (argument move) instead of errorRelease call0xe07cc. Assertion failed before findings; corrected address and independent LLVM bytes pass.",
+  "private_runtime_limit": "No verified callable private Swift collector prototype established. Public typed Foundation file operations only; private collector/lock/archive/resource settlement unobserved.",
+  "publication_whitespace_gate": "git diff --check rejected one trailing space in original source verifier before commit; whitespace removed and seal updated. Unrelated index preserved."
+}
