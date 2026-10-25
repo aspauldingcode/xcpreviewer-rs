@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "scope": "Canonical pure-value wrapper presentation with verified source/public Foundation formatting/actual WASI; private getters/full diagnostics/resources open",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6021,
+      "sha256": "3750920d58a8b6749bbbfdbd2893cae8faadc996a79be23ffa941fc1674edb21"
+    },
+    {
+      "path": "check.py",
+      "bytes": 1792,
+      "sha256": "2fa3cfcbf5fd98959137c8a07c7caceb832e56034ba46999704ac7ec7e2d2463"
+    },
+    {
+      "path": "failures.json",
+      "bytes": 416,
+      "sha256": "45febbb592c6307548ce543f63b6110a2499bfd279d2922961a5fbfa02d18a05"
+    },
+    {
+      "path": "format-build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "format-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "format-results.json",
+      "bytes": 906,
+      "sha256": "a73a6d6ce7bad011ac9b15a767fd402823ac7bb13addcc44cccb1afa27963277"
+    },
+    {
+      "path": "format.bplist",
+      "bytes": 386,
+      "sha256": "e8b6b28470afe6b4cdb24e0cabf9bc85e7609e0970be3f39b57f9749f00b7261"
+    },
+    {
+      "path": "format.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "format.stdout",
+      "bytes": 906,
+      "sha256": "a73a6d6ce7bad011ac9b15a767fd402823ac7bb13addcc44cccb1afa27963277"
+    },
+    {
+      "path": "format.swift",
+      "bytes": 625,
+      "sha256": "2de0bcbd9af77cee37cb1a39a594b85a05f62096c487bc8c7b89b70d11bf22ed"
+    },
+    {
+      "path": "implementation-pins.json",
+      "bytes": 6229,
+      "sha256": "43dadf60c028453619cedf22064faf1a904b52387ed001dbd979d3f44ac22f4a"
+    },
+    {
+      "path": "predecessor.json",
+      "bytes": 212,
+      "sha256": "a74711765247da30683b8d1f4987f04f42a2d0c4a28bde999c5e48285c91fb19"
+    },
+    {
+      "path": "raw-provenance.json",
+      "bytes": 379,
+      "sha256": "ae5dd2d30f12010b50c19261306d7635f9822792f596a0df1472742e5df72fd5"
+    },
+    {
+      "path": "replay.log",
+      "bytes": 197,
+      "sha256": "8d5824dd357a7808eebd8bb951d3b0eac18190c6b1eca377ff4d6307aa208ebe"
+    },
+    {
+      "path": "results.json",
+      "bytes": 454,
+      "sha256": "4382771800719c58114648980638f002c7d237940a14a3794adb13d03e07ed98"
+    },
+    {
+      "path": "run-wasi.cjs",
+      "bytes": 612,
+      "sha256": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+    },
+    {
+      "path": "source-findings.json",
+      "bytes": 1199,
+      "sha256": "73ca7603c6ce1ccc407584aa09ba3c2d7e2fa982cbdd0c0ea3b5d1a6cefde760"
+    },
+    {
+      "path": "source-initial-verify.py",
+      "bytes": 3822,
+      "sha256": "ce2182d3b0cbf8c34b8ddb82ddd5e6f2abdf18229d7e4c212f289b2a9cf039cd"
+    },
+    {
+      "path": "source-verify.py",
+      "bytes": 3851,
+      "sha256": "fbed519497d29259463631bb7a0dc3dc4d953c83872c9188a0fa8632ccc84ed5"
+    },
+    {
+      "path": "source.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source.stdout",
+      "bytes": 1199,
+      "sha256": "73ca7603c6ce1ccc407584aa09ba3c2d7e2fa982cbdd0c0ea3b5d1a6cefde760"
+    },
+    {
+      "path": "tests.stderr",
+      "bytes": 8543,
+      "sha256": "d9fc90cd554576902ac310f2e063c04744560ee6944ba7ed3e7cf66cdb456158"
+    },
+    {
+      "path": "tests.stdout",
+      "bytes": 23307,
+      "sha256": "f5880faaf6ea62ce04deb645b82b02b325849dad81d912c91d9309b1c9bb5b53"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 847,
+      "sha256": "e04633efcb2f2b0904b0aa58b92b098566578e11206c8fb1733e294a0847f34b"
+    },
+    {
+      "path": "wasi.rs",
+      "bytes": 1778,
+      "sha256": "427d712879cf7a0458b3d618553056af928d3886f17f8ebe8f9dfb9fd1b781da"
+    },
+    {
+      "path": "wasi.stderr",
+      "bytes": 167,
+      "sha256": "a88eae63366360ad832fe4f42c52e857b0e4844a954698c42921833fd96459c7"
+    },
+    {
+      "path": "wasi.stdout",
+      "bytes": 111,
+      "sha256": "aa420cc6be43f2063c7567cefe1d3363000bfb772db7568efd26e79dcf5fe905"
+    },
+    {
+      "path": "wasm-build.stderr",
+      "bytes": 160,
+      "sha256": "70e1c21e84813fda65133e67a11b8052dd51228f39e24c3a05875870e5e46fca"
+    },
+    {
+      "path": "wasm-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "wasm-control-build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "wasm-control-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

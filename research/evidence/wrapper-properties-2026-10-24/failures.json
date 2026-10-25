@@ -1,0 +1,9 @@
+{
+  "initial_import_assertion": {
+    "expected_fragment": "format9arguments",
+    "actual_import": "_$sSS10FoundationE6format_S2Sh_s7CVarArg_pdtcfC",
+    "result": "Verifier assertion rejected the guessed overload name before recording source findings",
+    "correction": "Bind exact variadic String(format:,_:) import; public typed Swift controls already use this overload",
+    "private_abi_invoked": false
+  }
+}
