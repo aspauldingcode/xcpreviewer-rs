@@ -1,0 +1,14 @@
+{
+  "verification_failures": [
+    {
+      "stage": "source verifier",
+      "incorrect_assumption": "Messaging imports public audit_token_to_pid directly",
+      "actual_import": "Foundation audit_token_t.pid getter",
+      "resolution": "Resolve Foundation getter to exact public audit_token_to_pid import",
+      "receipt": "initial-source-failure.txt"
+    }
+  ],
+  "private_process_decoder_invoked": false,
+  "native_process_action_performed": false,
+  "public_foundation_scope": "21 original dictionaries, primitive numeric/array casts and synthetic token PID helper only; recovered precedence is original composition."
+}

@@ -1,4 +1,4 @@
-//! Recovered ping/capabilities/forward envelopes. Identifier is data;
+//! Recovered service envelope subset. Identifier is data;
 //! decoding does not match replies, generate IDs, send, cancel or settle work.
 use crate::{binary_plist,forward_payload::{self,ForwardPayload},payload_codec::Value};
 use std::collections::BTreeMap;
@@ -9,7 +9,7 @@ pub struct ForwardServiceEnvelope {
     pub forward:ForwardPayload,
 }
 #[derive(Clone,Debug,PartialEq,Eq)]
-pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error)}
+pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error),Process(crate::service_process::Error)}
 impl ForwardServiceEnvelope {
     /// Allocate an identifier from the shared process sequence for a new
     /// forwarding request. This constructs a value and sends nothing.
@@ -44,6 +44,9 @@ pub enum ServiceContent {
     /// Absent when content decoding fails; root and identifier errors still reject.
     Capabilities(Option<CapabilitiesPayload>),
     Forward(ForwardPayload),
+    Connect(crate::service_process::ProcessTarget),
+    Stop(crate::service_process::ProcessTarget),
+    Kill(crate::service_process::ProcessTarget),
 }
 /// Value-only outer envelope. A ping is a message value, not a liveness result.
 #[derive(Clone, Debug, PartialEq)]
@@ -74,7 +77,9 @@ impl ServiceEnvelope {
                     content: ServiceContent::Forward(forward.forward),
                 })
             }
-            Value::String(kind) if kind == "ping" || kind == "capabilities" => {
+            Value::String(kind)
+                if ["ping", "capabilities", "connect", "stop", "kill"].contains(&kind.as_str()) =>
+            {
                 let payload = root.get("payload").ok_or(Error::Missing("payload"))?;
                 let Value::Dictionary(payload) = payload else {
                     return Err(Error::Type("payload"));
@@ -86,12 +91,20 @@ impl ServiceEnvelope {
                 };
                 Ok(Self {
                     identifier,
-                    content: if kind == "ping" {
-                        ServiceContent::Ping
-                    } else {
-                        ServiceContent::Capabilities(
+                    content: match kind.as_str() {
+                        "ping" => ServiceContent::Ping,
+                        "capabilities" => ServiceContent::Capabilities(
                             CapabilitiesPayload::decode_dictionary(payload).ok(),
-                        )
+                        ),
+                        _ => {
+                            let target = crate::service_process::ProcessTarget::decode_dictionary(payload)
+                            .map_err(Error::Process)?;
+                            match kind.as_str() {
+                                "connect" => ServiceContent::Connect(target),
+                                "stop" => ServiceContent::Stop(target),
+                                _ => ServiceContent::Kill(target),
+                            }
+                        }
                     },
                 })
             }
@@ -113,6 +126,9 @@ impl ServiceEnvelope {
                     .as_ref()
                     .map_or_else(BTreeMap::new, CapabilitiesPayload::to_dictionary),
             ),
+            ServiceContent::Connect(target) => ("connect", target.to_dictionary()),
+            ServiceContent::Stop(target) => ("stop", target.to_dictionary()),
+            ServiceContent::Kill(target) => ("kill", target.to_dictionary()),
             ServiceContent::Forward(forward) => {
                 let Value::Dictionary(payload) = forward.to_value() else {
                     unreachable!()

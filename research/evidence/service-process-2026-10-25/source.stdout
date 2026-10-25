@@ -1,0 +1,97 @@
+{
+  "images": {
+    "Messaging": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "Foundation": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "process_cases": [
+    "auditToken",
+    "pid"
+  ],
+  "process_keys": [
+    "discriminant",
+    "auditToken",
+    "pid"
+  ],
+  "audit_token_key": "val",
+  "audit_token_words": 8,
+  "legacy_pid_fallback": true,
+  "public_pid_import": "_audit_token_to_pid",
+  "pid_import": "_$sSo13audit_token_ta22PreviewsFoundationHostE3pids5Int32Vvg",
+  "pid_metadata": "_$ss5Int32VN",
+  "routes": [
+    "connect",
+    "stop",
+    "kill"
+  ],
+  "ranges": [
+    {
+      "image": "Foundation",
+      "start": "0x9217c",
+      "bytes": 68,
+      "sha256": "7a6966b1c888263f462b3bf35620aff3cba87231e40d028d516292965afb195c"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x66510",
+      "bytes": 520,
+      "sha256": "ac0d2e9494a9d430ebe37dc1eafc1666fdad306558331b67878d1dadc2d8c76c"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x69440",
+      "bytes": 540,
+      "sha256": "a8f29f30f7d1a42589e337c3d6a43c0b7353d3a14cad563b9c71c3db65733734"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x661cc",
+      "bytes": 60,
+      "sha256": "971ae5eb9f8913658d428352247a458db34ab2970588851d28c77d4003beb52f"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5fed8",
+      "bytes": 136,
+      "sha256": "9931e657af7ffd0f400a51243d2a97ba710bfb5e371572cb2441f92a7effbbdd"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60088",
+      "bytes": 132,
+      "sha256": "2faa44a100f331112ddb4e094ccc921c49a671958e867e83d08d9683fd78acb2"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x6021c",
+      "bytes": 128,
+      "sha256": "32e3d109c1e59a759bec0682e5d3e7c07ae3c58336c53e3425b989815bb54f33"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5e96c",
+      "bytes": 52,
+      "sha256": "cac189acc434e85bc1faaa57878727a5ad706c296bfb1f4cd50030d412826640"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x9f884",
+      "bytes": 348,
+      "sha256": "24d2e7ae968b2b454e7a0bee92712a5f172241642cc3906e3113b458d3a794f8"
+    },
+    {
+      "image": "Foundation",
+      "start": "0xaaa40",
+      "bytes": 208,
+      "sha256": "67f034df6665f31f2c33d4fe64036adf8051e37a4ad831065dee69e146b176e1"
+    }
+  ],
+  "selected_source_bytes_verified": 2192,
+  "private_functions_invoked": false,
+  "native_process_action_performed": false
+}

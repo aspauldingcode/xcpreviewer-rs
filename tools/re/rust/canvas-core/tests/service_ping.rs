@@ -54,7 +54,7 @@ fn ping_requires_root_payload_and_typed_identifier() {
             Err(Error::Type("messageType"))
         )
     }
-    for kind in ["Ping", "stop", "captureIOSurface", "unknown"] {
+    for kind in ["Ping", "launch", "captureIOSurface", "unknown"] {
         assert_eq!(
             E::decode(&map(&[("messageType", V::String(kind.into()))])),
             Err(Error::UnsupportedMessageType)
