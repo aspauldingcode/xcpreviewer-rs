@@ -280,3 +280,5 @@ mod remote_prefix;
 pub mod error_archive;
 
 pub mod error_presentation;
+
+pub mod preview_error;

@@ -1,0 +1,9 @@
+warning: unused import: `service_reply_error::ServiceReplyError`
+ --> /private/tmp/native-error-bridge-20261024/wasi.rs:1:240
+  |
+1 | ...ble_error::{extract_encoded_with,ARCHIVE_KEY},service_reply_error::ServiceReplyError,service_response::send_service_response_binar...
+  |                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: 1 warning emitted
