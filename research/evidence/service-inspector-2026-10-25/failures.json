@@ -1,0 +1,28 @@
+{
+  "verification_failures": [
+    {
+      "stage": "initial Rust integration",
+      "problem": "Test used unsupported inner requestScreenshot; ServiceEnvelope correctly rejected Forward(Unsupported(messageType)).",
+      "fix": "Changed test fixture to recovered render command.",
+      "logs": [
+        "initial-tests.stdout",
+        "initial-tests.stderr"
+      ]
+    },
+    {
+      "stage": "first complete-value cross-runtime comparison",
+      "problem": "Expected legacy PID process output omitted canonical discriminant=pid. CLI output included it, as required by existing ProcessTarget contract.",
+      "fix": "Corrected expected controls only.",
+      "initial_control_source": "initial-controls.py"
+    }
+  ],
+  "native_private_decoder_invoked": false,
+  "native_service_action_performed": false,
+  "publication_checks": [
+    {
+      "stage": "git diff --check",
+      "problem": "Captured cargo log has final blank line; check rejected staged evidence before commit.",
+      "fix": "Normalized trailing whitespace in published log copies; unmodified original logs remain temporary/local. Exact owned paths unstaged and baseline index verified before retry."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "fields": [
+    "workspaceID",
+    "killAgents"
+  ],
+  "workspace_type": "required String",
+  "kill_agents_type": "optional Bool decoded into nonoptional Bool with missing=false",
+  "invalid_present_flag_propagates": true,
+  "wire_kind": "purge",
+  "encoding_includes_false": true,
+  "ranges": [
+    {
+      "image": "Messaging",
+      "start": "0x67704",
+      "bytes": 556,
+      "sha256": "d09ac138197f80a59354223d5467537d243eab3fe1caed8344db9faece8b85c7"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5fd44",
+      "bytes": 132,
+      "sha256": "39f79998d2323722bdb9a96b151c381926c2f80d891b426816640d4d7bd710ee"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ea00",
+      "bytes": 36,
+      "sha256": "46e955ed130ad5786204db3a94f04fb2560c665859d836a900064fab52800696"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5eccc",
+      "bytes": 24,
+      "sha256": "40af81a09dc6b6e7a1479a24fd7debea24d3c3aa1c70dbe4bf98b5ce315ca922"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x607a4",
+      "bytes": 20,
+      "sha256": "a9eac219020228aec794165a02c508cea3d3a5f11dc50d49360ca474a47217d5"
+    }
+  ],
+  "selected_source_bytes_verified": 768,
+  "native_private_decoder_invoked": false,
+  "native_purge_performed": false
+}
