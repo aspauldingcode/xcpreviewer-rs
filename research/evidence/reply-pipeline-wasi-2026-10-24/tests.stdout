@@ -1,0 +1,501 @@
+
+running 16 tests
+test payload_codec::tests::legacy_defaults_and_all_data_bytes ... ok
+test payload_codec::tests::complete_outer_tree_uses_native_defaults_and_required_region_array ... ok
+test payload_codec::tests::big_endian_and_explicit_format_fields ... ok
+test payload_codec::tests::explicit_bitmap_info_bypasses_even_malformed_legacy_order ... ok
+test payload_codec::tests::missing_order_and_invalid_uint32_are_errors ... ok
+test payload_codec::tests::rect_requires_flat_coordinates_and_rejects_missing_height ... ok
+test render_payload::tests::absent_values_match_recovered_native_constants ... ok
+test payload_codec::tests::region_preserves_geometry_unicode_and_optional_accessibility_bytes ... ok
+test render_payload::tests::present_values_override_each_default_independently ... ok
+test tests::invalid_render_keeps_every_input_byte ... ok
+test tests::rejects_extent_and_receipt_boundaries ... ok
+test tests::transparent_and_opaque_controls_overwrite_full_allocation ... ok
+test tests::rejects_overflow_and_retains_last_valid_frame ... ok
+test tests::snapshot_owns_allocation ... ok
+test tests::failures_preserve_every_prior_byte ... ok
+test tests::revision_overflow_never_publishes ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test each_serial_event_order_emits_only_its_first_outcome ... ok
+test outcomes_match_independently_frozen_native_callbacks ... ok
+test rejected_owned_reply_drops_once_while_accepted_value_stays_with_consumer ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test outer_and_inner_class_confusion_and_unobserved_endpoints_reject ... ok
+test decoded_property_list_and_export_own_native_data ... ok
+test duplicate_native_slot_and_truncated_property_list_reject ... ok
+test native_action_envelopes_preserve_absence_classes_and_all_268_data_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test exact_native_domain_and_incremental_pairs ... ok
+test unknown_and_near_match_commands_remain_unsupported ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 7 tests
+test cycles_bad_references_text_keys_and_unsupported_types_rejected ... ok
+test truncations_and_corrupt_trailers_fail_without_panics ... ok
+test independent_payloads_keep_every_byte_and_native_defaults ... ok
+test independent_unicode_scalars_extended_lengths_and_data ... ok
+test independent_wide_object_references ... ok
+test finite_marker_mutations_never_panic ... ok
+test depth_and_expansion_limits_prevent_recursive_resource_exhaustion ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+
+running 6 tests
+test limits_charge_dictionary_keys_and_complete_output_including_trailer ... ok
+test null_nonfinite_and_excessive_depth_are_explicit_rejections ... ok
+test real_and_date_bits_include_negative_zero_and_subnormal ... ok
+test scalar_boundaries_unicode_and_nested_values_round_trip ... ok
+test real_service_error_can_encode_and_classify_without_fixture_encoder ... ok
+test length_reference_and_offset_width_transitions_are_real_round_trips ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test row_padding_does_not_become_pixels_and_tight_output_works ... ok
+test unsupported_or_invalid_input_preserves_every_destination_byte ... ok
+test decoded_payloads_match_every_native_and_independent_output_byte ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 7 tests
+test listener_case_controls ... ok
+test required_request_fields_preserve_error_order ... ok
+test discriminants_and_payload_types_are_strict ... ok
+test signed_pid_domain_and_name_emptiness ... ok
+test no_invented_timeout_validation ... ok
+test independent_binary_message_fixtures ... ok
+test response_uses_full_report_and_explicit_entropy ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 8 tests
+test native_uuid_input_and_canonical_cases_match ... ok
+test minimal_report_omits_absent_fields ... ok
+test optional_empty_values_and_signed_ints_are_preserved ... ok
+test full_report_matches_independent_canonical_tree ... ok
+test missing_id_uses_lazy_entropy_and_never_a_fixed_default ... ok
+test opaque_extras_do_not_change_known_fields_and_entropy_errors_propagate ... ok
+test all_recovered_remote_event_and_request_cases_work ... ok
+test required_and_nested_types_reject_without_input_changes ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test date_tag_is_exact_and_truncation_never_accepts_a_partial_date ... ok
+test unrelated_fields_are_ignored_but_discriminants_are_not ... ok
+test binary_dates_match_all_native_absolute_time_bits ... ok
+test screenshot_request_round_trip_matches_independent_binary_fixture ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test independent_native_sequential_signal_outcomes ... ok
+test signalled_flag_does_not_prove_winning_work_completed ... ok
+test independent_native_concurrent_one_winner_contract ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test independent_full_fixture_preserves_payload_and_aliases ... ok
+test missing_orientation_normalizes_but_other_optional_fields_stay_absent ... ok
+test required_fields_and_strict_scalar_negatives ... ok
+test all_recovered_domain_and_orientation_values_roundtrip ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test resource_id_does_not_deduplicate_changed_copied_contents ... ok
+test complete_independent_fixture_and_receiver_projection ... ok
+test strict_types_and_ieee_geometry_preserve_inputs ... ok
+test all_fields_required_without_render_payload_defaults ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test malformed_host_views_fail_without_source_changes ... ok
+test native_receiver_copy_preserves_all_padding_and_ignores_allocation_tail ... ok
+test snapshot_metadata_is_separate_from_renderer_format_support ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test generic_defaults_keep_hosted_and_static_distinct ... ok
+test macos_override_preserves_hosted_default ... ok
+test unsupported_layer_route_never_falls_back_and_surface_errors_propagate ... ok
+test static_request_and_reply_routes_are_paired ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test absent_and_unsupported_archives_remain_distinct ... ok
+test native_archives_match_independent_fields_and_all_bytes ... ok
+test truncation_bad_offsets_and_non_nil_userinfo_reject ... ok
+test hostile_lengths_and_invalid_utf16_reject ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test native_diagnostic_archive_projects_to_service_error ... ok
+test native_string_details_match_expected_fields ... ok
+test native_truncations_and_unknown_reference_reject ... ok
+test valid_native_numeric_value_is_explicitly_unsupported ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test unknown_reply_is_not_cached_and_reused_seed_has_no_hidden_generation ... ok
+test duplicate_begin_fails_and_clears_old_registration ... ok
+test matching_resolution_consumes_once_and_preserves_other_requests ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test division_and_reciprocal_multiplication_are_distinct ... ok
+test region_mapping_preserves_order_metadata_and_inputs ... ok
+test decoded_binary_payload_connects_to_point_space_api ... ok
+test scaled_regions_and_point_coordinates_match_native_corpus ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test modern_behavior_bypasses_even_malformed_legacy_field ... ok
+test fallback_requirements_pid_boundaries_and_error_order ... ok
+test unknown_and_unreconstructed_variants_are_explicit ... ok
+test independent_binary_fixtures_match_modern_and_legacy_behavior ... ok
+test serializer_matches_independent_modern_trees_and_preserves_three_cases ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test missing_info_and_wrong_native_object_kinds_are_explicit ... ok
+test payload_fence_preserved_and_explicit_empty_is_not_missing ... ok
+test native_slot_labels_and_optional_object_fields ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test class_field_and_unknown_variant_rejection ... ok
+test preserves_raw_absence_utf8_and_owned_snapshot ... ok
+test five_independently_observed_native_shapes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test wrong_payload_types_and_corrupt_native_serializations_reject ... ok
+test absent_and_empty_stay_distinct_through_local_reply_gate ... ok
+test independent_native_wrappers_decode_complete_owned_payloads ... ok
+test sender_response_error_precedes_malformed_payload_and_absence_normalizes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 6 tests
+test constructor_fence_policy_and_unsupported_event_are_explicit ... ok
+test timing_is_presence_only_and_preferences_preserve_token ... ok
+test event_carrier_preserves_every_byte_after_explicit_validation ... ok
+test source_seed_wrap_matches_independent_bit_domain_cases ... ok
+test event_validation_rejection_and_field_fence_order ... ok
+test original_token_ownership_drops_once_on_error_and_success ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test missing_specialized_handlers_do_not_fall_back_to_generic_handler ... ok
+test event_matrix_uses_specific_notifications_or_unchanged_generic_error ... ok
+test reply_and_event_paths_share_notification_slots_but_keep_generic_errors_separate ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test exact_outer_and_inner_kinds_and_identifier_namespace ... ok
+test outer_kind_and_required_shape_fail_explicitly ... ok
+test identifier_type_and_inner_codec_errors_propagate ... ok
+test missing_identifier_is_not_generated_or_read_from_other_namespaces ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test actual_native_error_fields_when_supplied ... ok
+test reply_operation_error_is_distinct_from_connection_invalidation ... ok
+test wrong_domain_and_missing_or_mistyped_reserved_fields_reject ... ok
+test unknown_codes_preserve_identity_and_factory_reserved_keys_override_extras ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test encoded_values_own_all_nested_data_and_never_add_error_marker ... ok
+test outbound_dictionary_matches_four_public_foundation_controls ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test any_nonempty_encoded_destination_skips_retry_even_if_partial ... ok
+test retry_uses_supplied_description_and_does_not_merge_or_mutate_original_info ... ok
+test empty_encoding_retry_matches_public_foundation_projections ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test wrap_returns_old_value_without_overflow_failure ... ok
+test initial_and_unsigned_decimal_match_owned_swift_control ... ok
+test new_envelopes_share_process_sequence_and_preserve_identifier_namespace ... ok
+test shared_sequence_allocates_contiguous_unique_values_concurrently ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test failed_serializer_still_writes_one_data_entry_and_bypasses_count_zero_retry ... ok
+test initialization_rejects_missing_wrong_and_empty_but_parsing_bad_nonempty_returns_empty_map ... ok
+test native_wire_payloads_decode_complete_empty_and_nested_values ... ok
+test stored_direction_skips_conversion_and_computed_results_are_not_cached ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test receiver_can_retain_reply_capability_for_later_response ... ok
+test missing_receiver_drops_only_local_reply_capture_without_synthesizing_response ... ok
+test rejected_wire_never_creates_reply_capability_or_calls_receiver ... ok
+test reply_capability_selects_receiver_method_without_parsing_or_remote_error_recognition ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test clearing_local_notification_captures_does_not_drop_request_capture ... ok
+test absent_and_cleared_notifications_still_forward_each_request ... ok
+test notification_matrix_precedes_completion_and_preserves_every_outcome ... ok
+test native_wire_fixtures_keep_remote_errors_and_late_decode_errors_separate_from_notifications ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 6 tests
+test classification_owns_user_info_and_preserves_ordinary_dictionary ... ok
+test complete_error_fields_map_to_error_callback_and_keep_all_user_info ... ok
+test missing_or_wrong_fields_remain_payload_instead_of_becoming_empty_reply ... ok
+test measured_foundation_numeric_coercions_and_nonmatching_values ... ok
+test no_marker_required_and_extra_fields_do_not_hide_error_shape ... ok
+test all_representable_numeric_cases_match_independent_swift_fixture ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test absent_descriptions_use_literal_while_empty_and_unicode_values_survive ... ok
+test rejected_dictionary_and_other_types_preserve_full_description_in_error_callback ... ok
+test interrupted_termination_invalidated_and_unknown_stay_distinct ... ok
+test decoded_dictionaries_compose_with_remote_schema_and_ordinary_payload ... ok
+test public_xpc_control_categories_feed_the_projected_classifier ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test present_payload_wins_without_error_projection_or_reencoding_stored_bytes ... ok
+test serialization_failure_still_writes_one_data_entry_and_calls_send ... ok
+test absent_connection_or_outcome_or_failed_projection_leaves_reply_and_send_untouched ... ok
+test receiver_can_invoke_response_capability_after_its_message_dispatch_returns ... ok
+test projected_error_encodes_exact_dictionary_and_round_trips_through_reply_classifier ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test missing_wrong_and_empty_data_fail_before_parser_and_request_description_once ... ok
+test legacy_dictionary_mode_repeats_getter_and_keeps_its_empty_fallback ... ok
+test recognition_fallback_does_not_destroy_malformed_bytes_or_hide_late_typed_errors ... ok
+test actual_native_error_fields_select_remote_error_before_either_success_representation ... ok
+test normal_native_dictionary_retains_original_bytes_in_serialized_mode_and_full_values_in_legacy_mode ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test empty_bytes_after_receipt_are_distinct_from_unavailable_local_bytes ... ok
+test receipt_aware_empty_request_creates_reply_capability_before_receiver_dispatch ... ok
+test received_empty_reply_selects_success_but_serialized_typing_still_fails ... ok
+test native_received_normal_error_and_malformed_responses_match_portable_projection ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test archive_projection_owns_bytes_without_decoding_them ... ok
+test malformed_and_unsupported_shapes_fail_closed ... ok
+test native_owned_envelopes_roundtrip_every_archive_byte ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test malformed_payload_wins_then_fails_later_without_error_fallback ... ok
+test deserialized_snapshot_owns_data_and_does_not_reparse ... ok
+test binary_payload_retains_every_byte_and_decodes_only_on_request ... ok
+test payload_wins_both_nullable_callback_combinations ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test void_acknowledgement_does_not_validate_serialized_payload ... ok
+test remote_empty_and_lazy_parse_failure_skip_typed_decoder ... ok
+test deserialized_typed_reply_invokes_decoder_once_and_preserves_data ... ok
+test typed_failure_remains_distinct_from_transport_and_parse_error ... ok
+test typed_surface_reply_matches_complete_independent_fixture ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test opaque_action_values_are_owned_snapshots_not_native_set_encoding ... ok
+test rejects_wrong_route_selector_argument_and_inline_completion ... ok
+test native_primary_and_unicode_absent_extension_shapes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test native_error_archive_corpus_when_supplied ... ok
+test strict_completion_fields_are_distinct_from_native_wrong_slot_policy ... ok
+test selected_action_rejects_subclasses_and_responder_fields ... ok
+test native_base_action_absent_and_empty_info_arguments ... ok
+test nullable_error_and_complete_opaque_archive_snapshot ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 6 tests
+test actual_native_completion_wire_corpus_when_supplied ... ok
+test actual_native_reserved_return_corpus_when_supplied ... ok
+test malformed_reserved_error_rejects_but_void_return_value_is_ignored ... ok
+test wire_errors_remain_distinct_from_unsupported_argument_values ... ok
+test native_argument_selection_differs_from_strict_envelope_validation ... ok
+test reserved_error_precedes_numbered_error_and_remains_owned ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test native_attachment_corpus_when_supplied ... ok
+test explicit_opt_in_counts_and_limits ... ok
+test canonical_order_requires_table_permutation ... ok
+test repeated_refs_are_plans_not_new_capabilities ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test independent_native_identifier_corpus_when_supplied ... ok
+test original_date_wire_fixtures_preserve_signed_payload ... ok
+test original_uuid_wire_fixtures_preserve_all_bytes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test independent_native_scalar_corpus_when_supplied ... ok
+test bitwise_scalar_identity_preserves_zero_sign_and_nan_payload ... ok
+test original_scalar_wire_fixtures_and_truncation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test frozen_native_owned_corpus_when_supplied ... ok
+test original_exact_small_dictionary_fixture ... ok
+test malformed_length_tag_version_and_padding_reject ... ok
+test bounded_depth_and_unknown_attachment_tags ... ok
+test strings_integer_extremes_data_and_empty_containers ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

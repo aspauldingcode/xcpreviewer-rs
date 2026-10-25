@@ -1,0 +1,15 @@
+   Compiling canvas-core v0.1.0 (/Users/8amps/xcpreviewer-rs/tools/re/rust/canvas-core)
+error[E0599]: no variant, associated function, or constant named `Integer` found for enum `XpcValue` in the current scope
+  --> tools/re/rust/canvas-core/examples/reply_pipeline.rs:27:56
+   |
+27 |     let mut wire = BTreeMap::from([("extra".into(), X::Integer(17))]);
+   |                                                        ^^^^^^^ variant, associated function, or constant not found in `XpcValue`
+
+error[E0599]: no variant, associated function, or constant named `Integer` found for enum `XpcValue` in the current scope
+  --> tools/re/rust/canvas-core/examples/reply_pipeline.rs:29:34
+   |
+29 |     assert_eq!(wire["extra"], X::Integer(17));
+   |                                  ^^^^^^^ variant, associated function, or constant not found in `XpcValue`
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `canvas-core` (example "reply_pipeline") due to 2 previous errors
