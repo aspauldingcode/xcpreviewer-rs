@@ -1,0 +1,52 @@
+{
+  "open": false,
+  "package": {
+    "name": "rea-agents",
+    "version": "6.2.0",
+    "root_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents",
+    "build_commit": null
+  },
+  "server": {
+    "name": "rea",
+    "version": "6.2.0",
+    "started_at": "2026-10-24T01:37:03.697Z",
+    "command_path": "/Users/8amps/xcpreviewer-rs/research/build/rea/node_modules/rea-agents/scripts/rea.mjs"
+  },
+  "catalog_digests": {
+    "tools_sha256": "33d0b5a86d359d0aaaa7fe53b8097ff6f3ef04c0266f7d7ecbb6e01e5b3fb374",
+    "prompts_sha256": "5296f0301566cadaf89243e774512011f11045af36d48405f76a3ff9a8947ac2",
+    "combined_sha256": "678609d2e1cbc0fbf64185050a543b2c0be5599413627327f5c29a20b2b52b0c"
+  },
+  "alignment": {
+    "state": "unknown",
+    "reasons": [],
+    "remediation": "Supply expected package, catalog, or registration identity to compare the live server."
+  },
+  "providers": [
+    {
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": null
+      },
+      "availability": "available"
+    },
+    {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": null
+      },
+      "availability": "unavailable"
+    },
+    {
+      "provider": {
+        "id": "ida",
+        "name": "IDA Pro MCP adapter",
+        "version": "1"
+      },
+      "availability": "unavailable"
+    }
+  ],
+  "ghidra_vibe_inventory": "No result before bounded local orchestration cancellation. Underlying request settlement unobserved; no retry/import/target change attempted."
+}

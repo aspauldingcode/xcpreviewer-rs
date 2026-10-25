@@ -1,0 +1,19 @@
+{
+  "verification_failures": [],
+  "expected_invalid_controls": [
+    "missing-both",
+    "invalid-path",
+    "invalid-id",
+    "invalid-both",
+    "invalid-nested-no-flat"
+  ],
+  "access_limitations": [
+    {
+      "method": "GhidraVibe list_project_files",
+      "result": "No inventory response before bounded local orchestration cancellation. Underlying request settlement unobserved. No repeated import/restart/inventory call.",
+      "alternative": "Pinned local Mach-O metadata/import parsing and independently checked LLVM disassembly."
+    }
+  ],
+  "native_private_decoder_invoked": false,
+  "native_relaunch_prepared": false
+}

@@ -35,6 +35,7 @@ fn process(out: &mut impl Write, target: &ProcessTarget) -> std::io::Result<()> 
 fn summary(out: &mut impl Write, envelope: &ServiceEnvelope) -> std::io::Result<()> {
     let kind = match &envelope.content {
         ServiceContent::Ping => "ping",
+        ServiceContent::PrepareToRelaunch(_) => "prepareToRelaunch",
         ServiceContent::Capabilities(_) => "capabilities",
         ServiceContent::Connect(_) => "connect",
         ServiceContent::Stop(_) => "stop",
@@ -47,6 +48,19 @@ fn summary(out: &mut impl Write, envelope: &ServiceEnvelope) -> std::io::Result<
     string(out, "identifier", envelope.identifier.as_deref())?;
     match &envelope.content {
         ServiceContent::Ping => Ok(()),
+        ServiceContent::PrepareToRelaunch(value) => {
+            string(
+                out,
+                "idAcrossRelaunches",
+                Some(&value.agent_descriptor.id_across_relaunches),
+            )?;
+            string(
+                out,
+                "bundleID",
+                Some(&value.agent_descriptor.bundle.bundle_id),
+            )?;
+            string(out, "path", value.agent_descriptor.bundle.path.as_deref())
+        }
         ServiceContent::Capabilities(None) => writeln!(out, "capabilities=absent"),
         ServiceContent::Capabilities(Some(value)) => {
             writeln!(out, "isRunningInXTP={}", value.is_running_in_xtp)

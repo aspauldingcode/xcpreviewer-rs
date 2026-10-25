@@ -288,3 +288,6 @@ pub mod diagnostic_files;
 pub mod service_process;
 pub mod cancel_update;
 pub mod purge;
+
+pub mod agent_descriptor;
+pub mod prepare_relaunch;

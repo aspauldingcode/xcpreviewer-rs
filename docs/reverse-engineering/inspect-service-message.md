@@ -12,7 +12,7 @@ cat INPUT.bplist | cargo run --offline \
 
 Input is `bplist00`, from one named file or standard input (`-`). The inspector
 supports the recovered ping, capabilities, connect, forward, cancelUpdate, stop,
-kill and purge subsets. Other outer kinds fail explicitly. Default output is
+kill, purge and prepareToRelaunch subsets. Other outer kinds fail explicitly. Default output is
 human-readable `key=value` lines. String previews are debug-quoted, limited to
 256 Unicode scalars and accompanied by UTF-8 byte count and truncation flag.
 Absent strings print `absent`; an empty string prints `""`. Forwarding output
@@ -23,7 +23,7 @@ errors go to standard error with a nonzero exit status. Normalization follows
 `ServiceEnvelope`: unknown fields are omitted, missing purge killAgents becomes
 false, missing forward orientation becomes portrait, and failed capability
 content decoding becomes absent capabilities. Identifier errors still reject.
-Full UInt64 update seeds are retained. This is semantic normalization, not a
+Prepare-to-relaunch retries legacy agentIdentifier after any agentDescriptor error; descriptor decoding also retries a flat bundle with an empty relaunch ID. Canonical prepare output includes a modern descriptor and legacy bundle. Bundle discriminants are ignored during decoding and recomputed from optional path presence. Paths and bundle IDs are opaque strings; no files or agents are resolved. Full UInt64 update seeds are retained. This is semantic normalization, not a
 lossless archive editor or a byte-identical Foundation serializer. A failed
 output write may leave partial stdout, so check the exit status before using it.
 Input is limited to 64 MiB; existing codecs also enforce object/depth/output
