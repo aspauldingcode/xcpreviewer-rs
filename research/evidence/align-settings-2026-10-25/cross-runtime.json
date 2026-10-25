@@ -1,0 +1,122 @@
+[
+  {
+    "case": "empty",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "all-removed",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "new-groups-no-defaults",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "retain-disabled-and-stale-selection",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "retain-empty-selection",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "prune-only-group-ids",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "no-override-config-still-retained",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "grid-present",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "grid-missing",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "grid-missing-empty-groups",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "canonical-grid",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "canonical-selection-representative",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "settings-first-key-last-value",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "duplicate-groups",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "associations-do-not-retain-settings",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "case-sensitive",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "long-many",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-id",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-group",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-groups",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-settings",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-enabled",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-selection",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-grid",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  }
+]

@@ -1,5 +1,5 @@
-//! Scoped EditorSettings.effectiveGroupsAndOverrides reconstruction.
-//! Settings are already resolved; this neither aligns defaults nor applies updates.
+//! Scoped EditorSettings selection and discovered-group alignment.
+//! This does not install defaults, persist native modes or apply updates.
 use crate::{
     content_results::PreviewVariant, variant_id_set::VariantIdSet,
     variants_reply::PreviewVariantGroup,
@@ -32,6 +32,10 @@ impl OverrideSettings {
             }
             Entry::Occupied(mut e) => Some(std::mem::replace(&mut e.get_mut().1, value)),
         }
+    }
+    /// Original key spellings in deterministic canonical-key order.
+    pub fn iter(&self) -> impl Iterator<Item = (&str, &VariantGroupSettings)> {
+        self.values.values().map(|(id, value)| (id.as_str(), value))
     }
     pub fn get(&self, id: &str) -> Option<&VariantGroupSettings> {
         self.values
@@ -87,4 +91,30 @@ pub fn effective_groups_and_overrides<'a>(
             Some(EffectiveGroup { group, overrides })
         })
         .collect()
+}
+
+/// Original report of alignment effects, not a native wire type.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Alignment {
+    /// Directive to clear storedCanvasMode. It may be a no-op if already absent.
+    pub clear_stored_canvas_mode: bool,
+    pub removed_settings: usize,
+}
+/// Removes settings whose canonical IDs are absent from discovered groups.
+/// Surviving values/spellings are unchanged; missing settings/defaults are not added.
+/// `effective_grid_group_id` is projected from storedCanvasMode ?? defaultCanvasMode.
+/// A missing grid ID requests clearing stored mode; mode payloads are caller-owned.
+pub fn align_settings(
+    groups: &[PreviewVariantGroup],
+    settings: &mut OverrideSettings,
+    effective_grid_group_id: Option<&str>,
+) -> Alignment {
+    let ids: VariantIdSet = groups.iter().map(|g| g.id.clone()).collect();
+    let clear_stored_canvas_mode = effective_grid_group_id.is_some_and(|id| !ids.contains(id));
+    let before = settings.values.len();
+    settings.values.retain(|_, (id, _)| ids.contains(id));
+    Alignment {
+        clear_stored_canvas_mode,
+        removed_settings: before - settings.values.len(),
+    }
 }
