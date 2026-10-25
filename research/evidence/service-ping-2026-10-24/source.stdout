@@ -1,0 +1,88 @@
+{
+  "images": {
+    "Messaging": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "Foundation": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "wire_kind": "ping",
+  "kind_internal_ordinal": 0,
+  "content_internal_ordinal": 12,
+  "root_keys": [
+    "messageType",
+    "payload"
+  ],
+  "identifier_key": "__unique_service_message_identifier",
+  "content_specific_fields": [],
+  "imports": {
+    "0xb190c": "_$s22PreviewsFoundationHost12PropertyListV14unarchiveValue3forxAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+    "0xb1948": "_$s22PreviewsFoundationHost12PropertyListV22unarchiveOptionalValue3forxSgAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+    "0xb1954": "_$s22PreviewsFoundationHost12PropertyListV5emptyACvgZ",
+    "0xb1900": "_$s22PreviewsFoundationHost12PropertyListV12archiveValue_3foryxSg_AA0dE3Key_ptAA0dE13RepresentableRzlF",
+    "0xb27dc": "_swift_storeEnumTagMultiPayload"
+  },
+  "empty_literal_input": "__swiftEmptyArrayStorage",
+  "ranges": [
+    {
+      "image": "Messaging",
+      "start": "0x5f684",
+      "bytes": 444,
+      "sha256": "6b6dd2d2486695f9c1c3bf75b53412931ca31961f366ca25449450d8fa1179ee"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5fc0c",
+      "bytes": 216,
+      "sha256": "27f02398feb607b6644c8375e309a4cbfe153631bcb2af8f2f5f666d1704cff4"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ff60",
+      "bytes": 52,
+      "sha256": "3f7ffa8550d2a38895b7ddfe434c1072d985704d5fffabb06546bdb8ce1f8991"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5e928",
+      "bytes": 68,
+      "sha256": "fe2515b822e9f62ca8d420262362018dc1cbf0ea499342b42ca40dcbc6a48bf1"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5e9f0",
+      "bytes": 16,
+      "sha256": "a58cf37eb1a85489a9bfddf2a3f1dcb332dbc1f0973f792df93a5ec864c932a5"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ece4",
+      "bytes": 96,
+      "sha256": "c245b47e1b57dcfaf0fea7c2b8ae02d183b3425780a1c4887438d62d17389c67"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60758",
+      "bytes": 44,
+      "sha256": "28405a28d2f98e4f512a6ef6f121976b29ffff7da21fa0026339933fe10ba9ec"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60870",
+      "bytes": 4,
+      "sha256": "110f46b5b35c069160560c6ad6786f647dd44e8760a52a46fc22dbbcd7630b91"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x9acbc",
+      "bytes": 44,
+      "sha256": "38eb7f679a0d89ee5f3fc6c6b607f5f27f92fe1f82acbc88ef58098a002c736d"
+    }
+  ],
+  "selected_source_bytes_verified": 984,
+  "private_functions_invoked": false,
+  "native_ping_delivery_observed": false
+}

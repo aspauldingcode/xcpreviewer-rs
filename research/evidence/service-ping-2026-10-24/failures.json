@@ -1,0 +1,18 @@
+{
+  "verification_failures": [
+    {
+      "stage": "source verifier",
+      "error": "KeyError: 'addr'",
+      "resolution": "Use parser section key 'address'",
+      "receipt_kind": "initial-source-failure.txt is a correction summary, not raw traceback"
+    },
+    {
+      "stage": "test compilation",
+      "error": "encode absent from binary_plist module",
+      "resolution": "Call binary_plist_writer::encode",
+      "receipt": "initial-test-compile.stderr"
+    }
+  ],
+  "private_ping_acceptance_observed": false,
+  "public_foundation_scope": "Actual serialization of four original dictionaries only; not private decoder execution."
+}

@@ -1,0 +1,21 @@
+   Compiling canvas-core v0.1.0 (/Users/8amps/xcpreviewer-rs/tools/re/rust/canvas-core)
+error[E0425]: cannot find function `encode` in module `binary_plist`
+  --> tools/re/rust/canvas-core/tests/service_ping.rs:41:35
+   |
+41 |         let bytes = binary_plist::encode(&canonical).unwrap();
+   |                                   ^^^^^^
+   |
+  ::: tools/re/rust/canvas-core/src/binary_plist.rs:40:1
+   |
+40 | pub fn decode(bytes: &[u8]) -> Result<Value, Error> {
+   | --------------------------------------------------- similarly named function `decode` defined here
+   |
+help: a function with a similar name exists
+   |
+41 -         let bytes = binary_plist::encode(&canonical).unwrap();
+41 +         let bytes = binary_plist::decode(&canonical).unwrap();
+   |
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `canvas-core` (test "service_ping") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
