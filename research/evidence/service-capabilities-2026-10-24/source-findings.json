@@ -1,0 +1,111 @@
+{
+  "images": {
+    "Messaging": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "Foundation": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "wire_kind": "capabilities",
+  "kind_internal_ordinal": 1,
+  "content_internal_ordinal": 0,
+  "payload_key": "isRunningInXTP",
+  "required_bool_field": true,
+  "default_runtime_detection_invoked": false,
+  "outer_decode_error_suppressed_to_absent": true,
+  "identifier_errors_suppressed": false,
+  "imports": {
+    "0xb190c": "_$s22PreviewsFoundationHost12PropertyListV14unarchiveValue3forxAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+    "0xb1c24": "_$s22PreviewsFoundationHost25PropertyListRepresentablePAAE08propertyE0xAA0dE0V_tKcfC",
+    "0xb25fc": "_swift_errorRelease",
+    "0xb1c18": "_$s22PreviewsFoundationHost25PropertyListRepresentablePAAE08propertyE0AA0dE0Vvg",
+    "0xb1cb4": "_$s22PreviewsFoundationHost5isXTPSbvg"
+  },
+  "bool_metadata_import": "_$sSbN",
+  "ranges": [
+    {
+      "image": "Messaging",
+      "start": "0x698c8",
+      "bytes": 12,
+      "sha256": "033c00dcc5f5edb6a091d716e8a0e094f3665caf24ae9ccf93cadb2aa13697ce"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x63078",
+      "bytes": 40,
+      "sha256": "3dbae94305dc2a04f6b4f406de062d3d87f1d1a418cd5294fcf0bb80bcc77799"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x68998",
+      "bytes": 36,
+      "sha256": "bc7c115dc7aa26dc35bfa016a726a886ddcf9be4d0533ee48cedc093118b1fcf"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x689fc",
+      "bytes": 256,
+      "sha256": "0a77ff598c882a9dac23139423e00f4d9a95b0bf4aab8ff480b67c0e40fcba3b"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ff94",
+      "bytes": 92,
+      "sha256": "aa71661d9cc02e337d2ff1ca7f4404ef7efc4421dc5b6124088e834aafe49a62"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60394",
+      "bytes": 68,
+      "sha256": "4a1c46151009f13a5af5fdf9dc797c4823763ac46ba00439ca0d3d738ab33bcf"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ead0",
+      "bytes": 36,
+      "sha256": "29786d21285a57f9ee8801e31cd0770554d60dbe9600be9445660132899205ac"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ed44",
+      "bytes": 136,
+      "sha256": "a0c73bd55ffcbb3a398326c677c211f80063631cba15796945cbf0af4af22b08"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60784",
+      "bytes": 32,
+      "sha256": "386a7254701fcff18b3141110fcfcbaa9ca05c3254a893ecf7af4a6598d64197"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x98990",
+      "bytes": 392,
+      "sha256": "ecf6374a7ab487020221044dfcc03ef33e382626522aa00884a03645be76d939"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x9c5f8",
+      "bytes": 580,
+      "sha256": "d35d527270e3f7587f2852001a18aa8645571a1cfe89b52d7e80f3b6c1f0a873"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x9c93c",
+      "bytes": 384,
+      "sha256": "1205eee7fe5c01122f286befb9c3989a29261608cb23fb6937ed3b99276df593"
+    },
+    {
+      "image": "Foundation",
+      "start": "0x9abb8",
+      "bytes": 12,
+      "sha256": "ba8fc948d0cb4228c6bb979f07152802426d73811b282036a60f5a87d6b76f53"
+    }
+  ],
+  "selected_source_bytes_verified": 2076,
+  "private_functions_invoked": false,
+  "native_capability_delivery_observed": false
+}

@@ -1,4 +1,4 @@
-//! Recovered ping/forward ServiceMessage value envelopes. Identifier is data;
+//! Recovered ping/capabilities/forward envelopes. Identifier is data;
 //! decoding does not match replies, generate IDs, send, cancel or settle work.
 use crate::{binary_plist,forward_payload::{self,ForwardPayload},payload_codec::Value};
 use std::collections::BTreeMap;
@@ -41,6 +41,8 @@ impl ForwardServiceEnvelope {
 #[derive(Clone, Debug, PartialEq)]
 pub enum ServiceContent {
     Ping,
+    /// Absent when content decoding fails; root and identifier errors still reject.
+    Capabilities(Option<CapabilitiesPayload>),
     Forward(ForwardPayload),
 }
 /// Value-only outer envelope. A ping is a message value, not a liveness result.
@@ -72,7 +74,7 @@ impl ServiceEnvelope {
                     content: ServiceContent::Forward(forward.forward),
                 })
             }
-            Value::String(kind) if kind == "ping" => {
+            Value::String(kind) if kind == "ping" || kind == "capabilities" => {
                 let payload = root.get("payload").ok_or(Error::Missing("payload"))?;
                 let Value::Dictionary(payload) = payload else {
                     return Err(Error::Type("payload"));
@@ -84,7 +86,13 @@ impl ServiceEnvelope {
                 };
                 Ok(Self {
                     identifier,
-                    content: ServiceContent::Ping,
+                    content: if kind == "ping" {
+                        ServiceContent::Ping
+                    } else {
+                        ServiceContent::Capabilities(
+                            CapabilitiesPayload::decode_dictionary(payload).ok(),
+                        )
+                    },
                 })
             }
             Value::String(_) => Err(Error::UnsupportedMessageType),
@@ -94,11 +102,17 @@ impl ServiceEnvelope {
     pub fn decode_binary(bytes: &[u8]) -> Result<Self, Error> {
         Self::decode(&binary_plist::decode(bytes).map_err(Error::Plist)?)
     }
-    /// Ping has no content-specific fields. Unknown decoded fields are omitted
+    /// Ping and absent capabilities have no content-specific fields. Unknown fields are omitted
     /// on canonical output; the optional identifier belongs inside payload.
     pub fn to_value(&self) -> Value {
         let (kind, mut payload) = match &self.content {
             ServiceContent::Ping => ("ping", BTreeMap::new()),
+            ServiceContent::Capabilities(capabilities) => (
+                "capabilities",
+                capabilities
+                    .as_ref()
+                    .map_or_else(BTreeMap::new, CapabilitiesPayload::to_dictionary),
+            ),
             ServiceContent::Forward(forward) => {
                 let Value::Dictionary(payload) = forward.to_value() else {
                     unreachable!()
@@ -113,5 +127,36 @@ impl ServiceEnvelope {
             ("messageType".into(), Value::String(kind.into())),
             ("payload".into(), Value::Dictionary(payload)),
         ]))
+    }
+}
+
+/// Reported peer capability value, not ambient runtime detection or a negotiated
+/// permission. The native default initializer's XTP detection is not invoked.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct CapabilitiesPayload {
+    pub is_running_in_xtp: bool,
+}
+impl CapabilitiesPayload {
+    /// The primitive Foundation compatibility profile: Bool or numeric zero/one.
+    /// Arbitrary Objective-C objects and future runtime bridging are not modeled.
+    pub fn decode_dictionary(fields: &BTreeMap<String, Value>) -> Result<Self, Error> {
+        let value = fields
+            .get("isRunningInXTP")
+            .ok_or(Error::Missing("isRunningInXTP"))?;
+        let is_running_in_xtp = match value {
+            Value::Boolean(value) => *value,
+            Value::Integer(0) => false,
+            Value::Integer(1) => true,
+            Value::Real(value) if *value == 0.0 => false,
+            Value::Real(value) if *value == 1.0 => true,
+            _ => return Err(Error::Type("isRunningInXTP")),
+        };
+        Ok(Self { is_running_in_xtp })
+    }
+    pub fn to_dictionary(&self) -> BTreeMap<String, Value> {
+        BTreeMap::from([(
+            "isRunningInXTP".into(),
+            Value::Boolean(self.is_running_in_xtp),
+        )])
     }
 }

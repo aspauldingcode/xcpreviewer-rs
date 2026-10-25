@@ -1,0 +1,13 @@
+{
+  "verification_failures": [
+    {
+      "stage": "source verifier",
+      "incorrect_assumption": "Convenience initializer mangled name contains propertyListValue",
+      "actual_import": "_$s22PreviewsFoundationHost25PropertyListRepresentablePAAE08propertyE0xAA0dE0V_tKcfC",
+      "resolution": "Require exact measured PropertyListRepresentable.propertyList initializer",
+      "receipt": "initial-source-failure.txt"
+    }
+  ],
+  "private_capability_decode_observed": false,
+  "public_foundation_scope": "Serialization, parse and Bool dynamic cast for15 original primitive controls; no private decoder invocation."
+}
