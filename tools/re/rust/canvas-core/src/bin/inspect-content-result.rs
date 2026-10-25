@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -105,6 +105,7 @@ fn run() -> Result<(), String> {
         && kind != "row-settings"
         && kind != "update-multi-selection"
         && kind != "update-single-selection"
+        && kind != "row-controls"
     {
         return Err(USAGE.into());
     }
@@ -127,8 +128,132 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "update-multi-selection" || kind == "update-single-selection"
-    {
+    let normalized: Value = if kind == "row-controls" {
+        use canvas_core::{
+            effective_overrides::{OverrideSettings, VariantGroupSettings},
+            variant_id_set::VariantIdSet,
+        };
+        let Value::Dictionary(f) = &value else {
+            return Err("row-controls-input: expected dictionary".into());
+        };
+        let group = PreviewVariantGroup::decode(
+            f.get("group").ok_or("row-controls-input: group required")?,
+        )
+        .map_err(|e| format!("row-controls-input: group: {e:?}"))?;
+        let mut settings = OverrideSettings::new();
+        if let Some(v) = f.get("settings") {
+            let Value::Dictionary(v) = v else {
+                return Err("row-controls-input: settings dictionary".into());
+            };
+            let (Some(Value::Boolean(enabled)), Some(Value::Array(ids))) =
+                (v.get("isEnabled"), v.get("selection"))
+            else {
+                return Err(
+                    "row-controls-input: settings Bool isEnabled and selection array".into(),
+                );
+            };
+            let selection = ids
+                .iter()
+                .map(|v| {
+                    if let Value::String(id) = v {
+                        Ok(id.clone())
+                    } else {
+                        Err("row-controls-input: ID String")
+                    }
+                })
+                .collect::<Result<VariantIdSet, _>>()?;
+            settings.insert(
+                group.id.clone(),
+                VariantGroupSettings {
+                    is_enabled: *enabled,
+                    selection,
+                },
+            );
+        }
+        let requested = match f.get("requestedEnabled") {
+            None => None,
+            Some(Value::Boolean(v)) => Some(*v),
+            _ => return Err("row-controls-input: requestedEnabled Bool".into()),
+        };
+        if let Some(enabled) = requested {
+            settings.set_row_enabled(&group, enabled);
+        }
+        let state = settings.row_settings(&group);
+        let read = group
+            .overrides_configuration
+            .as_ref()
+            .and_then(|c| state.single_selection_candidates(c));
+        if !canonical {
+            writeln!(out,"result=row-controls\nisStored={}\nisEnabled={}\nenableWriteRequested={}\nselection={}\nsingleSelectionAvailable={}",settings.get(&group.id).is_some(),state.is_enabled,requested.is_some(),state.selection.len(),read.is_some()).map_err(|e|e.to_string())?;
+            for (i, id) in state.selection.iter().take(8).enumerate() {
+                string(&mut out, &format!("selected{i}"), Some(id)).map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "selectionShown={}", state.selection.len().min(8))
+                .map_err(|e| e.to_string())?;
+            if let Some(read) = &read {
+                writeln!(
+                    out,
+                    "usesDefaults={}\ncandidates={}\ncandidatesShown={}",
+                    read.uses_defaults,
+                    read.candidates.len(),
+                    read.candidates.len().min(8)
+                )
+                .map_err(|e| e.to_string())?;
+                string(&mut out, "portableValue", read.portable_value())
+                    .map_err(|e| e.to_string())?;
+                for (i, id) in read.candidates.iter().take(8).enumerate() {
+                    string(&mut out, &format!("candidate{i}"), Some(id))
+                        .map_err(|e| e.to_string())?;
+                }
+            }
+        }
+        let mut report = std::collections::BTreeMap::from([
+            (
+                "isStored".into(),
+                Value::Boolean(settings.get(&group.id).is_some()),
+            ),
+            ("isEnabled".into(), Value::Boolean(state.is_enabled)),
+            (
+                "enableWriteRequested".into(),
+                Value::Boolean(requested.is_some()),
+            ),
+            (
+                "selection".into(),
+                Value::Array(
+                    state
+                        .selection
+                        .iter()
+                        .map(|id| Value::String(id.into()))
+                        .collect(),
+                ),
+            ),
+            (
+                "singleSelectionAvailable".into(),
+                Value::Boolean(read.is_some()),
+            ),
+        ]);
+        if let Some(read) = read {
+            report.insert("usesDefaults".into(), Value::Boolean(read.uses_defaults));
+            report.insert(
+                "candidates".into(),
+                Value::Array(
+                    read.candidates
+                        .iter()
+                        .map(|id| Value::String(id.into()))
+                        .collect(),
+                ),
+            );
+            report.insert(
+                "portableValue".into(),
+                Value::String(
+                    read.portable_value()
+                        .ok_or("row-controls-input: empty read invariant")?
+                        .into(),
+                ),
+            );
+        }
+        Value::Dictionary(report)
+    } else if kind == "update-multi-selection" || kind == "update-single-selection" {
         use canvas_core::{
             effective_overrides::VariantGroupSettings, variant_id_set::VariantIdSet,
         };

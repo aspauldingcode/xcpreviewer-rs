@@ -143,3 +143,25 @@ matching direct variants (including duplicates), and unions their recursive defa
 Equal canonical membership preserves stored representatives; enablement is unchanged.
 This is a calculation on owned state; native bindings/animation/persistence remain
 unverified. Summaries retain the same bounded eight-ID/four-title policy.
+
+
+`row-controls` accepts an original dictionary with required `group` (group wire
+value), optional `settings` dictionary (required strict Bool `isEnabled` and String
+array `selection`), and optional strict Bool `requestedEnabled`. Absent settings
+use the disabled recursive-default row fallback. Reading leaves settings absent;
+a delivered enablement write stores the complete row, even for an equal Bool,
+preserving selection. This models a delivered setter call, not whether SwiftUI
+suppresses, batches or coalesces a user event.
+
+The derived output reports `isStored`, `isEnabled`, `selection`,
+`enableWriteRequested` and `singleSelectionAvailable`. If available it also reports
+`usesDefaults`, `candidates` and `portableValue`. Single-selection availability
+requires a nonempty recursive default set, independently of enablement/style.
+Stored IDs matching direct variants are eligible; absent matches use defaults,
+which can include child or unknown IDs. Stored spellings survive canonical matches.
+Native Set iteration picks one eligible ID; the inspector explicitly chooses the
+first in deterministic decomposed-key order. With multiple candidates its value
+may differ from Xcode. This is a per-call projection, not a retained SwiftUI binding
+with a captured fallback or native-order parity. Summaries show at most eight stored
+and eight candidate IDs with escaped256-scalar previews. No native binding or
+persistence action occurs. The input and derived report are not Apple wire schemas.

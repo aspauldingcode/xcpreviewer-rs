@@ -51,6 +51,14 @@ impl OverrideSettings {
                     .unwrap_or_default(),
             })
     }
+    /// Read the row fallback, replace enablement, and always store the complete row.
+    /// A write installs missing disabled/default state even if the Bool is equal.
+    /// Native binding notifications and persistence are caller-owned.
+    pub fn set_row_enabled(&mut self, group: &PreviewVariantGroup, enabled: bool) {
+        let mut state = self.row_settings(group);
+        state.is_enabled = enabled;
+        self.insert(group.id.clone(), state);
+    }
     pub fn get(&self, id: &str) -> Option<&VariantGroupSettings> {
         self.values
             .get(&id.nfd().collect::<String>())
@@ -226,5 +234,51 @@ impl VariantGroupSettings {
             child_configurations,
             selection_changed,
         }
+    }
+}
+
+/// Eligible read results, retaining stored spellings for direct-root matches.
+/// Native Set iteration chooses one ID; this report does not reproduce that order.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct SingleSelectionCandidates {
+    pub candidates: VariantIdSet,
+    pub uses_defaults: bool,
+}
+impl SingleSelectionCandidates {
+    /// Deterministic portable choice in decomposed-key order. With several IDs,
+    /// this may differ from the shipped UI's randomized Set iteration.
+    pub fn portable_value(&self) -> Option<&str> {
+        self.candidates.iter().next()
+    }
+}
+impl VariantGroupSettings {
+    /// Per-call projection of the binding factory/read closure, not a retained
+    /// SwiftUI Binding. Availability requires nonempty recursive defaults.
+    /// Prefer stored IDs matching direct variants; otherwise return defaults.
+    /// Enablement, selection behavior style and child-only matches do not gate it.
+    pub fn single_selection_candidates(
+        &self,
+        configuration: &crate::overrides_configuration::PreviewOverridesConfiguration,
+    ) -> Option<SingleSelectionCandidates> {
+        let defaults = configuration.default_selection();
+        if defaults.is_empty() {
+            return None;
+        }
+        let roots: VariantIdSet = configuration
+            .variants
+            .iter()
+            .map(|v| v.id.clone())
+            .collect();
+        let matching: VariantIdSet = self
+            .selection
+            .iter()
+            .filter(|id| roots.contains(id))
+            .map(str::to_owned)
+            .collect();
+        let uses_defaults = matching.is_empty();
+        Some(SingleSelectionCandidates {
+            candidates: if uses_defaults { defaults } else { matching },
+            uses_defaults,
+        })
     }
 }

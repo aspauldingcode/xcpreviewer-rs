@@ -1,0 +1,132 @@
+[
+  {
+    "case": "missing-no-config",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-defaults-read-only",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "equal-false-write-installs",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "enable-missing",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "disable-preserves-ids",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "same-true-write",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "selected-root",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "stored-child-only-falls-back",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "several-roots-ambiguous",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-defaults-even-stored-root",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "multi-defaults-available",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "recursive-fallback-includes-child",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "stored-empty-gets-default",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unknown-default-not-validated",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "canonical-match-stored-spelling",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "range-style",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "toggle-without-config",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-id-available",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "case-sensitive",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "long-many",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-group",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-group",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-stored-bool",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-selection",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-requested-enabled",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "malformed-unselected-child",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  }
+]
