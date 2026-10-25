@@ -149,3 +149,55 @@ fn service_error_extraction_uses_real_leaf_decoder_and_suppresses_rejection() {
         None
     );
 }
+
+#[test]
+fn native_prefix_scalar_boundaries_and_partial_characters() {
+    let V::Array(raw) =
+        binary_plist::decode(include_bytes!("fixtures/remote-prefix/boundaries.bplist")).unwrap()
+    else {
+        panic!()
+    };
+    let ranges: Vec<(u32, u32)> = raw
+        .into_iter()
+        .map(|entry| {
+            let V::Array(pair) = entry else { panic!() };
+            let [V::Integer(a), V::Integer(b)] = pair.as_slice() else {
+                panic!()
+            };
+            (*a as u32, *b as u32)
+        })
+        .collect();
+    assert_eq!(ranges.len(), 334);
+    for &(a, b) in &ranges {
+        for code in [a.saturating_sub(1), a, b, b + 1] {
+            let Some(scalar) = char::from_u32(code) else {
+                continue;
+            };
+            let title = format!("[Remote] {scalar}x");
+            let rejected = ranges.iter().any(|&(a, b)| a <= code && code <= b);
+            let mut fields = leaf();
+            fields.insert("errorTypeDescription".into(), V::String(title.clone()));
+            let value = RemoteErrorLeaf::from_dictionary(&fields).unwrap();
+            assert_eq!(
+                value.error_type_description,
+                if rejected {
+                    format!("[Remote] {title}")
+                } else {
+                    title
+                },
+                "U+{code:04X}"
+            );
+        }
+    }
+    let mut fields = leaf();
+    fields.insert(
+        "errorTypeDescription".into(),
+        V::String("[Remote] 🪨".into()),
+    );
+    assert_eq!(
+        RemoteErrorLeaf::from_dictionary(&fields)
+            .unwrap()
+            .error_type_description,
+        "[Remote] 🪨"
+    );
+}

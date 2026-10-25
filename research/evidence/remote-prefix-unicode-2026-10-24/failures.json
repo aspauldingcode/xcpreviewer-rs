@@ -1,0 +1,13 @@
+{
+  "initial_commit": "c188de40d6833fb64a4d10d7b0d32595e81f927e",
+  "falsified_prediction": "Rust byte starts_with was expected to match Swift String.hasPrefix for the ASCII remote prefix with any suffix",
+  "native_counterexamples": [
+    "U+0301 combining acute accent",
+    "U+FE0F variation selector",
+    "U+200D zero width joiner"
+  ],
+  "native_result": false,
+  "initial_byte_prefix_result": true,
+  "correction": "Require the observed Swift character boundary after the fixed prefix; preserve the original sealed record as historical evidence",
+  "scope": "Public Swift API observations, not private remote-decoder runtime"
+}

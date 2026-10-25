@@ -64,7 +64,7 @@ impl RemoteErrorLeaf {
         }
         let title = match string(fields, "errorTypeDescription")? {
             None => "[Remote] Unknown Error".into(),
-            Some(title) if title.starts_with("[Remote] ") => title,
+            Some(title) if crate::remote_prefix::has_remote_prefix(&title) => title,
             Some(title) => format!("[Remote] {title}"),
         };
         let high_value_title = string(fields, "highValueTitle")?;

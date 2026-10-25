@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "scope": "Public Swift fixed-prefix Unicode scalar observations and portable boundary correction; no private decoder or resource parity",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4595,
+      "sha256": "dd04ac4e33a285afca0f6eb64f5c5d3661ce1b73ccd49f1d209ee58cf83cafab"
+    },
+    {
+      "path": "boundaries.bplist",
+      "bytes": 6488,
+      "sha256": "469eac93b43bc21020c7decf254a3f675e9c6fc7df5e4ca3f720c99596c1b822"
+    },
+    {
+      "path": "build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "check.py",
+      "bytes": 1729,
+      "sha256": "46bc8622eae04f0433d078cd17873139034e8d5a5ad3c487a0421c722f2f5d08"
+    },
+    {
+      "path": "failures.json",
+      "bytes": 635,
+      "sha256": "f4bb38a412cd8b97c1d08adfffa023464058f2fb43bbcd6bdab317569ec24111"
+    },
+    {
+      "path": "generate.swift",
+      "bytes": 979,
+      "sha256": "72801a0a9de074d6c73be4adcb4cba5aba6c76b33f55b77a3cb9c90bd10bce68"
+    },
+    {
+      "path": "implementation-pins.json",
+      "bytes": 5588,
+      "sha256": "2686e212986b444e8638ebbc7dd70b0bb42eb88c685e57ea163ca16be1fe0270"
+    },
+    {
+      "path": "native-build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native.stdout",
+      "bytes": 5033,
+      "sha256": "5d6b92b55909db8a691677533ba224d7af63869c64e624b917d7f1816d4767bb"
+    },
+    {
+      "path": "observations.json",
+      "bytes": 5033,
+      "sha256": "5d6b92b55909db8a691677533ba224d7af63869c64e624b917d7f1816d4767bb"
+    },
+    {
+      "path": "predecessor.json",
+      "bytes": 327,
+      "sha256": "d071c9750468632c3a08c4833d770c68cab9b2b1035b90d7a77725f7f6e509e9"
+    },
+    {
+      "path": "replay.log",
+      "bytes": 174,
+      "sha256": "3d088135b79b5e3f91d78a8ee2b54dd60eea8a2102921611ee65af598abec316"
+    },
+    {
+      "path": "results.json",
+      "bytes": 602,
+      "sha256": "e4dfecf67642f0164d324a7669c4f61d31e9f02ceafbdcf7e28ff874e618cfaf"
+    },
+    {
+      "path": "run-wasi.cjs",
+      "bytes": 612,
+      "sha256": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+    },
+    {
+      "path": "run.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests.stderr",
+      "bytes": 7982,
+      "sha256": "30a7013b73e51277ac30c79aa92c67b36b5cdc3d0d42dc0de4a6e6f917d76019"
+    },
+    {
+      "path": "tests.stdout",
+      "bytes": 22348,
+      "sha256": "343d18e97af3dbcdcf8cd95a20df8472e250b98bf217b1d71e1b0e59e8580261"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 790,
+      "sha256": "464f38600cc2ff1c8c2eb4741445ebca9b87b051f5ac48cdbd642b24cbcab22d"
+    },
+    {
+      "path": "wasi.rs",
+      "bytes": 729,
+      "sha256": "5a15b6241170b0204b974aa42aa85f7c8c783ed1222c78952cad108ff06b464b"
+    },
+    {
+      "path": "wasi.stderr",
+      "bytes": 167,
+      "sha256": "c5e8d28e5e7caaafef6b04c1ccda7fe9bf82557af1b1967ab9bfcc7d2fac6a47"
+    },
+    {
+      "path": "wasi.stdout",
+      "bytes": 119,
+      "sha256": "5060c7c16418bed2660f3542108b8d5382751f5f3f4b2a55e9075b7d89d441b7"
+    },
+    {
+      "path": "wasm-build.stderr",
+      "bytes": 160,
+      "sha256": "dfc9a60aa3353a4ecc614bccd0a31690c9365f12b024ca1cdb5195f887e10b32"
+    },
+    {
+      "path": "wasm-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "wasm-control-build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "wasm-control-build.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
