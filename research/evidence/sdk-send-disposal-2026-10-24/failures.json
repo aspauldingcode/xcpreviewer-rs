@@ -1,0 +1,10 @@
+{
+  "initial_caller_assertion": {
+    "expected": "libdispatch destruction caller",
+    "actual": "libxpc destruction caller",
+    "result": "AssertionError before cancel sanitized findings were updated; corrected from actual loaded image and confirmed exact callsite binding to mach_msg_destroy"
+  },
+  "current_verification_failures": [],
+  "unobserved_path": "No kernel-rejected marked late send is observed in this route. The marked reply reaches libxpc destruction instead; kernel failed-send disposal remains a separate unproven route.",
+  "scope": "Only the same owned local name is bracketed by self task queries; no global rights count, underlying object destruction, native Canvas/provider settlement or uninstrumented scheduling guarantee."
+}

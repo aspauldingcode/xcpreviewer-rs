@@ -1,0 +1,82 @@
+{
+  "callback_received": true,
+  "callbacks_in_observation_window": 1,
+  "cancel_image": {
+    "path": "/usr/lib/system/libxpc.dylib",
+    "uuid": "c40fcae87a173d8287cb3da4802adef1"
+  },
+  "capture_alive_before_operation": true,
+  "capture_dropped_after_callback_within_1s": true,
+  "capture_drops": 1,
+  "exceptions": 0,
+  "invalid_event_received": true,
+  "invalid_events": 1,
+  "late_peer_reply_submitted": true,
+  "mach_constants": {
+    "dead_name_type": 1048576,
+    "invalid_name": 15,
+    "move_send_once": 18,
+    "success": 0
+  },
+  "mach2_original_image": {
+    "path": "/usr/lib/system/libsystem_kernel.dylib",
+    "uuid": "cc1cf985bc653725809f4c1e36b8f4ba"
+  },
+  "mode": "cancel",
+  "os_version": "Version 26.5.1 (Build 25F80)",
+  "owned_marker_matches": false,
+  "private_connection_invoked": false,
+  "queue_mismatches": 0,
+  "quiet_window_completed": true,
+  "quiet_window_ms": 150,
+  "reply_dictionary": false,
+  "reply_image": {
+    "path": "/usr/lib/system/libxpc.dylib",
+    "uuid": "c40fcae87a173d8287cb3da4802adef1"
+  },
+  "reply_invalid": true,
+  "request_received": true,
+  "requests": 1,
+  "target_resource_settlement_proven": false,
+  "trace": [
+    "peer.request.gated",
+    "capture.before.operation",
+    "cancel.request",
+    "client.invalid",
+    "reply.invalid",
+    "peer.reply.late.submit"
+  ],
+  "trace_capacity": 512,
+  "trace_total_started": 4,
+  "marker_observations": [
+    {
+      "after_type": 0,
+      "after_type_result": 15,
+      "api": 3,
+      "before_refs": 1,
+      "before_refs_result": 0,
+      "before_type": 1048576,
+      "before_type_result": 0,
+      "bits": 18,
+      "caller_image": {
+        "path": "/usr/lib/system/libxpc.dylib",
+        "uuid": "c40fcae87a173d8287cb3da4802adef1"
+      },
+      "caller_offset": 29388,
+      "complete": 1,
+      "index": 3,
+      "message_id": 536870912,
+      "options": 0,
+      "owned_marker": 1,
+      "phase": 2,
+      "queried": 1,
+      "result": null,
+      "send_size": 88,
+      "remote_name_present": true
+    }
+  ],
+  "all_completed_observer_rows": 4,
+  "scope_no_marker_send_in_observed_wrappers": true,
+  "local_dead_name_retirement_observed": true,
+  "global_rights_settlement_proven": false
+}

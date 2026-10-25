@@ -1,0 +1,40 @@
+{
+  "caller_image": "/usr/lib/system/libxpc.dylib",
+  "caller_uuid": "c40fcae87a173d8287cb3da4802adef1",
+  "selected_native_context_bytes_verified": 96,
+  "destruction_calls": [
+    {
+      "mode": "normal",
+      "caller_return_offset": "0x7ecc",
+      "selected_context_bytes": 48,
+      "context_sha256": "85e113d7b79bb85eaec365fbac08df22fe0da70a6b6588f27de4f098363f73c7",
+      "callee_image": "/usr/lib/system/libsystem_kernel.dylib",
+      "callee_image_uuid": "cc1cf985bc653725809f4c1e36b8f4ba",
+      "callee_exports": [
+        {
+          "name": "_mach_msg_destroy",
+          "flags": 0
+        }
+      ],
+      "binding_profile": "bounded v5 authenticated stub",
+      "native_caller_image_uuid": "c40fcae87a173d8287cb3da4802adef1"
+    },
+    {
+      "mode": "cancel",
+      "caller_return_offset": "0x72cc",
+      "selected_context_bytes": 48,
+      "context_sha256": "2c9116b4faadda8e721b79ff27d65046869b867891ae55ef4eb43bf51922cd5e",
+      "callee_image": "/usr/lib/system/libsystem_kernel.dylib",
+      "callee_image_uuid": "cc1cf985bc653725809f4c1e36b8f4ba",
+      "callee_exports": [
+        {
+          "name": "_mach_msg_destroy",
+          "flags": 0
+        }
+      ],
+      "binding_profile": "bounded v5 authenticated stub",
+      "native_caller_image_uuid": "c40fcae87a173d8287cb3da4802adef1"
+    }
+  ],
+  "scope": "Two measured libxpc callsites invoke actual mach_msg_destroy; no inference of enclosing private function ABI or full global ownership protocol."
+}
