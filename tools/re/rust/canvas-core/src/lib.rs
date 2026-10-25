@@ -276,3 +276,5 @@ pub mod human_readable_error;
 pub mod remote_error;
 
 mod remote_prefix;
+
+pub mod error_archive;

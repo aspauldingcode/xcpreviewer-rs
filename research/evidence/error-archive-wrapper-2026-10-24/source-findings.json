@@ -1,0 +1,52 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "reflected_cases": [
+    "main",
+    "cause"
+  ],
+  "wire_keys": [
+    "main",
+    "underlying"
+  ],
+  "required_dictionary_order": [
+    "main",
+    "underlying"
+  ],
+  "recursive_decode_order": [
+    "main",
+    "underlying"
+  ],
+  "potential_crash_branch": "underlying",
+  "native_flag_branch": "main",
+  "native_private_runtime_invoked": false,
+  "portable_limits_native_parity": false,
+  "ranges": [
+    {
+      "start": "0x5e370",
+      "bytes": 1064,
+      "sha256": "b1acd53e0d5988ca7e16d42eda2f39a8adeb689ed8059d64bb632e452748bcad"
+    },
+    {
+      "start": "0x5ead0",
+      "bytes": 356,
+      "sha256": "619cc98b31e844193c40ddca3672fc87fb7afd052c51c495bd7eb6da29df7803"
+    },
+    {
+      "start": "0x61ad8",
+      "bytes": 392,
+      "sha256": "e8d48f5396f9a38c01e014e2412a81a5dc6caa9858650ca44e9117e1f2b2b8a5"
+    },
+    {
+      "start": "0x5f8c4",
+      "bytes": 188,
+      "sha256": "e3aca210701efb99f64e42331df8307909404fbd117eb14515f1b3603e43cc66"
+    },
+    {
+      "start": "0x5f154",
+      "bytes": 416,
+      "sha256": "471f9f1e6f1c9758b0fbfe4ee4e14fd9f0abd15aace4f9d0185cfbf9d7dbf08f"
+    }
+  ],
+  "selected_source_bytes_verified": 2416
+}
