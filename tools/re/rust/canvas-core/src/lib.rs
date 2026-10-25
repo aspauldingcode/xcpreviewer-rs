@@ -262,3 +262,5 @@ pub mod service_reply_failure;
 pub mod service_property_list;
 
 pub mod service_reply_dispatch;
+
+pub mod service_connection_event;
