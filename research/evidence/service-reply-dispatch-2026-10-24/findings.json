@@ -1,0 +1,52 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "image_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "enum_fields": [
+    {
+      "name": "connectionInvalidated",
+      "mangled_payload": "SS"
+    },
+    {
+      "name": "invalidType",
+      "mangled_payload": "SS"
+    },
+    {
+      "name": "unknown",
+      "mangled_payload": "SS"
+    },
+    {
+      "name": "connectionInterrupted",
+      "mangled_payload": null
+    },
+    {
+      "name": "terminationImminent",
+      "mangled_payload": null
+    }
+  ],
+  "enum_descriptor": "0x26330ed70",
+  "notification_slots": {
+    "interruption": 64,
+    "invalidation": 80
+  },
+  "request_completion": "0x2633059a0",
+  "sequence": [
+    "classify XPC Kind",
+    "optional interruption or invalidation Void callback",
+    "forward nil and original Kind error to request callback"
+  ],
+  "selected_ranges": [
+    {
+      "offset": "0x53e0",
+      "bytes": 2556,
+      "sha256": "3aef842ac4673924eeaa8f3ee3b850efbddb639f06d88b1022b3015fd731cc3d"
+    },
+    {
+      "offset": "0x8004",
+      "bytes": 424,
+      "sha256": "7451d4501f7be00d1e1944f18c0eea6c3922729b9f649c03ded7f2cab2da1ba4"
+    }
+  ],
+  "selected_source_bytes_verified": 2980,
+  "native_callback_invoked": false,
+  "target_settlement_proven": false
+}
