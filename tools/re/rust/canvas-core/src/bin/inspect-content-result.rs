@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -97,6 +97,7 @@ fn run() -> Result<(), String> {
         && kind != "overrides-configuration"
         && kind != "group"
         && kind != "variants-reply"
+        && kind != "default-selection"
     {
         return Err(USAGE.into());
     }
@@ -119,7 +120,21 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "variants-reply" {
+    let normalized: Value = if kind == "default-selection" {
+        let value = PreviewOverridesConfiguration::decode(&value)
+            .map_err(|e| format!("default-selection: {e:?}"))?;
+        let selected = value.default_selection();
+        if !canonical {
+            writeln!(out, "result=default-selection\nselected={}", selected.len())
+                .map_err(|e| e.to_string())?;
+            for (index, id) in selected.iter().take(8).enumerate() {
+                string(&mut out, &format!("selected{index}"), Some(id))
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "selectedShown={}", selected.len().min(8)).map_err(|e| e.to_string())?;
+        }
+        Value::Array(selected.iter().map(|id| Value::String(id.into())).collect())
+    } else if kind == "variants-reply" {
         let value =
             PreviewVariantsPayload::decode(&value).map_err(|e| format!("variants-reply: {e:?}"))?;
         if !canonical {

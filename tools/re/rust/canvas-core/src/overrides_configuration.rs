@@ -137,6 +137,26 @@ impl PreviewOverridesConfiguration {
             child_variant_configurations: children,
         })
     }
+    /// Recursively union defaults from children selected by this node's own
+    /// defaults. Child-added IDs do not activate sibling configurations.
+    /// Parent spellings win; sibling traversal uses deterministic ID-set order.
+    pub fn default_selection(&self) -> crate::variant_id_set::VariantIdSet {
+        let initial = match &self.selection_behavior {
+            SelectionBehavior::SingleSelect(value) => {
+                [value.default_variant.clone()].into_iter().collect()
+            }
+            SelectionBehavior::MultiSelect(value) => value.default_variants.clone(),
+        };
+        let mut result = initial.clone();
+        for id in initial.iter() {
+            if let Some(child) = self.child_variant_configurations.get(id) {
+                for selected in child.default_selection().iter() {
+                    result.insert(selected.into());
+                }
+            }
+        }
+        result
+    }
     pub fn to_value(&self) -> Value {
         Value::Dictionary(BTreeMap::from([
             ("title".into(), Value::String(self.title.clone())),
