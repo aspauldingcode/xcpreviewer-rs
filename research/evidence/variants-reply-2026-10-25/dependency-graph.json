@@ -1,0 +1,249 @@
+{
+  "scope": "Group and PreviewVariantsPayload typed values implemented over configuration dependencies. Ambiguous raw child-key bridging, native Set order and transport/Canvas/resource parity remain outside acceptance.",
+  "native_source_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "nodes": [
+    {
+      "id": "RenderEffect",
+      "status": "scoped_codec_verified",
+      "source": "field descriptors0xd702c/0xd7094; decoder0xa5070",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "evidence_type": "pinned static metadata/instructions and scoped portable validation"
+    },
+    {
+      "id": "PreviewVariant",
+      "status": "scoped_codec_verified",
+      "source": "field descriptors0xd6e3c/0xd6fe0; decoder0xa19ec",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "evidence_type": "pinned static metadata/instructions and scoped portable validation"
+    },
+    {
+      "id": "ContentOverridePayload",
+      "status": "scoped_codec_verified",
+      "source": "field descriptors0xd53fc/0xd5790; decoder0x687f4",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "evidence_type": "pinned static metadata/instructions and scoped portable validation"
+    },
+    {
+      "id": "PreviewOverridesConfiguration",
+      "status": "scoped_value_codec_raw_key_collisions_unsupported",
+      "source": "parent0x9e5f8..0x9eb64; Foundation dictionary0x9e600,0xaa850,keyedMap0x1116cc,subscript map init0xadba8; original public bridge controls",
+      "observed_at": "2026-10-25T19:07:20.420341+00:00",
+      "evidence_type": "pinned source; original public Foundation composition; native Rust/WASI values; explicit ambiguous wire-domain restriction"
+    },
+    {
+      "id": "PreviewVariantsConfiguration",
+      "status": "scoped_codec_verified",
+      "source": "field descriptors0xd6d14/0xd6f18; decoder0x9f7ac; actual Section array metadata cache0xfc0b0; encoder0x9f6f0",
+      "observed_at": "2026-10-25T16:47:19.585828+00:00",
+      "evidence_type": "pinned static metadata/instructions and scoped portable/Foundation composition validation"
+    },
+    {
+      "id": "PreviewVariantGroup",
+      "status": "scoped_value_codec_inherited_raw_key_boundary",
+      "source": "Group0x9d69c..0x9ddb0; IDrawinit0x36b38; payload0x67f18..0x680b0; exact group and group-ID array caches0xf8910/0xfc020",
+      "observed_at": "2026-10-25T19:17:41.177928+00:00",
+      "evidence_type": "pinned static source and original public Foundation/native Rust/WASI values; private decoder and transport correlation unobserved"
+    },
+    {
+      "id": "PreviewVariantsPayload",
+      "status": "scoped_value_codec_inherited_raw_key_boundary",
+      "source": "Group0x9d69c..0x9ddb0; IDrawinit0x36b38; payload0x67f18..0x680b0; exact group and group-ID array caches0xf8910/0xfc020",
+      "observed_at": "2026-10-25T19:17:41.177928+00:00",
+      "evidence_type": "pinned static source and original public Foundation/native Rust/WASI values; private decoder and transport correlation unobserved"
+    },
+    {
+      "id": "Section",
+      "status": "scoped_codec_verified",
+      "source": "field descriptors0xd6d3c/0xd6f40; decoder0x9fc7c; actual PreviewVariant array metadata cache0xfc048; encoder0x9fbc0",
+      "observed_at": "2026-10-25T16:47:19.585828+00:00",
+      "evidence_type": "pinned static metadata/instructions and scoped portable/Foundation composition validation"
+    },
+    {
+      "id": "SingleSelectConfiguration",
+      "status": "scoped_codec_verified",
+      "source": "fields0xd6db4/keys0xd6f9c; style0xd6ddc/getter0xa0c24; decoder0xa0afc/required0xa0b58,0xa0bc0; encoder0xa0a44",
+      "observed_at": "2026-10-25T17:15:52.456975+00:00",
+      "evidence_type": "pinned static metadata/instructions; scoped public Foundation composition where implemented"
+    },
+    {
+      "id": "MultiSelectConfiguration",
+      "status": "scoped_codec_verified",
+      "source": "MessagingHost0xa1030..0xa1228 actual Set witness0xa3924; FoundationHost0x9e2dc..0x9e600 map-before-Set and map-iteration encoders",
+      "observed_at": "2026-10-25T18:45:27.849790+00:00",
+      "evidence_type": "pinned static instructions; public native Set/String controls; portable/native/WASI composition validation"
+    },
+    {
+      "id": "VariantIdSet",
+      "status": "scoped_codec_verified",
+      "source": "Foundation Set conformance; public native String equality and process-varying Set controls; Unicode16 generated13670pairs",
+      "observed_at": "2026-10-25T18:45:27.849790+00:00",
+      "evidence_type": "static shared codec plus finite public native runtime and portable/WASI controls"
+    },
+    {
+      "id": "SelectionBehavior",
+      "status": "scoped_codec_verified",
+      "source": "metadata0xd6d64/0xd6d8c/0xd6f68; rawinit0x9fe30; decoder0xa05e8; encoderclosures0xa0470/0xa052c",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "evidence_type": "pinned static source and original public Foundation/native/WASI composition validation"
+    },
+    {
+      "id": "ChildVariantConfigurations",
+      "status": "scoped_value_codec_raw_key_collisions_unsupported",
+      "source": "parent0x9e5f8..0x9eb64; Foundation dictionary0x9e600,0xaa850,keyedMap0x1116cc,subscript map init0xadba8; original public bridge controls",
+      "observed_at": "2026-10-25T19:07:20.420341+00:00",
+      "evidence_type": "pinned source; original public Foundation composition; native Rust/WASI values; explicit ambiguous wire-domain restriction"
+    }
+  ],
+  "edges": [
+    {
+      "from": "PreviewVariant",
+      "relation": "REQUIRES_CODEC",
+      "to": "RenderEffect",
+      "source": "Source nodes carry pinned field/decoder anchors; transitive dependency inferred from configuration variants/sections fields and group/configuration decoder witnesses.",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "confidence": "static prerequisite inference; native runtime unobserved"
+    },
+    {
+      "from": "PreviewOverridesConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewVariant",
+      "source": "Source nodes carry pinned field/decoder anchors; transitive dependency inferred from configuration variants/sections fields and group/configuration decoder witnesses.",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "confidence": "static prerequisite inference; native runtime unobserved"
+    },
+    {
+      "from": "PreviewVariantGroup",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewOverridesConfiguration",
+      "source": "Source nodes carry pinned field/decoder anchors; transitive dependency inferred from configuration variants/sections fields and group/configuration decoder witnesses.",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "confidence": "static prerequisite inference; native runtime unobserved"
+    },
+    {
+      "from": "PreviewVariantGroup",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewVariantsConfiguration",
+      "source": "Source nodes carry pinned field/decoder anchors; transitive dependency inferred from configuration variants/sections fields and group/configuration decoder witnesses.",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "confidence": "static prerequisite inference; native runtime unobserved"
+    },
+    {
+      "from": "PreviewVariantsPayload",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewVariantGroup",
+      "source": "Source nodes carry pinned field/decoder anchors; transitive dependency inferred from configuration variants/sections fields and group/configuration decoder witnesses.",
+      "observed_at": "2026-10-25T16:37:42.753759+00:00",
+      "confidence": "static prerequisite inference; native runtime unobserved"
+    },
+    {
+      "from": "PreviewVariantsConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "Section",
+      "source": "actual Section array metadata0xfc0b0 and array conformance0xfc0b8; required decode call0x9f8a0",
+      "observed_at": "2026-10-25T16:47:19.585828+00:00",
+      "confidence": "direct static type/witness binding; native runtime unobserved"
+    },
+    {
+      "from": "Section",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewVariant",
+      "source": "actual PreviewVariant array metadata0xfc048 and conformance0xfc078; required decode call0x9fd70",
+      "observed_at": "2026-10-25T16:47:19.585828+00:00",
+      "confidence": "direct static type/witness binding; native runtime unobserved"
+    },
+    {
+      "from": "PreviewOverridesConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "SingleSelectConfiguration",
+      "source": "SelectionBehavior decoder0xa05e8 selects the required configuration with witnesses0xa3818/0xa37d8",
+      "observed_at": "2026-10-25T17:15:52.456975+00:00",
+      "confidence": "static dependency; native selection runtime unobserved"
+    },
+    {
+      "from": "PreviewOverridesConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "MultiSelectConfiguration",
+      "source": "SelectionBehavior decoder0xa05e8 selects the required configuration with witnesses0xa3818/0xa37d8",
+      "observed_at": "2026-10-25T17:15:52.456975+00:00",
+      "confidence": "static dependency; native selection runtime unobserved"
+    },
+    {
+      "from": "MultiSelectConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "VariantIdSet",
+      "source": "actual Set<PreviewVariant.ID> witness0xa3924",
+      "observed_at": "2026-10-25T18:45:27.849790+00:00",
+      "confidence": "direct pinned conformance binding and scoped runtime validation"
+    },
+    {
+      "from": "PreviewOverridesConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "SelectionBehavior",
+      "source": "exact decoder conformance witnesses pinned in current source verification",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "confidence": "direct static dependency; private runtime unobserved"
+    },
+    {
+      "from": "SelectionBehavior",
+      "relation": "REQUIRES_CODEC",
+      "to": "SingleSelectConfiguration",
+      "source": "exact decoder conformance witnesses pinned in current source verification",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "confidence": "direct static dependency; private runtime unobserved"
+    },
+    {
+      "from": "SelectionBehavior",
+      "relation": "REQUIRES_CODEC",
+      "to": "MultiSelectConfiguration",
+      "source": "exact decoder conformance witnesses pinned in current source verification",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "confidence": "direct static dependency; private runtime unobserved"
+    },
+    {
+      "from": "PreviewOverridesConfiguration",
+      "relation": "REQUIRES_CODEC",
+      "to": "ChildVariantConfigurations",
+      "source": "exact decoder conformance witnesses pinned in current source verification",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "confidence": "direct static dependency; private runtime unobserved"
+    },
+    {
+      "from": "ChildVariantConfigurations",
+      "relation": "REQUIRES_CODEC",
+      "to": "PreviewOverridesConfiguration",
+      "source": "exact decoder conformance witnesses pinned in current source verification",
+      "observed_at": "2026-10-25T18:51:30.071692+00:00",
+      "confidence": "direct static dependency; private runtime unobserved"
+    }
+  ],
+  "milestones_complete": false,
+  "observed_at": "2026-10-25T16:47:19.585828+00:00",
+  "relation_scope": "REQUIRES_CODEC denotes a possibly transitive prerequisite, not a complete direct member-type graph. Pending configuration edges are static inferences from named metadata/fields and partial decoder analysis; no native runtime call relation is claimed.",
+  "pending_field_observations": {
+    "0xd6cd4": [
+      "title",
+      "selectionBehavior",
+      "variants",
+      "childVariantConfigurations"
+    ],
+    "0xd6d14": [
+      "title",
+      "sections"
+    ],
+    "0xd6d3c": [
+      "title",
+      "variants"
+    ],
+    "0xd6d64": [
+      "singleSelect",
+      "multiSelect"
+    ],
+    "0xd6db4": [
+      "style",
+      "defaultVariant"
+    ],
+    "0xd6e04": [
+      "defaultVariants"
+    ]
+  }
+}

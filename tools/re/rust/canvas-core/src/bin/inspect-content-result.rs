@@ -8,9 +8,10 @@ use canvas_core::{
     selection_behavior::SelectionBehavior,
     single_select_configuration::SingleSelectConfiguration,
     variants_configuration::{PreviewVariantsConfiguration, Section},
+    variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -37,11 +38,47 @@ fn section_summary(out: &mut impl Write, key: &str, section: &Section) -> std::i
     }
     writeln!(out, "{key}.variantsShown={}", section.variants.len().min(4))
 }
+fn group_summary(
+    out: &mut impl Write,
+    key: &str,
+    value: &PreviewVariantGroup,
+) -> std::io::Result<()> {
+    string(out, &format!("{key}.id"), Some(&value.id))?;
+    writeln!(
+        out,
+        "{key}.associatedGroupIDs={}",
+        value.associated_group_ids.len()
+    )?;
+    for (index, id) in value.associated_group_ids.iter().take(4).enumerate() {
+        string(out, &format!("{key}.associated{index}"), Some(id))?;
+    }
+    writeln!(
+        out,
+        "{key}.associatedGroupIDsShown={}",
+        value.associated_group_ids.len().min(4)
+    )?;
+    string(
+        out,
+        &format!("{key}.overridesTitle"),
+        value
+            .overrides_configuration
+            .as_ref()
+            .map(|v| v.title.as_str()),
+    )?;
+    string(
+        out,
+        &format!("{key}.variantsTitle"),
+        value
+            .variants_configuration
+            .as_ref()
+            .map(|v| v.title.as_str()),
+    )
+}
 fn run() -> Result<(), String> {
     let mut args = std::env::args_os().skip(1);
     let first = args.next().ok_or(USAGE)?;
     if first == "--help" && args.next().is_none() {
-        println!("{USAGE}\nValues only. Choose the expected kind explicitly; whole groups are not supported.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
+        println!("{USAGE}\nValues only. Choose the expected kind explicitly; variants-reply handles payload values without transport correlation.\n--canonical emits normalized bplist00 stdout. No effects or overrides are applied.");
         return Ok(());
     }
     let canonical = first == "--canonical";
@@ -58,6 +95,8 @@ fn run() -> Result<(), String> {
         && kind != "multi-selection"
         && kind != "selection-behavior"
         && kind != "overrides-configuration"
+        && kind != "group"
+        && kind != "variants-reply"
     {
         return Err(USAGE.into());
     }
@@ -80,7 +119,28 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "overrides-configuration" {
+    let normalized: Value = if kind == "variants-reply" {
+        let value =
+            PreviewVariantsPayload::decode(&value).map_err(|e| format!("variants-reply: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=variants-reply\ngroups={}", value.groups.len())
+                .map_err(|e| e.to_string())?;
+            for (index, group) in value.groups.iter().take(4).enumerate() {
+                group_summary(&mut out, &format!("group{index}"), group)
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "groupsShown={}", value.groups.len().min(4))
+                .map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "group" {
+        let value = PreviewVariantGroup::decode(&value).map_err(|e| format!("group: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=group").map_err(|e| e.to_string())?;
+            group_summary(&mut out, "group", &value).map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "overrides-configuration" {
         let value = PreviewOverridesConfiguration::decode(&value)
             .map_err(|e| format!("overrides-configuration: {e:?}"))?;
         if !canonical {

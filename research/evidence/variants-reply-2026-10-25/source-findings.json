@@ -1,0 +1,34 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "ranges": [
+    {
+      "start": "0x9d69c",
+      "bytes": 1812,
+      "sha256": "99a0f1a03b1a77ade8e61bc72462d1dbec941368133beb64fe54e5cb2ec24b55"
+    },
+    {
+      "start": "0x67f18",
+      "bytes": 408,
+      "sha256": "f0479a623efe8363e86a29039f01818cd3dfe7cb672a740c2c97d724b8709a16"
+    },
+    {
+      "start": "0x36b38",
+      "bytes": 8,
+      "sha256": "3b3903d6e8f0fed0d82237c7b8e4983c371d1b1767aa1188fa39a8c8386271f5"
+    }
+  ],
+  "selected_source_bytes_verified": 2228,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "group_decode_order": [
+    "required open String id",
+    "optional associatedGroupIDsArray -> empty default Set",
+    "optional overridesConfiguration",
+    "optional variantsConfiguration"
+  ],
+  "reply": "required ordered groups array; duplicates preserved; element errors propagate",
+  "canonical": "id and association array always present; absent configurations omitted; portable set order deterministic",
+  "transport_correlation_proven": false,
+  "inherited_boundary": "ambiguous raw canonical-equivalent child keys rejected; native bridge policy not reproduced"
+}
