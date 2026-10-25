@@ -291,3 +291,5 @@ pub mod purge;
 
 pub mod agent_descriptor;
 pub mod prepare_relaunch;
+
+pub mod content_requests;

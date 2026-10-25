@@ -12,11 +12,11 @@ cat INPUT.bplist | cargo run --offline \
 
 Input is `bplist00`, from one named file or standard input (`-`). The inspector
 supports the recovered ping, capabilities, connect, forward, cancelUpdate, stop,
-kill, purge and prepareToRelaunch subsets. Other outer kinds fail explicitly. Default output is
+kill, purge, prepareToRelaunch, variants and contentOverride subsets. Other outer kinds fail explicitly. Default output is
 human-readable `key=value` lines. String previews are debug-quoted, limited to
 256 Unicode scalars and accompanied by UTF-8 byte count and truncation flag.
 Absent strings print `absent`; an empty string prints `""`. Forwarding output
-reports routing fields without dumping its arbitrary messagePayload.
+reports routing fields without dumping its arbitrary messagePayload. Content-override summaries show the total count and at most eight requested override strings. Canonical output retains the complete ordered array, including duplicates. Categories and override names are open strings; variants takes an optional single contentOverride while contentOverride requires requestedOverrides, even when empty. These are requests, not grouped variant replies or returned override results.
 
 `--canonical` emits only a normalized binary property list on standard output;
 errors go to standard error with a nonzero exit status. Normalization follows

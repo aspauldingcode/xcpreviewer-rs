@@ -35,6 +35,8 @@ fn process(out: &mut impl Write, target: &ProcessTarget) -> std::io::Result<()> 
 fn summary(out: &mut impl Write, envelope: &ServiceEnvelope) -> std::io::Result<()> {
     let kind = match &envelope.content {
         ServiceContent::Ping => "ping",
+        ServiceContent::Variants(_) => "variants",
+        ServiceContent::ContentOverride(_) => "contentOverride",
         ServiceContent::PrepareToRelaunch(_) => "prepareToRelaunch",
         ServiceContent::Capabilities(_) => "capabilities",
         ServiceContent::Connect(_) => "connect",
@@ -48,6 +50,26 @@ fn summary(out: &mut impl Write, envelope: &ServiceEnvelope) -> std::io::Result<
     string(out, "identifier", envelope.identifier.as_deref())?;
     match &envelope.content {
         ServiceContent::Ping => Ok(()),
+        ServiceContent::Variants(value) => {
+            string(out, "contentCategory", Some(&value.content_category))?;
+            string(out, "contentOverride", value.content_override.as_deref())
+        }
+        ServiceContent::ContentOverride(value) => {
+            string(out, "contentCategory", Some(&value.content_category))?;
+            writeln!(
+                out,
+                "requestedOverrides={}",
+                value.requested_overrides.len()
+            )?;
+            for (index, item) in value.requested_overrides.iter().take(8).enumerate() {
+                string(out, &format!("requestedOverride{index}"), Some(item))?;
+            }
+            writeln!(
+                out,
+                "requestedOverridesShown={}",
+                value.requested_overrides.len().min(8)
+            )
+        }
         ServiceContent::PrepareToRelaunch(value) => {
             string(
                 out,

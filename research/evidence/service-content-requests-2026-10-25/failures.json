@@ -1,0 +1,26 @@
+{
+  "verification_failures": [
+    {
+      "stage": "source import binding",
+      "expected": "_$sSS0A10Foundation16PropertyListTypeAAWP",
+      "actual": "_$sSS22PreviewsFoundationHost16PropertyListTypeAAWP",
+      "resolution": "Assert exact native indirect binding with full module name."
+    },
+    {
+      "stage": "array metadata cache symbol",
+      "expected": "ContentOverrideVGMD",
+      "actual": "ContentOverrideVGMd",
+      "resolution": "Use exact case-sensitive defined nlist symbol. No product codec changed."
+    }
+  ],
+  "access_limitations": [
+    {
+      "method": "Compiler-checked Swift import with shipped framework search path",
+      "result": "no such module 'PreviewsMessagingHost'",
+      "scope": "No module/interface files in the two selected framework inventories; no private decoder linked or run. Other locations unqualified.",
+      "alternative": "Source-guided original implementation and public Foundation control composition; no guessed ABI."
+    }
+  ],
+  "native_private_decoder_invoked": false,
+  "native_variant_discovery_or_override_performed": false
+}

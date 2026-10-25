@@ -23,6 +23,7 @@ pub enum Error {
     CancelUpdate(crate::cancel_update::Error),
     Purge(crate::purge::Error),
     PrepareToRelaunch(crate::agent_descriptor::Error),
+    ContentRequest(crate::content_requests::Error),
 }
 impl ForwardServiceEnvelope {
     /// Allocate an identifier from the shared process sequence for a new
@@ -82,6 +83,8 @@ impl ForwardServiceEnvelope {
 #[derive(Clone, Debug, PartialEq)]
 pub enum ServiceContent {
     Ping,
+    Variants(crate::content_requests::RequestPreviewVariantsPayload),
+    ContentOverride(crate::content_requests::RequestContentOverridePayload),
     PrepareToRelaunch(crate::prepare_relaunch::PrepareToRelaunchPayload),
     Purge(crate::purge::PurgePayload),
     CancelUpdate(crate::cancel_update::CancelUpdatePayload),
@@ -124,6 +127,8 @@ impl ServiceEnvelope {
             Value::String(kind)
                 if [
                     "ping",
+                    "variants",
+                    "contentOverride",
                     "prepareToRelaunch",
                     "capabilities",
                     "connect",
@@ -147,6 +152,8 @@ impl ServiceEnvelope {
                     identifier,
                     content: match kind.as_str() {
                         "ping" => ServiceContent::Ping,
+                        "variants" => ServiceContent::Variants(crate::content_requests::RequestPreviewVariantsPayload::decode_dictionary(payload).map_err(Error::ContentRequest)?),
+                        "contentOverride" => ServiceContent::ContentOverride(crate::content_requests::RequestContentOverridePayload::decode_dictionary(payload).map_err(Error::ContentRequest)?),
                         "prepareToRelaunch" => ServiceContent::PrepareToRelaunch(
                             crate::prepare_relaunch::PrepareToRelaunchPayload::decode_dictionary(
                                 payload,
@@ -189,6 +196,10 @@ impl ServiceEnvelope {
     pub fn to_value(&self) -> Value {
         let (kind, mut payload) = match &self.content {
             ServiceContent::Ping => ("ping", BTreeMap::new()),
+            ServiceContent::Variants(payload) => ("variants", payload.to_dictionary()),
+            ServiceContent::ContentOverride(payload) => {
+                ("contentOverride", payload.to_dictionary())
+            }
             ServiceContent::PrepareToRelaunch(payload) => {
                 ("prepareToRelaunch", payload.to_dictionary())
             }

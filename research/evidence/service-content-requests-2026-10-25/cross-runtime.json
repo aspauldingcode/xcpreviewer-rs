@@ -1,0 +1,107 @@
+[
+  {
+    "case": "category",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unknown",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "controls",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "extra",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-category",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "invalid-category",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "invalid-override",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "array-override",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-array",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "ordered-duplicates",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unicode-array",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "long-array",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-category",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-array",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "wrong-array",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "mixed-array",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bad-array-category",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-array-category",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "reply-groups-not-request",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "single-override-not-array",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  }
+]
