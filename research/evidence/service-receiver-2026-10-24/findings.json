@@ -1,0 +1,302 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "image_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "protocol": [
+    {
+      "offset": "0xad34",
+      "exports": [
+        {
+          "name": "_$s16PreviewsServices0A22ServiceMessageReceiverP7receive7messageySo14UVPropertyListC_tFTj",
+          "flags": 0
+        }
+      ]
+    },
+    {
+      "offset": "0xad48",
+      "exports": [
+        {
+          "name": "_$s16PreviewsServices0A22ServiceMessageReceiverP7receive7message12replyHandlerySo14UVPropertyListC_yAHSg_s5Error_pSgtctFTj",
+          "flags": 0
+        }
+      ]
+    }
+  ],
+  "initializer_selector": {
+    "slot": "0x290b33998",
+    "target": "0x1fcd93390",
+    "chain_hops": 590,
+    "page_start_bytes": 1888,
+    "page_origin": "0x290b30000",
+    "page_size": 16384,
+    "profile": "v5 regular",
+    "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+    "slide_header_sha256": "15eeceea68090a9892c1b7dea471e1e8c4599c9b955a0b985624d4d455846ea6",
+    "selector": "initWithXpcDictionary:",
+    "stub": "0x263310340"
+  },
+  "bindings": [
+    {
+      "target": "0x1801d34e8",
+      "chain_hops": 915,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24dc98",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d124",
+      "stub_sha256": "cb53e24a798e7fbab2fca6570a4fcf4dad12f24c81009d65e6f7fb1a21b14c02",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_dictionary_create_reply",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304720"
+    },
+    {
+      "target": "0x1801cd638",
+      "chain_hops": 893,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a24dbe8",
+      "page_origin": "0x29a24c000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d104",
+      "stub_sha256": "86115299a2032e4148de5c7780b979f00eba7ccab5c28fdb5f40f039b809756c",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+      "exports": [
+        {
+          "name": "_xpc_copy_description",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304894"
+    },
+    {
+      "target": "0x193bb5ac0",
+      "chain_hops": 921,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245cc8",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ce04",
+      "stub_sha256": "a41b5c2d92ed0e554b0e2ccc08ea28e9322d6b3962934eaa7315543fdac9c5f6",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_allocObject",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304a7c"
+    },
+    {
+      "target": "0x193bc1a34",
+      "chain_hops": 1097,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246248",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d064",
+      "stub_sha256": "17b07b70a4aea318f1a0b87c74cfa6531387bf47ecb135946c0666b0ff6be78e",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_weakInit",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304a8c"
+    },
+    {
+      "target": "0x193bb5ac0",
+      "chain_hops": 921,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a245cc8",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330ce04",
+      "stub_sha256": "a41b5c2d92ed0e554b0e2ccc08ea28e9322d6b3962934eaa7315543fdac9c5f6",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_allocObject",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304aa0"
+    },
+    {
+      "target": "0x193bb7f24",
+      "chain_hops": 1054,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a2460f0",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330cf84",
+      "stub_sha256": "b147eb962a7bca576fdf48d50453983b3b0b4b8f500ceb3712be0bf3b1d370bf",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_retain",
+          "flags": 0
+        },
+        {
+          "name": "_swift_retain_preservemost",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304ad0"
+    },
+    {
+      "target": "0x193bb8244",
+      "chain_hops": 1071,
+      "diversity": 0,
+      "address_diversity": true,
+      "key": "IA",
+      "slot": "0x29a246178",
+      "page_origin": "0x29a244000",
+      "page_start": 0,
+      "page_size": 16384,
+      "slide_version": 5,
+      "value_add": "0x180000000",
+      "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+      "slide_info_file_offset": 236996104,
+      "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+      "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+      "stub": "0x26330d014",
+      "stub_sha256": "34e92a9202227441baec31be6282fa5137fde9708dfbc3d6bc1c88b86a7f1203",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "image_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+      "exports": [
+        {
+          "name": "_swift_unknownObjectRetain",
+          "flags": 0
+        }
+      ],
+      "call": "0x263304ad8"
+    }
+  ],
+  "receiver_presence_offset": 48,
+  "one_way_witness_offset": 8,
+  "request_reply_witness_offset": 16,
+  "response_thunk": "0x263308420",
+  "response_body": "0x263306048",
+  "reply_capture_bytes": 32,
+  "weak_capture_bytes": 24,
+  "selected_ranges": [
+    {
+      "offset": "0x463c",
+      "bytes": 1556,
+      "sha256": "fa93b0f22b353d0276e4ad86e6f5b661bbfe525366275b948b0674c2c8ca055d"
+    },
+    {
+      "offset": "0xad34",
+      "bytes": 40,
+      "sha256": "1f4ea3231210e1375dd0965743d6852909af57a499ceb54f0f2e6f6bc445e5b4"
+    },
+    {
+      "offset": "0x8420",
+      "bytes": 8,
+      "sha256": "e46a050f1111831c1a084fbbf46554ca85d55fe5c920ea113cfaf78b499c26f5"
+    },
+    {
+      "offset": "0x10340",
+      "bytes": 24,
+      "sha256": "8ae799f68ed8ffbe3bf37e7f364233a4f496aa9edbe8f05c35d3bf494b11dfdd"
+    },
+    {
+      "offset": "0xd124",
+      "bytes": 16,
+      "sha256": "cb53e24a798e7fbab2fca6570a4fcf4dad12f24c81009d65e6f7fb1a21b14c02"
+    },
+    {
+      "offset": "0xd104",
+      "bytes": 16,
+      "sha256": "86115299a2032e4148de5c7780b979f00eba7ccab5c28fdb5f40f039b809756c"
+    },
+    {
+      "offset": "0xce04",
+      "bytes": 16,
+      "sha256": "a41b5c2d92ed0e554b0e2ccc08ea28e9322d6b3962934eaa7315543fdac9c5f6"
+    },
+    {
+      "offset": "0xd064",
+      "bytes": 16,
+      "sha256": "17b07b70a4aea318f1a0b87c74cfa6531387bf47ecb135946c0666b0ff6be78e"
+    },
+    {
+      "offset": "0xcf84",
+      "bytes": 16,
+      "sha256": "b147eb962a7bca576fdf48d50453983b3b0b4b8f500ceb3712be0bf3b1d370bf"
+    },
+    {
+      "offset": "0xd014",
+      "bytes": 16,
+      "sha256": "34e92a9202227441baec31be6282fa5137fde9708dfbc3d6bc1c88b86a7f1203"
+    }
+  ],
+  "selected_source_bytes_verified": 1724,
+  "private_function_invoked": false,
+  "exact_service_native_receiver_invoked": false,
+  "target_settlement_proven": false
+}

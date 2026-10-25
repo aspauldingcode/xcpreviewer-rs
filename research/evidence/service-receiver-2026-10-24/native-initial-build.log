@@ -1,0 +1,7 @@
+/private/tmp/service-receiver-20261024/native.c:26:54: error: cannot refer to declaration with an array type inside block
+   26 |             equal &= got == n && data && memcmp(data,bytes,n) == 0;
+      |                                                      ^
+/private/tmp/service-receiver-20261024/native.c:9:19: note: 'bytes' declared here
+    9 |     unsigned char bytes[4096]; size_t n = fread(bytes, 1, sizeof(bytes), f); fclose(f); if (!n || n == sizeof(bytes)) return 4;
+      |                   ^
+1 error generated.

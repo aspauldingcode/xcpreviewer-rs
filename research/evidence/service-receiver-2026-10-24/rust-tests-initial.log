@@ -1,0 +1,17 @@
+   Compiling canvas-core v0.1.0 (/Users/8amps/xcpreviewer-rs/tools/re/rust/canvas-core)
+error[E0631]: type mismatch in closure arguments
+  --> tools/re/rust/canvas-core/tests/service_receiver.rs:60:79
+   |
+60 | ...&wire(b"owned request"), || Some(Box::new(move |value| captured.set(value)) as Box<dyn FnOnce(u32)>)).unwrap();
+   |                                     ^^^^^^^^^------------^^^^^^^^^^^^^^^^^^^^^
+   |                                     |        |
+   |                                     |        found signature defined here
+   |                                     expected due to this
+   |
+   = note: expected closure signature `fn(u32) -> _`
+              found closure signature `fn(i32) -> _`
+   = note: required for the cast from `Box<{closure@tools/re/rust/canvas-core/tests/service_receiver.rs:60:88: 60:100}>` to `Box<dyn FnOnce(u32)>`
+
+For more information about this error, try `rustc --explain E0631`.
+error: could not compile `canvas-core` (test "service_receiver") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

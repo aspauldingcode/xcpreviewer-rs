@@ -1,0 +1,16 @@
+{
+  "native_initial_compile": {
+    "result": "failed before execution",
+    "reason": "Clang rejects capturing an array declaration in a block",
+    "correction": "Capture pointer to stack bytes retained until synchronous group wait and queue read finish; process deadline bounds execution"
+  },
+  "rust_initial_compile": {
+    "result": "failed before test execution",
+    "reason": "Deferred callback test inferred i32 cell while capability requires u32",
+    "correction": "Explicit u32 cell type; full197-test suite rerun successfully"
+  },
+  "source_query": {
+    "result": "unanchored sed address regex reopened at operand references and output was truncated",
+    "correction": "Anchored numeric instruction-address selection; complete selected bytes then independently verified with LLVM"
+  }
+}
