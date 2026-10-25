@@ -282,3 +282,5 @@ pub mod error_archive;
 pub mod error_presentation;
 
 pub mod preview_error;
+pub mod full_diagnostics;
+mod diagnostic_escape;
