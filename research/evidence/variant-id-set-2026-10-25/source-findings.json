@@ -1,0 +1,29 @@
+{
+  "messaging_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "foundation_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "messaging_uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "foundation_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "ranges": [
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0xa1030",
+      "bytes": 504,
+      "sha256": "d7cca287af6ca77df9f1b2a0dc8731a920d73594aa03a7d341f81a9357dc0390"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x9e2dc",
+      "bytes": 804,
+      "sha256": "e366474e9d29fa2819ddc20f83e72fe3e5d6b410222d00d6ee1fbcd4034c2985"
+    }
+  ],
+  "selected_source_bytes_verified": 1308,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "wire_shape": "required defaultVariants array of opaque PreviewVariant.ID strings",
+  "decode": "validate/map all array elements; propagate first error; then construct Swift Set",
+  "encode": "map actual Set iteration to array, no sort",
+  "equality": "Swift String canonical Unicode equivalence, qualified with public runtime controls",
+  "portable_order": "deterministic decomposed-key order; native randomized order intentionally not reproduced",
+  "full_override_configuration_implemented": false
+}

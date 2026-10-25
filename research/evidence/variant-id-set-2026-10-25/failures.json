@@ -1,0 +1,26 @@
+{
+  "verification_failures": [
+    {
+      "stage": "dependency-fetch",
+      "error": "First attempt could not execute rustc -vV; explicit RUSTC corrected existing PATH limitation."
+    },
+    {
+      "stage": "Unicode18-candidate",
+      "error": "21 combining-order pairs compare unequal in native Swift; candidate rejected, Unicode16 pinned after13670 pairs passed.",
+      "details": "unicode18-check.json"
+    },
+    {
+      "stage": "initial-Rust-controls",
+      "error": "Two complete fixture comparisons used Swift default sorting instead of the documented NFD-key portable policy; only expected fixture sort corrected.",
+      "retained": [
+        "initial-tests.stdout",
+        "initial-tests.stderr",
+        "initial-native.bplist"
+      ]
+    }
+  ],
+  "expected_rejections": 8,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "access_scope": "Current public native Swift/Foundation finite controls. Private module and Ghidra inventory limitations retained, not retried. No guessed ABI."
+}

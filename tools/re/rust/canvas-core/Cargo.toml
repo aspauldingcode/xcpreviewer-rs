@@ -3,3 +3,7 @@ name = "canvas-core"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
+
+[dependencies]
+# Unicode 16 matches the qualified native Swift runtime; see set evidence.
+unicode-normalization = "=0.1.24"

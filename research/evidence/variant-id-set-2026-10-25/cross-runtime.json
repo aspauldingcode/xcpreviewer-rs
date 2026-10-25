@@ -1,0 +1,127 @@
+[
+  {
+    "case": "empty",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "one",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "ordered",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "duplicates",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-opaque-ids",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unknown-omitted",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "canonical-equivalence",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "first-spelling-reverse",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "combining-order",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "compatibility-distinct",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unicode18-boundary",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "long",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "many",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "string",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "dictionary",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "number",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bool",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "nested",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "mixed",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "root",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "representative-2",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "representative-5",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "representative-16",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "representative-128",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  }
+]

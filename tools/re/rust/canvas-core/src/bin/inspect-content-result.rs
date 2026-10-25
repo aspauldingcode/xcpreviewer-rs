@@ -2,12 +2,13 @@
 use canvas_core::{
     binary_plist, binary_plist_writer,
     content_results::{ContentOverridePayload, PreviewVariant},
+    multi_select_configuration::MultiSelectConfiguration,
     payload_codec::Value,
     single_select_configuration::SingleSelectConfiguration,
     variants_configuration::{PreviewVariantsConfiguration, Section},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -52,6 +53,7 @@ fn run() -> Result<(), String> {
         && kind != "configuration"
         && kind != "section"
         && kind != "single-selection"
+        && kind != "multi-selection"
     {
         return Err(USAGE.into());
     }
@@ -74,7 +76,29 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "single-selection" {
+    let normalized: Value = if kind == "multi-selection" {
+        let value = MultiSelectConfiguration::decode(&value)
+            .map_err(|e| format!("multi-selection: {e:?}"))?;
+        if !canonical {
+            writeln!(
+                out,
+                "result=multi-selection\ndefaultVariants={}",
+                value.default_variants.len()
+            )
+            .map_err(|e| e.to_string())?;
+            for (index, id) in value.default_variants.iter().take(8).enumerate() {
+                string(&mut out, &format!("defaultVariant{index}"), Some(id))
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(
+                out,
+                "defaultVariantsShown={}",
+                value.default_variants.len().min(8)
+            )
+            .map_err(|e| e.to_string())?;
+        }
+        value.to_value()
+    } else if kind == "single-selection" {
         let value = SingleSelectConfiguration::decode(&value)
             .map_err(|e| format!("single-selection: {e:?}"))?;
         if !canonical {
