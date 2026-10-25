@@ -1,0 +1,14 @@
+{
+  "verification_failures": [],
+  "expected_decode_rejections": 4,
+  "formatter_correction": "Incidental lib.rs module reordering removed; final source rebuilt/rechecked. Initial successful test/build logs retained locally.",
+  "native_private_update_invoked": false,
+  "selection_or_rendering_performed": false,
+  "access_scope": "Private import/Ghidra limitations inherited without retry. Offline source route used; upstream selection and native update execution remain open.",
+  "auxiliary_syntax_check": {
+    "initial": "python3 -m py_compile attempted default macOS user cache write and received PermissionError",
+    "scope": "orchestration script syntax check; no code/test behavior failure or repository state change",
+    "correction": "compile(source,path,exec) validates all three scripts in memory without cache writes",
+    "corrected_result": "passed"
+  }
+}

@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -99,6 +99,7 @@ fn run() -> Result<(), String> {
         && kind != "variants-reply"
         && kind != "default-selection"
         && kind != "group-variants"
+        && kind != "render-effects"
     {
         return Err(USAGE.into());
     }
@@ -121,7 +122,39 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "group-variants" {
+    let normalized: Value = if kind == "render-effects" {
+        // Original inspector input shape, not a recovered native wire payload.
+        let Value::Dictionary(fields) = &value else {
+            return Err("render-effects: expected dictionary".into());
+        };
+        let Some(Value::Array(values)) = fields.get("overrides") else {
+            return Err("render-effects: required overrides array".into());
+        };
+        let overrides = values
+            .iter()
+            .enumerate()
+            .map(|(i, v)| {
+                PreviewVariant::decode(v)
+                    .map_err(|e| format!("render-effects: override {i}: {e:?}"))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+        let variant = fields
+            .get("variant")
+            .map(PreviewVariant::decode)
+            .transpose()
+            .map_err(|e| format!("render-effects: variant: {e:?}"))?;
+        let effects = canvas_core::render_effects::assemble(&overrides, variant.as_ref());
+        if !canonical {
+            writeln!(out, "result=render-effects\neffects={}", effects.len())
+                .map_err(|e| e.to_string())?;
+            for (i, effect) in effects.iter().take(8).enumerate() {
+                string(&mut out, &format!("effect{i}"), Some(&effect.id))
+                    .map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "effectsShown={}", effects.len().min(8)).map_err(|e| e.to_string())?;
+        }
+        Value::Array(effects.iter().map(|e| e.to_value()).collect())
+    } else if kind == "group-variants" {
         let group =
             PreviewVariantGroup::decode(&value).map_err(|e| format!("group-variants: {e:?}"))?;
         let lists = [

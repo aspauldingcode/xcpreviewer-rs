@@ -1,0 +1,16 @@
+{
+  "scan": "direct B/BL to selected imported stubs; indirect calls unenumerated",
+  "pipeline": "PreviewExecutionPoint.updateBehavior",
+  "effect_getter_calls": [
+    "0x15b168",
+    "0x15b2d4"
+  ],
+  "upstream": "EditorSettings.effectiveGroupsAndOverrides",
+  "override_configuration": "0x2b80f8",
+  "direct_variants": [
+    "0x2b818c",
+    "0x2b85d4"
+  ],
+  "child_configurations": "0x2b8538",
+  "upstream_semantics_complete": false
+}
