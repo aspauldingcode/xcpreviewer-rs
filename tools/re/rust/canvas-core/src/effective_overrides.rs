@@ -37,6 +37,20 @@ impl OverrideSettings {
     pub fn iter(&self) -> impl Iterator<Item = (&str, &VariantGroupSettings)> {
         self.values.values().map(|(id, value)| (id.as_str(), value))
     }
+    /// Read-only UI-row fallback. Missing state is disabled with configuration
+    /// defaults, or an empty selection without a configuration. Never installs it.
+    pub fn row_settings(&self, group: &PreviewVariantGroup) -> VariantGroupSettings {
+        self.get(&group.id)
+            .cloned()
+            .unwrap_or_else(|| VariantGroupSettings {
+                is_enabled: false,
+                selection: group
+                    .overrides_configuration
+                    .as_ref()
+                    .map(|c| c.default_selection())
+                    .unwrap_or_default(),
+            })
+    }
     pub fn get(&self, id: &str) -> Option<&VariantGroupSettings> {
         self.values
             .get(&id.nfd().collect::<String>())

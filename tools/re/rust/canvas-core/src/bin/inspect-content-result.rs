@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -102,6 +102,7 @@ fn run() -> Result<(), String> {
         && kind != "render-effects"
         && kind != "effective-overrides"
         && kind != "align-settings"
+        && kind != "row-settings"
     {
         return Err(USAGE.into());
     }
@@ -124,7 +125,10 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "effective-overrides" || kind == "align-settings" {
+    let normalized: Value = if kind == "effective-overrides"
+        || kind == "align-settings"
+        || kind == "row-settings"
+    {
         use canvas_core::effective_overrides::{
             effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
         };
@@ -182,7 +186,63 @@ fn run() -> Result<(), String> {
             Some(Value::String(id)) => Some(id.as_str()),
             _ => return Err("override-input: gridGroupID String".into()),
         };
-        if kind == "align-settings" {
+        if kind == "row-settings" {
+            let rows: Vec<_> = groups
+                .iter()
+                .map(|g| (g, settings.row_settings(g), settings.get(&g.id).is_some()))
+                .collect();
+            if !canonical {
+                writeln!(out, "result=row-settings\nrows={}", rows.len())
+                    .map_err(|e| e.to_string())?;
+                for (i, (group, state, stored)) in rows.iter().take(4).enumerate() {
+                    string(&mut out, &format!("row{i}.groupID"), Some(&group.id))
+                        .map_err(|e| e.to_string())?;
+                    writeln!(
+                        out,
+                        "row{i}.isStored={stored}\nrow{i}.isEnabled={}\nrow{i}.selection={}",
+                        state.is_enabled,
+                        state.selection.len()
+                    )
+                    .map_err(|e| e.to_string())?;
+                    for (j, id) in state.selection.iter().take(8).enumerate() {
+                        string(&mut out, &format!("row{i}.selected{j}"), Some(id))
+                            .map_err(|e| e.to_string())?;
+                    }
+                    writeln!(
+                        out,
+                        "row{i}.selectionShown={}",
+                        state.selection.len().min(8)
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+                writeln!(out, "rowsShown={}", rows.len().min(4)).map_err(|e| e.to_string())?;
+            }
+            Value::Array(
+                rows.iter()
+                    .map(|(group, state, stored)| {
+                        Value::Dictionary(
+                            [
+                                ("groupID".into(), Value::String(group.id.clone())),
+                                ("isStored".into(), Value::Boolean(*stored)),
+                                ("isEnabled".into(), Value::Boolean(state.is_enabled)),
+                                (
+                                    "selection".into(),
+                                    Value::Array(
+                                        state
+                                            .selection
+                                            .iter()
+                                            .map(|id| Value::String(id.into()))
+                                            .collect(),
+                                    ),
+                                ),
+                            ]
+                            .into_iter()
+                            .collect(),
+                        )
+                    })
+                    .collect(),
+            )
+        } else if kind == "align-settings" {
             let report =
                 canvas_core::effective_overrides::align_settings(&groups, &mut settings, grid);
             if !canonical {
