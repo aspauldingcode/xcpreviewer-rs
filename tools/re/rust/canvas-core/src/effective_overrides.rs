@@ -1,5 +1,5 @@
-//! Scoped EditorSettings selection and discovered-group alignment.
-//! This does not install defaults, persist native modes or apply updates.
+//! Scoped EditorSettings selection, row-state calculation and group alignment.
+//! Native UI bindings, animation and persistence remain caller-owned.
 use crate::{
     content_results::PreviewVariant, variant_id_set::VariantIdSet,
     variants_reply::PreviewVariantGroup,
@@ -130,5 +130,47 @@ pub fn align_settings(
     Alignment {
         clear_stored_canvas_mode,
         removed_settings: before - settings.values.len(),
+    }
+}
+
+/// Source-guided result of rebuilding a multi-select row's child configurations.
+/// Replace the caller's child rows with this whole array, including when selection
+/// membership did not change. UI binding writes/animation remain caller-owned.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct MultiSelectionUpdate<'a> {
+    pub child_configurations:
+        Vec<&'a crate::overrides_configuration::PreviewOverridesConfiguration>,
+    pub selection_changed: bool,
+}
+impl VariantGroupSettings {
+    /// Rebuild immediate child rows from selected direct variants in source order,
+    /// retaining duplicates. Union their recursive defaults into the requested set.
+    /// Own defaults and child-added IDs do not activate more rows at this level.
+    /// Preserve enablement; equal membership preserves the stored representatives.
+    pub fn update_multi_selection<'a>(
+        &mut self,
+        configuration: &'a crate::overrides_configuration::PreviewOverridesConfiguration,
+        requested: VariantIdSet,
+    ) -> MultiSelectionUpdate<'a> {
+        let child_configurations: Vec<_> = configuration
+            .variants
+            .iter()
+            .filter(|variant| requested.contains(&variant.id))
+            .filter_map(|variant| configuration.child_variant_configurations.get(&variant.id))
+            .collect();
+        let mut selection = requested;
+        for child in &child_configurations {
+            for id in child.default_selection().iter() {
+                selection.insert(id.into());
+            }
+        }
+        let selection_changed = self.selection != selection;
+        if selection_changed {
+            self.selection = selection;
+        }
+        MultiSelectionUpdate {
+            child_configurations,
+            selection_changed,
+        }
     }
 }

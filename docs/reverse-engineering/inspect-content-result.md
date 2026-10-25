@@ -107,3 +107,26 @@ Library `effective_overrides::align_settings` mutates the supplied OverrideSetti
 `row-settings` reads the override UI row state for each input group. Existing settings win unchanged, even disabled/empty/stale selections. A missing setting reads as disabled with recursive configuration defaults, or an empty set without an override configuration. Reading does not install fallback settings. Library API: `OverrideSettings::row_settings(&group)` returns owned state.
 
 The inspector shares the original groups/settings-array input format; optional gridGroupID is validated but does not filter row reads. Output is a complete derived array of groupID/isStored/isEnabled/selection dictionaries, not a native wire schema. Summaries show four rows/eight IDs each, escaped256-scalar previews. Recursive fallback inherits the documented deterministic portable default traversal and native sibling-representative difference. No private SwiftUI binding getter/setter, selection application or persistence is invoked.
+
+
+`update-multi-selection` accepts an original inspector dictionary with required
+`configuration` (override configuration wire value), strict Bool `isEnabled`,
+String arrays `selection` (current state) and `requestedSelection`. It validates
+all configuration children and every ID before calculation. Its derived output
+contains `isEnabled`, `selectionChanged`, `selection`, and ordered
+`childConfigurations`; this input/report is not an Apple wire schema.
+
+The operation replaces child rows with configurations keyed by requested direct
+variants, preserving variant order and duplicates. It unions their recursive
+defaults with the requested set, preserves enablement and unknown IDs, and changes
+stored selection only when canonical set membership differs. Equal membership
+preserves existing ID spellings. The root's defaults are ignored. Child-added IDs
+do not activate additional root rows. Repeated calls rebuild child rows even when
+`selectionChanged` is false. The API returns the whole replacement row list; callers
+own applying it, UI bindings, animation and persistence.
+
+Summary output shows at most eight selected IDs and four child titles, each escaped
+and capped at 256 scalars. Portable canonical ordering and recursive-default
+representative policies remain scoped as documented above. The shipped private
+SwiftUI setter has not been invoked; native UI animation and binding behavior
+remain unverified.

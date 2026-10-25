@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -103,6 +103,7 @@ fn run() -> Result<(), String> {
         && kind != "effective-overrides"
         && kind != "align-settings"
         && kind != "row-settings"
+        && kind != "update-multi-selection"
     {
         return Err(USAGE.into());
     }
@@ -125,10 +126,87 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "effective-overrides"
-        || kind == "align-settings"
-        || kind == "row-settings"
-    {
+    let normalized: Value = if kind == "update-multi-selection" {
+        use canvas_core::{
+            effective_overrides::VariantGroupSettings, variant_id_set::VariantIdSet,
+        };
+        let Value::Dictionary(f) = &value else {
+            return Err("selection-update-input: expected dictionary".into());
+        };
+        let configuration = PreviewOverridesConfiguration::decode(
+            f.get("configuration")
+                .ok_or("selection-update-input: configuration required")?,
+        )
+        .map_err(|e| format!("selection-update-input: configuration: {e:?}"))?;
+        let Some(Value::Boolean(is_enabled)) = f.get("isEnabled") else {
+            return Err("selection-update-input: isEnabled Bool required".into());
+        };
+        let ids = |key: &str| -> Result<VariantIdSet, String> {
+            let Some(Value::Array(values)) = f.get(key) else {
+                return Err(format!("selection-update-input: {key} array required"));
+            };
+            values
+                .iter()
+                .map(|v| match v {
+                    Value::String(id) => Ok(id.clone()),
+                    _ => Err(format!("selection-update-input: {key} ID String")),
+                })
+                .collect()
+        };
+        let mut state = VariantGroupSettings {
+            is_enabled: *is_enabled,
+            selection: ids("selection")?,
+        };
+        let update = state.update_multi_selection(&configuration, ids("requestedSelection")?);
+        if !canonical {
+            writeln!(out,"result=update-multi-selection\nselectionChanged={}\nisEnabled={}\nselection={}\nchildConfigurations={}",update.selection_changed,state.is_enabled,state.selection.len(),update.child_configurations.len()).map_err(|e|e.to_string())?;
+            for (i, id) in state.selection.iter().take(8).enumerate() {
+                string(&mut out, &format!("selected{i}"), Some(id)).map_err(|e| e.to_string())?;
+            }
+            writeln!(
+                out,
+                "selectionShown={}\nchildConfigurationsShown={}",
+                state.selection.len().min(8),
+                update.child_configurations.len().min(4)
+            )
+            .map_err(|e| e.to_string())?;
+            for (i, child) in update.child_configurations.iter().take(4).enumerate() {
+                string(&mut out, &format!("child{i}.title"), Some(&child.title))
+                    .map_err(|e| e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            [
+                ("isEnabled".into(), Value::Boolean(state.is_enabled)),
+                (
+                    "selectionChanged".into(),
+                    Value::Boolean(update.selection_changed),
+                ),
+                (
+                    "selection".into(),
+                    Value::Array(
+                        state
+                            .selection
+                            .iter()
+                            .map(|id| Value::String(id.into()))
+                            .collect(),
+                    ),
+                ),
+                (
+                    "childConfigurations".into(),
+                    Value::Array(
+                        update
+                            .child_configurations
+                            .iter()
+                            .map(|c| c.to_value())
+                            .collect(),
+                    ),
+                ),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "effective-overrides" || kind == "align-settings" || kind == "row-settings" {
         use canvas_core::effective_overrides::{
             effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
         };
