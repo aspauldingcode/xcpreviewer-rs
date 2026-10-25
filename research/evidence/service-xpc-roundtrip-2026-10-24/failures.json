@@ -1,0 +1,10 @@
+{
+  "initial_oracle": {
+    "exit_code": 11,
+    "runtime_requests": 4,
+    "runtime_reply_callbacks": 4,
+    "falsified_prediction": "Zero-length data was expected to reject UVPropertyList initialization after actual XPC receipt",
+    "observation": "Received zero-length data exposes a nonnull get_data pointer and initializes; its byte-equal locally reencoded copy exposes null bytes and rejects",
+    "correction": "Check actual byte availability and decoded empty dictionary, preserve local-construction profile separately; no private source or result rewritten retrospectively"
+  }
+}

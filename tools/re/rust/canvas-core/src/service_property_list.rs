@@ -9,13 +9,24 @@ pub enum ServicePropertyList {
     Data(Vec<u8>),
 }
 impl ServicePropertyList {
-    /// Pinned native controls reject absent, wrong-type and zero-byte data.
-    /// Nonempty bytes initialize successfully before any plist validation.
+    /// Value-only compatibility profile for locally constructed XPC data.
+    /// Empty Vec cannot retain native byte-pointer availability. The measured
+    /// local empty object rejects, while received empty data can initialize.
+    /// Use from_observed_xpc_data when the transport supplies that observation.
+    /// Nonempty bytes initialize before plist validation.
     pub fn from_xpc_dictionary(fields: &BTreeMap<String, XpcValue>) -> Option<Self> {
         match fields.get("data") {
             Some(XpcValue::Data(bytes)) if !bytes.is_empty() => Some(Self::Data(bytes.clone())),
             _ => None,
         }
+    }
+    /// Project the actual xpc_dictionary_get_data byte-availability result.
+    /// None means unavailable bytes (including missing/wrong-type data). A
+    /// nonnull native byte pointer can expose a zero-length slice after XPC
+    /// receipt; Some(&[]) initializes successfully and keeps empty data lazy.
+    /// No address is stored or fabricated by this portable observation API.
+    pub fn from_observed_xpc_data(bytes: Option<&[u8]>) -> Option<Self> {
+        bytes.map(|bytes| Self::Data(bytes.to_vec()))
     }
     /// Native dictionary access falls back to an empty dictionary on parser
     /// failure or a non-dictionary root. Existing dictionary storage bypasses

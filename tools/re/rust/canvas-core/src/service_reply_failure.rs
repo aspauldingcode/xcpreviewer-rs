@@ -69,7 +69,7 @@ pub enum ReplyRepresentation {
     SerializedData,
     DeserializedDictionary,
 }
-/// Compose the dictionary wire initializer, NSError recognition and incoming
+/// Compose the value-only local-construction initializer, NSError recognition and incoming
 /// reply representation. This models the supplied observations only; decoder
 /// must match the desired Foundation/profile behavior (including XML if needed).
 ///
@@ -81,11 +81,35 @@ pub enum ReplyRepresentation {
 pub fn classify_service_xpc_dictionary_with<E>(
     fields: &BTreeMap<String, crate::settings_xpc::XpcValue>,
     representation: ReplyRepresentation,
-    mut decode: impl FnMut(&[u8]) -> Result<Value, E>,
+    decode: impl FnMut(&[u8]) -> Result<Value, E>,
     raw_description: impl FnOnce() -> String,
 ) -> (Option<LazyReply>, Option<ServiceReplyFailure>) {
-    use crate::service_property_list::ServicePropertyList;
-    let Some(property_list)=ServicePropertyList::from_xpc_dictionary(fields) else {
+    classify_initialized_property_list_with(
+        crate::service_property_list::ServicePropertyList::from_xpc_dictionary(fields),
+        representation, decode, raw_description,
+    )
+}
+/// Receipt-aware counterpart using observed native byte availability rather
+/// than inferring initialization from Vec length. Some(empty) stays a successful
+/// lazy response; malformed/empty parse errors can surface later during typing.
+pub fn classify_service_observed_data_with<E>(
+    bytes: Option<&[u8]>,
+    representation: ReplyRepresentation,
+    decode: impl FnMut(&[u8]) -> Result<Value,E>,
+    raw_description: impl FnOnce() -> String,
+) -> (Option<LazyReply>,Option<ServiceReplyFailure>) {
+    classify_initialized_property_list_with(
+        crate::service_property_list::ServicePropertyList::from_observed_xpc_data(bytes),
+        representation, decode, raw_description,
+    )
+}
+fn classify_initialized_property_list_with<E>(
+    property_list: Option<crate::service_property_list::ServicePropertyList>,
+    representation: ReplyRepresentation,
+    mut decode: impl FnMut(&[u8]) -> Result<Value,E>,
+    raw_description: impl FnOnce() -> String,
+) -> (Option<LazyReply>,Option<ServiceReplyFailure>) {
+    let Some(property_list)=property_list else {
         return (None,Some(ServiceReplyFailure::Xpc(XpcFailure::InvalidType(raw_description()))));
     };
     let recognition_fields=property_list.dictionary_with(&mut decode);

@@ -1,0 +1,67 @@
+{
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "image_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "get_data_binding": {
+    "target": "0x1801c896c",
+    "chain_hops": 922,
+    "diversity": 0,
+    "address_diversity": true,
+    "key": "IA",
+    "slot": "0x29a24dcd0",
+    "page_origin": "0x29a24c000",
+    "page_start": 0,
+    "page_size": 16384,
+    "slide_version": 5,
+    "value_add": "0x180000000",
+    "slide_file": "dyld_shared_cache_arm64e.06.dylddata",
+    "slide_info_file_offset": 236996104,
+    "slide_info_sha256": "235eeada25a266b059be4909e988e9a027ba50df8d51dfeb401122bec247b4af",
+    "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+    "stub": "0x26330d144",
+    "stub_sha256": "65c3a41a06d08c0988d0812c8cf3e018e745bc4f4664c7fb01476a56686075a6",
+    "image": "/usr/lib/system/libxpc.dylib",
+    "image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+    "exports": [
+      {
+        "name": "_xpc_dictionary_get_data",
+        "flags": 0
+      }
+    ]
+  },
+  "data_initializer": {
+    "slot": "0x290b33978",
+    "target": "0x1fa17239d",
+    "chain_hops": 586,
+    "page_start_bytes": 1888,
+    "page_origin": "0x290b30000",
+    "page_size": 16384,
+    "profile": "v5 regular",
+    "cache_uuid": "81778ebda5de34428a20a951e9cd0dd9",
+    "slide_header_sha256": "15eeceea68090a9892c1b7dea471e1e8c4599c9b955a0b985624d4d455846ea6",
+    "selector": "initWithBytes:length:",
+    "stub": "0x2633102c0"
+  },
+  "pointer_gate": "0x263301964",
+  "nil_pointer_target": "0x263301984",
+  "length_loaded_separately": "0x263301978",
+  "selected_ranges": [
+    {
+      "offset": "0x192c",
+      "bytes": 120,
+      "sha256": "f01f75c3278265330096ca870ca8aeb396e564ab6c635c27e1da84f76d4d13c7"
+    },
+    {
+      "offset": "0xd144",
+      "bytes": 16,
+      "sha256": "65c3a41a06d08c0988d0812c8cf3e018e745bc4f4664c7fb01476a56686075a6"
+    },
+    {
+      "offset": "0x102c0",
+      "bytes": 24,
+      "sha256": "a7d81a3bf17e4a080edce9e48ad812709ac82ccd17376bdb637459d03c411ac5"
+    }
+  ],
+  "selected_source_bytes_verified": 160,
+  "private_swift_abi_declared": false,
+  "target_settlement_proven": false
+}
