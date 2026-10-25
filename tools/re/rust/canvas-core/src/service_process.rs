@@ -16,7 +16,7 @@ pub enum Error {
 }
 // Primitive Foundation NSNumber compatibility profile. Arbitrary native objects
 // are excluded; caller-owned decoded values remain separate from native rights.
-fn integer(value: &Value, min: i64, max: i64) -> Option<i64> {
+pub(crate) fn integer(value: &Value, min: i64, max: i64) -> Option<i64> {
     match value {
         Value::Integer(n) if *n >= min && *n <= max => Some(*n),
         Value::Boolean(n) => Some(i64::from(*n)),

@@ -163,6 +163,18 @@ impl Reader<'_> {
                 let n = raw.iter().fold(0u64, |n, b| (n << 8) | u64::from(*b));
                 Ok(Value::Integer(n as i64))
             }
+            1 if small == 4 => {
+                let raw = self.span(payload, 16)?;
+                if raw[..8].iter().any(|byte| *byte != 0) {
+                    return Err(Error::Unsupported(marker));
+                }
+                let number = u64::from_be_bytes(raw[8..].try_into().unwrap());
+                Ok(if number <= i64::MAX as u64 {
+                    Value::Integer(number as i64)
+                } else {
+                    Value::Unsigned(number)
+                })
+            }
             2 => match small {
                 2 => Ok(Value::Real(
                     f32::from_be_bytes(self.span(payload, 4)?.try_into().unwrap()) as f64,

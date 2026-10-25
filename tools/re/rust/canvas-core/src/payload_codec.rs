@@ -14,6 +14,8 @@ pub enum Value {
     Date(f64),
     Data(Vec<u8>),
     Integer(i64),
+    /// Positive plist integer above Int64.max. Smaller values canonicalize to Integer.
+    Unsigned(u64),
     Real(f64),
     String(String),
     Array(Vec<Value>),

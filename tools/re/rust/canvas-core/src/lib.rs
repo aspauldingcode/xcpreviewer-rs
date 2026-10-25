@@ -286,3 +286,4 @@ pub mod full_diagnostics;
 mod diagnostic_escape;
 pub mod diagnostic_files;
 pub mod service_process;
+pub mod cancel_update;

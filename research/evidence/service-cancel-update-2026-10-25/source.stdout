@@ -1,0 +1,73 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "fields": [
+    "pid",
+    "contentIdentifier",
+    "updateSeed"
+  ],
+  "pid_type": "Int32",
+  "content_type": "String raw-representable",
+  "seed_type": "UInt64",
+  "wire_kind": "cancelUpdate",
+  "decoder_failures_propagate": true,
+  "ranges": [
+    {
+      "image": "Messaging",
+      "start": "0x2530c",
+      "bytes": 780,
+      "sha256": "b9445f2e9786c0d7bb445c887630b579b251e90d3afcdb2608d229163de850dc"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x6029c",
+      "bytes": 80,
+      "sha256": "7ec62112a7a172ffaa69abd8579c1b5b4a7db68f77c4ddf0aa8ebcd9d574260c"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60460",
+      "bytes": 60,
+      "sha256": "8c0b1073dd14119cb0e25d2c4124ca7cb23584e244e670492dbae0bb08eaafd2"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5eca4",
+      "bytes": 64,
+      "sha256": "a1d5bb3e9def58b7ee38196e4616bf2dbd82ebb5f477c460e36e84a689af3814"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x5ba4",
+      "bytes": 8,
+      "sha256": "5d6cf3218637a33aa6615a67a9c37b053772a345524f05d49126fffc0ea011d9"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x1b6e0",
+      "bytes": 8,
+      "sha256": "93fef3ce1ae6d0344fc2b45940d42c7901ce2d55cf1c45a327a4d6c3aafedba6"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x36578",
+      "bytes": 172,
+      "sha256": "27a3f5b8d2a32770c2ee2480799bf5ffc49e3323c064dfcdd3cffc7f4e584f70"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x36360",
+      "bytes": 24,
+      "sha256": "660a9fa0277197a5411f51ca392185d6fc5aee007df6b58c8c57c58f19aed050"
+    },
+    {
+      "image": "Messaging",
+      "start": "0x60898",
+      "bytes": 32,
+      "sha256": "3e602cb814d4395a058f03c705b12a46a3d8cd98c9cbf55d5a72420c4ae31b08"
+    }
+  ],
+  "selected_source_bytes_verified": 1228,
+  "native_private_decoder_invoked": false,
+  "native_cancellation_performed": false
+}

@@ -9,7 +9,7 @@ pub struct ForwardServiceEnvelope {
     pub forward:ForwardPayload,
 }
 #[derive(Clone,Debug,PartialEq,Eq)]
-pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error),Process(crate::service_process::Error)}
+pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error),Process(crate::service_process::Error),CancelUpdate(crate::cancel_update::Error)}
 impl ForwardServiceEnvelope {
     /// Allocate an identifier from the shared process sequence for a new
     /// forwarding request. This constructs a value and sends nothing.
@@ -41,6 +41,7 @@ impl ForwardServiceEnvelope {
 #[derive(Clone, Debug, PartialEq)]
 pub enum ServiceContent {
     Ping,
+    CancelUpdate(crate::cancel_update::CancelUpdatePayload),
     /// Absent when content decoding fails; root and identifier errors still reject.
     Capabilities(Option<CapabilitiesPayload>),
     Forward(ForwardPayload),
@@ -78,7 +79,15 @@ impl ServiceEnvelope {
                 })
             }
             Value::String(kind)
-                if ["ping", "capabilities", "connect", "stop", "kill"].contains(&kind.as_str()) =>
+                if [
+                    "ping",
+                    "capabilities",
+                    "connect",
+                    "stop",
+                    "kill",
+                    "cancelUpdate",
+                ]
+                .contains(&kind.as_str()) =>
             {
                 let payload = root.get("payload").ok_or(Error::Missing("payload"))?;
                 let Value::Dictionary(payload) = payload else {
@@ -93,12 +102,17 @@ impl ServiceEnvelope {
                     identifier,
                     content: match kind.as_str() {
                         "ping" => ServiceContent::Ping,
+                        "cancelUpdate" => ServiceContent::CancelUpdate(
+                            crate::cancel_update::CancelUpdatePayload::decode_dictionary(payload)
+                                .map_err(Error::CancelUpdate)?,
+                        ),
                         "capabilities" => ServiceContent::Capabilities(
                             CapabilitiesPayload::decode_dictionary(payload).ok(),
                         ),
                         _ => {
-                            let target = crate::service_process::ProcessTarget::decode_dictionary(payload)
-                            .map_err(Error::Process)?;
+                            let target =
+                                crate::service_process::ProcessTarget::decode_dictionary(payload)
+                                    .map_err(Error::Process)?;
                             match kind.as_str() {
                                 "connect" => ServiceContent::Connect(target),
                                 "stop" => ServiceContent::Stop(target),
@@ -120,6 +134,7 @@ impl ServiceEnvelope {
     pub fn to_value(&self) -> Value {
         let (kind, mut payload) = match &self.content {
             ServiceContent::Ping => ("ping", BTreeMap::new()),
+            ServiceContent::CancelUpdate(payload) => ("cancelUpdate", payload.to_dictionary()),
             ServiceContent::Capabilities(capabilities) => (
                 "capabilities",
                 capabilities

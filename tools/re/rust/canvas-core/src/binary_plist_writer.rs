@@ -29,6 +29,7 @@ pub enum Error {
 enum Node<'a> {
     Boolean(bool),
     Integer(i64),
+    Unsigned(u64),
     Real(f64),
     Date(f64),
     Data(&'a [u8]),
@@ -88,6 +89,8 @@ impl<'a> Builder<'a> {
             Value::Null => return Err(Error::Null),
             Value::Boolean(v) => Node::Boolean(*v),
             Value::Integer(v) => Node::Integer(*v),
+            Value::Unsigned(v) if *v <= i64::MAX as u64 => Node::Integer(*v as i64),
+            Value::Unsigned(v) => Node::Unsigned(*v),
             Value::Real(v) | Value::Date(v) if !v.is_finite() => return Err(Error::NonFinite),
             Value::Real(v) => Node::Real(*v),
             Value::Date(v) => Node::Date(*v),
@@ -148,6 +151,7 @@ fn size(node: &Node<'_>, refs: usize) -> Result<usize, Error> {
                 1 + width(*v as u64)
             }
         }
+        Node::Unsigned(_) => 17,
         Node::Real(_) | Node::Date(_) => 9,
         Node::Data(v) => add(prefix(v.len()), v.len())?,
         Node::String(v) => {
@@ -183,6 +187,11 @@ fn write(node: &Node<'_>, refs: usize, out: &mut Vec<u8>) {
             let bytes = if *v < 0 { 8 } else { width(*v as u64) };
             out.push(0x10 | bytes.trailing_zeros() as u8);
             integer(out, *v as u64, bytes);
+        }
+        Node::Unsigned(v) => {
+            out.push(0x14);
+            out.extend_from_slice(&[0; 8]);
+            out.extend_from_slice(&v.to_be_bytes());
         }
         Node::Real(v) => {
             out.push(0x23);

@@ -115,7 +115,7 @@ fn cycles_bad_references_text_keys_and_unsupported_types_rejected() {
         decode(&plist(&[&[0xd2, 1, 1, 2, 2], &[0x51, b'a'], &[0]], 0)),
         Err(Error::DuplicateKey)
     );
-    for marker in [0x30, 0x80, 0xc0, 0x14, 0xff] {
+    for marker in [0x30, 0x80, 0xc0, 0x15, 0xff] {
         assert_eq!(
             decode(&plist(&[&[marker]], 0)),
             Err(Error::Unsupported(marker))

@@ -1,0 +1,22 @@
+{
+  "verification_failures": [
+    {
+      "stage": "initial cargo check",
+      "error": "rustc -vV could not execute; rustc absent from PATH",
+      "resolution": "Set explicit RUSTC/RUSTDOC toolchain paths",
+      "receipt_kind": "correction summary; no fabricated raw log"
+    },
+    {
+      "stage": "full tests",
+      "error": "Old16-byte unsupported-marker assertion expected Unsupported(20), got Bounds for truncated now-supported integer",
+      "resolution": "Use unsupported32-byte marker; retain new malformed16-byte/budget checks",
+      "receipts": [
+        "initial-tests.stdout",
+        "initial-tests.stderr"
+      ]
+    }
+  ],
+  "native_cancellation_performed": false,
+  "native_private_decoder_invoked": false,
+  "public_foundation_scope": "10 original UInt64 casts and7 Foundation parses of WASI output only."
+}
