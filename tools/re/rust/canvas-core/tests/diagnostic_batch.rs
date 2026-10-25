@@ -1,0 +1,163 @@
+use canvas_core::{
+    binary_plist,
+    diagnostic_files::{FileQueue, FileSink},
+    payload_codec::Value as V,
+};
+#[derive(Default)]
+struct Sink {
+    operations: Vec<String>,
+    writes: Vec<Vec<u8>>,
+    fail_names: Vec<String>,
+    current: String,
+}
+impl FileSink for Sink {
+    type Destination = String;
+    type Error = String;
+    fn directory(&mut self, base: &String, name: &str) -> String {
+        self.operations.push("directory".into());
+        format!("{base}/{name}")
+    }
+    fn create_intermediate_directory(&mut self, d: &String) -> Result<(), String> {
+        self.operations.push("create".into());
+        if d.ends_with("/blocked") {
+            Err("ignored-create".into())
+        } else {
+            Ok(())
+        }
+    }
+    fn file(&mut self, base: &String, name: &str) -> String {
+        self.operations.push("file".into());
+        self.current = name.into();
+        format!("{base}/{name}")
+    }
+    fn write_utf8(&mut self, d: &String, bytes: &[u8], atomic: bool) -> Result<(), String> {
+        assert!(atomic);
+        self.operations.push("write".into());
+        if d.contains("/blocked/") || self.fail_names.contains(&self.current) {
+            self.writes.push(Vec::new());
+            return Err(self.current.clone());
+        }
+        self.writes.push(bytes.into());
+        Ok(())
+    }
+}
+#[test]
+fn complete_native_batch_sequences_continue_after_failures() {
+    let V::Array(records) =
+        binary_plist::decode(include_bytes!("fixtures/diagnostic-batch/native.bplist")).unwrap()
+    else {
+        panic!()
+    };
+    assert_eq!(records.len(), 3);
+    for record in records {
+        let V::Dictionary(row) = record else { panic!() };
+        let V::Array(inputs) = &row["inputs"] else {
+            panic!()
+        };
+        let mut q = FileQueue::default();
+        for input in inputs {
+            let V::Dictionary(input) = input else {
+                panic!()
+            };
+            let (V::String(name), V::String(contents)) = (&input["name"], &input["contents"])
+            else {
+                panic!()
+            };
+            let folder = match input.get("folder") {
+                Some(V::String(s)) => Some(s.as_str()),
+                None => None,
+                _ => panic!(),
+            };
+            q.append(name, folder, contents).unwrap();
+        }
+        let mut sink = Sink::default();
+        let report = q.serialize_all_into(&"owned".into(), &mut sink);
+        assert_eq!(V::Integer(report.attempted as i64), row["attempted"]);
+        let V::Array(failures) = &row["failures"] else {
+            panic!()
+        };
+        let indices: Vec<usize> = failures
+            .iter()
+            .map(|f| {
+                let V::Dictionary(f) = f else { panic!() };
+                let V::Integer(n) = f["index"] else { panic!() };
+                n as usize
+            })
+            .collect();
+        assert_eq!(
+            report.failures.iter().map(|f| f.index).collect::<Vec<_>>(),
+            indices
+        );
+        let V::Array(outputs) = &row["outputs"] else {
+            panic!()
+        };
+        let mut all_ops = Vec::new();
+        for (i, output) in outputs.iter().enumerate() {
+            let V::Dictionary(output) = output else {
+                panic!()
+            };
+            assert_eq!(V::Data(sink.writes[i].clone()), output["bytes"]);
+            let V::Array(ops) = &output["operations"] else {
+                panic!()
+            };
+            all_ops.extend(ops.iter().map(|op| {
+                let V::String(op) = op else { panic!() };
+                op.clone()
+            }));
+        }
+        assert_eq!(sink.operations, all_ops);
+        assert_eq!(q.entries().len(), inputs.len());
+    }
+}
+#[test]
+fn error_values_preserved_and_queue_not_consumed() {
+    let mut q = FileQueue::default();
+    for name in ["fail-a", "ok", "fail-b", "ok"] {
+        q.append(name, None, name).unwrap();
+    }
+    let snapshot = q.clone();
+    let mut sink = Sink {
+        fail_names: vec!["fail-a".into(), "fail-b".into()],
+        ..Sink::default()
+    };
+    let report = snapshot.serialize_all_into(&"owned".into(), &mut sink);
+    assert_eq!(report.attempted, 4);
+    assert_eq!(
+        report
+            .failures
+            .iter()
+            .map(|f| (f.index, f.error.as_str()))
+            .collect::<Vec<_>>(),
+        [(0, "fail-a"), (2, "fail-b")]
+    );
+    assert_eq!(sink.writes.len(), 4);
+    assert_eq!(q.entries(), snapshot.entries());
+    let mut retry = Sink::default();
+    assert!(snapshot
+        .serialize_all_into(&"owned".into(), &mut retry)
+        .failures
+        .is_empty());
+    assert_eq!(retry.writes.len(), 4);
+    assert_eq!(snapshot.entries().len(), 4);
+}
+#[test]
+fn snapshot_excludes_later_appends_and_empty_batch_has_no_effects() {
+    let mut q = FileQueue::default();
+    let empty = q.clone();
+    q.append("first", None, "x").unwrap();
+    let snapshot = q.clone();
+    q.append("later", Some(""), "y").unwrap();
+    let mut sink = Sink::default();
+    let r = empty.serialize_all_into(&"owned".into(), &mut sink);
+    assert_eq!(r.attempted, 0);
+    assert!(r.failures.is_empty());
+    assert!(sink.operations.is_empty());
+    assert_eq!(
+        snapshot
+            .serialize_all_into(&"owned".into(), &mut sink)
+            .attempted,
+        1
+    );
+    assert_eq!(sink.writes, [b"x".to_vec()]);
+    assert_eq!(q.entries().len(), 2);
+}

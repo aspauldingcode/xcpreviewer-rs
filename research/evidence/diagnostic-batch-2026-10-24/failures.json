@@ -1,0 +1,24 @@
+{
+  "expected_negative_controls": {
+    "mixed_batch": {
+      "attempted": 5,
+      "failed_indices": [
+        1,
+        4
+      ]
+    },
+    "first_failure_batch": {
+      "attempted": 2,
+      "failed_indices": [
+        0
+      ]
+    },
+    "native_write_errors": {
+      "domain": "NSCocoaErrorDomain",
+      "code": 512
+    },
+    "later_actions_still_attempted": true
+  },
+  "verification_failures": [],
+  "runtime_scope": "Public typed Foundation file operations and original batch composition only. Shipped private collector, archive setup/retention, generated command actions, diagnostic error report and ZIP were not executed."
+}

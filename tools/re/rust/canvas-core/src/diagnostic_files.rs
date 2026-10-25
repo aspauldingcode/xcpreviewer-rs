@@ -110,3 +110,38 @@ impl FileQueue {
         Ok(())
     }
 }
+/// Original observability metadata associates a retained sink error with its
+/// queue index. The native collector retains errors without this index field.
+#[derive(Debug, PartialEq, Eq)]
+pub struct EntryFailure<E> {
+    pub index: usize,
+    pub error: E,
+}
+#[derive(Debug, PartialEq, Eq)]
+pub struct BatchReport<E> {
+    pub attempted: usize,
+    pub failures: Vec<EntryFailure<E>>,
+}
+impl FileQueue {
+    /// Execute this retained file-action set sequentially, keeping each write
+    /// failure in encounter order and continuing with later entries. No action
+    /// is consumed or automatically retried. Use clone for an independent snapshot.
+    /// This omits collector archive setup, generated actions, error-report output
+    /// and ZIP creation; no filesystem/resource settlement is implied.
+    pub fn serialize_all_into<S: FileSink>(
+        &self,
+        base: &S::Destination,
+        sink: &mut S,
+    ) -> BatchReport<S::Error> {
+        let mut failures = Vec::new();
+        for (index, entry) in self.entries.iter().enumerate() {
+            if let Err(error) = entry.serialize_into(base, sink) {
+                failures.push(EntryFailure { index, error });
+            }
+        }
+        BatchReport {
+            attempted: self.entries.len(),
+            failures,
+        }
+    }
+}
