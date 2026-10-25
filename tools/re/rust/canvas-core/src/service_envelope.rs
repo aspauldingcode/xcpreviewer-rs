@@ -9,7 +9,7 @@ pub struct ForwardServiceEnvelope {
     pub forward:ForwardPayload,
 }
 #[derive(Clone,Debug,PartialEq,Eq)]
-pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error),Process(crate::service_process::Error),CancelUpdate(crate::cancel_update::Error)}
+pub enum Error {Plist(binary_plist::Error),Missing(&'static str),Type(&'static str),UnsupportedMessageType,Forward(forward_payload::Error),Process(crate::service_process::Error),CancelUpdate(crate::cancel_update::Error),Purge(crate::purge::Error)}
 impl ForwardServiceEnvelope {
     /// Allocate an identifier from the shared process sequence for a new
     /// forwarding request. This constructs a value and sends nothing.
@@ -41,6 +41,7 @@ impl ForwardServiceEnvelope {
 #[derive(Clone, Debug, PartialEq)]
 pub enum ServiceContent {
     Ping,
+    Purge(crate::purge::PurgePayload),
     CancelUpdate(crate::cancel_update::CancelUpdatePayload),
     /// Absent when content decoding fails; root and identifier errors still reject.
     Capabilities(Option<CapabilitiesPayload>),
@@ -86,6 +87,7 @@ impl ServiceEnvelope {
                     "stop",
                     "kill",
                     "cancelUpdate",
+                    "purge",
                 ]
                 .contains(&kind.as_str()) =>
             {
@@ -102,6 +104,10 @@ impl ServiceEnvelope {
                     identifier,
                     content: match kind.as_str() {
                         "ping" => ServiceContent::Ping,
+                        "purge" => ServiceContent::Purge(
+                            crate::purge::PurgePayload::decode_dictionary(payload)
+                                .map_err(Error::Purge)?,
+                        ),
                         "cancelUpdate" => ServiceContent::CancelUpdate(
                             crate::cancel_update::CancelUpdatePayload::decode_dictionary(payload)
                                 .map_err(Error::CancelUpdate)?,
@@ -134,6 +140,7 @@ impl ServiceEnvelope {
     pub fn to_value(&self) -> Value {
         let (kind, mut payload) = match &self.content {
             ServiceContent::Ping => ("ping", BTreeMap::new()),
+            ServiceContent::Purge(payload) => ("purge", payload.to_dictionary()),
             ServiceContent::CancelUpdate(payload) => ("cancelUpdate", payload.to_dictionary()),
             ServiceContent::Capabilities(capabilities) => (
                 "capabilities",
@@ -174,14 +181,7 @@ impl CapabilitiesPayload {
         let value = fields
             .get("isRunningInXTP")
             .ok_or(Error::Missing("isRunningInXTP"))?;
-        let is_running_in_xtp = match value {
-            Value::Boolean(value) => *value,
-            Value::Integer(0) => false,
-            Value::Integer(1) => true,
-            Value::Real(value) if *value == 0.0 => false,
-            Value::Real(value) if *value == 1.0 => true,
-            _ => return Err(Error::Type("isRunningInXTP")),
-        };
+        let is_running_in_xtp = primitive_bool(value).ok_or(Error::Type("isRunningInXTP"))?;
         Ok(Self { is_running_in_xtp })
     }
     pub fn to_dictionary(&self) -> BTreeMap<String, Value> {
@@ -189,5 +189,18 @@ impl CapabilitiesPayload {
             "isRunningInXTP".into(),
             Value::Boolean(self.is_running_in_xtp),
         )])
+    }
+}
+
+// Measured primitive Foundation Bool profile, shared by capability and purge
+// payloads. Unsigned zero/one normalize numerically; large unsigned values reject.
+pub(crate) fn primitive_bool(value: &Value) -> Option<bool> {
+    match value {
+        Value::Boolean(value) => Some(*value),
+        Value::Integer(0) | Value::Unsigned(0) => Some(false),
+        Value::Integer(1) | Value::Unsigned(1) => Some(true),
+        Value::Real(value) if *value == 0.0 => Some(false),
+        Value::Real(value) if *value == 1.0 => Some(true),
+        _ => None,
     }
 }
