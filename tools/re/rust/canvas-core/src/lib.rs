@@ -272,3 +272,5 @@ pub mod service_response;
 pub mod binary_plist_writer;
 
 pub mod human_readable_error;
+
+pub mod remote_error;

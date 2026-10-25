@@ -1,0 +1,88 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "keys": [
+    "errorTypeDescription",
+    "highValueTitle",
+    "lowValueTitle",
+    "additionalInfo",
+    "additionalDiagnostics",
+    "options",
+    "severity",
+    "isPotentialCrash",
+    "isNative"
+  ],
+  "error_types": [
+    "leaf",
+    "wrapper"
+  ],
+  "severity": [
+    "error",
+    "info"
+  ],
+  "imports": {
+    "0x12fc20": "_$sSS9hasPrefixySbSSF",
+    "0x12fb84": "_$sSS6appendyySSF",
+    "0x131270": "_swift_dynamicCast"
+  },
+  "metadata_imports": {
+    "0x171338": "_$sSiN",
+    "0x171228": "_$sSbN",
+    "0x170fe0": "_$sSSN"
+  },
+  "optional_bool_storage_source_matrix": [
+    {
+      "optional_bool_storage": 0,
+      "potential_crash": false,
+      "native": false
+    },
+    {
+      "optional_bool_storage": 1,
+      "potential_crash": true,
+      "native": true
+    },
+    {
+      "optional_bool_storage": 2,
+      "potential_crash": true,
+      "native": false
+    }
+  ],
+  "default_title": "[Remote] Unknown Error",
+  "prefix": "[Remote] ",
+  "canonical_profile_only": true,
+  "wrapper_implemented": false,
+  "native_private_runtime_invoked": false,
+  "ranges": [
+    {
+      "start": "0x5fb98",
+      "bytes": 2180,
+      "sha256": "c7c20f171c7794acbad7e58af9c6a96654574ec8cad233fcc005ad7e5f77efd8"
+    },
+    {
+      "start": "0x606c0",
+      "bytes": 288,
+      "sha256": "afc70665d7d93efae1100e891d70a78e104cf7fafec11e8826f5d3853ef191c8"
+    },
+    {
+      "start": "0x619e0",
+      "bytes": 248,
+      "sha256": "779cc2ce2b3d3e209fe72e2bec26e2480a107f24e4b4c39d4312009350854656"
+    },
+    {
+      "start": "0x5d578",
+      "bytes": 172,
+      "sha256": "c122e7e5c50b6de9eca52a93eefad52f1563b8e71b1b7e5e9c2538c7c964283f"
+    },
+    {
+      "start": "0x5f154",
+      "bytes": 752,
+      "sha256": "072bfe8a9c07fc9aa001c0e4757ab1a765e2ae7ce2d333f3a93219a7e4e45cbb"
+    },
+    {
+      "start": "0x6080c",
+      "bytes": 124,
+      "sha256": "49f7ff6ee046caa90231c408466051217d316b70d1a483e19a0fcbdb6e4e9d64"
+    }
+  ],
+  "selected_source_bytes_verified": 3764
+}
