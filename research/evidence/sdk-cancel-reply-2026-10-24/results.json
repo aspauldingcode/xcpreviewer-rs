@@ -1,0 +1,17 @@
+{
+  "rust_tests": 250,
+  "prior_source_bytes_independently_reverified": 1792,
+  "owned_sdk_modes": [
+    "normal",
+    "cancel"
+  ],
+  "native_sdk_reply_callbacks_invoked": true,
+  "one_capture_destroyed_per_observed_mode": true,
+  "capture_destruction_deadline_ms": 1000,
+  "post_callback_quiet_window_ms": 150,
+  "actual_wasi_execution": true,
+  "private_service_connection_invoked": false,
+  "global_exactly_once_proven": false,
+  "native_target_resource_settlement": false,
+  "wasm_sha256": "83dde7f83977449d3e7fa69208ad204b77a85a7dfd720d4165f2cdf0aefc8143"
+}

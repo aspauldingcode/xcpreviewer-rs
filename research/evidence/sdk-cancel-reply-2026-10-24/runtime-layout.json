@@ -1,0 +1,120 @@
+[
+  {
+    "class": "_TtC16PreviewsServices11XPCListener",
+    "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+    "instance_size": 128,
+    "methods": [],
+    "ivars": [
+      {
+        "name": "listenerService",
+        "offset": 16,
+        "type": ""
+      },
+      {
+        "name": "service",
+        "offset": 24,
+        "type": ""
+      },
+      {
+        "name": "shouldAcceptConnectionHandler",
+        "offset": 64,
+        "type": ""
+      },
+      {
+        "name": "interruptionHandler",
+        "offset": 80,
+        "type": ""
+      },
+      {
+        "name": "invalidationHandler",
+        "offset": 96,
+        "type": ""
+      },
+      {
+        "name": "connectionErrorHandler",
+        "offset": 112,
+        "type": ""
+      }
+    ]
+  },
+  {
+    "class": "_TtC16PreviewsServices13XPCConnection",
+    "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+    "instance_size": 112,
+    "methods": [],
+    "ivars": [
+      {
+        "name": "connection",
+        "offset": 16,
+        "type": ""
+      },
+      {
+        "name": "messageReceiver",
+        "offset": 24,
+        "type": ""
+      },
+      {
+        "name": "interruptionHandler",
+        "offset": 64,
+        "type": ""
+      },
+      {
+        "name": "invalidationHandler",
+        "offset": 80,
+        "type": ""
+      },
+      {
+        "name": "connectionErrorHandler",
+        "offset": 96,
+        "type": ""
+      }
+    ]
+  },
+  {
+    "class": "_TtC16PreviewsServices25PreviewsServiceConnection",
+    "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+    "instance_size": 32,
+    "methods": [],
+    "ivars": [
+      {
+        "name": "connection",
+        "offset": 16,
+        "type": ""
+      },
+      {
+        "name": "auditToken",
+        "offset": 24,
+        "type": ""
+      }
+    ]
+  },
+  {
+    "class": "_TtCC16PreviewsServices25PreviewsServiceConnection8Listener",
+    "image": "/System/Library/PrivateFrameworks/PreviewsServices.framework/Versions/A/PreviewsServices",
+    "instance_size": 32,
+    "methods": [
+      {
+        "encoding": "v16@0:8",
+        "kind": "-",
+        "selector": ".cxx_destruct"
+      },
+      {
+        "encoding": "@16@0:8",
+        "kind": "-",
+        "selector": "init"
+      }
+    ],
+    "ivars": [
+      {
+        "name": "listener",
+        "offset": 8,
+        "type": ""
+      },
+      {
+        "name": "connectionHandler",
+        "offset": 16,
+        "type": ""
+      }
+    ]
+  }
+]
