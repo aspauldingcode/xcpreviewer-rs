@@ -30,20 +30,39 @@ impl LazyReply {
     pub fn property_list(&self) -> Result<BTreeMap<String, Value>, DecodeError> {
         match self {
             Self::Deserialized(fields) => Ok(fields.clone()),
-            Self::Serialized(bytes) => match binary_plist::decode(bytes).map_err(DecodeError::Plist)? {
-                Value::Dictionary(fields) => Ok(fields),
-                _ => Err(DecodeError::NonDictionary),
-            },
+            Self::Serialized(bytes) => {
+                match binary_plist::decode(bytes).map_err(DecodeError::Plist)? {
+                    Value::Dictionary(fields) => Ok(fields),
+                    _ => Err(DecodeError::NonDictionary),
+                }
+            }
         }
     }
 }
 /// Mirror native nullable callback precedence: a present payload wins even if
 /// an error is also supplied. Absent payload uses the error, or EmptyReply.
 /// Selection does not parse bytes, claim exactly-once delivery or settle work.
-pub fn select_reply<E>(payload: Option<LazyReply>, error: Option<E>) -> Result<LazyReply, ReplyError<E>> {
+pub fn select_reply<E>(
+    payload: Option<LazyReply>,
+    error: Option<E>,
+) -> Result<LazyReply, ReplyError<E>> {
+    select_reply_projecting_error(payload, error, |error| error)
+}
+
+/// Defer the caller's error projection until nullable payload selection fails.
+/// The native incoming handler performs humanReadable/NSError conversion only
+/// on this error branch. This API supplies that conversion as an explicit caller
+/// operation; it neither implements native boxing nor parses a selected payload.
+pub fn select_reply_projecting_error<E, P>(
+    payload: Option<LazyReply>,
+    error: Option<E>,
+    project: impl FnOnce(E) -> P,
+) -> Result<LazyReply, ReplyError<P>> {
     match payload {
         Some(payload) => Ok(payload),
-        None => Err(error.map_or(ReplyError::EmptyReply, ReplyError::Remote)),
+        None => Err(error.map_or(ReplyError::EmptyReply, |error| {
+            ReplyError::Remote(project(error))
+        })),
     }
 }
 
@@ -69,6 +88,9 @@ pub fn decode_reply_with<T, E, D>(
 }
 /// The native Void success transform ignores LazyPropertyList without parsing.
 /// Acknowledgement reports only callback-level success, never target settlement.
-pub fn acknowledge_reply<E>(payload: Option<LazyReply>, error: Option<E>) -> Result<(), ReplyError<E>> {
+pub fn acknowledge_reply<E>(
+    payload: Option<LazyReply>,
+    error: Option<E>,
+) -> Result<(), ReplyError<E>> {
     select_reply(payload, error).map(|_| ())
 }

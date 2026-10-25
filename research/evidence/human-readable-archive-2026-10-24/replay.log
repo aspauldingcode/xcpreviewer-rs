@@ -1,0 +1,57 @@
+{
+  "images": [
+    {
+      "image": "PreviewsFoundationHost",
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    }
+  ],
+  "imports": {
+    "0x131270": {
+      "symbol": "_swift_dynamicCast",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    },
+    "0x131294": {
+      "symbol": "_swift_errorRelease",
+      "library": "/usr/lib/swift/libswiftCore.dylib"
+    }
+  },
+  "human_readable_import": {
+    "symbol": "_$ss5ErrorP22PreviewsFoundationHostE13humanReadableAC05HumanfA0_pvg",
+    "library": "@rpath/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+  },
+  "archive_key": "UVHumanReadableError",
+  "archive_dictionary_mangling": "SDySSypG",
+  "unarchive_error_suppressed": true,
+  "lazy_error_projection_after_payload_absence": true,
+  "ranges": [
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x60eb4",
+      "bytes": 824,
+      "sha256": "39f3567b1fa2e99e59a009db743ff3398516c0ce0cfaf5110cd6b051687f25e1"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x5cf68",
+      "bytes": 464,
+      "sha256": "73fc49af8bd33cc21727ae8eff70b80312ff316457da87a8ab94ad210a3d8750"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x3fcb8",
+      "bytes": 420,
+      "sha256": "dc4cc7f0eb417a00eaa7010c049913873be783f41966d8a758baf6aa283ed435"
+    }
+  ],
+  "selected_source_bytes_verified": 1708,
+  "private_swift_runtime_invoked": false,
+  "full_remote_archive_schema_implemented": false,
+  "target_settlement_proven": false
+}
+Eight Foundation cast controls,216 Rust tests and actual WASI projection/extraction replay passed; private callback and native settlement remain open.
