@@ -297,3 +297,5 @@ pub mod content_requests;
 pub mod content_results;
 
 pub mod variants_configuration;
+
+pub mod single_select_configuration;

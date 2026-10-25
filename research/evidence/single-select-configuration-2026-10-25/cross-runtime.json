@@ -1,0 +1,87 @@
+[
+  {
+    "case": "list",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "range",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-id",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "opaque-id",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "long-id",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unknown-omitted",
+    "accepted": true,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-style",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "missing-default",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "unknown-style",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "empty-style",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "case-sensitive",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "numeric-style",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "bool-default",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "array-default",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "dict-default",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "wrong-root",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  },
+  {
+    "case": "both-missing",
+    "accepted": false,
+    "native_wasi_complete_type_sensitive_equality": true
+  }
+]

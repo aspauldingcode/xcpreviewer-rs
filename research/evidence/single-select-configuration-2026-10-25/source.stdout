@@ -1,0 +1,36 @@
+{
+  "image_sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+  "uuid": "ce1040273729381b8f0cc774e404c0ce",
+  "ranges": [
+    {
+      "start": "0xa09c8",
+      "bytes": 652,
+      "sha256": "5098afff78dd74d00ddcc8180fa48d9c60885c1af5f096ed89b98bf5f69c2015"
+    },
+    {
+      "start": "0x1b44",
+      "bytes": 124,
+      "sha256": "147adf2bd5662d3c0e933d9886ef20f12670bf15b48b4087527bc75969ea8331"
+    },
+    {
+      "start": "0xa10d4",
+      "bytes": 180,
+      "sha256": "58998c7c731dcd6a070aa47255f8f2a460ba99e08c276fdf17eb5074033e2222"
+    }
+  ],
+  "selected_source_bytes_verified": 956,
+  "native_private_decoder_invoked": false,
+  "selection_or_rendering_performed": false,
+  "single_select_keys": [
+    "style",
+    "defaultVariant"
+  ],
+  "style": "required closed String: list|range",
+  "defaultVariant": "required open PreviewVariant.ID String",
+  "decode_order": [
+    "style",
+    "defaultVariant"
+  ],
+  "multi_select_defaultVariants": "required Set<PreviewVariant.ID>; equality/order/representation not ported",
+  "full_override_configuration_implemented": false
+}

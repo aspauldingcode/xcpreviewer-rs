@@ -43,5 +43,11 @@ exit status before consuming output; a write failure may leave partial stdout.
 The same command runs under actual WASI preview1. Standard input needs no
 filesystem preopens; named input needs a host-granted directory. Verification
 uses explicit standard-I/O handles, no preopens and no inherited environment.
-Browser execution, private decoder/runtime parity, whole grouped replies and selection configurations, and
+Browser execution, private decoder/runtime parity, whole grouped replies and full override-selection configurations, and
 actual rendering/lifecycle/resource settlement remain outside this result.
+
+## Single-select configuration
+
+Use `inspect-content-result single-selection INPUT.bplist` (or `-` for stdin) to inspect an individual SingleSelectConfiguration. Add `--canonical` before the kind to emit normalized binary plist stdout. Both `style` and `defaultVariant` are required strings. Style must be `list` or `range`; defaultVariant is an opaque ID, including empty or unknown strings. Style errors precede default-ID errors. Unknown dictionary fields are omitted from canonical output. Summaries escape IDs, cap them at 256 Unicode scalars and report original byte length/truncation; canonical output preserves the complete ID.
+
+This mode does not choose or apply a variant, check membership in another configuration, decode full override configurations or decode grouped replies. Multi-select default IDs use a native Set; equality, representative retention and serialization ordering remain to be qualified before implementing that branch.
