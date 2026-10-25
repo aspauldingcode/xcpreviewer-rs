@@ -5,7 +5,8 @@ use crate::{
     variant_id_set::VariantIdSet,
     variants_configuration::{self, PreviewVariantsConfiguration},
 };
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
+use unicode_normalization::UnicodeNormalization;
 /// Opaque group IDs use the same qualified Unicode equality as variant IDs.
 pub type AssociatedGroupIds = VariantIdSet;
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -35,6 +36,45 @@ fn fields(v: &Value) -> Result<&BTreeMap<String, Value>, Error> {
     }
 }
 impl PreviewVariantGroup {
+    /// Direct override variants only; child override configurations are excluded.
+    pub fn overrides_variants(&self) -> &[crate::content_results::PreviewVariant] {
+        self.overrides_configuration
+            .as_ref()
+            .map_or(&[], |v| &v.variants)
+    }
+    /// Section variants in section/element order, retaining duplicates.
+    pub fn grid_variants(&self) -> Vec<crate::content_results::PreviewVariant> {
+        self.variants_configuration
+            .iter()
+            .flat_map(|v| &v.sections)
+            .flat_map(|s| &s.variants)
+            .cloned()
+            .collect()
+    }
+    /// Overrides followed by grid variants, retaining the first equal full value.
+    /// Equality here qualifies all String fields with Unicode 16 canonical
+    /// equivalence; effect order and optional orientation remain significant.
+    /// The public model's derived PartialEq still compares stored spellings.
+    pub fn all_variants(&self) -> Vec<crate::content_results::PreviewVariant> {
+        let mut seen = BTreeSet::new();
+        self.overrides_variants()
+            .iter()
+            .cloned()
+            .chain(self.grid_variants())
+            .filter(|v| {
+                seen.insert((
+                    v.id.nfd().collect::<String>(),
+                    v.display_name.nfd().collect::<String>(),
+                    v.render_effects
+                        .iter()
+                        .map(|e| e.id.nfd().collect::<String>())
+                        .collect::<Vec<_>>(),
+                    v.interface_orientation_override.map(|o| o.as_str()),
+                ))
+            })
+            .collect()
+    }
+
     pub fn decode(v: &Value) -> Result<Self, Error> {
         let f = fields(v)?;
         let id = match f.get("id") {

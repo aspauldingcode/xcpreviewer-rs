@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -98,6 +98,7 @@ fn run() -> Result<(), String> {
         && kind != "group"
         && kind != "variants-reply"
         && kind != "default-selection"
+        && kind != "group-variants"
     {
         return Err(USAGE.into());
     }
@@ -120,7 +121,43 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "default-selection" {
+    let normalized: Value = if kind == "group-variants" {
+        let group =
+            PreviewVariantGroup::decode(&value).map_err(|e| format!("group-variants: {e:?}"))?;
+        let lists = [
+            ("overrides", group.overrides_variants().to_vec()),
+            ("grid", group.grid_variants()),
+            ("all", group.all_variants()),
+        ];
+        if !canonical {
+            writeln!(out, "result=group-variants").map_err(|e| e.to_string())?;
+            for (key, values) in &lists {
+                writeln!(out, "{key}={}", values.len()).map_err(|e| e.to_string())?;
+                for (index, v) in values.iter().take(8).enumerate() {
+                    string(&mut out, &format!("{key}{index}.id"), Some(&v.id))
+                        .map_err(|e| e.to_string())?;
+                    string(
+                        &mut out,
+                        &format!("{key}{index}.displayName"),
+                        Some(&v.display_name),
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+                writeln!(out, "{key}Shown={}", values.len().min(8)).map_err(|e| e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            lists
+                .into_iter()
+                .map(|(key, values)| {
+                    (
+                        key.into(),
+                        Value::Array(values.iter().map(PreviewVariant::to_value).collect()),
+                    )
+                })
+                .collect(),
+        )
+    } else if kind == "default-selection" {
         let value = PreviewOverridesConfiguration::decode(&value)
             .map_err(|e| format!("default-selection: {e:?}"))?;
         let selected = value.default_selection();
