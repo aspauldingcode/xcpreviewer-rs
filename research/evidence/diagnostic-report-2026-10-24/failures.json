@@ -1,0 +1,16 @@
+{
+  "verification_failures": [
+    {
+      "stage": "initial source verifier",
+      "incorrect_assumption": "generic error helper import contains appendInterpolation",
+      "observed_import": "_$ss15_print_unlockedyyx_q_zts16TextOutputStreamR_r0_lF",
+      "resolution": "Require measured exact _print_unlocked import; public Swift interpolation control unchanged",
+      "receipt": "initial-source-failure.txt"
+    }
+  ],
+  "expected_negative_controls": {
+    "report_write_failure_suppressed": true,
+    "joined_byte_budget_rejects_before_io": true
+  },
+  "scope": "Public typed Foundation formatting/report file operations only; shipped private collector not invoked."
+}
