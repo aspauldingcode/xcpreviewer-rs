@@ -130,3 +130,16 @@ and capped at 256 scalars. Portable canonical ordering and recursive-default
 representative policies remain scoped as documented above. The shipped private
 SwiftUI setter has not been invoked; native UI animation and binding behavior
 remain unverified.
+
+
+`update-single-selection` shares the original update report and strict configuration,
+`isEnabled` Bool and `selection` String-array input. It requires `requestedVariant`
+String instead of `requestedSelection`. The chosen ID may be unknown or empty.
+Starting with current selection, it removes every other direct root ID and the IDs
+of that root's immediate child variants, even if that root was not selected. It
+preserves unrelated IDs, grandchildren, orphan child values and existing values
+under the chosen root. It inserts the chosen ID, rebuilds immediate child rows from
+matching direct variants (including duplicates), and unions their recursive defaults.
+Equal canonical membership preserves stored representatives; enablement is unchanged.
+This is a calculation on owned state; native bindings/animation/persistence remain
+unverified. Summaries retain the same bounded eight-ID/four-title policy.

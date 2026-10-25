@@ -22,6 +22,10 @@ impl VariantIdSet {
             Entry::Occupied(_) => false,
         }
     }
+    /// Remove a canonical ID, returning its stored spelling when present.
+    pub fn remove(&mut self, value: &str) -> Option<String> {
+        self.values.remove(&value.nfd().collect::<String>())
+    }
     pub fn contains(&self, value: &str) -> bool {
         self.values.contains_key(&value.nfd().collect::<String>())
     }

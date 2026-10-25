@@ -174,3 +174,57 @@ impl VariantGroupSettings {
         }
     }
 }
+
+/// Complete replacement child rows and state-change report for a single-ID edit.
+/// Native UI binding writes, animation and persistence remain caller-owned.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct SingleSelectionUpdate<'a> {
+    pub child_configurations:
+        Vec<&'a crate::overrides_configuration::PreviewOverridesConfiguration>,
+    pub selection_changed: bool,
+}
+impl VariantGroupSettings {
+    /// Remove other direct roots and their immediate child variant IDs from the
+    /// current selection, even when those roots were not selected. Preserve all
+    /// other IDs, including grandchildren and existing selected-child values.
+    /// Insert the requested opaque ID, then union defaults of its direct child
+    /// rows. Enablement and equal-membership stored representatives are preserved.
+    pub fn update_single_selection<'a>(
+        &mut self,
+        configuration: &'a crate::overrides_configuration::PreviewOverridesConfiguration,
+        requested: String,
+    ) -> SingleSelectionUpdate<'a> {
+        let initial: VariantIdSet = [requested.clone()].into_iter().collect();
+        let mut selection = self.selection.clone();
+        for variant in &configuration.variants {
+            if !initial.contains(&variant.id) {
+                selection.remove(&variant.id);
+                if let Some(child) = configuration.child_variant_configurations.get(&variant.id) {
+                    for variant in &child.variants {
+                        selection.remove(&variant.id);
+                    }
+                }
+            }
+        }
+        selection.insert(requested);
+        let child_configurations: Vec<_> = configuration
+            .variants
+            .iter()
+            .filter(|variant| initial.contains(&variant.id))
+            .filter_map(|variant| configuration.child_variant_configurations.get(&variant.id))
+            .collect();
+        for child in &child_configurations {
+            for id in child.default_selection().iter() {
+                selection.insert(id.into());
+            }
+        }
+        let selection_changed = self.selection != selection;
+        if selection_changed {
+            self.selection = selection;
+        }
+        SingleSelectionUpdate {
+            child_configurations,
+            selection_changed,
+        }
+    }
+}

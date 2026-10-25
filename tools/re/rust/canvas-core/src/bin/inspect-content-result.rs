@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -104,6 +104,7 @@ fn run() -> Result<(), String> {
         && kind != "align-settings"
         && kind != "row-settings"
         && kind != "update-multi-selection"
+        && kind != "update-single-selection"
     {
         return Err(USAGE.into());
     }
@@ -126,7 +127,8 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "update-multi-selection" {
+    let normalized: Value = if kind == "update-multi-selection" || kind == "update-single-selection"
+    {
         use canvas_core::{
             effective_overrides::VariantGroupSettings, variant_id_set::VariantIdSet,
         };
@@ -157,9 +159,18 @@ fn run() -> Result<(), String> {
             is_enabled: *is_enabled,
             selection: ids("selection")?,
         };
-        let update = state.update_multi_selection(&configuration, ids("requestedSelection")?);
+        let (child_configurations, selection_changed) = if kind == "update-single-selection" {
+            let Some(Value::String(requested)) = f.get("requestedVariant") else {
+                return Err("selection-update-input: requestedVariant String required".into());
+            };
+            let update = state.update_single_selection(&configuration, requested.clone());
+            (update.child_configurations, update.selection_changed)
+        } else {
+            let update = state.update_multi_selection(&configuration, ids("requestedSelection")?);
+            (update.child_configurations, update.selection_changed)
+        };
         if !canonical {
-            writeln!(out,"result=update-multi-selection\nselectionChanged={}\nisEnabled={}\nselection={}\nchildConfigurations={}",update.selection_changed,state.is_enabled,state.selection.len(),update.child_configurations.len()).map_err(|e|e.to_string())?;
+            writeln!(out,"result={}\nselectionChanged={}\nisEnabled={}\nselection={}\nchildConfigurations={}",kind.to_string_lossy(),selection_changed,state.is_enabled,state.selection.len(),child_configurations.len()).map_err(|e|e.to_string())?;
             for (i, id) in state.selection.iter().take(8).enumerate() {
                 string(&mut out, &format!("selected{i}"), Some(id)).map_err(|e| e.to_string())?;
             }
@@ -167,10 +178,10 @@ fn run() -> Result<(), String> {
                 out,
                 "selectionShown={}\nchildConfigurationsShown={}",
                 state.selection.len().min(8),
-                update.child_configurations.len().min(4)
+                child_configurations.len().min(4)
             )
             .map_err(|e| e.to_string())?;
-            for (i, child) in update.child_configurations.iter().take(4).enumerate() {
+            for (i, child) in child_configurations.iter().take(4).enumerate() {
                 string(&mut out, &format!("child{i}.title"), Some(&child.title))
                     .map_err(|e| e.to_string())?;
             }
@@ -178,10 +189,7 @@ fn run() -> Result<(), String> {
         Value::Dictionary(
             [
                 ("isEnabled".into(), Value::Boolean(state.is_enabled)),
-                (
-                    "selectionChanged".into(),
-                    Value::Boolean(update.selection_changed),
-                ),
+                ("selectionChanged".into(), Value::Boolean(selection_changed)),
                 (
                     "selection".into(),
                     Value::Array(
@@ -194,13 +202,7 @@ fn run() -> Result<(), String> {
                 ),
                 (
                     "childConfigurations".into(),
-                    Value::Array(
-                        update
-                            .child_configurations
-                            .iter()
-                            .map(|c| c.to_value())
-                            .collect(),
-                    ),
+                    Value::Array(child_configurations.iter().map(|c| c.to_value()).collect()),
                 ),
             ]
             .into_iter()
