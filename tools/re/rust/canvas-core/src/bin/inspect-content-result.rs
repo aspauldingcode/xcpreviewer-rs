@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -106,6 +106,7 @@ fn run() -> Result<(), String> {
         && kind != "update-multi-selection"
         && kind != "update-single-selection"
         && kind != "row-controls"
+        && kind != "override-cache-keys"
     {
         return Err(USAGE.into());
     }
@@ -128,7 +129,53 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "row-controls" {
+    let normalized: Value = if kind == "override-cache-keys" {
+        use canvas_core::content_requests::RequestContentOverridePayload;
+        let Value::Array(requests) = &value else {
+            return Err("override-cache-input: request array required".into());
+        };
+        let requests = requests
+            .iter()
+            .map(|value| {
+                let Value::Dictionary(fields) = value else {
+                    return Err("override-cache-input: request dictionary".into());
+                };
+                RequestContentOverridePayload::decode_dictionary(fields)
+                    .map_err(|e| format!("override-cache-input: {e:?}"))
+            })
+            .collect::<Result<Vec<_>, String>>()?;
+        let mut keys = std::collections::HashMap::new();
+        let classes: Vec<usize> = requests
+            .iter()
+            .enumerate()
+            .map(|(i, request)| *keys.entry(request.cache_key()).or_insert(i))
+            .collect();
+        if !canonical {
+            writeln!(
+                out,
+                "result=override-cache-keys\nrequests={}\nuniqueKeys={}\nrepresentativesShown={}",
+                classes.len(),
+                keys.len(),
+                classes.len().min(8)
+            )
+            .map_err(|e| e.to_string())?;
+            for (i, representative) in classes.iter().take(8).enumerate() {
+                writeln!(out, "request{i}.representative={representative}")
+                    .map_err(|e| e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            [
+                (
+                    "representatives".into(),
+                    Value::Array(classes.iter().map(|i| Value::Integer(*i as i64)).collect()),
+                ),
+                ("uniqueKeys".into(), Value::Integer(keys.len() as i64)),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "row-controls" {
         use canvas_core::{
             effective_overrides::{OverrideSettings, VariantGroupSettings},
             variant_id_set::VariantIdSet,

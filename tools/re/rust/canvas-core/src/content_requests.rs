@@ -93,3 +93,27 @@ impl RequestContentOverridePayload {
         ])
     }
 }
+
+/// Identity of a DestinationCapabilitiesCache content-override request.
+/// Category and each ordered override ID use qualified Swift canonical Unicode
+/// equality. Order, duplicate multiplicity, emptiness and case remain significant.
+/// Hash values are Rust-local; native hash bits/cache scheduling are not reproduced.
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
+pub struct ContentOverrideCacheKey {
+    content_category: String,
+    requested_overrides: Vec<String>,
+}
+impl RequestContentOverridePayload {
+    /// Build an immutable normalized key without changing wire spellings/order.
+    pub fn cache_key(&self) -> ContentOverrideCacheKey {
+        use unicode_normalization::UnicodeNormalization;
+        ContentOverrideCacheKey {
+            content_category: self.content_category.nfd().collect(),
+            requested_overrides: self
+                .requested_overrides
+                .iter()
+                .map(|id| id.nfd().collect())
+                .collect(),
+        }
+    }
+}

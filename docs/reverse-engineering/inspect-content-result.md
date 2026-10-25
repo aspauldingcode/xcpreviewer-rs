@@ -165,3 +165,19 @@ may differ from Xcode. This is a per-call projection, not a retained SwiftUI bin
 with a captured fallback or native-order parity. Summaries show at most eight stored
 and eight candidate IDs with escaped256-scalar previews. No native binding or
 persistence action occurs. The input and derived report are not Apple wire schemas.
+
+
+`override-cache-keys` accepts an ordered array of existing content-override request
+payload dictionaries (`contentCategory` String and required `requestedOverrides`
+String array). It validates the whole batch before grouping requests by scoped
+DestinationCapabilitiesCache.ContentOverrideKey identity. Category and each
+positionwise override use qualified canonical Unicode equality. Array order,
+duplicate count, empty arrays/IDs, case and compatibility distinctions matter.
+
+`--canonical` emits the original derived report `representatives` (zero-based
+first request index per equivalent key) and `uniqueKeys`; this is not native cache
+serialization. Summary shows at most eight representative indices. The immutable
+Rust key leaves wire spellings/order unchanged and supports Rust-local HashMap
+memoization. Native hash bits, task coalescing, cache lifetime, error retention,
+invalidation, fetch execution and transport behavior remain unimplemented. The
+Unicode16 qualification and codec bounds/error-order limits remain inherited.
