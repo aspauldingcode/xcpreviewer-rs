@@ -1,0 +1,20 @@
+{
+  "failures": [
+    {
+      "operation": "strict authenticated-code-slot reader on0x28f680978",
+      "result": "Rejected address-diverse IA profile; slot is a regular v5 pointer",
+      "correction": "Used separately checked regular-pointer chain reader; target exports resolve activate/cancel and source signs before indirect call"
+    },
+    {
+      "operation": "branch decoder at0x263308e10",
+      "result": "Assertion before resolution because instruction is LDP",
+      "correction": "Use verified branch0x263308e24"
+    },
+    {
+      "operation": "branch decoder at0x263303a28",
+      "result": "Assertion before resolution because instruction is MOV",
+      "correction": "Use verified branch0x263303a2c"
+    }
+  ],
+  "scope": "Bounded static exploration only; no private ABI invoked and no product modified"
+}
