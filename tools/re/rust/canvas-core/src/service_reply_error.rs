@@ -47,10 +47,15 @@ impl ServiceReplyError {
     /// serialization. This does not validate arbitrary Objective-C userInfo,
     /// implement the native encoding fallback, or report transport completion.
     pub fn to_dictionary(&self) -> BTreeMap<String, Value> {
+        self.clone().into_dictionary()
+    }
+    /// Move owned fields into the wire-value dictionary without cloning large
+    /// userInfo before a bounded serializer gets to inspect it.
+    pub fn into_dictionary(self) -> BTreeMap<String, Value> {
         BTreeMap::from([
-            ("domain".into(), Value::String(self.domain.clone())),
+            ("domain".into(), Value::String(self.domain)),
             ("code".into(), Value::Integer(self.code)),
-            ("userInfo".into(), Value::Dictionary(self.user_info.clone())),
+            ("userInfo".into(), Value::Dictionary(self.user_info)),
         ])
     }
     /// The native helper requires domain:String, code:Int and userInfo:[String:Any].

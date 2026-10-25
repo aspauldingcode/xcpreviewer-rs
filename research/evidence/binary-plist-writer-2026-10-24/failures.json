@@ -1,0 +1,27 @@
+{
+  "foundation_rejection": {
+    "initial_file": "data-root-initial.bplist",
+    "initial_self_and_python_roundtrip_passed": true,
+    "native_rejection": {
+      "code": 3840,
+      "description": "The data couldn\u2019t be read because it isn\u2019t in the correct format.",
+      "error": "NSCocoaErrorDomain",
+      "name": "data"
+    },
+    "cause_and_correction": "Initial offset width covered the last object start but not the table position for a512-byte root data object. Width now covers table position; all15 outputs parse correctly in pinned Foundation. Root-data regression added."
+  },
+  "initial_probe_failure": {
+    "exit_signal": 5,
+    "reason": "Uncaught top-level Swift parsing error caused the owned helper to trap",
+    "correction": "Catch per-file errors and retain individual result rows; final helper exits normally"
+  },
+  "temporary_patch_script": {
+    "result": "SyntaxError before edits",
+    "correction": "Escaped newline correctly in prepared patch script; reran successfully"
+  },
+  "draft_review": {
+    "integer_width": "Use u64 value for width calculation so 32-bit targets do not truncate i64 values before encoding",
+    "byte_budget": "Allow UTF-8 inputs that shrink as UTF-16; final output/table/trailer byte count remains exact",
+    "ownership": "Borrow dictionary values and move owned error fields before bounded serialization; do not clone entire values first"
+  }
+}

@@ -24,7 +24,7 @@ pub fn select_service_response_with<E>(
         return Some(payload);
     }
     let error = project_error(error?)?;
-    Some(ServicePropertyList::Dictionary(error.to_dictionary()))
+    Some(ServicePropertyList::Dictionary(error.into_dictionary()))
 }
 
 /// Encode the selected response into the supplied reply dictionary and call
@@ -49,4 +49,27 @@ pub fn send_service_response_with<E, D, T>(
         select_service_response_with(connection_available, payload, error, project_error)?;
     response.encode_to_xpc_dictionary_with(reply, encode);
     Some(send(reply))
+}
+
+/// Self-contained binary-plist serialization for the finite portable Value
+/// subset. NSError projection and transport remain explicit caller operations.
+/// Unsupported/over-limit dictionary values follow the measured coder's empty
+/// data-on-serialization-failure behavior; inspect the wire/send result if needed.
+pub fn send_service_response_binary<E, T>(
+    connection_available: bool,
+    payload: Option<ServicePropertyList>,
+    error: Option<E>,
+    reply: &mut BTreeMap<String, XpcValue>,
+    project_error: impl FnOnce(E) -> Option<ServiceReplyError>,
+    send: impl FnOnce(&BTreeMap<String, XpcValue>) -> T,
+) -> Option<T> {
+    send_service_response_with(
+        connection_available,
+        payload,
+        error,
+        reply,
+        project_error,
+        |fields| crate::binary_plist_writer::encode_dictionary(fields),
+        send,
+    )
 }

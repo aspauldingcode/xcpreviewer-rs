@@ -268,3 +268,5 @@ pub mod service_connection_event;
 pub mod service_receiver;
 
 pub mod service_response;
+
+pub mod binary_plist_writer;

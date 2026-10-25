@@ -1,0 +1,82 @@
+{
+  "foundation_matched": 15,
+  "format": 200,
+  "source_inputs": {
+    "tools/re/rust/canvas-core/tests/fixtures/service-property-list/nested.wire-data": "8bfb512a592c1cf2f02b51cd44364ab09d4ea102325928b82c91f52641c158d8",
+    "tools/re/rust/canvas-core/tests/fixtures/service-wire-reply/remote-error.wire-data": "15d12be4891a760b54cad710073bda9acd605d8189b9fd5979df790d45207502"
+  },
+  "files": {
+    "bool.bplist": {
+      "bytes": 48,
+      "sha256": "d5ad893ec5a88dcb5542c06436256232e46de065cab9737908e38f863fe4cd70"
+    },
+    "data.bplist": {
+      "bytes": 558,
+      "sha256": "ca5f6a1b34e8f4f250dfa3413d06c37fa5e70d3c1e4b38d3b603aa031953591a"
+    },
+    "dates.bplist": {
+      "bytes": 86,
+      "sha256": "cf1b50035f7fe1fdff13e5923b48aa6e687353d86b2e58cdb91ad87ecfe2b7d4"
+    },
+    "empty.bplist": {
+      "bytes": 42,
+      "sha256": "9261ecceda608ef174256e5fdc774c1e6e3dcf533409c1bc393d490d01c713f1"
+    },
+    "integers.bplist": {
+      "bytes": 123,
+      "sha256": "148b661c449876a0926f2ec3486256e9343ac3be5a79b3020fd1024108621f3d"
+    },
+    "length-14.bplist": {
+      "bytes": 76,
+      "sha256": "2ec3a09a91cb46b0e9c9de5bcf758e0b520c3fa6c6b84bb851ff5770a28ec13f"
+    },
+    "length-15.bplist": {
+      "bytes": 82,
+      "sha256": "97a1369f896bf6409904ef4c66c50dbded28f0dd4c18ae62e77f03d4de2a2e2d"
+    },
+    "length-255.bplist": {
+      "bytes": 565,
+      "sha256": "13538d309e63da7d0a0a07190dfd5aa618861e08ba57121af999ce6404e2aef7"
+    },
+    "length-256.bplist": {
+      "bytes": 569,
+      "sha256": "564f69a5e98a466e808a606d890c33a821ddfd54d3974f11f8f4c0a092d8d213"
+    },
+    "native-error.bplist": {
+      "bytes": 280,
+      "sha256": "ea8cb5fe6776dff0834590cb5f54b3f096222e1747c8d3e3d07adb148f725b73"
+    },
+    "native-nested.bplist": {
+      "bytes": 301,
+      "sha256": "63edd50dd66e9e38f35044cfc922d095b4300bf51c3cbe61591d3c4c107e959b"
+    },
+    "real.bplist": {
+      "bytes": 97,
+      "sha256": "884a52317c8cc815dd1319a83b4d8167e92dc28ccc88430e4cf2fa789c52dd71"
+    },
+    "text.bplist": {
+      "bytes": 96,
+      "sha256": "e8ec471a66e9a850c8efd3a29f56b2d930ebb62062ad126034b98e1125714481"
+    },
+    "wide-offset.bplist": {
+      "bytes": 70081,
+      "sha256": "07c6c0ee3c2745daa15593e10c19312566f8fe02e8de0cd2f0a7ab902cb5c374"
+    },
+    "wide-refs.bplist": {
+      "bytes": 1890,
+      "sha256": "b552e1ff442b1a4552885dac52ec1203687b8678f48f6599d535c532f6aabc4e"
+    }
+  },
+  "checks": [
+    "exact integer values including Int.min/max and2^32",
+    "f64 bit patterns including signed zero/subnormal",
+    "date intervals",
+    "Unicode and embedded NUL/newline",
+    "data bytes",
+    "extended lengths",
+    "wide references/offsets",
+    "nested native owned-input service and error fixtures"
+  ],
+  "private_callback_invoked": false,
+  "target_settlement_proven": false
+}
