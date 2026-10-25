@@ -1,0 +1,13 @@
+{
+  "verification_failures": [],
+  "expected_decode_rejections": 6,
+  "analysis_script_failure": {
+    "operation": "exploratory enum associated-type dump",
+    "result": "TypeError when dereferencing absent static associated type",
+    "correction": "check None explicitly; source verifier asserts static associated type absent",
+    "native_or_reconstruction_failure": false
+  },
+  "native_private_selection_method_invoked": false,
+  "selection_or_rendering_performed": false,
+  "access_scope": "Private import/Ghidra limitations inherited without retry. Stored settings selection value resolution only; no default alignment/native selection application."
+}

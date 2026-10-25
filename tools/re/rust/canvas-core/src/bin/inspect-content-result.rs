@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -100,6 +100,7 @@ fn run() -> Result<(), String> {
         && kind != "default-selection"
         && kind != "group-variants"
         && kind != "render-effects"
+        && kind != "effective-overrides"
     {
         return Err(USAGE.into());
     }
@@ -122,7 +123,108 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "render-effects" {
+    let normalized: Value = if kind == "effective-overrides" {
+        use canvas_core::effective_overrides::{
+            effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
+        };
+        let Value::Dictionary(f) = &value else {
+            return Err("effective-overrides: expected dictionary".into());
+        };
+        let Some(Value::Array(groups)) = f.get("groups") else {
+            return Err("effective-overrides: required groups array".into());
+        };
+        let groups = groups
+            .iter()
+            .map(PreviewVariantGroup::decode)
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(|e| format!("effective-overrides: group: {e:?}"))?;
+        let Some(Value::Array(rows)) = f.get("settings") else {
+            return Err("effective-overrides: required settings array".into());
+        };
+        let mut settings = OverrideSettings::new();
+        for row in rows {
+            let Value::Dictionary(row) = row else {
+                return Err("effective-overrides: settings entry dictionary".into());
+            };
+            let (
+                Some(Value::String(id)),
+                Some(Value::Boolean(is_enabled)),
+                Some(Value::Array(selection)),
+            ) = (
+                row.get("groupID"),
+                row.get("isEnabled"),
+                row.get("selection"),
+            )
+            else {
+                return Err("effective-overrides: required groupID String, isEnabled Bool and selection array".into());
+            };
+            let selection = selection
+                .iter()
+                .map(|v| match v {
+                    Value::String(id) => Ok(id.clone()),
+                    _ => Err("effective-overrides: selection ID String"),
+                })
+                .collect::<Result<canvas_core::variant_id_set::VariantIdSet, _>>()?;
+            settings.insert(
+                id.clone(),
+                VariantGroupSettings {
+                    is_enabled: *is_enabled,
+                    selection,
+                },
+            );
+        }
+        let grid = match f.get("gridGroupID") {
+            None => None,
+            Some(Value::String(id)) => Some(id.as_str()),
+            _ => return Err("effective-overrides: gridGroupID String".into()),
+        };
+        let effective = effective_groups_and_overrides(&groups, &settings, grid);
+        if !canonical {
+            writeln!(
+                out,
+                "result=effective-overrides\ngroups={}",
+                effective.len()
+            )
+            .map_err(|e| e.to_string())?;
+            for (i, entry) in effective.iter().take(4).enumerate() {
+                string(&mut out, &format!("group{i}.id"), Some(&entry.group.id))
+                    .map_err(|e| e.to_string())?;
+                writeln!(out, "group{i}.overrides={}", entry.overrides.len())
+                    .map_err(|e| e.to_string())?;
+                for (j, v) in entry.overrides.iter().take(8).enumerate() {
+                    string(&mut out, &format!("group{i}.override{j}"), Some(&v.id))
+                        .map_err(|e| e.to_string())?;
+                }
+                writeln!(
+                    out,
+                    "group{i}.overridesShown={}",
+                    entry.overrides.len().min(8)
+                )
+                .map_err(|e| e.to_string())?;
+            }
+            writeln!(out, "groupsShown={}", effective.len().min(4)).map_err(|e| e.to_string())?;
+        }
+        Value::Array(
+            effective
+                .iter()
+                .map(|e| {
+                    Value::Dictionary(
+                        [
+                            ("group".into(), e.group.to_value()),
+                            (
+                                "overrides".into(),
+                                Value::Array(
+                                    e.overrides.iter().map(PreviewVariant::to_value).collect(),
+                                ),
+                            ),
+                        ]
+                        .into_iter()
+                        .collect(),
+                    )
+                })
+                .collect(),
+        )
+    } else if kind == "render-effects" {
         // Original inspector input shape, not a recovered native wire payload.
         let Value::Dictionary(fields) = &value else {
             return Err("render-effects: expected dictionary".into());
