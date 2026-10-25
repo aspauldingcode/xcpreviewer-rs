@@ -1,0 +1,24 @@
+{
+  "native_initial_compile": {
+    "reason": "Default Swift/Clang module cache under user home was not writable; standard library load failed before execution",
+    "route_change": "Explicit owned temporary module-cache-path; bounded build/run passed without permission or protection changes"
+  },
+  "static_exploration": [
+    {
+      "reason": "A non-branch instruction address0x6450 was passed to branch/stub resolver and rejected",
+      "correction": "Use opcode-checked actual call sites0x64c4/0x66b0"
+    },
+    {
+      "reason": "Cache.image only identifies __TEXT and rejected the NSError class data address",
+      "correction": "Resolve regular chained class reference, locate Foundation data segment in cache map and bind exact _OBJC_CLASS_$_NSError export"
+    },
+    {
+      "reason": "Symbolic source existential descriptor indirect slot was outside the supported regular-pointer reader profile",
+      "outcome": "Descriptor expansion stopped; not needed for confirmed NSError destination/control-flow. Source existential internals remain unexpanded."
+    }
+  ],
+  "edit_review": {
+    "reason": "Automatic permission review did not finish before deadline; edit did not run",
+    "correction": "One allowed retry using a prepared temporary script and short inspectable command succeeded"
+  }
+}
