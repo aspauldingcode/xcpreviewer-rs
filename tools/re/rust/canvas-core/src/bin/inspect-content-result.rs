@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,7 @@ fn run() -> Result<(), String> {
         && kind != "runnable-configuration-keys"
         && kind != "shell-control-states"
         && kind != "configuration-shell-control-states"
+        && kind != "dynamic-product"
         && kind != "preview-type"
         && kind != "host-location"
         && kind != "unbox-host-update-seed"
@@ -308,6 +309,13 @@ fn run() -> Result<(), String> {
         let values = (0..count).map(|_|seeds.next_seed().to_value()).collect();
         if !canonical { writeln!(out, "result=update-seed-sequence\nseeds={count}").map_err(|e|e.to_string())?; }
         Value::Dictionary([("values".into(),Value::Array(values)),("last".into(),HostUpdateSeed::new(seeds.last_value()).to_value())].into_iter().collect())
+    } else if kind == "dynamic-product" {
+        let product = canvas_core::dynamic_product::DynamicLoadablePreviewProduct::decode(&value)
+            .map_err(|e| format!("dynamic-product: {e:?}"))?;
+        if !canonical {
+            writeln!(out, "result=dynamic-product\nlocation={}\nloadingStrategy={}\nexternalFunctionBinding={}\nisRequired={}", product.location.raw_value(), product.loading_strategy.raw_value(), product.external_function_binding.raw_value(), product.is_required).map_err(|e|e.to_string())?;
+        }
+        product.to_value()
     } else if kind == "preview-type" || kind == "host-location" {
         use canvas_core::preview_type::{HostLocation, PreviewType};
         let (tag, location, normalized) = if kind == "preview-type" {

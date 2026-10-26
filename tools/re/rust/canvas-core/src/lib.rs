@@ -327,3 +327,5 @@ pub mod runnable_configuration_id;
 pub mod shell_control_states;
 pub mod preview_type;
 pub mod update_seed;
+
+pub mod dynamic_product;

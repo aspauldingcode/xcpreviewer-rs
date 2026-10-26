@@ -1,0 +1,39 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "dynamic-product-codec": "native-and-wasi-qualified",
+    "static-product": "open",
+    "incremental-update": "open",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "dynamic-product-codec",
+      "setup"
+    ],
+    [
+      "static-product",
+      "setup"
+    ],
+    [
+      "incremental-update",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Value roundtrips and returned destruction calls do not close loader behavior, provider terminal state or final resource settlement."
+}
