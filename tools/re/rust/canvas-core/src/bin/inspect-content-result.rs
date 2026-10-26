@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -105,6 +105,7 @@ fn run() -> Result<(), String> {
         && kind != "control-state-keys"
         && kind != "control-state-sequence-keys"
         && kind != "runnable-configuration-keys"
+        && kind != "shell-control-states"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -279,6 +280,23 @@ fn run() -> Result<(), String> {
             .into_iter()
             .collect(),
         )
+    } else if kind == "shell-control-states" {
+        use canvas_core::shell_control_states::ShellControlStates;
+        let states = ShellControlStates::read_from(&value)
+            .map_err(|e| format!("shell-control-states: {e:?}"))?;
+        let mut fields = std::collections::BTreeMap::new();
+        fields.insert("isPresent".into(), Value::Boolean(states.boxes().is_some()));
+        if let Some(boxes) = states.boxes() {
+            fields.insert(
+                "controlStates".into(),
+                Value::Array(boxes.iter().map(|b| b.to_value()).collect()),
+            );
+        }
+        if !canonical {
+            writeln!(out, "result=shell-control-states\nscope=controlStates-field-only\nisPresent={}\nboxes={}", states.boxes().is_some(), states.boxes().map_or(0, |b| b.len()))
+                .map_err(|e| e.to_string())?;
+        }
+        Value::Dictionary(fields)
     } else if kind == "runnable-configuration-keys" {
         use canvas_core::{
             canvas_control_state::CanvasControlState, content_results::PreviewVariant,

@@ -324,3 +324,4 @@ pub mod hashable_plist_box;
 pub mod canvas_control_state;
 
 pub mod runnable_configuration_id;
+pub mod shell_control_states;

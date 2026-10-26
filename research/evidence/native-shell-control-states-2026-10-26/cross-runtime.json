@@ -1,0 +1,157 @@
+{
+  "native_shell_cases": 21,
+  "native_accepts": 13,
+  "native_control_states_rejections": 8,
+  "direct_shell_destruction_returns": 13,
+  "direct_property_list_destruction_returns": 13,
+  "direct_error_release_returns": 8,
+  "tool_cases": 28,
+  "accepts": 16,
+  "rejections": 12,
+  "native_matched_rejections": 8,
+  "portable_profile_or_scope_rejections": 4,
+  "actual_wasi_invocations": 44,
+  "foundation_reparses": 16,
+  "cases": [
+    {
+      "case": "native-shell-0",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-1",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-2",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-3",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-4",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-5",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-6",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-7",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-8",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-9",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-10",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-11",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-12",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-13",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-14",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-15",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-16",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-17",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-18",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-19",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-shell-20",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "empty-envelope",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "opaque-envelope",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "many-boxes",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-top",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "canonical-envelope-key-collision",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "canonical-box-key-collision",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "depth-profile",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    }
+  ]
+}

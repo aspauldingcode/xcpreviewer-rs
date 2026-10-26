@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "native-shell-control-field",
+      "state": "21-attempts-13-accepts-8-errors"
+    },
+    {
+      "id": "optional-presence",
+      "state": "absent-distinct-present-empty"
+    },
+    {
+      "id": "ordered-whole-boxes",
+      "state": "unknown-fields-and-duplicates-retained"
+    },
+    {
+      "id": "rust-wire-facet",
+      "state": "358-tests-pass"
+    },
+    {
+      "id": "wasi-inspector",
+      "state": "44-runs-16-reparses"
+    },
+    {
+      "id": "native-caller-projection",
+      "state": "open"
+    },
+    {
+      "id": "complete-shell-setup-products",
+      "state": "open"
+    },
+    {
+      "id": "live-transport-resources",
+      "state": "open"
+    },
+    {
+      "id": "canvas-provider-global-settlement",
+      "state": "quarantined-open"
+    }
+  ],
+  "edges": [
+    [
+      "native-shell-control-field",
+      "optional-presence"
+    ],
+    [
+      "native-shell-control-field",
+      "ordered-whole-boxes"
+    ],
+    [
+      "optional-presence",
+      "rust-wire-facet"
+    ],
+    [
+      "ordered-whole-boxes",
+      "rust-wire-facet"
+    ],
+    [
+      "rust-wire-facet",
+      "wasi-inspector"
+    ],
+    [
+      "wasi-inspector",
+      "native-caller-projection"
+    ],
+    [
+      "native-caller-projection",
+      "complete-shell-setup-products"
+    ],
+    [
+      "complete-shell-setup-products",
+      "live-transport-resources"
+    ],
+    [
+      "live-transport-resources",
+      "canvas-provider-global-settlement"
+    ]
+  ],
+  "execution": "serial-exclusive-controller-lock",
+  "stop_rule": "Qualified optional wire field does not close complete envelope/native caller/real transport/provider/UI/global settlement."
+}
