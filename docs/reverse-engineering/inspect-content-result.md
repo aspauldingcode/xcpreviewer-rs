@@ -369,3 +369,22 @@ not claims that the native initializer rejects those inputs. Generic Swift type 
 unsupported Foundation objects, live state installation/transport and global resource
 settlement remain outside this profile. Actual shipped HashableBox methods, 96 cached projections and 9,216 pair comparisons
 are recorded in `research/evidence/native-hashable-number-2026-10-26`.
+
+
+### Ordered Canvas control-state containers
+
+`control-state-sequence-keys` accepts an array of state arrays. Each state array contains
+whole box dictionaries. It returns original-tool `representatives` (first equal state index),
+`uniqueKeys` and `states` (the complete original values after unboxing). Summary shows at most
+eight state lengths/representatives with no opaque contents. The full input validates before output.
+
+`CanvasControlState` owns an ordered sequence of qualified `HashablePlistBox` values and has an
+empty default. Equality/hashing preserve order and duplicate multiplicity. Empty state differs
+from a state containing an empty box. Numeric/Unicode equality uses the qualified box projection,
+while value extraction preserves original wire values. Native Pipeline state construction/empty,
+comparison/hash/destruction and copied-value reads are exercised in an owned helper after source
+wrappers are destroyed. Native request Configuration.ID comparison delegates its control-state
+part to the same ordered array comparison; complete request identity is not implemented here.
+This original array adapter does not claim a native CanvasControlState wire schema, installation,
+transport, provider execution or global resource settlement. Evidence:
+`research/evidence/native-canvas-control-state-2026-10-26`.

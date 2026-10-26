@@ -1,0 +1,188 @@
+{
+  "source_boxes": 14,
+  "native_states": 24,
+  "native_state_pairs": 576,
+  "copied_box_value_reads_after_source_wrapper_destruction": 29,
+  "tool_cases": 35,
+  "accepts": 28,
+  "portable_profile_rejections": 7,
+  "actual_wasi_invocations": 63,
+  "foundation_reparses": 28,
+  "cases": [
+    {
+      "case": "all-states",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "reverse",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "duplicates",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "empty-batch",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-0",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-1",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-2",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-3",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-4",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-5",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-6",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-7",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-8",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-9",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-10",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-11",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-12",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-13",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-14",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-15",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-16",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-17",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-18",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-19",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-20",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-21",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-22",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "single-23",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-top",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-state",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-box",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "nonfinite",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "nested-collision",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "validate-complete-batch",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "depth-profile",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    }
+  ]
+}

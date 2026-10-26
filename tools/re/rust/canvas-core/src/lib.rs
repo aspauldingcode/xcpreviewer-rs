@@ -320,3 +320,5 @@ pub mod request_projection;
 pub mod plist_value_box;
 
 pub mod hashable_plist_box;
+
+pub mod canvas_control_state;

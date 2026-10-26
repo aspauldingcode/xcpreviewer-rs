@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -103,6 +103,7 @@ fn run() -> Result<(), String> {
         && kind != "plist-box"
         && kind != "control-state-boxes"
         && kind != "control-state-keys"
+        && kind != "control-state-sequence-keys"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -273,6 +274,65 @@ fn run() -> Result<(), String> {
                     Value::Array(retained.into_iter().map(Value::Integer).collect()),
                 ),
                 ("cancelRequests".into(), Value::Array(cancel_requests)),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "control-state-sequence-keys" {
+        use canvas_core::canvas_control_state::CanvasControlState;
+        let Value::Array(values) = &value else {
+            return Err("control-state-sequence-keys: expected array of state arrays".into());
+        };
+        let states = values
+            .iter()
+            .enumerate()
+            .map(|(i, value)| {
+                CanvasControlState::decode(value)
+                    .map_err(|e| format!("control-state-sequence-keys: state{i}: {e:?}"))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+        let mut keys = std::collections::HashMap::new();
+        let representatives: Vec<_> = states
+            .iter()
+            .enumerate()
+            .map(|(i, state)| *keys.entry(state).or_insert(i))
+            .collect();
+        if !canonical {
+            writeln!(
+                out,
+                "result=control-state-sequence-keys\nstates={}\nuniqueKeys={}\nstatesShown={}",
+                states.len(),
+                keys.len(),
+                states.len().min(8)
+            )
+            .map_err(|e| e.to_string())?;
+            for (i, (state, representative)) in
+                states.iter().zip(&representatives).take(8).enumerate()
+            {
+                writeln!(
+                    out,
+                    "state{i}.boxes={}\nstate{i}.representative={representative}",
+                    state.states().len()
+                )
+                .map_err(|e| e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            [
+                (
+                    "representatives".into(),
+                    Value::Array(
+                        representatives
+                            .iter()
+                            .map(|i| Value::Integer(*i as i64))
+                            .collect(),
+                    ),
+                ),
+                ("uniqueKeys".into(), Value::Integer(keys.len() as i64)),
+                (
+                    "states".into(),
+                    Value::Array(states.iter().map(CanvasControlState::to_value).collect()),
+                ),
             ]
             .into_iter()
             .collect(),
