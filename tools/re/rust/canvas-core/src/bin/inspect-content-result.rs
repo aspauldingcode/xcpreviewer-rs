@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -100,6 +100,10 @@ fn run() -> Result<(), String> {
         && kind != "default-selection"
         && kind != "group-variants"
         && kind != "render-effects"
+        && kind != "plist-box"
+        && kind != "control-state-boxes"
+        && kind != "unbox-string"
+        && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
         && kind != "request-projections"
         && kind != "grid-request-overrides"
@@ -585,6 +589,10 @@ fn run() -> Result<(), String> {
         let grid = match f.get("gridGroupID").filter(|_| {
             kind != "grid-request-overrides"
                 && kind != "request-projections"
+                && kind != "plist-box"
+                && kind != "control-state-boxes"
+                && kind != "unbox-string"
+                && kind != "unbox-optional-string"
                 && kind != "configured-request-projections"
         }) {
             None => None,
@@ -958,6 +966,74 @@ fn run() -> Result<(), String> {
                     })
                     .collect(),
             )
+        }
+    } else if kind == "plist-box"
+        || kind == "control-state-boxes"
+        || kind == "unbox-string"
+        || kind == "unbox-optional-string"
+    {
+        use canvas_core::plist_value_box::{decode_boxes, PlistValueBox};
+        if kind == "control-state-boxes" {
+            let boxes = decode_boxes(&value).map_err(|e| format!("control-state-boxes: {e:?}"))?;
+            if !canonical {
+                writeln!(out, "result=control-state-boxes\nboxes={}", boxes.len())
+                    .map_err(|e| e.to_string())?;
+                for (i, b) in boxes.iter().take(8).enumerate() {
+                    writeln!(
+                        out,
+                        "box{i}.fields={}\nbox{i}.valuePresent={}",
+                        b.field_count(),
+                        b.value().is_some()
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+                writeln!(out, "boxesShown={}", boxes.len().min(8)).map_err(|e| e.to_string())?;
+            }
+            Value::Array(boxes.iter().map(PlistValueBox::to_value).collect())
+        } else {
+            let b = PlistValueBox::decode(&value).map_err(|e| format!("plist-box: {e:?}"))?;
+            if kind == "plist-box" {
+                if !canonical {
+                    writeln!(
+                        out,
+                        "result=plist-box\nfields={}\nvaluePresent={}",
+                        b.field_count(),
+                        b.value().is_some()
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+                b.to_value()
+            } else {
+                let decode = |v: &Value| match v {
+                    Value::String(s) => Ok(s.clone()),
+                    _ => Err("expected String"),
+                };
+                let value = if kind == "unbox-string" {
+                    Some(
+                        b.required_with(decode)
+                            .map_err(|e| format!("unbox-string: {e:?}"))?,
+                    )
+                } else {
+                    b.optional_with(decode)
+                        .map_err(|e| format!("unbox-optional-string: {e}"))?
+                };
+                if !canonical {
+                    let label = if kind == "unbox-string" {
+                        "unbox-string"
+                    } else {
+                        "unbox-optional-string"
+                    };
+                    writeln!(out, "result={label}\nisPresent={}", value.is_some())
+                        .map_err(|e| e.to_string())?;
+                    string(&mut out, "value", value.as_deref()).map_err(|e| e.to_string())?;
+                }
+                let mut fields = std::collections::BTreeMap::new();
+                fields.insert("isPresent".into(), Value::Boolean(value.is_some()));
+                if let Some(value) = value {
+                    fields.insert("value".into(), Value::String(value));
+                }
+                Value::Dictionary(fields)
+            }
         }
     } else if kind == "render-effects" {
         // Original inspector input shape, not a recovered native wire payload.

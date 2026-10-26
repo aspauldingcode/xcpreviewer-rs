@@ -298,3 +298,28 @@ empty array. `configured_request_projections<T: Clone>` leaves boxed values/hand
 cloning to the host. Original plist values demonstrate opaque array propagation;
 native HashableBox/PlistValueBox codecs, equality/identity/lifetimes, full request
 fields, persistence and resource settlement are not modeled or proven.
+
+
+### Property-list value boxes
+
+`plist-box` accepts a wire dictionary, retaining all fields and values without
+requiring or typing `value`. Empty/unknown-only dictionaries are valid boxes.
+`control-state-boxes` accepts an array of these dictionaries; order and duplicates
+are retained, and every element validates before output. Canonical output preserves
+the complete dictionaries. Summaries show counts/presence only, at most eight boxes.
+These codecs do not unwrap boxes during wire decoding.
+
+`unbox-string` requires `value` to be a String. `unbox-optional-string` returns
+absence only when `value` is missing; present wrong types fail, while empty String
+is present. Their canonical output is an original `{isPresent: Bool, value?: String}`
+report. String summaries use the existing escaped 256-scalar limit. Unknown box
+fields are ignored only by these typed getters and preserved by the box codec.
+
+Core `PlistValueBox::required_with`/`optional_with` delegate present-value validation
+to a caller codec, preserving its errors. `from_value` wraps one encoded value under
+`value`; it does not reproduce the generic optional native constructor. The native
+outer PropertyList is a String-keyed dictionary. As with existing dictionary codecs,
+raw canonically equivalent outer key collisions are explicitly unsupported by this
+portable adapter, although native bridging may collapse them. Nested opaque values
+are retained. No native error-text, HashableBox equality/hash/identity/lifetime,
+private method execution or complete control-state transport parity is claimed.

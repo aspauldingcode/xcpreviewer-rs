@@ -316,3 +316,5 @@ pub mod effective_overrides;
 pub mod task_cache;
 
 pub mod request_projection;
+
+pub mod plist_value_box;
