@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -100,6 +100,7 @@ fn run() -> Result<(), String> {
         && kind != "default-selection"
         && kind != "group-variants"
         && kind != "render-effects"
+        && kind != "configured-request-projections"
         && kind != "request-projections"
         && kind != "grid-request-overrides"
         && kind != "effective-overrides"
@@ -527,6 +528,7 @@ fn run() -> Result<(), String> {
         || kind == "row-settings"
         || kind == "grid-request-overrides"
         || kind == "request-projections"
+        || kind == "configured-request-projections"
     {
         use canvas_core::effective_overrides::{
             effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
@@ -580,15 +582,16 @@ fn run() -> Result<(), String> {
                 },
             );
         }
-        let grid = match f
-            .get("gridGroupID")
-            .filter(|_| kind != "grid-request-overrides" && kind != "request-projections")
-        {
+        let grid = match f.get("gridGroupID").filter(|_| {
+            kind != "grid-request-overrides"
+                && kind != "request-projections"
+                && kind != "configured-request-projections"
+        }) {
             None => None,
             Some(Value::String(id)) => Some(id.as_str()),
             _ => return Err("override-input: gridGroupID String".into()),
         };
-        if kind == "request-projections" {
+        if kind == "request-projections" || kind == "configured-request-projections" {
             use canvas_core::request_projection::{
                 admitted_request_projections, CanvasMode, Capabilities, DisplayMode, HostLocation,
             };
@@ -636,23 +639,67 @@ fn run() -> Result<(), String> {
             ) else {
                 return Err("request-projections: required capability Bools".into());
             };
-            let requests = admitted_request_projections(
-                &groups,
-                &settings,
-                mode,
-                Capabilities {
-                    supports_continuous_live_preview: *continuous,
-                    supports_static_previews: *static_previews,
-                },
-            );
+            let capabilities = Capabilities {
+                supports_continuous_live_preview: *continuous,
+                supports_static_previews: *static_previews,
+            };
+            let requests: Vec<(_, Option<Vec<Value>>)> = if kind == "configured-request-projections"
+            {
+                use canvas_core::request_projection::{
+                    configured_request_projections, PreviewSettings,
+                };
+                fn row(value: &Value) -> Result<PreviewSettings<Value>, String> {
+                    let Value::Dictionary(row) = value else {
+                        return Err("configured-request-projections: settings dictionary".into());
+                    };
+                    let (Some(Value::Boolean(enabled)), Some(Value::Array(states))) =
+                        (row.get("isEnabled"), row.get("boxedCanvasControlStates"))
+                    else {
+                        return Err("configured-request-projections: required isEnabled Bool and boxedCanvasControlStates array".into());
+                    };
+                    Ok(PreviewSettings {
+                        is_enabled: *enabled,
+                        boxed_canvas_control_states: states.clone(),
+                    })
+                }
+                let defaults = row(f
+                    .get("defaultPreviewSettings")
+                    .ok_or("configured-request-projections: required defaultPreviewSettings")?)?;
+                let stored = f.get("previewSettings").map(row).transpose()?;
+                configured_request_projections(
+                    &groups,
+                    &settings,
+                    mode,
+                    capabilities,
+                    stored.as_ref(),
+                    &defaults,
+                )
+                .into_iter()
+                .map(|p| (p.request, Some(p.control_states)))
+                .collect()
+            } else {
+                admitted_request_projections(&groups, &settings, mode, capabilities)
+                    .into_iter()
+                    .map(|p| (p, None))
+                    .collect()
+            };
             if !canonical {
                 writeln!(
                     out,
-                    "result=request-projections\nrequests={}",
+                    "result={}\nrequests={}",
+                    if kind == "configured-request-projections" {
+                        "configured-request-projections"
+                    } else {
+                        "request-projections"
+                    },
                     requests.len()
                 )
                 .map_err(|e| e.to_string())?;
-                for (i, request) in requests.iter().take(8).enumerate() {
+                for (i, (request, states)) in requests.iter().take(8).enumerate() {
+                    if let Some(states) = states {
+                        writeln!(out, "request{i}.controlStates={}", states.len())
+                            .map_err(|e| e.to_string())?;
+                    }
                     writeln!(
                         out,
                         "request{i}.displayMode={}\nrequest{i}.overrides={}",
@@ -677,7 +724,7 @@ fn run() -> Result<(), String> {
             Value::Array(
                 requests
                     .iter()
-                    .map(|request| {
+                    .map(|(request, states)| {
                         let mut display = std::collections::BTreeMap::new();
                         match request.display_mode {
                             DisplayMode::Interactive(value) => {
@@ -709,6 +756,9 @@ fn run() -> Result<(), String> {
                         .collect();
                         if let Some(variant) = &request.variant {
                             fields.insert("variant".into(), variant.to_value());
+                        }
+                        if let Some(states) = states {
+                            fields.insert("controlState".into(), Value::Array(states.clone()));
                         }
                         Value::Dictionary(fields)
                     })

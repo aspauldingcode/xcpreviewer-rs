@@ -1,5 +1,5 @@
 //! Ordered display/override/variant projections after native request admission.
-//! Admission, stored/default mode resolution, full request fields and execution
+//! Native identity lookup, stored/default mode resolution, full fields and execution
 //! are caller-owned. These types are original projections, not native wire types.
 use crate::{
     content_results::PreviewVariant,
@@ -93,4 +93,52 @@ pub fn admitted_request_projections(
         }
     }
     requests
+}
+
+/// Source-guided settings projection. T represents an opaque boxed control-state
+/// value/host handle; no native HashableBox identity or contents are interpreted.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct PreviewSettings<T> {
+    pub is_enabled: bool,
+    pub boxed_canvas_control_states: Vec<T>,
+}
+impl<T> Default for PreviewSettings<T> {
+    fn default() -> Self {
+        Self {
+            is_enabled: false,
+            boxed_canvas_control_states: Vec::new(),
+        }
+    }
+}
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct ConfiguredRequestProjection<T> {
+    pub request: RequestProjection,
+    pub control_states: Vec<T>,
+}
+/// The caller resolves the actual structured DiscoveredItem.ID.preview key and
+/// supplies its optional stored row. A present row wins as a whole, even disabled
+/// or empty; otherwise use default settings. Disabled returns no requests. Every
+/// enabled request receives a clone of the selected ordered control-state array.
+/// No merge, filtering, deduplication, state installation or persistence occurs.
+/// T cloning/handle lifetime remains host-owned; this is not native box equality,
+/// transport serialization, resource settlement or complete request construction.
+pub fn configured_request_projections<T: Clone>(
+    groups: &[PreviewVariantGroup],
+    overrides: &OverrideSettings,
+    mode: CanvasMode<'_>,
+    capabilities: Capabilities,
+    stored: Option<&PreviewSettings<T>>,
+    defaults: &PreviewSettings<T>,
+) -> Vec<ConfiguredRequestProjection<T>> {
+    let selected = stored.unwrap_or(defaults);
+    if !selected.is_enabled {
+        return Vec::new();
+    }
+    admitted_request_projections(groups, overrides, mode, capabilities)
+        .into_iter()
+        .map(|request| ConfiguredRequestProjection {
+            request,
+            control_states: selected.boxed_canvas_control_states.clone(),
+        })
+        .collect()
 }

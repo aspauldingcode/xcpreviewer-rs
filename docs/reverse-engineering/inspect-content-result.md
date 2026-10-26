@@ -274,3 +274,27 @@ IDs, with existing escaped 256-scalar bounds. Preview instance, destination,
 origin, control state, localization, request context/identity, earlier admission,
 transport/execution and native lifecycle/rendering/resource behavior are omitted.
 No complete PreviewRequest or native runtime parity claim.
+
+
+### Settings-controlled request projections
+
+`configured-request-projections` uses the request-projections input plus required
+`defaultPreviewSettings` and optional `previewSettings`. Each is an original
+`{isEnabled: Bool, boxedCanvasControlStates: [opaque plist values]}` dictionary.
+The caller has already looked up the stored row using the actual structured
+DiscoveredItem.ID.preview key; this command does not substitute a String key.
+Both settings rows and all other active input validate before calculation, even
+when disabled or a stored row makes defaults unused. Numeric Bools are rejected.
+This tool validation policy is not a claim about native settings wire decoding.
+
+A present stored row wins as a whole, even disabled or empty; otherwise defaults
+win. Disabled yields no requests. Enabled uses admitted request projections and
+copies the selected ordered control-state array into each request under original
+report field `controlState`. No merge, deduplication or interpretation of elements.
+Summary adds only per-request control-state counts, not their contents.
+
+Core `PreviewSettings<T>::default()` matches the native constructor's disabled,
+empty array. `configured_request_projections<T: Clone>` leaves boxed values/handle
+cloning to the host. Original plist values demonstrate opaque array propagation;
+native HashableBox/PlistValueBox codecs, equality/identity/lifetimes, full request
+fields, persistence and resource settlement are not modeled or proven.
