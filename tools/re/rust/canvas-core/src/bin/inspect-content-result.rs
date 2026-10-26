@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -104,6 +104,7 @@ fn run() -> Result<(), String> {
         && kind != "control-state-boxes"
         && kind != "control-state-keys"
         && kind != "control-state-sequence-keys"
+        && kind != "runnable-configuration-keys"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -274,6 +275,95 @@ fn run() -> Result<(), String> {
                     Value::Array(retained.into_iter().map(Value::Integer).collect()),
                 ),
                 ("cancelRequests".into(), Value::Array(cancel_requests)),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "runnable-configuration-keys" {
+        use canvas_core::{
+            canvas_control_state::CanvasControlState, content_results::PreviewVariant,
+            request_projection::DisplayMode, runnable_configuration_id::RunnableConfigurationId,
+        };
+        let Value::Array(values) = &value else {
+            return Err("runnable-configuration-keys: expected configuration array".into());
+        };
+        let mut ids = Vec::new();
+        for (i, value) in values.iter().enumerate() {
+            let Value::Dictionary(fields) = value else {
+                return Err(format!(
+                    "runnable-configuration-keys: configuration{i} dictionary"
+                ));
+            };
+            let Some(Value::Dictionary(mode)) = fields.get("displayMode") else {
+                return Err(format!(
+                    "runnable-configuration-keys: configuration{i}.displayMode dictionary"
+                ));
+            };
+            let mode =
+                match mode.get("discriminant") {
+                    Some(Value::String(kind)) if kind == "static" => DisplayMode::Static,
+                    Some(Value::String(kind)) if kind == "interactive" => {
+                        let Some(Value::Boolean(value)) = mode.get("value") else {
+                            return Err(format!(
+                                "runnable-configuration-keys: configuration{i} interactive Bool"
+                            ));
+                        };
+                        DisplayMode::Interactive(*value)
+                    }
+                    _ => return Err(format!(
+                        "runnable-configuration-keys: configuration{i} displayMode discriminant"
+                    )),
+                };
+            let Some(Value::Array(overrides)) = fields.get("overrides") else {
+                return Err(format!(
+                    "runnable-configuration-keys: configuration{i}.overrides array"
+                ));
+            };
+            let overrides = overrides
+                .iter()
+                .enumerate()
+                .map(|(j, value)| {
+                    PreviewVariant::decode(value).map_err(|e| {
+                        format!("runnable-configuration-keys: configuration{i}.override{j}: {e:?}")
+                    })
+                })
+                .collect::<Result<Vec<_>, _>>()?;
+            let control = fields.get("controlState").ok_or_else(|| {
+                format!("runnable-configuration-keys: configuration{i}.controlState required")
+            })?;
+            let control = CanvasControlState::decode(control).map_err(|e| {
+                format!("runnable-configuration-keys: configuration{i}.controlState: {e:?}")
+            })?;
+            ids.push(RunnableConfigurationId::new(mode, &overrides, control));
+        }
+        let mut keys = std::collections::HashMap::new();
+        let representatives: Vec<_> = ids
+            .iter()
+            .enumerate()
+            .map(|(i, id)| *keys.entry(id).or_insert(i))
+            .collect();
+        if !canonical {
+            writeln!(out,"result=runnable-configuration-keys\nconfigurations={}\nuniqueKeys={}\nconfigurationsShown={}",ids.len(),keys.len(),ids.len().min(8)).map_err(|e|e.to_string())?;
+            for (i, (id, representative)) in ids.iter().zip(&representatives).take(8).enumerate() {
+                writeln!(out,"configuration{i}.overrides={}\nconfiguration{i}.controlStates={}\nconfiguration{i}.representative={representative}",id.override_ids().len(),id.control_state().states().len()).map_err(|e|e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            [
+                (
+                    "representatives".into(),
+                    Value::Array(
+                        representatives
+                            .iter()
+                            .map(|i| Value::Integer(*i as i64))
+                            .collect(),
+                    ),
+                ),
+                ("uniqueKeys".into(), Value::Integer(keys.len() as i64)),
+                (
+                    "identities".into(),
+                    Value::Array(ids.iter().map(RunnableConfigurationId::to_value).collect()),
+                ),
             ]
             .into_iter()
             .collect(),

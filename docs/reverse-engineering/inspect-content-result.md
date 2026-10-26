@@ -388,3 +388,25 @@ part to the same ordered array comparison; complete request identity is not impl
 This original array adapter does not claim a native CanvasControlState wire schema, installation,
 transport, provider execution or global resource settlement. Evidence:
 `research/evidence/native-canvas-control-state-2026-10-26`.
+
+
+### Qualified runnable configuration identity
+
+`runnable-configuration-keys` accepts an array of original-tool configurations, each with
+`displayMode` (`interactive` plus strict Bool `value`, or `static`), a complete `overrides`
+variant array and `controlState` whole-box array. All variants and states validate before output,
+even fields that do not enter identity. It returns first `representatives`, `uniqueKeys` and
+complete `identities` projections containing display mode, original ordered override IDs and
+original state values. Summary shows at most eight counts/indices without opaque contents.
+
+`RunnableConfigurationId` models PreviewRunnable.Configuration.ID: display mode, ordered
+canonical-Unicode override IDs (duplicates/empty IDs preserved) and ordered qualified control
+states. Variant display names, render effects and orientation are excluded. Original ID spelling
+and state wire values remain available independently of equality/hash projections. Rust-local
+hashing obeys equality; native randomized hash bits are not reproduced. This is distinct from
+the outer PreviewConfiguration.ID and a complete request/instance/location/update identity.
+Native configuration init/id getter/equality/hash/destruction and typed PreviewVariant
+codec compositions execute in the owned helper. IDs are read after configurations and source
+variant/state pools are destroyed. This establishes scoped ID field/value survival, without
+unique object ownership, real provider/cache execution, transport or global settlement claims.
+Evidence: `research/evidence/native-runnable-configuration-id-2026-10-26`.
