@@ -1,0 +1,26 @@
+{
+  "failures": [
+    {
+      "stage": "first service metadata probe",
+      "result": "symbol guard SIGTRAP before service decoder/getter",
+      "cause": "copied ShellUpdatePayload mangling substitution PropertyH0V rather than independently verified ServiceMessage PropertyG0V",
+      "correction": "verified nm/dlsym names and expected offsets; metadata-only probe and378 subsequent attempts pass"
+    },
+    {
+      "stage": "first fresh full Rust build",
+      "result": "60-second subprocess deadline; no completed test result claimed",
+      "captured_output": "initial inline launcher did not persist TimeoutExpired buffers; traceback retained in session",
+      "correction": "incremental bounded retry with persistent logs passed392 full tests"
+    },
+    {
+      "stage": "initial service canonical writer",
+      "result": "native envelope fixture test rejected nested nonfinite Real with NonFinite",
+      "correction": "existing shell codec-scoped encode_preserving_real_bits applied to envelope; generic finite-only writer unchanged;392 tests/131 cross-runtime canonical controls pass"
+    },
+    {
+      "stage": "precommit artifact whitespace check",
+      "result": "initial-tests terminal blank and native runner trailing spaces rejected before commit",
+      "correction": "only owned paths unstaged; full-index user baseline verified; public text logs normalized, raw temp logs retained, binary fixtures unchanged; evidence resealed"
+    }
+  ]
+}

@@ -38,3 +38,5 @@ These commands inspect and encode values only. They do not contact Xcode, send
 requests, verify peer liveness, cancel updates, purge agents, control processes
 or prove provider/resource settlement. Native schema evidence remains scoped to
 the linked service-envelope evidence chain; the CLI itself is original tooling.
+
+Modern shell requests use `messageType: update`; the inspector now decodes and canonicalizes them through `shell_service::ShellServiceEnvelope`. The optional identifier remains inside the shell payload. Summaries show only identifier and product/update counts. Nested multi-key incremental updates retain the explicit portable ambiguity rejection; nested nonfinite Real values use the qualified shell writer. This constructs/inspects request values and does not execute updates or establish daemon, Canvas or provider settlement. See `research/evidence/native-shell-service-2026-10-26` for actual native envelope and source dispatch evidence.

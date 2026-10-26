@@ -145,7 +145,24 @@ fn run() -> Result<(), String> {
     if bytes.len() as u64 > INPUT_LIMIT {
         return Err("input exceeds 64 MiB".into());
     }
-    let envelope = ServiceEnvelope::decode_binary(&bytes).map_err(|e| format!("decode: {e:?}"))?;
+    let value = canvas_core::binary_plist::decode(&bytes).map_err(|e| format!("decode: {e:?}"))?;
+    if matches!(&value, canvas_core::payload_codec::Value::Dictionary(d)
+        if matches!(d.get("messageType"), Some(canvas_core::payload_codec::Value::String(k)) if k == "update")) {
+        let envelope = canvas_core::shell_service::ShellServiceEnvelope::decode_single_entry_updates(&value)
+            .map_err(|e| format!("decode: {e:?}"))?;
+        let mut out = std::io::stdout().lock();
+        if canonical {
+            out.write_all(&envelope.to_binary_plist().map_err(|e| format!("encode: {e:?}"))?)
+                .map_err(|e| format!("output: {e}"))?;
+        } else {
+            writeln!(out, "messageType=update").map_err(|e| format!("output: {e}"))?;
+            string(&mut out, "identifier", envelope.identifier.as_deref()).map_err(|e| format!("output: {e}"))?;
+            writeln!(out, "staticProducts={}\nupdates={}", envelope.shell.static_products.len(), envelope.shell.setup_payload.updates.len())
+                .map_err(|e| format!("output: {e}"))?;
+        }
+        return out.flush().map_err(|e| format!("output: {e}"));
+    }
+    let envelope = ServiceEnvelope::decode(&value).map_err(|e| format!("decode: {e:?}"))?;
     let mut out = std::io::stdout().lock();
     if canonical {
         let encoded = binary_plist_writer::encode(&envelope.to_value())
