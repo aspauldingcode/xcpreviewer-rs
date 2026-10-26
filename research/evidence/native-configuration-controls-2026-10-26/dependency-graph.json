@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "execution-point-mapping",
+      "state": "source-qualified"
+    },
+    {
+      "id": "computed-keypath-getter",
+      "state": "29-native-calls"
+    },
+    {
+      "id": "ordered-original-boxes",
+      "state": "24-native-sequences"
+    },
+    {
+      "id": "rust-projection",
+      "state": "360-tests"
+    },
+    {
+      "id": "wasi-inspector",
+      "state": "56-runs-25-reparses"
+    },
+    {
+      "id": "instance-updater-policy",
+      "state": "open"
+    },
+    {
+      "id": "live-transport-resources",
+      "state": "open"
+    },
+    {
+      "id": "canvas-provider-settlement",
+      "state": "quarantined-open"
+    }
+  ],
+  "edges": [
+    [
+      "execution-point-mapping",
+      "computed-keypath-getter"
+    ],
+    [
+      "computed-keypath-getter",
+      "ordered-original-boxes"
+    ],
+    [
+      "ordered-original-boxes",
+      "rust-projection"
+    ],
+    [
+      "rust-projection",
+      "wasi-inspector"
+    ],
+    [
+      "wasi-inspector",
+      "instance-updater-policy"
+    ],
+    [
+      "instance-updater-policy",
+      "live-transport-resources"
+    ],
+    [
+      "live-transport-resources",
+      "canvas-provider-settlement"
+    ]
+  ],
+  "execution": "serial-exclusive-controller-lock",
+  "stop_rule": "Source-qualified caller mapping and executed value getter do not close full behavior construction/downstream transport/UI/provider/global settlement."
+}

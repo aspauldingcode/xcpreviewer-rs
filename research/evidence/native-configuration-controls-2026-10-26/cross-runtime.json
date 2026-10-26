@@ -1,0 +1,169 @@
+{
+  "source_boxes": 14,
+  "native_states": 24,
+  "native_state_pairs": 576,
+  "execution_point_keypath_getter_calls_after_source_wrapper_destruction": 29,
+  "full_native_behavior_getter_invoked": false,
+  "tool_cases": 31,
+  "accepts": 25,
+  "portable_profile_rejections": 6,
+  "actual_wasi_invocations": 56,
+  "foundation_reparses": 25,
+  "cases": [
+    {
+      "case": "native-projection-0",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-1",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-2",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-3",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-4",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-5",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-6",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-7",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-8",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-9",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-10",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-11",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-12",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-13",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-14",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-15",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-16",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-17",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-18",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-19",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-20",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-21",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-22",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-projection-23",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "large-duplicates",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-top",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-box",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "nonfinite",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "nested-collision",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "late-error",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "depth-profile",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    }
+  ]
+}

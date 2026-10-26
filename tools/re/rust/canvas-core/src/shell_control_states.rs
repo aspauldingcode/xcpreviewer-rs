@@ -2,6 +2,7 @@
 //! This facet does not validate a complete shell update or send/install state.
 use crate::{
     canvas_control_state::CanvasControlState,
+    hashable_plist_box::HashablePlistBox,
     payload_codec::Value,
     plist_value_box::{decode_boxes, ArrayError, Error as BoxError, PlistValueBox},
 };
@@ -32,11 +33,18 @@ impl ShellControlStates {
             .map(|v| decode_boxes(v).map(Self::Present).map_err(Error::States))
             .unwrap_or(Ok(Self::Absent))
     }
-    /// Project original box values, independently of their cached equality keys.
-    /// Empty Canvas state maps to Present([]). Callers choose absence explicitly.
-    /// This is an original adapter, not evidence of the native caller's policy.
+    /// Match the source-recovered PreviewExecutionPoint.updateBehavior mapping:
+    /// read every configured wrapper's original value, retaining source order
+    /// and duplicates. Even empty input produces a present array. The native
+    /// key-path getter is runtime-qualified; full behavior construction and
+    /// downstream updater routing/transport are not executed by this adapter.
+    pub fn from_configuration_states(states: &[HashablePlistBox]) -> Self {
+        Self::Present(states.iter().map(|b| b.value().clone()).collect())
+    }
+    /// Apply the same ordered value projection to a Canvas state container.
+    /// This does not establish equivalence of the two native owner types.
     pub fn from_canvas_state(state: &CanvasControlState) -> Self {
-        Self::Present(state.states().iter().map(|b| b.value().clone()).collect())
+        Self::from_configuration_states(state.states())
     }
     pub fn boxes(&self) -> Option<&[PlistValueBox]> {
         match self {
