@@ -213,3 +213,30 @@ executor hops or timing, and does not establish native/global resource parity.
 clearOnFailure=true, matching the explicit DestinationCapabilitiesCache constructor
 argument. The generic TaskCache default and task-cache trace default remain false.
 Use host-owned task handles and provide the executor; neither factory spawns tasks.
+
+
+### Grid request overrides
+
+`inspect-content-result [--canonical] grid-request-overrides INPUT.bplist|-`
+uses an original tool input: required `groups` (wire Group array), `settings`
+(ordered `{groupID: String, isEnabled: Bool, selection: [String]}` entries), and
+`gridGroup` (complete wire Group, projected from CanvasMode.grid's payload).
+`gridGroupID` is unused for this command. All groups, settings and grid payload
+validate before calculation, including disabled/excluded groups. Existing Unicode
+16 canonical ID equality and codec limits apply.
+
+Compute effective groups/overrides, excluding the grid ID. Exclude every remaining
+group when its associated IDs contain the grid ID or the grid payload's associated
+IDs contain that group's ID. Only direct links matter; no transitive closure or
+lookup/replacement of the supplied grid payload. Flatten surviving override arrays
+in source order, retaining duplicates and existing one-level child expansion.
+Missing/disabled settings and missing override configurations keep their existing
+skip behavior. State is read-only. Canonical output is the complete array of wire
+Variant values. Text output shows counts and at most eight IDs, each bounded by the
+existing 256-scalar escaped summary.
+
+This is the grid branch's override calculation. It does not select a mode, apply
+capability fallback, enumerate grid requests, construct PreviewRequest values,
+launch previews or prove native lifecycle/rendering/resource parity. The original
+public Swift Set/String composition qualifies the calculation; the shipped private
+previewRequests method has not been invoked.

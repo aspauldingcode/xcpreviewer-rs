@@ -282,3 +282,25 @@ impl VariantGroupSettings {
         })
     }
 }
+
+/// Flatten effective overrides for the grid request branch of previewRequests.
+/// The supplied group is the CanvasMode.grid payload, even when not present in
+/// discovered groups. Exclude equal IDs and direct associations in either
+/// direction. Do not follow transitive associations or alter stored state.
+/// Preserve surviving group/variant order and duplicates, including child values
+/// already selected by effective_groups_and_overrides. This does not choose a
+/// canvas mode, evaluate capability fallback, or construct a complete request.
+pub fn grid_request_overrides(
+    groups: &[PreviewVariantGroup],
+    settings: &OverrideSettings,
+    grid_group: &PreviewVariantGroup,
+) -> Vec<PreviewVariant> {
+    effective_groups_and_overrides(groups, settings, Some(&grid_group.id))
+        .into_iter()
+        .filter(|entry| {
+            !entry.group.associated_group_ids.contains(&grid_group.id)
+                && !grid_group.associated_group_ids.contains(&entry.group.id)
+        })
+        .flat_map(|entry| entry.overrides)
+        .collect()
+}

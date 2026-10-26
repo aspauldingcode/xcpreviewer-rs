@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -100,6 +100,7 @@ fn run() -> Result<(), String> {
         && kind != "default-selection"
         && kind != "group-variants"
         && kind != "render-effects"
+        && kind != "grid-request-overrides"
         && kind != "effective-overrides"
         && kind != "align-settings"
         && kind != "row-settings"
@@ -520,7 +521,11 @@ fn run() -> Result<(), String> {
             .into_iter()
             .collect(),
         )
-    } else if kind == "effective-overrides" || kind == "align-settings" || kind == "row-settings" {
+    } else if kind == "effective-overrides"
+        || kind == "align-settings"
+        || kind == "row-settings"
+        || kind == "grid-request-overrides"
+    {
         use canvas_core::effective_overrides::{
             effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
         };
@@ -573,12 +578,38 @@ fn run() -> Result<(), String> {
                 },
             );
         }
-        let grid = match f.get("gridGroupID") {
+        let grid = match f
+            .get("gridGroupID")
+            .filter(|_| kind != "grid-request-overrides")
+        {
             None => None,
             Some(Value::String(id)) => Some(id.as_str()),
             _ => return Err("override-input: gridGroupID String".into()),
         };
-        if kind == "row-settings" {
+        if kind == "grid-request-overrides" {
+            let grid = PreviewVariantGroup::decode(
+                f.get("gridGroup")
+                    .ok_or("grid-request-overrides: required gridGroup")?,
+            )
+            .map_err(|e| format!("grid-request-overrides: gridGroup: {e:?}"))?;
+            let variants =
+                canvas_core::effective_overrides::grid_request_overrides(&groups, &settings, &grid);
+            if !canonical {
+                writeln!(
+                    out,
+                    "result=grid-request-overrides\noverrides={}",
+                    variants.len()
+                )
+                .map_err(|e| e.to_string())?;
+                for (i, variant) in variants.iter().take(8).enumerate() {
+                    string(&mut out, &format!("override{i}"), Some(&variant.id))
+                        .map_err(|e| e.to_string())?;
+                }
+                writeln!(out, "overridesShown={}", variants.len().min(8))
+                    .map_err(|e| e.to_string())?;
+            }
+            Value::Array(variants.iter().map(PreviewVariant::to_value).collect())
+        } else if kind == "row-settings" {
             let rows: Vec<_> = groups
                 .iter()
                 .map(|g| (g, settings.row_settings(g), settings.get(&g.id).is_some()))
