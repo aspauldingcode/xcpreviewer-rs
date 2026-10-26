@@ -1,0 +1,6 @@
+{
+  "source_lookup_failure": "ValueError: Misaligned/outside symbol slot; selector stub is not a12-byte imported symbol stub",
+  "resolution": "Verified32-byte selector stub, chained selector string and objc_msgSend pointer binding.",
+  "native_symbol_guard_failure": "SIGTRAP before lazy accessor/getters: VMa requested instead of OMa",
+  "native_symbol_guard_resolution": "Enum OMa symbol verified; measured metadata probe and getter cases pass."
+}

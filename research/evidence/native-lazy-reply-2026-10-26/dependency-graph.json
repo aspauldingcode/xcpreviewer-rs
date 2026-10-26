@@ -1,0 +1,29 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "shell-wire-fields": "qualified-predecessor-with-profiles",
+    "native-lazy-resolution": "owned-runtime-qualified",
+    "one-owned-backing-buffer-lifetime": "native-release-event-qualified",
+    "actual-message-delivery": "open",
+    "transport-resource-provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "shell-wire-fields",
+      "native-lazy-resolution"
+    ],
+    [
+      "native-lazy-resolution",
+      "actual-message-delivery"
+    ],
+    [
+      "one-owned-backing-buffer-lifetime",
+      "actual-message-delivery"
+    ],
+    [
+      "actual-message-delivery",
+      "transport-resource-provider-settlement"
+    ]
+  ],
+  "stop_rule": "A scoped backing-buffer release and lazy value resolution do not establish message delivery/callback/provider/kernel-resource settlement."
+}

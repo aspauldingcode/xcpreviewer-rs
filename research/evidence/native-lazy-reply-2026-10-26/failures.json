@@ -1,0 +1,38 @@
+{
+  "native_guard_failures": [
+    {
+      "signal": "SIGTRAP",
+      "reason": "Owned helper requested VMa struct symbol rather than OMa enum symbol",
+      "lazy_accessor_or_getter_calls_before_failure": 0,
+      "resolution": "Corrected enum symbol; measured17/24/8 metadata and bounded native getters pass"
+    }
+  ],
+  "native_timeouts": [],
+  "verification_failures": [],
+  "source_lookup_failure": {
+    "reason": "ObjC selector stub wrongly treated as a12-byte import stub",
+    "resolution": "Exact32-byte selector stub, selector reference and objc_msgSend import verified"
+  },
+  "scope_notes": [
+    "One owned no-copy8192-byte buffer retained across source/copy enum destruction until returned Data release; exactly one custom deallocator call after autorelease pool.",
+    "This does not prove all Foundation objects, callbacks, OS rights, kernel resource or final transport settlement.",
+    "Native XML dictionary accepts; portable binary reader explicitly rejects XML.",
+    "Repeated dictionary reads observed; no universal no-cache/reference-identity claim.",
+    "Initial symbol guard and analysis correction retained. Both milestones incomplete; UI/provider quarantine persists."
+  ],
+  "artifact_packaging_failure": {
+    "reason": "Text normalization attempted UTF-8 decoding of owned canonical bplist stdout",
+    "resolution": "Keep bplist stdout binary; semantic checks and replay already passed; resume sealing without rerunning checks.",
+    "binary_stdout_restoration": {
+      "files": [
+        "host-canonical-2.stdout",
+        "host-canonical-0.stdout",
+        "host-canonical-3.stdout",
+        "host-canonical-1.stdout"
+      ],
+      "exact_original_bytes_restored": true,
+      "all_four_reparse": true,
+      "semantic_replay_unchanged": true
+    }
+  }
+}
