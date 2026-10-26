@@ -47,6 +47,11 @@ fn native_attachment_corpus_when_supplied() {
         assert_eq!(payload(&v)["aDescriptor"], DescriptorRef(1));
         let encoded = encode_body_with_descriptors(&v, 2).unwrap();
         assert_eq!(encoded.descriptor_order, vec![1, 0]);
+        let tokens = ["z-resource", "a-resource"];
+        assert_eq!(
+            encoded.bind_resources(&tokens).unwrap(),
+            vec![&tokens[1], &tokens[0]]
+        );
         assert_eq!(
             rebind(
                 &decode_body_with_descriptors(&encoded.body, 2).unwrap(),
@@ -105,4 +110,33 @@ fn repeated_refs_are_plans_not_new_capabilities() {
     );
     let many = Array(vec![DescriptorRef(0); 1025]);
     assert_eq!(encode_body_with_descriptors(&many, 1), Err(Error::Limit));
+}
+
+#[test]
+fn resource_binding_preserves_tokens_and_alias_plan() {
+    let value = Dictionary(BTreeMap::from([
+        ("z".into(), DescriptorRef(0)),
+        ("a".into(), DescriptorRef(1)),
+    ]));
+    let encoded = encode_body_with_descriptors(&value, 2).unwrap();
+    let resources = [vec![0, 1], vec![2, 3]];
+    let bound = encoded.bind_resources(&resources).unwrap();
+    assert!(std::ptr::eq(bound[0], &resources[1]));
+    assert!(std::ptr::eq(bound[1], &resources[0]));
+    let repeated =
+        encode_body_with_descriptors(&Array(vec![DescriptorRef(0), DescriptorRef(0)]), 1).unwrap();
+    let single = [vec![7]];
+    let bound = repeated.bind_resources(&single).unwrap();
+    assert!(std::ptr::eq(bound[0], bound[1]));
+}
+#[test]
+fn resource_binding_rejects_incoherent_public_plans() {
+    let mut encoded = encode_body_with_descriptors(&Array(vec![DescriptorRef(0)]), 1).unwrap();
+    assert_eq!(encoded.bind_resources::<()>(&[]), Err(Error::Descriptors));
+    encoded.descriptor_order.clear();
+    assert_eq!(encoded.bind_resources(&[()]), Err(Error::Descriptors));
+    encoded.descriptor_order = vec![0];
+    encoded.body[0] ^= 1;
+    assert_eq!(encoded.bind_resources(&[()]), Err(Error::Header));
+    assert_eq!(encoded.bind_resources(&vec![(); 1025]), Err(Error::Limit));
 }

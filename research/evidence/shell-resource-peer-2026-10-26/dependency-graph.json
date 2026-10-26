@@ -1,0 +1,34 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "shell-lazy-wire": "qualified-predecessors-with-profiles",
+    "checked-resource-binding": "implemented-native-corpus-tested",
+    "owned-native-cross-process-delivery": "seven-controls-qualified",
+    "direct-rust-imported-fd-consumption": "qualified-after-sender-exit",
+    "native-canvas-interface-routing": "open",
+    "final-kernel-resource-provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "shell-lazy-wire",
+      "owned-native-cross-process-delivery"
+    ],
+    [
+      "checked-resource-binding",
+      "owned-native-cross-process-delivery"
+    ],
+    [
+      "owned-native-cross-process-delivery",
+      "direct-rust-imported-fd-consumption"
+    ],
+    [
+      "direct-rust-imported-fd-consumption",
+      "native-canvas-interface-routing"
+    ],
+    [
+      "native-canvas-interface-routing",
+      "final-kernel-resource-provider-settlement"
+    ]
+  ],
+  "stop_rule": "Owned generic carrier delivery and borrowed binding plans do not establish actual Canvas interface routing or final resource/provider settlement."
+}

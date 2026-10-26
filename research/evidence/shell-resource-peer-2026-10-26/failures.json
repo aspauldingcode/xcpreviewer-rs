@@ -1,0 +1,30 @@
+{
+  "native_phase_failures": [
+    {
+      "native_exit_code": 47,
+      "method": "bootstrap_register before fork",
+      "execution_context": "un-escalated exec sandbox; earlier approved probes passed",
+      "child_started": false,
+      "kernel_return_code_not_captured_by_initial_helper": true,
+      "resolution_pending": false,
+      "resolution": "Native phase rerun only with require_escalated approved execution; all seven current-code modes and identity checks pass; no system changes."
+    }
+  ],
+  "expected_negative_controls": [
+    "identity descriptor order swaps otherwise valid shell resources",
+    "aliased second direct Rust stdin read yields EOF/Header exit1, not an empty dictionary",
+    "91 frame mutations rejected"
+  ],
+  "timeouts_or_crashes": [],
+  "final_verification_failures": [],
+  "scope_notes": [
+    "Native decode/import may precede sender exit; FD duplication/reads/direct Rust consumption follow exact sender reap.",
+    "Generic native BaseBoard/libxpc carrier, not actual Canvas scene or AgentMessage routing.",
+    "bind_resources borrows caller tokens; backend remains responsible for capabilities and cleanup.",
+    "No final kernel right/file-object/provider settlement or universal callback finality claim."
+  ],
+  "precommit_artifact_whitespace_failure": {
+    "reason": "Two normalized text test logs retained terminal blank lines; git diff --check rejected before commit",
+    "resolution": "Remove only terminal blank lines, reseal, preserve original user index; semantic replay unchanged."
+  }
+}

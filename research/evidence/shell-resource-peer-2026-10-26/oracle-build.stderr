@@ -1,0 +1,7 @@
+/private/tmp/shell-peer-20261026/peer.c:17:199: warning: 'bootstrap_register' is deprecated: first deprecated in macOS 10.5 [-Wdeprecated-declarations]
+   17 |  if(mach_port_insert_right(mach_task_self(),inbox,inbox,MACH_MSG_TYPE_MAKE_SEND))exit(46);snprintf(service,sizeof(service),"local.re.xpcpeer.%d.%08x",getpid(),arc4random());kern_return_t registered=bootstrap_register(bootstrap_port,service,inbox);if(registered){fprintf(stderr,"owned bootstrap_register failed: %d\n",registered);exit(47);}char pid[32];snprintf(pid,sizeof(pid),"%d",getpid());child=fork();if(!child){execl(argv[0],argv[0],argv[1],argv[2],service,pid,NULL);_exit(127);}if(child<0)exit(48);union recv r;receive(&r,child);if(r.m.h.msgh_size!=sizeof(mach_msg_header_t)||r.m.h.msgh_id!=73)exit(49);remote=r.m.h.msgh_remote_port;trace_route(remote,1);return 0;
+      |                                                                                                                                                                                                       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/servers/bootstrap.h:77:1: note: 'bootstrap_register' has been explicitly marked deprecated here
+   77 | bootstrap_register(mach_port_t bp, name_t service_name, mach_port_t sp);
+      | ^
+1 warning generated.

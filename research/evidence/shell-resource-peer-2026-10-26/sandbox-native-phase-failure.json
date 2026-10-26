@@ -1,0 +1,9 @@
+{
+  "native_exit_code": 47,
+  "method": "bootstrap_register before fork",
+  "execution_context": "un-escalated exec sandbox; earlier approved probes passed",
+  "child_started": false,
+  "kernel_return_code_not_captured_by_initial_helper": true,
+  "resolution_pending": false,
+  "resolution": "Native phase rerun only with require_escalated approved execution; all seven current-code modes and identity checks pass; no system changes."
+}

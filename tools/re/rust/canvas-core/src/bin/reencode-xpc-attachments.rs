@@ -16,9 +16,11 @@ fn run() -> Result<(), String> {
         canvas_core::xpc_wire::decode_body_with_descriptors(&b, n).map_err(|e| format!("{e:?}"))?;
     let encoded =
         canvas_core::xpc_wire::encode_body_with_descriptors(&v, n).map_err(|e| format!("{e:?}"))?;
+    let source_tokens = (0..n).collect::<Vec<_>>();
     let order = encoded
-        .descriptor_order
-        .iter()
+        .bind_resources(&source_tokens)
+        .map_err(|e| format!("binding: {e:?}"))?
+        .into_iter()
         .map(|n| n.to_string())
         .collect::<Vec<_>>()
         .join("\n")

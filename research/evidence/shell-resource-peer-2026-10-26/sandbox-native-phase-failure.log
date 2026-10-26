@@ -1,0 +1,9 @@
+native 47
+Traceback (most recent call last):
+  File "/private/tmp/shell-peer-20261026/check.py", line 24, in <module>
+    d=capture/mode;d.mkdir();data=run(mode,[str(capture/'oracle'),mode,str(d)],8,owned);(d/'parent.json').write_bytes(data)
+  File "/private/tmp/shell-peer-20261026/check.py", line 9, in run
+    p.check_returncode();return p.stdout
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 460, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/private/tmp/shell-peer-20261026/fresh/capture/oracle', 'native', '/private/tmp/shell-peer-20261026/fresh/capture/native']' returned non-zero exit status 47.

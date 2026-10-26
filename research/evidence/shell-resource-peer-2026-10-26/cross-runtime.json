@@ -1,0 +1,85 @@
+{
+  "typed_received_payloads": 11,
+  "native_shell_accepts": 11,
+  "actual_wasi_invocations": 11,
+  "foundation_reparses": 11,
+  "cases": [
+    {
+      "mode": "native",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "native",
+      "resource": "b",
+      "bytes": 2128,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "native-alias",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "portable",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "portable",
+      "resource": "b",
+      "bytes": 2128,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "portable-alias",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "wrong-order",
+      "resource": "a",
+      "bytes": 2128,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "wrong-order",
+      "resource": "b",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "native-rust",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "native-rust",
+      "resource": "b",
+      "bytes": 2128,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    },
+    {
+      "mode": "native-rust-alias",
+      "resource": "a",
+      "bytes": 290,
+      "native_shell_decoded": true,
+      "wasi_and_foundation_match": true
+    }
+  ]
+}

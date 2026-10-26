@@ -317,6 +317,22 @@ pub struct EncodedWithDescriptors {
     /// Repeated indices require the backend's independently valid copy policy.
     pub descriptor_order: Vec<u32>,
 }
+impl EncodedWithDescriptors {
+    /// Validate body/descriptor cardinality and borrow source tokens in the
+    /// physical order required by this canonical body. Repeated references
+    /// borrow the same token; they do not duplicate an OS capability.
+    /// The backend still owns handle validity, rights/dispositions and cleanup.
+    pub fn bind_resources<'a, T>(&self, source: &'a [T]) -> Result<Vec<&'a T>, Error> {
+        if source.len() > 1024 || self.descriptor_order.len() > 1024 {
+            return Err(Error::Limit);
+        }
+        decode_body_with_descriptors(&self.body, self.descriptor_order.len() as u32)?;
+        self.descriptor_order
+            .iter()
+            .map(|index| source.get(*index as usize).ok_or(Error::Descriptors))
+            .collect()
+    }
+}
 /// Opt-in syntax projection. Caller validates/owns the actual attachment table.
 /// All declared descriptors must be consumed; no handle is acquired or released.
 pub fn decode_body_with_descriptors(bytes: &[u8], count: u32) -> Result<XpcValue, Error> {
