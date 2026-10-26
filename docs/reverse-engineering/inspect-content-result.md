@@ -323,3 +323,21 @@ raw canonically equivalent outer key collisions are explicitly unsupported by th
 portable adapter, although native bridging may collapse them. Nested opaque values
 are retained. No native error-text, HashableBox equality/hash/identity/lifetime,
 private method execution or complete control-state transport parity is claimed.
+
+
+### Owned native box verification
+
+`research/evidence/native-plist-box-2026-10-26/verify.py` rebuilds an owned ARM64
+helper in a disposable directory, loads the pinned Xcode MessagingHost/FoundationHost
+images, checks module offsets/runtime layouts and invokes actual box initialization,
+encoding and required/optional String getters through an original C/assembly bridge.
+Each native run has an eight-second deadline. It compares the full recorded native
+results and counters, derives the conformance fixture, then checks Rust/WASI outputs.
+Requires the pinned macOS ARM64/Xcode profile; portable Rust tests use saved fixtures.
+
+The selected run covers eleven dictionaries and twenty-two typed outcomes. Explicit native
+box/encoded-PropertyList destruction and error-release calls return. These are
+scoped owned-value observations, not native UI/provider execution, HashableBox
+identity/hash/equality or global resource settlement. The helper does not attach
+to or modify Xcode/simulator processes. Source-only checks and actual invocation
+results are recorded separately.

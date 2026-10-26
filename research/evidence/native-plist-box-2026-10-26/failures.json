@@ -1,0 +1,18 @@
+{
+  "verification_failures": [],
+  "corrected_tooling_failures": [
+    "Fixture expansion installer refused its already-owned directory; idempotent owned-directory handling fixed before final verification"
+  ],
+  "experimental_scope": [
+    "Initial ten inputs expanded with a heap-backed Unicode String; selected final run uses eleven"
+  ],
+  "native_load_or_layout_failures": [],
+  "native_timeouts_or_crashes": [],
+  "expected_native_typed_errors": 12,
+  "scope_notes": [
+    "actual private value methods executed in owned helper only",
+    "explicit destruction/error-release returns do not prove memory/global resource settlement",
+    "raw outer canonical-key collision restriction remains portable-only"
+  ],
+  "source_only_checks_invoke_private_getter": false
+}
