@@ -1,0 +1,34 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "product-wire-records": "qualified-predecessors",
+    "incremental-single-entry": "qualified-predecessor-subset",
+    "setup-wire-record": "qualified-with-incremental-restriction",
+    "full-shell": "open",
+    "actual-setup-delivery-update-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "product-wire-records",
+      "setup-wire-record"
+    ],
+    [
+      "incremental-single-entry",
+      "setup-wire-record"
+    ],
+    [
+      "setup-wire-record",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "actual-setup-delivery-update-transport"
+    ],
+    [
+      "actual-setup-delivery-update-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Setup codec composition does not remove incremental ambiguity or qualify actual delivery/application/transport/resource settlement."
+}

@@ -341,3 +341,5 @@ pub mod built_target;
 pub mod static_product;
 
 pub mod incremental_update;
+
+pub mod setup_payload;
