@@ -1,0 +1,16 @@
+{
+  "native_guard_failures": [],
+  "native_crashes_or_timeouts": [],
+  "verification_failures": [],
+  "portable_multikey_restrictions": 6,
+  "native_schema_rejections": 237,
+  "analysis_events": "analysis-events.json",
+  "scope_notes": [
+    "Six native-accepted shell controls contain multi-key setup updates; inherited portable ambiguity restriction remains explicit.",
+    "Initial34 boxed seed inputs retained as negatives; both34-case unboxed scalar seed profiles subsequently added.",
+    "Only inherited linkerFlags/sourceFilePaths Set wire orders normalized.",
+    "Raw dictionary canonical-key collisions/custom Foundation numeric types/Null/nonfinite Date serialization outside qualified domain; controls explicitly reject canonical collisions.",
+    "No exact multiple-invalid-field error priority or unique nested final-release proof.",
+    "No native delivery/scheduling/update application/registry/transport/UI/provider/resource settlement. Both milestones incomplete."
+  ]
+}

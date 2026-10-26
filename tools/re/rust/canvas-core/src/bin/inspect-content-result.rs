@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|setup-payload|incremental-update-single|static-product|built-target|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|shell-payload|setup-payload|incremental-update-single|static-product|built-target|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,7 @@ fn run() -> Result<(), String> {
         && kind != "runnable-configuration-keys"
         && kind != "shell-control-states"
         && kind != "configuration-shell-control-states"
+        && kind != "shell-payload"
         && kind != "setup-payload"
         && kind != "incremental-update-single"
         && kind != "static-product"
@@ -320,6 +321,10 @@ fn run() -> Result<(), String> {
         let values = (0..count).map(|_|seeds.next_seed().to_value()).collect();
         if !canonical { writeln!(out, "result=update-seed-sequence\nseeds={count}").map_err(|e|e.to_string())?; }
         Value::Dictionary([("values".into(),Value::Array(values)),("last".into(),HostUpdateSeed::new(seeds.last_value()).to_value())].into_iter().collect())
+    } else if kind == "shell-payload" {
+        let shell=canvas_core::shell_payload::ShellUpdatePayload::decode_single_entry_updates(&value).map_err(|e|format!("shell-payload: {e:?}"))?;
+        if !canonical { writeln!(out,"result=shell-payload\nhostUpdateSeedPresent={}\nhostUpdateGroupSeedPresent={}\ncontentOverridePresent={}\nstaticProducts={}\ncontrolStatesPresent={}",shell.host_update_seed.is_some(),shell.host_update_group_seed.is_some(),shell.content_override.is_some(),shell.static_products.len(),shell.control_states.boxes().is_some()).map_err(|e|e.to_string())?; }
+        shell.to_value()
     } else if kind == "setup-payload" {
         let setup=canvas_core::setup_payload::UpdateSetupPayload::decode_single_entry_updates(&value).map_err(|e|format!("setup-payload: {e:?}"))?;
         if !canonical { writeln!(out,"result=setup-payload\nproducts={}\nstaticProducts={}\nupdates={}\nshellDidLoadStaticProducts={}\nloggingOutputPathPresent={}",setup.dynamic_products.len(),setup.static_products.len(),setup.updates.len(),setup.shell_did_load_static_products,setup.logging_output_path.is_some()).map_err(|e|e.to_string())?; }
@@ -1655,7 +1660,7 @@ fn run() -> Result<(), String> {
     };
     if canonical {
         let bytes =
-            if kind=="setup-payload" {canvas_core::setup_payload::UpdateSetupPayload::decode_single_entry_updates(&normalized).map_err(|e|format!("setup-payload: {e:?}"))?.to_binary_plist()} else if kind=="incremental-update-single" {
+            if kind=="shell-payload" {canvas_core::shell_payload::ShellUpdatePayload::decode_single_entry_updates(&normalized).map_err(|e|format!("shell-payload: {e:?}"))?.to_binary_plist()} else if kind=="setup-payload" {canvas_core::setup_payload::UpdateSetupPayload::decode_single_entry_updates(&normalized).map_err(|e|format!("setup-payload: {e:?}"))?.to_binary_plist()} else if kind=="incremental-update-single" {
                 canvas_core::incremental_update::PreviewIncrementalUpdate::decode_single_entry(&normalized).map_err(|e|format!("incremental-update-single: {e:?}"))?.to_binary_plist()
             } else {binary_plist_writer::encode(&normalized)}.map_err(|e|format!("encode: {e:?}"))?;
         out.write_all(&bytes).map_err(|e| format!("output: {e}"))?;

@@ -1,0 +1,29 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "product-type-seed-control-setup-wire": "qualified-predecessors-with-explicit-profiles",
+    "shell-eleven-fields": "native-and-wasi-qualified-with-inherited-limits",
+    "actual-delivery-scheduling": "open",
+    "update-application-transport-resources": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "product-type-seed-control-setup-wire",
+      "shell-eleven-fields"
+    ],
+    [
+      "shell-eleven-fields",
+      "actual-delivery-scheduling"
+    ],
+    [
+      "actual-delivery-scheduling",
+      "update-application-transport-resources"
+    ],
+    [
+      "update-application-transport-resources",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "All selected shell wire fields do not establish native delivery/application/transport/UI/final resource parity."
+}

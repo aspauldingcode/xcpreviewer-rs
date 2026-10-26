@@ -343,3 +343,5 @@ pub mod static_product;
 pub mod incremental_update;
 
 pub mod setup_payload;
+
+pub mod shell_payload;
