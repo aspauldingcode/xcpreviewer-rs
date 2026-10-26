@@ -1,0 +1,24 @@
+{
+  "initial_metadata_guard_abort": {
+    "exit": -5,
+    "signal": "SIGTRAP",
+    "expected_destroy_entries": [
+      "0x71d50",
+      "0x71d54"
+    ],
+    "actual_destroy_entry": "0x720b8",
+    "decoder_calls_before_abort": 0,
+    "correction": "Read-only metadata probe and source verification identify trampoline0x720b8 ->0x71d50 ->0x71d54; pin actual entry for both types.",
+    "user_process_affected": false
+  },
+  "corrected_native_crashes_or_timeouts": [],
+  "native_load_or_layout_failures": [],
+  "native_rejections": 48,
+  "additional_schema_rejections": 2,
+  "probe_warning": "Expected unreachable-code diagnostic after deliberate early exit.",
+  "exploratory_read_error": "No native.bplist after initial guard abort; final fixture generated only by corrected successful run.",
+  "scope_notes": [
+    "No real dylib loading/linkage/symbol resolution/transport/provider action.",
+    "Returned destruction witnesses do not prove unique final release."
+  ]
+}

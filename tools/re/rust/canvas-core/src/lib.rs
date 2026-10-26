@@ -333,3 +333,5 @@ pub mod dynamic_product;
 pub mod product_value;
 
 pub mod built_artifact;
+
+pub mod jit_load_command;
