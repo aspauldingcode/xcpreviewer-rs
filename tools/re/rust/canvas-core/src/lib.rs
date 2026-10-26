@@ -314,3 +314,5 @@ pub mod render_effects;
 pub mod effective_overrides;
 
 pub mod task_cache;
+
+pub mod request_projection;

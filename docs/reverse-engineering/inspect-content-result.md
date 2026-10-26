@@ -240,3 +240,37 @@ capability fallback, enumerate grid requests, construct PreviewRequest values,
 launch previews or prove native lifecycle/rendering/resource parity. The original
 public Swift Set/String composition qualifies the calculation; the shipped private
 previewRequests method has not been invoked.
+
+
+### Admitted request projections
+
+`inspect-content-result [--canonical] request-projections INPUT.bplist|-` projects
+ordered display modes, override arrays and optional grid variants after the native
+method's earlier admission checks. Input is an original tool schema: `groups` and
+`settings` as above, required `mode` dictionary and `capabilities` dictionary.
+Mode discriminant is `live` (required `hostLocation`: `inCanvas` or `external`),
+`grid` (required complete wire Group under `group`) or `static`. Capabilities
+require strict Bool `supportsContinuousLivePreview` and `supportsStaticPreviews`.
+The caller resolves stored/default mode and admission. `gridGroupID` is unused.
+Inactive mode payloads are unused; all active payload/groups/settings validate
+before calculation. These are projections, not native request/wire schemas.
+
+Live always adds one interactive projection. Other modes add one when continuous
+preview is supported. Its unnamed Bool payload is false for live external hosting,
+true otherwise. Without static support, stop. With static support, append a
+variant-less static projection for static mode or when no interactive projection
+exists. Grid then appends a static projection per section variant, preserving order
+and duplicates. Variant-less projections use all effective overrides (grid ID
+excluded); grid-variant projections additionally exclude direct associations in
+either direction. An empty/missing grid variants configuration adds no per-variant
+projections. Continuous and static requests can coexist; this is not exclusive
+fallback. Inputs are read-only; output values are owned.
+
+Canonical output is an array of `{displayMode, overrides, variant?}`. Display mode
+is original `{discriminant: "interactive", value: Bool}` or
+`{discriminant: "static"}`; overrides/variant use existing wire Variant codecs.
+Summary shows total count and at most eight display modes/override counts/variant
+IDs, with existing escaped 256-scalar bounds. Preview instance, destination,
+origin, control state, localization, request context/identity, earlier admission,
+transport/execution and native lifecycle/rendering/resource behavior are omitted.
+No complete PreviewRequest or native runtime parity claim.

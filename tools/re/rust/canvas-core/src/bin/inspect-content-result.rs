@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -100,6 +100,7 @@ fn run() -> Result<(), String> {
         && kind != "default-selection"
         && kind != "group-variants"
         && kind != "render-effects"
+        && kind != "request-projections"
         && kind != "grid-request-overrides"
         && kind != "effective-overrides"
         && kind != "align-settings"
@@ -525,6 +526,7 @@ fn run() -> Result<(), String> {
         || kind == "align-settings"
         || kind == "row-settings"
         || kind == "grid-request-overrides"
+        || kind == "request-projections"
     {
         use canvas_core::effective_overrides::{
             effective_groups_and_overrides, OverrideSettings, VariantGroupSettings,
@@ -580,13 +582,139 @@ fn run() -> Result<(), String> {
         }
         let grid = match f
             .get("gridGroupID")
-            .filter(|_| kind != "grid-request-overrides")
+            .filter(|_| kind != "grid-request-overrides" && kind != "request-projections")
         {
             None => None,
             Some(Value::String(id)) => Some(id.as_str()),
             _ => return Err("override-input: gridGroupID String".into()),
         };
-        if kind == "grid-request-overrides" {
+        if kind == "request-projections" {
+            use canvas_core::request_projection::{
+                admitted_request_projections, CanvasMode, Capabilities, DisplayMode, HostLocation,
+            };
+            let Some(Value::Dictionary(mode)) = f.get("mode") else {
+                return Err("request-projections: required mode dictionary".into());
+            };
+            let Some(Value::String(tag)) = mode.get("discriminant") else {
+                return Err("request-projections: required mode discriminant String".into());
+            };
+            let grid = if tag == "grid" {
+                Some(
+                    PreviewVariantGroup::decode(
+                        mode.get("group")
+                            .ok_or("request-projections: required grid group")?,
+                    )
+                    .map_err(|e| format!("request-projections: grid group: {e:?}"))?,
+                )
+            } else {
+                None
+            };
+            let mode = match tag.as_str() {
+                "live" => match mode.get("hostLocation") {
+                    Some(Value::String(s)) if s == "inCanvas" => {
+                        CanvasMode::Live(HostLocation::InCanvas)
+                    }
+                    Some(Value::String(s)) if s == "external" => {
+                        CanvasMode::Live(HostLocation::External)
+                    }
+                    _ => {
+                        return Err(
+                            "request-projections: live hostLocation inCanvas|external".into()
+                        )
+                    }
+                },
+                "grid" => CanvasMode::Grid(grid.as_ref().unwrap()),
+                "static" => CanvasMode::Static,
+                _ => return Err("request-projections: unknown canvas mode".into()),
+            };
+            let Some(Value::Dictionary(caps)) = f.get("capabilities") else {
+                return Err("request-projections: required capabilities dictionary".into());
+            };
+            let (Some(Value::Boolean(continuous)), Some(Value::Boolean(static_previews))) = (
+                caps.get("supportsContinuousLivePreview"),
+                caps.get("supportsStaticPreviews"),
+            ) else {
+                return Err("request-projections: required capability Bools".into());
+            };
+            let requests = admitted_request_projections(
+                &groups,
+                &settings,
+                mode,
+                Capabilities {
+                    supports_continuous_live_preview: *continuous,
+                    supports_static_previews: *static_previews,
+                },
+            );
+            if !canonical {
+                writeln!(
+                    out,
+                    "result=request-projections\nrequests={}",
+                    requests.len()
+                )
+                .map_err(|e| e.to_string())?;
+                for (i, request) in requests.iter().take(8).enumerate() {
+                    writeln!(
+                        out,
+                        "request{i}.displayMode={}\nrequest{i}.overrides={}",
+                        match request.display_mode {
+                            DisplayMode::Interactive(true) => "interactive(true)",
+                            DisplayMode::Interactive(false) => "interactive(false)",
+                            DisplayMode::Static => "static",
+                        },
+                        request.overrides.len()
+                    )
+                    .map_err(|e| e.to_string())?;
+                    string(
+                        &mut out,
+                        &format!("request{i}.variant"),
+                        request.variant.as_ref().map(|v| v.id.as_str()),
+                    )
+                    .map_err(|e| e.to_string())?;
+                }
+                writeln!(out, "requestsShown={}", requests.len().min(8))
+                    .map_err(|e| e.to_string())?;
+            }
+            Value::Array(
+                requests
+                    .iter()
+                    .map(|request| {
+                        let mut display = std::collections::BTreeMap::new();
+                        match request.display_mode {
+                            DisplayMode::Interactive(value) => {
+                                display.insert(
+                                    "discriminant".into(),
+                                    Value::String("interactive".into()),
+                                );
+                                display.insert("value".into(), Value::Boolean(value));
+                            }
+                            DisplayMode::Static => {
+                                display
+                                    .insert("discriminant".into(), Value::String("static".into()));
+                            }
+                        }
+                        let mut fields: std::collections::BTreeMap<String, Value> = [
+                            ("displayMode".into(), Value::Dictionary(display)),
+                            (
+                                "overrides".into(),
+                                Value::Array(
+                                    request
+                                        .overrides
+                                        .iter()
+                                        .map(PreviewVariant::to_value)
+                                        .collect(),
+                                ),
+                            ),
+                        ]
+                        .into_iter()
+                        .collect();
+                        if let Some(variant) = &request.variant {
+                            fields.insert("variant".into(), variant.to_value());
+                        }
+                        Value::Dictionary(fields)
+                    })
+                    .collect(),
+            )
+        } else if kind == "grid-request-overrides" {
             let grid = PreviewVariantGroup::decode(
                 f.get("gridGroup")
                     .ok_or("grid-request-overrides: required gridGroup")?,
