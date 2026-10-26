@@ -1,0 +1,13 @@
+{
+  "controller_lock_host_failure": "First non-terminal host acquired lock then exited on stdin EOF; reacquired in live PTY before native work.",
+  "native_crashes_or_timeouts": [],
+  "native_load_or_layout_failures": [],
+  "native_rejections": 42,
+  "additional_schema_rejections": 2,
+  "scope_notes": [
+    "Primitive numeric bridge bodies not statically recovered; serialized primitive profiles runtime-qualified.",
+    "Negative-zero inputs may coalesce during plist generation.",
+    "Real2^63 saturation belongs to signed rank only; integer2^63 fails rank but succeeds UInt64 content seed.",
+    "Independent references may retain objects; returned destruction witnesses do not prove final release."
+  ]
+}

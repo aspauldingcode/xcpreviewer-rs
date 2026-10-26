@@ -1,0 +1,49 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "product-identity": "native-and-wasi-qualified",
+    "product-seed": "native-and-wasi-qualified",
+    "built-target-description": "open",
+    "static-product": "open",
+    "incremental-update": "open",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "product-identity",
+      "static-product"
+    ],
+    [
+      "product-seed",
+      "static-product"
+    ],
+    [
+      "built-target-description",
+      "static-product"
+    ],
+    [
+      "static-product",
+      "setup"
+    ],
+    [
+      "incremental-update",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Value roundtrips do not qualify reuse decisions or close native provider/final resource settlement."
+}

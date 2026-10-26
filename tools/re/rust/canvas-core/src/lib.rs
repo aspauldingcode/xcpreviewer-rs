@@ -329,3 +329,5 @@ pub mod preview_type;
 pub mod update_seed;
 
 pub mod dynamic_product;
+
+pub mod product_value;
