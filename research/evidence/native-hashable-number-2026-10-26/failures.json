@@ -1,0 +1,22 @@
+{
+  "corrected_harness_failures": [
+    {
+      "attempt": "direct public mixed-dictionary AnyHashable cast",
+      "result": "owned-helper fatal assertion: public dictionary projection unavailable; SIGTRAP(-5)",
+      "native_framework_rejection": false,
+      "resolution": "Recovered scalar/collection fallback used by recursive public control; all96 native/public projections pass. Stale native output unlinked before every run."
+    }
+  ],
+  "access_limitations": [
+    "System Foundation and libswiftFoundation do not exist as ordinary files at queried runtime paths; numeric conversion implementation was not statically disassembled. Public loaded-image UUIDs and owned cached projections provide an alternate route."
+  ],
+  "native_load_or_layout_failures": [],
+  "native_deadline_timeouts": [],
+  "portable_profile_rejections": 5,
+  "native_rejection_parity_claimed_for_profile_exclusions": false,
+  "scope_notes": [
+    "Actual cached-type observations explain selected wider numeric boundary behavior; generic arbitrary-origin semantics remain open.",
+    "Direct destruction returns do not prove memory/global settlement.",
+    "The predecessor broad numeric projection mismatch and conservative restriction are preserved in its sealed evidence; this unit supersedes that restriction."
+  ]
+}

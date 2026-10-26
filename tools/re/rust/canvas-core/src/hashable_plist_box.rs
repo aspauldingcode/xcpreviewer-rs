@@ -1,8 +1,8 @@
 //! Bounded property-list HashableBox value/snapshot semantics.
 //!
 //! Derived from shipped native methods and an owned native helper. This profile
-//! supports numeric magnitudes at most 2^53, finite dates, Bool, String, Data,
-//! arrays and dictionaries. Wider Foundation numeric conversion is not modeled.
+//! supports full signed/unsigned 64-bit integers, finite Real/Date, Bool, String,
+//! Data, arrays and dictionaries in the qualified Foundation-origin profile.
 //! Null, nonfinite values, canonical dictionary-key collisions and nesting beyond
 //! 64 are explicitly unsupported. Native hash bits and generic type identity are
 //! not reproduced. Equality uses a cached projection; the original value survives.
@@ -16,7 +16,6 @@ use unicode_normalization::UnicodeNormalization;
 pub enum Error {
     Null,
     Nonfinite,
-    NumericRange,
     CanonicalKeyCollision,
     Depth,
 }
@@ -35,14 +34,6 @@ fn key(value: &Value, depth: usize) -> Result<Key, Error> {
     if depth > 64 {
         return Err(Error::Depth);
     }
-    match value {
-        Value::Integer(v) if (*v as i128).abs() > (1i128 << 53) => return Err(Error::NumericRange),
-        Value::Unsigned(v) if *v > (1u64 << 53) => return Err(Error::NumericRange),
-        Value::Real(v) if v.is_finite() && v.abs() > (1u64 << 53) as f64 => {
-            return Err(Error::NumericRange)
-        }
-        _ => {}
-    }
     Ok(match value {
         Value::Null => return Err(Error::Null),
         Value::Boolean(v) => Key::Bool(*v),
@@ -52,10 +43,14 @@ fn key(value: &Value, depth: usize) -> Result<Key, Error> {
             if !v.is_finite() {
                 return Err(Error::Nonfinite);
             }
-            // Exact integral binary64 numbers in the supported integer domain.
-            // Strict upper bound avoids saturating u64 casts at 2^64.
-            if v.fract() == 0.0 && *v >= -9223372036854775808.0 && *v < 18446744073709551616.0 {
-                Key::Integer(*v as i128)
+            // Foundation-origin NSNumber -> AnyHashable selects Int64 first.
+            // At binary64 2^63, its native Int64 projection saturates to MAX.
+            // Larger exactly integral values below 2^64 select UInt64 instead.
+            if v.fract() == 0.0 && *v >= -9223372036854775808.0 && *v <= 9223372036854775808.0 {
+                Key::Integer((*v as i64) as i128)
+            } else if v.fract() == 0.0 && *v > 9223372036854775808.0 && *v < 18446744073709551616.0
+            {
+                Key::Integer((*v as u64) as i128)
             } else {
                 Key::Real(v.to_bits())
             }

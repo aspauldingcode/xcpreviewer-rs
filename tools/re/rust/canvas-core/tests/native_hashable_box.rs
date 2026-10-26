@@ -30,13 +30,7 @@ fn native_value_equality_and_hash_law() {
             let Value::Dictionary(r) = r else { panic!() };
             let value = PlistValueBox::decode(&r["input"]).unwrap();
             assert_eq!(value.to_value(), r["roundtrip"]);
-            match HashablePlistBox::new(value) {
-                Ok(b) => Some(b),
-                Err(error) => {
-                    assert_eq!(error, Error::NumericRange);
-                    None
-                }
-            }
+            HashablePlistBox::new(value).unwrap()
         })
         .collect();
     let Value::Array(pairs) = &v["pairs"] else {
@@ -48,9 +42,7 @@ fn native_value_equality_and_hash_law() {
         let (Value::Integer(i), Value::Integer(j)) = (&p["left"], &p["right"]) else {
             panic!()
         };
-        let (Some(a), Some(b)) = (&boxes[*i as usize], &boxes[*j as usize]) else {
-            continue;
-        };
+        let (a, b) = (&boxes[*i as usize], &boxes[*j as usize]);
         comparisons += 1;
         assert_eq!(
             a == b,
@@ -62,10 +54,9 @@ fn native_value_equality_and_hash_law() {
             assert_eq!(p["sameHash"], Value::Boolean(true));
         }
     }
-    assert_eq!(boxes.len(), 57);
-    assert_eq!(boxes.iter().filter(|b| b.is_some()).count(), 48);
-    assert_eq!(comparisons, 2304);
-    assert_eq!(pairs.len(), 3249);
+    assert_eq!(boxes.len(), 96);
+    assert_eq!(comparisons, 9216);
+    assert_eq!(pairs.len(), 9216);
 }
 #[test]
 fn unsupported_profile_rejected_without_lawless_keys() {
@@ -95,4 +86,66 @@ fn unsupported_profile_rejected_without_lawless_keys() {
         HashablePlistBox::new(PlistValueBox::from_value(value)).unwrap_err(),
         Error::Depth
     );
+}
+
+#[test]
+fn native_numeric_projection_types_and_public_bridge() {
+    let Value::Dictionary(v) =
+        binary_plist::decode(include_bytes!("fixtures/native_hashable_box/native.bplist")).unwrap()
+    else {
+        panic!()
+    };
+    let Value::Array(rows) = &v["rows"] else {
+        panic!()
+    };
+    let mut numeric = 0;
+    for row in rows {
+        let Value::Dictionary(row) = row else {
+            panic!()
+        };
+        assert_eq!(row["publicProjectionEqual"], Value::Boolean(true));
+        assert_eq!(row["snapshot"], row["publicProjection"]);
+        let Value::Dictionary(input) = &row["input"] else {
+            panic!()
+        };
+        if input.len() != 1 {
+            continue;
+        }
+        let Some(Value::Integer(_) | Value::Unsigned(_) | Value::Real(_)) = input.get("value")
+        else {
+            continue;
+        };
+        let Value::Dictionary(snapshot) = &row["snapshot"] else {
+            panic!()
+        };
+        let Value::Dictionary(fields) = &snapshot["dictionary"] else {
+            panic!()
+        };
+        let Value::Dictionary(value) = &fields["value"] else {
+            panic!()
+        };
+        let Value::String(kind) = &value["swiftType"] else {
+            panic!()
+        };
+        let Value::String(text) = &value["stringValue"] else {
+            panic!()
+        };
+        let projected = match kind.as_str() {
+            "Swift.Int64" => Value::Integer(text.parse().unwrap()),
+            "Swift.UInt64" => Value::Unsigned(text.parse().unwrap()),
+            "Swift.Double" => {
+                let Value::String(text) = &value["doubleValue"] else {
+                    panic!()
+                };
+                Value::Real(text.parse().unwrap())
+            }
+            _ => panic!("unexpected numeric snapshot type {kind}"),
+        };
+        assert_eq!(
+            HashablePlistBox::new(PlistValueBox::decode(&row["input"]).unwrap()).unwrap(),
+            HashablePlistBox::new(PlistValueBox::from_value(projected)).unwrap()
+        );
+        numeric += 1;
+    }
+    assert!(numeric >= 60);
 }

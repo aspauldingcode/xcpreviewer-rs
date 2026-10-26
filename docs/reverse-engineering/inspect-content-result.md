@@ -349,17 +349,23 @@ results are recorded separately.
 `representatives` (the first equal input index) and `uniqueKeys`. Summary output shows
 at most eight representatives and no opaque state contents. All inputs validate before output.
 `HashablePlistBox` retains the original `PlistValueBox` and separately caches its equality key.
-Bool differs from numeric values; exactly equal integer/finite-real values compare equal;
+Bool differs from numeric values; numeric equality follows the qualified projection below;
 String/dictionary keys use qualified canonical Unicode equality; arrays retain order and
 multiplicity; dictionary encounter order is irrelevant. Data and Date retain distinct types.
 Rust-local hash values obey equality; native randomized hash bits are not reproduced.
 
-The supported numeric magnitude is at most 2^53 (inclusive), excluding larger Integer,
-Unsigned and finite Real values. Native NSNumber conversion at Int64.max/2^63 has
-observed boundary behavior outside this profile; exact wider numeric semantics remain open.
+The qualified Foundation-origin numeric profile supports full Int64/UInt64 and finite Real.
+Native cached AnyHashable projections select Int64 for integral Real in [-2^63,2^63],
+including saturation to Int64.max at real 2^63; larger integral reals below 2^64 select
+UInt64. Remaining finite reals retain Double identity. This boundary preserves the observed
+distinction between real 2^63 (projected Int64.max) and UInt64 2^63. Whole box roundtrips
+retain the original real/integer type and value; only the cached equality key projects it.
+The earlier conservative 2^53 restriction was superseded by actual cached-type observations
+and expanded native comparisons. This is a qualified Foundation-origin profile, not a claim
+about all possible Swift/object constructions of the generic native type.
 The supported profile also excludes Null, nonfinite Real/Date values, canonical dictionary-key
 collisions at any depth, and nesting beyond 64. These are portable domain restrictions,
 not claims that the native initializer rejects those inputs. Generic Swift type identity,
 unsupported Foundation objects, live state installation/transport and global resource
-settlement remain outside this profile. Actual shipped HashableBox methods and 3,249
-pair comparisons (2,304 within the portable domain) are recorded in `research/evidence/native-hashable-box-2026-10-26`.
+settlement remain outside this profile. Actual shipped HashableBox methods, 96 cached projections and 9,216 pair comparisons
+are recorded in `research/evidence/native-hashable-number-2026-10-26`.
