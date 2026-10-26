@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 pub struct CancelUpdatePayload {
     pub pid: i32,
     pub content_identifier: String,
-    /// Native PreviewUpdateSeed is UInt64, distinct from signed scene timing seeds.
+    /// Native HostUpdateSeed carries UInt64, distinct from signed scene timing seeds.
     pub update_seed: u64,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -31,20 +31,7 @@ impl CancelUpdatePayload {
             .ok_or(Error::Missing("updateSeed"))?;
         // Measured Foundation primitive UInt64 casts; fractional, negative,
         // nonfinite and the rounded Double(2^64) endpoint reject.
-        let update_seed = match value {
-            Value::Unsigned(n) => *n,
-            Value::Integer(n) if *n >= 0 => *n as u64,
-            Value::Boolean(n) => u64::from(*n),
-            Value::Real(n)
-                if n.is_finite()
-                    && n.fract() == 0.0
-                    && *n >= 0.0
-                    && *n < 18446744073709551616.0 =>
-            {
-                *n as u64
-            }
-            _ => return Err(Error::Range("updateSeed")),
-        };
+        let update_seed = crate::update_seed::uint64(value).ok_or(Error::Range("updateSeed"))?;
         Ok(Self {
             pid,
             content_identifier: content_identifier.clone(),

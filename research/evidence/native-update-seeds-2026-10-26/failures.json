@@ -1,0 +1,23 @@
+{
+  "exploratory_lookup_errors": [
+    {
+      "path": "tools/re/rust/canvas-core/src/service_message.rs",
+      "error": "No such file or directory",
+      "correction": "Used repository file inventory and located existing cancel_update UInt64 conversion."
+    }
+  ],
+  "harness_notes": [
+    "Required-call counter instrumentation completed before final fixture capture; actual68 calls tracked."
+  ],
+  "native_load_or_layout_failures": [],
+  "native_crashes_or_deadline_timeouts": [],
+  "verification_failures": [],
+  "native_typed_value_rejections": 30,
+  "additional_portable_profile_or_scope_rejections": 11,
+  "scope_notes": [
+    "Global native next is executed for fresh1..8; wrap boundaries use actual increment closure without mutating native global lock state.",
+    "Primitive NSNumber conversion body not statically recovered here; standard serialized primitive profile runtime-qualified.",
+    "Native lock ABI/fairness/concurrent stress, custom NSNumber subclasses, cancellation/update matching/delivery/completion remain open.",
+    "Seed/direct destruction values do not prove global uniqueness/final release/settlement."
+  ]
+}

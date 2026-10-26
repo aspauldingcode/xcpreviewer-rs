@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "typed-seed-wire-values",
+      "state": "38-native-accepts-30-errors"
+    },
+    {
+      "id": "update-seed-next",
+      "state": "8-native-full-calls"
+    },
+    {
+      "id": "increment-closure-boundaries",
+      "state": "4-native-calls"
+    },
+    {
+      "id": "unsigned-group-order",
+      "state": "25-native-comparisons"
+    },
+    {
+      "id": "rust-value-allocator",
+      "state": "365-tests"
+    },
+    {
+      "id": "wasi-inspectors",
+      "state": "131-runs-45-reparses"
+    },
+    {
+      "id": "shell-setup-product-dependencies",
+      "state": "open"
+    },
+    {
+      "id": "full-update-transport-resources",
+      "state": "open"
+    },
+    {
+      "id": "canvas-provider-settlement",
+      "state": "quarantined-open"
+    }
+  ],
+  "edges": [
+    [
+      "typed-seed-wire-values",
+      "rust-value-allocator"
+    ],
+    [
+      "update-seed-next",
+      "rust-value-allocator"
+    ],
+    [
+      "increment-closure-boundaries",
+      "rust-value-allocator"
+    ],
+    [
+      "unsigned-group-order",
+      "rust-value-allocator"
+    ],
+    [
+      "rust-value-allocator",
+      "wasi-inspectors"
+    ],
+    [
+      "wasi-inspectors",
+      "shell-setup-product-dependencies"
+    ],
+    [
+      "shell-setup-product-dependencies",
+      "full-update-transport-resources"
+    ],
+    [
+      "full-update-transport-resources",
+      "canvas-provider-settlement"
+    ]
+  ],
+  "execution": "serial-exclusive-controller-lock",
+  "stop_rule": "Seed/allocator value contracts do not close global uniqueness, cancellation/correlation/completion, full update transport/UI/provider/resource settlement."
+}

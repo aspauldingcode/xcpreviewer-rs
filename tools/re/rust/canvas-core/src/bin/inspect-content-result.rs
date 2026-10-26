@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|preview-type|host-location|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -109,6 +109,9 @@ fn run() -> Result<(), String> {
         && kind != "configuration-shell-control-states"
         && kind != "preview-type"
         && kind != "host-location"
+        && kind != "unbox-host-update-seed"
+        && kind != "unbox-host-update-group-seed"
+        && kind != "update-seed-sequence"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -283,6 +286,28 @@ fn run() -> Result<(), String> {
             .into_iter()
             .collect(),
         )
+    } else if kind == "unbox-host-update-seed" || kind == "unbox-host-update-group-seed" {
+        use canvas_core::{plist_value_box::PlistValueBox, update_seed::{HostUpdateSeed,HostUpdateGroupSeed}};
+        let boxed = PlistValueBox::decode(&value).map_err(|e|format!("seed-box: {e:?}"))?;
+        let (seed, normalized) = if kind == "unbox-host-update-seed" {
+            let seed = boxed.required_with(HostUpdateSeed::decode).map_err(|e|format!("update-seed: {e:?}"))?;
+            (seed.value(), seed.to_value())
+        } else {
+            let seed = boxed.required_with(HostUpdateGroupSeed::decode).map_err(|e|format!("update-group-seed: {e:?}"))?;
+            (seed.value(), seed.to_value())
+        };
+        if !canonical { writeln!(out, "result={}\nvalue={seed}", kind.to_string_lossy()).map_err(|e|e.to_string())?; }
+        normalized
+    } else if kind == "update-seed-sequence" {
+        use canvas_core::update_seed::{HostUpdateSeed, UpdateSeeds};
+        let Value::Dictionary(fields) = &value else { return Err("update-seed-sequence: dictionary required".into()); };
+        let last = HostUpdateSeed::decode(fields.get("last").ok_or("update-seed-sequence: last required")?).map_err(|e|format!("update-seed-sequence: last: {e:?}"))?;
+        let count = HostUpdateSeed::decode(fields.get("count").ok_or("update-seed-sequence: count required")?).map_err(|e|format!("update-seed-sequence: count: {e:?}"))?.value();
+        if count>4096 { return Err("update-seed-sequence: count exceeds4096".into()); }
+        let seeds = UpdateSeeds::starting_after(last.value());
+        let values = (0..count).map(|_|seeds.next_seed().to_value()).collect();
+        if !canonical { writeln!(out, "result=update-seed-sequence\nseeds={count}").map_err(|e|e.to_string())?; }
+        Value::Dictionary([("values".into(),Value::Array(values)),("last".into(),HostUpdateSeed::new(seeds.last_value()).to_value())].into_iter().collect())
     } else if kind == "preview-type" || kind == "host-location" {
         use canvas_core::preview_type::{HostLocation, PreviewType};
         let (tag, location, normalized) = if kind == "preview-type" {
