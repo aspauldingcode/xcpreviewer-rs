@@ -1,0 +1,13 @@
+{
+  "native_guard_or_layout_failures": [],
+  "native_crashes_or_timeouts": [],
+  "verification_failures": [],
+  "native_rejections": 102,
+  "additional_schema_rejections": 1,
+  "scope_notes": [
+    "Complete selected wire record is distinct from target constructor/linker/runtime behavior.",
+    "mergedModuleNames exists in native memory but is intentionally not a wire key; actual owned field mutation is distinct from native constructor execution.",
+    "Only linkerFlags/sourceFilePaths Set output order normalized; all other arrays/order/duplicates preserved.",
+    "Returned target destruction calls do not prove unique nested-object final release."
+  ]
+}

@@ -1,0 +1,844 @@
+{
+  "native_decode_attempts": 164,
+  "native_accepts": 62,
+  "native_rejections": 102,
+  "tool_cases": 165,
+  "tool_accepts": 62,
+  "native_matched_rejections": 102,
+  "additional_schema_rejections": 1,
+  "actual_wasi_invocations": 227,
+  "foundation_reparses": 62,
+  "native_nonwire_merged_mutation_controls": 1,
+  "native_set_wire_order_ignored": [
+    "linkerFlags",
+    "objectFiles.sourceFilePaths"
+  ],
+  "portable_set_order": "NFD-key-ascending",
+  "cases": [
+    {
+      "case": 0,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 1,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 2,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 3,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 4,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 5,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 6,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 7,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 8,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 9,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 10,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 11,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 12,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 13,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 14,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 15,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 16,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 17,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 18,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 19,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 20,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 21,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 22,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 23,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 24,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 25,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 26,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 27,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 28,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 29,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 30,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 31,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 32,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 33,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 34,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 35,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 36,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 37,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 38,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 39,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 40,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 41,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 42,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 43,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 44,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 45,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 46,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 47,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 48,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 49,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 50,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 51,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 52,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 53,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 54,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 55,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 56,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 57,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 58,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 59,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 60,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 61,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 62,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 63,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 64,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 65,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 66,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 67,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 68,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 69,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 70,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 71,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 72,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 73,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 74,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 75,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 76,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 77,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 78,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 79,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 80,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 81,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 82,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 83,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 84,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 85,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 86,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 87,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 88,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 89,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 90,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 91,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 92,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 93,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 94,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 95,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 96,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 97,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 98,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 99,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 100,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 101,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 102,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 103,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 104,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 105,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 106,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 107,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 108,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 109,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 110,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 111,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 112,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 113,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 114,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 115,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 116,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 117,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 118,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 119,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 120,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 121,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 122,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 123,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 124,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 125,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 126,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 127,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 128,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 129,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 130,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 131,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 132,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 133,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 134,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 135,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 136,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 137,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 138,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 139,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 140,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 141,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 142,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 143,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 144,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 145,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 146,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 147,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 148,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 149,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 150,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 151,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 152,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 153,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 154,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 155,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 156,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 157,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 158,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 159,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 160,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 161,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 162,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 163,
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": 164,
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    }
+  ]
+}

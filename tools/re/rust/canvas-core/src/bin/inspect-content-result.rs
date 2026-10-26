@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|built-target|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,7 @@ fn run() -> Result<(), String> {
         && kind != "runnable-configuration-keys"
         && kind != "shell-control-states"
         && kind != "configuration-shell-control-states"
+        && kind != "built-target"
         && kind != "jit-load-command"
         && kind != "jit-load-dylib"
         && kind != "built-object-file"
@@ -316,6 +317,10 @@ fn run() -> Result<(), String> {
         let values = (0..count).map(|_|seeds.next_seed().to_value()).collect();
         if !canonical { writeln!(out, "result=update-seed-sequence\nseeds={count}").map_err(|e|e.to_string())?; }
         Value::Dictionary([("values".into(),Value::Array(values)),("last".into(),HostUpdateSeed::new(seeds.last_value()).to_value())].into_iter().collect())
+    } else if kind == "built-target" {
+        let target=canvas_core::built_target::BuiltTargetDescription::decode(&value).map_err(|e|format!("built-target: {e:?}"))?;
+        if !canonical { writeln!(out,"result=built-target\nobjectFiles={}\nstaticArchives={}\nloadCommands={}\nlinkerFlags={}\nisExecutable={}\nenforceWeakSymbolPaths={}\nopaqueTypeErasureEnabled={}",target.object_files.len(),target.static_archives.len(),target.load_commands.len(),target.linker_flags.len(),target.is_executable,target.enforce_weak_symbol_paths,target.opaque_type_erasure_enabled).map_err(|e|e.to_string())?; }
+        target.to_value()
     } else if kind == "jit-load-command" || kind == "jit-load-dylib" {
         use canvas_core::jit_load_command::{JitLoadCommand,LoadDylib};
         let (command,normalized)=if kind == "jit-load-command" {

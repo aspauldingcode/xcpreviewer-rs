@@ -1,0 +1,49 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "nested-object-archive-platform-jit-codecs": "qualified-predecessors",
+    "complete-target-wire-codec": "native-and-wasi-qualified",
+    "nonwire-merged-field": "owned-native-mutation-control",
+    "static-product": "open",
+    "incremental-update": "open",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "nested-object-archive-platform-jit-codecs",
+      "complete-target-wire-codec"
+    ],
+    [
+      "nonwire-merged-field",
+      "complete-target-wire-codec"
+    ],
+    [
+      "complete-target-wire-codec",
+      "static-product"
+    ],
+    [
+      "static-product",
+      "setup"
+    ],
+    [
+      "incremental-update",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Complete target wire values do not prove native constructor/linker/architecture/reuse/loading policy or native provider/final resource settlement."
+}
