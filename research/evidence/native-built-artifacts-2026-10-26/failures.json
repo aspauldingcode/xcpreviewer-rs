@@ -1,0 +1,28 @@
+{
+  "initial_owned_harness_abi_crash": {
+    "owned_helper_exit": -10,
+    "signal": "SIGBUS",
+    "fault": "KERN_PROTECTION_FAILURE",
+    "faulting_messaging_frame_offset": "0x141a0",
+    "cause": "Public archive decoder returned registers rather than initializing the indirect result; public archive encoder also requires register self. Harness later destroyed uninitialized archive result.",
+    "correction": {
+      "indirect_decoder_protocol_witness": "0xc27c",
+      "indirect_self_encoder_protocol_witness": "0xc1b8"
+    },
+    "user_process_affected": false,
+    "raw_os_crash_report_published": false
+  },
+  "corrected_native_crashes_or_timeouts": [],
+  "native_load_or_layout_failures": [],
+  "native_rejections": 55,
+  "additional_schema_rejections": 3,
+  "exploratory_errors": [
+    "Guessed reflection descriptor0xd3318 led to nullable-name TypeError; switched to exact symbol inventory descriptors.",
+    "Source metadata/destructor range labels corrected before final evidence."
+  ],
+  "scope_notes": [
+    "Numeric Bool and Unicode String-set profiles runtime-qualified; full primitive bridge not statically recovered.",
+    "Only sourceFilePaths canonical array order ignored; portable output deliberately deterministic.",
+    "Returned destruction witnesses do not prove unique final release."
+  ]
+}

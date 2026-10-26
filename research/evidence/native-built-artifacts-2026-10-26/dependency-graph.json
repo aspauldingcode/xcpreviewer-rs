@@ -1,0 +1,59 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "built-object-file": "native-and-wasi-qualified",
+    "built-static-archive": "native-and-wasi-qualified",
+    "platform-version": "native-and-wasi-qualified",
+    "jit-load-command": "open",
+    "built-target": "open",
+    "static-product": "open",
+    "incremental-update": "open",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "built-object-file",
+      "built-target"
+    ],
+    [
+      "built-static-archive",
+      "built-target"
+    ],
+    [
+      "platform-version",
+      "built-target"
+    ],
+    [
+      "jit-load-command",
+      "built-target"
+    ],
+    [
+      "built-target",
+      "static-product"
+    ],
+    [
+      "static-product",
+      "setup"
+    ],
+    [
+      "incremental-update",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Value codecs, Set membership and returned destruction calls do not close loader/replacement/reuse policy or native provider/final resource settlement."
+}

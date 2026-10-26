@@ -1,0 +1,13 @@
+{
+  "owned_helper_exit": -10,
+  "signal": "SIGBUS",
+  "fault": "KERN_PROTECTION_FAILURE",
+  "faulting_messaging_frame_offset": "0x141a0",
+  "cause": "Public archive decoder returned registers rather than initializing the indirect result; public archive encoder also requires register self. Harness later destroyed uninitialized archive result.",
+  "correction": {
+    "indirect_decoder_protocol_witness": "0xc27c",
+    "indirect_self_encoder_protocol_witness": "0xc1b8"
+  },
+  "user_process_affected": false,
+  "raw_os_crash_report_published": false
+}
