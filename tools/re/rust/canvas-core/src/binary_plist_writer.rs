@@ -40,6 +40,7 @@ enum Node<'a> {
 struct Builder<'a> {
     nodes: Vec<Node<'a>>,
     limits: Limits,
+    allow_nonfinite_reals: bool,
 }
 impl<'a> Builder<'a> {
     fn slot(&mut self, depth: usize) -> Result<usize, Error> {
@@ -91,7 +92,10 @@ impl<'a> Builder<'a> {
             Value::Integer(v) => Node::Integer(*v),
             Value::Unsigned(v) if *v <= i64::MAX as u64 => Node::Integer(*v as i64),
             Value::Unsigned(v) => Node::Unsigned(*v),
-            Value::Real(v) | Value::Date(v) if !v.is_finite() => return Err(Error::NonFinite),
+            Value::Real(v) if !v.is_finite() && !self.allow_nonfinite_reals => {
+                return Err(Error::NonFinite)
+            }
+            Value::Date(v) if !v.is_finite() => return Err(Error::NonFinite),
             Value::Real(v) => Node::Real(*v),
             Value::Date(v) => Node::Date(*v),
             Value::Data(v) => {
@@ -246,6 +250,17 @@ pub fn encode_with_limits(value: &Value, limits: Limits) -> Result<Vec<u8>, Erro
     let mut builder = Builder {
         nodes: Vec::new(),
         limits,
+        allow_nonfinite_reals: false,
+    };
+    builder.value(value, 0)?;
+    finish(builder)
+}
+// Restricted to native-qualified codecs; generic public writer remains finite-only.
+pub(crate) fn encode_preserving_real_bits(value: &Value) -> Result<Vec<u8>, Error> {
+    let mut builder = Builder {
+        nodes: Vec::new(),
+        limits: Limits::default(),
+        allow_nonfinite_reals: true,
     };
     builder.value(value, 0)?;
     finish(builder)
@@ -255,6 +270,7 @@ pub fn encode_dictionary(fields: &BTreeMap<String, Value>) -> Result<Vec<u8>, Er
     let mut builder = Builder {
         nodes: Vec::new(),
         limits: Limits::default(),
+        allow_nonfinite_reals: false,
     };
     builder.dictionary(fields, 0)?;
     finish(builder)

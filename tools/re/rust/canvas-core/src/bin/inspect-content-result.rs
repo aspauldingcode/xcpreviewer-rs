@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|static-product|built-target|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|incremental-update-single|static-product|built-target|jit-load-command|jit-load-dylib|built-object-file|built-static-archive|platform-version|product-identity|product-seed|dynamic-product|preview-type|host-location|unbox-host-update-seed|unbox-host-update-group-seed|update-seed-sequence|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,7 @@ fn run() -> Result<(), String> {
         && kind != "runnable-configuration-keys"
         && kind != "shell-control-states"
         && kind != "configuration-shell-control-states"
+        && kind != "incremental-update-single"
         && kind != "static-product"
         && kind != "built-target"
         && kind != "jit-load-command"
@@ -318,6 +319,10 @@ fn run() -> Result<(), String> {
         let values = (0..count).map(|_|seeds.next_seed().to_value()).collect();
         if !canonical { writeln!(out, "result=update-seed-sequence\nseeds={count}").map_err(|e|e.to_string())?; }
         Value::Dictionary([("values".into(),Value::Array(values)),("last".into(),HostUpdateSeed::new(seeds.last_value()).to_value())].into_iter().collect())
+    } else if kind == "incremental-update-single" {
+        let update=canvas_core::incremental_update::PreviewIncrementalUpdate::decode_single_entry(&value).map_err(|e|format!("incremental-update-single: {e:?}"))?;
+        if !canonical { writeln!(out,"result=incremental-update-single\nentries=1").map_err(|e|e.to_string())?; }
+        update.to_value()
     } else if kind == "static-product" {
         let product=canvas_core::static_product::StaticLinkablePreviewProduct::decode(&value).map_err(|e|format!("static-product: {e:?}"))?;
         if !canonical { writeln!(out,"result=static-product\nproductIdentityPresent={}\nseedPresent={}\nbuiltTargetDescriptions={}",product.product_identity.is_some(),product.seed.is_some(),product.built_target_descriptions.len()).map_err(|e|e.to_string())?; }
@@ -1645,7 +1650,9 @@ fn run() -> Result<(), String> {
     };
     if canonical {
         let bytes =
-            binary_plist_writer::encode(&normalized).map_err(|e| format!("encode: {e:?}"))?;
+            if kind=="incremental-update-single" {
+                canvas_core::incremental_update::PreviewIncrementalUpdate::decode_single_entry(&normalized).map_err(|e|format!("incremental-update-single: {e:?}"))?.to_binary_plist()
+            } else {binary_plist_writer::encode(&normalized)}.map_err(|e|format!("encode: {e:?}"))?;
         out.write_all(&bytes).map_err(|e| format!("output: {e}"))?;
     }
     out.flush().map_err(|e| format!("output: {e}"))

@@ -1,0 +1,24 @@
+{
+  "native_guard_failures": [
+    {
+      "signal": "SIGTRAP",
+      "reason": "Owned metadata guard expected56 instead of measured64 bytes",
+      "decoder_calls_before_failure": 0,
+      "resolution": "Corrected source-consistent64-byte guard; bounded metadata probe and full run pass"
+    }
+  ],
+  "verification_failures": [
+    {
+      "case": 86,
+      "reason": "Generic writer NonFinite rejection for native-accepted infinity",
+      "resolution": "Private codec-only Real bit-preserving path; generic finite-only contract regression-tested"
+    }
+  ],
+  "scope_notes": [
+    "Native accepts multiple keys and selects a first hash-table entry; portable decoder explicitly rejects ambiguity.",
+    "Combined Foundation fixture coalesces positive Real zero into negative zero; separate zero identity/serialization unqualified.",
+    "Only serialized Foundation-parsed scalar/data types qualified; not all custom native protocol conformers.",
+    "Destruction witnesses returned; no unique existential-object final-release proof.",
+    "UI/provider quarantine and both incomplete milestones retained."
+  ]
+}

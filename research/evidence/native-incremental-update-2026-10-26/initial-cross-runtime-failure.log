@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/private/tmp/incremental-update-20261026/check.py", line 34, in <module>
+    assert (p.returncode==0)==row['accepted'] and (j.returncode==0)==row['accepted'],i
+AssertionError: 86

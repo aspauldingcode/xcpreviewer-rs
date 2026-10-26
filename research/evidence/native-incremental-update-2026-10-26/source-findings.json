@@ -1,0 +1,71 @@
+{
+  "source_images": {
+    "PreviewsMessagingHost": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "PreviewsFoundationHost": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x1d54c",
+      "bytes": 364,
+      "sha256": "4aa675c042bcce0769040dd6ea0d57bdf151c81f27f84797c7c0b0aa17ada7c5"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x5ec38",
+      "bytes": 364,
+      "sha256": "072f3828edb217300d2cc1c067e6195500c044a46c920fa90be2336940204f05"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x6041c",
+      "bytes": 316,
+      "sha256": "6b9c70cebc2519a4df0103d4b9f1a46b49208c0f7cde32e035530a6ef92743ab"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x61d70",
+      "bytes": 240,
+      "sha256": "8563836f701586fe4a9a61da12102bb3d4e5c46f277dafc2d237ee7688061d96"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x72154",
+      "bytes": 1072,
+      "sha256": "cef69bc20c3ddaafe92e701f080374b3c24b939f4e7b16b78fdf8b1f9d4a437b"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x728c4",
+      "bytes": 124,
+      "sha256": "8771353413cabcd7e65bca8e2483ad9224ba49f5a890a0b0aa5e85e9f8d9db55"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x72978",
+      "bytes": 44,
+      "sha256": "0333125bc88aa6d5c22bb336bcf3e4f52c40e7089cb4187301c466b0fce94b6a"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x72c14",
+      "bytes": 16,
+      "sha256": "febccdabd8bf48db44271097b25471d1c8c3b391a2d8277108d1bacd9045fc3c"
+    }
+  ],
+  "selected_source_bytes_verified": 2540,
+  "private_box_getter_invoked": false,
+  "scope": "Native first-entry selection and dynamic protocol-composition cast; portable single-entry scalar/data subset. Multi-key selection nondeterministic and explicitly excluded from portable decoder; no update application/dispatch, setup, shell or transport.",
+  "bindings": {
+    "0xb193c": "_$s22PreviewsFoundationHost12PropertyListV22serializableDictionarySDySSypGvg",
+    "0xb2188": "_$ss10_HashTableV11startBucketAB0D0Vvg",
+    "0xb25e4": "_swift_dynamicCast",
+    "0xb196c": "_$s22PreviewsFoundationHost12PropertyListV7contentACx_AA0dE4Type_pSgtyXE_tcAA0dE3KeyRzlufC"
+  }
+}

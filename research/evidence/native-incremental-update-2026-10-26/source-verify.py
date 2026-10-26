@@ -1,0 +1,22 @@
+from pathlib import Path
+import runpy,contextlib,io,json,re,subprocess
+w=Path(__file__).parent
+with contextlib.redirect_stdout(io.StringIO()):n=runpy.run_path(str(w/'base-source-verify.py'))
+m,f,word,call,binding,sha,fields=[n[k] for k in ['m','f','word','call','binding','sha','fields']]
+assert binding(m,0xe5078,8)=='_$s22PreviewsFoundationHost16PropertyListTypeMp'
+assert m.data[m.file_offset(0xc98c5):m.file_offset(0xc98c5)+5]==b'_SHp\x00' # PropertyListType & Hashable composition
+assert fields(m,0xd59b8)==['key','value'] and fields(m,0xd59e0)==['invalid','empty']
+assert word(m,0x72238)==0xaa0803f6 # indirect result
+assert call(m,0x7232c)==0xb25e4 and binding(m,0xb25e4)=='_swift_dynamicCast'
+assert call(m,0x7223c)==0xb193c
+assert call(m,0x722a0)==0x728c4 # first occupied native Dictionary index
+assert word(m,0x7226c)==0x540000e1 and word(m,0x722c4)==0xb40005a8
+assert word(m,0x72988)==0xf9400400 and call(m,0x7298c)==0xb2548
+assert word(m,0x72990)==0x91004260 and call(m,0x72994)==0x2d70
+base=json.loads((w/'source-findings.json').read_text())
+for a,b,name in [(0x72154,0x72584,'incremental-codec.s'),(0x728c4,0x72940,'dictionary-entry.s'),(0x72978,0x729a4,'incremental-destroy.s'),(0x72c14,0x72c24,'incremental-metadata.s')]:
+ text=subprocess.run(['xcrun','llvm-objdump','--disassemble','--start-address='+hex(a),'--stop-address='+hex(b),str(m.path)],capture_output=True,text=True,check=True,timeout=20).stdout
+ words={int(x,16):int(y,16).to_bytes(4,'little') for x,y in re.findall(r'^\s*([0-9a-f]+):\s*([0-9a-f]{8})\s',text,re.M)};raw=m.data[m.file_offset(a):m.file_offset(a)+b-a];assert raw==b''.join(words[x] for x in range(a,b,4));(w/name).write_text(text);base['ranges'].append({'image':m.path.name,'start':hex(a),'bytes':b-a,'sha256':sha(raw)})
+base['selected_source_bytes_verified']=sum(x['bytes'] for x in base['ranges']);base['scope']='Native first-entry selection and dynamic protocol-composition cast; portable single-entry scalar/data subset. Multi-key selection nondeterministic and explicitly excluded from portable decoder; no update application/dispatch, setup, shell or transport.'
+base['bindings']={hex(a):binding(m,a) for a in [0xb193c,0xb2188,0xb25e4,0xb196c]}
+(w/'source-findings.json').write_text(json.dumps(base,indent=2)+'\n');print(base['selected_source_bytes_verified'])

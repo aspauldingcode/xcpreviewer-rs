@@ -1,0 +1,39 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "complete-static-product-wire": "qualified-predecessor",
+    "incremental-single-entry": "native-and-wasi-qualified-subset",
+    "incremental-multiple-entry-selection": "native-randomized-explicit-portable-restriction",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "complete-static-product-wire",
+      "setup"
+    ],
+    [
+      "incremental-single-entry",
+      "setup"
+    ],
+    [
+      "incremental-multiple-entry-selection",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "A qualified single-entry subset does not establish complete incremental decoding or update application/registry, transport or native final settlement."
+}

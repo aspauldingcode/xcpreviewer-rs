@@ -339,3 +339,5 @@ pub mod jit_load_command;
 pub mod built_target;
 
 pub mod static_product;
+
+pub mod incremental_update;
