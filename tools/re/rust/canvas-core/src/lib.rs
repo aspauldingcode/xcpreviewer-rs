@@ -337,3 +337,5 @@ pub mod built_artifact;
 pub mod jit_load_command;
 
 pub mod built_target;
+
+pub mod static_product;

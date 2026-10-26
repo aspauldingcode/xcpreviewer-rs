@@ -1,0 +1,39 @@
+{
+  "execution": "serial-exclusive-controller-lock",
+  "nodes": {
+    "identity-seed-target-wire-codecs": "qualified-predecessors",
+    "complete-static-product-wire-codec": "native-and-wasi-qualified",
+    "incremental-update": "open",
+    "setup": "open",
+    "full-shell": "open",
+    "loader-updater-transport": "open",
+    "provider-settlement": "quarantined-open"
+  },
+  "edges": [
+    [
+      "identity-seed-target-wire-codecs",
+      "complete-static-product-wire-codec"
+    ],
+    [
+      "complete-static-product-wire-codec",
+      "setup"
+    ],
+    [
+      "incremental-update",
+      "setup"
+    ],
+    [
+      "setup",
+      "full-shell"
+    ],
+    [
+      "full-shell",
+      "loader-updater-transport"
+    ],
+    [
+      "loader-updater-transport",
+      "provider-settlement"
+    ]
+  ],
+  "stop_rule": "Static-product wire roundtrips do not qualify linking/loading/reuse policy or native provider/final resource settlement."
+}
