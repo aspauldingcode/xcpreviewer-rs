@@ -181,3 +181,35 @@ Rust key leaves wire spellings/order unchanged and supports Rust-local HashMap
 memoization. Native hash bits, task coalescing, cache lifetime, error retention,
 invalidation, fetch execution and transport behavior remain unimplemented. The
 Unicode16 qualification and codec bounds/error-order limits remain inherited.
+
+
+`task-cache` projects the recovered actor's serialized task-handle storage; it is
+not an async executor or Apple wire format. Input is an original dictionary with
+optional strict Bool `clearOnFailure` (default false) and required `operations`
+array. An `acquire` operation requires `request` using the content-override payload
+schema. It allocates a monotonically numbered synthetic handle only on a cache
+miss and returns an acquisition ticket, indexed by acquisition order. A `failure`
+operation requires a nonnegative `ticket` for one prior, unconsumed acquisition.
+Only the creating ticket clears the key, and only with clearOnFailure enabled.
+There is no task-identity guard: a late creator failure can remove a replacement.
+A reused waiter failure leaves storage unchanged. Success needs no state change.
+
+`invalidate` requires `request` and optional strict Bool `cancelingTask` (default
+true). It records a cancellation request for a stored handle before removing it;
+false removes without requesting cancellation. Cancellation is not completion,
+waiter release or resource settlement. Removed handles remain valid for external
+owners. All operations/requests/tickets validate before execution. Output reports
+events, tasksStarted, retainedTasks and cancelRequests; summary shows eight events.
+
+The generic TaskCache API takes host-owned cloneable handles/factory/cancellation
+callbacks, and uses immutable content-override keys in the inspector. Hosts own
+actual scheduling, task results, actor/executor synchronization, awaiting and
+cancellation cooperation. Observe a failure only on the cache that produced its
+ticket. The pure projection does not reproduce Swift actor reentrancy, priority,
+executor hops or timing, and does not establish native/global resource parity.
+
+
+`content_requests::content_override_task_cache` configures task storage with
+clearOnFailure=true, matching the explicit DestinationCapabilitiesCache constructor
+argument. The generic TaskCache default and task-cache trace default remain false.
+Use host-owned task handles and provide the executor; neither factory spawns tasks.

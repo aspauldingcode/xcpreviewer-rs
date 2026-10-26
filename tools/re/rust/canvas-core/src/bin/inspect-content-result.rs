@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,7 @@ fn run() -> Result<(), String> {
         && kind != "update-single-selection"
         && kind != "row-controls"
         && kind != "override-cache-keys"
+        && kind != "task-cache"
     {
         return Err(USAGE.into());
     }
@@ -129,7 +130,146 @@ fn run() -> Result<(), String> {
     }
     let value = binary_plist::decode(&bytes).map_err(|e| format!("plist: {e:?}"))?;
     let mut out = std::io::stdout().lock();
-    let normalized: Value = if kind == "override-cache-keys" {
+    let normalized: Value = if kind == "task-cache" {
+        use canvas_core::{
+            content_requests::{ContentOverrideCacheKey, RequestContentOverridePayload},
+            task_cache::{TaskAcquisition, TaskCache},
+        };
+        enum Op {
+            Acquire(ContentOverrideCacheKey),
+            Failure(usize),
+            Invalidate(ContentOverrideCacheKey, bool),
+        }
+        let Value::Dictionary(f) = &value else {
+            return Err("task-cache-input: dictionary required".into());
+        };
+        let clear = match f.get("clearOnFailure") {
+            None => false,
+            Some(Value::Boolean(v)) => *v,
+            _ => return Err("task-cache-input: clearOnFailure Bool".into()),
+        };
+        let Some(Value::Array(values)) = f.get("operations") else {
+            return Err("task-cache-input: operations array".into());
+        };
+        let mut available = Vec::new();
+        let operations = values
+            .iter()
+            .map(|v| -> Result<Op, String> {
+                let Value::Dictionary(f) = v else {
+                    return Err("task-cache-input: operation dictionary".into());
+                };
+                let Some(Value::String(op)) = f.get("op") else {
+                    return Err("task-cache-input: op String".into());
+                };
+                let key = || -> Result<ContentOverrideCacheKey, String> {
+                    let Some(Value::Dictionary(request)) = f.get("request") else {
+                        return Err("task-cache-input: request dictionary".into());
+                    };
+                    RequestContentOverridePayload::decode_dictionary(request)
+                        .map(|v| v.cache_key())
+                        .map_err(|e| format!("task-cache-input: request: {e:?}"))
+                };
+                match op.as_str() {
+                    "acquire" => {
+                        let key = key()?;
+                        available.push(true);
+                        Ok(Op::Acquire(key))
+                    }
+                    "failure" => {
+                        let Some(Value::Integer(i)) = f.get("ticket") else {
+                            return Err("task-cache-input: ticket nonnegative integer".into());
+                        };
+                        let i = usize::try_from(*i)
+                            .map_err(|_| "task-cache-input: ticket nonnegative")?;
+                        let Some(v) = available.get_mut(i) else {
+                            return Err("task-cache-input: unknown ticket".into());
+                        };
+                        if !*v {
+                            return Err("task-cache-input: consumed ticket".into());
+                        }
+                        *v = false;
+                        Ok(Op::Failure(i))
+                    }
+                    "invalidate" => {
+                        let cancel = match f.get("cancelingTask") {
+                            None => true,
+                            Some(Value::Boolean(v)) => *v,
+                            _ => return Err("task-cache-input: cancelingTask Bool".into()),
+                        };
+                        Ok(Op::Invalidate(key()?, cancel))
+                    }
+                    _ => Err("task-cache-input: unknown operation".into()),
+                }
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+        let mut cache = TaskCache::new(clear);
+        let mut tickets: Vec<Option<TaskAcquisition<ContentOverrideCacheKey, i64>>> = Vec::new();
+        let mut starts = 0i64;
+        let mut cancel_requests = Vec::new();
+        let mut events = Vec::new();
+        for op in operations {
+            let mut event = std::collections::BTreeMap::new();
+            match op {
+                Op::Acquire(key) => {
+                    let lookup = cache.acquire(key, || {
+                        starts += 1;
+                        starts
+                    });
+                    event.insert("op".into(), Value::String("acquire".into()));
+                    event.insert("task".into(), Value::Integer(*lookup.task()));
+                    event.insert("created".into(), Value::Boolean(lookup.created()));
+                    tickets.push(Some(lookup));
+                }
+                Op::Failure(i) => {
+                    event.insert("op".into(), Value::String("failure".into()));
+                    if let Some(task) = cache.observe_failure(
+                        tickets[i]
+                            .take()
+                            .ok_or("task-cache-input: ticket invariant")?,
+                    ) {
+                        event.insert("removed".into(), Value::Integer(task));
+                    }
+                }
+                Op::Invalidate(key, cancel) => {
+                    event.insert("op".into(), Value::String("invalidate".into()));
+                    if let Some(task) = cache.invalidate_with(&key, cancel, |task| {
+                        cancel_requests.push(Value::Integer(*task))
+                    }) {
+                        event.insert("removed".into(), Value::Integer(task));
+                        if cancel {
+                            event.insert("cancelRequested".into(), Value::Integer(task));
+                        }
+                    }
+                }
+            }
+            events.push(Value::Dictionary(event));
+        }
+        let mut retained: Vec<_> = cache.tasks().copied().collect();
+        retained.sort();
+        if !canonical {
+            writeln!(out,"result=task-cache\noperations={}\ntasksStarted={}\nretainedTasks={}\ncancelRequests={}\neventsShown={}",events.len(),starts,retained.len(),cancel_requests.len(),events.len().min(8)).map_err(|e|e.to_string())?;
+            for (i, event) in events.iter().take(8).enumerate() {
+                if let Value::Dictionary(f) = event {
+                    if let Some(Value::String(op)) = f.get("op") {
+                        writeln!(out, "event{i}.op={op}").map_err(|e| e.to_string())?;
+                    }
+                }
+            }
+        }
+        Value::Dictionary(
+            [
+                ("events".into(), Value::Array(events)),
+                ("tasksStarted".into(), Value::Integer(starts)),
+                (
+                    "retainedTasks".into(),
+                    Value::Array(retained.into_iter().map(Value::Integer).collect()),
+                ),
+                ("cancelRequests".into(), Value::Array(cancel_requests)),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "override-cache-keys" {
         use canvas_core::content_requests::RequestContentOverridePayload;
         let Value::Array(requests) = &value else {
             return Err("override-cache-input: request array required".into());

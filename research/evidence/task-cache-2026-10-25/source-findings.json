@@ -1,0 +1,35 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "pipeline_sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+  "destination_clear_on_failure": true,
+  "ranges": [
+    {
+      "start": "0x4788",
+      "bytes": 8,
+      "sha256": "5103ba3de080c52a046485f800433848701faa49ab8f60241a80987ca249d7ac"
+    },
+    {
+      "start": "0x4884",
+      "bytes": 8,
+      "sha256": "2f6110664dbd16b514a0c2c7c8326932a36e85d2f15b91e57ca76efd2c7a625a"
+    },
+    {
+      "start": "0xb3634",
+      "bytes": 2144,
+      "sha256": "100c7f5e7dbdd919d21f7a699296b8d6a679a46bfa809cd14a8ef1b84ad460ba"
+    },
+    {
+      "image": "PreviewsPipeline",
+      "start": "0x2a4030",
+      "bytes": 196,
+      "sha256": "17c2e05ec6720ee8a175ba1017ab6b3fef64befedf6dd5d8f8ddbb4d9ffdd0ed"
+    }
+  ],
+  "selected_source_bytes_verified": 2356,
+  "semantics": "actor stores task handles; hit reuses; default clearOnFailure false; creator-only failure may remove current key without identity guard; default invalidate cancels then removes; task scheduling/awaiting/result/settlement not modeled",
+  "native_actor_invoked": false,
+  "native_executor_timing_parity": false,
+  "global_resource_settlement_proven": false,
+  "swift_module_entries": []
+}

@@ -117,3 +117,10 @@ impl RequestContentOverridePayload {
         }
     }
 }
+
+/// Task storage configured like DestinationCapabilitiesCache's content-override
+/// cache: creator failures clear the key. The host owns its actual task executor.
+pub fn content_override_task_cache<T: Clone>(
+) -> crate::task_cache::TaskCache<ContentOverrideCacheKey, T> {
+    crate::task_cache::TaskCache::new(true)
+}
