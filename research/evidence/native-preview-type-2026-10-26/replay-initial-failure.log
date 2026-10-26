@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/native-preview-type-replay-rn0sawvl/check.py", line 11, in <module>
+    assert sum(map(int,re.findall(r'test result: ok\. (\d+) passed',(w/'tests.stdout').read_text())))==(3 if '--replay' in sys.argv else 362)
+AssertionError
+
+Traceback (most recent call last):
+  File "/Users/8amps/xcpreviewer-rs/research/evidence/native-preview-type-2026-10-26/verify.py", line 9, in <module>
+    p.check_returncode();assert json.loads((work/'cross-runtime.json').read_text())==json.loads((artifact/'cross-runtime.json').read_text())
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 460, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['python3', '/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/native-preview-type-replay-rn0sawvl/check.py', '--replay']' returned non-zero exit status 1.

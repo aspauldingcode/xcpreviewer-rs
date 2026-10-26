@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|control-state-sequence-keys|runnable-configuration-keys|shell-control-states|configuration-shell-control-states|preview-type|host-location|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -107,6 +107,8 @@ fn run() -> Result<(), String> {
         && kind != "runnable-configuration-keys"
         && kind != "shell-control-states"
         && kind != "configuration-shell-control-states"
+        && kind != "preview-type"
+        && kind != "host-location"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -281,6 +283,27 @@ fn run() -> Result<(), String> {
             .into_iter()
             .collect(),
         )
+    } else if kind == "preview-type" || kind == "host-location" {
+        use canvas_core::preview_type::{HostLocation, PreviewType};
+        let (tag, location, normalized) = if kind == "preview-type" {
+            let preview = PreviewType::decode(&value).map_err(|e| format!("preview-type: {e:?}"))?;
+            let normalized = preview.to_value();
+            let location = match preview { PreviewType::Static => None, PreviewType::Hosted(location) => Some(location) };
+            (if location.is_some() { "hosted" } else { "static" }, location, normalized)
+        } else {
+            let location = HostLocation::decode(&value).map_err(|e| format!("host-location: {e:?}"))?;
+            (location.discriminant(), Some(location.clone()), location.to_value())
+        };
+        if !canonical {
+            writeln!(out, "result={}\ndiscriminant={tag}", kind.to_string_lossy()).map_err(|e|e.to_string())?;
+            if let Some(location) = location {
+                writeln!(out, "hostLocation={}", location.discriminant()).map_err(|e|e.to_string())?;
+                if let HostLocation::InjectedScene { scene_identifier } = location {
+                    writeln!(out, "sceneIdentifierBytes={}", scene_identifier.len()).map_err(|e|e.to_string())?;
+                }
+            }
+        }
+        normalized
     } else if kind == "configuration-shell-control-states" {
         use canvas_core::{canvas_control_state::CanvasControlState, shell_control_states::ShellControlStates};
         let state = CanvasControlState::decode(&value)

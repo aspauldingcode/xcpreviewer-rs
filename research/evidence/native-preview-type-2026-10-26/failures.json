@@ -1,0 +1,34 @@
+{
+  "static_verifier_assertion_failures": [
+    {
+      "expression": "injected-scene typeref == bare SS plus NUL",
+      "correction": "Actual associated argument type is labelled tuple SS10identifier_t plus NUL; wire sceneIdentifier spelling independently recovered."
+    },
+    {
+      "expression": "labelled String tuple fixed slice length16",
+      "correction": "Trailing NUL omitted from fixed length; exact literal-length comparison used."
+    }
+  ],
+  "native_load_or_layout_failures": [],
+  "native_crashes_or_deadline_timeouts": [],
+  "corrected_replay_harness_failure": {
+    "expected_focused_tests": 3,
+    "actual_focused_tests": 2,
+    "correction": "Use the current two-test count; replay-initial-failure.log retained."
+  },
+  "final_verification_failures": [],
+  "native_malformed_value_rejections": 15,
+  "additional_portable_profile_or_scope_rejections": 3,
+  "scope_notes": [
+    "Native inputs are dictionaries; two portable top-level type rejections not directly invoked as native dictionary constructors.",
+    "Depth limits are reader profile restrictions, not native rejection parity.",
+    "No enum/String equality/hash, scene routing or complete shell/transport/UI/provider/resource execution claim.",
+    "Independent value references can retain objects; destruction returns do not prove final release/global settlement."
+  ],
+  "corrected_local_evidence_script_error": {
+    "error": "SyntaxError: invalid syntax",
+    "cause": "An apostrophe inserted into a generated single-quoted Python diagnostic literal.",
+    "correction": "Use an apostrophe-free diagnostic literal; corrected finisher and disposable replay completed.",
+    "implementation_or_native_runtime_affected": false
+  }
+}

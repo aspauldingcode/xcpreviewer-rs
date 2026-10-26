@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "preview-type-codec",
+      "state": "12-native-roundtrips-8-errors"
+    },
+    {
+      "id": "host-location-codec",
+      "state": "14-native-roundtrips-7-errors"
+    },
+    {
+      "id": "active-payload-schema",
+      "state": "source-and-runtime-qualified"
+    },
+    {
+      "id": "rust-wire-values",
+      "state": "362-tests"
+    },
+    {
+      "id": "wasi-inspector",
+      "state": "70-runs-26-reparses"
+    },
+    {
+      "id": "shell-setup-product-seed-schemas",
+      "state": "open"
+    },
+    {
+      "id": "instance-updater-policy",
+      "state": "open"
+    },
+    {
+      "id": "live-transport-resources",
+      "state": "open"
+    },
+    {
+      "id": "canvas-provider-settlement",
+      "state": "quarantined-open"
+    }
+  ],
+  "edges": [
+    [
+      "preview-type-codec",
+      "active-payload-schema"
+    ],
+    [
+      "host-location-codec",
+      "active-payload-schema"
+    ],
+    [
+      "active-payload-schema",
+      "rust-wire-values"
+    ],
+    [
+      "rust-wire-values",
+      "wasi-inspector"
+    ],
+    [
+      "wasi-inspector",
+      "shell-setup-product-seed-schemas"
+    ],
+    [
+      "shell-setup-product-seed-schemas",
+      "instance-updater-policy"
+    ],
+    [
+      "instance-updater-policy",
+      "live-transport-resources"
+    ],
+    [
+      "live-transport-resources",
+      "canvas-provider-settlement"
+    ]
+  ],
+  "execution": "serial-exclusive-controller-lock",
+  "stop_rule": "Selected enum value parity does not close scene routing, complete shell/update behavior, transport/UI/provider/global settlement."
+}

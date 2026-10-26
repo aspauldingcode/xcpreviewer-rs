@@ -1,0 +1,237 @@
+{
+  "native_enum_cases": 41,
+  "native_accepts": 26,
+  "native_rejections": 15,
+  "direct_enum_destruction_returns": 26,
+  "direct_property_list_destruction_returns": 26,
+  "direct_error_release_returns": 15,
+  "tool_cases": 44,
+  "accepts": 26,
+  "rejections": 18,
+  "native_matched_rejections": 15,
+  "portable_profile_or_scope_rejections": 3,
+  "actual_wasi_invocations": 70,
+  "foundation_reparses": 26,
+  "cases": [
+    {
+      "case": "native-enum-0",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-1",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-2",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-3",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-4",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-5",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-6",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-7",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-8",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-9",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-10",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-11",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-12",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-13",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-14",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-15",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-16",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-17",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-18",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-19",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-20",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-21",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-22",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-23",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-24",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-25",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-26",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-27",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-28",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-29",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-30",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-31",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-32",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-33",
+      "accepted": true,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-34",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-35",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-36",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-37",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-38",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-39",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "native-enum-40",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-top-preview-type",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "wrong-top-host-location",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    },
+    {
+      "case": "inactive-field-depth-profile",
+      "accepted": false,
+      "complete_host_wasi_equality": true
+    }
+  ]
+}
