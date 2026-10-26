@@ -11,7 +11,7 @@ use canvas_core::{
     variants_reply::{PreviewVariantGroup, PreviewVariantsPayload},
 };
 use std::io::{Read, Write};
-const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-content-result [--canonical] variant|override|configuration|section|single-selection|multi-selection|selection-behavior|overrides-configuration|group|variants-reply|default-selection|group-variants|render-effects|effective-overrides|align-settings|row-settings|update-multi-selection|update-single-selection|row-controls|override-cache-keys|control-state-keys|task-cache|grid-request-overrides|request-projections|configured-request-projections|plist-box|control-state-boxes|unbox-string|unbox-optional-string INPUT.bplist|-";
 fn string(out: &mut impl Write, key: &str, value: Option<&str>) -> std::io::Result<()> {
     if let Some(value) = value {
         let preview: String = value.chars().take(256).collect();
@@ -102,6 +102,7 @@ fn run() -> Result<(), String> {
         && kind != "render-effects"
         && kind != "plist-box"
         && kind != "control-state-boxes"
+        && kind != "control-state-keys"
         && kind != "unbox-string"
         && kind != "unbox-optional-string"
         && kind != "configured-request-projections"
@@ -272,6 +273,51 @@ fn run() -> Result<(), String> {
                     Value::Array(retained.into_iter().map(Value::Integer).collect()),
                 ),
                 ("cancelRequests".into(), Value::Array(cancel_requests)),
+            ]
+            .into_iter()
+            .collect(),
+        )
+    } else if kind == "control-state-keys" {
+        use canvas_core::{hashable_plist_box::HashablePlistBox, plist_value_box::decode_boxes};
+        let boxes = decode_boxes(&value).map_err(|e| format!("control-state-keys: {e:?}"))?;
+        // Validate every snapshot before producing any output.
+        let boxes = boxes
+            .into_iter()
+            .map(HashablePlistBox::new)
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(|e| format!("control-state-keys: {e:?}"))?;
+        let mut keys = std::collections::HashMap::new();
+        let representatives: Vec<_> = boxes
+            .iter()
+            .enumerate()
+            .map(|(i, b)| *keys.entry(b).or_insert(i))
+            .collect();
+        if !canonical {
+            writeln!(
+                out,
+                "result=control-state-keys\nboxes={}\nuniqueKeys={}\nrepresentativesShown={}",
+                boxes.len(),
+                keys.len(),
+                boxes.len().min(8)
+            )
+            .map_err(|e| e.to_string())?;
+            for (i, representative) in representatives.iter().take(8).enumerate() {
+                writeln!(out, "box{i}.representative={representative}")
+                    .map_err(|e| e.to_string())?;
+            }
+        }
+        Value::Dictionary(
+            [
+                (
+                    "representatives".into(),
+                    Value::Array(
+                        representatives
+                            .iter()
+                            .map(|i| Value::Integer(*i as i64))
+                            .collect(),
+                    ),
+                ),
+                ("uniqueKeys".into(), Value::Integer(keys.len() as i64)),
             ]
             .into_iter()
             .collect(),

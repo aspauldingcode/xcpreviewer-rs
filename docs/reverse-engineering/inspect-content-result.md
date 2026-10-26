@@ -341,3 +341,25 @@ scoped owned-value observations, not native UI/provider execution, HashableBox
 identity/hash/equality or global resource settlement. The helper does not attach
 to or modify Xcode/simulator processes. Source-only checks and actual invocation
 results are recorded separately.
+
+
+### Bounded native control-state equality keys
+
+`control-state-keys` accepts an array of whole box dictionaries and returns original-tool
+`representatives` (the first equal input index) and `uniqueKeys`. Summary output shows
+at most eight representatives and no opaque state contents. All inputs validate before output.
+`HashablePlistBox` retains the original `PlistValueBox` and separately caches its equality key.
+Bool differs from numeric values; exactly equal integer/finite-real values compare equal;
+String/dictionary keys use qualified canonical Unicode equality; arrays retain order and
+multiplicity; dictionary encounter order is irrelevant. Data and Date retain distinct types.
+Rust-local hash values obey equality; native randomized hash bits are not reproduced.
+
+The supported numeric magnitude is at most 2^53 (inclusive), excluding larger Integer,
+Unsigned and finite Real values. Native NSNumber conversion at Int64.max/2^63 has
+observed boundary behavior outside this profile; exact wider numeric semantics remain open.
+The supported profile also excludes Null, nonfinite Real/Date values, canonical dictionary-key
+collisions at any depth, and nesting beyond 64. These are portable domain restrictions,
+not claims that the native initializer rejects those inputs. Generic Swift type identity,
+unsupported Foundation objects, live state installation/transport and global resource
+settlement remain outside this profile. Actual shipped HashableBox methods and 3,249
+pair comparisons (2,304 within the portable domain) are recorded in `research/evidence/native-hashable-box-2026-10-26`.

@@ -1,0 +1,14 @@
+{
+  "verification_failures_preserved": [
+    "Initial broad numeric projection failed actual native pair26/27: Int64.max equals the binary64 real2^63 in this Foundation-origin corpus; UInt64 2^63 differs from that real. Numeric magnitude>2^53 explicitly excluded pending wider NSNumber conversion recovery. Final supported-domain checks pass."
+  ],
+  "native_load_or_layout_failures": [],
+  "native_timeouts_or_crashes": [],
+  "portable_profile_rejections": 14,
+  "native_rejection_parity_claimed_for_profile_exclusions": false,
+  "scope_notes": [
+    "Actual private value methods execute in an owned helper only.",
+    "Explicit destruction returns do not prove memory/global settlement.",
+    "Raw canonical-key collisions, Null, nonfinite values, wide numerics and deep values are portable exclusions, not native rejection claims."
+  ]
+}
