@@ -1,0 +1,32 @@
+{
+  "services_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "ranges": [
+    {
+      "start": "0x9abc",
+      "bytes": 216,
+      "sha256": "2bbf5965f5b80d0da90427023c4b0fed5b65deddec764597545ce024a95c5d34"
+    },
+    {
+      "start": "0x8800",
+      "bytes": 200,
+      "sha256": "275aaf78e5cac342a6b523654493e41855a2f4df28edad1dcfd054ea272806bc"
+    },
+    {
+      "start": "0xa150",
+      "bytes": 188,
+      "sha256": "3447dbd8d4ab8ce4e5365a95129466768d28dbfb9c46ae60593fbc0047796a0d"
+    },
+    {
+      "start": "0xa230",
+      "bytes": 36,
+      "sha256": "379f8cffd06b773471a22dbe10e88277f05c949e5c47b8b437a8db68251d00e4"
+    }
+  ],
+  "source_bytes": 640,
+  "factory_operation": "xpc_connection_enable_sim2host_4sim",
+  "operation_image": "/usr/lib/system/libxpc.dylib",
+  "operation_image_uuid": "c40fcae87a173d8287cb3da4802adef1",
+  "operation_export": "_xpc_connection_enable_sim2host_4sim",
+  "scope": "Actual factory invokes simulator transport operation. Ordinary owned local endpoint fails in native wrapper while SDK baseline works. Simulator operation is a context distinction, not proven sole cause. No code/system protection or peer-signing policy changed."
+}

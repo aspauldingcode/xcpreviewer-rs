@@ -1,0 +1,38 @@
+{
+  "retained_controls": [
+    {
+      "case": "ordinary outgoing endpoint",
+      "observed": "Native wrapper callback PreviewsServices.XPCError/1, connection interrupted; one peer connection, no received dictionary. Source wrapped raw object equality and32/112-byte runtime layouts guarded."
+    },
+    {
+      "case": "ordinary incoming endpoint",
+      "observed": "Same negative callback/no dictionary with accepted endpoint."
+    },
+    {
+      "case": "approved execution diagnostic",
+      "observed": "Same negative outgoing result outside ambient sandbox. This rules out ambient permission alone as explanation for that observed case; no system protection changed. Historical diagnostic used symbol-offset/path guards; qualified replay additionally verifies runtime Services UUID."
+    },
+    {
+      "case": "bare SDK baseline",
+      "observed": "Same underlying anonymous endpoint family delivers five owned bytes and dictionary reply; same-process peer PID checked internally, only Boolean published."
+    },
+    {
+      "case": "constructor source",
+      "observed": "Actual hostToSimConnection initializer reaches xpc_connection_enable_sim2host_4sim. This is a relevant context distinction; it is not proven sole cause of negative ordinary endpoint behavior."
+    },
+    {
+      "case": "seed/backend substitution exploration",
+      "observed": "Two owned attempts ended SIGTRAP with empty stderr; stage not located because stdout was buffered. No successful substitution, valid postcondition, ownership or causal conclusion claimed. No unchanged retries planned. Failed originals local ignored."
+    }
+  ],
+  "compile_failures": [
+    {
+      "file": "initial-peer-build.stderr",
+      "cause": "Initial ARC helper used explicit xpc retain/release macros; corrected to ARC strong ownership/bridge transfer before native launch."
+    },
+    {
+      "file": "initial-native-build.stderr",
+      "cause": "Swift NSDictionary optional bridging mismatch; corrected before launch."
+    }
+  ]
+}

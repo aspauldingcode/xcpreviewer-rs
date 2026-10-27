@@ -1,0 +1,120 @@
+/private/tmp/daemon-connection-20261027/peer.m:13:28: error: 'retain' is unavailable: not available in automatic reference counting mode
+   13 |   remote=(xpc_connection_t)xpc_retain(event);peerCount++;
+      |                            ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:385:33: note: expanded from macro 'xpc_retain'
+  385 |                 _xpc_object_validate(_o); [_o retain]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:36:1: note: 'retain' has been explicitly marked unavailable here
+   36 | - (instancetype)retain OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:13:28: error: ARC forbids explicit message send of 'retain'
+   13 |   remote=(xpc_connection_t)xpc_retain(event);peerCount++;
+      |                            ^~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:385:33: note: expanded from macro 'xpc_retain'
+  385 |                 _xpc_object_validate(_o); [_o retain]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:19:252: error: 'release' is unavailable: not available in automatic reference counting mode
+   19 |    if(reply){NSData*d=[NSPropertyListSerialization dataWithPropertyList:@{@"ownedReply":@42} format:NSPropertyListBinaryFormat_v1_0 options:0 error:NULL];xpc_dictionary_set_data(reply,"data",d.bytes,d.length);xpc_connection_send_message(remote,reply);xpc_release(reply);}
+      |                                                                                                                                                                                                                                                            ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:37:1: note: 'release' has been explicitly marked unavailable here
+   37 | - (oneway void)release OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:19:252: error: ARC forbids explicit message send of 'release'
+   19 |    if(reply){NSData*d=[NSPropertyListSerialization dataWithPropertyList:@{@"ownedReply":@42} format:NSPropertyListBinaryFormat_v1_0 options:0 error:NULL];xpc_dictionary_set_data(reply,"data",d.bytes,d.length);xpc_connection_send_message(remote,reply);xpc_release(reply);}
+      |                                                                                                                                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:23:107: error: 'release' is unavailable: not available in automatic reference counting mode
+   23 |  xpc_object_t endpoint=xpc_endpoint_create(listener);client=xpc_connection_create_from_endpoint(endpoint);xpc_release(endpoint);
+      |                                                                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:37:1: note: 'release' has been explicitly marked unavailable here
+   37 | - (oneway void)release OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:23:107: error: ARC forbids explicit message send of 'release'
+   23 |  xpc_object_t endpoint=xpc_endpoint_create(listener);client=xpc_connection_create_from_endpoint(endpoint);xpc_release(endpoint);
+      |                                                                                                           ^~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:24:23: error: 'retain' is unavailable: not available in automatic reference counting mode
+   24 |  return client?(void*)xpc_retain(client):NULL;
+      |                       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:385:33: note: expanded from macro 'xpc_retain'
+  385 |                 _xpc_object_validate(_o); [_o retain]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:36:1: note: 'retain' has been explicitly marked unavailable here
+   36 | - (instancetype)retain OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:24:23: error: ARC forbids explicit message send of 'retain'
+   24 |  return client?(void*)xpc_retain(client):NULL;
+      |                       ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:385:33: note: expanded from macro 'xpc_retain'
+  385 |                 _xpc_object_validate(_o); [_o retain]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:24:16: error: cast of Objective-C pointer type 'xpc_object_t' (aka 'NSObject<OS_xpc_object> *') to C pointer type 'void *' requires a bridged cast
+   24 |  return client?(void*)xpc_retain(client):NULL;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/private/tmp/daemon-connection-20261027/peer.m:24:17: note: use __bridge to convert directly (no change in ownership)
+   24 |  return client?(void*)xpc_retain(client):NULL;
+      |                 ^
+      |                 __bridge
+/private/tmp/daemon-connection-20261027/peer.m:24:23: note: use CFBridgingRetain call to make an ARC object available as a +1 'void *'
+   24 |  return client?(void*)xpc_retain(client):NULL;
+      |                       ^
+      |                       CFBridgingRetain( )
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:384:28: note: expanded from macro 'xpc_retain'
+  384 | #define xpc_retain(object) ({ xpc_object_t _o = (object); \
+      |                            ^
+/private/tmp/daemon-connection-20261027/peer.m:31:70: error: 'release' is unavailable: not available in automatic reference counting mode
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                      ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:37:1: note: 'release' has been explicitly marked unavailable here
+   37 | - (oneway void)release OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:31:70: error: ARC forbids explicit message send of 'release'
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                      ^~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:31:144: error: 'release' is unavailable: not available in automatic reference counting mode
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                                                                                                ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:37:1: note: 'release' has been explicitly marked unavailable here
+   37 | - (oneway void)release OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:31:144: error: ARC forbids explicit message send of 'release'
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                                                                                                ^~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                            ~~ ^
+/private/tmp/daemon-connection-20261027/peer.m:31:222: error: 'release' is unavailable: not available in automatic reference counting mode
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                                                                                                                                                                              ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/objc/NSObject.h:37:1: note: 'release' has been explicitly marked unavailable here
+   37 | - (oneway void)release OBJC_ARC_UNAVAILABLE;
+      | ^
+/private/tmp/daemon-connection-20261027/peer.m:31:222: error: ARC forbids explicit message send of 'release'
+   31 | void owned_peer_close(void){if(client){xpc_connection_cancel(client);xpc_release(client);client=NULL;}if(remote){xpc_connection_cancel(remote);xpc_release(remote);remote=NULL;}if(listener){xpc_connection_cancel(listener);xpc_release(listener);listener=NULL;}}
+      |                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h:410:33: note: expanded from macro 'xpc_release'
+  410 |                 _xpc_object_validate(_o); [_o release]; })
+      |                                            ~~ ^
+15 errors generated.

@@ -1,0 +1,19 @@
+/private/tmp/daemon-connection-20261027/native.swift:67:151: warning: expression implicitly coerced from '[AnyHashable : Any]?' to 'Any'
+65 | unsafeBitCast(release,to:(@convention(c)(UnsafeRawPointer)->Void).self)(instance)
+66 | owned_peer_close()
+67 | let result:[String:Any]=["replyTimedOut":wait != .success,"callbackCount":callbackCount,"errorPresent":errorPresent,"response":response ?? [:],"peer":peer]
+   |                                                                                                                                                       |- warning: expression implicitly coerced from '[AnyHashable : Any]?' to 'Any'
+   |                                                                                                                                                       |- note: provide a default value to avoid this warning
+   |                                                                                                                                                       |- note: force-unwrap the value to avoid this warning
+   |                                                                                                                                                       `- note: explicitly cast to 'Any' with 'as Any' to silence this warning
+68 | try PropertyListSerialization.data(fromPropertyList:result,format:.binary,options:0).write(to:URL(fileURLWithPath:CommandLine.arguments[2]));print(result)
+69 |
+
+/private/tmp/daemon-connection-20261027/native.swift:49:30: error: cannot assign value of type '[AnyHashable : Any]?' to type 'NSDictionary?'
+47 | func reply(_ value:UnsafeRawPointer?,_ error:UnsafeRawPointer?,_ context:UnsafeRawPointer?) {
+48 |  callbackCount+=1;errorPresent=error != nil
+49 |  if let value=value {response=owned_uv_dictionary(value)}
+   |                              |- error: cannot assign value of type '[AnyHashable : Any]?' to type 'NSDictionary?'
+   |                              `- note: arguments to generic parameter 'Wrapped' ('[AnyHashable : Any]' and 'NSDictionary') are expected to be equal
+50 |  semaphore.signal()
+51 | }
