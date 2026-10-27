@@ -1,0 +1,16 @@
+{
+  "mislabeled_receipt": {
+    "description": "Exploratory text substitution changed the output field from the actual success predicate to an equality-with-expected assertion result. All six fields consequently read true. Native preconditions still checked actual expected values. Corrected output records actual second==1, and all6 corrected/replay cases pass.",
+    "retained_local": "research/raw/encoded-future-20261027/initial-mislabeled-native.bplist",
+    "product_change": false
+  },
+  "example_compile": {
+    "diagnostic": "E0308: decode_reply_with closure receives Value, not a dictionary map. Removed erroneous Value::Dictionary wrapper.",
+    "stderr": "initial-tests.stderr"
+  },
+  "fixture_assertion": {
+    "diagnostic": "Boolean assertion rejected uvInitialized, which Objective-C comparison boxing records as Integer1. Test now asserts exact Integer1 for that receipt field; native Boolean predicate fields remain strictly Boolean.",
+    "retained_local": "research/raw/encoded-future-20261027/initial-receipt-tests.stdout",
+    "product_coercion_added": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ranges": [
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x3fb40",
+      "bytes": 320,
+      "sha256": "f322b1648018a725349344982104a6e01e9150c3dfaf41810bc07c9102c4521c"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x40114",
+      "bytes": 120,
+      "sha256": "fa4d0feb1fbdf768817c9d639592dd67e5fd627cf26778996c6d81a17d05ff8c"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0x490ac",
+      "bytes": 64,
+      "sha256": "57e7a2c3aae83e88d434191caef37ac0bea8c01b1da0dff780f15c81ab73c2ea"
+    }
+  ],
+  "bytes_verified": 504,
+  "callsite_native_constructor": true,
+  "handler_returns_owned_function_context_pair": true,
+  "capture_copies_native_reply_and_callsite": true,
+  "source_scope": "Constructor stores exact StaticString/line/column fields; makeEncodedReplyHandler copies TransportReply and Callsite into captured context and returns native thunk/context. Runtime size/offset and function-path guards independently execute. No native terminal error object or exactly-once lifetime claimed."
+}

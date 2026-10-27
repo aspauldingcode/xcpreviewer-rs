@@ -1,0 +1,6 @@
+valid: acknowledged=true, typed_success=true
+valid-with-error: acknowledged=true, typed_success=true
+malformed: acknowledged=true, typed_success=false
+empty: acknowledged=true, typed_success=false
+absent-with-error: acknowledged=false, typed_success=false
+absent-both: acknowledged=false, typed_success=false

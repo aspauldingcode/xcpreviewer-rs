@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "disposable_workspace": "/private/tmp/encoded-future-replay-78n5q_xs",
+  "results": {
+    "native_sdk_encoded_callbacks": 6,
+    "native_success_predicate_true": 2,
+    "native_success_predicate_false_not_terminal_proof": 4,
+    "original_reply_and_callsite_destroyed_before_sdk_and_callback": 6,
+    "closure_context_references_released": 6,
+    "uv_objects_retained_across_sdk_cleanup": 6,
+    "empty_received_uv_initialized": true,
+    "portable_ack_success": 4,
+    "portable_typed_success": 2,
+    "portable_typed_errors": 4,
+    "host_wasi_stdout_equal": true,
+    "rust_tests": 1,
+    "wasm_sha256": "63ebe1a6ca6c901a2565246041c9769af54fcab8a1d200dc0aa3e5d6adad10d6",
+    "source_bytes_verified": 5440
+  }
+}
