@@ -7,7 +7,7 @@ use canvas_core::{
 use std::io::{Read, Write};
 
 const INPUT_LIMIT: u64 = 64 * 1024 * 1024;
-const USAGE: &str = "usage: inspect-service-message [--canonical] INPUT.bplist|-";
+const USAGE: &str = "usage: inspect-service-message [--canonical|--prepare-update] INPUT.bplist|-";
 
 // Bound human-readable strings independently of the binary input budget. Debug
 // quoting escapes embedded newlines, NULs and other controls onto one line.
@@ -120,10 +120,11 @@ fn run() -> Result<(), String> {
     let mut args = std::env::args_os().skip(1);
     let first = args.next().ok_or(USAGE)?;
     if first == "--help" && args.next().is_none() {
-        println!("{USAGE}\nInspect values only. --canonical emits normalized bplist00 to stdout.\nUnknown fields are omitted; unsupported kinds reject. No service action runs.");
+        println!("{USAGE}\nInspect values only. --canonical emits normalized bplist00 to stdout.\nUnknown fields are omitted; unsupported kinds reject. --prepare-update wraps a standalone shell value with a new process-local identifier. No service action runs.");
         return Ok(());
     }
-    let canonical = first == "--canonical";
+    let prepare = first == "--prepare-update";
+    let canonical = first == "--canonical" || prepare;
     let input = if canonical {
         args.next().ok_or(USAGE)?
     } else {
@@ -146,6 +147,20 @@ fn run() -> Result<(), String> {
         return Err("input exceeds 64 MiB".into());
     }
     let value = canvas_core::binary_plist::decode(&bytes).map_err(|e| format!("decode: {e:?}"))?;
+    if prepare {
+        struct Preparation;
+        impl canvas_core::shell_service::ShellServiceTransport for Preparation {
+            type PendingReply = canvas_core::shell_service::ShellServiceEnvelope;
+            fn send(&mut self, request: Self::PendingReply) -> Self::PendingReply { request }
+        }
+        let shell = canvas_core::shell_payload::ShellUpdatePayload::decode_single_entry_updates(&value)
+            .map_err(|e| format!("shell: {e:?}"))?;
+        let request = canvas_core::shell_service::dispatch_shell_update(&mut Preparation, shell);
+        let bytes = request.to_binary_plist().map_err(|e| format!("encode: {e:?}"))?;
+        let mut out = std::io::stdout().lock();
+        out.write_all(&bytes).map_err(|e| format!("output: {e}"))?;
+        return out.flush().map_err(|e| format!("output: {e}"));
+    }
     if matches!(&value, canvas_core::payload_codec::Value::Dictionary(d)
         if matches!(d.get("messageType"), Some(canvas_core::payload_codec::Value::String(k)) if k == "update")) {
         let envelope = canvas_core::shell_service::ShellServiceEnvelope::decode_single_entry_updates(&value)

@@ -1,0 +1,30 @@
+{
+  "failures": [
+    {
+      "stage": "initial metadata launcher",
+      "result": "actual native metadata probe returned modern52/56/8, fields0/40; old launcher then expected nonexistent metadata plist",
+      "correction": "owned launcher metadata path adapted; no native metadata failure or method invocation"
+    },
+    {
+      "stage": "reply metadata link",
+      "result": "metadata-only script omitted callback definition required by owned trampoline; linker rejected before launch",
+      "log": "initial-metadata-link.stderr",
+      "correction": "metadata-only inert callback supplied; reply metadata24/24/8 verified"
+    },
+    {
+      "stage": "first reply control compile",
+      "result": "callback parameter shadowed witness helper; compiler rejected before launch",
+      "log": "initial-reply-compile.stderr",
+      "correction": "renamed callback parameter; immediate/delayed controls pass"
+    },
+    {
+      "stage": "initial native fixture regression",
+      "result": "strict nested array comparison rejected previously qualified Set serialization order variation",
+      "logs": [
+        "initial-tests.stdout",
+        "initial-tests.stderr"
+      ],
+      "correction": "normalize only existing sourceFilePaths/linkerFlags Set wire profiles; all ordered arrays remain ordered;394 full tests pass"
+    }
+  ]
+}

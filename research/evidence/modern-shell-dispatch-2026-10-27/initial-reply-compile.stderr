@@ -1,0 +1,7 @@
+/private/tmp/modern-updater-20261027/native.swift:62:35: error: cannot call value of non-function type 'UnsafeRawPointer?'
+ 60 |    precondition(replyCopy==nil)
+ 61 |    let copy=UnsafeMutableRawPointer.allocate(byteCount:24,alignment:8)
+ 62 |    precondition(owned_swift_call3(witness(rp,2),copy,reply,rp,nil,nil)==nil);replyCopy=copy
+    |                                   `- error: cannot call value of non-function type 'UnsafeRawPointer?'
+ 63 |  }
+ 64 |  precondition(invoke(witnessForPlist(),raw,fp,nil,nil)==nil);raw.deallocate()

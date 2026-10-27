@@ -73,3 +73,20 @@ impl ShellServiceEnvelope {
         crate::binary_plist_writer::encode_preserving_real_bits(&self.to_value())
     }
 }
+
+/// Caller-owned service backend. Its pending value carries callback handling,
+/// scheduling and resource ownership; this adapter imposes none of those policies.
+pub trait ShellServiceTransport {
+    type PendingReply;
+    fn send(&mut self, request: ShellServiceEnvelope) -> Self::PendingReply;
+}
+/// Construct one modern shell service request and return the backend's pending
+/// reply unchanged. The shared identifier is allocated before calling the backend.
+/// This invokes no native transport or daemon by itself. A returned pending value
+/// is not evidence of successful update application or resource settlement.
+pub fn dispatch_shell_update<T: ShellServiceTransport>(
+    transport: &mut T,
+    shell: ShellUpdatePayload,
+) -> T::PendingReply {
+    transport.send(ShellServiceEnvelope::new(shell))
+}
