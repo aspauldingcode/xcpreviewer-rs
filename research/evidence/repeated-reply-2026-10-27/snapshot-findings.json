@@ -1,0 +1,28 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "future_state_cases": [
+    "finished",
+    "running"
+  ],
+  "future_termination_cases": [
+    "succeeded",
+    "failed",
+    "canceled"
+  ],
+  "snapshot_dispatch_metadata_slot": "0x80",
+  "ranges": [
+    {
+      "start": "0x115868",
+      "bytes": 252,
+      "sha256": "66a753c64352c9d845a8739bd7265bfa42168ce2fd83db5e6bcbbaa11f7aca89"
+    },
+    {
+      "start": "0x118b7c",
+      "bytes": 12,
+      "sha256": "24f18c9134d4ca26e785376c60fc92a655bf5cb10dd11a57821fef197c0e31d2"
+    }
+  ],
+  "source_bytes_verified": 264,
+  "scope": "Actual exported virtual snapshot getter dispatches through class metadata slot0x80; owned runtime verifies resolved native getter offset0x115868. Getter returns FutureState via indirect result and native synchronous peek/state path. Runtime reflection applies only to the returned owned value copy, not mutable lock storage. No cancellation or final provider/OS resource settlement claimed."
+}

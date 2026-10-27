@@ -1,0 +1,28 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "ranges": [
+    {
+      "start": "0x34224",
+      "bytes": 116,
+      "sha256": "9d19180cb079a02c4da0c189662c6fb18eff0569efaafc6d1514ae3ba6086523"
+    },
+    {
+      "start": "0x343a4",
+      "bytes": 196,
+      "sha256": "8956a0527a7280b1345923f7f7bbd732bc91a82f7e6739708825d11cc4657588"
+    },
+    {
+      "start": "0x34544",
+      "bytes": 896,
+      "sha256": "56a166f79948a508f32f761fa429ef3e5329596aa7b4e591943f60ebd8fe8d4d"
+    },
+    {
+      "start": "0x34b48",
+      "bytes": 668,
+      "sha256": "8e277282a9dd98921e37a9960c5afd4c8f0304c4f77cab4c27edd86c0adb8384"
+    }
+  ],
+  "source_bytes_verified": 1876,
+  "scope": "Promise succeed/fail reach complete, transition, tryTransition and the locked FutureState closure. Running branch replaces state; already completed old/new branch constructs TransitionError without replacing stored state, then transition handles its diagnostic path. Runtime independently measures retained first success/failure across repeated encoded callbacks. No cancellation, observer cardinality, queue/concurrency equivalence or resource settlement claimed."
+}
