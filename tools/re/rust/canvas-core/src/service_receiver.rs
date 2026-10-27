@@ -73,3 +73,39 @@ impl<R> ServiceReceiverMessage<R> {
         }
     }
 }
+
+/// Incoming daemon relay arguments after service-wire initialization. The reply
+/// capability remains opaque and backend-owned; this value sends no response.
+#[derive(Clone, Debug, PartialEq)]
+pub struct DaemonReceiverMessage<R> {
+    pub message: crate::transport_reply::LazyReply,
+    pub reply: Option<R>,
+}
+impl<R> ServiceReceiverMessage<R> {
+    /// Current native receiver data-access profile (observed on macOS 26.5.1).
+    /// Data storage remains byte-exact and unparsed, including malformed/empty
+    /// input. Dictionary storage uses the supplied serializer; failure produces
+    /// empty serialized data, following the separate UVPropertyList data adapter.
+    ///
+    /// The caller chooses this profile after wire initialization/reply creation.
+    /// This is not automatic OS-version selection, native ABI or daemon routing.
+    /// No default acknowledgement is generated. Dropping R follows its backend's
+    /// policy and is not proof of native/OS resource release or callback finality.
+    pub fn into_daemon_data_with<E>(
+        self,
+        encode: impl FnOnce(&BTreeMap<String, crate::payload_codec::Value>) -> Result<Vec<u8>, E>,
+    ) -> DaemonReceiverMessage<R> {
+        let (message, reply) = match self {
+            Self::OneWay(message) => (message, None),
+            Self::WithReply { message, reply } => (message, Some(reply)),
+        };
+        let bytes = match message {
+            ServicePropertyList::Data(bytes) => bytes,
+            ServicePropertyList::Dictionary(fields) => encode(&fields).unwrap_or_default(),
+        };
+        DaemonReceiverMessage {
+            message: crate::transport_reply::LazyReply::Serialized(bytes),
+            reply,
+        }
+    }
+}

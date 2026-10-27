@@ -1,0 +1,63 @@
+{
+  "source_images": {
+    "PreviewsMessagingHost": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "PreviewsPlatforms": {
+      "sha256": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd",
+      "uuid": "bd66c84173de3e93a37c15f9b1a0246e"
+    },
+    "PreviewsFoundationHost": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x74ca0",
+      "bytes": 1308,
+      "sha256": "f906c3e5fc4a2637d623b96e723f43bb3a8d743920db6539a5b26ab7202797d8"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x75670",
+      "bytes": 12,
+      "sha256": "fb04f084d004b9f3de9f89d4c30d0b58496b9b8ab2e7733a01e6840435d974bb"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x75898",
+      "bytes": 8,
+      "sha256": "b87ed43f5827cf763ac8d6447ff5e1add4d6929800a5f7d160ede735465ff688"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x6e998",
+      "bytes": 544,
+      "sha256": "bfa3162aac95009e4b1adf1f5c8fe84b50cf3e0dda21dfdfae0f5a2ab06c5a68"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x3dbd8",
+      "bytes": 380,
+      "sha256": "0abb221ae55d9f30a4a95e07ec77cedcde9ba2ce3304405617837df16655050c"
+    },
+    {
+      "image": "PreviewsPlatforms",
+      "start": "0x14074",
+      "bytes": 56,
+      "sha256": "4461d3e9e1743c6761509ee21e9413dd7b894b3dfb02f02df51b497bf7691768"
+    }
+  ],
+  "source_bytes_verified": 2308,
+  "receiver_field": "messageRelay",
+  "field_offset_vector_word": 4,
+  "availability_data_gate": [
+    14,
+    4,
+    0
+  ],
+  "scope": "Actual native Receiver<DaemonClientRole> protocol witnesses extract the messageRelay pair and use availability-selected UV data or legacy dictionary access. Current native controls qualify data path, preserved lazy bytes, optional native TransportReply copying/Unit send/drop observation. Legacy receiver branch is source-only; native connection construction/routing and finality/settlement remain unqualified. Original closure field initialization is layout-qualified; no native memberwise initializer is asserted."
+}

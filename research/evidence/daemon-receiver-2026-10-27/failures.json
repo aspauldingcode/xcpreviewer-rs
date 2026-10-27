@@ -1,0 +1,27 @@
+{
+  "resolved": [
+    {
+      "stage": "Metadata-only probe",
+      "failure": "Private Receiver metadata symbol is not exported; forced optional unwrap during lookup trapped before receiver invocation",
+      "resolution": "Use pinned image-relative accessor/descriptor offsets from an exported anchor, then verify image, role metadata, conformance witness entries and receiver layout"
+    },
+    {
+      "stage": "Receiver probe setup",
+      "failure": "Incorrect mangled LazyPropertyList getter name caused lookup trap before receiver invocation",
+      "resolution": "Use exact shipped exported symbol from native symbol table; final bounded native controls pass"
+    }
+  ],
+  "preserved_local": [
+    "metadata-initial.swift",
+    "metadata-initial.stderr",
+    "getter-name-initial.swift",
+    "getter-name-initial.stderr"
+  ],
+  "connection_limitation": "Existing exported Services constructors require closed Apple service identities or quarantined simulator context. No unchanged failed constructor or field-substitution probe was repeated. Actual whole DaemonConnection construction/routing remains open.",
+  "scope_limits": [
+    "Legacy pre-14.4 receiver branch is source-only",
+    "Drop controls observe no callback within the bounded owned execution; no eventual-callback/finality assertion",
+    "Original memberwise closure-field initialization is layout-qualified; native Receiver initializer not invoked",
+    "No actual production daemon, target application or final OS/provider resource settlement"
+  ]
+}
