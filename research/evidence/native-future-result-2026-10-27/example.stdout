@@ -1,0 +1,6 @@
+valid: finished, success
+valid-with-error: finished, success
+malformed: finished, parse_failure
+empty: finished, parse_failure
+absent-with-error: finished, remote_failure
+absent-both: finished, empty_reply

@@ -1,0 +1,16 @@
+{
+  "initial_state_guard": {
+    "signal": "SIGTRAP",
+    "stage": "metadata size guard before snapshot getter invocation",
+    "assumption": "FutureState stride at most32",
+    "observation": "Metadata-only probe: kind513,size58,stride64,flags2293767",
+    "correction": "Exact measured size58/stride64 required before any native getter/value access; selected source/descriptor and runtime guards remain pinned.",
+    "stderr": "initial-state-guard.stderr",
+    "original_helper_local": "research/raw/future-result-20261027/initial-state-guard.swift"
+  },
+  "route_refinement": {
+    "initial_method": "Bounded Swift Mirror inventory of owned Future fields found finished/error values. Raw type strings contain private-context addresses and remain local.",
+    "qualified_method": "Use exported native recentStateSnapshot virtual getter, independently verify dispatch and returned enum descriptors, copy the returned typed value with dynamic metadata, then reflect only that owned copy. No mutable lock storage reflection in sealed helper.",
+    "raw_inventory_local": "research/raw/future-result-20261027/"
+  }
+}
