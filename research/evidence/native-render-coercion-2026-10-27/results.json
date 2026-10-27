@@ -1,0 +1,30 @@
+{
+  "native_render_cases": 465,
+  "accepted": 298,
+  "rejected": 167,
+  "native_values_destroyed": 298,
+  "native_output_plists_destroyed": 298,
+  "native_errors_released": 167,
+  "host_wasi_stdout_equal": true,
+  "exact_pixel_controls": 3,
+  "host_renderer_controls": [
+    {
+      "case": "integral-bitmap",
+      "bytes": 16,
+      "sha256": "c21b35e3f28e676cedf24c13575a7346682e101a2d26aad9598d0cdbcee9ee3b"
+    },
+    {
+      "case": "integer-geometry",
+      "bytes": 16,
+      "sha256": "c21b35e3f28e676cedf24c13575a7346682e101a2d26aad9598d0cdbcee9ee3b"
+    },
+    {
+      "case": "boolean-bitmap",
+      "bytes": 4,
+      "sha256": "34aaa746c25a0f105c4316bbb1f009aa359f49582656ee97d73c58132d563423"
+    }
+  ],
+  "rust_tests": 397,
+  "wasm_sha256": "7936487be1903305d2ca6868b849e44cd7ec5d61284a2d885f28e586d35ad757",
+  "source_bytes_verified": 5888
+}

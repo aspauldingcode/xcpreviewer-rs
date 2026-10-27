@@ -1,8 +1,9 @@
 //! Typed property-list tree adapter recovered from PreviewsMessagingHost.
 //!
 //! This consumes decoded values. It does not parse binary/XML plists or reproduce
-//! Foundation's numeric coercions. CGRect uses the recovered flat dictionary
-//! keys x, y, width and height, represented here as explicit real values.
+//! all Foundation coercions. The pinned native render decoder qualifies Boolean
+//! and integral-real Int/UInt32 values, and exact integer-to-Double geometry.
+//! CGRect uses the recovered flat dictionary keys x, y, width and height.
 use crate::render_payload::RenderPayload;
 use std::collections::BTreeMap;
 
@@ -66,6 +67,18 @@ fn required<'a>(fields: &'a Fields, key: &'static str) -> Result<&'a Value, Deco
 fn integer(value: &Value, key: &'static str) -> Result<i64, DecodeError> {
     match value {
         Value::Integer(v) => Ok(*v),
+        Value::Unsigned(v) => i64::try_from(*v).map_err(|_| DecodeError::Type(key)),
+        Value::Boolean(v) => Ok(i64::from(*v)),
+        // Native Int accepts integral Real2^63 and saturates to Int64.max.
+        // Integer2^63 fails; the serialized primitive type matters.
+        Value::Real(v)
+            if v.is_finite()
+                && v.fract() == 0.0
+                && *v >= -9223372036854775808.0
+                && *v <= 9223372036854775808.0 =>
+        {
+            Ok(*v as i64)
+        }
         _ => Err(DecodeError::Type(key)),
     }
 }
@@ -81,14 +94,20 @@ fn data(value: &Value, key: &'static str) -> Result<Vec<u8>, DecodeError> {
         _ => Err(DecodeError::Type(key)),
     }
 }
+// Native Double/CGFloat accepts every Real, including non-finite values.
+// Integer primitives must survive an exact conversion; a rounded cast alone
+// would incorrectly accept odd integers above 2^53 or Int64/UInt64 maxima.
+fn real(value: &Value, key: &'static str) -> Result<f64, DecodeError> {
+    match value {
+        Value::Real(v) => Ok(*v),
+        Value::Boolean(v) => Ok(u8::from(*v) as f64),
+        Value::Integer(v) if (*v as f64) as i128 == i128::from(*v) => Ok(*v as f64),
+        Value::Unsigned(v) if (*v as f64) as i128 == i128::from(*v) => Ok(*v as f64),
+        _ => Err(DecodeError::Type(key)),
+    }
+}
 fn optional_real(fields: &Fields, key: &'static str) -> Result<Option<f64>, DecodeError> {
-    fields
-        .get(key)
-        .map(|v| match v {
-            Value::Real(x) => Ok(*x),
-            _ => Err(DecodeError::Type(key)),
-        })
-        .transpose()
+    fields.get(key).map(|value| real(value, key)).transpose()
 }
 impl BitmapDescription {
     pub fn decode(value: &Value) -> Result<Self, DecodeError> {
@@ -135,10 +154,7 @@ impl Rect {
     pub fn decode(value: &Value) -> Result<Self, DecodeError> {
         let f = dictionary(value, "rect")?;
         fn coordinate(f: &Fields, key: &'static str) -> Result<f64, DecodeError> {
-            match required(f, key)? {
-                Value::Real(v) => Ok(*v),
-                _ => Err(DecodeError::Type(key)),
-            }
+            real(required(f, key)?, key)
         }
         Ok(Self {
             x: coordinate(f, "x")?,

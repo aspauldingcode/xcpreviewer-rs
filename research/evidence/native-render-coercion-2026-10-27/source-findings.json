@@ -1,0 +1,50 @@
+{
+  "source_images": {
+    "PreviewsMessagingHost": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "PreviewsFoundationHost": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "ranges": [
+    {
+      "label": "bitmap-codec",
+      "start": "0x4aaf4",
+      "bytes": 2512,
+      "sha256": "0020252f1fb3f6f0fc1c2e9541789eeb79406bc3ad43e7d25d3464e9a8c3a404"
+    },
+    {
+      "label": "region-codec",
+      "start": "0x4bb70",
+      "bytes": 1744,
+      "sha256": "4c190ac12d3cdce3eb93058812fdf0fd223ccbb1fb742753bbb75d7da895e7cd"
+    },
+    {
+      "label": "render-codec",
+      "start": "0x8d740",
+      "bytes": 1632,
+      "sha256": "639b7573aec765ae1a30c0b02c84c852a4c3e589e2cba9ebd91d349f4c56c292"
+    }
+  ],
+  "source_bytes_verified": 5888,
+  "decoder_imports": [
+    "_$s22PreviewsFoundationHost12PropertyListV14unarchiveValue3forxAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+    "_$s22PreviewsFoundationHost12PropertyListV22unarchiveOptionalValue3forxSgAA0dE3Key_p_tKAA0dE13RepresentableRzlF",
+    "_$s22PreviewsFoundationHost12PropertyListV7contentACSDySSAA0dE4Type_pGyXE_tcfC",
+    "_$s22PreviewsFoundationHost12PropertyListVMa",
+    "_$s22PreviewsFoundationHost19PropertyListBuilderV10buildBlockySDySSAA0dE4Type_pGx_q_Sgt_q0__q1_Sgtq2__q3_Sgtq4__q5_Sgtq6__q7_Sgtq8__q9_Sgtq10__q11_Sgtq12__q13_Sgtq14__q15_SgttAA0dE3KeyRzAA0dE13RepresentableR_AaPR0_AaQR1_AaPR2_AaQR3_AaPR4_AaQR5_AaPR6_AaQR7_AaPR8_AaQR9_AaPR10_AaQR11_AaPR12_AaQR13_AaPR14_AaQR15_r16_lFZ",
+    "_$s22PreviewsFoundationHost19PropertyListBuilderV10buildBlockySDySSAA0dE4Type_pGx_q_Sgt_q0__q1_Sgtq2__q3_Sgtq4__q5_SgttAA0dE3KeyRzAA0dE13RepresentableR_AaKR0_AaLR1_AaKR2_AaLR3_AaKR4_AaLR5_r6_lFZ",
+    "_$s22PreviewsFoundationHost19PropertyListBuilderV10buildBlockySDySSAA0dE4Type_pGx_q_Sgt_q0__q1_Sgtq2__q3_SgttAA0dE3KeyRzAA0dE13RepresentableR_AaJR0_AaKR1_AaJR2_AaKR3_r4_lFZ",
+    "_$sSS10FoundationE36_unconditionallyBridgeFromObjectiveCySSSo8NSStringCSgFZ",
+    "_$sSS4hash4intoys6HasherVz_tF",
+    "_$ss6HasherV5_seedABSi_tcfC",
+    "_$ss6HasherV9_finalizeSiyF",
+    "_swift_bridgeObjectRelease",
+    "_swift_bridgeObjectRetain",
+    "_swift_getWitnessTable"
+  ],
+  "scope": "Selected native RenderPayload/BitmapDescription/SelectableRegion encoder/decoder source regions independently compared; runtime independently measures metadata104/104/8 offsets0/80/88/96 and numeric outcomes. No native CGImage drawing, surfaces, provider application or Canvas UI claimed."
+}

@@ -1,0 +1,12 @@
+{
+  "prior_cli_controls": {
+    "source_commit": "405107e7ed9c326221ce256c41efa77fc5b8cd28",
+    "source_matches_committed_pre_fix_decoder": true,
+    "receipt": "before-results.json",
+    "outcomes": "All3 inputs return1 before pixel-file creation: Type(bitmapInfo), Type(x), Type(bitmapInfo).",
+    "classification": "Controlled pre-fix reconstruction failures; native accepts all3.",
+    "replay_scope": "Fresh verifier rebuilds/repeats fixed controls; prior binary receipts remain historical, not re-executed by replay."
+  },
+  "native_probe_failures": [],
+  "signed_zero_nan_scope": "Fixture serializers can coalesce zero values and NaN payloads. Zero equality and NaN presence are compared; no universal sign/payload bit fidelity claimed."
+}

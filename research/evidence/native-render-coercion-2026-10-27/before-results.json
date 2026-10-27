@@ -1,0 +1,22 @@
+{
+  "binary_sha256": "35eaa23233a05e9023950b941a20f307c117a5810767e16725098aee1382820c",
+  "payload_decoder_source_sha256": "c77a73132bcac56e72cef3066e1ac8e5c8bc3182f0bc158713182f3c0a129c17",
+  "source_commit": "405107e7ed9c326221ce256c41efa77fc5b8cd28",
+  "controls": [
+    {
+      "case": "integral-bitmap",
+      "returncode": 1,
+      "stderr": "Fields(Type(\"bitmapInfo\"))\n"
+    },
+    {
+      "case": "integer-geometry",
+      "returncode": 1,
+      "stderr": "Fields(Type(\"x\"))\n"
+    },
+    {
+      "case": "boolean-bitmap",
+      "returncode": 1,
+      "stderr": "Fields(Type(\"bitmapInfo\"))\n"
+    }
+  ]
+}
