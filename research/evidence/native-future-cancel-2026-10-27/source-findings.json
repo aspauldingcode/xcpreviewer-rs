@@ -1,0 +1,92 @@
+{
+  "source_images": {
+    "PreviewsPipeline": {
+      "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+      "uuid": "c6ed2a5e6f2e3a41a1586d2f65e00a58"
+    },
+    "PreviewsPlatforms": {
+      "sha256": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd",
+      "uuid": "bd66c84173de3e93a37c15f9b1a0246e"
+    },
+    "PreviewsMessagingHost": {
+      "sha256": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+      "uuid": "ce1040273729381b8f0cc774e404c0ce"
+    },
+    "PreviewsFoundationHost": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsPlatforms",
+      "start": "0x342e4",
+      "bytes": 472,
+      "sha256": "dfac0611f12e929d286eac4e5f3dc38e63684b133bd51be30f76b59bdb32a2a0"
+    },
+    {
+      "image": "PreviewsPlatforms",
+      "start": "0x327e0",
+      "bytes": 1220,
+      "sha256": "4fb3d3e178315947e02ece364e5e51e8313eb150fa2402991c0d5515cca63d96"
+    },
+    {
+      "image": "PreviewsPlatforms",
+      "start": "0x33134",
+      "bytes": 428,
+      "sha256": "37ad5834596bc02abb8c78b6904e21a51ed123a38a793f6c564955e5c82e55e7"
+    },
+    {
+      "image": "PreviewsPipeline",
+      "start": "0x1dfa78",
+      "bytes": 88,
+      "sha256": "270029881da59b195a9f8738e09bfa530ea3c576b65b0ae9abbc4e1a4cd60b48"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "start": "0xfc348",
+      "bytes": 328,
+      "sha256": "e0a7a253c71454b8ac484bea768d280252295543437daa6cf542fd546c511cc3"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x3dbd8",
+      "bytes": 380,
+      "sha256": "0abb221ae55d9f30a4a95e07ec77cedcde9ba2ce3304405617837df16655050c"
+    },
+    {
+      "image": "PreviewsMessagingHost",
+      "start": "0x40f10",
+      "bytes": 144,
+      "sha256": "1da80ebe34745a422dd9f8e40d7394f8d836a8ce949f7fb49f8aafb0cc92817d"
+    }
+  ],
+  "verified_bytes": 3060,
+  "content_cases": [
+    "capabilities",
+    "relaunch",
+    "prepareToRelaunch",
+    "connect",
+    "forward",
+    "update",
+    "cancelUpdate",
+    "stop",
+    "kill",
+    "purge",
+    "variants",
+    "contentOverride",
+    "ping"
+  ],
+  "pipeline_constructor_callers": [
+    "0xb87a8",
+    "0xb95e8",
+    "0xb9d3c",
+    "0xba908",
+    "0x1d6174",
+    "0x1d6d28",
+    "0x1d7978",
+    "0x1d8528",
+    "0x1dfaa4"
+  ],
+  "scope": "Modern update tag5/Future send; primitive-send witness at slot16; native Unit reply and success predicate; native TransportReply copy/destroy. Owned ABI-shaped transport boundary supplies the witness, without a registered native daemon conformance. Runtime probe separately invokes actual modern update and controlled immediate/delayed Unit replies. No daemon routing/application/resource settlement observed."
+}

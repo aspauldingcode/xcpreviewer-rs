@@ -1,0 +1,12 @@
+before/valid: first cancellation retained through three callbacks
+before/valid-with-error: first cancellation retained through three callbacks
+before/malformed: first cancellation retained through three callbacks
+before/empty: first cancellation retained through three callbacks
+before/absent-with-error: first cancellation retained through three callbacks
+before/absent-both: first cancellation retained through three callbacks
+after/valid: first retained after later dictionary and empty reply, success
+after/valid-with-error: first retained after later dictionary and empty reply, success
+after/malformed: first retained after later dictionary and empty reply, parse_failure
+after/empty: first retained after later dictionary and empty reply, parse_failure
+after/absent-with-error: first retained after later dictionary and empty reply, remote_failure
+after/absent-both: first retained after later dictionary and empty reply, empty_reply

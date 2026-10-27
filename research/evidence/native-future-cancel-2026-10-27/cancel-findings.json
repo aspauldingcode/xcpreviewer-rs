@@ -1,0 +1,36 @@
+{
+  "image_sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+  "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "ranges": [
+    {
+      "start": "0x115e1c",
+      "bytes": 40,
+      "sha256": "2283d9a09351d68338b54a5e5f5f9c8f94d4c8b85ffea4c30da232a75cc33ef6"
+    },
+    {
+      "start": "0x1187c8",
+      "bytes": 60,
+      "sha256": "9b5ba920314a34d2a0ca691b0ff74b023d2c6d009f7d95776a76acb45a83c674"
+    },
+    {
+      "start": "0x118bb8",
+      "bytes": 12,
+      "sha256": "44bfcd944dba2e70866e97a99c0f92f8cba358dcf0556c48d2759ea22a2d08a8"
+    },
+    {
+      "start": "0x34178",
+      "bytes": 172,
+      "sha256": "c28352381acb047feb49f43499e70ca81a3cb6811742bf8723677c9e9bbbae64"
+    }
+  ],
+  "source_bytes_verified": 284,
+  "callsite_fields": [
+    "file",
+    "line",
+    "column",
+    "function"
+  ],
+  "public_cancel_dispatch_slot": "0xb0",
+  "callsite_cancel_dispatch_slot": "0xc0",
+  "scope": "Exported Future.cancel thunk dispatches via b0; its wrapper assembles Callsite and dispatches via c0. The owned runtime invokes the actual c0 override only after its image/offset guard. PromiseFuture override copies Callsite into canceled tag2 and calls the qualified transition path. Runtime reflects only the owned returned snapshot value. Public wrapper itself is not invoked; base abstract implementation is not called. No transport cancellation, observer/queue/concurrency or resource settlement claimed."
+}

@@ -1,33 +1,59 @@
-//! Serial reply-result completion after native first-result retention controls.
-//! Not a transport, callback gate, cancellation API, or resource settlement signal.
-/// Retains the first fully projected success/failure. Callers synchronize access.
-/// Native Future diagnostics, observer scheduling and cancellation are outside
-/// this profile. Returning a rejected value is original Rust ownership policy.
+//! Serial reply state from native success/failure/cancellation controls.
+//! Local state only: no transport cancellation, callback gate or resource settlement.
+#[derive(Debug, PartialEq)]
+pub enum ReplyTermination<T, E, C> {
+    Completed(Result<T, E>),
+    Canceled(C),
+}
+/// Retains the first completion or cancellation context. Callers synchronize access.
+/// Native diagnostics, observer scheduling and transport effects are outside this
+/// profile. Returning rejected values is original Rust ownership policy.
 #[derive(Debug)]
-pub struct ReplyCompletion<T, E> {
-    result: Option<Result<T, E>>,
+pub struct ReplyCompletion<T, E, C = ()> {
+    termination: Option<ReplyTermination<T, E, C>>,
 }
 impl<T, E> ReplyCompletion<T, E> {
     pub const fn new() -> Self {
-        Self { result: None }
+        Self { termination: None }
     }
+}
+impl<T, E, C> ReplyCompletion<T, E, C> {
+    /// None includes running and canceled states; inspect termination to distinguish.
     pub fn result(&self) -> Option<&Result<T, E>> {
-        self.result.as_ref()
+        match &self.termination {
+            Some(ReplyTermination::Completed(result)) => Some(result),
+            _ => None,
+        }
+    }
+    /// None means running. Cancellation context is caller-owned, not native ABI.
+    pub fn termination(&self) -> Option<&ReplyTermination<T, E, C>> {
+        self.termination.as_ref()
     }
     /// Store the first outcome; otherwise return the proposed outcome unchanged.
-    /// Project/decode a callback before calling this method. A completed result
+    /// Decode a callback before calling this method. A finished/canceled result
     /// does not imply that later callbacks or their decoding cannot execute.
     pub fn try_complete(&mut self, outcome: Result<T, E>) -> Result<(), Result<T, E>> {
-        if self.result.is_some() {
+        if self.termination.is_some() {
             Err(outcome)
         } else {
-            self.result = Some(outcome);
+            self.termination = Some(ReplyTermination::Completed(outcome));
+            Ok(())
+        }
+    }
+    /// Record cancellation while running; otherwise return the context unchanged.
+    /// This sends no cancellation request, releases no backend captures, and does
+    /// not interrupt target work. Use Default for a custom context type.
+    pub fn try_cancel(&mut self, context: C) -> Result<(), C> {
+        if self.termination.is_some() {
+            Err(context)
+        } else {
+            self.termination = Some(ReplyTermination::Canceled(context));
             Ok(())
         }
     }
 }
-impl<T, E> Default for ReplyCompletion<T, E> {
+impl<T, E, C> Default for ReplyCompletion<T, E, C> {
     fn default() -> Self {
-        Self::new()
+        Self { termination: None }
     }
 }
