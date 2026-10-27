@@ -1,0 +1,40 @@
+{
+  "rust_tests": 399,
+  "worker_checks": {
+    "worker_valid_native_packet_equal": true,
+    "malformed_rejected": true,
+    "unknown_import_rejected": true,
+    "packet_sha256": "d3cda9d9772df81637e47a8baf7167553c738c7ea5c9c6d0ba6cff32cdfaa15b",
+    "imports": [
+      {
+        "module": "wasi_snapshot_preview1",
+        "name": "environ_get",
+        "kind": "function"
+      },
+      {
+        "module": "wasi_snapshot_preview1",
+        "name": "environ_sizes_get",
+        "kind": "function"
+      },
+      {
+        "module": "wasi_snapshot_preview1",
+        "name": "fd_read",
+        "kind": "function"
+      },
+      {
+        "module": "wasi_snapshot_preview1",
+        "name": "fd_write",
+        "kind": "function"
+      },
+      {
+        "module": "wasi_snapshot_preview1",
+        "name": "proc_exit",
+        "kind": "function"
+      }
+    ]
+  },
+  "sample_native_accepted": true,
+  "pixel_sha256": "c170800b5f3bb578fc5e6172c1085ee577a6011705b0935f8fa0dd41eca51970",
+  "wasm_sha256": "5524454ec094403f07e79ceb7a3b41733cfc1a2d29036ab22001eb263a36b360",
+  "wasm_import_count": 5
+}

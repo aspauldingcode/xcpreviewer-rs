@@ -1,0 +1,34 @@
+{
+  "resolved": [
+    {
+      "stage": "Rust presentation tests",
+      "failure": "Incorrect encode import from decoder module",
+      "resolution": "Use binary_plist_writer::encode; all 399 tests pass"
+    }
+  ],
+  "tool_limitations": [
+    {
+      "method": "Read-only UI DOM canvas proxy",
+      "failure": "getContext is unavailable",
+      "alternative": "Page-owned Canvas2D getImageData readback SHA-256 exposed as DOM attributes"
+    },
+    {
+      "method": "CUA file chooser",
+      "elapsed_seconds": 1956.6822,
+      "outcome": "Owned local file loaded successfully",
+      "next_action": "Avoid unchanged chooser loop; subsequent calls bounded to 30 seconds"
+    },
+    {
+      "method": "Default viewer startup in restricted sandbox",
+      "failure": "Loopback socket bind denied after successful offline build",
+      "alternative": "Approved local-only startup passed; only temporary owned test server stopped"
+    }
+  ],
+  "platform_limits": [
+    "wasm32-unknown-unknown target unavailable; installed WASIp1 target used with five explicit memory-I/O imports"
+  ],
+  "unverified": [
+    "Browser failure retention and stale-request guards were source inspected; no browser negative-file interaction claimed",
+    "No Apple Canvas interaction, provider, native view rendering or full alpha/color parity"
+  ]
+}
