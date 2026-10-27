@@ -1,0 +1,18 @@
+{
+  "initial_native": {
+    "signal": "SIGSEGV",
+    "stderr_empty": true,
+    "owned_stage": "owned_exchange first NSPropertyListSerialization decode",
+    "diagnostic_frames": [
+      "objc_msgSend",
+      "_CFPropertyListCreateWithData",
+      "CFPropertyListCreateWithData",
+      "NSPropertyListSerialization.propertyListWithData",
+      "owned_exchange",
+      "main"
+    ],
+    "correction": "Keep the Swift-bridged NSData object alive through the C call with withExtendedLifetime. Initial unretained temporary bridge was unsafe. Corrected native and WASI-wire controls pass.",
+    "raw_helper": "research/raw/modern-sdk-initial-20261027/initial-native.swift",
+    "apple_dump_published": false
+  }
+}

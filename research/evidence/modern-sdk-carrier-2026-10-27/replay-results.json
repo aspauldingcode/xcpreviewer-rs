@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "disposable_workspace": "/private/tmp/modern-sdk-replay-v1dh6ye1",
+  "results": {
+    "native_future_sdk_compositions": 4,
+    "native_wire_sdk_messages": 2,
+    "wasi_wire_sdk_messages": 2,
+    "sdk_reply_callbacks": 4,
+    "source_shell_destroyed_before_sdk_exchange": 4,
+    "successful_after_sdk_ack_before_owned_forward": 0,
+    "successful_after_owned_unit_forward": 4,
+    "reply_value_copies_destroyed": 4,
+    "future_references_released": 4,
+    "cli_canonical": 2,
+    "wasi_canonical": 2,
+    "source_bytes_reverified": 3220,
+    "wasm_sha256": "25406a48b221957e3f100354a4ca469a10dfb2a6b4445d5725fef31901d020a2",
+    "full_rust_suite_rerun": false,
+    "scope": "Owned adapter synchronously waits for SDK acknowledgement then invokes native Unit reply. No DaemonConnection, native encoded reply decoder, Apple service acknowledgement, provider application, rights settlement or browser WASM claimed."
+  }
+}
