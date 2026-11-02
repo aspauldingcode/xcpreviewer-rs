@@ -1,0 +1,47 @@
+{
+  "qualified_runs": {
+    "initial": {
+      "policy-debug-unfulfilled": "returned and owned context/FD cleanup observed",
+      "policy-soft-unfulfilled": "returned and owned context/FD cleanup observed",
+      "policy-fatal-unfulfilled": "owned SIGTRAP with explicit native unfulfilled-handle diagnostic",
+      "policy-debug-fulfilled": "returned and owned context/FD cleanup observed",
+      "policy-soft-fulfilled": "returned and owned context/FD cleanup observed",
+      "policy-fatal-fulfilled": "returned and owned context/FD cleanup observed"
+    },
+    "reproduced": {
+      "policy-debug-unfulfilled": "returned and owned context/FD cleanup observed",
+      "policy-soft-unfulfilled": "returned and owned context/FD cleanup observed",
+      "policy-fatal-unfulfilled": "owned SIGTRAP with explicit native unfulfilled-handle diagnostic",
+      "policy-debug-fulfilled": "returned and owned context/FD cleanup observed",
+      "policy-soft-fulfilled": "returned and owned context/FD cleanup observed",
+      "policy-fatal-fulfilled": "returned and owned context/FD cleanup observed"
+    }
+  },
+  "synthetic_trace_mutations": [
+    {
+      "mutation": "fatal-returned",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "fatal-diagnostic-missing",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "false-fd-cleanup",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-policy",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-deinit",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ]
+}

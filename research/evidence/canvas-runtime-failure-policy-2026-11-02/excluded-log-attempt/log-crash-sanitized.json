@@ -1,0 +1,84 @@
+{
+  "pid": 25208,
+  "exception": {
+    "codes": "0x0000000000000001, 0x0000000000000018",
+    "rawCodes": [
+      1,
+      24
+    ],
+    "type": "EXC_BAD_ACCESS",
+    "signal": "SIGSEGV",
+    "subtype": "KERN_INVALID_ADDRESS at 0x0000000000000018"
+  },
+  "termination": {
+    "flags": 0,
+    "code": 11,
+    "namespace": "SIGNAL",
+    "indicator": "Segmentation fault: 11",
+    "byProc": "exc handler",
+    "byPid": 25208
+  },
+  "asi": null,
+  "frames": [
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0x14244",
+      "symbol": "_StringObject.getSharedUTF8Start()"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0x40b10",
+      "symbol": "_StringObject.sharedUTF8.getter"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x21a64",
+      "symbol": "specialized _StringGuts._deconstructUTF8<A>(scratch:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x218e4",
+      "symbol": "getNullTerminatedUTF8PointerImpl(_:storingStringOwnersIn:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x2bd90",
+      "symbol": "FulfillmentFailureMode.fail(callsite:error:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x2bbdc",
+      "symbol": "FulfillOnceState.deinit"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x2c17c",
+      "symbol": "FulfillOnceState.__deallocating_deinit"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0xbcb0",
+      "symbol": "_swift_release_dealloc"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0x6eae4",
+      "symbol": "bool swift::RefCounts<swift::RefCountBitsT<(swift::RefCountInlinedness)1>>::doDecrementSlow<(swift::PerformDeinit)1>(swift::RefCountBitsT<(swift::RefCountInlinedness)1>, unsigned int)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x42018",
+      "symbol": "ConcurrentInvalidationHandle.__deallocating_deinit"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0xbcb0",
+      "symbol": "_swift_release_dealloc"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0x6ec6c",
+      "symbol": "bool swift::RefCounts<swift::SideTableRefCountBits>::doDecrementSlow<(swift::PerformDeinit)1>(swift::SideTableRefCountBits, unsigned int)"
+    }
+  ]
+}

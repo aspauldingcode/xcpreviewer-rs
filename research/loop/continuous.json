@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-failure-policy-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18946,5 +18946,21 @@
     "controller_released": true,
     "next_action": "Keep static expansion paused. Apply observed admission/cancellation and nested-registration contracts when testing portable reconstruction; continue native preview/state/resource controls without claiming whole Canvas settlement or retrying unchanged inaccessible-window route.",
     "verified_at": "2026-11-02T22:00:18.988782+00:00"
+  },
+  "canvas_runtime_failure_policy_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-failure-policy-2026-11-02",
+    "seal_sha256": "f78d0d541a3cdabb7fa102fd0d8c2a49483becbe6001a8ec770ab604fac797e1",
+    "qualified_native_runs": 2,
+    "controls_per_run": 6,
+    "returning_controls_per_run": 5,
+    "fatal_unfulfilled_sigtrap_per_run": 1,
+    "owned_context_fd_cleanup_in_returning_controls": true,
+    "soft_assert_delegate_or_logging_delivery_verified": false,
+    "unqualified_log_attempt_excluded": true,
+    "synthetic_trace_mutations_rejected": 5,
+    "raw_crash_stderr_published": false,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Runtime-test remaining recovered behavior or qualify log-associated payload only if needed for an actual native control. Do not infer a logging bug from the unqualified SIGSEGV input, or assertion delivery from returning soft-assert owner release. Canvas rendering/state/resource contracts remain open.",
+    "verified_at": "2026-11-02T22:12:56.553208+00:00"
   }
 }

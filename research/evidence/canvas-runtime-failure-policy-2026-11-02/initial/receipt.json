@@ -1,0 +1,20 @@
+{
+  "classification": "native component execution; intentional owned fatal-policy termination",
+  "modes": [
+    "policy-debug-unfulfilled",
+    "policy-soft-unfulfilled",
+    "policy-fatal-unfulfilled",
+    "policy-debug-fulfilled",
+    "policy-soft-fulfilled",
+    "policy-fatal-fulfilled"
+  ],
+  "source_sha256": {
+    "native.swift": "a00831e1627a44a8622e1d4978a7dea09195fcadb8697f9bd9de76d29fd574bc",
+    "bridge.s": "67a24c5288664449e85087c42f646dc6046d6d242543c6e69ad5daa7bf63de14",
+    "bridge.h": "d47452abe2f16326d1b4a59f7e8f53154ed4f74e4d2d014b5b1d31fdb26cff1d",
+    "identity.c": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab",
+    "run-native.py": "50252397d29a8836210f8448ef7848a89ee9de60a5addb91bb0dc5fe8e56a74f",
+    "verify.py": "72ada54fe2a012d5c3abbaeea014d667a62538b41a8e1cfade29a38d9f447bd1"
+  },
+  "full_canvas_parity": false
+}

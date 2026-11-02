@@ -1,0 +1,16 @@
+{"event":"native-ready","pid":26593,"seq":1,"thread_id":259,"time_ns":49550304726500,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":49550308500416}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":49550308553000}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":49550308632375}
+{"event":"handle-created","seq":5,"thread_id":259,"time_ns":49550308717708}
+{"event":"probe-created","fd":3,"name":"policy-probe","seq":6,"thread_id":259,"time_ns":49550308766208}
+{"event":"registered","has_token":true,"name":"policy-probe","seq":7,"thread_id":259,"time_ns":49550309068375}
+{"event":"policy-configured","fulfilled":false,"kind":"soft","marker":2,"payload":1,"seq":8,"thread_id":259,"time_ns":49550309119791}
+{"event":"policy-release-begin","seq":9,"thread_id":259,"time_ns":49550309149875}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"policy-probe","seq":10,"thread_id":259,"time_ns":49550309840666}
+{"context_released":true,"event":"policy-release-end","fd_closed":true,"seq":11,"thread_id":259,"time_ns":49550309902750}
+{"event":"cancel-begin","seq":12,"thread_id":259,"time_ns":49550309926625}
+{"event":"cancel-end","seq":13,"thread_id":259,"time_ns":49550309984625}
+{"event":"token-destroy-begin","seq":14,"thread_id":259,"time_ns":49550310000916}
+{"event":"token-destroy-end","seq":15,"thread_id":259,"time_ns":49550310023541}
+{"callbacks":[],"event":"pass","mode":"policy-soft-unfulfilled","seq":16,"thread_id":259,"time_ns":49550310040458}

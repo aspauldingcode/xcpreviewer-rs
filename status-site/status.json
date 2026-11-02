@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:00:18.988782+00:00",
+  "updated_at": "2026-11-02T22:12:56.553208+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: eleven observer controls reproduced. Cancellation after dispatch began did not suppress later callback; nested registration ran synchronously.",
+  "current_focus": "Runtime validation: owner destruction under three recovered policy configurations reproduced. Fatal unfulfilled release traps; fulfilled controls return. Log attempt excluded.",
   "milestones": [
     {
       "number": 1,
@@ -105,10 +105,10 @@
         "id": "resources",
         "title": "Resource lifetime",
         "status": "in_progress",
-        "evidence_level": "Native observer dispatch/lifetime controls; full resource settlement open",
-        "verified_summary": "Eleven normal native controls reproduced, including later-callback admission and nested registration ordering. Owned weak contexts/FDs cleaned before invalidation returned. Prior recursive-lock negative remains separate; transport/render cleanup unknown.",
+        "evidence_level": "Native observer lifetime and owner-release policy controls; settlement open",
+        "verified_summary": "Eleven observer controls plus three policy configurations exercised. Returning owner-release controls cleared owned contexts/FDs; fatal unfulfilled release trapped before normal cleanup. Log input remains unqualified; transport/render settlement open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-dispatch-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-failure-policy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native owner-release policy outcomes reproduced",
+      "detail": "Debug-only and soft-assert configurations returned; fatal unfulfilled release trapped. Fulfilled controls returned for all three. Owned cleanup checked in returning controls. Log attempt segfaulted with unqualified payload and is excluded from policy claims."
+    },
     {
       "date": "2026-11-02",
       "title": "Observer dispatch cancellation and nested registration reproduced",
@@ -321,10 +326,10 @@
   "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00",
   "runtime_validation": {
     "normal_native_passes": 11,
-    "observed_negative_controls": 1,
-    "summary": "Two fresh runs passed all eleven native observer controls. New: cancelling later observer after dispatch began did not suppress it; nested registration invoked synchronously with no token. Weak-context and owned FD cleanup checked. Prior build/file controls remain separately scoped.",
+    "observed_negative_controls": 2,
+    "summary": "Observer suite: eleven controls reproduced previously. New: two runs of six owner-release policy controls; five returned with owned context/FD cleanup, fatal unfulfilled release trapped with explicit native diagnostic. Unqualified log attempt excluded and retained.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "Native transport/render cleanup, true auto-resume/scene/state gates, private Preview.update, rendered completion, SwiftUI continuity and cross-platform WASM remain unverified. Native-window limitation not retried.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-dispatch-2026-11-02"
+    "unknown": "Log-associated payload, logging/assertion delivery, native transport/render cleanup, true auto-resume/scene/state, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-failure-policy-2026-11-02"
   }
 }
