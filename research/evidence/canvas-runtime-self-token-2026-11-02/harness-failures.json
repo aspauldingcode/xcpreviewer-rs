@@ -1,0 +1,10 @@
+{
+  "initial_edit_script": "AssertionError before writing the extended verifier; native source and runner had already been updated.",
+  "run1_original_reader_modes": 11,
+  "run1_executed_normal_modes": 13,
+  "run1_original_receipt_claim_not_sufficient": true,
+  "correction": "Retain original reader and receipt; final reader explicitly checks both self-token modes in run1 and run2. Runner now requires verified mode set == executed mode set.",
+  "mutation_driver_initial_error": "Missing token event raises ValueError; reject control now records AssertionError or ValueError, without changing native evidence.",
+  "native_crashes_or_timeouts": 0,
+  "compiler_warnings": "Existing weak-mutability and Swift 6 Sendable diagnostics retained in build stderr; compilation is not Swift 6 strict-mode qualification."
+}

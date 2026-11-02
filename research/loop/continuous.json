@@ -19036,5 +19036,28 @@
     "xcode_left_running": true,
     "next_action": "Keep static expansion paused. Do not retry unchanged background coordinate input. Qualify an actual preview-host input route before claiming nonzero state continuity, or switch to remaining native component lifecycle/resource controls. Preserve separate native method, native UI, artifact-reader and WASM scopes.",
     "verified_at": "2026-11-02T23:25:23.245869+00:00"
+  },
+  "canvas_runtime_self_token_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-self-token-2026-11-02",
+    "manifest_sha256": "9712b48d483fa82bb887d0f01313d17c401775c9ae1fac335f243878d2610ae0",
+    "native_runs": 2,
+    "normal_controls_per_run": 13,
+    "new_controls": [
+      "self-drop",
+      "self-cancel-drop"
+    ],
+    "weak_context_and_owned_fd_live_after_token_destruction": true,
+    "cleanup_after_final_callback_marker_before_invalidate_return": true,
+    "second_invalidation_no_repeat": true,
+    "new_callbacks_recover_strong_probe_local": false,
+    "run1_original_reader_only_covered_eleven": true,
+    "final_reader_checks_thirteen_in_both_runs": true,
+    "run2_runner_checks_exact_mode_coverage": true,
+    "synthetic_mutations_rejected": 6,
+    "native_crashes_or_timeouts": 0,
+    "user_xcode_or_project_accessed": false,
+    "next_action": "Keep static expansion paused. Further qualify remaining native lifecycle/cleanup or actual preview-host input; do not retry unchanged coordinate input. Self-token controls concern observer closure/owned sentinel only, not Canvas state or transport/render resources.",
+    "verified_at": "2026-11-02T23:32:19.330962+00:00",
+    "controller_released": true
   }
 }

@@ -190,9 +190,12 @@
       "controls": [
         "invalidate",
         "reentrant",
-        "cancel-reentry"
+        "cancel-reentry",
+        "self-drop",
+        "self-cancel-drop"
       ],
-      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
     },
     {
       "function": "CancelationToken.cancel",
@@ -203,9 +206,11 @@
       "controls": [
         "cancel",
         "owner-loss",
-        "ordering"
+        "ordering",
+        "self-cancel-drop"
       ],
-      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
     },
     {
       "function": "CancelationToken destroy witness",
@@ -215,9 +220,12 @@
       "direct_entry_exercised": true,
       "controls": [
         "drop-waiting-token",
-        "invalidate"
+        "invalidate",
+        "self-drop",
+        "self-cancel-drop"
       ],
-      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
     },
     {
       "function": "PreviewInstance value-assignment helper, selected caller",
@@ -230,6 +238,6 @@
     }
   ],
   "warning": "Observed entry/callsite/selected path is not full function or target acceptance. Untraced collector, reconciliation and destruction helpers remain static even when UI changes.",
-  "updated_at": "2026-11-02T23:13:22.562796+00:00",
+  "updated_at": "2026-11-02T23:32:19.330962+00:00",
   "catalog_scope": "Bounded current evidence index based on the prior function audit; not an exhaustive Xcode function count or percentage denominator."
 }

@@ -1,0 +1,20 @@
+# Native callback drops its own cancellation token
+
+Static expansion remains paused. No Xcode UI input was retried. Two fresh owned-process executions ran thirteen normal controls each against the pinned shipped PreviewsFoundationHost image. Existing eleven controls passed regression, including each run's 100 sampled concurrent rounds. Two new serial controls exercise destruction of an observer's own token while its callback is executing:
+
+- **self-drop:** callback destroys/deallocates its token without cancellation.
+- **self-cancel-drop:** callback calls cancel twice, then destroys/deallocates its token.
+
+Both invoke exactly once. After token destruction the weak context remains alive and its owned /dev/null FD remains open. After the callback's final returning marker, Probe.deinit closes the FD (close result zero); both weak context and FD are cleared before the enclosing invalidate returns. A second invalidation returns without another callback. The final reader asserts this ordering, the two cancel intervals only in the cancellation mode, normal exits and no deadlines. The return marker precedes the actual ABI return; it is not an independently traced native return instruction.
+
+These callback branches compare raw context identity and never recover a strong Probe local. The caller releases its strong Probe before invalidation; the retained global observation is weak. The original assembly callback adapter only forwards raw context/trace to the owned callback. This avoids adding the normal recorder's strong Probe local to these two lifetime controls. Weak inspection creates temporary observations; no particular retain count, allocator behavior or arbitrary capture semantics are inferred. Only owned sentinel FD/context cleanup is tested, not native transport, surface or rendering-resource settlement.
+
+The image hash is checked before each run and loaded UUID/symbol paths/offsets are checked inside each owned native process. Exclusive controller locking and compiler/native deadlines are unchanged. No Apple app was injected, re-signed, terminated or reconfigured. All native controls exited zero; no new native crash or timeout occurred. Existing compiler weak-mutability and Swift 6 Sendable warnings are retained; this is not Swift 6 strict-concurrency qualification.
+
+## Reader qualification and retained failures
+
+The initial edit script failed before writing the extended reader, after updating the native source and runner. Run1 executed all thirteen controls with in-process preconditions, but its original post-reader only checked eleven. Its original receipt is retained and is insufficient on its own for a thirteen-reader claim. The final reader now checks both new traces in run1 and run2; run2 also reproduced the complete runner with a guard requiring verified mode names to equal executed names. All thirteen final checks pass on both sets of actual execution traces. Exact sources/readers/receipts are retained per run.
+
+Six normalized synthetic trace mutations reject: early context destruction, dead weak context, closed FD inside callback, missing token-destruction completion, duplicate callback and incorrect cancellation-mode flag. These are reader controls, not additional native executions. Initial mutation-driver handling assumed only AssertionError; missing event raises ValueError. That driver mistake was corrected and recorded; it is not a native failure.
+
+Run `python3 tools/re/native-canvas-runtime/run.py --output /private/tmp/FRESH` to reproduce the actual native suite. Run `python3 research/evidence/canvas-runtime-self-token-2026-11-02/verify.py research/evidence/canvas-runtime-self-token-2026-11-02/run2` only to check saved artifacts. No Apple binary, object/module cache, private disassembly or crash dump is published. Static discovery did not expand. Native UI state continuity from the preceding unsuccessful input qualification remains unknown. No Rust/WASM functionality or full-area acceptance follows. Full native areas remain 0/9; tracked delivery 1/26 (3.8%).

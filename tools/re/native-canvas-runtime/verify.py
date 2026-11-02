@@ -1,7 +1,7 @@
 """Verify executed native traces; source replay is deliberately not accepted."""
 import json
 from pathlib import Path
-MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-next','add-during-dispatch','cancel-admitted']
+MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-next','add-during-dispatch','cancel-admitted','self-drop','self-cancel-drop']
 def verify(root,negative=False):
  root=Path(root);result={}
  for mode in MODES+(['cancel-reentry'] if negative else []):
@@ -13,7 +13,7 @@ def verify(root,negative=False):
    assert r['code']==-9 and 'destructor-reentry-begin' in events and 'destructor-reentry-end' not in events and 'pass' not in events
    crash=json.loads((root/'cancel-reentry-crash.json').read_text());assert crash['pid']==r['pid'];assert any('Trying to recursively lock an os_unfair_lock' in s for lines in (crash.get('asi') or {}).values() for s in lines);result[mode]='observed recursive-lock process termination';continue
   assert r['code']==0 and rows[-1]['event']=='pass' and rows[-1]['mode']==mode
-  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks,'cancel-next':['cancel-next-a','cancel-next-b'],'add-during-dispatch':['add-late-a','nested-late','add-late-b'],'cancel-admitted':['admitted-a','admitted-b']}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
+  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks,'cancel-next':['cancel-next-a','cancel-next-b'],'add-during-dispatch':['add-late-a','nested-late','add-late-b'],'cancel-admitted':['admitted-a','admitted-b'],'self-drop':['self-drop'],'self-cancel-drop':['self-cancel-drop']}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
   if mode=='invalidate':
    assert dead==['first','late'];assert events.index('caller-probe-dropped')<events.index('invalidate-begin')<events.index('callback')<events.index('probe-deinit')<events.index('invalidate-end');assert [x['has_token'] for x in rows if x['event']=='registered']==[True,False]
   elif mode=='cancel':assert dead==['cancelled'] and events.index('cancel-begin')<events.index('probe-deinit')<events.index('cancel-end')
@@ -35,6 +35,16 @@ def verify(root,negative=False):
      overlap=overlap or any(t!=x['thread_id'] for t in active);active[x['thread_id']]=x['event']
     elif x['event'] in ['cancel-end','invalidate-end']:active.pop(x['thread_id'],None)
    assert overlap and not active
+  elif mode in ['self-drop','self-cancel-drop']:
+   assert dead==[mode]
+   retained=next(x for x in rows if x['event']=='self-token-dropped-context-live');assert retained['context_alive'] and retained['fd_open'] and retained['cancelled']==(mode=='self-cancel-drop')
+   cleanup=next(x for x in rows if x['event']=='self-cleanup-complete');assert cleanup['context_released'] and cleanup['fd_closed']
+   assert events.index('callback')<events.index('token-destroy-begin')<events.index('token-destroy-end')<events.index('self-token-dropped-context-live')<events.index('self-callback-returning')<events.index('probe-deinit')<events.index('invalidate-end')<events.index('self-cleanup-complete')
+   assert events.count('callback')==1 and events.count('invalidate-begin')==2 and events.count('invalidate-end')==2
+   if mode=='self-cancel-drop':
+    assert events.count('cancel-begin')==events.count('cancel-end')==2
+    assert events.index('callback')<events.index('cancel-begin')<events.index('cancel-end')<events.index('token-destroy-begin')
+   else:assert 'cancel-begin' not in events
   elif mode in ['cancel-next','add-during-dispatch','cancel-admitted']:
    cleanup=next(x for x in rows if x['event']=='dispatch-cleanup-complete');assert cleanup['context_released'] and cleanup['fds_closed'];assert len(dead)==len(callbacks) and set(dead)==set(callbacks);assert all(i<events.index('invalidate-end') for i,x in enumerate(rows) if x['event']=='probe-deinit')
    def pos(name,event='callback'):return next(i for i,x in enumerate(rows) if x['event']==event and x.get('name')==name)

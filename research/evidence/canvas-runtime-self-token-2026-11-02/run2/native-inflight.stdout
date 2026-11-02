@@ -1,0 +1,17 @@
+{"event":"native-ready","pid":61468,"seq":1,"thread_id":259,"time_ns":54338831344916,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":54338835552666}
+{"event":"probe-created","fd":3,"name":"inflight","seq":3,"thread_id":259,"time_ns":54338835653541}
+{"event":"registered","has_token":true,"name":"inflight","seq":4,"thread_id":259,"time_ns":54338835764625}
+{"event":"invalidate-begin","seq":5,"thread_id":6147,"time_ns":54338835857625}
+{"event":"callback","name":"inflight","seq":6,"thread_id":6147,"time_ns":54338835939166}
+{"event":"callback-blocked","seq":7,"thread_id":6147,"time_ns":54338835966041}
+{"event":"cancel-begin","seq":8,"thread_id":259,"time_ns":54338836013708}
+{"event":"cancel-end","seq":9,"thread_id":259,"time_ns":54338836184250}
+{"context_alive":true,"event":"cancel-returned-callback-still-blocked","fd_open":true,"seq":10,"thread_id":259,"time_ns":54338836218625}
+{"event":"callback-unblocked","seq":11,"thread_id":6147,"time_ns":54338836247541}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"inflight","seq":12,"thread_id":6147,"time_ns":54338836270083}
+{"event":"invalidate-end","seq":13,"thread_id":6147,"time_ns":54338836289083}
+{"context_released":true,"event":"inflight-cleanup-complete","fd_closed":true,"seq":14,"thread_id":259,"time_ns":54338836314833}
+{"event":"token-destroy-begin","seq":15,"thread_id":259,"time_ns":54338836332791}
+{"event":"token-destroy-end","seq":16,"thread_id":259,"time_ns":54338836361083}
+{"callbacks":["inflight"],"event":"pass","mode":"inflight","seq":17,"thread_id":259,"time_ns":54338836383291}

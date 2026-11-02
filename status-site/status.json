@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:25:23.245869+00:00",
+  "updated_at": "2026-11-02T23:32:19.330962+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Real native title edit and exact restoration rendered correctly. Increment attempts left Count: 0; successful input and interactive state continuity remain unqualified.",
+  "current_focus": "Thirteen native observer controls pass: own-token destruction with/without repeated cancellation leaves context/owned FD live through final callback marker, then releases them before invalidate returns. Canvas input/state remains unqualified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Executing observer destroys its own token",
+      "detail": "Two actual native runs pass thirteen controls each, including token drop with/without repeated cancellation. Context/owned FD cleanup bounded by callback marker and invalidate return. Run1 reader omitted new controls initially; final reader checks both runs and runner now enforces mode coverage. Six synthetic mutations reject."
+    },
     {
       "date": "2026-11-02",
       "title": "Native title refresh passes; state input unresolved",
@@ -343,14 +348,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T23:25:25.135545+00:00",
+  "issue_counts_updated_at": "2026-11-02T23:32:21.509026+00:00",
   "runtime_validation": {
-    "normal_native_passes": 11,
+    "normal_native_passes": 13,
     "observed_negative_controls": 2,
-    "summary": "Eleven observer controls plus separate policy/build/file controls remain scoped evidence. Prior color edit traced eighteen Preview.update and assignment-helper calls. New title-render sequence had no active hooks and no new method trace.",
+    "summary": "Two fresh owned-process runs exercised thirteen observer controls each. New self-drop/self-cancel-drop kept weak context/owned FD alive through final callback marker and released them before invalidate returned; repeated invalidate did not call again. Reader coverage correction and six synthetic mutations retained.",
     "ui_summary": "Text and interaction native title changed Canvas baseline \u2192 Runtime state edit \u2192 Canvas baseline after a real file edit/restoration. Two coordinate Increment attempts left Count: 0; input delivery and state continuity unqualified.",
     "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-title-input-2026-11-02",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-self-token-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }
