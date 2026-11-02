@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T00:53:40.417289+00:00",
+  "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover native file-update routing, then correlate source contracts with actual owned-project refresh behavior.",
+  "current_focus": "Recover build-start classification and build-stop behavior, then correlate native build/file-event timing and refresh state.",
   "milestones": [
     {
       "number": 1,
@@ -113,6 +113,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Build timestamp and file-event time gate recovered",
+      "detail": "Static source qualifies a two-second suppression comparison after the build-start timestamp. Exact boundary and missing-timestamp paths checked; actual timing and payload flag meaning remain unobserved."
+    },
     {
       "date": "2026-11-02",
       "title": "Thunkable-file membership recovered",
