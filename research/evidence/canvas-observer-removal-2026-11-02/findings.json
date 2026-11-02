@@ -1,0 +1,235 @@
+{
+  "image": {
+    "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "overfulfill-cleanup",
+      "start": "0x305c8",
+      "end_exclusive": "0x30600",
+      "bytes": 56,
+      "sha256": "5986c3f396060b2cd184c510fb4a56585bb681bcd78827671ec0a1c28831490e"
+    },
+    {
+      "name": "cancel-closure",
+      "start": "0x41f10",
+      "end_exclusive": "0x41fdc",
+      "bytes": 204,
+      "sha256": "1a9cd0ad482b3cf5cd91a5598bcb3c9a52edcbecfa52aa2a390176328e87f142"
+    },
+    {
+      "name": "remove-forwarder",
+      "start": "0x428d0",
+      "end_exclusive": "0x428f8",
+      "bytes": 40,
+      "sha256": "a71786a2cb61d4f9894e4ac7c39c9ac3f3eae39eccb14da0bf294f9bf48c883c"
+    },
+    {
+      "name": "waiting-forwarder",
+      "start": "0xbeea8",
+      "end_exclusive": "0xbeecc",
+      "bytes": 36,
+      "sha256": "5d3a6729a6ed9da59ccaae8027af52b8ee39b577c4c7b2e5b3c26949db73d60b"
+    },
+    {
+      "name": "waiting-update",
+      "start": "0xbeef0",
+      "end_exclusive": "0xbf014",
+      "bytes": 292,
+      "sha256": "75cda8916de73fdea5d7244a28c09db2de6002a49c46f6da809fed6b5e908fe9"
+    },
+    {
+      "name": "dictionary-remove",
+      "start": "0xee75c",
+      "end_exclusive": "0xee834",
+      "bytes": 216,
+      "sha256": "6386600a9fe61d4efd51801585b3547af12e178e7acc2abdac623257cba880a4"
+    },
+    {
+      "name": "optional-cleanup",
+      "start": "0xdb40",
+      "end_exclusive": "0xdb50",
+      "bytes": 16,
+      "sha256": "a8108029025a4b5e37a1e4524e963412ae55338fef79d7bafc26dfdc6256674b"
+    }
+  ],
+  "source_bytes_verified": 860,
+  "metadata": {
+    "state": [
+      "waiting",
+      "fulfilled"
+    ],
+    "waiting_update": [
+      "updated",
+      "alreadyFulfilled"
+    ],
+    "storage": [
+      "observers",
+      "managedTokens"
+    ]
+  },
+  "calls": [
+    {
+      "call": "0x305e4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost22FulfillmentFailureModeOWOe"
+        ],
+        "offset": "0x2d00c"
+      }
+    },
+    {
+      "call": "0x305ec",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0x41f68",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_beginAccess",
+        "offset": "0x1311bc"
+      }
+    },
+    {
+      "call": "0x41f70",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_weakLoadStrong",
+        "offset": "0x13166c"
+      }
+    },
+    {
+      "call": "0x41f8c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_lock",
+        "offset": "0x131120"
+      }
+    },
+    {
+      "call": "0x41fac",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_unlock",
+        "offset": "0x13112c"
+      }
+    },
+    {
+      "call": "0x41fb4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0x428e8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost17OrderedDictionaryV11removeValue6forKeyq_Sgx_tFAA10IdentifierV_AA33ConcurrentInvalidationObserverBoxVTB5"
+        ],
+        "offset": "0xee75c"
+      }
+    },
+    {
+      "call": "0x428f4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSSIegho_SgWOe",
+          "_$ss5Error_pSgIegg_SgWOe",
+          "_$s22PreviewsFoundationHost33ConcurrentInvalidationObserverBoxVSgWOe",
+          "_$sIeg_SgWOe",
+          "_$sxRi_zRi0_zlyytIsegr_SgWOe",
+          "_$sxq_Ri_zRi0_zRi__Ri0__r0_lyytytIsegnr_SgWOe",
+          "_$s22PreviewsFoundationHost16QueryResolutionsV10Resolution33_69996F6F3B1F3565DF7359E82AA4697DLLVy_xGSgAA0D0RzlWOe"
+        ],
+        "offset": "0xdb40"
+      }
+    },
+    {
+      "call": "0xbeec0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC013updateWaitingF00G0AC0hF12UpdateResultOyxq__qd__Gqd__xzXE_tlFAhC0F0Oyxq__GzYbXEfU_AA23ObserverAndTokenStorageVyAA022ConcurrentInvalidationK3BoxVAA0oM8CallbackVG_AA0P5TraceVAA10IdentifierVTg5Tm",
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC013updateWaitingF00G0AC0hF12UpdateResultOyxq__qd__Gqd__xzXE_tlFAhC0F0Oyxq__GzYbXEfU_AA23ObserverAndTokenStorageVyAA022ConcurrentInvalidationK3BoxVAA0oM8CallbackVG_AA0P5TraceVytTg5Tm"
+        ],
+        "offset": "0xbeef0"
+      }
+    },
+    {
+      "call": "0xee790",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_isUniquelyReferenced_nonNull_native",
+        "offset": "0x131438"
+      }
+    },
+    {
+      "call": "0xee7b4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$ss17_NativeDictionaryV7_delete2atys10_HashTableV6BucketV_tF22PreviewsFoundationHost10IdentifierV_yyt_tcTg5",
+          "_$ss17_NativeDictionaryV7_delete2atys10_HashTableV6BucketV_tF22PreviewsFoundationHost10IdentifierV_AI33ConcurrentInvalidationObserverBoxVTg5"
+        ],
+        "offset": "0x18158"
+      }
+    },
+    {
+      "call": "0xee800",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSa6remove2atxSi_tF22PreviewsFoundationHost10IdentifierV_Tg5"
+        ],
+        "offset": "0xf82dc"
+      }
+    },
+    {
+      "call": "0xee828",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$ss17_NativeDictionaryV4copyyyF22PreviewsFoundationHost10IdentifierV_AD33ConcurrentInvalidationObserverBoxVTg5"
+        ],
+        "offset": "0x13130"
+      }
+    },
+    {
+      "call": "0xdb48",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    }
+  ],
+  "source_policy": {
+    "cancel_closure": "Concurrent makeCancelationToken closure configures removeObserver callback and updateWaitingState helper. Acquire strong owner from weak storage; missing owner returns. Live owner loads handle state/lock, locks, delegates waiting update, unlocks, releases strong owner, then destroys update outcome.",
+    "waiting_gate": "fulfilled state returns alreadyFulfilled outcome (tag 1) without invoking mutation callback. waiting state invokes callback with local ObserverAndTokenStorage, commits updated storage, keeps waiting discriminator 0, and returns updated outcome (tag 0). No transition to fulfilled is introduced by this route.",
+    "remove": "Callback uses captured Identifier, delegates OrderedDictionary.removeValue(forKey:), then destroys returned optional observer box before returning to locked caller. Dictionary miss returns nil; hit ensures unique dictionary storage, extracts/deletes value and removes matching Identifier from ordered keys. Inconsistent key storage traps. Dictionary copy/delete/array-remove internals are delegated, not fully qualified here.",
+    "context_release": "Present optional observer box cleanup tail-releases its context; absent returns. This release occurs inside removal callback before outer unlock. Actual zero-reference deinit/reentry or resource effects remain unobserved.",
+    "overfulfill_cleanup": "OverfulfillHandle cleanup destroys stored failure-mode value and releases closure context reference. This small helper has no direct failure-policy invocation; released context effects and failure-mode destructor internals remain opaque.",
+    "boundary": "This source route detaches an observer while waiting; it does not establish actual token cancellation delivery, handle invalidation, race safety or final resource settlement. Creation/registration and real repeated cancel controls remain open."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_token_cancel_or_reentry_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Exploratory optional cleanup and waiting-update ranges included adjacent functions; final ranges stop at appropriate boundaries.",
+    "Previous locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T13:54:34.620585+00:00",
+  "updated_at": "2026-11-02T14:04:47.416392+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover overfulfill cleanup and observer token removal; actual repeated invalidation and cancellation controls remain required.",
+  "current_focus": "Recover observer registration and cancellation-token ownership; validate actual cancellation, weak-owner loss and cleanup/reentry boundaries.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus invalidation ownership, unfulfilled diagnostics, callback lock boundaries and source one-shot dispatch suppression. Actual repeat/cancellation/failure effects and final settlement remain open.",
+        "verified_summary": "Scoped native controls plus invalidation ownership, one-shot dispatch and waiting-only observer detachment. Context release before unlock is source-qualified; actual cancellation, deinit/reentry and settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-invalidation-fulfill-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-observer-removal-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Observer-token detachment and cleanup ordering recovered",
+      "detail": "Source removes by identifier only while waiting. Removed observer context release precedes unlock; acquired owner/result cleanup follows. Fresh replay passes; actual cancel, last-owner deinit and reentry remain unobserved."
+    },
     {
       "date": "2026-11-02",
       "title": "One-shot invalidation storage transfer recovered",

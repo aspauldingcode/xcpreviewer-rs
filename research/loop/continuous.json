@@ -18753,5 +18753,19 @@
     "actual_repeated_invalidation_control": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify OverfulfillHandle cleanup/failure effects and observer token removal via ConcurrentInvalidationHandle.makeCancelationToken. Connect legal repeated invalidation paths with bounded actual native controls when permitted observation is available; no unchanged UI/Ghidra retry."
+  },
+  "canvas_observer_removal_checkpoint": {
+    "evidence": "research/evidence/canvas-observer-removal-2026-11-02",
+    "seal_sha256": "a8ac54bb349a83dd9f7370f122538e5c914d90482b0b56a2b7c3688d2c76d6f2",
+    "source_bytes_verified": 860,
+    "selected_calls": 15,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-observer-removal-replay-cw2a78lp",
+      "scope": "Fresh copied-source complete-findings replay; actual cancellation and reentry not observed."
+    },
+    "actual_token_cancel_or_reentry_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify observer registration and makeCancelationToken construction/lifetime, including weak capture and token cancel semantics. Establish bounded owned native controls if callable ABI is qualified; preserve blocked UI route without unchanged retry."
   }
 }
