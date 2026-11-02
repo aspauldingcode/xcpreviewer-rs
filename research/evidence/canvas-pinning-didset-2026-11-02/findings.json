@@ -1,0 +1,164 @@
+{
+  "image": {
+    "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+    "uuid": "afaf513ac1153755840e1d82b40e7d93",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "didset",
+      "start": "0x58e98",
+      "end_exclusive": "0x5930c",
+      "bytes": 1140,
+      "sha256": "4fbe664d3ecdcb083a9a1e1616519adb980a78202be79ed938e78da8de3b0b4e"
+    },
+    {
+      "name": "change",
+      "start": "0x5930c",
+      "end_exclusive": "0x593f8",
+      "bytes": 236,
+      "sha256": "31163edbfe4128c91fc7bef71f547b15b15e4d7b8b4aa16cdbf206868ea55b65"
+    },
+    {
+      "name": "event-tag",
+      "start": "0x625b4",
+      "end_exclusive": "0x625d0",
+      "bytes": 28,
+      "sha256": "00a4b43b377ac3c4938ff88acb4a53d25057422f462ea86ce71690a1fc33e10e"
+    }
+  ],
+  "source_bytes_verified": 1404,
+  "calls": [
+    {
+      "call": "0x58f68",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileVMa",
+        "offset": "0x7f828"
+      }
+    },
+    {
+      "call": "0x590a8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileV18previewDescriptionxvg",
+        "offset": "0x7f810"
+      }
+    },
+    {
+      "call": "0x5912c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileV18previewDescriptionxvg",
+        "offset": "0x7f810"
+      }
+    },
+    {
+      "call": "0x592b8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSQ2eeoiySbx_xtFZTj",
+        "offset": "0x80fbc"
+      }
+    },
+    {
+      "call": "0x59264",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC19pinnedFileDidChange33_68A43DA405F91BF7F8826F4A0B43D4A5LLyyF"
+        ],
+        "offset": "0x5930c"
+      }
+    },
+    {
+      "call": "0x59330",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonVMa",
+        "offset": "0x7fec4"
+      }
+    },
+    {
+      "call": "0x59370",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV15previewsChangedACvgZ",
+        "offset": "0x7fe88"
+      }
+    },
+    {
+      "call": "0x59378",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14PreviewServiceC14setNeedsUpdate3foryAA0cG6ReasonV_tF",
+        "offset": "0x7fab0"
+      }
+    },
+    {
+      "call": "0x593b4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost11EventStreamV4SinkC4sendyyxF",
+        "offset": "0x806ec"
+      }
+    },
+    {
+      "call": "0x593dc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC21previewablesDidChange33_68A43DA405F91BF7F8826F4A0B43D4A5LLyyF"
+        ],
+        "offset": "0x5cb00"
+      }
+    }
+  ],
+  "field_offsets": {
+    "vector_word_offset": 12,
+    "pinningState_index": 8,
+    "eventsSink_index": 12,
+    "previewService_index": 13,
+    "metadata_slots": [
+      "0xa0",
+      "0xc0",
+      "0xc8"
+    ]
+  },
+  "event_metadata": {
+    "field_descriptor": "0x8c6dc",
+    "payload_cases": 2,
+    "empty_cases": 3,
+    "cases": [
+      "documentWasRenamed",
+      "displayableContentChanged",
+      "noCanvasContentSymbolsPresent",
+      "canvasContentSymbolsPresent",
+      "pinnedFileDidChange"
+    ],
+    "emitted_empty_word": 2,
+    "emitted_tag_byte": 2,
+    "logical_event": "pinnedFileDidChange"
+  },
+  "source_policy": {
+    "comparison": "Project current and old pinningState.file to optional PreviewFile.previewDescription. Both absent returns; one absent calls pinnedFileDidChange; both present calls it only when generic Equatable equality is false.",
+    "sources_only": "Equal optional descriptions skip this callback; source-set changes alone are not tested by this didSet route.",
+    "downstream_order": [
+      "previewService.setNeedsUpdate(previewsChanged)",
+      "eventsSink.send(pinnedFileDidChange)",
+      "previewablesDidChange()"
+    ],
+    "scope": "Source submission/call order only. Event consumers, previewablesDidChange effects, actual rebuild/render/state completion and resource settlement unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_event_observed": false,
+    "previewables_didchange_effects_qualified": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Prior locked-screen/empty Accessibility observation not retried unchanged.",
+    "Source inspection and combined reader-writing escalations each hit permission-review timeout before execution; shorter separated execution used, without inferring unsafe-action rejection."
+  ]
+}

@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Trace pinning-state didSet and downstream resource/state effects. Native UI controls remain unavailable after locked-screen/empty Accessibility observation.",
+  "current_focus": "Trace previewablesDidChange and editor-event consumers after pinned-file change; qualify downstream state/resource update semantics.",
   "milestones": [
     {
       "number": 1,
@@ -95,10 +95,11 @@
       {
         "id": "interaction",
         "title": "Interaction & state",
-        "status": "open",
-        "evidence_level": "Unqualified at full scope",
-        "verified_summary": "Preparatory interactive examples exist; complete native state/input behavior remains unqualified.",
-        "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics."
+        "status": "in_progress",
+        "evidence_level": "Partial source; runtime state unqualified",
+        "verified_summary": "Pinned-file removal and optional-description change gates recovered in source, including editor-event/update ordering. General native input/state behavior remains unqualified.",
+        "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-pinning-didset-2026-11-02"
       },
       {
         "id": "resources",
@@ -120,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Pinning-state comparison and notification ordering recovered",
+      "detail": "Equal optional preview descriptions skip callback. Changes request previewsChanged, emit pinnedFileDidChange and call previewablesDidChange. Fresh static replay passes; downstream effects and native completion remain open."
+    },
     {
       "date": "2026-11-01",
       "title": "Removed-location scene propagation and pin cleanup recovered",

@@ -18571,5 +18571,20 @@
     "object_deinit_or_resource_settlement_observed": false,
     "controller_released_on_exit": true,
     "next_action": "Trace PreviewsScenes EditorScene.pinningState.didSet at 0x58e98 and downstream ownership/update effects. Native UI controls remain pending external availability change; no unchanged locked-screen/Accessibility retry."
+  },
+  "canvas_pinning_didset_checkpoint": {
+    "evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
+    "seal_sha256": "8d889d4cfe1e5cd962ce767ce47e5281c19afd2b13add8db7c734944698ecbe3",
+    "source_bytes_verified": 1404,
+    "selected_calls": 10,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-pinning-didset-replay-boszufh9",
+      "scope": "Fresh copied-source complete-findings comparison; no native event execution."
+    },
+    "native_event_execution_observed": false,
+    "downstream_previewables_effects_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace EditorScene.previewablesDidChange at 0x5cb00 and event consumer ownership/update routing. Resume native controls only after external UI availability changes; do not retry unchanged lock/Accessibility or Ghidra failures."
   }
 }
