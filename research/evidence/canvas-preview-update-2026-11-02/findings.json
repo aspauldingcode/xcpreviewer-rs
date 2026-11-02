@@ -1,0 +1,139 @@
+{
+  "images": {
+    "PreviewsScenes": {
+      "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+      "uuid": "afaf513ac1153755840e1d82b40e7d93",
+      "architecture": "arm64"
+    },
+    "PreviewsUI": {
+      "sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab",
+      "uuid": "0d87b0e2f4453035a9b6b1cf8230e015",
+      "architecture": "arm64"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsScenes",
+      "name": "update",
+      "start": "0x3f694",
+      "end_exclusive": "0x3fa5c",
+      "bytes": 968,
+      "sha256": "5da30434a34e101e185f1a3a3c5ec9137755959de23b5aa754d2234533812da6"
+    },
+    {
+      "image": "PreviewsUI",
+      "name": "instance-setter",
+      "start": "0x187a8",
+      "end_exclusive": "0x187b4",
+      "bytes": 12,
+      "sha256": "6bb19086fabb28d6c004a369540559dd6cd0f204191ed8306e0972cd164bef4d"
+    },
+    {
+      "image": "PreviewsUI",
+      "name": "value-assign",
+      "start": "0x19dd4",
+      "end_exclusive": "0x19e0c",
+      "bytes": 56,
+      "sha256": "f4ef7ee855f5472818106e7ea7ce16ba0cedd083607dd9312b6e79a3ae64c08b"
+    }
+  ],
+  "source_bytes_verified": 1036,
+  "calls": [
+    {
+      "call": "0x3f6c0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasE0VMa",
+        "offset": "0x7ef10"
+      }
+    },
+    {
+      "call": "0x3f780",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceVMa",
+        "offset": "0x7fc3c"
+      }
+    },
+    {
+      "call": "0x3f7d8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14DiscoveredItemOMa",
+        "offset": "0x7f93c"
+      }
+    },
+    {
+      "call": "0x3f848",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV4item0A8Pipeline14DiscoveredItemOvs",
+        "offset": "0x7efac"
+      }
+    },
+    {
+      "call": "0x3f8b0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV06canvasD0AE06CanvasD0OSgvg",
+        "offset": "0x7ef1c"
+      }
+    },
+    {
+      "call": "0x3f8b8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasD0OMa",
+        "offset": "0x7ece8"
+      }
+    },
+    {
+      "call": "0x3f974",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasE0V8instance0A8Pipeline0E8InstanceVvs",
+        "offset": "0x7eed4"
+      }
+    },
+    {
+      "call": "0x3f9c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV06canvasD0AE06CanvasD0OSgvs",
+        "offset": "0x7ef28"
+      }
+    },
+    {
+      "call": "0x3fa54",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss27_diagnoseUnexpectedEnumCase4types5NeverOxm_tlF",
+        "offset": "0x81610"
+      }
+    }
+  ],
+  "imports": {
+    "PreviewsScenes:0x95c98": "_$s16PreviewsPipeline14DiscoveredItemO7previewyAcA15PreviewInstanceVcACmFWC",
+    "PreviewsScenes:0x967d8": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasD0O7previewyAgE0fE0VcAGmFWC",
+    "PreviewsScenes:0x967e0": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasD0O8registryyAgE0F8RegistryVcAGmFWC",
+    "PreviewsUI:0xc1b88": "_$s16PreviewsPipeline15PreviewInstanceVMa"
+  },
+  "source_policy": {
+    "item_assignment": "Always assign incoming DiscoveredItem to Preview.item before testing its case.",
+    "non_preview_item": "Incoming item other than preview skips canvas-content synchronization after item assignment.",
+    "canvas_guard": "For preview item, read optional canvasContent; absent skips creation/update. Present registry content skips instance synchronization. Unexpected content enum case diagnoses/traps.",
+    "preview_content": "Copy existing CanvasPreview, assign new PreviewInstance, wrap the same preview content case as present optional and write canvasContent back. Other CanvasPreview fields are carried by the value copy; this does not establish full application/state preservation.",
+    "instance_setter": "Independently pinned PreviewsUI setter loads PreviewInstance metadata function and tails to shared helper. Helper obtains that metadata and tail-calls its value witness at offset 0x28 using destination self and incoming value. No explicit extra callback in these setter/helper fragments.",
+    "boundaries": "Item/canvasContent setter internals, value-witness resource release, notifications, completed render, session/state continuity and registry reconciliation remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_runtime_control": false,
+    "full_state_preservation_or_resource_settlement_observed": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Prior locked-screen/empty Accessibility and unresponsive Ghidra failures not retried unchanged."
+  ]
+}

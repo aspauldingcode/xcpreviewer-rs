@@ -1,0 +1,11 @@
+# Preview item assignment and existing canvas synchronization
+
+Pinned PreviewsScenes source qualifies Preview.update(withItem:), reached by the recovered provider transform. It assigns the incoming DiscoveredItem to Preview.item first. An incoming non-preview item skips canvas-content synchronization after that assignment. For an incoming preview instance, missing canvasContent skips creation/update, and existing registry canvas content skips instance synchronization. An unexpected canvas-content case reaches the native diagnostic/trap.
+
+When existing canvasContent is a preview, the function copies its CanvasPreview value, assigns the incoming PreviewInstance to CanvasPreview.instance, wraps that value back into the preview case as a present optional, and writes canvasContent. Other fields are carried by the value copy; this is not proof of complete application-state or session preservation. Native case identities come from imported case globals rather than numeric enum guesses.
+
+The independently pinned PreviewsUI CanvasPreview.instance setter loads the PreviewInstance metadata function and tails to a shared assignment helper. That helper invokes the metadata function and tail-calls its value witness at offset 0x28 with destination self and incoming value. These bounded setter/helper fragments contain no explicit extra callback. Value-witness resource effects and item/canvasContent setter internals remain outside this unit.
+
+source.py freshly compares 1,036 instruction bytes across three bounded fragments and validates nine selected calls, four enum-case/type GOT imports and branch/copy/wrapping/setter anchors. verify.py copies original readers into a fresh directory and compares complete findings. Raw Apple code remains temporary/local; published files contain original readers, hashes and sanitized findings only.
+
+No native event/private method invocation, GUI action, system-permission change, process signal, Rust/product implementation change or Rust test rerun occurred. REA aligned with no binary session open; prior locked-screen/empty Accessibility and unresponsive Ghidra listing failures were not retried unchanged. Notifications, actual rendering, state/session continuity, resource settlement and registry reconciliation remain unqualified. Both milestones and all nine full native acceptance areas remain open.

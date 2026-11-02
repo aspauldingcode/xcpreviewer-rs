@@ -18616,5 +18616,21 @@
     "preview_update_effects_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Trace Preview.update(withItem:) at 0x3f694 for state/configuration and resource effects, then registry reconciliation at 0x3eb94. Native controls remain required; no unchanged locked-screen/Accessibility/Ghidra retries."
+  },
+  "canvas_preview_update_checkpoint": {
+    "evidence": "research/evidence/canvas-preview-update-2026-11-02",
+    "seal_sha256": "eba1282401732b48df392c4d2596d710de29827afe2103c1dfee7f00f2082b81",
+    "source_bytes_verified": 1036,
+    "selected_calls": 9,
+    "case_and_type_imports": 4,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-preview-update-replay-4nayxmv8",
+      "scope": "Fresh copied-source complete-findings replay; no native event execution."
+    },
+    "native_runtime_control": false,
+    "full_state_or_resource_settlement_observed": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify registry reconciliation at PreviewsScenes 0x3eb94..0x3f4d4, including existing preview refresh/nil and value-exclusion routes. Outer Preview.item/canvasContent setters and resource effects remain gaps; no unchanged locked-screen/Accessibility/Ghidra retry."
   }
 }

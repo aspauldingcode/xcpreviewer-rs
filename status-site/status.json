@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover Preview.update(withItem:) state/resource effects and registry reconciliation after source-ID matching.",
+  "current_focus": "Recover registry reconciliation, preview refresh/removal branches and remaining state/resource ownership.",
   "milestones": [
     {
       "number": 1,
@@ -97,9 +97,9 @@
         "title": "Interaction & state",
         "status": "in_progress",
         "evidence_level": "Partial source; runtime state unqualified",
-        "verified_summary": "Source pin removal/change gates, editor-event ordering, pinned source-ID priority and collector publication recovered. Actual native input/state behavior and downstream reconciliation remain unqualified.",
+        "verified_summary": "Source pin/change gates, provider matching, collector publication and conditional canvas-instance synchronization recovered. Actual native state/input and rendering continuity remain unqualified.",
         "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-previewables-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-preview-update-2026-11-02"
       },
       {
         "id": "resources",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Preview item and canvas-instance synchronization recovered",
+      "detail": "Source assigns item first and updates only existing preview canvas content; missing/registry content skips instance synchronization. Cross-framework setter replay passes; actual state/render/resource continuity remains open."
+    },
     {
       "date": "2026-11-02",
       "title": "Provider identity matching and source refresh recovered",
