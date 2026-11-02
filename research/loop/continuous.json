@@ -18709,5 +18709,20 @@
     "actual_lifetime_or_cancellation_control": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify ExecutionPointStatus destruction and released state ownership. Correlate with actual native lifecycle/failure controls when permitted observation works; do not retry unchanged locked-screen/Accessibility/Ghidra failures."
+  },
+  "canvas_execution_status_checkpoint": {
+    "evidence": "research/evidence/canvas-execution-status-2026-11-02",
+    "seal_sha256": "bee4a4d6cfd907bf4e684c5c48cc7763a75fa2f3606bbadf5afd600775913b9a",
+    "source_bytes_verified": 1440,
+    "selected_calls": 7,
+    "logical_payload_dispatch_routes": 3,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-execution-status-replay-a0836cpe",
+      "scope": "Fresh copied-source complete-findings replay; actual lifetime and cancellation not observed."
+    },
+    "actual_lifetime_or_cancellation_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace ConcurrentInvalidationHandle state object destruction and explicit invalidate/observer operations, separating last-owner release from invalidation. Actual native controls and concrete generic layout validation remain required; no unchanged UI/Ghidra retry."
   }
 }

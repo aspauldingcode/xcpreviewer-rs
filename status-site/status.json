@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T13:27:53.363550+00:00",
+  "updated_at": "2026-11-02T13:33:36.990264+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover execution-status and invalidation-state ownership; actual cancellation and lifetime controls remain required.",
+  "current_focus": "Recover invalidation-state ownership and explicit invalidate/observer behavior; actual cancellation and lifetime controls remain required.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus source mode/state, execution-update, erased-point box and invalidation-handle release paths. Dynamic destructor effects and actual lifetime/cancellation/settlement remain open.",
+        "verified_summary": "Scoped native controls plus source mode/state, execution status/update, erased-point box and invalidation-handle cleanup. Dynamic destructor effects and actual lifetime/cancellation/settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-execution-ownership-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-execution-status-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Execution-status payload cleanup recovered",
+      "detail": "Source binds running to optional stale output, valid to an inline-cleaned update, and failed to optional stale output plus Error. Three logical dispatch routes and fresh replay pass; dynamic destruction and actual cancellation remain unproven."
+    },
     {
       "date": "2026-11-02",
       "title": "Execution update and invalidation-handle ownership recovered",

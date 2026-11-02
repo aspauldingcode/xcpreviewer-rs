@@ -1,0 +1,137 @@
+{
+  "image": {
+    "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+    "uuid": "c6ed2a5e6f2e3a41a1586d2f65e00a58",
+    "architecture": "arm64"
+  },
+  "range": {
+    "start": "0x293cb4",
+    "end_exclusive": "0x294254",
+    "bytes": 1440,
+    "sha256": "ea1fa5dba65c697fd6d503c43ba2c005114e1f76bd168ac5405bb4fd5c2327c5"
+  },
+  "source_bytes_verified": 1440,
+  "fields": [
+    "running",
+    "valid",
+    "failed"
+  ],
+  "payload_case_count": 3,
+  "empty_case_count": 0,
+  "type_references": [
+    {
+      "reference": "0x54ba18",
+      "contexts": [
+        "_$s16PreviewsPipeline14ExecutionPointMp"
+      ],
+      "literal_mangling": "6OutputQzSg05staleA0_t"
+    },
+    {
+      "reference": "0x54ba34",
+      "contexts": [
+        "_$s16PreviewsPipeline20ExecutionPointUpdateVMn",
+        "_$s16PreviewsPipeline14ExecutionPointMp"
+      ],
+      "literal_mangling": "y6OutputQzG6update_t"
+    },
+    {
+      "reference": "0x54ba54",
+      "contexts": [
+        "_$s16PreviewsPipeline14ExecutionPointMp",
+        "_$ss5ErrorMp"
+      ],
+      "literal_mangling": "6OutputQzSg05staleA0__p5errort"
+    }
+  ],
+  "dispatch": [
+    {
+      "tag": 0,
+      "case": "running",
+      "entry": "0x29416c"
+    },
+    {
+      "tag": 1,
+      "case": "valid",
+      "entry": "0x293f0c"
+    },
+    {
+      "tag": 2,
+      "case": "failed",
+      "entry": "0x2941f8"
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x293cf4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getAssociatedTypeWitness",
+        "offset": "0x520f18"
+      }
+    },
+    {
+      "call": "0x293d20",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost19SendableAnyHashableVMa",
+        "offset": "0x51edac"
+      }
+    },
+    {
+      "call": "0x293d68",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation3URLVMa",
+        "offset": "0x51bfec"
+      }
+    },
+    {
+      "call": "0x293e0c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost31CrashLogSymbolicationParametersVMa",
+        "offset": "0x51f154"
+      }
+    },
+    {
+      "call": "0x293e48",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s21PreviewsMessagingHost0C10UpdateSeedVMa",
+        "offset": "0x51d93c"
+      }
+    },
+    {
+      "call": "0x294168",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x5210d4"
+      }
+    },
+    {
+      "call": "0x294250",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_errorRelease",
+        "offset": "0x520ef4"
+      }
+    }
+  ],
+  "source_policy": {
+    "running": "Payload is optional associated ExecutionPoint.Output named staleOutput. Probe its optional enum tag via associated output value witness; absent returns, present tail-delegates output destruction.",
+    "valid": "Payload is ExecutionPointUpdate<ExecutionPoint.Output> named update. This witness inlines cleanup: associated output destroy, intermediate cleanup, final reference release. Intermediate field-to-operation mapping is not complete here; no extra call to the standalone update destroy function is inferred.",
+    "failed": "Payload has optional associated Output staleOutput plus Error. Destroy staleOutput only when present, then load aligned following error reference and tail-call swift_errorRelease.",
+    "boundary": "Associated output metadata comes from ExecutionPoint protocol and Output requirement descriptors. Generic enum representation decoder bytes are checked, but arbitrary malformed representations and runtime layout sizes are not exercised. Reference releases and dynamic witnesses do not prove cancellation or final resource settlement."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_lifetime_or_cancellation_control": false,
+    "full_canvas_parity": false
+  },
+  "failures": [
+    "Exploratory types.py shadowed Python standard-library types and failed import; renamed field_types.py before analysis.",
+    "Prior UI/Ghidra failures not retried unchanged."
+  ]
+}
