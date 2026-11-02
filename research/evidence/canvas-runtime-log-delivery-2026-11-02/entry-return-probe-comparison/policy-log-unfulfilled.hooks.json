@@ -1,0 +1,35 @@
+[
+  {
+    "type": "send",
+    "payload": {
+      "event": "hooks-ready",
+      "image_path": "/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
+    }
+  },
+  {
+    "type": "send",
+    "payload": {
+      "event": "native-log-enabled-result",
+      "caller_offset": "0x2bd4c",
+      "enabled": 1
+    }
+  },
+  {
+    "type": "send",
+    "payload": {
+      "event": "native-log-api-enter",
+      "id": 1,
+      "caller_offset": "0x2be2c",
+      "type": 16,
+      "thread": 259
+    }
+  },
+  {
+    "type": "send",
+    "payload": {
+      "event": "native-log-api-return",
+      "id": 1,
+      "caller_offset": "0x2be2c"
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{"event":"native-ready","pid":34288,"seq":1,"thread_id":259,"time_ns":50570132050875,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":50570136844666}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":50570136909791}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":50570137004875}
+{"event":"associated-type-qualified","seq":5,"size":16,"source":"pinned existing log field typeref","thread_id":259,"time_ns":50570137251041,"type":"(message: Swift.String)"}
+{"event":"handle-created","seq":6,"thread_id":259,"time_ns":50570137371375}
+{"event":"probe-created","fd":3,"name":"policy-probe","seq":7,"thread_id":259,"time_ns":50570137508208}
+{"event":"registered","has_token":true,"name":"policy-probe","seq":8,"thread_id":259,"time_ns":50570137645916}
+{"event":"policy-configured","fulfilled":true,"kind":"log","marker":1,"payload":0,"seq":9,"thread_id":259,"time_ns":50570137683625}
+{"event":"invalidate-begin","seq":10,"thread_id":259,"time_ns":50570137715875}
+{"event":"callback","name":"policy-probe","seq":11,"thread_id":259,"time_ns":50570137781958}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"policy-probe","seq":12,"thread_id":259,"time_ns":50570137807625}
+{"event":"invalidate-end","seq":13,"thread_id":259,"time_ns":50570137833333}
+{"event":"policy-ready-for-hooks","seq":14,"thread_id":259,"time_ns":50570137857583}
+{"event":"policy-release-begin","seq":15,"thread_id":259,"time_ns":50570422199708}
+{"context_released":true,"event":"policy-release-end","fd_closed":true,"seq":16,"thread_id":259,"time_ns":50570422356208}
+{"event":"cancel-begin","seq":17,"thread_id":259,"time_ns":50570422424833}
+{"event":"cancel-end","seq":18,"thread_id":259,"time_ns":50570422527541}
+{"event":"token-destroy-begin","seq":19,"thread_id":259,"time_ns":50570422565500}
+{"event":"token-destroy-end","seq":20,"thread_id":259,"time_ns":50570422612916}
+{"callbacks":["policy-probe"],"event":"pass","mode":"policy-log-fulfilled","seq":21,"thread_id":259,"time_ns":50570422643125}

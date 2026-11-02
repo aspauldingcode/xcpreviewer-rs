@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-failure-policy-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-log-delivery-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18962,5 +18962,26 @@
     "controller_released": true,
     "next_action": "Keep static expansion paused. Runtime-test remaining recovered behavior or qualify log-associated payload only if needed for an actual native control. Do not infer a logging bug from the unqualified SIGSEGV input, or assertion delivery from returning soft-assert owner release. Canvas rendering/state/resource contracts remain open.",
     "verified_at": "2026-11-02T22:12:56.553208+00:00"
+  },
+  "canvas_runtime_log_delivery_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-log-delivery-2026-11-02",
+    "seal_sha256": "ba190fa36e6a2a776778276d0022f0eb501a3dd9ac7604b9f9465b831bc5853a",
+    "qualified_runs": 2,
+    "owned_conditions": [
+      "unattached",
+      "gated-unattached",
+      "gated-attached"
+    ],
+    "native_return_and_context_fd_cleanup_observed": true,
+    "log_associated_type": "(message: Swift.String)",
+    "unattached_readable_log_records_observed": true,
+    "gated_unattached_readable_records_observed": true,
+    "attached_entry_probe_compose_failure_observed": true,
+    "earlier_entry_return_probe_comparison_preserved": true,
+    "observer_effect_mechanism_established": false,
+    "synthetic_trace_mutations_rejected": 6,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Prioritize remaining native Canvas update/state/resource runtime contracts; test-callback policy and heap-backed String transfer remain unqualified. Use unattached controls for logging delivery, and do not infer observer transparency from normal process exit. Do not retry unchanged native-window failures.",
+    "verified_at": "2026-11-02T22:31:52.009419+00:00"
   }
 }

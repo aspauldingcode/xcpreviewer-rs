@@ -1,0 +1,18 @@
+{"event":"native-ready","pid":34283,"seq":1,"thread_id":259,"time_ns":50569819741625,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":50569824830916}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":50569824898208}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":50569824984833}
+{"event":"associated-type-qualified","seq":5,"size":16,"source":"pinned existing log field typeref","thread_id":259,"time_ns":50569825218583,"type":"(message: Swift.String)"}
+{"event":"handle-created","seq":6,"thread_id":259,"time_ns":50569825279958}
+{"event":"probe-created","fd":3,"name":"policy-probe","seq":7,"thread_id":259,"time_ns":50569825346666}
+{"event":"registered","has_token":true,"name":"policy-probe","seq":8,"thread_id":259,"time_ns":50569825457958}
+{"event":"policy-configured","fulfilled":false,"kind":"log","marker":1,"payload":0,"seq":9,"thread_id":259,"time_ns":50569825490208}
+{"event":"policy-ready-for-hooks","seq":10,"thread_id":259,"time_ns":50569825524833}
+{"event":"policy-release-begin","seq":11,"thread_id":259,"time_ns":50570115352708}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"policy-probe","seq":12,"thread_id":259,"time_ns":50570115639208}
+{"context_released":true,"event":"policy-release-end","fd_closed":true,"seq":13,"thread_id":259,"time_ns":50570115715333}
+{"event":"cancel-begin","seq":14,"thread_id":259,"time_ns":50570115754791}
+{"event":"cancel-end","seq":15,"thread_id":259,"time_ns":50570115873375}
+{"event":"token-destroy-begin","seq":16,"thread_id":259,"time_ns":50570115903333}
+{"event":"token-destroy-end","seq":17,"thread_id":259,"time_ns":50570115941166}
+{"callbacks":[],"event":"pass","mode":"policy-log-unfulfilled","seq":18,"thread_id":259,"time_ns":50570115971708}

@@ -1,0 +1,118 @@
+{
+  "qualified_runs": {
+    "initial": {
+      "native": {
+        "policy-log-unfulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "native_logging_api_called": true
+        },
+        "policy-log-fulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "native_logging_api_called": false
+        },
+        "gated-policy-log-unfulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "frida_attached": false
+        },
+        "gated-policy-log-fulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "frida_attached": false
+        }
+      },
+      "store": {
+        "untraced": {
+          "readable_owned_record": true,
+          "compose_failure_record": false,
+          "pid": 34038
+        },
+        "gated-untraced": {
+          "readable_owned_record": true,
+          "compose_failure_record": false,
+          "pid": 34059
+        },
+        "traced": {
+          "readable_owned_record": false,
+          "compose_failure_record": true,
+          "pid": 34041
+        }
+      }
+    },
+    "reproduced": {
+      "native": {
+        "policy-log-unfulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "native_logging_api_called": true
+        },
+        "policy-log-fulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "native_logging_api_called": false
+        },
+        "gated-policy-log-unfulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "frida_attached": false
+        },
+        "gated-policy-log-fulfilled": {
+          "returned": true,
+          "owned_context_fd_cleaned": true,
+          "frida_attached": false
+        }
+      },
+      "store": {
+        "untraced": {
+          "readable_owned_record": true,
+          "compose_failure_record": false,
+          "pid": 34266
+        },
+        "gated-untraced": {
+          "readable_owned_record": true,
+          "compose_failure_record": false,
+          "pid": 34283
+        },
+        "traced": {
+          "readable_owned_record": false,
+          "compose_failure_record": true,
+          "pid": 34269
+        }
+      }
+    }
+  },
+  "synthetic_trace_mutations": [
+    {
+      "mutation": "wrong-type",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "logging-disabled",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-caller",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "unexpected-fulfilled-api",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-readable-record",
+      "rejected": true,
+      "diagnostic": "owned native log record not observed: untraced"
+    },
+    {
+      "mutation": "wrong-record-pid",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ]
+}

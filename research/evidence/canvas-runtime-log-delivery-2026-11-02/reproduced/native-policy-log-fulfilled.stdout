@@ -1,0 +1,20 @@
+{"event":"native-ready","pid":34267,"seq":1,"thread_id":259,"time_ns":50568197580875,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":50568202697250}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":50568202787375}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":50568202889375}
+{"event":"associated-type-qualified","seq":5,"size":16,"source":"pinned existing log field typeref","thread_id":259,"time_ns":50568203158208,"type":"(message: Swift.String)"}
+{"event":"handle-created","seq":6,"thread_id":259,"time_ns":50568203232291}
+{"event":"probe-created","fd":3,"name":"policy-probe","seq":7,"thread_id":259,"time_ns":50568203318041}
+{"event":"registered","has_token":true,"name":"policy-probe","seq":8,"thread_id":259,"time_ns":50568203597875}
+{"event":"policy-configured","fulfilled":true,"kind":"log","marker":1,"payload":0,"seq":9,"thread_id":259,"time_ns":50568203664833}
+{"event":"invalidate-begin","seq":10,"thread_id":259,"time_ns":50568203720750}
+{"event":"callback","name":"policy-probe","seq":11,"thread_id":259,"time_ns":50568203805583}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"policy-probe","seq":12,"thread_id":259,"time_ns":50568203841250}
+{"event":"invalidate-end","seq":13,"thread_id":259,"time_ns":50568203873000}
+{"event":"policy-release-begin","seq":14,"thread_id":259,"time_ns":50568203903375}
+{"context_released":true,"event":"policy-release-end","fd_closed":true,"seq":15,"thread_id":259,"time_ns":50568203933458}
+{"event":"cancel-begin","seq":16,"thread_id":259,"time_ns":50568203961458}
+{"event":"cancel-end","seq":17,"thread_id":259,"time_ns":50568204065125}
+{"event":"token-destroy-begin","seq":18,"thread_id":259,"time_ns":50568204110375}
+{"event":"token-destroy-end","seq":19,"thread_id":259,"time_ns":50568204223291}
+{"callbacks":["policy-probe"],"event":"pass","mode":"policy-log-fulfilled","seq":20,"thread_id":259,"time_ns":50568204250125}

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:12:56.553208+00:00",
+  "updated_at": "2026-11-02T22:31:52.009419+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: owner destruction under three recovered policy configurations reproduced. Fatal unfulfilled release traps; fulfilled controls return. Log attempt excluded.",
+  "current_focus": "Runtime validation: real log(String) input and readable unattached native log records reproduced. Attached API probes distort stored composition; remaining Canvas/state contracts stay open.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native log delivery and observer effects distinguished",
+      "detail": "Real Swift-string log inputs returned and produced readable native backend records without hooks. Gate-only controls also logged correctly. Attached probes observed the API call but stored compose failures. Earlier unqualified input remains excluded."
+    },
     {
       "date": "2026-11-02",
       "title": "Native owner-release policy outcomes reproduced",
@@ -327,9 +332,9 @@
   "runtime_validation": {
     "normal_native_passes": 11,
     "observed_negative_controls": 2,
-    "summary": "Observer suite: eleven controls reproduced previously. New: two runs of six owner-release policy controls; five returned with owned context/FD cleanup, fatal unfulfilled release trapped with explicit native diagnostic. Unqualified log attempt excluded and retained.",
+    "summary": "Qualified log input is a Swift message string. Two runs returned with owned cleanup and readable matching-PID records without attachment, including gated controls. Attached API probes observed the native call but stored compose failures; observer conditions are kept separate.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "Log-associated payload, logging/assertion delivery, native transport/render cleanup, true auto-resume/scene/state, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-failure-policy-2026-11-02"
+    "unknown": "Heap-backed log strings, test callback/soft-assert delivery, observer transparency, native render/transport cleanup, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-log-delivery-2026-11-02"
   }
 }
