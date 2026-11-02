@@ -1,0 +1,23 @@
+{"event":"native-ready","pid":41634,"seq":1,"thread_id":259,"time_ns":51525268880250,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":51525272246375}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":51525272292916}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":51525272356041}
+{"event":"probe-created","fd":3,"name":"action-context","seq":5,"thread_id":259,"time_ns":51525272427916}
+{"event":"probe-created","fd":4,"name":"observer-context","seq":6,"thread_id":259,"time_ns":51525272457750}
+{"event":"action-associated-type","seq":7,"size":16,"thread_id":259,"time_ns":51525272596375,"type":"(action: @Sendable () -> ())"}
+{"event":"registered","has_token":true,"name":"observer-context","seq":8,"thread_id":259,"time_ns":51525272702708}
+{"action_context_alive":true,"event":"action-caller-references-dropped","observer_context_alive":true,"seq":9,"thread_id":259,"time_ns":51525272725458}
+{"event":"invalidate-begin","seq":10,"thread_id":259,"time_ns":51525272746041}
+{"event":"callback","name":"observer-context","seq":11,"thread_id":259,"time_ns":51525272791666}
+{"close_result":0,"event":"probe-deinit","fd":4,"name":"observer-context","seq":12,"thread_id":259,"time_ns":51525272808833}
+{"event":"invalidate-end","seq":13,"thread_id":259,"time_ns":51525272827166}
+{"action_context_alive":true,"event":"action-after-fulfillment","observer_context_released":true,"seq":14,"thread_id":259,"time_ns":51525272842833}
+{"event":"action-owner-release-begin","seq":15,"thread_id":5635,"time_ns":51525272898666}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"action-context","seq":16,"thread_id":5635,"time_ns":51525272922416}
+{"event":"action-owner-release-end","seq":17,"thread_id":5635,"time_ns":51525272942041}
+{"action_context_released":true,"event":"action-cleanup-complete","fds_closed":true,"observer_context_released":true,"seq":18,"thread_id":259,"time_ns":51525272963375}
+{"event":"cancel-begin","seq":19,"thread_id":259,"time_ns":51525272983625}
+{"event":"cancel-end","seq":20,"thread_id":259,"time_ns":51525273027791}
+{"event":"token-destroy-begin","seq":21,"thread_id":259,"time_ns":51525273039916}
+{"event":"token-destroy-end","seq":22,"thread_id":259,"time_ns":51525273056000}
+{"callbacks":["observer-context"],"event":"pass","mode":"action-fulfilled-worker","seq":23,"thread_id":259,"time_ns":51525273068458}

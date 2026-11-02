@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-log-delivery-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-action-policy-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18983,5 +18983,21 @@
     "controller_released": true,
     "next_action": "Keep static expansion paused. Prioritize remaining native Canvas update/state/resource runtime contracts; test-callback policy and heap-backed String transfer remain unqualified. Use unattached controls for logging delivery, and do not infer observer transparency from normal process exit. Do not retry unchanged native-window failures.",
     "verified_at": "2026-11-02T22:31:52.009419+00:00"
+  },
+  "canvas_runtime_action_policy_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-action-policy-2026-11-02",
+    "seal_sha256": "35e148049129e07ba119d804d38d1b5903b90037769e968b38da46531c73fece",
+    "qualified_runs": 2,
+    "controls_per_run": 4,
+    "associated_type": "(action: @Sendable () -> ())",
+    "unfulfilled_action_synchronous_on_release_thread": true,
+    "fulfilled_action_skipped_capture_retained_until_owner_release": true,
+    "owned_context_fd_cleanup_verified": true,
+    "semantic_trace_mutations_rejected": 6,
+    "native_failures_or_timeouts": 0,
+    "user_xcode_accessed": false,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Prioritize remaining native Canvas update/render/state and resource contracts. Preserve the distinction between observer cleanup on fulfillment and retained failure-action captures until owner destruction; arbitrary capture/reentry/general concurrency remain unqualified. Do not retry unchanged inaccessible-window route.",
+    "verified_at": "2026-11-02T22:48:15.656853+00:00"
   }
 }

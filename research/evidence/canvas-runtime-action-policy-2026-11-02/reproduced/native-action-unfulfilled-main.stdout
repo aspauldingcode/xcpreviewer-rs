@@ -1,0 +1,20 @@
+{"event":"native-ready","pid":41790,"seq":1,"thread_id":259,"time_ns":51551281878958,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":51551286613416}
+{"event":"invalidate-begin","seq":3,"thread_id":259,"time_ns":51551286696791}
+{"event":"invalidate-end","seq":4,"thread_id":259,"time_ns":51551286885666}
+{"event":"probe-created","fd":3,"name":"action-context","seq":5,"thread_id":259,"time_ns":51551287023958}
+{"event":"probe-created","fd":4,"name":"observer-context","seq":6,"thread_id":259,"time_ns":51551287069916}
+{"event":"action-associated-type","seq":7,"size":16,"thread_id":259,"time_ns":51551287265333,"type":"(action: @Sendable () -> ())"}
+{"event":"registered","has_token":true,"name":"observer-context","seq":8,"thread_id":259,"time_ns":51551287499041}
+{"action_context_alive":true,"event":"action-caller-references-dropped","observer_context_alive":true,"seq":9,"thread_id":259,"time_ns":51551287530708}
+{"event":"action-owner-release-begin","seq":10,"thread_id":259,"time_ns":51551287559458}
+{"action_fd_open":true,"event":"failure-action","name":"action-context","observer_fd_open":true,"seq":11,"thread_id":259,"time_ns":51551287597916}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"action-context","seq":12,"thread_id":259,"time_ns":51551287631333}
+{"close_result":0,"event":"probe-deinit","fd":4,"name":"observer-context","seq":13,"thread_id":259,"time_ns":51551287661666}
+{"event":"action-owner-release-end","seq":14,"thread_id":259,"time_ns":51551287685041}
+{"action_context_released":true,"event":"action-cleanup-complete","fds_closed":true,"observer_context_released":true,"seq":15,"thread_id":259,"time_ns":51551287709541}
+{"event":"cancel-begin","seq":16,"thread_id":259,"time_ns":51551287733041}
+{"event":"cancel-end","seq":17,"thread_id":259,"time_ns":51551287813000}
+{"event":"token-destroy-begin","seq":18,"thread_id":259,"time_ns":51551287830750}
+{"event":"token-destroy-end","seq":19,"thread_id":259,"time_ns":51551287859750}
+{"callbacks":[],"event":"pass","mode":"action-unfulfilled-main","seq":20,"thread_id":259,"time_ns":51551287879375}

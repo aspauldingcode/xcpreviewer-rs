@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:31:52.009419+00:00",
+  "updated_at": "2026-11-02T22:48:15.656853+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: real log(String) input and readable unattached native log records reproduced. Attached API probes distort stored composition; remaining Canvas/state contracts stay open.",
+  "current_focus": "Runtime validation: failure-action delivery and capture lifetime reproduced on main/worker release. Fulfilled handles retain action captures until destruction.",
   "milestones": [
     {
       "number": 1,
@@ -105,10 +105,10 @@
         "id": "resources",
         "title": "Resource lifetime",
         "status": "in_progress",
-        "evidence_level": "Native observer lifetime, owner-release and short-string log controls; settlement open",
-        "verified_summary": "Observer and owner-release policy controls exercised. Short-string log input and readable unattached backend records now observed; attached logging probes distort composition. Heap-string ownership and transport/render settlement remain open.",
+        "evidence_level": "Native observer and failure-action lifetimes; full resource settlement open",
+        "verified_summary": "Unfulfilled release invoked captured failure action on releasing thread. Fulfillment cleared observer context but retained action context until owner destruction. Owned weak contexts/FDs checked; arbitrary captures and transport/render settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-log-delivery-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-action-policy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native failure-action callback and retained captures reproduced",
+      "detail": "Main and worker controls: unfulfilled owner release invoked action synchronously; fulfilled release skipped action yet retained capture until destruction. Observer/context and FD cleanup checked. No native crashes/timeouts."
+    },
     {
       "date": "2026-11-02",
       "title": "Native log delivery and observer effects distinguished",
@@ -332,9 +337,10 @@
   "runtime_validation": {
     "normal_native_passes": 11,
     "observed_negative_controls": 2,
-    "summary": "Qualified log input is a Swift message string. Two runs returned with owned cleanup and readable matching-PID records without attachment, including gated controls. Attached API probes observed the native call but stored compose failures; observer conditions are kept separate.",
+    "summary": "Earlier observer suite: eleven controls. New: two runs of four native failure-action controls. Unfulfilled release invoked action on releasing thread; fulfillment skipped action but retained its captured context until destruction. Owned weak contexts/FDs checked.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "Heap-backed log strings, test callback/soft-assert delivery, observer transparency, native render/transport cleanup, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-log-delivery-2026-11-02"
+    "unknown": "Arbitrary captures/reentry, soft-assert delegate delivery, observer transparency, full native render/transport cleanup, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-action-policy-2026-11-02",
+    "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

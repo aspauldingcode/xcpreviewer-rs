@@ -1,0 +1,18 @@
+{
+  "classification": "actual native failure-action and capture lifetime execution",
+  "modes": [
+    "action-unfulfilled-main",
+    "action-fulfilled-main",
+    "action-unfulfilled-worker",
+    "action-fulfilled-worker"
+  ],
+  "source_sha256": {
+    "native.swift": "3963d9c708dc27360bf684e14f12d69f68c74d144718433486475088efb70b8e",
+    "bridge.s": "67a24c5288664449e85087c42f646dc6046d6d242543c6e69ad5daa7bf63de14",
+    "bridge.h": "d47452abe2f16326d1b4a59f7e8f53154ed4f74e4d2d014b5b1d31fdb26cff1d",
+    "identity.c": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab",
+    "run-native.py": "336912528e6dcc538aa92b52b43abb5fddbbe546b8184cfc4e791583a2f3872b",
+    "verify.py": "e91ce8df06a7f62ffbe2be5db372f6996f507fcc80306fe7e8a64fa345a9a0b4"
+  },
+  "full_canvas_parity": false
+}

@@ -1,0 +1,96 @@
+{
+  "qualified_native_runs": {
+    "initial": {
+      "action-unfulfilled-main": {
+        "failure_action_calls": 1,
+        "observer_calls": 0,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": false,
+        "owned_cleanup_verified": true
+      },
+      "action-fulfilled-main": {
+        "failure_action_calls": 0,
+        "observer_calls": 1,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": false,
+        "owned_cleanup_verified": true
+      },
+      "action-unfulfilled-worker": {
+        "failure_action_calls": 1,
+        "observer_calls": 0,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": true,
+        "owned_cleanup_verified": true
+      },
+      "action-fulfilled-worker": {
+        "failure_action_calls": 0,
+        "observer_calls": 1,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": true,
+        "owned_cleanup_verified": true
+      }
+    },
+    "reproduced": {
+      "action-unfulfilled-main": {
+        "failure_action_calls": 1,
+        "observer_calls": 0,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": false,
+        "owned_cleanup_verified": true
+      },
+      "action-fulfilled-main": {
+        "failure_action_calls": 0,
+        "observer_calls": 1,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": false,
+        "owned_cleanup_verified": true
+      },
+      "action-unfulfilled-worker": {
+        "failure_action_calls": 1,
+        "observer_calls": 0,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": true,
+        "owned_cleanup_verified": true
+      },
+      "action-fulfilled-worker": {
+        "failure_action_calls": 0,
+        "observer_calls": 1,
+        "action_context_retained_until_owner_release": true,
+        "worker_release": true,
+        "owned_cleanup_verified": true
+      }
+    }
+  },
+  "semantic_trace_mutations": [
+    {
+      "mutation": "missing-action",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "action-after-fulfillment",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-thread",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "early-action-context-release",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "premature-observer-close",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "cleanup-incomplete",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ]
+}
