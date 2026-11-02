@@ -1,0 +1,289 @@
+{
+  "image": {
+    "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "handle-initializer",
+      "start": "0x41df0",
+      "end_exclusive": "0x41f10",
+      "bytes": 288,
+      "sha256": "1819eb42ed6f215ac7754a139bc488030f22126b275c1e1f5c10d1bb413729a7"
+    },
+    {
+      "name": "handle-deinit",
+      "start": "0x41fdc",
+      "end_exclusive": "0x4202c",
+      "bytes": 80,
+      "sha256": "402efdf668b5ea543047fd6328c6fc9c0ffbe936190c0c679a28cff6c5b479f1"
+    },
+    {
+      "name": "state-deinit",
+      "start": "0x2b980",
+      "end_exclusive": "0x2bc40",
+      "bytes": 704,
+      "sha256": "edb277692f74990cd97c9aa4c4837085f50a017ecbfe6fdf383b4b03015dfee4"
+    },
+    {
+      "name": "explicit-invalidate",
+      "start": "0xbf75c",
+      "end_exclusive": "0xbf9d0",
+      "bytes": 628,
+      "sha256": "8daee11ccc41b5f54cec98df8846b5fe4f09b882678766261e9de07f5e0e8587"
+    },
+    {
+      "name": "invalidate-witness",
+      "start": "0xbfcc8",
+      "end_exclusive": "0xbfd10",
+      "bytes": 72,
+      "sha256": "021d7c81749911e54556b171b21958e523d5d882fae7d4faddc1824b4581a59b"
+    }
+  ],
+  "source_bytes_verified": 1772,
+  "metadata": {
+    "handle": [
+      "name",
+      "state"
+    ],
+    "state_owner": [
+      "initializationCallsite",
+      "initializationInfo",
+      "failureMode",
+      "thing",
+      "action",
+      "state"
+    ],
+    "state_cases": [
+      "waiting",
+      "fulfilled"
+    ],
+    "storage": [
+      "observers",
+      "managedTokens"
+    ]
+  },
+  "field_offsets": [
+    {
+      "address": "0x1340e0",
+      "offset": "0x50",
+      "symbols": [
+        "_$s22PreviewsFoundationHost16FulfillOnceStateC18initializationInfoSSyYbcSgvpWvd"
+      ]
+    },
+    {
+      "address": "0x1340e8",
+      "offset": "0x60",
+      "symbols": [
+        "_$s22PreviewsFoundationHost16FulfillOnceStateC11failureModeAA018FulfillmentFailureH0OvpWvd"
+      ]
+    },
+    {
+      "address": "0x134100",
+      "offset": "0x98",
+      "symbols": [
+        "_$s22PreviewsFoundationHost16FulfillOnceStateC5state2os21OSAllocatedUnfairLockVyAC0F0Oyxq__GGvpWvd"
+      ]
+    },
+    {
+      "address": "0x1353c8",
+      "offset": "0x20",
+      "symbols": [
+        "_$s22PreviewsFoundationHost28ConcurrentInvalidationHandleC5stateAA16FulfillOnceStateCyAA23ObserverAndTokenStorageVyAA0deK3BoxVAA0dM8CallbackVGAA0E5TraceVGvpWvd"
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x41e2c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost17OrderedDictionaryV17dictionaryLiteralACyxq_Gx_q_td_tcfCAA10IdentifierV_AA33ConcurrentInvalidationObserverBoxVTt1g5"
+        ],
+        "offset": "0x40838"
+      }
+    },
+    {
+      "call": "0x41ff0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0x2ba5c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost26SynchronousAccessProvidingPAAs8Sendable5ValueRpzrlE4peek8callsiteAfA8CallsiteV_tF"
+        ],
+        "offset": "0x39658"
+      }
+    },
+    {
+      "call": "0x2ba68",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0x1312dc"
+      }
+    },
+    {
+      "call": "0x2bb5c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC11Unfulfilled33_0A060B02C41CE7982A36ACFBD7B9052ELLVMa"
+        ],
+        "offset": "0x2d030"
+      }
+    },
+    {
+      "call": "0x2bb84",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_allocError",
+        "offset": "0x13115c"
+      }
+    },
+    {
+      "call": "0x2bbd8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost22FulfillmentFailureModeO4fail33_0A060B02C41CE7982A36ACFBD7B9052ELL8callsite5erroryAA8CallsiteV_s5Error_ptF"
+        ],
+        "offset": "0x2bc40"
+      }
+    },
+    {
+      "call": "0x2bbec",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_errorRelease",
+        "offset": "0x131294"
+      }
+    },
+    {
+      "call": "0x2bc18",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0xbfcfc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost26InvalidationHandleProtocolPAAE11_invalidate8callsite5traceyAA8CallsiteV_AA0D5TraceVtFAA010ConcurrentdE0C_TB5"
+        ],
+        "offset": "0xbf75c"
+      }
+    },
+    {
+      "call": "0xbf79c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_retain",
+        "offset": "0x1314b0"
+      }
+    },
+    {
+      "call": "0xbf7a4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_lock",
+        "offset": "0x131120"
+      }
+    },
+    {
+      "call": "0xbf7d4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC7fulfill8callsite013makeFulfilledF009ifAlreadyJ0AC18FulfillmentOutcomeOyxq__GAA8CallsiteV_q_xXEyq__AA17OverfulfillHandleVtKXEtKFAjC0F0Oyxq__GzYbKXEfU_AA23ObserverAndTokenStorageVyAA022ConcurrentInvalidationR3BoxVAA0vT8CallbackVG_AA0W5TraceVTg5"
+        ],
+        "offset": "0x30be0"
+      }
+    },
+    {
+      "call": "0xbf7dc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_unlock",
+        "offset": "0x13112c"
+      }
+    },
+    {
+      "call": "0xbf7e4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0xbf858",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_retain",
+        "offset": "0x1314b0"
+      }
+    },
+    {
+      "call": "0xbf868",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0xbf93c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_lock",
+        "offset": "0x131120"
+      }
+    },
+    {
+      "call": "0xbf968",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC7fulfill8callsite013makeFulfilledF009ifAlreadyJ0AC18FulfillmentOutcomeOyxq__GAA8CallsiteV_q_xXEyq__AA17OverfulfillHandleVtKXEtKFAjC0F0Oyxq__GzYbKXEfU_yt_ytTg5"
+        ],
+        "offset": "0x30a1c"
+      }
+    },
+    {
+      "call": "0xbf970",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_unlock",
+        "offset": "0x13112c"
+      }
+    }
+  ],
+  "source_policy": {
+    "ownership": "Concurrent handle state field at +0x20 is FulfillOnceState<ObserverAndTokenStorage<ConcurrentInvalidationObserverBox,InvalidationTokenCallback>,InvalidationTrace>. Initializer stores state reference; handle deinit releases it. State owner contains OSAllocatedUnfairLock-backed state at +0x98. Reference release does not prove state deinit runs.",
+    "state_deinit": "Peek lock-backed state and inspect waiting/fulfilled tag. fulfilled (tag 1) destroys snapshot and skips unfulfilled failure construction. waiting destroys waiting snapshot, evaluates optional initializationInfo closure when present, builds Unfulfilled error and calls configured FulfillmentFailureMode.fail, then releases own fields. Failure policy internals and concrete configured mode are not qualified here; no direct observer invalidation call is established here, while initializationInfo effects remain opaque.",
+    "explicit_invalidate": "Protocol witness forwards to concurrent invalidate specialization. Retain state, lock, call specialized fulfill closure, unlock, release state, then inspect extracted observer/token storage. Nonempty first collection dispatches observer closure pairs after unlock. Second managed-token loop takes each token state lock, calls another fulfill specialization, unlocks, and skips its callback when returned discriminator equals 1; otherwise invokes callback. Internal fulfill transition semantics and callback contents remain unqualified.",
+    "boundaries": "Source distinguishes explicit invalidation dispatch from last-owner unfulfilled diagnostics. No actual callback, zero reference count, cancellation timing, deadlock/reentry behavior or final resource settlement observed."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_lifetime_or_cancellation_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Exploratory disassembly ranges included adjacent function bodies. Final qualification ranges stop at deinit and specialization boundaries; adjacent failure-policy implementation is excluded.",
+    "Previous locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}

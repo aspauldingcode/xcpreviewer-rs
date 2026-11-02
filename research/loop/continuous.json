@@ -18724,5 +18724,19 @@
     "actual_lifetime_or_cancellation_control": false,
     "controller_released_on_exit": true,
     "next_action": "Trace ConcurrentInvalidationHandle state object destruction and explicit invalidate/observer operations, separating last-owner release from invalidation. Actual native controls and concrete generic layout validation remain required; no unchanged UI/Ghidra retry."
+  },
+  "canvas_invalidation_state_checkpoint": {
+    "evidence": "research/evidence/canvas-invalidation-state-2026-11-02",
+    "seal_sha256": "ebc66778c5502e53a4b9e105630befffa017fb7d34e0c87bf14a78574d92e8d8",
+    "source_bytes_verified": 1772,
+    "selected_calls": 20,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-invalidation-state-replay-ga5akq39",
+      "scope": "Fresh copied-source complete-findings replay; actual lifetime and cancellation not observed."
+    },
+    "actual_lifetime_or_cancellation_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify specialized FulfillOnceState.fulfill transition at FoundationHost 0x30be0 and observer/token extraction callback at 0xc12c0; separate repeated invalidation from initial transition and token removal. Actual native controls remain required; no unchanged UI/Ghidra retry."
   }
 }
