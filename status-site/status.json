@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover preview-state/static/variant destruction and delegated execution-point lifetime effects.",
+  "current_focus": "Recover execution-point/viewable witness ownership and remaining dynamic cleanup; actual deinit/cancellation controls remain required.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus source release order and registry/preview-mode destruction dependencies. Dynamic state/witness effects and actual object/session/resource settlement remain open.",
+        "verified_summary": "Scoped native controls plus source release order, mode/state destruction dispatch and variant-array reference release. Dynamic witness contents and actual object/session/resource settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-content-destroy-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-state-destroy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Preview-state cleanup and variant-array release recovered",
+      "detail": "Source verifies all live/static state cleanup dispatches, failure-reason release, viewable payload cleanup and final groups-array reference release. Fresh replay passes; dynamic witness contents and actual resource settlement remain open."
+    },
     {
       "date": "2026-11-02",
       "title": "Canvas payload and mode destruction dependencies recovered",

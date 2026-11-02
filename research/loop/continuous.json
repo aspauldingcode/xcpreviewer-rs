@@ -18679,5 +18679,21 @@
     "full_payload_destruction_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify CanvasContent destroy continuation at PreviewsUI 0x23ef0..0x24680: livePreview/staticPreview State and variantMatrix ownership. Trace delegated ExecutionPointStatus<AnyExecutionPoint> lifetime effects separately; no unchanged native UI/Ghidra retries."
+  },
+  "canvas_state_destroy_checkpoint": {
+    "evidence": "research/evidence/canvas-state-destroy-2026-11-02",
+    "seal_sha256": "df05493cda46a76f3a39abac58f62b49b1a7c5db9bc3693ecb25f2434fe86ae9",
+    "source_bytes_verified": 1936,
+    "selected_calls": 19,
+    "valid_state_dispatch_routes": 10,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-state-destroy-replay-40vn388u",
+      "scope": "Fresh copied-source complete-findings replay; no actual lifetime/cancellation control."
+    },
+    "actual_lifetime_or_cancellation_control": false,
+    "dynamic_witness_contents_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace delegated ExecutionPointUpdate<PreviewViewable existential> and ExecutionPointStatus<AnyExecutionPoint> ownership/witness effects in pinned PreviewsPipeline, plus opaque viewable and variant-array element cleanup boundaries. Actual native controls remain required; no unchanged locked-screen/Accessibility/Ghidra retry."
   }
 }

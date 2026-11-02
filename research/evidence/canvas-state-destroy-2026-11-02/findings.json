@@ -1,0 +1,415 @@
+{
+  "image": {
+    "sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab",
+    "uuid": "0d87b0e2f4453035a9b6b1cf8230e015",
+    "architecture": "arm64"
+  },
+  "range": {
+    "start": "0x23ef0",
+    "end_exclusive": "0x24680",
+    "bytes": 1936,
+    "sha256": "12e50b5951ee05e61e76252ec6d6e01264608bc46ab2327dc526c2ba9c0f8fdd"
+  },
+  "source_bytes_verified": 1936,
+  "metadata": {
+    "state": [
+      "disabled",
+      "enabledExpectingUpdate",
+      "updating",
+      "succeeded",
+      "failed"
+    ],
+    "pending": [
+      "capabilities",
+      "configuration"
+    ],
+    "updating": [
+      "groupSeed",
+      "capabilities",
+      "configuration"
+    ],
+    "viewable": [
+      "status",
+      "capabilities",
+      "configuration"
+    ],
+    "viewable_status": [
+      "valid",
+      "stale"
+    ],
+    "failed_reason": [
+      "failed",
+      "canceled"
+    ],
+    "canvas_preview": [
+      "instance",
+      "location",
+      "capabilities",
+      "canvasMode",
+      "livePreview",
+      "staticPreview",
+      "variantMatrix"
+    ],
+    "variant_matrix": [
+      "groups"
+    ]
+  },
+  "type_references": [
+    {
+      "reference": "0xad810",
+      "contexts": [
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO07PendingF0VMn",
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableVMn"
+      ],
+      "literal_mangling": "5state_Sg8previoust"
+    },
+    {
+      "reference": "0xad820",
+      "contexts": [
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO08UpdatingF0VMn",
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableVMn"
+      ],
+      "literal_mangling": "5state_Sg8previoust"
+    },
+    {
+      "reference": "0xad830",
+      "contexts": [
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO12FailedReasonOMn",
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO08UpdatingF0VMn",
+        "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableVMn"
+      ],
+      "literal_mangling": "6reason_6updateSg8previoust"
+    },
+    {
+      "reference": "0xaeb50",
+      "contexts": [
+        "_$s16PreviewsPipeline20ExecutionPointUpdateVMn",
+        "_$s16PreviewsPipeline15PreviewViewableMp"
+      ],
+      "literal_mangling": "y_pG"
+    }
+  ],
+  "variant_groups_type_symbol": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasE0V13VariantMatrixV6groupsSayAG0G5GroupVGvg",
+  "dispatch": [
+    {
+      "field": "live",
+      "state": "disabled",
+      "entry": "0x24038",
+      "visited": [
+        "0x23f08",
+        "0x23f0c",
+        "0x2402c"
+      ]
+    },
+    {
+      "field": "live",
+      "state": "enabledExpectingUpdate",
+      "entry": "0x24038",
+      "visited": [
+        "0x23f08",
+        "0x23f0c",
+        "0x2402c",
+        "0x24030",
+        "0x24034"
+      ]
+    },
+    {
+      "field": "live",
+      "state": "updating",
+      "entry": "0x240b4",
+      "visited": [
+        "0x23f08",
+        "0x23f0c",
+        "0x23f10",
+        "0x23f14"
+      ]
+    },
+    {
+      "field": "live",
+      "state": "succeeded",
+      "entry": "0x24190",
+      "visited": [
+        "0x23f08",
+        "0x23f0c",
+        "0x23f10",
+        "0x23f14",
+        "0x23f18",
+        "0x23f1c"
+      ]
+    },
+    {
+      "field": "live",
+      "state": "failed",
+      "entry": "0x23f28",
+      "visited": [
+        "0x23f08",
+        "0x23f0c",
+        "0x23f10",
+        "0x23f14",
+        "0x23f18",
+        "0x23f1c",
+        "0x23f20",
+        "0x23f24"
+      ]
+    },
+    {
+      "field": "static",
+      "state": "disabled",
+      "entry": "0x243e8",
+      "visited": [
+        "0x242c8",
+        "0x242cc",
+        "0x243dc"
+      ]
+    },
+    {
+      "field": "static",
+      "state": "enabledExpectingUpdate",
+      "entry": "0x243e8",
+      "visited": [
+        "0x242c8",
+        "0x242cc",
+        "0x243dc",
+        "0x243e0",
+        "0x243e4"
+      ]
+    },
+    {
+      "field": "static",
+      "state": "updating",
+      "entry": "0x24464",
+      "visited": [
+        "0x242c8",
+        "0x242cc",
+        "0x242d0",
+        "0x242d4"
+      ]
+    },
+    {
+      "field": "static",
+      "state": "succeeded",
+      "entry": "0x24540",
+      "visited": [
+        "0x242c8",
+        "0x242cc",
+        "0x242d0",
+        "0x242d4",
+        "0x242d8",
+        "0x242dc"
+      ]
+    },
+    {
+      "field": "static",
+      "state": "failed",
+      "entry": "0x242e8",
+      "visited": [
+        "0x242c8",
+        "0x242cc",
+        "0x242d0",
+        "0x242d4",
+        "0x242d8",
+        "0x242dc",
+        "0x242e0",
+        "0x242e4"
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x23ef4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateOMa"
+        ],
+        "offset": "0x60968"
+      }
+    },
+    {
+      "call": "0x23f04",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x23f30",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_errorRelease",
+        "offset": "0xad2c0"
+      }
+    },
+    {
+      "call": "0x24060",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO07PendingF0VMa"
+        ],
+        "offset": "0x60990"
+      }
+    },
+    {
+      "call": "0x240b8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO08UpdatingF0VMa"
+        ],
+        "offset": "0x6097c"
+      }
+    },
+    {
+      "call": "0x24144",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableVMa"
+        ],
+        "offset": "0x60954"
+      }
+    },
+    {
+      "call": "0x24178",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x24188",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_destroy_boxed_opaque_existential_0Tm",
+          "___swift_destroy_boxed_opaque_existential_1"
+        ],
+        "offset": "0x3ab0"
+      }
+    },
+    {
+      "call": "0x241b0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_destroy_boxed_opaque_existential_0Tm",
+          "___swift_destroy_boxed_opaque_existential_1"
+        ],
+        "offset": "0x3ab0"
+      }
+    },
+    {
+      "call": "0x242c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x242f0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_errorRelease",
+        "offset": "0xad2c0"
+      }
+    },
+    {
+      "call": "0x24410",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO07PendingF0VMa"
+        ],
+        "offset": "0x60990"
+      }
+    },
+    {
+      "call": "0x24468",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO08UpdatingF0VMa"
+        ],
+        "offset": "0x6097c"
+      }
+    },
+    {
+      "call": "0x24544",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableV6StatusOMa"
+        ],
+        "offset": "0x60940"
+      }
+    },
+    {
+      "call": "0x24550",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x24560",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_destroy_boxed_opaque_existential_0Tm",
+          "___swift_destroy_boxed_opaque_existential_1"
+        ],
+        "offset": "0x3ab0"
+      }
+    },
+    {
+      "call": "0x245d0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV5StateO8ViewableVMa"
+        ],
+        "offset": "0x60954"
+      }
+    },
+    {
+      "call": "0x245f0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline20PreviewConfigurationVMa",
+        "offset": "0xac00c"
+      }
+    },
+    {
+      "call": "0x2467c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0xad248"
+      }
+    }
+  ],
+  "source_policy": {
+    "state_routes": "Both livePreview and staticPreview state dispatch map disabled/enabledExpectingUpdate to pending cleanup, updating to updating cleanup, succeeded to Viewable cleanup, failed to reason/update/previous cleanup.",
+    "pending_updating": "Destroy capabilities/configuration only when their optional payloads are present, then clean previous Viewable only when present. Pending/Updating concrete tuple references and fields are independently bound.",
+    "failed": "Pass failure-reason reference representation to swift_errorRelease, clean updating fields and optional previous Viewable. FailedReason also has canceled empty case; no actual error presence or runtime cancellation inferred.",
+    "viewable": "valid status delegates to ExecutionPointUpdate<PreviewViewable existential> witness; stale status destroys its opaque existential container. Viewable capabilities/configuration cleanup follows. Contained values and callback/resource effects remain opaque.",
+    "variant_matrix": "After both state cleanups, load variantMatrix groups reference and tail-call swift_bridgeObjectRelease. No per-element destruction or final deallocation observed by this source-only unit."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_lifetime_or_cancellation_control": false,
+    "dynamic_witness_contents_or_full_canvas_parity": false
+  },
+  "failures": [
+    "Initial exploratory symbolic-reference reader assumed every GOT slot was imported and hit an indirect-local sentinel. Corrected resolver validates chained-fixup format 6 and walks the relevant page chain before resolving local nominal descriptors.",
+    "One exploratory follow-up command had unmatched bracket syntax and failed before executing; no inference from failure.",
+    "First verifier reused the load-command size variable for chained-segment structure size and failed a bounds read. Separate command-size variable fixes the reader; failed source retained locally.",
+    "Prior UI/Ghidra failures not retried unchanged."
+  ]
+}
