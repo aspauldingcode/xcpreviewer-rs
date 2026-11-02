@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover build-start classification and build-stop behavior, then correlate native build/file-event timing and refresh state.",
+  "current_focus": "Recover build-stop consumer behavior, then correlate actual native build/file-event timing and refresh/session state.",
   "milestones": [
     {
       "number": 1,
@@ -26,7 +26,7 @@
   ],
   "recovery": {
     "metric": "Accepted recovery areas",
-    "formula": "100 \u00d7 accepted areas / 9 required areas",
+    "formula": "100 × accepted areas / 9 required areas",
     "accepted_status": "accepted",
     "version": 1,
     "scope": "Complete native behavior across the declared version/project/target matrix. This is a closure metric, not an estimate of all code or behavior discovered.",
@@ -70,9 +70,9 @@
         "title": "Build & refresh",
         "status": "in_progress",
         "evidence_level": "Partial source + owned workflows",
-        "verified_summary": "File exclusions, thunkable membership, cache reuse, coalescing and workspace-event routes recovered in source. Owned watcher/follow prototypes verified.",
+        "verified_summary": "Source recovered file exclusions, thunkable membership, cache/coalescing, workspace events, timestamp suppression and native build notification classification. Actual correlated native state/timing remains open.",
         "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-build-time-gate-2026-11-01"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-build-listener-2026-11-01"
       },
       {
         "id": "transport",
@@ -121,6 +121,11 @@
   },
   "recent": [
     {
+      "date": "2026-11-01",
+      "title": "Native build notification classification recovered",
+      "detail": "Start flag traced to isPreviewsBuild (buildCommand == 8); stop flag is result == 1 without an established enum name. Fresh static replay passes; native event timing remains open."
+    },
+    {
       "date": "2026-11-02",
       "title": "Build timestamp and file-event time gate recovered",
       "detail": "Static source qualifies a two-second suppression comparison after the build-start timestamp. Exact boundary and missing-timestamp paths checked; actual timing and payload flag meaning remain unobserved."
@@ -143,7 +148,7 @@
     {
       "date": "2026-11-02",
       "title": "Builder producer and reuse chain recovered",
-      "detail": "Selection \u2192 cached buildables \u2192 dependency request connected in source; runtime execution remains unqualified."
+      "detail": "Selection → cached buildables → dependency request connected in source; runtime execution remains unqualified."
     }
   ],
   "targets": [

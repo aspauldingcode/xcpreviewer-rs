@@ -1,0 +1,241 @@
+{
+  "images": {
+    "PreviewsXcode": {
+      "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+      "uuid": "25c99c664185307188e31ab474573a10",
+      "architecture": "arm64"
+    },
+    "PreviewsIDEAPI": {
+      "sha256": "d3e0ad14a4ea159fde12482d92fb7b7d3f86e4df1578fcef76961a294fbe71f0",
+      "uuid": "b8c195f9db4837999653d7aa8bcb986e",
+      "architecture": "arm64"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsXcode",
+      "name": "registrations",
+      "start": "0x16c734",
+      "end_exclusive": "0x16c8ac",
+      "bytes": 376,
+      "sha256": "79aa4ffbf920be587b60aad13a67a6119c22c0084f2edb388046c57ac1def150"
+    },
+    {
+      "image": "PreviewsXcode",
+      "name": "start-callback",
+      "start": "0x16ed0c",
+      "end_exclusive": "0x16ef1c",
+      "bytes": 528,
+      "sha256": "c12e90f06a3e34c3248a35c8a32587c5cec9aecac761f71f165bf08e19770b06"
+    },
+    {
+      "image": "PreviewsXcode",
+      "name": "stop-callback",
+      "start": "0x16ef1c",
+      "end_exclusive": "0x16f130",
+      "bytes": 532,
+      "sha256": "bf75b8e3af5991a9359e09c0e3e1aae6bc5a4f99b551a6dc8dae0de961fad200"
+    },
+    {
+      "image": "PreviewsXcode",
+      "name": "callback-forwarders",
+      "start": "0x16f424",
+      "end_exclusive": "0x16f434",
+      "bytes": 16,
+      "sha256": "f17731726044a0a523fda53c84c23d195fb0e2d889c40ce19daa698ccd3e8f11"
+    },
+    {
+      "image": "PreviewsXcode",
+      "name": "subscriber-forwarder",
+      "start": "0x16f5a0",
+      "end_exclusive": "0x16f5a4",
+      "bytes": 4,
+      "sha256": "0c21a75383c5c84661cb0ba1fdd2686b70d7cdb23e017e9ecb2d33e495993b15"
+    },
+    {
+      "image": "PreviewsIDEAPI",
+      "name": "preview-build-classifier",
+      "start": "0x8fb0",
+      "end_exclusive": "0x8fd0",
+      "bytes": 32,
+      "sha256": "b1b98604e83d2b6355a949d163910fdca38955bf03adda70707fb1b4a4d06a41"
+    }
+  ],
+  "source_bytes_verified": 1488,
+  "notification_imports": {
+    "0x330760": "_IDEBuildOperationWillStartNotification",
+    "0x330758": "_IDEBuildOperationDidStopNotification"
+  },
+  "calls": [
+    {
+      "call": "0x16c7b4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$dvt_addObserverForName:object:queue:usingBlock:"
+        ],
+        "offset": "0x2acd80"
+      }
+    },
+    {
+      "call": "0x16c870",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$dvt_addObserverForName:object:queue:usingBlock:"
+        ],
+        "offset": "0x2acd80"
+      }
+    },
+    {
+      "call": "0x16ed78",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation12NotificationV6objectypSgvg",
+        "offset": "0x2a2160"
+      }
+    },
+    {
+      "call": "0x16ef88",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation12NotificationV6objectypSgvg",
+        "offset": "0x2a2160"
+      }
+    },
+    {
+      "call": "0x16edb8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_dynamicCast",
+        "offset": "0x2ab910"
+      }
+    },
+    {
+      "call": "0x16efc8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_dynamicCast",
+        "offset": "0x2ab910"
+      }
+    },
+    {
+      "call": "0x16edc8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$executionEnvironment"
+        ],
+        "offset": "0x2acfe0"
+      }
+    },
+    {
+      "call": "0x16efd8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$executionEnvironment"
+        ],
+        "offset": "0x2acfe0"
+      }
+    },
+    {
+      "call": "0x16edd8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$workspace"
+        ],
+        "offset": "0x2af900"
+      }
+    },
+    {
+      "call": "0x16efe8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$workspace"
+        ],
+        "offset": "0x2af900"
+      }
+    },
+    {
+      "call": "0x16ee38",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSo8NSObjectC10ObjectiveCE2eeoiySbAB_ABtFZ",
+        "offset": "0x2aad70"
+      }
+    },
+    {
+      "call": "0x16f048",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSo8NSObjectC10ObjectiveCE2eeoiySbAB_ABtFZ",
+        "offset": "0x2aad70"
+      }
+    },
+    {
+      "call": "0x16ee74",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSo17IDEBuildOperationC14PreviewsIDEAPIE02isC5BuildSbvg",
+        "offset": "0x2aac20"
+      }
+    },
+    {
+      "call": "0x16f084",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$result"
+        ],
+        "offset": "0x2ae5a0"
+      }
+    },
+    {
+      "call": "0x16eecc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost20SubscriberCollectionV9notifyAll7closureyyxXE_tF",
+        "offset": "0x2a8634"
+      }
+    },
+    {
+      "call": "0x16f0e0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost20SubscriberCollectionV9notifyAll7closureyyxXE_tF",
+        "offset": "0x2a8634"
+      }
+    }
+  ],
+  "classifier_call": {
+    "kind": "defined_symbol",
+    "names": [
+      "_objc_msgSend$buildCommand"
+    ],
+    "offset": "0x10100"
+  },
+  "source_policy": {
+    "registration": "Default notification center; object and queue nil; separate buildStartedToken/buildCompletedToken stores. Forwarders bind start/stop callbacks.",
+    "guard": "Notification.object conditional cast to IDEBuildOperation; operation.executionEnvironment.workspace compared with listener workspace using imported NSObject equality. Both absent passes; one absent or unequal rejects.",
+    "start": "isPreviewsBuild imported getter returns buildCommand == 8. Low bit stored as payload with tag 3 and sent through SubscriberCollection.notifyAll.",
+    "stop": "operation.result == 1 stored as payload with tag 4 and sent through the same subscriber forwarding entry. The semantic result enum name is not established.",
+    "prior_handler_correlation": "Previously recovered event metadata names tags 3/4 buildSystemBuildStarted/buildSystemBuildStopped. Prior build-time-gate source assigns timestamp for both start flag values; preview-build true exits after timestamp, false invalidates builder/coalescer and optionally requests workspaceChanged then pauses userInitiatedBuild."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_event_delivery_observed": false,
+    "result_enum_semantics_known": false,
+    "build_stop_consumer_qualified": false,
+    "complete_refresh_behavior": false,
+    "full_canvas_parity": false
+  },
+  "failures": [
+    "Initial metadata query had no candidates due to narrow symbol spelling; no absence inference.",
+    "Ambient sandbox denied opening controller lock; authorized escalated locked route succeeded.",
+    "First verifier assumed Objective-C selector stubs were import-table entries; actual defined selector-stub symbol binding used instead."
+  ]
+}
