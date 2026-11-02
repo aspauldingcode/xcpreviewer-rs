@@ -1,0 +1,167 @@
+{
+  "captures": [
+    {
+      "source": "failures/identity-api/events.jsonl",
+      "rows": [
+        {
+          "stage": "local-device",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 235638875
+        },
+        {
+          "stage": "local-device",
+          "status": "complete",
+          "time_ns": 341889958
+        },
+        {
+          "stage": "process-identity",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 342307208
+        },
+        {
+          "status": "failed",
+          "error_type": "AttributeError",
+          "error": "'int' object has no attribute 'lower'",
+          "time_ns": 342814000
+        },
+        {
+          "status": "finished-no-target-termination",
+          "time_ns": 343199791
+        }
+      ]
+    },
+    {
+      "source": "events.jsonl",
+      "rows": [
+        {
+          "stage": "local-device",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 235638875
+        },
+        {
+          "stage": "local-device",
+          "status": "complete",
+          "time_ns": 341889958
+        },
+        {
+          "stage": "process-identity",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 342307208
+        },
+        {
+          "status": "failed",
+          "error_type": "AttributeError",
+          "error": "'int' object has no attribute 'lower'",
+          "time_ns": 342814000
+        },
+        {
+          "status": "finished-no-target-termination",
+          "time_ns": 343199791
+        },
+        {
+          "stage": "local-device",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 129027875
+        },
+        {
+          "stage": "local-device",
+          "status": "complete",
+          "time_ns": 189632875
+        },
+        {
+          "stage": "process-identity",
+          "status": "begin",
+          "deadline_seconds": 3,
+          "time_ns": 189880208
+        },
+        {
+          "stage": "process-identity",
+          "status": "complete",
+          "time_ns": 414803041
+        },
+        {
+          "stage": "process-identity",
+          "pid": 5841,
+          "name": "Xcode",
+          "time_ns": 415026833
+        },
+        {
+          "stage": "attach",
+          "status": "begin",
+          "deadline_seconds": 8,
+          "time_ns": 415135375
+        },
+        {
+          "stage": "attach",
+          "status": "complete",
+          "time_ns": 2900523625
+        },
+        {
+          "stage": "load-hooks",
+          "status": "begin",
+          "deadline_seconds": 5,
+          "time_ns": 2901848000
+        },
+        {
+          "stage": "script",
+          "message": {
+            "type": "send",
+            "payload": {
+              "event": "image-identity",
+              "uuid": "25c99c664185307188e31ab474573a10",
+              "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode"
+            }
+          },
+          "time_ns": 2903138791
+        },
+        {
+          "stage": "script",
+          "message": {
+            "type": "send",
+            "payload": {
+              "event": "hooks-ready"
+            }
+          },
+          "time_ns": 2904288958
+        },
+        {
+          "stage": "load-hooks",
+          "status": "complete",
+          "time_ns": 2904452750
+        },
+        {
+          "stage": "script",
+          "message": {
+            "type": "send",
+            "payload": {
+              "event": "build-start-listener",
+              "thread": 259
+            }
+          },
+          "time_ns": 122466974666
+        },
+        {
+          "stage": "script",
+          "message": {
+            "type": "send",
+            "payload": {
+              "event": "workspace-event-handler",
+              "thread": 259
+            }
+          },
+          "time_ns": 122467783041
+        },
+        {
+          "status": "finished-no-target-termination",
+          "time_ns": 122909956375
+        }
+      ]
+    }
+  ],
+  "classification": "harness identity API failure and incomplete capture; not native implementation failures"
+}

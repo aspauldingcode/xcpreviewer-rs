@@ -1,0 +1,49 @@
+{"stage": "device", "status": "begin", "deadline_seconds": 3, "time_ns": 321170791, "phase": "setup"}
+{"stage": "device", "status": "complete", "time_ns": 530947125, "phase": "setup"}
+{"stage": "identity", "status": "begin", "deadline_seconds": 3, "time_ns": 531934458, "phase": "setup"}
+{"stage": "identity", "status": "complete", "time_ns": 1221259375, "phase": "setup"}
+{"stage": "attach", "status": "begin", "deadline_seconds": 8, "time_ns": 1221735041, "phase": "setup"}
+{"stage": "attach", "status": "complete", "time_ns": 6531980375, "phase": "setup"}
+{"stage": "load-hooks", "status": "begin", "deadline_seconds": 5, "time_ns": 6536746041, "phase": "setup"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "25c99c664185307188e31ab474573a10", "api_uuid": "b8c195f9db4837999653d7aa8bcb986e", "agent_phase": "setup"}}, "time_ns": 6545283791, "phase": "setup"}
+{"stage": "load-hooks", "status": "complete", "time_ns": 6545719000, "phase": "setup"}
+{"stage": "phase-success", "status": "begin", "deadline_seconds": 2, "time_ns": 6546118333, "phase": "success"}
+{"stage": "phase-success", "status": "complete", "time_ns": 6547734250, "phase": "success"}
+{"stage": "build-request", "status": "begin", "workspace": "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/PreviewLab.xcodeproj", "time_ns": 6548737791, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-start-listener", "thread": 259, "agent_phase": "success"}}, "time_ns": 6922142916, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "isPreviewsBuild", "thread": 259, "value": 0, "agent_phase": "success"}}, "time_ns": 6922893916, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "success"}}, "time_ns": 6923079750, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-stop-listener", "thread": 259, "agent_phase": "success"}}, "time_ns": 7278529125, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-result-read", "thread": 259, "value": 1, "object": "0xb4a694600", "agent_phase": "success"}}, "time_ns": 7278978166, "phase": "success"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "success"}}, "time_ns": 7279166041, "phase": "success"}
+{"stage": "build-result", "code": 0, "stdout": "true, succeeded\n", "stderr": "2026-11-02 09:45:26.171 osascript[94932:1485615] ApplePersistence=NO\n", "timeout": false, "time_ns": 7364802041, "phase": "success"}
+{"stage": "source-error-introduced", "sha256": "d12b6d12e602b02e05d326c0ffd5d9173162783dfa046f87d6e1de71c738631c", "time_ns": 7769349541, "phase": "success"}
+{"stage": "phase-failure", "status": "begin", "deadline_seconds": 2, "time_ns": 7769835583, "phase": "failure"}
+{"stage": "phase-failure", "status": "complete", "time_ns": 7771395833, "phase": "failure"}
+{"stage": "build-request", "status": "begin", "workspace": "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/PreviewLab.xcodeproj", "time_ns": 7772075416, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-start-listener", "thread": 259, "agent_phase": "failure"}}, "time_ns": 8104427750, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "isPreviewsBuild", "thread": 259, "value": 0, "agent_phase": "failure"}}, "time_ns": 8105798000, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "failure"}}, "time_ns": 8106310500, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "failure"}}, "time_ns": 9989366500, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-stop-listener", "thread": 259, "agent_phase": "failure"}}, "time_ns": 10522598500, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-result-read", "thread": 259, "value": 2, "object": "0xb4a693900", "agent_phase": "failure"}}, "time_ns": 10524016125, "phase": "failure"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "failure"}}, "time_ns": 10526414291, "phase": "failure"}
+{"stage": "build-result", "code": 0, "stdout": "true, failed\n", "stderr": "2026-11-02 09:45:27.391 osascript[94960:1485780] ApplePersistence=NO\n", "timeout": false, "time_ns": 10749594333, "phase": "failure"}
+{"stage": "source-restored", "sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 11155878125, "phase": "failure"}
+{"stage": "phase-recovery", "status": "begin", "deadline_seconds": 2, "time_ns": 11156239333, "phase": "recovery"}
+{"stage": "phase-recovery", "status": "complete", "time_ns": 11158723125, "phase": "recovery"}
+{"stage": "build-request", "status": "begin", "workspace": "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/PreviewLab.xcodeproj", "time_ns": 11160155083, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-start-listener", "thread": 259, "agent_phase": "recovery"}}, "time_ns": 11568784291, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "isPreviewsBuild", "thread": 259, "value": 0, "agent_phase": "recovery"}}, "time_ns": 11569669625, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "recovery"}}, "time_ns": 11569927916, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "recovery"}}, "time_ns": 11965140541, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-stop-listener", "thread": 259, "agent_phase": "recovery"}}, "time_ns": 15929610500, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-result-read", "thread": 259, "value": 1, "object": "0xb4a691e00", "agent_phase": "recovery"}}, "time_ns": 15930609500, "phase": "recovery"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "agent_phase": "recovery"}}, "time_ns": 15939895541, "phase": "recovery"}
+{"stage": "build-result", "code": 0, "stdout": "true, succeeded\n", "stderr": "2026-11-02 09:45:30.800 osascript[94983:1485980] ApplePersistence=NO\n", "timeout": false, "time_ns": 16037058500, "phase": "recovery"}
+{"status": "all-build-actions-complete", "time_ns": 16442383625, "phase": "recovery"}
+{"stage": "unload", "status": "begin", "deadline_seconds": 3, "time_ns": 16443070875, "phase": "recovery"}
+{"stage": "unload", "status": "complete", "time_ns": 16447520541, "phase": "recovery"}
+{"stage": "detach", "status": "begin", "deadline_seconds": 3, "time_ns": 16449396791, "phase": "recovery"}
+{"stage": "detach", "status": "complete", "time_ns": 16452159000, "phase": "recovery"}
+{"status": "detached-no-target-termination", "source_restored": true, "time_ns": 16456586166, "phase": "recovery"}

@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-validation-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-build-notifications-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18837,5 +18837,32 @@
     "inflight_cancel_is_not_drain_observed": true,
     "controller_released": true,
     "next_action": "Keep static expansion paused. Improve permitted build-notification tracing or test native preview interactive state across updates. Do not equate sampled race controls with general concurrency or parity acceptance."
+  },
+  "canvas_runtime_build_notifications_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-build-notifications-2026-11-02",
+    "seal_sha256": "9b17caa95a367dafe97b2e2f7506515d24cd4f647f5b5a4deb19303e020f409b",
+    "actual_build_runs": 2,
+    "actual_completed_builds": 6,
+    "statuses_each_run": [
+      "succeeded",
+      "failed",
+      "succeeded"
+    ],
+    "result_reads_each_run": [
+      1,
+      2,
+      1
+    ],
+    "is_previews_build_each_run": [
+      false,
+      false,
+      false
+    ],
+    "agent_phase_marked_reproduction": true,
+    "recorded_trace_mutations_rejected": 4,
+    "controller_released": true,
+    "source_restored_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
+    "next_action": "Keep static expansion paused. Exercise existing private refresh gates with real file/build timing and state controls. Preview-build true branch, subscriber payloads and rendering/resource completion remain unknown.",
+    "verified_at": "2026-11-02T17:47:22.267680+00:00"
   }
 }
