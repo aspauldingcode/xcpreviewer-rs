@@ -18632,5 +18632,20 @@
     "full_state_or_resource_settlement_observed": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify registry reconciliation at PreviewsScenes 0x3eb94..0x3f4d4, including existing preview refresh/nil and value-exclusion routes. Outer Preview.item/canvasContent setters and resource effects remain gaps; no unchanged locked-screen/Accessibility/Ghidra retry."
+  },
+  "canvas_registry_reconcile_checkpoint": {
+    "evidence": "research/evidence/canvas-registry-reconcile-2026-11-02",
+    "seal_sha256": "6bef90ff925ea206b91b6bc9e21dc9cbc2337860421db9b535a2d1178da51633",
+    "source_bytes_verified": 2368,
+    "selected_calls": 14,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-registry-reconcile-replay-ehmkvdre",
+      "scope": "Fresh copied-source complete-findings replay; no native event execution."
+    },
+    "native_runtime_control": false,
+    "resource_settlement_or_full_canvas_parity_observed": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace PreviewsUI Registry.preview setter at 0x8b490..0x8b4c0 plus outer Preview.item/canvasContent setters for actual assignment side effects. Existing native UI/module access limitations remain scoped; avoid unchanged retries."
   }
 }

@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover registry reconciliation, preview refresh/removal branches and remaining state/resource ownership.",
+  "current_focus": "Recover registry-preview and outer canvas item/content setter effects and remaining ownership/resource boundaries.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native resource controls plus source pin cleanup, provider ID matching and output exclusion. Actual object/session reuse, row teardown and resource settlement remain open.",
+        "verified_summary": "Scoped native resource controls plus source pin cleanup, provider/registry matching and preview retention/exclusion branches. Actual object/session reuse and resource settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-provider-reconcile-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-registry-reconcile-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Registry identity matching and preview retention recovered",
+      "detail": "Source updates matched definitions and retains present previews even when registryInstance is absent; missing preview stays missing. Fresh replay passes; runtime identity and resource settlement remain unverified."
+    },
     {
       "date": "2026-11-02",
       "title": "Preview item and canvas-instance synchronization recovered",

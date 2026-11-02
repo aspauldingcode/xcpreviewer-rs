@@ -1,0 +1,155 @@
+{
+  "image": {
+    "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+    "uuid": "afaf513ac1153755840e1d82b40e7d93",
+    "architecture": "arm64"
+  },
+  "range": {
+    "start": "0x3eb94",
+    "end_exclusive": "0x3f4d4",
+    "bytes": 2368,
+    "sha256": "960bef74ab7b07eb61b72ef97e9820bacb1cc5cf36a79e0d9fd578a6d6314d8a"
+  },
+  "source_bytes_verified": 2368,
+  "calls": [
+    {
+      "call": "0x3efbc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s13PreviewsModel18RegistryDefinitionV2id0A13MessagingHost0C2IDVvg",
+        "offset": "0x7f5a0"
+      }
+    },
+    {
+      "call": "0x3efe8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost13IdentifiedSetVyxSg2IDQzcig",
+        "offset": "0x80848"
+      }
+    },
+    {
+      "call": "0x3f05c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8RegistryV10definition8isPinnedAE0A5Model0E10DefinitionV_SbtcfC",
+        "offset": "0x7f1a4"
+      }
+    },
+    {
+      "call": "0x3f094",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8RegistryV10definition0A5Model0E10DefinitionVvs",
+        "offset": "0x7f198"
+      }
+    },
+    {
+      "call": "0x3f0a0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8RegistryV8isPinnedSbvs",
+        "offset": "0x7f1e0"
+      }
+    },
+    {
+      "call": "0x3f0ac",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8RegistryV7previewAC7PreviewVSgvg",
+        "offset": "0x7f1c8"
+      }
+    },
+    {
+      "call": "0x3f138",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV4item0A8Pipeline14DiscoveredItemOvg",
+        "offset": "0x7efa0"
+      }
+    },
+    {
+      "call": "0x3f1c0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceV08registryD0AA08RegistrycD0VSgvg",
+        "offset": "0x7fbf4"
+      }
+    },
+    {
+      "call": "0x3f27c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV0A6ScenesE6update33_43ACF5493FEFE32A9C4B3DADA98FE11CLL8withItemy0A8Pipeline010DiscoveredP0O_tF"
+        ],
+        "offset": "0x3f694"
+      }
+    },
+    {
+      "call": "0x3f2e4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline23RegistryPreviewInstanceV10definition0A5Model0C10DefinitionVvs",
+        "offset": "0x8017c"
+      }
+    },
+    {
+      "call": "0x3f2f8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceV08registryC0yAcA08RegistrycD0VFZ",
+        "offset": "0x7fbe8"
+      }
+    },
+    {
+      "call": "0x3f32c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV0A6ScenesE6update33_43ACF5493FEFE32A9C4B3DADA98FE11CLL8withItemy0A8Pipeline010DiscoveredP0O_tF"
+        ],
+        "offset": "0x3f694"
+      }
+    },
+    {
+      "call": "0x3f3c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8RegistryV7previewAC7PreviewVSgvs",
+        "offset": "0x7f1d4"
+      }
+    },
+    {
+      "call": "0x3f4cc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss27_diagnoseUnexpectedEnumCase4types5NeverOxm_tlF",
+        "offset": "0x81610"
+      }
+    }
+  ],
+  "enum_case_imports": {
+    "0x95c98": "_$s16PreviewsPipeline14DiscoveredItemO7previewyAcA15PreviewInstanceVcACmFWC",
+    "0x95ca0": "_$s16PreviewsPipeline14DiscoveredItemO8registryyAC0A5Model18RegistryDefinitionVcACmFWC"
+  },
+  "source_policy": {
+    "matching": "Iterate incoming RegistryDefinition values in order; use definition.id to look up existing Registry value in captured IdentifiedSet. Miss constructs Registry(definition:isPinned:); hit assigns incoming definition and pin low bit. Constructor/setter internals unqualified.",
+    "missing_preview": "On a hit, existing preview none reaches Registry.preview setter with none; no preview creation in this branch.",
+    "preview_item": "For present preview whose item is DiscoveredItem.preview, obtain registryInstance. If present, replace its definition, wrap PreviewInstance.registry and DiscoveredItem.preview and call Preview.update(withItem:). If registryInstance is absent, skip item update while retaining present preview value.",
+    "registry_item": "Present preview whose item is DiscoveredItem.registry receives incoming definition wrapped as registry item through Preview.update(withItem:). Unknown item case diagnoses/traps.",
+    "retention": "All normal existing-present-preview routes wrap a present preview and assign it back; absence of registryInstance does not select the nil-preview route. This is source value retention, not runtime object/session/state preservation.",
+    "output": "Append one registry per incoming definition in input order. Empty input returns empty array. Old IDs not selected by input are omitted without an explicit teardown claim.",
+    "boundaries": "Registry/preview setter effects, duplicate IDs, actual runtime reuse, rows removed, callbacks cancelled, rendered output and OS/transport resources settled remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_runtime_control": false,
+    "resource_settlement_or_full_canvas_parity_observed": false
+  },
+  "limitations": [
+    "Prior locked-screen/empty Accessibility and Ghidra failures not retried unchanged.",
+    "PreviewsUI/PreviewsPipeline framework Versions/A/Modules directories absent; bounded filename inventory found no matching module/interface/modulemap path in Xcode Contents. No import compilation or global module-availability conclusion inferred."
+  ]
+}
