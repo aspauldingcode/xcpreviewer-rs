@@ -18586,5 +18586,20 @@
     "downstream_previewables_effects_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Trace EditorScene.previewablesDidChange at 0x5cb00 and event consumer ownership/update routing. Resume native controls only after external UI availability changes; do not retry unchanged lock/Accessibility or Ghidra failures."
+  },
+  "canvas_previewables_checkpoint": {
+    "evidence": "research/evidence/canvas-previewables-2026-11-02",
+    "seal_sha256": "f4a533b8a34247e9bc08ca56843dba3ff71a62ab9c2b3dc2d52b32481f6aa400",
+    "source_bytes_verified": 2216,
+    "selected_calls": 34,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-previewables-replay-uai2x9pb",
+      "scope": "Fresh copied-source complete-findings replay; no native event execution."
+    },
+    "native_event_execution_observed": false,
+    "reconciliation_or_resource_settlement_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace PreviewsScenes collector updateProviders helper 0x3e4e0 and updateRegistries helper 0x3eb94 for identity/reuse/removal ownership. Event consumers and native controls remain required; do not retry unchanged locked-screen/Accessibility/Ghidra failures."
   }
 }

@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Trace previewablesDidChange and editor-event consumers after pinned-file change; qualify downstream state/resource update semantics.",
+  "current_focus": "Recover provider/registry reconciliation, retained identity and removal ownership after collector publication.",
   "milestones": [
     {
       "number": 1,
@@ -97,9 +97,9 @@
         "title": "Interaction & state",
         "status": "in_progress",
         "evidence_level": "Partial source; runtime state unqualified",
-        "verified_summary": "Pinned-file removal and optional-description change gates recovered in source, including editor-event/update ordering. General native input/state behavior remains unqualified.",
+        "verified_summary": "Source pin removal/change gates, editor-event ordering, pinned source-ID priority and collector publication recovered. Actual native input/state behavior and downstream reconciliation remain unqualified.",
         "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-pinning-didset-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-previewables-2026-11-02"
       },
       {
         "id": "resources",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Previewables priority and collector publication recovered",
+      "detail": "Pinned source ID is submitted first. Collector assembles pinned/open provider and registry lists, applies visibility/source ordering, then publishes observable content. Fresh source replay passes; row reconciliation and resource cleanup remain open."
+    },
     {
       "date": "2026-11-02",
       "title": "Pinning-state comparison and notification ordering recovered",

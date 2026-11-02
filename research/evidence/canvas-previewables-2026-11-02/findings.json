@@ -1,0 +1,371 @@
+{
+  "image": {
+    "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+    "uuid": "afaf513ac1153755840e1d82b40e7d93",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "editor",
+      "start": "0x5cb00",
+      "end_exclusive": "0x5ce90",
+      "bytes": 912,
+      "sha256": "ea456630868cf47aa7a398419c2f2bd44b679cb8880ee0dc78e436c9a01eb046"
+    },
+    {
+      "name": "collector",
+      "start": "0x29d34",
+      "end_exclusive": "0x2a1d4",
+      "bytes": 1184,
+      "sha256": "cade4f4fb9e6812c8f555d52aaef56308ae609e2399044e7efc5d1cef6ec869d"
+    },
+    {
+      "name": "projection-forwarder",
+      "start": "0x63434",
+      "end_exclusive": "0x63438",
+      "bytes": 4,
+      "sha256": "c7258dcebf4068ba632add97fe6758cd68e86d4879e96b7cb46cbb8828a2ebcd"
+    },
+    {
+      "name": "projection",
+      "start": "0x63398",
+      "end_exclusive": "0x633a0",
+      "bytes": 8,
+      "sha256": "0d0b666441b30b5e15f631af218b6f350dba302ca04a709ba5e281c083f711a3"
+    },
+    {
+      "name": "adapter",
+      "start": "0x62adc",
+      "end_exclusive": "0x62af0",
+      "bytes": 20,
+      "sha256": "dbba88922d9fa25848230562c15e3e39121edf5a5943e29cc064bfc975fcc1e8"
+    },
+    {
+      "name": "adapter-merged",
+      "start": "0x633a0",
+      "end_exclusive": "0x633f8",
+      "bytes": 88,
+      "sha256": "b0fadc296b675de90a2d106d6524743f0dc7445492fd607810c7d0a8381c1f78"
+    }
+  ],
+  "source_bytes_verified": 2216,
+  "calls": [
+    {
+      "call": "0x5cc40",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC16currentDocuments33_68A43DA405F91BF7F8826F4A0B43D4A5LLSayAA8Document_p8LocationQzAHRS_XPGvg"
+        ],
+        "offset": "0x594e4"
+      }
+    },
+    {
+      "call": "0x5cd1c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSTsE10compactMapySayqd__Gqd__Sg7ElementQzKXEKlF",
+        "offset": "0x810dc"
+      }
+    },
+    {
+      "call": "0x5cd44",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC17pinnedPreviewFilexSgvg"
+        ],
+        "offset": "0x59c6c"
+      }
+    },
+    {
+      "call": "0x5cd8c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline22PreviewFileDescriptionP16sourceIdentifier0A5Model06SourceG0VvgTj",
+        "offset": "0x800a4"
+      }
+    },
+    {
+      "call": "0x5ce20",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$ss20_ArrayBufferProtocolPsE15replaceSubrange_4with10elementsOfySnySiG_Siqd__ntSlRd__7ElementQyd__AGRtzlFs01_aB0Vy13PreviewsModel16SourceIdentifierVG_s010CollectionH3OneVyANGTg5"
+        ],
+        "offset": "0x60860"
+      }
+    },
+    {
+      "call": "0x5ce44",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC12previewables0A8Pipeline12PreviewablesVvg"
+        ],
+        "offset": "0x57d7c"
+      }
+    },
+    {
+      "call": "0x5ce54",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE9CollectorC18updatePreviewables_23sortedSourceIdentifiersy0A8Pipeline0H0V_Say0A5Model0J10IdentifierVGtF"
+        ],
+        "offset": "0x29d34"
+      }
+    },
+    {
+      "call": "0x6339c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getAtKeyPath",
+        "offset": "0x818b0"
+      }
+    },
+    {
+      "call": "0x62ae4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes8Document_p8Location0A8Pipeline22PreviewFileDescriptionPQzAcaBPRts_XP0A5Model16SourceIdentifierVIegnr_AaB_pAgIRS_XPALSgs5Error_pIegnrzo_AdERzlTRTATm"
+        ],
+        "offset": "0x633a0"
+      }
+    },
+    {
+      "call": "0x633c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s13PreviewsModel16SourceIdentifierVMa",
+        "offset": "0x7f54c"
+      }
+    },
+    {
+      "call": "0x29eb0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost21EventStreamObservableC12wrappedValuexvg",
+        "offset": "0x80b60"
+      }
+    },
+    {
+      "call": "0x29ecc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV10pinnedFileAC11DefinitionsVvg",
+        "offset": "0x7f864"
+      }
+    },
+    {
+      "call": "0x29ed4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV11DefinitionsV22previewProviderSourcesSayAA0F6SourceOGvg",
+        "offset": "0x7f87c"
+      }
+    },
+    {
+      "call": "0x29ef4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV8openFileAC11DefinitionsVvg",
+        "offset": "0x7f8dc"
+      }
+    },
+    {
+      "call": "0x29efc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV11DefinitionsV22previewProviderSourcesSayAA0F6SourceOGvg",
+        "offset": "0x7f87c"
+      }
+    },
+    {
+      "call": "0x29f14",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV9providersSayAC8ProviderVGvg",
+        "offset": "0x7f21c"
+      }
+    },
+    {
+      "call": "0x29f90",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sST22PreviewsFoundationHosts12Identifiable7ElementRpzrlE10identifiedAA13IdentifiedSetVyADGyF",
+        "offset": "0x810c4"
+      }
+    },
+    {
+      "call": "0x29fac",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE15updateProviders33_43ACF5493FEFE32A9C4B3DADA98FE11CLL10pinnedFile04openP0ySay0A8Pipeline14ProviderSourceOG_ALtFAEL_4from0O0SayAC0S0VGAL_SbtF"
+        ],
+        "offset": "0x3e4e0"
+      }
+    },
+    {
+      "call": "0x29fc0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE15updateProviders33_43ACF5493FEFE32A9C4B3DADA98FE11CLL10pinnedFile04openP0ySay0A8Pipeline14ProviderSourceOG_ALtFAEL_4from0O0SayAC0S0VGAL_SbtF"
+        ],
+        "offset": "0x3e4e0"
+      }
+    },
+    {
+      "call": "0x29fcc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSa6append10contentsOfyqd__n_t7ElementQyd__RszSTRd__lF10PreviewsUI18DisplayableContentV8ProviderV_SayAIGTg5"
+        ],
+        "offset": "0x26768"
+      }
+    },
+    {
+      "call": "0x29fd8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV9providersSayAC8ProviderVGvs",
+        "offset": "0x7f228"
+      }
+    },
+    {
+      "call": "0x2a008",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV10pinnedFileAC11DefinitionsVvg",
+        "offset": "0x7f864"
+      }
+    },
+    {
+      "call": "0x2a024",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV11DefinitionsV014canvasRegistryD00E5TypesSay0A5Model0F10DefinitionVGShy0A13MessagingHost0F4TypeVG_tF",
+        "offset": "0x7f870"
+      }
+    },
+    {
+      "call": "0x2a040",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV8openFileAC11DefinitionsVvg",
+        "offset": "0x7f8dc"
+      }
+    },
+    {
+      "call": "0x2a04c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline12PreviewablesV11DefinitionsV014canvasRegistryD00E5TypesSay0A5Model0F10DefinitionVGShy0A13MessagingHost0F4TypeVG_tF",
+        "offset": "0x7f870"
+      }
+    },
+    {
+      "call": "0x2a064",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV10registriesSayAC8RegistryVGvg",
+        "offset": "0x7ebf8"
+      }
+    },
+    {
+      "call": "0x2a0e4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sST22PreviewsFoundationHosts12Identifiable7ElementRpzrlE10identifiedAA13IdentifiedSetVyADGyF",
+        "offset": "0x810c4"
+      }
+    },
+    {
+      "call": "0x2a0fc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE16updateRegistries33_43ACF5493FEFE32A9C4B3DADA98FE11CLL10pinnedFile04openP0ySay0A5Model18RegistryDefinitionVG_ALtFAEL_4from0O0SayAC0S0VGAL_SbtF"
+        ],
+        "offset": "0x3eb94"
+      }
+    },
+    {
+      "call": "0x2a110",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE16updateRegistries33_43ACF5493FEFE32A9C4B3DADA98FE11CLL10pinnedFile04openP0ySay0A5Model18RegistryDefinitionVG_ALtFAEL_4from0O0SayAC0S0VGAL_SbtF"
+        ],
+        "offset": "0x3eb94"
+      }
+    },
+    {
+      "call": "0x2a11c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSa6append10contentsOfyqd__n_t7ElementQyd__RszSTRd__lF10PreviewsUI18DisplayableContentV8RegistryV_SayAIGTg5"
+        ],
+        "offset": "0x2677c"
+      }
+    },
+    {
+      "call": "0x2a128",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV10registriesSayAC8RegistryVGvs",
+        "offset": "0x7ec04"
+      }
+    },
+    {
+      "call": "0x2a158",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV0A6ScenesE26updateAppPreviewVisibility33_43ACF5493FEFE32A9C4B3DADA98FE11CLL5usingy0A8Pipeline19EditorSettingsRelayC_tF"
+        ],
+        "offset": "0x2a1d4"
+      }
+    },
+    {
+      "call": "0x2a164",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV23sortedSourceIdentifiersSay0A5Model0F10IdentifierVGvs",
+        "offset": "0x7ec70"
+      }
+    },
+    {
+      "call": "0x2a198",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost21EventStreamObservableC12wrappedValuexvs",
+        "offset": "0x80b6c"
+      }
+    }
+  ],
+  "source_policy": {
+    "editor_order": "Get currentDocuments; compactMap using captured document key-path projection returning SourceIdentifier and adapter wrapping some. Exact key-path field encoding and currentDocuments ordering policy not independently decoded here.",
+    "pin_priority": "If pinnedPreviewFile is present, obtain its sourceIdentifier and insert CollectionOfOne at range 0..<0. If absent, skip insertion. No caller-level de-duplication is established.",
+    "handoff": "Obtain current previewables and call DisplayableContent.Collector.updatePreviewables with assembled source identifiers.",
+    "collector": "Read existing EventStreamObservable displayableContent value. Obtain pinned/open provider sources and existing providers; form identified existing-provider lookup and call updateProviders helper for pinned=true then false, concatenate pinned then open and assign providers. Similarly obtain registry definitions, existing-registry lookup, call updateRegistries true then false, concatenate and assign registries.",
+    "publication_order": "After provider/registry assignment, call updateAppPreviewVisibility, assign sortedSourceIdentifiers, then assign EventStreamObservable.wrappedValue.",
+    "boundaries": "Provider/registry reconciliation helper internals, visibility implementation, observable delivery, actual row/resource teardown, native runtime behavior and completion remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_runtime_control": false,
+    "row_reconciliation_or_resource_settlement_qualified": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Initial adapter exploration used next named symbol as end and included unnamed adjacent functions; published verifier narrows adapter to its actual return boundary at 0x62af0. No adjacent-function semantics claimed.",
+    "Locked-screen/Accessibility and Ghidra availability failures not retried unchanged."
+  ]
+}
