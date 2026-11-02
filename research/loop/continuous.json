@@ -18695,5 +18695,19 @@
     "dynamic_witness_contents_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Trace delegated ExecutionPointUpdate<PreviewViewable existential> and ExecutionPointStatus<AnyExecutionPoint> ownership/witness effects in pinned PreviewsPipeline, plus opaque viewable and variant-array element cleanup boundaries. Actual native controls remain required; no unchanged locked-screen/Accessibility/Ghidra retry."
+  },
+  "canvas_execution_ownership_checkpoint": {
+    "evidence": "research/evidence/canvas-execution-ownership-2026-11-02",
+    "seal_sha256": "a83945c6acce2b1cfb22fce703b48f815ae851adccfd8086e52d7a36935b3efb",
+    "source_bytes_verified": 1064,
+    "selected_calls": 13,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-execution-ownership-replay-1udbilzo",
+      "scope": "Fresh copied-source complete-findings replay; actual lifetime and cancellation not observed."
+    },
+    "actual_lifetime_or_cancellation_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify ExecutionPointStatus destruction and released state ownership. Correlate with actual native lifecycle/failure controls when permitted observation works; do not retry unchanged locked-screen/Accessibility/Ghidra failures."
   }
 }

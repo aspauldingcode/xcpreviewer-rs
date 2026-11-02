@@ -1,0 +1,228 @@
+{
+  "images": {
+    "PreviewsPipeline": {
+      "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+      "uuid": "c6ed2a5e6f2e3a41a1586d2f65e00a58",
+      "architecture": "arm64"
+    },
+    "PreviewsFoundationHost": {
+      "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+      "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+      "architecture": "arm64"
+    }
+  },
+  "ranges": [
+    {
+      "image": "PreviewsPipeline",
+      "name": "update-destroy",
+      "start": "0x3e8c10",
+      "end_exclusive": "0x3e8f2c",
+      "bytes": 796,
+      "sha256": "7c6adfaab629a88ffefd6a6344269f1929b88535a4001e2915bad93bd12b1ab8"
+    },
+    {
+      "image": "PreviewsPipeline",
+      "name": "erased-point-destroy",
+      "start": "0x4894c4",
+      "end_exclusive": "0x489544",
+      "bytes": 128,
+      "sha256": "e6bfd96d7dbe78b25296f07f845e97575e37054e153a42b9b4c30dc99436091c"
+    },
+    {
+      "image": "PreviewsPipeline",
+      "name": "box-deallocate",
+      "start": "0x489210",
+      "end_exclusive": "0x48924c",
+      "bytes": 60,
+      "sha256": "a71a24de8abfa3e9649b1c00b3ada4651989475ac70a23e68f76dbed2871637d"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "name": "handle-deinit-deallocate",
+      "start": "0x41fdc",
+      "end_exclusive": "0x4202c",
+      "bytes": 80,
+      "sha256": "402efdf668b5ea543047fd6328c6fc9c0ffbe936190c0c679a28cff6c5b479f1"
+    }
+  ],
+  "source_bytes_verified": 1064,
+  "metadata": {
+    "update": [
+      "output",
+      "streamFactory",
+      "executionPointID",
+      "agentBundle",
+      "agentProcess",
+      "controlDetails",
+      "updatePass",
+      "capabilities",
+      "symbolicationParameters",
+      "publicSuccessfulCompletionDescription",
+      "updateSeed",
+      "invalidationHandle",
+      "usingPipelineV2"
+    ],
+    "erased_point": [
+      "box",
+      "id"
+    ],
+    "erased_id": [
+      "executionPointType",
+      "executionPointID",
+      "underlyingDescription",
+      "executionPointTypeName"
+    ],
+    "handle": [
+      "name",
+      "state"
+    ]
+  },
+  "update_field_type_bindings": [
+    {
+      "field": "updateSeed",
+      "context": "_$s21PreviewsMessagingHost0C10UpdateSeedVMn"
+    },
+    {
+      "field": "invalidationHandle",
+      "context": "_$s22PreviewsFoundationHost28ConcurrentInvalidationHandleCMn"
+    }
+  ],
+  "calls": [
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x3e8ed0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s21PreviewsMessagingHost0C10UpdateSeedVMa",
+        "offset": "0x51d93c"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x3e8f28",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x5210d4"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x4894e0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x5210d4"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x4894f0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s16PreviewsPipeline17AnyExecutionPointV2IDVMa"
+        ],
+        "offset": "0x30965c"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x489500",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost19SendableAnyHashableVMa",
+        "offset": "0x51edac"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x489524",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0x520e1c"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x489540",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0x520e1c"
+      }
+    },
+    {
+      "image": "PreviewsPipeline",
+      "call": "0x489248",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_deallocClassInstance",
+        "offset": "0x520e88"
+      }
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "call": "0x41fe8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0x1311c8"
+      }
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "call": "0x41ff0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "call": "0x4200c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0x1311c8"
+      }
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "call": "0x42014",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "call": "0x42028",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_deallocClassInstance",
+        "offset": "0x131234"
+      }
+    }
+  ],
+  "source_policy": {
+    "update": "Generic output is destroyed through its type witness. At tail, after publicSuccessfulCompletionDescription String cleanup, typed UpdateSeed is destroyed; its size/alignment advances to the reflected ConcurrentInvalidationHandle field and swift_release is tail-called. Other update fields are byte-verified but not fully semantically mapped here.",
+    "erased_point": "Destroy releases box reference, destroys SendableAnyHashable executionPointID, then releases the two ID string backing values. executionPointType metadata is not separately released by this route.",
+    "box_deallocate": "If concrete generic box deallocation runs, destroy stored generic value through its witness then deallocate class instance. This is not proof release of the outer value reaches this deallocation.",
+    "handle_deinit": "Deinit directly bridge-releases name backing value and releases state reference; deallocating variant additionally deallocates class storage. Complete bounded bodies have no explicit invalidate/observer call. Released state object and dynamic payload effects remain opaque.",
+    "boundaries": "A release/deinit/deallocation source path does not establish zero reference count, actual callback cancellation, session invalidation or OS/transport settlement. Full ExecutionPointStatus and dynamic state/viewable witnesses remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_lifetime_or_cancellation_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "ExecutionPointStatus destructor explored locally but not semantically qualified in this update/erased-point unit.",
+    "Prior locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}
