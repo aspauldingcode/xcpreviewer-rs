@@ -1,0 +1,54 @@
+{
+  "scope": "All four native executable blobs flagged by full reachable-history scan",
+  "artifacts": [
+    {
+      "path": "research/evidence/observed-compiler-2026-10-10/owned-process-snapshot",
+      "sha256": "718c0dd47aaa6598281d0f0afb7dd12fa4c497a8494897b24829905de82ecda5",
+      "mach_o_file_type": "MH_EXECUTE (not a framework/dylib)",
+      "provenance_verified": {
+        "source": "research/evidence/owned-escape-2026-10-10/frozen/tools/re/native/OwnedProcessSnapshot.c",
+        "source_sha256": "f575177f88d6d8306f38d0fc16863396f5d666988d2a8d98c60e87392f162833",
+        "build_recipe": "research/evidence/observed-compiler-2026-10-10/frozen/observedcompilerprobe.py",
+        "type": "owned public-libproc observer"
+      }
+    },
+    {
+      "path": "research/evidence/rust-frame-core-2026-10-10/control/core-tests",
+      "sha256": "5c3cabc682b25bd1fea555aa117a419cc129e1a40f01fa88c42dafc59da4d546",
+      "mach_o_file_type": "MH_EXECUTE (not a framework/dylib)",
+      "provenance_verified": {
+        "manifest": "research/evidence/rust-frame-core-2026-10-10/manifest.json",
+        "verified_original_rust_sources": 2,
+        "owned_crate_symbols_present": true,
+        "type": "owned Rust fixture/test executable"
+      }
+    },
+    {
+      "path": "research/evidence/rust-frame-core-2026-10-10/control/frame-gate",
+      "sha256": "20c5bf2932f67c2d5f4a6e983431a3add36780884f11d1ecda14d749ffcade59",
+      "mach_o_file_type": "MH_EXECUTE (not a framework/dylib)",
+      "provenance_verified": {
+        "manifest": "research/evidence/rust-frame-core-2026-10-10/manifest.json",
+        "verified_original_rust_sources": 2,
+        "owned_crate_symbols_present": true,
+        "type": "owned Rust fixture/test executable"
+      }
+    },
+    {
+      "path": "research/evidence/rust-primary-render-2026-10-10/control/primary-render",
+      "sha256": "2e6cfff3ba43e6060d73f8887c91b9d0c22d65147553859979653ecb3c375ceb",
+      "mach_o_file_type": "MH_EXECUTE (not a framework/dylib)",
+      "provenance_verified": {
+        "manifest": "research/evidence/rust-primary-render-2026-10-10/manifest.json",
+        "verified_original_rust_sources": 3,
+        "owned_crate_symbols_present": true,
+        "type": "owned Rust fixture/test executable"
+      }
+    }
+  ],
+  "apple_framework_or_dylib_blobs_found": 0,
+  "shipped_apple_binary_blobs_found": 0,
+  "history_credential_signature_findings": 0,
+  "large_disassembly_or_decompiler_signature_findings": 0,
+  "raw_extension_note": "Tracked .raw outputs include owned test markers and golden image/transport bytes; filename raw is not itself evidence of proprietary executable code. No visibility change is performed by this check."
+}

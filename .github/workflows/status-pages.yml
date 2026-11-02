@@ -16,7 +16,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
-    if: vars.STATUS_PAGES_ENABLED == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
