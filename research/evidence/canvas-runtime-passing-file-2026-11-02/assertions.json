@@ -1,0 +1,105 @@
+{
+  "native_runs": {
+    "initial": {
+      "classification": "native passing modified-file route and scene-update method execution",
+      "phases": {
+        "change": {
+          "invocation": 9,
+          "is_open_and_thunkable": false,
+          "should_update_file": true,
+          "coalescer_entry": true,
+          "scene_update_entry_and_return": true,
+          "caller_offsets": {}
+        },
+        "restore-value": {
+          "invocation": 10,
+          "is_open_and_thunkable": false,
+          "should_update_file": true,
+          "coalescer_entry": true,
+          "scene_update_entry_and_return": true,
+          "caller_offsets": {}
+        }
+      },
+      "fixture_removed": true,
+      "rendered_completion_verified": false,
+      "full_product_acceptance": false
+    },
+    "reproduced": {
+      "classification": "native passing modified-file route and scene-update method execution",
+      "phases": {
+        "change": {
+          "invocation": 7,
+          "is_open_and_thunkable": false,
+          "should_update_file": true,
+          "coalescer_entry": true,
+          "scene_update_entry_and_return": true,
+          "caller_offsets": {
+            "environment-coalescer-set-needs-update": "0x249c84",
+            "workspace-scene-set-needs-update": "0x24a2ec"
+          }
+        },
+        "restore-value": {
+          "invocation": 8,
+          "is_open_and_thunkable": false,
+          "should_update_file": true,
+          "coalescer_entry": true,
+          "scene_update_entry_and_return": true,
+          "caller_offsets": {
+            "environment-coalescer-set-needs-update": "0x249c84",
+            "workspace-scene-set-needs-update": "0x24a2ec"
+          }
+        }
+      },
+      "fixture_removed": true,
+      "rendered_completion_verified": false,
+      "full_product_acceptance": false
+    }
+  },
+  "recorded_trace_mutation_controls": [
+    {
+      "mutation": "wrong-predicate",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-coalescer",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-scene-call",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-scene-return",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-caller",
+      "rejected": true,
+      "diagnostic": "{'environment-coalescer-set-needs-update': '0x249c84', 'workspace-scene-set-needs-update': '0x0'}"
+    },
+    {
+      "mutation": "not-restored",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "dependency-left",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-phase",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-build-log-marker",
+      "rejected": true,
+      "diagnostic": "build success and dependency-name build-log marker required"
+    }
+  ]
+}
