@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T14:04:47.416392+00:00",
+  "updated_at": "2026-11-02T16:05:32.378209+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover observer registration and cancellation-token ownership; validate actual cancellation, weak-owner loss and cleanup/reentry boundaries.",
+  "current_focus": "Recover token destruction and once-guarantee lifetime; qualify actual registration, cancellation and weak-owner-loss controls.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus invalidation ownership, one-shot dispatch and waiting-only observer detachment. Context release before unlock is source-qualified; actual cancellation, deinit/reentry and settlement remain open.",
+        "verified_summary": "Scoped native controls plus registration/late-observer source paths, weak cancellation capture, one-shot cancel and observer removal. Actual delivery, token deinit effects, races/reentry and settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-observer-removal-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-observer-registration-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Observer registration and weak cancellation tokens recovered",
+      "detail": "Waiting registration stores observer and returns weak-owner token. Late registration invokes observer after unlock and returns no token. Cancel uses one-shot gate. Fresh replay passes; actual delivery and lifetime effects remain unverified."
+    },
     {
       "date": "2026-11-02",
       "title": "Observer-token detachment and cleanup ordering recovered",

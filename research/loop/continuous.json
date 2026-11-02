@@ -18767,5 +18767,19 @@
     "actual_token_cancel_or_reentry_control": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify observer registration and makeCancelationToken construction/lifetime, including weak capture and token cancel semantics. Establish bounded owned native controls if callable ABI is qualified; preserve blocked UI route without unchanged retry."
+  },
+  "canvas_observer_registration_checkpoint": {
+    "evidence": "research/evidence/canvas-observer-registration-2026-11-02",
+    "seal_sha256": "2f9f470f0564fc0cc39eb4a638d6aeea93228731bfe05357e76e968a5538c5b5",
+    "source_bytes_verified": 1660,
+    "selected_calls": 17,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-observer-registration-replay-jl4vpg9c",
+      "scope": "Fresh copied-source complete-findings replay; actual registration and cancellation not observed."
+    },
+    "actual_registration_or_cancel_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Recover token destroy/onceGuarantee lifetime and constructor failure-mode policy; identify a qualified callable owned native control route for registration/cancel/weak-owner loss without guessing Swift ABI. No unchanged UI/Ghidra retry."
   }
 }
