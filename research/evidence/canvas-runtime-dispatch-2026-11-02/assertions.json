@@ -1,0 +1,69 @@
+{
+  "executed_runs": {
+    "initial": {
+      "invalidate": "native execution passed assertions",
+      "cancel": "native execution passed assertions",
+      "owner-loss": "native execution passed assertions",
+      "drop-waiting-token": "native execution passed assertions",
+      "ordering": "native execution passed assertions",
+      "reentrant": "native execution passed assertions",
+      "inflight": "native execution passed assertions",
+      "race": "native execution passed assertions",
+      "cancel-next": "native execution passed assertions",
+      "add-during-dispatch": "native execution passed assertions",
+      "cancel-admitted": "native execution passed assertions"
+    },
+    "reproduced": {
+      "invalidate": "native execution passed assertions",
+      "cancel": "native execution passed assertions",
+      "owner-loss": "native execution passed assertions",
+      "drop-waiting-token": "native execution passed assertions",
+      "ordering": "native execution passed assertions",
+      "reentrant": "native execution passed assertions",
+      "inflight": "native execution passed assertions",
+      "race": "native execution passed assertions",
+      "cancel-next": "native execution passed assertions",
+      "add-during-dispatch": "native execution passed assertions",
+      "cancel-admitted": "native execution passed assertions"
+    }
+  },
+  "semantic_trace_mutations": [
+    {
+      "mutation": "suppressed-admitted-callback",
+      "mode": "cancel-admitted",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "deferred-late-callback",
+      "mode": "add-during-dispatch",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "closed-fd-before-delivery",
+      "mode": "cancel-admitted",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "callback-before-cancel-return",
+      "mode": "cancel-admitted",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "cleanup-incomplete",
+      "mode": "cancel-next",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "destruction-after-invalidate-return",
+      "mode": "cancel-next",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ],
+  "negative_native_control_rerun": false
+}

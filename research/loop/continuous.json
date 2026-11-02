@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-build-stop-gates-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18926,5 +18926,25 @@
     "source_restored_controller_released": true,
     "next_action": "Keep static expansion paused. Find a permitted route to native rendered dependency/state control or qualify existing true build-stop preference/scene/state controls without assuming them from false-input returns. Preserve missing native window limitation; avoid unchanged UI retry loops.",
     "verified_at": "2026-11-02T18:17:06.684592+00:00"
+  },
+  "canvas_runtime_dispatch_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+    "seal_sha256": "cf103fd20b69d71a6be736a126e5a839d5da27255ddcc1518c90dd9d5d1c60ec",
+    "fresh_native_runs": 2,
+    "normal_controls_per_run": 11,
+    "new_controls": [
+      "cancel-next",
+      "add-during-dispatch",
+      "cancel-admitted"
+    ],
+    "later_callback_survives_after_dispatch_cancel": true,
+    "nested_late_registration_synchronous_no_token": true,
+    "owned_context_fd_cleanup_verified": true,
+    "semantic_trace_mutations_rejected": 6,
+    "negative_native_control_rerun": false,
+    "user_xcode_process_accessed": false,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Apply observed admission/cancellation and nested-registration contracts when testing portable reconstruction; continue native preview/state/resource controls without claiming whole Canvas settlement or retrying unchanged inaccessible-window route.",
+    "verified_at": "2026-11-02T22:00:18.988782+00:00"
   }
 }

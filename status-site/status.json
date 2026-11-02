@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T18:17:06.684592+00:00",
+  "updated_at": "2026-11-02T22:00:18.988782+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: six build-stop handlers observed false auto-resume input and returned before refresh. Native rendering/state and true-gate controls remain open.",
+  "current_focus": "Runtime validation: eleven observer controls reproduced. Cancellation after dispatch began did not suppress later callback; nested registration ran synchronously.",
   "milestones": [
     {
       "number": 1,
@@ -105,10 +105,10 @@
         "id": "resources",
         "title": "Resource lifetime",
         "status": "in_progress",
-        "evidence_level": "Native component execution + observed failure",
-        "verified_summary": "Eight native controls exercise observer lifetimes and owned FD cleanup. Cancel can return before an active callback ends. 100 concurrent rounds had no duplicate callbacks/leaks; destructor reentry terminates. General concurrency and transport/render cleanup remain open.",
+        "evidence_level": "Native observer dispatch/lifetime controls; full resource settlement open",
+        "verified_summary": "Eleven normal native controls reproduced, including later-callback admission and nested registration ordering. Owned weak contexts/FDs cleaned before invalidation returned. Prior recursive-lock negative remains separate; transport/render cleanup unknown.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-concurrency-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-dispatch-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Observer dispatch cancellation and nested registration reproduced",
+      "detail": "Two runs of eleven native controls passed. Later callback survived cancellation after dispatch began; nested late observer ran before add returned and remaining observers. Owned weak contexts/FDs cleared; no transport/resource parity claim."
+    },
     {
       "date": "2026-11-02",
       "title": "Native false auto-resume path exercised",
@@ -315,11 +320,11 @@
   },
   "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00",
   "runtime_validation": {
-    "normal_native_passes": 8,
+    "normal_native_passes": 11,
     "observed_negative_controls": 1,
-    "summary": "Previously: observer, build/file timing and positive file-selection controls. New: six real build-stop invocations read false auto-resume input, payloads 1/0/1 and returned before scene/state/refresh. Missing adjacent-probe reports and assertion-builder failure retained separately.",
+    "summary": "Two fresh runs passed all eleven native observer controls. New: cancelling later observer after dispatch began did not suppress it; nested registration invoked synchronously with no token. Weak-context and owned FD cleanup checked. Prior build/file controls remain separately scoped.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "True auto-resume/scene/state gates, private Preview.update, rendered completion, SwiftUI state continuity, native resource settlement and cross-platform WASM remain unverified. Xcode window currently inaccessible.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-build-stop-gates-2026-11-02"
+    "unknown": "Native transport/render cleanup, true auto-resume/scene/state gates, private Preview.update, rendered completion, SwiftUI continuity and cross-platform WASM remain unverified. Native-window limitation not retried.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-dispatch-2026-11-02"
   }
 }

@@ -1,7 +1,7 @@
 """Verify executed native traces; source replay is deliberately not accepted."""
 import json
 from pathlib import Path
-MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race']
+MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-next','add-during-dispatch','cancel-admitted']
 def verify(root,negative=False):
  root=Path(root);result={}
  for mode in MODES+(['cancel-reentry'] if negative else []):
@@ -13,7 +13,7 @@ def verify(root,negative=False):
    assert r['code']==-9 and 'destructor-reentry-begin' in events and 'destructor-reentry-end' not in events and 'pass' not in events
    crash=json.loads((root/'cancel-reentry-crash.json').read_text());assert crash['pid']==r['pid'];assert any('Trying to recursively lock an os_unfair_lock' in s for lines in (crash.get('asi') or {}).values() for s in lines);result[mode]='observed recursive-lock process termination';continue
   assert r['code']==0 and rows[-1]['event']=='pass' and rows[-1]['mode']==mode
-  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
+  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks,'cancel-next':['cancel-next-a','cancel-next-b'],'add-during-dispatch':['add-late-a','nested-late','add-late-b'],'cancel-admitted':['admitted-a','admitted-b']}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
   if mode=='invalidate':
    assert dead==['first','late'];assert events.index('caller-probe-dropped')<events.index('invalidate-begin')<events.index('callback')<events.index('probe-deinit')<events.index('invalidate-end');assert [x['has_token'] for x in rows if x['event']=='registered']==[True,False]
   elif mode=='cancel':assert dead==['cancelled'] and events.index('cancel-begin')<events.index('probe-deinit')<events.index('cancel-end')
@@ -35,6 +35,18 @@ def verify(root,negative=False):
      overlap=overlap or any(t!=x['thread_id'] for t in active);active[x['thread_id']]=x['event']
     elif x['event'] in ['cancel-end','invalidate-end']:active.pop(x['thread_id'],None)
    assert overlap and not active
+  elif mode in ['cancel-next','add-during-dispatch','cancel-admitted']:
+   cleanup=next(x for x in rows if x['event']=='dispatch-cleanup-complete');assert cleanup['context_released'] and cleanup['fds_closed'];assert len(dead)==len(callbacks) and set(dead)==set(callbacks);assert all(i<events.index('invalidate-end') for i,x in enumerate(rows) if x['event']=='probe-deinit')
+   def pos(name,event='callback'):return next(i for i,x in enumerate(rows) if x['event']==event and x.get('name')==name)
+   if mode=='cancel-next':
+    assert pos('cancel-next-a')<events.index('callback-cancel-next-begin')<events.index('cancel-begin')<events.index('cancel-end')<events.index('callback-cancel-next-end')<pos('cancel-next-b')<events.index('invalidate-end')
+   elif mode=='add-during-dispatch':
+    assert pos('add-late-a')<events.index('callback-add-late-begin')<pos('nested-late')<events.index('callback-add-late-returned')<pos('nested-late','probe-deinit')<events.index('callback-add-late-end')<pos('add-late-b')
+    assert [x['has_token'] for x in rows if x['event']=='registered']==[True,True,False]
+   else:
+    retained=next(x for x in rows if x['event']=='cancel-returned-next-not-called');assert retained['context_alive'] and retained['fd_open']
+    assert events.index('callback-blocked')<events.index('cancel-begin')<events.index('cancel-end')<events.index('cancel-returned-next-not-called')<events.index('callback-unblocked')<pos('admitted-b')<pos('admitted-b','probe-deinit')<events.index('invalidate-end')
+    assert rows[pos('admitted-b')]['thread_id']!=retained['thread_id']
   result[mode]='native execution passed assertions'
  return result
 if __name__=='__main__':

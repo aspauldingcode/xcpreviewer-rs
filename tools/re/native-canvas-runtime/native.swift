@@ -36,13 +36,15 @@ func makeHandle()->UnsafeMutableRawPointer {let p=alloc(handleMeta,40,7);let mod
 var callbacks=[String]()
 var callbackReentry:UnsafeMutableRawPointer?
 var destructionReentry:UnsafeMutableRawPointer?
+var dispatchCancelToken:UnsafeMutableRawPointer?
+var dispatchAddHandle:UnsafeMutableRawPointer?
 final class Probe {
  let name:String;let descriptor:Int32
  init(_ name:String){self.name=name;descriptor=open("/dev/null",O_RDONLY);precondition(descriptor>=0);event("probe-created",["name":name,"fd":descriptor])}
  deinit {let rc=close(descriptor);event("probe-deinit",["name":name,"fd":descriptor,"close_result":rc]);if name=="cancel-reentry",let h=destructionReentry {destructionReentry=nil;event("destructor-reentry-begin");invalidate(h);event("destructor-reentry-end")}}
 }
 @_cdecl("owned_observer_record")
-func record(_ context:UnsafeRawPointer?,_ trace:UnsafeRawPointer?){let p=Unmanaged<Probe>.fromOpaque(context!).takeUnretainedValue();precondition(trace != nil);observationLock.lock();callbacks.append(p.name);observationLock.unlock();event("callback",["name":p.name]);if p.name=="inflight" {event("callback-blocked");callbackEntered.signal();precondition(callbackMayReturn.wait(timeout:.now()+2) == .success);event("callback-unblocked")};if p.name=="reentrant",let h=callbackReentry {callbackReentry=nil;event("callback-reentry-begin");invalidate(h);event("callback-reentry-end")}}
+func record(_ context:UnsafeRawPointer?,_ trace:UnsafeRawPointer?){let p=Unmanaged<Probe>.fromOpaque(context!).takeUnretainedValue();precondition(trace != nil);observationLock.lock();callbacks.append(p.name);observationLock.unlock();event("callback",["name":p.name]);if p.name=="inflight" || p.name=="admitted-a" {event("callback-blocked");callbackEntered.signal();precondition(callbackMayReturn.wait(timeout:.now()+2) == .success);event("callback-unblocked")};if p.name=="cancel-next-a",let t=dispatchCancelToken {dispatchCancelToken=nil;event("callback-cancel-next-begin");cancel(t);event("callback-cancel-next-end")};if p.name=="add-late-a",let owner=dispatchAddHandle {dispatchAddHandle=nil;var late:Probe?=Probe("nested-late");weak var w=late;let fd=late!.descriptor;event("callback-add-late-begin");let token=add(owner,late!);precondition(token.load(as:UInt.self)==0 && callbacks==["add-late-a","nested-late"]);event("callback-add-late-returned",["has_token":false]);late=nil;precondition(w==nil && closed(fd));dropToken(token);event("callback-add-late-end",["context_released":w==nil,"fd_closed":closed(fd)])};if p.name=="reentrant",let h=callbackReentry {callbackReentry=nil;event("callback-reentry-begin");invalidate(h);event("callback-reentry-end")}}
 func add(_ h:UnsafeMutableRawPointer,_ p:Probe)->UnsafeMutableRawPointer {let t=UnsafeMutableRawPointer.allocate(byteCount:24,alignment:8);t.initializeMemory(as:UInt8.self,repeating:0xcc,count:24);owned_add_observer(fn(0xbf014),h,unsafeBitCast(owned_observer_callback as @convention(c)()->Void,to:UnsafeMutableRawPointer.self),Unmanaged.passUnretained(p).toOpaque(),t);event("registered",["name":p.name,"has_token":t.load(as:UInt.self) != 0]);return t}
 func invalidate(_ h:UnsafeMutableRawPointer){event("invalidate-begin");let ref=UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity:1);ref.initialize(to:h);precondition(owned_swift_call(fn(0xbfcc8),callsite,trace,ref,nil)==nil);ref.deinitialize(count:1);ref.deallocate();event("invalidate-end")}
 func cancel(_ t:UnsafeMutableRawPointer){event("cancel-begin");precondition(owned_swift_call(fn(0x12993c),callsite,tm,t,nil)==nil);event("cancel-end")}
@@ -78,6 +80,17 @@ if mode=="invalidate" {
   let count=callbacks.filter{$0=="race-\(i)"}.count;precondition(count<=1 && w==nil && closed(fd))
   event("race-round-complete",["round":i,"callbacks":count,"fd_closed":closed(fd),"context_released":w==nil]);dropToken(token);release(owner)
  }
+ } else if mode=="cancel-next" {
+ var a:Probe?=Probe("cancel-next-a"),b:Probe?=Probe("cancel-next-b");weak var wa=a;weak var wb=b;let fds=[a!.descriptor,b!.descriptor];let ta=add(h,a!),tb=add(h,b!);a=nil;b=nil;dispatchCancelToken=tb
+ invalidate(h);precondition(callbacks==["cancel-next-a","cancel-next-b"] && wa==nil && wb==nil && fds.allSatisfy{closed($0)});event("dispatch-cleanup-complete",["context_released":wa==nil && wb==nil,"fds_closed":fds.allSatisfy{closed($0)}]);dropToken(ta);dropToken(tb);release(h)
+} else if mode=="add-during-dispatch" {
+ var a:Probe?=Probe("add-late-a"),b:Probe?=Probe("add-late-b");weak var wa=a;weak var wb=b;let fds=[a!.descriptor,b!.descriptor];let ta=add(h,a!),tb=add(h,b!);a=nil;b=nil;dispatchAddHandle=h
+ invalidate(h);precondition(callbacks==["add-late-a","nested-late","add-late-b"] && wa==nil && wb==nil && fds.allSatisfy{closed($0)});event("dispatch-cleanup-complete",["context_released":wa==nil && wb==nil,"fds_closed":fds.allSatisfy{closed($0)}]);dropToken(ta);dropToken(tb);release(h)
+} else if mode=="cancel-admitted" {
+ var a:Probe?=Probe("admitted-a"),b:Probe?=Probe("admitted-b");weak var wa=a;weak var wb=b;let fds=[a!.descriptor,b!.descriptor];let ta=add(h,a!),tb=add(h,b!);a=nil;b=nil
+ let group=DispatchGroup();group.enter();DispatchQueue.global().async {invalidate(h);group.leave()};precondition(callbackEntered.wait(timeout:.now()+2) == .success)
+ precondition(callbacks==["admitted-a"]);cancel(tb);precondition(wb != nil && !closed(fds[1]) && callbacks==["admitted-a"]);event("cancel-returned-next-not-called",["context_alive":wb != nil,"fd_open":!closed(fds[1])]);callbackMayReturn.signal();precondition(group.wait(timeout:.now()+2) == .success)
+ precondition(callbacks==["admitted-a","admitted-b"] && wa==nil && wb==nil && fds.allSatisfy{closed($0)});event("dispatch-cleanup-complete",["context_released":wa==nil && wb==nil,"fds_closed":fds.allSatisfy{closed($0)}]);dropToken(ta);dropToken(tb);release(h)
 } else if mode=="cancel-reentry" {
  var p:Probe?=Probe("cancel-reentry");let t=add(h,p!);p=nil;destructionReentry=h;cancel(t);event("destructor-reentry-returned");dropToken(t);invalidate(h);release(h)
 } else if mode=="drop-waiting-token" {
