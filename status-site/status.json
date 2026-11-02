@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:48:15.656853+00:00",
+  "updated_at": "2026-11-02T23:13:22.624863+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: failure-action delivery and capture lifetime reproduced on main/worker release. Fulfilled handles retain action captures until destruction.",
+  "current_focus": "Native Canvas route restored: real file edit exercised Preview.update and instance assignment, changed displayed color, and restored it. Interactive state continuity remains open.",
   "milestones": [
     {
       "number": 1,
@@ -87,19 +87,19 @@
         "id": "rendering",
         "title": "Rendering",
         "status": "in_progress",
-        "evidence_level": "Scoped native controls",
-        "verified_summary": "Bitmap payloads and selected native rendering paths compared at bounded scopes.",
+        "evidence_level": "Native UI rendered edit/restore observation; full renderer contract open",
+        "verified_summary": "Native selected preview visibly changed purple to brown after source edit and restored; screenshot-region repeat passed without active hooks. This is not render-buffer equality, all view semantics or standalone WASM parity.",
         "remaining": "All rendering routes, device environments and output publication/completion ordering.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/swiftui-source-preview-2026-10-27"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-preview-update-2026-11-02"
       },
       {
         "id": "interaction",
         "title": "Interaction & state",
         "status": "in_progress",
-        "evidence_level": "Partial source; runtime state unqualified",
-        "verified_summary": "Source pin/change gates, provider matching, collector publication and conditional canvas-instance synchronization recovered. Actual native state/input and rendering continuity remain unqualified.",
+        "evidence_level": "Native update selected path + rendered color edit; interactive state untested",
+        "verified_summary": "Preview.update and instance-assignment helper entry/return observed during actual file color edit. Native output changed and restored. Item identity, state/input, focus, accessibility and lifecycle continuity remain unqualified.",
         "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-preview-update-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-preview-update-2026-11-02"
       },
       {
         "id": "resources",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native Preview.update and rendered color change exercised",
+      "detail": "Fresh background Xcode session exposed Canvas. Real source edit entered Preview.update and selected assignment helper eighteen times each, changed native color, and restored. Same-process repeat had no active hooks; interactive state remains untested."
+    },
     {
       "date": "2026-11-02",
       "title": "Native failure-action callback and retained captures reproduced",
@@ -337,10 +342,10 @@
   "runtime_validation": {
     "normal_native_passes": 11,
     "observed_negative_controls": 2,
-    "summary": "Earlier observer suite: eleven controls. New: two runs of four native failure-action controls. Unfulfilled release invoked action on releasing thread; fulfillment skipped action but retained its captured context until destruction. Owned weak contexts/FDs checked.",
-    "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "Arbitrary captures/reentry, soft-assert delegate delivery, observer transparency, full native render/transport cleanup, Preview.update, SwiftUI continuity and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-action-policy-2026-11-02",
+    "summary": "New live Canvas control: eighteen Preview.update and assignment-helper entries/returns during a real color edit. Native output changed purple→brown→purple; repeated without active hooks in same process. Exact source restored; Xcode left running.",
+    "ui_summary": "Owned Primary layers preview changed visibly after blue source constant edit and returned after restoration. Lossy screenshot ROI comparison passed; no exact render-buffer parity or state continuity claim.",
+    "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-preview-update-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

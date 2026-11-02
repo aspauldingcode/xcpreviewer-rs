@@ -1,0 +1,100 @@
+{
+  "classification": "native method execution plus native UI rendered color change",
+  "attached_event_counts": {
+    "hooks-ready": 1,
+    "preview-update-enter": 18,
+    "instance-assignment-helper-enter": 18,
+    "instance-assignment-helper-return": 18,
+    "preview-update-return": 18
+  },
+  "balanced_selected_calls": true,
+  "roi": [
+    790,
+    340,
+    816,
+    354
+  ],
+  "screenshots": {
+    "baseline": {
+      "file": "baseline.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.95054945054945,
+        80.04120879120879,
+        126.0
+      ],
+      "roi_rgb_sha256": "87bd4d274ce324444bd022cafaeb9ca3db2b2407f700090b0781eb2e6bdce6f2"
+    },
+    "attached_changed": {
+      "file": "attached_changed.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.17032967032966,
+        80.8956043956044,
+        18.95054945054945
+      ],
+      "roi_rgb_sha256": "84ed8488263769064a8ebe241882f23153b42762bfc155dae0826f6d8c06101e"
+    },
+    "attached_restored": {
+      "file": "attached_restored.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.95054945054945,
+        80.04120879120879,
+        126.0
+      ],
+      "roi_rgb_sha256": "87bd4d274ce324444bd022cafaeb9ca3db2b2407f700090b0781eb2e6bdce6f2"
+    },
+    "repeat_early_after_edit": {
+      "file": "repeat_early_after_edit.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.95054945054945,
+        80.04120879120879,
+        126.0
+      ],
+      "roi_rgb_sha256": "87bd4d274ce324444bd022cafaeb9ca3db2b2407f700090b0781eb2e6bdce6f2"
+    },
+    "repeat_changed": {
+      "file": "repeat_changed.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.17032967032966,
+        80.8956043956044,
+        18.95054945054945
+      ],
+      "roi_rgb_sha256": "84ed8488263769064a8ebe241882f23153b42762bfc155dae0826f6d8c06101e"
+    },
+    "repeat_restored": {
+      "file": "repeat_restored.jpg",
+      "size": [
+        1000,
+        644
+      ],
+      "roi_mean_rgb": [
+        122.95054945054945,
+        80.04120879120879,
+        126.0
+      ],
+      "roi_rgb_sha256": "87bd4d274ce324444bd022cafaeb9ca3db2b2407f700090b0781eb2e6bdce6f2"
+    }
+  },
+  "native_pixel_parity": false,
+  "interactive_state_preservation_verified": false,
+  "repeat_scope": "same previously attached process, no active hooks"
+}

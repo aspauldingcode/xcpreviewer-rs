@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-action-policy-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-preview-update-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18999,5 +18999,24 @@
     "controller_released": true,
     "next_action": "Keep static expansion paused. Prioritize remaining native Canvas update/render/state and resource contracts. Preserve the distinction between observer cleanup on fulfillment and retained failure-action captures until owner destruction; arbitrary capture/reentry/general concurrency remain unqualified. Do not retry unchanged inaccessible-window route.",
     "verified_at": "2026-11-02T22:48:15.656853+00:00"
+  },
+  "canvas_runtime_preview_update_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-preview-update-2026-11-02",
+    "seal_sha256": "52914abee0fd15fd32d3ca88f9ff67cd98d4d741173aab3c215ba06c789c0ec4",
+    "native_pid": 45749,
+    "owned_workspace_reopened_background_after_old_pid_absent": true,
+    "preview_update_entries": 18,
+    "selected_instance_assignment_entries": 18,
+    "native_rendered_color_change_and_restore": true,
+    "repeat_without_active_hooks": true,
+    "repeat_is_same_previously_attached_process": true,
+    "interactive_state_preservation_verified": false,
+    "exact_native_pixel_parity_verified": false,
+    "synthetic_artifact_mutations_rejected": 5,
+    "source_restored_controller_available": true,
+    "xcode_left_running": true,
+    "coverage_index": "research/loop/canvas-runtime-function-coverage.json",
+    "next_action": "Keep static expansion paused. Native window route is available in PID 45749/owned PreviewLab. Continue real preview interaction/state and dependency/error controls; reverify current identities and controller ownership. Do not infer arbitrary guards, state continuity, render-buffer parity or resource release from this selected color case.",
+    "verified_at": "2026-11-02T23:13:22.624863+00:00"
   }
 }
