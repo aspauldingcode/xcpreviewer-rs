@@ -1,7 +1,7 @@
 """Verify executed native traces; source replay is deliberately not accepted."""
 import json
 from pathlib import Path
-MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-next','add-during-dispatch','cancel-admitted','self-drop','self-cancel-drop']
+MODES=['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-next','add-during-dispatch','cancel-admitted','self-drop','self-cancel-drop','invalidate-deinit-reentry','invalidate-deinit-add']
 def verify(root,negative=False):
  root=Path(root);result={}
  for mode in MODES+(['cancel-reentry'] if negative else []):
@@ -13,7 +13,7 @@ def verify(root,negative=False):
    assert r['code']==-9 and 'destructor-reentry-begin' in events and 'destructor-reentry-end' not in events and 'pass' not in events
    crash=json.loads((root/'cancel-reentry-crash.json').read_text());assert crash['pid']==r['pid'];assert any('Trying to recursively lock an os_unfair_lock' in s for lines in (crash.get('asi') or {}).values() for s in lines);result[mode]='observed recursive-lock process termination';continue
   assert r['code']==0 and rows[-1]['event']=='pass' and rows[-1]['mode']==mode
-  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks,'cancel-next':['cancel-next-a','cancel-next-b'],'add-during-dispatch':['add-late-a','nested-late','add-late-b'],'cancel-admitted':['admitted-a','admitted-b'],'self-drop':['self-drop'],'self-cancel-drop':['self-cancel-drop']}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
+  expected={'invalidate':['first','late'],'cancel':[],'owner-loss':[],'drop-waiting-token':['drop-waiting'],'ordering':['a','c'],'reentrant':['reentrant'],'inflight':['inflight'],'race':callbacks,'cancel-next':['cancel-next-a','cancel-next-b'],'add-during-dispatch':['add-late-a','nested-late','add-late-b'],'cancel-admitted':['admitted-a','admitted-b'],'self-drop':['self-drop'],'self-cancel-drop':['self-cancel-drop'],'invalidate-deinit-reentry':['invalidate-deinit-reentry'],'invalidate-deinit-add':['invalidate-deinit-add','destructor-late']}[mode];assert callbacks==expected and rows[-1]['callbacks']==expected
   if mode=='invalidate':
    assert dead==['first','late'];assert events.index('caller-probe-dropped')<events.index('invalidate-begin')<events.index('callback')<events.index('probe-deinit')<events.index('invalidate-end');assert [x['has_token'] for x in rows if x['event']=='registered']==[True,False]
   elif mode=='cancel':assert dead==['cancelled'] and events.index('cancel-begin')<events.index('probe-deinit')<events.index('cancel-end')
@@ -35,6 +35,27 @@ def verify(root,negative=False):
      overlap=overlap or any(t!=x['thread_id'] for t in active);active[x['thread_id']]=x['event']
     elif x['event'] in ['cancel-end','invalidate-end']:active.pop(x['thread_id'],None)
    assert overlap and not active
+  elif mode in ['invalidate-deinit-reentry','invalidate-deinit-add']:
+   assert sorted(dead)==sorted(expected)
+   for name in expected:
+    created=[x for x in rows if x['event']=='probe-created' and x['name']==name];destroyed=[x for x in rows if x['event']=='probe-deinit' and x['name']==name]
+    assert len(created)==len(destroyed)==1 and created[0]['fd']==destroyed[0]['fd'] and created[0]['seq']<destroyed[0]['seq']
+   cleanup=next(x for x in rows if x['event']=='destructor-cleanup-complete');assert cleanup['context_released'] and cleanup['fd_closed']
+   own_deinit=next(i for i,x in enumerate(rows) if x['event']=='probe-deinit' and x['name']==mode)
+   assert events.index('callback')<own_deinit<events.index('destructor-cleanup-complete')
+   if mode=='invalidate-deinit-reentry':
+    assert events.count('invalidate-begin')==events.count('invalidate-end')==3
+    ends=[i for i,x in enumerate(rows) if x['event']=='invalidate-end']
+    begins=[i for i,x in enumerate(rows) if x['event']=='invalidate-begin']
+    assert begins[0]<own_deinit<events.index('destructor-reentry-begin')<begins[1]<ends[0]<events.index('destructor-reentry-end')<ends[1]<events.index('destructor-cleanup-complete')<begins[2]<ends[2]
+   else:
+    assert events.count('invalidate-begin')==events.count('invalidate-end')==2
+    late_callback=next(i for i,x in enumerate(rows) if x['event']=='callback' and x['name']=='destructor-late')
+    late_dead=next(i for i,x in enumerate(rows) if x['event']=='probe-deinit' and x['name']=='destructor-late')
+    returned=next(x for x in rows if x['event']=='destructor-add-returned');assert not returned['has_token']
+    assert own_deinit<events.index('destructor-add-begin')<late_callback<events.index('destructor-add-returned')<late_dead<events.index('destructor-add-end')<events.index('invalidate-end')<events.index('destructor-cleanup-complete')
+    assert [x['has_token'] for x in rows if x['event']=='registered']==[True,False]
+    late_cleanup=next(x for x in rows if x['event']=='destructor-add-end');assert late_cleanup['context_released'] and late_cleanup['fd_closed']
   elif mode in ['self-drop','self-cancel-drop']:
    assert dead==[mode]
    retained=next(x for x in rows if x['event']=='self-token-dropped-context-live');assert retained['context_alive'] and retained['fd_open'] and retained['cancelled']==(mode=='self-cancel-drop')

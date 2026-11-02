@@ -19080,5 +19080,22 @@
     "synthetic_mutations_rejected": 5,
     "next_action": "Do not mistake owned app-window input for Canvas input. Keep static expansion paused. Qualify a different actual Canvas input route using permitted tooling only, or continue remaining native component lifecycle/resource controls. No unchanged coordinate or ordinary app-button loop.",
     "verified_at": "2026-11-02T23:43:42.097884+00:00"
+  },
+  "canvas_runtime_invalidate_destructor_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02",
+    "manifest_sha256": "145af8ebb438025c64cd7b7d48975180626cee2b9b3e2168fd7692ccad4c208b",
+    "native_runs": 2,
+    "normal_controls_each": 15,
+    "owned_context_destructor_same_handle_invalidate_returned": true,
+    "owned_context_destructor_late_registration_synchronous_no_token": true,
+    "weak_context_fd_cleanup_verified": true,
+    "per_context_fd_identity_checked_with_number_reuse": true,
+    "historical_cancel_destructor_negative_rerun": false,
+    "native_failures_or_timeouts": 0,
+    "synthetic_mutations_rejected": 6,
+    "user_xcode_accessed": false,
+    "controller_available": true,
+    "next_action": "Keep static expansion paused. Native owned-context invalidation-time reentry controls do not qualify Apple Canvas destructors or transport/render resources. Continue remaining runtime contracts without repeating failed Canvas input routes or expanding static function discovery.",
+    "verified_at": "2026-11-02T23:52:38.575915+00:00"
   }
 }

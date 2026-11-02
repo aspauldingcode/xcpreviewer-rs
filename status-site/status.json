@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:43:42.097884+00:00",
+  "updated_at": "2026-11-02T23:52:38.575915+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native owned app AX Increment works (0\u21921), while the separate Xcode Canvas remains at 0. That route does not qualify Canvas input/state. Thirteen native observer controls remain scoped component evidence.",
+  "current_focus": "Fifteen native observer controls pass: owned context destruction during invalidation can reenter invalidate or register a synchronous late observer. This is scoped component cleanup; Canvas state, destructors and transport remain open.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Owned context destructor reentry during invalidation passes",
+      "detail": "Same live handle nested invalidation returned; destructor-created late observer ran synchronously without token. Two native runs, fifteen normal controls each; six synthetic mutations reject. Per-context FD checks account for number reuse. Apple Canvas destructor/resource coverage remains open."
+    },
     {
       "date": "2026-11-02",
       "title": "App input and Canvas state separated experimentally",
@@ -353,14 +358,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T23:43:44.021913+00:00",
+  "issue_counts_updated_at": "2026-11-02T23:52:40.448890+00:00",
   "runtime_validation": {
-    "normal_native_passes": 13,
+    "normal_native_passes": 15,
     "observed_negative_controls": 2,
-    "summary": "Two fresh owned-process runs exercised thirteen observer controls each. New self-drop/self-cancel-drop kept weak context/owned FD alive through final callback marker and released them before invalidate returned; repeated invalidate did not call again. Reader coverage correction and six synthetic mutations retained.",
+    "summary": "Two fresh owned-process runs each passed fifteen observer controls. New owned context deinit controls nested invalidate and late registration within outer invalidation; weak contexts/FDs cleaned up. Numeric FD reuse is matched by context. Historical cancel-time destructor termination was not rerun.",
     "ui_summary": "Owned app-window AX button changed Count: 0\u21921; separate actual Canvas screenshot still showed Count: 0. Native app input is qualified for that window only; Canvas input and state continuity remain unknown. No source edits or coordinate retries.",
     "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-app-input-boundary-2026-11-02",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-invalidate-destructor-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

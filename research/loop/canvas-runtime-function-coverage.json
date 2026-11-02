@@ -177,9 +177,11 @@
       "direct_entry_exercised": true,
       "controls": [
         "invalidate",
-        "ordering"
+        "ordering",
+        "invalidate-deinit-add"
       ],
-      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02"
     },
     {
       "function": "AnyInvalidatable.invalidate witness",
@@ -192,10 +194,13 @@
         "reentrant",
         "cancel-reentry",
         "self-drop",
-        "self-cancel-drop"
+        "self-cancel-drop",
+        "invalidate-deinit-reentry",
+        "invalidate-deinit-add"
       ],
       "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
-      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02",
+      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02"
     },
     {
       "function": "CancelationToken.cancel",
@@ -238,6 +243,6 @@
     }
   ],
   "warning": "Observed entry/callsite/selected path is not full function or target acceptance. Untraced collector, reconciliation and destruction helpers remain static even when UI changes.",
-  "updated_at": "2026-11-02T23:32:19.330962+00:00",
+  "updated_at": "2026-11-02T23:52:38.575915+00:00",
   "catalog_scope": "Bounded current evidence index based on the prior function audit; not an exhaustive Xcode function count or percentage denominator."
 }

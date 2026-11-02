@@ -47,7 +47,7 @@ var selfTokenShouldCancel=false
 final class Probe {
  let name:String;let descriptor:Int32
  init(_ name:String){self.name=name;descriptor=open("/dev/null",O_RDONLY);precondition(descriptor>=0);event("probe-created",["name":name,"fd":descriptor])}
- deinit {let rc=close(descriptor);event("probe-deinit",["name":name,"fd":descriptor,"close_result":rc]);if name=="cancel-reentry",let h=destructionReentry {destructionReentry=nil;event("destructor-reentry-begin");invalidate(h);event("destructor-reentry-end")}}
+ deinit {let rc=close(descriptor);event("probe-deinit",["name":name,"fd":descriptor,"close_result":rc]);if (name=="cancel-reentry" || name=="invalidate-deinit-reentry"),let h=destructionReentry {destructionReentry=nil;event("destructor-reentry-begin");invalidate(h);event("destructor-reentry-end")};if name=="invalidate-deinit-add",let h=destructionReentry {destructionReentry=nil;event("destructor-add-begin");var late:Probe?=Probe("destructor-late");weak var w=late;let fd=late!.descriptor;let token=add(h,late!);precondition(token.load(as:UInt.self)==0 && callbacks==["invalidate-deinit-add","destructor-late"]);event("destructor-add-returned",["has_token":false]);late=nil;precondition(w==nil && closed(fd));dropToken(token);event("destructor-add-end",["context_released":w==nil,"fd_closed":closed(fd)])}}
 }
 @_cdecl("owned_observer_record")
 func record(_ context:UnsafeRawPointer?,_ trace:UnsafeRawPointer?){
@@ -108,6 +108,13 @@ if mode=="invalidate" {
  let group=DispatchGroup();group.enter();DispatchQueue.global().async {invalidate(h);group.leave()};precondition(callbackEntered.wait(timeout:.now()+2) == .success)
  precondition(callbacks==["admitted-a"]);cancel(tb);precondition(wb != nil && !closed(fds[1]) && callbacks==["admitted-a"]);event("cancel-returned-next-not-called",["context_alive":wb != nil,"fd_open":!closed(fds[1])]);callbackMayReturn.signal();precondition(group.wait(timeout:.now()+2) == .success)
  precondition(callbacks==["admitted-a","admitted-b"] && wa==nil && wb==nil && fds.allSatisfy{closed($0)});event("dispatch-cleanup-complete",["context_released":wa==nil && wb==nil,"fds_closed":fds.allSatisfy{closed($0)}]);dropToken(ta);dropToken(tb);release(h)
+} else if mode=="invalidate-deinit-reentry" || mode=="invalidate-deinit-add" {
+ var p:Probe?=Probe(mode);weak var w=p;let fd=p!.descriptor;let token=add(h,p!);p=nil;destructionReentry=h
+ invalidate(h)
+ let expected=mode=="invalidate-deinit-add" ? [mode,"destructor-late"] : [mode]
+ precondition(callbacks==expected && w==nil && closed(fd) && destructionReentry==nil)
+ event("destructor-cleanup-complete",["context_released":w==nil,"fd_closed":closed(fd)])
+ invalidate(h);precondition(callbacks==expected);dropToken(token);release(h)
 } else if mode=="self-cancel-drop" || mode=="self-drop" {
  var p:Probe?=Probe(mode);selfTokenProbe=p;selfTokenFD=p!.descriptor;selfTokenContext=UnsafeRawPointer(Unmanaged.passUnretained(p!).toOpaque());selfTokenShouldCancel=(mode=="self-cancel-drop")
  selfToken=add(h,p!);p=nil;precondition(selfTokenProbe != nil)
