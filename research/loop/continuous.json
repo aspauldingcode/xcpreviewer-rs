@@ -18508,5 +18508,30 @@
     "native_events_observed": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify build-stop consumer and then correlate actual owned-project native build/file-event timing and refresh/session state controls."
+  },
+  "canvas_build_stop_checkpoint": {
+    "evidence": "research/evidence/canvas-build-stop-2026-11-01",
+    "seal_sha256": "1189639394fc663d196799d5cca0106b98683cec3e2773742a255051c1fbb3a0",
+    "instruction_bytes_reverified": 5160,
+    "selected_calls": 10,
+    "building_state_tags": {
+      "blocked": 0,
+      "paused": 1,
+      "running": 2,
+      "empty": 3
+    },
+    "static_refresh_states": [
+      "blocked",
+      "paused"
+    ],
+    "effective_preference_observed": false,
+    "native_event_delivery_observed": false,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-build-stop-replay-vcfz9bdi",
+      "scope": "Fresh copied-source complete-findings replay; no native event delivery."
+    },
+    "controller_released_on_exit": true,
+    "next_action": "Use bounded actual owned-project native build/refresh and failure controls; correlate visible lifecycle/state and available event diagnostics without assuming source submission equals runtime completion."
   }
 }

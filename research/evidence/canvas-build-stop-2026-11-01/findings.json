@@ -1,0 +1,155 @@
+{
+  "images": {
+    "PreviewsXcode": {
+      "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+      "uuid": "25c99c664185307188e31ab474573a10",
+      "architecture": "arm64"
+    },
+    "PreviewsPipeline": {
+      "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+      "uuid": "c6ed2a5e6f2e3a41a1586d2f65e00a58",
+      "architecture": "arm64"
+    }
+  },
+  "ranges": [
+    {
+      "start": "0x248ef0",
+      "end_exclusive": "0x24a318",
+      "bytes": 5160,
+      "sha256": "db13b4e3563b1e78303a62294b5c923b788d5cf1a67350b3a666bf914fc82fb6"
+    }
+  ],
+  "instruction_bytes_reverified": 5160,
+  "selected_calls": [
+    {
+      "call": "0x2496c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost11UserDefaultV12wrappedValuexvg",
+        "offset": "0x2a7f68"
+      }
+    },
+    {
+      "call": "0x249710",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14previewService0A8Pipeline07PreviewF0Cvg",
+        "offset": "0x2a50b8"
+      }
+    },
+    {
+      "call": "0x249730",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14PreviewServiceC13buildingStateAA0b8BuildingF0Ovg",
+        "offset": "0x2a5f70"
+      }
+    },
+    {
+      "call": "0x249748",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0x2ab994"
+      }
+    },
+    {
+      "call": "0x249760",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline20PreviewBlockedReasonOMa",
+        "offset": "0x2a6960"
+      }
+    },
+    {
+      "call": "0x24a218",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x24a234",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV20userRequestedRefreshACvgZ",
+        "offset": "0x2a684c"
+      }
+    },
+    {
+      "call": "0x24a24c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF",
+        "offset": "0x2a50c4"
+      }
+    },
+    {
+      "call": "0x248f24",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline0B13BuildingStateOMa",
+        "offset": "0x2a5898"
+      }
+    },
+    {
+      "call": "0x24a310",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_once",
+        "offset": "0x2abb38"
+      }
+    }
+  ],
+  "building_state_metadata": {
+    "field_descriptor": "0x556d4c",
+    "nominal_descriptor": "0x562e28",
+    "payload_cases": 2,
+    "empty_cases": 2,
+    "source_routes": [
+      {
+        "logical_tag": 0,
+        "name": "blocked",
+        "has_payload": true,
+        "source_route": "refresh after associated-value cleanup"
+      },
+      {
+        "logical_tag": 1,
+        "name": "paused",
+        "has_payload": true,
+        "source_route": "refresh after associated-value cleanup"
+      },
+      {
+        "logical_tag": 2,
+        "name": "running",
+        "has_payload": false,
+        "source_route": "return"
+      },
+      {
+        "logical_tag": 3,
+        "name": "empty",
+        "has_payload": false,
+        "source_route": "return"
+      }
+    ]
+  },
+  "source_policy": {
+    "dispatch": "Logical event tag 4 follows build-stop route. Payload low bit comes from prior qualified listener result == 1 comparison.",
+    "preference": "Lazy UserDefault<Bool> _shouldAutoResumeWhenBuildSucceeds; effective default/value not observed. wrappedValue low bit AND stop payload low bit must be true.",
+    "scene": "Missing workspaceScene returns without refresh. Present scene supplies previewService.buildingState.",
+    "state": "running or empty returns. blocked or paused destroys associated state and continues; no particular pause/block reason comparison appears on this recovered route.",
+    "refresh": "Surviving path schedules environmentCoalescer, clears/releases cached lastWorkspaceBuilder, constructs userRequestedRefresh, and requests setNeedsUpdate on the scene if still present.",
+    "scope": "Request submission only. No immediate unpause, resumed rendering, preserved state, completed build or timing behavior established."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_build_stop_event_observed": false,
+    "effective_preference_observed": false,
+    "result_enum_name_known": false,
+    "complete_refresh_or_canvas_parity": false
+  }
+}

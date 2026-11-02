@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover build-stop consumer behavior, then correlate actual native build/file-event timing and refresh/session state.",
+  "current_focus": "Correlate actual owned-project native build/refresh timing and failure/state transitions with recovered start/stop source gates.",
   "milestones": [
     {
       "number": 1,
@@ -70,9 +70,9 @@
         "title": "Build & refresh",
         "status": "in_progress",
         "evidence_level": "Partial source + owned workflows",
-        "verified_summary": "Source recovered file exclusions, thunkable membership, cache/coalescing, workspace events, timestamp suppression and native build notification classification. Actual correlated native state/timing remains open.",
+        "verified_summary": "Source recovered file filters, thunkable membership, cache/coalescing, workspace events, timestamp suppression, build notification classification and build-stop state/refresh gates. Actual correlated native state/timing remains open.",
         "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-build-listener-2026-11-01"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-build-stop-2026-11-01"
       },
       {
         "id": "transport",
@@ -120,6 +120,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-01",
+      "title": "Build-stop state gate and refresh request recovered",
+      "detail": "Native source gates automatic refresh on preference, result flag, scene and blocked/paused state. Running/empty return. Fresh static replay passes; actual resume/render/state remains unverified."
+    },
     {
       "date": "2026-11-01",
       "title": "Native build notification classification recovered",
