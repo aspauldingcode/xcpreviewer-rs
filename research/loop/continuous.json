@@ -18601,5 +18601,20 @@
     "reconciliation_or_resource_settlement_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Trace PreviewsScenes collector updateProviders helper 0x3e4e0 and updateRegistries helper 0x3eb94 for identity/reuse/removal ownership. Event consumers and native controls remain required; do not retry unchanged locked-screen/Accessibility/Ghidra failures."
+  },
+  "canvas_provider_reconcile_checkpoint": {
+    "evidence": "research/evidence/canvas-provider-reconcile-2026-11-02",
+    "seal_sha256": "daf2e644f560d5a410db123940a4fa33dd374f47b57ab822c71a2424574e257b",
+    "source_bytes_verified": 1724,
+    "selected_calls": 13,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-provider-reconcile-replay-l1g3npom",
+      "scope": "Fresh copied-source complete-findings replay; no native event execution."
+    },
+    "native_runtime_reuse_or_removal_observed": false,
+    "preview_update_effects_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace Preview.update(withItem:) at 0x3f694 for state/configuration and resource effects, then registry reconciliation at 0x3eb94. Native controls remain required; no unchanged locked-screen/Accessibility/Ghidra retries."
   }
 }

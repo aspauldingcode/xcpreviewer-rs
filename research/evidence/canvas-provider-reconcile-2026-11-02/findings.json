@@ -1,0 +1,163 @@
+{
+  "image": {
+    "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+    "uuid": "afaf513ac1153755840e1d82b40e7d93",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "providers",
+      "start": "0x3e4e0",
+      "end_exclusive": "0x3e890",
+      "bytes": 944,
+      "sha256": "d3c04234f3aca3fbbefbfe50bfafcbef5092b6c33554d620817815dace846cf7"
+    },
+    {
+      "name": "preview-transform",
+      "start": "0x3e890",
+      "end_exclusive": "0x3eb94",
+      "bytes": 772,
+      "sha256": "6146ac2ed61dabb7b9570bf82c4b2e4e1f2679493ef4b0bf1c36822df2ebaa92"
+    },
+    {
+      "name": "forwarder",
+      "start": "0x47750",
+      "end_exclusive": "0x47758",
+      "bytes": 8,
+      "sha256": "825a866c09e07fbccb9a4e6924b3bad84ebd662e08b7a8afa7e5101f860b4408"
+    }
+  ],
+  "source_bytes_verified": 1724,
+  "calls": [
+    {
+      "call": "0x3e698",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14ProviderSourceO2idAC2IDOvg",
+        "offset": "0x7fba0"
+      }
+    },
+    {
+      "call": "0x3e6c4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost13IdentifiedSetVyxSg2IDQzcig",
+        "offset": "0x80848"
+      }
+    },
+    {
+      "call": "0x3e730",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8ProviderV6source8isPinnedAE0A8Pipeline0E6SourceO_SbtcfC",
+        "offset": "0x7f12c"
+      }
+    },
+    {
+      "call": "0x3e770",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8ProviderV6source0A8Pipeline0E6SourceOvs",
+        "offset": "0x7f120"
+      }
+    },
+    {
+      "call": "0x3e77c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8ProviderV8isPinnedSbvs",
+        "offset": "0x7f150"
+      }
+    },
+    {
+      "call": "0x3e788",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV8ProviderV8previewsSayAC7PreviewVGvM",
+        "offset": "0x7f15c"
+      }
+    },
+    {
+      "call": "0x3e7b8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSa22PreviewsFoundationHostE17transformElementsyyyxzXEF",
+        "offset": "0x81154"
+      }
+    },
+    {
+      "call": "0x3e9fc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10PreviewsUI18DisplayableContentV7PreviewV4item0A8Pipeline14DiscoveredItemOvg",
+        "offset": "0x7efa0"
+      }
+    },
+    {
+      "call": "0x3ea54",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceV08providerD0AA08ProvidercD0VSgvg",
+        "offset": "0x7fbd0"
+      }
+    },
+    {
+      "call": "0x3eb00",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline23ProviderPreviewInstanceV14providerSourceAA0cG0Ovs",
+        "offset": "0x80164"
+      }
+    },
+    {
+      "call": "0x3eb0c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceV08providerC0yAcA08ProvidercD0VFZ",
+        "offset": "0x7fbc4"
+      }
+    },
+    {
+      "call": "0x3eb2c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV0A6ScenesE6update33_43ACF5493FEFE32A9C4B3DADA98FE11CLL8withItemy0A8Pipeline010DiscoveredP0O_tF"
+        ],
+        "offset": "0x3f694"
+      }
+    },
+    {
+      "call": "0x3eb8c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss27_diagnoseUnexpectedEnumCase4types5NeverOxm_tlF",
+        "offset": "0x81610"
+      }
+    }
+  ],
+  "enum_case_imports": {
+    "0x95c98": "_$s16PreviewsPipeline14DiscoveredItemO7previewyAcA15PreviewInstanceVcACmFWC",
+    "0x95ca0": "_$s16PreviewsPipeline14DiscoveredItemO8registryyAC0A5Model18RegistryDefinitionVcACmFWC"
+  },
+  "source_policy": {
+    "matching": "Iterate incoming ProviderSource array; obtain each source.id and look up optional existing DisplayableContent.Provider in captured IdentifiedSet.",
+    "miss": "Construct Provider(source:isPinned:) with current input source and low bit of supplied pinned flag.",
+    "hit": "Reuse matched provider value, assign current source and pinned flag, then transform the previews exposed after those setters. Whether setters also alter preview contents remains unqualified. Value reuse is not proof of object/session identity preservation.",
+    "preview_transform": "Read DiscoveredItem. Registry case returns after cleanup without this update path. Preview case with absent providerInstance likewise returns. Present providerInstance receives new providerSource, is wrapped into PreviewInstance.provider and DiscoveredItem.preview, then passed to Preview.update(withItem:). Unexpected case reaches native diagnostic/trap.",
+    "output": "Append one resulting provider per input source in input order; empty input returns empty array. Old entries not selected by input are not appended by this mapper. No explicit resource termination is inferred from exclusion.",
+    "boundaries": "Provider constructor/setter internals, Preview.update(withItem:) state/resource transitions, registry reconciliation, actual runtime reuse/removal and final settlement remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "runtime_reuse_or_removal_observed": false,
+    "preview_update_effects_qualified": false,
+    "full_canvas_parity": false
+  },
+  "failures": [
+    "Exploratory branch decoder applied to the forwarder first instruction failed its B/BL assertion; actual branch is at 0x47754 and binds to 0x3e890. No control-flow inference from failed decode.",
+    "Registry helper explored separately but its complex item-refresh semantics are not qualified by this provider-only unit.",
+    "Prior locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}
