@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-02T00:53:40.417289+00:00",
+  "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "title": "Xcode Canvas recovery",
+  "current_focus": "Recover native file-update routing, then correlate source contracts with actual owned-project refresh behavior.",
+  "milestones": [
+    {
+      "number": 1,
+      "title": "Fully reverse engineer native Xcode Canvas first",
+      "closed_issues": 1,
+      "total_issues": 10,
+      "status": "in_progress",
+      "percent_label": "Tracking issues closed",
+      "note": "The closed issue establishes the research toolkit and scoped boundary oracles. It does not close a full Canvas recovery area."
+    },
+    {
+      "number": 2,
+      "title": "Standalone cross-platform WASM Canvas",
+      "closed_issues": 0,
+      "total_issues": 16,
+      "status": "gated",
+      "percent_label": "Tracking issues closed",
+      "note": "Standalone implementation depends on full native recovery. Existing prototypes are preparatory."
+    }
+  ],
+  "recovery": {
+    "metric": "Accepted recovery areas",
+    "formula": "100 \u00d7 accepted areas / 9 required areas",
+    "accepted_status": "accepted",
+    "version": 1,
+    "scope": "Complete native behavior across the declared version/project/target matrix. This is a closure metric, not an estimate of all code or behavior discovered.",
+    "requirements": [
+      "Pinned source entry points and transitions",
+      "Actual positive-change and relevant failure controls",
+      "Explicit input/output/ordering contract with complete comparison",
+      "Reproducible replay or retained observation procedure",
+      "Declared original-project/native-version/target coverage"
+    ],
+    "areas": [
+      {
+        "id": "ui",
+        "title": "Canvas UI",
+        "status": "in_progress",
+        "evidence_level": "Partial native observation",
+        "verified_summary": "Open PreviewLab Canvas, selected Live mode, declarations and visible controls observed.",
+        "remaining": "Complete control/menu/shortcut inventory and enabled-state transitions."
+      },
+      {
+        "id": "project",
+        "title": "Project binding",
+        "status": "in_progress",
+        "evidence_level": "Partial source + native context",
+        "verified_summary": "Scheme buildable selection, builder population, reuse and invalidation routes recovered. Native project/scheme/destination context observed separately.",
+        "remaining": "Actual target/source/settings/dependency/resource ownership across projects and destinations."
+      },
+      {
+        "id": "discovery",
+        "title": "Discovery & variants",
+        "status": "in_progress",
+        "evidence_level": "Scoped native controls",
+        "verified_summary": "Selected plain registry/body and explicit provider controls on pinned profiles.",
+        "remaining": "General declaration discovery, traits, variants and selection identity across edits."
+      },
+      {
+        "id": "refresh",
+        "title": "Build & refresh",
+        "status": "in_progress",
+        "evidence_level": "Partial source + owned workflows",
+        "verified_summary": "File exclusions, thunkable membership, cache reuse, coalescing and workspace-event routes recovered in source. Owned watcher/follow prototypes verified.",
+        "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions."
+      },
+      {
+        "id": "transport",
+        "title": "Sessions & transport",
+        "status": "in_progress",
+        "evidence_level": "Scoped native controls",
+        "verified_summary": "Native connection/reply/codec controls with explicit lifetime and failure boundaries.",
+        "remaining": "A complete correlated Canvas/agent/host lifecycle and routing/error matrix."
+      },
+      {
+        "id": "rendering",
+        "title": "Rendering",
+        "status": "in_progress",
+        "evidence_level": "Scoped native controls",
+        "verified_summary": "Bitmap payloads and selected native rendering paths compared at bounded scopes.",
+        "remaining": "All rendering routes, device environments and output publication/completion ordering."
+      },
+      {
+        "id": "interaction",
+        "title": "Interaction & state",
+        "status": "open",
+        "evidence_level": "Unqualified at full scope",
+        "verified_summary": "Preparatory interactive examples exist; complete native state/input behavior remains unqualified.",
+        "remaining": "Input, focus, accessibility, identity, observation, tasks, animation and refresh-state semantics."
+      },
+      {
+        "id": "resources",
+        "title": "Resource lifetime",
+        "status": "in_progress",
+        "evidence_level": "Scoped native controls",
+        "verified_summary": "Surface, descriptor and callback ownership controls; limitations retained.",
+        "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss."
+      },
+      {
+        "id": "targets",
+        "title": "Target differences",
+        "status": "open",
+        "evidence_level": "Unqualified at full scope",
+        "verified_summary": "Requested device families are recorded; no all-target acceptance claimed.",
+        "remaining": "Versioned native comparisons for every claimed Apple profile and real non-Apple host validation."
+      }
+    ]
+  },
+  "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Thunkable-file membership recovered",
+      "detail": "Static source qualifies scene source-identifier/URL membership and late external-change refresh gates. Actual event delivery remains unobserved."
+    },
+    {
+      "date": "2026-11-02",
+      "title": "Modified-file selection policy recovered",
+      "detail": "Typed-file filtering and bundle/package/path exclusions reproduced by a fresh static reader."
+    },
+    {
+      "date": "2026-11-02",
+      "title": "Six workspace event routes recovered",
+      "detail": "Settings/scheme/destination/package/platform events map to coalescer scheduling and cached-builder invalidation in source."
+    },
+    {
+      "date": "2026-11-02",
+      "title": "Builder producer and reuse chain recovered",
+      "detail": "Selection \u2192 cached buildables \u2192 dependency request connected in source; runtime execution remains unqualified."
+    }
+  ],
+  "targets": [
+    "macOS",
+    "iPhone / iOS",
+    "iPad / iPadOS",
+    "Apple Watch / watchOS",
+    "Apple TV / tvOS",
+    "Vision Pro / visionOS",
+    "Requested iPhone Duo profile",
+    "Future verified profiles"
+  ],
+  "publication": {
+    "contents": "Original dashboard code and sanitized aggregate status only. Native binaries, raw disassembly and private captures are not included.",
+    "evidence_availability": "Recent detailed evidence remains local pending separate publication review. Repository/milestone links require repository access."
+  },
+  "history": [
+    {
+      "date": "2026-11-02",
+      "accepted_areas": 0,
+      "required_areas": 9,
+      "milestone_1_closed": 1,
+      "milestone_1_total": 10,
+      "note": "Initial audited status baseline; no inferred historical percentages."
+    }
+  ],
+  "overall": {
+    "metric": "Tracked delivery progress",
+    "formula": "Closed issues across milestones 1 and 2 / all issues in those milestones",
+    "completion_gate": "100% additionally requires all nine recovery areas accepted and explicit Linux, macOS, Windows, standalone WASM SwiftUI runtime and full product conformance evidence.",
+    "release_acceptance": {
+      "linux": null,
+      "macos": null,
+      "windows": null,
+      "standalone_swiftui_wasm": null,
+      "full_product_conformance": null
+    }
+  },
+  "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00"
+}

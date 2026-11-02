@@ -1,0 +1,39 @@
+name: Canvas status Pages
+on:
+  push:
+    branches: [master]
+    paths: ['status-site/**', '.github/workflows/status-pages.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+permissions:
+  contents: read
+  issues: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: vars.STATUS_PAGES_ENABLED == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Prepare status-only public artifact
+        run: |
+          mkdir public-status
+          cp status-site/index.html status-site/style.css status-site/app.js status-site/status.json public-status/
+      - name: Sync milestone counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 status-site/sync_status.py --output public-status/status.json
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public-status
+      - uses: actions/deploy-pages@v5
+        id: deployment
