@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T16:05:32.378209+00:00",
+  "updated_at": "2026-11-02T16:17:24.908031+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover token destruction and once-guarantee lifetime; qualify actual registration, cancellation and weak-owner-loss controls.",
+  "current_focus": "Recover softAssert failure handling and once-guarantee/context destruction; actual last-owner, cancellation and assertion controls remain required.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus registration/late-observer source paths, weak cancellation capture, one-shot cancel and observer removal. Actual delivery, token deinit effects, races/reentry and settlement remain open.",
+        "verified_summary": "Scoped native controls plus observer/token registration, cancellation, destruction and constructor softAssert policy source. Actual last-owner deinit, assertion/cancellation effects and settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-observer-registration-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-token-destroy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Token destruction and softAssert policy decoded",
+      "detail": "Source delegates callback destruction then releases once guarantee. Full enum-tag decoding binds constructor to softAssert. Fresh replay passes; actual deinit, assertion and cancellation effects remain unobserved."
+    },
     {
       "date": "2026-11-02",
       "title": "Observer registration and weak cancellation tokens recovered",

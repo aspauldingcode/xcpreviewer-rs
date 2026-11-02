@@ -1,0 +1,103 @@
+{
+  "image": {
+    "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "token-destroy",
+      "start": "0x12a0ac",
+      "end_exclusive": "0x12a0ec",
+      "bytes": 64,
+      "sha256": "04dead5453d5f233d253a09d9547e18b0a56b4b72bdc001b5a1b2405257da355"
+    },
+    {
+      "name": "mode-destroy",
+      "start": "0x2d00c",
+      "end_exclusive": "0x2d030",
+      "bytes": 36,
+      "sha256": "95935bbae27be3acdb2fded2a1eadcfa8d80d09ef8590821282cb406cb32a3d8"
+    },
+    {
+      "name": "mode-tag",
+      "start": "0x2ffa0",
+      "end_exclusive": "0x2ffb8",
+      "bytes": 24,
+      "sha256": "cbd3ebedaeca6e0cad7fc4cec3b3da00ab4f63f771c6cb14e29aa0a4c132bfca"
+    },
+    {
+      "name": "constructor-mode",
+      "start": "0x1298ec",
+      "end_exclusive": "0x129904",
+      "bytes": 24,
+      "sha256": "15e1f0b06cf91f44846609074e3a31f18642dc4af013eb563756189d1705444a"
+    }
+  ],
+  "source_bytes_verified": 148,
+  "metadata": {
+    "token": [
+      "callback",
+      "onceGuarantee"
+    ],
+    "failure_mode": [
+      "test",
+      "log",
+      "softAssertDebugOnly",
+      "softAssert",
+      "fatalError"
+    ]
+  },
+  "constructor_failure_policy": {
+    "constant_address": "0x132920",
+    "constant_bytes": 16,
+    "constant_sha256": "4cbbd8ca5215b8d161aec181a74b694f4e24b001d5b081dc0030ed797a8973e0",
+    "marker": 2,
+    "payload_ordinal": 1,
+    "logical_tag": 3,
+    "case": "softAssert",
+    "native_tag_accessor": "0x2ffa0"
+  },
+  "calls": [
+    {
+      "call": "0x12a0e8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0x2d020",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0x131498"
+      }
+    },
+    {
+      "call": "0x2d028",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_bridgeObjectRelease",
+        "offset": "0x1311c8"
+      }
+    }
+  ],
+  "source_policy": {
+    "token_destroy": "Destroy callback through its generic type witness, advance by callback size rounded to 8-byte alignment, load following onceGuarantee reference and tail-call swift_release. Complete body contains no explicit cancel call; dynamic callback destructor and released guarantee effects remain opaque.",
+    "failure_policy": "Concrete ConcurrentTokenCallback token constructor stores failureMode at state-owner offset +0x60: constant payload ordinal 1 and marker 2. Native tag accessor returns payload+2 for marker >1, hence logical tag 3 softAssert. Marker 2 alone does not identify softAssertDebugOnly.",
+    "mode_destroy": "Representation marker 0 releases closure context, marker 1 bridge-releases storage, other markers return. The constructor-selected empty case therefore has no payload reference release in this helper. No runtime assertion policy or severity inferred beyond named case selection.",
+    "boundaries": "Previously recovered FulfillOnceState deinit can invoke configured policy while waiting, but this unit does not prove last ownership, actual deinit, cancellation, assertion delivery, process behavior or final resource settlement. No claim that token destruction cannot cancel through delegated effects."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_token_destroy_or_assertion_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Initial exploratory tag-witness range was a prefix; final range includes select and return before naming constructor policy. No claim based on marker alone.",
+    "Previous locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}

@@ -18781,5 +18781,20 @@
     "actual_registration_or_cancel_control": false,
     "controller_released_on_exit": true,
     "next_action": "Recover token destroy/onceGuarantee lifetime and constructor failure-mode policy; identify a qualified callable owned native control route for registration/cancel/weak-owner loss without guessing Swift ABI. No unchanged UI/Ghidra retry."
+  },
+  "canvas_token_destroy_checkpoint": {
+    "evidence": "research/evidence/canvas-token-destroy-2026-11-02",
+    "seal_sha256": "fde38a0108652a6644b609608330600fe9699a3c9718abf55e8d55a4638990eb",
+    "source_bytes_verified": 148,
+    "constructor_constant_bytes": 16,
+    "selected_calls": 3,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-token-destroy-replay-w1g44e0e",
+      "scope": "Fresh copied-source complete-findings replay; actual destruction/assertion not observed."
+    },
+    "actual_token_destroy_or_assertion_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify FulfillmentFailureMode.fail softAssert branch at FoundationHost 0x2bc40 and released onceGuarantee/context destruction. Seek ABI-qualified bounded owned native registration/cancel/deinit controls; no unchanged UI/Ghidra retry."
   }
 }
