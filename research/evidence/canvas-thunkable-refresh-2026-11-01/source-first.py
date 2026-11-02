@@ -1,0 +1,23 @@
+from pathlib import Path
+import fcntl,hashlib,json,re,subprocess,tempfile
+from macho import Image
+r=Path('/Users/8amps/xcpreviewer-rs');w=Path(__file__).parent;p=Path('/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode')
+with (r/'research/state/controller.lock').open('a+') as lock:
+ fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);m=Image(p);digest=hashlib.sha256(m.data).hexdigest();assert digest=='ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b' and m.uuid=='25c99c664185307188e31ab474573a10'
+ rawdir=Path(tempfile.mkdtemp(prefix='canvas-thunkable-refresh-raw-',dir='/private/tmp'));ranges=[]
+ for a,b,n in [(0x250a48,0x250ffc,'open-thunkable'),(0x249bf4,0x249d1c,'modified-gate'),(0x24a264,0x24a300,'modified-scene-update')]:
+  out=subprocess.run(['xcrun','llvm-objdump','--arch=arm64','--disassemble','--start-address='+hex(a),'--stop-address='+hex(b),str(p)],capture_output=True,check=True,timeout=20).stdout;(rawdir/(n+'.raw.s')).write_bytes(out)
+  words={int(x,16):int(y,16).to_bytes(4,'little') for x,y in re.findall(r'^\s*([0-9a-f]+):\s*([0-9a-f]{8})\s',out.decode(),re.M)}
+  assert set(words)==set(range(a,b,4)) and b''.join(words[x] for x in range(a,b,4))==m.read(a,b-a)
+  ranges.append({'name':n,'start':hex(a),'end_exclusive':hex(b),'bytes':b-a,'sha256':hashlib.sha256(m.read(a,b-a)).hexdigest()})
+ expected={0x250bc0:'_objc_msgSend$fileURL',0x250be8:'_swift_weakLoadStrong',0x250bf8:'_$s14PreviewsScenes14WorkspaceSceneC26thunkableSourceIdentifiersShy0A5Model0F10IdentifierVGvg',0x250ce0:'_$s13PreviewsModel16SourceIdentifierV12originalFile10Foundation3URLVSgvg',0x250ecc:'_$sSQ2eeoiySbx_xtFZTj',0x249c5c:'filterfg3ForH0',0x249c80:'CoalescerC14setNeedsUpdateyyF',0x24a2ac:'_$s16PreviewsPipeline19PreviewUpdateReasonV16workspaceChangedyACSSFZ',0x24a2e8:'_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF'}
+ calls=[]
+ for a,name in expected.items():
+  t=m.resolve(m.branch(a));names=[t['name']] if t['kind']=='import_stub' else t['names'];assert any(name in n for n in names),(hex(a),names);calls.append({'call':hex(a),'target':t})
+ ops={0x250bf0:0xb4001d80,0x250d00:0x52800001,0x250d04:0x52800022,0x250f70:0x3607e7e8,0x250f74:0x1400001e,0x250f7c:0x52800014,0x250fb0:0xaa1403e0,0x250fec:0x52800034,0x249bf8:0xf9479913,0x249c10:0x38736b28,0x249c14:0x7100051f,0x249c18:0x54000a81,0x249c3c:0x39402268,0x249c44:0x54002220,0x249c6c:0xf9400a68,0x249c70:0xb4000c68,0x249c88:0xf945a908,0x249c90:0xf8286b3f,0x249d18:0x14000157,0x24a2d8:0xb40000f4}
+ for a,v in ops.items():assert m.word(a)==v,hex(a)
+ assert any('isOpenAndThunkable' in n for n in m.named[0x250a48])
+ assert any('shouldInvalidatePreviewsOnExternalFileChanges' in n for n in m.named[0x38bf30])
+ assert any('lastC7Builder' in n for n in m.named[0x36cb50])
+ result={'image':{'path':str(p),'sha256':digest,'uuid':m.uuid,'architecture':'arm64'},'ranges':ranges,'source_bytes_verified':sum(x['bytes'] for x in ranges),'new_helper_bytes':1460,'previous_handler_bytes_reverified':sum(x['bytes'] for x in ranges[1:]),'calls':calls,'source_inference':{'membership':'isOpenAndThunkable weak-loads workspaceScene. Missing scene or no match returns false. It iterates scene.thunkableSourceIdentifiers and compares each optional originalFile URL with the changed path fileURL represented as present URL, using imported URL Equatable machinery. A match returns true. Exact Foundation URL equality/normalization semantics are not separately qualified.','filter_composition':'Prior shouldUpdateModifiedFile source rejects true helper results; this completes the previously opaque thunkable membership source boundary. No separate editor-open state query is established by this helper.','late_modified_gate':'The inspected late modified-file handler path requires shouldInvalidatePreviewsOnExternalFileChanges=true, a present ModifiedFilesUpdateFilter, and a nonempty filtered result before marking the coalescer and clearing/releasing lastWorkspaceBuilder.','scene_update':'The qualifying path constructs workspaceChanged and calls optional WorkspaceScene.setNeedsUpdate. Earlier build-operation gates and complete modified-event delivery/session effects remain unqualified.'},'scope':{'static_only':True,'private_native_calls':0,'fresh_ui_observation':False,'runtime_thunkable_set_observed':False,'runtime_file_event_delivery_observed':False,'complete_modified_event_behavior':False,'build_refresh_state_parity':False,'full_canvas_parity':False}}
+ (w/'findings.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'source_bytes_verified':result['source_bytes_verified'],'new_helper_bytes':1460,'selected_calls_bound':len(calls)}))

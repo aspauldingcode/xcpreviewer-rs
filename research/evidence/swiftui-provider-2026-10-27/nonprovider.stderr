@@ -1,0 +1,31 @@
+/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-8q6uuhgn/Capture.swift:19:43: error: static method 'providerContent' requires that 'NotProvider' conform to 'PreviewProvider'
+ 8 |   do {try capture()} catch {fputs("SwiftUI capture failed: \(error)\n",stderr);exit(1)}
+ 9 |  }
+10 |  @MainActor static func providerContent<P: PreviewProvider>(_ provider: P.Type) -> P.Previews {
+   |                         `- note: where 'P' = 'NotProvider'
+11 |   P.previews
+12 |  }
+   :
+17 |   let pixelWidth=width*scale,pixelHeight=height*scale,stride=pixelWidth*4
+18 |   guard stride*pixelHeight<=32*1024*1024 else {throw CaptureError.invalidDimensions}
+19 |   let renderer=ImageRenderer(content:Self.providerContent(NotProvider.self).frame(width:CGFloat(width),height:CGFloat(height)).clipped().environment(\.displayScale,CGFloat(scale)))
+   |                                           `- error: static method 'providerContent' requires that 'NotProvider' conform to 'PreviewProvider'
+20 |   renderer.proposedSize=ProposedViewSize(width:CGFloat(width),height:CGFloat(height));renderer.scale=CGFloat(scale);renderer.colorMode = .nonLinear;renderer.isOpaque=false
+21 |   guard let image=renderer.cgImage,image.width==pixelWidth,image.height==pixelHeight else {throw CaptureError.noImage}
+
+/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-8q6uuhgn/Capture.swift:19:150: error: cannot infer key path type from context; consider explicitly specifying a root type
+17 |   let pixelWidth=width*scale,pixelHeight=height*scale,stride=pixelWidth*4
+18 |   guard stride*pixelHeight<=32*1024*1024 else {throw CaptureError.invalidDimensions}
+19 |   let renderer=ImageRenderer(content:Self.providerContent(NotProvider.self).frame(width:CGFloat(width),height:CGFloat(height)).clipped().environment(\.displayScale,CGFloat(scale)))
+   |                                                                                                                                                      `- error: cannot infer key path type from context; consider explicitly specifying a root type
+20 |   renderer.proposedSize=ProposedViewSize(width:CGFloat(width),height:CGFloat(height));renderer.scale=CGFloat(scale);renderer.colorMode = .nonLinear;renderer.isOpaque=false
+21 |   guard let image=renderer.cgImage,image.width==pixelWidth,image.height==pixelHeight else {throw CaptureError.noImage}
+
+/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-8q6uuhgn/Capture.swift:20:139: error: cannot infer contextual base in reference to member 'nonLinear'
+18 |   guard stride*pixelHeight<=32*1024*1024 else {throw CaptureError.invalidDimensions}
+19 |   let renderer=ImageRenderer(content:Self.providerContent(NotProvider.self).frame(width:CGFloat(width),height:CGFloat(height)).clipped().environment(\.displayScale,CGFloat(scale)))
+20 |   renderer.proposedSize=ProposedViewSize(width:CGFloat(width),height:CGFloat(height));renderer.scale=CGFloat(scale);renderer.colorMode = .nonLinear;renderer.isOpaque=false
+   |                                                                                                                                           `- error: cannot infer contextual base in reference to member 'nonLinear'
+21 |   guard let image=renderer.cgImage,image.width==pixelWidth,image.height==pixelHeight else {throw CaptureError.noImage}
+22 |   var pixels=Data(count:stride*pixelHeight)
+

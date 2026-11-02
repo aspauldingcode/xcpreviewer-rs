@@ -1,0 +1,36 @@
+{
+  "commit": "8ef5e1655307103bd34083ef9cd68ece0b9c1417",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "status": "complete",
+  "retry_not_before_utc": "2026-10-27T14:05:20.484859+00:00",
+  "body": "Repeated encoded reply completion published: 8ef5e1655307103bd34083ef9cd68ece0b9c1417\n\nSix actual native modern-update Futures retain their first complete success/failure snapshot through a later distinct valid dictionary and a later nil/nil reply. Explicit counters: 18 retained encoded-handler invocations, 30 native Future state snapshots, 12 owned SDK UV exchanges. Two first successes and four first failures remain unchanged. Encoded callbacks are directly invoked; this does not claim 18 SDK deliveries or exactly-once callback behavior.\n\nNew Promise transition source qualification covers 1,876 instruction bytes, plus inherited 5,704 bytes. Added original serial ReplyCompletion<T,E>: first fully projected success/failure retained; rejected proposal returned intact. Decoding precedes the completion attempt. Returned ownership and Rust synchronization interface are reconstruction policy. No native cancellation, observer cardinality, concurrency/queue equivalence, daemon/provider update application or OS/resource settlement inferred.\n\n401 Rust tests pass, including complete native-value/category conformance and non-Clone rejected-value ownership. Host and actual WASIp1 example stdout match. Fresh disposable native/source/focused-test/host/WASM replay passes. Raw Apple code stays local; sanitized evidence and replay: `research/evidence/repeated-reply-2026-10-27`. Both milestones remain incomplete. Next: actual daemon/resource/provider semantics or independently qualified cancellation.",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6444041180",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6444042893",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6444044243",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6444046399",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T14:05:20.534297+00:00",
+  "completed_utc": "2026-10-27T14:05:33.417680+00:00"
+}

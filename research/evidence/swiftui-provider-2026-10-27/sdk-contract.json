@@ -1,0 +1,24 @@
+{
+  "source": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+  "sha256": "da276921c83f2fa0e00bb3892865cfb4d3326d895984947c260b018306433bef",
+  "lines": [
+    11776,
+    11789
+  ],
+  "observations": [
+    "PreviewProvider has a View-constrained associated Previews type.",
+    "Public static previews getter is MainActor and ViewBuilder.",
+    "Public platform getter is separate from previews."
+  ],
+  "implementation": [
+    "Explicit generic P: PreviewProvider access on MainActor.",
+    "No _PreviewProvider ABI or private discovery entry invoked.",
+    "CLI size/scale, not provider platform/layout metadata, controls this ImageRenderer capture."
+  ],
+  "rea": {
+    "version": "6.2.0",
+    "alignment": "aligned",
+    "open": false,
+    "catalog": "678609d2e1cbc0fbf64185050a543b2c0be5599413627327f5c29a20b2b52b0c"
+  }
+}

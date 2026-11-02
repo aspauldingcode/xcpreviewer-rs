@@ -1,0 +1,22 @@
+[
+  {
+    "case": "Controls",
+    "passed": true,
+    "registries": 2
+  },
+  {
+    "case": "None",
+    "passed": true,
+    "registries": 0
+  },
+  {
+    "case": "Invalid",
+    "passed": true,
+    "expected_failure": "ThisOwnedTypeDoesNotExist"
+  },
+  {
+    "case": "Slow",
+    "passed": true,
+    "expected_failure": "Owned process exceeded 0.1 seconds"
+  }
+]

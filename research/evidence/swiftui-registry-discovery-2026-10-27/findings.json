@@ -1,0 +1,53 @@
+{
+  "rea": {
+    "version": "6.2.0",
+    "alignment": "aligned",
+    "open": false
+  },
+  "actual_registry": {
+    "file_id": "Source/Source.swift",
+    "line": 2,
+    "column": 1,
+    "runtime_receipt": "probe.json"
+  },
+  "observed_shape": [
+    "Preview.displayName: Optional<String>",
+    "Preview.dataSource.preview: DefaultPreviewSource<ViewPreviewBody>",
+    "structure.singlePreview.makeBody: @MainActor () -> ViewPreviewBody"
+  ],
+  "checked_cast_to_actor_any_returning_closure": false,
+  "body_invoked_by_metadata_probe": false,
+  "static_export_frontier": [
+    {
+      "image": "/System/Library/Frameworks/DeveloperToolsSupport.framework/Versions/A/DeveloperToolsSupport",
+      "uuid": "5ed60a65de463c51874d608cfced6a11",
+      "offset": 13664,
+      "signature": "DeveloperToolsSupport.Preview.dataSource.getter : DeveloperToolsSupport.Preview.DataSource"
+    },
+    {
+      "image": "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+      "uuid": "90f7fa24a2803e8aa62d148b11bfc28d",
+      "offset": 17171888,
+      "signature": "type metadata accessor for SwiftUI.ViewPreviewBody"
+    },
+    {
+      "image": "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+      "uuid": "90f7fa24a2803e8aa62d148b11bfc28d",
+      "offset": 17171168,
+      "signature": "SwiftUI.ViewPreviewBody.init<A where A: SwiftUI.View>(body: A) -> SwiftUI.ViewPreviewBody"
+    },
+    {
+      "image": "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI",
+      "uuid": "90f7fa24a2803e8aa62d148b11bfc28d",
+      "offset": 17171544,
+      "signature": "SwiftUI.ViewPreviewBody.body.getter : SwiftUI.View"
+    }
+  ],
+  "source_scope": "Export signatures only; no getter instructions analyzed or native body ABI invoked. Runtime image UUIDs independently agree with static cache images.",
+  "limitations": [
+    "Requested private swiftinterface files are absent; public interfaces were inspected instead.",
+    "Initial export_names(raw,0) query returned no symbol at offset zero; this was not an export inventory and does not indicate absent exports. A bounded export-trie traversal recovered the listed candidates.",
+    "A checked closure cast fails on this build; no unsafe reinterpretation attempted.",
+    "Actual native Canvas session, event/state migration and resource settlement remain unqualified."
+  ]
+}

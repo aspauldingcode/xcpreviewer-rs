@@ -1,0 +1,7 @@
+from pathlib import Path
+import subprocess,json,sys,hashlib,os
+w=Path(__file__).parent;r=Path(sys.argv[1]) if len(sys.argv)>1 else Path('/Users/8amps/xcpreviewer-rs')
+source=w/'Registry.swift';source.write_text('import SwiftUI\n#Preview("Watched") { Color.green }\n')
+args=[sys.executable,str(r/'tools/re/swiftui-preview/watch.py'),str(source),'--once','--preview-index','0','--output',str(w/'registry.bplist'),'--width','16','--height','12']
+p=subprocess.run(args,capture_output=True,timeout=240,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'});(w/'registry.stdout').write_bytes(p.stdout);(w/'registry.stderr').write_bytes(p.stderr);assert p.returncode==0,p.stderr.decode();events=[json.loads(line) for line in p.stdout.splitlines()];assert [e['status'] for e in events]==['capturing','published'];c=events[-1]['capture'];assert c['preview_index']==0 and c['registry']['display_name']=='Watched';assert c['native_registry']['body_calls']==c['native_registry']['getter_calls']==c['native_registry']['body_destroys']==1
+(w/'registry-results.json').write_text(json.dumps({'passed':True,'once_mode':True,'selected_registry':True,'native_body_calls':1,'native_body_destroys':1,'payload_sha256':hashlib.sha256((w/'registry.bplist').read_bytes()).hexdigest(),'scope':'Pinned runtime plain registry capture regression through watcher; no traits or interactive state.'},indent=2)+'\n');print((w/'registry-results.json').read_text())

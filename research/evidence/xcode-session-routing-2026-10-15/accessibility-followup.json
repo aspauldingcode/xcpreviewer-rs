@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-15T17:59:49.125534+00:00",
+  "xcode_pid": 50437,
+  "ucu_observation": "no accessible/on-screen window; native System Events intermittently reports Intelligence window",
+  "ucu_schema_finding": "computer_run implementation accepts step objects, contrary to advertised Array<string>",
+  "passive_sample": "840 main-thread samples in normal AppKit run loop; finite sample does not establish absence of intermittent stalls",
+  "outside_sandbox_probe": {
+    "initialize": {
+      "name": "xcode-tools",
+      "version": "24952",
+      "protocolVersion": "2024-11-05"
+    },
+    "tools_list": "TimeoutError after 12 seconds",
+    "owned_bridge_closed_and_waited": true
+  },
+  "setting": "user confirmed external agents enabled; no re-enable request",
+  "resolution": "unresolved; no reliable controls or downstream tool response",
+  "changes": "no system protections, user processes, or workspace contents changed",
+  "next_action": "Normal user-controlled Xcode relaunch after saving work, then one bounded tools/list and XcodeListWindows check; do not terminate Xcode automatically"
+}

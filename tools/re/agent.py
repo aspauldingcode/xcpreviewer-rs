@@ -51,6 +51,8 @@ def serve(controller):
         ('re_response','Read an exact page from a bounded tool response.',{'response_id':{'type':'string'},'offset':{'type':'integer'},'chars':{'type':'integer'}}),
         ('re_claim','Assess an explicitly scoped claim against sealed observation checks.',{'claim':{'type':'object'}}),
         ('re_plan','Suggest discriminating counterexperiments from verified outcomes.',{}),
+        ('re_graph_loop','Inspect graph research candidates and pinned Caveman FULL instructions.',{}),
+        ('re_graph_loop_run','Execute bounded reviewed graph research; resume interrupted wake without renewing budget.',{}),
         ('re_engine_tools','Discover allowlisted live Ghidra engine tool contracts.',{}),
         ('re_engine_read','Query explicit Ghidra program: symbols, references, decompilation, disassembly.',{'operation':{'type':'string'},'arguments':{'type':'object'}}),
         ('re_campaign','Run up to four connected campaign experiments with a 15-minute budget.',{}),
@@ -91,6 +93,9 @@ def serve(controller):
         if name=='re_plan':
             from reloop.planner import plan
             return plan(controller)
+        if name in {'re_graph_loop','re_graph_loop_run'}:
+            from reloop.graphloop import inspect,run
+            return run(controller) if name=='re_graph_loop_run' else inspect(controller)
         if name=='re_engine_tools':
             from reloop.engine import catalog
             return catalog()
@@ -142,6 +147,9 @@ def main():
     parser.add_argument('--state-dir',type=pathlib.Path)
     sub=parser.add_subparsers(dest='command',required=True)
     for name in ['doctor','status','serve','next','report','index','plan','graph','campaign']:sub.add_parser(name)
+    graph_loop=sub.add_parser('graph-loop',help='Inspect or execute bounded graph research with Caveman FULL resume context')
+    graph_loop.add_argument('--execute',action='store_true')
+    graph_loop.add_argument('--resume',help='Resume original wake without renewing its budget')
     run=sub.add_parser('run');run.add_argument('--queue',type=pathlib.Path,default=QUEUE);run.add_argument('--only');run.add_argument('--max-experiments',type=int,default=8);run.add_argument('--minutes',type=float,default=45);run.add_argument('--max-mb',type=int,default=1024)
     search=sub.add_parser('search');search.add_argument('query')
     claim_parser=sub.add_parser('claim');claim_parser.add_argument('spec',type=pathlib.Path)
@@ -152,6 +160,11 @@ def main():
     args=parser.parse_args();controller=Controller(state_root=args.state_dir)
     def interrupted(signum,frame):raise KeyboardInterrupt()
     signal.signal(signal.SIGTERM,interrupted)
+    if args.command=='graph-loop':
+        from reloop.graphloop import inspect,run
+        if args.resume and not args.execute:parser.error('--resume requires --execute')
+        print(json.dumps(run(controller,args.resume) if args.execute else inspect(controller),indent=2))
+        return 0
     if args.command=='serve':serve(controller);return 0
     if args.command=='campaign':result=controller.session(read_queue(CAMPAIGN),4,15)
     elif args.command=='compare':

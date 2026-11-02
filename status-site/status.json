@@ -44,7 +44,8 @@
         "status": "in_progress",
         "evidence_level": "Partial native observation",
         "verified_summary": "Open PreviewLab Canvas, selected Live mode, declarations and visible controls observed.",
-        "remaining": "Complete control/menu/shortcut inventory and enabled-state transitions."
+        "remaining": "Complete control/menu/shortcut inventory and enabled-state transitions.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-workspace-caller-2026-11-01"
       },
       {
         "id": "project",
@@ -52,7 +53,8 @@
         "status": "in_progress",
         "evidence_level": "Partial source + native context",
         "verified_summary": "Scheme buildable selection, builder population, reuse and invalidation routes recovered. Native project/scheme/destination context observed separately.",
-        "remaining": "Actual target/source/settings/dependency/resource ownership across projects and destinations."
+        "remaining": "Actual target/source/settings/dependency/resource ownership across projects and destinations.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-buildable-producer-2026-11-01"
       },
       {
         "id": "discovery",
@@ -60,7 +62,8 @@
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
         "verified_summary": "Selected plain registry/body and explicit provider controls on pinned profiles.",
-        "remaining": "General declaration discovery, traits, variants and selection identity across edits."
+        "remaining": "General declaration discovery, traits, variants and selection identity across edits.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/swiftui-registry-discovery-2026-10-27"
       },
       {
         "id": "refresh",
@@ -68,7 +71,8 @@
         "status": "in_progress",
         "evidence_level": "Partial source + owned workflows",
         "verified_summary": "File exclusions, thunkable membership, cache reuse, coalescing and workspace-event routes recovered in source. Owned watcher/follow prototypes verified.",
-        "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions."
+        "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-build-time-gate-2026-11-01"
       },
       {
         "id": "transport",
@@ -76,7 +80,8 @@
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
         "verified_summary": "Native connection/reply/codec controls with explicit lifetime and failure boundaries.",
-        "remaining": "A complete correlated Canvas/agent/host lifecycle and routing/error matrix."
+        "remaining": "A complete correlated Canvas/agent/host lifecycle and routing/error matrix.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/native-pending-reply-2026-10-27"
       },
       {
         "id": "rendering",
@@ -84,7 +89,8 @@
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
         "verified_summary": "Bitmap payloads and selected native rendering paths compared at bounded scopes.",
-        "remaining": "All rendering routes, device environments and output publication/completion ordering."
+        "remaining": "All rendering routes, device environments and output publication/completion ordering.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/swiftui-source-preview-2026-10-27"
       },
       {
         "id": "interaction",
@@ -100,7 +106,8 @@
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
         "verified_summary": "Surface, descriptor and callback ownership controls; limitations retained.",
-        "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss."
+        "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/uv-fd-carrier-2026-11-01"
       },
       {
         "id": "targets",
@@ -151,7 +158,7 @@
   ],
   "publication": {
     "contents": "Original dashboard code and sanitized aggregate status only. Native binaries, raw disassembly and private captures are not included.",
-    "evidence_availability": "Recent detailed evidence remains local pending separate publication review. Repository/milestone links require repository access."
+    "evidence_availability": "Detailed sanitized evidence and milestone links are available in the public source repository. Raw Apple code, binaries, compiler caches and private captures remain local."
   },
   "history": [
     {

@@ -1,0 +1,62 @@
+{
+  "channel": {
+    "received": 3,
+    "writes": 1,
+    "suppressed": 1,
+    "closed": true,
+    "reason": "input-ended"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 0,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 2,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "rejected",
+        "generation": 1,
+        "error": "Error: Observed compiler aborted"
+      },
+      "lastFailure": {
+        "kind": "rejected",
+        "generation": 1,
+        "error": "Error: Observed compiler aborted"
+      }
+    }
+  },
+  "builds": [],
+  "failures": [
+    {
+      "error": "Error: Observed compiler aborted",
+      "record": {
+        "pid": 89671,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": -15,
+          "failure": "abort",
+          "drained": true,
+          "tracked": 1,
+          "observations": 4,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": true,
+        "stdout": "",
+        "stderr": ""
+      }
+    }
+  ]
+}

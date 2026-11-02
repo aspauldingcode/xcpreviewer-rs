@@ -1,0 +1,41 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "owned_paths": [
+    "research/evidence/native-reply-owner-drop-2026-10-28/README.md",
+    "research/evidence/native-reply-owner-drop-2026-10-28/bridge.h",
+    "research/evidence/native-reply-owner-drop-2026-10-28/bridge.s",
+    "research/evidence/native-reply-owner-drop-2026-10-28/check.py",
+    "research/evidence/native-reply-owner-drop-2026-10-28/connection-source-verify.py",
+    "research/evidence/native-reply-owner-drop-2026-10-28/identity.c",
+    "research/evidence/native-reply-owner-drop-2026-10-28/native.bplist",
+    "research/evidence/native-reply-owner-drop-2026-10-28/native.swift",
+    "research/evidence/native-reply-owner-drop-2026-10-28/peer.m",
+    "research/evidence/native-reply-owner-drop-2026-10-28/pins.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/remote-close.status.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/remote-close.stderr",
+    "research/evidence/native-reply-owner-drop-2026-10-28/remote-close.stdout",
+    "research/evidence/native-reply-owner-drop-2026-10-28/replay-results.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/replay.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/reply-first.status.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/reply-first.stderr",
+    "research/evidence/native-reply-owner-drop-2026-10-28/reply-first.stdout",
+    "research/evidence/native-reply-owner-drop-2026-10-28/results.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/run.py",
+    "research/evidence/native-reply-owner-drop-2026-10-28/seal.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/server-identity.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/source-findings.json",
+    "research/evidence/native-reply-owner-drop-2026-10-28/source-verify.py",
+    "research/evidence/native-reply-owner-drop-2026-10-28/verify.py"
+  ],
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "prior_220_path_manifest_unchanged": true,
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Two native pending-reply controls survive original caller connection-reference release. Genuine native weak reference remains alive until reply and clears by bounded cleanup; capture used/destroyed once. No callback after destruction, notification captures, final settlement or milestone parity claimed. Local pending explicit publication approval.",
+  "fresh_replay_passed": true
+}

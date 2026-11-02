@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "commit": "897e2c7b572b61a6eb118104d7af739876d188b8",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Scoped native service factory failure against a positive owned SDK baseline in `897e2c7b572b61a6eb118104d7af739876d188b8`.\n\nActual PreviewsServices hostToSimConnection constructor/activate/send run with ordinary outgoing and accepted incoming anonymous XPC endpoints. Both construct32-byte wrappers/112-byte inner objects with the exact supplied raw object. Each observes one owned peer connection and one native callback PreviewsServices.XPCError/1 (connection interrupted), with zero received request dictionaries. No native request delivery is established. A bare native SDK control in the same endpoint family delivers5 independent owned bytes and a dictionary reply; same-process peer PID is checked internally, only Boolean published. An approved same-binary diagnostic reproduces failure outside the ambient sandbox; ambient permission alone does not explain that observation.\n\nIndependent cache-v5 stub/export proof binds the actual hostToSimConnection helper to xpc_connection_enable_sim2host_4sim. This simulator-specific constructor context is proven; it is NOT proven sole cause of the ordinary endpoint failure. Closed local service factories were inspected statically, without contacting hard-coded Apple production/user services. No connection flag disabled, signing policy/protection changed, Apple application re-signed, or user Xcode/simulator process touched.\n\n640 selected instruction bytes compare independently with pinned Services cache __TEXT SHA256d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3, UUIDfffb683f59433c2591b272d6e5174fa3. Qualified runtime guards require that UUID, exact symbol offsets/image paths and layouts/raw association. REA expected package/path/catalog aligned, closed/provider null. Fresh disposable replay repeats both native negative controls and positive SDK control. Native8s/compiler30s bounds,2s/3s inner waits. Owned serial-queue state snapshots; cancellation only of owned connections.\n\nARC/Swift bridge compile failures retained. Two exploratory seed/backend-substitution attempts SIGTRAPed with empty stderr and unlocated stage; no successful postcondition, valid ownership or causal result claimed. Failed originals/raw diagnostics local ignored; no unchanged retries planned. Sealed reproducible controls contain no field substitution. Product Rust/WASM code unchanged; prior394-test result is not claimed rerun here.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/service-connection-factory-2026-10-27 (seal `ae26f6ff4f7accd2f450116585f888587289839d1a392d1b20de51ee8294f3a3`). Original helpers/owned data/sanitized receipts only; Apple instructions/images/full exports and raw addresses/PIDs remain local. Development/master refs and preserved full-index user staging verified.\n\nOrdinary hostToSim factory route quarantined pending suitable endpoint/context or source-qualified constructor. Earlier actual modern-updater witness success remains separate and valid. Actual daemon delivery, scene/workspace routing, application, Canvas interaction/rendering and final OS/provider settlement remain open; both milestones incomplete. Next use working caller-owned SDK carrier to correlate UVPropertyList/reconstructed request bytes while recovering a suitable local native factory contract. No essential user action is required.\n",
+  "retry_not_before_utc": "2026-10-27T03:54:05.570908+00:00",
+  "next_attempt_policy": "REST read-before-post; reuse unique commit; persist partial events; backoff30min on write limit",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6432959650",
+      "action": "existing-reused"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6433344666",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6433345246",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6433346013",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T03:54:50.265654+00:00",
+  "failure": "outbox-read-service-connection-factory-897e2c7b-9:Get \"https://api.github.com/repos/aspauldingcode/xcpreviewer-rs/issues/9/comments?per_page=100\": read tcp 10.0.0.51:64572->140.82.114.5:443: read: connection reset by peer\n",
+  "completed_utc": "2026-10-27T03:55:28.897150+00:00"
+}

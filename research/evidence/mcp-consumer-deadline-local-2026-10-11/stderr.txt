@@ -1,0 +1,19 @@
+file:///private/tmp/xcpreviewer-mcp-client-231/node_modules/@modelcontextprotocol/client/dist/src-WCy6ifGf.mjs:5870
+		const error = new SdkError(SdkErrorCode.ConnectionClosed, "Connection closed");
+		              ^
+
+SdkError: Connection closed
+    at Client._onclose (file:///private/tmp/xcpreviewer-mcp-client-231/node_modules/@modelcontextprotocol/client/dist/src-WCy6ifGf.mjs:5870:17)
+    at Client._onclose (file:///private/tmp/xcpreviewer-mcp-client-231/node_modules/@modelcontextprotocol/client/dist/index.mjs:4181:9)
+    at _transport.onclose (file:///private/tmp/xcpreviewer-mcp-client-231/node_modules/@modelcontextprotocol/client/dist/src-WCy6ifGf.mjs:5837:10)
+    at ChildProcess.<anonymous> (file:///private/tmp/xcpreviewer-mcp-client-231/node_modules/@modelcontextprotocol/client/dist/stdio.mjs:97:19)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1141:16)
+    at Socket.<anonymous> (node:internal/child_process:498:11)
+    at Socket.emit (node:events:509:28)
+    at Pipe.<anonymous> (node:net:355:12) {
+  code: 'CONNECTION_CLOSED',
+  data: undefined
+}
+
+Node.js v24.19.0

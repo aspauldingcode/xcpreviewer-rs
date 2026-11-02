@@ -51,15 +51,16 @@ def snapshot(roots=None, known=None):
 
 
 class OwnedTree:
-    def __init__(self, pid, process=None):
+    def __init__(self, pid, process=None, snapshotter=None):
         self.pid = pid
         self.process = process
         self.known = {}
+        self.snapshotter = snapshotter
 
     def observe(self):
         root_live = self.process is not None and self.process.poll() is None
         roots = {self.pid} if root_live or (self.process is None and self.pid not in self.known) else set()
-        rows = snapshot(roots, self.known)
+        rows = (self.snapshotter or snapshot)(roots, self.known)
         owned = {self.pid} if root_live or (self.process is None and self.pid not in self.known) else set()
         # A known identity can still be ours after reparenting or setsid().
         owned.update(pid for pid, identity in self.known.items()
@@ -91,4 +92,4 @@ class OwnedTree:
         if live:
             raise RuntimeError('Owned descendants remain live after bounded cleanup')
         return {'tracked_processes': len(self.known),
-                'scope': 'Observed owned ancestry plus unchanged ps start-time/command identity; not arbitrary escaped descendants between observations.'}
+                'scope': 'Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations.'}

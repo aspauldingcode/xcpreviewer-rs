@@ -1,0 +1,53 @@
+.............................E...............E......E.....................................................................................................................E...............................................................................................................................................................
+======================================================================
+ERROR: test_corrupt_result_is_sealed_not_crash (test_core.CoreTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_core.py", line 100, in test_corrupt_result_is_sealed_not_crash
+    with patch('reloop.core.execute',side_effect=fake):m=self.c.run_one(experiment(),{'os':'owned-test'})
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/reloop/core.py", line 397, in run_one
+    outcome=execute(argv,run,timeout,limit,lambda kind,payload:self.journal(run,kind,payload),observer=self.process_observer)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1093, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1097, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1158, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: fake() got an unexpected keyword argument 'observer'
+
+======================================================================
+ERROR: test_campaign_schema_matches_executor (test_evidence.EvidenceTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_evidence.py", line 250, in test_campaign_schema_matches_executor
+    import jsonschema
+ModuleNotFoundError: No module named 'jsonschema'
+
+======================================================================
+ERROR: test_frozen_source_hashes_override_stale_live_scan (test_evidence.EvidenceTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_evidence.py", line 277, in test_frozen_source_hashes_override_stale_live_scan
+    m = self.c.run_one(experiment(), {'tool_sources': {'stale': 'wrong'}})
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/reloop/core.py", line 397, in run_one
+    outcome=execute(argv,run,timeout,limit,lambda kind,payload:self.journal(run,kind,payload),observer=self.process_observer)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1093, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1097, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1158, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: fake() got an unexpected keyword argument 'observer'
+
+======================================================================
+ERROR: test_seed_queue_matches_json_schema (test_protocol.ProtocolTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_protocol.py", line 29, in test_seed_queue_matches_json_schema
+    import jsonschema
+ModuleNotFoundError: No module named 'jsonschema'
+
+----------------------------------------------------------------------
+Ran 330 tests in 25.448s
+
+FAILED (errors=4)

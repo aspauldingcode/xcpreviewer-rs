@@ -1,0 +1,161 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "research/evidence/uv-fd-carrier-2026-11-01/README.md",
+    "research/evidence/uv-fd-carrier-2026-11-01/check.py",
+    "research/evidence/uv-fd-carrier-2026-11-01/collision.status.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/collision.stderr",
+    "research/evidence/uv-fd-carrier-2026-11-01/collision.stdout",
+    "research/evidence/uv-fd-carrier-2026-11-01/compile.status.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/compile.stderr",
+    "research/evidence/uv-fd-carrier-2026-11-01/compile.stdout",
+    "research/evidence/uv-fd-carrier-2026-11-01/control.m",
+    "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.status.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.stderr",
+    "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.stdout",
+    "research/evidence/uv-fd-carrier-2026-11-01/native.bplist",
+    "research/evidence/uv-fd-carrier-2026-11-01/pins.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/replay-results.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/replay.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/results.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/run.py",
+    "research/evidence/uv-fd-carrier-2026-11-01/seal.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/server-identity.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/source.status.json",
+    "research/evidence/uv-fd-carrier-2026-11-01/source.stderr",
+    "research/evidence/uv-fd-carrier-2026-11-01/source.stdout",
+    "research/evidence/uv-fd-carrier-2026-11-01/verify.py"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Two actual native UV encode -> owned anonymous SDK -> native UV decode controls. Preserved extra FD independently duplicated/read by receiver after sender scope exit and UV weak clearing; data collision sends payload only. Same-process peers verified; no sender death, exact SDK-internal owner release, cross-process/Canvas receiver or final resource-settlement parity. Local pending explicit publication approval.",
+  "paths": [
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/README.md",
+      "bytes": 3076,
+      "sha256": "fbf3b72242b3f25a14f44cded13a895e848e581398bd5318001d7071d02432dc"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/check.py",
+      "bytes": 1426,
+      "sha256": "72a947968e6e1fba9fb1a64f6f5ee15379749db2dbce0fdcbab72c8eb3b55c28"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/collision.status.json",
+      "bytes": 61,
+      "sha256": "a54acdec7d9e0b54fa5eccd065612caed3cc1e3dc369fb04d9621684d2876b85"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/collision.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/collision.stdout",
+      "bytes": 34,
+      "sha256": "5e76669f0e8d331530f405b706ac305ff7fb3e5469d68d81bf0e8beebac70085"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/compile.status.json",
+      "bytes": 62,
+      "sha256": "72599f45037c7f79e09afaf75d2ac7b42555d25ca996d7a9fff2b24d87449ece"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/compile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/compile.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/control.m",
+      "bytes": 6327,
+      "sha256": "aa9138e404ed461c7956ad8ed7007bb379d98ef09e0796161f1ad3ddf64288e0"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.status.json",
+      "bytes": 61,
+      "sha256": "a54acdec7d9e0b54fa5eccd065612caed3cc1e3dc369fb04d9621684d2876b85"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/extra-fd.stdout",
+      "bytes": 34,
+      "sha256": "5e76669f0e8d331530f405b706ac305ff7fb3e5469d68d81bf0e8beebac70085"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/native.bplist",
+      "bytes": 374,
+      "sha256": "22a8b8a5032653fb459a526b2efeb038b29d5a57a6312bd5a466412c07529250"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/pins.json",
+      "bytes": 835,
+      "sha256": "06efdd5e69f54d7760ff80d1ed6dfee54a7bca9e7d233f6f91548e8228c66d07"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/replay-results.json",
+      "bytes": 634,
+      "sha256": "0bb3a1f593c53afd7a583620d90bafce3ef8d9e74e55f2b1b1557dfd37e7b6eb"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/replay.json",
+      "bytes": 415,
+      "sha256": "23103bae086fcef4f0a834dfd21cc266c9b876dab33a086eb109c733867dadff"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/results.json",
+      "bytes": 634,
+      "sha256": "0bb3a1f593c53afd7a583620d90bafce3ef8d9e74e55f2b1b1557dfd37e7b6eb"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/run.py",
+      "bytes": 1347,
+      "sha256": "99564737fa181b2b7908862ece197f4ff8bbf076b65be1fd08b9d772f535d875"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/seal.json",
+      "bytes": 2024,
+      "sha256": "f67a86b3b5f86691b4263963a3f1b64a1227dd07708433175a6b74218b6a245d"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/server-identity.json",
+      "bytes": 318,
+      "sha256": "453b9327ba195c9d4ac9bee4769ce56d81a8e97859afd7c9597b07e0b7b5c6da"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/source.status.json",
+      "bytes": 62,
+      "sha256": "144d271ad44ff9af1522eb5ce2a0463a850de360dd1c4e8a82e343625e9c7f60"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/source.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/source.stdout",
+      "bytes": 112,
+      "sha256": "4803a8b96693e89cd9a61eb58491afd7c5dd6d0352cb3062f4004d3bc42357a1"
+    },
+    {
+      "path": "research/evidence/uv-fd-carrier-2026-11-01/verify.py",
+      "bytes": 772,
+      "sha256": "d7b65a1574e660c0debf4601b630e9dfb351a7caaa0a0dcad52d997f8d0af794"
+    }
+  ],
+  "fresh_replay_passed": true
+}

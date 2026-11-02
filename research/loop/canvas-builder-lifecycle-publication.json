@@ -1,0 +1,82 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/README.md",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/findings.json",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/macho.py",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/pins.json",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/replay.json",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/seal.json",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/source-first-failure.json",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/source-first.py",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/source.py",
+    "research/evidence/canvas-builder-lifecycle-2026-11-01/verify.py"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Native source: makeBuilder reuses last builder when open/previewed path sets agree; changed set marks environment update and drops cache. Coalescer cancellation/rescheduling and recompute/cache-return branches recovered. 4,372 bounded source bytes (860 new), eleven bindings and fresh copied-reader replay pass. Event-to-invalidation mapping, runtime cache identity, exact delay and full target behavior remain open. Local only pending explicit publication approval.",
+  "paths": [
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/README.md",
+      "bytes": 3163,
+      "sha256": "4dcc3f470460882b86c772aab586a44708a4f4bec776ee599b1af4d2dc397762"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/findings.json",
+      "bytes": 4672,
+      "sha256": "f06ffb2e2289ac55801dc001aa95c35a5383a960517d4305050d28c26fa21882"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/macho.py",
+      "bytes": 2254,
+      "sha256": "fa54e1f2df0a92220efe9aa37fac08b5041bcd0624e9f24718256bded131b38d"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/pins.json",
+      "bytes": 168,
+      "sha256": "48d8b56dc2ab11c5aa01f9b5419de71ba5763012d3c79d627e9364a0267ec43a"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/replay.json",
+      "bytes": 296,
+      "sha256": "9229cef0c4ca1b3ed776257d786587e1e439c438d16c377bc569b439bcc8e916"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/seal.json",
+      "bytes": 777,
+      "sha256": "d87562eed346b615bbd442ac7502c70a414846e33063144586c3bc897254dc18"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/source-first-failure.json",
+      "bytes": 253,
+      "sha256": "5cb829cb07a196223348d6ab6bd4a1b0211675240df986c9601a6317adc160ab"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/source-first.py",
+      "bytes": 5072,
+      "sha256": "668c25fa67165946779e91925972cdf19efaa9cb4eb643d1c0e09b4a09af03c7"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/source.py",
+      "bytes": 5072,
+      "sha256": "5d1632565b35ecb4b4a3aaedfaee02e69ca051dfa4108a07c8150b485fdf057d"
+    },
+    {
+      "path": "research/evidence/canvas-builder-lifecycle-2026-11-01/verify.py",
+      "bytes": 813,
+      "sha256": "b4305ab1d954f862dfc4ff422bf0a11dbbfd1d54c64b55b58b05310ea5b1b436"
+    }
+  ],
+  "shared_files_modified_sections_only": [
+    "PROGRESS.md",
+    "research/loop/continuous.json"
+  ],
+  "historical_manifests_unchanged": true,
+  "static_source_replay_passed": true
+}

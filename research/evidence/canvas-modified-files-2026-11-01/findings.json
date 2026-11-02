@@ -1,0 +1,168 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "filter",
+      "start": "0x24e3d4",
+      "end_exclusive": "0x24e808",
+      "bytes": 1076,
+      "sha256": "65ab68db414538e7df11ac02bbea612228f8bfd4c020171c98bbb9e0ce949b9c"
+    },
+    {
+      "name": "should-update",
+      "start": "0x250314",
+      "end_exclusive": "0x250a48",
+      "bytes": 1844,
+      "sha256": "d3c40e1fa5db86dc8fbd1c10b478097d433542a7a8981f1c04a37edb335087eb"
+    }
+  ],
+  "source_bytes_verified": 2920,
+  "calls": [
+    {
+      "call": "0x24e720",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC25ModifiedFilesUpdateFilterV06shouldhF4File33_79390B747E07F69D30A6D48DE90213E2LL2at2ofSbSo11DVTFilePathC_So0V8DataTypeCtF"
+        ],
+        "offset": "0x250314"
+      }
+    },
+    {
+      "call": "0x2503b0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC25ModifiedFilesUpdateFilterV18isOpenAndThunkable33_79390B747E07F69D30A6D48DE90213E2LLySbSo11DVTFilePathCF"
+        ],
+        "offset": "0x250a48"
+      }
+    },
+    {
+      "call": "0x250504",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$conformsTo:"
+        ],
+        "offset": "0x2ac7a0"
+      }
+    },
+    {
+      "call": "0x250540",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$conformsTo:"
+        ],
+        "offset": "0x2ac7a0"
+      }
+    },
+    {
+      "call": "0x25057c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$conformsTo:"
+        ],
+        "offset": "0x2ac7a0"
+      }
+    },
+    {
+      "call": "0x2505b4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$conformsTo:"
+        ],
+        "offset": "0x2ac7a0"
+      }
+    },
+    {
+      "call": "0x2507ec",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$pathComponents"
+        ],
+        "offset": "0x2adf60"
+      }
+    },
+    {
+      "call": "0x250830",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSS10lowercasedSSyF",
+        "offset": "0x2aa4c4"
+      }
+    },
+    {
+      "call": "0x250858",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss27_stringCompareWithSmolCheck__9expectingSbs11_StringGutsV_ADs01_G16ComparisonResultOtF",
+        "offset": "0x2ab310"
+      }
+    },
+    {
+      "call": "0x250890",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$pathExtension"
+        ],
+        "offset": "0x2adf80"
+      }
+    },
+    {
+      "call": "0x2508dc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss27_stringCompareWithSmolCheck__9expectingSbs11_StringGutsV_ADs01_G16ComparisonResultOtF",
+        "offset": "0x2ab310"
+      }
+    }
+  ],
+  "excluded_conforming_types": [
+    {
+      "address": "0x2d8f50",
+      "type": "com.apple.application-bundle"
+    },
+    {
+      "address": "0x2d8f70",
+      "type": "com.apple.pluginkit"
+    },
+    {
+      "address": "0x2d8f90",
+      "type": "com.apple.framework"
+    },
+    {
+      "address": "0x2d8fb0",
+      "type": "com.apple.dt.swiftpm-user-managed-folder"
+    }
+  ],
+  "source_policy": {
+    "missing_data_type": "Skip entry; no type inference performed in this function.",
+    "predicate_true": "Keep typed entry.",
+    "open_thunkable": "If isOpenAndThunkable(path) returns true, shouldUpdateModifiedFile returns false. Helper internals not qualified by this unit.",
+    "excluded_types": "Conformance to any recovered bundle/package type returns false.",
+    "path_component": "A path component lowercased equal to .swiftpm returns false.",
+    "path_extension": "Extension equal to swiftpm returns false; no lowercasing of extension on inspected path.",
+    "remaining_typed_files": "Return true after these exclusions."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_file_change_delivery_observed": false,
+    "fresh_ui_observation": false,
+    "isOpenAndThunkable_internals_recovered": false,
+    "handler_followup_effects_complete": false,
+    "full_canvas_parity": false,
+    "exploratory_range_correction": "Initial filter exploration ended at next makeBuilder (0x24e884), including adjacent editor-settings key-path setter. Final verified filter range ends at actual next symbol 0x24e808."
+  }
+}

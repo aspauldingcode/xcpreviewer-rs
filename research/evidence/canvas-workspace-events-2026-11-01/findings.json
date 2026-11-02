@@ -1,0 +1,277 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "handler",
+      "start": "0x248ef0",
+      "end_exclusive": "0x24a318",
+      "bytes": 5160,
+      "sha256": "db13b4e3563b1e78303a62294b5c923b788d5cf1a67350b3a666bf914fc82fb6"
+    },
+    {
+      "name": "enum-tag",
+      "start": "0x16cdd0",
+      "end_exclusive": "0x16cde8",
+      "bytes": 24,
+      "sha256": "fca998a861b4b97c3f2dad7124bb0c92d02b16edb7ea7b3ebe321b6e405773d9"
+    }
+  ],
+  "source_bytes_verified": 5184,
+  "enum_metadata": {
+    "field_descriptor": "0x30a844",
+    "nominal_descriptor": "0x2e81c4",
+    "payload_cases": 5,
+    "empty_cases": 6,
+    "cases": [
+      {
+        "reflection_order": 0,
+        "name": "blueprintDidChange",
+        "associated_type_present": true
+      },
+      {
+        "reflection_order": 1,
+        "name": "modifiedFiles",
+        "associated_type_present": true
+      },
+      {
+        "reflection_order": 2,
+        "name": "removedFiles",
+        "associated_type_present": true
+      },
+      {
+        "reflection_order": 3,
+        "name": "buildSystemBuildStarted",
+        "associated_type_present": true
+      },
+      {
+        "reflection_order": 4,
+        "name": "buildSystemBuildStopped",
+        "associated_type_present": true
+      },
+      {
+        "reflection_order": 5,
+        "name": "workspaceSettingsChanged",
+        "associated_type_present": false
+      },
+      {
+        "reflection_order": 6,
+        "name": "newSchemeSelected",
+        "associated_type_present": false
+      },
+      {
+        "reflection_order": 7,
+        "name": "newRunDestinationSelected",
+        "associated_type_present": false
+      },
+      {
+        "reflection_order": 8,
+        "name": "didFinishPackageLoading",
+        "associated_type_present": false
+      },
+      {
+        "reflection_order": 9,
+        "name": "activeSchemeDidChange",
+        "associated_type_present": false
+      },
+      {
+        "reflection_order": 10,
+        "name": "installablePlatformsDidChange",
+        "associated_type_present": false
+      }
+    ]
+  },
+  "empty_event_routes": [
+    {
+      "event": "workspaceSettingsChanged",
+      "empty_case_payload_word": 0,
+      "logical_tag": 5,
+      "handler_entry": "0x249f64",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249b48"
+      ],
+      "coalescer_call": "0x249f70",
+      "cache_clear": "0x249f80",
+      "scene_reason": "workspaceChanged",
+      "reason_text": "Workspace build settings changed"
+    },
+    {
+      "event": "newSchemeSelected",
+      "empty_case_payload_word": 1,
+      "logical_tag": 6,
+      "handler_entry": "0x249d2c",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249b48",
+        "0x249b4c",
+        "0x249b50"
+      ],
+      "coalescer_call": "0x249d38",
+      "cache_clear": "0x249d48",
+      "scene_reason": "workspaceChanged",
+      "reason_text": "Current scheme changed"
+    },
+    {
+      "event": "newRunDestinationSelected",
+      "empty_case_payload_word": 2,
+      "logical_tag": 7,
+      "handler_entry": "0x249b54",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249b48",
+        "0x249b4c",
+        "0x249b50"
+      ],
+      "coalescer_call": "0x249b60",
+      "cache_clear": "0x249b70",
+      "scene_reason": "previewsChanged",
+      "reason_text": null
+    },
+    {
+      "event": "didFinishPackageLoading",
+      "empty_case_payload_word": 3,
+      "logical_tag": 8,
+      "handler_entry": "0x249fb4",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249d1c",
+        "0x249d20"
+      ],
+      "coalescer_call": "0x249fc0",
+      "cache_clear": "0x249fd0",
+      "scene_reason": "workspaceChanged",
+      "reason_text": "Current scheme changed"
+    },
+    {
+      "event": "activeSchemeDidChange",
+      "empty_case_payload_word": 4,
+      "logical_tag": 9,
+      "handler_entry": "0x249d2c",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249d1c",
+        "0x249d20",
+        "0x249d24",
+        "0x249d28"
+      ],
+      "coalescer_call": "0x249d38",
+      "cache_clear": "0x249d48",
+      "scene_reason": "workspaceChanged",
+      "reason_text": "Current scheme changed"
+    },
+    {
+      "event": "installablePlatformsDidChange",
+      "empty_case_payload_word": 5,
+      "logical_tag": 10,
+      "handler_entry": "0x249ff0",
+      "dispatch_visited": [
+        "0x249b40",
+        "0x249b44",
+        "0x249d1c",
+        "0x249d20",
+        "0x249d24",
+        "0x249d28"
+      ],
+      "coalescer_call": "0x249ffc",
+      "cache_clear": "0x24a00c",
+      "scene_reason": "workspaceChanged",
+      "reason_text": "Current scheme changed"
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x249f70",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249d38",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249b60",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249fc0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249ffc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249b84",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV15previewsChangedACvgZ",
+        "offset": "0x2a6828"
+      }
+    },
+    {
+      "call": "0x24a038",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV16workspaceChangedyACSSFZ",
+        "offset": "0x2a6840"
+      }
+    },
+    {
+      "call": "0x24a06c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF",
+        "offset": "0x2a50c4"
+      }
+    }
+  ],
+  "source_inference": "All six valid payload-free listener events schedule the environment coalescer, clear/release the cached builder, and request a scene update. Destination selection uses previewsChanged; other recovered empty events use workspaceChanged. Logical event tags are derived from pinned reflection, enum counts, tag witness and interpreted handler comparisons, not native invocation.",
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "fresh_ui_observation": false,
+    "payload_event_behaviors_recovered": false,
+    "complete_event_mapping": false,
+    "runtime_event_delivery_observed": false,
+    "full_canvas_parity": false
+  }
+}

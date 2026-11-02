@@ -1,0 +1,1128 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "base_commit": "e524b3708bd63f9410b21506368fd3bbedb127f6",
+  "scope": "Current original reconstruction code and listed sanitized local evidence from six pending units; excludes raw Apple code/binaries, user staging and unrelated work. Historical evidence pins describe their earlier revisions; current path hashes below describe the reviewable pending tree.",
+  "source_manifests": [
+    "research/loop/native-local-connection-publication.json",
+    "research/loop/native-pending-reply-publication.json",
+    "research/loop/swiftui-source-preview-publication.json",
+    "research/loop/swiftui-provider-publication.json",
+    "research/loop/swiftui-registry-discovery-publication.json",
+    "research/loop/swiftui-registry-capture-publication.json"
+  ],
+  "path_count": 220,
+  "total_bytes": 5161187,
+  "paths": [
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/README.md",
+      "bytes": 5303,
+      "sha256": "417948b40598d40e06643b5fe9cb1575230154231c996d36b38328fd69aeacdd"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/bridge.h",
+      "bytes": 1263,
+      "sha256": "506f748bfa83289a3edbcc20352e981e7949e97aad64c80cc0379f8fad9a9cb7"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/bridge.s",
+      "bytes": 951,
+      "sha256": "a65db00e53116b7f73ba5e2015c667a654eaf651316bcb4fd8a56ff80d4f2df1"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/check.py",
+      "bytes": 3558,
+      "sha256": "30e8db9c3a49604582018c48cb8dfa228591627db636954da28bec7d6a6b82f5"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/example.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/example.stdout",
+      "bytes": 580,
+      "sha256": "c08b764be0b234116f77e047c3c873b594b15751150edbb2f0a368afaf1651ca"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/failures.json",
+      "bytes": 1018,
+      "sha256": "318642d6957aadda0b8f2365233faa75c19525e9c953de5c2c2782c980d57511"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/identity.c",
+      "bytes": 1084,
+      "sha256": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/implementation-pins.json",
+      "bytes": 422,
+      "sha256": "e9b7949c26868ae51454fc5730c6f2b54e03d623392031b2937a61acf1bfc926"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/initial-tests.stderr",
+      "bytes": 1270,
+      "sha256": "78c0d0615827ee5a9bdf94955c0dde1f3e6517500a0261c47e9a4d64ba1d6a72"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/native.bplist",
+      "bytes": 960,
+      "sha256": "167cbcf7bd6613d7f5b634a8fce2811eb458665011967f3ea52ce49d79552892"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/native.swift",
+      "bytes": 7466,
+      "sha256": "d2f513bf52d4edeff9d8e8b357bd371026a2dfbb051384c153473307831c7725"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/peer-incoming.m",
+      "bytes": 4657,
+      "sha256": "43698dad8406caa8776a4d60228b5319e31c1ba8755e91f264972f41f8e59a05"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/peer-outgoing.m",
+      "bytes": 4324,
+      "sha256": "85b538bb377e637b8b1d569fb02401ef1bf3cf773a99a189e5c85ad0e3cd73ab"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/publication-audit.json",
+      "bytes": 5485,
+      "sha256": "11119530c4e6bdb9976b6e340243c3d309806726c33ccac85b7b3e8e227bf9ce"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/replay-results.json",
+      "bytes": 508,
+      "sha256": "79e8c21a2378b191b270dbf221e7fc3fdcdf007c0240a623d10fd105fc8dba99"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/results.json",
+      "bytes": 468,
+      "sha256": "b31599806384cec97f6cd85cc6e20e3aa2c4bcbe17d06e95a28e494629927d89"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/run-wasi.cjs",
+      "bytes": 612,
+      "sha256": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/run.py",
+      "bytes": 1523,
+      "sha256": "9ea6ba498aefe8c5491c138993120fcbc2b20f06dd7fd2f9a9dd1bc964d820d4"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/seal.json",
+      "bytes": 3329,
+      "sha256": "6e0d2246c1c09461881f01884743406a52ff4e200207631aed2be6fc72532b5c"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/source-findings.json",
+      "bytes": 4440,
+      "sha256": "679de4271b9588258036e1fe6de4a2eb0e79bfbe9fb0f4442b82d3d914e07900"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/source-verify.py",
+      "bytes": 3725,
+      "sha256": "bffe234bcea4ca95479f4b9fdce8e7a08bdbfdf7fa4796f142e799198e168a0a"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/tests.stderr",
+      "bytes": 19411,
+      "sha256": "5aba2723d70222c7b439623b056576a081a98025ab8a9ea04a400fb2b175c325"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/tests.stdout",
+      "bytes": 41796,
+      "sha256": "dba215c817933c89c4dc13f432fffbbdaf7c83d4f3ec19de73364301122137b7"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/verify.py",
+      "bytes": 1065,
+      "sha256": "a0aa0444147c746564f72c3d4dddd5566b7cfb00a7befd13bf5dbaf8bba2c03e"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/wasi.stderr",
+      "bytes": 167,
+      "sha256": "25f0b87fbd413558a9b34a7cc7b25ce99758e5189574d328ab703479696d45f6"
+    },
+    {
+      "path": "research/evidence/native-local-connection-2026-10-27/wasi.stdout",
+      "bytes": 580,
+      "sha256": "c08b764be0b234116f77e047c3c873b594b15751150edbb2f0a368afaf1651ca"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/README.md",
+      "bytes": 5237,
+      "sha256": "da1829783feedb58677b0c1ae638bb245c81e0a7117905833269c5b81dd18560"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/bridge.h",
+      "bytes": 1360,
+      "sha256": "1543f1ab6fc49a3c974e7bc18f48c0aec5577975af000d79ea196da8de6754cc"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/bridge.s",
+      "bytes": 951,
+      "sha256": "a65db00e53116b7f73ba5e2015c667a654eaf651316bcb4fd8a56ff80d4f2df1"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/check.py",
+      "bytes": 3413,
+      "sha256": "93d9c9b48faf97beac04ccc938628c1288a549bfaa84103fdfd0ca039f710eb4"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/connection-source-verify.py",
+      "bytes": 3725,
+      "sha256": "bffe234bcea4ca95479f4b9fdce8e7a08bdbfdf7fa4796f142e799198e168a0a"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/example.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/example.stdout",
+      "bytes": 198,
+      "sha256": "18a1cb5e980094ed1efbbc90e3f7ff636f0907171462fa064086c91f9fb2169c"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/identity.c",
+      "bytes": 1084,
+      "sha256": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/implementation-pins.json",
+      "bytes": 413,
+      "sha256": "2acb80e3ce41c9acec16bb321af36548be7b357b634f7f2a44fdbf5c4f5f86cb"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/limitations.json",
+      "bytes": 580,
+      "sha256": "3cbfcfcacbc3cfef72de155f126ac20fd6e182e871ee92a130a8b732cd1e2b11"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/native.bplist",
+      "bytes": 845,
+      "sha256": "a5aa9b11b2fa051a427a34d3e734298196b02beaa2cb0ef91aba3bee60620f8b"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/native.swift",
+      "bytes": 8414,
+      "sha256": "16003462785aff37b84aac25f682d608fb81cc08de06ad09c6ac651df4f35454"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/peer.m",
+      "bytes": 4406,
+      "sha256": "9f39464805add0c8c785992d26eac5dd78e1b6651c5700533af6306eeb5a471e"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/replay-results.json",
+      "bytes": 491,
+      "sha256": "db54e64b62a836d40ebf6d3b8f58444cabd3dde71ea1b99e7b17e64683335589"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/results.json",
+      "bytes": 451,
+      "sha256": "016fd58e32711c821023b139f15a9b990fb11e1b81512c6daa052aba2a230402"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/run-wasi.cjs",
+      "bytes": 612,
+      "sha256": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/run.py",
+      "bytes": 1161,
+      "sha256": "3d1d53f28c2fc43b7a01ccf2030ea49d2e04e98884d27036a9a01a7e727aa5a8"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/seal.json",
+      "bytes": 3065,
+      "sha256": "cdbc2d3f2f44f2f89dc2e30dfcaab460c2a0ab27c1a4601e4a8fc23d075a1fe6"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/source-findings.json",
+      "bytes": 4998,
+      "sha256": "c770a8c66afc33cb3fc4e0f3a5b3f71ecba64bbdcd91ab80f8d20302c4b865d8"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/source-verify.py",
+      "bytes": 2126,
+      "sha256": "b34c6c31687cf8b102d57fdd224ceea40f6f09d040c7f8c62b72ba00735e1c37"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/tests.stderr",
+      "bytes": 19244,
+      "sha256": "a9d4df9d60d189da75e4c6d719de352ceb326647e6891a25ad6b6403b2867288"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/tests.stdout",
+      "bytes": 41980,
+      "sha256": "17a31b0d14e92b5f3076c0c0ed44c355d28aebcc157932a4126daefaa5a4032f"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/verify.py",
+      "bytes": 1065,
+      "sha256": "70b7a56bf9de90bf878a75422187b4257c384c6e06dd15e306ca1bdb0a9bbd68"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/wasi.stderr",
+      "bytes": 167,
+      "sha256": "ab9f0c478ce135efd10dac73e27d87123fe3af647e7c71efed71fa60f39ef24d"
+    },
+    {
+      "path": "research/evidence/native-pending-reply-2026-10-27/wasi.stdout",
+      "bytes": 198,
+      "sha256": "18a1cb5e980094ed1efbbc90e3f7ff636f0907171462fa064086c91f9fb2169c"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/Provider.swift",
+      "bytes": 339,
+      "sha256": "d31d46db6c41390110c610d7734941defbe6332d1d6baada47611b70a57738a5"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/README.md",
+      "bytes": 2387,
+      "sha256": "2bf768b5e4f8297d9983badb14a8ca05f2e88fac7844ac94c485869da94d3697"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/ambiguous.stderr",
+      "bytes": 358,
+      "sha256": "a6ceb6cac9eb75836185517d3f689b478f3c428332f528de9c3c38ba93779331"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/check-transport.py",
+      "bytes": 2097,
+      "sha256": "ee5f09867eba4331da77c4d839731beff8b608b9dc939798da50d54889da956d"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/check.py",
+      "bytes": 2098,
+      "sha256": "c824dfcbd09e9034f76929528440edd6a1ea6bb7d53735d8ae53d6a89aad2d03"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/empty.stderr",
+      "bytes": 68,
+      "sha256": "cb2b82dafc1d7d7442a3f975bd31c7ea5708ba322862d3b24de5143c7dcade97"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/factory.bplist",
+      "bytes": 24917,
+      "sha256": "a49a7a452db8bbea9e767c1b1c671080b1039f1598e237b62ea2f387f1e473b7"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/factory.json",
+      "bytes": 843,
+      "sha256": "442c856a7d5997a48588a6a58e375a528cc12896e00b16bf3d7dfd433dddcb13"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/factory.png",
+      "bytes": 390,
+      "sha256": "74f7f90684e69ac4c412c0b87b64c362abfa140c1771d8f393eeacd822e6e951"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/invalid.stderr",
+      "bytes": 68,
+      "sha256": "cb2b82dafc1d7d7442a3f975bd31c7ea5708ba322862d3b24de5143c7dcade97"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/native.bplist",
+      "bytes": 51531,
+      "sha256": "60c0b167034b1d95f373a6c71b3a51a2cc6ae0d27f72f3dc996cdcdd5c4bcc8d"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/native.stderr",
+      "bytes": 64,
+      "sha256": "e6421afebfaf1a1837a4dc6091d446cefef7a76aca5ff4df175a22bf739ba563"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/nonprovider.stderr",
+      "bytes": 3394,
+      "sha256": "3d774b2bb4f5b80bbf85f791d74e8ca0dc4c7b75e1cc424e75a281ffd13bc6b0"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/pins.json",
+      "bytes": 341,
+      "sha256": "63f1da918411772915b835241e24d47667689e7156899620feafda4d2a5ba4ff"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/provider.bplist",
+      "bytes": 24917,
+      "sha256": "efe98e72df409e4fa25d2da3580af4af4b692738269b2d4daf79bd1f0685ce9e"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/provider.json",
+      "bytes": 846,
+      "sha256": "a3a1680d2713a60b037e976560151e976f9734e501f3ad5e23e2fc000a5db0d6"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/provider.packet",
+      "bytes": 24616,
+      "sha256": "824d4115014a7af906b2e2a710a0838d04bfa401f5cd0c8ed6cb34dd23733255"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/provider.png",
+      "bytes": 390,
+      "sha256": "74f7f90684e69ac4c412c0b87b64c362abfa140c1771d8f393eeacd822e6e951"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/registry-frontier.json",
+      "bytes": 1165,
+      "sha256": "c9ae8676502eab49f7f73874145b03af96bfdcfd439948dcad4022387108dbac"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/replay-results.json",
+      "bytes": 2111,
+      "sha256": "d983ade4a387f2816fee5f13e67ee1ab33ac2ae3e8bc4f8de74769f24a9b2d6b"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/replay-transport-results.json",
+      "bytes": 2444,
+      "sha256": "17832c0a29f5044e66468fc85645eb589821427e6f6be2bf984338f0145535bd"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/replay.json",
+      "bytes": 288,
+      "sha256": "36bd936a1692d165dd8b2a361b5726aaa55adc998d139df732e620d7154130bf"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/results.json",
+      "bytes": 2025,
+      "sha256": "a74a657b2ce5df7d469ba803f41abff7e5b555fffc794d15d77b6c663f21f163"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/sdk-contract.json",
+      "bytes": 983,
+      "sha256": "4bcd37966e39d8883153c8db77a4c271220940dd5211d27ea55f82d178d9b4a8"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/seal.json",
+      "bytes": 2304,
+      "sha256": "68db3fa4b112f84e2ed82e5f08f8fa3aabf4699bc376692461594203378fdfd3"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/transport-results.json",
+      "bytes": 2444,
+      "sha256": "cbd3d8baccd58e88b989bfad648a9673dfcd1ed2e22c3c7f19c64d9a49f0eb86"
+    },
+    {
+      "path": "research/evidence/swiftui-provider-2026-10-27/verify.py",
+      "bytes": 913,
+      "sha256": "8d6365f33795200f545e6814a77df4f96b3b94bb8bc5e77b08ef6da08fe88e84"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/Controls.swift",
+      "bytes": 416,
+      "sha256": "318473d7ff2ea96b9e022f69589270ede7f3d439cb31b4654527f45f3c538b3b"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/Provider.swift",
+      "bytes": 339,
+      "sha256": "d31d46db6c41390110c610d7734941defbe6332d1d6baada47611b70a57738a5"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/README.md",
+      "bytes": 3337,
+      "sha256": "d5105bce7f12ed02e32b00a4a393389d84ad4a9d5287f0ea92e7000546356f53"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/Source.swift",
+      "bytes": 126,
+      "sha256": "b1fe519d952f2842c7656531f7425b891393de85ec5298ab3b7a2f01980d3e03"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/Traits.swift",
+      "bytes": 66,
+      "sha256": "c95b75600e0e3a3a191191f1259e798e8ee5773bb06a7f7f708d632be9835d92"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/bars.bplist",
+      "bytes": 24917,
+      "sha256": "dbae17db141d2296185ee2a5bd56b65e6147175600830668cab90d384221ad53"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/bars.json",
+      "bytes": 1934,
+      "sha256": "72dab8cf4ccb9bdd5742d7ddd4065335039a898d12b231f8e30f4c25ce3993e6"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/bars.png",
+      "bytes": 390,
+      "sha256": "74f7f90684e69ac4c412c0b87b64c362abfa140c1771d8f393eeacd822e6e951"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/browser-final.json",
+      "bytes": 303,
+      "sha256": "b1595c77bf0dbd4fccdd17f48736aa4488309c210b41ddd3b253c54c41addbba"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/browser-transparent.json",
+      "bytes": 303,
+      "sha256": "907dbd78d851b7899bd8179ba56628e30d948469cefaff48e4f037a26f6e17a1"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/browser.json",
+      "bytes": 320,
+      "sha256": "9fa06238ac6f528bdc66937b68936f4ea98dbb3b31aeecc65f6c1164a94d4263"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/capture-results.json",
+      "bytes": 1685,
+      "sha256": "889511bb86ce73c27f880751e565c4ef1a69fa8e81748e474ce4a0d4aff08c68"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/check-capture.py",
+      "bytes": 2519,
+      "sha256": "eefc28d3b8336d299c73712083d72e7953e29512f4e2757dd01027afaefa0acf"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/check-guard.py",
+      "bytes": 2806,
+      "sha256": "e056967d8d12da2abc203aa6a623e1f3ace8cbe7d2aafd1fb8891f976b3f07e6"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/check-transport.py",
+      "bytes": 2493,
+      "sha256": "3b6e6b0faa9b38402893d524294ef86ca5af6a24d625136b9829b4ff34764022"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/factory.bplist",
+      "bytes": 24917,
+      "sha256": "5d49767ae0bdfd87a9ad0ebfd5d32384855115ebf5f3b090d29beb1f801f4297"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/factory.json",
+      "bytes": 942,
+      "sha256": "2a109755ca54c00de14d90cbe2cfd533a06ee3809ea2046a51a0985a50342083"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/failures.json",
+      "bytes": 1429,
+      "sha256": "e7bb1302c329c515f36152b88d2f372319e1b1b54cca45b57cbfeb2ae60155bc"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/findings.json",
+      "bytes": 3574,
+      "sha256": "a887563ee8e8f888c3d57c2d90fabe93706142a73b71b3eacf43e5439b03b308"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/guard-results.json",
+      "bytes": 376,
+      "sha256": "6da136fbf8b8ba84818d631c43d1b0ae4a2dca1c1d0ff23d7386c60fcbac37fe"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/index.stderr",
+      "bytes": 54,
+      "sha256": "4aa73051fc357cad85498653decdf4883c50b0826f728d1e38e605961db6a4a4"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/native.bplist",
+      "bytes": 150601,
+      "sha256": "bc949a7629af565bf14d742e383fa6627e22fcd6b1839f7c624fc92ab4574939"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/native.stderr",
+      "bytes": 250,
+      "sha256": "9f4619967aafbcc3ab2b41dba71dce74ba0448d9d69c335e886d63f1062957b4"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/pins.json",
+      "bytes": 1354,
+      "sha256": "dddebe063a02d132e78aad8720247555a85abb548e3415833ea38bf15fd88a90"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/probe-layout.stderr",
+      "bytes": 83,
+      "sha256": "33ef7901039c3edb3542b13f5800e8f6c373cba4b60975f15cc29952bf4769ec"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/probe-layout.stdout",
+      "bytes": 665,
+      "sha256": "5cffc442dc02eb0cb10b4f9470275bb58c2a803553ecc562c9ba795caa6ae29c"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/provider.bplist",
+      "bytes": 24917,
+      "sha256": "8e306383de0b4fdf3e01ca124df11a886d15699d34e2c6eee276accdc51b27c3"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/provider.json",
+      "bytes": 941,
+      "sha256": "fc41e1fe4cfa4de8ba58f18d65c1f6975c4faa81a141ec029d4408c42eb7fd98"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/replay-capture-results.json",
+      "bytes": 1685,
+      "sha256": "889511bb86ce73c27f880751e565c4ef1a69fa8e81748e474ce4a0d4aff08c68"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/replay-guard-results.json",
+      "bytes": 376,
+      "sha256": "6da136fbf8b8ba84818d631c43d1b0ae4a2dca1c1d0ff23d7386c60fcbac37fe"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/replay-transport-results.json",
+      "bytes": 1928,
+      "sha256": "b8a3995b336b239ae1a2413b585e26b08a9723f815010c1ce11d6df033b0ee8d"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/replay.json",
+      "bytes": 430,
+      "sha256": "cfbce2f3568e598476370caf9c6a095b5f50945330ba3a2e0d77e0971782149b"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/seal.json",
+      "bytes": 3653,
+      "sha256": "680f27be081ec40a15849150b0ca9a4379a6e532bcc76d92b5123f7d73986d29"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/source-ranges.json",
+      "bytes": 1472,
+      "sha256": "9c5e4ba9da1a7e79761af2185a0d582b6b9ab9cb01b3bbf46a3b7a0595fc3230"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/source.py",
+      "bytes": 1831,
+      "sha256": "f65876dcf083caeb60f924c299276efbcd88fe431226be5e6684562c6316ff59"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/traits.stderr",
+      "bytes": 49,
+      "sha256": "0cc84f6cec28733b6c27e7a89d5725a469187a6e8034cfb439a682d78d193717"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/transparent.bplist",
+      "bytes": 24917,
+      "sha256": "07aa237c693f7c3b74b4a8ed5e2f9e766259b2ed2d6fd5b82a01e09cbc247c54"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/transparent.json",
+      "bytes": 1940,
+      "sha256": "9b7c7f18f427db9ae24edf637b40ff3b20901d6c211c2dba98ea9a8a134528ba"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/transparent.png",
+      "bytes": 386,
+      "sha256": "42325db58b3da2f82fbd9941ada6a61b5d137aa84b00067bc1bc310924763aa3"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/transport-results.json",
+      "bytes": 1928,
+      "sha256": "b8a3995b336b239ae1a2413b585e26b08a9723f815010c1ce11d6df033b0ee8d"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/verify.py",
+      "bytes": 1074,
+      "sha256": "74535cb97537761489a197655fad66253ef4ab05418a2c868dae24c2a2642d65"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-capture-2026-10-27/viewer.png",
+      "bytes": 30816,
+      "sha256": "75555af13a6f3cf2c2e1de30371769baab52117e1df392528f3769ae1e0bc111"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.stdout",
+      "bytes": 1188,
+      "sha256": "da1c15ac4cfec4e313d576521dc4a83a5f1047cf8b8d849e6eb1bd901377afd2"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.swift",
+      "bytes": 194,
+      "sha256": "5d81ea42fb47b2105f58c564f6008fa419a216ab98f3c314359425ac64478dd7"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Invalid.stderr",
+      "bytes": 306,
+      "sha256": "dcab5dc3b61f35fa1b606918a2eed73050ddfd341055ae15eb7b557b7d11c213"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Invalid.swift",
+      "bytes": 57,
+      "sha256": "c3b2eaef02f6c57522c457be397ccf260c482054a74d0aeec7501e067ec69b45"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/None.stdout",
+      "bytes": 732,
+      "sha256": "1f89d1d3d5db3643b5892f3c0473864eb1eaa8bc41542e82c582d898dc2926c5"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/None.swift",
+      "bytes": 103,
+      "sha256": "b045aadb77d22824e07cac2962d5307161d5d6153e868b34b813468fb9caa776"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/README.md",
+      "bytes": 2062,
+      "sha256": "83840e6a88d623a1e9c522700051312140451db42e4703e05ce32815205c0231"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Slow.stderr",
+      "bytes": 35,
+      "sha256": "ca95c399e667caf1e8cbcf6acdd57d2b91b3ed450ddd6e56b14c77adb5331cf8"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Slow.swift",
+      "bytes": 161,
+      "sha256": "74dde97ae779e10249632764dcc8ec6ad931322deec360df0d7051bae778ac3f"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/Source.swift",
+      "bytes": 126,
+      "sha256": "b1fe519d952f2842c7656531f7425b891393de85ec5298ab3b7a2f01980d3e03"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/check.py",
+      "bytes": 1264,
+      "sha256": "f0165b40a3d69a9a9b39c4b834400e5a599e3b0b95205f3e7228e59cd95c294b"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/findings.json",
+      "bytes": 2348,
+      "sha256": "06778b8bc5611262daa3b16c9ad9d7c88c0c6fe7b8a0ae0234eab7f0e4c2e533"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/metadata.json",
+      "bytes": 2099,
+      "sha256": "bd9b98486ae9153275b9ffb0058dd8915221c4368be6f70a2fe3284c9dcfe6f9"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/pins.json",
+      "bytes": 221,
+      "sha256": "3e6ed54f075320efb6a07ee4ec71175e6dac3631814c3cd2bb7655450399ad16"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/probe.json",
+      "bytes": 2558,
+      "sha256": "9972534aea2d9546c3f44ffda3cabe61287de77b871d1468b7941fe5b91c7e8c"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/replay-results.json",
+      "bytes": 359,
+      "sha256": "d4b91af603690d16b0baf9293a99c7f25e36c61b10df07c74c8384b2bc1b59cc"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/replay.json",
+      "bytes": 289,
+      "sha256": "b92f6fac76d8622b544a3c3e50f4bef5a17e0b9f0c6a109b51fad2002b60f5a8"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/results.json",
+      "bytes": 359,
+      "sha256": "d4b91af603690d16b0baf9293a99c7f25e36c61b10df07c74c8384b2bc1b59cc"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/seal.json",
+      "bytes": 1721,
+      "sha256": "775c4e53201f777a1ba747cfdca28c82fb764e030ab73c865be8dc1f7bf3b92c"
+    },
+    {
+      "path": "research/evidence/swiftui-registry-discovery-2026-10-27/verify.py",
+      "bytes": 710,
+      "sha256": "1e9de153439d27470db4bb4bf42d3f596c9ebec20087283c0ec714f87948a630"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/README.md",
+      "bytes": 6598,
+      "sha256": "5234d632fd4e4abe443aae9c1791c6b56b7500acdf26a47797a50826a09b21f4"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/asymmetric.bplist",
+      "bytes": 12629,
+      "sha256": "02da0cf453e668ace74b5ff4cc5878db0e68610ff84d73e8ffcbea4d9fe0dbed"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/asymmetric.png",
+      "bytes": 275,
+      "sha256": "01a2a0560437bab9aadbd415f486dd2127576d75218d24b6a70265d0f0762097"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/bridge.h",
+      "bytes": 721,
+      "sha256": "13d329ca70b20355d79473fc53e109e407707ffaf27213963cf38593d3df7bce"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/bridge.s",
+      "bytes": 845,
+      "sha256": "00b9d2cafc2bafe782b50b0388b3a7dc34646c70e5b0950c2b9235c56b614e7d"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/browser-final.json",
+      "bytes": 312,
+      "sha256": "496a21ba466cbb21a03f16e2b4fe77105bec011b1e86b3467b7b7a012081fa8a"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/browser-receipt.json",
+      "bytes": 796,
+      "sha256": "53ac9355604185f116dadaccd49b9b48326838f38d52a9b26b3ae6e23b11ce44"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/build.py",
+      "bytes": 929,
+      "sha256": "e156eb09ee157524b74a97d4acddd0111caa3d2e18cf60b2c5fde4316a5f943e"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/capture-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/capture-check.stdout",
+      "bytes": 287,
+      "sha256": "3aee4770cd30eb77802dd2cd2d3f596728671e293ce29f4ab7fba9d7ea346ea6"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/capture-receipts.json",
+      "bytes": 2784,
+      "sha256": "5ba717430ca394ea0f1d90a7af58c243440f14e150df1d82485f8269bf62f0c2"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/check-capture.py",
+      "bytes": 2948,
+      "sha256": "80e4f41b4cb65954f75e36542837044b5f135197dfa2f73ed4bf9dac5a8d2ebb"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/check-packets.py",
+      "bytes": 1419,
+      "sha256": "1fdb69bd82af819997f77a520a019cbeca45915871046ac2058a581b01da55b4"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/check-png.py",
+      "bytes": 811,
+      "sha256": "ee6f490179d9d8d18d545d100f7cb2d30852574ac5db3b06e5eeed10c62aaeb3"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/check-rust.py",
+      "bytes": 1714,
+      "sha256": "3b33a1840c334958c5c209704f6e54ebf252d58c7d1f2549b3a3f29ff5b61b9c"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/check.py",
+      "bytes": 2195,
+      "sha256": "a1b4b1a6a836b94999b9613f184ac33d1bba061dd36a922732657a3c3235cad7"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/compile-failure.stderr",
+      "bytes": 346,
+      "sha256": "1fb48045d933e79ac6b021d84dd37a4abcda16dae17ef3b8ecca174922a252c1"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/example.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/example.stdout",
+      "bytes": 131,
+      "sha256": "0f46f77145444c5848f52e60b370eda134e28d3000cd72258708ea0ee132f597"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/expected-failures.json",
+      "bytes": 691,
+      "sha256": "c5c170281fd242facf133d5d6d40217f825b06846a2c1f880a12413add4aef01"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/factory-validation.stderr",
+      "bytes": 59,
+      "sha256": "ef79600b6c1692188921cf2a232fc35f86cfa4325d310d388d99c064909c923d"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/failures.json",
+      "bytes": 2361,
+      "sha256": "e8919219b118c102314e16ff54c4a894cfdf9fbbe703666aa10a4b75a0fdaf47"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/identity.c",
+      "bytes": 1084,
+      "sha256": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/implementation-pins.json",
+      "bytes": 2289,
+      "sha256": "b7729a085b9d02dfcf19479b8fce9560fd514302c28709e9fa89078adb7c6550"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/initial-deadlines.json",
+      "bytes": 446,
+      "sha256": "c951be067cbb0b29040cd2ec4d3cc4b5226db86bebf62acfb2ddcec416ed2d6c"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/input.bplist",
+      "bytes": 1041034,
+      "sha256": "12e9aa26fc61eca1ddf381c0a25649859aef75f9d4ed351c51b668e62dd72058"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/live-failure.json",
+      "bytes": 198,
+      "sha256": "394443a86d5f26f46b8ee19fc9eb7dae05cdd927721aa0b3459a868574431010"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/native-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/native-check.stdout",
+      "bytes": 376,
+      "sha256": "b2d4ef7f5aa7fc7d091925aec966d75b4fb19e3ea0f3d1da1aae1d05171a4926"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/native.bplist",
+      "bytes": 2083794,
+      "sha256": "aaca688952bf7156940fd728a5e164c543262763553a37fdf44b7add8fa29b86"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/native.swift",
+      "bytes": 6127,
+      "sha256": "3cac5b3c3f1507fef2ebad315b8b8b96887052165ea4695aa6f51a487a23c868"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/packet-results.json",
+      "bytes": 777,
+      "sha256": "f0c2d4facbce9ccc0e384d3f6aa97c92b98f86a455d93e9612cb295b9c4f360b"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/png-results.json",
+      "bytes": 556,
+      "sha256": "2060d9dc11fd89d743f3582bcb9c32b2b1583399cccfcc3dc20de5663573df26"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/replay-results.json",
+      "bytes": 1283,
+      "sha256": "551c3b349e6d8cc69c12d3bcc4331a4e0b63f6822aed19c05cdda81df540a030"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/results.json",
+      "bytes": 1636,
+      "sha256": "5b40ac278a96cd771cf4eda63455324b36309c26973fc1a55e625f5e5fcef4cc"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/run-native.py",
+      "bytes": 1396,
+      "sha256": "e79f0ab351b2f2d13fbb4ea42caf7a5f52891696a672ba4625930175137cde89"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/run-wasi.cjs",
+      "bytes": 612,
+      "sha256": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/runtime-timeout.stderr",
+      "bytes": 35,
+      "sha256": "813d5bd40c3ba90bd91c12fdef5d7fdc5658801db0b3bef4c811461d5bea5128"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/sample.bplist",
+      "bytes": 1024399,
+      "sha256": "653091c7b021b25651346e1c1ef639c3fcacb22f0c9b79ea64ad22e67aff6d15"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/sample.png",
+      "bytes": 17412,
+      "sha256": "6434768dd778f3f8d4d5b4cfb75663b575d9357fa2d847ece1f3479aa5ffeff2"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/seal.json",
+      "bytes": 7024,
+      "sha256": "550338bc9c84f17a92a9a435dfc5e13af29c31b7cd0c2971feadb01d399885db"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/size-validation.stderr",
+      "bytes": 50,
+      "sha256": "64a43eafeaac4f0e7b33d55d52891e07f04b5b8ec1e7917a63c64b177b1d4fb4"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/source-findings.json",
+      "bytes": 2738,
+      "sha256": "565312e82ddc74c379724c4cafcef89f5c69d36ebec9b8db5a1ccfdc1ed6a126"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/source-verify.py",
+      "bytes": 3311,
+      "sha256": "b94955e0701ad20f1b8df423d152468b9dc7385f2070b05c84f90b6798fe467f"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/tests.stderr",
+      "bytes": 19566,
+      "sha256": "0db1cf08cd083659952487ca6960d7b2f0ea752931b098ddcc6e4e096f0cf8ae"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/tests.stdout",
+      "bytes": 42234,
+      "sha256": "4261361ca3648f0d1a1699cd16b0c724bc0b5fea9c53bbff33c2e21161337400"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/transparent.bplist",
+      "bytes": 4428,
+      "sha256": "2db87feb3349387ee20834870d58709f7ef3f222a0c664d439cea121e6f24b07"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/transparent.png",
+      "bytes": 205,
+      "sha256": "1c0e0d68f9ad3f654924f06b38255a327ace8efa55a9f9c690f12b3f99413652"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/verify.py",
+      "bytes": 1052,
+      "sha256": "e343ea788e694f110ac130e3362812d32fdbf0c0deb10885e3ba3ff3dafb4561"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/viewer.png",
+      "bytes": 46467,
+      "sha256": "2115569b1aff3fd430b3e03c9e649d73255dd88dfec5c79792ec7416e16671af"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/wasi-example.stderr",
+      "bytes": 167,
+      "sha256": "824a8e0fa9cb9675cdcd4891a1d51370eb9f365c14fedd76c069896b98fc272d"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/wasi-example.stdout",
+      "bytes": 131,
+      "sha256": "0f46f77145444c5848f52e60b370eda134e28d3000cd72258708ea0ee132f597"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/worker-check.cjs",
+      "bytes": 1788,
+      "sha256": "9377d4ed8ecbbdbf2ee5cbaba2135bb36005681aaad9b8bea31903a02b6b1122"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/worker-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/swiftui-source-preview-2026-10-27/worker-check.stdout",
+      "bytes": 566,
+      "sha256": "daf1fb7de2e3d49f6a029cf52956f355abcd308011055fc96fe68d9d79fbdc84"
+    },
+    {
+      "path": "research/loop/receiver-registration-analysis.json",
+      "bytes": 5131,
+      "sha256": "d4eb0a4873ad253f0ca38a1e1625a20e550efe91521d61dc1270c4d89a244aff"
+    },
+    {
+      "path": "tools/re/browser-preview/README.md",
+      "bytes": 2211,
+      "sha256": "c117738d596adf12cd9ece39a8fb4151ea63fd32df4359487f0ca63f9cff3334"
+    },
+    {
+      "path": "tools/re/browser-preview/serve.py",
+      "bytes": 2471,
+      "sha256": "4b0437d0eed2332af2807dafdb9b7122fcd9b2e252a16c6c918528ed30974e25"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/examples/native_local_connection.rs",
+      "bytes": 3741,
+      "sha256": "34a331b8e745dc202afb2dd410e7e848da4cce07a02b5cb8d898681b3b2c592f"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/examples/native_pending_reply.rs",
+      "bytes": 4391,
+      "sha256": "84f6c1ad68409831fc2ec74d8dfc2cc0b930bceff62d056e84870c8d6883adc8"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/examples/swiftui_capture.rs",
+      "bytes": 2482,
+      "sha256": "c495c4f3c58196d3126f48cd31d9d76e9e04edf649e96cf4705bbee9005a94b3"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/fixtures/native_local_connection/native.bplist",
+      "bytes": 960,
+      "sha256": "167cbcf7bd6613d7f5b634a8fce2811eb458665011967f3ea52ce49d79552892"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/fixtures/native_pending_reply/native.bplist",
+      "bytes": 845,
+      "sha256": "a5aa9b11b2fa051a427a34d3e734298196b02beaa2cb0ef91aba3bee60620f8b"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/fixtures/swiftui_capture/asymmetric.bplist",
+      "bytes": 12629,
+      "sha256": "3b7b737aeec61b94405b16033af2ee0985990c861194a48534a0d8b4612410df"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/fixtures/swiftui_capture/native.bplist",
+      "bytes": 16875,
+      "sha256": "16120f3867298b479ce2f5b027f48f9bcc7552ade5a337f27c03142610b1f97b"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/fixtures/swiftui_capture/transparent.bplist",
+      "bytes": 4428,
+      "sha256": "4e75a09fea242a56cbb3fa1eae98f45bee7a21cd5203b879f58761293f0207ac"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/native_local_connection.rs",
+      "bytes": 143,
+      "sha256": "44f5614bd59be20063a06dd25ba5506d3d59e8085985862bb9478fc2a7bdf64c"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/native_pending_reply.rs",
+      "bytes": 138,
+      "sha256": "177e57319c40f33a97b741704c4d3615c7bd8c3fae6e9d306ebe470c2f5e31ec"
+    },
+    {
+      "path": "tools/re/rust/canvas-core/tests/swiftui_capture.rs",
+      "bytes": 264,
+      "sha256": "9746fca93947004e0a4f49d23fede8e7cab5ee28928e3a8bca84c7a5c471b534"
+    },
+    {
+      "path": "tools/re/swiftui-preview/Capture.swift.template",
+      "bytes": 2976,
+      "sha256": "dbe4ead18a4edf5975817de7578342c7136fc1ae98ddd8c22a81ce53872213ad"
+    },
+    {
+      "path": "tools/re/swiftui-preview/README.md",
+      "bytes": 7842,
+      "sha256": "709a484a8c5d87045f0d6e1e2b5478af1258c33cc2c0a48051f20dfe75348779"
+    },
+    {
+      "path": "tools/re/swiftui-preview/Registry.swift",
+      "bytes": 4299,
+      "sha256": "c53254df7c9593ade0536fd534fa244a273d2a01782744078a11343b198fad46"
+    },
+    {
+      "path": "tools/re/swiftui-preview/RegistryBridge.h",
+      "bytes": 721,
+      "sha256": "13d329ca70b20355d79473fc53e109e407707ffaf27213963cf38593d3df7bce"
+    },
+    {
+      "path": "tools/re/swiftui-preview/RegistryBridge.s",
+      "bytes": 845,
+      "sha256": "00b9d2cafc2bafe782b50b0388b3a7dc34646c70e5b0950c2b9235c56b614e7d"
+    },
+    {
+      "path": "tools/re/swiftui-preview/RegistryIdentity.c",
+      "bytes": 1084,
+      "sha256": "588f67f332351b4c4fba9ff5a8de4eec5c806db81273319e90162a3618c1d0ab"
+    },
+    {
+      "path": "tools/re/swiftui-preview/Sample.swift",
+      "bytes": 480,
+      "sha256": "d9929d5ea9f84c3509ea4a1d89d8e39732374fd203eb6dc14c167cffea5661af"
+    },
+    {
+      "path": "tools/re/swiftui-preview/capture.py",
+      "bytes": 10460,
+      "sha256": "bdae8a7c3194add3c57d2878cf78415e26cfc228031eb8f904702affaedb1c9e"
+    },
+    {
+      "path": "tools/re/swiftui-preview/discover.py",
+      "bytes": 5815,
+      "sha256": "3b7d0e3239129bd3e3f56d8b5070e91ae19639fe32e352171f39e874af3d2dc5"
+    }
+  ],
+  "requires_explicit_human_approval": true,
+  "publication_attempted": false,
+  "prior_review_reason": "Automatic review rejected low-level helper/evidence publication as insufficiently established by the audit; no retry or alternate egress is authorized by this manifest.",
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "latest_verified_replay": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-registry-capture-replay-slq7kfos",
+  "user_index_preserved": true
+}

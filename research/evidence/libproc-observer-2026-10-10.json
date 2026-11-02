@@ -1,0 +1,158 @@
+{
+  "dependencies": [
+    {
+      "manifest_sha256": "9dba73bc8a5098d92441a4bd5e34ada36548f2cbb51387ba2844b6d008cdd4ac",
+      "run_id": "20261010T215404Z-primary-source-frame-cli-8a8fd3bc",
+      "scope": "Frozen CLI dependency, not the mutable working CLI.",
+      "seal_valid": true
+    },
+    {
+      "manifest_sha256": "5786fc404ec0181161d42e431b303425260af6adb3d517bf92351cbf542301fa",
+      "run_id": "20261010T215252Z-native-primary-extent-holdouts-5143e5b4",
+      "scope": "Public native callback allocation reference.",
+      "seal_valid": true
+    }
+  ],
+  "failures_retained": [
+    "Launcher path mistaken for actual dyld executable identity.",
+    "Negative control treated mocked kill(pid,0) as evidence of a live nonexistent root; corrected to forward read-only liveness and forbid destructive signals."
+  ],
+  "observation_contract": {
+    "compiler_deadline_seconds": 10,
+    "default_ps_unchanged": true,
+    "identity": "Microsecond process birth plus executable filesystem bytes; full equality required before destructive signals",
+    "path_scope": "Owned selected ancestry only; no process arguments",
+    "snapshot_deadline_seconds": 2
+  },
+  "remaining": [
+    "Native Canvas correlation/runtime/transport contracts remain open.",
+    "General SwiftUI, browser primary-source execution, state migration, Windows and broader cross-platform acceptance remain open.",
+    "Default ps backend remains unreliable; selected extent comparison uses explicit libproc backend."
+  ],
+  "runs": [
+    {
+      "duration_seconds": 1.813,
+      "execution": "failed",
+      "manifest_sha256": "fb4a669377a7cbca8da091be8f41b702b7ca609c1e54010577051336fc82c795",
+      "result": {
+        "error": "",
+        "error_type": "AssertionError",
+        "observations": {}
+      },
+      "run_id": "20261010T222226Z-owned-process-observation-oracle-7b608a26",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "duration_seconds": 7.271,
+      "execution": "success",
+      "manifest_sha256": "ae79dcbef453c15ed2578671f4492892541cca77ca08c904dfe7597e3dec9006",
+      "result": {
+        "observations": {
+          "detached_timeout_drained": true,
+          "identity_mutations_rejected": 2,
+          "independent_parent_group_path": true,
+          "late_write_absent": true,
+          "maximum_snapshot_seconds": 0.029568540999999726,
+          "nonzero_retained": true,
+          "scope": "Owned helper only; no actual kernel PID reuse or Canvas policy acceptance.",
+          "snapshot_deadline_seconds": 2,
+          "stable_samples": 20
+        }
+      },
+      "run_id": "20261010T222324Z-owned-process-observation-oracle-2ccf7690",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "duration_seconds": 5.653,
+      "execution": "failed",
+      "manifest_sha256": "ed51afaec5184dc8bcac18acb08ee7192735c4a7699d17d14aa50bfd04bf1ab4",
+      "result": {
+        "error": "Cannot observe a live owned root",
+        "error_type": "OSError",
+        "observations": {}
+      },
+      "run_id": "20261010T222612Z-owned-process-observer-integration-6b3160d6",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "duration_seconds": 6.011,
+      "execution": "success",
+      "manifest_sha256": "757fe71409104c80f9b5baa292cc18df1850155a8f4a7e388bed9c79dcc6aa8e",
+      "result": {
+        "observations": {
+          "detached_timeout_drained": true,
+          "identity_mutations_rejected": 2,
+          "independent_parent_group_path": true,
+          "late_write_absent": true,
+          "maximum_snapshot_seconds": 0.016825292000000047,
+          "nonzero_retained": true,
+          "scope": "Owned helper only; no actual kernel PID reuse or Canvas policy acceptance.",
+          "snapshot_deadline_seconds": 2,
+          "stable_samples": 20
+        }
+      },
+      "run_id": "20261010T222705Z-owned-process-observer-integration-99575304",
+      "seal_valid": true,
+      "verdict": "supports"
+    },
+    {
+      "duration_seconds": 166.388,
+      "execution": "success",
+      "manifest_sha256": "c7d706c527ec6af1fd22709effc05e5a665edfdb28acc33973586cd764e7c834",
+      "result": {
+        "observations": {
+          "allocation_bytes": 1376256,
+          "failure_controls": 8,
+          "frames": 84,
+          "independent_matches": 84,
+          "last_good_preserved": true,
+          "native_frames": 80,
+          "native_full_bytes": 1310720,
+          "native_jobs": 40,
+          "native_matches": 80,
+          "native_padding_bytes": 1536,
+          "native_tail_bytes": 1035264,
+          "png_decoded_bytes": 274656,
+          "png_matches": 84,
+          "pngs": 84,
+          "scope": "Pinned frozen source-frame CLI, macOS LLVM compilation and V8.80 complete public native extent allocations plus4 independently predicted transparent frames; Fraction-projected PNG decoded independently. No native PNG/getter equivalence, current mutable CLI assurance, browser, hot reload/state migration, general SwiftUI or Canvas protocol acceptance.",
+          "staging_cleanup": true,
+          "transparent_frames": 4,
+          "verifier_faults": 4
+        }
+      },
+      "run_id": "20261010T222740Z-primary-source-frame-native-extents-89cb7e2c",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Public libproc owned observation and pinned frozen CLI/native extent comparisons; no native Canvas transport/lifecycle acceptance.",
+  "verification": {
+    "isolated_suite": {
+      "log_path": "research/evidence/libproc-validation-2026-10-10/final-tests.txt",
+      "log_sha256": "e7e282abff04b5822229cf35df859b6b3db749effec26532a935cb364112a74c",
+      "passed": true,
+      "scope": "Exact proposed implementation excluding unrelated graph/source-frame/tree-size edits; dependency-complete Xcode Python runtime.",
+      "seconds": 35.978,
+      "tests": 330
+    },
+    "retained_validation_failures": [
+      {
+        "log_path": "research/evidence/libproc-validation-2026-10-10/initial-tests.txt",
+        "log_sha256": "267bc2e8b554cbe1f527e5cfaf73506f12d977ea0d67a5d6dc842b540727789a",
+        "reason": "Two existing default execute mocks rejected unconditional observer=None keyword, and two schema tests lacked jsonschema. Default keyword omission restored."
+      },
+      {
+        "log_path": "research/evidence/libproc-validation-2026-10-10/dependency-tests.txt",
+        "log_sha256": "09d78b8169cbe864edf453eb556595832a78651d013ff37de4c52e338ae7e304",
+        "reason": "Dependency-incomplete bundled Python lacks jsonschema; no native implementation failure."
+      }
+    ],
+    "unit_tests": 7,
+    "unit_tests_passed": true
+  }
+}

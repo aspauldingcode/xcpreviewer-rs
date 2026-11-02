@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "commit": "405107e7ed9c326221ce256c41efa77fc5b8cd28",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Native Future result qualification published in `405107e7ed9c326221ce256c41efa77fc5b8cd28`.\n\nTwelve actual native Future.recentStateSnapshot getter calls show all6 owned SDK/callback cases running before and finished after callback. Two finish succeeded with complete native PropertyList dictionaries equal to original owned response bytes, including payload+NSError precedence. Four finish failed: malformed/empty data produce NSCocoaErrorDomain3840; nil/error produces HumanReadableNSError retaining original owned NSError domain/code17/description; nil/nil produces TransportReply.EmptyReply. These are actual returned Future values, not provider/application/OS resource settlement. Earlier success-predicate-only records retain their narrower scope.\n\nExported virtual getter dispatch and actual owned target qualified at metadata slot0x80 and pinned Foundation offsets. Concrete generic FutureState<PropertyList> metadata is kind513,size58,stride64,alignment8. Native getter writes indirect result; Swift dynamic metatype copies the typed value into Any, then actual value witness destroys original. Reflection applies only to returned owned copies; no mutable lock storage reflected in sealed helper, no private async ABI guessed.6 callbacks/12 snapshots/12 original snapshot-value destructions; closure/Future references released separately. Native descriptors name finished/running and succeeded/failed/canceled; cancellation is not exercised. Initial size-at-most32 guard SIGTRAP preserved before getter access, metadata-only measurement corrected to exact58/64. Raw exploratory type strings/private context addresses remain local; public error type/domain/description receipts replace context addresses with (private).\n\nPortable `examples/future_result.rs` and conformance test compare complete native successful values and distinct parse/opaque-remote/EmptyReply categories. Native NSError presentation remains host-specific; no fabricated Foundation error implementation added. Full396 Rust tests pass. Actual native/WASI preview1 example stdout identical with no preopens/environment. Fresh disposable replay repeats12 snapshots, focused test and host/WASI equality. WASM SHA256db5c7fb7985b040ebfa71934a7f7af0fabf258950a606d84a4eae7c7a5470b60.\n\n5704 selected source bytes independently verified (inherited5440 +264 snapshot getter/dispatch), enum descriptors and runtime UUID/hash/offset/layout guards pass. REA6.2.0 expected path/catalog aligned, closed/provider null. Native8s/compiler30s/SDKwait3s/Rust60s/example5s/WASI10s deadlines. Exclusive serial controller. Only owned connections canceled; no user Xcode/simulator operation, private Xcode MCP bridge, signing/protection change or Apple dump publication.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/native-future-result-2026-10-27 (seal `851bd571f28b6e8c7594b064e6c276d05ab8689b3aea0e0cfe810137bcfe12c0`). Original helpers/owned data/sanitized findings only. User staging and all five local/tracking development/master refs preserved/verified after atomic push.\n\nBoth milestone acceptance contracts remain incomplete. Next advance suitable local native service construction, actual daemon resource semantics or usable Canvas behavior. Finished native Futures do not establish application/provider/UI/rights settlement. Ordinary hostToSim factory remains quarantined; no essential user action needed.\n",
+  "retry_not_before_utc": "2026-10-27T03:58:07.769022+00:00",
+  "next_attempt_policy": "REST read-before-post full unique commit marker; persist partial events; backoff30min on failure",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6433378595",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6433379214",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6433379893",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6433380667",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T03:58:07.828346+00:00",
+  "completed_utc": "2026-10-27T03:58:20.993903+00:00"
+}

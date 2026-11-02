@@ -1,0 +1,36 @@
+{
+  "commit": "f5dc2e249bbeebf3e1e42c4d2667f183f7c1d72d",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "status": "complete",
+  "retry_not_before_utc": "2026-10-27T13:53:01.603871+00:00",
+  "body": "Browser bitmap preview surface published: f5dc2e249bbeebf3e1e42c4d2667f183f7c1d72d\n\nAdded a usable local browser surface over the qualified Rust decoder and real WASM executable: local file loading, sample, zoom and selectable region outlines/list. One owned opaque sample is accepted/canonicalized by the pinned native RenderPayload decoder. Host/WASM packets agree, and actual Canvas readback SHA-256 matches all 49,152 expected RGBA bytes. Scale-two file loading and Orange selection at 400% zoom were observed in the browser; a screenshot and final DOM receipt are saved.\n\nValidation: 399 Rust tests; actual WASM worker host-packet identity, malformed rejection and unknown-import rejection; fresh disposable native/source/build/worker replay passed. Default offline viewer startup passed in approved loopback context. Original packet/presentation/selection policy remains distinct from recovered native behavior. Accessibility blobs remain opaque; no arbitrary SwiftUI rendering, native Canvas interaction, general alpha/color parity or provider/OS resource settlement claimed. M1 and M2 remain incomplete.\n\nSanitized evidence and replay: `research/evidence/browser-preview-surface-2026-10-27`; usage: `tools/re/browser-preview/README.md`. Raw Apple disassembly remains local. Concrete UI-tool latency, proxy and sandbox limitations are preserved. Next: connect missing provider/resource semantics and qualify further native Canvas behavior.",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6443654576",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6443656087",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6443657667",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6443659954",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T13:53:12.990639+00:00",
+  "completed_utc": "2026-10-27T13:53:27.196087+00:00"
+}

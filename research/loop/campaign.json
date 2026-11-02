@@ -4802,6 +4802,69 @@
       "timeout_seconds": 180
     },
     {
+      "adapter": "source_frame",
+      "artifact_limit_mb": 128,
+      "checks": [
+        {
+          "equals": 16,
+          "path": "frames"
+        },
+        {
+          "equals": 262144,
+          "path": "allocation_bytes"
+        },
+        {
+          "equals": 4,
+          "path": "native_frames"
+        },
+        {
+          "equals": 2880,
+          "path": "native_target_bytes"
+        },
+        {
+          "equals": 16,
+          "path": "pngs"
+        },
+        {
+          "equals": true,
+          "path": "all_frames_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_native_equal"
+        },
+        {
+          "equals": true,
+          "path": "all_pngs_equal"
+        },
+        {
+          "equals": 64,
+          "path": "invalid_requests"
+        },
+        {
+          "equals": 6,
+          "path": "failure_controls"
+        },
+        {
+          "equals": true,
+          "path": "all_failed_previews_preserve_last_good"
+        },
+        {
+          "equals": true,
+          "path": "staging_cleanup"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Declared primary-layer source renders full callback-target allocations and explicitly converted PNGs; failed previews preserve last good output.",
+      "id": "primary-source-frame-cli",
+      "params": {},
+      "priority": 94,
+      "resources": [
+        "local-re-controller"
+      ],
+      "timeout_seconds": 300
+    },
+    {
       "adapter": "native_reference",
       "artifact_limit_mb": 256,
       "checks": [
@@ -4918,6 +4981,96 @@
         "wasm"
       ],
       "timeout_seconds": 180
+    },
+    {
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 8,
+      "checks": [
+        {
+          "equals": 20,
+          "path": "stable_samples"
+        },
+        {
+          "equals": true,
+          "path": "independent_parent_group_path"
+        },
+        {
+          "equals": true,
+          "path": "detached_timeout_drained"
+        },
+        {
+          "equals": true,
+          "path": "late_write_absent"
+        },
+        {
+          "equals": true,
+          "path": "nonzero_retained"
+        },
+        {
+          "equals": 2,
+          "path": "identity_mutations_rejected"
+        },
+        {
+          "equals": 2,
+          "path": "snapshot_deadline_seconds"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Public libproc microsecond birth/executable identity permits bounded owned ancestry snapshots and detached-child timeout cleanup while rejected identities never receive signals; no Canvas reclamation policy claim.",
+      "id": "owned-process-observation-oracle",
+      "params": {
+        "libproc_control": true
+      },
+      "priority": 99,
+      "resources": [
+        "process-observer"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "adapter": "portable_solid",
+      "artifact_limit_mb": 8,
+      "checks": [
+        {
+          "equals": 20,
+          "path": "stable_samples"
+        },
+        {
+          "equals": true,
+          "path": "independent_parent_group_path"
+        },
+        {
+          "equals": true,
+          "path": "detached_timeout_drained"
+        },
+        {
+          "equals": true,
+          "path": "late_write_absent"
+        },
+        {
+          "equals": true,
+          "path": "nonzero_retained"
+        },
+        {
+          "equals": 2,
+          "path": "identity_mutations_rejected"
+        },
+        {
+          "equals": 2,
+          "path": "snapshot_deadline_seconds"
+        }
+      ],
+      "depends_on": [],
+      "hypothesis": "Explicit Controller/execute/OwnedTree observer injection repeats the public libproc lifetime and cleanup corpus without changing default ps behavior; independent dyld path and controlled failures must agree.",
+      "id": "owned-process-observer-integration",
+      "params": {
+        "libproc_control": true
+      },
+      "priority": 99,
+      "resources": [
+        "process-observer"
+      ],
+      "timeout_seconds": 60
     },
     {
       "adapter": "live_swap",

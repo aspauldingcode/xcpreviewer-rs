@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scope": "Retained failed Xcode bridge routing experiments and accessibility follow-up; no successful capture or authorization diagnosis",
+  "files": {
+    "accessibility-followup.json": "e5b8d276ee0391520717e8929f38397aee0194cbf10a1409e933ff7e00b54386",
+    "automatic-pid-and-session.json": "a7f095d9e34014012010772c34730daf4bba0ca0c7609bc1633d97f1316f5e88",
+    "automatic-pid-and-session.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "automatic-session.json": "2cfb23082869c51a22cf0530c74e884d5ec0a018bdcacc03928187f169d8ae2b",
+    "automatic-session.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol-2025.json": "430549e1079f6f9fa32c6ecb48bfc9a58cca07d8f561d8a591fa434c8eaf5ffb",
+    "protocol-2025.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary.json": "069240b6c734ecf31b078d635b5efc97d947de94415a9bac9df7009627f0a1bf"
+  },
+  "sealed_at": "2026-10-15T18:01:54.558066+00:00",
+  "limitations": [
+    "Seal detects file modification; it does not independently prove recorded runtime claims.",
+    "UI adapter AXChildren window filtering is a source observation and possible cause of missing windows, not an established Xcode connection cause.",
+    "No unchanged Xcode discovery retry is eligible until relevant external state changes."
+  ]
+}

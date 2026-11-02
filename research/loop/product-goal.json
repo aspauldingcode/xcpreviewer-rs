@@ -1,0 +1,70 @@
+{
+  "clarified_on": "2026-11-01",
+  "user_goal": "Development of any SwiftUI application for any Apple device with a 1:1 experience on other systems through a liberated WASM-based Xcode preview Canvas.",
+  "authoritative_scope": "docs/product-goal.md",
+  "subset_is_intermediate_not_end_goal": true,
+  "normal_product_execution_requires_apple_host": false,
+  "current_swiftui_capture_requires_mac": true,
+  "current_wasm_viewer_executes_general_swiftui": false,
+  "active_priority": "Complete native Canvas reverse engineering first, including real project/target binding and UI/session/refresh behavior; then implement the project-aware standalone WASM Canvas and validate all requested targets.",
+  "next_vertical_slice": {
+    "source_features": [
+      "View",
+      "Text",
+      "Button",
+      "State"
+    ],
+    "persistent_state": true,
+    "no_native_render_service": true,
+    "native_transition_comparison_required": true,
+    "status": "unimplemented; follows native recovery gate",
+    "prerequisite": "native_canvas_recovery gate"
+  },
+  "task_dependencies": {
+    "native_canvas_recovery": [],
+    "verified_project_binding": [
+      "native_canvas_recovery"
+    ],
+    "standalone_wasm_canvas_ui_runtime": [
+      "native_canvas_recovery",
+      "verified_project_binding"
+    ],
+    "interactive_project_workflow": [
+      "standalone_wasm_canvas_ui_runtime"
+    ],
+    "all_target_host_conformance": [
+      "interactive_project_workflow"
+    ]
+  },
+  "current_probe": {
+    "standard_swift_wasm_build": "passed",
+    "standard_swift_wasm_expected_execution": "count=0\ncount=1\ncount=2\n",
+    "swiftui_import_build": "failed: no such module SwiftUI",
+    "host": "Mac; non-Apple build/execution not verified by this probe",
+    "fresh_rebuild_replay_passed": true,
+    "evidence": "research/evidence/portable-swift-goal-2026-11-01"
+  },
+  "milestones_complete": false,
+  "publication_gate_unchanged": true,
+  "native_canvas_full_reverse_engineering_first": true,
+  "canvas_ui_itself_owned_wasm_required": true,
+  "project_binding_contract": "docs/omarchy-project-integration.md",
+  "native_recovery_gate": "docs/canvas-recovery-contract.md",
+  "requested_device_labels": [
+    "Mac",
+    "iPhone",
+    "iPad",
+    "Apple Watch",
+    "Apple TV",
+    "Apple Vision Pro",
+    "iPhone Duo",
+    "additional targets"
+  ],
+  "device_profiles_require_native_sdk_validation": true,
+  "upstream_basis": {
+    "repository": "https://github.com/joshuaswarren/omarchy-apple-dev",
+    "reviewed_revision": "7bc44ea917e5f1fcd39c066346d43f827b5796f3",
+    "source_review_only": true,
+    "independent_upstream_build_validation": false
+  }
+}

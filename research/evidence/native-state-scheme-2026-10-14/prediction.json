@@ -1,0 +1,22 @@
+{
+  "budget": {
+    "alarm_seconds": 12,
+    "compile": 1,
+    "compile_seconds": 60,
+    "native": 2,
+    "native_seconds": 15
+  },
+  "expected_colors": [
+    "red",
+    "blue",
+    "green",
+    "green",
+    "yellow",
+    "green",
+    "blue",
+    "yellow",
+    "yellow",
+    "green"
+  ],
+  "hypothesis": "Same explicit id retains view-owned State across environment colorScheme changes; id change resets state; detached old binding does not affect replacement."
+}

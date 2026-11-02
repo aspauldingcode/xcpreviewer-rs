@@ -355,6 +355,9 @@
       "scope": "Portable primary-layer source CLI and bounded deterministic source/configuration/IR/module cache identities; explicit subset diagnostics and transaction/fault controls. No browser workaround, native Canvas or arbitrary SwiftUI acceptance."
     },
     {
+      "completion_runs": [
+        "20261010T215404Z-primary-source-frame-cli-8a8fd3bc"
+      ],
       "id": "primary-source-frame-cli",
       "issue": "I5",
       "priority": 94,
@@ -379,22 +382,40 @@
       "scope": "Independent public native callback full allocation predictions at compact/padded 1x1,13x7,64x64 extents; no Canvas/native getter equivalence."
     },
     {
-      "blocked_track": "host-process-observation",
+      "completion_runs": [
+        "20261010T222740Z-primary-source-frame-native-extents-89cb7e2c"
+      ],
       "id": "primary-source-frame-native-extents",
       "issue": "I5",
       "priority": 96,
       "requires_runs": [
         "20261010T215252Z-native-primary-extent-holdouts-5143e5b4",
-        "20261010T215404Z-primary-source-frame-cli-8a8fd3bc"
+        "20261010T215404Z-primary-source-frame-cli-8a8fd3bc",
+        "20261010T222705Z-owned-process-observer-integration-99575304"
       ],
-      "scope": "Run the supported source-frame CLI for all40 newly native-anchored primary extent jobs, repeats and full16384-byte target allocations; independent explicit straight-alpha PNG decoding and corruption/runtime/precommit controls. Raw native callback acceptance remains separate from PNG conversion and native Canvas transport."
+      "scope": "Run the supported source-frame CLI for all40 newly native-anchored primary extent jobs, repeats and full16384-byte target allocations; independent explicit straight-alpha PNG decoding and corruption/runtime/precommit controls. Raw native callback acceptance remains separate from PNG conversion and native Canvas transport. Requires explicit reviewed libproc observer selection; default ps host remains unreliable."
     },
     {
+      "completion_runs": [
+        "20261010T222324Z-owned-process-observation-oracle-2ccf7690"
+      ],
       "id": "owned-process-observation-oracle",
       "issue": "R1",
       "priority": 99,
       "requires_runs": [],
       "scope": "Implement and independently discriminate a public macOS libproc-based owned process observer against known spawned/detached/reused identities; retain bounded deadlines and preserve user processes. Resolve host ps prerequisite before full extent/capture retries; no native Canvas release policy acceptance."
+    },
+    {
+      "completion_runs": [
+        "20261010T222705Z-owned-process-observer-integration-99575304"
+      ],
+      "id": "owned-process-observer-integration",
+      "issue": "R1",
+      "priority": 100,
+      "requires_runs": [
+        "20261010T222324Z-owned-process-observation-oracle-2ccf7690"
+      ],
+      "scope": "Explicit controller/executor/tree public libproc observer injection repeated with independent dyld identity and owned cleanup controls; does not change default ps behavior or claim native Canvas policy."
     },
     {
       "id": "primary-live-wasm-swap",

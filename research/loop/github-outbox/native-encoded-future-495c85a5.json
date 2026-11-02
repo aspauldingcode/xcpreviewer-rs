@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "commit": "495c85a56d02122254e8e78bb3b549c6fa46887e",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Actual native encoded-reply callback qualification published in `495c85a56d02122254e8e78bb3b549c6fa46887e`.\n\nSix actual TransportReply.makeEncodedReplyHandler function/context pairs now run against owned native SDK/UVPropertyList replies. Native Callsite constructor/metadata and returned thunk are guarded. Original source ShellUpdatePayload, copied TransportReply and Callsite are destroyed before SDK exchange/callback. Captured contexts continue to work and are released separately from6 Future references. All6 SDK requests/callbacks pass byte/peer/request guards, including available zero-length data initializing UVPropertyList. Only owned connections canceled.\n\nFour actual callback arguments supply payloads: valid dictionary, valid dictionary plus NSError, malformed bytes, empty bytes. Two deliberately withhold their successfully received UV object and supply nil/error or nil/nil; these are controlled callback arguments, not SDK delivery failures. Two native success predicates become true (valid payload wins over accompanying error); four stay false. False does not prove failure/terminal state, and no native terminal error object or exact NSError identity is captured. Native daemon routing/application, exactly-once callbacks, scheduling and final OS/provider rights settlement remain unproven.\n\nOriginal portable example `tools/re/rust/canvas-core/examples/encoded_reply.rs` and one conformance test embed owned native fixtures and compare complete valid decoded payloads, acknowledgement selection and typed outcomes. Available malformed/empty payloads acknowledge in the portable value adapter, then fail typed parsing. Opaque error tokens do not reconstruct NSError presentation. Full395 Rust tests pass. Native/WASI preview1 example stdout is byte-identical, no preopens/inherited environment. Fresh disposable replay repeats6 native callbacks, focused test and host/WASI equality. WASM SHA25663ebe1a6ca6c901a2565246041c9769af54fcab8a1d200dc0aa3e5d6adad10d6.\n\n5440 selected source bytes independently verified across modern update/ownership, incoming reply/lazy getter, UV pointer gate and additional handler/Callsite construction. Runtime UUID/image/offset/layout guards pass; REA expected6.2.0 path/catalog aligned, closed/provider null. Exploratory mislabeled receipt, example type mismatch and exact Objective-C Integer1 receipt assertion failure preserved with corrections. No product coercion added or native behavior altered to satisfy checks. Native8s/compiler30s/SDKwait3s/Rust60s/example5s/WASI10s bounds. No user Xcode/simulator action, private Xcode MCP bridge, signing/protection change or Apple dump publication.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/native-encoded-future-2026-10-27 (seal `8832b13fd8f2063cf7d4fa50e2e8cb5af822091e0e6ea21be2c8db4e12829f99`). Original helpers/owned data/sanitized findings only; raw disassembly/failed originals local. User staging and all five local/tracking refs preserved/verified after atomic development/master push.\n\nBoth milestone acceptance contracts remain open. Next recover suitable local native construction or inspect native terminal error/result values through a qualified ABI. Ordinary hostToSim factory remains quarantined. No essential user action needed.\n",
+  "retry_not_before_utc": "2026-10-27T03:54:05.570908+00:00",
+  "next_attempt_policy": "Respect existing network backoff; REST read-before-post with unique full commit marker, persist partial events",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6433341469",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6433342245",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6433342913",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6433343678",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T03:54:50.265654+00:00",
+  "completed_utc": "2026-10-27T03:55:17.341598+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "complete",
+  "commit": "d8c014913507eeedcb2a226c188bdbf956c4b5de",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Added checked XPC resource binding and correlated reconstructed shell payloads with actual owned native cross-process capability delivery in `d8c014913507eeedcb2a226c188bdbf956c4b5de`.\n\nEncodedWithDescriptors::bind_resources validates body/descriptor cardinality and source-token indices, then borrows resources in canonical physical descriptor order. Repeated references borrow the same token; no OS capability is synthesized/copied/closed. Backend owns validity/rights/dispositions/duplication/cleanup. Attachment-reencoding CLI now uses the checked binding before emitting its plan.\n\nSeven audit-verified owned BaseBoard/libxpc controls deliver Rust-canonical290/2128-byte shells through pipe-backed xpc_fd resources. Sender's original pipe writer/read FD close before serialization. Receiver reaps exact sender before FD duplication/read. Native XPC import can precede exit; only duplication/read/Rust consumption claimed after it. Native and portable-body distinct/alias controls preserve data and shared pipe consumption. Ignoring descriptor_order[1,0] swaps valid shell payloads while remaining syntactically accepted; semantic binding failure detected. Swapped payloads still pass shell decoding, demonstrating why valid bytes alone are insufficient.\n\nTwo controls pass actual imported FDs directly into current Rust CLI stdin using checked posix_spawn actions after sender reap. Three CLI processes produce complete byte-matching canonical shells; aliased second read yields EOF, exits1 with plist: Header and no output. These lengths are canonical stdout lengths, separately labeled from native C read counts. Source bytes are not substituted for stdin. This executes reconstruction code against real imported native resources through an owned research adapter, not a complete portable OS capability backend.\n\n391 Rust tests pass. Eleven nonempty delivered records (including swapped controls) pass actual native Swift shell decoding,11 actual WASI canonical runs and11 Foundation reparses. Fresh native corpus exercises6 descriptor tests. Disposable replay runs10 focused tests plus those6 fresh-corpus tests and all7 native controls.2716 frame bytes compare across7 transfers;91 mutations reject. Count2,388-byte complex body,412-byte message, header bits, alias/distinct port-name relationships, native receive audit identity and libxpc UUID/caller offsets/prefix hashes match. Child unused send-once destinations produce separate message71 error callbacks, not successful payloads. Current BaseBoard signatures/UUID and128 method-prefix bytes match prior source profile;64 libxpc caller-prefix bytes independently match.7380 shell source instruction bytes and current Messaging/Foundation UUIDs verified.\n\nOne ambient-sandbox fresh phase exited47 at bootstrap registration before fork; failure retained. Native phase only reran through approved execution and passed, including disposable replay; no system protection change. Compiler30s, native control8s, owned Rust reader child3s, metadata5s and WASI10s deadlines. Cleanup restricted to exact owned children. REA command/catalog match, provider null/session closed/alignment unknown. Unchanged Ghidra/provider loops not retried.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/shell-resource-peer-2026-10-26 (seal `04930dcd9ce94a8ca736525eef2bb19e7b97c44179e8bc141ad46428a4e7b5a9`). Raw frames/port names/PIDs/private method bytes local/ignored; public original helpers/code/owned fixtures and sanitized hash/equality receipts only. Serial controller/full-index unrelated staged-work preservation verified. No user Xcode/simulator process or protection changes; UI/provider quarantine persists.\n\nThis is generic native carrier delivery of reconstructed shell data, not actual Canvas scene/workspace/AgentMessage routing or native update application. Final kernel right/file-object/provider settlement and universal callback finality remain unproven. Both milestones incomplete. Next recover/correlate actual messaging interface and shell-update dispatch with this delivery/resource boundary.\n",
+  "transport": "REST read-before-post; reuse existing unique commit comment before any POST",
+  "last_attempt_utc": "2026-10-27T02:43:56.231850+00:00",
+  "retry_not_before_utc": "2026-10-26T23:49:21.708400+00:00",
+  "failure": "HTTP403 API rate limit exceeded on first issue6 comment POST",
+  "write_reset_time": "not provided; do not infer from core read quota",
+  "core_read_quota_remaining": 3711,
+  "core_read_quota_reset_utc": "2026-10-26T23:46:34Z",
+  "next_attempt_policy": "At most one synchronization attempt after backoff. REST read-before-post; reuse unique commit comment. Previous temp rest-sync.py requires old HEAD/pins and is unsuitable after newer commits; use queued body and verify historical git blobs if needed, not current HEAD equality. Preserve pending/extend backoff on repeated write rate limit.",
+  "retry_exit": 1,
+  "retry_failure": "20261026/rest-sync.py\", line 9, in run\n    if q.returncode:print(label,'failed',q.returncode,q.stderr.decode()[:120]);q.check_returncode()\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py\", line 460, in check_returncode\n    raise CalledProcessError(self.returncode, self.args, self.stdout,\nsubprocess.CalledProcessError: Command '['gh', 'api', '--method', 'POST', 'repos/aspauldingcode/xcpreviewer-rs/issues/6/comments', '--input', '/private/tmp/shell-peer-20261026/rest-comment.json']' returned non-zero exit status 1.\n",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6432448654",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6432449197",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6432449886",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6432450717",
+      "action": "posted"
+    }
+  ],
+  "completed_utc": "2026-10-27T02:44:21.358346+00:00"
+}

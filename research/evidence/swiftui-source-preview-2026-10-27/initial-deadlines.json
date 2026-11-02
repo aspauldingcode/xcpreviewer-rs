@@ -1,0 +1,6 @@
+{
+  "rust_full_test": "60-second owned Cargo timeout; initial outer wrapper failed to retain partial output. No pass count claimed.",
+  "swiftui_refresh_compile": "30-second compiler deadline while Cargo compilation was also active; last good served payload unchanged",
+  "changed_context": "Subsequent compilation/test checks serialized; Cargo jobs limited to1 with owned process-group deadline handling",
+  "user_processes_terminated": false
+}

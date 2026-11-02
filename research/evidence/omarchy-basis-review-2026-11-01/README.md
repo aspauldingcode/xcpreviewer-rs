@@ -1,0 +1,11 @@
+# Suggested cross-platform foundation and project-bound Canvas requirements
+
+The user authorizes evaluating omarchy-apple-dev as a development basis, requires the standalone Canvas to integrate with each real project and explicitly requires full Canvas reverse engineering before replacement implementation. Product scope includes all requested Apple device families and additional profiles; Canvas UI/control/session behavior itself must be implemented by us in WASM. Current HTML/JavaScript frame display with a WASM decoder is intermediate.
+
+Public repository main was pinned and six files hashed. Static Python AST review confirms the reviewed importer platform table has iOS/macOS; broader target support is not inferred. The reviewed simulation documentation explicitly limits its native-parity claims. Exact source URLs/hashes are in sources.json. No upstream scripts were executed, installed or copied into the product, and no independent upstream build/device validation occurred. Public upstream source was retained only in the temporary review directory; this package contains our audit script, source hashes/links and findings. Preserve upstream notices in any future actual code adaptation.
+
+Updated contracts: docs/canvas-recovery-contract.md defines the required native recovery areas; docs/omarchy-project-integration.md defines project identities, target/scheme settings, source/dependency/resource ownership, platform semantics, revision isolation and distinct deployment/preview products. docs/product-goal.md and durable priority now enforce native recovery first. These are acceptance requirements and source-review findings, not implemented project import or completed native recovery.
+
+verify.py refetches only the exact public revision's reviewed files into a fresh directory, checks every expected hash and reruns static AST checks. It executes our audit script only. No compiler, installer, Apple private framework or Canvas UI is invoked. No Rust tests or compatibility claim. Publication and matching issue updates remain gated; user staging is preserved.
+
+Fresh immutable-revision re-fetch reproduces all six source hashes and the static findings. No upstream code or installer was executed.

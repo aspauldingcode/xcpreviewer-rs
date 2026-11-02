@@ -1,0 +1,74 @@
+flowchart TD
+  subgraph M1["Milestone 1: Native RSE acceptance"]
+    BASE["BASE: verified RE toolkit and owned boundary oracles"]
+    O1["O1: Reconcile target/environment identities and invalid evidence"]
+    O2["O2: Native capture diagnosis"]
+    O3["O3: Stable reference fixtures"]
+    P1["P1: Recover one actual preview lifecycle"]
+    P2["P2: Recover bounded wire semantics"]
+    P3["P3: Native decoder/replay adapter"]
+    R1["R1: Receiver-first exit and release accounting"]
+    R2["R2: Resource reuse and completion model"]
+    R3["R3: Format and synchronization coverage"]
+  end
+  subgraph M2["Milestone 2: Portable WASM canvas acceptance"]
+    A1["A1: Preview-facing MCP and user workflow"]
+    A2["A2: C ABI and language bindings"]
+    B1["B1: Cost and latency qualification"]
+    D1["D1: Packaging, releases and operator docs"]
+    F1["F1: Choose first portable subset"]
+    F2["F2: Compiler/runtime feasibility spike"]
+    F3["F3: Design portable protocol and ABI"]
+    H1["H1: Transactional hot reload"]
+    H2["H2: Developer canvas"]
+    I1["I1: Rust workspace and core contracts"]
+    I2["I2: Swift compatibility/build adapter"]
+    I3["I3: Runtime and host imports"]
+    I4["I4: Layout and software rendering"]
+    I5["I5: End-to-end portable CLI slice"]
+    S1["S1: Hardening and platform acceptance"]
+    V1["V1: Independent conformance system"]
+  end
+  H1 --> A1
+  I5 --> A1
+  V1 --> A1
+  I1 --> A2
+  I5 --> A2
+  H1 --> B1
+  H2 --> B1
+  A1 --> D1
+  A2 --> D1
+  S1 --> D1
+  O3 --> F1
+  F1 --> F2
+  F2 --> F3
+  P2 --> F3
+  F3 --> H1
+  I5 --> H1
+  H1 --> H2
+  I5 --> H2
+  V1 --> H2
+  F3 --> I1
+  F2 --> I2
+  I1 --> I2
+  I1 --> I3
+  I2 --> I3
+  F1 --> I4
+  I3 --> I4
+  O3 --> I4
+  I2 --> I5
+  I4 --> I5
+  O1 --> O2
+  O2 --> O3
+  O3 --> P1
+  P1 --> P2
+  P2 --> P3
+  R2 --> P3
+  R3 --> P3
+  R1 --> R2
+  R2 --> R3
+  I5 --> S1
+  V1 --> S1
+  F1 --> V1
+  I5 --> V1
+  O3 --> V1

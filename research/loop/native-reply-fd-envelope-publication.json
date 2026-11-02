@@ -1,0 +1,42 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "research/evidence/native-reply-fd-envelope-2026-10-28/README.md",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/bridge.h",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/bridge.s",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/callback-imports.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/callback-imports.py",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/check.py",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/connection-source-verify.py",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/extra-fd.status.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/extra-fd.stderr",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/extra-fd.stdout",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/fd-as-data.status.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/fd-as-data.stderr",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/fd-as-data.stdout",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/identity.c",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/native.bplist",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/native.swift",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/peer.m",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/pins.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/replay-results.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/replay.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/results.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/run.py",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/seal.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/server-identity.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/source-findings.json",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/source-verify.py",
+    "research/evidence/native-reply-fd-envelope-2026-10-28/verify.py"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Two native reply-envelope FD controls: extra root FD does not surface in complete UV data/dictionary projection; FD-valued data returns actual invalidType. Pre-send FD duplication validated after original reader closure. No receiver FD-use/final rights-settlement or full resource/parity claim. Local pending explicit publication approval.",
+  "fresh_replay_passed": true
+}

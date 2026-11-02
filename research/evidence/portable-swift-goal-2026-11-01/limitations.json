@@ -1,0 +1,13 @@
+{
+  "configuration_inspection": {
+    "command": "swift sdk configure 6.3-RELEASE-wasm32-unknown-wasip1 wasm32-unknown-wasi --show-configuration",
+    "diagnostic": "Error: encountered an I/O error (code: 1) while reading /Users/8amps/Library/org.swift.swiftpm/swift-sdks/configuration",
+    "configuration_changed": false,
+    "cause_established": false,
+    "followup": "Read installed artifact metadata and execute explicitly authorized owned builds; no SDK installation or configuration write requested."
+  },
+  "swiftui_negative_control": "Expected compile failure: missing SwiftUI module in the selected installed WASM SDK. No claim about all possible compatibility implementations.",
+  "ordinary_counter": "Swift struct mutation and output only; does not exercise SwiftUI State, rendering or user event delivery.",
+  "native_references": "No native Canvas/private framework invoked.",
+  "host": "Mac-hosted builds and Node WASI execution; non-Apple execution remains unverified."
+}

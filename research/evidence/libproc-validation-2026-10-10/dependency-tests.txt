@@ -1,0 +1,27 @@
+.............................................E........./private/tmp/xcpreviewer-libproc-final-tests/tools/re/compare_images.py:18: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(delta.getdata());changed=sum(max(pixel)>threshold for pixel in pixels)
+...................................................................................................................E............................................................................................................................................................/private/tmp/xcpreviewer-libproc-final-tests/tools/re/reloop/canvas.py:79: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(image.convert('RGBA').crop(box).getdata())
+../private/tmp/xcpreviewer-libproc-final-tests/tools/re/reloop/canvas.py:63: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=image.convert('RGBA').crop((32,96,608,352)).getdata()
+.
+======================================================================
+ERROR: test_campaign_schema_matches_executor (test_evidence.EvidenceTests.test_campaign_schema_matches_executor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_evidence.py", line 250, in test_campaign_schema_matches_executor
+    import jsonschema
+ModuleNotFoundError: No module named 'jsonschema'
+
+======================================================================
+ERROR: test_seed_queue_matches_json_schema (test_protocol.ProtocolTests.test_seed_queue_matches_json_schema)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/xcpreviewer-libproc-final-tests/tools/re/tests/test_protocol.py", line 29, in test_seed_queue_matches_json_schema
+    import jsonschema
+ModuleNotFoundError: No module named 'jsonschema'
+
+----------------------------------------------------------------------
+Ran 330 tests in 25.094s
+
+FAILED (errors=2)

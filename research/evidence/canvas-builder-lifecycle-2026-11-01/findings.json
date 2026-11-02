@@ -1,0 +1,155 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "make-builder",
+      "start": "0x24e884",
+      "end_exclusive": "0x24f63c",
+      "bytes": 3512,
+      "sha256": "1980b4536b6db8356d315f40e02467381d942b3f920b39007d2245cf8820dd1b"
+    },
+    {
+      "name": "coalescer",
+      "start": "0x4f3a4",
+      "end_exclusive": "0x4f700",
+      "bytes": 860,
+      "sha256": "629cdde96b28a2712b2cd9344018eed7460833ea274c72eb8728c38ba7b99b34"
+    }
+  ],
+  "source_bytes_verified": 4372,
+  "new_coalescer_bytes": 860,
+  "previous_make_builder_bytes_reverified": 3512,
+  "calls": [
+    {
+      "call": "0x24e9e0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC24openOrPreviewedFilePaths33_79390B747E07F69D30A6D48DE90213E2LLShySo11DVTFilePathCGvg"
+        ],
+        "offset": "0x247a9c"
+      }
+    },
+    {
+      "call": "0x24ea50",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x24eb30",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC7updatedAC12UpdateResultVyF"
+        ],
+        "offset": "0x4f56c"
+      }
+    },
+    {
+      "call": "0x4f3c4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$invalidate"
+        ],
+        "offset": "0x2ad780"
+      }
+    },
+    {
+      "call": "0x4f530",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$isValid"
+        ],
+        "offset": "0x2ad900"
+      }
+    },
+    {
+      "call": "0x4f53c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$cancelScheduledInvocation"
+        ],
+        "offset": "0x2ac5a0"
+      }
+    },
+    {
+      "call": "0x4f544",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$scheduleInvocation"
+        ],
+        "offset": "0x2ae6c0"
+      }
+    },
+    {
+      "call": "0x4f618",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$hasScheduledInvocation"
+        ],
+        "offset": "0x2ad380"
+      }
+    },
+    {
+      "call": "0x4f624",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$isInvoking"
+        ],
+        "offset": "0x2ad8a0"
+      }
+    },
+    {
+      "call": "0x24ea24",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSh2eeoiySbShyxG_ABtFZSo11DVTFilePathC_Tt1g5"
+        ],
+        "offset": "0x24fad4"
+      }
+    },
+    {
+      "call": "0x4f6b4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC6update33_3E93FFCF6706EADB07FB5A0E9951E1CALLAC12UpdateResultVyF"
+        ],
+        "offset": "0x4ee50"
+      }
+    }
+  ],
+  "source_inference": {
+    "cache_hit": "If lastWorkspaceBuilder exists and its openAndPreviewedFilesAtCreation equals current openOrPreviewedFilePaths, return retained existing builder before coalescer.updated or BuildSystem.buildables.",
+    "cache_miss": "Path-set mismatch calls coalescer.setNeedsUpdate, clears/releases lastWorkspaceBuilder, then enters update/rebuild path. Newly constructed builder stores the current path set and replaces the host cache.",
+    "coalescer_reschedule": "setNeedsUpdate checks optional delayed invocation validity, cancels scheduled invocation then schedules it. No delay duration inferred.",
+    "coalescer_updated": "Missing invocation, scheduled-but-not-invoking invocation, or missing lastUpdate enters update(); otherwise copies existing lastUpdate. No private ABI invoked to test scheduling or reentrancy.",
+    "coalescer_invalidate": "invalidate calls optional delayed invocation.invalidate and clears/releases invocation, didUpdateCallback, updateCallback and queryManager slots. Final resource disposal is unobserved."
+  },
+  "scope": {
+    "static_only": true,
+    "native_runtime_calls": 0,
+    "fresh_ui_observation": false,
+    "event_to_invalidation_mapping_complete": false,
+    "native_cache_identity_observed": false,
+    "exact_coalescing_delay_known": false,
+    "full_canvas_parity": false
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "timestamp-presence",
+      "start": "0x2495e0",
+      "end_exclusive": "0x24965c",
+      "bytes": 124,
+      "sha256": "86a75e9cebbb11bb468242fb9bf32f1a46623c5320ed6afe561f3109982692df"
+    },
+    {
+      "name": "build-start",
+      "start": "0x24985c",
+      "end_exclusive": "0x249960",
+      "bytes": 260,
+      "sha256": "f7bcb9c517fe90aa27348693f857ab2dcd5e26d95ccaf70491d1aada80d0bbdd"
+    },
+    {
+      "name": "time-check",
+      "start": "0x249b8c",
+      "end_exclusive": "0x249bf4",
+      "bytes": 104,
+      "sha256": "bfd6eb67d0a396c4b33dc3b1e15098a5b25f2419c8e926dfe492708ddfc40727"
+    },
+    {
+      "name": "suppressed-cleanup",
+      "start": "0x249e08",
+      "end_exclusive": "0x249ea4",
+      "bytes": 156,
+      "sha256": "514beee9138f8c197070dd8f65f0ee26d3eeae667abe81e470aea916194ada9c"
+    },
+    {
+      "name": "build-start-pause",
+      "start": "0x249960",
+      "end_exclusive": "0x2499c4",
+      "bytes": 100,
+      "sha256": "92ea7c6e91f2bca40e37acc075e9275f590590900d4c2822398cd8ccb8d17d23"
+    },
+    {
+      "name": "return-branches",
+      "start": "0x249df8",
+      "end_exclusive": "0x249e08",
+      "bytes": 16,
+      "sha256": "572895cbcd57776a64d3286e2815bd4fb381d0f9c92740bc7c39b05f2c0fdee5"
+    },
+    {
+      "name": "cleanup-return",
+      "start": "0x24a0c4",
+      "end_exclusive": "0x24a0d0",
+      "bytes": 12,
+      "sha256": "288629436803c0d3ea149cfd3dbe6943521df0bc63596dfc733d64914b38a6e2"
+    }
+  ],
+  "source_bytes_verified": 772,
+  "calls": [
+    {
+      "call": "0x249868",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation4DateVACycfC",
+        "offset": "0x2a2580"
+      }
+    },
+    {
+      "call": "0x249bb0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation4DateVACycfC",
+        "offset": "0x2a2580"
+      }
+    },
+    {
+      "call": "0x249bc0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation4DateV17timeIntervalSinceySdACF",
+        "offset": "0x2a2514"
+      }
+    },
+    {
+      "call": "0x2498d4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249910",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV16workspaceChangedyACSSFZ",
+        "offset": "0x2a6840"
+      }
+    },
+    {
+      "call": "0x249944",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF",
+        "offset": "0x2a50c4"
+      }
+    },
+    {
+      "call": "0x2499a8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC5pause3fory0A8Pipeline18PreviewPauseReasonO_tF",
+        "offset": "0x2a5190"
+      }
+    }
+  ],
+  "pause_reason_import": "_$s16PreviewsPipeline18PreviewPauseReasonO18userInitiatedBuildyA2CmFWC",
+  "source_policy": {
+    "timestamp": "Build-start path constructs current Foundation.Date and writes present optional lastBuildTimestamp.",
+    "build_payload_flag": "After timestamp assignment, true low payload bit exits; false continues to coalescer scheduling, cached-builder clear, optional workspaceChanged scene update and pause(userInitiatedBuild). The payload bit meaning is not recovered here.",
+    "modified_files": "Missing timestamp proceeds to later external-change gate. Present timestamp compares Date().timeIntervalSince(lastBuildTimestamp) against native immediate 2.0; branch <=2 enters suppressed cleanup/return, otherwise continues to later gate.",
+    "boundary": "Exactly two seconds follows the suppression branch in source. No timer, scheduled retry, measured debounce interval or native timing experiment established."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "fresh_ui_observation": false,
+    "native_timestamp_or_event_timing_observed": false,
+    "payload_flag_origin_known": false,
+    "complete_refresh_behavior": false,
+    "full_canvas_parity": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "commit": "76679b1373b424189bae095fa92a5e296b6150b5",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Usable native render numeric-decoding correction published in `76679b1373b424189bae095fa92a5e296b6150b5`.\n\nActual shipped RenderPayload init/getter qualifies465 owned serialized inputs:298 accept,167 reject. Native struct104/104/8,offsets0/80/88/96,destructor0x58980 guarded after metadata-only measurement. Bitmap Int fields accept Boolean/finite integral Real, including Real2^63\u2192Int64.max while Integer2^63 rejects. UInt32 bitmapInfo accepts Boolean/integral Real in range. Double/CGFloat geometry accepts Boolean, all tested Real values including nonfinite, and exactly representable integer primitives. Odd2^53+1 and Int64/UInt64 maxima reject; neighboring even integers and exact high unsigned values pass. Numeric strings/data/arrays/dictionaries reject. No universal Foundation/null/date coercion claim.\n\nPortable payload_codec.rs now matches this measured subset. Exact integer\u2192Double conversion uses i128 round-trip checks, avoiding rounded acceptance. Existing required/default/legacy byteOrder precedence stays intact. Generic plist-writer finiteness policy and pixel import dimension/format/premultiplication/memory checks remain separate and unchanged. No native error identity was fabricated.\n\nThree actual prior verified render-preview-bitmap controls failed before output with Type(bitmapInfo),Type(x),Type(bitmapInfo). The fixed CLI now exports exact expected premultiplied RGBA pixel files for integral-real bitmaps, integer geometry and Boolean dimensions. Old binary/source hashes and failure receipts preserved. These are original pixel-import controls, not native CGImage drawing or SwiftUI/Canvas view rendering.\n\n465-case conformance compares acceptance and every stored field against native canonical values, including complete bitmap/accessibility bytes and all geometry. NaN presence/zero equality scoped explicitly; no NaN payload/signed-zero fidelity claim from coalescing serializers. Full397 Rust tests pass. Original native_render example executes465 cases and3 pixel controls natively and under actual WASI preview1, no preopens/environment, identical stdout. Host renderer CLI independently writes3 exact outputs. Fresh disposable replay repeats native controls, focused test, native/WASI example and renderer CLI. WASM SHA2567936487be1903305d2ca6868b849e44cd7ec5d61284a2d885f28e586d35ad757.\n\n5888 selected codec source bytes independently verified against LLVM; whole-file hashes/runtime UUIDs/entry/layout guards pass.298 native value+output PropertyList destructor calls,167 thrown error reference releases; no final provider/OS settlement inferred. Compiler30s/native8s/Rust60s/example5s/WASI10s/renderer5s bounds. REA expected6.2.0 path/catalog aligned,closed/provider null. Serial exclusive controller. No user Xcode/simulator operation, private Xcode MCP bridge, signing/protection change or Apple binary/private dump publication.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/native-render-coercion-2026-10-27 (seal `6b07b98cbfcc4649aeb9b3f41c988f911d8a327b9e4912a1608dde7d93c4afe1`). Original helpers/owned data/sanitized findings only; raw instructions local. User staging and all five local/tracking development/master refs preserved/verified after atomic push.\n\nBoth milestone contracts remain incomplete. Next connect qualified render payloads/selection geometry to usable cross-platform Canvas surface or advance actual daemon/resource semantics. Universal SwiftUI compatibility, native view rendering, Canvas interaction and provider/OS settlement remain open. No essential user action needed.\n",
+  "retry_not_before_utc": "2026-10-27T04:14:14.869170+00:00",
+  "next_attempt_policy": "REST read-before-post unique full commit marker; persist partial events; backoff30min on failure",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6433585120",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6433585735",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6433586388",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6433587230",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T04:14:14.924129+00:00",
+  "completed_utc": "2026-10-27T04:14:28.522510+00:00"
+}

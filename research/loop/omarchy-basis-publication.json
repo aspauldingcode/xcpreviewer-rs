@@ -1,0 +1,119 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "docs/product-goal.md",
+    "docs/omarchy-project-integration.md",
+    "docs/canvas-recovery-contract.md",
+    "research/loop/product-goal.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/README.md",
+    "research/evidence/omarchy-basis-review-2026-11-01/audit.py",
+    "research/evidence/omarchy-basis-review-2026-11-01/limitations.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/remote.stderr",
+    "research/evidence/omarchy-basis-review-2026-11-01/remote.stdout",
+    "research/evidence/omarchy-basis-review-2026-11-01/replay.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/review.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/seal.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/sources.json",
+    "research/evidence/omarchy-basis-review-2026-11-01/verify.py"
+  ],
+  "supersedes_prior_goal_versions": [
+    {
+      "path": "docs/product-goal.md",
+      "prior_review_sha256": "fbdbfc50a4d027abd5080abb83ee06005b78c8864091993b60e824b6b3559d27",
+      "current_sha256": "13c3ce4fea74b19b517ad7ab6b3d8c70eeaacff0c0fdd245195e234add5f70d6"
+    },
+    {
+      "path": "research/loop/product-goal.json",
+      "prior_review_sha256": "11079dbf1a4d82ab055e9c6da3f66d511d0c3da16ba536c196718fe9d46dd82a",
+      "current_sha256": "4b301fabddf7239bd81eed7cf202ac76538446e711f9b169b909d4fa3a581969"
+    }
+  ],
+  "shared_files_not_whole_file_owned": [
+    "README.md",
+    "docs/remaining-work.md",
+    "PROGRESS.md",
+    "research/loop/continuous.json"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "User clarifies complete native Canvas RE first, then our standalone WASM Canvas UI/session/runtime bound to each real project and all requested Apple targets. Audited suggested omarchy-apple-dev at immutable revision; project/build tooling is a reuse candidate, simulation is not native-parity evidence. Added native recovery gate and per-project contract. No upstream execution/install/code import, device validation or completed target-support claim. Local pending explicit publication approval.",
+  "paths": [
+    {
+      "path": "docs/product-goal.md",
+      "bytes": 6503,
+      "sha256": "13c3ce4fea74b19b517ad7ab6b3d8c70eeaacff0c0fdd245195e234add5f70d6"
+    },
+    {
+      "path": "docs/omarchy-project-integration.md",
+      "bytes": 7502,
+      "sha256": "5be9cd4a4cb1ed3383fae95ebcd76a78e1f8f7582ca192d9711309676e0973e6"
+    },
+    {
+      "path": "docs/canvas-recovery-contract.md",
+      "bytes": 4300,
+      "sha256": "b029b6195dc5622d8082659cc4252866fded0757320b27e49348b88bb40f2380"
+    },
+    {
+      "path": "research/loop/product-goal.json",
+      "bytes": 2647,
+      "sha256": "4b301fabddf7239bd81eed7cf202ac76538446e711f9b169b909d4fa3a581969"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/README.md",
+      "bytes": 2221,
+      "sha256": "f93c1915dc5d0af41a13bf608ef9f6ed2ba66c62a04c5fc0dee020a446c8f3c8"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/audit.py",
+      "bytes": 1611,
+      "sha256": "f14b2eaa6e53f7c3011fd3e2d634b59b4437e6a9d84eeb1d9daa2ec0412863af"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/limitations.json",
+      "bytes": 583,
+      "sha256": "658aff1d4954b8752fa0b04f8601d3c832f7480b1bcdc389b060b4fd90a6f718"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/remote.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/remote.stdout",
+      "bytes": 57,
+      "sha256": "98663eef4a9d4bb5dec3fbd4b3f12aba25ff96bad0ad5c7e05a6f47b28af522a"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/replay.json",
+      "bytes": 317,
+      "sha256": "42ad9735463f6a2a9c3f85043d039ec4f50acffb4ab43db2f30bb6532b322f49"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/review.json",
+      "bytes": 747,
+      "sha256": "1e5252710af7b28407b678030fb11372cf2c57ae2b240225e1669c9127dea790"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/seal.json",
+      "bytes": 771,
+      "sha256": "04530ab9f29c654a85c3b4aba1da4074a77cc20d2ee822ab4c5582891d47a891"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/sources.json",
+      "bytes": 1960,
+      "sha256": "fbc9df82c6e5ec6895280d0b664c44fdc5898fe0a15bf19f504049a957a5a186"
+    },
+    {
+      "path": "research/evidence/omarchy-basis-review-2026-11-01/verify.py",
+      "bytes": 1024,
+      "sha256": "2cb78c1c528454f3829f38bf1e0e5bc4c860ffb049aab568381eadf5277dfaa1"
+    }
+  ],
+  "immutable_source_review_replay_passed": true
+}

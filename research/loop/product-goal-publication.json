@@ -1,0 +1,167 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "docs/product-goal.md",
+    "research/loop/product-goal.json",
+    "research/evidence/portable-swift-goal-2026-11-01/README.md",
+    "research/evidence/portable-swift-goal-2026-11-01/build-results.json",
+    "research/evidence/portable-swift-goal-2026-11-01/check.py",
+    "research/evidence/portable-swift-goal-2026-11-01/limitations.json",
+    "research/evidence/portable-swift-goal-2026-11-01/pins.json",
+    "research/evidence/portable-swift-goal-2026-11-01/probe.py",
+    "research/evidence/portable-swift-goal-2026-11-01/replay-results.json",
+    "research/evidence/portable-swift-goal-2026-11-01/replay.json",
+    "research/evidence/portable-swift-goal-2026-11-01/results.json",
+    "research/evidence/portable-swift-goal-2026-11-01/run-wasi.cjs",
+    "research/evidence/portable-swift-goal-2026-11-01/seal.json",
+    "research/evidence/portable-swift-goal-2026-11-01/swift-state.stderr",
+    "research/evidence/portable-swift-goal-2026-11-01/swift-state.stdout",
+    "research/evidence/portable-swift-goal-2026-11-01/swift-state/Package.swift",
+    "research/evidence/portable-swift-goal-2026-11-01/swift-state/main.swift",
+    "research/evidence/portable-swift-goal-2026-11-01/swiftui-state.stderr",
+    "research/evidence/portable-swift-goal-2026-11-01/swiftui-state.stdout",
+    "research/evidence/portable-swift-goal-2026-11-01/swiftui-state/Package.swift",
+    "research/evidence/portable-swift-goal-2026-11-01/swiftui-state/main.swift",
+    "research/evidence/portable-swift-goal-2026-11-01/verify.py",
+    "research/evidence/portable-swift-goal-2026-11-01/wasi.stderr",
+    "research/evidence/portable-swift-goal-2026-11-01/wasi.stdout"
+  ],
+  "shared_files_updated_not_whole_file_owned": [
+    "README.md",
+    "docs/remaining-work.md",
+    "PROGRESS.md",
+    "research/loop/continuous.json"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "User clarifies full destination: any SwiftUI application/Apple target with a 1:1 Canvas experience on other hosts through WASM. Subsets are checkpoints, not end goal. Direct Swift6.3 WASM package build/Node execution passes expected counter0/1/2; actual SwiftUI State/Button fixture fails import SwiftUI. Prioritize compatible SwiftUI runtime and persistent interactive slice. Mac-hosted probe only, no native Canvas or non-Apple host acceptance; milestones open. Local pending publication approval.",
+  "paths": [
+    {
+      "path": "docs/product-goal.md",
+      "bytes": 6593,
+      "sha256": "fbdbfc50a4d027abd5080abb83ee06005b78c8864091993b60e824b6b3559d27"
+    },
+    {
+      "path": "research/loop/product-goal.json",
+      "bytes": 1775,
+      "sha256": "11079dbf1a4d82ab055e9c6da3f66d511d0c3da16ba536c196718fe9d46dd82a"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/README.md",
+      "bytes": 2399,
+      "sha256": "d517e6239e72ac95b29a17635c672c7e9b7a59287d09192982bd32ad8f43775e"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/build-results.json",
+      "bytes": 141,
+      "sha256": "ffbe122af422d6d2b6b1d150b28076cf7238c1236947b3e6ca86cd717ee4877a"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/check.py",
+      "bytes": 1638,
+      "sha256": "bbd5f5a062832d80f29286ee3e7081e7b9db43e05dcc93f9e20aa78943595b80"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/limitations.json",
+      "bytes": 989,
+      "sha256": "7498a07e7cc2a11ca10ac1e2e498dce225e741024de8d2ad00480b533c59e760"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/pins.json",
+      "bytes": 253,
+      "sha256": "d6b96e95a1a8f1f2cb7fd99aa2977f650abbc834373532bcbb5430c83204f195"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/probe.py",
+      "bytes": 1662,
+      "sha256": "406207781d6fe12e1116764a9c37de6630bacfa1d445ceecde65a9f59797eaf6"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/replay-results.json",
+      "bytes": 831,
+      "sha256": "78b3709aca61407154c27299d5d517aa8a9b8f522e22128cd6a1c2fd06ed029d"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/replay.json",
+      "bytes": 387,
+      "sha256": "3c326e516b6a1a605a4f154031cd8959d939ecaa9ca01ba958dbbf91bf895a99"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/results.json",
+      "bytes": 831,
+      "sha256": "215a112f9e73f2dfd3f7ddc8722e36983434c31af6a376f0b8c70c39891e0e20"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/run-wasi.cjs",
+      "bytes": 436,
+      "sha256": "3150f0e1016e4c0538138117322900a3a53fcba75ff6d59c505ba3049e00f21c"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/seal.json",
+      "bytes": 1884,
+      "sha256": "6b8d7fd72acb02b4fcf2aa9487513f37f15e60bdb8ce1dcc538cca3cb8d5ea7b"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swift-state.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swift-state.stdout",
+      "bytes": 279,
+      "sha256": "3bcf019ee7c7362f1ec6430f6f18527e1eba648c341a52588df2482fb8e9edd1"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swift-state/Package.swift",
+      "bytes": 132,
+      "sha256": "d3b971c831e9795b2283ec51bfe99964e9815a3abbc312c79c1cf70e86b45fe2"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swift-state/main.swift",
+      "bytes": 230,
+      "sha256": "c930a4eabd4ee8ba7eab5fae63ed50deb35ed2ebdaf579c6e1831ed244f49e28"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swiftui-state.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swiftui-state.stdout",
+      "bytes": 892,
+      "sha256": "8d3b6339c4d390b193128ee27598f94c22c201400311ab98ef47397e406d9f65"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swiftui-state/Package.swift",
+      "bytes": 132,
+      "sha256": "d3b971c831e9795b2283ec51bfe99964e9815a3abbc312c79c1cf70e86b45fe2"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/swiftui-state/main.swift",
+      "bytes": 154,
+      "sha256": "bb63e2ac0d79a15ed3e9d632365075019bea773efea60a0dea68f678a809c70b"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/verify.py",
+      "bytes": 646,
+      "sha256": "99ffe31c348678db630c8556b4e4605d05ef30dc0b4024dee9e2838be85265ee"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/wasi.stderr",
+      "bytes": 167,
+      "sha256": "ee06d3fbfcd8d92ba9c626d265d6bc9444ab448597bfa06565a7a5912eaab2eb"
+    },
+    {
+      "path": "research/evidence/portable-swift-goal-2026-11-01/wasi.stdout",
+      "bytes": 24,
+      "sha256": "dec37cda2ddeda7f697aca4da5147cef396161f0e81a41c864bdb85afede3aa6"
+    }
+  ],
+  "fresh_replay_passed": true
+}

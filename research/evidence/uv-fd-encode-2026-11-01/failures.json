@@ -1,0 +1,10 @@
+{
+  "first_compile": {
+    "native_invoked": false,
+    "invalid_argument": "Unnecessary __bridge cast from Objective-C XPC object pointer to id.",
+    "compiler_frontend_crashed": true,
+    "underlying_compiler_cause_established": false,
+    "correction": "Pass the typed Objective-C object directly; exact runtime selector signature remains checked."
+  },
+  "corrected_native_controls_passed": 2
+}

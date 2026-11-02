@@ -1,0 +1,15 @@
+{
+  "all_expected_stages_verified": true,
+  "expected_diagnostics": {
+    "compile-failure": "ThisTypeDoesNotExist",
+    "runtime-timeout": "Owned process exceeded 0.2 seconds",
+    "factory-validation": "Factory must be a Swift identifier",
+    "size-validation": "Capture dimensions exceed"
+  },
+  "stderr_sha256": {
+    "compile-failure": "1fb48045d933e79ac6b021d84dd37a4abcda16dae17ef3b8ecca174922a252c1",
+    "runtime-timeout": "813d5bd40c3ba90bd91c12fdef5d7fdc5658801db0b3bef4c811461d5bea5128",
+    "factory-validation": "ef79600b6c1692188921cf2a232fc35f86cfa4325d310d388d99c064909c923d",
+    "size-validation": "64a43eafeaac4f0e7b33d55d52891e07f04b5b8ec1e7917a63c64b177b1d4fb4"
+  }
+}

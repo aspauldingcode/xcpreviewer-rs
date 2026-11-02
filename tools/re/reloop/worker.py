@@ -35,11 +35,17 @@ def perform(kind,out,p):
     if kind=='live_swap':
         from reloop.liveswapprobe import corpus
         return corpus(out)
+    if kind=='portable_solid' and p.get('libproc_control',False):
+        from reloop.processoracle import corpus
+        return corpus(out)
     if kind=='portable_solid' and p.get('extent_cli_control',False):
         from reloop.extentcli import corpus
         return corpus(out)
     if kind=='native_reference' and p.get('primary_extent_control',False):
         from reloop.primaryextent import corpus
+        return corpus(out)
+    if kind=='source_frame':
+        from reloop.sourceframeprobe import corpus
         return corpus(out)
     xcode=p.get('xcode','/Applications/Xcode.app')
     image=p.get('binary',xcode+'/Contents/SharedFrameworks/PreviewsMessagingHost.framework/PreviewsMessagingHost')

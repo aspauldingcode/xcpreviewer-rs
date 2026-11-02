@@ -1,0 +1,1 @@
+{"passed":true,"controls":6,"checks":["unchanged bytes skip decode; changed bytes apply","stopped in-flight read cannot update or reschedule","restart rejects old epoch and aborts reader","failure preserves frame; deduplicates error; recovery restores status","reader hashes bytes; rejects HTTP and oversized data","reader abort cancels active fetch"]}

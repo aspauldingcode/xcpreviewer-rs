@@ -13,13 +13,14 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 PROJECT_ROOT = pathlib.Path(os.environ.get('RE_PROJECT_ROOT', str(ROOT))).resolve()
-ADAPTERS = {'live_swap', 'linux_wasm', 'rea_native', 'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
+ADAPTERS = {'live_swap', 'source_frame', 'linux_wasm', 'rea_native', 'surface_payload', 'portable_solid', 'inventory', 'runtime', 'disassembly', 'ghidra', 'ghidra_mcp', 'lldb_smoke', 'frida_smoke', 'native_reference', 'connected_probe', 'plist_corpus', 'swift_metadata', 'xcode_preview', 'xpc_corpus', 'xpc_negative', 'xpc_prefix', 'agent_discriminants', 'raw_coder', 'surface_corpus', 'preview_hook_smoke', 'surface_ipc', 'surface_failure', 'surface_reuse', 'xcode_bridge_probe'}
 PARAMS = {
     'live_swap': set(),
+    'source_frame': set(),
     'linux_wasm': {'primary_source_control','alpha_control','layer_control','layer_mutation_control'},
     'rea_native': {'binary','owned_control'},
     'surface_payload': {'payload'},
-    'portable_solid': {'extent_cli_control','source_cli_control','primary_browser_control','primary_syntax_control','primary_source_control','layer_mutation_control','layer_control','second_runtime','source_control','browser_control','alpha_control','alpha_browser_control'},
+    'portable_solid': {'libproc_control','extent_cli_control','source_cli_control','primary_browser_control','primary_syntax_control','primary_source_control','layer_mutation_control','layer_control','second_runtime','source_control','browser_control','alpha_control','alpha_browser_control'},
     'inventory': {'xcode'}, 'runtime': {'xcode'}, 'disassembly': {'binary', 'query','guard_control','default_control','cancel_control','deinit_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','ranges','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control'},
     'ghidra': {'binary', 'addresses'}, 'ghidra_mcp': {'tool', 'arguments'},
     'lldb_smoke': set(), 'frida_smoke': set(), 'native_reference': {'primary_extent_control','repeat_control','solid_control','alpha_control','mixed_alpha_control','mixed_even_control','mixed_boundary_control','mixed_quartz_control','mixed_public_quartz_control','mixed_normal_quartz_control','mixed_blend_compare_control','mixed_callback_control','mixed_callback_layout_control','mixed_order_control','mixed_order_export_control','mixed_scale_control','mixed_group_control','primary_layer_control','primary_layer_holdout_control','cleanup_control'},
@@ -85,12 +86,13 @@ def validate_experiment(e):
     if 'guard_control' in p and type(p['guard_control']) is not bool:raise ValueError('Invalid guard control')
     if 'default_control' in p and type(p['default_control']) is not bool:raise ValueError('Invalid default control')
     if 'cancel_control' in p and type(p['cancel_control']) is not bool:raise ValueError('Invalid cancellation control')
-    for flag in ('extent_cli_control','primary_extent_control','source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control','name_reuse_control','retained_right_control','generation_control','browser_control','alpha_control','alpha_browser_control','mixed_alpha_control','mixed_even_control','mixed_boundary_control','mixed_quartz_control','mixed_public_quartz_control','mixed_normal_quartz_control','mixed_blend_compare_control','mixed_callback_control','mixed_callback_layout_control','mixed_order_control','mixed_order_export_control','mixed_scale_control','mixed_group_control','primary_layer_control','primary_layer_holdout_control','layer_control','layer_mutation_control','primary_source_control','primary_syntax_control','primary_browser_control','source_cli_control'):
+    for flag in ('libproc_control','extent_cli_control','primary_extent_control','source_control','owned_control','deinit_control','state_control','callback_control','isolation_control','invalidation_control','dictionary_control','token_link_control','cleanup_control','witness_control','descriptor_control','pattern_control','ownership_control','tag_control','result_control','gpu_control','gpu_consumer_control','gpu_stall_control','gpu_reuse_control','name_reuse_control','retained_right_control','generation_control','browser_control','alpha_control','alpha_browser_control','mixed_alpha_control','mixed_even_control','mixed_boundary_control','mixed_quartz_control','mixed_public_quartz_control','mixed_normal_quartz_control','mixed_blend_compare_control','mixed_callback_control','mixed_callback_layout_control','mixed_order_control','mixed_order_export_control','mixed_scale_control','mixed_group_control','primary_layer_control','primary_layer_holdout_control','layer_control','layer_mutation_control','primary_source_control','primary_syntax_control','primary_browser_control','source_cli_control'):
         if flag in p and type(p[flag]) is not bool:raise ValueError('Invalid static state control')
     if e['adapter']=='native_reference' and sum(bool(p.get(k)) for k in ('alpha_control','mixed_alpha_control','mixed_even_control','mixed_boundary_control','mixed_quartz_control','mixed_public_quartz_control','mixed_normal_quartz_control','mixed_blend_compare_control','mixed_callback_control','mixed_callback_layout_control','mixed_order_control','mixed_order_export_control','mixed_scale_control','mixed_group_control','primary_layer_control','primary_layer_holdout_control','solid_control','repeat_control','cleanup_control'))>1:raise ValueError('Separate native reference modes')
     if e['adapter']=='linux_wasm' and p.get('primary_source_control') and any(p.get(k) for k in ('layer_control','layer_mutation_control','alpha_control')):raise ValueError('Separate Linux source modes')
     if e['adapter']=='linux_wasm' and p.get('layer_mutation_control') and any(p.get(k) for k in ('layer_control','alpha_control')):raise ValueError('Separate Linux layer mutation modes')
     if e['adapter']=='linux_wasm' and p.get('layer_control') and p.get('alpha_control'):raise ValueError('Separate Linux layer modes')
+    if e['adapter']=='portable_solid' and p.get('libproc_control') and any(v for k,v in p.items() if k!='libproc_control'):raise ValueError('Separate libproc control mode')
     if e['adapter']=='portable_solid' and p.get('extent_cli_control') and any(v for k,v in p.items() if k!='extent_cli_control'):raise ValueError('Separate extent CLI mode')
     if e['adapter']=='native_reference' and p.get('primary_extent_control') and any(v for k,v in p.items() if k!='primary_extent_control'):raise ValueError('Separate native extent mode')
     if e['adapter']=='portable_solid' and p.get('source_cli_control') and any(p.get(k) for k in ('primary_browser_control','primary_syntax_control','primary_source_control','layer_control','layer_mutation_control','alpha_control','source_control','browser_control','second_runtime','alpha_browser_control')):raise ValueError('Separate source CLI modes')
@@ -185,10 +187,16 @@ def evaluate(checks, result):
 
 def tree_size(path):
     total=0
-    for p in pathlib.Path(path).rglob('*'):
-        try:
-            if p.is_file() and not p.is_symlink():total+=p.stat().st_size
-        except FileNotFoundError:pass  # Compiler caches atomically replace temporary files.
+    def scan_error(error):
+        if not isinstance(error,FileNotFoundError):raise error
+    # Atomic bundle publication can rename a directory after enumeration. Ignore
+    # only vanished entries; access failures must not hide bytes from the cap.
+    for folder,dirs,files in os.walk(path,followlinks=False,onerror=scan_error):
+        for name in files:
+            p=pathlib.Path(folder)/name
+            try:
+                if p.is_file() and not p.is_symlink():total+=p.stat().st_size
+            except FileNotFoundError:pass
     return total
 
 
@@ -203,7 +211,7 @@ def terminate_group(process):
     if process.poll() is None: process.wait(timeout=2)
 
 
-def execute(argv, directory, timeout, limit_bytes, event=None):
+def execute(argv, directory, timeout, limit_bytes, event=None, observer=None):
     started = time.monotonic()
     outcome = 'failed'
     process = None
@@ -215,9 +223,9 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
             env['RE_PROJECT_ROOT'] = str(PROJECT_ROOT)
             env['PYTHONUNBUFFERED'] = '1'
             from reloop.processes import OwnedTree, snapshot
-            snapshot()  # Fail before launch if owned identity tracking is unavailable.
+            (observer or snapshot)()  # Fail before launch if owned identity tracking is unavailable.
             process = subprocess.Popen(argv, cwd=str(ROOT), stdout=stdout, stderr=stderr, env=env, start_new_session=True)
-            tree = OwnedTree(process.pid, process)
+            tree = OwnedTree(process.pid, process, snapshotter=observer)
             tree.observe()
             if event: event('process_started', {'pid':process.pid, 'process_group':process.pid})
             next_update = started + 30
@@ -236,7 +244,7 @@ def execute(argv, directory, timeout, limit_bytes, event=None):
                 outcome = 'success' if process.returncode == 0 else 'failed'
         except (KeyboardInterrupt, SystemExit):
             outcome = 'interrupted'
-        except (OSError, subprocess.TimeoutExpired) as error:
+        except (OSError, subprocess.SubprocessError, ValueError) as error:
             stderr.write((type(error).__name__+": "+str(error)).encode())
         finally:
             try:
@@ -289,7 +297,9 @@ def identity():
 
 
 class Controller:
-    def __init__(self, root=ROOT, state_root=None):
+    def __init__(self, root=ROOT, state_root=None, process_observer=None):
+        if process_observer is not None and not callable(process_observer):raise ValueError("Invalid process observer")
+        self.process_observer = process_observer
         self.root = pathlib.Path(root).resolve()
         self.state = pathlib.Path(state_root).resolve() if state_root else self.root/'research/state'
         self.runs = self.state.parent/'runs'
@@ -392,7 +402,8 @@ class Controller:
         timeout=min(e['timeout_seconds'],seconds_left) if seconds_left is not None else e['timeout_seconds']
         limit=e['artifact_limit_mb']*1024*1024
         if bytes_left is not None: limit=min(limit,bytes_left)
-        outcome=execute(argv,run,timeout,limit,lambda kind,payload:self.journal(run,kind,payload))
+        observer_args={'observer':self.process_observer} if self.process_observer is not None else {}
+        outcome=execute(argv,run,timeout,limit,lambda kind,payload:self.journal(run,kind,payload),**observer_args)
         try: result=load(run/'output/result.json',{})
         except (ValueError,OSError) as error: result={'observations':{},'invalid_result':str(error)}
         verdict,checks=evaluate(e['checks'],result) if outcome['execution']=='success' else ('not_evaluated',[])

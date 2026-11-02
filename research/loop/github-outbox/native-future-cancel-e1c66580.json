@@ -1,0 +1,36 @@
+{
+  "commit": "e1c665804128ccc183167859f0d71f8acf0af577",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "status": "complete",
+  "retry_not_before_utc": "2026-10-27T18:21:08.214504+00:00",
+  "body": "Native Future cancellation ordering published: e1c665804128ccc183167859f0d71f8acf0af577\n\nTwelve actual native modern-update Futures qualify cancel-before/cancel-after reply. Six before-reply controls retain the first owned Callsite line1 after a second cancel with line2 and three later encoded callback invocations. Six after-reply controls retain their completed success/failure snapshots across both cancels and further replies. Explicit counters: 24 native cancellation override calls, 36 encoded handler invocations, 84 actual state getter calls, 24 owned SDK UV exchanges. Later callbacks still execute after cancellation in these owned controls.\n\n284 new cancellation source bytes correlate exported wrapper dispatch with the guarded actual class c0 override; 7,580 inherited bytes reverify. The probe invokes the actual override with the source-qualified Callsite ABI; it does not invoke the public multi-argument wrapper or abstract base implementation. Callsite field metadata, loaded image hashes/UUIDs and every carrier receipt are checked.\n\nReplyCompletion now records local Canceled(context) as well as completed Result, preserving first context/result and returning rejected ownership. Prior completion calls remain usable. This sends no backend cancellation and does not prove provider/GPU work stopped, observer cardinality, queues/concurrent races, capture cleanup or OS/resource settlement. Opaque cancellation context and rejected-value returns are original Rust policy.\n\n403 full Rust tests pass; native conformance and non-Clone context/result ownership tests pass. Host and actual WASIp1 stdout match. Fresh disposable native/source/focused-test/host/WASM replay passes. Sanitized evidence: `research/evidence/native-future-cancel-2026-10-27`; raw Apple code remains local. Both milestones remain incomplete. Next advance actual daemon/provider/resource behavior rather than generalizing local cancellation to settlement.",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6450174083",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6450175133",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6450176358",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6450177782",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T18:21:08.261479+00:00",
+  "completed_utc": "2026-10-27T18:21:22.044154+00:00"
+}

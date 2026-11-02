@@ -1,0 +1,128 @@
+{
+  "channel": {
+    "received": 13,
+    "writes": 12,
+    "suppressed": 0,
+    "closed": true,
+    "reason": "input-ended"
+  },
+  "final": {
+    "schemaVersion": 1,
+    "scope": "Finite primary source preview; local owned policy",
+    "lifecycle": {
+      "liveWorkers": 0,
+      "busy": false,
+      "closed": true,
+      "revision": 0,
+      "loopClosed": true,
+      "building": false,
+      "timers": 0
+    },
+    "frame": null,
+    "diagnostics": {
+      "retainedEvents": 8,
+      "droppedEvents": 0,
+      "latest": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "Error: Observed compiler failed: 2"
+      },
+      "lastFailure": {
+        "kind": "rejected",
+        "generation": 4,
+        "error": "Error: Observed compiler failed: 2"
+      }
+    }
+  },
+  "builds": [],
+  "failures": [
+    {
+      "error": "Error: Observed compiler failed: 2",
+      "record": {
+        "pid": 15259,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 2,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 5,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+      }
+    },
+    {
+      "error": "Error: Observed compiler failed: 2",
+      "record": {
+        "pid": 15266,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 2,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 5,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+      }
+    },
+    {
+      "error": "Error: Observed compiler failed: 2",
+      "record": {
+        "pid": 15273,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 2,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 5,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+      }
+    },
+    {
+      "error": "Error: Observed compiler failed: 2",
+      "record": {
+        "pid": 15280,
+        "anchorCode": null,
+        "signal": "SIGKILL",
+        "report": {
+          "kind": "complete",
+          "target_code": 2,
+          "failure": null,
+          "drained": true,
+          "tracked": 1,
+          "observations": 5,
+          "remaining_observed": 0,
+          "scope": "Observed full-identity ancestry and inherited group only; unseen escapes excluded"
+        },
+        "emergencyClosed": false,
+        "privateAbortRequested": false,
+        "stdout": "",
+        "stderr": "/Users/8amps/xcpreviewer-rs/research/venv/bin/python: can't open file '/Users/8amps/xcpreviewer-rs/research/evidence/mcp-sdk-2026-10-11/runtime/tools/re/rust_source_cli.py': [Errno 2] No such file or directory\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "owned_paths": [
+    "research/evidence/uv-fd-encode-2026-11-01/README.md",
+    "research/evidence/uv-fd-encode-2026-11-01/check.py",
+    "research/evidence/uv-fd-encode-2026-11-01/compile.status.json",
+    "research/evidence/uv-fd-encode-2026-11-01/compile.stderr",
+    "research/evidence/uv-fd-encode-2026-11-01/compile.stdout",
+    "research/evidence/uv-fd-encode-2026-11-01/control.m",
+    "research/evidence/uv-fd-encode-2026-11-01/failures.json",
+    "research/evidence/uv-fd-encode-2026-11-01/first-compile.status.json",
+    "research/evidence/uv-fd-encode-2026-11-01/first-compile.stderr",
+    "research/evidence/uv-fd-encode-2026-11-01/first-compile.stdout",
+    "research/evidence/uv-fd-encode-2026-11-01/first-control.m",
+    "research/evidence/uv-fd-encode-2026-11-01/native.bplist",
+    "research/evidence/uv-fd-encode-2026-11-01/native.status.json",
+    "research/evidence/uv-fd-encode-2026-11-01/native.stderr",
+    "research/evidence/uv-fd-encode-2026-11-01/native.stdout",
+    "research/evidence/uv-fd-encode-2026-11-01/pins.json",
+    "research/evidence/uv-fd-encode-2026-11-01/replay-results.json",
+    "research/evidence/uv-fd-encode-2026-11-01/replay.json",
+    "research/evidence/uv-fd-encode-2026-11-01/results.json",
+    "research/evidence/uv-fd-encode-2026-11-01/run.py",
+    "research/evidence/uv-fd-encode-2026-11-01/seal.json",
+    "research/evidence/uv-fd-encode-2026-11-01/server-identity.json",
+    "research/evidence/uv-fd-encode-2026-11-01/source.status.json",
+    "research/evidence/uv-fd-encode-2026-11-01/source.stderr",
+    "research/evidence/uv-fd-encode-2026-11-01/source.stdout",
+    "research/evidence/uv-fd-encode-2026-11-01/verify.py"
+  ],
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Two actual local UV encoder controls preserve extra FD identity/readability after UV weak clearing and replace FD-valued data with payload bytes. Collision readback explicitly uses an independent FD owner; no native disposal/IPC/settlement or milestone parity inferred. Compile-only frontend crash retained, corrected controls pass. Local pending explicit publication approval.",
+  "paths": [
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/README.md",
+      "bytes": 2953,
+      "sha256": "b4240df316a69e4789e762ad7b7532b8940a9e6eaccbe87e2f809deda0704d5e"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/check.py",
+      "bytes": 1240,
+      "sha256": "86eeb37dd27428bf6739a25cc47cf4fef90e54cab7c65cde369dbfb76de8bdb1"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/compile.status.json",
+      "bytes": 62,
+      "sha256": "72599f45037c7f79e09afaf75d2ac7b42555d25ca996d7a9fff2b24d87449ece"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/compile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/compile.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/control.m",
+      "bytes": 4942,
+      "sha256": "22d5f24b644788c3cd355b17004ec5198c1e237ad4b52210bc4ba0da82a449a2"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/failures.json",
+      "bytes": 400,
+      "sha256": "80a4e454dbe5023ada4e310c6166a6715e657b01d9add27d46434abced174836"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/first-compile.status.json",
+      "bytes": 62,
+      "sha256": "1547264f9c5e83115afaa0d7eecbdcee300355c07d94c5733eb568cf7715d7bd"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/first-compile.stderr",
+      "bytes": 1644,
+      "sha256": "e8eaaaf38cea2c48b7e908c8deaa30298132b0f61bcdd3212796a78e50d4b314"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/first-compile.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/first-control.m",
+      "bytes": 4955,
+      "sha256": "22d521e8e898f4aea4b7bf24b4fa3abe23462c32aed49cac11bbcc810583d20f"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/native.bplist",
+      "bytes": 379,
+      "sha256": "1bff2b00754e2bf311055a36b89c65cbeadc485b60919af79f48f7c6ca547234"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/native.status.json",
+      "bytes": 61,
+      "sha256": "a54acdec7d9e0b54fa5eccd065612caed3cc1e3dc369fb04d9621684d2876b85"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/native.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/native.stdout",
+      "bytes": 44,
+      "sha256": "13951b6bc7c2bf14fd1daeb590434e51d5c6e3d71b1b9c5404e7e5fe83b972d8"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/pins.json",
+      "bytes": 835,
+      "sha256": "b25b6d336a54d7a1fd90a941a15502fca9085b04389302ce643b58ee04cf2190"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/replay-results.json",
+      "bytes": 608,
+      "sha256": "e6801163e52535030be918eb09ce2659f3bb9cd3ae3d31447035a15d6b23028f"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/replay.json",
+      "bytes": 355,
+      "sha256": "b31e6e25c028fc4c82780184054c2939f7c15fe965d68aa98b80514eaac38569"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/results.json",
+      "bytes": 608,
+      "sha256": "e6801163e52535030be918eb09ce2659f3bb9cd3ae3d31447035a15d6b23028f"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/run.py",
+      "bytes": 1296,
+      "sha256": "8c3c1041f3e902ae24bf199e2b9e78df4e8a5a0b0a202309069e0925166696e9"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/seal.json",
+      "bytes": 2206,
+      "sha256": "35ded7ddc8c946878d6f7ea91947a9ef0710384719bcca81b4d6dca52c41eb7f"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/server-identity.json",
+      "bytes": 322,
+      "sha256": "0b5c630493bbd4c436198a3882adcfb011361fdc1069ca2b8f28f6ae2bae9144"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/source.status.json",
+      "bytes": 62,
+      "sha256": "144d271ad44ff9af1522eb5ce2a0463a850de360dd1c4e8a82e343625e9c7f60"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/source.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/source.stdout",
+      "bytes": 112,
+      "sha256": "4803a8b96693e89cd9a61eb58491afd7c5dd6d0352cb3062f4004d3bc42357a1"
+    },
+    {
+      "path": "research/evidence/uv-fd-encode-2026-11-01/verify.py",
+      "bytes": 783,
+      "sha256": "89eb31e100bad068c8040872e38ca6c178916e987e7253f3dd4b31daa157774d"
+    }
+  ],
+  "fresh_replay_passed": true
+}

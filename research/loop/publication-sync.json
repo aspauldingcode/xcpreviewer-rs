@@ -1,0 +1,25 @@
+{
+  "authorization": "Explicit user request: make the original repo public; synchronize local commits and push; continue.",
+  "history_audit": {
+    "reachable_objects": 16832,
+    "blobs": 10515,
+    "native_binary_findings": 4,
+    "native_binary_provenance": "Owned C/Rust helper builds, hashes match source manifests",
+    "credential_or_large_dump_findings": 0
+  },
+  "snapshot_manifest_local": "/private/tmp/canvas-publication-audit/sync-manifest.json",
+  "excluded": [
+    "Ignored DerivedData and other generated native build caches",
+    "research/evidence/row-settings-2026-10-25/complete-row-getter.s",
+    "Existing ignored raw/runtime/ghidra/build directories"
+  ],
+  "validation": {
+    "rust_suite": "passed",
+    "focused_python_tests": 21,
+    "browser_follow_controls": 6
+  },
+  "prior_pending_manifests": "Preserved as historical records; explicit approval now received for reviewed source snapshot.",
+  "public_site": "https://aspauldingcode.github.io/xcpreviewer-rs/",
+  "native_acceptance_areas": 0,
+  "required_native_areas": 9
+}

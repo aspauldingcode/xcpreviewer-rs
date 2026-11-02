@@ -1,0 +1,6 @@
+{
+  "stage": "Static source validator binding",
+  "native_private_calls": 0,
+  "failure": "Guessed nested WorkspaceNoLongerValid mangled name did not match the actual module-private symbol. Assertion rejected before findings admission.",
+  "correction": "Use the actual module-private symbol read from pinned Mach-O symbols; no native call or fabricated type."
+}

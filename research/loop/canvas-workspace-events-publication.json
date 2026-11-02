@@ -1,0 +1,70 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "requires_explicit_approval": true,
+  "publication_attempted": false,
+  "owned_paths": [
+    "research/evidence/canvas-workspace-events-2026-11-01/README.md",
+    "research/evidence/canvas-workspace-events-2026-11-01/findings.json",
+    "research/evidence/canvas-workspace-events-2026-11-01/macho.py",
+    "research/evidence/canvas-workspace-events-2026-11-01/pins.json",
+    "research/evidence/canvas-workspace-events-2026-11-01/replay.json",
+    "research/evidence/canvas-workspace-events-2026-11-01/seal.json",
+    "research/evidence/canvas-workspace-events-2026-11-01/source.py",
+    "research/evidence/canvas-workspace-events-2026-11-01/verify.py"
+  ],
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Native source maps all six payload-free workspace listener events to coalescer scheduling and cached-builder clearing. Destination event requests previewsChanged; other empty cases workspaceChanged. Eleven enum names/counts/tag witness and six interpreted routes verified across 5,184 instruction bytes/eight bindings; fresh copied-source replay passes. Payload-event semantics and actual native delivery/runtime correlation remain open. Local only pending explicit publication approval.",
+  "paths": [
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/README.md",
+      "bytes": 3344,
+      "sha256": "0c8c13b776d4067b842c73026f7275ba10a1a295c0bdbe188eb64cd18c138e75"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/findings.json",
+      "bytes": 7522,
+      "sha256": "208469ef94fb09fdc48b5f5e565ce90e8fa41d712929f31da3409b56f0db0478"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/macho.py",
+      "bytes": 2254,
+      "sha256": "fa54e1f2df0a92220efe9aa37fac08b5041bcd0624e9f24718256bded131b38d"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/pins.json",
+      "bytes": 168,
+      "sha256": "7579b82e59b6395bca508cfd2f852ec9c847b588951fbb7b76bb96166f4376c0"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/replay.json",
+      "bytes": 300,
+      "sha256": "db7617e726fd0080a142fe1ea31a552863c135a32de2f79dd4759b375c58a1dd"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/seal.json",
+      "bytes": 589,
+      "sha256": "5fc8b493137957960b10b28d4950774ab4b1cc6705af1e3d338fd0e59f9c3c32"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/source.py",
+      "bytes": 6432,
+      "sha256": "62d6016b8c73c06900aefe8c4e50818162c1f80464161e169c1a0e7a9efd9cdd"
+    },
+    {
+      "path": "research/evidence/canvas-workspace-events-2026-11-01/verify.py",
+      "bytes": 835,
+      "sha256": "f42dd684abf0b9f7d2312fc8973a5d441417a4d32e1cbd6b3040bdfce6ec1fc9"
+    }
+  ],
+  "shared_files_modified_sections_only": [
+    "PROGRESS.md",
+    "research/loop/continuous.json"
+  ],
+  "historical_manifests_unchanged": true,
+  "static_source_replay_passed": true
+}

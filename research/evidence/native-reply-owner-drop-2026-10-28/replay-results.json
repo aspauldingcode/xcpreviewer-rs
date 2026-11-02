@@ -1,0 +1,12 @@
+{
+  "controls": 2,
+  "original_reference_dropped_before_trigger": 2,
+  "native_connection_weak_alive_after_owner_drop": 2,
+  "native_connection_weak_cleared_by_cleanup": 2,
+  "capture_contexts_retained_after_caller_scope": 2,
+  "capture_uses": 2,
+  "capture_destructions_observed": 2,
+  "callbacks_observed": 2,
+  "notification_setter_calls": 0,
+  "scope": "Actual native connection remains alive after caller reference release while reply is pending, then weak reference clears during bounded cleanup. This does not demonstrate a callback after native object destruction, exact native deinit timing, final kernel-right settlement, or universal callback finality."
+}

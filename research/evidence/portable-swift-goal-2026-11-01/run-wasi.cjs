@@ -1,0 +1,2 @@
+const fs=require('node:fs');const {WASI}=require('node:wasi');
+(async()=>{const path=process.argv[2];const wasm=new WASI({version:'preview1',args:['owned-swift-probe'],env:{},preopens:{}});const module=await WebAssembly.compile(fs.readFileSync(path));const instance=await WebAssembly.instantiate(module,{wasi_snapshot_preview1:wasm.wasiImport});wasm.start(instance);})().catch(error=>{console.error(String(error));process.exitCode=1});

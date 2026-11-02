@@ -1,0 +1,73 @@
+{
+  "files": {
+    "allocation.raw": {
+      "bytes": 16384,
+      "sha256": "80ae52969237fdfd40cae95782dfa3ec61b4087eb1f7f1424c5b8eeee0eda489"
+    },
+    "preview.png": {
+      "bytes": 153,
+      "sha256": "5eb4aa75f0d88c297135cc5debe5def155edd639714d4e38bb653acee8f9ac7b"
+    },
+    "runtime.json": {
+      "bytes": 217,
+      "sha256": "2377ff49dc05ee46e85974e689329b30840e5c1391b1906fd16098ccf9e772f4"
+    },
+    "runtime.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runtime.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source.swift": {
+      "bytes": 231,
+      "sha256": "b372f23988769e7d203b540986b5dfb7a710d2f096719fac925de8b01684db5d"
+    },
+    "view.c": {
+      "bytes": 1099,
+      "sha256": "02eedc21ed64d79c1db9ee4ddd772b5e934ba7c21d467c3e3d3f75a45bddadaf"
+    },
+    "view.ll": {
+      "bytes": 3855,
+      "sha256": "456cb5a768347a41d58d43fe46f55d4a3e10c810ad8810a1f2e856496ed36175"
+    },
+    "view.wasm": {
+      "bytes": 198,
+      "sha256": "329adea50083a3e5dbc8d371a22319ad8c2385bd0cc9cabb97c9c6a13d921fb8"
+    }
+  },
+  "identity": {
+    "adapter_sha256": "c11244a85e592a4800577d18a5bccf0e335c01bf65338762d30f36255c074741",
+    "compiler_entry": "ab6b41801c583592eaaeeafd1131cdb5d464e15d4018c16cbe5a90438d665a14",
+    "config": {
+      "alphas": [
+        4,
+        6,
+        8
+      ],
+      "height": 48,
+      "reverse": 0,
+      "width": 64
+    },
+    "module_sha256": "329adea50083a3e5dbc8d371a22319ad8c2385bd0cc9cabb97c9c6a13d921fb8",
+    "png_conversion": "sRGB straight RGBA: zero at alpha 0, floor((premult*255+floor(alpha/2))/alpha) otherwise",
+    "runner_sha256": "2c44ebd257a84a0c3b16806e965f98a06e2728f35cc170936d9b5635b33e30a9",
+    "runtime": {
+      "allocation_bytes": 16384,
+      "architecture": "arm64",
+      "imports": 0,
+      "invalid_requests": 4,
+      "invalid_unchanged": true,
+      "memory_bytes": 131072,
+      "node": "v24.19.0",
+      "platform": "darwin",
+      "rendered_bytes": 12288,
+      "v8": "13.6.233.17-node.51"
+    },
+    "runtime_sha256": "768d7cb3d8a404059b095085b2a3803bcb1c8965e0b8eb95fc453bad9196974e",
+    "source_sha256": "b372f23988769e7d203b540986b5dfb7a710d2f096719fac925de8b01684db5d",
+    "stride": 256
+  },
+  "version": 1
+}

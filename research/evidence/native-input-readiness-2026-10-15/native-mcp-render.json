@@ -1,0 +1,29 @@
+{
+  "scope": "Actual Codex-exposed native Xcode MCP; owned fixture only",
+  "tool": "RenderPreview",
+  "arguments": {
+    "tabIdentifier": "windowtab7",
+    "sourceFilePath": "PreviewLab/Sources/PreviewLab/PreviewLab.swift",
+    "previewDefinitionIndexInFile": 1,
+    "timeout": 30
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"data\":\"PreviewFailedError: Preview errored.\\n\\n==================================\\n\\n|  EvolvingError\\n|  \\n|  EvolvingError: EvolvingError(initialError: SchemeBuildError: Failed to build the active scheme\\n|  \\n|  Scheme build operation did not return error but also did not return a successful operation., evolutions: nil)\",\"type\":\"error\"}"
+      }
+    ],
+    "isError": true
+  },
+  "cleanup": {
+    "owned_workspace_absent": true,
+    "preserved_user_workspace": "/Users/8amps/Wawona/Wawona/Wawona.xcodeproj",
+    "verification": "actual XcodeListWindows returned only Wawona; AppleScript iteration error after owned close retained"
+  },
+  "claims": {
+    "connection_working": true,
+    "image_accepted": false,
+    "input_tested": false
+  }
+}

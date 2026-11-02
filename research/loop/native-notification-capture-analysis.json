@@ -1,0 +1,77 @@
+{
+  "status": "source-only; no native setter or invalidation calls in this unit",
+  "services_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "source_bytes_verified": 248,
+  "ranges": [
+    {
+      "name": "interruption-setter",
+      "offset": "0x9d1c",
+      "bytes": 96,
+      "sha256": "08f133144793489fb5e86ff7f5c0d16f4fa7aca6cd96272eb939185aa9e44fb3"
+    },
+    {
+      "name": "invalidation-setter",
+      "offset": "0x9fe4",
+      "bytes": 96,
+      "sha256": "5f32d5bf59c66c64956e1128dbbc62a814111ad7887a28a7265b9c7bcef5ab28"
+    },
+    {
+      "name": "invalidate-notification-clear",
+      "offset": "0x39ac",
+      "bytes": 24,
+      "sha256": "f76914830083ca48183bb31dd474e231fc8a7e66690f3e99b4f1b64b6bcf3d4c"
+    },
+    {
+      "name": "conditional-release",
+      "offset": "0x71b8",
+      "bytes": 16,
+      "sha256": "9fe7a6a72bcd38166d1909e9d1f62d77c20946731402350dffba87e386e0273b"
+    },
+    {
+      "name": "conditional-retain",
+      "offset": "0x8e34",
+      "bytes": 16,
+      "sha256": "f4f7f56ebfb23f866644b481d328b0997d7040000106acf3936d43875bcce641"
+    }
+  ],
+  "exports": {
+    "0x9d1c": "_$s16PreviewsServices0A17ServiceConnectionC19interruptionHandleryycSgvs",
+    "0x9fe4": "_$s16PreviewsServices0A17ServiceConnectionC19invalidationHandleryycSgvs"
+  },
+  "bindings": [
+    {
+      "branch_offset": "0x71c0",
+      "target": "_swift_release",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "branch_offset": "0x8e3c",
+      "target": "_swift_retain",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    }
+  ],
+  "observations": [
+    "Exported interruption and invalidation setters follow the outer connection reference at object field16 and replace closure pairs at inner fields64 and80 respectively.",
+    "Selected setters store the incoming pair, conditionally retain its context, conditionally release the old context, then conditionally release the incoming argument context. This is source ordering, not runtime deallocation timing.",
+    "The existing qualified invalidate body zeroes and conditionally releases field64 before field80, then clears its receiver before requesting the C cancellation operation. Only the notification-clear window is newly verified here; remaining invalidate/cancel source is inherited.",
+    "The helper checks whether the function word is nonzero before retaining/releasing the context word."
+  ],
+  "remaining": [
+    "Nonnil capture destruction/alias replacement and callback ordering require actual owned native controls.",
+    "A valid actual outer connection construction route must be qualified before invoking exported setters. No fabricated wrapper or direct field substitution is used.",
+    "Existing nil-handler pending-reply controls do not establish nonnil capture lifetime or final kernel resource settlement."
+  ],
+  "failures": [
+    {
+      "stage": "static disassembly invocation",
+      "result": "Initial separated option/value spelling rejected; corrected to the documented equals spelling. No native target ran. First stderr was not retained."
+    }
+  ],
+  "publication_attempted": false,
+  "publication_pending_explicit_approval": true,
+  "prior_review_manifest_unchanged": true,
+  "verifier_repair": "Initial package import path omitted the reloop package root; corrected before any native target execution."
+}

@@ -1,0 +1,32 @@
+{
+  "preserved": [
+    "layout-build-first.stderr",
+    "layout-build-render-first.stderr",
+    "runtime-profile-first.stderr"
+  ],
+  "records": [
+    {
+      "method": "layout compile",
+      "result": "Swift Dictionary.values was called as a function; corrected before native execution."
+    },
+    {
+      "method": "render probe compile",
+      "result": "Generated Swift stage-log string escaping failed compilation; corrected before native execution."
+    },
+    {
+      "method": "initial product capture under restricted sandbox",
+      "result": "Installed Swift macro plugin sandbox initialization denied; native producer did not execute. Normal authorized host execution succeeded. No protection was changed.",
+      "full_raw_log_retained": false
+    },
+    {
+      "method": "initial local viewer under restricted sandbox",
+      "result": "Loopback bind denied. Authorized host loopback server succeeded.",
+      "full_raw_log_retained": false
+    },
+    {
+      "method": "full copied wrong-runtime producer control",
+      "result": "An owned subprocess reached its 30-second compiler deadline. The phase was not retained by that wrapper, so this is not evidence of runtime guard rejection. Last-good payload/PNG hashes remained unchanged. A separate phased native probe of the copied production UUID guard qualified unsupportedRuntime before body trace.",
+      "raw": "runtime-profile-first.stderr"
+    }
+  ]
+}

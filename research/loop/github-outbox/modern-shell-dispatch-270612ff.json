@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "commit": "270612ffee6c4446fc41755fe09794479c2c6236",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Invoked actual modern shell updater dispatch and controlled native replies, and added original portable dispatch/preparation support in `270612ffee6c4446fc41755fe09794479c2c6236`.\n\nSix native PreviewShellModernUpdaterInterface.update calls reach an owned primitive-send witness and yield complete/minimal update requests with generated IDs0\u20265. Two immediate native TransportReply.send() Unit acknowledgements produce Future.hasFinishedSuccessfully=true on return. Two retained native24-byte reply copies produce false initially, then true on the same returned Future after original source shell destruction and deferred Unit acknowledgement. Two no-reply controls read false; this predicate alone does not establish pending/error/terminal state or eventual completion. Six shell/output-plist destroy calls, two reply-copy destroys and six Future reference releases return; no unique final native/OS/provider release inferred. Unit success is callback acknowledgement, not provider output or target update application.\n\nOwned transport is ABI-shaped storage with UInt64 metadata/token and supplied primitive witness, not a registered native Swift daemon conformance or actual daemon connection. Modern layout52/56/8, fields0/40 guarded; selected code does not read capability tail or inherited invalidation witness. No interface constructor/general conformance claim. Actual method invocation and controlled callbacks are native runtime evidence.3060 source instruction bytes verified, four framework runtime UUIDs match source images. REA6.2.0 expected command/package/catalog aligned; closed/provider null.\n\nOriginal ShellServiceTransport/dispatch_shell_update allocates one shared-process ID, sends one typed request and preserves backend pending identity. Backend owns callbacks/scheduling/resources. inspect-service-message --prepare-update wraps a standalone shell value through a value-only backend; it sends nothing.394 full Rust tests pass;12 native CLI and12 actual WASI canonical/preparation controls pass;6 WASM-prepared requests pass actual native ServiceMessage decoding/encoding; fresh disposable replay passes. WASM SHA25625406a48b221957e3f100354a4ca469a10dfb2a6b4445d5725fef31901d020a2. Each new CLI/WASI process starts its own ID sequence. Existing nested sourceFilePaths/linkerFlags Set wire-order distinction preserved; ordered arrays unchanged. Compile-only harness/linker/shadowing failures and initial overly strict Set comparison retained and corrected. Native8s/compiler30s/WASI10s deadlines, replay180s.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/modern-shell-dispatch-2026-10-27 (seal `34a1401e8d3133cb39982a313077ea3572b226c00bfc25ac41ed227ee2e2d3fb`). Only original helpers/owned fixtures/sanitized findings published; raw Apple instructions/symbol dumps local ignored. User staging and remote changes preserved, development/master synchronized. Both earlier GitHub outboxes have now synchronized.\n\nActual DaemonConnection delivery, scene/workspace routing, error/cancellation/repeated-reply behavior, update application, Canvas rendering/interaction and final resource settlement remain open; both milestones incomplete. Next recover/correlate DaemonConnection<DaemonClientRole> primitive-send with the qualified native resource carrier and this modern request boundary.\n",
+  "retry_not_before_utc": "2026-10-27T02:52:03.753234+00:00",
+  "next_attempt_policy": "REST read-before-post; reuse unique commit comment; preserve partial events; backoff30minutes on write limit",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6432549299",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6432549844",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6432550349",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6432551220",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T02:52:03.798555+00:00",
+  "completed_utc": "2026-10-27T02:52:15.247488+00:00"
+}

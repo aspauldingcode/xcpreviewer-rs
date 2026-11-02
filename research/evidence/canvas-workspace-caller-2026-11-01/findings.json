@@ -1,0 +1,175 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "source_bytes_verified": 3416,
+  "ranges": [
+    {
+      "name": "entry",
+      "start": "0x5d010",
+      "end_exclusive": "0x5d138",
+      "bytes": 296,
+      "sha256": "23d07aee70b6ca2f26052366c668e832d5b1b120f4776996a94d52145998581d"
+    },
+    {
+      "name": "prepare-and-request",
+      "start": "0x5d138",
+      "end_exclusive": "0x5d70c",
+      "bytes": 1492,
+      "sha256": "1b120625ce78b03f4a15b5254a5a2dedc1d06d791ee56c2be2a4f676e3ee334b"
+    },
+    {
+      "name": "await-resume",
+      "start": "0x5d70c",
+      "end_exclusive": "0x5d760",
+      "bytes": 84,
+      "sha256": "0356058cdecfa605de54d6dcbc1f453584f800795088676f7e9e894c2431872e"
+    },
+    {
+      "name": "dependency-result",
+      "start": "0x5d760",
+      "end_exclusive": "0x5db14",
+      "bytes": 948,
+      "sha256": "da97d083dc5b76a96193223fd52566eb72b5cd532b50d9f99da6be2e9952514f"
+    },
+    {
+      "name": "error-resume",
+      "start": "0x5db14",
+      "end_exclusive": "0x5dd68",
+      "bytes": 596,
+      "sha256": "e4119d15ac08775b52917f68de83429d611ed83c912dab46347496f34fa274f0"
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x5d134",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_task_switch",
+        "offset": "0x2abc40"
+      }
+    },
+    {
+      "call": "0x5d338",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_allocError",
+        "offset": "0x2ab7fc"
+      }
+    },
+    {
+      "call": "0x5d0dc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sScM6sharedScMvgZ",
+        "offset": "0x2aa884"
+      }
+    },
+    {
+      "call": "0x5d254",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$isValid"
+        ],
+        "offset": "0x2ad900"
+      }
+    },
+    {
+      "call": "0x5d260",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$buildSystemService"
+        ],
+        "offset": "0x2ac420"
+      }
+    },
+    {
+      "call": "0x5d294",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$isValid"
+        ],
+        "offset": "0x2ad900"
+      }
+    },
+    {
+      "call": "0x5d2c4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B16WorkspaceBuilderC24workspaceBuildParameters3forAA0bcfG0VSo17IDERunDestinationC_tKF"
+        ],
+        "offset": "0x574fc"
+      }
+    },
+    {
+      "call": "0x5d520",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$buildSystemService"
+        ],
+        "offset": "0x2ac420"
+      }
+    },
+    {
+      "call": "0x5d598",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_continuation_init",
+        "offset": "0x2ab8bc"
+      }
+    },
+    {
+      "call": "0x5d608",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$computeDependencyClosureForBuildables:buildParameters:includeImplicitDependencies:completionBlock:"
+        ],
+        "offset": "0x2ac760"
+      }
+    },
+    {
+      "call": "0x5d62c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_continuation_await",
+        "offset": "0x2ab8b0"
+      }
+    },
+    {
+      "call": "0x5d320",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode22WorkspaceNoLongerValid33_65BA9A005A9FF21AC987F9C3E9BD0579LLVADs5ErrorAAWl"
+        ],
+        "offset": "0x854b8"
+      }
+    }
+  ],
+  "field_symbol_anchors": [
+    {
+      "global_offset": "0x38bd58",
+      "name": "_$s13PreviewsXcode0B16WorkspaceBuilderC19allSchemeBuildablesShyAA16BuildableWrapperVGvpWvd"
+    },
+    {
+      "global_offset": "0x38bd40",
+      "name": "_$s13PreviewsXcode0B16WorkspaceBuilderC11environmentAA0bC16BuildEnvironmentV9ValidatedVvpWvd"
+    },
+    {
+      "global_offset": "0x2b4a28",
+      "name": "_$s13PreviewsXcode0B16WorkspaceBuilderC9workspaceSo12IDEWorkspaceCvpWvd"
+    }
+  ],
+  "workspace_instance_field_offset": 16,
+  "dependency_request_include_implicit_dependencies": false,
+  "scope": "Static source/metadata: cached scheme-buildable consumer, workspace/service validity branches, run-destination build parameters and continuation-based dependency request. Source of cached allSchemeBuildables and direct caller relationship to the earlier PreviewsIDEAPI policy remain untraced. No private native method or async ABI invoked."
+}

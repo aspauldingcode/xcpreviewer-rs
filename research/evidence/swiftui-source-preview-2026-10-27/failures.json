@@ -1,0 +1,30 @@
+{
+  "native_probe": [
+    {
+      "failure": "SIGSEGV in a modified codec harness after adding an extra input-value destruction",
+      "stage": "Initial run lacked stage receipts; exact trap stage not established",
+      "resolution": "Restore the previously verified argument ownership profile; final helper adds decode/encode/destruction stage receipts and all three controls plus fresh replay pass",
+      "limits": "No Apple codec defect, final input ownership/reclamation claim or native postcondition inferred from the failed run"
+    }
+  ],
+  "codec_expectation": [
+    {
+      "failure": "Initial equality assertion compared a minimal bitmap dictionary with its expanded native canonical dictionary",
+      "observation": "Native decoder accepted all three; encoder supplied bitsPerPixel32,bitsPerComponent8,byteOrder little,colorSpace kCGColorSpaceSRGB",
+      "resolution": "Producer now emits every qualified bitmap field explicitly; final canonical dictionaries compare completely"
+    }
+  ],
+  "deadlines": {
+    "rust_full_test": "60-second owned Cargo timeout; initial outer wrapper failed to retain partial output. No pass count claimed.",
+    "swiftui_refresh_compile": "30-second compiler deadline while Cargo compilation was also active; last good served payload unchanged",
+    "changed_context": "Subsequent compilation/test checks serialized; Cargo jobs limited to1 with owned process-group deadline handling",
+    "user_processes_terminated": false
+  },
+  "later_compile": "A second restricted serialized compile also reached30 seconds. Simplified generated dictionary expressions and permitted host execution subsequently succeeded; multiple context changes mean no sole cause is claimed. Fresh final producer replay passes all three captures and four expected negative controls.",
+  "raw_failures_local_only": "research/raw/swiftui-source-preview-20261027",
+  "publication": "Existing automatic approval review rejected prior low-level evidence egress twice. No publication retry, commit, push, alternate egress or GitHub update attempted in this unit.",
+  "static_check": {
+    "method": "Read-only Python AST parsing passed for both production scripts",
+    "limitation": "A later py_compile check attempted an implicit global user-cache write and was denied by the restricted sandbox; no global cache permission was changed."
+  }
+}

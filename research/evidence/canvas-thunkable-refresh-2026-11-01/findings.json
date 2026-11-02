@@ -1,0 +1,130 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "open-thunkable",
+      "start": "0x250a48",
+      "end_exclusive": "0x250ffc",
+      "bytes": 1460,
+      "sha256": "fc913ee39a366b80245650f9b061a31923269fee3b6212acfcf5bafcd2b02d67"
+    },
+    {
+      "name": "modified-gate",
+      "start": "0x249bf4",
+      "end_exclusive": "0x249d1c",
+      "bytes": 296,
+      "sha256": "045783fe9fe28934a604232fec8c940b1c2cbd27dc6f05bcd31a8f25b45292e1"
+    },
+    {
+      "name": "modified-scene-update",
+      "start": "0x24a264",
+      "end_exclusive": "0x24a300",
+      "bytes": 156,
+      "sha256": "68b5e931c8c48c57bb584f3e27de5bc155689c9be77aa74b0ee216cf1eae85ec"
+    }
+  ],
+  "source_bytes_verified": 1912,
+  "new_helper_bytes": 1460,
+  "previous_handler_bytes_reverified": 452,
+  "calls": [
+    {
+      "call": "0x250bc0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$fileURL"
+        ],
+        "offset": "0x2ad180"
+      }
+    },
+    {
+      "call": "0x250be8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_weakLoadStrong",
+        "offset": "0x2abd30"
+      }
+    },
+    {
+      "call": "0x250bf8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC26thunkableSourceIdentifiersShy0A5Model0F10IdentifierVGvg",
+        "offset": "0x2a5178"
+      }
+    },
+    {
+      "call": "0x250ce0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s13PreviewsModel16SourceIdentifierV12originalFile10Foundation3URLVSgvg",
+        "offset": "0x2a3e58"
+      }
+    },
+    {
+      "call": "0x250ecc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSQ2eeoiySbx_xtFZTj",
+        "offset": "0x2aa428"
+      }
+    },
+    {
+      "call": "0x249c5c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC25ModifiedFilesUpdateFilterV06filterfg3ForH0ySaySo11DVTFilePathC4path_So0L8DataTypeC04dataP0tGSayAhI_AKSgALtGF"
+        ],
+        "offset": "0x24e3d4"
+      }
+    },
+    {
+      "call": "0x249c80",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x24a2ac",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV16workspaceChangedyACSSFZ",
+        "offset": "0x2a6840"
+      }
+    },
+    {
+      "call": "0x24a2e8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF",
+        "offset": "0x2a50c4"
+      }
+    }
+  ],
+  "source_inference": {
+    "membership": "isOpenAndThunkable weak-loads workspaceScene. Missing scene or no match returns false. It iterates scene.thunkableSourceIdentifiers and compares each optional originalFile URL with the changed path fileURL represented as present URL, using imported URL Equatable machinery. A match returns true. Exact Foundation URL equality/normalization semantics are not separately qualified.",
+    "filter_composition": "Prior shouldUpdateModifiedFile source rejects true helper results; this completes the previously opaque thunkable membership source boundary. No separate editor-open state query is established by this helper.",
+    "late_modified_gate": "The inspected late modified-file handler path requires shouldInvalidatePreviewsOnExternalFileChanges=true, a present ModifiedFilesUpdateFilter, and a nonempty filtered result before marking the coalescer and clearing/releasing lastWorkspaceBuilder.",
+    "scene_update": "The qualifying path constructs workspaceChanged and calls optional WorkspaceScene.setNeedsUpdate. Earlier build-operation gates and complete modified-event delivery/session effects remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "fresh_ui_observation": false,
+    "runtime_thunkable_set_observed": false,
+    "runtime_file_event_delivery_observed": false,
+    "complete_modified_event_behavior": false,
+    "build_refresh_state_parity": false,
+    "full_canvas_parity": false
+  }
+}

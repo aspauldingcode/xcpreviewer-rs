@@ -1,0 +1,25 @@
+/private/tmp/uv-fd-encode-20261101/control.m:36:55: error: incompatible types casting 'xpc_object_t' (aka 'NSObject<OS_xpc_object> *') to 'id' with a __bridge cast
+   36 |    invoke(value,"encodeToXpcDictionary:","v24@0:8@16",(__bridge id)destination);
+      |                                                       ^         ~~ ~~~~~~~~~~~
+/private/tmp/uv-fd-encode-20261101/control.m:36:4: error: cannot compile this scalar expression yet
+   36 |    invoke(value,"encodeToXpcDictionary:","v24@0:8@16",(__bridge id)destination);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+clang: error: unable to execute command: Segmentation fault: 11
+clang: error: clang frontend command failed due to signal (use -v to see invocation)
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: note: diagnostic msg: 
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang: note: diagnostic msg: /var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/control-1cba29.m
+clang: note: diagnostic msg: /var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/control-1cba29.sh
+clang: note: diagnostic msg: Crash backtrace is located in
+clang: note: diagnostic msg: /Users/8amps/Library/Logs/DiagnosticReports/clang_<YYYY-MM-DD-HHMMSS>_<hostname>.crash
+clang: note: diagnostic msg: (choose the .crash file that corresponds to your crash)
+clang: note: diagnostic msg: 
+
+********************

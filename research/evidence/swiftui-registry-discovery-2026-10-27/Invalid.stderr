@@ -1,0 +1,6 @@
+/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-discover-ptxywhlx/Source.swift:2:13: error: cannot find type 'ThisOwnedTypeDoesNotExist' in scope
+1 | import SwiftUI
+2 | let broken: ThisOwnedTypeDoesNotExist = 1
+  |             `- error: cannot find type 'ThisOwnedTypeDoesNotExist' in scope
+3 | 
+

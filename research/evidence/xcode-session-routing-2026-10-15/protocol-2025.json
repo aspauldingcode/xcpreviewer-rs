@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-15T17:32:46.626913+00:00",
+  "discovery_succeeded": false,
+  "error": "MCP request timed out: tools/list",
+  "error_type": "TimeoutError",
+  "identity_unchanged": true,
+  "initialize": {
+    "capabilities": {
+      "tools": {
+        "listChanged": true
+      }
+    },
+    "instructions": "Request Xcode perform the action you specify.",
+    "protocolVersion": "2025-06-18",
+    "serverInfo": {
+      "name": "xcode-tools",
+      "version": "24952"
+    }
+  },
+  "owned_bridge_wait": -15,
+  "requested_protocol": "2025-06-18"
+}

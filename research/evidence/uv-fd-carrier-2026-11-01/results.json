@@ -1,0 +1,11 @@
+{
+  "controls": 2,
+  "native_encoder_to_sdk_to_native_decoder": 2,
+  "complete_native_payload_equal": 2,
+  "source_uv_weak_cleared_before_receiver_projection": 2,
+  "receiver_extra_fd_duplicate_and_read_after_sender_scope": true,
+  "receiver_fd_readback_bytes": 14,
+  "collision_descriptor_not_forwarded": true,
+  "same_process_peer": true,
+  "scope": "Owned anonymous SDK IPC in one process; real FD import/read after sender local scope exit and UV weak clearing. No sender-process death, exact SDK-internal sender-object release, native connection/Canvas receiver route, cross-process parity or final kernel-resource settlement."
+}

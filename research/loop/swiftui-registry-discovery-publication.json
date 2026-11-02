@@ -1,0 +1,37 @@
+{
+  "destination": "https://github.com/aspauldingcode/xcpreviewer-rs",
+  "owned_paths": [
+    "tools/re/swiftui-preview/discover.py",
+    "tools/re/swiftui-preview/README.md",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.stderr",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.stdout",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Controls.swift",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Invalid.stderr",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Invalid.swift",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/None.stdout",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/None.swift",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/README.md",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Slow.stderr",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Slow.swift",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/Source.swift",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/check.py",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/findings.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/metadata.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/pins.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/probe.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/replay-results.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/replay.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/results.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/seal.json",
+    "research/evidence/swiftui-registry-discovery-2026-10-27/verify.py"
+  ],
+  "publication_attempted": false,
+  "requires_explicit_approval": true,
+  "matching_issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "issue_update": "Actual compiler-generated #Preview discovery now lists runtime names/source locations. Four native controls qualify listing, nonexecution of trapping bodies and failures. Checked private body closure cast fails; #Preview rendering and native Canvas parity remain open. Local evidence pending publication approval; no commit yet."
+}

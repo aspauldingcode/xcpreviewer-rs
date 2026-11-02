@@ -1,0 +1,15 @@
+# Native Canvas builder reuse and coalescing
+
+This static source unit recovers a builder cache hit/miss decision and its update coalescer controls. It adds no product implementation and does not claim runtime parity.
+
+`XcodeWorkspaceSceneHost.makeBuilder` reads current openOrPreviewedFilePaths. If lastWorkspaceBuilder exists and its openAndPreviewedFilesAtCreation set equals the current set, it returns that retained builder before the coalescer update and selected-buildable query. A mismatching set marks the environment coalescer for update, clears/releases the host's cached builder and enters the update/rebuild path. The newly constructed builder receives the current path set and replaces the host cache. This is one recovered cache-reuse condition, not a complete invalidation policy. Workspace/listener event cases and other clear sites remain unclassified.
+
+`XcodeBuildEnvironmentCoalescer.setNeedsUpdate` checks its optional DVTDelayedInvocation and isValid; for a valid invocation it cancels the scheduled invocation and schedules again. No delay value is inferred. `updated` recomputes when invocation is absent, scheduled but not invoking, or lastUpdate is absent. Otherwise it copies the existing update result. The scheduling/reentrancy behavior has not been invoked or observed dynamically.
+
+The coalescer invalidator invokes delayed-invocation invalidate and clears/releases invocation, didUpdateCallback, updateCallback and queryManager slots. This source observation does not establish final native/kernel resource disposal, callback timing, or lifecycle of the complete Canvas session.
+
+The verifier pins the installed ARM64 Mach-O UUID/SHA, compares 4,372 bounded instruction bytes with section-mapped image bytes (3,512 prior makeBuilder bytes reverified and 860 new coalescer bytes), binds eleven selected calls using import/defined symbol tables, and checks selected cache/branch flow. Field names come from symbols rather than misleading generic nearest-symbol labels. The original failed assertion used a mangled-name length of 23 rather than the actual 24 for openOrPreviewedFilePaths; failed reader and receipt are retained. It failed during static verification before any native invocation. Corrected reader and fresh copied-source replay pass.
+
+An exploratory bounded buildEnvironmentDidChange disassembly and limited lastWorkspaceBuilder reference scan identified additional event-handler/callback candidates. Their raw analysis stays temporary/local and is not a verified complete event mapping in this unit. REA server identity is aligned with no binary session open. The unchanged earlier Ghidra listing limitation was not retried.
+
+No private method or guessed ABI, UI input, native app build/refresh, process signal, preference change, Rust/product change or Rust test rerun occurred. Prior PreviewLab UI evidence was not reobserved and does not causally verify the cache path. Raw Apple instructions and full symbol inventories are excluded from this package. Both milestones and the all-target recovery gate remain open. Publication and matching GitHub updates remain deferred behind the existing explicit approval gate.

@@ -1,0 +1,26 @@
+{
+  "compiler_deadline": {
+    "seconds": 30,
+    "native_invoked": false,
+    "partial_stdout_stderr_empty": true,
+    "changes_before_success": [
+      "Corrected an unchecked generated precondition expression.",
+      "Changed result serialization to typed individual dictionary assignments.",
+      "Used a returned escaping Swift function candidate before abandoning it."
+    ],
+    "sole_cause_established": false
+  },
+  "typed_function_candidates": [
+    {
+      "candidate": "native-early-release.swift",
+      "result": "Nonzero native exit after peer-reply trigger and before reply-wait return. Exact signal/status was not retained; no original-connection lifetime conclusion."
+    },
+    {
+      "candidate": "native-typed-callback.swift",
+      "returncode": -11,
+      "result": "SIGSEGV after peer-reply trigger while original native connection remains held. Generic raw function-value extraction is quarantined; no native framework defect or specific crash frame inferred."
+    }
+  ],
+  "owned_code_static_observation": "The failed owned executable exposed a pointer-dereferencing reabstraction thunk. Actual crashing PC/selected thunk was not captured; this is an incompatibility candidate, not a proven crash diagnosis.",
+  "successful_alternative": "Previously qualified original C relay receives the native context in x20, forwards it as an explicit C argument and uses a genuine original Swift CaptureToken. Native send retains that context as independently bound source shows. No generic Swift function-value reinterpretation is used in the successful controls."
+}

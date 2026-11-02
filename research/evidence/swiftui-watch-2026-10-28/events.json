@@ -1,0 +1,87 @@
+[
+  {
+    "source_sha256": "9e5ac20438882c3f4a4d1b1f320c5cfa9a744c11243a5db837d9c3b29364fe8a",
+    "status": "capturing"
+  },
+  {
+    "source_sha256": "9e5ac20438882c3f4a4d1b1f320c5cfa9a744c11243a5db837d9c3b29364fe8a",
+    "status": "superseded"
+  },
+  {
+    "source_sha256": "94cf3b44f3af3f184f85ea4c13aba2ce5ce1884bfc990c433522cfbf7757b670",
+    "status": "capturing"
+  },
+  {
+    "capture": {
+      "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "compiler_version": "Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+      "deployment_target": "arm64-apple-macos13.0",
+      "factory": "makePreview",
+      "native_registry": null,
+      "output": "/private/tmp/swiftui-watch-20261028/frame.bplist",
+      "payload_sha256": "188f0e2f97774b163369e25b8c2f575860438bd7190601d619b0f86344c7c74b",
+      "pixel_size": [
+        32,
+        24
+      ],
+      "point_size": [
+        32,
+        24
+      ],
+      "preview_index": null,
+      "producer": "SwiftUI.ImageRenderer",
+      "provider": null,
+      "reference_png_sha256": "df900b06a0d148d42162b34c285c8d47e0b1ac41cf73ea35f20d3051b859d5f5",
+      "registry": null,
+      "registry_adapter_sha256": null,
+      "renderer_source_sha256": "8dbf90a9de76007b9e38149d4e73a3ee97333fac0e9d32bbb795b2753d5568cf",
+      "scale": 1,
+      "source": "/private/tmp/swiftui-watch-20261028/Source.swift",
+      "source_sha256": "94cf3b44f3af3f184f85ea4c13aba2ce5ce1884bfc990c433522cfbf7757b670"
+    },
+    "status": "published"
+  },
+  {
+    "source_sha256": "2b1712730b899b87fdb9ad0d137b504050af1531a678af8f762bcf96695a108c",
+    "status": "capturing"
+  },
+  {
+    "error": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:1: error: expressions are not allowed at the top level\n1 | invalid swift source\n  | `- error: expressions are not allowed at the top level\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:8: error: consecutive statements on a line must be separated by ';'\n1 | invalid swift source\n  |        `- error: consecutive statements on a line must be separated by ';'\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:9: error: expressions are not allowed at the top level\n1 | invalid swift source\n  |         `- error: expressions are not allowed at the top level\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:14: error: consecutive statements on a line must be separated by ';'\n1 | invalid swift source\n  |              `- error: consecutive statements on a line must be separated by ';'\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:15: error: expressions are not allowed at the top level\n1 | invalid swift source\n  |               `- error: expressions are not allowed at the top level\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:1: error: cannot find 'invalid' in scope\n1 | invalid swift source\n  | `- error: cannot find 'invalid' in scope\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:9: error: cannot find 'swift' in scope\n1 | invalid swift source\n  |         `- error: cannot find 'swift' in scope\n2 | \n\n/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-2d04xzce/Source.swift:1:15: error: cannot find 'source' in scope\n1 | invalid swift source\n  |               `- error: cannot find 'source' in scope\n2 | \n",
+    "source_sha256": "2b1712730b899b87fdb9ad0d137b504050af1531a678af8f762bcf96695a108c",
+    "status": "capture-error"
+  },
+  {
+    "source_sha256": "9e5ac20438882c3f4a4d1b1f320c5cfa9a744c11243a5db837d9c3b29364fe8a",
+    "status": "capturing"
+  },
+  {
+    "capture": {
+      "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "compiler_version": "Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+      "deployment_target": "arm64-apple-macos13.0",
+      "factory": "makePreview",
+      "native_registry": null,
+      "output": "/private/tmp/swiftui-watch-20261028/frame.bplist",
+      "payload_sha256": "0762dc2ae9d20e20dcafc0c60e75701ad2a1900b62e9caa90fddc4a4dc2a667a",
+      "pixel_size": [
+        32,
+        24
+      ],
+      "point_size": [
+        32,
+        24
+      ],
+      "preview_index": null,
+      "producer": "SwiftUI.ImageRenderer",
+      "provider": null,
+      "reference_png_sha256": "37f82f1e4e272f7402c469e5264ba8ba17415e8d6bb3f1ab34c74967a799cc02",
+      "registry": null,
+      "registry_adapter_sha256": null,
+      "renderer_source_sha256": "8dbf90a9de76007b9e38149d4e73a3ee97333fac0e9d32bbb795b2753d5568cf",
+      "scale": 1,
+      "source": "/private/tmp/swiftui-watch-20261028/Source.swift",
+      "source_sha256": "9e5ac20438882c3f4a4d1b1f320c5cfa9a744c11243a5db837d9c3b29364fe8a"
+    },
+    "status": "published"
+  }
+]

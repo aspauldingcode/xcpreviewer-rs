@@ -1,0 +1,99 @@
+{
+  "images": [
+    {
+      "name": "PreviewsXcode",
+      "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+      "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+      "uuid": "25c99c664185307188e31ab474573a10",
+      "architecture": "arm64",
+      "bytes": 9044288
+    },
+    {
+      "name": "PreviewsIDEAPI",
+      "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsIDEAPI.framework/Versions/A/PreviewsIDEAPI",
+      "sha256": "d3e0ad14a4ea159fde12482d92fb7b7d3f86e4df1578fcef76961a294fbe71f0",
+      "uuid": "b8c195f9db4837999653d7aa8bcb986e",
+      "architecture": "arm64",
+      "bytes": 268864
+    }
+  ],
+  "source_bytes_verified": 1324,
+  "ranges": [
+    {
+      "name": "buildables",
+      "start": "0x6f50",
+      "end_exclusive": "0x7418",
+      "bytes": 1224,
+      "sha256": "88b4fab318b75b5a775a9de8232d7a91cd23cf12124a347713321a74d6bf02aa"
+    },
+    {
+      "name": "package-selector-presence",
+      "start": "0x7418",
+      "end_exclusive": "0x747c",
+      "bytes": 100,
+      "sha256": "fe54c27ead377c0eccd3e4eb3bc20ec4e3c162ca06378c59b7c128c26bc640c9"
+    }
+  ],
+  "selector_calls": [
+    {
+      "offset": "0x6f90",
+      "selector_stub": "_objc_msgSend$standardUserDefaults",
+      "stub_offset": "0x10720"
+    },
+    {
+      "offset": "0x6fc4",
+      "selector_stub": "_objc_msgSend$boolForKey:",
+      "stub_offset": "0x100e0"
+    },
+    {
+      "offset": "0x6ff4",
+      "selector_stub": "_objc_msgSend$buildablesIncludingImplicitDependenciesForWorkspace:scheme:includingPackages:",
+      "stub_offset": "0x101a0"
+    },
+    {
+      "offset": "0x7104",
+      "selector_stub": "_objc_msgSend$blueprints",
+      "stub_offset": "0x100c0"
+    },
+    {
+      "offset": "0x7190",
+      "selector_stub": "_objc_msgSend$primaryBuildable",
+      "stub_offset": "0x10580"
+    },
+    {
+      "offset": "0x7378",
+      "selector_stub": "_objc_msgSend$isUnitTest",
+      "stub_offset": "0x10400"
+    },
+    {
+      "offset": "0x7428",
+      "selector_stub": "_objc_msgSend$blueprint",
+      "stub_offset": "0x10080"
+    },
+    {
+      "offset": "0x745c",
+      "selector_stub": "_objc_msgSend$respondsToSelector:",
+      "stub_offset": "0x105e0"
+    }
+  ],
+  "string_anchors": [
+    {
+      "offset": "0x11cd0",
+      "value": "PreviewsBuildAllPackageTargets"
+    },
+    {
+      "offset": "0x11cf0",
+      "value": "PreviewsBuildTestTargets"
+    },
+    {
+      "offset": "0x11f00",
+      "value": "packageProductType"
+    }
+  ],
+  "observed_source_policy": {
+    "all_packages": "Read PreviewsBuildAllPackageTargets; pass its Boolean inverse as includingPackages to scheme/workspace query. When true, enumerate workspace referenced source packages and append each blueprint primaryBuildable. Effective runtime preference not observed.",
+    "test_targets": "Read PreviewsBuildTestTargets using a lookup with explicit false fallback. Source filter with true retains elements whose blueprint lacks packageProductType selector; false retains selector-bearing elements or other blueprints that respond to isUnitTest and return false.",
+    "package_marker": "Helper checks selector presence only; it does not read the packageProductType value.",
+    "runtime": "No native private method called or actual workspace/scheme selection exercised. Source-only policy; no complete graph/project-binding or cross-target parity."
+  }
+}

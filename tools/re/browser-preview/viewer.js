@@ -1,3 +1,4 @@
+import {createSampleFollower,createSampleReader} from './sample-follow.js';
 const $=id=>document.getElementById(id),status=$('status');let worker=null,timer=null,generation=0,frame=null,selected=-1;
 function decode(packet){const bytes=new Uint8Array(packet),view=new DataView(packet);if(bytes.length<40||new TextDecoder().decode(bytes.subarray(0,4))!=='XCPV'||view.getUint32(4,true)!==1)throw Error('Invalid preview output');
  const width=view.getUint32(8,true),height=view.getUint32(12,true),length=view.getUint32(16,true),count=view.getUint32(20,true),scale=view.getFloat64(24,true),radius=view.getFloat64(32,true);
@@ -14,5 +15,11 @@ function show(value,name){const straight=new Uint8ClampedArray(value.pixels.leng
  $('frame').style.display='block';layout();status.dataset.error='false';status.textContent=`${name} · ${value.width} × ${value.height} · ${value.regions.length} selectable regions`;
 }
 async function open(input,name){const request=++generation;worker?.terminate();clearTimeout(timer);worker=null;status.dataset.error='false';status.textContent='Opening preview…';try{const buffer=await input;if(request!==generation)return;worker=new Worker('./worker.js');const current=worker;timer=setTimeout(()=>{if(request!==generation)return;current.terminate();clearTimeout(timer);worker=null;status.dataset.error="true";status.textContent="Could not open preview: display time limit exceeded"},10000);current.onmessage=({data})=>{if(request!==generation)return;current.terminate();clearTimeout(timer);worker=null;try{if(!data.ok)throw Error(data.error);show(decode(data.packet),name)}catch(error){status.dataset.error='true';status.textContent='Could not open preview: '+error.message}};current.onerror=()=>{if(request!==generation)return;current.terminate();clearTimeout(timer);worker=null;status.dataset.error='true';status.textContent='Could not open preview: preview engine stopped'};current.postMessage({input:buffer},[buffer]);}catch(error){if(request===generation){status.dataset.error='true';status.textContent='Could not open preview: '+error.message}}}
-$('file').onchange=()=>{const file=$('file').files[0];if(file)open(file.size>64*1024*1024?Promise.reject(Error('Preview file exceeds 64 MiB')):file.arrayBuffer(),file.name)};
-$('sample').onclick=()=>open(fetch('./sample.bplist').then(response=>{if(!response.ok)throw Error('Sample unavailable');return response.arrayBuffer()}),'Sample preview');$('zoom').oninput=layout;
+function cancelPending(){generation++;worker?.terminate();worker=null;clearTimeout(timer);}
+const readFollowSample=createSampleReader();
+const follower=createSampleFollower({read:readFollowSample,apply:buffer=>open(Promise.resolve(buffer),'Following sample'),failed:error=>{status.dataset.error='true';status.textContent='Could not follow sample: '+error.message}});
+function stopFollowing(){follower.stop();$('follow').checked=false;cancelPending();}
+$('follow').onchange=()=>{if($('follow').checked){cancelPending();follower.start();}else{stopFollowing();status.dataset.error='false';status.textContent=frame?'Sample following paused':'No preview open';}};
+$('file').onchange=()=>{const file=$('file').files[0];if(file){stopFollowing();open(file.size>64*1024*1024?Promise.reject(Error('Preview file exceeds 64 MiB')):file.arrayBuffer(),file.name)}};
+$('sample').onclick=()=>{stopFollowing();const read=createSampleReader();open(read().then(value=>value.buffer),'Sample preview')};$('zoom').oninput=layout;
+window.addEventListener('pagehide',()=>{follower.stop();cancelPending()});

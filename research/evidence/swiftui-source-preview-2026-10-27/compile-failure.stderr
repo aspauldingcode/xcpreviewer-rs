@@ -1,0 +1,6 @@
+/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/swiftui-preview-d261qnk3/Source.swift:2:46: error: cannot find 'ThisTypeDoesNotExist' in scope
+1 | import SwiftUI
+2 | @MainActor func makePreview() -> some View { ThisTypeDoesNotExist() }
+  |                                              `- error: cannot find 'ThisTypeDoesNotExist' in scope
+3 | 
+

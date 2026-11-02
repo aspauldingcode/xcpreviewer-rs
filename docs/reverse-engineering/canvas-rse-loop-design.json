@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "status": "implemented-by-tools/re/reloop/graphloop.py",
+  "rse": "reverse software engineering",
+  "existing_delivery_policy": "research/loop/workgraph.json",
+  "existing_checkpoint": "research/loop/continuous.json",
+  "delivery_roadmap": "research/roadmap/github.json",
+  "node_contracts": [
+    {
+      "id": "restore",
+      "output": "Resume capsule"
+    },
+    {
+      "id": "select",
+      "output": "Eligible task"
+    },
+    {
+      "id": "predict",
+      "output": "Predeclared experiment contract"
+    },
+    {
+      "id": "rea",
+      "output": "REA scoped discovery"
+    },
+    {
+      "id": "bytes",
+      "output": "Independent static checks"
+    },
+    {
+      "id": "native",
+      "output": "Owned runtime observation"
+    },
+    {
+      "id": "build",
+      "output": "Supported implementation"
+    },
+    {
+      "id": "seal",
+      "output": "Anchored manifest and cleanup"
+    },
+    {
+      "id": "verify",
+      "output": "Separate-context verification"
+    },
+    {
+      "id": "merge",
+      "output": "Scoped accepted claim"
+    },
+    {
+      "id": "diagnose",
+      "output": "Failure and changed prerequisite"
+    },
+    {
+      "id": "coverage",
+      "output": "Delivery acceptance reconciliation"
+    },
+    {
+      "id": "checkpoint",
+      "output": "Durable resumable state"
+    }
+  ],
+  "within_round_edges": [
+    {
+      "from": "restore",
+      "to": "select"
+    },
+    {
+      "from": "select",
+      "to": "predict"
+    },
+    {
+      "from": "predict",
+      "to": "rea"
+    },
+    {
+      "from": "predict",
+      "to": "native"
+    },
+    {
+      "from": "predict",
+      "to": "build"
+    },
+    {
+      "from": "rea",
+      "to": "bytes"
+    },
+    {
+      "from": "bytes",
+      "to": "seal"
+    },
+    {
+      "from": "native",
+      "to": "seal"
+    },
+    {
+      "from": "build",
+      "to": "seal"
+    },
+    {
+      "from": "seal",
+      "to": "verify"
+    },
+    {
+      "from": "verify",
+      "to": "merge"
+    },
+    {
+      "from": "verify",
+      "to": "diagnose"
+    },
+    {
+      "from": "merge",
+      "to": "coverage"
+    },
+    {
+      "from": "coverage",
+      "to": "checkpoint"
+    },
+    {
+      "from": "diagnose",
+      "to": "checkpoint"
+    }
+  ],
+  "cross_round_routes": [
+    {
+      "from": "checkpoint",
+      "to": "select",
+      "when": "Shared budget remains and useful eligible work exists"
+    },
+    {
+      "from": "checkpoint",
+      "to": "restore",
+      "when": "Next authorized run; verify identities before reuse"
+    }
+  ],
+  "verification_outcomes": {
+    "supports": "merge only within tested scope",
+    "contradicts": "diagnose and retain failure",
+    "inconclusive": "diagnose and retain unknown",
+    "review-pending": "checkpoint without independent delivery acceptance"
+  },
+  "proposed_limits": {
+    "rounds_per_wake": 4,
+    "experiments_per_wake_total": 4,
+    "controller_minutes_total": 15,
+    "artifact_bytes_total": 1073741824,
+    "spawned_agents": 0,
+    "writers": 1,
+    "native_controllers": 1,
+    "implementation_status": "enforced by graph runner"
+  },
+  "blocked_retry_rule": "Relevant prerequisite must change; never retry identical expensive failure",
+  "completion": "All declared milestone 1 and 2 delivery nodes independently accepted with anchored sealed evidence, complete contract coverage and accepted dependencies",
+  "publication_gate": "Only for irreversible actions outside existing authority",
+  "runtime_config": "research/loop/graph-runner.json"
+}

@@ -1,6 +1,20 @@
 # xcpreviewer-rs
 
+Follow the [live progress dashboard](https://aspauldingcode.github.io/xcpreviewer-rs/) for overall delivery, milestone tracking, native recovery acceptance and remaining work.
+
 Research toward a portable Swift view previewer. This repository begins with reverse engineering of Xcode's preview pipeline; it is not yet a working SwiftUI-to-WebAssembly renderer.
+
+The [product goal](docs/product-goal.md) is a 1:1 SwiftUI Canvas development experience for any Apple device on other systems through WASM. Supported subsets and native frame producers are intermediate checkpoints toward full compatibility. Full native Canvas recovery comes first; [project integration](docs/omarchy-project-integration.md) must preserve each real project’s target, settings, dependencies and resources.
+
+A [supported source-to-frame CLI](docs/reverse-engineering/source-frame-cli.md)
+now builds explicit primary-layer expressions into WASM, verifies their complete
+frame allocation and publishes a PNG while preserving the last good result on
+failure. Try the [sample source](examples/primary-layers.swift).
+
+[Canvas examples](examples/CanvasExamples/README.md) provide an owned Xcode project
+for color edits, text and button state, and layout changes. The
+[native editing comparison](docs/reverse-engineering/canvas-edit-comparison.md)
+records measured behavior and remaining reconstruction gaps.
 
 The proposed roadmap is in [plan.md](plan.md). Its dependency versions, protocol examples, and portability assumptions are proposals to validate against observed behavior.
 

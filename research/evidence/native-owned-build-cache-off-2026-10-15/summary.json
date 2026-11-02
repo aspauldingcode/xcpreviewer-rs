@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-15T21:47:41.408916+00:00",
+  "scope": "Single changed-condition owned build; attempted compilation-cache disable; signing off; no Canvas claim",
+  "argv": [
+    "/usr/bin/xcrun",
+    "xcodebuild",
+    "-project",
+    "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-2b3aaa1663864b3fa200cd0eed456444/PreviewLab.xcodeproj",
+    "-scheme",
+    "PreviewLab",
+    "-configuration",
+    "Debug",
+    "-sdk",
+    "macosx",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-destination-timeout",
+    "3",
+    "-derivedDataPath",
+    "/Users/8amps/xcpreviewer-rs/research/evidence/native-owned-build-cache-off-2026-10-15/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "COMPILATION_CACHE_ENABLE_CACHING=NO",
+    "build"
+  ],
+  "outcome": {
+    "execution": "artifact_limit",
+    "exit_code": 65,
+    "duration_seconds": 4.315
+  },
+  "events": [
+    {
+      "event": "process_started",
+      "pid": 27866,
+      "process_group": 27866
+    },
+    {
+      "event": "owned_descendant_cleanup",
+      "tracked_processes": 6,
+      "scope": "Observed owned ancestry plus full selected observer lifetime/executable identity; not arbitrary escaped descendants between observations."
+    }
+  ],
+  "build_succeeded_marker": false,
+  "logical_bytes": 26844293389,
+  "allocated_bytes": 970752,
+  "error_lines": [
+    "error: unexpected service error: The Xcode build system has crashed. Build again to continue."
+  ],
+  "largest_sparse_files": [
+    {
+      "path": "DerivedData/CompilationCache.noindex/generic/v1.1/v8.data",
+      "logical": 17179869184,
+      "allocated": 16384
+    },
+    {
+      "path": "DerivedData/CompilationCache.noindex/generic/v1.1/v8.index",
+      "logical": 8589934592,
+      "allocated": 16384
+    },
+    {
+      "path": "DerivedData/CompilationCache.noindex/generic/v1.1/v3.actions",
+      "logical": 1073741824,
+      "allocated": 16384
+    }
+  ],
+  "classification": "Harness artifact-limit failure; build-service crash message may follow owned descendant termination, not independent native crash evidence",
+  "acceptance": false,
+  "raw_derived_data": "Local mutable unsealed scratch; no recursive file-content hashing or publication"
+}

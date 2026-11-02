@@ -33,7 +33,7 @@ const el = (tag, value, cls) => { const n = document.createElement(tag); if (val
    const detail=el('details',undefined,'area'), summary=el('summary');
    summary.append(el('span',String(i+1).padStart(2,'0'),'area-number'),el('span',a.title,'area-title'),el('span',a.status==='accepted'?'Accepted':a.evidence_level,'area-status'),el('span','›','area-arrow'));
    const body=el('div',undefined,'area-body'), proven=el('div'), pending=el('div');
-   proven.append(el('h3','Qualified so far'),el('p',a.verified_summary)); pending.append(el('h3','Still required'),el('p',a.remaining)); body.append(proven,pending); detail.append(summary,body); $('areas').append(detail);
+   proven.append(el('h3','Qualified so far'),el('p',a.verified_summary)); if (a.evidence_url) { const link=el('a','Review scoped evidence ↗'); link.href=a.evidence_url; proven.append(link); } pending.append(el('h3','Still required'),el('p',a.remaining)); body.append(proven,pending); detail.append(summary,body); $('areas').append(detail);
   });
   d.recent.forEach(x=>{const row=el('article',undefined,'log');row.append(el('time',x.date),el('h3',x.title),el('p',x.detail));$('recent').append(row);});
   d.recovery.requirements.forEach(x=>$('requirements').append(el('li',x)));

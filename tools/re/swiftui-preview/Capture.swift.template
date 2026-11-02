@@ -1,0 +1,49 @@
+import SwiftUI
+import Foundation
+import CoreGraphics
+import ImageIO
+import UniformTypeIdentifiers
+@main struct Capture {
+ @MainActor static func main() {
+  do {try capture()} catch {fputs("SwiftUI capture failed: \(error)\n",stderr);exit(1)}
+ }
+ @MainActor static func providerContent<P: PreviewProvider>(_ provider: P.Type) -> P.Previews {
+  P.previews
+ }
+ @MainActor static func capture() throws {
+  guard CommandLine.arguments.count==5,
+        let width=Int(CommandLine.arguments[1]),let height=Int(CommandLine.arguments[2]),let scale=Int(CommandLine.arguments[3]) else {throw CaptureError.invalidDimensions}
+  guard (1...2048).contains(width),(1...2048).contains(height),(1...4).contains(scale) else {throw CaptureError.invalidDimensions}
+  let pixelWidth=width*scale,pixelHeight=height*scale,stride=pixelWidth*4
+  guard stride*pixelHeight<=32*1024*1024 else {throw CaptureError.invalidDimensions}
+  let renderer=ImageRenderer(content:__PREVIEW_CONTENT__.frame(width:CGFloat(width),height:CGFloat(height)).clipped().environment(\.displayScale,CGFloat(scale)))
+  renderer.proposedSize=ProposedViewSize(width:CGFloat(width),height:CGFloat(height));renderer.scale=CGFloat(scale);renderer.colorMode = .nonLinear;renderer.isOpaque=false
+  guard let image=renderer.cgImage,image.width==pixelWidth,image.height==pixelHeight else {throw CaptureError.noImage}
+  var pixels=Data(count:stride*pixelHeight)
+  try pixels.withUnsafeMutableBytes { buffer in
+   guard let space=CGColorSpace(name:CGColorSpace.sRGB),let context=CGContext(data:buffer.baseAddress,width:pixelWidth,height:pixelHeight,bitsPerComponent:8,bytesPerRow:stride,space:space,bitmapInfo:CGImageAlphaInfo.premultipliedFirst.rawValue|CGBitmapInfo.byteOrder32Little.rawValue) else {throw CaptureError.noContext}
+   context.draw(image,in:CGRect(x:0,y:0,width:pixelWidth,height:pixelHeight))
+  }
+  var bitmap=[String:Any]()
+  bitmap["data"]=pixels
+  bitmap["width"]=pixelWidth
+  bitmap["height"]=pixelHeight
+  bitmap["bytesPerRow"]=stride
+  bitmap["bitmapInfo"]=8194
+  bitmap["bitsPerPixel"]=32
+  bitmap["bitsPerComponent"]=8
+  bitmap["byteOrder"]="little"
+  bitmap["colorSpace"]="kCGColorSpaceSRGB"
+  var payload=[String:Any]()
+  payload["bitmapDescription"]=bitmap
+  payload["selectableRegions"]=[Any]()
+  payload["snapshotCornerRadius"]=0
+  payload["scaleFactor"]=scale
+  let root=URL(fileURLWithPath:CommandLine.arguments[4],isDirectory:true)
+  try PropertyListSerialization.data(fromPropertyList:payload,format:.binary,options:0).write(to:root.appendingPathComponent("capture.bplist"),options:.atomic)
+  guard let destination=CGImageDestinationCreateWithURL(root.appendingPathComponent("reference.png") as CFURL,UTType.png.identifier as CFString,1,nil) else {throw CaptureError.noPNG}
+  CGImageDestinationAddImage(destination,image,nil);guard CGImageDestinationFinalize(destination) else {throw CaptureError.noPNG}
+  __PREVIEW_RECEIPT__
+ }
+ enum CaptureError:Error {case invalidDimensions,noImage,noContext,noPNG}
+}

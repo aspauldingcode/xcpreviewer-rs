@@ -1,6 +1,16 @@
+> **2026-10-19 user override:** Clean-room/isolated-implementer requirements below are superseded. Direct decompilation-guided implementation in this context is authorized. Use REA, GhidraVibe MCP, native framework symbols and permitted Frida/dylib/swizzling observations. Do not use Xcode built-in MCP or its retained bridge. Evidence, bounded execution, user-work preservation and existing system protections still apply.
+
 # Continuous reverse-engineering operation
 
 The user authorized recurring work on 2026-10-09. The desktop heartbeat `continuous-xcode-preview-re` returns to this chat every ten minutes. The heartbeat supplies the reasoning and source-editing agent; the existing reviewed controller supplies bounded native execution, freezing, sealing and verification. A shell daemon that merely repeats the existing queue would not discover or implement new experiments.
+
+On 2026-10-10 the user renewed that authorization and moved the existing heartbeat
+to chat `01a127b8-a741-7733-8d78-bfa96ace3692`; there is one scheduler, not a second
+copy. Each wake explicitly applies graph-engineering and its task-graph reference,
+REA for shipped-artifact/runtime claims, and Caveman FULL. Read the latest
+`canvas_ui_checkpoint` before selecting another owned Canvas session. Its evidence
+supports UI edit and recovery observations; repeatable input, state semantics,
+display fidelity and private transport remain acceptance work.
 
 The schedule is active in the app, not in GitHub Actions. Local execution requires the computer and desktop app to remain running and the project to remain available. Account usage limits and existing permissions still apply. This is recurring autonomous work, not a guarantee of uninterrupted execution. No paid service or API credential is added.
 
@@ -9,6 +19,14 @@ The schedule is active in the app, not in GitHub Actions. Local execution requir
 Read `research/loop/continuous.json`, the relevant portion of `docs/remaining-work.md`, current repository status and the latest controller planner output. Read scoped evidence by artifact/page reference; do not reload full historical dumps or conversation transcripts. Confirm the schedule is still authorized before changing its scope or cadence. Use Caveman FULL for user-facing communication; write source and technical documents normally. The user requested RE, LLVM and Frida skills; consult `research/loop/skills.json` for pinned provenance and load the installed relevant SKILL.md only when its workflow applies. Skills do not override user scope, the runbook, evidence requirements or owned-process restrictions.
 
 Each wake performs work, not a status-only check:
+
+Use the [executable graph runner](graph-runner.md) for graph-selected reviewed
+execution. Begin with `tools/re/agent.py graph-loop`, read its pinned Caveman FULL
+skill instructions, and apply them to all user-facing messages. Use
+`tools/re/agent.py graph-loop --execute` for bounded reviewed rounds; resume a
+running wake before creating another. The runner shares time/artifact/experiment
+limits across rounds and retains failed fingerprints and review-pending delivery.
+Implementing a new experiment remains the reasoning agent's responsibility.
 
 1. **Restore and select.** Check for user edits, remote branch movement, active owned experiments and incomplete manifests. Verify relevant target identity and trusted evidence anchors before reusing a native claim. Select the highest-value unblocked uncertainty: capture gate and required protocol semantics first, resource lifecycle controls next; use an independent reference/portable-feasibility track when native capture is blocked. Score by acceptance gate unlocked, discriminating power, independence, expected cost and failure history. More random cases of an already-bounded plist oracle rank below a missing lifecycle or capture boundary.
 2. **Predict and implement.** State the competing explanations, predicted observations and a failure/control condition before execution. Add a reviewed bounded adapter or extend one when the required probe does not exist. Test the verifier against corrupted or absent evidence. Do not substitute a planner suggestion or prose design for implementation.

@@ -1,0 +1,48 @@
+{
+  "native_swiftui_captures": 3,
+  "negative_controls_preserving_last_good": 4,
+  "native_private_render_codec_acceptances": 3,
+  "native_output_values_destroyed": 3,
+  "native_output_plists_destroyed": 3,
+  "source_codec_bytes_verified": 5888,
+  "host_wasi_packets_equal": true,
+  "independent_png_pixel_bytes_equal": 1040384,
+  "host_wasi_example_stdout_equal": true,
+  "rust_tests": 2,
+  "pixel_receipts": [
+    {
+      "case": "sample",
+      "size": [
+        640,
+        400
+      ],
+      "native_codec_accepted": true,
+      "host_wasi_packet_equal": true,
+      "pixel_bytes": 1024000,
+      "rgba_sha256": "00e19709c1f5283b1999421defbf2c5cd8253af5c728131b3589222474fa0abe"
+    },
+    {
+      "case": "asymmetric",
+      "size": [
+        64,
+        48
+      ],
+      "native_codec_accepted": true,
+      "host_wasi_packet_equal": true,
+      "pixel_bytes": 12288,
+      "rgba_sha256": "26c463dca40b6eddfd302e925b6efb863da8275c31fad76c8f375023e38b1041"
+    },
+    {
+      "case": "transparent",
+      "size": [
+        32,
+        32
+      ],
+      "native_codec_accepted": true,
+      "host_wasi_packet_equal": true,
+      "pixel_bytes": 4096,
+      "rgba_sha256": "ab966d05ff7fc449649aba25273486e19923e15b263fe290ffcee0461fb3783e"
+    }
+  ],
+  "worker_checked": true
+}

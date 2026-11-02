@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "case": "bars",
+      "native_codec_accepted": true,
+      "canonical_equal": true,
+      "host_wasi_equal": true,
+      "native_png_projection_equal": true,
+      "rgba_bytes": 24576,
+      "rgba_sha256": "118c0283e5d72877b9e74a8233327177b6f23f817c33021240e3b3e1c0b7c1e2"
+    },
+    {
+      "case": "transparent",
+      "native_codec_accepted": true,
+      "canonical_equal": true,
+      "host_wasi_equal": true,
+      "native_png_projection_equal": true,
+      "rgba_bytes": 24576,
+      "rgba_sha256": "eb7a84b5acdd8a5560c931452cc068e86972d673a451acb0489dc52a69e92596"
+    },
+    {
+      "case": "factory",
+      "native_codec_accepted": true,
+      "canonical_equal": true,
+      "host_wasi_equal": true,
+      "native_png_projection_equal": true,
+      "rgba_bytes": 24576,
+      "rgba_sha256": "118c0283e5d72877b9e74a8233327177b6f23f817c33021240e3b3e1c0b7c1e2"
+    },
+    {
+      "case": "provider",
+      "native_codec_accepted": true,
+      "canonical_equal": true,
+      "host_wasi_equal": true,
+      "native_png_projection_equal": true,
+      "rgba_bytes": 24576,
+      "rgba_sha256": "118c0283e5d72877b9e74a8233327177b6f23f817c33021240e3b3e1c0b7c1e2"
+    }
+  ],
+  "dependencies": {
+    "/private/tmp/swiftui-source-preview-20261027/native": "49821c3c30caedcbe06a6ac896bbd177a3c1daaaf956ef404bd3448f066369c3",
+    "/private/tmp/swiftui-source-preview-20261027/target/debug/canvas-frame": "43431d24f2f2c23014f56df41530b3af4de440fb8b2157272a1ec6efe88783a9",
+    "/private/tmp/swiftui-source-preview-20261027/target/wasm32-wasip1/debug/canvas-frame.wasm": "5524454ec094403f07e79ceb7a3b41733cfc1a2d29036ab22001eb263a36b360",
+    "/private/tmp/swiftui-source-preview-20261027/run-wasi.cjs": "095af63bb484764cf6002410bfa0cd92d4208efa3e6653ce098c3e2c6382e729"
+  },
+  "scope": "Existing qualified native RenderPayload codec and host/WASIp1 converters reused with pinned executables; not rebuilt."
+}

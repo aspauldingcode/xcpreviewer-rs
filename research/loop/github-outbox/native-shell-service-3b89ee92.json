@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "commit": "3b89ee92c1ac0a23d0ab41fa654b7b02536a830a",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Recovered the modern shell service boundary and implemented typed ShellServiceEnvelope plus update support in inspect-service-message in `3b89ee92c1ac0a23d0ab41fa654b7b02536a830a`.\n\nSource evidence: nine Pipeline shell-payload constructor call sites. Modern PreviewShellModernUpdaterInterface.update copies ShellUpdatePayload into ServiceMessage.Content, injects tag5 (update), calls shell transport Future send and destroys temporary Content.2208 instruction bytes independently compared; Pipeline/Platforms/Messaging hashes and UUIDs pinned. REA6.2.0 expected package/path/catalog aligned, closed/provider null. This identifies the immediate boundary, not observed runtime updater/daemon dispatch.\n\nActual native ServiceMessage decode/encode composition:378 attempts,137 accepts/241 errors.131 deterministic portable cases;6 inherited multi-key incremental ambiguity restrictions. Optional identifier is inside payload under __unique_service_message_identifier; absent/empty/Unicode qualify, malformed present non-Strings reject. Canonical shell fields compose with identifier. New requests use the shared process-local identifier sequence. The generic ServiceEnvelope subset remains separate.\n\n392 full Rust tests,378 CLI attempts,131 actual WASI canonical runs,131 Foundation reparses and disposable fresh replay pass. WASM SHA256912d70691e7fb6e356cb68b804d34e95f6b5ef1e70593ee008df85ee223c4200. Native layout kind512,size233,stride240,align8,fields0/16;137 message/137 output plist destructor invocations and241 error releases return, without unique nested final-release claims. Nested nonfinite Real regression fixed using existing qualified codec-scoped writer; generic writer unchanged. Initial copied-symbol guard SIGTRAP before decoder, fresh build60s deadline and precommit public-log whitespace correction retained. Native calls8s, Swift compilers30s,WASI10s; replay bounded180s.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/native-shell-service-2026-10-26 (seal `30bbdc540381c6b050edcb91e960001c57767b2a7aa459022286ad1bfea44411`). Original helpers/owned fixtures/sanitized findings only; raw Apple instructions/symbol dumps local ignored. Serial controller; full-index user staged work preserved. Actual modern updater transport invocation, daemon routing, update application, Canvas scene/render/interaction, kernel/provider resource settlement and both milestones remain incomplete. Next qualify actual modern updater send using an owned transport witness, then correlate routing/application.\n",
+  "retry_not_before_utc": "2026-10-26T23:49:21.708400+00:00",
+  "write_reset_time": "unknown; existing comment write rate limit reconfirmed23:19UTC",
+  "next_attempt_policy": "At most one synchronization attempt after backoff. REST read-before-post; reuse unique commit comment. Previous temp rest-sync.py requires old HEAD/pins and is unsuitable after newer commits; use queued body and verify historical git blobs if needed, not current HEAD equality. Preserve pending/extend backoff on repeated write rate limit.",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6432445784",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6432446494",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6432447202",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6432448061",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T02:43:56.231850+00:00",
+  "completed_utc": "2026-10-27T02:44:09.805308+00:00"
+}

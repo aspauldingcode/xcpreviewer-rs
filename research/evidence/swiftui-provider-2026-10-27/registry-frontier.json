@@ -1,0 +1,22 @@
+{
+  "status": "static follow-up seed; not a runtime result",
+  "source": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/DeveloperToolsSupport.framework/Modules/DeveloperToolsSupport.swiftmodule/arm64e-apple-macos.swiftinterface",
+  "sha256": "17cf7834fbddcb54c5928e9f1423385be1bab250078514ab120bfcead035a4b3",
+  "line_ranges": [
+    [
+      62,
+      63
+    ],
+    [
+      99,
+      111
+    ]
+  ],
+  "observations": [
+    "PreviewRegistry exposes fileID, line, column and a MainActor throwing makePreview() returning DeveloperToolsSupport.Preview.",
+    "Registry makePreview availability starts at macOS14; current producer targets macOS13.",
+    "The observed Preview declaration has no public members in its primary declaration."
+  ],
+  "next_question": "Recover actual macro registry construction and view-body storage/access before adding #Preview capture. No getter or ABI should be fabricated from this seed.",
+  "scope": "Primary Preview declaration and PreviewRegistry declaration/default extension only; not exhaustive SPI/private symbol or cross-framework extension coverage."
+}

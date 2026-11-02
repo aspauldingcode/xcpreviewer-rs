@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "commit": "9167744b0c2ccee1b972d7871d24dcfc3af1d362",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "body": "Native modern updater / owned SDK carrier composition published in `9167744b0c2ccee1b972d7871d24dcfc3af1d362`.\n\nFour actual native PreviewShellModernUpdaterInterface.update invocations retain native TransportReply values through an owned ABI-shaped transport witness. Source ShellUpdatePayload is destroyed before SDK exchange. Two exchanges carry native request bytes; two carry rebuilt WASM canonical request bytes executed under WASI preview1. Actual owned anonymous SDK request/reply channels decode both sides through shipped UVPropertyList. Complete requests match captured native payloads, with only already-qualified sourceFilePaths/linkerFlags Set ordering normalization. Four callbacks, zero errors before cleanup, same-process peer identity checked internally and published as Boolean only.\n\nEach native Future success predicate is false after source destruction and remains false after the SDK acknowledgement. The original adapter then explicitly forwards native Unit reply; the same Future becomes successful. Four reply value copies destroyed and four Future references released. SDK acknowledgement dictionary/Unit mapping is owned adapter policy. No native daemon encoded reply decoder or native identifier-correlation rule is inferred; no DaemonConnection, Apple service delivery/application, Canvas behavior, exactly-once callbacks or final OS/provider settlement established.\n\nSource3220-byte verification and runtime UUID guards pass, including system Services. Fresh disposable replay rebuilds and repeats all four compositions. CLI/WASI full canonical checks2 each; Rust/WASM executables rebuilt, product source unchanged, prior394-test suite not claimed rerun. Initial owned NSData bridge SIGSEGV with empty stderr preserved, local stack stage recorded; withExtendedLifetime correction passes native and WASI controls. No unchanged failure loops, policy/signature/protection changes, user Xcode/simulator operations or Apple dump publication.\n\nEvidence: https://github.com/aspauldingcode/xcpreviewer-rs/tree/development/research/evidence/modern-sdk-carrier-2026-10-27 (seal `3391371aa1805428c936a8f7e616d2f4d7cc7b7fca174613fb127fe99a3264b0`). Original helpers/owned data/sanitized findings only. Exclusive serial controller; bounded compiler30s/native8s/innerwait3s/CLI8s/WASI10s/build60s. Preserved user staging and equal development/master/local-tracking refs verified after atomic push.\n\nBoth milestones remain incomplete. Quarantined hostToSim ordinary-endpoint factory remains separate; next recover suitable local native construction or actual encoded reply continuation. No essential user action needed.\n",
+  "retry_not_before_utc": "2026-10-27T03:54:05.570908+00:00",
+  "next_attempt_policy": "Respect existing network backoff; REST read-before-post, persist partial events, no duplicate commit markers",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6433338851",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6433339479",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6433340114",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6433340879",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T03:54:50.265654+00:00",
+  "completed_utc": "2026-10-27T03:55:03.670481+00:00"
+}

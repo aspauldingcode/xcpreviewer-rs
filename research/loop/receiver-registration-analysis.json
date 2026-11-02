@@ -1,0 +1,104 @@
+{
+  "recorded_utc": "2026-10-27T19:08:31.046318+00:00",
+  "question": "Can the native outer InterfaceTarget safely register a receiver over the working plain raw-XPC connection?",
+  "answer": "This exact system Services conformance has both actual receive witnesses bound to swift_deletedMethodError. Do not install/invoke it as a usable native receiver. No receive method was invoked.",
+  "source": {
+    "services_uuid": "fffb683f59433c2591b272d6e5174fa3",
+    "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+    "conformance_descriptor_offset": "0xdb88",
+    "nominal_descriptor_offset": "0xee88",
+    "protocol_runtime_descriptor_offset": "0xec98",
+    "static_witness_table": "0x29d491408",
+    "bindings": [
+      {
+        "slot": "0x29d491410",
+        "image": "/usr/lib/swift/libswiftCore.dylib",
+        "uuid": "7669d858d33236c79c6c4564ffbea8d2",
+        "export": "_swift_deletedMethodError",
+        "authenticated_cache_v5_chain": true
+      },
+      {
+        "slot": "0x29d491418",
+        "image": "/usr/lib/swift/libswiftCore.dylib",
+        "uuid": "7669d858d33236c79c6c4564ffbea8d2",
+        "export": "_swift_deletedMethodError",
+        "authenticated_cache_v5_chain": true
+      }
+    ],
+    "source_instruction_bytes": 436,
+    "ranges": [
+      {
+        "name": "registration",
+        "start": "0xa150",
+        "bytes": 188,
+        "sha256": "3447dbd8d4ab8ce4e5365a95129466768d28dbfb9c46ae60593fbc0047796a0d"
+      },
+      {
+        "name": "receiver-assignment",
+        "start": "0x8e44",
+        "bytes": 104,
+        "sha256": "ed7c05b5b4fb6972eccd093dd6f6aaad249e5bd21e8c98fda50ae9a9312dd8d0"
+      },
+      {
+        "name": "interface-target-metadata",
+        "start": "0xb2fc",
+        "bytes": 16,
+        "sha256": "386e03ff16865fa24b0687bad35d3a094a3e9628f7135aa12e066c00984f9267"
+      },
+      {
+        "name": "accepted-outer-construction",
+        "start": "0xa8a0",
+        "bytes": 128,
+        "sha256": "75ba2c9cab15f46f372d26e964584bee363208b91c5644556fa712657243da79"
+      }
+    ],
+    "conformance_data_sha256": "d6a0f25e0a0541d6751a161a3cb2315a233a77856233b7e6253672dc9a133a15",
+    "native_probe": "Actual InterfaceTarget metadata size40/stride40, one receiver field at0; actual Swift runtime witness table equals static table, both requirements resolve to swift_deletedMethodError. Metadata only: no receiver installed or invoked.",
+    "scope": "This exact system Services image and conformance only. It does not establish behavior for another framework build, another receiver conformance, the Xcode process or a full daemon connection. Working lower-level raw-XPC send/reply route remains separate."
+  },
+  "runtime": {
+    "metadata_name": "PreviewsServices.PreviewsServiceConnection.(private).InterfaceTarget",
+    "kind": 512,
+    "size": 40,
+    "stride": 40,
+    "field_count": 1,
+    "receiver_field_offset": 0,
+    "protocol": "XPCMessageReceiver",
+    "protocol_requirement_count": 2,
+    "runtime_witness_equals_static": true,
+    "actual_receive_symbols": [
+      "swift_deletedMethodError",
+      "swift_deletedMethodError"
+    ],
+    "swift_core_uuid": "7669d858d33236c79c6c4564ffbea8d2",
+    "receiver_installations": 0,
+    "receiver_method_calls": 0
+  },
+  "replay": {
+    "fresh_disposable_directory": "/private/tmp/native-receiver-registration-replay-mn53_krw",
+    "source_equal": true,
+    "runtime_metadata_stdout_equal": true,
+    "native_receiver_methods_invoked": 0,
+    "native_receiver_installations": 0,
+    "publication_attempted": false
+  },
+  "failures": [
+    {
+      "stage": "Initial metadata-only helper link",
+      "failure": "Copied original ABI bridge referenced an omitted owned_service_reply_record symbol",
+      "resolution": "Provide an original unused callback definition; final bounded compile/runtime and fresh replay pass",
+      "native_receiver_invoked": false
+    }
+  ],
+  "limits": [
+    "Scope is the named conformance in the exact pinned system Services image; no statement about every framework version, other conformances or actual Xcode Canvas receiver state",
+    "Metadata/conformance recovery does not establish successful inbound message handling",
+    "Accepted native listener path source also performs audit/signing checks before outer allocation; it was not invoked and no production service was contacted",
+    "Existing lower-level native raw-XPC send/reply controls remain valid separately",
+    "No Rust implementation changed in this unit; previous 406-test result is retained historical evidence, not rerun"
+  ],
+  "next_action": "Keep actual native InterfaceTarget registration quarantined in this image. Examine a different qualified native receiver route or implement the original lower-level incoming adapter with explicit scope. Do not fabricate a native conformance or infer receiver parity from send/reply success. Publication stays pending existing explicit approval; no retry/alternate egress.",
+  "local_raw_directory": "research/raw/native-receiver-registration-20261027",
+  "raw_directory_git_ignored": true,
+  "publication_attempted": false
+}

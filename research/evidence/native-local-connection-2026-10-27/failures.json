@@ -1,0 +1,20 @@
+{
+  "resolved": [
+    {
+      "stage": "Rust conformance example compilation",
+      "failure": "Conditional byte string arrays had incompatible lengths",
+      "resolution": "Coerce both branches to byte slices; 406 tests and host/WASM example pass"
+    }
+  ],
+  "native_failures_in_this_unit": 0,
+  "preserved_historical_limitations": [
+    "Ordinary hostToSim outgoing/accepted-peer failures remain scoped to the exported simulator-context factory",
+    "Exploratory historical field-substitution SIGTRAP stages remain unlocated; no ownership claim is inferred"
+  ],
+  "scope_limits": [
+    "Only owned anonymous SDK peers, in one process",
+    "Actual plain native XPCConnection initializer and activate/send/invalidate methods; no outer PreviewsServiceConnection or DaemonConnection constructor",
+    "No installed messageReceiver existential, production service or target/provider work",
+    "No native final reclamation, queue semantics, concurrency, cancellation or OS resource settlement qualification"
+  ]
+}

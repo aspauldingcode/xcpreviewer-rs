@@ -1,0 +1,111 @@
+{
+  "image": {
+    "path": "/Applications/Xcode.app/Contents/PlugIns/PreviewsXcode.framework/Versions/A/PreviewsXcode",
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "function": {
+    "name": "XcodeWorkspaceSceneHost.makeBuilder",
+    "start": "0x24e884",
+    "end_exclusive": "0x24f63c",
+    "bytes": 3512,
+    "sha256": "1980b4536b6db8356d315f40e02467381d942b3f920b39007d2245cf8820dd1b"
+  },
+  "source_bytes_verified": 3512,
+  "calls": [
+    {
+      "call": "0x24eed0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$runContextManager"
+        ],
+        "offset": "0x2ae5e0"
+      }
+    },
+    {
+      "call": "0x24eef0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$executionEnvironment"
+        ],
+        "offset": "0x2acfe0"
+      }
+    },
+    {
+      "call": "0x24ef28",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsIDEAPI11BuildSystemV10buildables6scheme9workspace17runContextManager20executionEnvironmentSaySo12IDEBuildable_pGSo9IDESchemeC_So12IDEWorkspaceCSo06IDERuniJ0CSo012IDEExecutionL0CtFZ",
+        "offset": "0x2a4df4"
+      }
+    },
+    {
+      "call": "0x24efd8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost3RefVyACyxGxcfC",
+        "offset": "0x2a894c"
+      }
+    },
+    {
+      "call": "0x24efe0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$displayName"
+        ],
+        "offset": "0x2accc0"
+      }
+    },
+    {
+      "call": "0x24f3b0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSl22PreviewsFoundationHostSH7ElementRpzrlE7uniquedShyACGyF",
+        "offset": "0x2aaaac"
+      }
+    },
+    {
+      "call": "0x24f3d0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B16WorkspaceBuilderCMa"
+        ],
+        "offset": "0x7b8c4"
+      }
+    },
+    {
+      "call": "0x24f3dc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_allocObject",
+        "offset": "0x2ab808"
+      }
+    }
+  ],
+  "cache_field": {
+    "global_offset": "0x38bd58",
+    "symbol": "_$s13PreviewsXcode0B16WorkspaceBuilderC19allSchemeBuildablesShyAA16BuildableWrapperVGvpWvd",
+    "set_result_spill": "0xa8",
+    "allocation_result_register": "x23",
+    "store_address": "0x24f548"
+  },
+  "source_inference": [
+    "makeBuilder obtains workspace runContextManager and executionEnvironment; passes scheme, workspace, manager and environment to BuildSystem.buildables.",
+    "Returned buildables are iterated, wrapped using FoundationHost.Ref and paired with displayName in BuildableWrapper storage.",
+    "Wrapper collection is uniqued to a set; result spills at scratch offset 0xa8 and is stored through the allSchemeBuildables field-offset global on the newly allocated XcodeWorkspaceBuilder.",
+    "This producer and the prior cached-consumer source establish the selection-to-dependency-request source chain; they do not establish an observed runtime invocation."
+  ],
+  "scope": {
+    "static_source_only": true,
+    "native_private_calls": 0,
+    "fresh_ui_observation": false,
+    "runtime_preferences_observed": false,
+    "runtime_chain_execution_observed": false,
+    "milestone_parity_complete": false
+  }
+}

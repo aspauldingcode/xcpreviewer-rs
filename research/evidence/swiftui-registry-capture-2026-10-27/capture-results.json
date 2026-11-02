@@ -1,0 +1,62 @@
+[
+  {
+    "case": "bars",
+    "passed": true,
+    "native_registry": {
+      "body_alignment": 8,
+      "body_calls": 1,
+      "body_destroys": 1,
+      "body_size": 40,
+      "body_stride": 40,
+      "closure_offset": 17171072,
+      "destroy_offset": 808028,
+      "getter_calls": 1,
+      "getter_offset": 17171544,
+      "runtime_images": {
+        "/System/Library/Frameworks/DeveloperToolsSupport.framework/Versions/A/DeveloperToolsSupport": "5ed60a65de463c51874d608cfced6a11",
+        "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI": "90f7fa24a2803e8aa62d148b11bfc28d"
+      }
+    }
+  },
+  {
+    "case": "transparent",
+    "passed": true,
+    "native_registry": {
+      "body_alignment": 8,
+      "body_calls": 1,
+      "body_destroys": 1,
+      "body_size": 40,
+      "body_stride": 40,
+      "closure_offset": 17171072,
+      "destroy_offset": 808028,
+      "getter_calls": 1,
+      "getter_offset": 17171544,
+      "runtime_images": {
+        "/System/Library/Frameworks/DeveloperToolsSupport.framework/Versions/A/DeveloperToolsSupport": "5ed60a65de463c51874d608cfced6a11",
+        "/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI": "90f7fa24a2803e8aa62d148b11bfc28d"
+      }
+    }
+  },
+  {
+    "case": "factory",
+    "passed": true,
+    "native_registry": null
+  },
+  {
+    "case": "provider",
+    "passed": true,
+    "native_registry": null
+  },
+  {
+    "case": "traits",
+    "passed": true,
+    "expected_failure": "unsupportedPreviewShape",
+    "payload_and_png_preserved": true
+  },
+  {
+    "case": "index",
+    "passed": true,
+    "expected_failure": "outside the discovered registry list",
+    "payload_and_png_preserved": true
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "commit": "e524b3708bd63f9410b21506368fd3bbedb127f6",
+  "issues": [
+    6,
+    9,
+    14,
+    22
+  ],
+  "status": "complete",
+  "retry_not_before_utc": "2026-10-27T18:45:51.852538+00:00",
+  "body": "Actual native daemon incoming adapter published: e524b3708bd63f9410b21506368fd3bbedb127f6\n\nTwelve owned calls invoke the actual native PreviewsServiceMessageReceiver witnesses for Receiver<DaemonClientRole>, using real role/receiver metadata and conformance tables. The sole relay closure field is initialized with an original layout-qualified function/context pair; no native memberwise initializer or full DaemonConnection constructor is claimed.\n\nAll 12 complete incoming byte sequences remain lazy/serialized, including malformed, received-empty and array-root data. Native copied lazy values survive the borrowed receiver call: 3 deferred dictionary parses succeed and 9 throw. Optional native reply capability is absent for one-way calls and retained in 8 with-reply cases. Four deferred explicit Unit sends return empty dictionaries, including after malformed input; four drop controls observe no callback during the bounded run. No eventual-callback, exactly-once or settlement claim follows. Native SDK exchanges construct the UV inputs; the four acknowledgement handlers are directly observed, not actual daemon SDK response deliveries.\n\nAdded portable ServiceReceiverMessage.into_daemon_data_with, preserving lazy bytes and opaque reply identity. Dictionary serialization is caller-supplied; this is an explicit current-host data profile, not automatic OS selection or full Foundation parity. 405 Rust tests pass; host and actual WASIp1 stdout match; fresh disposable native/source/focused-test/host/WASM replay passes. 2,308 instruction bytes plus image/runtime identities qualify the boundary. Two symbol lookup traps before receiver invocation are preserved and corrected.\n\nEvidence/replay: `research/evidence/daemon-receiver-2026-10-27`. Raw Apple instructions and inventories remain local. Ordinary hostToSim connection route stays quarantined; suitable whole daemon connection, provider/target work, Canvas integration and final OS/resource settlement remain open. Both milestones remain incomplete. Next advance the actual connection/context or provider/resource frontier without repeating unchanged failed ordinary endpoint probes.",
+  "events": [
+    {
+      "issue": 6,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/6#issuecomment-6450683001",
+      "action": "posted"
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/9#issuecomment-6450684375",
+      "action": "posted"
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/14#issuecomment-6450685576",
+      "action": "posted"
+    },
+    {
+      "issue": 22,
+      "url": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-6450687540",
+      "action": "posted"
+    }
+  ],
+  "last_attempt_utc": "2026-10-27T18:45:51.904934+00:00",
+  "completed_utc": "2026-10-27T18:46:08.443721+00:00"
+}

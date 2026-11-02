@@ -1,0 +1,91 @@
+{
+  "routes": [
+    {
+      "at": "2026-10-15T17:31:52.548586+00:00",
+      "discovery_succeeded": false,
+      "error": "MCP request timed out: tools/list",
+      "error_type": "TimeoutError",
+      "events": [
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": 1,
+          "method": "initialize"
+        },
+        {
+          "direction": "in",
+          "error": null,
+          "has_result": true,
+          "id": 1,
+          "method": null
+        },
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": null,
+          "method": "notifications/initialized"
+        },
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": 2,
+          "method": "tools/list"
+        }
+      ],
+      "initialized": true,
+      "owned_bridge_wait": -15,
+      "route": "automatic-session",
+      "server_info": {
+        "name": "xcode-tools",
+        "version": "24952"
+      }
+    },
+    {
+      "at": "2026-10-15T17:32:01.318167+00:00",
+      "discovery_succeeded": false,
+      "error": "MCP request timed out: tools/list",
+      "error_type": "TimeoutError",
+      "events": [
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": 1,
+          "method": "initialize"
+        },
+        {
+          "direction": "in",
+          "error": null,
+          "has_result": true,
+          "id": 1,
+          "method": null
+        },
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": null,
+          "method": "notifications/initialized"
+        },
+        {
+          "direction": "out",
+          "error": null,
+          "has_result": false,
+          "id": 2,
+          "method": "tools/list"
+        }
+      ],
+      "initialized": true,
+      "owned_bridge_wait": -15,
+      "route": "automatic-pid-and-session",
+      "server_info": {
+        "name": "xcode-tools",
+        "version": "24952"
+      }
+    }
+  ],
+  "scope": "read-only bridge session-routing discriminator; no workspace/capture/native protocol acceptance"
+}

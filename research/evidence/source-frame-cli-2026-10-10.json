@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-10",
+  "delivery_acceptance": "review-pending; milestones remain open",
+  "retained_failure_diagnosis": [
+    "Sandbox process-list access unavailable before execution.",
+    "Atomic staging-directory rename raced controller artifact traversal; os.walk now ignores only vanished entries and preserves access errors."
+  ],
+  "runs": [
+    {
+      "execution": "failed",
+      "manifest_sha256": "2744a1b836f7eda4e7800e92ea8eea1119088b3b4102da1babad1daf99f52d8e",
+      "run_id": "20261010T214949Z-primary-source-frame-cli-34b462b7",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "failed",
+      "manifest_sha256": "a829c18ad017a423964a30702a003e8c3952e20a9ce9ab441478162aa96164e8",
+      "run_id": "20261010T215107Z-primary-source-frame-cli-d7668bb1",
+      "seal_valid": true,
+      "verdict": "not_evaluated"
+    },
+    {
+      "execution": "success",
+      "facts": {
+        "all_failed_previews_preserve_last_good": true,
+        "all_frames_equal": true,
+        "all_native_equal": true,
+        "all_pngs_equal": true,
+        "allocation_bytes": 262144,
+        "failure_controls": 6,
+        "frames": 16,
+        "invalid_requests": 64,
+        "native_frames": 4,
+        "native_target_bytes": 2880,
+        "png_decoded_bytes": 70448,
+        "pngs": 16,
+        "scope": "Primary-layer source CLI to fixed-memory import-free V8 frame and independently decoded sRGB PNG, explicit integer unpremultiplication. Native callback prefixes only; no native PNG equivalence, browser/Canvas wire, general SwiftUI, state migration or hot reload.",
+        "staging_cleanup": true
+      },
+      "manifest_sha256": "9dba73bc8a5098d92441a4bd5e34ada36548f2cbb51387ba2844b6d008cdd4ac",
+      "run_id": "20261010T215404Z-primary-source-frame-cli-8a8fd3bc",
+      "seal_valid": true,
+      "verdict": "supports"
+    }
+  ],
+  "scope": "Primary-layer source CLI to fixed-memory import-free V8 frame and independently decoded sRGB PNG, explicit integer unpremultiplication. Native callback prefixes only; no native PNG equivalence, browser/Canvas wire, general SwiftUI, state migration or hot reload.",
+  "tests": {
+    "count": 338,
+    "passed": true
+  }
+}

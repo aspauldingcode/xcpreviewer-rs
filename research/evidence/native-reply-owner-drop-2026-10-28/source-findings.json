@@ -1,0 +1,175 @@
+{
+  "services_uuid": "fffb683f59433c2591b272d6e5174fa3",
+  "services_text_sha256": "d52bb808c85bf5067dc936655a9dfe5ee75d54f544c1beb923195c520af9b3a3",
+  "ranges": [
+    {
+      "name": "class-metadata",
+      "start": "0x6e00",
+      "bytes": 36,
+      "sha256": "2735b3e1c6a44da6dc36772cc534669dbbd1eb9738ad8abcdb3f3e2356db8fd0"
+    },
+    {
+      "name": "raw-initializer",
+      "start": "0x7c84",
+      "bytes": 260,
+      "sha256": "8051ab8544a49a5e9a5ffa7a33b192e1b32c9cf1774c6fc7e8348c03180c6030"
+    },
+    {
+      "name": "ordinary-caller",
+      "start": "0x7d88",
+      "bytes": 188,
+      "sha256": "813b9fe28555ff7057398d0efa01f4f3770399d7ceec83bbb5fa83dd627ea667"
+    },
+    {
+      "name": "simulator-caller",
+      "start": "0x8800",
+      "bytes": 212,
+      "sha256": "e589fd458a883b5db3f40bbacaf76a244771ecfeea4ed85442ef2c14a12bfd72"
+    },
+    {
+      "name": "invalidate",
+      "start": "0x37c4",
+      "bytes": 684,
+      "sha256": "13ce14057f1fe506d46b243f3e5957cc1d95d215e6d91897465e29068bda30c1"
+    },
+    {
+      "name": "activate-body",
+      "start": "0x3d94",
+      "bytes": 700,
+      "sha256": "1384033b9ae638293b8f771935899b4e8b87f7e2e8f59679b838df845e39825d"
+    },
+    {
+      "name": "activate-wrapper",
+      "start": "0x4dfc",
+      "bytes": 52,
+      "sha256": "dc0cd17e23634bd5bcab20f539ae6189f9649572f7d0a698a975d945671d37f4"
+    },
+    {
+      "name": "send-reply",
+      "start": "0x50a4",
+      "bytes": 828,
+      "sha256": "3c34cd4726a9b2760b43f3b60a95e4a2d27a5b7258c44a5e5114a440cd47c506"
+    },
+    {
+      "name": "outer-forwarders",
+      "start": "0xa12c",
+      "bytes": 296,
+      "sha256": "e119c9e7237a8a82cfb91523815653a4cfa34c82cac021fc232b743acbf8b721"
+    },
+    {
+      "name": "reply-block-thunk",
+      "start": "0x8e28",
+      "bytes": 12,
+      "sha256": "dc3b2f508b614fb8472bde2819f2bcefd6e60ad9a52cec20c8f0a007b24a8cf9"
+    },
+    {
+      "name": "reply-callback-path",
+      "start": "0x53e0",
+      "bytes": 3176,
+      "sha256": "38b5dd88e1be13a2e0c7b6f454cc31d4ecf96e9834713a650e2b80b4159882ab"
+    }
+  ],
+  "source_bytes_verified": 6444,
+  "bindings": [
+    {
+      "call": "0x7cd0",
+      "export": "_swift_allocObject",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "call": "0x7ce0",
+      "export": "_swift_weakInit",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "call": "0x7d40",
+      "export": "__Block_copy",
+      "image": "/usr/lib/system/libsystem_blocks.dylib",
+      "uuid": "cc947089488d316ba9c746dec0f73145"
+    },
+    {
+      "call": "0x7d50",
+      "export": "_swift_unknownObjectRetain",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "call": "0x7d58",
+      "export": "_swift_release",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "call": "0x7d64",
+      "export": "_xpc_connection_set_event_handler",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "uuid": "c40fcae87a173d8287cb3da4802adef1"
+    },
+    {
+      "call": "0x7d6c",
+      "export": "__Block_release",
+      "image": "/usr/lib/system/libsystem_blocks.dylib",
+      "uuid": "cc947089488d316ba9c746dec0f73145"
+    },
+    {
+      "call": "0x6e14",
+      "export": "_objc_opt_self",
+      "image": "/usr/lib/libobjc.A.dylib",
+      "uuid": "ff1d8ae4abef35f1a30a1183b9cb414f"
+    },
+    {
+      "call": "0x88b4",
+      "export": "_swift_allocObject",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "call": "0x88a4",
+      "export": "_xpc_connection_enable_sim2host_4sim",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "uuid": "c40fcae87a173d8287cb3da4802adef1"
+    },
+    {
+      "call": "0x538c",
+      "export": "_xpc_connection_send_message_with_reply",
+      "image": "/usr/lib/system/libxpc.dylib",
+      "uuid": "c40fcae87a173d8287cb3da4802adef1"
+    }
+  ],
+  "xcode_file_sha256": {
+    "PreviewsMessagingHost": "0413e01c6a94d3733b3778ce212fafb24fd62c67b071486604422cfd472df88c",
+    "PreviewsFoundationHost": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "PreviewsPlatforms": "e155b76d75ef6c37fa6685c8433e8e3cd7ca06f89fd598b5571cf52349d31cbd"
+  },
+  "scope": "Inherited qualified native raw connection/send/reply source, with additional retain/release bindings within the existing source windows. Nonnil original Swift capture-token ownership is independently observed through the qualified C relay; typed Swift function-value reinterpretation is excluded. Pending native connection retention after original caller reference release and eventual weak-reference clearing are independently observed. This does not claim callback delivery after native connection destruction, notification setters, native Future or final kernel settlement.",
+  "offline_got_limitation": "Existing cache-v5 helper requires address-diverse authenticated IA pointers and rejects the cancellation GOT slot; no speculative offline decoding used. Runtime equality to dlsym(xpc_connection_activate/xpc_connection_cancel) checks the actual loaded operation pointers instead.",
+  "capture_bindings": [
+    {
+      "offset": "0x5368",
+      "export": "_swift_retain",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "offset": "0x5370",
+      "export": "_swift_retain",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    },
+    {
+      "offset": "0x5378",
+      "export": "_swift_release",
+      "image": "/usr/lib/swift/libswiftCore.dylib",
+      "uuid": "7669d858d33236c79c6c4564ffbea8d2"
+    }
+  ],
+  "retained_self_register_path": {
+    "incoming_self": "x20",
+    "saved_self": "x21",
+    "save_offset": "0x50c8",
+    "retain_argument_offset": "0x5364",
+    "retain_call": "0x5368"
+  }
+}

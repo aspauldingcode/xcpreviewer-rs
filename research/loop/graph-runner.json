@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "limits": {
+    "rounds": 4,
+    "experiments": 4,
+    "minutes": 15,
+    "artifact_bytes": 1073741824
+  },
+  "communication": {
+    "skill": "caveman",
+    "intensity": "full",
+    "path": "/Users/8amps/.agents/skills/caveman/SKILL.md",
+    "sha256": "f9c83a2b20fc3b3503af9d1ae1cf2098c9f8c3d326c203c236b160ebe81ac8f0"
+  },
+  "task_bindings": {
+    "owned-generation-commit-control": [
+      "owned-generation-commit-control",
+      "owned-generation-commit-control-repeat"
+    ],
+    "portable-browser-execution": [
+      "portable-browser-execution",
+      "portable-browser-execution-repeat"
+    ],
+    "native-alpha-compositing-oracle": [
+      "native-alpha-quantized-compositing"
+    ],
+    "portable-alpha-rendering-control": [
+      "portable-alpha-rendering-control"
+    ],
+    "compiler-artifact-limit-quiescence": [
+      "compiler-artifact-limit-quiescence"
+    ],
+    "portable-alpha-browser-readback": [
+      "portable-alpha-browser-readback"
+    ],
+    "portable-alpha-linux-execution": [
+      "portable-alpha-linux-execution"
+    ],
+    "native-mixed-alpha-oracle": [
+      "native-mixed-alpha-oracle"
+    ],
+    "native-mixed-alpha-export-boundary": [
+      "native-mixed-alpha-export-boundary"
+    ],
+    "native-mixed-alpha-quartz-contrast": [
+      "native-mixed-alpha-quartz-contrast",
+      "native-mixed-alpha-public-quartz-contrast",
+      "native-mixed-alpha-normal-quartz-contrast",
+      "native-mixed-alpha-blend-contrast"
+    ],
+    "native-mixed-alpha-render-callback": [
+      "native-mixed-alpha-render-callback",
+      "native-mixed-alpha-render-callback-layouts"
+    ],
+    "native-mixed-alpha-render-order": [
+      "native-mixed-alpha-render-order",
+      "native-mixed-alpha-order-export-contrast"
+    ],
+    "native-mixed-alpha-rasterization-scale": [
+      "native-mixed-alpha-rasterization-scale"
+    ],
+    "native-mixed-alpha-drawing-group": [
+      "native-mixed-alpha-drawing-group"
+    ],
+    "native-primary-layer-composition": [
+      "native-primary-layer-composition",
+      "native-primary-layer-holdouts"
+    ],
+    "portable-primary-layer-control": [
+      "portable-primary-layer-control",
+      "portable-primary-layer-algorithm-mutants"
+    ],
+    "linux-primary-layer-control": [
+      "linux-primary-layer-control",
+      "linux-primary-layer-algorithm-mutants"
+    ],
+    "portable-primary-source-subset": [
+      "portable-primary-source-subset",
+      "portable-primary-source-separators"
+    ],
+    "linux-primary-source-subset": [
+      "linux-primary-source-subset"
+    ],
+    "browser-primary-source-subset": [
+      "browser-primary-source-subset"
+    ],
+    "primary-source-cli-cache": [
+      "primary-source-cli-cache"
+    ],
+    "primary-source-frame-cli": [
+      "primary-source-frame-cli"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "scope": "Task-graph runner implementation and control validation, not native Canvas or portable delivery acceptance",
+  "validation": {
+    "repository_suite": {
+      "tests": 329,
+      "passed": true,
+      "log_sha256": "098d1ab19900bbad062617916d70c41b14ef46d6d3908eeb98bc38201cc945c6",
+      "note": "Process ownership tests require process-list access; authorized rerun passed."
+    },
+    "runner_controls": {
+      "tests": 14,
+      "passed": true,
+      "log_sha256": "bfdd7741a60394b333110888874e1af978dac4010e35f4bcc74350d81c147be1"
+    }
+  },
+  "live_wake": {
+    "id": "60f76c2c5af34a1aad9d9646796fd998",
+    "state": "prerequisite-required",
+    "executed_rounds": 0,
+    "communication": "caveman full",
+    "checkpoint_path": "research/state/graph-loop.json",
+    "checkpoint_sha256": "5d7194d19493d6bda355554a3e213618c115787609170b82312f93916a0d9bde",
+    "blocked_tasks": [
+      {
+        "task": "native-correlated-capture",
+        "state": "blocked",
+        "blocker": {
+          "reason": "Owned light-scheme fixture captures now repeat and show label-only change; full environment coverage, correlated IPC and native instrumentation remain open.",
+          "retry_requires": "Use pinned light view context; do not repeat resolved blank-contrast attempts. Change observation/instrumentation for live transport and expand independent pixel coverage.",
+          "track": "native-canvas"
+        },
+        "missing_evidence": []
+      },
+      {
+        "task": "typed-continuation-runtime",
+        "state": "blocked",
+        "blocker": {
+          "reason": "No Modules directory in PreviewsFoundationHost framework; no safe typed native Continuation construction boundary currently established. Do not fabricate private Swift ABI declarations.",
+          "retry_requires": "Reviewed typed interface or independently safe owned runtime observation method. Static guard finding is not runtime execution.",
+          "track": "private-swift-continuation-runtime"
+        },
+        "missing_evidence": []
+      },
+      {
+        "task": "browser-primary-source-subset",
+        "state": "blocked",
+        "blocker": {
+          "reason": "Computer-use reported locked Mac; automatic approval review rejected actual browser launch and prohibited workaround. No runtime experiment executed.",
+          "retry_requires": "User unlocks Mac; browser prerequisite available and blocked action approved. Do not use indirect/headless/Node route to bypass rejection.",
+          "track": "browser-locked-host"
+        },
+        "missing_evidence": []
+      }
+    ]
+  },
+  "sources": {
+    "tools/re/reloop/graphloop.py": "2b20e5f96150e2133304af25cbd294980ae996a8a26bb0a781c489d30c79a7fa",
+    "tools/re/reloop/loopverify.py": "412768983e89ad5bc87e2f99c73499bbcd9c0b3d4b426273df1e18fe1ebcc27d",
+    "tools/re/tests/test_graphloop.py": "7eefaec54c93acc40278146fdb999056d6a071e57955fecaac21afd1d29c99db",
+    "research/loop/graph-runner.json": "c8e31109197545dd3a02ae941233eaf5040d22e298824acd37dfe54d27987651"
+  }
+}
