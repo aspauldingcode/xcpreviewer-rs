@@ -18647,5 +18647,21 @@
     "resource_settlement_or_full_canvas_parity_observed": false,
     "controller_released_on_exit": true,
     "next_action": "Trace PreviewsUI Registry.preview setter at 0x8b490..0x8b4c0 plus outer Preview.item/canvasContent setters for actual assignment side effects. Existing native UI/module access limitations remain scoped; avoid unchanged retries."
+  },
+  "canvas_value_setters_checkpoint": {
+    "evidence": "research/evidence/canvas-value-setters-2026-11-02",
+    "seal_sha256": "32806d1e81c8514a27f3b413f10335d1de18c6af983af412055b815bba057c80",
+    "source_bytes_verified": 484,
+    "selected_calls": 7,
+    "setter_tail_bindings": 3,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-value-setters-replay-wc6h_9ut",
+      "scope": "Fresh copied-source complete-findings replay; no native release/deinit control."
+    },
+    "runtime_release_or_settlement_observed": false,
+    "full_payload_destruction_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify present canvas payload destruction in PreviewsUI PreviewVwxx 0x1b6b0..0x1bfac and CanvasContentOwxx 0x23d68..0x24680, starting from settings-relay release prefix. Full optional assignment effects and actual lifetime controls remain required; no unchanged native-access retries."
   }
 }

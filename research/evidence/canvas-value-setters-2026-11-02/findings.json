@@ -1,0 +1,160 @@
+{
+  "image": {
+    "sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab",
+    "uuid": "0d87b0e2f4453035a9b6b1cf8230e015",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "item-setter",
+      "start": "0x16be4",
+      "end_exclusive": "0x16bf0",
+      "bytes": 12,
+      "sha256": "8ddc5cfc93dfb37ae72228bf9eac48ef45c0e3859c57206f6162e7b53a5ad4e2"
+    },
+    {
+      "name": "content-setter",
+      "start": "0x16cf0",
+      "end_exclusive": "0x16d20",
+      "bytes": 48,
+      "sha256": "ebc6dc06fb76ad571168dab6654a24d0c44e4e625e4959d0bb0a26e45774687d"
+    },
+    {
+      "name": "registry-preview-setter",
+      "start": "0x8b490",
+      "end_exclusive": "0x8b4c0",
+      "bytes": 48,
+      "sha256": "bf966fbc580773fface0bc1f11566efe3561544317aaba452e75dc2911e6dcb1"
+    },
+    {
+      "name": "optional-content-assign",
+      "start": "0x16d20",
+      "end_exclusive": "0x16d70",
+      "bytes": 80,
+      "sha256": "237442408966d289046d1afeef92413b1c58414ebd0f6e32bd10ad798b687beb"
+    },
+    {
+      "name": "optional-preview-assign",
+      "start": "0x480f0",
+      "end_exclusive": "0x48140",
+      "bytes": 80,
+      "sha256": "803d66a87ab567f4747c281231bfd5b9eb720e238c9f62a9c651c61694829fbb"
+    },
+    {
+      "name": "shared-assign",
+      "start": "0x19dd4",
+      "end_exclusive": "0x19e0c",
+      "bytes": 56,
+      "sha256": "f4ef7ee855f5472818106e7ea7ce16ba0cedd083607dd9312b6e79a3ae64c08b"
+    },
+    {
+      "name": "preview-destroy-prefix",
+      "start": "0x1b610",
+      "end_exclusive": "0x1b6b0",
+      "bytes": 160,
+      "sha256": "f2fec71e55b310d95a40bdd1dd4eab3a9d56b2ebed651585bfb03656425f0c74"
+    }
+  ],
+  "source_bytes_verified": 484,
+  "calls": [
+    {
+      "call": "0x16d04",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewVMa"
+        ],
+        "offset": "0x16c20"
+      }
+    },
+    {
+      "call": "0x8b4a4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV8RegistryVMa"
+        ],
+        "offset": "0x885b8"
+      }
+    },
+    {
+      "call": "0x16d44",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_instantiateConcreteTypeFromMangledNameV2"
+        ],
+        "offset": "0x1a0c"
+      }
+    },
+    {
+      "call": "0x48114",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_instantiateConcreteTypeFromMangledNameV2"
+        ],
+        "offset": "0x1a0c"
+      }
+    },
+    {
+      "call": "0x1b63c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14DiscoveredItemOMa",
+        "offset": "0xabdfc"
+      }
+    },
+    {
+      "call": "0x1b65c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_release",
+        "offset": "0xad434"
+      }
+    },
+    {
+      "call": "0x1b66c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasD0OMa"
+        ],
+        "offset": "0x16e38"
+      }
+    }
+  ],
+  "item_type_import": "_$s16PreviewsPipeline14DiscoveredItemOMa",
+  "field_metadata": {
+    "Preview": [
+      "item",
+      "settingsRelay",
+      "canvasContent"
+    ],
+    "Registry": [
+      "definition",
+      "isPinned",
+      "status",
+      "preview"
+    ]
+  },
+  "source_policy": {
+    "item_setter": "Loads DiscoveredItem metadata function and delegates to shared assignment helper; helper invokes metadata then tail-calls value witness at offset 0x28.",
+    "content_setter": "Uses Preview metadata field offset at 0x18 for canvasContent destination, then optional CanvasContent assignment helper, which invokes typed witness at offset 0x28.",
+    "registry_preview_setter": "Uses Registry metadata field offset at 0x1c for preview destination, then optional Preview assignment helper, which invokes typed witness at offset 0x28.",
+    "callbacks": "No explicit lifecycle/event callback in these bounded setter/assignment fragments. Dynamic value-witness effects are not covered by that statement.",
+    "preview_destroy_prefix": "Destroy item through its typed witness; load settingsRelay at metadata field offset 0x14 and call swift_release; then inspect canvasContent at field offset 0x18. Valid absent optional returns, present continues at 0x1b6b0 beyond this semantic scope.",
+    "boundaries": "A release call does not prove reference count reaches zero, relay deinit, downstream session invalidation or final OS/transport settlement. Full optional assignment witness implementations and present canvas payload destruction remain unqualified."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "runtime_release_or_settlement_observed": false,
+    "full_payload_destruction_or_canvas_parity": false
+  },
+  "failures": [
+    "First Registry field-name read requested 80 bytes across a section boundary and failed safely. Corrected bounded bytewise NUL string reader verifies names.",
+    "Destruction witnesses inspected and large assignment witnesses inventoried locally; only explicit prefix destruction semantics are qualified here.",
+    "Prior locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}
