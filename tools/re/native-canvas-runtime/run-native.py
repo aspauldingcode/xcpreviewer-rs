@@ -14,7 +14,7 @@ if '--no-build' not in sys.argv:
   if run(label,args,30)['code']!=0:sys.exit(1)
 with open('/Users/8amps/xcpreviewer-rs/research/state/controller.lock','a+') as lock:
  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
- for mode in ([a for a in sys.argv[1:] if a!='--no-build'] or ['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','cancel-reentry']):
+ for mode in ([a for a in sys.argv[1:] if a!='--no-build'] or ['invalidate','cancel','owner-loss','drop-waiting-token','ordering','reentrant','inflight','race','cancel-reentry']):
   if mode=='--no-build':continue
   rec=run('native-'+mode,[str(r/'native'),mode],8)
   rows=[json.loads(x) for x in (r/('native-'+mode+'.stdout')).read_text().splitlines()]
@@ -22,4 +22,4 @@ with open('/Users/8amps/xcpreviewer-rs/research/state/controller.lock','a+') as 
    assert rec['code']!=0 and not rec['timeout'] and any(x['event']=='destructor-reentry-begin' for x in rows) and not any(x['event']=='pass' for x in rows)
   else:
    assert rec['code']==0 and not rec['timeout'] and rows[-1]['event']=='pass' and rows[-1]['mode']==mode
-print('Six normal controls passed; destructor reentry failure observed (when full suite selected).')
+print('Requested native controls completed; inspect individual outcomes and verify.py assertions.')

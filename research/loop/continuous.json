@@ -18827,5 +18827,15 @@
     "internal_build_notifications_verified": false,
     "user_source_restored_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
     "next_action": "Improve permitted runtime build-notification tracing and refresh state/timing controls. Do not resume static function expansion or claim private callbacks from UI-only evidence."
+  },
+  "canvas_runtime_concurrency_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-concurrency-2026-11-02",
+    "seal_sha256": "21a5944fc9f4ce079da0699190f51b15f6331eb68e76a4b7ba060a0dac5808ab",
+    "native_normal_controls_passed": 8,
+    "negative_control_observed": 1,
+    "race_rounds": 100,
+    "inflight_cancel_is_not_drain_observed": true,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Improve permitted build-notification tracing or test native preview interactive state across updates. Do not equate sampled race controls with general concurrency or parity acceptance."
   }
 }

@@ -1,7 +1,9 @@
 import Foundation
 import Darwin
+let observationLock=NSLock()
+let callbackEntered=DispatchSemaphore(value:0),callbackMayReturn=DispatchSemaphore(value:0)
 var sequence=0
-func event(_ name:String,_ fields:[String:Any]=[:]) {sequence+=1;var d=fields;d["event"]=name;d["seq"]=sequence;d["time_ns"]=DispatchTime.now().uptimeNanoseconds;let data=try! JSONSerialization.data(withJSONObject:d,options:[.sortedKeys]);FileHandle.standardOutput.write(data);FileHandle.standardOutput.write(Data([10]))}
+func event(_ name:String,_ fields:[String:Any]=[:]) {observationLock.lock();defer{observationLock.unlock()};sequence+=1;var d=fields;d["event"]=name;d["seq"]=sequence;d["thread_id"]=pthread_mach_thread_np(pthread_self());d["time_ns"]=DispatchTime.now().uptimeNanoseconds;let data=try! JSONSerialization.data(withJSONObject:d,options:[.sortedKeys]);FileHandle.standardOutput.write(data);FileHandle.standardOutput.write(Data([10]))}
 let base="/Applications/Xcode.app/Contents/SharedFrameworks/PreviewsFoundationHost.framework/Versions/A/PreviewsFoundationHost"
 guard let lib=dlopen(base,RTLD_NOW|RTLD_LOCAL) else {fatalError(String(cString:dlerror()))}
 func sym(_ name:String,_ off:UInt)->UnsafeMutableRawPointer {guard let p=dlsym(lib,name) else {fatalError("missing "+name)};precondition(owned_symbol_offset(p)==off && String(cString:owned_symbol_path(p))==base);return p}
@@ -40,7 +42,7 @@ final class Probe {
  deinit {let rc=close(descriptor);event("probe-deinit",["name":name,"fd":descriptor,"close_result":rc]);if name=="cancel-reentry",let h=destructionReentry {destructionReentry=nil;event("destructor-reentry-begin");invalidate(h);event("destructor-reentry-end")}}
 }
 @_cdecl("owned_observer_record")
-func record(_ context:UnsafeRawPointer?,_ trace:UnsafeRawPointer?){let p=Unmanaged<Probe>.fromOpaque(context!).takeUnretainedValue();precondition(trace != nil);callbacks.append(p.name);event("callback",["name":p.name]);if p.name=="reentrant",let h=callbackReentry {callbackReentry=nil;event("callback-reentry-begin");invalidate(h);event("callback-reentry-end")}}
+func record(_ context:UnsafeRawPointer?,_ trace:UnsafeRawPointer?){let p=Unmanaged<Probe>.fromOpaque(context!).takeUnretainedValue();precondition(trace != nil);observationLock.lock();callbacks.append(p.name);observationLock.unlock();event("callback",["name":p.name]);if p.name=="inflight" {event("callback-blocked");callbackEntered.signal();precondition(callbackMayReturn.wait(timeout:.now()+2) == .success);event("callback-unblocked")};if p.name=="reentrant",let h=callbackReentry {callbackReentry=nil;event("callback-reentry-begin");invalidate(h);event("callback-reentry-end")}}
 func add(_ h:UnsafeMutableRawPointer,_ p:Probe)->UnsafeMutableRawPointer {let t=UnsafeMutableRawPointer.allocate(byteCount:24,alignment:8);t.initializeMemory(as:UInt8.self,repeating:0xcc,count:24);owned_add_observer(fn(0xbf014),h,unsafeBitCast(owned_observer_callback as @convention(c)()->Void,to:UnsafeMutableRawPointer.self),Unmanaged.passUnretained(p).toOpaque(),t);event("registered",["name":p.name,"has_token":t.load(as:UInt.self) != 0]);return t}
 func invalidate(_ h:UnsafeMutableRawPointer){event("invalidate-begin");let ref=UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity:1);ref.initialize(to:h);precondition(owned_swift_call(fn(0xbfcc8),callsite,trace,ref,nil)==nil);ref.deinitialize(count:1);ref.deallocate();event("invalidate-end")}
 func cancel(_ t:UnsafeMutableRawPointer){event("cancel-begin");precondition(owned_swift_call(fn(0x12993c),callsite,tm,t,nil)==nil);event("cancel-end")}
@@ -58,6 +60,24 @@ if mode=="invalidate" {
  var p:Probe?=Probe("reentrant");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;callbackReentry=h;invalidate(h);precondition(callbacks==["reentrant"] && w==nil && closed(fd));dropToken(t);release(h)
 } else if mode=="ordering" {
  var a:Probe?=Probe("a"),b:Probe?=Probe("b"),c:Probe?=Probe("c");let fds=[a!.descriptor,b!.descriptor,c!.descriptor];let ts=[add(h,a!),add(h,b!),add(h,c!)];a=nil;b=nil;c=nil;cancel(ts[1]);invalidate(h);precondition(callbacks==["a","c"] && fds.allSatisfy{closed($0)});for t in ts {dropToken(t)};release(h)
+} else if mode=="inflight" {
+ var p:Probe?=Probe("inflight");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil
+ let group=DispatchGroup();group.enter();DispatchQueue.global().async {invalidate(h);group.leave()}
+ precondition(callbackEntered.wait(timeout:.now()+2) == .success);cancel(t)
+ precondition(w != nil && !closed(fd));event("cancel-returned-callback-still-blocked",["context_alive":w != nil,"fd_open":!closed(fd)])
+ callbackMayReturn.signal();precondition(group.wait(timeout:.now()+2) == .success)
+ precondition(w==nil && closed(fd) && callbacks==["inflight"]);event("inflight-cleanup-complete",["fd_closed":closed(fd),"context_released":w==nil]);dropToken(t);release(h)
+} else if mode=="race" {
+ // Keep this outer handle empty and explicitly fulfilled before release.
+ invalidate(h);release(h)
+ for i in 0..<100 {
+  let owner=makeHandle();var p:Probe?=Probe("race-\(i)");weak var w=p;let fd=p!.descriptor;let token=add(owner,p!);p=nil
+  let group=DispatchGroup(),start=DispatchSemaphore(value:0)
+  for job in 0..<4 {group.enter();DispatchQueue.global().async {precondition(start.wait(timeout:.now()+2) == .success);if job%2==0 {cancel(token)} else {invalidate(owner)};group.leave()}}
+  for _ in 0..<4 {start.signal()};precondition(group.wait(timeout:.now()+2) == .success)
+  let count=callbacks.filter{$0=="race-\(i)"}.count;precondition(count<=1 && w==nil && closed(fd))
+  event("race-round-complete",["round":i,"callbacks":count,"fd_closed":closed(fd),"context_released":w==nil]);dropToken(token);release(owner)
+ }
 } else if mode=="cancel-reentry" {
  var p:Probe?=Probe("cancel-reentry");let t=add(h,p!);p=nil;destructionReentry=h;cancel(t);event("destructor-reentry-returned");dropToken(t);invalidate(h);release(h)
 } else if mode=="drop-waiting-token" {

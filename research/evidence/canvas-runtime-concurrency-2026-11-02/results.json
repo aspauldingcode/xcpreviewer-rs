@@ -1,0 +1,53 @@
+{
+  "classification": "native_component_execution",
+  "image_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+  "controls": {
+    "invalidate": "native execution passed assertions",
+    "cancel": "native execution passed assertions",
+    "owner-loss": "native execution passed assertions",
+    "drop-waiting-token": "native execution passed assertions",
+    "ordering": "native execution passed assertions",
+    "reentrant": "native execution passed assertions",
+    "inflight": "native execution passed assertions",
+    "race": "native execution passed assertions",
+    "cancel-reentry": "observed recursive-lock process termination"
+  },
+  "inflight": {
+    "cancel_returned_before_callback_release": true,
+    "callback_and_cancel_on_distinct_threads": true,
+    "context_and_fd_alive_until_callback_return": true,
+    "context_destroyed_and_fd_closed_after_callback": true
+  },
+  "race": {
+    "rounds": 100,
+    "operations_per_round": 4,
+    "with_callback": 5,
+    "without_callback": 95,
+    "api_thread_ids": [
+      259,
+      5891,
+      6403,
+      8451,
+      10499
+    ],
+    "overlapping_cross_thread_invocation_pairs": 484,
+    "duplicate_callbacks": false,
+    "all_owned_contexts_released_and_fds_closed": true
+  },
+  "source_profile": {
+    "observer_context_fd": "/dev/null sentinel; no transport resource claim",
+    "logging": "harness events serialized by NSLock; native timing distribution is perturbed",
+    "handle_failure_policy": "explicit softAssertDebugOnly",
+    "code_execution": "actual shipped native APIs via pinned ABI adapter"
+  },
+  "not_qualified": [
+    "arbitrary interleavings or race-freedom proof",
+    "performance guarantees",
+    "internal Xcode build notifications",
+    "UI interaction-state preservation",
+    "Mach/XPC/IOSurface lifetime",
+    "full standalone WASM functionality"
+  ],
+  "verification": "verify.py strengthens thread/overlap assertions after execution; execution-verifier.json encoded source matches original receipt hash",
+  "full_native_areas_accepted": 0
+}

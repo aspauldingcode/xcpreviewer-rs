@@ -1,0 +1,105 @@
+{
+  "pid": 87057,
+  "exception": {
+    "codes": "0x0000000000000001, 0x000000018c587644",
+    "rawCodes": [
+      1,
+      6649574980
+    ],
+    "type": "EXC_BREAKPOINT",
+    "signal": "SIGKILL"
+  },
+  "termination": {
+    "namespace": "FOUNDATION",
+    "flags": 2,
+    "code": 1
+  },
+  "asi": {
+    "libsystem_platform.dylib": [
+      "BUG IN CLIENT OF LIBPLATFORM: Trying to recursively lock an os_unfair_lock",
+      "Abort Cause 259"
+    ]
+  },
+  "frames": [
+    {
+      "image": "libsystem_platform.dylib",
+      "offset": "0x7644",
+      "symbol": "_os_unfair_lock_recursive_abort"
+    },
+    {
+      "image": "libsystem_platform.dylib",
+      "offset": "0x143c",
+      "symbol": "_os_unfair_lock_lock_slow"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbf7a8",
+      "symbol": "specialized InvalidationHandleProtocol._invalidate(callsite:trace:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbfd00",
+      "symbol": "protocol witness for AnyInvalidatable.invalidate(callsite:trace:) in conformance ConcurrentInvalidationHandle"
+    },
+    {
+      "image": "native",
+      "offset": "0xae7c",
+      "symbol": "owned_swift_call"
+    },
+    {
+      "image": "native",
+      "offset": "0x7adc",
+      "symbol": "invalidate(_:)"
+    },
+    {
+      "image": "native",
+      "offset": "0x8e40",
+      "symbol": "Probe.deinit"
+    },
+    {
+      "image": "native",
+      "offset": "0x8ed0",
+      "symbol": "Probe.__deallocating_deinit"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0xbcb0",
+      "symbol": "_swift_release_dealloc"
+    },
+    {
+      "image": "libswiftCore.dylib",
+      "offset": "0x6eae4",
+      "symbol": "bool swift::RefCounts<swift::RefCountBitsT<(swift::RefCountInlinedness)1>>::doDecrementSlow<(swift::PerformDeinit)1>(swift::RefCountBitsT<(swift::RefCountInlinedness)1>, unsigned int)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbefd4",
+      "symbol": "<deduplicated_symbol>"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbeec4",
+      "symbol": "specialized closure #1 in FulfillOnceState.updateWaitingState<A>(update:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x41fa8",
+      "symbol": "closure #1 in IsolatedInvalidationHandle.makeCancelationToken(for:)"
+    },
+    {
+      "image": "PreviewsFoundationHost",
+      "offset": "0x129a78",
+      "symbol": "ConcurrentTokenCallback.invoke()"
+    },
+    {
+      "image": "native",
+      "offset": "0xae7c",
+      "symbol": "owned_swift_call"
+    },
+    {
+      "image": "native",
+      "offset": "0x7f34",
+      "symbol": "cancel(_:)"
+    }
+  ]
+}

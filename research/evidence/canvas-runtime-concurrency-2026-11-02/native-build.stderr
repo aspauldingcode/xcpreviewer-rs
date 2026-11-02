@@ -1,0 +1,65 @@
+native.swift:54:39: warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+52 | let h=makeHandle()
+53 | if mode=="invalidate" {
+54 |  var p:Probe?=Probe("first");weak var weakProbe=p;let fd=p!.descriptor;let t=add(h,p!);precondition(callbacks.isEmpty);p=nil;precondition(weakProbe != nil);event("caller-probe-dropped",["native_retains":true]);invalidate(h);precondition(callbacks==["first"]);precondition(weakProbe==nil && closed(fd));invalidate(h);precondition(callbacks==["first"]);var late:Probe?=Probe("late");let lt=add(h,late!);precondition(callbacks==["first","late"] && lt.load(as:UInt.self)==0);late=nil;dropToken(lt);dropToken(t);release(h)
+   |                                       `- warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+55 | } else if mode=="cancel" {
+56 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+
+native.swift:56:43: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+54 |  var p:Probe?=Probe("first");weak var weakProbe=p;let fd=p!.descriptor;let t=add(h,p!);precondition(callbacks.isEmpty);p=nil;precondition(weakProbe != nil);event("caller-probe-dropped",["native_retains":true]);invalidate(h);precondition(callbacks==["first"]);precondition(weakProbe==nil && closed(fd));invalidate(h);precondition(callbacks==["first"]);var late:Probe?=Probe("late");let lt=add(h,late!);precondition(callbacks==["first","late"] && lt.load(as:UInt.self)==0);late=nil;dropToken(lt);dropToken(t);release(h)
+55 | } else if mode=="cancel" {
+56 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+   |                                           `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+57 | } else if mode=="owner-loss" {
+58 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+
+native.swift:58:44: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+56 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+57 | } else if mode=="owner-loss" {
+58 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+   |                                            `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+59 | } else if mode=="reentrant" {
+60 |  var p:Probe?=Probe("reentrant");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;callbackReentry=h;invalidate(h);precondition(callbacks==["reentrant"] && w==nil && closed(fd));dropToken(t);release(h)
+
+native.swift:58:100: warning: weak variable 'wh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+56 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+57 | } else if mode=="owner-loss" {
+58 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+   |                                                                                                    `- warning: weak variable 'wh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+59 | } else if mode=="reentrant" {
+60 |  var p:Probe?=Probe("reentrant");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;callbackReentry=h;invalidate(h);precondition(callbacks==["reentrant"] && w==nil && closed(fd));dropToken(t);release(h)
+
+native.swift:60:43: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+58 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+59 | } else if mode=="reentrant" {
+60 |  var p:Probe?=Probe("reentrant");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;callbackReentry=h;invalidate(h);precondition(callbacks==["reentrant"] && w==nil && closed(fd));dropToken(t);release(h)
+   |                                           `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+61 | } else if mode=="ordering" {
+62 |  var a:Probe?=Probe("a"),b:Probe?=Probe("b"),c:Probe?=Probe("c");let fds=[a!.descriptor,b!.descriptor,c!.descriptor];let ts=[add(h,a!),add(h,b!),add(h,c!)];a=nil;b=nil;c=nil;cancel(ts[1]);invalidate(h);precondition(callbacks==["a","c"] && fds.allSatisfy{closed($0)});for t in ts {dropToken(t)};release(h)
+
+native.swift:64:42: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+62 |  var a:Probe?=Probe("a"),b:Probe?=Probe("b"),c:Probe?=Probe("c");let fds=[a!.descriptor,b!.descriptor,c!.descriptor];let ts=[add(h,a!),add(h,b!),add(h,c!)];a=nil;b=nil;c=nil;cancel(ts[1]);invalidate(h);precondition(callbacks==["a","c"] && fds.allSatisfy{closed($0)});for t in ts {dropToken(t)};release(h)
+63 | } else if mode=="inflight" {
+64 |  var p:Probe?=Probe("inflight");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil
+   |                                          `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+65 |  let group=DispatchGroup();group.enter();DispatchQueue.global().async {invalidate(h);group.leave()}
+66 |  precondition(callbackEntered.wait(timeout:.now()+2) == .success);cancel(t)
+
+native.swift:74:67: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+72 |  invalidate(h);release(h)
+73 |  for i in 0..<100 {
+74 |   let owner=makeHandle();var p:Probe?=Probe("race-\(i)");weak var w=p;let fd=p!.descriptor;let token=add(owner,p!);p=nil
+   |                                                                   `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+75 |   let group=DispatchGroup(),start=DispatchSemaphore(value:0)
+76 |   for job in 0..<4 {group.enter();DispatchQueue.global().async {precondition(start.wait(timeout:.now()+2) == .success);if job%2==0 {cancel(token)} else {invalidate(owner)};group.leave()}}
+
+native.swift:15:6: warning: concurrently-executed global function 'fn' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+13 | let anchor=sym("$s22PreviewsFoundationHost28ConcurrentInvalidationHandleCMa",0x42148)
+14 | let imageBase=anchor.advanced(by:-0x42148)
+15 | func fn(_ offset:Int)->UnsafeMutableRawPointer {let p=imageBase.advanced(by:offset);precondition(owned_symbol_offset(p)==UInt(offset));return p}
+   |      `- warning: concurrently-executed global function 'fn' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+16 | typealias Accessor=@convention(c)(UInt)->UnsafeRawPointer
+17 | let handleMeta=unsafeBitCast(anchor,to:Accessor.self)(0)
+
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>

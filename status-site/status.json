@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T17:17:05.772182+00:00",
+  "updated_at": "2026-11-02T17:31:15.146330+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Static expansion paused. Validate native runtime behavior: build-notification tracing and refresh state/timing remain unverified.",
+  "current_focus": "Runtime validation: cancel does not drain an in-flight callback. Internal build notifications and preview state across updates still need controls.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Native component execution + observed failure",
-        "verified_summary": "Pinned native tests exercised observer context retention/destruction, weak-owner loss, cancel/repeat behavior and owned FD closure. Destructor reentry terminated with recursive-lock diagnostic; transport/rendering resources remain unqualified.",
+        "verified_summary": "Eight native controls exercise observer lifetimes and owned FD cleanup. Cancel can return before an active callback ends. 100 concurrent rounds had no duplicate callbacks/leaks; destructor reentry terminates. General concurrency and transport/render cleanup remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-validation-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-concurrency-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "In-flight cancellation and concurrent native controls passed",
+      "detail": "Cancel returned while callback/context/FD stayed alive; callback completion released them. 100 four-operation concurrent rounds had zero duplicate callbacks and complete owned cleanup. These samples do not prove race freedom."
+    },
     {
       "date": "2026-11-02",
       "title": "Native runtime controls executed; static expansion paused",
@@ -290,11 +295,11 @@
   },
   "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00",
   "runtime_validation": {
-    "normal_native_passes": 6,
+    "normal_native_passes": 8,
     "observed_negative_controls": 1,
-    "summary": "Executed shipped native observer registration, cancellation, invalidation, ownership and cleanup controls. Fresh reproduction passed. Destructor reentry caused a matched recursive-lock termination.",
+    "summary": "Eight normal native controls passed, including blocked in-flight cancellation and 100 concurrent cancel/invalidate rounds. No duplicate callbacks or owned FD leaks in sampled rounds. Destructor reentry again produced recursive-lock termination.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
     "unknown": "Internal build notifications, private refresh entries, transport/render resource settlement and full cross-platform WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-validation-2026-11-02"
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-concurrency-2026-11-02"
   }
 }

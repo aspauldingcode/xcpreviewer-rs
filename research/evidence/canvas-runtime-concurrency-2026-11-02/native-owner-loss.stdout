@@ -1,0 +1,12 @@
+{"event":"native-ready","pid":87050,"seq":1,"thread_id":259,"time_ns":32641413264916,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":32641417540416}
+{"event":"probe-created","fd":3,"name":"owner-loss","seq":3,"thread_id":259,"time_ns":32641417615125}
+{"event":"registered","has_token":true,"name":"owner-loss","seq":4,"thread_id":259,"time_ns":32641417722875}
+{"event":"handle-release-begin","seq":5,"thread_id":259,"time_ns":32641417748958}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"owner-loss","seq":6,"thread_id":259,"time_ns":32641417954166}
+{"event":"handle-release-end","seq":7,"thread_id":259,"time_ns":32641417984791}
+{"event":"cancel-begin","seq":8,"thread_id":259,"time_ns":32641418006000}
+{"event":"cancel-end","seq":9,"thread_id":259,"time_ns":32641418057333}
+{"event":"token-destroy-begin","seq":10,"thread_id":259,"time_ns":32641418076000}
+{"event":"token-destroy-end","seq":11,"thread_id":259,"time_ns":32641418096500}
+{"callbacks":[],"event":"pass","mode":"owner-loss","seq":12,"thread_id":259,"time_ns":32641418114666}
