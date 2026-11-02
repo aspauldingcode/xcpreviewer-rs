@@ -19059,5 +19059,26 @@
     "next_action": "Keep static expansion paused. Further qualify remaining native lifecycle/cleanup or actual preview-host input; do not retry unchanged coordinate input. Self-token controls concern observer closure/owned sentinel only, not Canvas state or transport/render resources.",
     "verified_at": "2026-11-02T23:32:19.330962+00:00",
     "controller_released": true
+  },
+  "canvas_runtime_app_input_boundary_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-app-input-boundary-2026-11-02",
+    "manifest_sha256": "6168f0a5cb7b136cc6cdf7a6ced4b42a37d42365c8ed1de27401e62cad278197",
+    "owned_app_pid_before_after": 46767,
+    "xcode_pid": 45749,
+    "actual_app_ax_increment_count": [
+      0,
+      1
+    ],
+    "separate_canvas_count_observed": 0,
+    "canvas_input_delivery_qualified": false,
+    "canvas_state_continuity_verified": false,
+    "new_native_function_coverage": false,
+    "source_edited": false,
+    "controller_available_after": true,
+    "processes_left_running": true,
+    "app_left_count": 1,
+    "synthetic_mutations_rejected": 5,
+    "next_action": "Do not mistake owned app-window input for Canvas input. Keep static expansion paused. Qualify a different actual Canvas input route using permitted tooling only, or continue remaining native component lifecycle/resource controls. No unchanged coordinate or ordinary app-button loop.",
+    "verified_at": "2026-11-02T23:43:42.097884+00:00"
   }
 }

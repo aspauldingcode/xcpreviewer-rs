@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:32:19.330962+00:00",
+  "updated_at": "2026-11-02T23:43:42.097884+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Thirteen native observer controls pass: own-token destruction with/without repeated cancellation leaves context/owned FD live through final callback marker, then releases them before invalidate returns. Canvas input/state remains unqualified.",
+  "current_focus": "Native owned app AX Increment works (0\u21921), while the separate Xcode Canvas remains at 0. That route does not qualify Canvas input/state. Thirteen native observer controls remain scoped component evidence.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "App input and Canvas state separated experimentally",
+      "detail": "Actual app AX Increment changed 0\u21921 while selected Xcode Canvas still showed 0. Same observed owned app PID before/after; source unchanged. This working app route cannot qualify Canvas input. Five artifact mutations reject; similarity gate failure retained without parity claim."
+    },
     {
       "date": "2026-11-02",
       "title": "Executing observer destroys its own token",
@@ -348,14 +353,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T23:32:21.509026+00:00",
+  "issue_counts_updated_at": "2026-11-02T23:43:44.021913+00:00",
   "runtime_validation": {
     "normal_native_passes": 13,
     "observed_negative_controls": 2,
     "summary": "Two fresh owned-process runs exercised thirteen observer controls each. New self-drop/self-cancel-drop kept weak context/owned FD alive through final callback marker and released them before invalidate returned; repeated invalidate did not call again. Reader coverage correction and six synthetic mutations retained.",
-    "ui_summary": "Text and interaction native title changed Canvas baseline \u2192 Runtime state edit \u2192 Canvas baseline after a real file edit/restoration. Two coordinate Increment attempts left Count: 0; input delivery and state continuity unqualified.",
+    "ui_summary": "Owned app-window AX button changed Count: 0\u21921; separate actual Canvas screenshot still showed Count: 0. Native app input is qualified for that window only; Canvas input and state continuity remain unknown. No source edits or coordinate retries.",
     "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-self-token-2026-11-02",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-app-input-boundary-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }
