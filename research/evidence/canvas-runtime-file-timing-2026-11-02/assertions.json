@@ -1,0 +1,109 @@
+{
+  "native_runs": {
+    "initial": {
+      "classification": "native basic-block paths during real file modifications",
+      "phases": {
+        "early": {
+          "invocation": 2,
+          "path": "modified-time-suppressed-cleanup",
+          "filter_entered": false,
+          "predicates": {},
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 1.980163458
+        },
+        "late": {
+          "invocation": 4,
+          "path": "modified-time-pass",
+          "filter_entered": true,
+          "predicates": {},
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 11.668950125
+        },
+        "restore": {
+          "invocation": 5,
+          "path": "modified-time-pass",
+          "filter_entered": true,
+          "predicates": {},
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 15.770752416
+        }
+      },
+      "exact_two_second_boundary_verified": false,
+      "full_refresh_or_rendering_verified": false
+    },
+    "reproduced": {
+      "classification": "native basic-block paths during real file modifications",
+      "phases": {
+        "early": {
+          "invocation": 2,
+          "path": "modified-time-suppressed-cleanup",
+          "filter_entered": false,
+          "predicates": {},
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 1.762681166
+        },
+        "late": {
+          "invocation": 4,
+          "path": "modified-time-pass",
+          "filter_entered": true,
+          "predicates": {
+            "is-open-thunkable-result": 1,
+            "should-update-file-result": 0
+          },
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 15.540600416
+        },
+        "restore": {
+          "invocation": 5,
+          "path": "modified-time-pass",
+          "filter_entered": true,
+          "predicates": {
+            "is-open-thunkable-result": 1,
+            "should-update-file-result": 0
+          },
+          "scene_update_entry_observed": false,
+          "host_reception_seconds_since_timestamp": 19.561609375
+        }
+      },
+      "exact_two_second_boundary_verified": false,
+      "full_refresh_or_rendering_verified": false
+    }
+  },
+  "recorded_trace_mutation_controls": [
+    {
+      "mutation": "wrong-branch",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-filter",
+      "rejected": true,
+      "diagnostic": "'modified-file-filter' is not in list"
+    },
+    {
+      "mutation": "wrong-predicate",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-predicate",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-return",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-phase",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "not-restored",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ]
+}

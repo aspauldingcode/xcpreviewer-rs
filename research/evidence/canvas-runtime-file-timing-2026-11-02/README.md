@@ -1,0 +1,28 @@
+# Real file modifications through native timestamp and filter paths
+
+Static research expansion remains paused. Two serial runs exercised the already recovered build timestamp and modified-file paths in running Xcode, using actual writes to one owned fixture's source file. No synthetic workspace notification or forced timestamp/return value was used.
+
+| Control, each run | Actual observed native path |
+| --- | --- |
+| Two-second baseline, no source edit/build | No modified-path probes observed in this bounded window |
+| Real build; comment write after timestamp assignment | Modified timestamp presence → time check → suppressed cleanup → handler return; no late filter entry |
+| Completed build plus three seconds; different comment write | Modified timestamp presence → time check → late path → file filter → handler return |
+| Restore exact original source | Same late path and file filter, then handler return |
+
+The second run additionally observed `isOpenAndThunkable` return true and `shouldUpdateModifiedFile` return false within the late and restoration handler invocations. No selected modified-scene-update entry was observed in those invocations. This is a native negative selection control for the sampled changed-file event. It is not proof that the source cannot update through other routes or that no rendering occurred globally. Notification payloads/file URL arguments were not decoded; attribution to the controlled write is based on isolated phases, no-action baseline, single intended project edit and matching modified-handler execution.
+
+## Execution and identity
+
+Existing source anchors: [timestamp/time gate](../canvas-build-time-gate-2026-11-01/README.md), [modified selection](../canvas-modified-files-2026-11-01/README.md), [thunkable membership](../canvas-thunkable-refresh-2026-11-01/README.md), [real build listeners](../canvas-runtime-build-notifications-2026-11-02/README.md). No new functions were discovered. The same pinned PreviewsXcode/PreviewsIDEAPI SHA-256 and loaded UUIDs are checked by the original driver/agent. Exact executed copies reside under initial/ and reproduced/; no raw Apple instructions or binaries are published.
+
+The observational agent groups entry/return probes by thread and enclosing handler invocation. Previously qualified block offsets are 0x2498c4 (after timestamp assignment, before start flag branch), 0x2495e0 (modified timestamp presence), 0x249b8c (time comparison route), 0x249bf4 (later path), 0x249e08 (suppressed cleanup) and 0x24a264 (selected scene-update route). Existing function entries are 0x24e3d4 (filter), 0x250314 (selection predicate) and 0x250a48 (thunkable membership). These probes observe actual block execution; their semantic names come from the previous source evidence. Native instructions, arguments, Date values and predicate results are not forced. Agent overhead changes timing.
+
+Each real build completed with AppleScript `true, succeeded`. The early write was triggered from an observed timestamp-path message, with a 0.2-second host delay. Host message reception differences from timestamp-path observation to modified time-check observation were about 1.980 and 1.763 seconds in the two runs. Late observations were about 11.669 and 15.541 seconds after timestamp observation. These are **host reception intervals**, not sampled Foundation.Date values or exact native durations. The script message callback intentionally delays reception during the early write. No exact two-second boundary, monotonic-clock property, debounce timer or scheduled retry was established. A slower future run may exercise the pass branch instead and should fail the early suppression assertion rather than silently relabel it.
+
+## Assertions, cleanup and limits
+
+Both recorded runs pass verify.py: actual completion, balanced handler grouping, phase markers, early suppressed/late pass branch distinction, downstream filter entry, predicate results when instrumented, source restoration and detach receipts. Seven altered recorded traces (wrong branch, missing filter, wrong/missing predicate, missing return, wrong phase, false restoration) reject. These are assertion checks, not seven additional native executions. The initial run did not include predicate-return hooks; no predicate result is inferred for that run.
+
+The exclusive controller lock covered both native sessions. Builds checked the active owned workspace path; source operations guarded against concurrent changes. Bounded Frida attachment/load/phase/unload/detach and AppleScript build deadlines were used. Both finally receipts record restoration and detach; independent cleanup found the controller lock available and Xcode PID 5841 still alive at /Applications/Xcode.app/Contents/MacOS/Xcode. Original source SHA-256 is `128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef`. No native crash or harness failure occurred in these two runs. No user process was terminated and no system protection or preference changed.
+
+Unknown: exact boundary behavior under native clock changes/load, preview-build true branch, missing timestamp path, type/package exclusions, non-thunkable passing-file positive control, notification payload contents, complete preference/state gates, private Preview.update, persistent SwiftUI state, rendered completion, transport/render resource cleanup and other target/host profiles. Native path execution is not working standalone WASM functionality. Earlier observer lifetimes/build failure controls remain separate and were not rerun here. No Rust product changes or Rust tests. Full native area acceptance remains 0/9 and tracked delivery 1/26 (3.8%).

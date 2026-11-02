@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T17:47:22.267680+00:00",
+  "updated_at": "2026-11-02T17:53:57.055430+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Runtime validation: real success/failure/recovery builds exercised native listeners twice. Next: refresh gates, file timing and preview state continuity.",
+  "current_focus": "Runtime validation: real file edits exercised early suppression and late filtering twice. Next: passing-file refresh and preview state continuity.",
   "milestones": [
     {
       "number": 1,
@@ -69,10 +69,10 @@
         "id": "refresh",
         "title": "Build & refresh",
         "status": "in_progress",
-        "evidence_level": "Native listener execution; downstream gates remain static",
-        "verified_summary": "Six actual builds exercised start/stop listeners, nested classification/result reads and workspace-handler entries. Real source failure and restoration yielded failed/succeeded actions. Refresh timing, payloads and completion remain open.",
+        "evidence_level": "Native listener, timing-path and filter execution; full refresh open",
+        "verified_summary": "Six real build controls plus two file-edit runs exercised native listeners, early suppression and late filtering. Reproduction observed open/thunkable=true and should-update=false. Exact boundary, positive refresh and rendering completion remain open.",
         "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-build-notifications-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-file-timing-2026-11-02"
       },
       {
         "id": "transport",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Real source edits exercised native time and filter gates",
+      "detail": "Two runs: early edit reached suppressed cleanup; delayed edit and restoration reached filter. Native predicates returned open/thunkable=true and should-update=false in reproduction. Exact two-second boundary and rendered refresh remain unverified."
+    },
     {
       "date": "2026-11-02",
       "title": "Native build listeners exercised through six real builds",
@@ -302,9 +307,9 @@
   "runtime_validation": {
     "normal_native_passes": 8,
     "observed_negative_controls": 1,
-    "summary": "Eight native observer controls passed previously. New: two real success/failure/recovery build sequences exercised native listeners, nested classifiers and workspace-handler entries; result reads were 1/2/1. Source restored and hooks detached.",
+    "summary": "Previously: eight native observer controls and six real build listener controls. New: two real file-edit runs took early suppression, then late filter paths. Second run observed open/thunkable=true and should-update=false. Exact source restored; hooks detached.",
     "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
-    "unknown": "Notification payloads, preview-build true branch, private refresh gates/timing, rendering/transport cleanup and full cross-platform WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-build-notifications-2026-11-02"
+    "unknown": "Exact timing boundary, passing-file positive refresh, full preference/state gates, private Preview.update, rendering/transport cleanup and cross-platform WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-file-timing-2026-11-02"
   }
 }

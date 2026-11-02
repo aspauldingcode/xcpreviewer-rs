@@ -18815,7 +18815,7 @@
   "runtime_validation_focus": {
     "static_expansion_paused": true,
     "instruction": "Validate existing recovered behavior through native execution; no static-only evidence upgrades.",
-    "evidence": "research/evidence/canvas-runtime-build-notifications-2026-11-02"
+    "evidence": "research/evidence/canvas-runtime-file-timing-2026-11-02"
   },
   "canvas_runtime_validation_checkpoint": {
     "evidence": "research/evidence/canvas-runtime-validation-2026-11-02",
@@ -18864,5 +18864,23 @@
     "source_restored_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef",
     "next_action": "Keep static expansion paused. Exercise existing private refresh gates with real file/build timing and state controls. Preview-build true branch, subscriber payloads and rendering/resource completion remain unknown.",
     "verified_at": "2026-11-02T17:47:22.267680+00:00"
+  },
+  "canvas_runtime_file_timing_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-file-timing-2026-11-02",
+    "seal_sha256": "5072fcf9ba77b59d8d20dd7811ea03cf981b10154be44a976e08f9d9dac4efea",
+    "native_runs": 2,
+    "actual_builds_succeeded": 2,
+    "early_file_edit_suppression_observed_each_run": true,
+    "late_and_restore_filter_entry_observed_each_run": true,
+    "predicate_results_second_run": {
+      "isOpenAndThunkable": true,
+      "shouldUpdateModifiedFile": false
+    },
+    "recorded_trace_mutations_rejected": 7,
+    "exact_boundary_verified": false,
+    "full_refresh_or_rendering_verified": false,
+    "controller_released": true,
+    "next_action": "Keep static expansion paused. Exercise a real non-thunkable passing-file positive control or existing refresh preference/state gates; preserve missing timestamp, exact boundary, Preview.update/render/lifetime and target coverage unknowns.",
+    "verified_at": "2026-11-02T17:53:57.055430+00:00"
   }
 }

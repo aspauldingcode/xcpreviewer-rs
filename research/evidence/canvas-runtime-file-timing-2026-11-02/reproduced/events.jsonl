@@ -1,0 +1,60 @@
+{"stage": "device", "status": "begin", "deadline_seconds": 3, "time_ns": 253109000, "phase": "setup"}
+{"stage": "device", "status": "complete", "time_ns": 403457208, "phase": "setup"}
+{"stage": "identity", "status": "begin", "deadline_seconds": 3, "time_ns": 404308541, "phase": "setup"}
+{"stage": "identity", "status": "complete", "time_ns": 852075583, "phase": "setup"}
+{"stage": "attach", "status": "begin", "deadline_seconds": 8, "time_ns": 852491166, "phase": "setup"}
+{"stage": "attach", "status": "complete", "time_ns": 6363181000, "phase": "setup"}
+{"stage": "load-hooks", "status": "begin", "deadline_seconds": 5, "time_ns": 6367161083, "phase": "setup"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "25c99c664185307188e31ab474573a10", "api_uuid": "b8c195f9db4837999653d7aa8bcb986e", "agent_phase": "setup"}}, "time_ns": 6382863541, "phase": "setup"}
+{"stage": "load-hooks", "status": "complete", "time_ns": 6383357291, "phase": "setup"}
+{"stage": "phase-baseline", "status": "begin", "deadline_seconds": 2, "time_ns": 6383617541, "phase": "baseline"}
+{"stage": "phase-baseline", "status": "complete", "time_ns": 6385013541, "phase": "baseline"}
+{"stage": "phase-early", "status": "begin", "deadline_seconds": 2, "time_ns": 8387771500, "phase": "early"}
+{"stage": "phase-early", "status": "complete", "time_ns": 8389487083, "phase": "early"}
+{"stage": "build-request", "status": "begin", "workspace": "/Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/PreviewLab.xcodeproj", "time_ns": 8390031833, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-start-listener", "thread": 259, "agent_phase": "early"}}, "time_ns": 8931089083, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "isPreviewsBuild", "thread": 259, "value": 0, "agent_phase": "early"}}, "time_ns": 8932262333, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "invocation": 1, "agent_phase": "early"}}, "time_ns": 8932661833, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-timestamp-written", "thread": 259, "invocation": 1, "agent_phase": "early"}}, "time_ns": 8932970375, "phase": "early"}
+{"stage": "early-file-write", "sha256": "583dcd5f68883eb1e6a10e0e375b0d3f1dd3bcb25adb68c28b3ff0654894664b", "time_ns": 9153198000, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler-return", "thread": 259, "invocation": 1, "agent_phase": "early"}}, "time_ns": 9153881958, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "invocation": 2, "agent_phase": "early"}}, "time_ns": 10691725500, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-timestamp-presence", "thread": 259, "invocation": 2, "agent_phase": "early"}}, "time_ns": 10694183041, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-check", "thread": 259, "invocation": 2, "agent_phase": "early"}}, "time_ns": 10695651541, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-suppressed-cleanup", "thread": 259, "invocation": 2, "agent_phase": "early"}}, "time_ns": 10699033041, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler-return", "thread": 259, "invocation": 2, "agent_phase": "early"}}, "time_ns": 10699450125, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-stop-listener", "thread": 259, "agent_phase": "early"}}, "time_ns": 18664946416, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "build-result-read", "thread": 259, "value": 1, "object": "0xb4a67b300", "agent_phase": "early"}}, "time_ns": 18667509958, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "invocation": 3, "agent_phase": "early"}}, "time_ns": 18668333000, "phase": "early"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler-return", "thread": 259, "invocation": 3, "agent_phase": "early"}}, "time_ns": 18669180875, "phase": "early"}
+{"stage": "build-result", "code": 0, "stdout": "true, succeeded\n", "stderr": "2026-11-02 09:51:43.284 osascript[98042:1506228] ApplePersistence=NO\n", "timeout": false, "time_ns": 18983547416, "phase": "early"}
+{"stage": "phase-settle", "status": "begin", "deadline_seconds": 2, "time_ns": 19387742750, "phase": "settle"}
+{"stage": "phase-settle", "status": "complete", "time_ns": 19394478083, "phase": "settle"}
+{"stage": "phase-late", "status": "begin", "deadline_seconds": 2, "time_ns": 22397892000, "phase": "late"}
+{"stage": "phase-late", "status": "complete", "time_ns": 22402723166, "phase": "late"}
+{"stage": "late-file-write", "sha256": "8e94b1676eff757fcd03aab17356f7ca5d0f8210cd34540182181bcd5205b7cc", "time_ns": 22409254041, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24470684666, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-timestamp-presence", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24473009791, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-check", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24473570791, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-pass", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24473911791, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-file-filter", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24474328375, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "is-open-thunkable-result", "thread": 259, "invocation": 4, "value": 1, "agent_phase": "late"}}, "time_ns": 24475285333, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "should-update-file-result", "thread": 259, "invocation": 4, "value": 0, "agent_phase": "late"}}, "time_ns": 24476559375, "phase": "late"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler-return", "thread": 259, "invocation": 4, "agent_phase": "late"}}, "time_ns": 24477169458, "phase": "late"}
+{"stage": "phase-restore", "status": "begin", "deadline_seconds": 2, "time_ns": 27418611125, "phase": "restore"}
+{"stage": "phase-restore", "status": "complete", "time_ns": 27420192666, "phase": "restore"}
+{"stage": "source-restored", "sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 27420827333, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28493716041, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-timestamp-presence", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28494333041, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-check", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28494579750, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-time-pass", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28494779500, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "modified-file-filter", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28494980166, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "is-open-thunkable-result", "thread": 259, "invocation": 5, "value": 1, "agent_phase": "restore"}}, "time_ns": 28495158166, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "should-update-file-result", "thread": 259, "invocation": 5, "value": 0, "agent_phase": "restore"}}, "time_ns": 28495428125, "phase": "restore"}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-event-handler-return", "thread": 259, "invocation": 5, "agent_phase": "restore"}}, "time_ns": 28495612750, "phase": "restore"}
+{"status": "all-file-actions-complete", "time_ns": 30421528500, "phase": "restore"}
+{"stage": "unload", "status": "begin", "deadline_seconds": 3, "time_ns": 30422410416, "phase": "restore"}
+{"stage": "unload", "status": "complete", "time_ns": 30425856541, "phase": "restore"}
+{"stage": "detach", "status": "begin", "deadline_seconds": 3, "time_ns": 30426400708, "phase": "restore"}
+{"stage": "detach", "status": "complete", "time_ns": 30428298041, "phase": "restore"}
+{"status": "detached-no-target-termination", "source_restored": true, "time_ns": 30429537916, "phase": "restore"}
