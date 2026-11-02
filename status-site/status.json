@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover present canvas-payload destruction and typed assignment ownership after settings-relay reference release.",
+  "current_focus": "Recover preview-state/static/variant destruction and delegated execution-point lifetime effects.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native resource controls plus source pin/reconciliation and settings-relay reference-release order. Present payload destruction, actual object/session lifetimes and final resource settlement remain open.",
+        "verified_summary": "Scoped native controls plus source release order and registry/preview-mode destruction dependencies. Dynamic state/witness effects and actual object/session/resource settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-value-setters-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-content-destroy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Canvas payload and mode destruction dependencies recovered",
+      "detail": "Source binds registry execution status to ExecutionPointStatus<AnyExecutionPoint> and preview live/grid payload cleanup to native types. Fresh replay and scoped dependency graph pass; actual cancellation and settlement remain open."
+    },
     {
       "date": "2026-11-02",
       "title": "Outer setter delegation and relay-release boundary recovered",

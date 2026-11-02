@@ -18663,5 +18663,21 @@
     "full_payload_destruction_qualified": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify present canvas payload destruction in PreviewsUI PreviewVwxx 0x1b6b0..0x1bfac and CanvasContentOwxx 0x23d68..0x24680, starting from settings-relay release prefix. Full optional assignment effects and actual lifetime controls remain required; no unchanged native-access retries."
+  },
+  "canvas_content_destroy_checkpoint": {
+    "evidence": "research/evidence/canvas-content-destroy-2026-11-02",
+    "seal_sha256": "88a8b1bc6249b79acf0907e6be3dca7c009d1c19be9ef40d49d0429ca8688abd",
+    "source_bytes_verified": 392,
+    "selected_calls": 14,
+    "destruction_dependency_edges": 8,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-content-destroy-replay-1rxzu8ck",
+      "scope": "Fresh copied-source complete-findings replay; no actual lifetime control."
+    },
+    "actual_lifetime_control": false,
+    "full_payload_destruction_qualified": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify CanvasContent destroy continuation at PreviewsUI 0x23ef0..0x24680: livePreview/staticPreview State and variantMatrix ownership. Trace delegated ExecutionPointStatus<AnyExecutionPoint> lifetime effects separately; no unchanged native UI/Ghidra retries."
   }
 }

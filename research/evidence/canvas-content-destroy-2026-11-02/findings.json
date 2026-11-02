@@ -1,0 +1,303 @@
+{
+  "images": {
+    "PreviewsUI": {
+      "sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab",
+      "uuid": "0d87b0e2f4453035a9b6b1cf8230e015",
+      "architecture": "arm64"
+    },
+    "PreviewsPipeline": {
+      "sha256": "c0897c050716f12f88da4dd08c24e3d3ae1de36dc748b65ad0b7346979e40053",
+      "uuid": "c6ed2a5e6f2e3a41a1586d2f65e00a58",
+      "architecture": "arm64"
+    }
+  },
+  "range": {
+    "start": "0x23d68",
+    "end_exclusive": "0x23ef0",
+    "bytes": 392,
+    "sha256": "9cf8d0455df54dd2d1712edc5325c3073d76d2930b080da4ab67d2c33ec184dc"
+  },
+  "source_bytes_verified": 392,
+  "calls": [
+    {
+      "call": "0x23d8c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x23d9c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline20RegistryCapabilitiesVMa",
+        "offset": "0xac024"
+      }
+    },
+    {
+      "call": "0x23db8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV14CanvasRegistryVMa"
+        ],
+        "offset": "0x17554"
+      }
+    },
+    {
+      "call": "0x23dc8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost10IdentifierVMa",
+        "offset": "0xac168"
+      }
+    },
+    {
+      "call": "0x23de4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV14CanvasRegistryV6StatusVMa"
+        ],
+        "offset": "0x19f6c"
+      }
+    },
+    {
+      "call": "0x23dfc",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "___swift_instantiateConcreteTypeFromMangledNameV2"
+        ],
+        "offset": "0x1a0c"
+      }
+    },
+    {
+      "call": "0x23e34",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline15PreviewInstanceVMa",
+        "offset": "0xabf04"
+      }
+    },
+    {
+      "call": "0x23e50",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasE0VMa"
+        ],
+        "offset": "0x17568"
+      }
+    },
+    {
+      "call": "0x23e60",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline20PreviewConfigurationV8LocationVMa",
+        "offset": "0xabff4"
+      }
+    },
+    {
+      "call": "0x23e80",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewCapabilitiesVMa",
+        "offset": "0xabf70"
+      }
+    },
+    {
+      "call": "0x23ea4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline14EditorSettingsV10CanvasModeOMa",
+        "offset": "0xabe14"
+      }
+    },
+    {
+      "call": "0x23eb0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_swift_getEnumCaseMultiPayload",
+        "offset": "0xad2e4"
+      }
+    },
+    {
+      "call": "0x23ec4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline24ExecutionPointPropertiesV12HostLocationOMa",
+        "offset": "0xac078"
+      }
+    },
+    {
+      "call": "0x23ed0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s21PreviewsMessagingHost19PreviewVariantGroupVMa",
+        "offset": "0xac150"
+      }
+    }
+  ],
+  "fields": {
+    "content": [
+      {
+        "name": "preview",
+        "payload_type_present": true
+      },
+      {
+        "name": "registry",
+        "payload_type_present": true
+      }
+    ],
+    "registry": [
+      {
+        "name": "capabilities",
+        "payload_type_present": true
+      },
+      {
+        "name": "enabled",
+        "payload_type_present": true
+      },
+      {
+        "name": "status",
+        "payload_type_present": true
+      }
+    ],
+    "status": [
+      {
+        "name": "id",
+        "payload_type_present": true
+      },
+      {
+        "name": "executionStatus",
+        "payload_type_present": true
+      }
+    ],
+    "preview": [
+      {
+        "name": "instance",
+        "payload_type_present": true
+      },
+      {
+        "name": "location",
+        "payload_type_present": true
+      },
+      {
+        "name": "capabilities",
+        "payload_type_present": true
+      },
+      {
+        "name": "canvasMode",
+        "payload_type_present": true
+      },
+      {
+        "name": "livePreview",
+        "payload_type_present": true
+      },
+      {
+        "name": "staticPreview",
+        "payload_type_present": true
+      },
+      {
+        "name": "variantMatrix",
+        "payload_type_present": true
+      }
+    ],
+    "canvas_mode": [
+      {
+        "name": "live",
+        "payload_type_present": true
+      },
+      {
+        "name": "grid",
+        "payload_type_present": true
+      },
+      {
+        "name": "static",
+        "payload_type_present": false
+      }
+    ]
+  },
+  "execution_status_type_imports": [
+    "_$s16PreviewsPipeline20ExecutionPointStatusOMn",
+    "_$s16PreviewsPipeline17AnyExecutionPointVMn"
+  ],
+  "destruction_edges": [
+    {
+      "field": "registry.capabilities",
+      "delegated_type": "RegistryCapabilities",
+      "call": "0x23db0",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "registry.status.id",
+      "delegated_type": "Identifier",
+      "call": "0x23ddc",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "registry.status.executionStatus",
+      "delegated_type": "ExecutionPointStatus<AnyExecutionPoint>",
+      "call": "0x23e2c",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "preview.instance",
+      "delegated_type": "PreviewInstance",
+      "call": "0x23e48",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "preview.location",
+      "delegated_type": "PreviewConfiguration.Location",
+      "call": "0x23e74",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "preview.capabilities",
+      "delegated_type": "PreviewCapabilities",
+      "call": "0x23e98",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "preview.canvasMode.live",
+      "delegated_type": "HostLocation",
+      "call": "0x23ee4",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    },
+    {
+      "field": "preview.canvasMode.grid",
+      "delegated_type": "PreviewVariantGroup",
+      "call": "0x23ee4",
+      "relation": "typed destroy witness",
+      "evidence": "static source only"
+    }
+  ],
+  "source_policy": {
+    "registry": "Registry enum payload destroys capabilities through RegistryCapabilities witness, then status.id through Identifier witness, then status.executionStatus through ExecutionPointStatus<AnyExecutionPoint> witness. enabled is a scalar field; no separate owned-field cleanup established for it.",
+    "preview_prefix": "Preview payload destroys instance through PreviewInstance witness, location through PreviewConfiguration.Location witness, then capabilities through PreviewCapabilities witness.",
+    "canvas_mode": "Native mode reflection binds live payload to HostLocation cleanup and grid payload to PreviewVariantGroup cleanup. static has no payload cleanup on this route.",
+    "next_boundary": "After mode cleanup, compute livePreview state field address. State, staticPreview and variantMatrix destruction remain outside this semantic unit.",
+    "scope": "Typed value-destruction delegation only. These dynamic witnesses are not traced here; no execution-point cancellation, task invalidation, callback completion, renderer release or final resource settlement inferred."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_lifetime_control": false,
+    "full_payload_destruction_or_canvas_parity": false
+  },
+  "failures": [
+    "An exploratory type-reference command contained an invalid placeholder and failed before execution. Corrected read resolves the two indirect native type imports; no type inference from failed command.",
+    "Initial CanvasMode count assertion compared the packed payload-count/offset word directly. Corrected low-24-bit count extraction passes; failed reader retained locally.",
+    "Prior locked-screen/Accessibility and Ghidra failures not retried unchanged."
+  ]
+}
