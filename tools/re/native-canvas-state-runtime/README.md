@@ -1,0 +1,11 @@
+# Native title refresh and interaction qualification
+
+This operator-coordinated control checks a real title edit in the owned PreviewLab **Text and interaction** live preview. It does not automatically deliver or qualify interactive input. First acquire the controller lock and confirm the exact Xcode executable/PID, owned workspace/source and selected live preview through the documented native UI tool. Release that observation lease before starting this session, which acquires the same lock. Never replace an unrelated workspace.
+
+Run `python3 tools/re/native-canvas-state-runtime/session.py --output /private/tmp/FRESH --pid PID --source /absolute/owned/PreviewLab.swift --no-hooks`. This session pins source and framework hashes and process executable; **workspace and selected preview qualification is a separate mandatory UI observation**, not an automated helper assertion. Do not use the optional attached mode as state/observer transparency proof.
+
+After `ready`, capture native preview baseline. Attempt Increment through a currently exposed AX control or coordinates derived from the current screenshot. Capture the result and require an actually observed nonzero count before claiming an input or state-continuity test. If input does not produce a nonzero count, preserve that limitation; do not call unchanged zero state preservation. Do not repeat unchanged failed input loops.
+
+Touch `edit`; after `edited`, observe the actual preview title change to Runtime state edit. Touch `restore`; after `restored`, observe Canvas baseline return. Touch `stop`. The helper has a 120-second deadline and conditionally restores exact source bytes; concurrent user changes are preserved. It does not terminate Xcode. Save original screenshots and explicit manual observations; source editor text alone is not rendering evidence.
+
+`verify.py EVIDENCE_DIRECTORY` checks retained events, hashes and selected screenshot regions. It does not exercise Xcode. Count glyph-mask similarity is a limited artifact consistency check, not OCR or state identity. Published evidence includes unsuccessful coordinate attempts, exact restoration and unknown input delivery. Reinspect coordinates/geometry for every reproduction. No new native functions were recovered.

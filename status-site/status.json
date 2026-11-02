@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:13:22.624863+00:00",
+  "updated_at": "2026-11-02T23:25:23.245869+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native Canvas route restored: real file edit exercised Preview.update and instance assignment, changed displayed color, and restored it. Interactive state continuity remains open.",
+  "current_focus": "Real native title edit and exact restoration rendered correctly. Increment attempts left Count: 0; successful input and interactive state continuity remain unqualified.",
   "milestones": [
     {
       "number": 1,
@@ -26,7 +26,7 @@
   ],
   "recovery": {
     "metric": "Accepted recovery areas",
-    "formula": "100 × accepted areas / 9 required areas",
+    "formula": "100 \u00d7 accepted areas / 9 required areas",
     "accepted_status": "accepted",
     "version": 1,
     "scope": "Complete native behavior across the declared version/project/target matrix. This is a closure metric, not an estimate of all code or behavior discovered.",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native title refresh passes; state input unresolved",
+      "detail": "Actual title edit/restoration visibly rendered. Two Increment attempts left Count: 0; no successful input delivery or state preservation claimed. Wrong-scale editor click and overstrict pixel checks preserved. Four artifact mutations rejected; source restored and Xcode left alive."
+    },
     {
       "date": "2026-11-02",
       "title": "Native Preview.update and rendered color change exercised",
@@ -299,7 +304,7 @@
     {
       "date": "2026-11-02",
       "title": "Builder producer and reuse chain recovered",
-      "detail": "Selection → cached buildables → dependency request connected in source; runtime execution remains unqualified."
+      "detail": "Selection \u2192 cached buildables \u2192 dependency request connected in source; runtime execution remains unqualified."
     }
   ],
   "targets": [
@@ -338,14 +343,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00",
+  "issue_counts_updated_at": "2026-11-02T23:25:25.135545+00:00",
   "runtime_validation": {
     "normal_native_passes": 11,
     "observed_negative_controls": 2,
-    "summary": "New live Canvas control: eighteen Preview.update and assignment-helper entries/returns during a real color edit. Native output changed purple→brown→purple; repeated without active hooks in same process. Exact source restored; Xcode left running.",
-    "ui_summary": "Owned Primary layers preview changed visibly after blue source constant edit and returned after restoration. Lossy screenshot ROI comparison passed; no exact render-buffer parity or state continuity claim.",
+    "summary": "Eleven observer controls plus separate policy/build/file controls remain scoped evidence. Prior color edit traced eighteen Preview.update and assignment-helper calls. New title-render sequence had no active hooks and no new method trace.",
+    "ui_summary": "Text and interaction native title changed Canvas baseline \u2192 Runtime state edit \u2192 Canvas baseline after a real file edit/restoration. Two coordinate Increment attempts left Count: 0; input delivery and state continuity unqualified.",
     "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-preview-update-2026-11-02",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-title-input-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

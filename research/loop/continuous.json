@@ -19018,5 +19018,23 @@
     "coverage_index": "research/loop/canvas-runtime-function-coverage.json",
     "next_action": "Keep static expansion paused. Native window route is available in PID 45749/owned PreviewLab. Continue real preview interaction/state and dependency/error controls; reverify current identities and controller ownership. Do not infer arbitrary guards, state continuity, render-buffer parity or resource release from this selected color case.",
     "verified_at": "2026-11-02T23:13:22.624863+00:00"
+  },
+  "canvas_runtime_title_input_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-title-input-2026-11-02",
+    "manifest_sha256": "9c0d02e0da1afed5dfcf0ad007ebb9a357f8c56feba5bd8f4720568fb7b5322e",
+    "native_pid": 45749,
+    "actual_preview_title_change_restoration_observed": true,
+    "native_ui_sequences": 1,
+    "native_method_trace_collected": false,
+    "active_hooks": false,
+    "input_attempts_with_unchanged_zero": 2,
+    "excluded_wrong_scale_attempt": 1,
+    "input_delivery_qualified": false,
+    "interactive_state_preservation_verified": false,
+    "artifact_mutations_rejected": 4,
+    "source_restored_controller_available": true,
+    "xcode_left_running": true,
+    "next_action": "Keep static expansion paused. Do not retry unchanged background coordinate input. Qualify an actual preview-host input route before claiming nonzero state continuity, or switch to remaining native component lifecycle/resource controls. Preserve separate native method, native UI, artifact-reader and WASM scopes.",
+    "verified_at": "2026-11-02T23:25:23.245869+00:00"
   }
 }
