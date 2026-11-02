@@ -18738,5 +18738,20 @@
     "actual_lifetime_or_cancellation_control": false,
     "controller_released_on_exit": true,
     "next_action": "Qualify specialized FulfillOnceState.fulfill transition at FoundationHost 0x30be0 and observer/token extraction callback at 0xc12c0; separate repeated invalidation from initial transition and token removal. Actual native controls remain required; no unchanged UI/Ghidra retry."
+  },
+  "canvas_invalidation_fulfill_checkpoint": {
+    "evidence": "research/evidence/canvas-invalidation-fulfill-2026-11-02",
+    "seal_sha256": "99c53aa03a7c684a296583dfaf7f9d0b956f8adff6420e695c6ee49e77891c3f",
+    "source_bytes_verified": 1988,
+    "selected_calls": 10,
+    "normal_return_source_cases": 2,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-invalidation-fulfill-replay-l_ab7a2y",
+      "scope": "Fresh copied-source complete-findings replay; actual repeated invalidation not observed."
+    },
+    "actual_repeated_invalidation_control": false,
+    "controller_released_on_exit": true,
+    "next_action": "Qualify OverfulfillHandle cleanup/failure effects and observer token removal via ConcurrentInvalidationHandle.makeCancelationToken. Connect legal repeated invalidation paths with bounded actual native controls when permitted observation is available; no unchanged UI/Ghidra retry."
   }
 }

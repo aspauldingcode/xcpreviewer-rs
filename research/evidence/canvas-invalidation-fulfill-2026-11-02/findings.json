@@ -1,0 +1,200 @@
+{
+  "image": {
+    "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "storage-fulfill",
+      "start": "0x30be0",
+      "end_exclusive": "0x30e60",
+      "bytes": 640,
+      "sha256": "36030ba3d945ca5102a690ca620dea1b959407be7c7565aa37a0d6fef4cf867d"
+    },
+    {
+      "name": "trace-forwarder",
+      "start": "0xc12c0",
+      "end_exclusive": "0xc12f0",
+      "bytes": 48,
+      "sha256": "ebbdcc18c08d4ea76541510d523f4aabaaa7b1f8b855f2a621c087f7a0cd676c"
+    },
+    {
+      "name": "trace-builder",
+      "start": "0xbf9d0",
+      "end_exclusive": "0xbfaec",
+      "bytes": 284,
+      "sha256": "75df7ba3386df4f4a2c7dad25083b4d8a092782d9ead11d386c44c21e7d20480"
+    },
+    {
+      "name": "token-fulfill",
+      "start": "0x30a1c",
+      "end_exclusive": "0x30b9c",
+      "bytes": 384,
+      "sha256": "c6478c5a25ecb57ab8d696b87675b629e5f373f14a21c5b0d93a0335b062cb75"
+    },
+    {
+      "name": "empty-callback",
+      "start": "0x1e5c",
+      "end_exclusive": "0x1e60",
+      "bytes": 4,
+      "sha256": "110f46b5b35c069160560c6ad6786f647dd44e8760a52a46fc22dbbcd7630b91"
+    },
+    {
+      "name": "caller",
+      "start": "0xbf75c",
+      "end_exclusive": "0xbf9d0",
+      "bytes": 628,
+      "sha256": "8daee11ccc41b5f54cec98df8846b5fe4f09b882678766261e9de07f5e0e8587"
+    }
+  ],
+  "source_bytes_verified": 1988,
+  "metadata": {
+    "state": [
+      "waiting",
+      "fulfilled"
+    ],
+    "outcome": [
+      "fulfilled",
+      "wasAlreadyFulfilled"
+    ],
+    "storage": [
+      "observers",
+      "managedTokens"
+    ]
+  },
+  "calls": [
+    {
+      "call": "0x30c14",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC7fulfill8callsite013makeFulfilledF009ifAlreadyJ0AC18FulfillmentOutcomeOyxq__GAA8CallsiteV_q_xXEyq__AA17OverfulfillHandleVtKXEtKFAjC0F0Oyxq__GzYbKXEfU_AA23ObserverAndTokenStorageVyAA020IsolatedInvalidationR3BoxVAA0vT8CallbackVG_AA0W5TraceVTg5Tm"
+        ],
+        "offset": "0x30c24"
+      }
+    },
+    {
+      "call": "0xc12e4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost26InvalidationHandleProtocolPAAE11_invalidate8callsite5traceyAA8CallsiteV_AA0D5TraceVtFAjA23ObserverAndTokenStorageVy0L3BoxQz0N8CallbackQzGXEfU_AA08IsolateddE0C_TB5Tm"
+        ],
+        "offset": "0xbf9d0"
+      }
+    },
+    {
+      "call": "0xbfa4c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost17InvalidationTraceV4LinkOWOi_"
+        ],
+        "offset": "0x3b1a8"
+      }
+    },
+    {
+      "call": "0xbfac8",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$sSa6append10contentsOfyqd__n_t7ElementQyd__RszSTRd__lF22PreviewsFoundationHost17InvalidationTraceV4LinkO_SayAIGTg5"
+        ],
+        "offset": "0x116ec"
+      }
+    },
+    {
+      "call": "0x30d8c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost17OverfulfillHandleVWOh"
+        ],
+        "offset": "0x305c8"
+      }
+    },
+    {
+      "call": "0x30b34",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost17OverfulfillHandleVWOh"
+        ],
+        "offset": "0x305c8"
+      }
+    },
+    {
+      "call": "0xbf7d4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC7fulfill8callsite013makeFulfilledF009ifAlreadyJ0AC18FulfillmentOutcomeOyxq__GAA8CallsiteV_q_xXEyq__AA17OverfulfillHandleVtKXEtKFAjC0F0Oyxq__GzYbKXEfU_AA23ObserverAndTokenStorageVyAA022ConcurrentInvalidationR3BoxVAA0vT8CallbackVG_AA0W5TraceVTg5"
+        ],
+        "offset": "0x30be0"
+      }
+    },
+    {
+      "call": "0xbf7dc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_unlock",
+        "offset": "0x13112c"
+      }
+    },
+    {
+      "call": "0xbf968",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost16FulfillOnceStateC7fulfill8callsite013makeFulfilledF009ifAlreadyJ0AC18FulfillmentOutcomeOyxq__GAA8CallsiteV_q_xXEyq__AA17OverfulfillHandleVtKXEtKFAjC0F0Oyxq__GzYbKXEfU_yt_ytTg5"
+        ],
+        "offset": "0x30a1c"
+      }
+    },
+    {
+      "call": "0xbf970",
+      "target": {
+        "kind": "import_stub",
+        "name": "_os_unfair_lock_unlock",
+        "offset": "0x13112c"
+      }
+    }
+  ],
+  "normal_return_source_matrix": [
+    {
+      "state": "waiting",
+      "storage_returned": true,
+      "next_state": "fulfilled",
+      "observer_dispatch_enabled": true,
+      "token_outcome": 0,
+      "token_callback_enabled": true
+    },
+    {
+      "state": "fulfilled",
+      "storage_returned": false,
+      "next_state": "fulfilled",
+      "observer_dispatch_enabled": false,
+      "token_outcome": 1,
+      "token_callback_enabled": false
+    }
+  ],
+  "source_policy": {
+    "storage_waiting": "Common helper copies waiting storage to outcome prefix, calls makeFulfilledState with output at +0x18, then installs returned trace and callsite into state and writes fulfilled discriminator 1 at +0x41. Prior waiting storage is returned for downstream dispatch. Callback/trace internals are only partially qualified.",
+    "storage_fulfilled": "Branch invokes configured ifAlreadyFulfilled callback and destroys OverfulfillHandle context. On normal no-error return, zeroes the 32-byte outcome, leaving no storage for caller dispatch. Callback throwing/error and OverfulfillHandle cleanup effects are not qualified here.",
+    "caller": "Concurrent invalidate passes trace builder through c12c0 and empty callback at 1e5c for already-fulfilled handling. Caller tests returned storage pointer after unlocking and skips both collection loops when absent.",
+    "trace": "Forwarder reaches trace builder, which constructs/appends InvalidationTrace.Link values and returns trace storage. It does not itself extract observer collections; the common fulfill helper copies waiting storage. Full link contents/ownership are not mapped.",
+    "managed_token": "Void/Void specialization compares state tag at +0x39. Waiting calls makeFulfilledState, installs callsite/tag 1 and writes outcome 0. Fulfilled invokes configured handler, cleans context and on normal no-error return writes outcome 1. Outer caller skips callback for outcome 1, otherwise invokes after unlock.",
+    "boundary": "One-shot dispatch suppression is source-qualified for legal tags and normal callback return. No actual repeated native invalidation, concurrency race/reentry, callback delivery, failure-policy behavior or final resource settlement observed."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_repeated_invalidation_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "No unchanged locked-screen/Accessibility or Ghidra failure retry.",
+    "Source matrix summarizes checked branches; it is not native runtime execution or an independent behavioral oracle."
+  ]
+}
