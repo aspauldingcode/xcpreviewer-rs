@@ -1,0 +1,187 @@
+{
+  "image": {
+    "sha256": "1558308e07d07693414f8681269d2e7d79226a4b3fa7aacf976bcdf60b0b5c4d",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "architecture": "arm64"
+  },
+  "range": {
+    "start": "0x2bc40",
+    "end_exclusive": "0x2c170",
+    "bytes": 1328,
+    "sha256": "103d5f9ad890f4813a54f0dabb763f73d3151288f1852baa3e4ae51c4f37179b"
+  },
+  "source_bytes_verified": 1328,
+  "cases": [
+    "test",
+    "log",
+    "softAssertDebugOnly",
+    "softAssert",
+    "fatalError"
+  ],
+  "dispatch": [
+    {
+      "case": "test",
+      "marker": 0,
+      "payload_low": 4096,
+      "payload_high": 8192,
+      "entry": "0x2be6c",
+      "visited": [
+        "0x2bcc4"
+      ]
+    },
+    {
+      "case": "log",
+      "marker": 1,
+      "payload_low": 0,
+      "payload_high": 0,
+      "entry": "0x2bcdc",
+      "visited": [
+        "0x2bcc4",
+        "0x2bcd4",
+        "0x2bcd8"
+      ]
+    },
+    {
+      "case": "softAssertDebugOnly",
+      "marker": 2,
+      "payload_low": 0,
+      "payload_high": 0,
+      "entry": "0x2be80",
+      "visited": [
+        "0x2bcc4",
+        "0x2bcd4",
+        "0x2bcd8",
+        "0x2be78",
+        "0x2be7c"
+      ]
+    },
+    {
+      "case": "softAssert",
+      "marker": 2,
+      "payload_low": 1,
+      "payload_high": 0,
+      "entry": "0x2c048",
+      "visited": [
+        "0x2bcc4",
+        "0x2bcd4",
+        "0x2bcd8",
+        "0x2be78",
+        "0x2be7c",
+        "0x2c03c",
+        "0x2c040",
+        "0x2c044"
+      ]
+    },
+    {
+      "case": "fatalError",
+      "marker": 2,
+      "payload_low": 2,
+      "payload_high": 0,
+      "entry": "0x2c0f0",
+      "visited": [
+        "0x2bcc4",
+        "0x2bcd4",
+        "0x2bcd8",
+        "0x2be78",
+        "0x2be7c",
+        "0x2c03c",
+        "0x2c040",
+        "0x2c044"
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "call": "0x2bd30",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s2os6LoggerV9logObjectSo03OS_a1_C0Cvg",
+        "offset": "0x12f53c"
+      }
+    },
+    {
+      "call": "0x2bd38",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSo13os_log_type_ta0A0E5errorABvgZ",
+        "offset": "0x130388"
+      }
+    },
+    {
+      "call": "0x2be28",
+      "target": {
+        "kind": "import_stub",
+        "name": "__os_log_impl",
+        "offset": "0x130f40"
+      }
+    },
+    {
+      "call": "0x2bec8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s2os6LoggerV9logObjectSo03OS_a1_C0Cvg",
+        "offset": "0x12f53c"
+      }
+    },
+    {
+      "call": "0x2bed0",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSo13os_log_type_ta0A0E5errorABvgZ",
+        "offset": "0x130388"
+      }
+    },
+    {
+      "call": "0x2bf38",
+      "target": {
+        "kind": "import_stub",
+        "name": "__swift_stdlib_bridgeErrorToNSError",
+        "offset": "0x130f4c"
+      }
+    },
+    {
+      "call": "0x2bfcc",
+      "target": {
+        "kind": "import_stub",
+        "name": "__os_log_impl",
+        "offset": "0x130f40"
+      }
+    },
+    {
+      "call": "0x2c078",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s22PreviewsFoundationHost21_assertionFailureBase7message8callsiteySSyXK_AA8CallsiteVtFTf4dn_n"
+        ],
+        "offset": "0x71290"
+      }
+    },
+    {
+      "call": "0x2c164",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_SSAHSus6UInt32VtF",
+        "offset": "0x130a18"
+      }
+    }
+  ],
+  "source_policy": {
+    "test": "Invokes stored closure using its context, then reaches return epilogue if callback returns. Closure effects unqualified.",
+    "log": "Builds logger/callsite message and conditionally emits error-level os_log, with no assertion delegate on this branch. Effective logging controls remain unobserved.",
+    "softAssertDebugOnly": "In this pinned shipped image, branch builds error/callsite logging with NSError bridge and reaches cleanup/return. No _assertionFailureBase call on this source branch. Do not generalize across debug builds or versions.",
+    "softAssert": "Calls local _assertionFailureBase at 0x71290 then has return epilogue if delegate returns. Delegate internals and actual assertion/process behavior remain unqualified.",
+    "fatalError": "Formats error description and calls Swift standard-library _assertionFailure returning Never. No runtime crash/assertion was triggered.",
+    "boundary": "All five legal source representations checked by bounded branch interpretation. This is source dispatch, not native execution, independent behavioral oracle or proof of policy delivery/final cleanup."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_assertion_or_failure_control": false,
+    "full_canvas_parity": false
+  },
+  "limitations": [
+    "Prior UI/Ghidra failures not retried unchanged.",
+    "Previous constructor policy softAssert remains distinct from its unqualified local assertion delegate effects."
+  ]
+}

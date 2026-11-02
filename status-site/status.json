@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T16:17:24.908031+00:00",
+  "updated_at": "2026-11-02T16:26:04.293424+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover softAssert failure handling and once-guarantee/context destruction; actual last-owner, cancellation and assertion controls remain required.",
+  "current_focus": "Recover assertion delegate behavior and actual last-owner failure controls; keep logging, assertion and fatal paths distinct.",
   "milestones": [
     {
       "number": 1,
@@ -106,9 +106,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus observer/token registration, cancellation, destruction and constructor softAssert policy source. Actual last-owner deinit, assertion/cancellation effects and settlement remain open.",
+        "verified_summary": "Scoped native controls plus token destruction and five failure-policy source routes. Constructor softAssert delegates to an unqualified assertion helper; actual last-owner diagnostics/cancellation and settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-token-destroy-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-failure-policy-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Five fulfillment failure-policy routes recovered",
+      "detail": "Source separates test callback, logging, pinned-image debug-only logging, softAssert delegate and fatal assertion. Fresh replay passes; effective diagnostics, assertion delivery and process behavior remain unobserved."
+    },
     {
       "date": "2026-11-02",
       "title": "Token destruction and softAssert policy decoded",
