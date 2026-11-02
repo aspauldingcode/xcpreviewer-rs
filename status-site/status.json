@@ -105,10 +105,10 @@
         "id": "resources",
         "title": "Resource lifetime",
         "status": "in_progress",
-        "evidence_level": "Native observer lifetime and owner-release policy controls; settlement open",
-        "verified_summary": "Eleven observer controls plus three policy configurations exercised. Returning owner-release controls cleared owned contexts/FDs; fatal unfulfilled release trapped before normal cleanup. Log input remains unqualified; transport/render settlement open.",
+        "evidence_level": "Native observer lifetime, owner-release and short-string log controls; settlement open",
+        "verified_summary": "Observer and owner-release policy controls exercised. Short-string log input and readable unattached backend records now observed; attached logging probes distort composition. Heap-string ownership and transport/render settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-failure-policy-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-log-delivery-2026-11-02"
       },
       {
         "id": "targets",
