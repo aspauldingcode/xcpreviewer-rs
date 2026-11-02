@@ -1,0 +1,151 @@
+{
+  "image": {
+    "sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+    "uuid": "25c99c664185307188e31ab474573a10",
+    "architecture": "arm64"
+  },
+  "range": {
+    "start": "0x248ef0",
+    "end_exclusive": "0x24a318",
+    "instruction_bytes_reverified": 5160,
+    "sha256": "db13b4e3563b1e78303a62294b5c923b788d5cf1a67350b3a666bf914fc82fb6"
+  },
+  "calls": [
+    {
+      "call": "0x249a08",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC25ModifiedFilesUpdateFilterV06filterfg3ForH0ySaySo11DVTFilePathC4path_So0L8DataTypeC04dataP0tGSayAhI_AKSgALtGF"
+        ],
+        "offset": "0x24e3d4"
+      }
+    },
+    {
+      "call": "0x249aa0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_objc_msgSend$fileURL"
+        ],
+        "offset": "0x2ad180"
+      }
+    },
+    {
+      "call": "0x249ab4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s10Foundation3URLV36_unconditionallyBridgeFromObjectiveCyACSo5NSURLCSgFZ",
+        "offset": "0x2a2430"
+      }
+    },
+    {
+      "call": "0x249eac",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC6update23forRemovedFileLocationsySay8LocationQzG_tF",
+        "offset": "0x2a51b4"
+      }
+    },
+    {
+      "call": "0x249ee0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B25BuildEnvironmentCoalescerC14setNeedsUpdateyyF"
+        ],
+        "offset": "0x4f43c"
+      }
+    },
+    {
+      "call": "0x249f0c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss15ContiguousArrayV15reserveCapacityyySiFyXl_Ts5",
+        "offset": "0x2ab088"
+      }
+    },
+    {
+      "call": "0x249f24",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss15ContiguousArrayV034_makeUniqueAndReserveCapacityIfNotD0yyFyXl_Ts5",
+        "offset": "0x2ab064"
+      }
+    },
+    {
+      "call": "0x249f34",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss15ContiguousArrayV36_reserveCapacityAssumingUniqueBuffer8oldCountySi_tFyXl_Ts5",
+        "offset": "0x2ab0a0"
+      }
+    },
+    {
+      "call": "0x249f40",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss15ContiguousArrayV37_appendElementAssumeUniqueAndCapacity_03newD0ySi_xntFyXl_Ts5",
+        "offset": "0x2ab0ac"
+      }
+    },
+    {
+      "call": "0x249f44",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$ss15ContiguousArrayV12_endMutationyyFyXl_Ts5",
+        "offset": "0x2ab070"
+      }
+    },
+    {
+      "call": "0x24a0f0",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s13PreviewsXcode0B18WorkspaceSceneHostC12UpdateReasonO11descriptionSSvg"
+        ],
+        "offset": "0x24e0e0"
+      }
+    },
+    {
+      "call": "0x24a118",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline19PreviewUpdateReasonV16workspaceChangedyACSSFZ",
+        "offset": "0x2a6840"
+      }
+    },
+    {
+      "call": "0x24a13c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s14PreviewsScenes14WorkspaceSceneC14setNeedsUpdate3fory0A8Pipeline07PreviewG6ReasonV_tF",
+        "offset": "0x2a50c4"
+      }
+    }
+  ],
+  "source_policy": {
+    "dispatch": "Valid payload tag 2 reaches removedFiles entry 0x2499c4; it does not traverse the modified-event timestamp/external-change gates.",
+    "filter": "Requires present modifiedFilesUpdateFilter and a nonempty result from the previously recovered filterModifiedFilesForUpdate. Missing filter or empty result returns. Filter internals remain qualified by canvas-modified-files and canvas-thunkable-refresh evidence.",
+    "removed_location_update": "If workspaceScene is present, map retained filtered tuples in order from DVTFilePath.fileURL through Foundation.URL bridging, then call scene.update(forRemovedFileLocations:). This source constructs an array, not a deduplicated set.",
+    "invalidation": "After optional removed-location submission, schedule environmentCoalescer and clear/release cached lastWorkspaceBuilder; scene absence does not bypass these steps.",
+    "reason_and_update": "Collect the same retained filtered DVTFilePath objects in order into an object array; UpdateReason.description constructs a workspaceChanged reason, then request scene.setNeedsUpdate if a scene is present. Exact reason text and imported scene implementation not qualified in this unit.",
+    "scope": "Submission/order source only; no removed-file native event, actual row/resource disposal, renderer update or session completion observed."
+  },
+  "scope": {
+    "static_only": true,
+    "native_private_calls": 0,
+    "actual_removed_file_event_observed": false,
+    "scene_removed_location_implementation_qualified": false,
+    "resource_disposal_or_full_canvas_parity": false
+  },
+  "native_observation_limitation": {
+    "provider": "unified-computer-use",
+    "app": "com.apple.dt.Xcode",
+    "pid": 5841,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "observe_ok": false,
+    "reported_error": "accessibility_permission_missing; screen is locked \u2014 accessibility tree empty",
+    "scope": "Read-only app/window inventory succeeded. Observe returned no tree. No GUI mutation/native build attempted, no permission or screen-lock change, and no unchanged retry."
+  }
+}

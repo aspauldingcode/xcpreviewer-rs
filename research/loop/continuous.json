@@ -18533,5 +18533,27 @@
     },
     "controller_released_on_exit": true,
     "next_action": "Use bounded actual owned-project native build/refresh and failure controls; correlate visible lifecycle/state and available event diagnostics without assuming source submission equals runtime completion."
+  },
+  "canvas_removed_files_checkpoint": {
+    "evidence": "research/evidence/canvas-removed-files-2026-11-01",
+    "seal_sha256": "82dcc78f78238f8d4ba35fbaa115fce718e1c246de863d3e49975b4246282a68",
+    "instruction_bytes_reverified": 5160,
+    "selected_calls": 13,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-removed-files-replay-6mz99ia6",
+      "scope": "Fresh copied-source complete-findings replay; no native event delivery."
+    },
+    "native_observation_limitation": {
+      "provider": "unified-computer-use",
+      "app": "com.apple.dt.Xcode",
+      "pid": 5841,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "observe_ok": false,
+      "reported_error": "accessibility_permission_missing; screen is locked \u2014 accessibility tree empty",
+      "scope": "Read-only app/window inventory succeeded. Observe returned no tree. No GUI mutation/native build attempted, no permission or screen-lock change, and no unchanged retry."
+    },
+    "controller_released_on_exit": true,
+    "next_action": "Trace imported scene.update(forRemovedFileLocations:) to qualify actual source row/resource ownership; resume bounded native UI controls only when external availability changes. Do not retry unchanged Accessibility/locked-screen failure."
   }
 }
