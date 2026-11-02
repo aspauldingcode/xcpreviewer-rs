@@ -3,7 +3,7 @@
   "updated_at": "2026-11-02T05:42:56.484260+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover scene removed-file ownership and cleanup. Native UI control is currently unavailable: observation reports a locked screen and empty Accessibility tree.",
+  "current_focus": "Trace pinning-state didSet and downstream resource/state effects. Native UI controls remain unavailable after locked-screen/empty Accessibility observation.",
   "milestones": [
     {
       "number": 1,
@@ -105,9 +105,9 @@
         "title": "Resource lifetime",
         "status": "in_progress",
         "evidence_level": "Scoped native controls",
-        "verified_summary": "Surface, descriptor and callback ownership controls; limitations retained.",
+        "verified_summary": "Scoped native surface/descriptor/callback controls plus source pin-file/source-set cleanup. Actual row/object destruction and downstream resource settlement remain open.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/uv-fd-carrier-2026-11-01"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-scene-removal-2026-11-01"
       },
       {
         "id": "targets",
@@ -120,6 +120,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-01",
+      "title": "Removed-location scene propagation and pin cleanup recovered",
+      "detail": "Source forwards to editor scenes, compares associated locations and clears matching pin/file sources through a setter. Fresh replay passes; downstream notifications and resource settlement remain open."
+    },
     {
       "date": "2026-11-01",
       "title": "Removed-file dispatch and update ordering recovered",

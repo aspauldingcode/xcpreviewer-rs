@@ -18555,5 +18555,21 @@
     },
     "controller_released_on_exit": true,
     "next_action": "Trace imported scene.update(forRemovedFileLocations:) to qualify actual source row/resource ownership; resume bounded native UI controls only when external availability changes. Do not retry unchanged Accessibility/locked-screen failure."
+  },
+  "canvas_scene_removal_checkpoint": {
+    "evidence": "research/evidence/canvas-scene-removal-2026-11-01",
+    "seal_sha256": "0c6bdae4218a1fb62eb27fb5a926b2f6085b6611e90774eaed40596ee08080a0",
+    "source_bytes_verified": 2032,
+    "selected_calls": 20,
+    "fresh_static_replay": {
+      "passed": true,
+      "workspace": "/var/folders/yj/rl1ct2jx2psdw8j3g4cth94c0000gq/T/canvas-scene-removal-replay-lowobolv",
+      "scope": "Fresh copied-source complete-findings replay; no native event delivery."
+    },
+    "native_event_delivery_observed": false,
+    "pinning_didset_effects_qualified": false,
+    "object_deinit_or_resource_settlement_observed": false,
+    "controller_released_on_exit": true,
+    "next_action": "Trace PreviewsScenes EditorScene.pinningState.didSet at 0x58e98 and downstream ownership/update effects. Native UI controls remain pending external availability change; no unchanged locked-screen/Accessibility retry."
   }
 }

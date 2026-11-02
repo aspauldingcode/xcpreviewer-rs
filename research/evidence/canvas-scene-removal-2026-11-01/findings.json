@@ -1,0 +1,261 @@
+{
+  "image": {
+    "sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+    "uuid": "afaf513ac1153755840e1d82b40e7d93",
+    "architecture": "arm64"
+  },
+  "ranges": [
+    {
+      "name": "workspace",
+      "start": "0x189dc",
+      "end_exclusive": "0x18bdc",
+      "bytes": 512,
+      "sha256": "83250ef9f751487fa3dbb8edfcf8332d46f56a34895504878b1c149e0dc4d322"
+    },
+    {
+      "name": "editor",
+      "start": "0x579fc",
+      "end_exclusive": "0x57d7c",
+      "bytes": 896,
+      "sha256": "7dc9372770d383c75d1de74a8794629a3c577af582a6c3e4fe33df56d8ac0ce0"
+    },
+    {
+      "name": "predicate",
+      "start": "0x5e2b0",
+      "end_exclusive": "0x5e354",
+      "bytes": 164,
+      "sha256": "0d7192c761bca7233c6eba61678718e992590bc5e18de546ea277224343d01c5"
+    },
+    {
+      "name": "forwarder",
+      "start": "0x62da4",
+      "end_exclusive": "0x62dc4",
+      "bytes": 32,
+      "sha256": "90e17e5f30d742e3f644a64c7ff506c3c3ee20794e5e91baf35309ef09ec4192"
+    },
+    {
+      "name": "clear",
+      "start": "0x1cbb4",
+      "end_exclusive": "0x1cc7c",
+      "bytes": 200,
+      "sha256": "75f9d0bd44ca1c6f07c70920ae1bef8a6be9d0c2d4c9dab8a629f5f23bda53bb"
+    },
+    {
+      "name": "setter",
+      "start": "0x61f68",
+      "end_exclusive": "0x6204c",
+      "bytes": 228,
+      "sha256": "ead53a95ae20f131bc2c851db7064422958f3317b09487361797534f01febed1"
+    }
+  ],
+  "source_bytes_verified": 2032,
+  "calls": [
+    {
+      "call": "0x18a68",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes14WorkspaceSceneC06editorB033_D0241D71E9F8F0C82683E5AE789CE0BALLShy0A14FoundationHost3RefVyAA06EditorD0CyxGGGvg"
+        ],
+        "offset": "0x15ff8"
+      }
+    },
+    {
+      "call": "0x18b6c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s22PreviewsFoundationHost3RefV8instancexvg",
+        "offset": "0x80bd8"
+      }
+    },
+    {
+      "call": "0x18b78",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC6update23forRemovedFileLocationsySay8LocationQzG_tF"
+        ],
+        "offset": "0x579fc"
+      }
+    },
+    {
+      "call": "0x57a44",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes12PinningStateVMa"
+        ],
+        "offset": "0x1ca20"
+      }
+    },
+    {
+      "call": "0x57ac4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileVMa",
+        "offset": "0x7f828"
+      }
+    },
+    {
+      "call": "0x57ad4",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSqMa",
+        "offset": "0x81400"
+      }
+    },
+    {
+      "call": "0x57b34",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSqMa",
+        "offset": "0x81400"
+      }
+    },
+    {
+      "call": "0x57c1c",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileV18previewDescriptionxvg",
+        "offset": "0x7f810"
+      }
+    },
+    {
+      "call": "0x57c40",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline22PreviewFileDescriptionP8location8LocationQzSgvgTj",
+        "offset": "0x800b0"
+      }
+    },
+    {
+      "call": "0x57ce8",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSTsE8contains5whereS2b7ElementQzKXE_tKF",
+        "offset": "0x81100"
+      }
+    },
+    {
+      "call": "0x57d2c",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes12PinningStateV5clearyyF"
+        ],
+        "offset": "0x1cbb4"
+      }
+    },
+    {
+      "call": "0x57d38",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC12pinningState33_68A43DA405F91BF7F8826F4A0B43D4A5LLAA07PinningF0VyxGvsTf4gn_n"
+        ],
+        "offset": "0x61f68"
+      }
+    },
+    {
+      "call": "0x5e330",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSQ2eeoiySbx_xtFZTj",
+        "offset": "0x80fbc"
+      }
+    },
+    {
+      "call": "0x62db4",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC6update23forRemovedFileLocationsySay8LocationQzG_tFSbAGXEfU_"
+        ],
+        "offset": "0x5e2b0"
+      }
+    },
+    {
+      "call": "0x1cbdc",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$s16PreviewsPipeline11PreviewFileVMa",
+        "offset": "0x7f828"
+      }
+    },
+    {
+      "call": "0x1cbec",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSqMa",
+        "offset": "0x81400"
+      }
+    },
+    {
+      "call": "0x1cc30",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes12PinningStateV6SourceOMa"
+        ],
+        "offset": "0x1cc7c"
+      }
+    },
+    {
+      "call": "0x1cc54",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sShMa",
+        "offset": "0x812c8"
+      }
+    },
+    {
+      "call": "0x1cc64",
+      "target": {
+        "kind": "import_stub",
+        "name": "_$sSh9removeAll15keepingCapacityySb_tF",
+        "offset": "0x812bc"
+      }
+    },
+    {
+      "call": "0x62020",
+      "target": {
+        "kind": "defined_symbol",
+        "names": [
+          "_$s14PreviewsScenes11EditorSceneC12pinningState33_68A43DA405F91BF7F8826F4A0B43D4A5LLAA07PinningF0VyxGvW"
+        ],
+        "offset": "0x58e98"
+      }
+    }
+  ],
+  "associated_location_imports": {
+    "0x963c0": "_$s16PreviewsPipeline22PreviewFileDescriptionTL",
+    "0x96658": "_$s8Location16PreviewsPipeline22PreviewFileDescriptionPTl",
+    "0x963a8": "_$s16PreviewsPipeline22PreviewFileDescriptionP8LocationAC_SHTn"
+  },
+  "field_metadata": {
+    "PinningState": [
+      "file",
+      "sources"
+    ],
+    "EditorScene_pinningState_index": 8,
+    "EditorScene_field_count": 25
+  },
+  "source_policy": {
+    "workspace": "Iterate the editorScenes Set of Ref<EditorScene>; obtain each Ref.instance and call its update(forRemovedFileLocations:) with the same array. Set enumeration order is not a semantic ordering guarantee.",
+    "editor_guards": "Read pinningState.file. Missing pinned PreviewFile or absent previewDescription.location exits after local cleanup without this clear/setter path.",
+    "match": "Use removed-location array contains(where:) with the recovered closure, which calls generic Equatable equality for the associated Location. No path-prefix or URL normalization semantics established.",
+    "matched": "When contains is true, copy current pinningState, call PinningState.clear and assign through the actual pinningState setter. False exits after local cleanup.",
+    "clear": "Destroy previous optional PreviewFile and write none; sources Set.removeAll(keepingCapacity:false). This is state-value cleanup, not proof of PreviewFile instance deinit or OS/transport resource settlement.",
+    "setter": "Copy old value, assign new pinningState using value witnesses, invoke pinningState.didSet, then destroy saved old state. didSet implementation and its downstream side effects are not qualified in this unit.",
+    "scope": "Source call chain and state cleanup only. No row destruction, renderer/session termination, resource release timing or runtime event execution established."
+  },
+  "scope": {
+    "static_only": true,
+    "private_native_calls": 0,
+    "native_removed_event_observed": false,
+    "pinning_didset_effects_qualified": false,
+    "previewfile_deinit_or_resource_settlement_observed": false,
+    "full_canvas_parity": false
+  },
+  "inherited_native_access_limitation": "Prior read-only native observe reported locked screen/empty Accessibility tree. No unchanged retry or permission/system change in this unit."
+}
