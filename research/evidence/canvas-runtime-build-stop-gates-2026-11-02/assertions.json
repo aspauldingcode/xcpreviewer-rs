@@ -1,0 +1,108 @@
+{
+  "native_runs": {
+    "single-probe": {
+      "classification": "native build-stop loaded-false preference path",
+      "phases": {
+        "success": {
+          "status": "succeeded",
+          "result_read": 1,
+          "loaded_preference": false,
+          "success_payload": true,
+          "invocation": 2,
+          "returned_before_scene_state_and_refresh": true
+        },
+        "failure": {
+          "status": "failed",
+          "result_read": 2,
+          "loaded_preference": false,
+          "success_payload": false,
+          "invocation": 5,
+          "returned_before_scene_state_and_refresh": true
+        },
+        "recovery": {
+          "status": "succeeded",
+          "result_read": 1,
+          "loaded_preference": false,
+          "success_payload": true,
+          "invocation": 8,
+          "returned_before_scene_state_and_refresh": true
+        }
+      },
+      "true_preference_branch_verified": false,
+      "rendering_or_full_product_verified": false
+    },
+    "reproduced": {
+      "classification": "native build-stop loaded-false preference path",
+      "phases": {
+        "success": {
+          "status": "succeeded",
+          "result_read": 1,
+          "loaded_preference": false,
+          "success_payload": true,
+          "invocation": 2,
+          "returned_before_scene_state_and_refresh": true
+        },
+        "failure": {
+          "status": "failed",
+          "result_read": 2,
+          "loaded_preference": false,
+          "success_payload": false,
+          "invocation": 5,
+          "returned_before_scene_state_and_refresh": true
+        },
+        "recovery": {
+          "status": "succeeded",
+          "result_read": 1,
+          "loaded_preference": false,
+          "success_payload": true,
+          "invocation": 8,
+          "returned_before_scene_state_and_refresh": true
+        }
+      },
+      "true_preference_branch_verified": false,
+      "rendering_or_full_product_verified": false
+    }
+  },
+  "incomplete_capture": {
+    "capture_rejected": true,
+    "diagnostic": "('preference inputs', 'expected one, observed', 0)",
+    "classification": "missing expected preference-input reports; no cause established"
+  },
+  "recorded_trace_mutation_controls": [
+    {
+      "mutation": "wrong-preference",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-payload",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-return-path",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "missing-handler-return",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "unexpected-scene-gate",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "wrong-phase",
+      "rejected": true,
+      "diagnostic": ""
+    },
+    {
+      "mutation": "not-restored",
+      "rejected": true,
+      "diagnostic": ""
+    }
+  ]
+}

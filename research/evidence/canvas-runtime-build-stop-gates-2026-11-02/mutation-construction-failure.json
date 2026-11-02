@@ -1,0 +1,6 @@
+{
+  "observed_failure": "AssertionError: missing-return-path",
+  "cause": "Mutation builder removed the first shared return in success phase (build-start invocation 1) instead of build-stop invocation 2. Correct verifier accepted the still-complete stop trace.",
+  "correction": "Select shared return by the observed build-stop preference-input invocation ID. Corrected mutation rejected.",
+  "classification": "recorded-trace mutation-construction bug, not native execution or verifier failure"
+}
