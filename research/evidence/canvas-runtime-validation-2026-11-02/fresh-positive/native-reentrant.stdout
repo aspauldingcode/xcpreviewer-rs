@@ -1,0 +1,15 @@
+{"event":"native-ready","pid":77970,"seq":1,"time_ns":31791356850625,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"time_ns":31791360402458}
+{"event":"probe-created","fd":3,"name":"reentrant","seq":3,"time_ns":31791360478708}
+{"event":"registered","has_token":true,"name":"reentrant","seq":4,"time_ns":31791360571416}
+{"event":"invalidate-begin","seq":5,"time_ns":31791360590458}
+{"event":"callback","name":"reentrant","seq":6,"time_ns":31791360633000}
+{"event":"callback-reentry-begin","seq":7,"time_ns":31791360647666}
+{"event":"invalidate-begin","seq":8,"time_ns":31791360656416}
+{"event":"invalidate-end","seq":9,"time_ns":31791360686458}
+{"event":"callback-reentry-end","seq":10,"time_ns":31791360696916}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"reentrant","seq":11,"time_ns":31791360711625}
+{"event":"invalidate-end","seq":12,"time_ns":31791360726250}
+{"event":"token-destroy-begin","seq":13,"time_ns":31791360739333}
+{"event":"token-destroy-end","seq":14,"time_ns":31791361174791}
+{"callbacks":["reentrant"],"event":"pass","mode":"reentrant","seq":15,"time_ns":31791361238375}

@@ -1,0 +1,12 @@
+{"event":"native-ready","pid":65902,"seq":1,"time_ns":30332507372625,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"time_ns":30332515006875}
+{"event":"probe-created","fd":3,"name":"drop-waiting","seq":3,"time_ns":30332515219833}
+{"event":"registered","has_token":true,"name":"drop-waiting","seq":4,"time_ns":30332515346333}
+{"event":"token-destroy-begin","seq":5,"time_ns":30332515371791}
+{"event":"token-destroy-end","seq":6,"time_ns":30332516390458}
+{"event":"after-waiting-token-drop","seq":7,"time_ns":30332516484000}
+{"event":"invalidate-begin","seq":8,"time_ns":30332516509291}
+{"event":"callback","name":"drop-waiting","seq":9,"time_ns":30332516608083}
+{"event":"invalidate-end","seq":10,"time_ns":30332516652875}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"drop-waiting","seq":11,"time_ns":30332516712208}
+{"callbacks":["drop-waiting"],"event":"pass","mode":"drop-waiting-token","seq":12,"time_ns":30332516753333}

@@ -29,6 +29,12 @@ const el = (tag, value, cls) => { const n = document.createElement(tag); if (val
   $('updated').dateTime=d.updated_at; text('updated',updated.toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}));
   text('freshness',Date.now()-updated.getTime()>48*60*60*1000 ? 'Snapshot over 48 hours old' : 'Updates at verified checkpoints');
   text('focus',d.current_focus); text('formula',d.recovery.formula);
+  if (d.runtime_validation) {
+   const r=d.runtime_validation;
+   text('runtime-count',`${r.normal_native_passes} normal native controls passed · ${r.observed_negative_controls} negative control produced a diagnostic failure`);
+   text('runtime-summary',r.summary); text('runtime-ui',r.ui_summary); text('runtime-unknown',r.unknown);
+   $('runtime-evidence').href=r.evidence_url; $('runtime-validation').hidden=false;
+  }
   d.recovery.areas.forEach((a,i)=>{
    const detail=el('details',undefined,'area'), summary=el('summary');
    summary.append(el('span',String(i+1).padStart(2,'0'),'area-number'),el('span',a.title,'area-title'),el('span',a.status==='accepted'?'Accepted':a.evidence_level,'area-status'),el('span','›','area-arrow'));

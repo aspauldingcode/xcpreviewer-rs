@@ -1,0 +1,41 @@
+native.swift:46:39: warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+44 | let h=makeHandle()
+45 | if mode=="invalidate" {
+46 |  var p:Probe?=Probe("first");weak var weakProbe=p;let fd=p!.descriptor;let t=add(h,p!);precondition(callbacks.isEmpty);p=nil;precondition(weakProbe != nil);event("caller-probe-dropped",["native_retains":true]);invalidate(h);precondition(callbacks==["first"]);precondition(weakProbe==nil && closed(fd));invalidate(h);precondition(callbacks==["first"]);var late:Probe?=Probe("late");let lt=add(h,late!);precondition(callbacks==["first","late"] && lt.load(as:UInt.self)==0);late=nil;dropToken(lt);dropToken(t);release(h)
+   |                                       `- warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+47 | } else if mode=="cancel" {
+48 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+
+native.swift:48:43: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+46 |  var p:Probe?=Probe("first");weak var weakProbe=p;let fd=p!.descriptor;let t=add(h,p!);precondition(callbacks.isEmpty);p=nil;precondition(weakProbe != nil);event("caller-probe-dropped",["native_retains":true]);invalidate(h);precondition(callbacks==["first"]);precondition(weakProbe==nil && closed(fd));invalidate(h);precondition(callbacks==["first"]);var late:Probe?=Probe("late");let lt=add(h,late!);precondition(callbacks==["first","late"] && lt.load(as:UInt.self)==0);late=nil;dropToken(lt);dropToken(t);release(h)
+47 | } else if mode=="cancel" {
+48 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+   |                                           `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+49 | } else if mode=="owner-loss" {
+50 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+
+native.swift:50:44: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+48 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+49 | } else if mode=="owner-loss" {
+50 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+   |                                            `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+51 | } else if mode=="drop-waiting-token" {
+52 |  let p=Probe("drop-waiting");let t=add(h,p);dropToken(t);event("after-waiting-token-drop");invalidate(h);release(h)
+
+native.swift:50:100: warning: weak variable 'wh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+48 |  var p:Probe?=Probe("cancelled");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;precondition(w != nil);cancel(t);precondition(w==nil && closed(fd) && callbacks.isEmpty);cancel(t);invalidate(h);precondition(callbacks.isEmpty);dropToken(t);release(h)
+49 | } else if mode=="owner-loss" {
+50 |  var p:Probe?=Probe("owner-loss");weak var w=p;let fd=p!.descriptor;let t=add(h,p!);p=nil;weak var wh:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end");precondition(wh==nil && w==nil && closed(fd));cancel(t);precondition(callbacks.isEmpty);dropToken(t)
+   |                                                                                                    `- warning: weak variable 'wh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+51 | } else if mode=="drop-waiting-token" {
+52 |  let p=Probe("drop-waiting");let t=add(h,p);dropToken(t);event("after-waiting-token-drop");invalidate(h);release(h)
+
+native.swift:42:64: error: missing whitespace between '==' and '-' operators
+40 | func cancel(_ t:UnsafeMutableRawPointer){event("cancel-begin");precondition(owned_swift_call(fn(0x12993c),callsite,tm,t,nil)==nil);event("cancel-end")}
+41 | func dropToken(_ t:UnsafeMutableRawPointer){if t.load(as:UInt.self) != 0 {event("token-destroy-begin");precondition(owned_swift_call(destroy,t,tm,nil,nil)==nil);event("token-destroy-end")};t.deallocate()}
+42 | func closed(_ fd:Int32)->Bool {errno=0;return fcntl(fd,F_GETFD)==-1 && errno==EBADF}
+   |                                                                `- error: missing whitespace between '==' and '-' operators
+43 | let mode=CommandLine.arguments.dropFirst().first ?? "invalidate"
+44 | let h=makeHandle()
+
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>

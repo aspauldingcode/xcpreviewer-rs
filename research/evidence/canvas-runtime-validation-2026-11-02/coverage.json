@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-02",
+  "static_expansion_paused": true,
+  "native_component_cases": {
+    "invalidate": "native execution passed assertions",
+    "cancel": "native execution passed assertions",
+    "owner-loss": "native execution passed assertions",
+    "drop-waiting-token": "native execution passed assertions",
+    "ordering": "native execution passed assertions",
+    "reentrant": "native execution passed assertions",
+    "cancel-reentry": "observed recursive-lock process termination"
+  },
+  "native_component_scope": {
+    "image": "PreviewsFoundationHost",
+    "uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "handle_failure_policy": "softAssertDebugOnly explicitly supplied by fixture",
+    "token_constructor": "actual shipped constructor",
+    "resource": "owned observer context holds /dev/null FD; close and EBADF checked",
+    "not_covered": [
+      "Mach/XPC/IOSurface release",
+      "concurrent race matrix",
+      "all Apple targets/versions",
+      "fully working WASM Canvas"
+    ]
+  },
+  "native_ui_cases": {
+    "external_file_title_change": "observed",
+    "external_file_rendered_text_change": "observed Runtime pixels A in screenshot",
+    "product_build": "AXPress succeeded; Build Succeeded and Canvas paused observed",
+    "syntax_failure": "Cannot preview in this file / expected type observed; blank preview",
+    "source_recovery": "exact original bytes restored; original preview rendered again",
+    "build_failure_attempt": "Product > Build disabled; no failed-build claim"
+  },
+  "not_exercised": {
+    "internal_build_notifications": "Frida attachment cancelled at four-second deadline before hooks; UI build is not notification verification",
+    "Preview.update/private_reconciliation_functions": "not traced by UI observations; static evidence remains",
+    "full_project_hot_reload_state": "not measured",
+    "token_soft_assert_diagnostics": "no unified log capture; process returned normally for tested token drop"
+  },
+  "evidence_categories": [
+    "static_reconstruction",
+    "simulated_branch_replay",
+    "native_component_execution",
+    "native_ui_observation",
+    "fully_working_functionality"
+  ],
+  "fully_working_functionality": {
+    "pinned_mac_owned_project_file_to_canvas_update": true,
+    "standalone_wasm_canvas": false,
+    "linux_windows_apple_target_parity": false
+  },
+  "failures": [
+    "Compile syntax error retained",
+    "Two initial ABI harness crashes retained; indirect-result getter correction made final controls pass",
+    "LLDB target creation exceeded twelve-second deadline",
+    "Frida attachment cancelled before hooks",
+    "Destructor reentry caused observed recursive os_unfair_lock termination",
+    "Native build menu disabled during syntax-error attempt",
+    "Python py_compile cache write denied; no-cache syntax check passed"
+  ],
+  "static_audit_count": 25
+}

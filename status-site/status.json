@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T16:26:04.293424+00:00",
+  "updated_at": "2026-11-02T17:17:05.772182+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Recover assertion delegate behavior and actual last-owner failure controls; keep logging, assertion and fatal paths distinct.",
+  "current_focus": "Static expansion paused. Validate native runtime behavior: build-notification tracing and refresh state/timing remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -70,9 +70,9 @@
         "title": "Build & refresh",
         "status": "in_progress",
         "evidence_level": "Partial source + owned workflows",
-        "verified_summary": "Source recovered modified/removed file dispatch, filters, cache/coalescing, event classification and build-stop state/refresh gates. Actual correlated native state/timing remains open.",
+        "verified_summary": "Native UI observed real external source edit, changed rendered text, syntax-error preview failure/recovery, and successful Product Build followed by Canvas paused. Internal notification handlers and exact recovered refresh gates were not traced.",
         "remaining": "Correlated native build/update/cancel/failure/retry and persistent state transitions.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-removed-files-2026-11-01"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-validation-2026-11-02"
       },
       {
         "id": "transport",
@@ -105,10 +105,10 @@
         "id": "resources",
         "title": "Resource lifetime",
         "status": "in_progress",
-        "evidence_level": "Scoped native controls",
-        "verified_summary": "Scoped native controls plus token destruction and five failure-policy source routes. Constructor softAssert delegates to an unqualified assertion helper; actual last-owner diagnostics/cancellation and settlement remain open.",
+        "evidence_level": "Native component execution + observed failure",
+        "verified_summary": "Pinned native tests exercised observer context retention/destruction, weak-owner loss, cancel/repeat behavior and owned FD closure. Destructor reentry terminated with recursive-lock diagnostic; transport/rendering resources remain unqualified.",
         "remaining": "Owner/cleanup graphs across success, failure, cancellation, reuse, refresh and peer loss.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-failure-policy-2026-11-02"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-validation-2026-11-02"
       },
       {
         "id": "targets",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native runtime controls executed; static expansion paused",
+      "detail": "Six normal native controls passed and reproduced. Destructor reentry produced a recursive-lock termination. Real Xcode file edit, rendered text change, syntax error and recovery observed. Internal build notifications remain untraced."
+    },
     {
       "date": "2026-11-02",
       "title": "Five fulfillment failure-policy routes recovered",
@@ -283,5 +288,13 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00"
+  "issue_counts_updated_at": "2026-11-02T05:32:20.443571+00:00",
+  "runtime_validation": {
+    "normal_native_passes": 6,
+    "observed_negative_controls": 1,
+    "summary": "Executed shipped native observer registration, cancellation, invalidation, ownership and cleanup controls. Fresh reproduction passed. Destructor reentry caused a matched recursive-lock termination.",
+    "ui_summary": "Owned Xcode project: external edit changed rendered preview; syntax error removed preview; restoration recovered it. UI build succeeded and paused Canvas.",
+    "unknown": "Internal build notifications, private refresh entries, transport/render resource settlement and full cross-platform WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-validation-2026-11-02"
+  }
 }

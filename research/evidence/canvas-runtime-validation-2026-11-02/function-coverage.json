@@ -1,0 +1,205 @@
+{
+  "functions": [
+    {
+      "function": "Preview.update(withItem:)",
+      "image": "PreviewsScenes",
+      "offset": "0x3f694",
+      "evidence": "research/evidence/canvas-preview-update-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "PreviewablesCollector.updatePreviewables",
+      "image": "PreviewsScenes",
+      "offset": "0x29d34",
+      "evidence": "research/evidence/canvas-previewables-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "EditorScene.pinningState.didSet",
+      "image": "PreviewsScenes",
+      "offset": "0x58e98",
+      "evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Provider reconciliation",
+      "image": "PreviewsScenes",
+      "offset": "0x3e4e0",
+      "evidence": "research/evidence/canvas-provider-reconcile-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Registry reconciliation",
+      "image": "PreviewsScenes",
+      "offset": "0x3eb94",
+      "evidence": "research/evidence/canvas-registry-reconcile-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "EditorScene removed locations",
+      "image": "PreviewsScenes",
+      "offset": "0x579fc",
+      "evidence": "research/evidence/canvas-scene-removal-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Workspace event handler",
+      "image": "PreviewsXcode",
+      "offset": "0x248ef0",
+      "evidence": "research/evidence/canvas-workspace-events-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Build start listener",
+      "image": "PreviewsXcode",
+      "offset": "0x16ed0c",
+      "evidence": "research/evidence/canvas-build-listener-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Build stop listener",
+      "image": "PreviewsXcode",
+      "offset": "0x16ef1c",
+      "evidence": "research/evidence/canvas-build-listener-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Modified-file filter",
+      "image": "PreviewsXcode",
+      "offset": "0x24e3d4",
+      "evidence": "research/evidence/canvas-modified-files-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Thunkable source membership",
+      "image": "PreviewsXcode",
+      "offset": "0x250a48",
+      "evidence": "research/evidence/canvas-thunkable-refresh-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Workspace.makeBuilder",
+      "image": "PreviewsXcode",
+      "offset": "0x24e884",
+      "evidence": "research/evidence/canvas-builder-lifecycle-2026-11-01",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "CanvasContent destroy",
+      "image": "PreviewsUI",
+      "offset": "0x23d68",
+      "evidence": "research/evidence/canvas-content-destroy-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "Preview state destroy",
+      "image": "PreviewsUI",
+      "offset": "0x23ef0",
+      "evidence": "research/evidence/canvas-state-destroy-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "ExecutionPointUpdate destroy",
+      "image": "PreviewsPipeline",
+      "offset": "0x3e8c10",
+      "evidence": "research/evidence/canvas-execution-ownership-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "ExecutionPointStatus destroy",
+      "image": "PreviewsPipeline",
+      "offset": "0x293cb4",
+      "evidence": "research/evidence/canvas-execution-status-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "AnyExecutionPoint destroy",
+      "image": "PreviewsPipeline",
+      "offset": "0x4894c4",
+      "evidence": "research/evidence/canvas-execution-ownership-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "FulfillmentFailureMode.fail",
+      "image": "PreviewsFoundationHost",
+      "offset": "0x2bc40",
+      "evidence": "research/evidence/canvas-failure-policy-2026-11-02",
+      "classification": "static_reconstruction",
+      "native_entry_or_stack_trace": false
+    },
+    {
+      "function": "ConcurrentInvalidationHandle initializer",
+      "image": "PreviewsFoundationHost",
+      "offset": "0x41df0",
+      "classification": "native_component_execution",
+      "direct_entry_exercised": true,
+      "controls": [
+        "all"
+      ]
+    },
+    {
+      "function": "addObserver concurrent specialization",
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbf014",
+      "classification": "native_component_execution",
+      "direct_entry_exercised": true,
+      "controls": [
+        "invalidate",
+        "ordering"
+      ]
+    },
+    {
+      "function": "AnyInvalidatable.invalidate witness",
+      "image": "PreviewsFoundationHost",
+      "offset": "0xbfcc8",
+      "classification": "native_component_execution",
+      "direct_entry_exercised": true,
+      "controls": [
+        "invalidate",
+        "reentrant",
+        "cancel-reentry"
+      ]
+    },
+    {
+      "function": "CancelationToken.cancel",
+      "image": "PreviewsFoundationHost",
+      "offset": "0x12993c",
+      "classification": "native_component_execution",
+      "direct_entry_exercised": true,
+      "controls": [
+        "cancel",
+        "owner-loss",
+        "ordering"
+      ]
+    },
+    {
+      "function": "CancelationToken destroy witness",
+      "image": "PreviewsFoundationHost",
+      "offset": "0x12a0ac",
+      "classification": "native_component_execution",
+      "direct_entry_exercised": true,
+      "controls": [
+        "drop-waiting-token",
+        "invalidate"
+      ]
+    }
+  ],
+  "warning": "UI pixel changes do not prove a specific private Preview.update or build-listener entry executed. Static helper effects are not upgraded by component entry tests."
+}
