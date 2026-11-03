@@ -1,0 +1,47 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "xcode_uuid": "25c99c664185307188e31ab474573a10", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "max_events": 1000}}, "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "install", "total_events": 0}}, "time_ns": 1158250}
+{"stage": "auxiliary-installed", "time_ns": 1760750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1889444625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "install"}}, "time_ns": 1889893375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1890063708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 1890479375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1896759000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1897224458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2035707167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 2, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249b64", "phase": "install"}}, "time_ns": 2036247250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2036454708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 2, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 2036733333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2040666208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2041074792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2045889333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 3, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "install"}}, "time_ns": 2046593417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2046858208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 3, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 2047318958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2051934458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2052392625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2587802375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 4, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "install"}}, "time_ns": 2588330250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2588622583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2588951167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 5, "thread": 259, "phase": "install"}}, "time_ns": 2680312583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 5, "thread": 259, "phase": "install"}}, "time_ns": 2680858125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "cli-build", "total_events": 24}}, "time_ns": 3004309208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 6, "thread": 259, "phase": "cli-build"}}, "time_ns": 8222330083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 6, "thread": 259, "phase": "cli-build"}}, "time_ns": 8226055000}
+{"stage": "cli-build-ended", "code": 0, "log_mentions_dependency": true, "time_ns": 20288705458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "baseline", "total_events": 26}}, "time_ns": 23293410167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "removed", "total_events": 26}}, "time_ns": 25300116000}
+{"stage": "source-deleted", "absent": true, "time_ns": 25300877458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 27410679500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-files-block", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 27411106167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 7, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249a0c", "phase": "removed"}}, "time_ns": 27411313833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 27411500500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 27411667083}
+{"stage": "removed-wait-ended", "workspace_removed_observed": false, "time_ns": 33305303792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restored", "total_events": 31}}, "time_ns": 34310194458}
+{"stage": "source-restored", "sha256": "847996eec8e88b74e34a03a00d27397a2bb729b6b26b8377d5696a8579f5c181", "time_ns": 34310688083}
+{"stage": "auxiliary-cleaned", "project_restored": true, "dependency_absent": true, "time_ns": 37324726917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "total_events": 31}}, "time_ns": 37327264625}
+{"stage": "script-unloaded", "time_ns": 37329768125}
+{"stage": "session-detached", "time_ns": 37332540417}
+{"stage": "session-ended", "source_restored": true, "project_restored": true, "auxiliary_absent": true, "time_ns": 37333040417}

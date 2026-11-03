@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T05:03:22.398816+00:00",
+  "updated_at": "2026-11-03T05:15:37.118931+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native observer suite now exercises cross-thread late registration during a blocked callback. Second invalidation returns before original completion; distinct owned contexts and FDs clean up at checked boundaries. Canvas object/resource release remains open.",
+  "current_focus": "Real primary/auxiliary source deletion reaches the native removed-event filter, but neither case propagates to the selected scene-removal methods. Stopping reason and native resource release remain unknown.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Actual file deletions stop before selected scene propagation",
+      "detail": "Primary deletion and a distinct compiled auxiliary-member deletion each correlate with native removed-block/filter intervals. No workspace/editor removal or scene update in those invocations. Both waits false; exact source/project bytes restored. Eight evidence faults reject; stopping reason remains unknown."
+    },
     {
       "date": "2026-11-03",
       "title": "Native late callbacks overlap; repeated invalidate is not a join",
@@ -383,14 +388,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T05:03:25.378155+00:00",
+  "issue_counts_updated_at": "2026-11-03T05:15:39.117340+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Sixteen native observer controls executed twice. Corrected reader checks both; fresh second runner completes. Repeated invalidate returned while original callback blocked; late observer ran synchronously on a different registering thread with no token and independent context/FD cleanup.",
-    "ui_summary": "Owned component execution only; no Xcode, simulator, project or UI access in this checkpoint. Earlier real file/build/preview and EditorScene weak-load controls remain separate evidence.",
-    "unknown": "Canvas EditorScene destruction/weak zeroing, interactive state, native transport/render resource release and standalone WASM parity remain unverified. Concurrent callback controls do not establish race freedom or a general callback-drain guarantee.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-late-blocked-2026-11-03",
+    "summary": "Two actual source-deletion profiles reach the native removed-event block and file filter, then handler return. Neither exercises selected scene propagation. Separate auxiliary CLI build succeeds; no IDE notification claim.",
+    "ui_summary": "No GUI actions. Real owned files and project bytes restored, temporary member removed, hooks detached, controller available and Xcode alive. Native observer suite remains sixteen separate prior controls.",
+    "unknown": "Filter output contents, payload paths and why scene propagation stops remain unknown. EditorScene destruction, weak zeroing, native transport/render release and WASM parity remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-removed-file-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

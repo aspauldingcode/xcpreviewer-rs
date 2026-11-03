@@ -1,0 +1,9 @@
+# Actual removed-file observation
+
+Use only the guarded owned PreviewLab fixture. `session.py --output NEW_DIRECTORY --pid CURRENT_XCODE_PID --source OWNED_PREVIEWLAB_SWIFT` temporarily deletes the primary file, waits eight seconds for the observed scene-removal entry, and restores exact bytes. `--auxiliary` instead installs the original temporary target member used by the passing-file controls, builds with a bounded independent xcodebuild process, deletes/restores that member, and restores project bytes/removes only the created member. It does not request an IDE build or synthesize notifications.
+
+Target executable, framework hashes/UUIDs and exact source/project digests are guarded; the controller lock covers setup through detach. No UI actions, protection changes, Apple resigning or user process termination. Source/project changes are conditional on expected bytes/absence to preserve concurrent edits; interrupted sessions require inspecting their local source/project backups. The canonical auxiliary profile saves a project backup before editing. Native probes are bounded to 1000 events.
+
+The captured primary and auxiliary cases reached the removed-event block and file filter, then returned without selected scene propagation. They are observations of an incomplete route, not passing propagation tests. Current runner returns nonzero when the selected workspace-removal entry is not observed; that exit-policy change was syntax checked, not rerun through another unchanged deletion. Captured original sessions returned zero after observational cleanup. See research/evidence/canvas-runtime-removed-file-2026-11-03.
+
+`verify.py DIRECTORY [--auxiliary]` checks those recorded partial observations. `mutations.py AUXILIARY_DIRECTORY` checks synthetic evidence-fault rejection. Neither executes native code. No array payload, filter return contents, object destruction, native resource release or rendered output is verified.
