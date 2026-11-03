@@ -1,0 +1,22 @@
+{
+  "passing_control": false,
+  "raw_trace_sha256": "630f2135d66a7a12ac4aba4c33745331d42d934854b3a9ba2441558dcf946e35",
+  "raw_trace_bytes": 32262550,
+  "full_trace_retained_locally": true,
+  "full_trace_published": false,
+  "point_hits_without_owner": 165702,
+  "event_counts": {
+    "('hooks-ready', None)": 1,
+    "(None, None)": 5,
+    "('phase', None)": 2,
+    "('point', 'variant-array-tail-site')": 166694,
+    "('owner-enter', None)": 992,
+    "('point', 'state-continuation')": 992,
+    "('owner-return', None)": 992
+  },
+  "coordinator_phase_wait_deadline_exceeded": true,
+  "coordinator_cleanup_wait_deadline_exceeded": true,
+  "subsequent_source_restoration_recorded": true,
+  "exact_delay_mechanism_known": false,
+  "native_failure_or_crash_established": false
+}

@@ -5,6 +5,7 @@ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Pa
 root=Path(os.environ.get('XCPREVIEWER_ROOT',str(Path(__file__).resolve().parents[3])));r=a.output.resolve();r.mkdir(exist_ok=False,parents=True)
 source=a.source.resolve();assert source.is_relative_to(root/'research/build/preview-workspaces');workspace=str(source.parents[2]/'PreviewLab.xcodeproj');assert '"' not in workspace and '\\' not in workspace
 (r/'session.py').write_bytes(Path(__file__).read_bytes());(r/'agent.js').write_bytes(Path(__file__).with_name('agent.js').read_bytes())
+phase_events={name:threading.Event() for name in ['edit','restore']}
 ready=threading.Event();session=None;script=None;edited=False;ever_edited=False;before=None;failed=False
 mutex=threading.Lock()
 def emit(**d):
@@ -19,6 +20,10 @@ def bounded(seconds,call):
 def message(m,data):
  emit(stage='script',message=m)
  if m.get('payload',{}).get('event')=='hooks-ready':ready.set()
+ if m.get('payload',{}).get('event')=='phase' and m['payload'].get('phase') in phase_events:phase_events[m['payload']['phase']].set()
+def set_phase(name):
+ phase_events[name].clear();bounded(3,lambda:script.post({'type':'phase','payload':{'name':name}}))
+ if not phase_events[name].wait(3):raise TimeoutError('phase acknowledgement deadline: '+name)
 with open(root/'research/state/controller.lock','a+') as lock:
  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
  try:
@@ -33,11 +38,11 @@ with open(root/'research/state/controller.lock','a+') as lock:
   while time.monotonic()<end and not (r/'stop').exists():
    if (r/'edit').exists() and not ever_edited:
     assert source.read_bytes()==before,'concurrent source edit';emit(stage='source-edit-begin');
-    if script:bounded(3,lambda:script.exports_sync.phase('edit'))
+    if script:set_phase('edit')
     source.write_bytes(after);edited=True;ever_edited=True;emit(stage='source-declaration-added',sha256=hashlib.sha256(after).hexdigest());(r/'edited').touch()
    if (r/'restore').exists() and edited:
     assert source.read_bytes()==after,'concurrent source edit';
-    if script:bounded(3,lambda:script.exports_sync.phase('restore'))
+    if script:set_phase('restore')
     source.write_bytes(before);edited=False;emit(stage='source-declaration-removed');(r/'restored').touch()
    time.sleep(.1)
  except Exception as e:failed=True;emit(stage='failed',kind=type(e).__name__,error=str(e))

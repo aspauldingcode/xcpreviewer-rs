@@ -1,0 +1,11 @@
+# Corrected native destruction-flow observations
+
+0x23d68 is the observed CanvasContent destruction function entry. 0x23ef0 is an interior continuation in that same function, not a separate state-destruction function. Do not install a return/caller probe there or interpret the interior link register as a call site. The existing pinned source already documents this boundary; no new function discovery is needed.
+
+Qualify the running owned PreviewLab workspace through CUA, current PID/executable, exact fixture source and controller availability. Run `python3 tools/re/native-canvas-destroy-flow-runtime/run.py --output /private/tmp/FRESH --pid PID --source /absolute/owned/PreviewLab.swift`. The driver performs real declaration add/remove, waits for native observations and restores source; it does not verify rendered UI or object/resource release.
+
+The helper acquires the exclusive controller lock, pins source/framework identity and sets a 120-second session deadline. Current phase control posts a message and waits up to three seconds for acknowledgement instead of a synchronous RPC response. Frida operations have bounds. The agent records at most twenty owner intervals per phase; unselected invocations are not included in reported sample counts. It associates the interior PC with the enclosing invocation and records only the genuine function return. No return/caller API is used at the interior point. Concurrent source edits are preserved rather than overwritten; cleanup never terminates Xcode.
+
+The focused posted-ack profile actually completed 22 sampled chains; the preceding bounded RPC profile completed 28. This does not establish exact total calls, all enum branches, deallocation, per-object identity or transport/render-resource settlement. A prior unscoped tail-site attempt produced many out-of-owner hits and exceeded coordinator deadlines; its data is not a passing control. See research/evidence/canvas-runtime-destroy-boundary-2026-11-03 for the correction, original failed-attempt hashes/extracts and successful traces.
+
+verify.py checks saved artifacts and mutations.py rejects eight synthetic faults. They do not rerun native Xcode. The new parameterized driver is the same control sequence as the retained executed fixed-path driver; only that recorded invocation is execution evidence.

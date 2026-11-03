@@ -1,0 +1,10 @@
+'use strict';
+function uuid(mod){if(mod.base.readU32()!==0xfeedfacf)throw Error('Mach header');let p=mod.base.add(32),value=null;for(let i=0,n=mod.base.add(16).readU32();i<n;i++){const c=p.readU32(),s=p.add(4).readU32();if(s<8)throw Error('load-command bound');if(c===0x1b)value=Array.from(new Uint8Array(p.add(8).readByteArray(16))).map(x=>x.toString(16).padStart(2,'0')).join('');p=p.add(s);}return value;}
+const scenes=Process.getModuleByName('PreviewsScenes'),ui=Process.getModuleByName('PreviewsUI');
+if(uuid(scenes)!=='afaf513ac1153755840e1d82b40e7d93'||uuid(ui)!=='0d87b0e2f4453035a9b6b1cf8230e015')throw Error('UUID mismatch');
+let serial=0,phase='baseline',overflow=false;const owners=new Map();
+function stack(thread){if(!owners.has(thread))owners.set(thread,[]);return owners.get(thread);}
+Interceptor.attach(ui.base.add(0x23d68),{onEnter(){if(serial>=20000){this.record=false;if(!overflow){overflow=true;send({event:'overflow'});}return;}this.record=true;this.id=++serial;this.thread=Process.getCurrentThreadId();this.phase=phase;stack(this.thread).push({id:this.id,phase:this.phase});send({event:'owner-enter',id:this.id,thread:this.thread,phase:this.phase});},onLeave(){if(!this.record)return;const s=stack(this.thread),owner=s.pop();if(owner?.id!==this.id)send({event:'owner-stack-mismatch',id:this.id});send({event:'owner-return',id:this.id,thread:Process.getCurrentThreadId(),phase:this.phase});}});
+for(const [point,offset] of [['state-continuation',0x23ef0],['variant-array-tail-site',0x2467c]])Interceptor.attach(ui.base.add(offset),{onEnter(){const thread=Process.getCurrentThreadId(),owner=stack(thread).at(-1);send({event:'point',point,owner_id:owner?.id??null,thread,phase:owner?.phase??phase});}});
+rpc.exports={phase(name){phase=name;send({event:'phase',phase:name});return true;}};
+send({event:'hooks-ready',scenes_uuid:uuid(scenes),ui_uuid:uuid(ui),function_entry:'0x23d68',interior_points:{'state-continuation':'0x23ef0','variant-array-tail-site':'0x2467c'},interior_return_or_caller_probe:false});

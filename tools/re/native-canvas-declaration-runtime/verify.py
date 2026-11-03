@@ -11,7 +11,9 @@ def verify(root):
  ready=[x for x in calls if x['event']=='hooks-ready'];assert len(ready)==1 and ready[0]['scenes_uuid']=='afaf513ac1153755840e1d82b40e7d93' and ready[0]['ui_uuid']=='0d87b0e2f4453035a9b6b1cf8230e015'
  enters={x['id']:(i,x) for i,x in enumerate(calls) if x['event']=='enter'};returns={x['id']:(i,x) for i,x in enumerate(calls) if x['event']=='return'}
  assert len(enters)==sum(x['event']=='enter' for x in calls) and len(returns)==sum(x['event']=='return' for x in calls)
- counts=collections.Counter(x['function'] for _,x in enters.values());assert counts['removed-locations']==0 and counts['preview-state-destroy']>0
+ legacy_interior_probe=any(x['name']=='preview-state-destroy' for x in ready[0]['targets'])
+ counts=collections.Counter(x['function'] for _,x in enters.values());assert counts['removed-locations']==0
+ assert (counts['preview-state-destroy']>0) if legacy_interior_probe else (counts['preview-state-destroy']==0)
  for ident,(i,x) in enters.items():
   if x['function']=='preview-state-destroy':assert ident not in returns;continue
   assert ident in returns;end,y=returns[ident];assert i<end and x['thread']==y['thread'] and x['function']==y['function'] and x['phase']==y['phase']
@@ -27,10 +29,10 @@ def verify(root):
   for n,(i,y) in enumerate(nested):assert i<returns[y['id']][0]<(nested[n+1][0] if n<3 else end)
  assert collectors>0 and counts['providers']==counts['registries']==2*collectors
  for ident,(start,x) in enters.items():
-  if x['function']!='canvas-content-destroy':continue
+  if x['function']!='canvas-content-destroy' or not legacy_interior_probe:continue
   end=returns[ident][0];nested=[y for i,y in enumerate(calls) if start<i<end and y['event']=='enter' and y['function']=='preview-state-destroy' and y['thread']==x['thread']]
   assert len(nested)==1 and nested[0]['caller_module']=='PreviewsUI' and nested[0]['caller_offset']=='0x23ee8'
- assert counts['canvas-content-destroy']==counts['preview-state-destroy']
+ if legacy_interior_probe:assert counts['canvas-content-destroy']==counts['preview-state-destroy']
  for name in ['pinning-didset','preview-update']:assert counts[name]>0
  assert all(any(x['event']=='enter' and x['function']=='collector' and x['phase']==phase for x in calls) for phase in ['edit','restore'])
  tabs=lambda s:re.findall(r'^\s*\d+ text (Primary layers|Text and interaction|Layout edit|Runtime addition)$',s,re.M)
@@ -53,7 +55,7 @@ def verify(root):
   selected,settled=mean('selected.png'),mean(restored_image);assert selected[0]>selected[1]>selected[2] and settled[2]>settled[1] and settled[0]>settled[1] and selected!=settled
   images[run]={'selected_rgb_mean':selected,'restored_rgb_mean':settled}
  o=json.loads((r/'observations.json').read_text());assert not o['native_object_lifetimes_verified'] and not o['native_resource_release_verified'] and not o['preview_state_return_verified'] and o['source_restored_controller_available']
- return {'recorded_native_entries':dict(counts),'collector_calls_with_two_providers_then_two_registries':collectors,'preview_state_returns_observed':0,'removed_location_entries_observed':0,'image_regions':images,'artifact_reader_reran_native':False,'native_resource_release_verified':False}
+ return {'recorded_native_function_entries':{k:v for k,v in counts.items() if k!='preview-state-destroy'},'historical_interior_location_hits':counts['preview-state-destroy'],'historical_interior_probe_is_not_function_entry':legacy_interior_probe,'interior_lr_is_not_callsite_evidence':True,'collector_calls_with_two_providers_then_two_registries':collectors,'historical_interior_onleave_events':0,'removed_location_entries_observed':0,'image_regions':images,'artifact_reader_reran_native':False,'native_resource_release_verified':False}
 if __name__=='__main__':
  import sys
  print(json.dumps(verify(sys.argv[1]),indent=2))

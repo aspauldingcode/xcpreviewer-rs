@@ -127,17 +127,23 @@
       "classification": "native_value_witness_entry_return",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-content-destroy-2026-11-02",
-      "runtime_scope": "1,400 complete intervals with nested preview-state entry; temporary/value copies possible, no object lifetime or resource release claim."
+      "runtime_scope": "Genuine function entry/return plus sampled interior-PC chains. Previous state probe was an interior location, not a callee. No object lifetime or resource release claim.",
+      "corrected_flow_evidence": "research/evidence/canvas-runtime-destroy-boundary-2026-11-03"
     },
     {
-      "function": "Preview state destroy",
+      "function": "CanvasContent state-cleanup continuation",
       "image": "PreviewsUI",
       "offset": "0x23ef0",
-      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
-      "classification": "native_entry_observation_only",
-      "native_entry_or_stack_trace": true,
+      "evidence": "research/evidence/canvas-runtime-destroy-boundary-2026-11-03",
+      "classification": "native_interior_pc_observation",
+      "native_entry_or_stack_trace": false,
       "source_evidence": "research/evidence/canvas-state-destroy-2026-11-02",
-      "runtime_scope": "1,400 entries, zero observed returns despite attempted return hook; cause unknown. No destruction completion or object/resource cleanup claim."
+      "runtime_scope": "28 and 22 sampled owning-function entry\u2192interior PC\u2192owning-function return chains. 0x23ef0 is not a separate function; interior LR is not callsite evidence. No object/resource release proof.",
+      "previous_label": "Preview state destroy",
+      "location_kind": "interior-continuation",
+      "enclosing_function_entry": "0x23d68",
+      "native_instruction_pc_observed": true,
+      "native_function_entry_verified": false
     },
     {
       "function": "ExecutionPointUpdate destroy",
@@ -257,7 +263,7 @@
       "runtime_scope": "Entry/return from PreviewsScenes caller 0x3f978 only; arbitrary value witness/resource effects unqualified."
     }
   ],
-  "warning": "Observed entry/callsite/selected path is not full function or target acceptance. Untraced collector, reconciliation and destruction helpers remain static even when UI changes.",
-  "updated_at": "2026-11-03T00:08:48.462037+00:00",
-  "catalog_scope": "Bounded current evidence index based on the prior function audit; not an exhaustive Xcode function count or percentage denominator."
+  "warning": "Selected function/PC execution is not full function/target acceptance. Interior locations must not use function return/caller semantics. Untraced reconciliation/destruction cases remain unqualified.",
+  "updated_at": "2026-11-03T03:22:07.760693+00:00",
+  "catalog_scope": "Bounded current function/location index; semantic source fragments are not necessarily distinct functions. Not an exhaustive function count or percentage denominator."
 }

@@ -1,0 +1,92 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "ui_uuid": "0d87b0e2f4453035a9b6b1cf8230e015", "function_entry": "0x23d68", "interior_points": {"state-continuation": "0x23ef0"}, "interior_return_or_caller_probe": false, "tail_probe": false, "sampled_owner_limit_per_phase": 20}}, "time_ns": 5603057583}
+{"stage": "capture-ready", "pid": 45749, "hooks": true, "time_ns": 5603897541}
+{"stage": "source-edit-begin", "time_ns": 6756614750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase", "phase": "edit"}}, "time_ns": 6758004750}
+{"stage": "source-declaration-added", "sha256": "321eab3748e606bd5d384858cd62188c441bb064a99a473ecbed5c2612a84f5c", "time_ns": 6759466958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 1, "thread": 259, "phase": "edit"}}, "time_ns": 7701421041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 1, "thread": 259, "phase": "edit"}}, "time_ns": 7701842333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 1, "thread": 259, "phase": "edit"}}, "time_ns": 7702045750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 2, "thread": 259, "phase": "edit"}}, "time_ns": 7702379166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 2, "thread": 259, "phase": "edit"}}, "time_ns": 7702716708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 2, "thread": 259, "phase": "edit"}}, "time_ns": 7702937833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 3, "thread": 259, "phase": "edit"}}, "time_ns": 7703108583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 3, "thread": 259, "phase": "edit"}}, "time_ns": 7703351041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 3, "thread": 259, "phase": "edit"}}, "time_ns": 7703648291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 4, "thread": 259, "phase": "edit"}}, "time_ns": 7703881958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 4, "thread": 259, "phase": "edit"}}, "time_ns": 7704070125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 4, "thread": 259, "phase": "edit"}}, "time_ns": 7704228208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 5, "thread": 259, "phase": "edit"}}, "time_ns": 7704381166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 5, "thread": 259, "phase": "edit"}}, "time_ns": 7704591500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 5, "thread": 259, "phase": "edit"}}, "time_ns": 7704753833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 6, "thread": 259, "phase": "edit"}}, "time_ns": 7704927916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 6, "thread": 259, "phase": "edit"}}, "time_ns": 7705080666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 6, "thread": 259, "phase": "edit"}}, "time_ns": 7705223375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 7, "thread": 259, "phase": "edit"}}, "time_ns": 7720463541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 7, "thread": 259, "phase": "edit"}}, "time_ns": 7720877541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 7, "thread": 259, "phase": "edit"}}, "time_ns": 7721047291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 8, "thread": 259, "phase": "edit"}}, "time_ns": 7721280208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 8, "thread": 259, "phase": "edit"}}, "time_ns": 7721436583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 8, "thread": 259, "phase": "edit"}}, "time_ns": 7721586791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 9, "thread": 259, "phase": "edit"}}, "time_ns": 7721748333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 9, "thread": 259, "phase": "edit"}}, "time_ns": 7721892958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 9, "thread": 259, "phase": "edit"}}, "time_ns": 7722074208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 10, "thread": 259, "phase": "edit"}}, "time_ns": 7722222666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 10, "thread": 259, "phase": "edit"}}, "time_ns": 7722367583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 10, "thread": 259, "phase": "edit"}}, "time_ns": 7722578791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 11, "thread": 259, "phase": "edit"}}, "time_ns": 7722807500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 11, "thread": 259, "phase": "edit"}}, "time_ns": 7722982500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 11, "thread": 259, "phase": "edit"}}, "time_ns": 7723141166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 12, "thread": 259, "phase": "edit"}}, "time_ns": 7723286083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 12, "thread": 259, "phase": "edit"}}, "time_ns": 7723442208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 12, "thread": 259, "phase": "edit"}}, "time_ns": 7723587541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 13, "thread": 259, "phase": "edit"}}, "time_ns": 7730483375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 13, "thread": 259, "phase": "edit"}}, "time_ns": 7730824958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 13, "thread": 259, "phase": "edit"}}, "time_ns": 7730985875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 14, "thread": 259, "phase": "edit"}}, "time_ns": 7731137750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 14, "thread": 259, "phase": "edit"}}, "time_ns": 7731364791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 14, "thread": 259, "phase": "edit"}}, "time_ns": 7731510541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 15, "thread": 259, "phase": "edit"}}, "time_ns": 7731658791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 15, "thread": 259, "phase": "edit"}}, "time_ns": 7731880291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 15, "thread": 259, "phase": "edit"}}, "time_ns": 7732078000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 16, "thread": 259, "phase": "edit"}}, "time_ns": 7732245375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 16, "thread": 259, "phase": "edit"}}, "time_ns": 7732394083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 16, "thread": 259, "phase": "edit"}}, "time_ns": 7732616458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 17, "thread": 259, "phase": "edit"}}, "time_ns": 7732761833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 17, "thread": 259, "phase": "edit"}}, "time_ns": 7732912416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 17, "thread": 259, "phase": "edit"}}, "time_ns": 7733072791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 18, "thread": 259, "phase": "edit"}}, "time_ns": 7733215916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 18, "thread": 259, "phase": "edit"}}, "time_ns": 7733361958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 18, "thread": 259, "phase": "edit"}}, "time_ns": 7733506208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 19, "thread": 259, "phase": "edit"}}, "time_ns": 7803792541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 19, "thread": 259, "phase": "edit"}}, "time_ns": 7804205458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 19, "thread": 259, "phase": "edit"}}, "time_ns": 7804416750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 20, "thread": 259, "phase": "edit"}}, "time_ns": 7804590125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 20, "thread": 259, "phase": "edit"}}, "time_ns": 7804750750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 20, "thread": 259, "phase": "edit"}}, "time_ns": 7804922666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase", "phase": "restore"}}, "time_ns": 7805737416}
+{"stage": "source-declaration-removed", "time_ns": 7806322250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 25, "thread": 259, "phase": "restore"}}, "time_ns": 7825595083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 25, "thread": 259, "phase": "restore"}}, "time_ns": 7826030333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 25, "thread": 259, "phase": "restore"}}, "time_ns": 7826303000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 26, "thread": 259, "phase": "restore"}}, "time_ns": 7826501541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 26, "thread": 259, "phase": "restore"}}, "time_ns": 7826714333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 26, "thread": 259, "phase": "restore"}}, "time_ns": 7826972916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 27, "thread": 259, "phase": "restore"}}, "time_ns": 7827297416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 27, "thread": 259, "phase": "restore"}}, "time_ns": 7827504416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 27, "thread": 259, "phase": "restore"}}, "time_ns": 7827695833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 28, "thread": 259, "phase": "restore"}}, "time_ns": 7827912208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 28, "thread": 259, "phase": "restore"}}, "time_ns": 7828177041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 28, "thread": 259, "phase": "restore"}}, "time_ns": 7828448250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 29, "thread": 259, "phase": "restore"}}, "time_ns": 7828692166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 29, "thread": 259, "phase": "restore"}}, "time_ns": 7828867250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 29, "thread": 259, "phase": "restore"}}, "time_ns": 7829133500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 30, "thread": 259, "phase": "restore"}}, "time_ns": 7829364250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 30, "thread": 259, "phase": "restore"}}, "time_ns": 7829548291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 30, "thread": 259, "phase": "restore"}}, "time_ns": 7829728541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 31, "thread": 259, "phase": "restore"}}, "time_ns": 7885188416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 31, "thread": 259, "phase": "restore"}}, "time_ns": 7885795041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 31, "thread": 259, "phase": "restore"}}, "time_ns": 7886313916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-enter", "id": 32, "thread": 259, "phase": "restore"}}, "time_ns": 7887242500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "point", "point": "state-continuation", "owner_id": 32, "thread": 259, "phase": "restore"}}, "time_ns": 7887853291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "owner-return", "id": 32, "thread": 259, "phase": "restore"}}, "time_ns": 7888406333}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 7920076541}

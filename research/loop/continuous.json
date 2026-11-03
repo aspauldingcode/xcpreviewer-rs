@@ -19121,6 +19121,31 @@
     "source_restored_controller_available": true,
     "xcode_left_running": true,
     "next_action": "Keep static expansion paused. Extend remaining actual native contracts, retaining zero removed-location calls, entry-only preview-state destruction and unmeasured object/resource lifetimes. Do not equate value-witness activity with preview retirement or cleanup, nor app-window input with Canvas input.",
-    "verified_at": "2026-11-03T00:08:48.462037+00:00"
+    "verified_at": "2026-11-03T00:08:48.462037+00:00",
+    "boundary_correction_evidence": "research/evidence/canvas-runtime-destroy-boundary-2026-11-03",
+    "legacy_state_counts_are_interior_hits_not_separate_function_calls": true,
+    "legacy_state_return_probe_invalid_boundary": true,
+    "legacy_interior_caller_field_not_callsite_evidence": true
+  },
+  "canvas_runtime_destroy_boundary_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-destroy-boundary-2026-11-03",
+    "manifest_sha256": "7a90290e022ef045c5ee219c8829a835999c51023bb578ab6f00055218e47c31",
+    "correction": "0x23ef0 is an interior continuation of CanvasContent destroy at 0x23d68; prior separate state-function return/caller interpretation invalid.",
+    "sampled_rpc_chains": 28,
+    "sampled_post_ack_chains": 22,
+    "sample_limit_per_phase": 20,
+    "new_native_ui_rendering_claim": false,
+    "tail_attempt_excluded_after_out_of_owner_hit_flood": true,
+    "out_of_owner_tail_hits": 165702,
+    "tail_attempt_controller_deadlines_exceeded": true,
+    "source_subsequently_restored_target_alive": true,
+    "old_sealed_artifacts_unchanged_supplemental_erratum_added": true,
+    "posted_phase_ack_control_exercised": true,
+    "revised_seven_function_variant_rerun": false,
+    "native_object_or_transport_resource_release_verified": false,
+    "synthetic_mutations_rejected": 8,
+    "historical_reader_regression_mutations_rejected": 8,
+    "next_action": "Keep static expansion paused. Treat semantic source fragments as interior locations unless function boundaries are qualified. Continue actual native lifecycle/resource contracts; do not repeat invalid interior return/caller probes or unscoped tail-site logging. Owner return alone is not object/resource release.",
+    "verified_at": "2026-11-03T03:22:07.760693+00:00"
   }
 }

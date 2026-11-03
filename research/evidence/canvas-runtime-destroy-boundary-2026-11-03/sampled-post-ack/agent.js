@@ -1,0 +1,10 @@
+'use strict';
+function uuid(mod){if(mod.base.readU32()!==0xfeedfacf)throw Error('Mach header');let p=mod.base.add(32),value=null;for(let i=0,n=mod.base.add(16).readU32();i<n;i++){const c=p.readU32(),s=p.add(4).readU32();if(s<8)throw Error('load-command bound');if(c===0x1b)value=Array.from(new Uint8Array(p.add(8).readByteArray(16))).map(x=>x.toString(16).padStart(2,'0')).join('');p=p.add(s);}return value;}
+const scenes=Process.getModuleByName('PreviewsScenes'),ui=Process.getModuleByName('PreviewsUI');
+if(uuid(scenes)!=='afaf513ac1153755840e1d82b40e7d93'||uuid(ui)!=='0d87b0e2f4453035a9b6b1cf8230e015')throw Error('UUID mismatch');
+let serial=0,phase='baseline',orphans=0;const limit=20,admitted=new Map(),owners=new Map();
+function stack(thread){if(!owners.has(thread))owners.set(thread,[]);return owners.get(thread);}
+Interceptor.attach(ui.base.add(0x23d68),{onEnter(){this.thread=Process.getCurrentThreadId();const n=admitted.get(phase)??0;this.owner={id:++serial,phase,record:n<limit};if(this.owner.record){admitted.set(phase,n+1);send({event:'owner-enter',id:this.owner.id,thread:this.thread,phase});}stack(this.thread).push(this.owner);},onLeave(){const owner=stack(this.thread).pop();if(owner?.id!==this.owner.id)send({event:'owner-stack-mismatch',id:this.owner.id});if(this.owner.record)send({event:'owner-return',id:this.owner.id,thread:Process.getCurrentThreadId(),phase:this.owner.phase});}});
+Interceptor.attach(ui.base.add(0x23ef0),{onEnter(){const thread=Process.getCurrentThreadId(),owner=stack(thread).at(-1);if(!owner){if(++orphans<=2)send({event:'orphan-interior-point',thread,phase});return;}if(owner.record)send({event:'point',point:'state-continuation',owner_id:owner.id,thread,phase:owner.phase});}});
+function receivePhase(){recv('phase',message=>{phase=message.payload.name;send({event:'phase',phase});receivePhase();});}receivePhase();
+send({event:'hooks-ready',scenes_uuid:uuid(scenes),ui_uuid:uuid(ui),function_entry:'0x23d68',interior_points:{'state-continuation':'0x23ef0'},interior_return_or_caller_probe:false,tail_probe:false,sampled_owner_limit_per_phase:limit});

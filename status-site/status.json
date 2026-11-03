@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T00:08:48.462037+00:00",
+  "updated_at": "2026-11-03T03:22:07.760693+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Real fourth preview declaration added, selected/rendered and removed; fallback rendered again without active hooks. Collector/reconciliation ordering now exercised. Value-destruction entries do not qualify object/resource release.",
+  "current_focus": "Corrected a probe-boundary error: state cleanup is inside the owning destruction function, not a separate function. Bounded native control-flow checks pass; object/resource release remains unverified.",
   "milestones": [
     {
       "number": 1,
@@ -122,9 +122,14 @@
   },
   "recent": [
     {
+      "date": "2026-11-03",
+      "title": "Probe boundary corrected; bounded native flow observed",
+      "detail": "State cleanup point is interior to CanvasContent destruction. Prior caller/return interpretation was invalid. Two captures recorded 28/22 sampled owner\u2192PC\u2192return chains. Tail-site scope/logging failed and was excluded; fixed profile uses finite samples and posted phase acknowledgements. Original sealed evidence preserved with erratum."
+    },
+    {
       "date": "2026-11-02",
       "title": "Native preview declaration lifecycle and recovered call ordering",
-      "detail": "Real 3\u21924\u21923 tabs and orange\u2192fallback-purple output repeated without active hooks. Twelve collectors each called two providers then two registries. Content witness returned 1,400 times; state entry recorded but return coverage unavailable. Zero removed-location calls. Eight artifact mutations reject."
+      "detail": "Real 3\u21924\u21923 tabs and orange\u2192fallback-purple output repeated without active hooks. Twelve collectors each called two providers then two registries. Content witness returned 1,400 times; state entry recorded but return coverage unavailable. Zero removed-location calls. Eight artifact mutations reject. Correction: the state probe was an interior PC, not a separate function; see latest boundary evidence."
     },
     {
       "date": "2026-11-02",
@@ -363,14 +368,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T00:08:51.362167+00:00",
+  "issue_counts_updated_at": "2026-11-03T03:22:10.235063+00:00",
   "runtime_validation": {
     "normal_native_passes": 15,
     "observed_negative_controls": 2,
-    "summary": "Actual declaration lifecycle capture: twelve collectors each called two providers then two registries; 1,400 content-witness intervals each contained a state-destruction entry. State return probe observed none; no object/resource cleanup claim. Fifteen observer-suite controls remain separate evidence.",
+    "summary": "Prior state probe was misclassified: 1,400 interior-PC hits are not separate function calls. Corrected captures recorded 28 and 22 sampled owner-entry \u2192 interior-point \u2192 owner-return chains. Unscoped tail-site attempt exceeded controller deadlines and is excluded; source restored. Fifteen observer controls remain separate evidence.",
     "ui_summary": "Native tabs 3\u21924\u21923, new orange preview selected/rendered, removal fell back to purple Primary layers. No-active-hook repeat settled after an initially pending spinner. Canvas interaction/state continuity remains unqualified.",
-    "unknown": "Provider/registry payloads and identity/reuse, preview-state return coverage, native object/transport/render-resource lifetimes, Canvas input/state continuity, target coverage and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+    "unknown": "Native object/weak lifetimes, transport/render-resource release, state branch coverage, Canvas input/state continuity, target coverage and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-destroy-boundary-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

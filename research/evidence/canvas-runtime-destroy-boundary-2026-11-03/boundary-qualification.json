@@ -1,0 +1,19 @@
+{
+  "state_location_kind": "interior-continuation",
+  "enclosing_function_entry": "0x23d68",
+  "interior_offset": "0x23ef0",
+  "interior_lr_is_callsite_evidence": false,
+  "old_event_name": "preview-state-destroy",
+  "old_event_name_does_not_identify_a_separate_function": true,
+  "old_caller_offset_0x23ee8_is_interior_lr_observation_only": true,
+  "source_basis": {
+    "research/evidence/canvas-content-destroy-2026-11-02/findings.json": "95a62772b8bd7e071c0437a4c284176380c3c0e97c277be1253909e12edfeaa5",
+    "research/evidence/canvas-content-destroy-2026-11-02/source.py": "d7da5a2284715303090740b816646960e62f4648ce58b5d089d0d55411f7229a",
+    "research/evidence/canvas-state-destroy-2026-11-02/README.md": "41cdd13a28089bbc7676a27c8c794177ee62e258501becd9c602f9c32082f2d8",
+    "research/evidence/canvas-state-destroy-2026-11-02/findings.json": "008560ef0c9dc943e28241d1316dddc7c709ff40cede0ebb6aacbfde153a83b9"
+  },
+  "owner_symbol": "_$s10PreviewsUI18DisplayableContentV7PreviewV06CanvasD0Owxx",
+  "owner_demangled": "destroy value witness for PreviewsUI.DisplayableContent.Preview.CanvasContent",
+  "owner_symbol_qualification": "Exact already-targeted arm64 address queried with installed nm, then installed swift-demangle; no new function discovery.",
+  "image_sha256": "26037ce436a19205977e4c5b879c8b46a1ac87f19fef25ffb5e14282ba189fab"
+}
