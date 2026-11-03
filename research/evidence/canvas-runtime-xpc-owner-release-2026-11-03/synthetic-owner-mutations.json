@@ -1,0 +1,13 @@
+{
+  "scope": "synthetic recorded-evidence faults",
+  "results": {
+    "capture-dead-at-release-return": "rejected",
+    "fd-closed-at-release-return": "rejected",
+    "release-flag-false": "rejected",
+    "owner-release-after-callback-marker": "rejected",
+    "release-return-wrong-thread": "rejected",
+    "error-reply-no-longer-valid": "rejected",
+    "dictionary-no-longer-valid": "rejected",
+    "fd-cleanup-not-observed": "rejected"
+  }
+}

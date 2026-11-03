@@ -1,0 +1,37 @@
+{
+  "normal": {
+    "native_sdk_assertions_passed": true,
+    "owned_capture_fd_cleanup_observed": true,
+    "client_peer_pid_query_available": false,
+    "canvas_resource_settlement_verified": false,
+    "caller_client_ref_released_during_callback": false
+  },
+  "cancel-inflight": {
+    "native_sdk_assertions_passed": true,
+    "owned_capture_fd_cleanup_observed": true,
+    "client_peer_pid_query_available": false,
+    "canvas_resource_settlement_verified": false,
+    "caller_client_ref_released_during_callback": false
+  },
+  "cancel-pending": {
+    "native_sdk_assertions_passed": true,
+    "owned_capture_fd_cleanup_observed": true,
+    "client_peer_pid_query_available": false,
+    "canvas_resource_settlement_verified": false,
+    "caller_client_ref_released_during_callback": false
+  },
+  "release-inflight": {
+    "native_sdk_assertions_passed": true,
+    "owned_capture_fd_cleanup_observed": true,
+    "client_peer_pid_query_available": false,
+    "canvas_resource_settlement_verified": false,
+    "caller_client_ref_released_during_callback": true
+  },
+  "release-pending": {
+    "native_sdk_assertions_passed": true,
+    "owned_capture_fd_cleanup_observed": true,
+    "client_peer_pid_query_available": false,
+    "canvas_resource_settlement_verified": false,
+    "caller_client_ref_released_during_callback": true
+  }
+}

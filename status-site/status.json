@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T06:05:22.159278+00:00",
+  "updated_at": "2026-11-03T06:23:21.739839+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native SDK controls measure reply cancellation and owned capture/FD cleanup. Cancel returns before an active callback finishes; private Canvas/transport/render settlement remains unverified.",
+  "current_focus": "Native SDK caller-reference release is now exercised while reply callbacks block. Owned capture/FD survives release and later cleans up; connection destruction and Canvas resource settlement remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Caller reference released during native SDK callbacks",
+      "detail": "Five SDK modes pass twice, including dictionary/error callbacks held across explicit client-reference release. Release returns with capture/FD live; later deinit/close observed. Connection deallocation is not inferred. Eight owner faults and historical SDK faults reject; no new native failure."
+    },
     {
       "date": "2026-11-03",
       "title": "Native SDK in-flight replies and capture cleanup tested",
@@ -408,14 +413,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T06:05:24.326836+00:00",
+  "issue_counts_updated_at": "2026-11-03T06:23:23.760874+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Six native public-SDK controls pass across two cohorts, with checked callback ordering and owned capture/FD cleanup. Cancel-inflight leaves the active dictionary valid; pending cancel delivers an invalid error reply. Two earlier owned identity-assertion aborts are preserved.",
-    "ui_summary": "Owned same-process anonymous SDK endpoints only. No Xcode, simulator, project or UI access. Controller available; no Rust/WASM product changes. Prior observer suite count remains sixteen separate controls.",
-    "unknown": "Private Canvas connection/capture cleanup, cross-process semantics, renderer/provider/port settlement and general identity remain unverified. Client server-PID query returns zero here; accepted peer PID is checked. Failed guard attempts have no capture cleanup proof.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-xpc-inflight-2026-11-03",
+    "summary": "Ten native public-SDK controls pass across two cohorts. New cases release the caller client reference while dictionary/error callbacks block; capture/FD remains live through release, reply remains valid after unblock, then deinit/close is observed.",
+    "ui_summary": "Owned same-process SDK endpoints only; no Xcode, simulator, project or UI access. Full five-mode reader coverage enforced by the updated runner. Prior observer suite count remains sixteen separate controls.",
+    "unknown": "Connection-object deallocation, private Swift/Canvas capture cleanup, cross-process behavior and renderer/provider/port settlement remain unverified. A release call is not a destruction witness; client server-PID query remains unavailable here.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-xpc-owner-release-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

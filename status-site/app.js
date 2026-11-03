@@ -31,7 +31,7 @@ const el = (tag, value, cls) => { const n = document.createElement(tag); if (val
   text('focus',d.current_focus); text('formula',d.recovery.formula);
   if (d.runtime_validation) {
    const r=d.runtime_validation;
-   text('runtime-count',`${r.normal_native_passes} observer controls passed · ${r.observed_negative_controls} distinct terminating controls observed`);
+   text('runtime-count',`${r.normal_native_passes} observer controls passed · ${r.observed_negative_controls} historical expected terminating controls observed`);
    text('runtime-summary',r.summary); text('runtime-ui',r.ui_summary); text('runtime-unknown',r.unknown);
    $('runtime-evidence').href=r.evidence_url; $('runtime-validation').hidden=false;
   }
