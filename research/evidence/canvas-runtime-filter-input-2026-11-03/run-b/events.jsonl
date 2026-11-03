@@ -1,0 +1,50 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "xcode_uuid": "25c99c664185307188e31ab474573a10", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "max_events": 1000, "filter_input_probes": true, "filter_count_probe": true, "empty_cleanup_probe": false}}, "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "baseline", "total_events": 0}}, "time_ns": 832917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "modified-control", "total_events": 0}}, "time_ns": 2012344584}
+{"stage": "source-modified-control", "time_ns": 2012953959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3978196167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "modified-control"}}, "time_ns": 3979378209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 1, "thread": 259, "count_register": "0x1", "phase": "modified-control"}}, "time_ns": 3979663084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 1, "thread": 259, "present": true, "phase": "modified-control"}}, "time_ns": 3979854250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 1, "thread": 259, "count_register": "0x1", "phase": "modified-control"}}, "time_ns": 3980264625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 1, "thread": 259, "value": 1, "phase": "modified-control"}}, "time_ns": 3980462584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 1, "thread": 259, "value": 0, "phase": "modified-control"}}, "time_ns": 3980746209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3980913750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3981076542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 2, "thread": 259, "phase": "modified-control"}}, "time_ns": 4523360959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 2, "thread": 259, "phase": "modified-control"}}, "time_ns": 4530355625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 3, "thread": 259, "phase": "modified-control"}}, "time_ns": 6469467250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 3, "thread": 259, "phase": "modified-control"}}, "time_ns": 6470062625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restore-control", "total_events": 13}}, "time_ns": 7031232542}
+{"stage": "source-modified-control-restored", "time_ns": 7033745167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 8127598417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 4, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "restore-control"}}, "time_ns": 8129608292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 4, "thread": 259, "count_register": "0x1", "phase": "restore-control"}}, "time_ns": 8131130334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 4, "thread": 259, "present": true, "phase": "restore-control"}}, "time_ns": 8132290625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 4, "thread": 259, "count_register": "0x1", "phase": "restore-control"}}, "time_ns": 8132570167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 4, "thread": 259, "value": 1, "phase": "restore-control"}}, "time_ns": 8133057042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 4, "thread": 259, "value": 0, "phase": "restore-control"}}, "time_ns": 8133327750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 8133667375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 8133979250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 5, "thread": 259, "phase": "restore-control"}}, "time_ns": 8384607459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 5, "thread": 259, "phase": "restore-control"}}, "time_ns": 8385167625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 6, "thread": 259, "phase": "restore-control"}}, "time_ns": 9555281959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 6, "thread": 259, "phase": "restore-control"}}, "time_ns": 9555805917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "removed", "total_events": 26}}, "time_ns": 11046286375}
+{"stage": "source-deleted", "absent": true, "time_ns": 11047665000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 12034186667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-files-block", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 12034663209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 7, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249a0c", "phase": "removed"}}, "time_ns": 12034893209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 7, "thread": 259, "count_register": "0x1", "phase": "removed"}}, "time_ns": 12035298292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 7, "thread": 259, "present": false, "phase": "removed"}}, "time_ns": 12035971000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 7, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 12036538417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 12036955625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-count-branch", "id": 7, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 12037385500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 12037691500}
+{"stage": "removed-wait-ended", "workspace_removed_observed": false, "time_ns": 19055453042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restored", "total_events": 35}}, "time_ns": 20067820709}
+{"stage": "source-restored", "sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 20069715792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "total_events": 35}}, "time_ns": 23081252834}
+{"stage": "script-unloaded", "time_ns": 23082501875}
+{"stage": "session-detached", "time_ns": 23083286167}
+{"stage": "session-ended", "source_restored": true, "project_restored": true, "auxiliary_absent": true, "time_ns": 23083642542}

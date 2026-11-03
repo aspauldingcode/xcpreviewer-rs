@@ -1,0 +1,49 @@
+{
+  "scope": "minimum instruction-slice qualification inside already recovered filter; no new function body recovered",
+  "image_sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+  "private_listings_published": false,
+  "local_listing_hashes": {
+    "entry.asm": "4940f8474a11c9853e92c8fb57e4b96d0c092dfd03e2a44ddfef40d9fdfbd223",
+    "loop.asm": "d01150c5f2277f2235e08afc70344df6bf30d14ce740356a54740b321a8313c2",
+    "optional.asm": "192d34ed4e2146e55f016c361801496ed7843e3daa2d4bcb1255df020224a8f5",
+    "type.asm": "9800d627da6fa73cf23be5efed69f25f152e4bcd96fe247e708e3a216323cf14"
+  },
+  "instruction_slices_total_bytes": 548,
+  "probes": [
+    {
+      "offset": "0x24e438",
+      "kind": "interior input-count zero-test",
+      "register": "x9"
+    },
+    {
+      "offset": "0x24e4d0",
+      "kind": "interior optional datatype presence test",
+      "register": "x23",
+      "published_value": "Boolean presence only"
+    },
+    {
+      "offset": "0x24e6bc",
+      "kind": "interior staged-candidate count test before predicate loop",
+      "register": "x21"
+    }
+  ],
+  "existing_function_return_probes": [
+    {
+      "offset": "0x250314",
+      "name": "shouldUpdateModifiedFile",
+      "value": "Boolean low bit"
+    },
+    {
+      "offset": "0x250a48",
+      "name": "isOpenAndThunkable",
+      "value": "Boolean low bit"
+    }
+  ],
+  "scoping": "active workspace handler and filter invocation on same thread",
+  "unqualified": [
+    "input payload path identity",
+    "why datatype is absent",
+    "intermediate nil-type processing or universal nil-skip rule",
+    "positive retained filter output and scene propagation"
+  ]
+}

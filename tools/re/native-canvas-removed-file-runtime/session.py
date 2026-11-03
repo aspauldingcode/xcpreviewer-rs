@@ -1,10 +1,10 @@
 """Actual deletion/restoration of guarded owned source; no UI or synthetic event."""
 from pathlib import Path
 import argparse,json,subprocess,hashlib,threading,time,fcntl,frida,signal,os
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');p.add_argument('--count-only',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');p.add_argument('--count-only',action='store_true');p.add_argument('--modify-control',action='store_true');a=p.parse_args();assert not (a.modify_control and a.auxiliary)
 r=a.output.resolve();r.mkdir(exist_ok=False,parents=True);root=Path(__file__).resolve().parents[3];source=a.source.resolve()
 for n in ['agent.js','session.py']:(r/n).write_bytes(Path(__file__).with_name(n).read_bytes())
-mutex=threading.Lock();ready=threading.Event();removed=threading.Event();acks={};script=None;session=None;before=None;deleted=False;failed=False;project=None;project_before=None;project_expected=None;installed=False;primary=source
+mutex=threading.Lock();ready=threading.Event();removed=threading.Event();acks={};script=None;session=None;before=None;deleted=False;failed=False;project=None;project_before=None;project_expected=None;installed=False;primary=source;modified=False;modified_bytes=None
 
 def emit(**v):
  v['time_ns']=time.monotonic_ns()
@@ -49,10 +49,16 @@ with open(root/'research/state/controller.lock','a+') as lock:
    except subprocess.TimeoutExpired:os.killpg(q.pid,signal.SIGKILL);q.wait();emit(stage='cli-build-timeout');raise
    emit(stage='cli-build-ended',code=code,log_mentions_dependency=b'RuntimeRefreshDependency.swift' in (r/'cli-build.stdout').read_bytes());assert code==0;time.sleep(3)
   phase('baseline');time.sleep(2);assert source.read_bytes()==before
-  removed.clear();phase('removed');source.unlink();deleted=True;emit(stage='source-deleted',absent=not source.exists());observed=removed.wait(8);emit(stage='removed-wait-ended',workspace_removed_observed=observed);failed=failed or not observed;time.sleep(1)
+  if a.modify_control:
+   phase('modified-control');modified_bytes=before+b'\n// Native filter input runtime control\n';source.write_bytes(modified_bytes);modified=True;emit(stage='source-modified-control');time.sleep(5)
+   phase('restore-control');assert source.read_bytes()==modified_bytes,'Concurrent source modification';source.write_bytes(before);modified=False;emit(stage='source-modified-control-restored');time.sleep(4)
+  removed.clear();phase('removed');assert source.read_bytes()==before,'Concurrent source edit before deletion';source.unlink();deleted=True;emit(stage='source-deleted',absent=not source.exists());observed=removed.wait(8);emit(stage='removed-wait-ended',workspace_removed_observed=observed);failed=failed or not observed;time.sleep(1)
   phase('restored');assert not source.exists(),'Concurrent source recreation';source.write_bytes(before);deleted=False;emit(stage='source-restored',sha256=hashlib.sha256(source.read_bytes()).hexdigest());time.sleep(3)
  except Exception as e:failed=True;emit(stage='failure',kind=type(e).__name__,error=str(e))
  finally:
+  if modified:
+   if source.exists() and source.read_bytes()==modified_bytes:source.write_bytes(before);emit(stage='modified-control-restored-finally')
+   else:failed=True;emit(stage='modified-restore-skipped-concurrent-edit')
   if deleted:
    if not source.exists():source.write_bytes(before);emit(stage='source-restored-finally')
    else:emit(stage='restore-skipped-concurrent-recreation')
