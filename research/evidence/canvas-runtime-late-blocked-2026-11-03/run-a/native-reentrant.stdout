@@ -1,0 +1,15 @@
+{"event":"native-ready","pid":51136,"seq":1,"thread_id":259,"time_ns":74141660419625,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":74141663288083}
+{"event":"probe-created","fd":3,"name":"reentrant","seq":3,"thread_id":259,"time_ns":74141663339750}
+{"event":"registered","has_token":true,"name":"reentrant","seq":4,"thread_id":259,"time_ns":74141663418625}
+{"event":"invalidate-begin","seq":5,"thread_id":259,"time_ns":74141663441500}
+{"event":"callback","name":"reentrant","seq":6,"thread_id":259,"time_ns":74141663490041}
+{"event":"callback-reentry-begin","seq":7,"thread_id":259,"time_ns":74141663508583}
+{"event":"invalidate-begin","seq":8,"thread_id":259,"time_ns":74141663522333}
+{"event":"invalidate-end","seq":9,"thread_id":259,"time_ns":74141663557833}
+{"event":"callback-reentry-end","seq":10,"thread_id":259,"time_ns":74141663570750}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"reentrant","seq":11,"thread_id":259,"time_ns":74141663586583}
+{"event":"invalidate-end","seq":12,"thread_id":259,"time_ns":74141663603000}
+{"event":"token-destroy-begin","seq":13,"thread_id":259,"time_ns":74141663617625}
+{"event":"token-destroy-end","seq":14,"thread_id":259,"time_ns":74141663991458}
+{"callbacks":["reentrant"],"event":"pass","mode":"reentrant","seq":15,"thread_id":259,"time_ns":74141664014500}

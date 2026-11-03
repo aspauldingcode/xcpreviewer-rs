@@ -1,0 +1,13 @@
+{
+  "scope": "synthetic recorded-evidence mutations",
+  "results": {
+    "original-context-dead": "rejected",
+    "original-fd-closed": "rejected",
+    "late-context-retained": "rejected",
+    "late-token-returned": "rejected",
+    "cleanup-fd-open": "rejected",
+    "deinit-fd-mismatch": "rejected",
+    "same-thread-callback": "rejected",
+    "callback-before-registration-call": "rejected"
+  }
+}

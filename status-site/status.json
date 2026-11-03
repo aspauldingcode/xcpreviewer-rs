@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T04:57:39.840530+00:00",
+  "updated_at": "2026-11-03T05:03:22.398816+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Existing-runtime weak API route works on the pinned host: two native file cycles yield positive EditorScene weak loads. Target destruction, weak zeroing and native resource release remain unverified.",
+  "current_focus": "Native observer suite now exercises cross-thread late registration during a blocked callback. Second invalidation returns before original completion; distinct owned contexts and FDs clean up at checked boundaries. Canvas object/resource release remains open.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native late callbacks overlap; repeated invalidate is not a join",
+      "detail": "Two native runs execute sixteen controls. Late registration invokes synchronously on a second thread while the original callback blocks; its context/FD cleans up first. Original cleanup follows unblock/join. First reader coverage failure retained and corrected; eight synthetic faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Actual native weak loads exercised; target destruction still open",
@@ -378,14 +383,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T04:57:59.610635+00:00",
+  "issue_counts_updated_at": "2026-11-03T05:03:25.378155+00:00",
   "runtime_validation": {
-    "normal_native_passes": 15,
+    "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Three owned direct runtime weak/FD controls pass and reproduce. Two native source-edit captures each record 25 paired setter calls and positive main-queue EditorScene weak loads. No helper image loaded into Xcode.",
-    "ui_summary": "No new GUI action or rendering verification. Prior locked-Mac limitation remains; real source addition/restoration and main-queue native observations completed with exact source restored.",
-    "unknown": "EditorScene destruction, weak zeroing after release, target resource cleanup and exact generic/project binding remain unverified. Weak loads briefly retain their target; probe weak-slot cleanup is not target release.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-weak-api-2026-11-03",
+    "summary": "Sixteen native observer controls executed twice. Corrected reader checks both; fresh second runner completes. Repeated invalidate returned while original callback blocked; late observer ran synchronously on a different registering thread with no token and independent context/FD cleanup.",
+    "ui_summary": "Owned component execution only; no Xcode, simulator, project or UI access in this checkpoint. Earlier real file/build/preview and EditorScene weak-load controls remain separate evidence.",
+    "unknown": "Canvas EditorScene destruction/weak zeroing, interactive state, native transport/render resource release and standalone WASM parity remain unverified. Concurrent callback controls do not establish race freedom or a general callback-drain guarantee.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-late-blocked-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

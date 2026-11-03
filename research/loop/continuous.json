@@ -19199,5 +19199,25 @@
     "xcode_left_running": true,
     "next_action": "Keep static expansion paused. Existing-runtime weak loads now qualify sampled EditorScene liveness on the pinned host. Do not equate positive weak loads or probe-slot disposal with target death/resource release. UI closure remains unexercised after locked-Mac failure; do not retry unchanged loader/UI routes. Continue permitted native lifecycle controls with positive target-release evidence when available, or other existing runtime contracts. Preserve real build, replay, native and WASM evidence distinctions.",
     "verified_at": "2026-11-03T04:57:39.840530+00:00"
+  },
+  "canvas_runtime_late_blocked_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-late-blocked-2026-11-03",
+    "manifest_sha256": "eee8b77766dff2bf3fa5e86a60a2aaa092839f1df99acdc23f57bef9c73409e0",
+    "native_runs": 2,
+    "native_normal_controls_per_run": 16,
+    "initial_run_a_outer_reader_coverage_failure": true,
+    "final_reader_checks_both_recorded_runs": 16,
+    "run_b_fresh_outer_runner_exit": 0,
+    "second_invalidate_returns_while_original_callback_blocked": true,
+    "late_registration_callback_synchronous_on_other_thread": true,
+    "late_registration_returns_no_token": true,
+    "late_context_fd_cleaned_while_original_context_fd_live": true,
+    "original_context_fd_cleaned_after_unblock_and_join": true,
+    "synthetic_evidence_faults_rejected": 8,
+    "native_crashes_or_timeouts": 0,
+    "user_xcode_accessed": false,
+    "controller_available": true,
+    "next_action": "Keep static expansion paused. Preserve the native distinction between repeated invalidate returning, concurrent late synchronous callback completion, and original callback/context completion. This does not settle EditorScene destruction or Canvas transport/render release. Continue permitted existing native lifecycle controls, without retrying unchanged locked UI or helper loader routes.",
+    "verified_at": "2026-11-03T05:03:22.398816+00:00"
   }
 }

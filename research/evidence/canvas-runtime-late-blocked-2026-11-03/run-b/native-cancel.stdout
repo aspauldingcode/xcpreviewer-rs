@@ -1,0 +1,14 @@
+{"event":"native-ready","pid":51281,"seq":1,"thread_id":259,"time_ns":74158825866750,"token_size":24,"trace_size":8}
+{"event":"handle-created","seq":2,"thread_id":259,"time_ns":74158828736375}
+{"event":"probe-created","fd":3,"name":"cancelled","seq":3,"thread_id":259,"time_ns":74158828797916}
+{"event":"registered","has_token":true,"name":"cancelled","seq":4,"thread_id":259,"time_ns":74158828882791}
+{"event":"cancel-begin","seq":5,"thread_id":259,"time_ns":74158828905000}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"cancelled","seq":6,"thread_id":259,"time_ns":74158828952916}
+{"event":"cancel-end","seq":7,"thread_id":259,"time_ns":74158828975208}
+{"event":"cancel-begin","seq":8,"thread_id":259,"time_ns":74158828991500}
+{"event":"cancel-end","seq":9,"thread_id":259,"time_ns":74158829377458}
+{"event":"invalidate-begin","seq":10,"thread_id":259,"time_ns":74158829396375}
+{"event":"invalidate-end","seq":11,"thread_id":259,"time_ns":74158829443583}
+{"event":"token-destroy-begin","seq":12,"thread_id":259,"time_ns":74158829456458}
+{"event":"token-destroy-end","seq":13,"thread_id":259,"time_ns":74158829476125}
+{"callbacks":[],"event":"pass","mode":"cancel","seq":14,"thread_id":259,"time_ns":74158829491750}
