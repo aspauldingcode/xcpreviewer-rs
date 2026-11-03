@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T04:34:10.918230+00:00",
+  "updated_at": "2026-11-03T04:57:39.840530+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Weak-helper load rejected by Xcode validation; UI lifetime controls unavailable while Mac is locked. File-only captures still observe guarded EditorScene setter calls. Native weak lifetime/resource release remains unverified.",
+  "current_focus": "Existing-runtime weak API route works on the pinned host: two native file cycles yield positive EditorScene weak loads. Target destruction, weak zeroing and native resource release remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Actual native weak loads exercised; target destruction still open",
+      "detail": "Two real source cycles each record 25 paired setter calls and two positive main-queue weak snapshots. Probe weak slots destroyed; no helper loaded into Xcode. Three owned ABI/FD modes reproduce. No native deinitializer/nil sample or UI closure test; eight synthetic evidence faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Weak-loader boundary recorded; native file route still works",
@@ -373,14 +378,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T04:34:12.931022+00:00",
+  "issue_counts_updated_at": "2026-11-03T04:57:59.610635+00:00",
   "runtime_validation": {
     "normal_native_passes": 15,
     "observed_negative_controls": 2,
-    "summary": "Three owned weak/FD control modes pass. Helper loading into Xcode was rejected for different Team IDs; no protections changed. File-only native captures recorded 20/22 paired setter calls with an EditorScene-family receiver guard. Tokens are address correlations, not object-lifetime proof.",
-    "ui_summary": "No new GUI action or rendering verification: CUA reported the Mac locked. Pin/window-close lifetime controls were not exercised. Permitted source additions/restorations and native observations completed with exact source restored.",
-    "unknown": "Native EditorScene weak zeroing, deinitialization, resource release, exact type/project binding and rendered UI remain unverified in this checkpoint. Other existing-runtime weak approaches are unqualified; loader rejection is method-specific.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-scene-observation-2026-11-03",
+    "summary": "Three owned direct runtime weak/FD controls pass and reproduce. Two native source-edit captures each record 25 paired setter calls and positive main-queue EditorScene weak loads. No helper image loaded into Xcode.",
+    "ui_summary": "No new GUI action or rendering verification. Prior locked-Mac limitation remains; real source addition/restoration and main-queue native observations completed with exact source restored.",
+    "unknown": "EditorScene destruction, weak zeroing after release, target resource cleanup and exact generic/project binding remain unverified. Weak loads briefly retain their target; probe weak-slot cleanup is not target release.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-weak-api-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

@@ -19176,5 +19176,28 @@
     "xcode_left_running": true,
     "next_action": "Keep static expansion paused. Do not repeat the rejected helper load or unchanged locked-UI request; no protection changes or Apple resigning. Continue permitted source/CLI runtime contracts. Existing-runtime weak API routes remain unqualified, not ruled out by this loader failure. Address ledgers are not weak liveness or permanent object identity.",
     "verified_at": "2026-11-03T04:34:10.918230+00:00"
+  },
+  "canvas_runtime_weak_api_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-weak-api-2026-11-03",
+    "manifest_sha256": "569df29f26df7141a803ad5fe1523321a3c27a498edbc8531558625c23d9d645",
+    "native_pid": 45749,
+    "owned_runtime_weak_fd_control_modes": 3,
+    "native_captures": 2,
+    "paired_setter_calls": [
+      25,
+      25
+    ],
+    "positive_main_queue_weak_snapshots_per_capture": 2,
+    "probe_weak_slots_destroyed_per_capture": 1,
+    "helper_image_loaded_in_xcode": false,
+    "native_deinitializer_observed": false,
+    "native_weak_zeroing_or_resource_release_verified": false,
+    "ui_actions_exercised": false,
+    "wrong_target_guard_exit": 1,
+    "synthetic_evidence_faults_rejected": 8,
+    "source_restored_controller_available": true,
+    "xcode_left_running": true,
+    "next_action": "Keep static expansion paused. Existing-runtime weak loads now qualify sampled EditorScene liveness on the pinned host. Do not equate positive weak loads or probe-slot disposal with target death/resource release. UI closure remains unexercised after locked-Mac failure; do not retry unchanged loader/UI routes. Continue permitted native lifecycle controls with positive target-release evidence when available, or other existing runtime contracts. Preserve real build, replay, native and WASM evidence distinctions.",
+    "verified_at": "2026-11-03T04:57:39.840530+00:00"
   }
 }

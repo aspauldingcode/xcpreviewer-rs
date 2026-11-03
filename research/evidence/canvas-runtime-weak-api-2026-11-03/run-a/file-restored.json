@@ -1,0 +1,14 @@
+{
+  "event": "snapshot",
+  "label": "file-restored",
+  "main": true,
+  "weak_read_scope": "load instant; temporary strong reference released on main",
+  "objects": [
+    {
+      "id": 1,
+      "weak_alive_at_load": true,
+      "deinitializing_return_seen": false,
+      "deallocating_return_seen": false
+    }
+  ]
+}

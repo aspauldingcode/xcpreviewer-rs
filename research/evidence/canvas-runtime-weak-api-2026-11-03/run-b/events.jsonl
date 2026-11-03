@@ -1,0 +1,64 @@
+{"stage": "owned-controls-passed", "count": 3, "library_sha256": "d8776a29ffeee3fc5e73f000e5462cca11107830d7385f2de8d27a933e19b063", "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "afaf513ac1153755840e1d82b40e7d93", "runtime_uuid": "7669d858d33236c79c6c4564ffbea8d2", "runtime_path": "/usr/lib/swift/libswiftCore.dylib", "slot_size": 8, "helper_module_loaded": false, "weak_reference_access_available": true, "weak_poll_main_queue": true, "max_objects": 20, "max_calls": 200}}, "time_ns": 2240374542}
+{"stage": "capture-ready", "time_ns": 2240685375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "baseline", "main": true, "weak_read_scope": "load instant; temporary strong reference released on main", "objects": []}}, "time_ns": 2241864167}
+{"stage": "source-added", "sha256": "321eab3748e606bd5d384858cd62188c441bb064a99a473ecbed5c2612a84f5c", "time_ns": 2242625958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "editor-scene-observed", "id": 1, "expected_class": true, "main": true, "weak_alive_at_load": true}}, "time_ns": 3000083125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 1, "scene_id": 1, "thread": 259}}, "time_ns": 3000511292}
+{"stage": "class-observation-wait", "observed": true, "time_ns": 3000559083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 1, "scene_id": 1, "thread": 259}}, "time_ns": 3000681292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 2, "scene_id": 1, "thread": 259}}, "time_ns": 3006977792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 2, "scene_id": 1, "thread": 259}}, "time_ns": 3007339375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 3, "scene_id": 1, "thread": 259}}, "time_ns": 3010214583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 3, "scene_id": 1, "thread": 259}}, "time_ns": 3010475750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 4, "scene_id": 1, "thread": 259}}, "time_ns": 3026117417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 4, "scene_id": 1, "thread": 259}}, "time_ns": 3026706292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 5, "scene_id": 1, "thread": 259}}, "time_ns": 3032739667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 5, "scene_id": 1, "thread": 259}}, "time_ns": 3033298875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 6, "scene_id": 1, "thread": 259}}, "time_ns": 3059265792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 6, "scene_id": 1, "thread": 259}}, "time_ns": 3059724958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-added", "main": true, "weak_read_scope": "load instant; temporary strong reference released on main", "objects": [{"id": 1, "weak_alive_at_load": true, "deinitializing_return_seen": false, "deallocating_return_seen": false}]}}, "time_ns": 3136856333}
+{"stage": "source-restored", "time_ns": 3137998875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 7, "scene_id": 1, "thread": 259}}, "time_ns": 3149377250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 7, "scene_id": 1, "thread": 259}}, "time_ns": 3149863542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 8, "scene_id": 1, "thread": 259}}, "time_ns": 3151905542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 8, "scene_id": 1, "thread": 259}}, "time_ns": 3152120625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 9, "scene_id": 1, "thread": 259}}, "time_ns": 3153488125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 9, "scene_id": 1, "thread": 259}}, "time_ns": 3153688542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 10, "scene_id": 1, "thread": 259}}, "time_ns": 3208638458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 10, "scene_id": 1, "thread": 259}}, "time_ns": 3209119500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 11, "scene_id": 1, "thread": 259}}, "time_ns": 3217420583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 11, "scene_id": 1, "thread": 259}}, "time_ns": 3217859458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 12, "scene_id": 1, "thread": 259}}, "time_ns": 4224509667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 12, "scene_id": 1, "thread": 259}}, "time_ns": 4224886875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 13, "scene_id": 1, "thread": 259}}, "time_ns": 4234407083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 13, "scene_id": 1, "thread": 259}}, "time_ns": 4234809000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 14, "scene_id": 1, "thread": 259}}, "time_ns": 4236624667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 14, "scene_id": 1, "thread": 259}}, "time_ns": 4237031542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 15, "scene_id": 1, "thread": 259}}, "time_ns": 4971594417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 15, "scene_id": 1, "thread": 259}}, "time_ns": 4971970667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 16, "scene_id": 1, "thread": 259}}, "time_ns": 4976874250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 16, "scene_id": 1, "thread": 259}}, "time_ns": 4977210500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 17, "scene_id": 1, "thread": 259}}, "time_ns": 4982277042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 17, "scene_id": 1, "thread": 259}}, "time_ns": 4982644375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 18, "scene_id": 1, "thread": 259}}, "time_ns": 4998021417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 18, "scene_id": 1, "thread": 259}}, "time_ns": 4998636417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 19, "scene_id": 1, "thread": 259}}, "time_ns": 5003829417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 19, "scene_id": 1, "thread": 259}}, "time_ns": 5004242333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 20, "scene_id": 1, "thread": 259}}, "time_ns": 5194742792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 20, "scene_id": 1, "thread": 259}}, "time_ns": 5210257417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 21, "scene_id": 1, "thread": 259}}, "time_ns": 5260562750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 21, "scene_id": 1, "thread": 259}}, "time_ns": 5264158750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 22, "scene_id": 1, "thread": 259}}, "time_ns": 5271419333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 22, "scene_id": 1, "thread": 259}}, "time_ns": 5271901000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 23, "scene_id": 1, "thread": 259}}, "time_ns": 5274726875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 23, "scene_id": 1, "thread": 259}}, "time_ns": 5275385125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 24, "scene_id": 1, "thread": 259}}, "time_ns": 5475724417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 24, "scene_id": 1, "thread": 259}}, "time_ns": 5476182250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "call_id": 25, "scene_id": 1, "thread": 259}}, "time_ns": 5478881708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "call_id": 25, "scene_id": 1, "thread": 259}}, "time_ns": 5479334000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-restored", "main": true, "weak_read_scope": "load instant; temporary strong reference released on main", "objects": [{"id": 1, "weak_alive_at_load": true, "deinitializing_return_seen": false, "deallocating_return_seen": false}]}}, "time_ns": 5484829125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "weak_slots_destroyed": 1, "main": true, "helper_module_loaded": false}}, "time_ns": 5521535375}
+{"stage": "script-unloaded", "time_ns": 5524145625}
+{"stage": "session-detached", "time_ns": 5531832667}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 5532398083}
