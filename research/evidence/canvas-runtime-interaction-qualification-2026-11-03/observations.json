@@ -1,0 +1,377 @@
+{
+  "evidence_level": "failed native UI qualification; no counter interaction or state continuity test exercised",
+  "preflight": {
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "elapsed_ms": 165,
+    "controls": [
+      {
+        "label": "Pin Preview",
+        "identifier": "pin.fill",
+        "frame": [
+          885,
+          128,
+          11,
+          16
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Primary layers",
+        "identifier": null,
+        "frame": [
+          946,
+          129,
+          74,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.2",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Text and interaction",
+        "identifier": null,
+        "frame": [
+          1064,
+          129,
+          104,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.4",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Layout edit",
+        "identifier": null,
+        "frame": [
+          1212,
+          129,
+          58,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.6",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Live",
+        "identifier": "play.circle.fill",
+        "frame": [
+          884,
+          873,
+          14,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.2",
+        "operations": [
+          "PRESS",
+          "SELECT"
+        ]
+      },
+      {
+        "label": "Close window",
+        "identifier": null,
+        "frame": [
+          41,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.2",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Full screen",
+        "identifier": null,
+        "frame": [
+          87,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.3",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Minimize window",
+        "identifier": null,
+        "frame": [
+          64,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.4",
+        "operations": [
+          "PRESS"
+        ]
+      }
+    ]
+  },
+  "initial_screenshot": {
+    "bytes": 79175,
+    "elapsed_ms": 285,
+    "executor": "accessibility",
+    "ok": true,
+    "path": "/Users/8amps/.local/share/unified-computer-use/shots/shot-18266-1793699290642.jpg",
+    "scale": 1.401,
+    "screen_recording": true,
+    "screenshot_ms": 285,
+    "window_id": 14224
+  },
+  "tab_action": {
+    "code": "error",
+    "elapsed_ms": 23,
+    "error": "AXStaticText =\"Text and interaction\" offers no AXPress; it has []",
+    "ok": false
+  },
+  "after_failed_tab": {
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "elapsed_ms": 138,
+    "controls": [
+      {
+        "label": "Pin Preview",
+        "identifier": "pin.fill",
+        "frame": [
+          885,
+          128,
+          11,
+          16
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Primary layers",
+        "identifier": null,
+        "frame": [
+          946,
+          129,
+          74,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.2",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Text and interaction",
+        "identifier": null,
+        "frame": [
+          1064,
+          129,
+          104,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.4",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Layout edit",
+        "identifier": null,
+        "frame": [
+          1212,
+          129,
+          58,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.0.6",
+        "operations": [
+          "CLICK"
+        ]
+      },
+      {
+        "label": "Live",
+        "identifier": "play.circle.fill",
+        "frame": [
+          884,
+          873,
+          14,
+          14
+        ],
+        "ref": "ax:0.0.2.0.0.0.0.3.2",
+        "operations": [
+          "PRESS",
+          "SELECT"
+        ]
+      },
+      {
+        "label": "Close window",
+        "identifier": null,
+        "frame": [
+          41,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.2",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Full screen",
+        "identifier": null,
+        "frame": [
+          87,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.3",
+        "operations": [
+          "PRESS"
+        ]
+      },
+      {
+        "label": "Minimize window",
+        "identifier": null,
+        "frame": [
+          64,
+          51,
+          16,
+          16
+        ],
+        "ref": "ax:0.4",
+        "operations": [
+          "PRESS"
+        ]
+      }
+    ]
+  },
+  "after_failed_tab_screenshot": {
+    "bytes": 79195,
+    "elapsed_ms": 321,
+    "executor": "accessibility",
+    "ok": true,
+    "path": "/Users/8amps/.local/share/unified-computer-use/shots/shot-18266-1793699314706.jpg",
+    "scale": 1.401,
+    "screen_recording": true,
+    "screenshot_ms": 321,
+    "window_id": 14224
+  },
+  "requested_visual_action": {
+    "op": "visual_click",
+    "x": 1116,
+    "y": 136,
+    "label": "Text and interaction"
+  },
+  "visual_action": {
+    "elapsed_ms": 559,
+    "executor": "visual",
+    "marker": {
+      "h": 9,
+      "w": 9,
+      "x": 47,
+      "y": 14
+    },
+    "ok": true,
+    "result": {
+      "detail": "clicked 95,58 in Xcode",
+      "frontmost_after": 17353,
+      "frontmost_before": 45749,
+      "mechanism": "HID (real pointer)",
+      "ok": true,
+      "took_focus": false
+    }
+  },
+  "after_visual": {
+    "ok": false,
+    "error": "Xcode has no accessible window (not drawn yet?)",
+    "elapsed_ms": 0,
+    "controls": []
+  },
+  "after_visual_screenshot": {
+    "code": "error",
+    "elapsed_ms": 15,
+    "error": "Xcode has no on-screen window to capture",
+    "ok": false
+  },
+  "activation": {
+    "bundle": "com.apple.dt.Xcode",
+    "elapsed_ms": 364,
+    "ok": true,
+    "url": "/Applications/Xcode.app"
+  },
+  "after_activation": {
+    "ok": false,
+    "error": "Xcode has no accessible window (not drawn yet?)",
+    "elapsed_ms": 9,
+    "controls": []
+  },
+  "open_recovery": [
+    {
+      "kind": "action",
+      "label": null,
+      "data": {
+        "code": "error",
+        "elapsed_ms": 46,
+        "error": "no menu bar exposed",
+        "ok": false
+      }
+    },
+    {
+      "kind": "observe",
+      "label": "open-panel",
+      "data": {
+        "ok": false,
+        "error": "Xcode has no accessible window (not drawn yet?)",
+        "elapsed_ms": 0,
+        "controls": []
+      }
+    }
+  ],
+  "fullscreen_key": {
+    "elapsed_ms": 26,
+    "executor": "accessibility",
+    "ok": true,
+    "result": {
+      "detail": "key ctrl+cmd+f",
+      "frontmost_after": 64394,
+      "frontmost_before": 64394,
+      "mechanism": "CGEvent\u2192pid",
+      "ok": true,
+      "took_focus": false
+    }
+  },
+  "after_fullscreen_key": {
+    "ok": false,
+    "error": "Xcode has no accessible window (not drawn yet?)",
+    "elapsed_ms": 6,
+    "controls": []
+  },
+  "interaction_exercised": false,
+  "counter_value_observed": false,
+  "interactive_state_preservation_verified": false,
+  "window_mode_restored_verified": false,
+  "source_or_project_modified": false,
+  "session_metadata": {
+    "session_available": true,
+    "on_console": true,
+    "login_done": true,
+    "screen_locked_field": null,
+    "lock_state_established": false
+  },
+  "raw_local": "/private/tmp/canvas-interaction-qualification-20261103-raw.json",
+  "raw_sha256": "d93be120b88a58aacf9f35481b29b7a6a81b56da0b00a97baf286d70fb41a82f"
+}

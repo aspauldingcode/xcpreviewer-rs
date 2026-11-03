@@ -1,0 +1,30 @@
+{
+  "raw_report_local": "/Users/8amps/Library/Logs/DiagnosticReports/Xcode-2026-11-03-014910.ips",
+  "raw_report_sha256": "a8b5426b9151c924725676b1500ed884706f155d4bf6157d0c172b99f2662ba0",
+  "app_version": "26.6",
+  "build_version": "24959",
+  "report_timestamp": "2026-11-03 01:49:10.00 -0800",
+  "capture_time": "2026-11-03 01:49:00.9937 -0800",
+  "pid": 45749,
+  "executable": "/Applications/Xcode.app/Contents/MacOS/Xcode",
+  "exception_type": "EXC_BAD_ACCESS",
+  "exception_signal": "SIGSEGV",
+  "termination_namespace": "SIGNAL",
+  "termination_code": 11,
+  "selected_faulting_frame_symbols": [
+    null,
+    "unw_init_local",
+    "objc_addExceptionHandler",
+    "+[NSEvent startPeriodicEventsAfterDelay:withPeriod:]",
+    "NSControlTrackMouse",
+    "-[NSCell trackMouse:inRect:ofView:untilMouseUp:]",
+    "-[NSButtonCell trackMouse:inRect:ofView:untilMouseUp:]",
+    "-[_NSThemeZoomWidgetCell trackMouse:inRect:ofView:untilMouseUp:]"
+  ],
+  "raw_addresses_or_full_dump_published": false,
+  "causation_verified": false,
+  "prior_instrumentation_role_known": false,
+  "same_old_process_previously_instrumented": true,
+  "frida_attached_by_this_experiment": false,
+  "native_crash_reproduced": false
+}
