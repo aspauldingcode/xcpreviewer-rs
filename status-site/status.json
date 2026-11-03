@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T05:47:03.164927+00:00",
+  "updated_at": "2026-11-03T06:05:22.159278+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native getter checks now bind filter inputs to owned files. Project membership removal still loses the auxiliary candidate; three separate workspace invocations request updates. Full removal/render/resource completion remains open.",
+  "current_focus": "Native SDK controls measure reply cancellation and owned capture/FD cleanup. Cancel returns before an active callback finishes; private Canvas/transport/render settlement remains unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native SDK in-flight replies and capture cleanup tested",
+      "detail": "Three owned libxpc modes pass twice: normal, cancel during callback, cancel before reply. Active reply/capture stays live until callback completion; pending cancel delivers an invalid reply. Two earlier identity-guard aborts preserved; unsupported PID query now recorded. Eight semantic faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Actual native tuple paths matched; membership control exercised",
@@ -403,14 +408,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T05:47:05.227239+00:00",
+  "issue_counts_updated_at": "2026-11-03T06:05:24.326836+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Native getters match three primary filter paths and the auxiliary membership-removal path. Auxiliary removed input still has absent type/zero candidates. Three other workspace invocations complete coalescer\u2192scene-update request intervals.",
-    "ui_summary": "No GUI action. One independent owned CLI build succeeds; project membership is removed/restored while the auxiliary file is kept, then original project/source state restored and member removed. Controller available; Xcode alive.",
-    "unknown": "Why removed tuples lack datatype, nonempty removed-location propagation, other event reasons, rendered completion and object/transport/render release remain unknown. Getter guard failure paths are not natively qualified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-path-membership-2026-11-03",
+    "summary": "Six native public-SDK controls pass across two cohorts, with checked callback ordering and owned capture/FD cleanup. Cancel-inflight leaves the active dictionary valid; pending cancel delivers an invalid error reply. Two earlier owned identity-assertion aborts are preserved.",
+    "ui_summary": "Owned same-process anonymous SDK endpoints only. No Xcode, simulator, project or UI access. Controller available; no Rust/WASM product changes. Prior observer suite count remains sixteen separate controls.",
+    "unknown": "Private Canvas connection/capture cleanup, cross-process semantics, renderer/provider/port settlement and general identity remain unverified. Client server-PID query returns zero here; accepted peer PID is checked. Failed guard attempts have no capture cleanup proof.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-xpc-inflight-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

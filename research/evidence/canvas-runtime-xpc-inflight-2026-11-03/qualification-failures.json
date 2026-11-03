@@ -1,0 +1,25 @@
+{
+  "earlier_incorrect_client_pid_equality_guard_aborts": 2,
+  "codes": [
+    -6,
+    -6
+  ],
+  "operation_timeouts": 0,
+  "assertion": "serverPID==getpid()",
+  "numeric_query_result_in_failed_attempts_recorded": false,
+  "failure_trace_flushed": false,
+  "second_planned_run_occurred_after_first_failure_due_to_non_short_circuit_shell_batch": true,
+  "unchanged_third_attempt": false,
+  "changed_probe_records_client_pid_query_instead_of_asserting_equality": true,
+  "qualified_client_pid_query_values": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "accepted_peer_pid_matches_own_process_in_all_qualified_controls": true,
+  "qualified_streamed_events_match_final_trace": true,
+  "private_canvas_invoked": false
+}

@@ -19328,5 +19328,41 @@
     "source_project_restored_member_absent_controller_available_xcode_alive": true,
     "next_action": "Keep static expansion paused. Actual filter tuple paths are now bound to owned primary/auxiliary files. Membership removal still carries absent datatype and zero candidates while file is kept by the harness; do not repeat unchanged Swift filesystem/membership removals. Other workspace invocations request updates but their reasons/render completion remain unknown. Consider a materially different existing resource/folder-member scenario with exact guards to seek nonempty removed propagation; it has not been exercised. No resource/weak-zeroing/WASM acceptance or locked-UI/helper-load retry.",
     "verified_at": "2026-11-03T05:47:03.164927+00:00"
+  },
+  "canvas_runtime_xpc_inflight_checkpoint": {
+    "evidence": "research/evidence/canvas-runtime-xpc-inflight-2026-11-03",
+    "manifest_sha256": "37d8bf1870a8818db66df26ce75c5df0746763c4837260cda3bf4acc5149c793",
+    "classification": "native_public_sdk_component_execution",
+    "qualified_runs": 2,
+    "modes_per_run": [
+      "normal",
+      "cancel-inflight",
+      "cancel-pending"
+    ],
+    "active_dictionary_reply_remains_valid_after_cancel": true,
+    "capture_fd_live_when_inflight_cancel_returns": true,
+    "capture_deinit_fd_close_after_final_callback_marker": true,
+    "pending_cancel_delivers_invalid_error_reply": true,
+    "late_reply_observed_no_second_callback_through_quiet_ms": 100,
+    "accepted_peer_pid_matches_helper": true,
+    "qualified_client_server_pid_queries": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "client_query_not_accepted_as_remote_identity": true,
+    "earlier_incorrect_identity_guard_sigabrt_attempts": 2,
+    "second_attempt_followed_non_short_circuit_batch_failure": true,
+    "failed_numeric_queries_or_capture_cleanup_recorded": false,
+    "qualified_crashes_or_timeouts": 0,
+    "private_canvas_or_user_xcode_invoked": false,
+    "target_resource_settlement_verified": false,
+    "semantic_evidence_faults_rejected": 8,
+    "controller_available": true,
+    "next_action": "Keep static expansion paused. Native SDK cancel return does not settle an active reply callback/capture in the measured controls; retain this distinction when qualifying actual private wrapper or resource contracts. Same-process SDK marker tests do not establish private Swift capture/Canvas/renderer cleanup. Do not repeat failed client PID equality guard or unchanged Swift deletion routes. Record client PID query limitation and two owned qualification aborts separately from six passing SDK controls.",
+    "verified_at": "2026-11-03T06:05:22.159278+00:00"
   }
 }
