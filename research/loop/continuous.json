@@ -19424,5 +19424,31 @@
     "controller_available": true,
     "synthetic_reader_faults_rejected": 8,
     "next_action": "Static expansion paused. Use accessible owned UI for bounded project-close/reopen lifetime experiment, with native acknowledgements before deadline and safe project restoration. Existing window-close observations show sampled weak liveness only; exact owner binding/destruction and renderer resources remain unknown. Avoid unchanged expired-session coordination and unobserved keyboard delivery routes."
+  },
+  "canvas_runtime_project_lifetime_checkpoint": {
+    "verified_at": "2026-11-03T09:20:59.315407+00:00",
+    "evidence": "research/evidence/canvas-runtime-project-lifetime-2026-11-03",
+    "manifest_sha256": "46e712123af6b38739ebbfa0b60dde35fe9f2fce9bb42b2b263186d095e91e36",
+    "native_xcode_pid": 45749,
+    "completed_native_runs": 1,
+    "paired_setters": 24,
+    "weak_alive_tokens_after_close": [
+      1
+    ],
+    "weak_alive_tokens_after_reopen": [
+      1,
+      2
+    ],
+    "tracked_destructor_events": 0,
+    "target_destruction_verified": false,
+    "exact_receiver_project_owner_binding": false,
+    "post_collector_refresh_ui_headers_observed": true,
+    "refresh_private_callback_order_instrumented": false,
+    "probe_weak_slots_destroyed": 2,
+    "source_project_hashes_original": true,
+    "hooks_detached": true,
+    "controller_available": true,
+    "synthetic_reader_faults_rejected": 8,
+    "next_action": "Keep static expansion paused. Avoid unchanged weak-positive close loops. Qualify exact receiver ownership or correlate existing refresh/cancellation probes with guarded native Refresh Canvas action. Header return is not rendered/provider/resource completion; target teardown remains unexercised."
   }
 }

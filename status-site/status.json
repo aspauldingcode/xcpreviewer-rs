@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:14:00.986969+00:00",
+  "updated_at": "2026-11-03T09:20:59.315407+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native UI pin/window-close behavior now exercised with guarded weak-load samples. Two observed EditorScene receivers remain live after the added window disappears; target destruction and Canvas resource settlement remain unverified.",
+  "current_focus": "Owned project close/reopen now exercised with native weak samples. The earlier receiver remains loadable; no target destructor observed. Refresh restores original header/pin UI after reopen, without private refresh callback or rendered-output proof.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Project close/reopen exercised; target destruction still unknown",
+      "detail": "One native run: 24 matched setters; old receiver weak-loadable after Close Project and reopen, then a second token observed. No destructor entries/returns. Probe cleanup confirmed. Reopened Canvas paused; one post-collector Refresh restores original pin/header controls. This is UI observation, not new build/render/resource completion."
+    },
     {
       "date": "2026-11-03",
       "title": "Native window closes; sampled Canvas receivers remain live",
@@ -418,14 +423,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T09:14:03.094090+00:00",
+  "issue_counts_updated_at": "2026-11-03T09:21:00.808994+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Actual Xcode pin/window actions correlated with 43 paired native setter intervals. Two guarded EditorScene receivers remain weak-loadable at sampled instants after added-window disappearance.",
-    "ui_summary": "Native activation recovered owned PreviewLab UI. Original window/pin state preserved, added window closed, hooks detached and source/project hashes unchanged. One complete run; first final snapshot missed deadline. Project-close lifecycle not exercised.",
-    "unknown": "Exact receiver/window/project ownership, target destruction, renderer/provider/transport release and rendered output remain unknown. Positive weak loads temporarily retain objects; probe-slot cleanup is not target cleanup.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-window-lifetime-2026-11-03",
+    "summary": "Actual owned project close/reopen records 24 matched native setter intervals. Old receiver remains weak-loadable after close/reopen; a second receiver token is observed on reopen.",
+    "ui_summary": "Owned project reopened and paused Canvas refreshed once. Original pin.fill and three header controls return; source/project bytes unchanged, hooks detached, Xcode alive and controller available.",
+    "unknown": "Exact receiver project/window ownership and target destruction remain unknown. Refresh UI action occurred after hooks detached, so no private callback ordering, new build, pixel rendering or renderer/provider/transport settlement is established.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-project-lifetime-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

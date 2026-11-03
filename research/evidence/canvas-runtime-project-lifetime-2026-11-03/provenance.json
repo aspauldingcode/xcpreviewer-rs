@@ -1,0 +1,13 @@
+{
+  "evidence_level": "scoped native runtime verification",
+  "collector_exit": 0,
+  "raw_ui_local": "/private/tmp/canvas-project-lifetime-20261103-b/ui-complete-raw.json",
+  "raw_ui_sha256": "6b5c4ba6d746c6ebc02ef37472c8a03921718a5708aacba37c0f25ec4243019e",
+  "sanitization": "Only selected owned project controls/action receipts retained; sidebar, source text and full menus remain local.",
+  "historical_labels": {
+    "new-tab": "before project close; no new tab created",
+    "restored": "after project reopen; before post-collector manual refresh"
+  },
+  "failure": "First raw UI write attempt failed with Python non-UTF-8 SyntaxError. Native collection/cleanup unaffected; raw protocol persisted with structured file patch afterwards.",
+  "limitations": "No project/receiver exact-owner binding; no tracked destructor; no global resource settlement. UI refresh performed after hooks detached, not correlated private callback evidence."
+}

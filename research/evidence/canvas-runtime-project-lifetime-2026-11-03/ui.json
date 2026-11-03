@@ -1,0 +1,315 @@
+[
+  {
+    "kind": "observe",
+    "label": "before",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 184,
+      "pin_identifier": "pin.fill",
+      "canvas_paused": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  },
+  {
+    "kind": "snapshot",
+    "label": "baseline",
+    "value": {
+      "event": "snapshot",
+      "label": "baseline",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+      "label": "Pin Preview"
+    },
+    "data": {
+      "elapsed_ms": 24,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Pin Preview\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "unpinned",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 472,
+      "pin_identifier": "pin",
+      "canvas_paused": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  },
+  {
+    "kind": "snapshot",
+    "label": "unpinned",
+    "value": {
+      "event": "snapshot",
+      "label": "unpinned",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+      "label": "Pin Preview"
+    },
+    "data": {
+      "elapsed_ms": 164,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Pin Preview\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "snapshot",
+    "label": "new-tab",
+    "value": {
+      "event": "snapshot",
+      "label": "new-tab",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "menu",
+      "menu": "File>Close Project"
+    },
+    "data": {
+      "elapsed_ms": 365,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXMenuItem \"Close Project\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress(menu)",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "after-project-close",
+    "data": {
+      "ok": false,
+      "error": "Xcode has no accessible window (not drawn yet?)",
+      "elapsed_ms": 435,
+      "pin_identifier": null,
+      "canvas_paused": false,
+      "preview_labels": []
+    }
+  },
+  {
+    "kind": "snapshot",
+    "label": "after-close",
+    "value": {
+      "event": "snapshot",
+      "label": "after-close",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "menu",
+      "menu": "File>Open\u2026"
+    },
+    "data": {
+      "elapsed_ms": 391,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXMenuItem \"Open\u2026\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress(menu)",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "open-panel",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "Open",
+      "elapsed_ms": 262,
+      "pin_identifier": null,
+      "canvas_paused": false,
+      "preview_labels": [],
+      "where": "preview-ca9cbc8786144517b3a14ef57a90e08b",
+      "owned_project_row": true,
+      "open_enabled": true
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.9",
+      "label": "Open"
+    },
+    "data": {
+      "elapsed_ms": 640,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Open\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "reopened",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 835,
+      "pin_identifier": null,
+      "canvas_paused": true,
+      "preview_labels": []
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "reopened-paused",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 150,
+      "pin_identifier": null,
+      "canvas_paused": true,
+      "preview_labels": []
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "label": "Refresh Canvas"
+    },
+    "data": {
+      "elapsed_ms": 9,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Refresh Canvas\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "refresh-immediate",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 193,
+      "pin_identifier": null,
+      "canvas_paused": false,
+      "preview_labels": []
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "final",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 161,
+      "pin_identifier": "pin.fill",
+      "canvas_paused": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  }
+]
