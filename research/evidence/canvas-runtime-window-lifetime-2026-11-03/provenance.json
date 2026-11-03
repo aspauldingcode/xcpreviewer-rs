@@ -1,0 +1,12 @@
+{
+  "kind": "native-runtime-verification-scoped",
+  "source": "Native accessibility actions plus existing guarded Frida weak collector in Xcode PID 45749",
+  "ui_raw_sha256": "ec5bf157554b276ec6bacf9c72d5f51cc3f33f1825a4a998be1638b8054b75b6",
+  "ui_sanitization": "Only owned-window inventories, action acknowledgements, pin identifiers, close frame and weak snapshots retained. Full AX trees/menus/source text stay local.",
+  "raw_ui_local": "/private/tmp/canvas-window-lifetime-20261103-b/ui-protocol-raw.json",
+  "b_collector_exit": 0,
+  "b_poll_helper": "poll.py; acknowledgements observed, not fixed-delay success",
+  "a_collector_exit": 0,
+  "project_preparation_collector_exit": "session-ended event; no action performed",
+  "artifacts_are_not_fresh_runtime_runs": true
+}

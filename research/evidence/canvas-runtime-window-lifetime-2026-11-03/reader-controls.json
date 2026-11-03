@@ -1,0 +1,37 @@
+{
+  "kind": "synthetic-reader-controls",
+  "cases": [
+    {
+      "case": "pin-transition",
+      "rejected": true
+    },
+    {
+      "case": "close-original",
+      "rejected": true
+    },
+    {
+      "case": "action-failed",
+      "rejected": true
+    },
+    {
+      "case": "missing-final",
+      "rejected": true
+    },
+    {
+      "case": "weak-nil",
+      "rejected": true
+    },
+    {
+      "case": "wrong-image",
+      "rejected": true
+    },
+    {
+      "case": "unpaired-setter",
+      "rejected": true
+    },
+    {
+      "case": "cleanup-missing",
+      "rejected": true
+    }
+  ]
+}

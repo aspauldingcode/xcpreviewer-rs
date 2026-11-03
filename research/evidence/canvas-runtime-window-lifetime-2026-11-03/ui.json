@@ -1,0 +1,364 @@
+[
+  {
+    "kind": "inventory",
+    "label": "before",
+    "windows": [
+      {
+        "frame": [
+          23,
+          33,
+          1401,
+          902
+        ],
+        "id": 13118,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      }
+    ]
+  },
+  {
+    "kind": "observe",
+    "label": "before",
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "pin_identifier": "pin.fill",
+    "close_frame": [
+      41,
+      51,
+      16,
+      16
+    ]
+  },
+  {
+    "kind": "snapshot",
+    "label": "baseline",
+    "value": {
+      "event": "snapshot",
+      "label": "baseline",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+      "label": "Pin Preview"
+    },
+    "data": {
+      "elapsed_ms": 71,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Pin Preview\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "unpinned",
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "pin_identifier": "pin",
+    "close_frame": [
+      41,
+      51,
+      16,
+      16
+    ]
+  },
+  {
+    "kind": "snapshot",
+    "label": "unpinned",
+    "value": {
+      "event": "snapshot",
+      "label": "unpinned",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.2.0.0.0.0.3.0.0",
+      "label": "Pin Preview"
+    },
+    "data": {
+      "elapsed_ms": 42,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Pin Preview\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "repinned",
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "pin_identifier": "pin.fill",
+    "close_frame": [
+      41,
+      51,
+      16,
+      16
+    ]
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "menu",
+      "menu": "File>New>Window"
+    },
+    "data": {
+      "elapsed_ms": 881,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXMenuItem \"Window\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress(menu)",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "inventory",
+    "label": "created",
+    "windows": [
+      {
+        "frame": [
+          139,
+          88,
+          1403,
+          902
+        ],
+        "id": 14183,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      },
+      {
+        "frame": [
+          23,
+          33,
+          1401,
+          902
+        ],
+        "id": 13118,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      }
+    ]
+  },
+  {
+    "kind": "observe",
+    "label": "created",
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "pin_identifier": "pin",
+    "close_frame": [
+      158,
+      106,
+      16,
+      16
+    ]
+  },
+  {
+    "kind": "snapshot",
+    "label": "new-tab",
+    "value": {
+      "event": "snapshot",
+      "label": "new-tab",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        },
+        {
+          "id": 2,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.2",
+      "label": "Close window"
+    },
+    "data": {
+      "elapsed_ms": 654,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "inventory",
+    "label": "closing-0",
+    "windows": [
+      {
+        "frame": [
+          23,
+          33,
+          1401,
+          902
+        ],
+        "id": 13118,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      },
+      {
+        "frame": [
+          153,
+          97,
+          1375,
+          884
+        ],
+        "id": 14183,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      }
+    ]
+  },
+  {
+    "kind": "inventory",
+    "label": "closing-1",
+    "windows": [
+      {
+        "frame": [
+          23,
+          33,
+          1401,
+          902
+        ],
+        "id": 13118,
+        "owner": "Xcode",
+        "pid": 45749,
+        "title": "PreviewLab \u2014 PreviewLab.swift"
+      }
+    ]
+  },
+  {
+    "kind": "snapshot",
+    "label": "after-close",
+    "value": {
+      "event": "snapshot",
+      "label": "after-close",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        },
+        {
+          "id": 2,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "snapshot",
+    "label": "restored",
+    "value": {
+      "event": "snapshot",
+      "label": "restored",
+      "main": true,
+      "weak_read_scope": "load instant; temporary strong reference released on main",
+      "objects": [
+        {
+          "id": 1,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        },
+        {
+          "id": 2,
+          "weak_alive_at_load": true,
+          "deinitializing_return_seen": false,
+          "deallocating_return_seen": false
+        }
+      ]
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "restored",
+    "ok": true,
+    "pid": 45749,
+    "window": "PreviewLab \u2014 PreviewLab.swift",
+    "pin_identifier": "pin.fill",
+    "close_frame": [
+      41,
+      51,
+      16,
+      16
+    ]
+  },
+  {
+    "kind": "completed",
+    "original_window_preserved": true,
+    "created_window_closed": true
+  }
+]

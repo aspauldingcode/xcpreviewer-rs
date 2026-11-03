@@ -1,0 +1,19 @@
+{
+  "window-a": {
+    "local_directory": "/private/tmp/canvas-window-lifetime-20261103-a",
+    "snapshots_present": [
+      "after-close",
+      "baseline",
+      "new-tab",
+      "unpinned"
+    ],
+    "target_terminated": false,
+    "failure": "Final restored snapshot requested after 240-second collector deadline; FileNotFoundError reading missing restored.json. Immediate inventory still showed closing animation. No settled final liveness sample."
+  },
+  "project-preparation": {
+    "local_directory": "/private/tmp/canvas-project-lifetime-20261103-a",
+    "snapshots_present": [],
+    "target_terminated": false,
+    "failure": "Collector expired during coordinator delay before project-close action or snapshots. Zero observed weak slots. Project close/reopen lifecycle was not exercised."
+  }
+}

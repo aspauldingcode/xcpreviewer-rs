@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T06:23:21.739839+00:00",
+  "updated_at": "2026-11-03T09:14:00.986969+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
   "current_focus": "Native SDK caller-reference release is now exercised while reply callbacks block. Owned capture/FD survives release and later cleans up; connection destruction and Canvas resource settlement remain unverified.",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native window closes; sampled Canvas receivers remain live",
+      "detail": "GUI recovered through bounded native activation. Pin toggle/new window/close sequence passes once: 43 matched setters, two weak-loadable receivers after window disappearance and again 3.16s later. No target destructor observed. Earlier incomplete window and idle project-close preparation retained; no leak/resource-release claim."
+    },
     {
       "date": "2026-11-03",
       "title": "Caller reference released during native SDK callbacks",
@@ -413,14 +418,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T06:23:23.760874+00:00",
+  "issue_counts_updated_at": "2026-11-03T09:14:03.094090+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Ten native public-SDK controls pass across two cohorts. New cases release the caller client reference while dictionary/error callbacks block; capture/FD remains live through release, reply remains valid after unblock, then deinit/close is observed.",
-    "ui_summary": "Owned same-process SDK endpoints only; no Xcode, simulator, project or UI access. Full five-mode reader coverage enforced by the updated runner. Prior observer suite count remains sixteen separate controls.",
-    "unknown": "Connection-object deallocation, private Swift/Canvas capture cleanup, cross-process behavior and renderer/provider/port settlement remain unverified. A release call is not a destruction witness; client server-PID query remains unavailable here.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-xpc-owner-release-2026-11-03",
+    "summary": "Actual Xcode pin/window actions correlated with 43 paired native setter intervals. Two guarded EditorScene receivers remain weak-loadable at sampled instants after added-window disappearance.",
+    "ui_summary": "Native activation recovered owned PreviewLab UI. Original window/pin state preserved, added window closed, hooks detached and source/project hashes unchanged. One complete run; first final snapshot missed deadline. Project-close lifecycle not exercised.",
+    "unknown": "Exact receiver/window/project ownership, target destruction, renderer/provider/transport release and rendered output remain unknown. Positive weak loads temporarily retain objects; probe-slot cleanup is not target cleanup.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-window-lifetime-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

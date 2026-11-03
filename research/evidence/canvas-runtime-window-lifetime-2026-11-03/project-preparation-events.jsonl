@@ -1,0 +1,7 @@
+{"stage": "owned-controls-passed", "count": 3, "library_sha256": "d8776a29ffeee3fc5e73f000e5462cca11107830d7385f2de8d27a933e19b063", "time_ns": 117360583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "afaf513ac1153755840e1d82b40e7d93", "runtime_uuid": "7669d858d33236c79c6c4564ffbea8d2", "runtime_path": "/usr/lib/swift/libswiftCore.dylib", "slot_size": 8, "helper_module_loaded": false, "weak_reference_access_available": true, "weak_poll_main_queue": true, "max_objects": 20, "max_calls": 200}}, "time_ns": 2180213541}
+{"stage": "capture-ready", "time_ns": 2180702291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "weak_slots_destroyed": 0, "main": true, "helper_module_loaded": false}}, "time_ns": 242218028750}
+{"stage": "script-unloaded", "time_ns": 242222697083}
+{"stage": "session-detached", "time_ns": 242224153625}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 242224480166}
