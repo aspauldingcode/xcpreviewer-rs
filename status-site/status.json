@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T05:34:47.503017+00:00",
+  "updated_at": "2026-11-03T05:47:03.164927+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Paired native controls narrow deletion filtering: one input with absent datatype produces zero staged candidates before the predicate. Typed file edits reach the predicate; nonempty removal propagation remains open.",
+  "current_focus": "Native getter checks now bind filter inputs to owned files. Project membership removal still loses the auxiliary candidate; three separate workspace invocations request updates. Full removal/render/resource completion remains open.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Actual native tuple paths matched; membership control exercised",
+      "detail": "Guarded getters identify primary edit/delete and auxiliary membership-removal inputs. Auxiliary remains on disk but its removed tuple has no type/zero candidates. Three other handler invocations complete coalescer\u2192scene-update requests; no rendered/removal completion claim. Eight path faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Typed edit controls isolate deletion loss before predicate",
@@ -398,14 +403,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T05:34:49.599013+00:00",
+  "issue_counts_updated_at": "2026-11-03T05:47:05.227239+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Two native paired runs contrast typed modifications/restoration (one candidate; thunkable=true, predicate=false) with deletion (one input, optional type absent, zero staged candidates, no predicate). Input assertions pass; scene propagation remains missing.",
-    "ui_summary": "No build or GUI action. Guarded source comment edits/restoration and deletion/restoration completed; source/project hashes match originals, controller available and Xcode alive.",
-    "unknown": "Why the optional datatype is absent, intermediate nil processing, definitive payload paths, nonempty removal propagation and object/transport/render cleanup remain unknown. Typed candidate coverage is not a successful refresh or WASM parity control.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-filter-input-2026-11-03",
+    "summary": "Native getters match three primary filter paths and the auxiliary membership-removal path. Auxiliary removed input still has absent type/zero candidates. Three other workspace invocations complete coalescer\u2192scene-update request intervals.",
+    "ui_summary": "No GUI action. One independent owned CLI build succeeds; project membership is removed/restored while the auxiliary file is kept, then original project/source state restored and member removed. Controller available; Xcode alive.",
+    "unknown": "Why removed tuples lack datatype, nonempty removed-location propagation, other event reasons, rendered completion and object/transport/render release remain unknown. Getter guard failure paths are not natively qualified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-path-membership-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

@@ -1,0 +1,50 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "xcode_uuid": "25c99c664185307188e31ab474573a10", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "max_events": 1000, "path_identity_getters": true, "filter_input_probes": true, "filter_count_probe": true, "empty_cleanup_probe": false}}, "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "baseline", "total_events": 0}}, "time_ns": 698667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "modified-control", "total_events": 0}}, "time_ns": 2007644583}
+{"stage": "source-modified-control", "time_ns": 2009021750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3665320875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "modified-control"}}, "time_ns": 3665734583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 1, "thread": 259, "count_register": "0x1", "phase": "modified-control"}}, "time_ns": 3665915000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 1, "thread": 259, "present": true, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "modified-control"}}, "time_ns": 3666691792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 1, "thread": 259, "count_register": "0x1", "phase": "modified-control"}}, "time_ns": 3666882917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 1, "thread": 259, "value": 1, "phase": "modified-control"}}, "time_ns": 3667031792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 1, "thread": 259, "value": 0, "phase": "modified-control"}}, "time_ns": 3667183958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3667334208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 1, "thread": 259, "phase": "modified-control"}}, "time_ns": 3667477167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 2, "thread": 259, "phase": "modified-control"}}, "time_ns": 3988484875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 2, "thread": 259, "phase": "modified-control"}}, "time_ns": 3989249792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 3, "thread": 259, "phase": "modified-control"}}, "time_ns": 6231457958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 3, "thread": 259, "phase": "modified-control"}}, "time_ns": 6232086417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restore-control", "total_events": 13}}, "time_ns": 7015315083}
+{"stage": "source-modified-control-restored", "time_ns": 7027116167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 7637883333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 4, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "restore-control"}}, "time_ns": 7638210500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 4, "thread": 259, "count_register": "0x1", "phase": "restore-control"}}, "time_ns": 7638500333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 4, "thread": 259, "present": true, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "restore-control"}}, "time_ns": 7638695333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 4, "thread": 259, "count_register": "0x1", "phase": "restore-control"}}, "time_ns": 7638836375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 4, "thread": 259, "value": 1, "phase": "restore-control"}}, "time_ns": 7638910917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 4, "thread": 259, "value": 0, "phase": "restore-control"}}, "time_ns": 7639019875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 7639096042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 4, "thread": 259, "phase": "restore-control"}}, "time_ns": 7639157208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 5, "thread": 259, "phase": "restore-control"}}, "time_ns": 7741997375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 5, "thread": 259, "phase": "restore-control"}}, "time_ns": 7742445875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 6, "thread": 259, "phase": "restore-control"}}, "time_ns": 8865524167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 6, "thread": 259, "phase": "restore-control"}}, "time_ns": 8865968083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "removed", "total_events": 26}}, "time_ns": 11041813500}
+{"stage": "source-deleted", "absent": true, "time_ns": 11043244125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 11610485083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-files-block", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 11610975750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 7, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249a0c", "phase": "removed"}}, "time_ns": 11611175708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 7, "thread": 259, "count_register": "0x1", "phase": "removed"}}, "time_ns": 11611332000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 7, "thread": 259, "present": false, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "removed"}}, "time_ns": 11611540542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 7, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 11611730500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 11611890167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-count-branch", "id": 7, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 11612041625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 11612200792}
+{"stage": "removed-wait-ended", "workspace_removed_observed": false, "time_ns": 19048281333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restored", "total_events": 35}}, "time_ns": 20057054000}
+{"stage": "source-restored", "sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 20057938750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "total_events": 35}}, "time_ns": 23065851583}
+{"stage": "script-unloaded", "time_ns": 23067066875}
+{"stage": "session-detached", "time_ns": 23067906542}
+{"stage": "session-ended", "source_restored": true, "project_restored": true, "auxiliary_absent": true, "time_ns": 23068259542}

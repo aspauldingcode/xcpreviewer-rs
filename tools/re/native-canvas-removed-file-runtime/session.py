@@ -1,7 +1,7 @@
 """Actual deletion/restoration of guarded owned source; no UI or synthetic event."""
 from pathlib import Path
 import argparse,json,subprocess,hashlib,threading,time,fcntl,frida,signal,os
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');p.add_argument('--count-only',action='store_true');p.add_argument('--modify-control',action='store_true');a=p.parse_args();assert not (a.modify_control and a.auxiliary)
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');p.add_argument('--count-only',action='store_true');p.add_argument('--modify-control',action='store_true');p.add_argument('--membership-remove',action='store_true');a=p.parse_args();assert not (a.modify_control and a.auxiliary);assert not a.membership_remove or a.auxiliary
 r=a.output.resolve();r.mkdir(exist_ok=False,parents=True);root=Path(__file__).resolve().parents[3];source=a.source.resolve()
 for n in ['agent.js','session.py']:(r/n).write_bytes(Path(__file__).with_name(n).read_bytes())
 mutex=threading.Lock();ready=threading.Event();removed=threading.Event();acks={};script=None;session=None;before=None;deleted=False;failed=False;project=None;project_before=None;project_expected=None;installed=False;primary=source;modified=False;modified_bytes=None
@@ -31,7 +31,7 @@ with open(root/'research/state/controller.lock','a+') as lock:
   assert source.is_relative_to(root/'research/build/preview-workspaces') and source.name=='PreviewLab.swift'
   before=source.read_bytes();assert hashlib.sha256(before).hexdigest()=='128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef'
   (r/'source-before.swift').write_bytes(before)
-  session=bounded(8,lambda:frida.get_local_device().attach(a.pid));code=(r/'agent.js').read_text();code=code.replace('const trackEmpty = true;','const trackEmpty = false;') if a.count_only else code;(r/'executed-agent.js').write_text(code);script=session.create_script(code);script.on('message',message);bounded(8,script.load);assert ready.wait(2)
+  session=bounded(8,lambda:frida.get_local_device().attach(a.pid));code=(r/'agent.js').read_text().replace('const expectedPaths = {};','const expectedPaths = '+json.dumps({'primary':str(primary),'auxiliary':str(primary.with_name('RuntimeRefreshDependency.swift')),'project':str(primary.parents[2]/'PreviewLab.xcodeproj/project.pbxproj')})+';');code=code.replace('const trackEmpty = true;','const trackEmpty = false;') if a.count_only else code;(r/'executed-agent.js').write_text(code);script=session.create_script(code);script.on('message',message);bounded(8,script.load);assert ready.wait(2)
   if a.auxiliary:
    project=primary.parents[2]/'PreviewLab.xcodeproj/project.pbxproj';project_before=project.read_bytes()
    assert hashlib.sha256(project_before).hexdigest()=='1ee671965dcfb221233970e970130946a1971a0b0d30625601e93440a60bcf45'
@@ -52,8 +52,17 @@ with open(root/'research/state/controller.lock','a+') as lock:
   if a.modify_control:
    phase('modified-control');modified_bytes=before+b'\n// Native filter input runtime control\n';source.write_bytes(modified_bytes);modified=True;emit(stage='source-modified-control');time.sleep(5)
    phase('restore-control');assert source.read_bytes()==modified_bytes,'Concurrent source modification';source.write_bytes(before);modified=False;emit(stage='source-modified-control-restored');time.sleep(4)
-  removed.clear();phase('removed');assert source.read_bytes()==before,'Concurrent source edit before deletion';source.unlink();deleted=True;emit(stage='source-deleted',absent=not source.exists());observed=removed.wait(8);emit(stage='removed-wait-ended',workspace_removed_observed=observed);failed=failed or not observed;time.sleep(1)
-  phase('restored');assert not source.exists(),'Concurrent source recreation';source.write_bytes(before);deleted=False;emit(stage='source-restored',sha256=hashlib.sha256(source.read_bytes()).hexdigest());time.sleep(3)
+  removed.clear();phase('removed');assert source.read_bytes()==before,'Concurrent source edit before removal'
+  if a.membership_remove:
+   assert project.read_bytes()==project_expected,'Concurrent project edit';project.write_bytes(project_before);emit(stage='project-membership-removed',file_present=source.exists(),file_bytes_match=source.read_bytes()==before)
+  else:source.unlink();deleted=True;emit(stage='source-deleted',absent=not source.exists())
+  observed=removed.wait(8);emit(stage='removed-wait-ended',workspace_removed_observed=observed);failed=failed or not observed;time.sleep(1)
+  phase('restored')
+  if a.membership_remove:
+   assert project.read_bytes()==project_before and source.read_bytes()==before,'Concurrent membership/file edit';project.write_bytes(project_expected);emit(stage='project-membership-restored',file_present=True)
+  else:
+   assert not source.exists(),'Concurrent source recreation';source.write_bytes(before);deleted=False;emit(stage='source-restored',sha256=hashlib.sha256(source.read_bytes()).hexdigest())
+  time.sleep(3)
  except Exception as e:failed=True;emit(stage='failure',kind=type(e).__name__,error=str(e))
  finally:
   if modified:
@@ -63,7 +72,7 @@ with open(root/'research/state/controller.lock','a+') as lock:
    if not source.exists():source.write_bytes(before);emit(stage='source-restored-finally')
    else:emit(stage='restore-skipped-concurrent-recreation')
   if installed:
-   if project.read_bytes()==project_expected and source.exists() and source.read_bytes()==before:
+   if project.read_bytes() in ([project_expected,project_before] if a.membership_remove else [project_expected]) and source.exists() and source.read_bytes()==before:
     project.write_bytes(project_before);source.unlink();emit(stage='auxiliary-cleaned',project_restored=True,dependency_absent=True)
    else:failed=True;emit(stage='auxiliary-cleanup-skipped-concurrent-edit')
   if script and ready.is_set():

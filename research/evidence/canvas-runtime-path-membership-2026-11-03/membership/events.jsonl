@@ -1,0 +1,125 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "xcode_uuid": "25c99c664185307188e31ab474573a10", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "max_events": 1000, "path_identity_getters": true, "filter_input_probes": true, "filter_count_probe": true, "empty_cleanup_probe": false}}, "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "install", "total_events": 0}}, "time_ns": 1125042}
+{"stage": "auxiliary-installed", "time_ns": 1662542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1874126625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "install"}}, "time_ns": 1874893792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1875444875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 1876094792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1883282500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 1, "thread": 259, "phase": "install"}}, "time_ns": 1883914834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2140791375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 2, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249b64", "phase": "install"}}, "time_ns": 2141663875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2142157209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 2, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 2142775709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2150151917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 2, "thread": 259, "phase": "install"}}, "time_ns": 2150690750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2154342125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 3, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "install"}}, "time_ns": 2155883084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2156508417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 3, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "install"}}, "time_ns": 2158926459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2166601542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 3, "thread": 259, "phase": "install"}}, "time_ns": 2167091667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2431401709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 4, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "install"}}, "time_ns": 2432958542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 4, "thread": 259, "count_register": "0x2", "phase": "install"}}, "time_ns": 2433458500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 4, "thread": 259, "present": true, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "install"}}, "time_ns": 2433737459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 4, "thread": 259, "present": true, "path_kind": "other", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "install"}}, "time_ns": 2433979042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 4, "thread": 259, "count_register": "0x2", "phase": "install"}}, "time_ns": 2434191209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 4, "thread": 259, "value": 1, "phase": "install"}}, "time_ns": 2434437542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 4, "thread": 259, "value": 0, "phase": "install"}}, "time_ns": 2434608709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 4, "thread": 259, "value": 0, "phase": "install"}}, "time_ns": 2434787542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 4, "thread": 259, "value": 0, "phase": "install"}}, "time_ns": 2434945667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2435108959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 4, "thread": 259, "phase": "install"}}, "time_ns": 2435278667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 5, "thread": 259, "phase": "install"}}, "time_ns": 2559200500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 5, "thread": 259, "phase": "install"}}, "time_ns": 2559599167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "cli-build", "total_events": 32}}, "time_ns": 3007699834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 6, "thread": 259, "phase": "cli-build"}}, "time_ns": 4944514042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 6, "thread": 259, "phase": "cli-build"}}, "time_ns": 4944868875}
+{"stage": "cli-build-ended", "code": 0, "log_mentions_dependency": true, "time_ns": 13931456042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "baseline", "total_events": 34}}, "time_ns": 16941624084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "removed", "total_events": 34}}, "time_ns": 18957135792}
+{"stage": "project-membership-removed", "file_present": true, "file_bytes_match": true, "time_ns": 18964287792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 19206981250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 7, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "removed"}}, "time_ns": 19208405042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 19208822500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 7, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "removed"}}, "time_ns": 19209963125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 19215975834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 7, "thread": 259, "phase": "removed"}}, "time_ns": 19216311459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 8, "thread": 259, "phase": "removed"}}, "time_ns": 19281198250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 8, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249b64", "phase": "removed"}}, "time_ns": 19282012459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 8, "thread": 259, "phase": "removed"}}, "time_ns": 19282359125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 8, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "removed"}}, "time_ns": 19282791125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 8, "thread": 259, "phase": "removed"}}, "time_ns": 19287712209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 8, "thread": 259, "phase": "removed"}}, "time_ns": 19288798042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 9, "thread": 259, "phase": "removed"}}, "time_ns": 19290941417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 9, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "removed"}}, "time_ns": 19291678292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 9, "thread": 259, "phase": "removed"}}, "time_ns": 19291916084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 9, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "removed"}}, "time_ns": 19292445334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 9, "thread": 259, "phase": "removed"}}, "time_ns": 19296470709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 9, "thread": 259, "phase": "removed"}}, "time_ns": 19296835167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 10, "thread": 259, "phase": "removed"}}, "time_ns": 19537679417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 10, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "removed"}}, "time_ns": 19538317709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 10, "thread": 259, "count_register": "0x2", "phase": "removed"}}, "time_ns": 19538414750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 10, "thread": 259, "present": true, "path_kind": "other", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "removed"}}, "time_ns": 19538776959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 10, "thread": 259, "present": true, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "removed"}}, "time_ns": 19540371375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 10, "thread": 259, "count_register": "0x2", "phase": "removed"}}, "time_ns": 19547942500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 10, "thread": 259, "value": 0, "phase": "removed"}}, "time_ns": 19548076917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 10, "thread": 259, "value": 0, "phase": "removed"}}, "time_ns": 19548605167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 10, "thread": 259, "value": 1, "phase": "removed"}}, "time_ns": 19552587209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 10, "thread": 259, "value": 0, "phase": "removed"}}, "time_ns": 19552709709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 10, "thread": 259, "phase": "removed"}}, "time_ns": 19553009500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 10, "thread": 259, "phase": "removed"}}, "time_ns": 19553091167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 11, "thread": 259, "phase": "removed"}}, "time_ns": 19553165000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-files-block", "id": 11, "thread": 259, "phase": "removed"}}, "time_ns": 19553224084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 11, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249a0c", "phase": "removed"}}, "time_ns": 19553278625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 11, "thread": 259, "count_register": "0x1", "phase": "removed"}}, "time_ns": 19559173542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 11, "thread": 259, "present": false, "path_kind": "auxiliary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "removed"}}, "time_ns": 19559261459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 11, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 19559323959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 11, "thread": 259, "phase": "removed"}}, "time_ns": 19559377792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-count-branch", "id": 11, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 19559432875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 11, "thread": 259, "phase": "removed"}}, "time_ns": 19559507542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 12, "thread": 259, "phase": "removed"}}, "time_ns": 19719493792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 12, "thread": 259, "phase": "removed"}}, "time_ns": 19719968834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 13, "thread": 259, "phase": "removed"}}, "time_ns": 21684646000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 13, "thread": 259, "phase": "removed"}}, "time_ns": 21685463625}
+{"stage": "removed-wait-ended", "workspace_removed_observed": false, "time_ns": 26967277000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restored", "total_events": 77}}, "time_ns": 27972571917}
+{"stage": "project-membership-restored", "file_present": true, "time_ns": 27973649417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 14, "thread": 259, "phase": "restored"}}, "time_ns": 29265739625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 14, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "restored"}}, "time_ns": 29267569042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 14, "thread": 259, "phase": "restored"}}, "time_ns": 29268156125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 14, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "restored"}}, "time_ns": 29268416709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 14, "thread": 259, "phase": "restored"}}, "time_ns": 29273838042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 14, "thread": 259, "phase": "restored"}}, "time_ns": 29274251917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 15, "thread": 259, "phase": "restored"}}, "time_ns": 29335312334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 15, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249b64", "phase": "restored"}}, "time_ns": 29336021459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 15, "thread": 259, "phase": "restored"}}, "time_ns": 29336310417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 15, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "restored"}}, "time_ns": 29336733292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 15, "thread": 259, "phase": "restored"}}, "time_ns": 29341527542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 15, "thread": 259, "phase": "restored"}}, "time_ns": 29341967042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 16, "thread": 259, "phase": "restored"}}, "time_ns": 29344848500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-enter", "id": 16, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249d3c", "phase": "restored"}}, "time_ns": 29346044084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "coalescer-return", "id": 16, "thread": 259, "phase": "restored"}}, "time_ns": 29346449334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-enter", "id": 16, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x24a070", "phase": "restored"}}, "time_ns": 29347185834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "scene-update-return", "id": 16, "thread": 259, "phase": "restored"}}, "time_ns": 29351313417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 16, "thread": 259, "phase": "restored"}}, "time_ns": 29351706917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 17, "thread": 259, "phase": "restored"}}, "time_ns": 29596931584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 17, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249c60", "phase": "restored"}}, "time_ns": 29597290334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-input-count", "id": 17, "thread": 259, "count_register": "0x2", "phase": "restored"}}, "time_ns": 29597376667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 17, "thread": 259, "present": true, "path_kind": "other", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "restored"}}, "time_ns": 29597519250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-optional-type", "id": 17, "thread": 259, "present": true, "path_kind": "primary", "getter_main": true, "getter_receiver_expected_family": true, "getter_read_available": true, "phase": "restored"}}, "time_ns": 29597802375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-candidate-count", "id": 17, "thread": 259, "count_register": "0x2", "phase": "restored"}}, "time_ns": 29598262084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 17, "thread": 259, "value": 0, "phase": "restored"}}, "time_ns": 29598601875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 17, "thread": 259, "value": 0, "phase": "restored"}}, "time_ns": 29598882792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-thunkable-result", "id": 17, "thread": 259, "value": 1, "phase": "restored"}}, "time_ns": 29599010084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "filter-predicate-result", "id": 17, "thread": 259, "value": 0, "phase": "restored"}}, "time_ns": 29599077875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 17, "thread": 259, "phase": "restored"}}, "time_ns": 29599135709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 17, "thread": 259, "phase": "restored"}}, "time_ns": 29599193250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 18, "thread": 259, "phase": "restored"}}, "time_ns": 29763103542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 18, "thread": 259, "phase": "restored"}}, "time_ns": 29763641084}
+{"stage": "auxiliary-cleaned", "project_restored": true, "dependency_absent": true, "time_ns": 30980827875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "total_events": 109}}, "time_ns": 30984560667}
+{"stage": "script-unloaded", "time_ns": 30987388917}
+{"stage": "session-detached", "time_ns": 30990007625}
+{"stage": "session-ended", "source_restored": true, "project_restored": true, "auxiliary_absent": true, "time_ns": 30990732834}

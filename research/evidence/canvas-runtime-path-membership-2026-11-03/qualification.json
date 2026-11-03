@@ -1,0 +1,23 @@
+{
+  "new_function_bodies_recovered": 0,
+  "prior_interface_evidence": [
+    "research/evidence/canvas-runtime-filter-input-2026-11-03/qualification.json",
+    "research/evidence/canvas-removed-files-2026-11-01/findings.json"
+  ],
+  "path_object_receiver": "x0 after native tuple load at existing optional-type observation point 0x24e4d0",
+  "runtime_calls": [
+    "pthread_main_np",
+    "object_getClassName",
+    "sel_registerName",
+    "objc_msgSend for respondsToSelector:, fileURL, path, UTF8String"
+  ],
+  "guard": "main thread, DVTFilePath-family predicate, selector availability and nonnull results",
+  "published_identity": "comparison category only: primary / auxiliary / project / other / unavailable",
+  "raw_unrelated_paths_published": false,
+  "lifetime_scope": "synchronous getter reads; no target retain/deinit/resource-settlement assertion",
+  "unexercised": [
+    "failed class/selector guard runtime controls",
+    "general getter observer-effect absence",
+    "complete original event payload decoding"
+  ]
+}

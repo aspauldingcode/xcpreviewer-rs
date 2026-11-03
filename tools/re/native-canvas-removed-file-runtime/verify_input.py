@@ -18,7 +18,12 @@ def verify_input(r):
   assert event('filter-input-count')['count_register']==event('filter-candidate-count')['count_register']=='0x1'
   assert event('filter-optional-type')['present'] is True
   assert event('filter-thunkable-result')['value']==1 and event('filter-predicate-result')['value']==0
- result.update(typed_modified_and_restored_controls=2,selected_scene_propagation_exercised=False,payload_paths_decoded=False)
+ path_bound=any(v.get('path_identity_getters') for _,v in payloads if v['event']=='hooks-ready')
+ if path_bound:
+  selected=[v for _,v in payloads if v['event']=='filter-optional-type' and v['phase'] in ['modified-control','restore-control','removed']]
+  assert len(selected)==3
+  for v in selected:assert v['getter_main'] and v['getter_receiver_expected_family'] and v['getter_read_available'] and v['path_kind']=='primary'
+ result.update(selected_filter_input_paths_matched_primary=path_bound,typed_modified_and_restored_controls=2,selected_scene_propagation_exercised=False,payload_paths_decoded=False)
  return result
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('directory',type=Path);a=p.parse_args();print(json.dumps(verify_input(a.directory)))
