@@ -1,0 +1,31 @@
+{
+  "scope": "minimum existing-handler interface qualification for native branch probes",
+  "new_function_bodies_recovered": 0,
+  "image_sha256": "ed08ea2f7e077fc0aeeecfd089e0901acb666a35bff3ef8610f8bf719cea424b",
+  "local_instruction_window": {
+    "start": "0x2499c4",
+    "end_exclusive": "0x249a80",
+    "bytes": 188,
+    "private_listing_sha256": "a078da9c65caadb304762d7bd3077ffa675620afb3f1ea1863428d6d62bcff1e",
+    "listing_published": false
+  },
+  "count_probe": {
+    "offset": "0x249a1c",
+    "kind": "interior instruction before zero-count branch, not function entry or return",
+    "register": "x21",
+    "register_source": "native load of returned filtered-array count at preceding instruction",
+    "zero_target": "0x249dfc",
+    "nonzero_continuation": "0x249a20"
+  },
+  "cleanup_probe": {
+    "offset": "0x249dfc",
+    "kind": "interior block reached from zero-count branch",
+    "scoping": "same active workspace invocation already observed at removed-event block"
+  },
+  "forbidden_inferences": [
+    "new function identity for interior blocks",
+    "native reference/resource release from block/handler return",
+    "why the filter excluded the input paths",
+    "positive nonempty scene-propagation acceptance"
+  ]
+}

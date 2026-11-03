@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T05:15:37.118931+00:00",
+  "updated_at": "2026-11-03T05:23:29.847674+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Real primary/auxiliary source deletion reaches the native removed-event filter, but neither case propagates to the selected scene-removal methods. Stopping reason and native resource release remain unknown.",
+  "current_focus": "Native count probes explain primary-file deletion early return: filtered count is zero. Why the input is excluded and nonempty scene propagation remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native zero-count gate observed in actual deletion cases",
+      "detail": "Two changed-probe captures measure count zero after filter return; one also reaches empty cleanup. Count-only variant agrees. Both exit nonzero for missing scene propagation after restoring source. Filter exclusion reason and resource release remain unknown; eight gate faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Actual file deletions stop before selected scene propagation",
@@ -388,14 +393,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T05:15:39.117340+00:00",
+  "issue_counts_updated_at": "2026-11-03T05:23:32.829299+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Two actual source-deletion profiles reach the native removed-event block and file filter, then handler return. Neither exercises selected scene propagation. Separate auxiliary CLI build succeeds; no IDE notification claim.",
-    "ui_summary": "No GUI actions. Real owned files and project bytes restored, temporary member removed, hooks detached, controller available and Xcode alive. Native observer suite remains sixteen separate prior controls.",
-    "unknown": "Filter output contents, payload paths and why scene propagation stops remain unknown. EditorScene destruction, weak zeroing, native transport/render release and WASM parity remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-removed-file-2026-11-03",
+    "summary": "Two native primary-deletion captures measure the target-loaded filtered-array count as zero. One observes empty cleanup; count-only variant agrees. Gate assertions pass; both sessions report missing scene propagation with exit one.",
+    "ui_summary": "No new build or GUI action. Source/project hashes restored, hooks detached, controller available and Xcode alive. Earlier auxiliary deletion lacks this count measurement and remains separate.",
+    "unknown": "Why the filter excludes inputs, native event payload paths, nonempty scene propagation, EditorScene destruction and transport/render cleanup remain unverified. No WASM parity acceptance.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-removed-gate-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

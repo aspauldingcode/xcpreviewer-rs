@@ -1,0 +1,17 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "xcode_uuid": "25c99c664185307188e31ab474573a10", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "max_events": 1000, "filter_count_probe": true, "empty_cleanup_probe": false}}, "time_ns": 0}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "baseline", "total_events": 0}}, "time_ns": 750625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "removed", "total_events": 0}}, "time_ns": 2009709500}
+{"stage": "source-deleted", "absent": true, "time_ns": 2010426000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-enter", "id": 1, "thread": 259, "phase": "removed"}}, "time_ns": 3213584167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-files-block", "id": 1, "thread": 259, "phase": "removed"}}, "time_ns": 3214066459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-enter", "id": 1, "thread": 259, "caller_image": "PreviewsXcode", "caller_offset": "0x249a0c", "phase": "removed"}}, "time_ns": 3214227417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-return", "id": 1, "thread": 259, "phase": "removed"}}, "time_ns": 3214378959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "removed-filter-count-branch", "id": 1, "thread": 259, "count_register": "0x0", "phase": "removed"}}, "time_ns": 3214524209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "workspace-handler-return", "id": 1, "thread": 259, "phase": "removed"}}, "time_ns": 3214674875}
+{"stage": "removed-wait-ended", "workspace_removed_observed": false, "time_ns": 10013588792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "phase-ack", "label": "restored", "total_events": 6}}, "time_ns": 11025406167}
+{"stage": "source-restored", "sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 11027240542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "total_events": 6}}, "time_ns": 14032221625}
+{"stage": "script-unloaded", "time_ns": 14034822584}
+{"stage": "session-detached", "time_ns": 14036386167}
+{"stage": "session-ended", "source_restored": true, "project_restored": true, "auxiliary_absent": true, "time_ns": 14036763334}

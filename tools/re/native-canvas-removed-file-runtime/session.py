@@ -1,7 +1,7 @@
 """Actual deletion/restoration of guarded owned source; no UI or synthetic event."""
 from pathlib import Path
 import argparse,json,subprocess,hashlib,threading,time,fcntl,frida,signal,os
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--auxiliary',action='store_true');p.add_argument('--count-only',action='store_true');a=p.parse_args()
 r=a.output.resolve();r.mkdir(exist_ok=False,parents=True);root=Path(__file__).resolve().parents[3];source=a.source.resolve()
 for n in ['agent.js','session.py']:(r/n).write_bytes(Path(__file__).with_name(n).read_bytes())
 mutex=threading.Lock();ready=threading.Event();removed=threading.Event();acks={};script=None;session=None;before=None;deleted=False;failed=False;project=None;project_before=None;project_expected=None;installed=False;primary=source
@@ -31,7 +31,7 @@ with open(root/'research/state/controller.lock','a+') as lock:
   assert source.is_relative_to(root/'research/build/preview-workspaces') and source.name=='PreviewLab.swift'
   before=source.read_bytes();assert hashlib.sha256(before).hexdigest()=='128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef'
   (r/'source-before.swift').write_bytes(before)
-  session=bounded(8,lambda:frida.get_local_device().attach(a.pid));script=session.create_script((r/'agent.js').read_text());script.on('message',message);bounded(8,script.load);assert ready.wait(2)
+  session=bounded(8,lambda:frida.get_local_device().attach(a.pid));code=(r/'agent.js').read_text();code=code.replace('const trackEmpty = true;','const trackEmpty = false;') if a.count_only else code;(r/'executed-agent.js').write_text(code);script=session.create_script(code);script.on('message',message);bounded(8,script.load);assert ready.wait(2)
   if a.auxiliary:
    project=primary.parents[2]/'PreviewLab.xcodeproj/project.pbxproj';project_before=project.read_bytes()
    assert hashlib.sha256(project_before).hexdigest()=='1ee671965dcfb221233970e970130946a1971a0b0d30625601e93440a60bcf45'
