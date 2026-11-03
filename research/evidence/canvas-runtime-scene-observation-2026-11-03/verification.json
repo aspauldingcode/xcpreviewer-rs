@@ -1,0 +1,20 @@
+{
+  "owned_weak_fd_controls": 3,
+  "load_helper_route_rejected": true,
+  "ui_actions_not_exercised_mac_locked": true,
+  "native_class_observation": {
+    "file-a": {
+      "pinning_entries_returns": 20,
+      "first_observed_address_tokens": 1,
+      "deinitializer_entries_observed": 0,
+      "weak_liveness_or_resource_release_verified": false
+    },
+    "file-b": {
+      "pinning_entries_returns": 22,
+      "first_observed_address_tokens": 1,
+      "deinitializer_entries_observed": 0,
+      "weak_liveness_or_resource_release_verified": false
+    }
+  },
+  "artifact_check_reran_native": false
+}

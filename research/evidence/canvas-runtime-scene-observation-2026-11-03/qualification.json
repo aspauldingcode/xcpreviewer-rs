@@ -1,0 +1,27 @@
+{
+  "image_sha256": "e785b5947cd0ae70ff8977485f73f7181b6ed07c958ef29ce263ffa06397bc09",
+  "uuid": "afaf513ac1153755840e1d82b40e7d93",
+  "targets": {
+    "pinning-didset": {
+      "offset": "0x58e98",
+      "symbol_kind": "EditorScene class property observer, vW"
+    },
+    "removed-files": {
+      "offset": "0x579fc",
+      "symbol_kind": "EditorScene.update(forRemovedFileLocations:)"
+    },
+    "deinitializing": {
+      "offset": "0x5dcf8",
+      "symbol_kind": "EditorScene.Cfd"
+    },
+    "deallocating": {
+      "offset": "0x5e078",
+      "symbol_kind": "EditorScene.CfD"
+    }
+  },
+  "lookup_scope": "Exact known method and class lifecycle symbols only; no bodies recovered.",
+  "native_deinitializer_entry_exercised": false,
+  "guard": "object_getClassName contains EditorScene on main thread at known class method entry",
+  "exact_generic_type_or_project_binding_verified": false,
+  "native_weak_reference_probe_performed": false
+}

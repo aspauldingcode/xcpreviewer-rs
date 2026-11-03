@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T03:22:07.760693+00:00",
+  "updated_at": "2026-11-03T04:34:10.918230+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Corrected a probe-boundary error: state cleanup is inside the owning destruction function, not a separate function. Bounded native control-flow checks pass; object/resource release remains unverified.",
+  "current_focus": "Weak-helper load rejected by Xcode validation; UI lifetime controls unavailable while Mac is locked. File-only captures still observe guarded EditorScene setter calls. Native weak lifetime/resource release remains unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Weak-loader boundary recorded; native file route still works",
+      "detail": "Owned weak/FD fixture modes pass. Xcode rejects helper Team ID and Mac lock blocks UI controls; no bypass attempted. Two real source-edit captures record 20/22 guarded setter intervals, no selected destructor calls. Address ledger does not establish native weak lifetime; eight artifact faults reject."
+    },
     {
       "date": "2026-11-03",
       "title": "Probe boundary corrected; bounded native flow observed",
@@ -368,14 +373,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T03:22:10.235063+00:00",
+  "issue_counts_updated_at": "2026-11-03T04:34:12.931022+00:00",
   "runtime_validation": {
     "normal_native_passes": 15,
     "observed_negative_controls": 2,
-    "summary": "Prior state probe was misclassified: 1,400 interior-PC hits are not separate function calls. Corrected captures recorded 28 and 22 sampled owner-entry \u2192 interior-point \u2192 owner-return chains. Unscoped tail-site attempt exceeded controller deadlines and is excluded; source restored. Fifteen observer controls remain separate evidence.",
-    "ui_summary": "Native tabs 3\u21924\u21923, new orange preview selected/rendered, removal fell back to purple Primary layers. No-active-hook repeat settled after an initially pending spinner. Canvas interaction/state continuity remains unqualified.",
-    "unknown": "Native object/weak lifetimes, transport/render-resource release, state branch coverage, Canvas input/state continuity, target coverage and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-destroy-boundary-2026-11-03",
+    "summary": "Three owned weak/FD control modes pass. Helper loading into Xcode was rejected for different Team IDs; no protections changed. File-only native captures recorded 20/22 paired setter calls with an EditorScene-family receiver guard. Tokens are address correlations, not object-lifetime proof.",
+    "ui_summary": "No new GUI action or rendering verification: CUA reported the Mac locked. Pin/window-close lifetime controls were not exercised. Permitted source additions/restorations and native observations completed with exact source restored.",
+    "unknown": "Native EditorScene weak zeroing, deinitialization, resource release, exact type/project binding and rendered UI remain unverified in this checkpoint. Other existing-runtime weak approaches are unqualified; loader rejection is method-specific.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-scene-observation-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

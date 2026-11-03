@@ -29,7 +29,8 @@
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
-      "runtime_scope": "Twenty-eight entry/return pairs; automatic invocations only, no explicit pin command/branch matrix."
+      "runtime_scope": "Twenty-eight entry/return pairs; automatic invocations only, no explicit pin command/branch matrix. Two later source-edit captures recorded 20/22 paired calls with EditorScene-family class-name/main-thread guards. Address correlation only; native weak/lifetime and project binding unqualified.",
+      "receiver_class_observation_evidence": "research/evidence/canvas-runtime-scene-observation-2026-11-03"
     },
     {
       "function": "Provider reconciliation",
@@ -59,7 +60,9 @@
       "classification": "static_reconstruction",
       "native_entry_or_stack_trace": false,
       "runtime_attempt_evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
-      "entries_observed": 0
+      "entries_observed": 0,
+      "latest_runtime_attempt_evidence": "research/evidence/canvas-runtime-scene-observation-2026-11-03",
+      "latest_entries_observed": 0
     },
     {
       "function": "Workspace event handler",
@@ -264,6 +267,6 @@
     }
   ],
   "warning": "Selected function/PC execution is not full function/target acceptance. Interior locations must not use function return/caller semantics. Untraced reconciliation/destruction cases remain unqualified.",
-  "updated_at": "2026-11-03T03:22:07.760693+00:00",
+  "updated_at": "2026-11-03T04:34:10.918230+00:00",
   "catalog_scope": "Bounded current function/location index; semantic source fragments are not necessarily distinct functions. Not an exhaustive function count or percentage denominator."
 }

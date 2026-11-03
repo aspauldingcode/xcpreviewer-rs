@@ -1,0 +1,56 @@
+{"stage": "owned-controls-passed", "count": 3, "library_sha256": "d8776a29ffeee3fc5e73f000e5462cca11107830d7385f2de8d27a933e19b063", "time_ns": 149047291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "afaf513ac1153755840e1d82b40e7d93", "tracked_class": "EditorScene", "max_objects": 20, "max_recorded_calls": 200, "helper_module_loaded": false, "weak_reference_access_available": false}}, "time_ns": 2237145000}
+{"stage": "capture-ready", "time_ns": 2237473500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "baseline", "objects": [], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 2238494500}
+{"stage": "source-added", "sha256": "321eab3748e606bd5d384858cd62188c441bb064a99a473ecbed5c2612a84f5c", "time_ns": 2239322250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "editor-scene-observed", "id": 1, "expected_class": true, "main": true, "weak_liveness_verified": false}}, "time_ns": 2952527541}
+{"stage": "class-observation-wait", "observed": true, "time_ns": 2952967458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 1, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2953016916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 1, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2953544250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-added", "objects": [{"id": 1, "deinitializing_enter_seen": false, "deinitializing_return_seen": false, "deallocating_enter_seen": false, "deallocating_return_seen": false}], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 2954085625}
+{"stage": "source-restored", "time_ns": 2956330375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 2, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2956908458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 2, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2957125750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 3, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2960812291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 3, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2961171875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 4, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2980174250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 4, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2980561458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 5, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2984344583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 5, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 2985749750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 6, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3012416000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 6, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3012840458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 7, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3104386958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 7, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3104866500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 8, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3107471833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 8, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3107895291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 9, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3109346166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 9, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3109777125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 10, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3153396166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 10, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3153830000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 11, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3158926916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 11, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3159483833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 12, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3950862458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 12, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3951303166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 13, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3955858750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 13, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3956287291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 14, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3961667708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 14, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3962023708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 15, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3977595250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 15, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3977998666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 16, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3984204208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 16, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3984656083}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 17, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4017926041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 17, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4019527416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 18, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4104794166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 18, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4105221541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 19, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4114163791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 19, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4114751208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 20, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4117562416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 20, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4118566208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 21, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4219594583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 21, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4220047666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 22, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4226544791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 22, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 4227053250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-restored", "objects": [{"id": 1, "deinitializing_enter_seen": false, "deinitializing_return_seen": false, "deallocating_enter_seen": false, "deallocating_return_seen": false}], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 4965280375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "listeners_detached": true, "weak_boxes_created": 0, "helper_module_loaded": false}}, "time_ns": 4967421750}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 4971389666}

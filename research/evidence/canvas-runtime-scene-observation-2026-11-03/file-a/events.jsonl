@@ -1,0 +1,52 @@
+{"stage": "owned-controls-passed", "count": 3, "library_sha256": "d8776a29ffeee3fc5e73f000e5462cca11107830d7385f2de8d27a933e19b063", "time_ns": 119058625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "uuid": "afaf513ac1153755840e1d82b40e7d93", "tracked_class": "EditorScene", "max_objects": 20, "max_recorded_calls": 200, "helper_module_loaded": false, "weak_reference_access_available": false}}, "time_ns": 2139319500}
+{"stage": "capture-ready", "time_ns": 2139570625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "baseline", "objects": [], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 2140966000}
+{"stage": "source-added", "sha256": "321eab3748e606bd5d384858cd62188c441bb064a99a473ecbed5c2612a84f5c", "time_ns": 2142044250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "editor-scene-observed", "id": 1, "expected_class": true, "main": true, "weak_liveness_verified": false}}, "time_ns": 3470756000}
+{"stage": "class-observation-wait", "observed": true, "time_ns": 3471357541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 1, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3471479833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 1, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3472400125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-added", "objects": [{"id": 1, "deinitializing_enter_seen": false, "deinitializing_return_seen": false, "deallocating_enter_seen": false, "deallocating_return_seen": false}], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 3473198375}
+{"stage": "source-restored", "time_ns": 3474100250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 2, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3483983333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 2, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3484333041}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 3, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3489263833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 3, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3490164916}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 4, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3614857791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 4, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3615286000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 5, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3621440375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 5, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3621692500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 6, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3678759333}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 6, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3679270875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 7, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3832993666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 7, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3833476125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 8, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3840664166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 8, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3841027458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 9, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3843446875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 9, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3843715541}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 10, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3953598625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 10, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3954032458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 11, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3956442708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 11, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 3956881500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 12, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5001535166}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 12, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5002003250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 13, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5009029791}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 13, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5009419666}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 14, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5010988583}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 14, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5011229291}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 15, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5394702625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 15, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5395151750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 16, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5400265958}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 16, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5400653708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 17, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5405741000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 17, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5406121625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 18, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5419900250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 18, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5420295208}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 19, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5425839416}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 19, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5426298458}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-enter", "method": "pinning-didset", "call_id": 20, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5454134833}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "method-return", "method": "pinning-didset", "call_id": 20, "scene_id": 1, "thread": 259, "main": true}}, "time_ns": 5454592708}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "snapshot", "label": "file-restored", "objects": [{"id": 1, "deinitializing_enter_seen": false, "deinitializing_return_seen": false, "deallocating_enter_seen": false, "deallocating_return_seen": false}], "weak_reference_access_available": false, "identity_scope": "address correlation only; unobserved reuse possible"}}, "time_ns": 5484342875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "cleanup-done", "label": "cleanup", "listeners_detached": true, "weak_boxes_created": 0, "helper_module_loaded": false}}, "time_ns": 5488047541}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 5494909000}
