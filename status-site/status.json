@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:20:59.315407+00:00",
+  "updated_at": "2026-11-03T09:33:35.311073+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Owned project close/reopen now exercised with native weak samples. The earlier receiver remains loadable; no target destructor observed. Refresh restores original header/pin UI after reopen, without private refresh callback or rendered-output proof.",
+  "current_focus": "Native Refresh Canvas button now exercised under existing preview probes: no selected update/helper callbacks in the bounded manual interval. Real source edits/restoration each produce 18 paired nested calls in both sessions. Manual refresh internals/render completion remain unknown.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native manual refresh differs from selected file-update probes",
+      "detail": "Ambiguous menu route failed; switched to observed paused-Canvas Refresh button. AXPress succeeds and original headers return, but selected private callbacks stay zero during bounded manual interval. Real file edit/restore gives 18 paired updates/helpers per phase in each of two sessions. No pixel/resource or full manual-refresh proof."
+    },
     {
       "date": "2026-11-03",
       "title": "Project close/reopen exercised; target destruction still unknown",
@@ -423,14 +428,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T09:21:00.808994+00:00",
+  "issue_counts_updated_at": "2026-11-03T09:33:37.393360+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Actual owned project close/reopen records 24 matched native setter intervals. Old receiver remains weak-loadable after close/reopen; a second receiver token is observed on reopen.",
-    "ui_summary": "Owned project reopened and paused Canvas refreshed once. Original pin.fill and three header controls return; source/project bytes unchanged, hooks detached, Xcode alive and controller available.",
-    "unknown": "Exact receiver project/window ownership and target destruction remain unknown. Refresh UI action occurred after hooks detached, so no private callback ordering, new build, pixel rendering or renderer/provider/transport settlement is established.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-project-lifetime-2026-11-03",
+    "summary": "Two native sessions contrast bounded idle/manual intervals with real file writes: zero selected manual callbacks; edit and restore each produce 18 paired updates with nested selected assignment helpers.",
+    "ui_summary": "Menu executor failed on ambiguous Canvas path; not retried. Paused owned Canvas AXButton press succeeds and original header/pin UI returns. Source/project restored, hooks detached, Xcode alive and controller available.",
+    "unknown": "Manual refresh internal route, asynchronous completion, state continuity, pixel rendering, new build notifications and target/resource release remain unverified. File-phase callbacks do not establish manual parity; zero is bounded to two selected probes.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-manual-refresh-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

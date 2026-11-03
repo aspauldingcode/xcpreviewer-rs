@@ -1,0 +1,91 @@
+[
+  {
+    "kind": "observe",
+    "label": "baseline",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 147,
+      "pin_identifier": null,
+      "canvas_paused": true,
+      "refresh_enabled": true,
+      "preview_labels": []
+    }
+  },
+  {
+    "kind": "action",
+    "args": {
+      "op": "press",
+      "ref": "ax:0.0.2.0.0.0.0.3.1",
+      "label": "Refresh Canvas"
+    },
+    "data": {
+      "elapsed_ms": 39,
+      "executor": "accessibility",
+      "ok": true,
+      "result": {
+        "detail": "AXButton \"Refresh Canvas\"",
+        "frontmost_after": 45749,
+        "frontmost_before": 45749,
+        "mechanism": "AXPress",
+        "ok": true,
+        "took_focus": false
+      }
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "refreshed",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 132,
+      "pin_identifier": "pin.fill",
+      "canvas_paused": false,
+      "refresh_enabled": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "edited",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 133,
+      "pin_identifier": "pin.fill",
+      "canvas_paused": false,
+      "refresh_enabled": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  },
+  {
+    "kind": "observe",
+    "label": "restored",
+    "data": {
+      "ok": true,
+      "pid": 45749,
+      "window": "PreviewLab \u2014 PreviewLab.swift",
+      "elapsed_ms": 144,
+      "pin_identifier": "pin.fill",
+      "canvas_paused": false,
+      "refresh_enabled": false,
+      "preview_labels": [
+        "Primary layers",
+        "Text and interaction",
+        "Layout edit"
+      ]
+    }
+  }
+]

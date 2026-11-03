@@ -1,0 +1,99 @@
+{
+  "raw_local": "/private/tmp/canvas-manual-refresh-setup-b.json",
+  "raw_sha256": "90b082a3ff9b9b5c39bdebe175fa892636d4abbdfa02f79691db44e282389e03",
+  "selected_protocol": [
+    {
+      "kind": "observe",
+      "label": "before",
+      "data": {
+        "ok": true,
+        "pid": 45749,
+        "window": "PreviewLab \u2014 PreviewLab.swift",
+        "canvas_paused": false
+      }
+    },
+    {
+      "kind": "action",
+      "args": {
+        "op": "menu",
+        "menu": "File>Close Project"
+      },
+      "data": {
+        "elapsed_ms": 137,
+        "executor": "accessibility",
+        "ok": true,
+        "result": {
+          "detail": "AXMenuItem \"Close Project\"",
+          "frontmost_after": 45749,
+          "frontmost_before": 45749,
+          "mechanism": "AXPress(menu)",
+          "ok": true,
+          "took_focus": false
+        }
+      }
+    },
+    {
+      "kind": "action",
+      "args": {
+        "op": "menu",
+        "menu": "File>Open\u2026"
+      },
+      "data": {
+        "elapsed_ms": 837,
+        "executor": "accessibility",
+        "ok": true,
+        "result": {
+          "detail": "AXMenuItem \"Open\u2026\"",
+          "frontmost_after": 45749,
+          "frontmost_before": 45749,
+          "mechanism": "AXPress(menu)",
+          "ok": true,
+          "took_focus": false
+        }
+      }
+    },
+    {
+      "kind": "observe",
+      "label": "open-panel",
+      "data": {
+        "ok": true,
+        "pid": 45749,
+        "window": "Open",
+        "canvas_paused": false,
+        "where": "preview-ca9cbc8786144517b3a14ef57a90e08b",
+        "owned_project_row": true
+      }
+    },
+    {
+      "kind": "action",
+      "args": {
+        "op": "press",
+        "ref": "ax:0.0.9",
+        "label": "Open"
+      },
+      "data": {
+        "elapsed_ms": 336,
+        "executor": "accessibility",
+        "ok": true,
+        "result": {
+          "detail": "AXButton \"Open\"",
+          "frontmost_after": 45749,
+          "frontmost_before": 45749,
+          "mechanism": "AXPress",
+          "ok": true,
+          "took_focus": false
+        }
+      }
+    },
+    {
+      "kind": "observe",
+      "label": "reopened",
+      "data": {
+        "ok": true,
+        "pid": 45749,
+        "window": "PreviewLab \u2014 PreviewLab.swift",
+        "canvas_paused": true
+      }
+    }
+  ]
+}
