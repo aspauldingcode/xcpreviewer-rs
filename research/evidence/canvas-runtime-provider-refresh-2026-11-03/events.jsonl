@@ -1,0 +1,278 @@
+{"stage": "script", "message": {"type": "send", "payload": {"event": "hooks-ready", "scenes_uuid": "afaf513ac1153755840e1d82b40e7d93", "ui_uuid": "0d87b0e2f4453035a9b6b1cf8230e015", "provider_targets": [{"name": "collector", "offset": "0x29d34"}, {"name": "providers", "offset": "0x3e4e0"}, {"name": "registries", "offset": "0x3eb94"}], "provider_call_cap": 1000}}, "time_ns": 2199169334}
+{"stage": "capture-ready", "pid": 45749, "time_ns": 2199477584}
+{"stage": "phase", "label": "idle-start", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 9893746542}
+{"stage": "phase", "label": "idle-end", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 13017424542}
+{"stage": "phase", "label": "refresh-start", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 13194261542}
+{"stage": "phase", "label": "refresh-return", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 13363927584}
+{"stage": "phase", "label": "refresh-settled", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 21542528459}
+{"stage": "phase", "label": "edit", "source_sha256": "80eb6505ab52d9121f38d6ddb3cdad2d450fe9994d537523a81e9bb9fd9b8bda", "time_ns": 21776026959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 1, "thread": 259}}, "time_ns": 22583702209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 2, "thread": 259}}, "time_ns": 22584153667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 2, "thread": 259}}, "time_ns": 22584331750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 3, "thread": 259}}, "time_ns": 22584472334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 3, "thread": 259}}, "time_ns": 22584623084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 4, "thread": 259}}, "time_ns": 22584763084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 5, "thread": 259}}, "time_ns": 22584913875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 6, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22585043167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 6}}, "time_ns": 22585188750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 5}}, "time_ns": 22585313167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 7, "thread": 259}}, "time_ns": 22585444167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 8, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22585578334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 8}}, "time_ns": 22585704000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 7}}, "time_ns": 22585833709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 9, "thread": 259}}, "time_ns": 22585964125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 10, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22586106750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 10}}, "time_ns": 22586240250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 9}}, "time_ns": 22586372084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 4, "thread": 259}}, "time_ns": 22586525709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 11, "thread": 259}}, "time_ns": 22586847334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 11, "thread": 259}}, "time_ns": 22587011709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 1, "thread": 259}}, "time_ns": 22587212750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 12, "thread": 259}}, "time_ns": 22587392042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 13, "thread": 259}}, "time_ns": 22587662792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 13, "thread": 259}}, "time_ns": 22587908625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 14, "thread": 259}}, "time_ns": 22588052875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 14, "thread": 259}}, "time_ns": 22588195834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 15, "thread": 259}}, "time_ns": 22588341709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 16, "thread": 259}}, "time_ns": 22588487334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 17, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22588622667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 17}}, "time_ns": 22588751500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 16}}, "time_ns": 22588888709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 18, "thread": 259}}, "time_ns": 22589015292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 19, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22589149167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 19}}, "time_ns": 22589277334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 18}}, "time_ns": 22589408209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 20, "thread": 259}}, "time_ns": 22589539750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 21, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22589671417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 21}}, "time_ns": 22589803125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 20}}, "time_ns": 22589928709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 15, "thread": 259}}, "time_ns": 22590058667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 22, "thread": 259}}, "time_ns": 22590191500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 22, "thread": 259}}, "time_ns": 22590324584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 12, "thread": 259}}, "time_ns": 22590485084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 23, "thread": 259}}, "time_ns": 22591052667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 24, "thread": 259}}, "time_ns": 22591341875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 24, "thread": 259}}, "time_ns": 22591535250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 25, "thread": 259}}, "time_ns": 22591710167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 25, "thread": 259}}, "time_ns": 22591949959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 26, "thread": 259}}, "time_ns": 22592146875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 27, "thread": 259}}, "time_ns": 22592321500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 28, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22592480000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 28}}, "time_ns": 22592644834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 27}}, "time_ns": 22592811625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 29, "thread": 259}}, "time_ns": 22592984917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 30, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22593147542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 30}}, "time_ns": 22593316667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 29}}, "time_ns": 22593462167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 31, "thread": 259}}, "time_ns": 22593627542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 32, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22593793375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 32}}, "time_ns": 22593979417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 31}}, "time_ns": 22594172709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 26, "thread": 259}}, "time_ns": 22594335667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 33, "thread": 259}}, "time_ns": 22594482209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 33, "thread": 259}}, "time_ns": 22594632250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 23, "thread": 259}}, "time_ns": 22594803834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 34, "thread": 259}}, "time_ns": 22608515250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 35, "thread": 259}}, "time_ns": 22609211667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 35, "thread": 259}}, "time_ns": 22609653584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 36, "thread": 259}}, "time_ns": 22609849834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 36, "thread": 259}}, "time_ns": 22610049209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 37, "thread": 259}}, "time_ns": 22610205834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 38, "thread": 259}}, "time_ns": 22610374709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 39, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22610606209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 39}}, "time_ns": 22610825292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 38}}, "time_ns": 22610989292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 40, "thread": 259}}, "time_ns": 22611242375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 41, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22611452750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 41}}, "time_ns": 22611699584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 40}}, "time_ns": 22611823667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 42, "thread": 259}}, "time_ns": 22611942959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 43, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22612057625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 43}}, "time_ns": 22612173042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 42}}, "time_ns": 22612247917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 37, "thread": 259}}, "time_ns": 22612320042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 44, "thread": 259}}, "time_ns": 22612382625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 44, "thread": 259}}, "time_ns": 22612454792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 34, "thread": 259}}, "time_ns": 22612514084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 45, "thread": 259}}, "time_ns": 22612761750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 46, "thread": 259}}, "time_ns": 22612987167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 46, "thread": 259}}, "time_ns": 22613181167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 47, "thread": 259}}, "time_ns": 22613243625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 47, "thread": 259}}, "time_ns": 22613304334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 48, "thread": 259}}, "time_ns": 22613518750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 49, "thread": 259}}, "time_ns": 22613656750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 50, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22613741417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 50}}, "time_ns": 22613844459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 49}}, "time_ns": 22613920334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 51, "thread": 259}}, "time_ns": 22613985417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 52, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22614046250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 52}}, "time_ns": 22614113500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 51}}, "time_ns": 22614170792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 53, "thread": 259}}, "time_ns": 22614220125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 54, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22614276042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 54}}, "time_ns": 22614364459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 53}}, "time_ns": 22614409542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 48, "thread": 259}}, "time_ns": 22614453084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 55, "thread": 259}}, "time_ns": 22614494875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 55, "thread": 259}}, "time_ns": 22614540459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 45, "thread": 259}}, "time_ns": 22615544500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 56, "thread": 259}}, "time_ns": 22780881834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 57, "thread": 259}}, "time_ns": 22781385167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 57, "thread": 259}}, "time_ns": 22781676792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 58, "thread": 259}}, "time_ns": 22781852000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 58, "thread": 259}}, "time_ns": 22781924292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 59, "thread": 259}}, "time_ns": 22782478792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 60, "thread": 259}}, "time_ns": 22782723625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 61, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22782895292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 61}}, "time_ns": 22783082542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 60}}, "time_ns": 22783283875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 62, "thread": 259}}, "time_ns": 22783545375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 63, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22783901584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 63}}, "time_ns": 22784081625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 62}}, "time_ns": 22784257292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 64, "thread": 259}}, "time_ns": 22784397459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 65, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 22784583667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 65}}, "time_ns": 22784836917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 64}}, "time_ns": 22785144459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 59, "thread": 259}}, "time_ns": 22785339667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 66, "thread": 259}}, "time_ns": 22785543709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 66, "thread": 259}}, "time_ns": 22785760542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 56, "thread": 259}}, "time_ns": 22788956000}
+{"stage": "phase", "label": "edit-settled", "source_sha256": "80eb6505ab52d9121f38d6ddb3cdad2d450fe9994d537523a81e9bb9fd9b8bda", "time_ns": 29949273000}
+{"stage": "phase", "label": "restore", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 30309784334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 67, "thread": 259}}, "time_ns": 30578635500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 68, "thread": 259}}, "time_ns": 30579037500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 68, "thread": 259}}, "time_ns": 30579196042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 69, "thread": 259}}, "time_ns": 30579339959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 69, "thread": 259}}, "time_ns": 30579499917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 70, "thread": 259}}, "time_ns": 30579647625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 71, "thread": 259}}, "time_ns": 30579789000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 72, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30579931042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 72}}, "time_ns": 30580082209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 71}}, "time_ns": 30580217709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 73, "thread": 259}}, "time_ns": 30580363334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 74, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30580495792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 74}}, "time_ns": 30580633584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 73}}, "time_ns": 30580764292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 75, "thread": 259}}, "time_ns": 30580899875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 76, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30581029834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 76}}, "time_ns": 30581170125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 75}}, "time_ns": 30581305042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 70, "thread": 259}}, "time_ns": 30581436000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 77, "thread": 259}}, "time_ns": 30581574834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 77, "thread": 259}}, "time_ns": 30581705292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 67, "thread": 259}}, "time_ns": 30581870209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 78, "thread": 259}}, "time_ns": 30582244000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 79, "thread": 259}}, "time_ns": 30582558625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 79, "thread": 259}}, "time_ns": 30582772959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 80, "thread": 259}}, "time_ns": 30582949125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 80, "thread": 259}}, "time_ns": 30583187334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 81, "thread": 259}}, "time_ns": 30583388000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 82, "thread": 259}}, "time_ns": 30583547417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 83, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30583730417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 83}}, "time_ns": 30583905209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 82}}, "time_ns": 30584126709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 84, "thread": 259}}, "time_ns": 30584300209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 85, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30584469500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 85}}, "time_ns": 30584624292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 84}}, "time_ns": 30584766459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 86, "thread": 259}}, "time_ns": 30584913625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 87, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30585054792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 87}}, "time_ns": 30585192792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 86}}, "time_ns": 30585341000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 81, "thread": 259}}, "time_ns": 30585522625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 88, "thread": 259}}, "time_ns": 30585622250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 88, "thread": 259}}, "time_ns": 30585691125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 78, "thread": 259}}, "time_ns": 30585755750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 89, "thread": 259}}, "time_ns": 30585895292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 90, "thread": 259}}, "time_ns": 30586153834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 90, "thread": 259}}, "time_ns": 30586314625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 91, "thread": 259}}, "time_ns": 30586391625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 91, "thread": 259}}, "time_ns": 30586438834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 92, "thread": 259}}, "time_ns": 30586658417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 93, "thread": 259}}, "time_ns": 30586770084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 94, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30586823209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 94}}, "time_ns": 30586919209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 93}}, "time_ns": 30587049209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 95, "thread": 259}}, "time_ns": 30587152875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 96, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30587249625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 96}}, "time_ns": 30587317084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 95}}, "time_ns": 30587411625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 97, "thread": 259}}, "time_ns": 30587464375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 98, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30587537917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 98}}, "time_ns": 30587589625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 97}}, "time_ns": 30587639792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 92, "thread": 259}}, "time_ns": 30587696084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 99, "thread": 259}}, "time_ns": 30587757125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 99, "thread": 259}}, "time_ns": 30587807792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 89, "thread": 259}}, "time_ns": 30588572750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 100, "thread": 259}}, "time_ns": 30601535625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 101, "thread": 259}}, "time_ns": 30601925917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 101, "thread": 259}}, "time_ns": 30602109625}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 102, "thread": 259}}, "time_ns": 30602275209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 102, "thread": 259}}, "time_ns": 30602524542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 103, "thread": 259}}, "time_ns": 30602793917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 104, "thread": 259}}, "time_ns": 30602929209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 105, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30603029209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 105}}, "time_ns": 30603099667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 104}}, "time_ns": 30603173417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 106, "thread": 259}}, "time_ns": 30603240375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 107, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30603307125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 107}}, "time_ns": 30603365292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 106}}, "time_ns": 30603412709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 108, "thread": 259}}, "time_ns": 30603462167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 109, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30603513792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 109}}, "time_ns": 30603597417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 108}}, "time_ns": 30603649042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 103, "thread": 259}}, "time_ns": 30603726125}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 110, "thread": 259}}, "time_ns": 30603809167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 110, "thread": 259}}, "time_ns": 30603866292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 100, "thread": 259}}, "time_ns": 30604334292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 111, "thread": 259}}, "time_ns": 30605685292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 112, "thread": 259}}, "time_ns": 30605971667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 112, "thread": 259}}, "time_ns": 30606113584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 113, "thread": 259}}, "time_ns": 30606162834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 113, "thread": 259}}, "time_ns": 30606210709}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 114, "thread": 259}}, "time_ns": 30606465084}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 115, "thread": 259}}, "time_ns": 30606575334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 116, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30606651792}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 116}}, "time_ns": 30606713209}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 115}}, "time_ns": 30606765375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 117, "thread": 259}}, "time_ns": 30606906334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 118, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30606954542}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 118}}, "time_ns": 30607001500}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 117}}, "time_ns": 30607117000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 119, "thread": 259}}, "time_ns": 30607208250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 120, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30607265959}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 120}}, "time_ns": 30607317834}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 119}}, "time_ns": 30607446334}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 114, "thread": 259}}, "time_ns": 30607540875}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 121, "thread": 259}}, "time_ns": 30607585250}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 121, "thread": 259}}, "time_ns": 30607630459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 111, "thread": 259}}, "time_ns": 30608663584}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-enter", "id": 122, "thread": 259}}, "time_ns": 30751817667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 123, "thread": 259}}, "time_ns": 30752517167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 123, "thread": 259}}, "time_ns": 30753400750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-enter", "id": 124, "thread": 259}}, "time_ns": 30753632459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "providers-return", "id": 124, "thread": 259}}, "time_ns": 30753817167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 125, "thread": 259}}, "time_ns": 30754682417}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 126, "thread": 259}}, "time_ns": 30754978917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 127, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30755179000}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 127}}, "time_ns": 30755359917}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 126}}, "time_ns": 30755527167}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 128, "thread": 259}}, "time_ns": 30755681042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 129, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30755853667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 129}}, "time_ns": 30756039292}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 128}}, "time_ns": 30756195042}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-enter", "id": 130, "thread": 259}}, "time_ns": 30756503375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-enter", "id": 131, "thread": 259, "caller_offset": "0x3f978"}}, "time_ns": 30756618375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "instance-assignment-helper-return", "id": 131}}, "time_ns": 30756696459}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "preview-update-return", "id": 130}}, "time_ns": 30756806375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 125, "thread": 259}}, "time_ns": 30757028375}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-enter", "id": 132, "thread": 259}}, "time_ns": 30757205750}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "registries-return", "id": 132, "thread": 259}}, "time_ns": 30757399667}
+{"stage": "script", "message": {"type": "send", "payload": {"event": "collector-return", "id": 122, "thread": 259}}, "time_ns": 30758794125}
+{"stage": "phase", "label": "restore-settled", "source_sha256": "128a57d8195466a929a95c91658e4b4dbd5ac7d731303e982639fbaa7b5c39ef", "time_ns": 38483854875}
+{"stage": "script-unloaded", "time_ns": 38812002750}
+{"stage": "session-detached", "time_ns": 38812729459}
+{"stage": "session-ended-no-target-termination", "source_restored": true, "time_ns": 38812911959}

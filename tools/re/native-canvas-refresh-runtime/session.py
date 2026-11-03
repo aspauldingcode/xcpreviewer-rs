@@ -1,9 +1,9 @@
 """Bounded existing preview probes with acknowledged native-UI/file experiment phases."""
 from pathlib import Path
 import argparse,fcntl,frida,hashlib,json,subprocess,threading,time
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--pid',type=int,required=True);p.add_argument('--source',type=Path,required=True);p.add_argument('--provider-probes',action='store_true');a=p.parse_args()
 root=Path(__file__).resolve().parents[3];out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
-for n in ['session.py','agent.js']:(out/n).write_bytes(Path(__file__).with_name(n).read_bytes())
+(out/'session.py').write_bytes(Path(__file__).read_bytes());agent_name='agent-providers.js' if a.provider_probes else 'agent.js';(out/'agent.js').write_bytes(Path(__file__).with_name(agent_name).read_bytes())
 source=a.source.resolve();assert source.is_relative_to(root/'research/build/preview-workspaces')
 lock=threading.Lock();ready=threading.Event();session=None;script=None;before=None;after=None;edited=False;failed=False
 start=time.monotonic_ns()

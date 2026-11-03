@@ -1,0 +1,32 @@
+{
+  "base_controls": {
+    "manual_action": "native AXPress acknowledged",
+    "selected_method_callbacks_before_file_edit": 0,
+    "source_edit_update_pairs": 18,
+    "source_restore_update_pairs": 18,
+    "nested_assignment_pairs": {
+      "edit": 18,
+      "restore": 18
+    },
+    "rendered_pixels_verified": false
+  },
+  "native_call_counts": {
+    "edit": {
+      "collector": 6,
+      "providers": 12,
+      "registries": 12,
+      "preview-update": 18,
+      "instance-assignment-helper": 18
+    },
+    "restore": {
+      "collector": 6,
+      "providers": 12,
+      "registries": 12,
+      "preview-update": 18,
+      "instance-assignment-helper": 18
+    }
+  },
+  "collector_tree_contract": "providers, providers, registries(three update/helper pairs), registries(empty); all selected calls matched by ID/thread",
+  "manual_interval_all_five_selected_probes": 0,
+  "manual_internal_route_verified": false
+}

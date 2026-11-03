@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:33:35.311073+00:00",
+  "updated_at": "2026-11-03T09:41:05.963985+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native Refresh Canvas button now exercised under existing preview probes: no selected update/helper callbacks in the bounded manual interval. Real source edits/restoration each produce 18 paired nested calls in both sessions. Manual refresh internals/render completion remain unknown.",
+  "current_focus": "Real file changes now exercise a verified selected collector/provider/registry/update call tree. All five probes remain silent during bounded native Refresh button interval; manual internals, rendering and resource completion remain unknown.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native source-change collector call tree exercised",
+      "detail": "Changed profile adds three existing collector/provider/registry entries. Real edit and restore each yield 6 collector, 12 provider, 12 registry and 18 update/helper pairs, with selected same-thread nesting asserted. All five probes silent during bounded manual Refresh interval. UI restored; no full refresh/render/resource acceptance."
+    },
     {
       "date": "2026-11-03",
       "title": "Native manual refresh differs from selected file-update probes",
@@ -428,14 +433,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T09:33:37.393360+00:00",
+  "issue_counts_updated_at": "2026-11-03T09:41:07.253862+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "Two native sessions contrast bounded idle/manual intervals with real file writes: zero selected manual callbacks; edit and restore each produce 18 paired updates with nested selected assignment helpers.",
-    "ui_summary": "Menu executor failed on ambiguous Canvas path; not retried. Paused owned Canvas AXButton press succeeds and original header/pin UI returns. Source/project restored, hooks detached, Xcode alive and controller available.",
-    "unknown": "Manual refresh internal route, asynchronous completion, state continuity, pixel rendering, new build notifications and target/resource release remain unverified. File-phase callbacks do not establish manual parity; zero is bounded to two selected probes.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-manual-refresh-2026-11-03",
+    "summary": "One native changed-profile session verifies selected file-change call trees: each edit/restore phase has 6 collector, 12 provider, 12 registry and 18 update/helper pairs.",
+    "ui_summary": "Actual paused-Canvas Refresh AXButton succeeds and original header/pin UI returns; all five selected probes remain silent during bounded manual interval. Original source/project hashes and detached/controller postflight pass.",
+    "unknown": "Manual refresh internal route, payload/receiver ownership, asynchronous completion, new build notifications, interactive state, pixel rendering and native resource release remain unverified. Same-thread selected call trees are not whole lifecycle completion.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-provider-refresh-2026-11-03",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

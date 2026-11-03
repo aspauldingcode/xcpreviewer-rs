@@ -1,0 +1,37 @@
+{
+  "kind": "synthetic-provider-reader-controls",
+  "results": [
+    {
+      "case": "wrong-provider-offset",
+      "rejected": true
+    },
+    {
+      "case": "missing-provider-return",
+      "rejected": true
+    },
+    {
+      "case": "wrong-return-thread",
+      "rejected": true
+    },
+    {
+      "case": "wrong-provider-order",
+      "rejected": true
+    },
+    {
+      "case": "overflow",
+      "rejected": true
+    },
+    {
+      "case": "manual-provider-entry",
+      "rejected": true
+    },
+    {
+      "case": "missing-detach",
+      "rejected": true
+    },
+    {
+      "case": "refresh-action-failed",
+      "rejected": true
+    }
+  ]
+}
