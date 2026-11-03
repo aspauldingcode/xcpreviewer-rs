@@ -3,7 +3,7 @@
   "updated_at": "2026-11-03T09:14:00.986969+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Native SDK caller-reference release is now exercised while reply callbacks block. Owned capture/FD survives release and later cleans up; connection destruction and Canvas resource settlement remain unverified.",
+  "current_focus": "Native UI pin/window-close behavior now exercised with guarded weak-load samples. Two observed EditorScene receivers remain live after the added window disappears; target destruction and Canvas resource settlement remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -43,9 +43,9 @@
         "title": "Canvas UI",
         "status": "in_progress",
         "evidence_level": "Partial native observation",
-        "verified_summary": "Open PreviewLab Canvas, selected Live mode, declarations and visible controls observed.",
+        "verified_summary": "Owned PreviewLab pin toggle/restore and new-window/close sequence exercised once. Added-window disappearance observed; original window preserved. Native weak receiver samples remain positive after close.",
         "remaining": "Complete control/menu/shortcut inventory and enabled-state transitions.",
-        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-workspace-caller-2026-11-01"
+        "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-window-lifetime-2026-11-03"
       },
       {
         "id": "project",
