@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:52:38.575915+00:00",
+  "updated_at": "2026-11-03T00:08:48.462037+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Fifteen native observer controls pass: owned context destruction during invalidation can reenter invalidate or register a synchronous late observer. This is scoped component cleanup; Canvas state, destructors and transport remain open.",
+  "current_focus": "Real fourth preview declaration added, selected/rendered and removed; fallback rendered again without active hooks. Collector/reconciliation ordering now exercised. Value-destruction entries do not qualify object/resource release.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-02",
+      "title": "Native preview declaration lifecycle and recovered call ordering",
+      "detail": "Real 3\u21924\u21923 tabs and orange\u2192fallback-purple output repeated without active hooks. Twelve collectors each called two providers then two registries. Content witness returned 1,400 times; state entry recorded but return coverage unavailable. Zero removed-location calls. Eight artifact mutations reject."
+    },
     {
       "date": "2026-11-02",
       "title": "Owned context destructor reentry during invalidation passes",
@@ -358,14 +363,14 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-02T23:52:40.448890+00:00",
+  "issue_counts_updated_at": "2026-11-03T00:08:51.362167+00:00",
   "runtime_validation": {
     "normal_native_passes": 15,
     "observed_negative_controls": 2,
-    "summary": "Two fresh owned-process runs each passed fifteen observer controls. New owned context deinit controls nested invalidate and late registration within outer invalidation; weak contexts/FDs cleaned up. Numeric FD reuse is matched by context. Historical cancel-time destructor termination was not rerun.",
-    "ui_summary": "Owned app-window AX button changed Count: 0\u21921; separate actual Canvas screenshot still showed Count: 0. Native app input is qualified for that window only; Canvas input and state continuity remain unknown. No source edits or coordinate retries.",
-    "unknown": "Other update guards, argument/item identity, interaction/state continuity, render-buffer equality, native transport/resource cleanup and standalone WASM remain unverified.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-invalidate-destructor-2026-11-02",
+    "summary": "Actual declaration lifecycle capture: twelve collectors each called two providers then two registries; 1,400 content-witness intervals each contained a state-destruction entry. State return probe observed none; no object/resource cleanup claim. Fifteen observer-suite controls remain separate evidence.",
+    "ui_summary": "Native tabs 3\u21924\u21923, new orange preview selected/rendered, removal fell back to purple Primary layers. No-active-hook repeat settled after an initially pending spinner. Canvas interaction/state continuity remains unqualified.",
+    "unknown": "Provider/registry payloads and identity/reuse, preview-state return coverage, native object/transport/render-resource lifetimes, Canvas input/state continuity, target coverage and standalone WASM remain unverified.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
     "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
   }
 }

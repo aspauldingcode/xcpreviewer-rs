@@ -8,39 +8,48 @@
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-preview-update-2026-11-02",
-      "runtime_scope": "Live source-color change; update entry/return and nested assignment helper. Other guards/state continuity untested."
+      "runtime_scope": "Live source-color change; update entry/return and nested assignment helper. Other guards/state continuity untested.",
+      "declaration_lifecycle_runtime_evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02"
     },
     {
       "function": "PreviewablesCollector.updatePreviewables",
       "image": "PreviewsScenes",
       "offset": "0x29d34",
-      "evidence": "research/evidence/canvas-previewables-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_runtime_selected_ordering",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-previewables-2026-11-02",
+      "runtime_scope": "Twelve complete intervals: two provider calls then two registry calls. Payloads, identity/reuse and delivery unqualified."
     },
     {
       "function": "EditorScene.pinningState.didSet",
       "image": "PreviewsScenes",
       "offset": "0x58e98",
-      "evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_runtime_selected_path",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
+      "runtime_scope": "Twenty-eight entry/return pairs; automatic invocations only, no explicit pin command/branch matrix."
     },
     {
       "function": "Provider reconciliation",
       "image": "PreviewsScenes",
       "offset": "0x3e4e0",
-      "evidence": "research/evidence/canvas-provider-reconcile-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_runtime_selected_path",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-provider-reconcile-2026-11-02",
+      "runtime_scope": "Twenty-four entry/return pairs during source declaration add/selection/remove; argument/item identity unqualified."
     },
     {
       "function": "Registry reconciliation",
       "image": "PreviewsScenes",
       "offset": "0x3eb94",
-      "evidence": "research/evidence/canvas-registry-reconcile-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_runtime_selected_path",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-registry-reconcile-2026-11-02",
+      "runtime_scope": "Twenty-four entry/return pairs during declaration lifecycle; reuse and observable delivery unqualified."
     },
     {
       "function": "EditorScene removed locations",
@@ -48,7 +57,9 @@
       "offset": "0x579fc",
       "evidence": "research/evidence/canvas-scene-removal-2026-11-01",
       "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "native_entry_or_stack_trace": false,
+      "runtime_attempt_evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "entries_observed": 0
     },
     {
       "function": "Workspace event handler",
@@ -112,17 +123,21 @@
       "function": "CanvasContent destroy",
       "image": "PreviewsUI",
       "offset": "0x23d68",
-      "evidence": "research/evidence/canvas-content-destroy-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_value_witness_entry_return",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-content-destroy-2026-11-02",
+      "runtime_scope": "1,400 complete intervals with nested preview-state entry; temporary/value copies possible, no object lifetime or resource release claim."
     },
     {
       "function": "Preview state destroy",
       "image": "PreviewsUI",
       "offset": "0x23ef0",
-      "evidence": "research/evidence/canvas-state-destroy-2026-11-02",
-      "classification": "static_reconstruction",
-      "native_entry_or_stack_trace": false
+      "evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "classification": "native_entry_observation_only",
+      "native_entry_or_stack_trace": true,
+      "source_evidence": "research/evidence/canvas-state-destroy-2026-11-02",
+      "runtime_scope": "1,400 entries, zero observed returns despite attempted return hook; cause unknown. No destruction completion or object/resource cleanup claim."
     },
     {
       "function": "ExecutionPointUpdate destroy",
@@ -243,6 +258,6 @@
     }
   ],
   "warning": "Observed entry/callsite/selected path is not full function or target acceptance. Untraced collector, reconciliation and destruction helpers remain static even when UI changes.",
-  "updated_at": "2026-11-02T23:52:38.575915+00:00",
+  "updated_at": "2026-11-03T00:08:48.462037+00:00",
   "catalog_scope": "Bounded current evidence index based on the prior function audit; not an exhaustive Xcode function count or percentage denominator."
 }

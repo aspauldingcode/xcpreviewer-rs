@@ -1,0 +1,9 @@
+'use strict';
+function uuid(mod){if(mod.base.readU32()!==0xfeedfacf)throw Error('Mach header');let p=mod.base.add(32),value=null;for(let i=0,n=mod.base.add(16).readU32();i<n;i++){const c=p.readU32(),s=p.add(4).readU32();if(s<8)throw Error('load-command bound');if(c===0x1b)value=Array.from(new Uint8Array(p.add(8).readByteArray(16))).map(x=>x.toString(16).padStart(2,'0')).join('');p=p.add(s);}return value;}
+const scenes=Process.getModuleByName('PreviewsScenes'),ui=Process.getModuleByName('PreviewsUI');
+if(uuid(scenes)!=='afaf513ac1153755840e1d82b40e7d93'||uuid(ui)!=='0d87b0e2f4453035a9b6b1cf8230e015')throw Error('UUID mismatch');
+let serial=0,phase='baseline',overflow=false;
+const targets=[['collector',scenes,0x29d34],['providers',scenes,0x3e4e0],['registries',scenes,0x3eb94],['removed-locations',scenes,0x579fc],['pinning-didset',scenes,0x58e98],['preview-update',scenes,0x3f694],['canvas-content-destroy',ui,0x23d68],['preview-state-destroy',ui,0x23ef0]];
+for(const [name,mod,offset] of targets)Interceptor.attach(mod.base.add(offset),{onEnter(){if(serial>=20000){if(!overflow){overflow=true;send({event:'overflow'});}this.record=false;return;}this.record=true;this.id=++serial;this.phase=phase;const caller=Process.findModuleByAddress(this.returnAddress);send({event:'enter',function:name,id:this.id,phase:this.phase,thread:Process.getCurrentThreadId(),caller_module:caller?.name??null,caller_offset:caller?this.returnAddress.sub(caller.base).toString():null});},onLeave(){if(this.record)send({event:'return',function:name,id:this.id,phase:this.phase,thread:Process.getCurrentThreadId()});}});
+rpc.exports={phase(name){phase=name;send({event:'phase',phase:name});return true;}};
+send({event:'hooks-ready',scenes_uuid:uuid(scenes),ui_uuid:uuid(ui),targets:targets.map(([name,mod,offset])=>({name,image:mod.name,offset:'0x'+offset.toString(16)}))});

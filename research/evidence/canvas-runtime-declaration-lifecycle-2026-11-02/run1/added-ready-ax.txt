@@ -1,0 +1,153 @@
+Window: "PreviewLab — PreviewLab.swift", App: Xcode.
+0 standard window PreviewLab — PreviewLab.swift, ID: Xcode.WorkspaceWindow, Secondary Actions: Raise, URL: file:///Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/Sources/PreviewLab/PreviewLab.swift
+	1 split group PreviewLab.xcodeproj, ID: Workspace window tab content, Description: /Users/8amps/xcpreviewer-rs/research/build/preview-workspaces/preview-ca9cbc8786144517b3a14ef57a90e08b/PreviewLab.xcodeproj
+		2 container navigator
+			3 two-level chooser segmented control
+				4 radio button Description: Project, Help: Show the Project navigator, Value: 0
+				5 radio button Description: Source Control, Help: Show the Source Control navigator, Value: 0
+				6 radio button Description: Bookmarks, Help: Show the Bookmark navigator, Value: 0
+				7 radio button Description: Find, Help: Show the Find navigator, Value: 0
+				8 radio button Description: Issues, Help: Show the Issue navigator, Value: 1
+				9 radio button Description: Tests, Help: Show the Test navigator, Value: 0
+				10 radio button Description: Debug, Help: Show the Debug Navigator, Value: 0
+				11 radio button Description: Breakpoints, Help: Show the Breakpoints Navigator, Value: 0
+				12 radio button Description: Reports, Help: Show the Report navigator, Value: 0
+			13 scroll area
+				14 outline Description: Issue Navigator, ID: issue navigator
+			15 search text field Description: Issue navigator filter, Help: Show issues with matching name, Placeholder: Filter
+				16 checkbox Show only latest issues, Help: Show only issues from open documents and recently built sources, Value: 0
+				17 checkbox Only errors, Help: Show only errors, Value: 0
+				18 button Icon View Drop Down
+					19 image
+		20 splitter (disabled, settable, float) 294
+		21 container editor area
+			22 split group
+				23 container PreviewLab.swift
+					24 container Description: PreviewLab.swift, ID: editor context
+						25 split group
+							26 scroll area Secondary Actions: Scroll Up, Scroll Down
+								27 text entry area (settable) Description: Source Editor, Value: import SwiftUI
+
+struct CanvasExamples: View {
+    @State private var count = 0
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Text("Canvas baseline").font(.title)
+            Text("Count: \(count)").monospacedDigit()
+            Button("Increment") { count += 1 }
+        }
+        .padding(24)
+        .frame(width: 320, height: 180)
+        .background(Color.white)
+        .foregroundStyle(Color.black)
+    }
+}
+
+@main
+struct PreviewLabApp: App {
+    var body: some Scene {
+        WindowGroup { CanvasExamples() }
+    }
+}
+
+// This expression is also supported by our portable source-to-frame renderer.
+#Preview("Primary layers", traits: .fixedLayout(width: 64, height: 48)) {
+    ZStack {
+        Color(.sRGB, red: 0, green: 0, blue: 1, opacity: 1.0)
+        Color(.sRGB, red: 1, green: 0, blue: 0, opacity: 0.5)
+        Color(.sRGB, red: 0, green: 1, blue: 0, opacity: 0.25)
+    }.frame(width: 64, height: 48)
+}
+
+// Text, layout and persistent interactive state exceed the portable subset.
+#Preview("Text and interaction", traits: .fixedLayout(width: 320, height: 180)) {
+    CanvasExamples().environment(\.colorScheme, .light)
+}
+
+#Preview("Layout edit", traits: .fixedLayout(width: 320, height: 180)) {
+    HStack(spacing: 16) {
+        Rectangle().fill(.red).frame(width: 60, height: 60)
+        Text("Layout baseline").foregroundStyle(Color.black)
+    }.frame(width: 320, height: 180).background(Color.white)
+}
+
+#Preview("Runtime addition", traits: .fixedLayout(width: 80, height: 40)) {
+    Color.orange.frame(width: 80, height: 40)
+}
+
+								28 scroll bar (settable, float) 0.392011821269989
+									29 value indicator (settable, float) 0.392011821269989
+									30 increment arrow button
+									31 decrement arrow button
+									32 increment page button
+									33 decrement page button
+								34 container Source Editor Gutter
+								35 container Source Editor Change Gutter
+								36 container Source Editor Minimap
+									37 text Minimap Landmark, Description: CanvasExamples
+									38 text Minimap Landmark, Description: count
+									39 text Minimap Landmark, Description: body
+									40 text Minimap Landmark, Description: PreviewLabApp
+									41 text Minimap Landmark, Description: body
+							42 splitter (disabled, settable, float) 847
+							43 container
+								44 scroll area
+									45 button (selected) Description: Pin Preview, ID: pin.fill
+									46 image Description: Pin, ID: pin
+									47 text Primary layers
+									48 image Description: Pin, ID: pin
+									49 text Text and interaction
+									50 image Description: Pin, ID: pin
+									51 text Layout edit
+									52 image Description: Pin, ID: pin
+									53 text Runtime addition
+								54 menu button (selected) Description: Live, ID: play.circle.fill
+								55 button Description: Selectable, ID: cursorarrow.square
+								56 menu button Description: Variants, ID: rectangle.grid.3x2
+								57 button Description: Device Settings, ID: switch.2
+						58 container Description: Jump Bar, ID: jump bar
+							59 menu button Description: Related Items, Help: Navigate to Related Items, ID: related items
+							60 menu button Description: Show Previous Location in History, ID: Go Back
+							61 menu button Description: Show Next Location in History, ID: Go Forward
+							62 button Description: Code Review, Help: Enable Code Review
+							63 menu button Description: editor options, Help: Adjust Editor Options
+							64 menu button Help: Add Editor Tabs or Editor Panes, ID: add editor
+							65 pop up button PreviewLab
+							66 pop up button Sources
+							67 pop up button PreviewLab
+							68 pop up button PreviewLab
+							69 pop up button No Selection
+			70 container debug bar
+				71 button Description: Breakpoints, Help: Deactivate Breakpoints, Value: 1
+				72 text Line: 26  Col: 31
+				73 button Description: show debug area, Help: Show the Debug Area
+	74 toolbar
+		75 radio button Description: Navigators, Value: 1
+		76 radio button Description: Coding Assistant, Value: 0
+		77 container Run/Stop
+			78 button (disabled) Description: Stop, Help: Stop the running scheme or application
+			79 button Description: Run, Help: Build and then run the current scheme
+		80 button Description: Branch Chooser, Value: PreviewLab, development, Secondary Actions: Move previous, Move next, Remove from toolbar
+		81 container Activity View
+			82 list path
+				83 pop up button Description: Active Scheme, Value: PreviewLab
+				84 pop up button Description: Active Run Destination, Value: My Mac
+			85 text Value: Build Succeeded │ Today at 10:14 AM, ID: Activity Text
+		86 button Description: Notices, ID: NoticesButton, Secondary Actions: Move previous, Move next, Remove from toolbar
+		87 button Description: Show Inspector, Help: Hide or show the Inspectors, Secondary Actions: Move previous, Remove from toolbar
+	88 close button
+	89 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	90 minimize button
+91 menu bar
+	92 Xcode
+	93 File
+	94 Edit
+	95 View
+	96 Find
+	97 Navigate
+	98 Editor
+	99 Product
+	100 Integrate
+	101 Window
+	102 Help
