@@ -1,0 +1,6 @@
+{"event":"native-ready","pid":69671,"seq":1,"thread_id":259,"time_ns":91634401450000,"token_size":24,"trace_size":8}
+{"event":"probe-created","fd":3,"name":"owned-copy-abi","seq":2,"thread_id":259,"time_ns":91634404297125}
+{"context_alive":true,"event":"owned-original-destroyed-copy-live","fd_open":true,"seq":3,"thread_id":259,"time_ns":91634404343666}
+{"close_result":0,"event":"probe-deinit","fd":3,"name":"owned-copy-abi","seq":4,"thread_id":259,"time_ns":91634404371083}
+{"context_released":true,"event":"owned-copy-abi-cleanup","fd_closed":true,"seq":5,"thread_id":259,"time_ns":91634404389875}
+{"callbacks":[],"event":"pass","mode":"owned-copy-abi","seq":6,"thread_id":259,"time_ns":91634404406208}

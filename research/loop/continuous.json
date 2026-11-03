@@ -19527,5 +19527,31 @@
     "restored_window_id": 14252,
     "canvas_state_restored_verified": false,
     "tool_bundle_app_lookup_still_stale": true
+  },
+  "canvas_runtime_token_copy_checkpoint": {
+    "verified_at": "2026-11-03T10:13:10.054379+00:00",
+    "evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+    "manifest_sha256": "33288db5beed4706b7d4c1762ecfd6110e738efaf3d7c9e537757ac782de2bcd",
+    "native_framework_uuid": "6b75229bde5d3d3794bc75af4f4704c6",
+    "qualified_cohorts": 2,
+    "native_token_controls_per_cohort": 5,
+    "owned_abi_preflights": 2,
+    "qualified_children": 12,
+    "preliminary_children": 6,
+    "preliminary_inflight_strong_local_confound_preserved": true,
+    "qualified_callback_uses_raw_context_no_strong_probe_local": true,
+    "b_c_native_source_identical": true,
+    "token_copy_vwt_slot": 16,
+    "token_copy_image_offset": "0x12a0ec",
+    "copy_destruction_does_not_cancel_waiting_registration": true,
+    "copied_token_cancel_and_owner_loss_context_fd_cleanup_observed": true,
+    "blocked_callback_survives_cancel_and_both_value_destructions": true,
+    "numeric_retain_counts_measured": false,
+    "full_canvas_resource_release_verified": false,
+    "user_xcode_or_simulator_process_accessed": false,
+    "native_crashes_or_timeouts": 0,
+    "synthetic_reader_faults_rejected": 8,
+    "controller_available": true,
+    "next_action": "Keep static discovery paused. Use these native copied-token/registration semantics as scoped runtime contracts, not full Canvas cleanup. UI counter/state route remains unexercised after prior crash/stale lookup; no input through stale resolver. Continue another existing lifecycle/resource contract or validate portable behavior against actual native traces, with explicit simulated/native/product distinctions."
   }
 }

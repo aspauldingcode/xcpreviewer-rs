@@ -1,0 +1,8 @@
+{
+  "cohort": "preliminary-a",
+  "all_six_owned_children_exit_zero": true,
+  "qualification_limitation": "The preliminary inflight callback recovered a strong Probe local. It observes liveness but cannot exclude callback-local retention; not counted in the final copied-token inflight proof. Hardened B/C use raw pointer identity without creating a strong Probe local.",
+  "other_cases": "Other four native token controls and owned ABI preflight were observed; final qualified counts use only B/C to keep source profile consistent.",
+  "source_changed_before_b": true,
+  "b_c_native_source_identical": true
+}

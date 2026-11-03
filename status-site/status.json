@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:57:40.425772+00:00",
+  "updated_at": "2026-11-03T10:13:10.054379+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Counter interaction qualification stopped after wrong marker input and old Xcode crash. Exact owned project window reopened in new PID through guarded public LaunchServices; tool app lookup remains stale. No counter/state acceptance; source/project unchanged.",
+  "current_focus": "Switched to owned native processes: copied-token cancellation/destruction/lifetime controls pass twice, with owned ABI qualification first. Context/FD cleanup measured; no user Xcode input or attachment. Counter/UI and full resource parity remain unverified.",
   "milestones": [
     {
       "number": 1,
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-03",
+      "title": "Native copied-token lifetime controls pass in owned processes",
+      "detail": "Five private observer/token controls pass in each of two cohorts, plus owned copy-ABI preflights. Dropping copied values does not cancel; owner loss/cancel clean context/FD; blocked callback survives cancel and both value destructions until unblock. Preliminary strong-local confound preserved; no new native crash/timeout or user Xcode access."
+    },
     {
       "date": "2026-11-03",
       "title": "Native interaction attempt stopped; crash and stale target recorded",
@@ -438,14 +443,17 @@
       "full_product_conformance": null
     }
   },
-  "issue_counts_updated_at": "2026-11-03T09:57:42.665272+00:00",
+  "issue_counts_updated_at": "2026-11-03T10:13:12.051463+00:00",
   "runtime_validation": {
     "normal_native_passes": 16,
     "observed_negative_controls": 2,
-    "summary": "No new native interaction acceptance. Failed tab/marker input qualification and old-process crash are preserved with explicit unknown causation.",
+    "summary": "Two owned-process cohorts each pass five native copied-token controls plus an owned ABI preflight. Actual callback counts/order, weak context/owner lifetime and descriptor cleanup asserted.",
     "ui_summary": "Guarded public LaunchServices request reopens owned PreviewLab.swift window in PID 64394 at original geometry. App lookup still reports old PID 45749; pointer/keyboard tests stopped. Exact Canvas/pin/counter state restoration unverified.",
-    "unknown": "Counter interaction/state continuity were not exercised. Exact crash cause, prior instrumentation role, current AX target resolution and Canvas state restoration remain unknown. Owned window-title restoration observed; source/project unchanged, no lifecycle/resource acceptance.",
-    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-interaction-qualification-2026-11-03",
-    "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately."
+    "unknown": "These are observer/token component contracts, not full Canvas/renderer/provider/transport cleanup or WASM parity. Numeric reference counts and generic layout portability are unmeasured. Prior UI counter/target-resolution and crash-causation limitations remain unresolved.",
+    "evidence_url": "https://github.com/aspauldingcode/xcpreviewer-rs/tree/master/research/evidence/canvas-runtime-token-copy-2026-11-03",
+    "normal_native_count_scope": "Observer suite only; policy, build and file controls are reported separately.",
+    "token_copy_native_modes": 5,
+    "token_copy_native_executions": 10,
+    "token_copy_owned_abi_preflights": 2
   }
 }

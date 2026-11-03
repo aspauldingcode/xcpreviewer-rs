@@ -9,7 +9,9 @@
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-preview-update-2026-11-02",
       "runtime_scope": "Live source-color change; update entry/return and nested assignment helper. Other guards/state continuity untested.",
-      "declaration_lifecycle_runtime_evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02"
+      "declaration_lifecycle_runtime_evidence": "research/evidence/canvas-runtime-declaration-lifecycle-2026-11-02",
+      "source_change_call_tree_evidence": "research/evidence/canvas-runtime-provider-refresh-2026-11-03",
+      "source_change_call_tree_scope": "Actual edit/restore each have 6 collector roots: providers/providers/registries(three update/helper pairs)/registries(no selected children), IDs and thread nesting checked. All five selected probes silent during bounded manual-button interval. No payload/ownership/manual-route/render completion claim."
     },
     {
       "function": "PreviewablesCollector.updatePreviewables",
@@ -19,7 +21,9 @@
       "classification": "native_runtime_selected_ordering",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-previewables-2026-11-02",
-      "runtime_scope": "Twelve complete intervals: two provider calls then two registry calls. Payloads, identity/reuse and delivery unqualified."
+      "runtime_scope": "Twelve complete intervals: two provider calls then two registry calls. Payloads, identity/reuse and delivery unqualified.",
+      "source_change_call_tree_evidence": "research/evidence/canvas-runtime-provider-refresh-2026-11-03",
+      "source_change_call_tree_scope": "Actual edit/restore each have 6 collector roots: providers/providers/registries(three update/helper pairs)/registries(no selected children), IDs and thread nesting checked. All five selected probes silent during bounded manual-button interval. No payload/ownership/manual-route/render completion claim."
     },
     {
       "function": "EditorScene.pinningState.didSet",
@@ -29,8 +33,11 @@
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-pinning-didset-2026-11-02",
-      "runtime_scope": "Twenty-eight entry/return pairs; automatic invocations only, no explicit pin command/branch matrix. Two later source-edit captures recorded 20/22 paired calls with EditorScene-family class-name/main-thread guards. Address correlation only; native weak/lifetime and project binding unqualified.",
-      "receiver_class_observation_evidence": "research/evidence/canvas-runtime-scene-observation-2026-11-03"
+      "runtime_scope": "Historical automatic invocations and later actual owned pin toggles exercised. Guarded native weak loads remain positive at sampled instants after added-window and project close; no tracked target destructor or exact receiver/project/window ownership binding. Earlier address-only captures remain address-only. These are historical old-process observations, not current counter/state acceptance.",
+      "receiver_class_observation_evidence": "research/evidence/canvas-runtime-scene-observation-2026-11-03",
+      "native_weak_liveness_evidence": "research/evidence/canvas-runtime-weak-api-2026-11-03",
+      "native_pin_command_window_evidence": "research/evidence/canvas-runtime-window-lifetime-2026-11-03",
+      "native_project_close_evidence": "research/evidence/canvas-runtime-project-lifetime-2026-11-03"
     },
     {
       "function": "Provider reconciliation",
@@ -40,7 +47,9 @@
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-provider-reconcile-2026-11-02",
-      "runtime_scope": "Twenty-four entry/return pairs during source declaration add/selection/remove; argument/item identity unqualified."
+      "runtime_scope": "Twenty-four entry/return pairs during source declaration add/selection/remove; argument/item identity unqualified.",
+      "source_change_call_tree_evidence": "research/evidence/canvas-runtime-provider-refresh-2026-11-03",
+      "source_change_call_tree_scope": "Actual edit/restore each have 6 collector roots: providers/providers/registries(three update/helper pairs)/registries(no selected children), IDs and thread nesting checked. All five selected probes silent during bounded manual-button interval. No payload/ownership/manual-route/render completion claim."
     },
     {
       "function": "Registry reconciliation",
@@ -50,7 +59,9 @@
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
       "source_evidence": "research/evidence/canvas-registry-reconcile-2026-11-02",
-      "runtime_scope": "Twenty-four entry/return pairs during declaration lifecycle; reuse and observable delivery unqualified."
+      "runtime_scope": "Twenty-four entry/return pairs during declaration lifecycle; reuse and observable delivery unqualified.",
+      "source_change_call_tree_evidence": "research/evidence/canvas-runtime-provider-refresh-2026-11-03",
+      "source_change_call_tree_scope": "Actual edit/restore each have 6 collector roots: providers/providers/registries(three update/helper pairs)/registries(no selected children), IDs and thread nesting checked. All five selected probes silent during bounded manual-button interval. No payload/ownership/manual-route/render completion claim."
     },
     {
       "function": "EditorScene removed locations",
@@ -191,7 +202,9 @@
       "controls": [
         "all"
       ],
-      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02"
+      "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
+      "token_copy_runtime_evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "token_copy_runtime_scope": "Two owned native cohorts exercise token value copies, copy cancellation/destruction, owner loss and blocked raw-context callback lifetime with actual weak/FD checks. No user Xcode/renderer/global resource acceptance."
     },
     {
       "function": "addObserver concurrent specialization",
@@ -205,7 +218,9 @@
         "invalidate-deinit-add"
       ],
       "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
-      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02"
+      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02",
+      "token_copy_runtime_evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "token_copy_runtime_scope": "Two owned native cohorts exercise token value copies, copy cancellation/destruction, owner loss and blocked raw-context callback lifetime with actual weak/FD checks. No user Xcode/renderer/global resource acceptance."
     },
     {
       "function": "AnyInvalidatable.invalidate witness",
@@ -224,7 +239,9 @@
       ],
       "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
       "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02",
-      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02"
+      "invalidation_context_destructor_evidence": "research/evidence/canvas-runtime-invalidate-destructor-2026-11-02",
+      "token_copy_runtime_evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "token_copy_runtime_scope": "Two owned native cohorts exercise token value copies, copy cancellation/destruction, owner loss and blocked raw-context callback lifetime with actual weak/FD checks. No user Xcode/renderer/global resource acceptance."
     },
     {
       "function": "CancelationToken.cancel",
@@ -239,7 +256,9 @@
         "self-cancel-drop"
       ],
       "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
-      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02",
+      "token_copy_runtime_evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "token_copy_runtime_scope": "Two owned native cohorts exercise token value copies, copy cancellation/destruction, owner loss and blocked raw-context callback lifetime with actual weak/FD checks. No user Xcode/renderer/global resource acceptance."
     },
     {
       "function": "CancelationToken destroy witness",
@@ -254,7 +273,9 @@
         "self-cancel-drop"
       ],
       "evidence": "research/evidence/canvas-runtime-dispatch-2026-11-02",
-      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02"
+      "supplemental_runtime_evidence": "research/evidence/canvas-runtime-self-token-2026-11-02",
+      "token_copy_runtime_evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "token_copy_runtime_scope": "Two owned native cohorts exercise token value copies, copy cancellation/destruction, owner loss and blocked raw-context callback lifetime with actual weak/FD checks. No user Xcode/renderer/global resource acceptance."
     },
     {
       "function": "PreviewInstance value-assignment helper, selected caller",
@@ -263,10 +284,24 @@
       "evidence": "research/evidence/canvas-runtime-preview-update-2026-11-02",
       "classification": "native_runtime_selected_path",
       "native_entry_or_stack_trace": true,
-      "runtime_scope": "Entry/return from PreviewsScenes caller 0x3f978 only; arbitrary value witness/resource effects unqualified."
+      "runtime_scope": "Entry/return from PreviewsScenes caller 0x3f978 only; arbitrary value witness/resource effects unqualified.",
+      "source_change_call_tree_evidence": "research/evidence/canvas-runtime-provider-refresh-2026-11-03",
+      "source_change_call_tree_scope": "Actual edit/restore each have 6 collector roots: providers/providers/registries(three update/helper pairs)/registries(no selected children), IDs and thread nesting checked. All five selected probes silent during bounded manual-button interval. No payload/ownership/manual-route/render completion claim."
+    },
+    {
+      "function": "CancelationToken copy initialization interface, runtime metadata table slot +16",
+      "image": "PreviewsFoundationHost",
+      "offset": "0x12a0ec",
+      "evidence": "research/evidence/canvas-runtime-token-copy-2026-11-03",
+      "classification": "native_component_execution",
+      "native_entry_or_stack_trace": false,
+      "native_direct_call_and_return_assertion": true,
+      "interface_qualification": "Owned 24-byte three-reference value-copy control first; token metadata copy pointer resolves to this pinned image offset, direct bridge return/destination and lifecycle assertions exercised. No body recovered or new function-count denominator.",
+      "runtime_scope": "Nonempty token copies in five scoped native controls, two cohorts. No generic layout portability, numeric retain-count or Canvas/UI resource claim."
     }
   ],
   "warning": "Selected function/PC execution is not full function/target acceptance. Interior locations must not use function return/caller semantics. Untraced reconciliation/destruction cases remain unqualified.",
-  "updated_at": "2026-11-03T04:34:10.918230+00:00",
-  "catalog_scope": "Bounded current function/location index; semantic source fragments are not necessarily distinct functions. Not an exhaustive function count or percentage denominator."
+  "updated_at": "2026-11-03T10:14:43.847647+00:00",
+  "catalog_scope": "Bounded current function/location index; semantic source fragments are not necessarily distinct functions. Not an exhaustive function count or percentage denominator.",
+  "current_native_ui_target_warning": "Historical user-Xcode captures used old PID 45749, which later crashed. New actual main PID 64394/owned window14252 observed, but bundle app lookup remains stale at old PID. No current UI counter/state acceptance; do not act through stale target."
 }

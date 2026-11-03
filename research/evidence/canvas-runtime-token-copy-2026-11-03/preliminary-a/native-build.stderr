@@ -1,0 +1,49 @@
+native.swift:87:48: warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 85 | let mode=CommandLine.arguments.dropFirst().first ?? "owned-copy-abi"
+ 86 | if mode=="owned-copy-abi" {
+ 87 |  var p:Probe?=Probe("owned-copy-abi");weak var weakProbe=p;let fd=p!.descriptor
+    |                                                `- warning: weak variable 'weakProbe' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 88 |  let original=UnsafeMutableRawPointer.allocate(byteCount:24,alignment:8);original.assumingMemoryBound(to:OwnedCopyValue.self).initialize(to:OwnedCopyValue(a:p!,b:p!,c:p!));p=nil
+ 89 |  let meta=unsafeBitCast(OwnedCopyValue.self,to:UnsafeRawPointer.self),witness=meta.load(fromByteOffset:-8,as:UnsafeRawPointer.self)
+
+native.swift:98:36: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 96 | } else {
+ 97 |  let h=makeHandle();let name=mode=="copy-inflight" ? "inflight" : mode
+ 98 |  var p:Probe?=Probe(name);weak var w=p;let fd=p!.descriptor;let original=add(h,p!);p=nil;let copy=copyToken(original)
+    |                                    `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 99 |  if mode=="copy-invalidate" {
+100 |   dropToken(original);precondition(w != nil && !closed(fd));event("original-token-dropped-copy-kept",["context_alive":w != nil,"fd_open":!closed(fd)])
+
+native.swift:109:12: warning: weak variable 'owner' was never mutated; consider changing to 'let' constant [#WeakMutability]
+107 |   invalidate(h);precondition(callbacks==[name] && w==nil && closed(fd));release(h)
+108 |  } else if mode=="copy-owner-loss" {
+109 |   weak var owner:AnyObject?=Unmanaged<AnyObject>.fromOpaque(h).takeUnretainedValue();event("handle-release-begin");release(h);event("handle-release-end")
+    |            `- warning: weak variable 'owner' was never mutated; consider changing to 'let' constant [#WeakMutability]
+110 |   precondition(owner==nil && w==nil && closed(fd));event("owner-lost-copies-kept",["owner_released":owner==nil,"context_released":w==nil,"fd_closed":closed(fd)])
+111 |   cancel(original);cancel(copy);precondition(callbacks.isEmpty);dropToken(original);dropToken(copy)
+
+native.swift:50:462: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 48 |  let name:String;let descriptor:Int32
+ 49 |  init(_ name:String){self.name=name;descriptor=open("/dev/null",O_RDONLY);precondition(descriptor>=0);event("probe-created",["name":name,"fd":descriptor])}
+ 50 |  deinit {let rc=close(descriptor);event("probe-deinit",["name":name,"fd":descriptor,"close_result":rc]);if (name=="cancel-reentry" || name=="invalidate-deinit-reentry"),let h=destructionReentry {destructionReentry=nil;event("destructor-reentry-begin");invalidate(h);event("destructor-reentry-end")};if name=="invalidate-deinit-add",let h=destructionReentry {destructionReentry=nil;event("destructor-add-begin");var late:Probe?=Probe("destructor-late");weak var w=late;let fd=late!.descriptor;let token=add(h,late!);precondition(token.load(as:UInt.self)==0 && callbacks==["invalidate-deinit-add","destructor-late"]);event("destructor-add-returned",["has_token":false]);late=nil;precondition(w==nil && closed(fd));dropToken(token);event("destructor-add-end",["context_released":w==nil,"fd_closed":closed(fd)])}}
+    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 51 | }
+ 52 | @_cdecl("owned_observer_record")
+
+native.swift:64:700: warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 62 |   event("self-callback-returning");return
+ 63 |  }
+ 64 |  let p=Unmanaged<Probe>.fromOpaque(context!).takeUnretainedValue();precondition(trace != nil);observationLock.lock();callbacks.append(p.name);observationLock.unlock();event("callback",["name":p.name]);if p.name=="inflight" || p.name=="admitted-a" || p.name=="parallel-a" {event("callback-blocked");callbackEntered.signal();precondition(callbackMayReturn.wait(timeout:.now()+2) == .success);event("callback-unblocked")};if p.name=="cancel-next-a",let t=dispatchCancelToken {dispatchCancelToken=nil;event("callback-cancel-next-begin");cancel(t);event("callback-cancel-next-end")};if p.name=="add-late-a",let owner=dispatchAddHandle {dispatchAddHandle=nil;var late:Probe?=Probe("nested-late");weak var w=late;let fd=late!.descriptor;event("callback-add-late-begin");let token=add(owner,late!);precondition(token.load(as:UInt.self)==0 && callbacks==["add-late-a","nested-late"]);event("callback-add-late-returned",["has_token":false]);late=nil;precondition(w==nil && closed(fd));dropToken(token);event("callback-add-late-end",["context_released":w==nil,"fd_closed":closed(fd)])};if p.name=="reentrant",let h=callbackReentry {callbackReentry=nil;event("callback-reentry-begin");invalidate(h);event("callback-reentry-end")}}
+    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `- warning: weak variable 'w' was never mutated; consider changing to 'let' constant [#WeakMutability]
+ 65 | func add(_ h:UnsafeMutableRawPointer,_ p:Probe)->UnsafeMutableRawPointer {let t=UnsafeMutableRawPointer.allocate(byteCount:24,alignment:8);t.initializeMemory(as:UInt8.self,repeating:0xcc,count:24);owned_add_observer(fn(0xbf014),h,unsafeBitCast(owned_observer_callback as @convention(c)()->Void,to:UnsafeMutableRawPointer.self),Unmanaged.passUnretained(p).toOpaque(),t);event("registered",["name":p.name,"has_token":t.load(as:UInt.self) != 0]);return t}
+ 66 | func invalidate(_ h:UnsafeMutableRawPointer){event("invalidate-begin");let ref=UnsafeMutablePointer<UnsafeMutableRawPointer>.allocate(capacity:1);ref.initialize(to:h);precondition(owned_swift_call(fn(0xbfcc8),callsite,trace,ref,nil)==nil);ref.deinitialize(count:1);ref.deallocate();event("invalidate-end")}
+
+native.swift:15:6: warning: concurrently-executed global function 'fn' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+ 13 | let anchor=sym("$s22PreviewsFoundationHost28ConcurrentInvalidationHandleCMa",0x42148)
+ 14 | let imageBase=anchor.advanced(by:-0x42148)
+ 15 | func fn(_ offset:Int)->UnsafeMutableRawPointer {let p=imageBase.advanced(by:offset);precondition(owned_symbol_offset(p)==UInt(offset));return p}
+    |      `- warning: concurrently-executed global function 'fn' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+ 16 | typealias Accessor=@convention(c)(UInt)->UnsafeRawPointer
+ 17 | let handleMeta=unsafeBitCast(anchor,to:Accessor.self)(0)
+
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>
