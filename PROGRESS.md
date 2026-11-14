@@ -1,5 +1,13 @@
 # Progress
 
+## 2026-11-14 — usable local Canvas slice
+
+Added [source-bound local previewer](packages/canvas-dev/README.md): native SwiftUI rebuild-and-refresh without Simulator, Swift highlighting, Light/Dark/Auto synchronized into the native environment, default true @2x with toggle, actual-canvas PNG export and view-only Mac titlebar controls. Xcode27 `project.xcproj` binding builds the supplied factory with selected language/isolation settings while preserving original `@main` source. Assets/packages/destination integration remains incomplete.
+
+Actual Chromium native edit-to-paint measured 9.473 s; a deliberate compiler failure preserves the full canvas readback, and recovery reproduces the original readback hash. Browser controls exercise appearance, OS preference transitions, 1x/2x, PNG dimensions and titlebar-off output. Separate original WASM subset executes and passes allocation validation at both scales. Nine new Python checks and six existing watcher checks pass; synthetic builders are labeled. [Evidence and limits](research/evidence/libre-canvas-2026-11-14/README.md).
+
+Matched 1200×800 screenshot content has 99.727% exact RGB pixels after sRGB normalization. Decorative titlebar material differs. This is public ImageRenderer snapshot functionality, not interactive/state-preserving injection, general SwiftUI-to-WASM, private Canvas lifecycle parity or full milestone acceptance. GitHub API returned 401; matching issue updates remain pending authentication.
+
 ## Branches
 
 - `master`: original roadmap and verified research milestones.

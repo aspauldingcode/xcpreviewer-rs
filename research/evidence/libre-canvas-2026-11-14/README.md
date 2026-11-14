@@ -1,0 +1,27 @@
+# Libre Canvas product checks — 2026-11-14
+
+Evidence class: working **scoped local snapshot preview functionality**, actual native public SwiftUI producer and actual Chromium viewer. This is not private Xcode Canvas lifecycle verification or full milestone parity.
+
+## Exercised
+
+- The supplied Xcode27 project builds its `makeMyPreview` factory using Swift6.4.2 on arm64 macOS27.2.1. The original source SHA256 remains `3540f2782e2b79e338d4ddae434938de99c6c1161b4725b81ae8d12ea7f82200`. One real `@main` attribute is removed only from the compilation snapshot. No user project edits were performed by this UI-control check.
+- `native-ui.json` transcribes the successful Playwright CLI result: 1200×800 backing pixels at 600×400 points, 15 highlighted tokens, downloaded PNG at backing size, Light/Dark native environment and editor theme, 600×400 pixel 1x output, Auto transitions following emulated browser OS preference changes, then @2x restored. Yellow is `[255,204,0,255]` in light and `[255,214,0,255]` in dark, exercising actual SwiftUI semantic color adaptation. This does not measure actual physical OS preference notifications.
+- `native-reload.json` is extracted directly from the Playwright CLI output. On a disposable copy of the public sample, a saved source edit paints red in 9473 ms. MissingPreviewType deliberately fails compilation and the full displayed RGBA readback SHA remains unchanged. Recovery restores the original full readback hash. Titlebar-off output is exercised. The reproduction function restores source in `finally`.
+- `portable-browser.json` is extracted directly from actual Chromium output. The import-free WASM renderer executes, its complete allocation hash is validated, and its primary-layer pixel is `[96,64,95,255]`; @2x is 128×96 and toggle-off is 64 pixels wide. This solid-color subset repeats pixels at @2x; general native text is not reconstructed in WASM.
+- Five server tests use **synthetic builders** to check failure/last-good recovery, supersession, missing-file recovery, save conflicts/origin/host guards, and bounded owned-child shutdown. Four source/config tests check comment/string-preserving `@main` adaptation, trailing-comma project parsing, extra-file dependency identity and settings validation. Six existing SwiftUI watcher tests pass. The initial project test failed due to `/var` versus `/private/var` test expectation; expectation corrected to canonical paths and all four pass. This was not a native rendering failure.
+
+Native captures in the final disposable-sample run use the exclusive controller lock and bounded compiler/helper processes. No Simulator, Xcode MCP/private bridge, Apple re-signing or system-protection changes. Current path does not attach to or terminate user Xcode processes.
+
+## Pixel comparison
+
+`canvas@2x.png` is the PNG downloaded by the button, stripped of metadata. `comparison.png` shows supplied native reference, new reconstruction and 8× amplified RGB difference. `comparison.json` records exact metrics; `difference-8x.png` preserves the full 1200×800 difference. RGB comparison converts ICC profiles to sRGB first; it does not assert alpha equality.
+
+At identical 1200×800 extents, content rows 65–799 have **99.7274376% exact RGB pixels** (2404 changed of 882000), mean absolute channel error 0.0141274/255. Whole-image agreement is 91.6652%, dominated by the view-only titlebar's different material. The reference has a warm translucent titlebar; the reconstruction paints an opaque neutral light/dark titlebar. This remaining mismatch is explicit. These numbers establish this single static screenshot comparison, not all-view/layout parity.
+
+Earlier supplied browser image was 722×484, with a 720×480 content area, versus native 1200×800 with a 64-pixel titlebar. Blue bar bounds were `(40,186)-(348,314)` versus native `(40,376)-(588,504)`; both bar heights128, padding40 and gap24. Different proposed point sizes explain bar widths. The earlier text came from an enlarged 1x capture. Its embedded `Display` ICC profile explains most apparent flat-color differences: after sRGB conversion, blue matches exactly; yellow/green differ by at most2 channel levels. No unequal layouts were stretched to produce the new same-size comparison.
+
+## Still unknown / unsupported
+
+Public ImageRenderer snapshots rebuild a helper; no in-process injection, interactive view event routing, persistent state, live animation, complete project assets/packages/settings, all Apple destinations or non-Mac host parity. Titlebar is painted decoration. No new private observer cancellation/invalidation/destruction or resource-release contract was exercised by these product checks. Existing native lifecycle evidence remains separately scoped. Old Xcode26 offsets have not been qualified for Xcode27.
+
+GitHub API returns HTTP401 Bad credentials; matching issue comments cannot currently be published. This is an access failure, not product acceptance. Local dashboard/checkpoints are updated; remote publication must be reported from the actual push result.

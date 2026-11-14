@@ -2,9 +2,15 @@
 
 Follow the [live progress dashboard](https://aspauldingcode.github.io/xcpreviewer-rs/) for overall delivery, milestone tracking, native recovery acceptance and remaining work.
 
-Research toward a portable Swift view previewer. This repository begins with reverse engineering of Xcode's preview pipeline; it is not yet a working SwiftUI-to-WebAssembly renderer.
+A source-bound **local Libre Canvas prototype** now supports native SwiftUI rebuild-and-refresh without Simulator, syntax highlighting, Light/Dark/Auto, native @2x Retina, view-only Mac titlebar controls and actual-canvas PNG export. [Launch instructions and tested limits](packages/canvas-dev/README.md).
 
-The [product goal](docs/product-goal.md) is a 1:1 SwiftUI Canvas development experience for any Apple device on other systems through WASM. Supported subsets and native frame producers are intermediate checkpoints toward full compatibility. Full native Canvas recovery comes first; [project integration](docs/omarchy-project-integration.md) must preserve each real project’s target, settings, dependencies and resources.
+```sh
+python3 canvas.py examples/canvas-swiftui.swift --native-factory makePreview
+```
+
+Native SwiftUI runs on the Mac through public ImageRenderer; the browser decodes its frames in WASM. The separate portable WASM renderer supports primary-color rectangles. General SwiftUI-to-WASM, interactive state-preserving hot reload and full Canvas parity remain open.
+
+The [product goal](docs/product-goal.md) is a 1:1 SwiftUI Canvas development experience for any Apple device on other systems through WASM. Supported subsets and native frame producers are intermediate checkpoints toward full compatibility. Usable snapshot preview development proceeds alongside scoped native runtime validation; [project integration](docs/omarchy-project-integration.md) must preserve each real project’s target, settings, dependencies and resources.
 
 A [supported source-to-frame CLI](docs/reverse-engineering/source-frame-cli.md)
 now builds explicit primary-layer expressions into WASM, verifies their complete

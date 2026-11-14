@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T10:13:10.054379+00:00",
+  "updated_at": "2026-11-14T18:09:15.816057+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Switched to owned native processes: copied-token cancellation/destruction/lifetime controls pass twice, with owned ABI qualification first. Context/FD cleanup measured; no user Xcode input or attachment. Counter/UI and full resource parity remain unverified.",
+  "current_focus": "Usable local Libre Canvas: native SwiftUI rebuild-and-refresh without Simulator; syntax highlighting, Light/Dark/Auto, native @2x and canvas PNG export exercised. Interactive state-preserving reload, full target support and general SwiftUI-to-WASM remain open.",
   "milestones": [
     {
       "number": 1,
@@ -19,9 +19,9 @@
       "title": "Standalone cross-platform WASM Canvas",
       "closed_issues": 0,
       "total_issues": 16,
-      "status": "gated",
+      "status": "in_progress",
       "percent_label": "Tracking issues closed",
-      "note": "Standalone implementation depends on full native recovery. Existing prototypes are preparatory."
+      "note": "Scoped local snapshot preview functionality is being completed alongside native validation. Full cross-platform SwiftUI/WASM and target coverage remain open; issue closure counts are last authenticated values."
     }
   ],
   "recovery": {
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-14",
+      "title": "Local Libre Canvas controls and native @2x refresh exercised",
+      "detail": "Actual Chromium: native source edit reaches canvas in 9.47 s; compile error preserves full readback; recovery restores original pixels. Light/Dark/Auto, @2x toggle, PNG download, syntax highlighting and view-only titlebar exercised. Same-size content matches 99.727% of supplied Xcode screenshot pixels. Separate portable subset runs verified WASM. GitHub API authentication currently returns 401; counts remain last known."
+    },
     {
       "date": "2026-11-03",
       "title": "Native copied-token lifetime controls pass in owned processes",

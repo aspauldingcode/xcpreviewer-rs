@@ -89,10 +89,13 @@ def capture(args):
             raise ValueError("Preview index is outside the discovered registry list")
         registry=discovery['previews'][registry_index]
         expression=f"try RegistryBridge.content(`{registry['registry']}`.self)"
+    color_scheme=getattr(args,'color_scheme',None)
+    if color_scheme not in (None,'light','dark'):raise ValueError('Unsupported color scheme')
+    if color_scheme:expression='('+expression+').environment(\\.colorScheme, .'+color_scheme+')'
     wrapper=template.replace("__PREVIEW_CONTENT__",expression)
     receipt_code='try JSONSerialization.data(withJSONObject:RegistryBridge.receipt,options:[.sortedKeys]).write(to:root.appendingPathComponent("registry.json"))' if registry else ''
     wrapper=wrapper.replace("__PREVIEW_RECEIPT__",receipt_code)
-    deployment=platform.machine()+"-apple-macos"+("14.0" if registry else "13.0")
+    deployment=platform.machine()+"-apple-macos"+("14.0" if registry else getattr(args,"minimum_macos","13.0"))
     native_registry=None
     adapter_hashes=None
     with tempfile.TemporaryDirectory(prefix="swiftui-preview-") as directory:
@@ -113,7 +116,16 @@ def capture(args):
                 run(["xcrun","clang","-arch","arm64","-c",str(work/name),"-o",str(work/(name+".o"))],30,environment)
             compile_args += ["-module-name","PreviewDiscovery","-import-objc-header",str(work/"RegistryBridge.h"),
                              str(work/"Registry.swift"),str(work/"RegistryBridge.s.o"),str(work/"RegistryIdentity.c.o")]
-        run(compile_args+[str(work/"Source.swift"),str(work/"Capture.swift"),"-o",str(executable)],30,environment)
+        extras=[]
+        for index,path in enumerate(getattr(args,'extra_source',[])):
+            data=Path(path).read_bytes()
+            if len(data)>1024*1024 or index>=127:raise ValueError('Extra source bounds exceeded')
+            target=work/('Additional'+str(index)+'.swift');target.write_bytes(data);extras.append(str(target))
+        language=getattr(args,'swift_version',None)
+        if language:compile_args += ['-swift-version',language]
+        isolation=getattr(args,'default_isolation',None)
+        if isolation:compile_args += ['-default-isolation',isolation]
+        run(compile_args+[str(work/"Source.swift"),*extras,str(work/"Capture.swift"),"-o",str(executable)],30,environment)
         run([str(executable),str(args.width),str(args.height),str(args.scale),str(work)],
             args.runtime_seconds,environment)
         if registry:
@@ -141,7 +153,7 @@ def capture(args):
             publish(reference,png)
         publish(output,payload)
     sha=lambda data:hashlib.sha256(data).hexdigest()
-    return {"producer":"SwiftUI.ImageRenderer","factory":factory,"provider":provider,"preview_index":registry_index,"registry":registry,"native_registry":native_registry,"registry_adapter_sha256":adapter_hashes,"source_sha256":sha(source_bytes),
+    return {"producer":"SwiftUI.ImageRenderer","color_scheme":color_scheme,"factory":factory,"provider":provider,"preview_index":registry_index,"registry":registry,"native_registry":native_registry,"registry_adapter_sha256":adapter_hashes,"source_sha256":sha(source_bytes),
             "renderer_source_sha256":sha(wrapper.encode()),"deployment_target":deployment,"compiler":compiler,"compiler_version":version,
             "point_size":[args.width,args.height],"pixel_size":list(expected),"scale":args.scale,
             "output":str(output),"payload_sha256":sha(payload),"reference_png_sha256":sha(png)}
@@ -159,6 +171,11 @@ def argument_parser():
     parser.add_argument("--height",type=int,default=240)
     parser.add_argument("--scale",type=int,choices=range(1,5),default=1)
     parser.add_argument("--runtime-seconds",type=float,default=8)
+    parser.add_argument("--color-scheme",choices=['light','dark'])
+    parser.add_argument("--minimum-macos",choices=['13.0','14.0'],default='13.0')
+    parser.add_argument("--extra-source",action='append',default=[])
+    parser.add_argument("--swift-version",choices=['5','6'])
+    parser.add_argument("--default-isolation",choices=['MainActor','nonisolated'])
     return parser
 
 def main():
