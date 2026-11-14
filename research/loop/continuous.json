@@ -19592,6 +19592,18 @@
       "watcher_joined": true,
       "retained_preliminary_failure": "negative fixture expected-diagnostic assertion; corrected fixture passes",
       "private_canvas_resource_release_claimed": false
+    },
+    "automatic_project_refresh": {
+      "updated_at": "2026-11-14T18:35:47.211566+00:00",
+      "evidence": "research/evidence/libre-canvas-2026-11-14/native-project-refresh.json",
+      "actual_native_frames": 7,
+      "compile_failure_controls": 2,
+      "observed_top_level_builders_reaped": 9,
+      "watcher_joined": true,
+      "added_removed_recreated_source_exercised": true,
+      "settings_refresh_evidence": "unit checks only; native settings changes not separately exercised",
+      "user_project_mutated": false,
+      "github_issue_update": "Pending existing 401 API authentication failure; unchanged retry avoided"
     }
   }
 }

@@ -14,7 +14,7 @@ For an Xcode 27 `project.xcproj` package:
 python3 canvas.py /path/to/Test.xcodeproj --native-factory makeMyPreview
 ```
 
-This binds local target Swift files, the named factory, Swift language version and default actor isolation. Select ambiguous targets with `--target`. The editor saves the factory's actual source file. Other selected Swift files are watched too. `@main` is removed only in temporary compilation copies. Legacy `project.pbxproj`, packages, assets, build scripts, entitlements and non-Mac destination semantics are not integrated. A manifest change triggers a rebuild but target/source enumeration currently requires restarting the server.
+This binds local target Swift files, the named factory, Swift language version and default actor isolation. Select ambiguous targets with `--target`. The editor saves the factory's actual source file. Other selected Swift files are watched too. `@main` is removed only in temporary compilation copies. Legacy `project.pbxproj`, packages, assets, build scripts, entitlements and non-Mac destination semantics are not integrated. Target source membership and selected language/isolation settings are re-read as project inputs change. Added/removed Swift files in target folders are discovered automatically. Moving the selected factory to a different file requires restarting to bind the new editor source; it is never silently redirected.
 
 Controls: source syntax highlighting; auto save; auto refresh; explicit refresh; zoom; synchronized Light/Dark/Auto; native @2x Retina by default; optional view-only Mac window frame; PNG screenshot of the accepted canvas at backing resolution. Auto follows the browser host's appearance preference. Explicit SwiftUI colors retain their normal framework behavior. Titlebar buttons are painted decoration. The PNG includes that titlebar when enabled and excludes the editor and browser chrome. Zoom changes presentation, not exported resolution.
 
@@ -53,3 +53,5 @@ python3 packages/canvas-dev/native-file-check.py --output /private/tmp/canvas-na
 ```
 
 It creates disposable source files, performs real atomic primary/extra-file replacements, checks every pixel in five @2x captures, deliberately rejects one compilation, exercises an adaptive view under light/dark environment, and checks observed top-level build processes exit and the watcher joins. The complete campaign has a 180-second budget, each state wait 45 seconds, and uses the native controller lock. It never writes a user project. It does not test browser delivery or private Canvas observers/resource lifetimes.
+
+Pass `--project` to the native filesystem campaign to exercise Xcode27 target-folder discovery as well: it adds a new Swift file used by the factory, removes it to reject a build while retaining the good frame, then recreates it and asserts pixel recovery. Project manifest parsing and discovery enforce the same 1 MiB per-file, 8 MiB total and 128-source bounds as compilation.

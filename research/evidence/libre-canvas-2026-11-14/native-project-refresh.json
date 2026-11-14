@@ -1,0 +1,145 @@
+{
+  "classification": "native public ImageRenderer; real disposable filesystem edits; no browser, simulator or Xcode-private lifecycle",
+  "trace": [
+    {
+      "stage": "initial blue from extra file",
+      "revision": 1,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "49a2a84aebe570cf672c6d685fdb0ddece3a61b0aea7a4e8852b0d81d9444b60",
+      "pixel_sha256": "51b820e2df0643a56b6cc7d6700c5181dbab746528f60bdafcf10ab8a108f0c2",
+      "rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4941
+    },
+    {
+      "stage": "real atomic extra-file replacement",
+      "revision": 2,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "1fb3f4008c463ada27c0056082387bc2a7dd5b0c700bd33a569893a7602ae33a",
+      "pixel_sha256": "9cb11b57898a05612433d14f6dac343ec9fb23306e4b9a2878e85ca08b96f9ab",
+      "rgba": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4789
+    },
+    {
+      "stage": "extra-file compile rejection",
+      "last_good_frame_retained": true,
+      "diagnostic_contains_missing_type": true
+    },
+    {
+      "stage": "extra-file recovery",
+      "revision": 3,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "0b93dc8d141b86ac19badee7d277ffb9c1dda8a9afbcdfb05af31fe4317a30d3",
+      "pixel_sha256": "51b820e2df0643a56b6cc7d6700c5181dbab746528f60bdafcf10ab8a108f0c2",
+      "rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4544
+    },
+    {
+      "stage": "real primary-file replacement, light environment",
+      "revision": 4,
+      "source_sha256": "1d02c547766874f0b76f807cf9dbf9e604f45e1140153c12c0fb02a39f877df4",
+      "artifact_sha256": "0e348344ceef4365840b287f33544063c320ef71ce725ccc4b1717fa4ad646fd",
+      "pixel_sha256": "71189f7fb6aed638640078fba3a35fda6c39c8962e74dcc75935aac948da9063",
+      "rgba": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4737
+    },
+    {
+      "stage": "dark environment reaches actual View",
+      "revision": 5,
+      "source_sha256": "1d02c547766874f0b76f807cf9dbf9e604f45e1140153c12c0fb02a39f877df4",
+      "artifact_sha256": "90d24d0d13e65873de3eaa3d8d7321f47b0580c74ec2b3caa079c883125e1903",
+      "pixel_sha256": "49f6ff9b24c008dc281f9b5e78644c12d9398ed5af3a3160620a88edbb117b00",
+      "rgba": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4637
+    },
+    {
+      "stage": "new source automatically discovered in target folder",
+      "revision": 6,
+      "source_sha256": "d6e9e5f6b0b1f5302c65ecd583f2cedc094022db7fa1a510e6ea26af8a0b143b",
+      "artifact_sha256": "2b1e9d7fa09fb08d897d1ee2d27a48376f50b58c850482ea2163601f75d63ccb",
+      "pixel_sha256": "9cb11b57898a05612433d14f6dac343ec9fb23306e4b9a2878e85ca08b96f9ab",
+      "rgba": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4786
+    },
+    {
+      "stage": "removed new source rejects build",
+      "last_good_frame_retained": true
+    },
+    {
+      "stage": "recreated source automatically recovers",
+      "revision": 7,
+      "source_sha256": "d6e9e5f6b0b1f5302c65ecd583f2cedc094022db7fa1a510e6ea26af8a0b143b",
+      "artifact_sha256": "69d747f77b1e1f161b54b6a4bdb7acd218aa1ac688168109a641b61117929643",
+      "pixel_sha256": "9cb11b57898a05612433d14f6dac343ec9fb23306e4b9a2878e85ca08b96f9ab",
+      "rgba": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4657
+    }
+  ],
+  "compiler_version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+  "primary_input_preserved_during_extra_edits": true,
+  "project_binding": true,
+  "observed_top_level_builders_reaped": 9,
+  "watcher_joined": true
+}

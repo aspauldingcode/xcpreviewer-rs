@@ -67,27 +67,48 @@ def resolve_source(path,factory,target=None):
     manifest=path/'project.xcproj'
     if path.suffix!='.xcodeproj' or not manifest.is_file():
         raise ValueError('Choose a Swift source file or an Xcode 27 project.xcproj package; legacy project binding is not implemented')
-    value=jsonc(manifest.read_text());targets=value.get('targets',[])
+    with manifest.open('rb') as stream:manifest_data=stream.read(1024*1024+1)
+    if len(manifest_data)>1024*1024:raise ValueError('Project manifest exceeds 1 MiB')
+    value=jsonc(manifest_data.decode('utf-8'))
+    if not isinstance(value,dict) or not isinstance(value.get('targets'),list):raise ValueError('Project must contain a targets array')
+    targets=value['targets']
+    if any(not isinstance(t,dict) for t in targets):raise ValueError('Project target entries must be objects')
     candidates=[t for t in targets if target is None or t.get('name')==target]
     if len(candidates)!=1:raise ValueError('Choose one project target with --target')
-    selected=candidates[0];root=path.parent;files=[]
+    selected=candidates[0]
+    if not isinstance(selected.get('name'),str) or not selected['name']:raise ValueError('Project target name must be a nonempty string')
+    root=path.parent;files=set()
     def walk(items):
+        if not isinstance(items,list):raise ValueError('Project files and group children must be arrays')
         for item in items:
+            if not isinstance(item,dict):raise ValueError('Project file entries must be objects')
             if item.get('kind')=='group':walk(item.get('children',[]));continue
-            if selected['name'] not in item.get('target-membership',[]):continue
-            relative=item.get('path','');folder=(root/relative).resolve()
+            membership=item.get('target-membership',[])
+            if not isinstance(membership,list):raise ValueError('Target membership must be an array')
+            if selected['name'] not in membership:continue
+            relative=item.get('path','')
+            if not isinstance(relative,str) or not relative:raise ValueError('Project file path must be a nonempty string')
+            folder=(root/relative).resolve()
             if not folder.is_relative_to(root):raise ValueError('External project source roots require explicit integration')
             paths=folder.rglob('*.swift') if folder.is_dir() else [folder]
             for source in paths:
                 if source.suffix=='.swift' and not any(part.startswith('.') for part in source.relative_to(root).parts):
                     real=source.resolve()
                     if not real.is_relative_to(root):raise ValueError('External source symlink rejected')
-                    files.append(real)
+                    files.add(real)
+                    if len(files)>128:raise ValueError('Project exceeds 128 local Swift source files')
     walk(value.get('files',[]));files=sorted(set(files))
     if not files or len(files)>128:raise ValueError('Project must contain 1–128 explicit local Swift source files')
-    matches=[p for p in files if re.search(r'\bfunc\s+'+re.escape(factory)+r'\s*\(',code_mask(p.read_text()))]
+    matches=[];total=0
+    for source in files:
+        with source.open('rb') as stream:data=stream.read(1024*1024+1)
+        total+=len(data)
+        if len(data)>1024*1024 or total>8*1024*1024:raise ValueError('Project source bounds exceeded')
+        if re.search(r'\bfunc\s+'+re.escape(factory)+r'\s*\(',code_mask(data.decode('utf-8'))):matches.append(source)
     if len(matches)!=1:raise ValueError('Expected one factory '+factory+' in selected target sources')
-    primary=matches[0];settings={**value.get('build-settings',{}),**selected.get('build-settings',{})}
+    primary=matches[0]
+    if not isinstance(value.get('build-settings',{}),dict) or not isinstance(selected.get('build-settings',{}),dict):raise ValueError('Build settings must be objects')
+    settings={**value.get('build-settings',{}),**selected.get('build-settings',{})}
     return primary,[p for p in files if p!=primary],{'name':path.stem,'target':selected['name'],'format':'project.xcproj',
         'manifest':str(manifest),'swift_version':str(settings.get('SWIFT_VERSION','5')).split('.')[0],
         'default_isolation':settings.get('SWIFT_DEFAULT_ACTOR_ISOLATION'),

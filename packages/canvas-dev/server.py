@@ -38,6 +38,7 @@ class Session:
         self.config = dict(appearance='auto', color_scheme='light', scale=2,
                            chrome=bool(factory), width=width, height=height)
         self.active_settings = dict(self.config); self.active_extras=[]
+        self.active_project = dict(project) if project else None
         self.tools = dict(clang=clang, wasm_ld=wasm_ld, node=node)
         self.debounce = debounce
         self.lock = threading.RLock(); self.stopped = threading.Event()
@@ -68,12 +69,24 @@ class Session:
 
     def read_inputs(self):
         text, digest = self.read_source(); pieces=[text.encode('utf-8')]; extras=[]; total=len(pieces[0])
-        for path in self.extra_sources:
+        project=self.project
+        if project:
+            manifest=Path(project['manifest'])
+            with manifest.open('rb') as stream:manifest_bytes=stream.read(MAX_SOURCE+1)
+            if len(manifest_bytes)>MAX_SOURCE:raise ValueError('Project manifest exceeds 1 MiB')
+            primary,extra_sources,project=resolve_source(manifest.parent,self.factory,project['target'])
+            if primary!=self.source:raise ValueError('Preview factory moved; restart to bind its new source file')
+            with manifest.open('rb') as stream:current_manifest=stream.read(MAX_SOURCE+1)
+            if current_manifest!=manifest_bytes:raise ValueError('Project changed during source discovery; waiting for a stable revision')
+            with self.lock:
+                self.extra_sources=extra_sources;self.project=project
+        else:extra_sources=self.extra_sources
+        for path in extra_sources:
             with path.open('rb') as stream:data=stream.read(MAX_SOURCE+1)
             total += len(data)
             if len(data)>MAX_SOURCE or total>8*MAX_SOURCE:raise ValueError('Project source bounds exceeded')
             data.decode('utf-8');extras.append((path,data));pieces.extend([str(path).encode(),data])
-        if self.project:pieces.append(Path(self.project['manifest']).read_bytes())
+        if project:pieces.append(manifest_bytes)
         combined=sha(b''.join(len(part).to_bytes(8,'big')+part for part in pieces))
         return text,digest,combined,extras
 
@@ -185,10 +198,10 @@ class Session:
                          '--scale',str(settings['scale']),'--color-scheme',settings['color_scheme'],
                          '--minimum-macos','14.0','--output',str(output)]
                 for path in extra_paths:command+=['--extra-source',str(path)]
-                if self.project:
-                    command+=['--swift-version',self.project['swift_version']]
-                    if self.project.get('default_isolation') in ['MainActor','nonisolated']:
-                        command+=['--default-isolation',self.project['default_isolation']]
+                if self.active_project:
+                    command+=['--swift-version',self.active_project['swift_version']]
+                    if self.active_project.get('default_isolation') in ['MainActor','nonisolated']:
+                        command+=['--default-isolation',self.active_project['default_isolation']]
                 with native_controller():
                     receipt = self.command(command)
                 data = output.read_bytes()
@@ -237,6 +250,7 @@ class Session:
                 self.observed = key
                 with self.lock:
                     self.active_settings=dict(self.config);self.active_extras=extras
+                    self.active_project=dict(self.project) if self.project else None
                     self.state.update(state='building', error=None,
                                       generation=self.state['generation']+1)
                 started = time.monotonic()

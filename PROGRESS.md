@@ -12,6 +12,10 @@ Matched 1200×800 screenshot content has 99.727% exact RGB pixels after sRGB nor
 
 Five public SwiftUI @2x captures pass full-bitmap byte assertions after atomic primary/extra-source file replacements. Extra-file change updates output with unchanged primary SHA; deliberate compile failure retains last-good frame, restore recovers. An adaptive `@Environment(\.colorScheme)` view renders white/light and black/dark. Six observed top-level builders exit and watcher joins. Preliminary negative-fixture diagnostic assertion failure is retained; corrected campaign and explicit child-tracking follow-up pass. [Native file evidence](research/evidence/libre-canvas-2026-11-14/native-files.json). No private observer/resource parity, nested-resource accounting or interactive-state claim.
 
+### Automatic Xcode27 project source refresh
+
+Added automatic target-folder source discovery and refreshed selected build settings, preserving the editor’s explicitly bound source. A disposable native project adds a used Swift file without restart, removes it to reject compilation while retaining the last good frame, then recreates it to restore exact pixels. Seven full @2x bitmap assertions, two compilation failure controls, nine observed builder exits and watcher join pass. Six project/config tests, five synthetic server tests and six watcher tests pass. [Evidence](research/evidence/libre-canvas-2026-11-14/native-project-refresh.json). Native settings-change behavior, project resources/dependencies and interactive state remain open.
+
 ## Branches
 
 - `master`: original roadmap and verified research milestones.

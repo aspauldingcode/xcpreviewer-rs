@@ -3,16 +3,23 @@
 from pathlib import Path
 import argparse,json,os,plistlib,tempfile,time
 from server import Session,sha
+from project import resolve_source
 
 
-def run():
+def run(project_binding=False):
     deadline=time.monotonic()+180;trace=[];children={}
     with tempfile.TemporaryDirectory(prefix='canvas-native-file-') as directory:
-        root=Path(directory);primary=root/'View.swift';extra=root/'Color.swift'
+        base=Path(directory);root=base/'Sources' if project_binding else base;root.mkdir(exist_ok=True)
+        primary=root/'View.swift';extra=root/'Color.swift'
         source='import SwiftUI\n@MainActor func makePreview() -> some View { fixtureColor() }\n'
         colors={name:'import SwiftUI\n@MainActor func fixtureColor() -> Color { Color(.sRGB, red: '+r+', green: '+g+', blue: '+b+', opacity: 1) }\n' for name,r,g,b in [('blue','0','0','1'),('green','0','1','0')]}
         primary.write_text(source);extra.write_text(colors['blue'])
-        session=Session(primary,root/'work',factory='makePreview',extra_sources=[extra],width=64,height=64)
+        metadata=None;extras=[extra]
+        if project_binding:
+            project=base/'Fixture.xcodeproj';project.mkdir()
+            (project/'project.xcproj').write_text(json.dumps({'targets':[{'name':'Fixture'}],'files':[{'kind':'folder','path':'Sources','target-membership':['Fixture']}]}))
+            primary,extras,metadata=resolve_source(project,'makePreview')
+        session=Session(primary,base/'work',factory='makePreview',extra_sources=extras,project=metadata,width=64,height=64)
         session.configure({'chrome':False});session.start()
         def wait(predicate):
             end=min(deadline,time.monotonic()+45)
@@ -45,7 +52,17 @@ def run():
             adaptive='import SwiftUI\nstruct Adaptive: View { @Environment(\\.colorScheme) var scheme; var body: some View { scheme == .dark ? Color.black : Color.white } }\n@MainActor func makePreview() -> some View { Adaptive() }\n'
             replace(primary,adaptive);accept('real primary-file replacement, light environment',4,[255,255,255])
             session.configure({'appearance':'dark','color_scheme':'dark'});accept('dark environment reaches actual View',5,[0,0,0])
-            result=dict(classification='native public ImageRenderer; real disposable filesystem edits; no browser, simulator or Xcode-private lifecycle',trace=trace,compiler_version=session.snapshot()['frame']['compiler_version'],primary_input_preserved_during_extra_edits=True)
+            if project_binding:
+                added=root/'NewColor.swift'
+                fresh='import SwiftUI\n@MainActor func freshColor() -> Color { Color(.sRGB, red: 0, green: 1, blue: 0, opacity: 1) }\n'
+                replace(added,fresh);replace(primary,source.replace('fixtureColor','freshColor'))
+                newest=accept('new source automatically discovered in target folder',6,[0,255,0])
+                added.unlink();failed=wait(lambda s:s['state']=='error')
+                assert failed['revision']==6 and failed['frame']==newest['frame']
+                assert 'freshColor' in failed['error']
+                trace.append(dict(stage='removed new source rejects build',last_good_frame_retained=True))
+                replace(added,fresh);accept('recreated source automatically recovers',7,[0,255,0])
+            result=dict(classification='native public ImageRenderer; real disposable filesystem edits; no browser, simulator or Xcode-private lifecycle',trace=trace,compiler_version=session.snapshot()['frame']['compiler_version'],primary_input_preserved_during_extra_edits=True,project_binding=project_binding)
         finally:session.close()
         assert not session.thread.is_alive();assert session.child is None or session.child.poll() is not None
         assert children and all(child.poll() is not None for child in children.values())
@@ -54,4 +71,4 @@ def run():
         return result
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--output',required=True,type=Path);args=parser.parse_args();result=run();args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
+    parser=argparse.ArgumentParser();parser.add_argument('--output',required=True,type=Path);parser.add_argument('--project',action='store_true');args=parser.parse_args();result=run(args.project);args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

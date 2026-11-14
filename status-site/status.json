@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T18:25:13.229976+00:00",
+  "updated_at": "2026-11-14T18:35:47.211566+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
   "current_focus": "Usable local Libre Canvas: native SwiftUI rebuild-and-refresh without Simulator; syntax highlighting, Light/Dark/Auto, native @2x and canvas PNG export exercised. Interactive state-preserving reload, full target support and general SwiftUI-to-WASM remain open.",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-14",
+      "title": "Xcode27 target-folder additions reload without restart",
+      "detail": "Automatic source membership/settings refresh implemented. Disposable native project discovers a new used Swift file, rejects its deletion while retaining the last good frame, and recovers when recreated. Seven full @2x bitmaps asserted, two failure controls, nine observed builders exit and watcher joins. Moving the factory requires explicit rebind; assets/packages/interactive state remain open."
+    },
     {
       "date": "2026-11-14",
       "title": "Real native primary/extra-file reload and adaptive appearance pass",
