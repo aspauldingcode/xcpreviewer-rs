@@ -16,6 +16,10 @@ Five public SwiftUI @2x captures pass full-bitmap byte assertions after atomic p
 
 Added automatic target-folder source discovery and refreshed selected build settings, preserving the editor’s explicitly bound source. A disposable native project adds a used Swift file without restart, removes it to reject compilation while retaining the last good frame, then recreates it to restore exact pixels. Seven full @2x bitmap assertions, two compilation failure controls, nine observed builder exits and watcher join pass. Six project/config tests, five synthetic server tests and six watcher tests pass. [Evidence](research/evidence/libre-canvas-2026-11-14/native-project-refresh.json). Native settings-change behavior, project resources/dependencies and interactive state remain open.
 
+### Reconnect preferences
+
+Frontend detects server-session rotation and reapplies appearance, Retina and titlebar controls. Actual Chromium with simulated token rotation/HTTP503 verifies a 5280 ms delayed retry and exact unsaved-text preservation with zero source writes. Initial harness cleanup briefly sent test preferences to the real server; conditional restoration and corrected close-before-unroute cleanup are retained. No native restart/render claim. [Evidence](research/evidence/libre-canvas-2026-11-14/browser-reconnect.json).
+
 ## Branches
 
 - `master`: original roadmap and verified research milestones.

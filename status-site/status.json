@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T18:35:47.211566+00:00",
+  "updated_at": "2026-11-14T18:45:17.555305+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
   "current_focus": "Usable local Libre Canvas: native SwiftUI rebuild-and-refresh without Simulator; syntax highlighting, Light/Dark/Auto, native @2x and canvas PNG export exercised. Interactive state-preserving reload, full target support and general SwiftUI-to-WASM remain open.",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-14",
+      "title": "Reconnect restores preview preferences and preserves unsaved text",
+      "detail": "Actual Chromium/frontend with simulated session rotation and HTTP503 verifies restored appearance/Retina/titlebar settings after a 5.28 s retry, with exact unsaved-text preservation. Initial harness cleanup leaked test preferences; restored conditionally and corrected cleanup passes. No native-restart or rendering claim."
+    },
     {
       "date": "2026-11-14",
       "title": "Xcode27 target-folder additions reload without restart",

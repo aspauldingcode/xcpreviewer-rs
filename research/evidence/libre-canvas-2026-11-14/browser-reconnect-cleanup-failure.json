@@ -1,0 +1,8 @@
+{
+  "classification": "initial browser harness cleanup failure",
+  "observed": "Removing mocked routes while the app remained open allowed its polling loop to discover the real server token and send test preferences: dark/1x/titlebar off. No source writes occurred.",
+  "correction": "Navigated the isolated test page to about:blank before removing interception; reran the campaign successfully.",
+  "restoration": "Stopped the first test page. Conditional restore applied only while server config still exactly matched the test settings and source SHA still matched the original; restored last recorded Auto/light/2x/titlebar-on settings. Final server observation remains ready at those settings.",
+  "source_sha256_unchanged": "3540f2782e2b79e338d4ddae434938de99c6c1161b4725b81ae8d12ea7f82200",
+  "scope": "Preference side effect and correction; no claim that the first campaign was fully isolated."
+}

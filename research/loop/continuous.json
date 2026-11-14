@@ -19604,6 +19604,17 @@
       "settings_refresh_evidence": "unit checks only; native settings changes not separately exercised",
       "user_project_mutated": false,
       "github_issue_update": "Pending existing 401 API authentication failure; unchanged retry avoided"
+    },
+    "reconnect_preferences": {
+      "updated_at": "2026-11-14T18:45:17.555305+00:00",
+      "evidence": "research/evidence/libre-canvas-2026-11-14/browser-reconnect.json",
+      "classification": "actual Chromium frontend; simulated token rotation/HTTP503",
+      "unsaved_text_preserved": true,
+      "source_writes": 0,
+      "retry_delay_ms": 5280,
+      "native_restart_exercised": false,
+      "initial_harness_cleanup_failure": "test preferences briefly reached real server; conditional restore and close-before-unroute fix retained",
+      "real_server_final": "ready; Auto/light/2x/titlebar on; original source SHA unchanged"
     }
   }
 }
