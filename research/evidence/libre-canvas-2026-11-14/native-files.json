@@ -1,0 +1,104 @@
+{
+  "classification": "native public ImageRenderer; real disposable filesystem edits; no browser, simulator or Xcode-private lifecycle",
+  "trace": [
+    {
+      "stage": "initial blue from extra file",
+      "revision": 1,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "80b1b7d2191f870d523dad7efece5057de297b4462af0dcd9e7327b93224843e",
+      "pixel_sha256": "51b820e2df0643a56b6cc7d6700c5181dbab746528f60bdafcf10ab8a108f0c2",
+      "rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4861
+    },
+    {
+      "stage": "real atomic extra-file replacement",
+      "revision": 2,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "ac5e51456e3c3aecc336c11f06e318cc053546ae0cdd51675af3945361a7bccc",
+      "pixel_sha256": "9cb11b57898a05612433d14f6dac343ec9fb23306e4b9a2878e85ca08b96f9ab",
+      "rgba": [
+        0,
+        255,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4676
+    },
+    {
+      "stage": "extra-file compile rejection",
+      "last_good_frame_retained": true,
+      "diagnostic_contains_missing_type": true
+    },
+    {
+      "stage": "extra-file recovery",
+      "revision": 3,
+      "source_sha256": "29cd0a05bd00a8c947d0d769a2f1698375c3dedd07eeb84aa5128169c80e2472",
+      "artifact_sha256": "9eaf2bb3fa479ab4a0f5a3d4b9c134a6f0e6cc7eb74c48679e8333f1ec103fa9",
+      "pixel_sha256": "51b820e2df0643a56b6cc7d6700c5181dbab746528f60bdafcf10ab8a108f0c2",
+      "rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4687
+    },
+    {
+      "stage": "real primary-file replacement, light environment",
+      "revision": 4,
+      "source_sha256": "1d02c547766874f0b76f807cf9dbf9e604f45e1140153c12c0fb02a39f877df4",
+      "artifact_sha256": "ca891a9f7c482448cdcd99f3899a95d8f8d5cd9d817ef8590c681f09245ddfba",
+      "pixel_sha256": "71189f7fb6aed638640078fba3a35fda6c39c8962e74dcc75935aac948da9063",
+      "rgba": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4720
+    },
+    {
+      "stage": "dark environment reaches actual View",
+      "revision": 5,
+      "source_sha256": "1d02c547766874f0b76f807cf9dbf9e604f45e1140153c12c0fb02a39f877df4",
+      "artifact_sha256": "9fd99e9226ff8676ed932b2e7027b70109cebca33089b41412f9cd4f4712e42c",
+      "pixel_sha256": "49f6ff9b24c008dc281f9b5e78644c12d9398ed5af3a3160620a88edbb117b00",
+      "rgba": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "pixel_size": [
+        128,
+        128
+      ],
+      "wait_ms": 4827
+    }
+  ],
+  "compiler_version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+  "primary_input_preserved_during_extra_edits": true,
+  "observed_top_level_builders_reaped": 6,
+  "watcher_joined": true
+}

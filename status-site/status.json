@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T18:09:15.816057+00:00",
+  "updated_at": "2026-11-14T18:25:13.229976+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
   "current_focus": "Usable local Libre Canvas: native SwiftUI rebuild-and-refresh without Simulator; syntax highlighting, Light/Dark/Auto, native @2x and canvas PNG export exercised. Interactive state-preserving reload, full target support and general SwiftUI-to-WASM remain open.",
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-14",
+      "title": "Real native primary/extra-file reload and adaptive appearance pass",
+      "detail": "Five @2x public SwiftUI captures checked across every bitmap byte after atomic source replacements. Extra-file edit changes output with primary SHA unchanged; compile failure retains last good, restore recovers. Adaptive view flips white\u2192black under light/dark environment. Six observed top-level builders exit and watcher joins. Preliminary fixture diagnostic assertion failure preserved; no private lifecycle or interactive state claim."
+    },
     {
       "date": "2026-11-14",
       "title": "Local Libre Canvas controls and native @2x refresh exercised",

@@ -45,3 +45,11 @@ The Python tests use synthetic builders for server lifecycle/concurrency failure
 `browser-reload-check.js` **edits the bound file**. Run only on a disposable copy of `examples/canvas-swiftui.swift`. It checks native red-background edits, compile failure with full canvas readback preservation, recovery and titlebar-off output; source is restored in `finally`. Every async browser wait has Playwright's deadline. Do not run it on a user's project.
 
 `compare_images.py REFERENCE NEW OUTPUT_DIRECTORY` converts embedded ICC profiles to sRGB, requires equal dimensions, and writes metrics plus an amplified difference image. The content crop at row 65 is specific to the supplied 1200×800 reference. It is not a general image-registration tool.
+
+Run the bounded real-filesystem/native producer campaign on a Mac:
+
+```sh
+python3 packages/canvas-dev/native-file-check.py --output /private/tmp/canvas-native-files.json
+```
+
+It creates disposable source files, performs real atomic primary/extra-file replacements, checks every pixel in five @2x captures, deliberately rejects one compilation, exercises an adaptive view under light/dark environment, and checks observed top-level build processes exit and the watcher joins. The complete campaign has a 180-second budget, each state wait 45 seconds, and uses the native controller lock. It never writes a user project. It does not test browser delivery or private Canvas observers/resource lifetimes.

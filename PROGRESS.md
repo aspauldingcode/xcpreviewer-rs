@@ -8,6 +8,10 @@ Actual Chromium native edit-to-paint measured 9.473 s; a deliberate compiler fai
 
 Matched 1200×800 screenshot content has 99.727% exact RGB pixels after sRGB normalization. Decorative titlebar material differs. This is public ImageRenderer snapshot functionality, not interactive/state-preserving injection, general SwiftUI-to-WASM, private Canvas lifecycle parity or full milestone acceptance. GitHub API returned 401; matching issue updates remain pending authentication.
 
+### Native real-file follow-up
+
+Five public SwiftUI @2x captures pass full-bitmap byte assertions after atomic primary/extra-source file replacements. Extra-file change updates output with unchanged primary SHA; deliberate compile failure retains last-good frame, restore recovers. An adaptive `@Environment(\.colorScheme)` view renders white/light and black/dark. Six observed top-level builders exit and watcher joins. Preliminary negative-fixture diagnostic assertion failure is retained; corrected campaign and explicit child-tracking follow-up pass. [Native file evidence](research/evidence/libre-canvas-2026-11-14/native-files.json). No private observer/resource parity, nested-resource accounting or interactive-state claim.
+
 ## Branches
 
 - `master`: original roadmap and verified research milestones.

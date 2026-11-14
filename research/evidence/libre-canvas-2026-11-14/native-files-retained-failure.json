@@ -1,0 +1,9 @@
+{
+  "stage": "preliminary negative-fixture diagnostic assertion",
+  "result": "failed",
+  "assertion": "diagnostic_contains_missing_type",
+  "fixture": "Removed fixtureColor declaration and added a global MissingPreviewType expression",
+  "observed": "State reached error and last-good frame equality passed; the expected MissingPreviewType substring assertion failed. Original compiler diagnostic was not retained; exact diagnostic remains unknown.",
+  "correction": "Preserve fixtureColor signature and place missing type in its body, so the negative control isolates that error. Recovery wait also permits retained prior error until a new build completes.",
+  "scope": "Test fixture failure, not a native parity result. Corrected full campaign and follow-up child-reaping campaign both pass."
+}
