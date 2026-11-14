@@ -24,7 +24,7 @@ def run(arguments, timeout, environment):
         process.communicate()
         if isinstance(error, KeyboardInterrupt):
             raise
-        raise RuntimeError(f"Owned process exceeded {timeout:g} seconds") from None
+        raise RuntimeError(f"Owned process exceeded {timeout:g} seconds ({Path(arguments[0]).name}: {str(arguments[1]) if len(arguments)>1 else 'run'})") from None
     if process.returncode:
         raise RuntimeError(stderr[-65536:].decode(errors="replace") or
                            f"Owned process exited {process.returncode}")
@@ -76,6 +76,8 @@ def capture(args):
     environment={k:v for k,v in os.environ.items() if not k.startswith("DYLD_")}
     compiler=run(["xcrun","--find","swiftc"],5,environment).decode().strip()
     sdk=run(["xcrun","--show-sdk-path"],5,environment).decode().strip()
+    sdk_version=run(["xcrun","--show-sdk-version"],5,environment).decode().strip()
+    if int(sdk_version.split(".")[0])<27:raise ValueError("Native preview requires an Apple SDK 27 or newer")
     version=run([compiler,"--version"],5,environment).decode().strip()
     template=(Path(__file__).with_name("Capture.swift.template")).read_text()
     expression = f"Self.providerContent({provider}.self)" if provider is not None else f"{factory}()"
@@ -95,7 +97,9 @@ def capture(args):
     wrapper=template.replace("__PREVIEW_CONTENT__",expression)
     receipt_code='try JSONSerialization.data(withJSONObject:RegistryBridge.receipt,options:[.sortedKeys]).write(to:root.appendingPathComponent("registry.json"))' if registry else ''
     wrapper=wrapper.replace("__PREVIEW_RECEIPT__",receipt_code)
-    deployment=platform.machine()+"-apple-macos"+("14.0" if registry else getattr(args,"minimum_macos","13.0"))
+    minimum=getattr(args,"minimum_macos","27.0")
+    if int(minimum.split(".")[0])<27:raise ValueError("Native preview deployment requires macOS 27 or newer")
+    deployment=platform.machine()+"-apple-macos"+minimum
     native_registry=None
     adapter_hashes=None
     with tempfile.TemporaryDirectory(prefix="swiftui-preview-") as directory:
@@ -103,8 +107,10 @@ def capture(args):
         (work/"Source.swift").write_bytes(source_bytes)
         (work/"Capture.swift").write_text(wrapper)
         executable=work/"capture"
+        module_cache=Path(getattr(args,'module_cache',None) or work/'module-cache')
+        module_cache.mkdir(parents=True,exist_ok=True)
         compile_args=[compiler,"-parse-as-library","-sdk",sdk,"-target",deployment,
-                      "-module-cache-path",str(work/"module-cache")]
+                      "-module-cache-path",str(module_cache)]
         if registry:
             here=Path(__file__).parent
             adapter_hashes={}
@@ -154,7 +160,7 @@ def capture(args):
         publish(output,payload)
     sha=lambda data:hashlib.sha256(data).hexdigest()
     return {"producer":"SwiftUI.ImageRenderer","color_scheme":color_scheme,"factory":factory,"provider":provider,"preview_index":registry_index,"registry":registry,"native_registry":native_registry,"registry_adapter_sha256":adapter_hashes,"source_sha256":sha(source_bytes),
-            "renderer_source_sha256":sha(wrapper.encode()),"deployment_target":deployment,"compiler":compiler,"compiler_version":version,
+            "renderer_source_sha256":sha(wrapper.encode()),"deployment_target":deployment,"compiler":compiler,"compiler_version":version,"sdk_version":sdk_version,
             "point_size":[args.width,args.height],"pixel_size":list(expected),"scale":args.scale,
             "output":str(output),"payload_sha256":sha(payload),"reference_png_sha256":sha(png)}
 
@@ -172,7 +178,8 @@ def argument_parser():
     parser.add_argument("--scale",type=int,choices=range(1,5),default=1)
     parser.add_argument("--runtime-seconds",type=float,default=8)
     parser.add_argument("--color-scheme",choices=['light','dark'])
-    parser.add_argument("--minimum-macos",choices=['13.0','14.0'],default='13.0')
+    parser.add_argument("--minimum-macos",choices=['27.0'],default='27.0')
+    parser.add_argument("--module-cache",help="Optional persistent compiler module cache for local rebuilds")
     parser.add_argument("--extra-source",action='append',default=[])
     parser.add_argument("--swift-version",choices=['5','6'])
     parser.add_argument("--default-isolation",choices=['MainActor','nonisolated'])

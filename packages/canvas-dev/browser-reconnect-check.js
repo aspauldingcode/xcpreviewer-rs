@@ -20,7 +20,7 @@ async page=>{
   await page.waitForFunction(()=>document.querySelector('#filename').textContent==='Fixture.swift');
   await page.getByLabel('Auto save',{exact:true}).uncheck();
   const unsaved='import SwiftUI\n// preserve my unsaved text\n';await page.getByRole('textbox',{name:'Swift source'}).fill(unsaved);
-  await page.getByLabel('Appearance',{exact:true}).selectOption('dark');
+  await page.getByLabel('Canvas appearance',{exact:true}).selectOption('dark');
   await page.getByLabel('@2x Retina').uncheck();await page.getByLabel('Titlebar (view only)').uncheck();
   await page.waitForTimeout(700);
   if(state.config.appearance!=='dark'||state.config.scale!==1||state.config.chrome!==false)throw Error('Initial controls were not synchronized');

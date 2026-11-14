@@ -1,59 +1,49 @@
 # Libre Canvas local previewer
 
-Run from the repository root:
+Requires **macOS27+ and an Apple SDK27+**. Native builds use the installed Xcode compiler; older deployment/SDK floors are rejected. Python3/Pillow, Node.js, Cargo and `wasm32-wasip1` are needed for the local server and original WASI decoder.
 
 ```sh
-python3 canvas.py examples/canvas-swiftui.swift --native-factory makePreview
+python3 canvas.py examples/canvas-counter.swift --native-factory makeMyPreview
 ```
 
-Open the printed loopback URL. Requires a Mac with Xcode's Swift compiler/SDK, Python 3 with Pillow, Node.js, Rust/Cargo and the `wasm32-wasip1` Rust target. The decoder builds with the repository's locked dependencies, offline. No Simulator is started. Existing compiler/capture deadlines and exclusive native controller locking apply.
+Open the printed loopback URL. Native mode defaults to an owned persistent AppKit/SwiftUI host. Browser clicks become native left mouse-down/up events in that process; SwiftUI owns the counter state. Use `--snapshot` to select the public ImageRenderer reference producer instead. No Simulator or Xcode session is launched.
 
-For an Xcode 27 `project.xcproj` package:
+- **UI** and **Canvas** each have independent Light/Dark/Auto controls. Auto reads the browser's live `prefers-color-scheme`. Canvas selection changes native SwiftUI appearance/environment and the painted titlebar together. UI-only changes do not rebuild the canvas.
+- @2x is enabled by default. The live host rejects insufficient native backing instead of upscaling1x pixels. CSS zoom/Fit affects presentation; PNG export preserves backing pixels and includes enabled window chrome.
+- Desktop titlebar/buttons are view-only decoration; hardware/AppKit material parity is not claimed. Installed iPhone/iPad/Watch profiles supply screen geometry; local mask PDFs are not distributed. Mobile profiles use **Mac SwiftUI**: UIKit widgets, safe areas, status bars and exact device-body artwork are not implemented.
+- Source editing/save conflicts, filesystem watching, last-good frames, Swift highlighting, explicit refresh and auto refresh are supported. Rebuilds reset state; tested native state persists across clicks within one host. Animation/timer streaming, drag/touch/keyboard/IME and full Xcode input parity remain open.
+
+Xcode27 project binding:
 
 ```sh
 python3 canvas.py /path/to/Test.xcodeproj --native-factory makeMyPreview
+# An explicitly selected zero-argument View constructor also works:
+python3 canvas.py /path/to/Test.xcodeproj --native-factory RootView
 ```
 
-This binds local target Swift files, the named factory, Swift language version and default actor isolation. Select ambiguous targets with `--target`. The editor saves the factory's actual source file. Other selected Swift files are watched too. `@main` is removed only in temporary compilation copies. Legacy `project.pbxproj`, packages, assets, build scripts, entitlements and non-Mac destination semantics are not integrated. Target source membership and selected language/isolation settings are re-read as project inputs change. Added/removed Swift files in target folders are discovered automatically. Moving the selected factory to a different file requires restarting to bind the new editor source; it is never silently redirected.
+The new `project.xcproj` JSON format is supported, including target membership, Swift language/default isolation settings, source additions/removals and selected settings refresh. Choose ambiguous targets with `--target`. Legacy `project.pbxproj`, assets, packages, scripts, entitlements and complete destination semantics remain pending. An iOS-only source API does not become available on the Mac just by selecting an iPhone frame.
 
-Controls: source syntax highlighting; auto save; auto refresh; explicit refresh; zoom; synchronized Light/Dark/Auto; native @2x Retina by default; optional view-only Mac window frame; PNG screenshot of the accepted canvas at backing resolution. Auto follows the browser host's appearance preference. Explicit SwiftUI colors retain their normal framework behavior. Titlebar buttons are painted decoration. The PNG includes that titlebar when enabled and excludes the editor and browser chrome. Zoom changes presentation, not exported resolution.
+`@main` and balanced plain `#Preview` registrations are removed only from owned compilation copies. The original source is preserved. A file can follow one unambiguous plain `#Preview { factory() }` when the former factory name disappears. Project binding refuses to silently move the editor to another file. The parser is a bounded lexical adapter, not a general Swift parser.
 
-The native backend compiles an owned helper and calls public `SwiftUI.ImageRenderer`. The browser runs the original WASI frame decoder. Source changes rebuild a snapshot; this is **rebuild-and-refresh**, not in-process Swift injection. View interactions, persistent `@State`, animation/live sessions and Xcode-private lifecycle parity are not implemented. A failed compilation preserves the accepted frame. Stale edits return a conflict instead of overwriting an external edit.
-
-A separate import-free WASM renderer executes the limited primary-color rectangle subset:
+Portable import-free WASM primary-color subset:
 
 ```sh
 python3 canvas.py examples/canvas-primary.swift
 ```
 
-It requires LLVM `clang`/`wasm-ld` and Node.js. Override tools with `--clang`, `--wasm-ld`, `--node`, or use `LLVM_BIN`. The browser verifies all output allocation bytes against the build oracle. Its @2x output repeats uniform rectangle pixels; it does not claim native text rendering or general SwiftUI support.
+Requires LLVM `clang`/`wasm-ld` and Node.js. Override with `--clang`, `--wasm-ld`, `--node`, or `LLVM_BIN`. The complete browser allocation is verified against the build oracle. Solid rectangle2x output repeats uniform pixels; this does not implement native text or general SwiftUI in WASM.
 
-## Reproduce checks
+## Checks and evidence
 
 ```sh
 python3 packages/canvas-dev/test_server.py
 python3 packages/canvas-dev/test_project.py
+python3 packages/canvas-dev/test_device_profiles.py
+python3 packages/canvas-dev/test_live_host.py
 python3 -m unittest discover -s tools/re/tests -p test_swiftui_watch.py
 node --check packages/canvas-dev/app.js
-node --check packages/canvas-dev/preview-worker.js
 ```
 
-The Python tests use synthetic builders for server lifecycle/concurrency failures and source-binding/configuration checks. They are not native framework parity tests.
+Synthetic builders/catalogs and owned child-I/O controls are labeled separately from native rendering. `native-file-check.py --project --output /private/tmp/project-refresh.json` performs bounded native filesystem changes only in disposable copies. `browser-theme-check.js` exercises independent themes with an adaptive native fixture on port57949; `browser-counter-check.js` exercises the sample counter and selected iPhone mask on port57948. They are Playwright CLI `run-code --filename` functions. The reconnect check uses intercepted API faults and navigates away before removing interception. Reload checks edit files: run only on disposable samples.
 
-`browser-check.js` is a Playwright CLI `run-code --filename` function. First open a fresh native sample session in a disposable browser profile, then run it. It checks 600×400 point/1200×800 pixel output, highlighting, PNG download, dark mode, 1x and Auto media transitions. It saves PNGs under `/private/tmp`.
-
-`browser-reload-check.js` **edits the bound file**. Run only on a disposable copy of `examples/canvas-swiftui.swift`. It checks native red-background edits, compile failure with full canvas readback preservation, recovery and titlebar-off output; source is restored in `finally`. Every async browser wait has Playwright's deadline. Do not run it on a user's project.
-
-`compare_images.py REFERENCE NEW OUTPUT_DIRECTORY` converts embedded ICC profiles to sRGB, requires equal dimensions, and writes metrics plus an amplified difference image. The content crop at row 65 is specific to the supplied 1200×800 reference. It is not a general image-registration tool.
-
-Run the bounded real-filesystem/native producer campaign on a Mac:
-
-```sh
-python3 packages/canvas-dev/native-file-check.py --output /private/tmp/canvas-native-files.json
-```
-
-It creates disposable source files, performs real atomic primary/extra-file replacements, checks every pixel in five @2x captures, deliberately rejects one compilation, exercises an adaptive view under light/dark environment, and checks observed top-level build processes exit and the watcher joins. The complete campaign has a 180-second budget, each state wait 45 seconds, and uses the native controller lock. It never writes a user project. It does not test browser delivery or private Canvas observers/resource lifetimes.
-
-Pass `--project` to the native filesystem campaign to exercise Xcode27 target-folder discovery as well: it adds a new Swift file used by the factory, removes it to reject a build while retaining the good frame, then recreates it and asserts pixel recovery. Project manifest parsing and discovery enforce the same 1 MiB per-file, 8 MiB total and 128-source bounds as compilation.
-
-`browser-reconnect-check.js` runs the actual frontend in Chromium with all API responses intercepted. It simulates session-token rotation and one HTTP503 environment failure, asserts a delayed retry restores appearance/Retina/titlebar preferences, and checks unsaved editor text survives without source writes. It uses the loopback server on port57945 for static assets; adjust that URL for a different port. Cleanup navigates away before removing routes, so polling cannot send fixture preferences to the real backend. These are simulated server-fault checks, not native process-restart or rendering tests.
+[Final OS/SDK27 evidence](../../research/evidence/libre-canvas-27-2026-11-14/README.md) distinguishes measured behavior, failures and open contracts. Native operations use the exclusive controller lock and bounded owned-process deadlines; only owned helpers are closed. Native input is authenticated, coordinate-bounded and tied to the accepted host identity. No full Canvas or all-target milestone is closed by these checks.

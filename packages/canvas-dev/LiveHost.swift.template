@@ -1,0 +1,92 @@
+import AppKit
+import SwiftUI
+import Foundation
+import CoreGraphics
+import Darwin
+
+@MainActor final class LiveHost {
+ let window:NSWindow
+ let view:NSHostingView<AnyView>
+ let output:URL
+ let width:Int;let height:Int;let scale:Int
+ var buffer=Data();var pending=false;var sequence=0;var nativeWidth=0;var nativeHeight=0
+ init() throws {
+  let a=CommandLine.arguments
+  guard a.count==5,let w=Int(a[1]),let h=Int(a[2]),let s=Int(a[3]),(1...2048).contains(w),(1...2048).contains(h),[1,2].contains(s),w*h*s*s*4<=32*1024*1024 else {throw HostError.invalid}
+  width=w;height=h;scale=s;output=URL(fileURLWithPath:a[4],isDirectory:true)
+  let app=NSApplication.shared;app.setActivationPolicy(.prohibited);app.finishLaunching()
+  window=NSWindow(contentRect:NSRect(x:-10000,y:-10000,width:w,height:h),styleMask:[.borderless],backing:.buffered,defer:false)
+  window.isReleasedWhenClosed=false
+  view=NSHostingView(rootView:AnyView(__PREVIEW_CONTENT__.frame(width:CGFloat(w),height:CGFloat(h)).clipped().environment(\.displayScale,CGFloat(s))))
+  view.appearance=NSAppearance(named:__APPEARANCE__)
+  window.contentView=view;window.orderFront(nil)
+  let old=fcntl(STDIN_FILENO,F_GETFL);_ = fcntl(STDIN_FILENO,F_SETFL,old|O_NONBLOCK)
+ }
+ func start() {
+  let timer=Timer(timeInterval:0.016,repeats:true){[weak self] _ in MainActor.assumeIsolated{self?.poll()}}
+  RunLoop.main.add(timer,forMode:.common)
+  // Parent owns shutdown; explicit upper lifetime bound protects abandoned helpers.
+  let deadline=Timer(timeInterval:3600,repeats:false){_ in Darwin.exit(0)}
+  RunLoop.main.add(deadline,forMode:.common)
+  NSApplication.shared.run()
+ }
+ func reply(_ value:[String:Any]) {
+  guard let data=try? JSONSerialization.data(withJSONObject:value,options:[.sortedKeys]) else{return}
+  FileHandle.standardOutput.write(Data("XCPVJSON:".utf8)+data+Data([10]))
+ }
+ func poll() {
+  guard !pending else{return}
+  var bytes=[UInt8](repeating:0,count:4096)
+  let count=Darwin.read(STDIN_FILENO,&bytes,bytes.count)
+  if count==0{window.orderOut(nil);window.close();Darwin.exit(0)}
+  if count>0{buffer.append(contentsOf:bytes.prefix(count))}
+  if buffer.count>65536{Darwin.exit(2)}
+  guard let newline=buffer.firstIndex(of:10) else{return}
+  let line=buffer[..<newline];buffer.removeSubrange(...newline)
+  guard let command=(try? JSONSerialization.jsonObject(with:Data(line))) as? [String:Any],let id=command["id"] as? Int,let action=command["action"] as? String else{reply(["ok":false,"id":-1,"error":"Invalid command"]);return}
+  if action=="close"{reply(["ok":true,"id":id]);window.orderOut(nil);window.close();Darwin.exit(0)}
+  var events:[String]=[]
+  do {
+   if action=="click" {
+    guard let x=command["x"] as? Double,let y=command["y"] as? Double,x.isFinite,y.isFinite,x>=0,y>=0,x<Double(width),y<Double(height) else{throw HostError.invalid}
+    let point=view.convert(NSPoint(x:x,y:y),to:nil),time=ProcessInfo.processInfo.systemUptime
+    for (type,pressure,offset) in [(NSEvent.EventType.leftMouseDown,Float(1),Double(0)),(.leftMouseUp,Float(0),Double(0.01))] {
+     sequence+=1
+     guard let event=NSEvent.mouseEvent(with:type,location:point,modifierFlags:[],timestamp:time+offset,windowNumber:window.windowNumber,context:nil,eventNumber:sequence,clickCount:1,pressure:pressure) else{throw HostError.invalid}
+     events.append(type == .leftMouseDown ? "leftMouseDown" : "leftMouseUp")
+     window.sendEvent(event)
+    }
+   } else if action != "capture" {throw HostError.invalid}
+   pending=true
+   let accepted=events
+   let timer=Timer(timeInterval:0.08,repeats:false){[weak self] _ in
+    MainActor.assumeIsolated {
+     guard let self else{return}
+     do{try self.capture();self.reply(["ok":true,"id":id,"events":accepted,"event_sequence":self.sequence,"point_width":self.width,"point_height":self.height,"scale":self.scale,"native_backing_width":self.nativeWidth,"native_backing_height":self.nativeHeight])}
+     catch{self.reply(["ok":false,"id":id,"error":String(describing:error)])}
+     self.pending=false
+    }
+   }
+   RunLoop.main.add(timer,forMode:.common)
+  } catch {reply(["ok":false,"id":id,"error":String(describing:error)])}
+ }
+ func capture() throws {
+  view.layoutSubtreeIfNeeded()
+  guard let native=view.bitmapImageRepForCachingDisplay(in:view.bounds) else{throw HostError.capture}
+  view.cacheDisplay(in:view.bounds,to:native)
+  guard let image=native.cgImage else{throw HostError.capture}
+  let pw=width*scale,ph=height*scale,stride=pw*4
+  nativeWidth=native.pixelsWide;nativeHeight=native.pixelsHigh
+  guard nativeWidth>=pw && nativeHeight>=ph else{throw HostError.capture}
+  var pixels=Data(count:stride*ph)
+  try pixels.withUnsafeMutableBytes { bytes in
+   guard let space=CGColorSpace(name:CGColorSpace.sRGB),let context=CGContext(data:bytes.baseAddress,width:pw,height:ph,bitsPerComponent:8,bytesPerRow:stride,space:space,bitmapInfo:CGImageAlphaInfo.premultipliedFirst.rawValue|CGBitmapInfo.byteOrder32Little.rawValue) else{throw HostError.capture}
+   context.draw(image,in:CGRect(x:0,y:0,width:pw,height:ph))
+  }
+  let bitmap:[String:Any] = ["data":pixels,"width":pw,"height":ph,"bytesPerRow":stride,"bitmapInfo":8194,"bitsPerPixel":32,"bitsPerComponent":8,"byteOrder":"little","colorSpace":"kCGColorSpaceSRGB"]
+  let payload:[String:Any] = ["bitmapDescription":bitmap,"selectableRegions":[Any](),"snapshotCornerRadius":0,"scaleFactor":scale]
+  try PropertyListSerialization.data(fromPropertyList:payload,format:.binary,options:0).write(to:output.appendingPathComponent("frame.bplist"),options:.atomic)
+ }
+ enum HostError:Error{case invalid,capture}
+}
+@main struct Main {@MainActor static func main(){do{try LiveHost().start()}catch{fputs("Live host failed: \(error)\n",stderr);Darwin.exit(1)}}}

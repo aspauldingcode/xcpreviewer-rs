@@ -41,6 +41,35 @@ def preview_snapshot(text):
     return ''.join(out),count
 
 
+def strip_preview_blocks(text):
+    """Factory captures do not need #Preview registration; remove only balanced plain blocks in owned copies."""
+    masked=code_mask(text);out=list(text);count=0;end=0
+    for match in re.finditer(r'#Preview\s*(?:\([^{}]*\))?\s*\{',masked):
+        if match.start()<end:continue
+        depth=1;end=match.end()
+        while end<len(masked) and depth:
+            if masked[end]=='{':depth+=1
+            elif masked[end]=='}':depth-=1
+            end+=1
+        if depth:raise ValueError('Incomplete #Preview block; waiting for a complete source revision')
+        for index in range(match.start(),end):
+            if out[index] not in '\r\n':out[index]=' '
+        count+=1
+    return ''.join(out),count
+
+
+def select_factory(text, requested):
+    """Follow one explicit, plain #Preview factory call when a file's old name is gone."""
+    masked=code_mask(text)
+    declarations=set(re.findall(r'\bfunc\s+([A-Za-z_][A-Za-z0-9_]*)\s*\(',masked))
+    declarations.update(re.findall(r'\b(?:struct|class)\s+([A-Za-z_][A-Za-z0-9_]*)\b',masked))
+    if requested in declarations or ('.' in requested and requested.rsplit('.',1)[1] in declarations):return requested
+    calls=set(re.findall(r'#Preview\s*(?:\([^{}]*\))?\s*\{\s*([A-Za-z_][A-Za-z0-9_]*)\s*\(\s*\)\s*\}',masked))
+    candidates=calls & declarations
+    if len(candidates)==1:return next(iter(candidates))
+    raise ValueError('Factory '+requested+' is missing. Select a declared factory or provide one plain #Preview { factory() }')
+
+
 def jsonc(text):
     # Xcode 27's supplied project.xcproj uses trailing commas. Preserve strings.
     out=[];i=0;quoted=False;escaped=False
@@ -104,7 +133,7 @@ def resolve_source(path,factory,target=None):
         with source.open('rb') as stream:data=stream.read(1024*1024+1)
         total+=len(data)
         if len(data)>1024*1024 or total>8*1024*1024:raise ValueError('Project source bounds exceeded')
-        if re.search(r'\bfunc\s+'+re.escape(factory)+r'\s*\(',code_mask(data.decode('utf-8'))):matches.append(source)
+        if re.search(r'\b(?:func\s+'+re.escape(factory)+r'\s*\(|(?:struct|class)\s+'+re.escape(factory)+r'\b)',code_mask(data.decode('utf-8'))):matches.append(source)
     if len(matches)!=1:raise ValueError('Expected one factory '+factory+' in selected target sources')
     primary=matches[0]
     if not isinstance(value.get('build-settings',{}),dict) or not isinstance(selected.get('build-settings',{}),dict):raise ValueError('Build settings must be objects')

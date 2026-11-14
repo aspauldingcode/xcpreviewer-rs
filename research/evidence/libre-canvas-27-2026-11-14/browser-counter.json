@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "deployment_target": "arm64-apple-macos27.0",
+    "sdk_version": "27.2"
+  },
+  "viewOnlyTitlebarForwardedNoEvents": true,
+  "classification": "actual Chromium -> authenticated local API -> owned AppKit mouse events -> SwiftUI @State -> native bitmap -> WASM decode",
+  "before": {
+    "artifact": "abf0902484fbe58aa2e5a4c4416ebb7e653e5151e88f6c0506831a6c5fb97705",
+    "host": "179d09d0ef2f3c3347d3fa2b1fe20209",
+    "scale": "2",
+    "width": 1200,
+    "height": 800,
+    "countRegionSha": "14270b4850220e30815a0ddc6e67da432db186261f92d52e5051abd5db159c61"
+  },
+  "plus": {
+    "ok": true,
+    "events": [
+      "leftMouseDown",
+      "leftMouseUp"
+    ],
+    "event_sequence": 2
+  },
+  "one": {
+    "artifact": "5d967b0f403e67b5104ee2c3f12f11edf3976f4396879d7c127477244267b6f1",
+    "host": "179d09d0ef2f3c3347d3fa2b1fe20209",
+    "scale": "2",
+    "width": 1200,
+    "height": 800,
+    "countRegionSha": "4511df33362e07f8eeac5a5b5ca87590eef1c95e44b52a476b3216949319b7b4"
+  },
+  "minus": {
+    "ok": true,
+    "events": [
+      "leftMouseDown",
+      "leftMouseUp"
+    ],
+    "event_sequence": 4
+  },
+  "zero": {
+    "artifact": "367e6dff7b072935467bb5c08c13e58d8ef77b4894ba26cd97c576e83512bc73",
+    "host": "179d09d0ef2f3c3347d3fa2b1fe20209",
+    "scale": "2",
+    "width": 1200,
+    "height": 800,
+    "countRegionSha": "14270b4850220e30815a0ddc6e67da432db186261f92d52e5051abd5db159c61"
+  },
+  "outOfBoundsRejected": 400,
+  "retinaOff": {
+    "width": 600,
+    "height": 400,
+    "cssWidth": 600,
+    "scale": "1"
+  },
+  "retinaRestored": true,
+  "maskRejected": 400,
+  "mobilePlus": {
+    "ok": true,
+    "events": [
+      "leftMouseDown",
+      "leftMouseUp"
+    ],
+    "event_sequence": 2
+  },
+  "mobileGlyphChanged": true,
+  "mobile": {
+    "width": 804,
+    "height": 1748,
+    "cssWidth": 236.875,
+    "cssHeight": 515,
+    "corner": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "scale": "2",
+    "zoom": "fit"
+  },
+  "mobileScope": "Installed screen geometry/mask; Mac SwiftUI controls, not native iOS semantics"
+}

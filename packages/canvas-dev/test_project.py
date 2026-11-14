@@ -1,7 +1,7 @@
 """Tests of source adaptation and configuration, not native Canvas parity."""
 import tempfile,unittest
 from pathlib import Path
-from project import code_mask,preview_snapshot,jsonc,resolve_source
+from project import code_mask,preview_snapshot,jsonc,resolve_source,select_factory,strip_preview_blocks
 from server import Session
 
 class Tests(unittest.TestCase):
@@ -53,6 +53,20 @@ class Tests(unittest.TestCase):
             for value in [[],{'targets':[{}]},{'targets':[1]},{'targets':[{'name':'T'}],'files':[1]},{'targets':[{'name':'T'}],'files':{} }]:
                 manifest.write_text(json.dumps(value))
                 with self.assertRaises(ValueError):resolve_source(project,'makePreview')
+
+    def test_factory_snapshot_strips_balanced_preview_registration_only(self):
+        text='func makePreview() {}\n// #Preview { ignored() }\n#Preview("Demo") { VStack { Text("}") } }\nlet keep = 4\n'
+        result,count=strip_preview_blocks(text)
+        self.assertEqual(count,1);self.assertEqual(len(result),len(text));self.assertIn('// #Preview { ignored() }',result);self.assertIn('func makePreview() {}',result);self.assertIn('let keep = 4',result)
+        with self.assertRaises(ValueError):strip_preview_blocks('#Preview { Text("unfinished")')
+
+    def test_file_factory_follows_one_plain_preview_without_guessing(self):
+        source='func makeMyPreview() {}\n#Preview("Name") { makeMyPreview() }'
+        self.assertEqual(select_factory(source,'makePreview'),'makeMyPreview')
+        self.assertEqual(select_factory('struct RootView: View {}','RootView'),'RootView')
+        self.assertEqual(select_factory('func makePreview() {}\n'+source,'makePreview'),'makePreview')
+        for invalid in ['func wrong() {}','// #Preview { wrong() }\nfunc wrong() {}',source+'\nfunc other() {}\n#Preview { other() }']:
+            with self.assertRaises(ValueError):select_factory(invalid,'missing')
 
     def test_settings_enforce_bounds_and_rebuild_on_environment(self):
         with tempfile.TemporaryDirectory() as tmp:

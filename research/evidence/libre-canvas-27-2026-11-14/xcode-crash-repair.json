@@ -1,0 +1,35 @@
+{
+  "classification": "User-supplied crash report plus local source inspection and reversible source repair; Xcode restart stability not exercised",
+  "xcode_version": "27.2 (27B52)",
+  "os_version": "27.2.1",
+  "fault": "EXC_BAD_ACCESS / SIGBUS at stack guard",
+  "faulting_queue": "MyApp.swift -> MyApp.swift",
+  "recursion_levels_reported": 1439,
+  "stack_path": [
+    "PreviewsScenes.DocumentParser",
+    "PreviewsModel.Parser.parseSyntax",
+    "SwiftOperators",
+    "SwiftSyntax recursion"
+  ],
+  "same_signature_in_latest_reports": 3,
+  "source_finding": {
+    "identical_modifier": ".accessibilityLabel(\"Clear search\")",
+    "consecutive_copies": 1000,
+    "start_line": 100,
+    "redundant_copies_removed": 999,
+    "original_sha256": "206f88d93cc34b5119902c555782e28a9bf7f1da96ee8bfff8cb19177625abd2",
+    "repaired_sha256": "27549b5aedf8333301e1111e78c564b877da23fb06274ae4249f9c3c561be557",
+    "exact_backup_preserved_locally": true,
+    "conditional_atomic_replacement": true
+  },
+  "repaired_source_frontend_parse_target": "arm64-apple-macos27.0",
+  "repaired_source_frontend_parse_exit": 0,
+  "crash_report_contains_reconstruction_or_frida_image": false,
+  "reported_target_external_modifications": {
+    "thread_create": 0,
+    "thread_set_state": 0,
+    "task_for_pid": 0
+  },
+  "causality": "Duplicated modifier chain is a strong candidate trigger for observed parser stack overflow; not a proven post-repair Xcode stability result",
+  "raw_crash_and_user_source_published": false
+}

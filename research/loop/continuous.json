@@ -19616,5 +19616,30 @@
       "initial_harness_cleanup_failure": "test preferences briefly reached real server; conditional restore and close-before-unroute fix retained",
       "real_server_final": "ready; Auto/light/2x/titlebar on; original source SHA unchanged"
     }
+  },
+  "libre_canvas_27_checkpoint": {
+    "updated_at": "2026-11-14T22:52:20.992278+00:00",
+    "evidence": "research/evidence/libre-canvas-27-2026-11-14",
+    "deployment_target": "arm64-apple-macos27.0",
+    "sdk_version": "27.2",
+    "producer": "owned public AppKit.NSHostingView; ImageRenderer optional reference producer",
+    "independent_ui_canvas_auto_native_pixels_exercised": true,
+    "actual_browser_native_counter_plus_minus": true,
+    "retina_toggle_preserves_points": true,
+    "titlebar_input_ignored": true,
+    "mobile_fit_input_and_mask_rejection_exercised": true,
+    "profile_count_discovered": 123,
+    "mobile_profiles_runtime_exercised": [
+      "iPhone 17 Pro:primary"
+    ],
+    "ios_native_semantics_verified": false,
+    "source_state_survives_rebuild": false,
+    "xcode_crash": "SwiftSyntax stack overflow;1000 identical modifiers reduced to one with exact local backup; macOS27 syntax parse passes; Xcode reopen stability untested",
+    "native_experiments_private_xcode_attachment": false,
+    "github_access": "Existing authorized Git credential allows repository API reads; GH CLI token remains stale; issue comment writes pending concrete result",
+    "next": "Continue native lifecycle/interaction contracts and usable reconstruction, preserve OS/SDK27 floor. Full input, actual iOS widgets/safe areas/device artwork, source-state preservation and general SwiftUI/WASM remain open.",
+    "actual_project": "Selected RootView after user changed app entry; macOS27 compile rejects iOS-only toolbar/title APIs. Source preserved except explicit backed-up duplicate-label repair.",
+    "working_counter_url": "http://127.0.0.1:57948",
+    "original_demo_url": "http://127.0.0.1:57942"
   }
 }

@@ -2,7 +2,7 @@ async page=>{
  // Only run on a disposable copy of examples/canvas-swiftui.swift: this test edits its file.
  const assert=(v,m)=>{if(!v)throw Error(m);};const editor=page.getByRole('textbox',{name:'Swift source'});
  await page.waitForFunction(()=>document.querySelector('#canvas').dataset.artifactSha256);
- await page.getByLabel('Appearance',{exact:true}).selectOption('light');
+ await page.getByLabel('Canvas appearance',{exact:true}).selectOption('light');
  await page.waitForFunction(()=>document.querySelector('#canvas').dataset.colorScheme==='light');
  const read=()=>page.evaluate(async()=>{const c=document.querySelector('#canvas'),p=c.getContext('2d').getImageData(0,0,c.width,c.height).data;return{artifact:c.dataset.artifactSha256,source:c.dataset.sourceSha256,width:c.width,height:c.height,pixel:Array.from(c.getContext('2d').getImageData(10,80,1,1).data),readbackSha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',p)),b=>b.toString(16).padStart(2,'0')).join('')};});
  const original=await editor.inputValue(),initial=await read();assert(original.includes('.background(Color.white)'),'Requires disposable sample fixture');assert(initial.width===1200&&initial.height===800,'Expected true @2x backing');

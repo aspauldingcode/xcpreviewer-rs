@@ -1,0 +1,46 @@
+{
+  "native_input_preflights": [
+    {
+      "method": "Initial NSAccessibility cast",
+      "outcome": "Compiler rejected concrete NSAccessibility namespace as a protocol; corrected imported protocol name."
+    },
+    {
+      "method": "NSAccessibilityProtocol members as properties",
+      "outcome": "Compiler required method calls; corrected interface use."
+    },
+    {
+      "method": "Owned NSHostingView accessibility enumeration",
+      "outcome": "Only root AXGroup returned; no button action executed; before/after bitmap hashes equal."
+    },
+    {
+      "method": "Direct NSHostingView mouseDown with queued mouseUp",
+      "outcome": "Dispatch returned but pixels stayed unchanged; not counted as working input."
+    },
+    {
+      "method": "Owned NSWindow.sendEvent down/up",
+      "outcome": "Native counter changed 0 to 1 and background changed; later browser +/- controls passed."
+    }
+  ],
+  "original_visible_demo": {
+    "url_port": 57942,
+    "old_bitmap": [
+      360,
+      240
+    ],
+    "scale_metadata": null,
+    "chrome_metadata": null,
+    "environment_endpoint": "Not found",
+    "result": "Old running backend could not honor newly served Retina/titlebar controls; not successful functionality."
+  },
+  "compiler_timeouts": {
+    "observed_seconds": [
+      5,
+      30
+    ],
+    "stage_diagnostics_added": true,
+    "persistent_module_cache_option_added": true,
+    "root_cause_isolated": false
+  },
+  "tooling_failure": "Previous Playwright session had closed; recreated an isolated headless session before successful browser checks.",
+  "historical_26_test": "Initial adaptive/counter checks targeted macOS26; user then superseded requirement with 27+. Published final receipts above are 27.0 / SDK27.2."
+}

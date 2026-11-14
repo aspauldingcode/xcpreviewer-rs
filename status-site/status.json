@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T18:45:17.555305+00:00",
+  "updated_at": "2026-11-14T22:52:20.992278+00:00",
   "repository": "https://github.com/aspauldingcode/xcpreviewer-rs",
   "title": "Xcode Canvas recovery",
-  "current_focus": "Usable local Libre Canvas: native SwiftUI rebuild-and-refresh without Simulator; syntax highlighting, Light/Dark/Auto, native @2x and canvas PNG export exercised. Interactive state-preserving reload, full target support and general SwiftUI-to-WASM remain open.",
+  "current_focus": "OS/SDK27+ local Canvas: independent UI/Canvas browser Auto, native adaptive text/background/titlebar, actual @2x and native counter input pass. iPhone geometry/mask works with Mac controls. Source-state-preserving reload, native iOS/all-device/private-input parity remain open.",
   "milestones": [
     {
       "number": 1,
@@ -21,7 +21,7 @@
       "total_issues": 16,
       "status": "in_progress",
       "percent_label": "Tracking issues closed",
-      "note": "Scoped local snapshot preview functionality is being completed alongside native validation. Full cross-platform SwiftUI/WASM and target coverage remain open; issue closure counts are last authenticated values."
+      "note": "Local native input/appearance/geometry functionality proceeds alongside recovery. Full non-Apple SwiftUI/WASM execution and target coverage remain open; scoped demos do not close the milestone."
     }
   ],
   "recovery": {
@@ -121,6 +121,11 @@
     ]
   },
   "recent": [
+    {
+      "date": "2026-11-14",
+      "title": "OS/SDK27 native counter, independent appearance and Retina pass",
+      "detail": "Actual Chromium + owned native SwiftUI: UI/Canvas themes vary independently, Auto follows browser media, native text/background and painted titlebar agree. Native +/- restores exact count glyph pixels; 1x/2x keeps point size; mobile Fit input and mask rejection pass. User Xcode parser crash has a likely1000-duplicate-modifier trigger; backed-up repair parses, Xcode reopening untested. No full iOS/private protocol/state-preserving reload claim."
+    },
     {
       "date": "2026-11-14",
       "title": "Reconnect restores preview preferences and preserves unsaved text",

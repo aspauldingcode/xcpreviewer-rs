@@ -1,0 +1,14 @@
+{
+  "source_name": "MyApp.swift",
+  "selected_entry": "RootView",
+  "deployment_target": "arm64-apple-macos27.0",
+  "sdk_version": "27.2",
+  "native_mac_compile": "failed",
+  "observed_unavailable_mac_apis": [
+    "ToolbarItemPlacement.topBarLeading",
+    "ToolbarItemPlacement.topBarTrailing",
+    "navigationBarTitleDisplayMode"
+  ],
+  "scope": "SDK/deployment floor is not an iOS runtime. Actual project now contains iOS-only UI APIs; native iOS rendering or explicit macOS adaptation remains required. No silent platform shims applied.",
+  "source_preservation": "Only the backed-up duplicate-label crash repair changed the user project; source constructor selection is server configuration."
+}

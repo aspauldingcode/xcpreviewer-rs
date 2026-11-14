@@ -1,5 +1,13 @@
 # Progress
 
+## 2026-11-14 — OS/SDK27, independent themes and native counter
+
+Final native preview deployment is macOS27.0 with SDK27.2; older floors are rejected. Browser tests exercise independent UI/Canvas Light/Dark/Auto with actual adaptive SwiftUI text/background and synchronized painted titlebar. Native backing, PNG dimensions and1x/2x toggling pass. Browser +/- clicks reach ordered native AppKit mouse-down/up events; SwiftUI count changes0→1→0 and the original glyph pixels return exactly. Titlebar clicks do not forward input; invalid coordinates and transparent mask corners reject. Selected iPhone17Pro geometry/mask and Fit-scaled native counter click pass.123 catalog profiles are discovered, not all runtime-qualified. [Evidence](research/evidence/libre-canvas-27-2026-11-14/README.md).
+
+Original visible demo servers were obsolete and could not honor Retina/titlebar controls. Failed AX/interface/direct-view input routes and5/30-second compiler failures are retained. Public `NSWindow.sendEvent` succeeds in owned processes; this is not full private Xcode event-protocol parity. Rebuilds reset state; iOS widget/safe-area semantics, exact hardware bezel artwork, continuous animations, keyboard/drag/touch and full WASM/target acceptance remain open.
+
+Three user Xcode reports share a SwiftSyntax preview-parser stack overflow. Current source contained1000 consecutive identical accessibility labels; an exact private backup and conditional atomic repair retain one and remove999 duplicates. Repaired source syntax parses for macOS27. The modifier chain is a strong candidate trigger, not proven post-repair Xcode stability. No user Xcode process was attached to, terminated or re-signed.
+
 ## 2026-11-14 — usable local Canvas slice
 
 Added [source-bound local previewer](packages/canvas-dev/README.md): native SwiftUI rebuild-and-refresh without Simulator, Swift highlighting, Light/Dark/Auto synchronized into the native environment, default true @2x with toggle, actual-canvas PNG export and view-only Mac titlebar controls. Xcode27 `project.xcproj` binding builds the supplied factory with selected language/isolation settings while preserving original `@main` source. Assets/packages/destination integration remains incomplete.
