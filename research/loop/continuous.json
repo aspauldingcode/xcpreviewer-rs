@@ -19618,7 +19618,7 @@
     }
   },
   "libre_canvas_27_checkpoint": {
-    "updated_at": "2026-11-14T22:52:20.992278+00:00",
+    "updated_at": "2026-11-20T18:36:05.330601+00:00",
     "evidence": "research/evidence/libre-canvas-27-2026-11-14",
     "deployment_target": "arm64-apple-macos27.0",
     "sdk_version": "27.2",
@@ -19636,10 +19636,23 @@
     "source_state_survives_rebuild": false,
     "xcode_crash": "SwiftSyntax stack overflow;1000 identical modifiers reduced to one with exact local backup; macOS27 syntax parse passes; Xcode reopen stability untested",
     "native_experiments_private_xcode_attachment": false,
-    "github_access": "Existing authorized Git credential allows repository API reads; GH CLI token remains stale; issue comment writes pending concrete result",
+    "github_access": "Issue comments published using existing authorized Git credential: #20/#19/#15/#22.",
     "next": "Continue native lifecycle/interaction contracts and usable reconstruction, preserve OS/SDK27 floor. Full input, actual iOS widgets/safe areas/device artwork, source-state preservation and general SwiftUI/WASM remain open.",
     "actual_project": "Selected RootView after user changed app entry; macOS27 compile rejects iOS-only toolbar/title APIs. Source preserved except explicit backed-up duplicate-label repair.",
     "working_counter_url": "http://127.0.0.1:57948",
-    "original_demo_url": "http://127.0.0.1:57942"
+    "original_demo_url": "http://127.0.0.1:57942",
+    "publication_commit": "6a6001c5",
+    "publication_branches": [
+      "development",
+      "master"
+    ],
+    "current_service_health": "2026-11-20: ports57948/57942 connection refused; former temporary sources absent. SDK query eventually returned27.2 and host27.2.1 after over180s; attempted termination found both processes already exited. Counter relaunch in progress; historical native receipts retained.",
+    "publication_issue_comments": {
+      "20": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20#issuecomment-7047473483",
+      "19": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-7047473865",
+      "15": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15#issuecomment-7047474251",
+      "22": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-7047474730"
+    },
+    "revalidation_checks": "17 canvas unit/owned-I/O tests, 6 watcher tests, JavaScript syntax and clean diff pass; historical native browser tests not rerun."
   }
 }
