@@ -19618,7 +19618,7 @@
     }
   },
   "libre_canvas_27_checkpoint": {
-    "updated_at": "2026-11-20T18:36:05.330601+00:00",
+    "updated_at": "2026-11-20T18:41:59.897886+00:00",
     "evidence": "research/evidence/libre-canvas-27-2026-11-14",
     "deployment_target": "arm64-apple-macos27.0",
     "sdk_version": "27.2",
@@ -19646,7 +19646,7 @@
       "development",
       "master"
     ],
-    "current_service_health": "2026-11-20: ports57948/57942 connection refused; former temporary sources absent. SDK query eventually returned27.2 and host27.2.1 after over180s; attempted termination found both processes already exited. Counter relaunch in progress; historical native receipts retained.",
+    "current_service_health": "November20 counter relaunch failed twice: Nix cargo lacked wasm32-wasip1 core; explicit existing rustup toolchain passed target qualification but decoder compilation exceeded the90s startup deadline. No ready service/native frame produced. No unchanged retry. SDK27.2/host27.2.1 confirmed; earlier native/browser results remain historical.",
     "publication_issue_comments": {
       "20": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20#issuecomment-7047473483",
       "19": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-7047473865",
