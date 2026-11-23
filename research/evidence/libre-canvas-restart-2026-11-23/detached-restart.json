@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-11-23T23:07:02.677274+00:00",
+  "initial_state": "prior service connection refused; no matching service process observed",
+  "cause_of_prior_exit": "unknown; not assigned to host one-hour lifetime or tool-session teardown",
+  "failed_launch": "current nightly default lacks wasm32-wasip1; E0463; server exited before binding",
+  "remedy": "installed wasm32-wasip1 on existing stable toolchain; RUSTUP_TOOLCHAIN=stable and rustup PATH scoped to detached owned server; global nightly unchanged",
+  "service_ready_after_launcher_exit": true,
+  "deployment_target": "arm64-apple-macos27.0",
+  "sdk_version": "27.2",
+  "native_bitmap_extent": [
+    1200,
+    736
+  ],
+  "artifact_sha256": "43074aa8542f735abfba66658a8028fd03d9bbcc731c7fcbe084f61c5b1fee10",
+  "new_input_browser_theme_or_png_test": false,
+  "long_running_durability_verified": false
+}

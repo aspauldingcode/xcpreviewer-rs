@@ -6,6 +6,8 @@ Requires **macOS27+ and an Apple SDK27+**. Native builds use the installed Xcode
 python3 canvas.py examples/canvas-counter.swift --native-factory makeMyPreview
 ```
 
+If another project changes your Rust default, qualify `rustup target list --installed --toolchain stable` and install `wasm32-wasip1` for that toolchain if needed. Run with `PATH="$HOME/.cargo/bin:$PATH" RUSTUP_TOOLCHAIN=stable python3 canvas.py examples/canvas-counter.swift --native-factory makeMyPreview` to scope toolchain selection to Canvas without changing the global default.
+
 Open the printed loopback URL. Native mode defaults to an owned persistent AppKit/SwiftUI host. Browser clicks become native left mouse-down/up events in that process; SwiftUI owns the counter state. Use `--snapshot` to select the public ImageRenderer reference producer instead. No Simulator or Xcode session is launched.
 
 - **UI** and **Canvas** each have independent Light/Dark/Auto controls. Auto reads the browser's live `prefers-color-scheme`. Canvas selection changes native SwiftUI appearance/environment and the painted titlebar together. UI-only changes do not rebuild the canvas.

@@ -19618,7 +19618,7 @@
     }
   },
   "libre_canvas_27_checkpoint": {
-    "updated_at": "2026-11-23T17:58:30.390734+00:00",
+    "updated_at": "2026-11-23T23:07:02.677274+00:00",
     "evidence": "research/evidence/libre-canvas-27-2026-11-14",
     "deployment_target": "arm64-apple-macos27.0",
     "sdk_version": "27.2",
@@ -19646,7 +19646,7 @@
       "development",
       "master"
     ],
-    "current_service_health": "Nov23 counter57948 ready; SDK27.2 macos27.0; actual API/native plus-minus changes/restores count glyph. Browser not exercised this turn. Original57942 not relaunched: its former temporary user-edited source is absent.",
+    "current_service_health": "Nov23 late check found service offline; prior exit cause unknown. Detached restart with server-scoped stable Rust toolchain now ready on SDK27.2/macOS27.0; actual1200x736 native bitmap fetched/hash-checked. Long-running durability not verified.",
     "publication_issue_comments": {
       "20": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20#issuecomment-7047473483",
       "19": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-7047473865",
@@ -19655,6 +19655,7 @@
     },
     "revalidation_checks": "17 canvas unit/owned-I/O tests, 6 watcher tests, JavaScript syntax and clean diff pass; historical native browser tests not rerun.",
     "restart_evidence": "research/evidence/libre-canvas-restart-2026-11-23",
-    "startup_cleanup": "Owned-group decoder deadline helper: success/failure/descendant-pipe timeout controls pass. Real earlier Cargo lock timeout retained; no user build termination."
+    "startup_cleanup": "Owned-group decoder deadline helper: success/failure/descendant-pipe timeout controls pass. Real earlier Cargo lock timeout retained; no user build termination.",
+    "detached_restart_evidence": "research/evidence/libre-canvas-restart-2026-11-23/detached-restart.json"
   }
 }
