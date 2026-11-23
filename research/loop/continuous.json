@@ -19618,7 +19618,7 @@
     }
   },
   "libre_canvas_27_checkpoint": {
-    "updated_at": "2026-11-20T18:41:59.897886+00:00",
+    "updated_at": "2026-11-23T17:58:30.390734+00:00",
     "evidence": "research/evidence/libre-canvas-27-2026-11-14",
     "deployment_target": "arm64-apple-macos27.0",
     "sdk_version": "27.2",
@@ -19646,13 +19646,15 @@
       "development",
       "master"
     ],
-    "current_service_health": "November20 counter relaunch failed twice: Nix cargo lacked wasm32-wasip1 core; explicit existing rustup toolchain passed target qualification but decoder compilation exceeded the90s startup deadline. No ready service/native frame produced. No unchanged retry. SDK27.2/host27.2.1 confirmed; earlier native/browser results remain historical.",
+    "current_service_health": "Nov23 counter57948 ready; SDK27.2 macos27.0; actual API/native plus-minus changes/restores count glyph. Browser not exercised this turn. Original57942 not relaunched: its former temporary user-edited source is absent.",
     "publication_issue_comments": {
       "20": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/20#issuecomment-7047473483",
       "19": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/19#issuecomment-7047473865",
       "15": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/15#issuecomment-7047474251",
       "22": "https://github.com/aspauldingcode/xcpreviewer-rs/issues/22#issuecomment-7047474730"
     },
-    "revalidation_checks": "17 canvas unit/owned-I/O tests, 6 watcher tests, JavaScript syntax and clean diff pass; historical native browser tests not rerun."
+    "revalidation_checks": "17 canvas unit/owned-I/O tests, 6 watcher tests, JavaScript syntax and clean diff pass; historical native browser tests not rerun.",
+    "restart_evidence": "research/evidence/libre-canvas-restart-2026-11-23",
+    "startup_cleanup": "Owned-group decoder deadline helper: success/failure/descendant-pipe timeout controls pass. Real earlier Cargo lock timeout retained; no user build termination."
   }
 }

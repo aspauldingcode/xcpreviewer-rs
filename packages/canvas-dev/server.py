@@ -11,6 +11,7 @@ sys.path.insert(0, str(ASSETS))
 from project import resolve_source, preview_snapshot, select_factory, strip_preview_blocks
 from device_profiles import load_profiles
 from live_host import NativeHost
+from startup import run_decoder_build
 MAX_SOURCE = 1024 * 1024
 
 
@@ -487,10 +488,10 @@ def main():
     decoder = None
     if a.native_factory:
         target = work/'decoder'; target.mkdir(parents=True, exist_ok=True)
-        subprocess.run([shutil.which('cargo') or str(Path.home()/'.cargo/bin/cargo'), 'rustc', '--offline', '--locked',
+        run_decoder_build([shutil.which('cargo') or str(Path.home()/'.cargo/bin/cargo'), 'rustc', '--offline', '--locked',
                         '--manifest-path', str(ROOT/'tools/re/rust/canvas-core/Cargo.toml'),
                         '--target-dir', str(target), '--target', 'wasm32-wasip1', '--bin', 'canvas-frame',
-                        '--', '-C', 'link-arg=--max-memory=268435456'], check=True, timeout=90)
+                        '--', '-C', 'link-arg=--max-memory=268435456'])
         decoder = target/'wasm32-wasip1/debug/canvas-frame.wasm'
     server = make_server(session, a.port, decoder); session.start()
     print(json.dumps({'url':'http://'+server.authority, 'source':str(session.source),

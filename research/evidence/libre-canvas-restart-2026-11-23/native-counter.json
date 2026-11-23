@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-11-23T17:58:06.003127+00:00",
+  "classification": "actual local API -> owned AppKit NSWindow mouse events -> SwiftUI state -> native bitmap; browser not exercised",
+  "deployment_target": "arm64-apple-macos27.0",
+  "sdk_version": "27.2",
+  "native_backing": [
+    1200,
+    736
+  ],
+  "scale": 2,
+  "glyph_hashes": [
+    "4523f3dc603f5120cf240b06187fa3b5a6cde7dc989cf5153db2450b24adffcf",
+    "19a0dc2e9f4faac15c9609409b9fa45674d1d2b5eb674af464784bd1e349ce46",
+    "4523f3dc603f5120cf240b06187fa3b5a6cde7dc989cf5153db2450b24adffcf"
+  ],
+  "plus_events": [
+    "leftMouseDown",
+    "leftMouseUp"
+  ],
+  "minus_events": [
+    "leftMouseDown",
+    "leftMouseUp"
+  ],
+  "plus_sequence": 2,
+  "minus_sequence": 4,
+  "plus_changes_glyph": true,
+  "minus_restores_glyph": true,
+  "source_rebuild_state_preservation_claimed": false,
+  "browser_theme_export_or_device_tests_rerun": false,
+  "failures_retained": [
+    "Nov20 PATH selected Nix cargo without WASM target",
+    "Nov20 decoder startup timeout",
+    "Nov20 retry waited on Cargo package-cache lock until deadline"
+  ],
+  "restart_condition": "Nov23 no package-cache lock holder reported; existing rustup toolchain selected; no installation or user process termination",
+  "sample_source_sha256": "86b6a23a7ee106f00a207fa9f67ec6771c9cb26882d631c03eee71dc2e735050"
+}
